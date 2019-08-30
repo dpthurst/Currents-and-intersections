@@ -1,0 +1,434 @@
+\section{Discussion on previous work}
+
+By theorem \ref{thm:intersect} we get an analogue $\mu_g$ of the Liouville current. This current was constructed by Otal in \cite{Otal90:SpectreMarqueNegative} for all negatively curved Riemannian metrics. Then it was generalized in two different paths:
+first by Croke-Fathi-Feldman \cite{CFF92:RigidityNonPosCurvedRiem} for non–positively curved Riemannian 
+metrics and second by Hersonsky-Paulin \cite{HP97:RigidityNegCurvedCone}  for negatively  curved cone  metrics. The general case for arbitrary flat metrics appears to be new. \\
+The existence of the analog of the Liouville current provides with the first step towards attempting the rigidity problem: is a family of metrics determined by its marked length spectrum? \\
+By Otal \cite{Otal90:SpectreMarqueNegative} or our
+Theorem~\ref{thm:intersect}, a geodesic current is determined by
+intersection numbers with closed curves.
+To determine spectral rigidity one has to show that two metrics inducing the same geodesic current are equivalent (up to maps isotopic to the identity). To do that one usually then studies the support of these geodesic currents. \\
+
+Comment: current we associate to an arbitrary Riemannian metrics is
+not the long-term behavior of a random geodesic. For instance, if $g$
+has positive curvature, may have an open set of Riemannian geodesics
+on~$\Sigma$ that stay inside a contractible set and so are not
+quasi-geodesic on~$\wt \Sigma$.
+
+
+
+\section{From additivity to geodesic currents}
+
+The idea is to reconstruct a current, i.e. a cross-ratio from the periods. (talk/cite previous work by Hamenstadt, Ledrappier, Martone-Zhang?).\\
+Work of Otal \cite{Otal90:SpectreMarqueNegative} shows that a current is uniquely determined by its values on closed curves, by using boxes whose endpoints are orbits of certain geodesics.
+In his argument, Otal uses lifts of a dense geodesic in the surface, but controlling the asymptotics of those is complicated.
+We will instead use boxes whose endpoints are orbits of a closed geodesic $x$, easier to control. The caveat here is that
+now we have to be more careful since the target geodesic current may have
+delta-masses at the boundaries of the boxes. We will have to specify exactly what's included in the boundary and what is not.
+This is where the definition of \emph{right handed} rectangle will come into play. \\
+
+Then we will construct closed curves whose lengths
+should correspond to these rectangles. Thus, in addition to the closed geodesic
+$x$, we have 4 elements of $\pi_1$, $a,b,c,d$ corresponding to the 4 sides of
+these boxes ($c$ and $d$ are opposite sides, and $a,b$ are diagonals), and we will consider limits of
+
+  $$v(a x^n b x^m) - v(c x^n d x^m).$$
+
+One key point here is that the first curve has a crossing that the second one doesn't have
+(so the difference is positive). There will be several things to check, all
+up to small additive error that goes to zero as $n,m \to \infty$:
+
+\begin{enumerate}
+\item $$v(a x^n b x^m) \sim  v(a x^n) + v(b x^m)$$ (same for $c,d$).
+
+\item Both quantities $v(a x^n b x^m)$ and $v(a x^n) + v(b x^m)$ are convex as a function of $n,m$
+
+\item Both quantities depend only on $n+m$
+\end{enumerate}
+
+
+ We use then the additivity of the function $v$ to show it's additive on these boxes, and prove that the boxes form a semi-ring (see proposition \ref{prop:RHsemiring}).
+ Then we apply Caratheodory's extension theorem for pre-measures on semi-rings (see theorem \ref{thm:caratheodorymeasures}) to obtain a $\pi_1(S)$-invariant measure.
+ Finally, we show these approximations converge to the right value, i.e. to the value of the function on closed curves i.e. the current we have
+constructed is really the Liouville current for $v$ (see proposition \ref{prop:liouvillecurrent}).
+
+\subsection{Boxes}
+\label{sec:boxes}
+
+Let $v\colon \mathbb{R}\mathcal{C}_+(\Sigma) \to \mathbb{R}_{0 \geq}$ satisfy additive union, smoothing, stability and homogeneity.
+
+We will fix (arbitrarily) a simple closed oriented curve~$x$ that will
+serve as endpoints of the allowable rectangles. For convenience, we
+will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$x$, and also
+use $x$ for the corresponding element of~$\pi_1$.
+
+We say that $a \in \pi_1(S, \ast)$ \emph{crosses $x$ to the
+  right} if (there is an essential right-handed crossing).
+
+For $a,b,c,d \in \pi_1(S,\ast)$ curves that cross $x$ to
+the right with $a b^{-1} c d^{-1} = 1$,
+let the box $B_{a,b,c,d,x}$
+be the \emph{right handed rectangle} defined by 
+(show picture of lifts of curves here.)
+(Need assumption on  $b$, $c$ crossing.)
+
+Slight issue: Need a little more data to get a box in $\wt S$, rather
+than a box up to translation by $\pi_1(S)$. Do this by picking
+paths $p_1$, $p_2$, $q_1$, $q_2$ and setting
+\begin{align*}
+  a &= q_1p_1 & b &= q_2p_1\\
+  c &= q_1p_2 & d &= q_2p_2.
+\end{align*}
+
+Explain about whiskers, pointing down or to the right. Allowable boxes
+have all corners at whiskers.
+
+\subsection{Measures of boxes}
+
+We wish to define a pre-measure by setting
+\todo{Labels have been permuted}
+\[
+\mu_{v}(B_{a,b,c,d,x})=\lim_{n \to \infty}v(bx^n) + v(cx^n)-v(ax^n) - v(dx^m)
+\]
+To check that this is well-defined, we first prove that this limit
+exists.
+
+\begin{lemma}
+  If $a$ crosses $x$ to the right, then we have the following
+  geometric reductions:
+  \begin{align}
+    \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
+    \label{eq:cross-red2}[a x^{n+1}][a x^{n-1}] &\reducesto 2[a x^n]\\
+    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto x^{\abs{n-m}}.
+  \end{align}
+\end{lemma}
+\begin{proof}
+  Equation~(\ref{eq:cross-red1}) follows since $a$ (and $a x^n)$
+  cross~$x$. The other two follow from the bands model.
+\end{proof}
+
+\begin{corollary}\label{cor:additivity-limit}
+  If $a$ crosses $x$ to the right, then
+  \[
+    \lim_{n \to \infty} \bigl(v(a x^n) - v(x^n)\bigr)
+  \]
+  exists.
+\end{corollary}
+
+\begin{proof}
+  By Equation~(\ref{eq:cross-red2}), $v(a x^n)$ is a convex function
+  of $n$, and thus so is $v(a x^n) - v(x^n)$. By
+  Equations~(\ref{eq:cross-red1}) and~(\ref{eq:cross-red3}) (both with
+  $n=0$),
+  \[
+    -v(a) \le v(a x^n) - v(x^n) \le v(a).
+  \]
+  A convex function that is bounded as $n \to \infty$ has a
+  well-defined limit.
+\end{proof}
+
+Thus the limit defining $\mu_{v}(B_{a,b,c,d,x})$ exists. To prove
+useful facts about this limit, we need a little more.
+
+\begin{lemma}\label{lem:join-split-geom}
+  If $a$ and $b$ cross $x$ to the right, then there is an integer $k$
+  so that, for all $n,m,r$ with either $0 < r < m-n+k$ or $0 > r > m-n+k$,
+  \begin{align*}
+    [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
+    [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
+  \end{align*}
+\end{lemma}
+\begin{proof}
+  Use the band model, centered on~$x$.
+  Number the windows on top and bottom (cut out by other lifts of~$x$)
+  with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
+  top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
+  of~$b$ connect top window~$\ell$ to bottom window $\ell+k$.
+
+  For the first reduction, note
+  lifts of $a x^n$ connect windows with a shift of~$n$, and
+  similarly lifts of $b x^m$ connect windows with a shift of $k+m$.
+  Choose a lift of $a x^n$ that connects window $0$ to window~$n$,
+  and choose a lift of $b x^m$ that connects window $n+r-k-m$ to
+  window $n+r$. Smoothing gives the desired reduction.
+
+  Other reduction is similar, instead choosing two different lifts of
+  $a x^n b x^m$.
+  
+  See DPT notes \texttt{2018-03-01 \#1} (but it's not written up very
+  cleanly there).
+\end{proof}
+
+\begin{proposition}\label{prop:join-split-alg}
+  If $a$ and $b$ cross $x$ to the right, then
+  \[
+    \lim_{n,m\to \infty} v(a x^n b x^m) - v(ax^n) - v(bx^m) = 0.
+  \]
+\end{proposition}
+\begin{proof}
+  Let $k$ be the value from Lemma~\ref{lem:join-split-geom} for $a$ and
+  $b$. Then, by that Lemma,
+  \[
+    v(a x^n) + v(b x^{n+k+4}) \ge v(a x^{n+1} b x^{n+k+3})
+      \ge v(a x^{n+2}) + v(b x^{n+k+2}).
+  \]
+  In particular,
+  $\lim_{n \to \infty} v(a x^n b x^{n+k+2}) - v(x^{2n+k+2})$ exists
+  (and equals what it is supposed to equal).
+
+  Muck around a little to show that the limit exists in general.
+\end{proof}
+
+\begin{proposition}
+  The limit defining $\mu_{v}(B_{a,b,c,d,x})$ exists and is positive.
+\end{proposition}
+
+\begin{proof}
+  Existence is clear from Corollary~\ref{cor:additivity-limit}.
+
+  For positivity, show that $[b x^n c x^m] \reducesto [a x^m][d x^n]$.
+  Apply Proposition~\ref{prop:join-split-alg}.
+\end{proof}
+
+We will address additivity of $\mu_v$ more later, but for now we prove
+one easy case.
+
+\begin{proposition}
+  If two boxes $B_1$ and $B_2$ fit together side-by-side, then
+  $\mu_v(B_1 \cup B_2) = \mu_v(B_1) + \mu_v(B_2)$.
+\end{proposition}
+
+\begin{proof}
+  Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S, *)$.
+  Then
+  \begin{align*}
+    B_1 &= (q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2)\\
+    B_2 &= (q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2)\\
+    B_1 \cup B_2 &= (q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2).
+  \end{align*}
+  Additivity follows immediately from the formula.
+\end{proof}
+
+\begin{remark}
+Note how crucial here was that in each application of smoothing, the function satisfies the strict smoothing property. Otherwise, the asymptotics would be off by a constant.
+\end{remark}
+
+\subsection{Carathéodory's Theorem}
+\label{sec:caratheodry}
+
+\begin{definition}
+semi-ring in measure theory
+\end{definition}
+
+\begin{proposition}
+The right handed rectangles $B_{a,b,c,d,x}$ form a semi-ring.
+\end{proposition}
+
+(Proof is showing more: that we only need side-by-side additivity.
+What's the term for that?)
+
+\begin{proof}
+Show finite additivity by using whiskers argument. Idea:
+ Induction on the number of vertical+horizontal
+coordinates that appear. Look at any vertical division whose whisker
+reaches
+the upper boundary. If there isn't one, there's a rectangle that
+reaches clear across the top; remove that rectangle, by induction
+build up the rest using side-by-side additivity, and then add that
+missing rectangle.
+
+Otherwise, divide the entire collection of rectangles at the location
+of that vertical division. (This is possible, since this is the
+correct direction for the whisker.) By induction, build up each half
+by side-by-side additivity, and then attach the two sides together.
+\end{proof}
+
+\begin{definition}
+pre-measure
+\end{definition}
+
+By results above, have finite additivity. Still need to prove $\mu_v$ is
+countably additive.
+
+\begin{remark}
+$\mu_{\nu}$ is $\pi_1(S)$ invariant, since by definition its definition does not depend on the lift of the curves considered.
+\end{remark}
+
+\begin{theorem}
+Carathéodory's theorem for semi-rings.
+\end{theorem}
+
+\subsection{Countable additivity}
+\label{sec:countable-additivity}
+
+Define continuity from above. Continuity from above is enough for
+rings.
+
+\begin{definition}
+  Fix a ring $\mathcal{R}$. Let $\mathcal{F}$ be a family of nested sequences
+  of elements of $\mathcal{R}$. Then $\mathcal{F}$ is \emph{final} if,
+  for any sequence $(R_i)_{i=0}^{\infty}$ of nested elements of
+  $\mathcal{R}$ with $\bigcap_i R_i = \emptyset$, there is a sequence
+  $(S_j) \in \mathcal{F}$ so that $R_i$ is eventually contained in
+  $S_j$, in the sense that for each $j$ there is an $N$ so that for
+  all $i \ge N$ we have $R_i \subset S_j$.
+\end{definition}
+
+To show countable additivity, suffices to show that there is a final
+family on which measures go to zero.
+
+For $a,c,e$ crossing $x$ to the right, define a family
+\[
+  F_{a,b,e} = \bigl(B_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty
+\]
+\begin{itemize}
+\item $F_{a,b,e}$ is nested
+\item $\lim_{k \to \infty} \mu_v(F_{a,b,e}(k)) = 0$.
+\item $F_{a,b,e}$ is final.
+\end{itemize}
+
+Completes proof that we have a measure.
+
+\DMGtodo[inline]{This is the part missing to prove countable subadditivity}
+
+\subsection{Recovering original measure}
+\label{sec:recovery}
+
+\begin{proposition}
+For $C$ a closed curve, we have
+\[
+i(\mu_{\nu},C)=\nu(C).
+\]
+\end{proposition}
+
+
+\subsection{The proof, older version}
+\DMGtodo[inline]{This is the old version of the proof}
+\begin{proposition}\label{prop:premeasurewelldef}
+$\mu_{v}(B_{a,b,c,d,x})$ is well-defined.
+\end{proposition}
+\begin{proof}
+For the elements $x,a,b,c,d \in \pi_1(S)$, we consider the following curves
+
+\textbf{Type 1}
+
+\begin{enumerate}
+\item $cx^ndx^m$
+\item $cx^n$
+\item $dx^m$
+\end{enumerate}
+
+\textbf{Type 2}
+
+\begin{enumerate}
+\item $ax^nbx^m$
+\item $ax^n$
+\item $bx^m$
+\end{enumerate}
+
+
+If we define $f(n)\coloneqq v(cx^n)$, $g(m)\coloneqq v(dx^m)$ and $h(n,m)\coloneqq v(cx^ndx^m)$.
+Application of smoothing and additive union yields
+
+\begin{enumerate}
+\item $f(n) \sim K_1 + nv(x)$
+\item $g(m) \sim K_2 + mv(x)$.
+\end{enumerate}
+
+where $\sim$ here means asymptotically.
+(show intersections are essential by working in the band model).\\
+We want to show that
+
+$h(n,m) \sim K_1 + K_2 + (n+m)v(x)$.
+
+To do this, we use the smoothing property again, and take lifts in the bands model to see that intersections are essential and thus smoothing yields
+\[
+  [cx^n][dx^{n+k}] \searrow [cx^ldx^{n+k-l}]
+\]
+where $1 \leq l \leq k-1$.
+
+This shows that
+\[
+  f(n+k) + g(n) \geq h(n+l,n+k-l).
+\]
+Similarly,
+\[
+  [cx^ndx^m][cx^k] \searrow [dx^{n+m-k}]
+\]
+which yields
+\[
+  h(n,m) + f(k) \geq g(n+m-k)
+\]
+i.e.,
+\[
+  h(n,m) \geq K_1 + K_2 + (n+m)\nu(x) - C(k).
+\]
+For, $n+m \gg k$ (or $n+m > k + C$). \\
+
+Now we show that $v(cx^n)$ is convex as a function of $n$.
+\end{proof}
+
+\begin{definition}
+semi-ring in measure theory
+\end{definition}
+
+\begin{proposition}\label{prop:RHsemiring}
+The right handed rectangles $B_{a,b,c,d,x}$ form a semi-ring.
+\end{proposition}
+\begin{proof}
+Show finite additivity by using whiskers argument. Idea:
+ Induction on the number of vertical+horizontal
+coordinates that appear. Look at any vertical division that reaches
+the upper boundary. If there isn't one, there's a rectangle that
+reaches clear across the top; remove that rectangle, by induction
+build up the rest using side-by-side additivity, and then add that
+missing rectangle.
+
+Otherwise, divide the entire collection of rectangles at the location
+of that vertical division. (This is possible, since this is the
+correct direction for the whisker.) By induction, build up each half
+by side-by-side additivity, and then attach the two sides together.
+\end{proof}
+
+\begin{definition}
+pre-measure
+\end{definition}
+
+\begin{proposition}\label{prop:premeasure}
+$\mu_{\nu}$ is a pre-measure on the semi-ring formed by the right handed rectangles.
+\end{proposition}
+\begin{proof}
+Show *countable* additivity of pre-measure on disjoint union of right handed rectangles. Use additivity of $\nu$.
+\end{proof}
+
+\begin{remark}
+$\mu_{\nu}$ is $\pi_1(S)$ invariant, since by definition its definition does not depend on the lift of the curves considered.
+\end{remark}
+\begin{theorem}\label{thm:caratheodorymeasures}
+caratheodory's theorem for semi-rings.
+\end{theorem}
+
+\begin{proposition}
+$\mu_{\nu}$ extends to a $\pi_1(S)$-invariant measure.
+\end{proposition}
+\begin{proof}
+By \ref{prop:premeasure} and \ref{prop:RHsemiring} $\mu_{\nu}$ is a $\pi_1(S)$-invariant pre-measure defined on a semi-ring, thus by theorem \ref{thm:caratheodorymeasures} extends to a $\pi_1(S)$-invariant measure.
+\end{proof}
+
+\begin{remark}
+Note how crucial here was that in each application of smoothing, the function satisfies the strict smoothing property. Otherwise, the asymptotics would be off by a constant.
+\end{remark}
+
+\begin{proposition}\label{prop:liouvillecurrent}
+For $C$ a closed curve, we have
+\[
+i(\mu_{\nu},C)=\nu(C).
+\]
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Smoothings"
+%%% End:

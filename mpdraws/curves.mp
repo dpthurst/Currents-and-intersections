@@ -1,0 +1,59 @@
+input macros;
+
+% ----------------------------------------
+% Fill to mark the surface
+color fill_color;
+fill_color = 0.9white;
+
+def surf_fill(expr p) = fill p withcolor fill_color
+enddef;
+
+background := fill_color;
+def skein_circle(expr p) = surf_fill(p); draw p dashed stddash; enddef;
+def opened_circle(expr p) =
+  fill p withcolor white;
+  draw p;
+  pickup vertexmarker; draw point 0 of p;
+  pickup defaultpen;
+  draw point 1 of p--point 5 of p;
+  draw point 3 of p--point 7 of p;
+enddef;
+
+% Basic unit for all figures
+u := 0.45cm;
+
+beginmulti;
+  for i = 0 upto 3: z[i] = u*dir(-135+90*i); endfor
+%  z0 = (0u, 0u); z1 = (1u, 0u); z2 = (1u, 1u); z3 = (0u, 1u);
+  path p[];
+  p0 = z0..z1..z2..z3..cycle;
+
+%% Simple skein relation
+  skein_circle(p0);
+  draw z0--z2; draw z1--z3;
+  shipmulti(0);
+
+  skein_circle(p0);
+  draw z0{dir 45}..{dir -45}z1; draw z3{dir -45}..{dir 45}z2;
+  shipmulti(1);
+
+  skein_circle(p0);
+  draw z0{dir 45}..{dir 135}z3; draw z1{dir 135}..{dir 45}z2;
+  shipmulti(2);
+
+%% Oriented
+  skein_circle(p0);
+  draw z0--z2; draw z1--z3;
+  mark_dir(z0--z2, 0.8);
+  mark_dir(z1--z3, 0.8);
+  shipmulti(3);
+
+  skein_circle(p0);
+  draw z0{dir 45}..{dir 135}z3;
+  draw z1{dir 135}..{dir 45}z2;
+  mark_dir(z0{dir 45}..{dir 135}z3,0.5);
+  mark_dir(z1{dir 135}..{dir 45}z2,0.5);
+  shipmulti(4);
+endmulti;
+
+end

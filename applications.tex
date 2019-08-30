@@ -1,0 +1,53 @@
+\section{Applications}
+
+\DMGtodo[inline]{some possible applications of this result. If the conditions give us intersection numbers, then one should be able to define geodesic currents as a subset of functionals on curves. This allows to give a new definition of Thurston distance in terms of supremums over a subfamily of functionals. Then one can especulate things like: can Teichmueller distance be expressed as supremum over a larger family of functionals on curves?}
+
+\subsection{Redefining Thurston metric}
+
+$d_{\mathit{Th}}(X,Y)=\sup_{f \in \mathcal{C}}\frac{f(X)}{f(Y)}$ (it is not clear if $\mathcal{C}$ here should mean only additive convex functionals (motivation: true for intersection numbers).
+\DMGtodo[inline]{What is the smallest family of functionals $\mathcal{C}$ that guarantees this is actually a symmetric distance? }
+
+
+\subsection{Characterizing binding currents?}
+
+$\operatorname{Syst}(\mu)=0$ if and only if $f(\mu)=0$ for some convex (additive?) functional. (motivation: result by M. Burger on structural theorem for geodesic currents).
+
+\subsection{Anosov representations}
+
+Let 
+\[
+\partial \Gamma^{[4]}\coloneqq\{(a,b,c,d) \in \partial \Gamma^{4}\colon \{ a,b \} \cap \{ c,d\}=\emptyset \}
+\]
+
+\begin{definition}
+  A cross-ratio is a continuous function $B\colon \Gamma^{[4]} \to \mathbb{R}$ invariant under the diagonal action of $\pi_1(S)$ and satisfying:
+  \begin{itemize}
+      \item (symmetry) $B(x,y,z,w)=B(z,w,x,y)$
+      \item (additivity) $B(x,y,z,w) + B(x,y,w,u)=B(x,y,z,u)$ for all $x,y,z,w,u \in \partial \Gamma$ such that $(x,y,z,w), (x,y,z,u) \in  \Gamma^{[4]}$
+  \end{itemize}
+\end{definition}
+We say that $B$ is \emph{positive} if for all $x,y,z,w$ in this cyclic order, we have $B(x,y,z,w) \geq 0$. \\
+Recall that if $c=[\gamma]$ we can define the length 
+\[
+  l_{\rho}^{\alpha}(c)=B_{\rho}^{\alpha}(\gamma^+,\gamma^-,z,\gamma(z)).
+ \]
+
+The properties of cross ratio ensure this is well-defined.
+In \cite{MZ18:PositiveReps} it is shown that if $B_{\rho}^{\alpha}$ is positive, then there exists a unique
+geodesic current $\mu_{\rho}^{\alpha}$ so that $l_{\rho}^{\alpha}(c)=i(\mu_{\rho}^{\alpha},c)$. In particular, $l_{\rho}^{\alpha}$ extends to geodesic currents as an intersection number.
+We can give another characterization of positivity for cross-ratio in terms of the length function $l_{\rho}^{\alpha}$.
+ 
+\begin{proposition}
+ $B_{\rho}^{\alpha}$ is positive if and only if $l_{\rho}^{\alpha}$ satisfies smoothing condition.
+\end{proposition}
+\begin{proof}
+From the above mentioned result in \cite{MZ18:PositiveReps}, the smoothing property follows. \\
+On the other hand, if $l_{\rho}^{\alpha}$ satisfies smoothing, since additive union is also clear for $l_{\rho}^{\alpha}$, then we just apply theorem \ref{thm:intersect}
+to obtain a geodesic current $\mu_{\rho}^{\alpha}$. Finally, we define the cross-ratio 
+\[ 
+B_{\rho}^{\alpha}(a,b,c,d)\coloneqq \mu_{\rho}^{\alpha}([a,b)\times[c,d)).
+\]
+
+It obviously satisfies the properties of cross-ratio in \cite{MZ18:PositiveReps} because of the definition of geodesic current, and it's positive.
+
+\end{proof}

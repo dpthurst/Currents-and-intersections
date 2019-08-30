@@ -1,0 +1,217 @@
+\documentclass[12pt]{amsart}
+\usepackage[margin=1in,lmargin=0.75in,rmargin=1.25in]{geometry}
+\usepackage{amsmath,latexsym,amssymb,amsthm,graphicx}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{subfigure}
+\usepackage{xfrac}
+\usepackage{fix-cm}
+\usepackage{color}
+\usepackage[bookmarks=true,%
+    colorlinks=true,%
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=blue,%
+    menucolor=blue,%
+    urlcolor=blue]{hyperref}
+\usepackage{doi}
+\usepackage{stmaryrd}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{pdfsync}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[textsize=small]{todonotes}
+\newcommand{\DPTtodo}[2][]{\todo[color=green!40,#1]{#2}}
+\newcommand{\DMGtodo}[2][]{\todo[color=red!40,#1]{#2}}
+\usepackage{hyphenat}
+
+\graphicspath{{draws/}{}}
+
+\setenumerate[1]{label=(\arabic*)}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{claim}{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem*{ex*}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{fact}[theorem]{Fact}
+
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+\def\H{\ensuremath{\mathbb{H}}} % Redefining "long Hungarian umlaut"
+\newcommand\D{\ensuremath{\mathbb{D}}}
+\newcommand\F{\ensuremath{\mathcal{F}}}
+\newcommand\G{\ensuremath{\mathcal{G}}}
+\newcommand\J{\ensuremath{\mathcal{J}}}
+\newcommand\U{\ensuremath{\mathcal{U}}}
+\newcommand\V{\ensuremath{\mathcal{V}}}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Curr}{Curr}
+\DeclareMathOperator{\Teich}{Teich}
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\cb}[1]{\left\{#1\right\}}
+\newcommand{\tn}[1]{\textnormal{#1}}
+\newcommand{\br}[1]{\left[#1\right]}
+\newcommand{\rest}[1]{\left.#1\right|}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\renewcommand{\card}[1]{\tn{card}\pa{#1}}
+\renewcommand{\Re}{\tn{Re}}
+\renewcommand{\Im}{\tn{Im}}
+\newcommand{\ang}{\tn{ang}}
+\newcommand{\Arg}{\tn{Arg\,}}
+\renewcommand{\arg}{\tn{arg\,}}
+\newcommand{\Log}{\tn{Log\,}}
+\newcommand{\len}{\tn{len\,}}
+\newcommand{\del}{\partial}
+\newcommand{\Res}[2]{\tn{Res}\br{#1, #2}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+\def\mathcenter#1{%
+  \vcenter{\hbox{$#1$}}%
+}
+\def\mfig#1{
+        \mathcenter{\includegraphics{#1}}
+}
+
+\usetikzlibrary{arrows}
+\tikzset{
+    labl/.style={anchor=south, rotate=90, inner sep=.5mm}
+}
+\tikzstyle{every picture}=[> = to]
+% Style for labels on arrows in commutative diagrams
+\tikzset{cdlabel/.style={execute at begin node=$\scriptstyle,execute at end node=$}}
+\tikzset{implication/.style={double equal sign distance, -implies}}
+\tikzset{biimplication/.style={double equal sign distance, implies-implies}}
+
+\begin{document}
+\title{Application 1: convexity along paths}
+\author{}
+\maketitle
+
+
+This contains the conjectures and possible applications related to characterization of convexity of paths in Teichmueller space.
+
+\subsection{Main results}
+
+\DPTtodo{Define ``curve'', ``essential crossing''}
+\begin{definition}\label{def:convex}
+  Let $f \colon C^+(S) \to \R_{\ge 0}$ be a curve functional. We say that $f$ is \emph{convex}
+  if it satisfies the following two properties.
+  \begin{itemize}
+  \item \textbf{(Smoothing)} Let $C$~be an oriented curve on~$S$, and
+    let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
+    have
+    \begin{equation}\label{eq:smoothing}
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
+    \end{equation}
+  \item \textbf{(Convex union)} Let $C_1$ and~$C_2$ be two curves
+    on~$S$. Then
+    \begin{equation}\label{eq:union}
+      f(C_1 \cup C_2) \le f(C_1) + f(C_2).
+    \end{equation}
+  \end{itemize}
+\end{definition}
+
+An example of a functional that is not convex is stable word-length w.r.t to a non-simple generating set (example of genus 1).
+
+
+
+\begin{definition}
+  A homogeneous function on geodesic currents is \emph{convex} if its
+  restriction to curves is convex by Definition~\ref{def:convex}.
+\end{definition}
+
+
+\begin{definition}
+We say a path $\mu_t$ in the space $\mathcal{G}\mathcal{C}(\Sigma)$ is \emph{convex} if for every convex functional on $\mathcal{G}\mathcal{C}(\Sigma)$, $t \mapsto f(\mu_t)$ is convex.
+\end{definition}
+
+We claim it is enough to look at intersection numbers with closed curves, i.e.
+
+\begin{lemma}
+For all $t \mapsto f(\mu_t)$ is convex for all convex functional $f$ if and only if $t \mapsto i(\mu_t,\alpha)$ is convex for all closed geodesic $\alpha$.
+\end{lemma}
+
+A way to rephrase this is as follows
+
+\begin{lemma}
+ If $ i(\mu_{\frac{s+t}{2}},\alpha) \leq \frac{1}{2} i(\mu_{s}+\mu_{t},\alpha) $ then $ f(\mu_{\frac{s+t}{2}}) \leq \frac{1}{2} f(\mu_{s}+\mu_{t})$ for all convex functional $f$.
+\end{lemma}
+
+Another way to rephrase it is
+
+\begin{lemma}
+ Let $\mu_1,\mu_2,\mu_3$ geodesic currents, and $\alpha$ any geodesic.
+ If $ i(\mu_1, \alpha) \leq \frac{1}{2}(i(\mu_2, \alpha)+i(\mu_3, \alpha))$, then $f(\mu_1) \leq \frac{1}{2} (f(\mu_2)+f(\mu_3))$ for all convex functional $f$.
+\end{lemma}
+
+Fixing a hyperbolic metric $m$ on $\Sigma$, we get the function hyperbolic length $L_m\colon \mathbb{R}\mathcal{S}'(\Sigma) \to \mathbb{R}$.
+We can also consider the function extremal length
+$EL_m\colon \mathbb{R}\mathcal{S}'(\Sigma) \to \mathbb{R}$.
+By a result by Lenzhen-Rafi we have that there exist some Teichm\"uller geodesic $t \mapsto m_t$ in Teichmueller space, and a simple curve $\alpha$, such that  $t \mapsto L_{m_t}(\alpha)$  and  $t \mapsto EL_{m_t}(\alpha)$  are not convex. \\
+Recall that $L_{m_t}(\alpha)=i(m_t,\alpha)$. According to our previous definitions, this says that a path of Liouville currents is not convex (i.e. Teichm\"uller geodesics are not convex).
+
+On the other hand, it is known that hyperbolic length is convex w.r.t to earthquake paths (Kerchoff), WP-geodesics (Wolpert) and shearing paths (Bestvina-Bromberg-Fujiwara-Souto).
+
+\section{Non-convexity of Teichm\"uller geodesics}
+
+
+
+\section{Convexity of Earthquake paths}
+
+By fixing a pants decomposition with a simple closed curve $C$ as a pants boundary, we can define the earth-quake of $g \in \mathcal{T}(\Sigma)$ 
+$\mathcal{E}_{C^t}(g)$ be the hyperbolic metric obtained by twisting a distance $t$ (measured in $g$) along $C$.
+Kerchoff proves convexity of $l_{\gamma}\colon \mathcal{T}(\Sigma) \to \mathbb{R}$ by studying its first order variation and seeing it's a strictly increasing function. \\
+Bestvina-Bromberg-Fujiwara-Souto prove also this in the more general case of measured laminations with finitely many leaves.
+
+\section{Stretch lines or stretch-geodesics}
+
+
+
+\section{Convexity of WP-geodesics}
+
+(Wolpert)
+
+\section{Convexity of shearing paths (can we subsume here earth-quake paths and stretch-lines?)}
+
+
+\begin{remark}
+This characterization of convexity does not a priori shed light to the question is extremal length convex along the above paths.
+\end{remark}
+
+\section{Convexity on $ML$ w.r.t to natural coordinates}
+
+\end{document}
+
+
+%\end{thebibliography}
+\end{document}

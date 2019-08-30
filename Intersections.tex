@@ -1,0 +1,173 @@
+\documentclass[12pt]{amsart}
+\usepackage[margin=1in,lmargin=0.5in,rmargin=1.5in]{geometry}
+\usepackage{amsmath,latexsym,amssymb,amsthm,graphicx}
+\usepackage{mathtools}
+\usepackage{subfig}
+\usepackage{xfrac}
+\usepackage{fix-cm}
+\usepackage{color}
+\usepackage{verbatim}
+\DeclareMathOperator\arctanh{arctanh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\usepackage[bookmarks=true,%
+    colorlinks=true,%
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=blue,%
+    menucolor=blue,%
+    urlcolor=blue]{hyperref}
+\usepackage{doi}
+\usepackage{stmaryrd}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage[shortlabels]{enumitem}
+\usepackage{pdfsync}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[textsize=small]{todonotes}
+\newcommand{\DPTtodo}[2][]{\todo[color=green!40,#1]{#2}}
+\newcommand{\DMGtodo}[2][]{\todo[color=red!40,#1]{#2}}
+\usepackage{hyphenat}
+\usepackage{booktabs}
+
+\graphicspath{{mpdraws/}{draws/}}
+
+\setenumerate[1]{label=(\arabic*)}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem*{ex*}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{remarks}[theorem]{Remarks}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{fact}[theorem]{Fact}
+
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+\def\H{\ensuremath{\mathbb{H}}} % Redefining "long Hungarian umlaut"
+\newcommand\D{\ensuremath{\mathbb{D}}}
+\newcommand\F{\ensuremath{\mathcal{F}}}
+\newcommand\G{\ensuremath{\mathcal{G}}}
+\newcommand\J{\ensuremath{\mathcal{J}}}
+\newcommand\U{\ensuremath{\mathcal{U}}}
+\newcommand\V{\ensuremath{\mathcal{V}}}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Curr}{Curr}
+\DeclareMathOperator{\Teich}{Teich}
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\cb}[1]{\left\{#1\right\}}
+\newcommand{\br}[1]{\left[#1\right]}
+\newcommand{\rest}[1]{\left.#1\right|}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\renewcommand{\card}[1]{\tn{card}\pa{#1}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\DeclareMathOperator{\ang}{ang}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\len}{len}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\EL}{EL}
+\DeclareMathOperator{\Area}{Area}
+\DeclareMathOperator{\interior}{int}
+\DeclareMathOperator{\id}{id}
+\newcommand{\del}{\partial}
+\newcommand{\Res}[2]{\tn{Res}\br{#1, #2}}
+\newcommand{\OneHalf}{{\textstyle \frac{1}{2}}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+% Linear groups
+\DeclareMathOperator{\ISO}{\mathit{ISO}}
+\DeclareMathOperator{\SO}{\mathit{SO}}
+\DeclareMathOperator{\GL}{\mathit{GL}}
+\DeclareMathOperator{\SL}{\mathit{SL}}
+\DeclareMathOperator{\PSL}{\mathit{PSL}}
+
+% More delimiters
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+
+% Specific notation for this paper
+\newcommand{\Simples}{\mathcal{S}}
+\newcommand{\Curves}{\mathcal{C}}
+\newcommand{\Meas}{\mathcal{M}}
+\newcommand{\PMeas}{\mathcal{M}_1}
+\newcommand{\MSimples}{\Simples'}
+\newcommand{\MCurves}{\Curves'}
+\newcommand{\GC}{\mathcal{GC}}
+\newcommand{\ML}{\mathcal{ML}}
+\newcommand{\PML}{\mathcal{PML}}
+\newcommand{\reducesto}{\mathrel{\searrow}}
+
+\def\mathcenter#1{\vcenter{\hbox{$#1$}}}
+\def\mfig#1{\mathcenter{\includegraphics{#1}}}
+\newcommand{\svgfig}[1]{\Huge{\input{draws/#1.pdf_tex}}}
+
+\usetikzlibrary{arrows}
+\tikzset{
+    labl/.style={anchor=south, rotate=90, inner sep=.5mm}
+}
+\tikzstyle{every picture}=[> = to]
+% Style for labels on arrows in commutative diagrams
+\tikzset{cdlabel/.style={execute at begin node=$\scriptstyle,execute at end node=$}}
+\tikzset{implication/.style={double equal sign distance, -implies}}
+\tikzset{biimplication/.style={double equal sign distance, implies-implies}}
+
+\begin{document}
+\title{Characterizing intersection numbers}
+\author[Martínez-Granado]{Dídac Martínez-Granado}
+\address{Department of Mathematics\\
+         Indiana University,
+         Bloomington, Indiana 47405\\
+         USA}
+\email{dmartinezgr@gmail.com}
+
+\author[Thurston]{Dylan~P.~Thurston}
+\address{Department of Mathematics\\
+         Indiana University,
+         Bloomington, Indiana 47405\\
+         USA}
+\email{dpthurst@indiana.edu}
+\date{Draft of \today}
+\begin{abstract}
+We give a characterization of functions defined on the space of closed curves that come from intersection numbers with a geodesic current. The key condition is that the function must be non-increasing under smoothing essential crossings.
+\end{abstract}
+\maketitle
+
+\tableofcontents
+
+\input{intro}
+\input{additivity.tex}
+\input{applications.tex}
+\input{notation} % For our reference
+%\nocite{*}
+\bibliographystyle{hamsalpha}
+\bibliography{Intersections}
+
+
+\end{document}
