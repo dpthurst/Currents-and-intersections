@@ -1,5 +1,64 @@
 \section{Introduction}
 
+Geodesic currents are positive measures on the space of geodesics of a surface. They were first introduced by Bonahon in
+his seminal paper \cite{Bonahon88:GeodesicCurrent}. Perhaps their most interesting trait is that many metric
+structures embed in the space of currents, such as
+hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
+ negatively curved Riemannian metrics
+\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} (which in fact do so densely, according to \cite[Lemma~2.8]{Ham99:Cocycles}),
+Croke-Fathi-Feldman for non-positively curved Riemannian metrics
+\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem},
+Hersonsky-Paulin \cite[Theorem~A]{HP97:RigidityNegCurvedCone} for
+negatively curved metrics with conical singularities,
+Duchin-Leininger-Rafi more explictly for singular Euclidean structures
+associated to quadratic differentials
+or half-translation structures
+\cite[Theorem~4]{DLR10:DegenerationFlatMetrics} and non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}. \DMGtodo{Read the definitions of each metric, I think DLR10 is subsumed in BL17 and/or HP97}.
+The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures, but it has also been used more generally for canonical geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
+The fundamental property that ties this Liouville currents to the geometric structure is the following.
+It turns out that weighted multi-curves on a surface embed in the space of geodesic currents \footnote{In fact, they embed densely and so one can see the space of geodesic currents as the closure of the space of weighted curves on a surface. See, for instance, \cite[Proposition~2]{Bonahon88:GeodesicCurrent}, although the result is standard in dynamical systems and follows by work of Kingmann. THIS FOOTNOTE SHOULD DISAPPEAR AND MAYBE PUT IT IN A SECTION WHERE WE TALK ABOUT RIGIDITY MORE PRECISELY}
+Previous work of Bonahon extended the notion of geometric intersection
+number as a continuous bilinear function of two geodesic currents
+\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. This
+allowed him to extend hyperbolic length to geodesic currents by
+following the principle of realizing it as an intersection number with
+a distinguished geodesic current
+\cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
+Similarly, other notions of length of curves $\ell_{\rho}$ associated to the above mentioned metric structures $\rho$ can be realized as intersection numbers with the corresponding Liouville current $\mathcal{L}_{\rho}$, this is
+
+\[
+  i(\mathcal{L}_{\rho},C)=\ell_{\rho}(C)
+\]
+
+for any closed multi-curve $C$ in $S$. 
+Erlandsson shows that word-length with respect to simple generating sets of
+the fundamental group can also be realized as an intersection number with a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
+Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \mathbb{R}^{\mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
+On the other hand, by Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} a geodesic current is uniquely determined by its intersection numbers with closed curves.
+Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the \emph{rigidity problem}: is a family of metric structures determined by its marked length spectrum? \\
+By the discussion above, this is equivalent to the problem: is the assignment $\rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
+
+As we have pointed out at the beginning, this problem has been solved for several metric structures.
+
+We leave the following (to our knowledge) open question:
+
+\begin{question}
+Is Erlandsson's assignment of a Liouville current to word-length an embedding?
+\end{question}
+
+Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
+In this paper we consider the following question.
+
+\begin{question}\label{q:intersection}
+Under which conditions can a function $f :\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ be realized as an intersection number with a fixed geodesic current?
+\end{question}
+
+
+Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). In this case, the functions are defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}.
+Jeffrey Frazier asks Question \ref{q:intersection} and remarks how relevant it is for the study of spectral rigidity problems \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
+
+\subsection{Main results}
+\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
 \begin{definition}\label{def:properties}
   Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves. In the following, we define several properties that $f$ might satisfy.
 
@@ -26,6 +85,8 @@
   component of~$C$ is covered by an $n$-fold cover, i.e. if $g \in \pi_1(S,x)$ represents $C$, $g^n$ represents $C^n$.
 \end{definition}
 
+
+
 \begin{definition}\label{def:homogeneous}
      Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves . We say
   that $f$ is \emph{homogeneous} if it satisfies the following
@@ -45,229 +106,68 @@
     f(C^n) = f(nC)
   \end{equation}
 \end{definition}
-
-
 Note that, if $f$ satisfies smoothing, then $f(nC) \le f(C^n)$.
 The stability and homogeneity conditions mean that these two inequalities are
 equalities, respectively.
 
-Not all functions on curves satisfy these conditions. 
-For example, square root of extremal length, although it satisfies smoothing, stability and homogeneity, it does not satisfy additive union. Also, although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity, it does not always satisfy smoothing. \\
-However, many natural notions of length do satisfy all these properties, such as:
+The four conditions of smoothing, additivity, stability and homogeneity are obviously necessary conditions for a function satisfying the property of Question~\ref{q:intersection}.
+Indeed, stability is needed for any such extension to be well-defined, since by definition of geodesic current, $C^n$ and $nC$ are represented by the same current.
+On the other hand, homogeneity, additivity and smoothing are obviously satisfied by intersection number w.r.t a given current.
+
+A functional satisfying additivity/convexity and smoothing can be upgraded to a functional that moreover satisfies stability and homogeneity (see \cite[Theorem~B]{MGT19:CurvesToCurrents}).
+
+Many natural notions of length do satisfy all these four properties, and they have been shown to extend continuously to geodesic currents as intersection numbers.
+
 \begin{enumerate}
-    \item hyperbolic length (\cite{Bonahon88:GeodesicCurrent}), or more generally length w.r.t. negatively curved Riemannian metrics
-    \item  (\cite{Otal90:SpectreMarqueNegative}), as well as lengths w.r.t. metrics with conical singularities (\cite{HP97:RigidityNegCurvedCone} or especifically singular Euclidean metrics coming from quadratic differentials \cite{DLR10:DegenerationFlatMetrics}),  
-    \item word length w.r.t. simple generating sets (\cite{Erlandsson:WordLength}) or, more generally, stable word length w.r.t. arbitrary generating sets of $\pi_1$ (\cite{EPS:CountingCurves})
+   \item Intersection number with a fixed geodesic current. See \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}.\DMGtodo{In this paragraph would be better to cite the exact results where they show property of Liouville current, instead of injectivity of assignment.}
+    \item Hyperbolic lengths  \cite[Theorem~12]{Bonahon88:GeodesicCurrent}.
+    \item More generally, length w.r.t. negatively curved Riemannian metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} 
+    \item Even more generally, non-positively curved Riemannian metrics
+\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
+\item Lengths w.r.t singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}
+\item More generally, lengths w.r.t. negatively curved  metrics with conical singularities \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
+\item Even more generally, non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}.
+    \item word length w.r.t. simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
+    \item Translation lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
 \end{enumerate}
 
-Incidentally, in all these cases these notions of length can be realized as intersection numbers w.r.t. to a fixed geodesic current, this is, for each such function $f : \mathcal{C}(S) \to \mathbb{R}_{\geq 0}$, there exist a geodesic current $\mu_{f}$ so that
-
-\begin{equation}
-f( \cdot ) = i( \mu_f, \cdot)
-\label{eq:intersectionprop}
-\end{equation}
-
-It is natural to ask which conditions one needs to impose to a function $f$ in order to satisfy the property in equation \ref{eq:intersectionprop}.
 
 
+Not all functions on curves satisfy these conditions. 
 
+\begin{enumerate}
+    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, it does not satisfy additive union (see \cite[Section~3.8]{MGT19:CurvesToCurrents}). 
+    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity, it does not always satisfy smoothing (see \cite[Example~3.7]{MGT19:CurvesToCurrents}). 
+    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity (see \cite[Example~1.5]{MGT19:CurvesToCurrents}).
+\end{enumerate}
 
+It is natural to ask which additional conditions one needs to impose to a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
 
-
-A functional satisfying convexity and smoothing can be upgraded to a functional that moreover satisfies stability and homogeneity (see other paper).
-
+It turns out that one doesn't need more conditions.
 
 \begin{theorem}\label{thm:intersect}
  Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves satisfying smoothing, additive union, homogeneity and stabilty properties. Then there exists a unique geodesic current $\mu_f$ such that the extension $\wt{f}\colon \mathcal{GC}(S) \to \mathbb{R}$ satisfies $\wt{f}(\alpha)=i(\alpha,\mu_f)$.
 \end{theorem}
 
+As immediate applications
 
-The strict smoothing property is necessary, since intersection number cannot increase after smoothing an essential crossing.
-
-\subsection{Prior Work}
-Continuous extension of functions on curves to measured foliation was
-previously announced by the second author \cite[Section
-3.2]{Thurston16:RubberBands}. In this work we prove the existence of a
-continuous extension to the larger space of geodesic currents, but do
-not prove the convexity properties announced there.
-In a recent paper we showed how we can require weaker assumptions if only want a continuous extension to geodesic currents (not necessarily via intersection number).
-\todo[inline]{More prior work}
+\begin{enumerate}
+    \item A new definition of geodesic currents as functionals on curves. \DMGtodo[inline]{write a section about this in apps, where I talk about From curves to currents, and maybe say something about signed-currents and our discussions with Francisco.}
+    \item Continuous extension of arbitrary Riemannian metric (note that a continuous extension of this was given by \cite[Theorem~1.5]{EPS:CountingCurves}, and also by the authors of the current paper in \cite[Theorem~A]{MGT19:CurvesToCurrents}). Even more, we give a continuous extension for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metrics is not the long-term behavior of a random geodesic. For instance, if $\rho$
+has positive curvature, there may be an open set of Riemannian geodesics
+on~$\Sigma$ that stay inside a contractible set and so are not
+quasi-geodesic on~$\wt \Sigma$.
+\end{enumerate}
 
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-
+We thank Francisco Arana, Kasra Rafi and Tengren Zhang for helpful conversations.
+The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship.
 The second author was supported by the National Science
 Foundation under Grant Number DMS-1507244.
 
 
-
-\section{A bunch of random background and previous ideas}
-
-\textbf{Cocycles}
-
-A class of H\"older continuous function $\zeta\colon T^1 S \times \mathbb{R} \to \mathbb{R}$ satisfying $\zeta(v,s+t)=\zeta(\phi_s(v),t) + \zeta(v,s)$
-for all $v \in T^1 S$ and all $s,t \in \mathbb{R}$.
-Let $\mathcal{F}\colon T^1 S \to T^1 S$ be the flip $v \mapsto -v$. The flip of a cocycle $\zeta$ is the cocycle defined by $\mathcal{F}\zeta(v,t)=\zeta(\mathcal{F}\phi^t(v),t)$. Two cocycles $\zeta, \xi$ are cohomologous if $\zeta(v,t)-\xi(v,t)=\beta(\phi^t(v)) - \beta(v)$ for all $v \in T^1 S$ and all $t \in \mathbb{R}$.
-$\zeta,\xi$ are cohomologous iff $\mathcal{F}\zeta,\mathcal{F}\xi$ are cohomologous. Thus, the flip map induces a map in cohomology classes.
-We say $\zeta$ is quasi-invariant under the flip if $\zeta$ and $\mathcal{F}\zeta$ are cohomologous.
-
-\textbf{Cross-ratio}
-
-A H\"older continuous, $\pi_1(S)$-invariant function on $\partial \wt{S}^{[4]}$ (space of quadruples of pairwise distinct points of $\partial \wt{S}$) with properties
-
-\begin{itemize}
-\item $Cr$ is invariant under the diagonal action of $\pi_1(S)$.
-\item $Cr(a,a',b,b')=Cr(a',a,b,b')^{-1}$
-\item $Cr(a,a',b,b')=Cr(b,b',a,a')$
-\item $Cr(a,a',b,b')Cr(a',a'',b,b')=Cr(a,a'',b,b')$
-\end{itemize}
-
-
-
-\textbf{Periods}
-
-\textbf{Periods for cross-ratio}
-Given a homotopy class of a closed curve $c$ in $S$, we can consider a representative $\gamma$.
-Let $\gamma$ be the Deck transformation associated to $\gamma$, and let $\gamma^-$ and $\gamma^+$ be its repelling and attracting points respectively.
-The period $l(\gamma)=\log Cr(\gamma^+,\gamma^-,\gamma \cdot a, a)$ for any $a \notin \{\gamma^-,\gamma^+\}$.
-This definition does not depend on the conjugacy class of the element $\gamma \in \pi_1(S)$, nor on the choice of point $a$. \\
-
-\textbf{Periods for geodesic currents}
-
-Let $c$ be a closed curve in $S$, lift it to the universal cover to some $\gamma$, choosing a hyperbolic metric. Let $G_{\gamma}$ be the set of geodesics that intersect $\gamma$ and have one endpoint in the segment $(a,\gamma a)$. $\nu(G_{\gamma})$ is the same as the measure of the set of geodesics that intersect the segment $(q,\gamma q)$ tranversally, for $q$ in the axis.
-
-
-
-
-\textbf{Signed geodesic current}
-
-A geodesic current for $S$ is a $\pi_1(S)$-invariant locally finite Borel measure on $\partial \wt{S} \times \partial \wt{S} - \Delta$ which in addition is invariant under the natural involution exchanging the two factors. Geodesic currents naturally correspond to finite $\phi^t$ invariant transverse Borel measures on $T^1M$ invariant under the flip map.
-A signed geodesic current is a difference of two geodesic currents. \\
-
-Otal proves that given a family of periods there is at most one cross ratio with those periods (essentially, density of endpoints of hyperbolic elements).
-What are the properties a period must satisfy?
-
-\textbf{From flip invariant Holder class to cross-ratio}
-
-Let $\alpha$ be a cocycle representing the class. Let $x \in \wt{S}$ be any point and let $(,)_{\alpha}$ be the symmetric product on distinct points in $T^1_x \wt{S}$. For $a \neq b \in \partial \wt{S}$, write $(a,b)=(v,w)_{\alpha}$ where $v,w \in T^1 \wt{S}$ are such that $\pi(v)=a$ and $\pi(w)=b$. Then $(,)$ is a symmetric product on pairs of distinct points in $\partial \wt{S}$ depending on the choice of $x$ and $\alpha$. For a quadruple $(a,a',b,b')$ of distinct points in $\partial \wt{S}$ define $[a,a',b,b']_{\alpha}=(a,b)+(a',b')-(a,b')-(a',b')$. Then one checks that $[]_{\alpha}$ does not depend on the choice of $x$ or the representative $\alpha$. And $Cr=e^{[]_{\alpha}}$ is the cross-ratio associated to the class of $\alpha$.
-
-\textbf{From cross-ratio to Holder cocycle}
-
-One defines a cocycle for the frame flow in the frame bundle, then integrates over fibers to obtain a Holder cocycle.\\
-
-Finally one checks that one is inverse of the other (if one closes the cycle obtains a cohomologous cocycle). \\
-
-\textbf{From geodesic current to cross-ratio}
-
-Let $\mu$ be a geodesic current. Let $(a,b,c,d)$ an ordered tuple of pairwise distinct points. Define $[a,b,c,d]=\mu([a,b] \times [c,d])$. \\
-(To check Holder property need to use $\mu$ is Gibbs current and thus comes from a Holder function...?) \\
-To check positivity one uses:
-
-\begin{lemma}
-Let $Cr$ be a cross-ratio on $\partial \wt{S}$. Then $Cr(a,b,c,d)+Cr(b,c,d,a) \to 1$ as $a \to b$, locally uniformly in $(c,d)$ if and only if $Cr$ is positive.
-\end{lemma}
-
-\textbf{From cross-ratio to intersection geodesic current}
-
-For a generalized cross-ratio there is a unique signed current $\mu$. Define $\mu([a,b]\times[c,d])=\log Cr(a,b,c,d)$. Additivity of cross ratio gives additivity of measure. If the cross ratio is positive then it gives a geodesic current. \\
-
-\textbf{From cocycle to Gibbs current}
-
-Let $\mathcal{M}$ be the space of all $\phi^t$-invariant probability measures on $T^1 S$.
-
-The entropy of a Borel set $A$ w.r.to to probability measure $\nu$ on $T^1S$ is $h_{\nu}(A):=-\nu(A)\log \nu(A)$. \\
-The entropy of $\nu$ is the entropy of the whole space $T^1 S$. Let $\mathcal{S}$ be the $\sigma$-algebra of all measurable sets. The entropy of $\nu$ is
-
-$h_{\nu} = \sup \{ \sum_{A\mathcal{F}} h_{\nu}(A) \mathcal{F} \subset \mathcal{S} | \mathcal{F} \mbox{ finite } , X=\sqcup_{A \in \mathcal{S}} A\}$. \\
-
-For every H\"older continuous function $f\colon T^1 S \to \mathbb{R}$ the pressure $p(f):=\sup \{ h_{\nu} - \int f d\nu | \nu \in \mathcal{M} \}$.
-
-The Gibbs equilibrium state of $f$ is the (unique) probability measure $\eta_f \in \mathcal{M}$ which realizes this supremum.
-
-Any H\"older function $f\colon T^1 S \to \mathbb{R}$ gives rise to a H\"older cocycle by 
-
-$$\xi_f(v,t):=\int_0^{t} f (\phi^s(v)ds.$$
-
-We call $f$ quasi-invariant under the flip if for any periodic $v \in T^1 S$ of period $\tau$, $\xi_f(v,\tau)=\xi_f(-v,\tau)$. \\
-
-For a H\"older cocycle, we can find some H\"older function $f\colon T^1 S \to \mathbb{R}$. Two H\"older $f,g$ functions give the same cocycle iff $\int fd\mu = \int g d\mu$ for all $\mu \in \mathcal{M}$.\\
-
-Otal proves that cross-ratio is determined given by periods. \\
-
-\subsection{Reconstructing currents from periods}
-
-Otal's argument uses density of geodesic in tangent bundle to construct current in some rectangles. Idea: extend to all sigma-algebra using Caratheodory's theorem. Problems:
-
-\begin{itemize}
-\item Is it enough to reconstruct the current given only on this family of rectangles?
-\item Continuity at endpoints.
-\end{itemize}
-
-\subsection{Reconstructing current}
-
-Another approach is to try to define a positive functional on the space of compact continuous functions on the space of geodesic currents. \\
-It also has to have the $\pi_1(S)$-invariant property.\\
-The difficult point will be continuity of the functional. \\
-
-
-Feng Luo characterizes functions that are intersection numbers on simple curves (ref).
-
-%\begin{definition}
-%  A homogeneous function on geodesic currents is \emph{convex} if its
-%  restriction to curves is convex by Definition~\ref{def:convex}.
-%\end{definition}
-
-%\begin{definition}
-%  \emph{Pants coordinates} on $\mathcal{ML}(S)$ are Dehn-Thurston
-%  coordinates with respect to a marked pair-of-pants decomposition,
-%  consisting of length and twist coordinates for each pants curve. The
-%  twist parameters require more specification, since there are several
-%  variations in the literature; see Section XXX for our version.
-%\end{definition}
-
-%\begin{theorem}
-%  Let $f \colon \mathcal{GC}(S) \to \R_{\ge 0}$ be a convex
-%  functional. Then the restriction of $f$ to measured laminations is
-%  convex with respect to pants coordinates for any pair-of-pants
-%  decomposition.
-%\end{theorem}
-
-%\subsection{Outline}
-%Extending functions to ML: \\
-%- Convexity argument, natural coordinates? \\
-%- Examples:
-%\begin{enumerate}
-%\item Hyperbolic length (Thurston)
-%\item Intersection number (Thurston)
-%\item Extremal length (Kerckhoff)
-%\end{enumerate}
-
-%Extending functions to GC:
-%\begin{enumerate}
-%\item Hyperbolic length (Bonahon)
-%\item Intersection number (Bonahon)
-%\item Stable length (Bonahon, Erlandsson-Parlier-Souto)
-%\item Generalized translation lengths (Martone-Zhang)
-%\end{enumerate}
-
-%In this paper we provide an argument that generalizes the previous extensions to a broad family of functions.
-
-%Applications:
-
-%\begin{enumerate}
-%\item Counting: Rafi-Souto, Erlandsson-Parlier-Souto)
-%\item Extending extremal length to geodesic currents, relevant in study of %rational maps.
-%\item Others? (conversations with Wright).
-%\end{enumerate}
-
-%Inequalities:
-%\[C_1 l(c) \leq f(c) \leq C_2 l(c).\]
-
-%For general $f$, the right inequality follows from argument decomposing curve into generators (in the additive case).
-%Question: can we also obtain it in the non-additive case, for general $f$? \\ Explain the case $f$ is extremal length. Consider the case of the torus. \\
-%Right inequality follows from collar lemma, and other by considering embedded annulus, and looking at the core curve. \\
-%These inequalities are interesting because: (1) they are satisfied by all Liouville currents (see paper by Burger et al on structure theorem for geodesic currents), and (2) the left inequality is usually a part of the definition of Anosov representation, where $f$ plays the role of the generalized translation length (see Martone-Zhang).
 
 %%% Local Variables:
 %%% mode: latex

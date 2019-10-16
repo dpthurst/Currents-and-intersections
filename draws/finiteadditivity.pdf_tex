@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'brokenpaths.pdf' (pdf, eps, ps)
+%% Accompanies image file 'finiteadditivity.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{257.94064499bp}%
+    \setlength{\unitlength}{455.92301496bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,16 +50,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.84594422)%
+  \begin{picture}(1,1.00664704)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{brokenpaths.pdf}}%
-    \put(0.34781823,0.20437767){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
-    \put(0.73714557,0.20269057){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{brokenpaths.pdf}}%
-    \put(0.3967081,0.04001255){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d(\theta,l)$\end{tabular}}}}%
-    \put(-0.00623067,0.22222723){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\delta$\end{tabular}}}}%
-    \put(0.32607176,0.46937709){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\alpha$\end{tabular}}}}%
-    \put(0.68098883,0.45294047){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\beta$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{finiteadditivity.pdf}}%
+    \put(0.4652804,0.7078909){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q_1p_1$\end{tabular}}}}%
+    \put(0.41851952,0.5697204){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q_2p_1$\end{tabular}}}}%
+    \put(0.40688751,0.31547788){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q_1p_2$\end{tabular}}}}%
+    \put(0.4351367,0.20248129){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q_2p_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{finiteadditivity.pdf}}%
+    \put(0.33709546,0.44675348){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q_3p_1$\end{tabular}}}}%
+    \put(0.2974471,0.12629042){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q_3p_2$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

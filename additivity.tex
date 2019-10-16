@@ -1,19 +1,5 @@
-\section{Discussion on previous work}
 
-By theorem \ref{thm:intersect} we get an analogue $\mu_g$ of the Liouville current. This current was constructed by Otal in \cite{Otal90:SpectreMarqueNegative} for all negatively curved Riemannian metrics. Then it was generalized in two different paths:
-first by Croke-Fathi-Feldman \cite{CFF92:RigidityNonPosCurvedRiem} for non–positively curved Riemannian 
-metrics and second by Hersonsky-Paulin \cite{HP97:RigidityNegCurvedCone}  for negatively  curved cone  metrics. The general case for arbitrary flat metrics appears to be new. \\
-The existence of the analog of the Liouville current provides with the first step towards attempting the rigidity problem: is a family of metrics determined by its marked length spectrum? \\
-By Otal \cite{Otal90:SpectreMarqueNegative} or our
-Theorem~\ref{thm:intersect}, a geodesic current is determined by
-intersection numbers with closed curves.
-To determine spectral rigidity one has to show that two metrics inducing the same geodesic current are equivalent (up to maps isotopic to the identity). To do that one usually then studies the support of these geodesic currents. \\
 
-Comment: current we associate to an arbitrary Riemannian metrics is
-not the long-term behavior of a random geodesic. For instance, if $g$
-has positive curvature, may have an open set of Riemannian geodesics
-on~$\Sigma$ that stay inside a contractible set and so are not
-quasi-geodesic on~$\wt \Sigma$.
 
 
 
@@ -58,8 +44,7 @@ constructed is really the Liouville current for $v$ (see proposition \ref{prop:l
 Let $v\colon \mathbb{R}\mathcal{C}_+(\Sigma) \to \mathbb{R}_{0 \geq}$ satisfy additive union, smoothing, stability and homogeneity.
 
 We will fix (arbitrarily) a simple closed oriented curve~$x$ that will
-serve as endpoints of the allowable rectangles. For convenience, we
-will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$x$, and also
+serve as endpoints of the allowable rectangles (note that these endpoints are dense in $S^1_{\infty}$, by minimality of the action of $\pi_1(S,*)$ by Deck transformations. See Section~\ref{subsec:actionsfundamental}). For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$x$, and also
 use $x$ for the corresponding element of~$\pi_1$.
 
 We say that $a \in \pi_1(S, \ast)$ \emph{crosses $x$ to the
@@ -69,8 +54,16 @@ For $a,b,c,d \in \pi_1(S,\ast)$ curves that cross $x$ to
 the right with $a b^{-1} c d^{-1} = 1$,
 let the box $B_{a,b,c,d,x}$
 be the \emph{right handed rectangle} defined by 
-(show picture of lifts of curves here.)
-(Need assumption on  $b$, $c$ crossing.)
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{box}}
+\caption{Example of box}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+We need the curve $[bc]$ to smooth to $[a] \cup [d]$.
 
 Slight issue: Need a little more data to get a box in $\wt S$, rather
 than a box up to translation by $\pi_1(S)$. Do this by picking
@@ -80,8 +73,18 @@ paths $p_1$, $p_2$, $q_1$, $q_2$ and setting
   c &= q_1p_2 & d &= q_2p_2.
 \end{align*}
 
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{fixedbox}}
+\caption{Example of fixed box}
+\label{fig:fixedbox}
+}
+\end{figure}
+
 Explain about whiskers, pointing down or to the right. Allowable boxes
 have all corners at whiskers.
+\DMGtodo{Need to recover material about whiskers, I forgot many details.}
+
 
 \subsection{Measures of boxes}
 
@@ -138,12 +141,65 @@ useful facts about this limit, we need a little more.
     [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align*}
 \end{lemma}
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{abcrossings}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{case1}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{case2}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{ablifts}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{abliftsbands}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+
+
 \begin{proof}
   Use the band model, centered on~$x$.
   Number the windows on top and bottom (cut out by other lifts of~$x$)
   with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
   top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
   of~$b$ connect top window~$\ell$ to bottom window $\ell+k$.
+  See Figure~\ref{fig:abliftsfirst}.
+  
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{abliftsfirst}}
+\caption{}
+\label{fig:abliftsfirst}
+}
+\end{figure}
 
   For the first reduction, note
   lifts of $a x^n$ connect windows with a shift of~$n$, and
@@ -206,7 +262,15 @@ one easy case.
     B_2 &= (q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2)\\
     B_1 \cup B_2 &= (q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2).
   \end{align*}
-  Additivity follows immediately from the formula.
+  Additivity follows immediately from the formula (see Figure~\ref{fig:finiteadditivity}).
+  
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{finiteadditivity}}
+\caption{Illustration of side-by-side additivity for boxes}
+\label{fig:finiteadditivity}
+}
+\end{figure}
 \end{proof}
 
 \begin{remark}
@@ -287,7 +351,29 @@ For $a,c,e$ crossing $x$ to the right, define a family
 \item $F_{a,b,e}$ is final.
 \end{itemize}
 
+Note we are considering the sequence
+
+
+\[
+(a,ae,c,ce),(a,axe,c,cxe),\cdots,(a,ax^ke,c,cx^ke)
+\]
+
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{finalfamily}}
+\caption{Box representing an element of the final family $F_{a,b,e}$. Here $e=Ab=Cd$.}
+\label{fig:finalfamily}
+}
+\end{figure}
+
 Completes proof that we have a measure.
+
+So we are interested in the limit
+
+\[
+\lim_{k \to \infty} \lim_{n \to \infty} \nu(ax^kex^ncx^m)-\nu(ax^n)-\nu(cx^kex^m)
+\]
 
 \DMGtodo[inline]{This is the part missing to prove countable subadditivity}
 
@@ -301,7 +387,7 @@ i(\mu_{\nu},C)=\nu(C).
 \]
 \end{proposition}
 
-
+\begin{comment}
 \subsection{The proof, older version}
 \DMGtodo[inline]{This is the old version of the proof}
 \begin{proposition}\label{prop:premeasurewelldef}
@@ -367,6 +453,7 @@ For, $n+m \gg k$ (or $n+m > k + C$). \\
 
 Now we show that $v(cx^n)$ is convex as a function of $n$.
 \end{proof}
+\end{comment}
 
 \begin{definition}
 semi-ring in measure theory

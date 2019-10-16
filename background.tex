@@ -1,0 +1,183 @@
+\section{Background}
+
+\DMGtodo{Should talk a bit about Hamenstaedt and Ledrappier work, copy some material of background of curves From curves to currents here, talk about definition of geodesic current in terms of cross-sections, etc.}
+
+\begin{comment}
+\DMGtodo[inline]{The following section contains material that could be relevant to include in intro or background section if we end up using anything for applications.}
+\section{A bunch of random background and previous ideas}
+
+\textbf{Cocycles}
+
+A class of H\"older continuous function $\zeta\colon T^1 S \times \mathbb{R} \to \mathbb{R}$ satisfying $\zeta(v,s+t)=\zeta(\phi_s(v),t) + \zeta(v,s)$
+for all $v \in T^1 S$ and all $s,t \in \mathbb{R}$.
+Let $\mathcal{F}\colon T^1 S \to T^1 S$ be the flip $v \mapsto -v$. The flip of a cocycle $\zeta$ is the cocycle defined by $\mathcal{F}\zeta(v,t)=\zeta(\mathcal{F}\phi^t(v),t)$. Two cocycles $\zeta, \xi$ are cohomologous if $\zeta(v,t)-\xi(v,t)=\beta(\phi^t(v)) - \beta(v)$ for all $v \in T^1 S$ and all $t \in \mathbb{R}$.
+$\zeta,\xi$ are cohomologous iff $\mathcal{F}\zeta,\mathcal{F}\xi$ are cohomologous. Thus, the flip map induces a map in cohomology classes.
+We say $\zeta$ is quasi-invariant under the flip if $\zeta$ and $\mathcal{F}\zeta$ are cohomologous.
+
+\textbf{Cross-ratio}
+
+A H\"older continuous, $\pi_1(S)$-invariant function on $\partial \wt{S}^{[4]}$ (space of quadruples of pairwise distinct points of $\partial \wt{S}$) with properties
+
+\begin{itemize}
+\item $Cr$ is invariant under the diagonal action of $\pi_1(S)$.
+\item $Cr(a,a',b,b')=Cr(a',a,b,b')^{-1}$
+\item $Cr(a,a',b,b')=Cr(b,b',a,a')$
+\item $Cr(a,a',b,b')Cr(a',a'',b,b')=Cr(a,a'',b,b')$
+\end{itemize}
+
+
+
+\textbf{Periods}
+
+\textbf{Periods for cross-ratio}
+Given a homotopy class of a closed curve $c$ in $S$, we can consider a representative $\gamma$.
+Let $\gamma$ be the Deck transformation associated to $\gamma$, and let $\gamma^-$ and $\gamma^+$ be its repelling and attracting points respectively.
+The period $l(\gamma)=\log Cr(\gamma^+,\gamma^-,\gamma \cdot a, a)$ for any $a \notin \{\gamma^-,\gamma^+\}$.
+This definition does not depend on the conjugacy class of the element $\gamma \in \pi_1(S)$, nor on the choice of point $a$. \\
+
+\textbf{Periods for geodesic currents}
+
+Let $c$ be a closed curve in $S$, lift it to the universal cover to some $\gamma$, choosing a hyperbolic metric. Let $G_{\gamma}$ be the set of geodesics that intersect $\gamma$ and have one endpoint in the segment $(a,\gamma a)$. $\nu(G_{\gamma})$ is the same as the measure of the set of geodesics that intersect the segment $(q,\gamma q)$ tranversally, for $q$ in the axis.
+
+
+
+
+\textbf{Signed geodesic current}
+
+A geodesic current for $S$ is a $\pi_1(S)$-invariant locally finite Borel measure on $\partial \wt{S} \times \partial \wt{S} - \Delta$ which in addition is invariant under the natural involution exchanging the two factors. Geodesic currents naturally correspond to finite $\phi^t$ invariant transverse Borel measures on $T^1M$ invariant under the flip map.
+A signed geodesic current is a difference of two geodesic currents. \\
+
+Otal proves that given a family of periods there is at most one cross ratio with those periods (essentially, density of endpoints of hyperbolic elements).
+What are the properties a period must satisfy?
+
+\textbf{From flip invariant Holder class to cross-ratio}
+
+Let $\alpha$ be a cocycle representing the class. Let $x \in \wt{S}$ be any point and let $(,)_{\alpha}$ be the symmetric product on distinct points in $T^1_x \wt{S}$. For $a \neq b \in \partial \wt{S}$, write $(a,b)=(v,w)_{\alpha}$ where $v,w \in T^1 \wt{S}$ are such that $\pi(v)=a$ and $\pi(w)=b$. Then $(,)$ is a symmetric product on pairs of distinct points in $\partial \wt{S}$ depending on the choice of $x$ and $\alpha$. For a quadruple $(a,a',b,b')$ of distinct points in $\partial \wt{S}$ define $[a,a',b,b']_{\alpha}=(a,b)+(a',b')-(a,b')-(a',b')$. Then one checks that $[]_{\alpha}$ does not depend on the choice of $x$ or the representative $\alpha$. And $Cr=e^{[]_{\alpha}}$ is the cross-ratio associated to the class of $\alpha$.
+
+\textbf{From cross-ratio to Holder cocycle}
+
+One defines a cocycle for the frame flow in the frame bundle, then integrates over fibers to obtain a Holder cocycle.\\
+
+Finally one checks that one is inverse of the other (if one closes the cycle obtains a cohomologous cocycle). \\
+
+\textbf{From geodesic current to cross-ratio}
+
+Let $\mu$ be a geodesic current. Let $(a,b,c,d)$ an ordered tuple of pairwise distinct points. Define $[a,b,c,d]=\mu([a,b] \times [c,d])$. \\
+(To check Holder property need to use $\mu$ is Gibbs current and thus comes from a Holder function...?) \\
+To check positivity one uses:
+
+\begin{lemma}
+Let $Cr$ be a cross-ratio on $\partial \wt{S}$. Then $Cr(a,b,c,d)+Cr(b,c,d,a) \to 1$ as $a \to b$, locally uniformly in $(c,d)$ if and only if $Cr$ is positive.
+\end{lemma}
+
+\textbf{From cross-ratio to intersection geodesic current}
+
+For a generalized cross-ratio there is a unique signed current $\mu$. Define $\mu([a,b]\times[c,d])=\log Cr(a,b,c,d)$. Additivity of cross ratio gives additivity of measure. If the cross ratio is positive then it gives a geodesic current. \\
+
+\textbf{From cocycle to Gibbs current}
+
+Let $\mathcal{M}$ be the space of all $\phi^t$-invariant probability measures on $T^1 S$.
+
+The entropy of a Borel set $A$ w.r.to to probability measure $\nu$ on $T^1S$ is $h_{\nu}(A):=-\nu(A)\log \nu(A)$. \\
+The entropy of $\nu$ is the entropy of the whole space $T^1 S$. Let $\mathcal{S}$ be the $\sigma$-algebra of all measurable sets. The entropy of $\nu$ is
+
+$h_{\nu} = \sup \{ \sum_{A\mathcal{F}} h_{\nu}(A) \mathcal{F} \subset \mathcal{S} | \mathcal{F} \mbox{ finite } , X=\sqcup_{A \in \mathcal{S}} A\}$. \\
+
+For every H\"older continuous function $f\colon T^1 S \to \mathbb{R}$ the pressure $p(f):=\sup \{ h_{\nu} - \int f d\nu | \nu \in \mathcal{M} \}$.
+
+The Gibbs equilibrium state of $f$ is the (unique) probability measure $\eta_f \in \mathcal{M}$ which realizes this supremum.
+
+Any H\"older function $f\colon T^1 S \to \mathbb{R}$ gives rise to a H\"older cocycle by 
+
+$$\xi_f(v,t):=\int_0^{t} f (\phi^s(v)ds.$$
+
+We call $f$ quasi-invariant under the flip if for any periodic $v \in T^1 S$ of period $\tau$, $\xi_f(v,\tau)=\xi_f(-v,\tau)$. \\
+
+For a H\"older cocycle, we can find some H\"older function $f\colon T^1 S \to \mathbb{R}$. Two H\"older $f,g$ functions give the same cocycle iff $\int fd\mu = \int g d\mu$ for all $\mu \in \mathcal{M}$.\\
+
+Otal proves that cross-ratio is determined given by periods. \\
+
+\subsection{Reconstructing currents from periods}
+
+Otal's argument uses density of geodesic in tangent bundle to construct current in some rectangles. Idea: extend to all sigma-algebra using Caratheodory's theorem. Problems:
+
+\begin{itemize}
+\item Is it enough to reconstruct the current given only on this family of rectangles?
+\item Continuity at endpoints.
+\end{itemize}
+
+\subsection{Reconstructing current}
+
+Another approach is to try to define a positive functional on the space of compact continuous functions on the space of geodesic currents. \\
+It also has to have the $\pi_1(S)$-invariant property.\\
+The difficult point will be continuity of the functional. \\
+
+
+Feng Luo characterizes functions that are intersection numbers on simple curves (ref).
+\end{comment}
+
+\subsection{Action of $\pi_1(S,*)$ on lifts}
+\label{subsec:actionsfundamental}
+
+There are two actions of $\pi_1(S,*)$ on lifts of $*$ to $\tilde{S}=\{ \mbox{paths from } * \}/\sim$:
+
+\begin{enumerate}
+    \item Left action: precomposition with $\gamma$ via Deck transformations, isometries of $\mathbb{H}^2$. The isometry extends to a homeomorphism of the boundary at infinity $S^1_{\infty}$. This action is minimal, in the sense that any orbit $\pi_1(S,*).p$, for $p \in S^1_{\infty}$, is a dense subset of $S^1_{\infty}$.
+    \item Right action: post-composition of paths. For example, $a \in \pi_1(S,*)$ acts on $x \in \pi_1(S,*)$, as $ax$, where this is the path first running through $x$ and then through $a$. 
+\end{enumerate}
+
+%\begin{definition}
+%  A homogeneous function on geodesic currents is \emph{convex} if its
+%  restriction to curves is convex by Definition~\ref{def:convex}.
+%\end{definition}
+
+%\begin{definition}
+%  \emph{Pants coordinates} on $\mathcal{ML}(S)$ are Dehn-Thurston
+%  coordinates with respect to a marked pair-of-pants decomposition,
+%  consisting of length and twist coordinates for each pants curve. The
+%  twist parameters require more specification, since there are several
+%  variations in the literature; see Section XXX for our version.
+%\end{definition}
+
+%\begin{theorem}
+%  Let $f \colon \mathcal{GC}(S) \to \R_{\ge 0}$ be a convex
+%  functional. Then the restriction of $f$ to measured laminations is
+%  convex with respect to pants coordinates for any pair-of-pants
+%  decomposition.
+%\end{theorem}
+
+%\subsection{Outline}
+%Extending functions to ML: \\
+%- Convexity argument, natural coordinates? \\
+%- Examples:
+%\begin{enumerate}
+%\item Hyperbolic length (Thurston)
+%\item Intersection number (Thurston)
+%\item Extremal length (Kerckhoff)
+%\end{enumerate}
+
+%Extending functions to GC:
+%\begin{enumerate}
+%\item Hyperbolic length (Bonahon)
+%\item Intersection number (Bonahon)
+%\item Stable length (Bonahon, Erlandsson-Parlier-Souto)
+%\item Generalized translation lengths (Martone-Zhang)
+%\end{enumerate}
+
+%In this paper we provide an argument that generalizes the previous extensions to a broad family of functions.
+
+%Applications:
+
+%\begin{enumerate}
+%\item Counting: Rafi-Souto, Erlandsson-Parlier-Souto)
+%\item Extending extremal length to geodesic currents, relevant in study of %rational maps.
+%\item Others? (conversations with Wright).
+%\end{enumerate}
+
+%Inequalities:
+%\[C_1 l(c) \leq f(c) \leq C_2 l(c).\]
+
+%For general $f$, the right inequality follows from argument decomposing curve into generators (in the additive case).
+%Question: can we also obtain it in the non-additive case, for general $f$? \\ Explain the case $f$ is extremal length. Consider the case of the torus. \\
+%Right inequality follows from collar lemma, and other by considering embedded annulus, and looking at the core curve. \\
+%These inequalities are interesting because: (1) they are satisfied by all Liouville currents (see paper by Burger et al on structure theorem for geodesic currents), and (2) the left inequality is usually a part of the definition of Anosov representation, where $f$ plays the role of the generalized translation length (see Martone-Zhang).

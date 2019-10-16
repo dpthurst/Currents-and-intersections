@@ -1,6 +1,6 @@
-%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'broken_smoothing.pdf' (pdf, eps, ps)
+%% Accompanies image file 'abliftsfirst.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{1700.78740157bp}%
+    \setlength{\unitlength}{850.39370079bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -53,6 +53,15 @@
   \begin{picture}(1,0.5)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{broken_smoothing.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{abliftsfirst.pdf}}%
+    \put(0.53816637,0.21536021){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{abliftsfirst.pdf}}%
+    \put(0.15072901,0.28953185){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{abliftsfirst.pdf}}%
+    \put(0.12535719,0.40627614){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{abliftsfirst.pdf}}%
+    \put(0.33059804,0.40493206){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell+1$\end{tabular}}}}%
+    \put(0.53027519,0.40575717){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell+2$\end{tabular}}}}%
+    \put(0.73655326,0.40658228){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell+3$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

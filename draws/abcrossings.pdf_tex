@@ -1,6 +1,6 @@
-%% Creator: Inkscape inkscape 0.92.3, www.inkscape.org
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'brokengeo.pdf' (pdf, eps, ps)
+%% Accompanies image file 'abcrossings.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{348.88995361bp}%
+    \setlength{\unitlength}{685.85998535bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,15 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.38292511)%
+  \begin{picture}(1,0.33251444)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{brokengeo.pdf}}%
-    \put(0.45800255,0.57171387){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$L$\end{tabular}}}}%
-    \put(0.09882626,1.0836262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{brokengeo.pdf}}%
-    \put(0.85368963,0.1412068){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta_1$\end{tabular}}}}%
-    \put(0.22672776,0.78492108){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta_0$\end{tabular}}}}%
-    \put(0.92322247,0.0884264){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta_2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{abcrossings.pdf}}%
+    \put(0.3070769,0.2130792){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.56182275,0.21485557){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.31913709,0.11084491){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{abcrossings.pdf}}%
+    \put(0.0955418,0.19667158){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{abcrossings.pdf}}%
   \end{picture}%
 \endgroup%

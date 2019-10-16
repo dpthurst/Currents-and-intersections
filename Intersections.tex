@@ -127,6 +127,7 @@
 \def\mathcenter#1{\vcenter{\hbox{$#1$}}}
 \def\mfig#1{\mathcenter{\includegraphics{#1}}}
 \newcommand{\svgfig}[1]{\Huge{\input{draws/#1.pdf_tex}}}
+\newcommand*{\svgfignormal}[1]{\fontsize{12pt}{12pt}\selectfont\input{draws/#1.pdf_tex}}
 
 \usetikzlibrary{arrows}
 \tikzset{
@@ -162,6 +163,7 @@ We give a characterization of functions defined on the space of closed curves th
 \tableofcontents
 
 \input{intro}
+\input{background}
 \input{additivity.tex}
 \input{applications.tex}
 \input{notation} % For our reference
