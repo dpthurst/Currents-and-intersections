@@ -5,6 +5,34 @@
 
 \section{From additivity to geodesic currents}
 
+We want to show that a convex, additive, stable and homogeneous curve functional comes from an intersection number.
+We will follow this strategy:
+
+\begin{enumerate}
+    \item Pick a simple closed curve $[x]$, $x \in \pi_1(S,*)$. with base point $p \in [x]$.
+    \item For any $c \in \pi_1(S,*)$, crossing $c$ right-handedly (define), we prove
+    \[
+      \lim_{n \to \infty} f([cx^n])-f([x^n])
+    \]
+    exists.
+    \item For $c,d \in \pi_1(S,*)$, crossing $x$ right-handedly
+    
+    \[
+       \lim_{m,n} f([cx^ndx^m])-f([cx^n][dx^m])=0
+    \]
+    
+    \item For $p,q,r,s \in \partial_{\infty} \tilde{S}$, and $a,b,c,d$ translations relating lifts, we set
+    
+    \[
+       \mu([p,q] \times [r,s]) \coloneqq \lim_{n \to \infty} f([ax^n][bx^n])-f([cx^n][dx^n])
+    \]
+    
+    This exists and moreover is positive, by the condition that $[ap b]$ smooth to $[c] \cup [d]$.
+    \item We define suitable rectangles that form a semi-ring of sets
+    \item We prove that the pre-measure we have defined is finitely additive and countably subadditive, and then Caratheodory theorem gives us a measure.
+    \item We show that this measure recovers intersection number.
+\end{enumerate}
+
 The idea is to reconstruct a current, i.e. a cross-ratio from the periods. (talk/cite previous work by Hamenstadt, Ledrappier, Martone-Zhang?).\\
 Work of Otal \cite{Otal90:SpectreMarqueNegative} shows that a current is uniquely determined by its values on closed curves, by using boxes whose endpoints are orbits of certain geodesics.
 In his argument, Otal uses lifts of a dense geodesic in the surface, but controlling the asymptotics of those is complicated.
@@ -81,7 +109,18 @@ paths $p_1$, $p_2$, $q_1$, $q_2$ and setting
 }
 \end{figure}
 
-Explain about whiskers, pointing down or to the right. Allowable boxes
+Explain about whiskers, pointing down or to the right.
+
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{whiskers}}
+\caption{Example of whiskers}
+\label{fig:whiskers}
+}
+\end{figure}
+
+Allowable boxes
 have all corners at whiskers.
 \DMGtodo{Need to recover material about whiskers, I forgot many details.}
 
@@ -292,8 +331,8 @@ The right handed rectangles $B_{a,b,c,d,x}$ form a semi-ring.
 What's the term for that?)
 
 \begin{proof}
-Show finite additivity by using whiskers argument. Idea:
- Induction on the number of vertical+horizontal
+Intersection of boxes is a box.
+If $A,B$ are boxes, $A - B$ is a union of boxes. Idea: subdivide and induction on the number of vertical+horizontal
 coordinates that appear. Look at any vertical division whose whisker
 reaches
 the upper boundary. If there isn't one, there's a rectangle that
