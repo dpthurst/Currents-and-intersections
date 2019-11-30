@@ -4,11 +4,18 @@
 
 \subsection{Redefining geodesic currents}
 This result gives a new definition of geodesic currents in terms of functionals on curves. These functionals form a subset of the functionals that extend continuously to currents (see \cite[Theorem~A]{MGT19:CurvesToCurrents}).
+
+
+\begin{enumerate}
+    \item What are filling currents? Positive functionals?
+    \item What are laminations? Satisfying max condition on smoothing?
+    \item What is the right topology on functionals to recover topology on currents? product topology? Compact-open?
+    \item How to see proper discontinuity of action of MCG?
+\end{enumerate}
 \DMGtodo[inline]{Do we get continuous extension to the whole space of signed currents? Linear extension? According to what Arana says, it should follow. And apparently not all elements of the dual should come from intersection numbers... This is very misterious to me... Also, our result doesn't require the $f$ function to be non-negative. But it follows after the extension that the function must be positive. Is it clear from the properties? Are we actually defining a current? Or a signed-current. }
 
 
 \subsection{A new expression for the Thurston metric}
-\DMGtodo[inline]{To show: taking supremum over geodesic currents is leggit.}
 
 
 In \cite[Theorem~8.5]{Thu98:MinimalStretch} Bill Thurston defines the following (asymmetric) metric on $\Teich(S)$.
@@ -28,6 +35,13 @@ d_{\mathit{Thu}}(X,Y)=\sup_{f} \frac{f(X)}{f(Y)}
 
 where $f$ runs over all non-zero functionals $f : \mathcal{C}(S) \to \mathbb{R}$ satisfying convex union, additive, stability and homogeneity properties.
 \end{corollary}
+\begin{proof}
+\[
+d_{\mathit{Thu}}(X,Y)=\sup_{f} \frac{f(X)}{f(Y)} = \sup_{\mu \in \mathcal{G}\mathcal{C}(S)} \frac{i(\mu,X)}{i(\mu,Y)} = \sup_{\lambda \in \ML(S)} \frac{i(\lambda,X)}{i(\lambda,Y)}
+\]
+The first equality follows by our Theorem~\ref{thm:intersect}, and the second equality follows because, by \cite[Theorem~8.5]{Thu98:MinimalStretch}, the distance is attained by a minimal stretch map, which dilates the hyperbolic lengths by the same bounded amount.
+\end{proof}
+
 
 
 \subsection{New characterization of binding currents}

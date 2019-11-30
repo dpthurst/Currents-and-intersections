@@ -1,0 +1,201 @@
+\section{From additivity to geodesic currents}
+
+We want to show that if $\nu$ satisfies smoothing, additivity, stability and homogeneity then it comes from an intersection number.
+We will follow this strategy:
+
+\begin{enumerate}
+    \item Pick a simple closed curve $[x]$, $x \in \pi_1(S,*)$. with base point $p \in [x]$.
+    \item For any $c \in \pi_1(S,*)$, crossing $c$ right-handedly (define), we prove
+    \[
+      \lim_{n \to \infty}  \nu([cx^n])-f([x^n])
+    \]
+    exists.
+    \item For $c,d \in \pi_1(S,*)$, crossing $x$ right-handedly
+    
+    \[
+       \lim_{m,n}  \nu([cx^ndx^m])-\nu([cx^n][dx^m])=0
+    \]
+    
+    \item For $p,q,r,s \in \partial_{\infty} \tilde{S}$, and $a,b,c,d$ translations relating lifts, we set
+    
+    \[
+       \mu([p,q) \times [r,s)) \coloneqq \lim_{n \to \infty} \nu([ax^n][bx^n])-\nu([cx^n][dx^n])
+    \]
+    
+    This exists and moreover is positive, by the condition that $[ap b]$ smooth to $[c] \cup [d]$.
+    \item We define suitable rectangles that form a semi-ring of sets
+    \item We prove that the pre-measure we have defined is finitely additive and countably subadditive, and then Caratheodory theorem gives us a measure.
+    \item We show that this measure recovers intersection number.
+\end{enumerate}
+
+The idea is to reconstruct a current, i.e. a cross-ratio from the periods. (talk/cite previous work by Hamenstadt, Ledrappier, Martone-Zhang?).\\
+Work of Otal \cite{Otal90:SpectreMarqueNegative} shows that a current is uniquely determined by its values on closed curves, by using boxes whose endpoints are orbits of certain geodesics.
+In his argument, Otal uses lifts of a dense geodesic in the surface, but controlling the asymptotics of those is complicated.
+We will instead use boxes whose endpoints are orbits of a closed geodesic $x$, easier to control. The caveat here is that
+now we have to be more careful since the target geodesic current may have
+delta-masses at the boundaries of the boxes. We will have to specify exactly what's included in the boundary and what is not.
+This is where the definition of \emph{right handed} rectangle will come into play. \\
+
+Then we will construct closed curves whose lengths
+should correspond to these rectangles. Thus, in addition to the closed geodesic
+$x$, we have 4 elements of $\pi_1$, $a,b,c,d$ corresponding to the 4 sides of
+these boxes ($c$ and $d$ are opposite sides, and $a,b$ are diagonals), and we will consider limits of
+
+  $$v(a x^n b x^m) - v(c x^n d x^m).$$
+
+One key point here is that the first curve has a crossing that the second one doesn't have
+(so the difference is positive). There will be several things to check, all
+up to small additive error that goes to zero as $n,m \to \infty$:
+
+\begin{enumerate}
+\item $$v(a x^n b x^m) \sim  v(a x^n) + v(b x^m)$$ (same for $c,d$).
+
+\item Both quantities $v(a x^n b x^m)$ and $v(a x^n) + v(b x^m)$ are convex as a function of $n,m$
+
+\item Both quantities depend only on $n+m$
+\end{enumerate}
+
+
+ We use then the additivity of the function $v$ to show it's additive on these boxes, and prove that the boxes form a semi-ring (see proposition \ref{prop:RHsemiring}).
+ Then we apply Caratheodory's extension theorem for pre-measures on semi-rings (see theorem \ref{thm:caratheodorymeasures}) to obtain a $\pi_1(S)$-invariant measure.
+ Finally, we show these approximations converge to the right value, i.e. to the value of the function on closed curves i.e. the current we have
+constructed is really the Liouville current for $v$ (see proposition \ref{prop:liouvillecurrent}).
+
+\subsection{Boxes}
+\label{sec:boxes}
+
+Let $v\colon \mathbb{R}\mathcal{C}_+(\Sigma) \to \mathbb{R}_{0 \geq}$ satisfy additive union, smoothing, stability and homogeneity.
+
+We will fix (arbitrarily) a simple closed oriented curve~$x$ that will
+serve as endpoints of the allowable rectangles (note that these endpoints are dense in $S^1_{\infty}$, by minimality of the action of $\pi_1(S,*)$ by Deck transformations. See Section~\ref{subsec:actionsfundamental}). For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$x$, and also
+use $x$ for the corresponding element of~$\pi_1$.
+
+We say that $a \in \pi_1(S, \ast)$ \emph{crosses $x$ to the
+  right} if there is an essential right-handed crossing.
+  This ensures that
+  \begin{align}
+    \label{eq:cross-red1}[a][x] &\reducesto [ax]
+  \end{align}
+
+For $a,b,c,d \in \pi_1(S,\ast)$ curves that cross $x$ to
+the right with $a b^{-1} c d^{-1} = 1$, 
+let the box $B_{a,b,c,d,x}$
+be the \emph{right handed rectangles of type 1 and type 2} defined by the configurations of oriented lifts of $x$ shown in Figures~\ref{fig:box1} and \ref{fig:box2}.
+
+\begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{box1}}
+\caption{Right handed box Type 1}
+\label{fig:box1}
+}
+\end{figure}
+
+\begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{box2}}
+\caption{Right-handed box Type 2}
+\label{fig:box2}
+}
+\end{figure}
+
+The elements $a,b,c,d$ in Figure~\ref{fig:box1} are the elements in $\pi_1(S,*)$ relating the lifts of $x$. 
+This determines a half-open box $B_{x,a,b,c,d}=[p,q) \times [r,s)$ as illustrated in Figure~\ref{fig:limitingbox}.
+
+\begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{limitingbox}}
+\caption{End-points of box $B_{x,a,b,c,d}$.}
+\label{fig:limitingbox}
+}
+\end{figure}
+
+\begin{remark}
+The box in Figure~\ref{fig:box3} is not a right-handed box. We note that for that box the diagonal component contributes extra because curves transversal to the diagonals are also transverse to one of the lifts of $x$.
+\begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{box3}}
+\caption{Non right-handed box.}
+\label{fig:box3}
+}
+\end{figure}
+\end{remark}
+
+We need the curve $[bc]$ to smooth to $[a] \cup [d]$.
+
+Slight issue: Need a little more data to get a box in $\wt S$, rather
+than a box up to translation by $\pi_1(S)$. Do this by picking
+paths $p_1$, $p_2$, $q_1$, $q_2$ and setting
+\begin{align*}
+  a &= q_1p_1 & b &= q_2p_1\\
+  c &= q_1p_2 & d &= q_2p_2.
+\end{align*}
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{fixedbox}}
+\caption{Example of fixed box}
+\label{fig:fixedbox}
+}
+\end{figure}
+
+Explain about whiskers, pointing down or to the right.
+
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{whiskers}}
+\caption{Example of whiskers}
+\label{fig:whiskers}
+}
+\end{figure}
+
+Allowable boxes
+have all corners at whiskers.
+\DMGtodo{Need to recover material about whiskers, I forgot many details.}
+
+
+\subsection{Measures of boxes}
+
+We wish to define a pre-measure by setting
+\todo{Labels have been permuted}
+\[
+\mu_{v}(B_{a,b,c,d,x})=\lim_{n \to \infty}v(bx^n) + v(cx^n)-v(ax^n) - v(dx^m)
+\]
+To check that this is well-defined, we first prove that this limit
+exists.
+
+\begin{lemma}
+  If $a$ crosses $x$ to the right, then we have the following
+  geometric reductions:
+  \begin{align}
+    \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
+    \label{eq:cross-red2}[a x^{n+1}][a x^{n-1}] &\reducesto 2[a x^n]\\
+    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto x^{\abs{n-m}}.
+  \end{align}
+\end{lemma}
+\begin{proof}
+  Equation~(\ref{eq:cross-red1}) follows since $a$ (and $a x^n)$
+  cross~$x$. The other two follow from the bands model.
+\end{proof}
+
+\begin{corollary}\label{cor:additivity-limit}
+  If $a$ crosses $x$ to the right, then
+  \[
+    \lim_{n \to \infty} \bigl(v(a x^n) - v(x^n)\bigr)
+  \]
+  exists.
+\end{corollary}
+
+\begin{proof}
+  By Equation~(\ref{eq:cross-red2}), $v(a x^n)$ is a convex function
+  of $n$, and thus so is $v(a x^n) - v(x^n)$. By
+  Equations~(\ref{eq:cross-red1}) and~(\ref{eq:cross-red3}) (both with
+  $n=0$),
+  \[
+    -v(a) \le v(a x^n) - v(x^n) \le v(a).
+  \]
+  A convex function that is bounded as $n \to \infty$ has a
+  well-defined limit.
+\end{proof}
+
+Thus the limit defining $\mu_{v}(B_{a,b,c,d,x})$ exists. 
