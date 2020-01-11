@@ -30,14 +30,14 @@ As an immediate application of Theorem \ref{thm:intersect} we give a new charact
 
 
 \[
-d_{\mathit{Thu}}(X,Y)=\sup_{f} \frac{f(X)}{f(Y)}
+d_{\mathit{Thu}}(X,Y)=\sup_{f} \log \frac{f(X)}{f(Y)}
 \]
 
 where $f$ runs over all non-zero functionals $f : \mathcal{C}(S) \to \mathbb{R}$ satisfying convex union, additive, stability and homogeneity properties.
 \end{corollary}
 \begin{proof}
 \[
-d_{\mathit{Thu}}(X,Y)=\sup_{f} \frac{f(X)}{f(Y)} = \sup_{\mu \in \mathcal{G}\mathcal{C}(S)} \frac{i(\mu,X)}{i(\mu,Y)} = \sup_{\lambda \in \ML(S)} \frac{i(\lambda,X)}{i(\lambda,Y)}
+d_{\mathit{Thu}}(X,Y)=\sup_{f} \log \frac{f(X)}{f(Y)} = \sup_{\mu \in \mathcal{G}\mathcal{C}(S)} \log \frac{i(\mu,X)}{i(\mu,Y)} = \sup_{\lambda \in \ML(S)} \log \frac{i(\lambda,X)}{i(\lambda,Y)}
 \]
 The first equality follows by our Theorem~\ref{thm:intersect}, and the second equality follows because, by \cite[Theorem~8.5]{Thu98:MinimalStretch}, the distance is attained by a minimal stretch map, which dilates the hyperbolic lengths by the same bounded amount.
 \end{proof}
