@@ -1,205 +1,319 @@
-\section{From additivity to geodesic currents}
-
-We want to show that if $\nu$ satisfies smoothing, additivity, stability and homogeneity then it comes from an intersection number.
-We will follow this strategy:
-
-\begin{enumerate}
-    \item Pick a simple closed curve $[x]$, $x \in \pi_1(S,*)$. with base point $p \in [x]$.
-    \item For any $c \in \pi_1(S,*)$, crossing $c$ right-handedly (define), we prove
-    \[
-      \lim_{n \to \infty}  \nu([cx^n])-f([x^n])
-    \]
-    exists.
-    \item For $c,d \in \pi_1(S,*)$, crossing $x$ right-handedly
-    
-    \[
-       \lim_{m,n}  \nu([cx^ndx^m])-\nu([cx^n][dx^m])=0
-    \]
-    
-    \item For $p,q,r,s \in \partial_{\infty} \tilde{S}$, and $a,b,c,d$ translations relating lifts, we set
-    
-    \[
-       \mu([p,q) \times [r,s)) \coloneqq \lim_{n \to \infty} \nu([ax^n][bx^n])-\nu([cx^n][dx^n])
-    \]
-    
-    This exists and moreover is positive, by the condition that $[a] \cup [b]$ smooth to $[c] \cup [d]$.
-    \item We define suitable rectangles that form a semi-ring of sets
-    \item We prove that the pre-measure we have defined is finitely additive and countably subadditive, and then Caratheodory theorem gives us a measure.
-    \item We show that this measure recovers intersection number.
-\end{enumerate}
-
-The idea is to reconstruct a current, i.e. a cross-ratio from the periods. (talk/cite previous work by Hamenstadt, Ledrappier, Martone-Zhang?).\\
-Work of Otal \cite{Otal90:SpectreMarqueNegative} shows that a current is uniquely determined by its values on closed curves, by using boxes whose endpoints are orbits of certain geodesics.
-In his argument, Otal uses lifts of a dense geodesic in the surface, but controlling the asymptotics of those is complicated.
-We will instead use boxes whose endpoints are orbits of a closed geodesic $x$, easier to control. The caveat here is that
-now we have to be more careful since the target geodesic current may have
-delta-masses at the boundaries of the boxes. We will have to specify exactly what's included in the boundary and what is not.
-This is where the definition of \emph{right handed} rectangle will come into play. \\
-
-Then we will construct closed curves whose lengths
-should correspond to these rectangles. Thus, in addition to the closed geodesic
-$x$, we have 4 elements of $\pi_1$, $a,b,c,d$ corresponding to the 4 sides of
-these boxes ($c$ and $d$ are opposite sides, and $a,b$ are diagonals), and we will consider limits of
-
-  $$v(a x^n b x^m) - v(c x^n d x^m).$$
-
-One key point here is that the first curve has a crossing that the second one doesn't have
-(so the difference is positive). There will be several things to check, all
-up to small additive error that goes to zero as $n,m \to \infty$:
-
-\begin{enumerate}
-\item $$v(a x^n b x^m) \sim  v(a x^n) + v(b x^m)$$ (same for $c,d$).
-
-\item Both quantities $v(a x^n b x^m)$ and $v(a x^n) + v(b x^m)$ are convex as a function of $n,m$
-
-\item Both quantities depend only on $n+m$
-\end{enumerate}
-
-
- We use then the additivity of the function $v$ to show it's additive on these boxes, and prove that the boxes form a semi-ring (see proposition \ref{prop:RHsemiring}).
- Then we apply Caratheodory's extension theorem for pre-measures on semi-rings (see theorem \ref{thm:caratheodorymeasures}) to obtain a $\pi_1(S)$-invariant measure.
- Finally, we show these approximations converge to the right value, i.e. to the value of the function on closed curves i.e. the current we have
-constructed is really the Liouville current for $v$ (see proposition \ref{prop:liouvillecurrent}).
-
-\subsection{Boxes}
+\section{Proof of Theorem~\ref{thm:intersect}}
+\subsection{Right-handed boxes}
 \label{sec:boxes}
 
-Let $v\colon \mathbb{R}\mathcal{C}_+(\Sigma) \to \mathbb{R}_{0 \geq}$ satisfy additive union, smoothing, stability and homogeneity.
+Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ satisfy symmetry, additive union, smoothing, stability and homogeneity.
+Recall that since $f$ satisfies the symmetry condition, we have that $f([a])=f([a^{-1}])$ for any $a \in \pi_1(S,\ast)$.
+Recall, also, that the fact that $f$ satisfies the smoothing condition for unoriented curves means $f$ is non-increasing under smoothing essential crossings for any of the two possible unoriented resolutions (the one coherent with the chosen orientation and the one which isn't).
+We will fix (arbitrarily) a simple closed oriented curve~$[x]$. The endpoints of the lifts of $[x]$  are dense in $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S,*)$ by deck transformations (see Proposition~\ref{prop:fundminimal}). For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$[x]$ and use $x$ for the corresponding element of~$\pi_1$.
 
-We will fix (arbitrarily) a simple closed oriented curve~$x$ that will
-serve as endpoints of the allowable rectangles (note that these endpoints are dense in $S^1_{\infty}$, by minimality of the action of $\pi_1(S,*)$ by Deck transformations. See Section~\ref{subsec:actionsfundamental}). For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$x$, and also
-use $x$ for the corresponding element of~$\pi_1$.
 
-We say that $a \in \pi_1(S, \ast)$ \emph{crosses $x$ to the
-  right} if there is an essential right-handed crossing.
+\begin{definition}[right handed crossing]
+We say that an essential crossing, as in Definition~\ref{def:essential-crossing}, is \emph{right-handed} if the orientations of the strands are like in the following picture
+
+  \[\mathcenter{\resizebox{30mm}{!}{\svgfig{rh}}}
+\]
+
+If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
+  right} or \emph{right-handedly} if there is an essential right-handed crossing between $[a]$ and $[x]$, as the following figure shows
+      
+  \[\mathcenter{\resizebox{30mm}{!}{\svgfig{rhres}}}
+\]
+  
+  where $*$ denotes a basepoint.
+  
   This ensures that
   \begin{align}
-    \label{eq:cross-red1}[a][x] &\reducesto [ax]
+    \label{eq:cross-red}[a][x] &\reducesto [ax]
   \end{align}
-
-For $a,b,c,d \in \pi_1(S,\ast)$ curves that cross $x$ to
-the right with $a b^{-1} c d^{-1} = 1$, 
-let the box $B_{a,b,c,d,x}$
-be the \emph{right handed rectangles of type 1 and type 2} defined by the configurations of oriented lifts of $x$ shown in Figures~\ref{fig:box1} and \ref{fig:box2}.
-
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{box1}}
-\caption{Right handed box Type 1}
-\label{fig:box1}
-}
+  \label{def:righthanded}
+  
+  If $[a]$ does not cross $[x]$ to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
+  \end{definition}
+  
+  \begin{figure}
+\subfloat[Right handed box Type 1]{\resizebox{80mm}{!}{\svgfig{box1}}}\qquad
+\subfloat[Right handed box Type 2]{\resizebox{65mm}{!}{\svgfig{box}}}\\
+\subfloat[Right handed box Type 3]{\resizebox{65mm}{!}{\svgfig{box4}}}\qquad
+\subfloat[Non-example of right handed box]{\resizebox{80mm}{!}{\svgfig{nonbox}}}
+\caption{Right handed boxes of Type 1, Type 2 and Type 3, and non-example of a right-handed box, induced by a choice of dreamcatcher and lift of $x$.}
+\label{fig:rhbox}
 \end{figure}
 
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{box2}}
-\caption{Right-handed box Type 2}
-\label{fig:box2}
-}
-\end{figure}
+\begin{definition}[dreamcatcher]
+\label{def:righthandeddreamcatcher}
+Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 
-The elements $a,b,c,d$ in Figure~\ref{fig:box1} are the elements in $\pi_1(S,*)$ relating the lifts of $x$. 
-This determines a half-open box $B_{x,a,b,c,d}=[p,q) \times [r,s)$ as illustrated in Figure~\ref{fig:limitingbox}.
-
-\begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{limitingbox}}
-\caption{End-points of box $B_{x,a,b,c,d}$.}
-\label{fig:limitingbox}
-}
-\end{figure}
+\begin{enumerate}
+    \item $[a],[b],[c],[d]$ cross $x$ to the right.
+    \item $a c^{-1} d b^{-1} = 1$.
+    \item There exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}bx^n a c^{-1}$ and the path $cx^n$, both based at $*$, have a right handed crossing. See Figure~\ref{fig:rhbox} for examples and non-examples of dreamcatchers. We distinguish three types of dreamcatchers: type 1 has no nested lifts; type 2 has one pair of nested lifts with the same orientation; and type 3 has two pairs of nested lifts of $x$, each pair with the same orientation.
+\end{enumerate}
+We will call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
+\end{definition}
 
 \begin{remark}
-The box in Figure~\ref{fig:box3} is not a right-handed box. We note that for that box the diagonal component contributes extra because curves transversal to the diagonals are also transverse to one of the lifts of $x$.
+\begin{enumerate} 
+\item The reader might wonder why in item (3) we require the condition ``for $n$ large enough''. It turns out that requiring the condition for all $n$ is too restrictive, and while it does happen for some configurations of lifts, such as type 1, in general it doesn't hold for the types of configurations of lifts that we are interested in. See the clarification in the proof of Proposition~\ref{prop:positivity} for more on this.
+\item Item (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked. 
+     To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
+     \end{enumerate}
+\end{remark}
+
+Given a right-handed dreamcatcher, $(a,b,c,d)$ and given a choice of lift of the geodesic $[x]$, we obtain lifts differing from each other by translating by $a,b,c,d$, respectively. For example, $\tilde{x},a\cdot \tilde{x}, b \tilde{x}, aC \cdot \tilde{x}$.
+There are other configurations of lifts possible, such as $\tilde{x},a\cdot \tilde{x}, b \tilde{x}, c \cdot \tilde{x}, Ba \cdot \tilde{x}$.
+Fixing a lift of the curve $[x]$, this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts of $x$ are placed as shown in Figure~\ref{fig:rhbox} respectively.
+Note how the lifts of $[x]$ are non-intersecting, since $[x]$ is simple, and these orientation of the lifts is always right-handed.
+A choice of one endpoint for each such lift of $x$, determines a box of geodesics in $G^+(\Sigma)$. 
+\begin{example}
+The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
 \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{box3}}
-\caption{Non right-handed box.}
-\label{fig:box3}
+\caption{Non-example of right-handed box.}
+\label{fig:box4}
 }
 \end{figure}
-\end{remark}
+\end{example}
+The elements $a,b,c,d$ in Figure~\ref{fig:rhbox} can be seen as deck transformations relating the lifts of $x$. 
 
-We need the curve $[bc]$ to smooth to $[a] \cup [d]$.
 
-Slight issue: Need a little more data to get a box in $\wt S$, rather
-than a box up to translation by $\pi_1(S)$. Do this by picking
-paths $p_1$, $p_2$, $q_1$, $q_2$ and setting
-\begin{align*}
+As we have pointed out above, a dreamcatcher only determines a box up to (left) action of $\pi_1(S)$ by isometries.
+We will now introduce a different notation which will be more helpful to refer to  concrete boxes.  Fix once and for all a lift $\tilde{x}$ of $x$ and then pick four arbitrary elements $p_1,q_1,p_2,q_2 \in \pi_1(S,*)$ sending $\tilde{x}$ to four respective distinct lifts of $x$, as in Figure~\ref{fig:newmodel3}, with the property that $p_2x^{-},p_1x^{-}, q_1x^{+}, q_2x^{+}$ appear in this counter clockwise order.
+We will denote this datum by $(p_1,p_2,q_1,q_2)$.
+
+We can relate the notations for a dreamcatcher in Figure~\ref{fig:rhbox} and Figure~\ref{fig:newmodel3} by setting
+\begin{align}
   a &= q_1p_1 & b &= q_2p_1\\
   c &= q_1p_2 & d &= q_2p_2.
-\end{align*}
+  \label{eq:relationdatum}
+\end{align}
+
+
+Note that $a,b,c,d$ satisfy a relation, whereas $p_1,p_2,q_1,q_2$ don't.
 
 \begin{figure}
 \centering{
-\resizebox{120mm}{!}{\svgfig{fixedbox}}
-\caption{Example of fixed box}
-\label{fig:fixedbox}
+\resizebox{100mm}{!}{\svgfig{newmodel3}}
+\caption{Determining a right handed box from a right handed dream catcher}
+\label{fig:newmodel3}
 }
 \end{figure}
 
-Explain about whiskers, pointing down or to the right.
+\begin{definition}
+Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by
+\[
+B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
+\]
+A different choice of lift $\tilde{x}'$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by conjugation by some element in $\pi_1(S,*)$.
+
+To recap, the datum $(p_1,p_2,q_1,q_2)$ determines a box $B_{p_1,p_2,q_1,q_2}$ and the dreamcatcher datum $(a,b,c,d)$ determines a $\pi_1(S)$ orbit of boxes that we will denote $[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to drive attention to a concrete representative of the orbit, or to the orbit itself, respectively. Here $(p_1,p_2,q_1,q_2)$ is related to $(a,b,c,d)$ by Equations~\ref{eq:relationdatum}.
+
+We will denote by $\mathcal{B}$ the set of right-handed boxes, and by 
+\[\mathcal{E}=\{ (p_1 x^-, p_2 x^-, q_2 x^+, q_1x^+) : (a,b,c,d) \mbox{ determined by Eq~\ref{eq:relationdatum} form a dreamcatcher } \}\]
+the set of 4-tuples of endpoints of right-handed boxes.
+\end{definition}
+
+Note that because of our interest in right-handed boxes, we are restricting our attention to a subset of the lifts of $[x]$.
+However, these are still enough to approximate any box.
 
 
-\begin{figure}
+\begin{proposition}
+The family of right handed boxes $\mathcal{B}$ is dense in $G^+(\Sigma)$, in the following sense.
+For any rectangle $R = [p,q) \times [r,s) \in G^+(\Sigma)$,
+and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S,*)$ so that for some $B \in [B]_{a,b,c,d}$, with $B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in B_{\epsilon}(s)$.
+\label{prop:density}
+\end{proposition}
+\begin{proof}
+   Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
+   Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively.
+   For $r$ (and similarly for $s$), we proceed as follows. Given a lift of $\tilde{x}$, and $p$, consider some element $\gamma \in \pi_1(\Sigma)$ with $\gamma_- \in (x^-, x^+)$ and $\gamma^+$ within $\epsilon/4$ of $p$. For $n$ large, we consider the lift of $[x]$ given by $\gamma^n \cdot \tilde{x}$, where $\cdot$ denotes the left action of $\gamma$, i.e., if $x$ is the element of $\pi_1(S,*)$ with invariant axis $\tilde{x}$, $\gamma^n \cdot \tilde{x}$ denotes the invariant axis of $\gamma^n x \gamma^{-n}$. For $n$ large enough we see that $(\gamma^n \cdot \tilde{x})^+$ and  $(\gamma^n \cdot \tilde{x})^-$ are within $\epsilon$ of $p$.   See Figure~\ref{fig:approx}.
+   We will write $\gamma_r$ as $\gamma$ in this construction, and then repeat the same construction for $s$ with an element $\gamma_s$.
+   This will give the necessary lifts with the correct orientations for $r$ and $s$.
+ 
+ \begin{figure}
 \centering{
-\resizebox{120mm}{!}{\svgfig{whiskers}}
-\caption{Example of whiskers}
-\label{fig:whiskers}
+\resizebox{60mm}{!}{\svgfig{approx}}
+\caption{Approximating a boundary point of the interval of endpoints of a right-handed box}
+\label{fig:approx}
 }
 \end{figure}
 
-Allowable boxes
-have all corners at whiskers.
-\DMGtodo{Need to recover material about whiskers, I forgot many details.}
-
+For the endpoints $p$ and $q$, take $\gamma^{-}$ in the above construction to appear after both $x^{-}$ and $x^{+}$ in clockwise order, as in Figure~\ref{fig:approx2}. 
+ \begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{approx2}}
+\caption{Approximating a boundary point of the interval of endpoints of a right-handed box}
+\label{fig:approx2}
+}
+\end{figure}
+Taking elements $\gamma_p$ and $\gamma_q$ as $\gamma$ for $p$ and $q$ respectively, we obtain the approximation. See Figure~\ref{fig:approxfin}.
+ \begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{approxfin}}
+\caption{Approximating a boundary points of a right-handed box}
+\label{fig:approxfin}
+}
+\end{figure}
+\end{proof}
 
 \subsection{Measures of boxes}
 
-We wish to define a pre-measure by setting
-\todo{Labels have been permuted}
+Fix $x$ and a lift $\tilde{x}$ once and for all.
+
+\begin{proposition}
+\label{prop:limitexists}
+Let $B_{p_1,p_2,q_1,q_2}$ be a right-handed box so that $[B_{p_1,p_2,q_1,q_2}]=[B]_{a,b,c,d}$.
+The following limit associated to $B_{p_1,p_2,q_1,q_2}$ exists:
 \[
-\mu_{v}(B_{a,b,c,d,x})=\lim_{n \to \infty}v(bx^n) + v(cx^n)-v(ax^n) - v(dx^m)
+\mu_{f}(B_{p_1,p_2,q_1,q_2})=\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \]
-To check that this is well-defined, we first prove that this limit
-exists.
+\end{proposition}
+Before checking if this limit exists, note that its definition only depends on the $\pi_1(S)$ orbit of $B_{p_1,p_2,q_1,q_2}$, in other words, it only depends on the choice of right-handed dreamcatcher $(a,b,c,d)$. Thus, the pre-measure is $\pi_1(S)$-invariant.
+
+We now prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
+
+\subsubsection{Smoothing lemmas}
+
+We will need some key lemmas relating several curves by smoothing essential crossings.
 
 \begin{lemma}
-  If $a$ crosses $x$ to the right, then we have the following
+  Suppose $x,a \in \pi_1(S,\ast)$ and $[x]$ is simple.
+  If $[a]$ crosses $[x]$ to the right, then we have the following
   geometric reductions:
-  \DPTtodo[inline]{This is assuming that $x$ is simple. We also need
-    this later for non-simple curves. For that, you need to replace
-    second equation by $[ax^{n+k}][ax^{n-k}] \reducesto 2[ax^n]$ for
-    sufficiently large $k$}
   \begin{align}
     \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
-    \label{eq:cross-red2}[a x^{n+1}][a x^{n-1}] &\reducesto 2[a x^n]\\
-    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto x^{\abs{n-m}}.
+    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}].
   \end{align}
+  \label{lem:smoothingskey}
 \end{lemma}
 \begin{proof}
-  Equation~(\ref{eq:cross-red1}) follows since $a$ (and $a x^n)$
-  cross~$x$. The other two follow from the bands model.
+  Equation~(\ref{eq:cross-red1}) follows since $[a]$ (and $[a x^n]$)
+  cross~$[x]$ to the right. For Equation~(\ref{eq:cross-red3}), consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
+   \[\mathcenter{\svgfignormal{smint_1}}
+\]
+    There are two possible choices of resolution. We choose the one which does not agree with the natural orientations of $[a]$ and $[x]$.
+    Smooth $[ax^n]$ with $[ax^m]$, as shown in the figure below ($n=4,m=3$), to obtain $[y]$ homotopic to $[x^{|n-m|}]$.
+  \[\mathcenter{\svgfignormal{smint_2}}
+\]
+  It remains to show that the crossing was essential. We justify this in the proof of Lemma~\ref{lem:join-split-geom}.
+\end{proof}
+
+
+\begin{lemma}\label{lem:join-split-geom}
+  If $[a]$ and $[b]$ cross $[x]$ to the right, then there integers $k$ and $s\geq 0$
+  so that, for all large enough $n,m$ and $r$ with either $s < r < m-n+k-s$ or $-s > r > m-n+k+s$,
+  \begin{align}
+    \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
+    \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
+  \end{align}
+  If $x$ is simple it suffices to take $s=0$. If $a=b$, $k$ can be taken to be $0$.
+\end{lemma}
+
+\begin{comment}
+\begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{case1}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+\begin{figure}
+\centering{
+\resizebox{80mm}{!}{\svgfig{case2}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+
+\begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{ablifts}}
+\caption{}
+\label{fig:abcrossings}
+}
+\end{figure}
+\end{comment}
+
+
+
+\begin{proof}
+  We first show that we can choose lifts for which the crossing is essential.
+  Use the band model, centered on~$\tilde{x}$.
+  By a \emph{window}, we mean an open interval $(x^-,x^+)$ cut out by the endpoints of another lift of $[x]$.
+  Number the windows on top and bottom
+  with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
+  top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
+  of~$b$ connect top window~$\ell$ to bottom window $\ell+k$.
+  Choose $s \geq 0$ so that translating a lift of $x$ at least $s$ times (to the left or to the right) gives two non-intersecting lifts of $x$. If $x$ is simple, $s$ can be taken to be $0$.
+  See Figure~\ref{fig:abcrossings}.
+  
+  \begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{abliftsbands}}
+\caption{Lifts of $x$ in blue. The top blue lift labelled by $l$ relates to the central lift by $a$. The central blue lift relates to the lower lift in the $l$ position also by $a$. The other top and lower blue lifts are related from $l$ top and lower lifts, respectively, by translating by $x$.}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+
+  For the first reduction, note
+  lifts of $[a x^n]$ connect windows with a shift of~$n$, and
+  similarly lifts of $[b x^m]$ connect windows with a shift of $k+m$.
+  Choose a lift of $[a x^n]$ that connects window $0$ to window~$n$,
+  and choose a lift of $[b x^m]$ that connects window $n+r-k-m$ to
+  window $n+r$. Since $0$ and $n+r-k-m$ are at least $s$ apart from each other, and $n$ and $n+r$ are at least $s$ apart from each other, it follows that the lifts $[a x^n]$ and $[b x^m]$ intersect essentially.
+  Now, consider the union of $[ax^n]$ and $[bx^m]$, and the crossing marked in the figure below. 
+  
+  \[\mathcenter{\svgfignormal{smint_0}}
+\]
+    There are two possible choices of resolution. If we smooth the essential crossing choosing the reduction that agrees with the orientations of $[a],[b],[x]$, as shown in the figure below ($n=4,m=3$), we obtain $[ax^{n-r}b^{n+r}]$ as shown in the figure below.
+
+  \[\mathcenter{\svgfignormal{smint_3}}
+\]
+
+  The other reduction is similar, instead choosing two different lifts of
+  $[a x^n b x^m]$.
 \end{proof}
 
 \begin{corollary}\label{cor:additivity-limit}
-  If $a$ crosses $x$ to the right, then
+  Let $x$ be simple. If $a$ crosses $x$ to the right, then
   \[
-    \lim_{n \to \infty} \bigl(v(a x^n) - v(x^n)\bigr)
+    \lim_{n \to \infty} f([a x^n]) - f([x^n])
   \]
   exists.
 \end{corollary}
 
-\begin{proof}
-  By Equation~(\ref{eq:cross-red2}), $v(a x^n)$ is a convex function
-  of $n$, and thus so is $v(a x^n) - v(x^n)$. By
+\begin{proof}[of Corollary~\ref{cor:additivity-limit}]
+  By Equation~(\ref{eq:cross_a}), with $k=0$ (since $a=b$) and $s=0$ ($x$ is simple), $m=t-1$ and $n=t+1$ for arbitrary $t$, and $r=0$, for $n$ large enough we get
+  \[
+    [a x^{t-1}] [a x^{t+1}] \reducesto [ax^{t}ax^{t}].
+  \]
+  Then, we apply Equation~(\ref{eq:cross_b}) with $m=t$ and $n=t$,  and $r=0$, to get
+    \[
+    [a x^t a x^t] \reducesto [ax^{t}][ax^{t}].
+  \]
+  Thus, by the smoothing and additivity property of $f$, we get
+  \[
+  f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
+  \]
+  Hence, $f([a x^n])$ is a convex function
+  of $n$, and thus so is $f([a x^n]) - f([x^n])$. By
   Equations~(\ref{eq:cross-red1}) and~(\ref{eq:cross-red3}) (both with
   $n=0$),
   \[
-    -v(a) \le v(a x^n) - v(x^n) \le v(a).
+    -f([a]) \le f([a x^n]) - f([x^n]) \le f([a]).
   \]
   A convex function that is bounded as $n \to \infty$ has a
   well-defined limit.
 \end{proof}
 
-Thus the limit defining $\mu_{v}(B_{a,b,c,d,x})$ exists. 
+\begin{proof}[Proof of Proposition~\ref{cor:additivity-limit}]
+It follows immediately from Corollary~\ref{cor:additivity-limit}.
+\end{proof}
+
+\begin{remark}
+Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
+\end{remark}

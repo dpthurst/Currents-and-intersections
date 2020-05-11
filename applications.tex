@@ -1,19 +1,33 @@
 \section{Applications}
 
-\DMGtodo[inline]{some possible applications of this result. If the conditions give us intersection numbers, then one should be able to define geodesic currents as a subset of functionals on curves. This allows to give a new definition of Thurston distance in terms of supremums over a subfamily of functionals. Then one can especulate things like: can Teichmueller distance be expressed as supremum over a larger family of functionals on curves?}
-
 \subsection{Redefining geodesic currents}
-This result gives a new definition of geodesic currents in terms of functionals on curves. These functionals form a subset of the functionals that extend continuously to currents (see \cite[Theorem~A]{MGT19:CurvesToCurrents}).
+This result gives a new definition of geodesic currents in terms of functionals on curves. These functionals form a subset of the functionals that extend continuously to currents, by Theorem~\ref{thm:convex}.
 
+\begin{corollary}
+Let $S$ a closed surface, $\mu$ a geodesic current and $f$ the functional on curves associated to $\mu$, i.e., so that $\mu_f=\mu$. The following are equivalent:
 
 \begin{enumerate}
-    \item What are filling currents? Positive functionals?
-    \item What are laminations? Satisfying max condition on smoothing?
-    \item What is the right topology on functionals to recover topology on currents? product topology? Compact-open?
-    \item How to see proper discontinuity of action of MCG?
+    \item $\mu \in \GC_{\mbox{fill}}(S)$
+    \item $f \colon \Curves(S) \to \mathbb{R}$ has a positive extension to geodesic currents.
+    \item $\sys(f)>0$.
 \end{enumerate}
-\DMGtodo[inline]{Do we get continuous extension to the whole space of signed currents? Linear extension? According to what Arana says, it should follow. And apparently not all elements of the dual should come from intersection numbers... This is very misterious to me... Also, our result doesn't require the $f$ function to be non-negative. But it follows after the extension that the function must be positive. Is it clear from the properties? Are we actually defining a current? Or a signed-current. }
+\end{corollary}
+\begin{proof}
+(1) is equivalent to (2) by our Theorem~\ref{thm:intersect} and Proposition~\ref{prop:filling}.
+(2) is equivalent to (3) by\cite[Theorem~4.1]{BIPP17:StructureThmCurrents}, where the lower bound in (3) is given by the systole of $\mu$.
+\end{proof}
 
+\begin{conjecture}
+$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies
+    \begin{equation}\label{eq:MLsmoothing}
+      f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}
+    \end{equation}
+\end{conjecture}
+
+\subsection{Topology on functionals}
+
+Note that by Subsection~\ref{sec:intersectioncurrents}, for functionals coming from currents, $f_i \to f$ if and only if $f_i(c) \to f(c)$ for each $c \in \Curves(S)$, i.e., pointwise convergence.
+This is therefore the natural topology in the space of functionals on curves.
 
 \subsection{A new expression for the Thurston metric}
 
@@ -21,82 +35,68 @@ This result gives a new definition of geodesic currents in terms of functionals 
 In \cite[Theorem~8.5]{Thu98:MinimalStretch} Bill Thurston defines the following (asymmetric) metric on $\Teich(S)$.
 
 \[
-d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq \sup_{\lambda \in \ML}\log \frac{L(\lambda;\Sigma)}{L(\lambda;\Sigma')}
+d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq \sup_{\lambda \in \ML}\log \frac{\ell_{\Sigma}(\lambda)}{\ell_{\Sigma'}(\lambda)}
 \]
 
 As an immediate application of Theorem \ref{thm:intersect} we give a new characterization of Thurston metric in terms of a supremum over functionals on curves.
 
 \begin{corollary}
-
-
 \[
-d_{\mathit{Thu}}(X,Y)=\sup_{f} \log \frac{f(X)}{f(Y)}
+d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq \sup_{f} \log \frac{f(\Sigma)}{f(\Sigma')}
 \]
 
-where $f$ runs over all non-zero functionals $f : \mathcal{C}(S) \to \mathbb{R}$ satisfying convex union, additive, stability and homogeneity properties.
+where $f$ runs over all non-zero functionals $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying smoothing, smoothing, stability and homogeneity properties.
+\label{cor:Thurston}
 \end{corollary}
 \begin{proof}
 \[
-d_{\mathit{Thu}}(X,Y)=\sup_{f} \log \frac{f(X)}{f(Y)} = \sup_{\mu \in \mathcal{G}\mathcal{C}(S)} \log \frac{i(\mu,X)}{i(\mu,Y)} = \sup_{\lambda \in \ML(S)} \log \frac{i(\lambda,X)}{i(\lambda,Y)}
+d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq sup_{f} \log \frac{f(\Sigma)}{f(\Sigma')} = \sup_{\mu \in \mathcal{G}\mathcal{C}(S)} \log \frac{i(\mu,\Sigma)}{i(\mu,\Sigma')} = \sup_{\lambda \in \ML(S)} \log \frac{i(\lambda,\Sigma)}{i(\lambda,\Sigma')}
 \]
 The first equality follows by our Theorem~\ref{thm:intersect}, and the second equality follows because, by \cite[Theorem~8.5]{Thu98:MinimalStretch}, the distance is attained by a minimal stretch map, which dilates the hyperbolic lengths by the same bounded amount.
 \end{proof}
 
+By considering different families of continuous functionals $\mathcal{F}$ on geodesic currents over which we take the supremum in Corollary~\ref{cor:Thurston}, we can obtain new distances.
+A possible future question is the following.
 
+\begin{question}
 
-\subsection{New characterization of binding currents}
-
-A \emph{binding current} is a geodesic current with positive intersection number with all non-zero currents (which are not supported on lifts of boundary components, if we also work on surfaces with boundary).
-
-By \cite[Theorem~1.1]{BIPP17:StructureThmCurrents} and our Theorem \ref{thm:intersect}, it follows that
-
-\begin{corollary}
- A current is binding if and only if $f(\mu) \neq 0$ for all non-trivial functionals on multi-curves satisfying additivity, smoothing, stability and homogeneity properties.
-\end{corollary}\DMGtodo{I guess this is useful if you want to show a geodesic current is not filling. You can try to construct a non-zero functional satisfying the conditions where your current vanishes. In practice, I don't see how this would actually ever be useful... }
-
-\subsection{Anosov representations}
-\DMGtodo[inline]{Not sure about this part, related to section 3.1 comments }
-Let 
-\[
-\partial \Gamma^{[4]}\coloneqq\{(a,b,c,d) \in \partial \Gamma^{4}\colon \{ a,b \} \cap \{ c,d\}=\emptyset \}
+What is the distance given by
+ \[
+d_{\mathcal{F}}(\Sigma,\Sigma')=\sup_{f \in \mathcal{F}} \log \frac{f(\mathcal{L}_\Sigma)}{f(\mathcal{L}_{\Sigma'})}
 \]
+where $\mathcal{F}$ consists of positive functionals $f : \mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfying convex union, quasi-smoothing (for a fixed uniform quasi-smoothing constant), stability and homogeneity properties.
+ 
+\end{question}
 
-\begin{definition}
-  A cross-ratio is a continuous function $B\colon \Gamma^{[4]} \to \mathbb{R}$ invariant under the diagonal action of $\pi_1(S)$ and satisfying:
-  \begin{itemize}
-      \item (symmetry) $B(x,y,z,w)=B(z,w,x,y)$
-      \item (additivity) $B(x,y,z,w) + B(x,y,w,u)=B(x,y,z,u)$ for all $x,y,z,w,u \in \partial \Gamma$ such that $(x,y,z,w), (x,y,z,u) \in  \Gamma^{[4]}$
-  \end{itemize}
-\end{definition}
-We say that $B$ is \emph{positive} if for all $x,y,z,w$ in this cyclic order, we have $B(x,y,z,w) \geq 0$. \\
-Recall that if $c=[\gamma]$ we can define the length 
-\[
-  l_{\rho}^{\alpha}(c)=B_{\rho}^{\alpha}(\gamma^+,\gamma^-,z,\gamma(z)).
- \]
+By the formula above, each family of functionals $\mathcal{F}$ also gives a distance between currents.
+There are other natural notions of distances between measures, coming from the theory of optimal transport (e.g. Wasserstein metric).
+These can be adapted for geodesic currents. Are these two families of distances on geodesic currents related?
 
-The properties of cross ratio ensure this is well-defined.
-In \cite{MZ18:PositiveReps} it is shown that if $B_{\rho}^{\alpha}$ is positive, then there exists a unique
-geodesic current $\mu_{\rho}^{\alpha}$ so that $l_{\rho}^{\alpha}(c)=i(\mu_{\rho}^{\alpha},c)$. In particular, $l_{\rho}^{\alpha}$ extends to geodesic currents as an intersection number.
+\subsection{Positive cross-ratios and smoothing}
+\label{subsec:poscross}
+
+In \cite[Proposition~2.24]{MZ18:PositiveReps} define a cross-ratio $B_{\rho}^{\alpha}$ associated to  a projective Anosov representation $\rho$. Suppose $B_{\rho}^{\alpha}$  is a positive cross-ratio (recall Definition~\ref{def:poscrossratio}), Then there exists a unique
+geodesic current $\mu_{\rho}^{\alpha}$ so that $\ell_{\rho}^{\alpha}(c)=i(\mu_{\rho}^{\alpha},c)$. In particular, $l_{\rho}^{\alpha}$ extends to geodesic currents as an intersection number.
 We can give another characterization of positivity for cross-ratio in terms of the length function $l_{\rho}^{\alpha}$.
  
 \begin{proposition}
  $B_{\rho}^{\alpha}$ is positive if and only if $l_{\rho}^{\alpha}$ satisfies smoothing condition.
 \end{proposition}
 \begin{proof}
-From the above mentioned result in \cite{MZ18:PositiveReps}, the smoothing property follows. \\
-On the other hand, if $l_{\rho}^{\alpha}$ satisfies smoothing, since additive union is also clear for $l_{\rho}^{\alpha}$, then we just apply theorem \ref{thm:intersect}
+From the above mentioned result in \cite{MZ18:PositiveReps}, $l_{\rho}^{\alpha}$ is realized as an intersection number with a current, so the smoothing property follows. 
+On the other hand, suppose $l_{\rho}^{\alpha}$ satisfies smoothing, Stability follows by the additivity property of the cross-ratio. Additive union follows just by definition of $l_{\rho}^{\alpha}$ on weighted multi-curves, defined by extending linearly. Then we just apply theorem \ref{thm:intersect}
 to obtain a geodesic current $\mu_{\rho}^{\alpha}$. Finally, we define the cross-ratio 
 \[ 
 B_{\rho}^{\alpha}(a,b,c,d)\coloneqq \mu_{\rho}^{\alpha}([a,b)\times[c,d)).
 \]
 
-It obviously satisfies the properties of cross-ratio in \cite{MZ18:PositiveReps} because of the definition of geodesic current, and it's positive.
-
+It obviously satisfies the properties of cross-ratio: symmetry follows by flip invariance of geodesic currents and additivity of cross-ratio follows by additivity of geodesic currents. Positivity also follows. 
 \end{proof}
 
 
-\subsection{Inequalities between intersection numbers and convexity of paths}
-\DMGtodo{Directly copied from my research statement}
+\subsection{Inequalities between intersection numbers}
+\label{subsec:ineqintersection}
+
 Let $\mu_1,\mu_2 \in \mathcal{G}\mathcal{C}(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \mathcal{C}(\Sigma)$.
 We can use these extension results to study what intersection numbers dominating one curve over another imply about Liouville currents.
 
@@ -104,45 +104,10 @@ For example, we answer positively the following question at the end of \cite{NC0
 In fact, we have something much stronger
 
 \begin{corollary}
-If $C_2$ dominates $C_2$, then
-    $l_g(C_1) \leq l_g(C_2)$ for all metric lengths satisfying conditions of theorem \ref{thm:intersect} (not necessarily Riemannian) $g$ on $S$.
+If $C_2$ dominates $C_1$, then
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all metric lengths $g$ satisfying conditions of theorem \ref{thm:intersect} (not necessarily Riemannian).
 \end{corollary}
 \begin{comment}
 The answer follows by realizing the length as a geodesic current, approximating the current by weighted multi-curves and using continuity of intersection number on currents.
 \end{comment}
 
-Further, we can study convexity of functions along paths in Teichm\"uller space. This is important because it yields proofs of the \emph{Nielsen realization problem}, this is, every finite subgroup of the mapping class group of $S$ can be realized as a group of isometries on some hyperbolic metric.
-
-A path $(\mu_t)_{t \in \mathbb{R}}$ in $\mathcal{G}\mathcal{C}(S)$ is called \emph{convex} if $\frac{1}{2}i(\mu_t + \mu_s)$ dominates $\mu_{\frac{s+t}{2}}$.
-for all $s,t \in \mathbb{R}$.
-
-For example, $\mu_t$ could be a path of Liouville currents in $\Teich(S)$.
-If $\mu_t$ corresponds to a Teichm\"uller geodesic, then \cite[Example~22]{LR11:QuasiConvexityLengths} shows that $\mu_t$ is not convex.
-On the other hand, if $\mu_t$ corresponds to an earthquake path \cite[Theorem~1]{Ker83:EarthquakeNielsenProblem}, to a WP-geodesic \cite[Corollary~4.7]{Wol87:WPNielsenProblem}, or paths related to certain shearing coordinates (of which Fenchel-Nielsen coordinates are an example)
-\cite[Theorem~1.3]{BBFS13:ConvexityShearing}
-All these yield, as corollaries, proofs of the Nielsen realization theorem.
-
-We conjecture that
-
-\begin{conjecture}
-\label{thm:convexpath}
- Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R$ be a function defined on weighted multi-curves satisfying
- 
-      \begin{enumerate}
-     \item (convex union) Let $C_1$ and~$C_2$ be two curves
-    on~$S$. Then
-    \begin{equation*}\label{eq:additivity}
-      f(C_1 \cup C_2) \leq f(C_1) + f(C_2).
-    \end{equation*}
-    \item (smoothing) For any essential crossing,
-    \begin{equation*}\label{eq:smoothing}
-      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
-    \end{equation*}
-    \item (stability and homogeneity)
-   \begin{equation*} f(nC)=f(C^n)=nf(C) \end{equation*}
-     \end{enumerate}
-     
-     For any convex path of currents $\mu_t$ the function $t \mapsto f(\mu_t)$ is convex.
-\end{conjecture}
-
-We observe that if this conjecture was true, it would imply that square root of extremal length is a convex function along convex paths but as a function of the curve, not as a function on Teichm\"uller space.

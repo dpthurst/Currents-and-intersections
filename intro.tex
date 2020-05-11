@@ -1,56 +1,58 @@
 \section{Introduction}
 
-Geodesic currents are positive measures on the space of geodesics of a surface. They were first introduced by Bonahon in
-his seminal paper \cite{Bonahon88:GeodesicCurrent}. Perhaps their most interesting trait is that many metric
+
+ Perhaps the most interesting trait of geodesic currents is that many metric
 structures embed in the space of currents, such as
-hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
+hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent} or even
  negatively curved Riemannian metrics
-\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} (which in fact do so densely, according to \cite[Lemma~2.8]{Ham99:Cocycles}),
+\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}. In fact, the image of the embedding of negatively curved Riemannian metrics is dense, according to \cite[Lemma~2.8]{Ham99:Cocycles} and, furthermore, it consists of linearly independent vectors (as elements of the vector space of signed currents \cite[Theorem~2]{Glo19:Embedding}).
+
+Other examples of geometric structures embedding inside the space of geodesic currents are given by
 Croke-Fathi-Feldman for non-positively curved Riemannian metrics
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem},
 Hersonsky-Paulin \cite[Theorem~A]{HP97:RigidityNegCurvedCone} for
 negatively curved metrics with conical singularities,
-Duchin-Leininger-Rafi more explictly for singular Euclidean structures
-associated to quadratic differentials
-or half-translation structures
-\cite[Theorem~4]{DLR10:DegenerationFlatMetrics} and non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}. \DMGtodo{Read the definitions of each metric, I think DLR10 is subsumed in BL17 and/or HP97}.
-The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures, but it has also been used more generally for canonical geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
-The fundamental property that ties this Liouville currents to the geometric structure is the following.
-It turns out that weighted multi-curves on a surface embed in the space of geodesic currents \footnote{In fact, they embed densely and so one can see the space of geodesic currents as the closure of the space of weighted curves on a surface. See, for instance, \cite[Proposition~2]{Bonahon88:GeodesicCurrent}, although the result is standard in dynamical systems and follows by work of Kingmann. THIS FOOTNOTE SHOULD DISAPPEAR AND MAYBE PUT IT IN A SECTION WHERE WE TALK ABOUT RIGIDITY MORE PRECISELY}
-Previous work of Bonahon extended the notion of geometric intersection
-number as a continuous bilinear function of two geodesic currents
-\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. This
-allowed him to extend hyperbolic length to geodesic currents by
-following the principle of realizing it as an intersection number with
-a distinguished geodesic current
-\cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
-Similarly, other notions of length of curves $\ell_{\rho}$ associated to the above mentioned metric structures $\rho$ can be realized as intersection numbers with the corresponding Liouville current $\mathcal{L}_{\rho}$, this is
+Duchin-Leininger-Rafi more explictly, as a subcase of the last one, give an embedding for singular Euclidean structures
+associated to quadratic differentials/half-translation structures
+\cite[Theorem~4]{DLR10:DegenerationFlatMetrics} or Bankovic-Leininger non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}.
 
+Our work does not contribute in any way (at least not obviously) to the marked spectrum rigidity problem, and therefore, we will not expand on the details of these papers. We comment though on how geodesic currents play a role in the proof. For reader interested to know more on how to construct the geodesic currents for each case, we recommend the excellent exposition \cite[Section~5]{AL17:HyperbolicStructures}.
+
+The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. This metric structure is usually defined up to some equivalence -as happens, for example, for Teichm\"uller space (see Theorem~\ref{thm:teichembeds}.  Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures (see also Section~\ref{subsec:Liouville}), but the term has also been used more generally for the geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
+The fundamental property that ties these Liouville currents to the geometric structure is the following.
+As we saw in Theorem~\ref{thm:denseweighted}, weighted multi-curves on a surface embed in the space of geodesic currents.
+Also, we have seen in Subsection~\ref{sec:intersectioncurrents} the work of Bonahon that extends the notion of geometric intersection
+number as a continuous bilinear function the space of pairs of geodesic currents.
+ This allowed him to extend hyperbolic length to geodesic currents by
+following the principle of realizing it as an intersection number with
+a distinguished geodesic current (see ``length current'' in Subsection~\ref{subsec:Liouville}).
+Similarly, other notions of length of curves $\ell_{\rho}$ associated to the above mentioned metric structures $\rho$ can be realized as intersection numbers with the corresponding Liouville current $\mathcal{L}_{\rho}$, this is
 \[
   i(\mathcal{L}_{\rho},C)=\ell_{\rho}(C)
 \]
-
 for any closed multi-curve $C$ in $S$. 
 Erlandsson shows that word-length with respect to simple generating sets of
 the fundamental group can also be realized as an intersection number with a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
-Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \mathbb{R}^{\mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
-On the other hand, by Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} a geodesic current is uniquely determined by its intersection numbers with closed curves.
-Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the \emph{rigidity problem}: is a family of metric structures determined by its marked length spectrum? \\
-By the discussion above, this is equivalent to the problem: is the assignment $\rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
+Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$. We have seen in Subsection~\ref{thm:intersectioncurves} that 
+Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the \emph{marked spectrum rigidity problem}
 
-As we have pointed out at the beginning, this problem has been solved for several metric structures.
+\begin{problem}
+Given a space of metric structures $\mathcal{D}$ on $S$ (up to some relation), and $\rho \in \mathcal{D}$,
+is $\rho$ uniquely determined by $\Lambda_{\rho}$?
+\end{problem}
+By the discussion above, this is equivalent to the problem:
 
-We leave the following (to our knowledge) open question:
+\begin{problem} 
+Let $\mathcal{D}$ be space of metric structures on $S$. Is the assignment $\mathcal{D} \to \GC(S), \rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
+\end{problem}
 
-\begin{question}
-Is Erlandsson's assignment of a Liouville current to word-length an embedding?
-\end{question}
-
-Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
-In this paper we consider the following question.
+As we have pointed out above, this problem has been solved for several types of metric structures. In fact, for negatively curved Riemannian metrics, recent work of Noelle Sawyer shows that one does not even need to consider all the marked length spectrum to determine the metric: it is determined up to ignoring any subset of closed geodesics for which the asymptotics of the counting problem are subexponential (see Chapter~\ref{chap:counting}). So, for example, one can throw out all simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type.
+Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is then: is there a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$?
+More generally, we consider the following question.
 
 \begin{question}\label{q:intersection}
-Under which conditions can a function $f :\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ be realized as an intersection number with a fixed geodesic current?
+Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
+Under which conditions can a functional on curves $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ be realized as an intersection number with a fixed geodesic current?
 \end{question}
 
 
@@ -58,7 +60,7 @@ Feng Luo considered the version of this question for measured laminations, which
 Jeffrey Frazier asks Question \ref{q:intersection} and remarks how relevant it is for the study of spectral rigidity problems \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
 
 \subsection{Main results}
-\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
+%\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
 \begin{definition}\label{def:properties}
   Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves. In the following, we define several properties that $f$ might satisfy.
 
@@ -110,38 +112,42 @@ Note that, if $f$ satisfies smoothing, then $f(nC) \le f(C^n)$.
 The stability and homogeneity conditions mean that these two inequalities are
 equalities, respectively.
 
-The four conditions of smoothing, additivity, stability and homogeneity are obviously necessary conditions for a function satisfying the property of Question~\ref{q:intersection}.
+
+The four conditions of smoothing, additivity, stability and homogeneity are obviously necessary conditions for a functional on curves satisfying the property of Question~\ref{q:intersection}.
 Indeed, stability is needed for any such extension to be well-defined, since by definition of geodesic current, $C^n$ and $nC$ are represented by the same current.
 On the other hand, homogeneity, additivity and smoothing are obviously satisfied by intersection number w.r.t a given current.
 
-A functional satisfying additivity/convexity and smoothing can be upgraded to a functional that moreover satisfies stability and homogeneity (see \cite[Theorem~B]{MGT19:CurvesToCurrents}).
-
-Many natural notions of length do satisfy all these four properties, and they have been shown to extend continuously to geodesic currents as intersection numbers.
+Many natural notions of length do satisfy all these four properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We have talked about some of them in Section~\ref{sec:examples}, but we list them, along with the appropriate references.
 
 \begin{enumerate}
-   \item Intersection number with a fixed geodesic current. See \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}.\DMGtodo{In this paragraph would be better to cite the exact results where they show property of Liouville current, instead of injectivity of assignment.}
+   \item Intersection number with a fixed geodesic current. See \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}.%\DMGtodo{In this paragraph would be better to cite the exact results where they show property of Liouville current, instead of injectivity of assignment.}
     \item Hyperbolic lengths  \cite[Theorem~12]{Bonahon88:GeodesicCurrent}.
     \item More generally, length w.r.t. negatively curved Riemannian metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} 
     \item Even more generally, non-positively curved Riemannian metrics
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
-\item Lengths w.r.t singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}
-\item More generally, lengths w.r.t. negatively curved  metrics with conical singularities \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
-\item Even more generally, non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}.
-    \item word length w.r.t. simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
+\item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}
+\item More generally, lengths with respect to negatively curved  metrics with conical singularities \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
+\item Even more generally, non-positively curved Euclidean cone metrics \cite[Proposition~3.3]{BL17:RigidityFlat}.
+    \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
     \item Translation lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
 \end{enumerate}
 
-
-
-Not all functions on curves satisfy these conditions. 
-
+The cited results cited above show the following properties for these currents:
 \begin{enumerate}
-    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, it does not satisfy additive union (see \cite[Section~3.8]{MGT19:CurvesToCurrents}). 
-    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity, it does not always satisfy smoothing (see \cite[Example~3.7]{MGT19:CurvesToCurrents}). 
-    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity (see \cite[Example~1.5]{MGT19:CurvesToCurrents}).
+    \item They have full support, except for the ones for conical metrics (for this exception, see, for example, \cite[Proposition~3.3]{Frazier12:SpectralRigidity}). In fact, the support of the geodesic current plays a key role for the rigidity result in non-positively curved Euclidean cone metrics (one can discern these metric structures by just looking at the support of its Liouville current \cite[Support~rigidity~theorem]{DELS18:ShapeBilliard}).
+    \item They are filling currents. Indeed, any full support geodesic current is filling. The conical metric exceptions above are also filling since, for example, conical lengths are Lipschitz equivalent to the hyperbolic length, and therefore lower bounded by a multiple of the hyperbolic length, which is positive for any geodesic current.
+    \item For each $T>0$, the set $\{ C \in \mathcal{C}(S) \bigm\vert \ell_{\rho}(C) \leq T\}$ is finite. This follows since the associated current is filling, and thus the $\ell_{\rho}$ is a positive, homogeneous and continuous function on currents. One can then use Corollary~\ref{cor:periodminimizing}.
 \end{enumerate}
 
-It is natural to ask which additional conditions one needs to impose to a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
+On the other hand, not all functions on curves satisfy the smoothing, additivity, homogeneity and stability conditions. 
+
+\begin{enumerate}
+    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see Section~ \ref{sec:extremal-length}).
+    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see Example~\ref{ex:puncturedtorus}). The stabilized version does not always satisfy smoothing, either (see the same example and also Theorem~\ref{thm:stable}).
+    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see Example~\ref{ex:selfintersection}).
+\end{enumerate}
+
+In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
 
 It turns out that one doesn't need more conditions.
 
@@ -149,23 +155,29 @@ It turns out that one doesn't need more conditions.
  Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves satisfying smoothing, additive union, homogeneity and stabilty properties. Then there exists a unique geodesic current $\mu_f$ such that the extension $\wt{f}\colon \mathcal{GC}(S) \to \mathbb{R}$ satisfies $\wt{f}(\alpha)=i(\alpha,\mu_f)$.
 \end{theorem}
 
-As immediate applications
+This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions.
+
+As immediate applications, we will obtain the following (see Section~\ref{sec:appsintersection}):
 
 \begin{enumerate}
-    \item A new definition of geodesic currents as functionals on curves. \DMGtodo[inline]{write a section about this in apps, where I talk about From curves to currents, and maybe say something about signed-currents and our discussions with Francisco.}
-    \item Continuous extension of arbitrary Riemannian metric (note that a continuous extension of this was given by \cite[Theorem~1.5]{EPS:CountingCurves}, and also by the authors of the current paper in \cite[Theorem~A]{MGT19:CurvesToCurrents}). Even more, we give a continuous extension for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metrics is not the long-term behavior of a random geodesic. For instance, if $\rho$
+    \item A new definition of geodesic currents on surfaces as functionals on curves. 
+    \item By our Theorem~\ref{thm:convex} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see Theorem~\ref{thm:contintersect}).
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}.  However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic (see Random current~\ref{subsec:Liouville}). For instance, if $\rho$
 has positive curvature, there may be an open set of Riemannian geodesics
 on~$\Sigma$ that stay inside a contractible set and so are not
 quasi-geodesic on~$\wt \Sigma$.
 \end{enumerate}
 
+
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-We thank Francisco Arana, Kasra Rafi and Tengren Zhang for helpful conversations.
 The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship.
 The second author was supported by the National Science
 Foundation under Grant Number DMS-1507244.
+
+
+
 
 
 

@@ -1,158 +1,83 @@
-\section{Proof}
-
-\subsection{Boxes form a semi-ring}
-
-\begin{proposition}\label{prop:RHsemiring}
-For fixed $x$, the right handed rectangles $B_{x,a,b,c,d}$ form a semi-ring.
-\end{proposition}
-\begin{proof}
-Show finite additivity by using whiskers argument. Idea:
- Induction on the number of vertical+horizontal
-coordinates that appear. Look at any vertical division that reaches
-the upper boundary. If there isn't one, there's a rectangle that
-reaches clear across the top; remove that rectangle, by induction
-build up the rest using side-by-side additivity, and then add that
-missing rectangle.
-
-Otherwise, divide the entire collection of rectangles at the location
-of that vertical division. (This is possible, since this is the
-correct direction for the whisker.) By induction, build up each half
-by side-by-side additivity, and then attach the two sides together.
-\end{proof}
-
-From now on, let's denote the semiring by $\mathcal{S}$.
-
-\subsection{$\mu_{\nu}$ is a measure}
+\subsection{$\mu_{f}$ is a pre-measure on boxes}
 
 This is the heart of the proof. Here we show that all the necessary hypothesis are satisfied to apply Theorem~\ref{thm:caratheodory}.
-
-\subsubsection{Preliminar lemmas}
-
-To prove useful facts about this $\mu_{\nu}$, we need some preliminar lemmas.
-
-\begin{lemma}\label{lem:join-split-geom}
-  If $a$ and $b$ cross $x$ to the right, then there is an integer $k$
-  so that, for all $n,m,r$ with either $0 < r < m-n+k$ or $0 > r > m-n+k$,
-  \begin{align*}
-    [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
-    [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
-  \end{align*}
-\end{lemma}
-
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{abcrossings}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{case1}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{case2}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{ablifts}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{abliftsbands}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-
-
-\begin{proof}
-  Use the band model, centered on~$x$.
-  Number the windows on top and bottom (cut out by other lifts of~$x$)
-  with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
-  top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
-  of~$b$ connect top window~$\ell$ to bottom window $\ell+k$.
-  See Figure~\ref{fig:abliftsfirst}.
-  
-  \begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{abliftsfirst}}
-\caption{}
-\label{fig:abliftsfirst}
-}
-\end{figure}
-
-  For the first reduction, note
-  lifts of $a x^n$ connect windows with a shift of~$n$, and
-  similarly lifts of $b x^m$ connect windows with a shift of $k+m$.
-  Choose a lift of $a x^n$ that connects window $0$ to window~$n$,
-  and choose a lift of $b x^m$ that connects window $n+r-k-m$ to
-  window $n+r$. Smoothing gives the desired reduction.
-
-  Other reduction is similar, instead choosing two different lifts of
-  $a x^n b x^m$.
-  
-  See DPT notes \texttt{2018-03-01 \#1} (but it's not written up very
-  cleanly there).
-\end{proof}
 
 \begin{proposition}\label{prop:join-split-alg}
   If $a$ and $b$ cross $x$ to the right, then
   \[
-    \lim_{n,m\to \infty} v(a x^n b x^m) - v(ax^n) - v(bx^m) = 0.
+    \lim_{n,m\to \infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m]) = 0.
   \]
 \end{proposition}
 \begin{proof}
   Let $k$ be the value from Lemma~\ref{lem:join-split-geom} for $a$ and
-  $b$. Then, by that Lemma,
+  $b$. Then, by that Lemma, for any $l>0$,
   \[
-    v(a x^n) + v(b x^{n+k+4}) \ge v(a x^{n+1} b x^{n+k+3})
-      \ge v(a x^{n+2}) + v(b x^{n+k+2}).
+    f([a x^n]) + f([b x^{n+k+l+2}]) \ge f([a x^{n+1} b x^{n+k+l+1}])
+      \ge f([a x^{n+2}]) + f([b x^{n+k+l}]).
   \]
-  In particular,
-  $\lim_{n \to \infty} v(a x^n b x^{n+k+2}) - v(x^{2n+k+2})$ exists
-  (and equals what it is supposed to equal).
-
-  Muck around a little to show that the limit exists in general.
+  In particular, for any $l$, we have
+  $\lim_{n \to \infty} f([a x^n b x^{n+k+l}]) -  f([x^{2n+k+l}])$ exists and is equal to
+  $\lim_{n \to \infty} f([a x^n]) + f([b x^{n+k+l}]) -  f([x^{2n+k+l}])$.
+  This proves the statement.
 \end{proof}
 
-\subsubsection{$\mu_{\nu}$ is well-defined}
+\subsubsection{$\mu_{f}$ is non-negative}
 
 \begin{proposition}
-  The limit defining $\mu_{v}(B_{a,b,c,d,x})$ exists and is positive.
-\end{proposition}
+  For a box $B\in \mathcal{B}$, we have $\mu_f(B) \geq 0$.
+  \label{prop:positivity}
+  \end{proposition}
 
 \begin{proof}
   Existence is clear from Corollary~\ref{cor:additivity-limit}.
 
-  For positivity, show that $[b x^n c x^m] \reducesto [a x^m][d x^n]$.
-  Apply Proposition~\ref{prop:join-split-alg}.
+  For positivity, we will to show that $[b x^n] \cup [c x^n] \reducesto [a x^nd x^n]$.
+  We fix the path $ca^{-1}bx^nac^{-1}$ in the conjugacy class $[bx^n]$, based at the same basepoint as the path $cx^n$.
+  By Definition~\ref{def:righthandeddreamcatcher}, item (3), the lifts of these paths to $\tilde{\Sigma}$ are linked for $n$ large enough.
+  
+  As a clarification point, we point out that in general, the ``large enough'' is a necessary condition. 
+ Consider  Figure~\ref{fig:nestedpositivity} item a) shows, $[bx^n]$ and $[cx^n]$ might not cross. However, for sufficiently large $n$, the $[b x^n]$ and $[c x^n]$ will cross, as item b) suggests. To prove it, consider the bands model centered at the outer most nested lift of $x$, as in item c). For sufficiently large $n$, it's clear that $[b x^n]$ and $[c x^n]$ cross each other.
+ There are some configurations of boxes, such as Type 1, Figure~\ref{fig:rhbox}, where the crossing is essential without passing to large $n$.
+ 
+ In any case, there is an essential crossing between $[bx^n]$ and $[cx^n]$ that we can resolve.
+  We thus get
+  \[
+     [bx^n][cx^n] = [ca^{-1}bx^nac^{-1}][cx^n] \searrow [ca^{-1}bx^nac^{-1}cx^n] = [dx^nax^n]
+  \]  
+  where in the first equality we used conjugay of paths, in the second step we applied a smoothing to the essential crossing, and in the last equality we used item (2) in  Definition~\ref{def:righthandeddreamcatcher}.
+  
+   Thus, by smoothing property of $f$, we obtain
+\[
+f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
+\]
+  
+  Finally, by Proposition~\ref{prop:join-split-alg}, and taking limit $n \to \infty$, we obtain
+  
+  \[
+  \mu_f(B_{p,q,r,s}) \geq 0. \qedhere
+  \]
+  
+
+ \begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{nestedpositivity}}
+\caption{$\mu_f$ is non-negative on right-handed boxes. By definition, the fact that $[bx^n]$ and $[cx^n]$ have a right-handed crossing for large $n$, gives non-negativity. Taking $n$ large might be necessary. Item a) shows one configuration of lifts where it is necessary, where for low values of $n$ there is no crossing. Item b) shows that for $n$ large we obtain a right-handed crossing. Item c) shows a figure of the bands model centered at one of the lifts of $x$, and showing how the crossing between the chosen lifts of $[bx^n]$ and $[cx^n]$ cross essentially.}
+\label{fig:nestedpositivity}
+}
+  \end{figure}
 \end{proof}
 
-\subsubsection{$\mu_{\nu}$ is side-by-side additive}
+\subsubsection{$\mu_f$ is side-by-side additive and finitely additive}
 
-We will address additivity of $\mu_v$ more later, but for now we prove
-one easy case.
+First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
 
 \begin{proposition}
-  If two boxes $B_1$ and $B_2$ fit together side-by-side, then
-  $\mu_v(B_1 \cup B_2) = \mu_v(B_1) + \mu_v(B_2)$.
+  If two boxes $B_1$ and $B_2$ fit together side-by-side (as in Figure~\ref{fig:finiteadditivity}), then
+  \begin{enumerate}
+      \item $B_1 \cup B_2$ is a box.
+      \item $\mu_f(B_1 \cup B_2) = \mu_f(B_1) + \mu_f(B_2)$
+  \end{enumerate}
+  \label{prop:sidebyside}
 \end{proposition}
 
 \begin{proof}
@@ -163,73 +88,112 @@ one easy case.
     B_2 &= (q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2)\\
     B_1 \cup B_2 &= (q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2).
   \end{align*}
-  Additivity follows immediately from the formula (see Figure~\ref{fig:finiteadditivity}).
-  
+  From this formula both items of the proposition follow immediately by the definition of $\mu_f$. \qedhere
+
   \begin{figure}
 \centering{
-\resizebox{120mm}{!}{\svgfig{finiteadditivity}}
+\resizebox{80mm}{!}{\svgfig{finiteadditivity}}
 \caption{Illustration of side-by-side additivity for boxes}
 \label{fig:finiteadditivity}
 }
 \end{figure}
 \end{proof}
 
+Now, we show that this in fact implies that $\mu_f$ is finitely additive.
 
 \begin{proposition}
-The right handed rectangles $B_{a,b,c,d,x}$ form a semi-ring.
+\label{prop:RHsemiring}
+The right handed boxes $B_{a,b,c,d,\tilde{x}}$ form a semi-ring and $\mu_f$ is finitely additive.
 \end{proposition}
 
-(Proof is showing more: that we only need side-by-side additivity.
-What's the term for that?)
-
 \begin{proof}
-Intersection of boxes is a box.
-If $A,B$ are boxes, $A - B$ is a union of boxes. Idea: subdivide and induction on the number of vertical+horizontal
-coordinates that appear. Look at any vertical division whose whisker
-reaches
-the upper boundary. If there isn't one, there's a rectangle that
-reaches clear across the top; remove that rectangle, by induction
-build up the rest using side-by-side additivity, and then add that
-missing rectangle.
+The intersection of boxes is obviously a box.
+We show that if $A,B$ are boxes, then $A - B$ is a finite union of boxes.
+\begin{comment}There are at least two ways to see this.
 
-Otherwise, divide the entire collection of rectangles at the location
-of that vertical division. (This is possible, since this is the
-correct direction for the whisker.) By induction, build up each half
+\begin{enumerate} \item One is by induction on the number of vertical and horizontal divisions.
+Look at any vertical division whose whisker
+reaches
+the upper boundary. There are two cases:
+\begin{itemize} \item If there isn't any, then here's a rectangle that
+reaches clear across the top; remove that rectangle, and by induction on the number of horizontal divisions,
+build up the rest using side-by-side additivity on the lower region, and then add that
+missing rectangle.
+\item Otherwise, that is, if there is such a division, divide the entire collection of rectangles at the location
+of that vertical division (by taking a longer vertical whisker. By induction, build up each half
 by side-by-side additivity, and then attach the two sides together.
+\end{itemize}
+
+\item
+
+\end{enumerate}
+
+\end{comment}
+
+Given an element $x \in \pi_1(S,*)$ corresponding to a simple closed curve, a choice of geodesic lift $\tilde{x}$ with endpoints $x^{+}$ and $x^{-}$ and an arbitrary element $a \in \pi_1(S,*)$, we can determine a \emph{whisker}, a half-closed half-open segment $G(\Sigma)$, as follows. The whisker is a vertical segment in the space $G(\Sigma)$ with horizontal coordinate determined by $a \cdot x^{+}$ and vertical span given by the complement of $[a \cdot x^{-},a \cdot x^{+})$, as in Figure~\ref{fig:whiskers}.
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{originwhiskers}}
+\caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
+\label{fig:whiskers}
+}
+\end{figure}
+
+\begin{figure}
+\centering{
+\resizebox{150mm}{!}{\svgfig{originwhiskers2}}
+\caption{Example of correspondence between right-handex boxes and collections of four whiskers}
+\label{fig:whiskers2}
+}
+\end{figure}
+
+Notice that the basepoints of whiskers correspond to startpoints/endpoints of lifts of a closed geodesic in $\tilde{\Sigma}$, and they are dense by Proposition~\ref{prop:fundminimal}. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
+\begin{figure}
+\centering{
+\resizebox{40mm}{!}{\svgfig{breakingup}}
+\caption{Breaking up a union of boxes into a finer collection of boxes where we can apply side-by-side additivity. We use vertical and horizontal whiskers. Density of whiskers allow us to cut the boxes by using as many vertical and horizontal whiskers as needed.}
+\label{fig:breaking}
+}
+\end{figure}
 \end{proof}
 
+From now on, let's denote the semiring by $\mathcal{S}$.
 Let $\mathcal{R}$ be the ring generated by $\mathcal{S}$.
-By Propositon~\ref{prop:addsemitoring}, $\mu_{\nu}$ is a finitely additive function.
+By Propositon~\ref{prop:addsemitoring}, $\mu_{f}$ is a finitely additive function.
 
 
-\subsection{$\mu_{\nu}$ is countable additivity}
+\subsection{$\mu_{f}$ countably additive}
 \label{sec:countable-additivity}
 
-We prove countable additivity of the function $\mu_{\nu}$ by constructing a final family.
+We prove countable additivity of the function $\mu_{f}$ by constructing a final family (recall Definition~\ref{def:finalfamily}).
 
-
-\begin{proposition}[Final family]
-
-For $a,b,e$ crossing $x$ to the right, define a family
+\begin{proposition}
+For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, define a family of sequences of orbit of boxes
 \[
-  F_{a,b,e} = \bigl(B_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty
+\bigl([B]_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty.
+\]
+
+By further fixing a choice of lift $\tilde{x}$ of $x$,  each fixed datum $(a,bx^ke,c,dx^k e)$ determines a sequence of boxes
+
+\[
+  (F_{a,b,e,\tilde{x}}(k))_{k=1,\cdots,\infty}
 \]
 
 See Figure~\ref{fig:finalfamily} for an illustration.
 \begin{figure}
 \centering{
-\resizebox{120mm}{!}{\svgfig{finalfamily}}
+\resizebox{80mm}{!}{\svgfig{finalfamily}}
 \caption{Box representing an element of the final family $F_{a,b,e}$. Here $e=Ab=Cd$.}
 \label{fig:finalfamily}
 }
 \end{figure}
 
 \begin{itemize}
-\item $F_{a,b,e}$ is nested
-\item $\lim_{k \to \infty} \mu_v(F_{a,b,e}(k)) = 0$.
-\item $F_{a,b,e}$ is final.
+\item For a fixed lift $\tilde{x}$ and fixed $a,b,e$, the sequence $F_{a,b,e,\tilde{x}}$ is a sequence of nested elements.
+\item For a fixed lift $\tilde{x}$ and for fixed $a,b,e$, we have $\lim_{k \to \infty} \mu_v(F_{a,b,e, \tilde{x}}(k)) = 0$.
 \end{itemize}
-\label{prop:finalfamily}
+\label{prop:finalfamily1}
 \end{proposition}
 \begin{proof}
 We prove each one of the items:
@@ -237,95 +201,190 @@ We prove each one of the items:
     \item Obvious by construction.
     \item 
     We want to show
-
-
 \[
-\lim_{k \to \infty} \nu(F_{a,b,e}(k))=\lim_{k \to \infty} \lim_{n,m \to \infty} \nu(ax^kex^ncx^m)-\nu(ax^n)-\nu(cx^kex^m)=0
+\lim_{k \to \infty} f(F_{a,b,e}(k))=\lim_{k \to \infty} \lim_{n,m \to \infty} f([ax^kex^ncx^m])-f([ax^n])-f([cx^kex^m])=0
 \]
-    
     By Proposition~\ref{prop:join-split-alg}, the limit in question is equivalent to the same limit for the expression
-    
-   \begin{align*}
-       \nu(ax^k) - \nu(x^k) + & \nu(ex^n) - \nu(x^n) + \nu(cx^m) - \nu(x^m) \\
-       &- (\nu(ax^n) - \nu(x^n)) - (\nu(cx^k)-\nu(x^k)) - (\nu(ex^m)-\nu(x^m))
+    \begin{align*}
+       f([ax^k]) - f([x^k]) + & f([ex^n]) - f([x^n]) + f([cx^m]) - f([x^m]) \\
+       &- (f([ax^n]) - f([x^n])) - (f([cx^k])-f([x^k])) - (f([ex^m])-f([x^m]))
     \end{align*}
-    Since the order of limits doesn't matter, the claim follows.
+    Since the order of limits doesn't matter, the claim follows by Corollary~\ref{cor:additivity-limit}.\qedhere
     
-    
-    \item Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of elements of $\mathcal{R}$ with empty intersection. By definition of ring, for each $i$, we can write
-    
-    \[
-        R_i = \cup_{j=1}^{n_i} B^i_{a_j,b_j,c_j,d_j}
-    \]
-    where the sets in the union are pairwise disjoint.
-    Since we are assuming the intersection of the $R_i$ is empty, and $B^i_{a_j,b_j,c_j,d_j}$ are products of half-open intervals, the boxes $B^i_j=[p^i_j,q^i_j) \times [r^i_j,s^i_j)$ must be focusing in the open endpoints. Therefore, there exists some $N$ so that for all $i \geq N$, $p_i<p_{i+1}$ and $r_i<r_{i+1}$.
-    Consider a choice of $a,b,e$ so that the two open endpoints of $F_{a,b,e}$ are fixed at $q_N,s_N$ and one of the closed endpoints is fixed to $r_N$. We let the other closed endpoint $p_N$ vary.  See Figure~\ref{fig:nestedhalfopen}.
-    We can write $F_{a,b,e}(k)$ as a box of type $[p_k,q_{k}) \times [r_{k},s_{k})$. At each level $i$, the boxes $B^i_j$ focus on open endpoints. Thus, there exists $i$ so that for all $j$, $p^i_j>p_k$ and $r^i_j >r_k$.
-     Let $X = \bigcap_i \overline{R_i}$, so that $X$ is non-empty and
-compact.
-
-For each $x \in X$, there is some $i$ so that $x \in \overline{R_i} - R_i$,
-i.e., it is on the left or bottom edge of some box and not contained
-in anything else in $R_i$. Then there is an open neighborhood $U_x$ of $x$
-so that $X \cap U_x$ is contained in a horizontal or vertical line.
-
-By compactness, finitely many such $U_x$ cover $X$, and thus $X$ is
-contained in finitely many horizontal or vertical lines.
-
-It thus suffices to consider a finite union of final boxes $(F^i_{a,b,e})_{j=1}^N$ where $(F^i_{a,b,e})_{j+1} \subset (F^i_{a,b,e})_j$.
-
-
-\begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{finiteadditivity}}
-\caption{Finite additivity whiskers.}
-\label{fig:limitingbox}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{countable_additivity_whiskers}}
-\caption{Countable}
-\label{fig:limitingbox}
-}
-\end{figure}
-    
-\begin{figure}
-\centering{
-\resizebox{50mm}{!}{\svgfig{nestedhalfopen}}
-\caption{Nested half-open boxes.}
-\label{fig:nestedhalfopen}
-}
-\end{figure}
-
-
     \end{itemize}
 \end{proof}
-Sketch:
-\begin{enumerate}
-\item  By Theorem~\ref{thm:caratheodory}, $\mu_{\nu}$ is a measure on the $\sigma$-ring of right-handed boxes $B_{x,a,b,c,d}$
-\item Boxes have dense endpoints, so any other box of geodesics can be approximated.
-\item From this follows outer and inner regularity, also locally finite is by construction, so $\mu_{\nu}$ is a Radon measure.
-\item By construction $\mu_{\nu}$ is $\pi_1(S,*)$-invariant.
-\item $\mu_{\nu}$ is therefore a geodesic current.
-\end{enumerate}
 
-\subsection{$\mu_{\nu}$ recovers $\nu$ on curves}
+Now, we show that this subset of boxes we have described forms a final family.
+
+\begin{proposition}
+The collection $\{ F_{a,b,e,\tilde{x}} \mid a,b,e \in \pi_1(S) \mbox{ crossing } x \mbox{ to the right } \}$ is a final family in the sense of Definition~\ref{def:finalfamily}.
+\label{prop:finalfamily2}
+\end{proposition}
+    
+    \begin{proof}
+    Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of elements of $\mathcal{R}$ with empty intersection. For simplicity, assume first $R_i=B^i$ for some right handed box $B^i_{p^i,q^j,r^j,s^j}=[x^i,y^i) \times [z^i,w^i)$. Let $X \coloneqq \cap \overline{R_i} \neq \emptyset$, Since we are assuming the intersection of the $R_i$ is empty, if $x \in X$, then $x$ must be on the upper or right edge of the boxes $\overline{B^i}$ for all $i \geq i_0$, for some $i_0$.
+    It suffices then to take the sequence of final boxes $F_{a^j,b^j,C^jd^j}(k)=[p^i,q^i) \times [r^i,s^i_k)$, where only the endpoint $s^i_k$ depends on $k$. This vacuously satisfies the condition of final family for the sequence $R_i$.
+    
+    In general, however, by definition of ring, for each $i$, each $R_i$ will be a disjoint union of boxes
+    \[
+        R_i = \cup_{j=1}^{n_i} B^i_j
+    \]
+    where the sets $B^i_j$ in the union are pairwise disjoint.
+    We can take for each $B^i_j$ the same family as above. However, the number of necessary total final sequences might increase with $i$. To show that  a finite number of final sequences $(F^i_{a_i,b_i,e_i,\tilde{x}})$ suffice, let $X = \bigcap_i \overline{R_i}$, so that $X$ is non-empty and
+compact. For each $x \in X$, there is some $i$ so that $x \in \overline{R_i} - R_i$,
+i.e., it is on the upper or right edge of some box $\bar{B^i_j}$. Then there is an open neighborhood $U_x$ of $x$
+so that $X \cap U_x$ is contained in a horizontal or vertical line.
+By compactness, finitely many such $U_x$ cover $X$, and thus $X$ is
+contained in finitely many horizontal or vertical lines. \qedhere
+
+
+\begin{figure}
+\centering{
+\resizebox{40mm}{!}{\svgfig{countable_additivity_whiskers}}
+\caption{Figure of set $X$ in the proof countable subbadditivity. The M\"obius strip is broken up into nested sequences of boxes $B_i^j$ which accumulate into $X$, marked in red in the picture.}
+\label{fig:limitingbox}
+}
+\end{figure}
+\end{proof}
+
+We now put everything together to show that $\mu_f$ is a geodesic current.
+
+\begin{proposition}
+Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfying additivity, smoothing, stability and homogeneity.
+Then $\mu_f$ is a geodesic current.
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring} and Propositions~\ref{prop:finalfamily1} and~\ref{prop:finalfamily2}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
+Therefore, by Caratheodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$. By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant.  From this it follows the measure $\mu_f$ is Borel. Furthermore, $\mu_f$ is locally finite by construction. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
+We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain an unoriented geodesic current, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
+\[
+i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
+\]
+The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
+Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedhere
+\end{proof}
+
+\subsection{$\mu_{f}$ recovers $f$ on curves}
 \label{sec:recovery}
+
+It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
 \begin{proposition}
 For $C$ a closed curve, we have
 \[
-i(\mu_{\nu},C)=\nu(C).
+i(\mu_f,C)=f(C).
 \]
+\label{prop:recoverintersection}
 \end{proposition}
 \begin{proof}
+First we will show that we can use boxes of the type $B_{a,b,c,d,\tilde{x}}$ to construct a window containing a unique lift of every geodesic intersecting $C=[y]$ transversally, for $y \in \pi_1(S,*)$.
+Second, we'll show that computing intersection number of that fundamental domain yields the same value as $f([y])$.
+\begin{enumerate}
+    \item We take a basepoint $*$ on of the lifts of $x$. Let $p \in \pi_1(S,*)$ be sending a point $*'$ in a lift of $C$ to the basepoint $*$, and $q$ an element sending $*'$ to the translate of the basepoint $*$ in another lift of $x$, in such a way that the element $pq$ translates from one lift of $x$ to the other.
+    Using the box notation $(p,q,r,s)$, we consider, for each $n$, the boxes associated to
+    
+    \[
+      (p_n,q_n,r_n,s_n) \coloneqq (p,Y^nq,yp,y^{n+1}r)
+    \]
+    
+    See Figure~\ref{fig:recwindow}.
+    
+           \begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{rec_window1}}
+\caption{Coniguration of lifts and elements of $\pi_1(S)$ used to approximate a fundamental domain of the action on $G(\Sigma)$ for a given curve $C=[y]$.}
+\label{fig:recwindow}
+}
+\end{figure}
+    
+    This determines, for each $n$, boxes of geodesics whose startpoints are confined in a fixed interval between the startpoints of two lifts of $x$ differing by a translate by $y$, and the endpoints are contained in interval growing as a function of $n$, with endpoints converging to the endpoints of a lift of $[y]$.
+    
+    Note that, in the dreamcatcher format $(a,b,c,d)$ it is given by
+    \[
+      (a_n,b_n,c_n,d_n) \coloneqq (py^nq, pY^{n+1}q,py^{n+1}r,pY^nq)
+    \]
+    
+    here we are using $y$ as the element $\pi_1(S,*)$ with red axis in Figure~\ref{fig:recwindow}.
+    Capital $Y$ letter means the inverse of $y$.
+    \item 
+    \begin{comment}
+    \begin{proposition}
+       Let $x$ be the element of $\pi_1(S,*)$ corresponding to a lift of some simple closed curve, $y$ any lift of the closed curve $C$. Let $p,q \in \pi_1(S,*)$ as in Figure~\ref{fig:dreamcatcher}.
+       Then,
+       
+       \[
+         f(C)  =  i(\mu_f,C) \lim_{n_1,n_2} \lim_{m_1,m_2} \frac{1}{2} \left(f([py^{n_1+1}rx^{m_1}][py^{-n_2-1}qx^{m_2}])-f([py^{n_1}rx^{m_1}][py^{-n_2}qx^{m_2}]) \right)
+       \]
+           \end{proposition}
+       \end{comment}
+       
+       \begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{dreamcatcher}}
+\caption{Configuration of lifts showing that intersection number with $\mu_f$ is defined by a limit of right handed boxes.}
+\label{fig:dreamcatcher}
+}
+\end{figure}
+       
 
+       
+       
+
+    
+    Note that by Proposition~\ref{prop:intersectioncurrentclosed}, we have
+    
+    \[
+       i(\mu_f,C) = \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-))
+    \] 
+    
+    Observe that by the above discussion
+    
+    \begin{align*}
+    \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
+    &= \lim_{n} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,pY^nq})  \\
+    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}rx^{m}][pY^{n+1}qx^{m}])-f([py^{n}rx^{m}][pY^{n}qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}]) + f([rx^{m}]) + f([pY^{n+1}]) + f([qx^{m}])\\
+    &-f([py^{n}]) - f([rx^{m}]) - f([pY^{n}]) - f([qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}]) +  f([pY^{n+1}]) -f([py^{n}]) - f([pY^{n}])  \\
+    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
+    &+ f([pY^{n+1}]) - f([Y^{n+1}]) + f([Y^{n}]) \\
+    &- f([pY^{n}])  + f([y]) + f([Y])\\
+    &= \frac{1}{2}(f([y]) + f([Y]))\\
+    &=f([y])
+    \end{align*}
+      The first equality follows by the fact that the boxes defined above converge from below to $(\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)$ as $n \to \infty$. The second equality is by definition of the measure $\mu_f$ on boxes.
+      For the third, we use \ref{lem:smoothingskey} to break up the limit into factors. In the fourth equality, we can cancel out terms, and in the fifth add and subtract the terms $f([y^{n+1}])$ and $f([Y^{n+1}])$. In the fifth equality, use Corollary~\ref{cor:additivity-limit}, and cancel out equivalent terms. Finally, use the symmetry property of $f$ to obtain the result.
+    \end{enumerate}
 \end{proof}
 
 \begin{remark}
-This implies in particular that $\nu$ is non-negative. We want measure to be zero on empty set.
+This implies in particular that $f$ is non-negative. This can also be seen directly by using Lemma~\ref{lem:smoothingskey}.
+Indeed, suppose $f([a])$ is negative and $f([x])$ is positive for some $a$ and $x$ ($x$ being simple).
+If needed, we can take a power of $a$ and assume WLOG that $f([a])+f([x^2])<0$
+By right handedness we have
+\[
+  [a][x^2]\searrow [ax^2]
+\]
+and hence $f([ax^2]) <0$.
+Then, the left hand side of Equation~\ref{eq:cross-red3}, taking $n=1$ and $m=2$, is
+\[ 
+f([ax^1]) + f([ax^2]) <0
+\]
+whereas the right hand side of Equation~\ref{eq:cross-red3} is
+\[
+f([x])>0
+\]
+which is a contradiction.
+So it follows that either $f$ is always non-negative or $f$ is always non-positive.
+But $f$ can't be non-positive, again by Equation~\ref{eq:cross-red3}. Indeed, just pick $a$ so that $f([a]) << -C$, for some large $C>0$, obtaining another contradiction.
+\end{remark}
+
+
+\begin{remark}
+\label{rmk:orientedintersectiondoesnotrecover}
+The proof of Proposition~\ref{prop:recoverintersection} is the first and only place where we have used the symmetry condition of $f$.
+This means, that up to that Proposition, we managed to construct a geodesic current associated to an $f$ that wasn't necessarily symmetric.
+One can hope that maybe the proof only uses symmetry of $f$ artificially, and therefore there is hope one can associate an oriented intersection number (see Remark~\ref{rmk:orientedintersection}). This is not the case, however, as one can show already in the torus. However, we will not spell out the details here. It is still interesting to consider the question of how is this measure then related to $f$.
 \end{remark}
 
 \begin{comment}

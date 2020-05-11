@@ -21,6 +21,21 @@
     <marker
        inkscape:isstock="true"
        style="overflow:visible"
+       id="marker27264"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#0000e8;fill-opacity:1;fill-rule:evenodd;stroke:#0000e8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path27262" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
        id="marker40988"
        refX="0"
        refY="0"
@@ -164,7 +179,7 @@
        inkscape:collect="always">
       <path
          id="path8113"
-         style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:#0000e8;fill-opacity:1;fill-rule:evenodd;stroke:#0000e8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="scale(-0.6)"
          inkscape:connector-curvature="0" />
@@ -293,22 +308,6 @@
          style="fill:#0000e8;fill-opacity:1;fill-rule:evenodd;stroke:#0000e8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path8326-6" />
     </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="marker8328-2-4"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Arrow2Mstart"
-       inkscape:collect="always">
-      <path
-         inkscape:connector-curvature="0"
-         transform="scale(0.6)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#0000e8;fill-opacity:1;fill-rule:evenodd;stroke:#0000e8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path8326-6-6" />
-    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -318,7 +317,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="587.4147"
+     inkscape:cx="395.48572"
      inkscape:cy="195.688"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -340,7 +339,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -410,7 +409,7 @@
        sodipodi:open="true"
        d="m 34.546363,186.02182 a 21.648832,21.916101 0 0 1 27.701995,3.16735 21.648832,21.916101 0 0 1 1.650441,28.17279" />
     <path
-       style="fill:none;stroke:#0000e8;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-mid:url(#marker8328-2-4)"
+       style="fill:none;stroke:#0000e8;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-mid:url(#marker27264)"
        id="path7767-7-8"
        sodipodi:type="arc"
        sodipodi:cx="99.722961"

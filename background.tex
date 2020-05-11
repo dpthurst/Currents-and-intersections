@@ -1,130 +1,161 @@
-\section{Background}
+\subsection{Lengths, stable lengths and cross-ratios associated to geodesic currents}
 
-\DMGtodo{Should talk a bit about Hamenstaedt and Ledrappier work, copy some material of background of curves From curves to currents here, talk about definition of geodesic current in terms of cross-sections, etc.}
+In this section we mention some constructions present in the literature that are related to Theorem~\ref{thm:intersect}.
+First, given a geodesic current $\mu$ one can define a pseudo-distance on $\tilde{\Sigma}$ and use it to define a length of paths on $\Sigma$, which coincides with intersection number with $\mu$. 
+Second, given a geodesic current one can further define a notion of stable length on an associated space (not on $\Sigma$), which coincides with intersection number when properly interpreted.
+Third, given a generalized cross-ratio, one can construct a geodesic current. The first two constructions are just given to motivate the problem, and other than exposing them here, won't be pursued further. The third construction will play a role in Subsection~\ref{subsec:poscross}.
 
-\begin{comment}
-\DMGtodo[inline]{The following section contains material that could be relevant to include in intro or background section if we end up using anything for applications.}
-\section{A bunch of random background and previous ideas}
+\subsection{Relation of intersection number to lengths of paths and stable lengths}
 
-\textbf{Cocycles}
+A \emph{pseudo-distance}  $d : \tilde{\Sigma} \times \tilde{\Sigma} \to [0,\infty]$ on $\tilde{\Sigma}$ is a map which is zero on the diagonal and satisfies the triangular inequality. For any two points $x,y \in \tilde{\Sigma}$, and a geodesic current $\mu \in \GC(\Sigma)$. In \cite[Proposition~4.1]{BIPP19:CurrentSystoles} a pseudo-distance is defined as follows. Let $G([x,y)) \subset G(\Sigma)$ denote the subset of geodesics intersecting the geodesic segment $[x,y)$ in $\tilde{\Sigma}$ transversely.
+We define
+\[
+d_{\mu}(x,y) \coloneqq \frac{1}{2} (\mu(G([x,y)) + \mu(G((x,y])).
+\]
+A similar pseudo-distance had been previously defined by Glorieux in \cite[Definition~2.2]{Glo17:CriticalExponents}. The one we just defined has the added feature that is \emph{straight} on points lying on a $\Sigma$-geodesic, that is, $d_{\mu}(x,y)=d_{\mu}(x,z) + d_{\mu}(z,y)$.
+We note that it is possible that $d_{\mu}(x,y)=0$ even though $x \neq y$, For instance, if $\mu=C$ for some closed curve, then any $x,y \in \tilde{\Sigma}$ for which the $\Sigma$-geodesic segment connecting $x$ and $y$ does not intersect a lift of $C$ will satisfy this.
+If $\mu$ is filling, then $d_{\mu}$ is a proper distance (see arguments in \cite[Proposition~2.8]{Glo17:CriticalExponents}).
 
-A class of H\"older continuous function $\zeta\colon T^1 S \times \mathbb{R} \to \mathbb{R}$ satisfying $\zeta(v,s+t)=\zeta(\phi_s(v),t) + \zeta(v,s)$
-for all $v \in T^1 S$ and all $s,t \in \mathbb{R}$.
-Let $\mathcal{F}\colon T^1 S \to T^1 S$ be the flip $v \mapsto -v$. The flip of a cocycle $\zeta$ is the cocycle defined by $\mathcal{F}\zeta(v,t)=\zeta(\mathcal{F}\phi^t(v),t)$. Two cocycles $\zeta, \xi$ are cohomologous if $\zeta(v,t)-\xi(v,t)=\beta(\phi^t(v)) - \beta(v)$ for all $v \in T^1 S$ and all $t \in \mathbb{R}$.
-$\zeta,\xi$ are cohomologous iff $\mathcal{F}\zeta,\mathcal{F}\xi$ are cohomologous. Thus, the flip map induces a map in cohomology classes.
-We say $\zeta$ is quasi-invariant under the flip if $\zeta$ and $\mathcal{F}\zeta$ are cohomologous.
+\subsection{Intersection and lengths of paths on $\tilde{\Sigma}$}
 
-\textbf{Cross-ratio}
-
-A H\"older continuous, $\pi_1(S)$-invariant function on $\partial \wt{S}^{[4]}$ (space of quadruples of pairwise distinct points of $\partial \wt{S}$) with properties
-
-\begin{itemize}
-\item $Cr$ is invariant under the diagonal action of $\pi_1(S)$.
-\item $Cr(a,a',b,b')=Cr(a',a,b,b')^{-1}$
-\item $Cr(a,a',b,b')=Cr(b,b',a,a')$
-\item $Cr(a,a',b,b')Cr(a',a'',b,b')=Cr(a,a'',b,b')$
-\end{itemize}
-
-
-
-\textbf{Periods}
-
-\textbf{Periods for cross-ratio}
-Given a homotopy class of a closed curve $c$ in $S$, we can consider a representative $\gamma$.
-Let $\gamma$ be the Deck transformation associated to $\gamma$, and let $\gamma^-$ and $\gamma^+$ be its repelling and attracting points respectively.
-The period $l(\gamma)=\log Cr(\gamma^+,\gamma^-,\gamma \cdot a, a)$ for any $a \notin \{\gamma^-,\gamma^+\}$.
-This definition does not depend on the conjugacy class of the element $\gamma \in \pi_1(S)$, nor on the choice of point $a$. \\
-
-\textbf{Periods for geodesic currents}
-
-Let $c$ be a closed curve in $S$, lift it to the universal cover to some $\gamma$, choosing a hyperbolic metric. Let $G_{\gamma}$ be the set of geodesics that intersect $\gamma$ and have one endpoint in the segment $(a,\gamma a)$. $\nu(G_{\gamma})$ is the same as the measure of the set of geodesics that intersect the segment $(q,\gamma q)$ tranversally, for $q$ in the axis.
-
-
-
-
-\textbf{Signed geodesic current}
-
-A geodesic current for $S$ is a $\pi_1(S)$-invariant locally finite Borel measure on $\partial \wt{S} \times \partial \wt{S} - \Delta$ which in addition is invariant under the natural involution exchanging the two factors. Geodesic currents naturally correspond to finite $\phi^t$ invariant transverse Borel measures on $T^1M$ invariant under the flip map.
-A signed geodesic current is a difference of two geodesic currents. \\
-
-Otal proves that given a family of periods there is at most one cross ratio with those periods (essentially, density of endpoints of hyperbolic elements).
-What are the properties a period must satisfy?
-
-\textbf{From flip invariant Holder class to cross-ratio}
-
-Let $\alpha$ be a cocycle representing the class. Let $x \in \wt{S}$ be any point and let $(,)_{\alpha}$ be the symmetric product on distinct points in $T^1_x \wt{S}$. For $a \neq b \in \partial \wt{S}$, write $(a,b)=(v,w)_{\alpha}$ where $v,w \in T^1 \wt{S}$ are such that $\pi(v)=a$ and $\pi(w)=b$. Then $(,)$ is a symmetric product on pairs of distinct points in $\partial \wt{S}$ depending on the choice of $x$ and $\alpha$. For a quadruple $(a,a',b,b')$ of distinct points in $\partial \wt{S}$ define $[a,a',b,b']_{\alpha}=(a,b)+(a',b')-(a,b')-(a',b')$. Then one checks that $[]_{\alpha}$ does not depend on the choice of $x$ or the representative $\alpha$. And $Cr=e^{[]_{\alpha}}$ is the cross-ratio associated to the class of $\alpha$.
-
-\textbf{From cross-ratio to Holder cocycle}
-
-One defines a cocycle for the frame flow in the frame bundle, then integrates over fibers to obtain a Holder cocycle.\\
-
-Finally one checks that one is inverse of the other (if one closes the cycle obtains a cohomologous cocycle). \\
-
-\textbf{From geodesic current to cross-ratio}
-
-Let $\mu$ be a geodesic current. Let $(a,b,c,d)$ an ordered tuple of pairwise distinct points. Define $[a,b,c,d]=\mu([a,b] \times [c,d])$. \\
-(To check Holder property need to use $\mu$ is Gibbs current and thus comes from a Holder function...?) \\
-To check positivity one uses:
-
-\begin{lemma}
-Let $Cr$ be a cross-ratio on $\partial \wt{S}$. Then $Cr(a,b,c,d)+Cr(b,c,d,a) \to 1$ as $a \to b$, locally uniformly in $(c,d)$ if and only if $Cr$ is positive.
-\end{lemma}
-
-\textbf{From cross-ratio to intersection geodesic current}
-
-For a generalized cross-ratio there is a unique signed current $\mu$. Define $\mu([a,b]\times[c,d])=\log Cr(a,b,c,d)$. Additivity of cross ratio gives additivity of measure. If the cross ratio is positive then it gives a geodesic current. \\
-
-\textbf{From cocycle to Gibbs current}
-
-Let $\mathcal{M}$ be the space of all $\phi^t$-invariant probability measures on $T^1 S$.
-
-The entropy of a Borel set $A$ w.r.to to probability measure $\nu$ on $T^1S$ is $h_{\nu}(A):=-\nu(A)\log \nu(A)$. \\
-The entropy of $\nu$ is the entropy of the whole space $T^1 S$. Let $\mathcal{S}$ be the $\sigma$-algebra of all measurable sets. The entropy of $\nu$ is
-
-$h_{\nu} = \sup \{ \sum_{A\mathcal{F}} h_{\nu}(A) \mathcal{F} \subset \mathcal{S} | \mathcal{F} \mbox{ finite } , X=\sqcup_{A \in \mathcal{S}} A\}$. \\
-
-For every H\"older continuous function $f\colon T^1 S \to \mathbb{R}$ the pressure $p(f):=\sup \{ h_{\nu} - \int f d\nu | \nu \in \mathcal{M} \}$.
-
-The Gibbs equilibrium state of $f$ is the (unique) probability measure $\eta_f \in \mathcal{M}$ which realizes this supremum.
-
-Any H\"older function $f\colon T^1 S \to \mathbb{R}$ gives rise to a H\"older cocycle by 
-
-$$\xi_f(v,t):=\int_0^{t} f (\phi^s(v)ds.$$
-
-We call $f$ quasi-invariant under the flip if for any periodic $v \in T^1 S$ of period $\tau$, $\xi_f(v,\tau)=\xi_f(-v,\tau)$. \\
-
-For a H\"older cocycle, we can find some H\"older function $f\colon T^1 S \to \mathbb{R}$. Two H\"older $f,g$ functions give the same cocycle iff $\int fd\mu = \int g d\mu$ for all $\mu \in \mathcal{M}$.\\
-
-Otal proves that cross-ratio is determined given by periods. \\
-
-\subsection{Reconstructing currents from periods}
-
-Otal's argument uses density of geodesic in tangent bundle to construct current in some rectangles. Idea: extend to all sigma-algebra using Caratheodory's theorem. Problems:
-
-\begin{itemize}
-\item Is it enough to reconstruct the current given only on this family of rectangles?
-\item Continuity at endpoints.
-\end{itemize}
-
-\subsection{Reconstructing current}
-
-Another approach is to try to define a positive functional on the space of compact continuous functions on the space of geodesic currents. \\
-It also has to have the $\pi_1(S)$-invariant property.\\
-The difficult point will be continuity of the functional. \\
-
-
-Feng Luo characterizes functions that are intersection numbers on simple curves (ref).
-\end{comment}
-
-\subsection{Action of $\pi_1(S,*)$ on lifts}
-\label{subsec:actionsfundamental}
-
-There are two actions of $\pi_1(S,*)$ on lifts of $*$ to $\tilde{S}=\{ \mbox{paths from } * \}/\sim$:
+Associated to a pseudo-distance $d$, there is a length of paths on $\tilde{\Sigma}$ defined as follows,
+\[
+  L_d(c) \coloneqq \sup \left\{ \sum_{i=0}^n d(c(t_i),c(t_{i+1}) : n \geq 1, t_0=r \leq t_1 \leq \cdots t_n = s \right\}.
+\]
+It satisfies the following properties.
+\cite[Lemma~4,3]{BIPP19:CurrentSystoles}.
 
 \begin{enumerate}
-    \item Left action: precomposition with $\gamma$ via Deck transformations, isometries of $\mathbb{H}^2$. The isometry extends to a homeomorphism of the boundary at infinity $S^1_{\infty}$. This action is minimal, in the sense that any orbit $\pi_1(S,*).p$, for $p \in S^1_{\infty}$, is a dense subset of $S^1_{\infty}$.
-    \item Right action: post-composition of paths. For example, $a \in \pi_1(S,*)$ acts on $x \in \pi_1(S,*)$, as $ax$, where this is the path first running through $x$ and then through $a$. 
+    \item If $c : [r,s] \to \tilde{\Sigma}$, then $L(c) \geq d(c(r),c(s))$, and if $c$ parametrizes a geodesic segment then equality holds.
+    \item If a path $c$ is a concatenation of two paths $c_1 \circ c_2$, then
+    \[
+      L(c) = L(c_1) + L(c_2).
+    \]
 \end{enumerate}
+
+
+For the pseudo-distance $d_{\mu}$, we will denote the corresponding length by $L_{\mu}$.
+
+
+$L_{\mu}$ induces a length function on the surface $\Sigma$ by defining, for a continuous path $c : [r,s] \to S$, the length $L_{\mu}(c)$ to be $L_{\mu}(\tilde{c})$ for any continuous lift $\tilde{c}$.
+
+It follows \cite[Proposition~4.4]{BIPP19:CurrentSystoles} that if $c$ is a closed concrete curve, then $L_{\mu}(c) \geq L_{\mu}(\gamma)$ where $\gamma$ is the $\Sigma$-hyperbolic representative.
+
+In fact, it follows \cite[Lemma~4.7]{BIPP19:CurrentSystoles} that
+
+\begin{proposition}
+For $C=[\gamma]$, where $\gamma$ is a closed $\Sigma$-geodesic,
+\[
+i(\mu,C) = L_{\mu}(\gamma).
+\]
+\end{proposition}
+
+Observe that from $L_{\mu}$ we can define a function $\bar{L}_{\mu} : \mathcal{C}(S) \to \mathbb{R}$ as follows. Fix some hyperbolic metric $\Sigma$. For $C=[\gamma]$ and $\gamma$ a $\Sigma$-geodesic representative, let
+\[
+\bar{L}_{\mu}(C) \coloneqq L_{\mu}(\gamma).
+\]
+Our Theorem~\ref{thm:intersect} provides the inverse method to the construction of $\bar{L}_{\mu}$.
+
+\subsection{Intersection and stable lengths}
+
+One can also consider the metric space $X_{\mu} \coloneqq \tilde{\Sigma} / \sim$, endowed with the induced distance $[d_{\mu}]$, where $\sim$ here means that two points $x,y \in \tilde{\Sigma}$ are identified  if and only if $d_{\mu}(x,y)=0$, and $[d_{\mu}]([x],[y])\coloneqq d_{\mu}(x,y)$, for $[x],[y] \in X_{\mu}$.
+Note that $X_{\mu}$ might not be Hausdorff. For instance, if $\mu=\mathcal{L}_{\Sigma}$, $X_{\mu} = \tilde{\Sigma}$ endowed with the hyperbolic distance. If $\mu$ is a measured lamination, then $X_{\mu}$ is 0-hyperbolic in the sense of Gromov (see \cite[Example~4.2]{BIPP19:CurrentSystoles}).
+$\pi_1(\Sigma)$ acts on $X_{\mu}$ by isometries, since $\mu$ is $\pi_1(\Sigma)$-invariant, and also co-compactly.
+If $\mu$ is filling, this action is also discrete. 
+Given a closed curve $C$, let $\gamma \in \pi_1(S)$ be a representative.
+One can define a stable length on $X_{\mu}$.
+
+\[
+   \|C\|_{X_{\mu}}=\lim_{n \to \infty} \inf_{x \in X_{\mu}} [d_{\mu}](x,\gamma \cdot x).
+ \] 
+ 
+Erlandsson-Uyanik show in \cite[Theorem~3.5]{EU18:LengthCurrents} that
+
+\begin{theorem}
+For a filling geodesic current $\mu$, and for any closed curve $C$,
+\[
+\|C\|_{X_{\mu}} = i(\mu,C).
+\]
+\end{theorem}
+
+Note that this stable length is defined on $X_{\mu}/\pi_1(S)$, not on $S$.
+In general, stable lengths on $S$ cannot be realized as intersection numbers, since they might not satisfy the smoothing condition (see Example~\ref{ex:puncturedtorus}), but they do satisfy quasi-smoothing (see Section~\ref{sec:length-emb-graph}).
+
+\begin{notation}
+To ease notation, we will sometimes write $[x][y]$ to denote $[x] \cup [y]$ as multicurves.
+\end{notation}
+
+\subsection{Cross-ratios}
+
+In Section~\ref{subsec:Liouville} we have seen several equivalent ways to define a geodesic current associated to a hyperbolic metric $\Sigma$ on a closed surface $S$. One of them was in terms of the cross-ratio defined on $(\partial_{\infty} \Sigma)^4$.
+It turns out that one can similarly construct geodesic currents from (generalized) cross-ratios. 
+
+There are several definitions in the literature of what a cross-ratio should be.
+Here we consider the one by Ledrappier~\cite[Definition~1.f]{L95:BordDesVar}, Hamenst\"adt~\cite[page~101]{Ham99:Cocycles} and Martone-Zhang~\cite[Definition~2.4]{MZ19:PositivelyRatioed}.
+
+Consider the set 
+\[
+\partial_{\infty} \Sigma^{[4]} \coloneqq \{ (x,y,z,w) \in (\partial_{\infty} \Sigma)^4 : \{ x,y \} \cap \{z,w\} = \emptyset  \}
+\]
+
+\begin{definition}
+A \emph{cross ratio} is a continuous function $B : \partial_{\infty} \Sigma^{[4]} \to \mathbb{R}$ that is invariant under the diagonal action of $\pi_1(\Sigma)$ and satisfies the following properties:
+\begin{enumerate}
+    \item (Symmetry) $B(x,y,z,w) = B(z,w,x,y)$
+    \item (Additivity) $B(x,y,z,w) + B(x,y,w,u)=B(x,y,z,u)$
+    for all $x,y,z,w,u \in \partial_{\infty} \Sigma$ so that $(x,y,z,w),(x,y,w,u),(x,y,z,u) \in \partial_{\infty}^{[4]} \Sigma.$
+\end{enumerate}
+\label{def:crossratio}
+\end{definition}
+
+\begin{definition}
+For any $C=[\gamma]$, for $\gamma \in \pi_1(\Sigma)$, the \emph{$B$-period of $C$} is defined as
+    \[
+       \ell_B(C) \coloneqq B(\gamma^-,\gamma^+, \gamma \cdot x,x) 
+    \]
+    for some $x \in \partial_{\infty}S - \{ \gamma_-, \gamma_+ \}$.
+\end{definition}
+
+It is easily shown, by the properties of cross-ratio, that $\ell_B$ is well-defined.
+Also, a cross-ratio is determined by its periods.
+
+\begin{theorem}
+Let $B_1,B_2$ be two cross-ratios. If $\ell_{B_1}(C)=\ell_{B_2}(C)$ for all connected closed curves $C \in \Curves(S)$, then $B_1=B_2$.
+\end{theorem}
+\begin{proof}
+See \cite[Theorem~2.2]{Otal92:Symplectique}.
+\end{proof}
+
+This Theorem is probably reminiscent of Theorem~\ref{thm:intersectioncurves}, that showed that geodesic currents are determined by their intersection numbers with connected closed curves.
+Indeed, this is not a coincidence.
+
+\begin{definition}
+We say a cross-ratio $B$ is \emph{positive} if for all $x,y,z,w \in \partial_{\infty} S$ in this cyclic order, we have $B(x,y,z,w) \geq 0$.
+\label{def:poscrossratio}
+\end{definition}
+
+The following is a Theorem by Hamenst\"adt \cite[Theorem~2.10]{Ham99:Cocycles}.
+
+\begin{theorem}
+A positive cross-ratio defines a geodesic current.
+\label{thm:currentfromcrossratio}
+\end{theorem}
+\begin{proof}[Proof sketch]
+Given a positive cross-ratio $B$, one can define a geodesic current by defining the measure of a box $[a,b) \times [c,d) \subset G(\Sigma)$ to be $\mu_B([a,b] \times [c,d]) \coloneqq B(a,b,c,d)$. The symmetry condition of $B$ shows $\mu_B$ is flip-invariant, it is $\pi_1(S)$-invariant by definition, and the additivity condition of $B$ shows it is a finitely additive pre-measure defined on the family of finite unions of products of half-open boxes in $\partial_{\infty} S$. By continuity of the cross-ratio, one can show that moreover $\mu_B$ is countably additive. By positivity of the cross-ratio, it follows it's a positive current. The details can be found in \cite[Proposition~A.3]{MZ19:PositivelyRatioed}.
+\end{proof}
+
+\begin{remark}
+\label{rmk:poscrossratio}
+\begin{enumerate}
+    \item Not all geodesic currents come from positive cross-ratios. Indeed, the geodesic currents coming from positive cross-ratios have no atoms (by continuity in the definition of cross-ratio). If one doesn't assume continuity in the definition of cross-ratio, one can still try to define a geodesic current, but then has to come up with a different way of proving countable subadditivity. For example, defining the current in some dense subset where one has some control on the pre-measure; we do this in the proof of Theorem~\ref{thm:intersections}.
+    \item In the proof of Theorem~\ref{thm:currentfromcrossratio}, even if we don't assume the cross-ratio is continuous, we will always get a finitely additive pre-measure. If $B$ is continuous but not positive, we obtain a signed-current (see \cite[Page~103]{Ham99:Cocycles}).
+\end{enumerate}
+\end{remark}
+
+
+
+
+
 
 %\begin{definition}
 %  A homogeneous function on geodesic currents is \emph{convex} if its
@@ -182,119 +213,3 @@ There are two actions of $\pi_1(S,*)$ on lifts of $*$ to $\tilde{S}=\{ \mbox{pat
 %Right inequality follows from collar lemma, and other by considering embedded annulus, and looking at the core curve. \\
 %These inequalities are interesting because: (1) they are satisfied by all Liouville currents (see paper by Burger et al on structure theorem for geodesic currents), and (2) the left inequality is usually a part of the definition of Anosov representation, where $f$ plays the role of the generalized translation length (see Martone-Zhang).
 
-\subsection{Background on measure theory}
-
-Let $X$ be a set.
-
-\begin{definition}[Semi-ring, ring, $\sigma$-ring]
-A family $\mathcal{S}$ of subsets of a set $X$ is called a \emph{semiring} if it contains the empty set, $A \cap B \in \mathcal{S}$ for all $A,B \in \mathcal{S}$ and, for every pair of sets $A,B \in \mathcal{S}$ with $B A \subset B$, the set $B \backslash A$ is a disjoint union of finitely many sets in $\mathcal{S}$.
-A family $\mathcal{R}$ of subsets of a set $X$ is called a \emph{ring} if it contains the empty set and the sets $A \cap B$, $A \cup B$ and $A \backslash B$ belong to $\mathcal{R}$ for all $A,B \in \mathcal{R}$. 
-The \emph{$\sigma$-ring} of $\mathcal{R}$ consists of the set of countable unions of elements of $\mathcal{R}$.
-\end{definition}
-
-\begin{definition}[semialgebra, algebra, $\sigma$-algebra]
-If in the above definitions one assumes $X$ is also an element of the family, one gets, respectively, the definitions of \emph{semialgebra},\emph{algebra} and $\sigma$-algebra.
-\end{definition}
-
-\begin{lemma}
-For any semiring $\mathcal{S}$, the collections of all finite unions of sets in $\mathcal{S}$ forms a ring $\mathcal{R}_{\mathcal{S}}$, the \emph{ring generated by $\mathcal{S}$}. Every set in $\mathcal{R}$ is a finite union of pairwise disjoint sets in $\mathcal{S}$.
-\end{lemma}
-\begin{proof}
-See \cite[1.2.14~Lemma]{Bo07:MeasureTheory}.
-\end{proof}
-
-\begin{definition}
-A real-valued set function $\mu$ defined on a class of sets $\mathcal{A}$ is called \emph{finitely additive} if 
-
-\[
-\mu\left(\bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n \mu(A_i)
-\]
-for all $n$ and all disjoint sets $A_1,\cdots,A_n \in \mathcal{A}$ such that $\bigcup_{i=1}^n A_i \in \mathcal{A}$.
-$\mu$ is called \emph{countably subadditive} if 
-
-\[
-\mu\left(\bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mu(A_i)
-\]
-for all pairwise disjoint sets $A_i \mathcal{A}$ such that $\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}$.
-We say $\mu$ is called \emph{countably additive} if the above inequality is replaced by an equality.
-\end{definition}
-
-\begin{proposition}
-A finitely additive function $\mu$ on a semiring $\mathcal{S}$ extends uniquely to a finitely additive function on $\mathcal{R}_{S}$
-\label{prop:addsemitoring}
-\end{proposition}
-\begin{proof}
-See \cite[1.3.10~Proposition]{Bo07:MeasureTheory}.
-\end{proof}
-
-
-\begin{definition}
-  Fix a ring $\mathcal{R}$. Let $\mathcal{F}$ be a family of nested sequences
-  of elements of $\mathcal{R}$. Then $\mathcal{F}$ is \emph{final} if,
-  for any sequence $(R_i)_{i=0}^{\infty}$ of nested elements of
-  $\mathcal{R}$ with $\bigcap_i R_i = \emptyset$, there is a sequence
-  $(S_j) \in \mathcal{F}$ so that $R_i$ is eventually contained in
-  $S_j$, in the sense that for each $j$ there is an $N$ so that for
-  all $i \ge N$ we have $R_i \subset S_j$.
-\end{definition}
-
-To show countable additivity, suffices to show that there is a final
-family on which measures go to zero.
-
-
-\begin{proposition}
-Let $\mu$ be a finitely additive function defined on a ring $\mathcal{R}$. Let $\mathcal{F}$ be a final family of $\mathcal{R}$ so that for any $(S_j)_{j=1}^{\infty} \in \mathcal{F}$, $\lim_j \mu(S_j) \to 0$. Then $\mu$ is countably subadditive.
-\label{prop:finalfamcount}
-\end{proposition}
-\begin{proof}
-Let $A_n$ be a sequence of pair-wise disjoint sets in $\mathcal{R}$ whose union $A$ is also in $\mathcal{R}$.
-Then consider $B_n =  A - \cup_{i=1}^n A_i$ . The sequence $B_n$ is a nested decreasing sequence of elements in $\mathcal{R}$ with empty intersection. Since $\mathcal{F}$ is a final family, for every $j$ we can find $N$ so that for every $i \geq N$, we have $B_i \subset S_j$.
-On the one hand, note that $\mu(B_i) \to 0$, since $\mu(S_j) \to 0$ by definition of final family and $\mu$ being monotone.
-On the other hand, \[
-\mu(A - \cup_{i=1}^n A_i )= \mu(A) - \mu( \cup_{i=1}^n A_i )
-\]
-by finite additivity of $\mu$, which proves what we wanted.
-\end{proof}
-
-
-\begin{definition}\DMGtodo{Is this same as outer regular in Radon definition? What about inner regular?}
-A set function $\mu$ defined on the class of all subsets of a set $X$ and taking values in $[0,\infty]$ is called an \emph{outer measure} if
-
-\begin{enumerate}
-    \item $\mu(\emptyset)=0$
-    \item $\mu(A) \leq \mu(B)$ whenever $A \subset B$, i.e., is monotone
-    \item $\mu$ is countably subadditive. 
-\end{enumerate}
-A set $A \subset X$ is called $\mu$-measurable if, for every $E \subset X$, one has the equality
-
-\[
-\mu(E \cap A) + \mu(E \backslash A) = \mu(E)
-\]
-The class of all $\mu$-measurable sets is denoted by $\mathcal{M}_{\mu}$.
-An outer measure is called \emph{regular} if, for every set $A \subset X$, there exist a $\mu$-measurable set $B$ so that $A \subset B$ and $\mu(A)=\mu(B)$.
-\end{definition}
-
-\begin{theorem}[Caratheodory extension theorem]
-Given a ring $\mathcal{R}$ and a finitely additive and countably additive function $\mu$ on it.
-Let 
-\[
-\mu^*(A) \coloneqq \inf \{ \sum_{i=1}^n \mu(A_n) | A_n \in \mathcal{R}, A \subset \cup_{i=1}^{\infty} X_i\},
-\]
-where in the case of absence of such sets $A_n$ we set $\mu^*(A) \coloneqq \infty$. Then
-
-\begin{enumerate}
-    \item  $\mu^*$ is an outer regular measure
-    \item All the sets in $\mathcal{R}$ are $\mu$-measurable
-    \item $\mu^*$ coincides with $\mu$ on $\mathcal{R}$
-    \item $\mu$ extends to the countably additive extension to the $\sigma$-ring generated by $\mathcal{R}$
-\end{enumerate}
-If one replaces ring by algebra above, the extension in (4) is unique.
-\label{thm:caratheodory}
-\end{theorem}
-\begin{proof}
-See \cite[1.11.8~Theorem]{Bo07:MeasureTheory}.
-\end{proof}
-
-Let $X$ be a topological space.
-Borel sigma algebra.
-Define outer regular, inner regular, locally finite measures.
