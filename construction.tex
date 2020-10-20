@@ -5,7 +5,7 @@
 Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ satisfy symmetry, additive union, smoothing, stability and homogeneity.
 Recall that since $f$ satisfies the symmetry condition, we have that $f([a])=f([a^{-1}])$ for any $a \in \pi_1(S,\ast)$.
 Recall, also, that the fact that $f$ satisfies the smoothing condition for unoriented curves means $f$ is non-increasing under smoothing essential crossings for any of the two possible unoriented resolutions (the one coherent with the chosen orientation and the one which isn't).
-We will fix (arbitrarily) a simple closed oriented curve~$[x]$. The endpoints of the lifts of $[x]$  are dense in $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S,*)$ by deck transformations (see Proposition~\ref{prop:fundminimal}). For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$[x]$ and use $x$ for the corresponding element of~$\pi_1$.
+We will fix (arbitrarily) a simple closed oriented curve~$[x]$. The endpoints of the lifts of $[x]$  are dense in $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S,*)$. For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$[x]$ and use $x$ for the corresponding element of~$\pi_1$.
 
 
 \begin{definition}[right handed crossing]
@@ -183,10 +183,11 @@ We will need some key lemmas relating several curves by smoothing essential cros
   geometric reductions:
   \begin{align}
     \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
-    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}].
+    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
   \end{align}
   \label{lem:smoothingskey}
 \end{lemma}
+\DMGtodo[inline]{Equation 4.5 looks funny, it is not homologically sound, and smoothing should preserve homology classes?}
 \begin{proof}
   Equation~(\ref{eq:cross-red1}) follows since $[a]$ (and $[a x^n]$)
   cross~$[x]$ to the right. For Equation~(\ref{eq:cross-red3}), consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 

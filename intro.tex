@@ -18,14 +18,14 @@ associated to quadratic differentials/half-translation structures
 
 Our work does not contribute in any way (at least not obviously) to the marked spectrum rigidity problem, and therefore, we will not expand on the details of these papers. We comment though on how geodesic currents play a role in the proof. For reader interested to know more on how to construct the geodesic currents for each case, we recommend the excellent exposition \cite[Section~5]{AL17:HyperbolicStructures}.
 
-The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. This metric structure is usually defined up to some equivalence -as happens, for example, for Teichm\"uller space (see Theorem~\ref{thm:teichembeds}.  Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures (see also Section~\ref{subsec:Liouville}), but the term has also been used more generally for the geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
+The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. This metric structure is usually defined up to some equivalence -as happens, for example, for Teichm\"uller space (see Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}.  Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures, but the term has also been used more generally for the geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
 The fundamental property that ties these Liouville currents to the geometric structure is the following.
-As we saw in Theorem~\ref{thm:denseweighted}, weighted multi-curves on a surface embed in the space of geodesic currents.
-Also, we have seen in Subsection~\ref{sec:intersectioncurrents} the work of Bonahon that extends the notion of geometric intersection
+By Theorem~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}, weighted multi-curves on a surface embed in the space of geodesic currents.
+Also, in the same paper Bonahon \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}that extends the notion of geometric intersection
 number as a continuous bilinear function the space of pairs of geodesic currents.
  This allowed him to extend hyperbolic length to geodesic currents by
 following the principle of realizing it as an intersection number with
-a distinguished geodesic current (see ``length current'' in Subsection~\ref{subsec:Liouville}).
+a distinguished geodesic current.
 Similarly, other notions of length of curves $\ell_{\rho}$ associated to the above mentioned metric structures $\rho$ can be realized as intersection numbers with the corresponding Liouville current $\mathcal{L}_{\rho}$, this is
 \[
   i(\mathcal{L}_{\rho},C)=\ell_{\rho}(C)
@@ -33,7 +33,7 @@ Similarly, other notions of length of curves $\ell_{\rho}$ associated to the abo
 for any closed multi-curve $C$ in $S$. 
 Erlandsson shows that word-length with respect to simple generating sets of
 the fundamental group can also be realized as an intersection number with a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
-Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$. We have seen in Subsection~\ref{thm:intersectioncurves} that 
+Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
 Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the \emph{marked spectrum rigidity problem}
 
 \begin{problem}
@@ -46,8 +46,8 @@ By the discussion above, this is equivalent to the problem:
 Let $\mathcal{D}$ be space of metric structures on $S$. Is the assignment $\mathcal{D} \to \GC(S), \rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
 \end{problem}
 
-As we have pointed out above, this problem has been solved for several types of metric structures. In fact, for negatively curved Riemannian metrics, recent work of Noelle Sawyer shows that one does not even need to consider all the marked length spectrum to determine the metric: it is determined up to ignoring any subset of closed geodesics for which the asymptotics of the counting problem are subexponential (see Chapter~\ref{chap:counting}). So, for example, one can throw out all simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type.
-Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is then: is there a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$?
+As we have pointed out above, this problem has been solved for several types of metric structures. So, for example, one can throw out all simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type.
+Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is to find a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$?
 More generally, we consider the following question.
 
 \begin{question}\label{q:intersection}
@@ -57,7 +57,7 @@ Under which conditions can a functional on curves $f \colon\mathbb{R}\mathcal{C}
 
 
 Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). In this case, the functions are defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}.
-Jeffrey Frazier asks Question \ref{q:intersection} and remarks how relevant it is for the study of spectral rigidity problems \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
+Jeffrey Frazier asked Question \ref{q:intersection} and remarks how relevant it is for the study of spectral rigidity problems \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
 
 \subsection{Main results}
 %\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
@@ -117,7 +117,7 @@ The four conditions of smoothing, additivity, stability and homogeneity are obvi
 Indeed, stability is needed for any such extension to be well-defined, since by definition of geodesic current, $C^n$ and $nC$ are represented by the same current.
 On the other hand, homogeneity, additivity and smoothing are obviously satisfied by intersection number w.r.t a given current.
 
-Many natural notions of length do satisfy all these four properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We have talked about some of them in Section~\ref{sec:examples}, but we list them, along with the appropriate references.
+Many natural notions of length do satisfy all these four properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We list them here, along with the appropriate references.
 
 \begin{enumerate}
    \item Intersection number with a fixed geodesic current. See \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}.%\DMGtodo{In this paragraph would be better to cite the exact results where they show property of Liouville current, instead of injectivity of assignment.}
@@ -136,15 +136,15 @@ The cited results cited above show the following properties for these currents:
 \begin{enumerate}
     \item They have full support, except for the ones for conical metrics (for this exception, see, for example, \cite[Proposition~3.3]{Frazier12:SpectralRigidity}). In fact, the support of the geodesic current plays a key role for the rigidity result in non-positively curved Euclidean cone metrics (one can discern these metric structures by just looking at the support of its Liouville current \cite[Support~rigidity~theorem]{DELS18:ShapeBilliard}).
     \item They are filling currents. Indeed, any full support geodesic current is filling. The conical metric exceptions above are also filling since, for example, conical lengths are Lipschitz equivalent to the hyperbolic length, and therefore lower bounded by a multiple of the hyperbolic length, which is positive for any geodesic current.
-    \item For each $T>0$, the set $\{ C \in \mathcal{C}(S) \bigm\vert \ell_{\rho}(C) \leq T\}$ is finite. This follows since the associated current is filling, and thus the $\ell_{\rho}$ is a positive, homogeneous and continuous function on currents. One can then use Corollary~\ref{cor:periodminimizing}.
+    \item For each $T>0$, the set $N_{T}^{\rho} \coloneqq \{ C \in \mathcal{C}(S) \bigm\vert \ell_{\rho}(C) \leq T\}$ is finite. This follows since the associated current is filling, and thus the $\ell_{\rho}$ is a positive, homogeneous and continuous function on currents. Therefore, $N_{T}^{\rho}$ is compact. Since the set of non-weighted multi-curves $\mathcal{C}(S)$ is discrete inside the space of currents, $N_{T}^{\rho}$ is finite.
 \end{enumerate}
 
 On the other hand, not all functions on curves satisfy the smoothing, additivity, homogeneity and stability conditions. 
 
 \begin{enumerate}
-    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see Section~ \ref{sec:extremal-length}).
-    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see Example~\ref{ex:puncturedtorus}). The stabilized version does not always satisfy smoothing, either (see the same example and also Theorem~\ref{thm:stable}).
-    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see Example~\ref{ex:selfintersection}).
+    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT:20}).
+    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT:20}. The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT:20}.
+    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT:20}).
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -161,8 +161,8 @@ As immediate applications, we will obtain the following (see Section~\ref{sec:ap
 
 \begin{enumerate}
     \item A new definition of geodesic currents on surfaces as functionals on curves. 
-    \item By our Theorem~\ref{thm:convex} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see Theorem~\ref{thm:contintersect}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}.  However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic (see Random current~\ref{subsec:Liouville}). For instance, if $\rho$
+    \item By \cite[Theorem~A]{MGT:20} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic. For instance, if $\rho$
 has positive curvature, there may be an open set of Riemannian geodesics
 on~$\Sigma$ that stay inside a contractible set and so are not
 quasi-geodesic on~$\wt \Sigma$.
@@ -176,9 +176,295 @@ The first author was supported by the Mathematics Department Indiana University 
 The second author was supported by the National Science
 Foundation under Grant Number DMS-1507244.
 
+\section{Background on measure theory}
+
+Let $X$ be a set.
+
+\begin{definition}[Semi-ring, ring, $\sigma$-ring]
+A family $\mathcal{S}$ of subsets of a set $X$ is called a \emph{semiring} if it contains the empty set, $A \cap B \in \mathcal{S}$ for all $A,B \in \mathcal{S}$ and, for every pair of sets $A,B \in \mathcal{S}$ with $B A \subset B$, the set $B \backslash A$ is a disjoint union of finitely many sets in $\mathcal{S}$.
+A family $\mathcal{R}$ of subsets of a set $X$ is called a \emph{ring} if it contains the empty set and the sets $A \cap B$, $A \cup B$ and $A \backslash B$ belong to $\mathcal{R}$ for all $A,B \in \mathcal{R}$. 
+The \emph{$\sigma$-ring} of $\mathcal{R}$ consists of the set of countable unions of elements of $\mathcal{R}$.
+\end{definition}
+
+\begin{definition}[semialgebra, algebra, $\sigma$-algebra]
+If in the above definitions one assumes $X$ is also an element of the family, one gets, respectively, the definitions of \emph{semialgebra}, \emph{algebra} and $\sigma$-algebra.
+\end{definition}
+
+\begin{lemma}
+For any semiring $\mathcal{S}$, the collections of all finite unions of sets in $\mathcal{S}$ forms a ring $\mathcal{R}_{\mathcal{S}}$, the \emph{ring generated by $\mathcal{S}$}. Every set in $\mathcal{R}$ is a finite union of pairwise disjoint sets in $\mathcal{S}$.
+\end{lemma}
+\begin{proof}
+See \cite[1.2.14~Lemma]{Bo07:MeasureTheory}.
+\end{proof}
+
+\begin{definition}
+A real-valued set function $\mu$ defined on a class of sets $\mathcal{A}$ is called \emph{finitely additive} if 
+\[
+\mu\left(\bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n \mu(A_i)
+\]
+for all $n$ and all disjoint sets $A_1,\cdots,A_n \in \mathcal{A}$ such that $\bigcup_{i=1}^n A_i \in \mathcal{A}$.
+$\mu$ is called \emph{countably subadditive} if 
+\[
+\mu\left(\bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mu(A_i)
+\]
+for all pairwise disjoint sets $A_i \in \mathcal{A}$ such that $\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}$.
+We say $\mu$ is called \emph{countably additive} if the above inequality is replaced by an equality.
+\end{definition}
+
+\begin{proposition}
+A finitely additive function $\mu$ on a semiring $\mathcal{S}$ extends uniquely to a finitely additive function on $\mathcal{R}_{S}$
+\label{prop:addsemitoring}
+\end{proposition}
+\begin{proof}
+See \cite[1.3.10~Proposition]{Bo07:MeasureTheory}.
+\end{proof}
 
 
+\begin{definition}
+  Fix a ring $\mathcal{R}$. Let $\mathcal{F}$ be a family of nested sequences
+  of elements of $\mathcal{R}$. Then $\mathcal{F}$ is a \emph{final family} if,
+  for any sequence $(R_i)_{i=0}^{\infty}$ of nested elements of
+  $\mathcal{R}$ with $\bigcap_i R_i = \emptyset$, there is a sequence
+  $(S_j) \in \mathcal{F}$ so that $R_i$ is eventually contained in
+  $S_j$, in the sense that for each $j$ there is an $N$ so that for
+  all $i \ge N$ we have $R_i \subset S_j$.
+  \label{def:finalfamily}
+\end{definition}
 
+To show countable additivity, suffices to show that there is a final
+family on which measures go to zero.
+
+
+\begin{proposition}
+Let $\mu$ be a finitely additive function defined on a ring $\mathcal{R}$. Let $\mathcal{F}$ be a final family of $\mathcal{R}$ so that for any $(S_j)_{j=1}^{\infty} \in \mathcal{F}$, $\lim_j \mu(S_j) \to 0$. Then $\mu$ is countably subadditive.
+\label{prop:finalfamcount}
+\end{proposition}
+\begin{proof}
+Let $A_n$ be a sequence of pair-wise disjoint sets in $\mathcal{R}$ whose union $A$ is also in $\mathcal{R}$.
+Then consider $B_n =  A - \cup_{i=1}^n A_i$ . The sequence $B_n$ is a nested decreasing sequence of elements in $\mathcal{R}$ with empty intersection. Since $\mathcal{F}$ is a final family, for every $j$ we can find $N$ so that for every $i \geq N$, we have $B_i \subset S_j$.
+On the one hand, note that $\mu(B_i) \to 0$, since $\mu(S_j) \to 0$ by definition of final family and $\mu$ being monotone.
+On the other hand, 
+\[
+\mu(A - \cup_{i=1}^n A_i )= \mu(A) - \mu( \cup_{i=1}^n A_i )
+\]
+by finite additivity of $\mu$, which proves what we wanted.
+\end{proof}
+
+
+\begin{definition}
+\label{def:outermeasure}
+A set function $\mu$ defined on the class of all subsets of a set $X$ and taking values in $[0,\infty]$ is called an \emph{outer measure} if
+
+\begin{enumerate}
+    \item $\mu(\emptyset)=0$
+    \item $\mu(A) \leq \mu(B)$ whenever $A \subset B$, i.e., is monotone
+    \item $\mu$ is countably subadditive. 
+\end{enumerate}
+A set $A \subset X$ is called $\mu$-measurable if, for every $E \subset X$, one has the equality
+\[
+\mu(E \cap A) + \mu(E \backslash A) = \mu(E)
+\]
+The class of all $\mu$-measurable sets is denoted by $\mathcal{M}_{\mu}$, and is an algebra \cite[Theorem~1.11.4]{Bo07:MeasureTheory}.
+An outer measure is called \emph{regular} if, for every set $A \subset X$, there exist a $\mu$-measurable set $B$ so that $A \subset B$ and $\mu(A)=\mu(B)$.
+\end{definition}
+
+\begin{theorem}[Caratheodory extension theorem]
+Given a ring $\mathcal{R}$ and a finitely additive and countably additive function $\mu$ on it.
+Let 
+\[
+\mu^*(A) \coloneqq \inf \{ \sum_{i=1}^n \mu(A_n) \bigm\vert A_n \in \mathcal{R}, A \subset \cup_{i=1}^{\infty} X_i\},
+\]
+where in the case of absence of such sets $A_n$ we set $\mu^*(A) \coloneqq \infty$. Then
+
+\begin{enumerate}
+    \item  $\mu^*$ is an outer regular measure
+    \item All the sets in $\mathcal{R}$ are $\mu$-measurable.
+    \item $\mu^*$ coincides with $\mu$ on $\mathcal{R}$
+    \item $\mu$ extends as a measure on $\mathcal{M}_{\mu}$.
+\end{enumerate}
+\label{thm:caratheodory}
+\end{theorem}
+\begin{proof}
+See \cite[1.11.8~Theorem]{Bo07:MeasureTheory}.
+\end{proof}
+
+From now on, let $X$ be a topological space.
+
+\begin{definition}[Borel $\sigma$-algebra, Borel measure]
+The \emph{Borel $\sigma$-algebra} is the smallest $\sigma$-algebra containing all open sets in $X$. A \emph{Borel measure} is a measure on $\mathcal{B}(X)$.
+\end{definition}
+
+\begin{definition}[Support of a Borel measure]
+Let $\mu$ be a Borel measure on $X$. The \emph{support} of $\mu$ is defined as the set of all points $x \in X$ for which every open neighbourhood $N_x$ of $x$ has positive measure. We will denote it $\supp(\mu)$.
+\label{def:support}
+\end{definition}
+
+\begin{definition}[Atom of a measure]
+Given a measure space $(X,\mu)$, and $A\subset X$ a measurable subset, we say $A$ is an atom of $\mu$ if the following two conditions are satisfied:
+\begin{enumerate}
+    \item $\mu(A) > 0$
+    \item For any measurable set $B \subset A$ properly contained, $\mu(B)=0$.
+\end{enumerate}
+\label{def:atommeasure}
+\end{definition}
+
+
+Let $X$ be a locally compact and thus Hausdorff space. A Borel measure $\mu$ on $X$ is  is \emph{locally finite} if every point has a neighborhood $U$ with $\mu(U)< \infty$. The measure $\mu$ is \emph{inner regular} if one has
+\[
+\mu(U) = \sup \{ \mu(K) : K \subset U \mbox{ compact } \}
+\]
+for every $U$ open.
+
+For a Borel measure, being outer regular (see Definition~\ref{def:outermeasure}) can be phrased as
+\[
+   \mu(B) = \inf \{ \mu(U) : U \supset B \mbox{ open } \}
+\]
+for every Borel set $B$. The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular and outer regular. The Riesz Representation theorem yields a characterization of Radon measures in terms of the associated functional on $C_c(X)$:
+
+\begin{theorem}
+  Let $X$ be a locally compact Hausdorff space. For any positive linear functional $F$ on $C_c(X)$ there is a unique Radon measure $\mu$ on $X$ so that
+   \[
+     F(\psi) = \int_X \psi(x)\mu(x)
+  \]
+  for all $\psi \in C_c(X)$, and a functional $F$ is called positive if $F(\psi) \geq 0$ for every function $\psi \in C_c(X) \geq 0$ and $x \in X$. The functional $F$ is not assumed to be continuous.
+  \label{thm:Riesz}
+\end{theorem}
+
+On a general topological space $X$, not all Borel measures are Radon.
+If $X$ is a metric space, the Radon property follows from the property of tightness
+
+\begin{definition}
+  A \emph{Borel measure} $\mu$ is \emph{tight} if, for every $\epsilon>0$, there exists a compact set $K_{\epsilon}$ so that $\mu(X \backslash K_{\epsilon}) < \epsilon$
+\end{definition}
+
+\begin{proposition}
+Let $X$ be a metric space.
+A tight Borel measure $\mu$ on $X$ is Radon.
+\end{proposition}
+\begin{proof}
+  See \cite[Proposition~2.1.8]{Bogachev18:WeakConvergence}.
+\end{proof}
+
+However, tightness and Borel is not equivalent to Radon property: indeed, using the axiom of choice one can construct a separable metric space with a Borel probability measure which is not Radon (see \cite[Example~1.1.2]{Bogachev18:WeakConvergence}).
+On complete metric spaces, there are examples of Borel measures which are not Radon. See \cite[Proposition~4.1.6]{Bogachev18:WeakConvergence}.
+However, the following Theorem of Ulam will play an important role.
+
+\begin{theorem}
+On a complete separable metric space all Borel measures are Radon.
+\label{thm:Ulam}
+\end{theorem}
+\begin{proof}
+  See \cite[Theorem~2.1.9]{Bogachev18:WeakConvergence}.
+\end{proof}
+
+\begin{definition}
+  By the \emph{space of measures $\mathcal{M}(X)$} on a topological space $X$ is the set of all positive Radon measures on $X$.
+\end{definition}
+
+We define the following topology in the space of measures.
+
+\begin{definition} The weak$^*$-topology on $\mathcal{M}(X)$ is the weakest topology with respect to which the map
+\[
+\mathcal{M}(X) \to \mathbb{R}, \mu \mapsto \int \psi \mu
+\]
+is continuous for all $\psi \in C_c(X)$.
+\end{definition}
+
+We suppose that $\mathcal{M}(X)$ is endowed with the weak$^*$-topology.
+This topology might seem scary (see Remark~\ref{rmk:signedcurrents}).
+However, if $X$ is locally compact, Theorem \ref{thm:Riesz} implies $\mathcal{M}(X)$ is Hausdorff.
+In fact, even more is true.
+
+\begin{theorem}
+Let $X$ be locally compact. If $X$ is second countable, then $\mathcal{M}(X)$ is metrizable and second countable.
+\label{thm:spacemeasureswell}
+\end{theorem}
+
+In fact, $\mathcal{M}(X)$ has the Heine-Borel property.
+A set $A \subset \mathcal{X}$ is \emph{bounded} whenever
+\[
+  \sup_{\mu \in H} \int \psi \mu < \infty
+\]
+for every $\psi \in C_c(X)$.
+
+\begin{theorem}
+Let $X$ be a locally compact space. A closed set $A \subset \mathcal{M}(X)$ is compact if and only if it is bounded.
+\label{thm:heineborelproperty}
+\end{theorem}
+
+In particular, the set of bounded measures on a locally compact space is compact.
+
+\section{Geodesic currents}
+
+Geodesic currents are measures. There are several competing viewpoints on where one can see this measures supported on.
+We'll work with all of them, but let us informally discuss the two most widely used in the literature, to our understanding, before we get to the precise definitions.
+One viewpoint is as measures supported on the space of geodesics of a surface.
+Another is as measures supported on the unit tangent bundle of the surface invariant under the flow.
+Both viewpoints have their cons and pros.
+The first is more algebraic, and can be easily generalized to hyperbolic groups.
+However, the space of geodesics is not well behaved (not Hausdorff), so one has to lift geodesics to the universal cover and work with $\pi_1(\Sigma)$-invariant measures.
+The second is more geometric, and allows to see geodesic currents as measures supported on $UT\Sigma$, which is a complete separable metric space. Thence, we don't need to consider the $\pi_1(\Sigma)$-invariance. On the other hand, though, we need to pay the price of considering measures invariant under the geodesic flow. Also, although this definition can be generalized to hyperbolic groups (see \cite[Section~3]{EPS:CountingCurves}) it takes a bit more work to define what unit tangent bundle is in that case (see Section~\cite{EPS:CountingCurves} for details on this).
+
+
+\begin{definition}[Geodesic current definition 1]\label{def:currents-1}
+We define $\GC^+(S)$, the space of oriented geodesic currents on $S$,
+to be the
+space of $\pi_1(S)$-invariant (positive) Radon measures on
+$G^{+}(S)$.
+\end{definition}
+
+Since the action of $\pi_1(S)$ on $G^+(S)$ is not discrete, by \ref{prop:fundminimal}, this
+definition is hard to visualize. We give alternate
+definitions that play a key role in our proofs. For a hyperbolic
+surface~$\Sigma$, let $UT\Sigma$ be the unit tangent bundle and let
+$\phi_t$ be the geodesic flow on it.
+
+\begin{definition}[Geodesic current definition 2]\label{def:currents-2}
+  We can also define oriented geodesic currents to be the (positive) finite
+  Radon measures $\mu$ on the unit tangent bundle
+$UT \Sigma$ which are invariant under the geodesic flow, in the sense
+that $(\phi_t)_*(\mu) = \mu$ for all $t\in\R$. We note that by Theorem~\ref{thm:Ulam}, it suffices to consider Borel measures, since $UT\Sigma$ is a complete separable metric space if $\Sigma$ is a compact surface.
+\end{definition}
+
+A measure as defined in Definition~\ref{def:currents-2} induces a flux
+measure on transversals to the geodesic foliation of the unit tangent
+bundle. This provides an
+alternative definition of geodesic currents, which we will exploit in the sequel.
+
+\begin{definition}[Geodesic current definition 3]\label{def:currents-3}
+A geodesic current is a family of measures $\{\mu_{\tau}\}_{\tau}$,
+where $\tau \subset UT \Sigma$ is a submanifold of the unit tangent
+bundle of real codimension 1 transverse to the geodesic
+foliation~$\mathcal{F}$, with the following invariance property:  if
+$x_1 \in \tau_1, x_2 \in \tau_2$ are two points on transversal
+submanifolds on the same leaf of $\mathcal{F}$, and $\phi \colon U_1
+\to U_2$ a holonomy diffeomorphism between neighborhoods of $x_1$ and
+$x_2$ respectively, then $\phi_{*}\mu_{\tau_1}=\mu_{\tau_2}$.
+\end{definition}
+
+
+\subsection{Oriented vs unoriented currents}
+
+We will be mostly working on the setting of oriented geodesic
+currents, but most of our natural examples use unoriented currents.
+
+
+\begin{definition}[Unoriented geodesic currents]
+\label{def:unorientedcurrents}
+Let $\GC(\Sigma) \subset \GC^{+}(\Sigma)$ denote the space of \emph{unoriented geodesics currents} defined by
+\[
+\GC(\Sigma) = \{ \mu \in  \GC^{+}(\Sigma) \mid \sigma_*(\mu)=\mu \}
+\]
+where $\sigma_* : \mathcal{G}\mathcal{C}^{+}(\Sigma)
+\to\mathcal{G}\mathcal{C}^{+}(\Sigma)$ is the map on currents induced
+by the \emph{flip map} $\sigma: G^{+}(\Sigma) \to G^{+}(\Sigma)$
+that switches the two factors in the definition of $G^+(\Sigma)$,
+reversing the orientation of the geodesic.
+\end{definition}
+
+There is a map $\Pi : \GC^{+}(\Sigma) \to\GC^{+}(\Sigma)$ 
+given by $\Pi(\mu)\coloneqq
+\frac{1}{2}(\mu + \sigma_*(\mu))$ with image the subset of unoriented currents.
 
 
 %%% Local Variables:
