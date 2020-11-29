@@ -36,14 +36,16 @@ See \cite[1.2.14~Lemma]{Bo07:MeasureTheory}.
 \begin{definition}
 A real-valued set function $\mu$ defined on a class of sets $\mathcal{A}$ is called \emph{finitely additive} if 
 \[
-\mu\left(\bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n \mu(A_i)
+\mu\Bigl(\bigcup\nolimits_{i=1}^n A_i \Bigr) = \sum_{i=1}^n \mu(A_i)
 \]
 for all $n$ and all disjoint sets $A_1,\cdots,A_n \in \mathcal{A}$ such that $\bigcup_{i=1}^n A_i \in \mathcal{A}$.
-$\mu$ is called \emph{countably subadditive} if 
+We say $\mu$ is \emph{countably subadditive} if, for all pairwise
+disjoint sets $A_i \in \mathcal{A}$ such that $\bigcup_{i=1}^{\infty}
+A_i \in \mathcal{A}$,
+\DPTtodo{This has an equality. Is it supposed to be $\le$?}
 \[
-\mu\left(\bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mu(A_i)
+\mu\Bigl(\bigcup\nolimits_{i=1}^{\infty} A_i \Bigr) = \sum_{i=1}^{\infty} \mu(A_i).
 \]
-for all pairwise disjoint sets $A_i \in \mathcal{A}$ such that $\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}$.
 We say $\mu$ is called \emph{countably additive} if the above inequality is replaced by an equality.
 \end{definition}
 
@@ -56,14 +58,15 @@ uniquely to a finitely additive function on $\mathcal{R}_{S}$.
 See \cite[1.3.10~Proposition]{Bo07:MeasureTheory}.
 \end{proof}
 
-
+\DPTtodo[inline]{Everything else in this section is completely
+  standard. Is this definition/proposition? Of course it is easy}
 \begin{definition}
   Fix a ring $\mathcal{R}$. Let $\mathcal{F}$ be a family of nested sequences
   of elements of $\mathcal{R}$. Then $\mathcal{F}$ is a \emph{final family} if,
-  for any sequence $(R_i)_{i=0}^{\infty}$ of nested elements of
+  for any sequence $\mathbf{R} = (R_i)_{i=0}^{\infty}$ of nested elements of
   $\mathcal{R}$ with $\bigcap_{i=0}^\infty R_i = \emptyset$, there is a sequence
-  $(S_j) \in \mathcal{F}$ so that $R_i$ is eventually contained
-  in~$S_j$, in the sense that for each $j$ there is an $N$ so that for
+  $\mathbf{S} = (S_j)_{j=0}^\infty \in \mathcal{F}$ so that $\mathbf{R}$ is eventually contained
+  in~$\mathbf{S}$, in the sense that for each $j$ there is an $N$ so that for
   all $i \ge N$ we have $R_i \subset S_j$.
   \label{def:finalfamily}
 \end{definition}
@@ -73,31 +76,45 @@ family on which measures go to zero.
 
 
 \begin{proposition}
-Let $\mu$ be a finitely additive function defined on a ring $\mathcal{R}$. Let $\mathcal{F}$ be a final family of $\mathcal{R}$ so that for any $(S_j)_{j=1}^{\infty} \in \mathcal{F}$, $\lim_j \mu(S_j) \to 0$. Then $\mu$ is countably subadditive.
+Let $\mu$ be a finitely additive function defined on a ring
+$\mathcal{R}$. Suppose $\mathcal{F}$ is a final family of
+$\mathcal{R}$ so that for any $\mathbf{S} = (S_j)_{j=0}^{\infty} \in
+\mathcal{F}$, we have $\lim_{j\to\infty} \mu(S_j) = 0$. Then $\mu$ is
+countably
+\DPTtodo{I think this proves countable additivity, no?}
+subadditive.
 \label{prop:finalfamcount}
 \end{proposition}
 \begin{proof}
-Let $A_n$ be a sequence of pair-wise disjoint sets in $\mathcal{R}$ whose union $A$ is also in $\mathcal{R}$.
-Then consider $B_n =  A - \cup_{i=1}^n A_i$ . The sequence $B_n$ is a nested decreasing sequence of elements in $\mathcal{R}$ with empty intersection. Since $\mathcal{F}$ is a final family, for every $j$ we can find $N$ so that for every $i \geq N$, we have $B_i \subset S_j$.
-On the one hand, note that $\mu(B_i) \to 0$, since $\mu(S_j) \to 0$ by definition of final family and $\mu$ being monotone.
-On the other hand, 
+  Let $A_n$ be a sequence of pair-wise disjoint sets in $\mathcal{R}$
+  whose union $A$ is also in $\mathcal{R}$. Set
+  $B_n \coloneqq A - \bigcup_{i=0}^n A_i$ . The sequence
+  $\mathbf{B} = (B_n)_{n=0}^\infty$ is a nested decreasing sequence of
+  elements in $\mathcal{R}$ with empty intersection. Since
+  $\mathcal{F}$ is a final family, we can find
+  $\mathbf{S} \in \mathcal{F}$ so that $\mathbf{B}$ is eventually
+  contained in $\mathbf{S}$. On the one hand, note that, since
+  by hypothesis $\mu(S_j) \to 0$, we also have $\mu(B_i) \to 0$, by
+  definition of ``eventually contained'' and monotonicity of~$\mu$. On
+  the other hand,
 \[
-\mu(A - \cup_{i=1}^n A_i )= \mu(A) - \mu( \cup_{i=1}^n A_i )
+\mu(B_n) = \mu\Bigl(A - \bigcup\nolimits_{i=0}^n A_i \Bigr)= \mu(A) - \mu\Bigl( \bigcup\nolimits_{i=0}^n A_i \Bigr)
 \]
-by finite additivity of $\mu$, which proves what we wanted.
+by finite additivity of $\mu$, which proves that
+$\mu\bigl(\bigcup_{i=0}^n A_i\bigr) \to \mu(A)$, as desired.
 \end{proof}
 
 
 \begin{definition}
 \label{def:outermeasure}
 A set function $\mu$ defined on the class of all subsets of a set $X$ and taking values in $[0,\infty]$ is called an \emph{outer measure} if
-
 \begin{enumerate}
-    \item $\mu(\emptyset)=0$
-    \item $\mu(A) \leq \mu(B)$ whenever $A \subset B$, i.e., is monotone
+    \item $\mu(\emptyset)=0$;
+    \item $\mu(A) \leq \mu(B)$ whenever $A \subset B$, i.e., $\mu$ is
+      monotone; and
     \item $\mu$ is countably subadditive. 
 \end{enumerate}
-A set $A \subset X$ is called $\mu$-measurable if, for every $E \subset X$, one has the equality
+A set $A \subset X$ is called \emph{$\mu$-measurable} if, for every $E \subset X$, one has the equality
 \[
 \mu(E \cap A) + \mu(E \backslash A) = \mu(E)
 \]
@@ -105,18 +122,17 @@ The class of all $\mu$-measurable sets is denoted by $\mathcal{M}_{\mu}$, and is
 An outer measure is called \emph{regular} if, for every set $A \subset X$, there exist a $\mu$-measurable set $B$ so that $A \subset B$ and $\mu(A)=\mu(B)$.
 \end{definition}
 
-\begin{theorem}[Caratheodory extension theorem]
-Given a ring $\mathcal{R}$ and a finitely additive and countably additive function $\mu$ on it.
-Let 
+\begin{theorem}[Carathéodory extension theorem]
+Given a ring~$\mathcal{R}$ on a set~$X$ and a countably additive function~$\mu$ on~$\mathcal{R}$.
+For $A \subset X$, let 
 \[
-\mu^*(A) \coloneqq \inf \{ \sum_{i=1}^n \mu(A_n) \bigm\vert A_n \in \mathcal{R}, A \subset \cup_{i=1}^{\infty} X_i\},
+\mu^*(A) \coloneqq \inf \biggl\{ \sum_{i=1}^n \mu(A_n) \biggm\vert A_n \in \mathcal{R}, A \subset \bigcup\nolimits_{i=1}^{\infty} A_i\biggr\},
 \]
-where in the case of absence of such sets $A_n$ we set $\mu^*(A) \coloneqq \infty$. Then
-
+where in the case of absence of such a sequence~$A_n$ we set $\mu^*(A) \coloneqq \infty$. Then
 \begin{enumerate}
-    \item  $\mu^*$ is an outer regular measure
-    \item All the sets in $\mathcal{R}$ are $\mu$-measurable.
-    \item $\mu^*$ coincides with $\mu$ on $\mathcal{R}$
+    \item $\mu^*$ is an outer regular measure;
+    \item all the sets in $\mathcal{R}$ are $\mu$-measurable;
+    \item $\mu^*$ coincides with $\mu$ on $\mathcal{R}$; and
     \item $\mu$ extends as a measure on $\mathcal{M}_{\mu}$.
 \end{enumerate}
 \label{thm:caratheodory}
