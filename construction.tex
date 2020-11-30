@@ -14,6 +14,10 @@ We say that an essential crossing, as in Definition~\ref{def:essential-crossing}
   \[\mathcenter{\resizebox{30mm}{!}{\svgfig{rh}}}
 \]
 
+\DPTtodo[inline]{The notation here is off: this is not a condition on
+  conjugacy classes. The condition that $[a][x]\reducesto[ax]$ is
+  invariant under simultaneous conjugation of $a$ and $x$, but not
+  under conjugation of $a$ or $x$ by itself}
 If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
   right} or \emph{right-handedly} if there is an essential right-handed crossing between $[a]$ and $[x]$, as the following figure shows
       
@@ -28,9 +32,10 @@ If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
   \end{align}
   \label{def:righthanded}
   
-  If $[a]$ does not cross $[x]$ to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
+  If $[a]$ cross $[x]$ essentially, but not to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
   \end{definition}
-  
+
+  \DPTtodo{Can we put the non-examples in their own figure?}
   \begin{figure}
 \subfloat[Right handed box Type 1]{\resizebox{80mm}{!}{\svgfig{box1}}}\qquad
 \subfloat[Right handed box Type 2]{\resizebox{65mm}{!}{\svgfig{box}}}\\
@@ -44,25 +49,82 @@ If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
 \begin{enumerate} \item Dreamcatchers given by elements $(a,b,c,d)$ with a relation $aBcD=1$ \item Dreamcatchers given by elements $(p_1,q_1,p_2,q_2)$, \item Boxes 
 \item and $\pi_1(S)$-orbit of boxes
 \end{enumerate}
-Do we want to use just either 1 or 2. We use 1 for the definition, and then use 2 for other purposes. I wonder if just introducing one datum is enough and keeps exposition more simple. If we want to use both, writing out the relation (and ambiguity) between two more precisely might be necessary?
+Do we want to use just either 1 or 2. We use 1 for the definition, and
+then use 2 for other purposes. I wonder if just introducing one datum
+is enough and keeps exposition more simple. If we want to use both,
+writing out the relation (and ambiguity) between two more precisely
+might be necessary?
+
+\DPTtodo[inline]{START RESPONSE}
+Aren't 1/2 and 4 the same object? Especially 2 and 4?
+
+I think it's good to keep to as few objects as possible, as you note.
+I think that boxes should be primary over orbits of boxes. (Maybe we
+can also revisit what gets called a ``dreamcatcher''; I think it's a
+little confusing that an orbit of boxes is a dreamcatcher.) That means
+we need the $p_i, q_i$ parametrization. But the $a,b,c,d$
+parametrization has the advantage that it's manifestly conjugation
+invariant. Maybe try to use $p_i,q_i$ as much as possible?
 \DMGtodo[inline]{END COMMENT}
 
-\begin{definition}[dreamcatcher]
+\DPTtodo[inline]{Added this. It seemed like the exposition was out of order;
+  we should talk about general lifts before the ``right-handed box''
+  condition.}
+\begin{definition}
+  Given elements $p_1,p_2,q_1,q_2$ of $\pi_1(S, *)$, we can construct
+  four lifts of~$x$: $\wt \ell_i = (p_1)^{-1} \cdot \wt x$ and
+  $\wt r_i = q_i \cdot \wt x$.
+
+  If we are only interested in the relative position of these lines
+  (for instance to construct conjugation-invariant functionals), we
+  can introduce new elements
+\begin{equation}
+\begin{aligned}
+  a &= q_1p_1 &\qquad\qquad\qquad\qquad\qquad b &= q_2p_1\\[2pt]
+  c &= q_1p_2 & d &= q_2p_2.
+\end{aligned}
+  \label{eq:relationdatum}
+\end{equation}
+so that
+\begin{align*}
+  \wt r_1 &= a \cdot \wt \ell_1 & \wt r_2 &= b \cdot \wt\ell_1\\
+  \wt r_1 &= c \cdot \wt \ell_2 & \wt r_2 &= d \cdot \wt\ell_2.
+\end{align*}
+Conversely, given elements $a,b,c,d \in \pi_1(S, *)$ with $aCdB = 1$, we can
+construct four lifts of $x$ differing pairwise by translating by these
+elements, for instance setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and
+$p_2 = aC$.
+\end{definition}
+
+We will only be interested in particular configurations of these lifts.
+
+\begin{definition}[Dreamcatcher]
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
-
 \begin{enumerate}
-    \item $[a],[b],[c],[d]$ cross $x$ to the right.
-    \item $a c^{-1} d b^{-1} = 1$.
-    \item There exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}bx^n a c^{-1}$ and the path $cx^n$, both based at $*$, have a right handed crossing. See Figure~\ref{fig:rhbox} for examples and non-examples of dreamcatchers. We distinguish three types of dreamcatchers: type 1 has no nested lifts; type 2 has one pair of nested lifts with the same orientation; and type 3 has two pairs of nested lifts of $x$, each pair with the same orientation.
+\item $a c^{-1} d b^{-1} = 1$.
+\item $[a],[b],[c],[d]$ cross $x$ to the right.
+\item There exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}bx^n a c^{-1}$ and the path $cx^n$, both based at $*$, have a right handed crossing.
 \end{enumerate}
+See Figure~\ref{fig:rhbox} for examples and non-examples of
+dreamcatchers. We distinguish three types of dreamcatchers: type 1 has
+no nested lifts; type 2 has one pair of nested lifts with the same
+orientation; and type 3 has two pairs of nested lifts of $x$, each
+pair with the same orientation.
+     
 We will call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
 \end{definition}
 
 \begin{remark}
 \begin{enumerate} 
-\item The reader might wonder why in item (3) we require the condition ``for $n$ large enough''. It turns out that requiring the condition for all $n$ is too restrictive, and while it does happen for some configurations of lifts, such as type 1, in general it doesn't hold for the types of configurations of lifts that we are interested in. See the clarification in the proof of Proposition~\ref{prop:positivity} for more on this.
-\item Item (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked. 
+\item The reader might wonder why in condition (3) we require the condition
+  ``for $n$ large enough''. It turns out that requiring the condition
+  for all $n$ is too restrictive, and while it does happen for some
+  configurations of lifts, such as type 1 in Figure~\ref{fig:rhbox},
+  in general it doesn't hold for the types of configurations of lifts
+  that we are interested in. See the clarification in the proof of
+  Proposition~\ref{prop:positivity} for more on this.
+\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked. 
      To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
      \end{enumerate}
 \end{remark}
@@ -139,7 +201,10 @@ and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S,*)$ so that for some $B \
    Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively.
    For $r$ (and similarly for $s$), we proceed as follows. Given a lift of $\tilde{x}$, and $p$, consider some element $\gamma \in \pi_1(\Sigma)$ with $\gamma_- \in (x^-, x^+)$ and $\gamma^+$ within $\epsilon/4$ of $p$. For $n$ large, we consider the lift of $[x]$ given by $\gamma^n \cdot \tilde{x}$, where $\cdot$ denotes the left action of $\gamma$, i.e., if $x$ is the element of $\pi_1(S,*)$ with invariant axis $\tilde{x}$, $\gamma^n \cdot \tilde{x}$ denotes the invariant axis of $\gamma^n x \gamma^{-n}$. For $n$ large enough we see that $(\gamma^n \cdot \tilde{x})^+$ and  $(\gamma^n \cdot \tilde{x})^-$ are within $\epsilon$ of $p$.   See Figure~\ref{fig:approx}.
    We will write $\gamma_r$ as $\gamma$ in this construction, and then repeat the same construction for $s$ with an element $\gamma_s$.
-   This will give the necessary lifts with the correct orientations for $r$ and $s$.
+   This will give the necessary lifts with the correct orientations
+   for $r$ and $s$.
+   \DPTtodo{Figures~\ref{fig:approx} and \ref{fig:approx2} have the
+     same caption. Can they be combined?}
  
  \begin{figure}
 \centering{
