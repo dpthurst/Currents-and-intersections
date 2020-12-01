@@ -5,6 +5,49 @@
 We now introduce the main objects in our proof, certain subsets of the
 space of geodesics to which we will first assign measures.
 
+\begin{definition}
+  Given a 4-tuple of elements $(p_1,q_1,p_2,q_2)$ of $\pi_1(S, *)$, we can construct
+  four lifts of~$x$: $\wt \ell_i = (p_1)^{-1} \cdot \wt x$ and
+  $\wt r_i = q_i \cdot \wt x$.
+
+  There is an action of $\pi_1(S)$ on these 4-tuples by
+  \[
+  g \cdot (p_1,q_1,p_2,q_2) \coloneqq (g p_1, q_1 g^{-1}, g p_2, q_2 g^{-1}),
+  \]
+  giving the action of $\pi_1(S)$ on the lifts in $\wt S$ (picking a different base
+  lift~$\wt x$).
+  If we are only interested in the relative position of these lines
+  (for instance to construct $\pi_1(S)$-invariant functionals), we
+  can introduce new elements
+\begin{equation}
+\begin{aligned}
+  a &= q_1p_1 &\qquad\qquad\qquad\qquad\qquad b &= q_2p_1\\[2pt]
+  c &= q_1p_2 & d &= q_2p_2.
+\end{aligned}
+  \label{eq:relationdatum}
+\end{equation}
+so that\DPTtodo{Currently we think these next actions are on the wrong side}
+\begin{align*}
+  \wt r_1 &= a \cdot \wt \ell_1 & \wt r_2 &= b \cdot \wt\ell_1\\
+  \wt r_1 &= c \cdot \wt \ell_2 & \wt r_2 &= d \cdot \wt\ell_2.
+\end{align*}
+Conversely, given elements $a,b,c,d \in \pi_1(S, *)$ with $aCdB = 1$, we can
+construct four lifts of $x$ differing pairwise by translating by these
+elements, for instance setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and
+$p_2 = aC$.
+\end{definition}
+
+A collection of four lifts of~$x$ as above, with some non-degeneracy
+conditions, defines a box in the space of geodesics in the sense of
+Bonahon.\DPTtodo{Check terminology is right} Concretely, we will end
+up looking at the box
+$[\wt\ell_2^-,\wt\ell_1^-) \times [\wt r_2^+,\wt r_1^+) \subset
+\partial_\infty \wt S \times \partial_\infty \wt S$ as basic elements for
+defining the measure (see Definition~\ref{def:dreamcatcher-box}). But we need some conditions on these lifts; for
+instance, we need the box to avoid the diagonal. For the proofs to go
+through easily, we will impose more conditions and only be interested
+in particular configurations of these lifts.
+
 Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ satisfy symmetry, additive union, smoothing, stability and homogeneity.
 Recall that since $f$ satisfies the symmetry condition, we have that $f([a])=f([a^{-1}])$ for any $a \in \pi_1(S,\ast)$.
 Recall, also, that the fact that $f$ satisfies the smoothing condition for unoriented curves means $f$ is non-increasing under smoothing essential crossings for any of the two possible unoriented resolutions (the one coherent with the chosen orientation and the one which isn't).
@@ -72,45 +115,7 @@ parametrization has the advantage that it's manifestly conjugation
 invariant. Maybe try to use $p_i,q_i$ as much as possible?
 \DMGtodo[inline]{END COMMENT}
 
-\DPTtodo[inline]{Added this. It seemed like the exposition was out of order;
-  we should talk about general lifts before the ``right-handed box''
-  condition.}
-\begin{definition}
-  Given elements $p_1,p_2,q_1,q_2$ of $\pi_1(S, *)$, we can construct
-  four lifts of~$x$: $\wt \ell_i = (p_1)^{-1} \cdot \wt x$ and
-  $\wt r_i = q_i \cdot \wt x$.
 
-  If we are only interested in the relative position of these lines
-  (for instance to construct conjugation-invariant functionals), we
-  can introduce new elements
-\begin{equation}
-\begin{aligned}
-  a &= q_1p_1 &\qquad\qquad\qquad\qquad\qquad b &= q_2p_1\\[2pt]
-  c &= q_1p_2 & d &= q_2p_2.
-\end{aligned}
-  \label{eq:relationdatum}
-\end{equation}
-so that
-\begin{align*}
-  \wt r_1 &= a \cdot \wt \ell_1 & \wt r_2 &= b \cdot \wt\ell_1\\
-  \wt r_1 &= c \cdot \wt \ell_2 & \wt r_2 &= d \cdot \wt\ell_2.
-\end{align*}
-Conversely, given elements $a,b,c,d \in \pi_1(S, *)$ with $aCdB = 1$, we can
-construct four lifts of $x$ differing pairwise by translating by these
-elements, for instance setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and
-$p_2 = aC$.
-\end{definition}
-
-A collection of four lifts of~$x$ as above, with some non-degeneracy
-conditions, defines a box in the space of geodesics in the sense of
-Bonahon.\DPTtodo{Check terminology is right} Concretely, we will end
-up looking at the box
-$[(\wt\ell_2)_+,(wt\ell_1)_+) \times [(\wt r_2)_+,(\wt r_1)_+) \subset
-\partial_\infty \wt S \times \partial_\infty \wt S$ as basic elements for
-defining the measure. But we need some conditions on these lifts; for
-instance, we need the box to avoid the diagonal. For the proofs to go
-through easily, we will impose more conditions and only be interested
-in particular configurations of these lifts.
 
 \begin{definition}[Dreamcatcher]
 \label{def:righthandeddreamcatcher}
@@ -188,7 +193,7 @@ $p_1,p_2,q_1,q_2$ do not satisfy any relation.
 }
 \end{figure}
 
-\begin{definition}
+\begin{definition}\label{def:dreamcatcher-box}
 Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by
 \[
 B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
