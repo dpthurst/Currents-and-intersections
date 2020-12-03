@@ -2,7 +2,27 @@
 \subsection{Right-handed boxes}
 \label{sec:boxes}
 
-We now introduce the main objects in our proof, certain windows in the
+Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ be a
+functional satisfying symmetry, additive union, smoothing, stability
+and homogeneity.
+Recall that since $f$ satisfies the symmetry condition,
+$f([a])=f([a^{-1}])$ for any $a \in \pi_1(S,\ast)$.
+Recall, also, that the fact that $f$ satisfies the smoothing condition
+for unoriented curves means $f$ is non-increasing under smoothing
+essential crossings for either of the two possible unoriented resolutions
+(the one coherent with the chosen orientation, and the one which
+isn't).
+
+We wish to construct a current $\mu_f$ and show that $f(C) = i(C,
+\mu_f)$. To construct $\mu_f$, we fix (arbitrarily) a simple closed
+oriented curve~$[x]$. The endpoints of the lifts of $[x]$  are dense
+in $\partial_{\infty} \Sigma$, by minimality of the action of
+$\pi_1(S,*)$. For convenience, we will work in $\pi_1(S,\ast)$ with a
+basepoint~$\ast$ on~$[x]$ and use $x$ for the corresponding element
+of~$\pi_1$. We also fix a base lift $\wt x$ of $x$ to the universal
+cover~$\wt S$.
+
+The main objects in our proof are certain \emph{windows} in the
 space of geodesics to which we will assign measures. The prototype for
 the kind of windows we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four lines, all lifts of~$x$, with
@@ -10,9 +30,22 @@ two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
 $[\wt\ell_2^-,\wt\ell_1^-) \times [\wt r_2^+,\wt r_1^+) \subset
 \partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
-for defining the measure. The precise conditions on the relation
-between lifts are explained below, but we start by recalling some
+for defining the measure. The precise conditions on the lifts are
+explained below, but we start by recalling some
 group theory on the universal cover.
+
+\DPTtodo[inline]{In Figure~\ref{fig:newmodel3}: draw the actual
+  intervals defining the windows; label $\ell_i$ and $r_i$; label
+  $a,b,c,d$ in another color; correct left endpoints:
+  we should have $p_1^{-1}$, etc. This probably requires making the
+  picture bigger to fit everything comprehensibly. I can also do this.}
+\begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{newmodel3}}
+\caption{Determining a box from group theory data}
+\label{fig:newmodel3}
+}
+\end{figure}
 
 There is one base lift~$\wt x$ of $x$ to $\wt S$, the lift that passes
 through the base point~$*$ and all elements of the group
@@ -71,14 +104,8 @@ As mentioned above, we need some conditions on these lifts; for
 instance, we need the window
 $[\wt\ell_2^-,\wt\ell_1^-) \times [\wt r_2^+,\wt r_1^+)$ to avoid the
 diagonal. For the proofs to go through easily, we will impose more
-conditions on the configurations of these lifts.
-\DPTtodo[inline]{Edited to HERE}
-
-Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ satisfy symmetry, additive union, smoothing, stability and homogeneity.
-Recall that since $f$ satisfies the symmetry condition, we have that $f([a])=f([a^{-1}])$ for any $a \in \pi_1(S,\ast)$.
-Recall, also, that the fact that $f$ satisfies the smoothing condition for unoriented curves means $f$ is non-increasing under smoothing essential crossings for any of the two possible unoriented resolutions (the one coherent with the chosen orientation and the one which isn't).
-We will fix (arbitrarily) a simple closed oriented curve~$[x]$. The endpoints of the lifts of $[x]$  are dense in $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S,*)$. For convenience, we will work in $\pi_1(S,\ast)$ with a basepoint~$\ast$ on~$[x]$ and use $x$ for the corresponding element of~$\pi_1$.
-
+conditions on the configurations of these lifts. We first distinguish
+between types of crossings.
 
 \begin{definition}[right handed crossing]
 We say that an essential crossing, as in
@@ -109,13 +136,12 @@ If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
   If $[a]$ cross $[x]$ essentially, but not to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
   \end{definition}
 
-  \DPTtodo{Can we put the non-examples in their own figure?}
   \begin{figure}
-\subfloat[Right handed box Type 1]{\resizebox{80mm}{!}{\svgfig{box1}}}\qquad
-\subfloat[Right handed box Type 2]{\resizebox{65mm}{!}{\svgfig{box}}}\\
-\subfloat[Right handed box Type 3]{\resizebox{65mm}{!}{\svgfig{box4}}}\qquad
-\subfloat[Non-example of right handed box]{\resizebox{80mm}{!}{\svgfig{nonbox}}}
-\caption{Right handed boxes of Type 1, Type 2 and Type 3, and non-example of a right-handed box, induced by a choice of dreamcatcher and lift of $x$.}
+\subfloat[Type 1]{\resizebox{80mm}{!}{\svgfig{box1}}}\qquad
+\subfloat[Type 2]{\resizebox{65mm}{!}{\svgfig{box}}}\\
+\subfloat[Type 3]{\resizebox{65mm}{!}{\svgfig{box4}}}\qquad
+\caption{Right handed boxes of Type 1, Type 2 and Type 3, induced by
+  different choices of dreamcatchers and lift of $x$.}
 \label{fig:rhbox}
 \end{figure}
 
@@ -147,36 +173,52 @@ invariant. Maybe try to use $p_i,q_i$ as much as possible?
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
-\item $a c^{-1} d b^{-1} = 1$.
-\item $[a],[b],[c],[d]$ cross $x$ to the right.
-\item There exists $n_0$ so that for all $n \geq n_0$, the lift of the
-  path $ca^{-1}bx^n a c^{-1}$ and the path $cx^n$, both based at $*$,
-  have a right handed crossing.
-  \DPTtodo{Does this look nicer in the $p_i,q_i$ notation?}
+\item $a c^{-1} d b^{-1} = 1$;
+\item $a,b,c,d$ cross $x$ to the right; and
+    \DPTtodo[inline]{I think this is a typo: should be $c
+      d^{-1}bx^ndc^{-1} = ax^ndc^{-1}$}
+\item for sufficiently large~$n$, $ca^{-1}bx^n a c^{-1}$ crosses
+  $cx^n$ to the right.
 \end{enumerate}
 Then we call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
+As explained above, this determines a $\pi_1(S)$-orbit of windows. In
+terms of the alternative data $(p_1,q_1,p_2,q_2)$ for a window (rather
+than for an orbit), these conditions
+become
+\begin{enumerate}[label=(\arabic*$^\prime$)]
+\item automatic;
+\item for $i,j \in \{1,2\}$, $p_iq_j$ crosses $x$ to the right; and
+\item for sufficiently large~$n$, $q_2x^np_1$ crosses $q_1x^np_2$ to
+  the right.
+\end{enumerate}
 \end{definition}
-See Figure~\ref{fig:rhbox} for examples and non-examples of
-dreamcatchers. We distinguish three types of dreamcatchers: type 1 has
+See Figure~\ref{fig:rhbox} for examples of
+dreamcatchers, and Figure~\ref{fig:box4} for non-examples. We
+distinguish three types of dreamcatchers: type 1 has
 no nested lifts; type 2 has one pair of nested lifts with the same
 orientation; and type 3 has two pairs of nested lifts of $x$, each
-pair with the same orientation.
+pair with the same orientation. Note that since $x$ is simple, lifts
+cannot intersect each other.
      
 \begin{remark}
 \begin{enumerate} 
 \item The reader might wonder why in condition (3) we require the condition
   ``for $n$ large enough''. It turns out that requiring the condition
   for all $n$ is too restrictive, and while it does happen for some
-  configurations of lifts, such as type 1 in Figure~\ref{fig:rhbox},
+  configurations of lifts, such as those of Type 1,
   in general it doesn't hold for the types of configurations of lifts
   that we are interested in. See the clarification in the proof of
   Proposition~\ref{prop:positivity} for more on this.
-\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked. 
-     To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
+\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
+  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
+    implications about the order in which things appear on the
+    boundary. But is the other direction correct? Could we end up
+    with a left-handed crossing?}
+  To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
      \end{enumerate}
 \end{remark}
 
-Given a right-handed dreamcatcher, $(a,b,c,d)$ and given a choice of lift of the geodesic $[x]$, we obtain lifts differing from each other by translating by $a,b,c,d$, respectively. For example, $\tilde{x},a\cdot \tilde{x}, b \tilde{x}, aC \cdot \tilde{x}$.
+Given a right-handed dreamcatcher $(a,b,c,d)$ and given a choice of lift of the geodesic $[x]$, we obtain lifts differing from each other by translating by $a,b,c,d$, respectively. For example, $\tilde{x},a\cdot \tilde{x}, b \tilde{x}, aC \cdot \tilde{x}$.
 There are other configurations of lifts possible, such as $\tilde{x},a\cdot \tilde{x}, b \tilde{x}, c \cdot \tilde{x}, Ba \cdot \tilde{x}$.
 Fixing a lift of the curve $[x]$, this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts of $x$ are placed as shown in Figure~\ref{fig:rhbox} respectively.
 Note how the lifts of $[x]$ are non-intersecting, since $[x]$ is simple, and these orientation of the lifts is always right-handed.
@@ -185,8 +227,9 @@ A choice of one endpoint for each such lift of $x$, determines a box of geodesic
 The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
 \begin{figure}
 \centering{
+\resizebox{60mm}{!}{\svgfig{nonbox}}
 \resizebox{60mm}{!}{\svgfig{box3}}
-\caption{Non-example of right-handed box.}
+\caption{Two non-examples of right-handed boxes.}
 \label{fig:box4}
 }
 \end{figure}
@@ -210,14 +253,6 @@ Figure~\ref{fig:rhbox} and Figure~\ref{fig:newmodel3} by setting
 
 Note that $a,b,c,d$ satisfy the relation $ab^{-1}cd^{-1} = 1$, whereas
 $p_1,p_2,q_1,q_2$ do not satisfy any relation.
-
-\begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{newmodel3}}
-\caption{Determining a right handed box from a right handed dream catcher}
-\label{fig:newmodel3}
-}
-\end{figure}
 
 \begin{definition}\label{def:dreamcatcher-box}
 Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by
