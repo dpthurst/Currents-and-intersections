@@ -132,14 +132,24 @@ If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
     \label{eq:cross-red}[a][x] &\reducesto [ax]
   \end{align}
   \label{def:righthanded}
+  An equivalent statement is that the four points $a^-,x^-,a^+, x^+$
+  occur on the circle at infinity in that cyclic order.
   
-  If $[a]$ cross $[x]$ essentially, but not to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
-  \end{definition}
+  If $[a]$ crosses $[x]$ essentially, but not to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
+\end{definition}
+\DPTtodo[inline]{Spell out here how to see ``crossing'' from
+  universal cover pictures. In particular, in
+  Figure~\ref{fig:rhbox}, how to see that $a$ crosses $x$ to the
+  right? What does it look like when $a$ does not cross $x$? But do
+  examples with just two lifts of~$x$ first}
 
+  \DPTtodo[inline]{To fix the sizing issues on Inkscape drawings, use
+    the command ``File/Document Properties/Resize Page to Content''.
+    You can then add extra margin in TeX if desired}
   \begin{figure}
-\subfloat[Type 1]{\resizebox{80mm}{!}{\svgfig{box1}}}\qquad
-\subfloat[Type 2]{\resizebox{65mm}{!}{\svgfig{box}}}\\
-\subfloat[Type 3]{\resizebox{65mm}{!}{\svgfig{box4}}}\qquad
+\subfloat[Type 1]{\resizebox{60mm}{!}{\svgfig{box1}}}\qquad
+\subfloat[Type 2]{\resizebox{60mm}{!}{\svgfig{box}}}\\
+\subfloat[Type 3]{\resizebox{60mm}{!}{\svgfig{box4}}}\qquad
 \caption{Right handed boxes of Type 1, Type 2 and Type 3, induced by
   different choices of dreamcatchers and lift of $x$.}
 \label{fig:rhbox}
@@ -183,18 +193,18 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 Then we call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
 As explained above, this determines a $\pi_1(S)$-orbit of windows. In
 terms of the alternative data $(p_1,q_1,p_2,q_2)$ for a window (rather
-than for an orbit), these conditions
+than for an orbit), condition~(1) is automatic and the others
 become
 \DPTtodo{Wrote what I think are the correct statements}
-\begin{enumerate}[label=(\arabic*$^\prime$)]
-\item automatic;
+\begin{enumerate}[label=(\arabic*$^\prime$),start=2]
 \item for $i,j \in \{1,2\}$, $p_iq_j$ crosses $x$ to the right; and
 \item for sufficiently large~$n$, $q_2x^np_1$ crosses $q_1x^np_2$ to
   the right.
 \end{enumerate}
 \end{definition}
 See Figure~\ref{fig:rhbox} for examples of
-dreamcatchers, and Figure~\ref{fig:box4} for non-examples. We
+dreamcatchers, and Figure~\ref{fig:box4} for non-examples.
+ We
 distinguish three types of dreamcatchers: type 1 has
 no nested lifts; type 2 has one pair of nested lifts with the same
 orientation; and type 3 has two pairs of nested lifts of $x$, each
@@ -230,7 +240,10 @@ The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ cro
 \centering{
 \resizebox{60mm}{!}{\svgfig{nonbox}}
 \resizebox{60mm}{!}{\svgfig{box3}}
-\caption{Two non-examples of right-handed boxes.}
+\caption{Two non-examples of right-handed boxes. The left is not
+  right-handed because $b$ and $c$ cross in the wrong way, while the
+  right is a non-example because $c$ does not cross $x$ (to the right
+  or to the left)}
 \label{fig:box4}
 }
 \end{figure}
@@ -262,21 +275,46 @@ B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
 \]
 A different choice of lift $\tilde{x}'$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by conjugation by some element in $\pi_1(S,*)$.
 
-To recap, the datum $(p_1,p_2,q_1,q_2)$ determines a box $B_{p_1,p_2,q_1,q_2}$ and the dreamcatcher datum $(a,b,c,d)$ determines a $\pi_1(S)$ orbit of boxes that we will denote $[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to drive attention to a concrete representative of the orbit, or to the orbit itself, respectively. Here $(p_1,p_2,q_1,q_2)$ is related to $(a,b,c,d)$ by Equations~\ref{eq:relationdatum}.
+To recap, the datum $(p_1,p_2,q_1,q_2)$ determines a box
+$B_{p_1,p_2,q_1,q_2}$ and the dreamcatcher datum $(a,b,c,d)$
+determines a $\pi_1(S)$ orbit of boxes that we will denote
+$[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
+draw attention to a concrete representative of the orbit or to the
+orbit itself. Here $(p_1,p_2,q_1,q_2)$ is related to $(a,b,c,d)$ by
+Equations~\ref{eq:relationdatum}.
 
 We will denote by $\mathcal{B}$ the set of right-handed boxes, and by 
-\[\mathcal{E}=\{ (p_1 x^-, p_2 x^-, q_2 x^+, q_1x^+) : (a,b,c,d) \mbox{ determined by Eq~\ref{eq:relationdatum} form a dreamcatcher } \}\]
+\[\mathcal{E}=\{ (p_1 x^-, p_2 x^-, q_2 x^+, q_1x^+) : \mbox{$p_i,q_j$
+    determined by Eq~\ref{eq:relationdatum} form a dreamcatcher } \}
+  \subset (\bdy_\infty \Sigma)^4
+\]
 the set of 4-tuples of endpoints of right-handed boxes.
 \end{definition}
 
 Note that because of our interest in right-handed boxes, we are restricting our attention to a subset of the lifts of $[x]$.
 However, these are still enough to approximate any box.
 
+\begin{remark}
+  The reader may wonder why we choose to make the boxes half-open in
+  the specified way. In fact it doesn't matter, as the weight of the
+  boundary of these boxes under any geodesic current is necessarily
+  zero. This choice is more convenient for the proofs.
+  \DPTtodo[inline]{Give a more precise ref for why weight of the
+    boundary is zero}
+\end{remark}
 
+
+\DPTtodo[inline]{Corrected proposition: rectangles are not elements of
+$G^+(S)$, they are subsets of it}
 \begin{proposition}
-The family of right handed boxes $\mathcal{B}$ is dense in $G^+(\Sigma)$, in the following sense.
-For any rectangle $R = [p,q) \times [r,s) \in G^+(\Sigma)$,
-and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S,*)$ so that for some $B \in [B]_{a,b,c,d}$, with $B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in B_{\epsilon}(s)$.
+The family of right handed boxes $\mathcal{B}$ is dense in the space
+of rectangles in $G^+(\Sigma)$, in the following sense.
+For any rectangle $R = [p,q) \times [r,s) \subset G^+(\Sigma)$,
+and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S,*)$ forming a
+right-handed box so that for some $B \in [B]_{a,b,c,d}$, with
+$B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in
+B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in
+B_{\epsilon}(s)$.
 \label{prop:density}
 \end{proposition}
 \begin{proof}
@@ -322,14 +360,15 @@ Fix $x$ and a lift $\tilde{x}$ once and for all.
 \begin{proposition}
 \label{prop:limitexists}
 Let $B_{p_1,p_2,q_1,q_2}$ be a right-handed box so that $[B_{p_1,p_2,q_1,q_2}]=[B]_{a,b,c,d}$.
-The following limit associated to $B_{p_1,p_2,q_1,q_2}$ exists:
+The following limit exists:
 \[
-\mu_{f}(B_{p_1,p_2,q_1,q_2})=\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
+\mu_{f}(B_{p_1,p_2,q_1,q_2})\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \]
 \end{proposition}
-Before checking if this limit exists, note that its definition only depends on the $\pi_1(S)$ orbit of $B_{p_1,p_2,q_1,q_2}$, in other words, it only depends on the choice of right-handed dreamcatcher $(a,b,c,d)$. Thus, the pre-measure is $\pi_1(S)$-invariant.
+Note this function on boxes (which will eventually become a pre-measure and
+then a measure) is automatically $\pi_1(S)$-invariant.
 
-We now prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
+We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
 
 \subsubsection{Smoothing lemmas}
 
@@ -338,17 +377,20 @@ We will need some key lemmas relating several curves by smoothing essential cros
 \begin{lemma}
   Suppose $x,a \in \pi_1(S,\ast)$ and $[x]$ is simple.
   If $[a]$ crosses $[x]$ to the right, then we have the following
-  geometric reductions:
+  unoriented geometric reductions:
   \begin{align}
     \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
     \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
   \end{align}
   \label{lem:smoothingskey}
 \end{lemma}
-\DMGtodo[inline]{Equation 4.5 looks funny, it is not homologically sound, and smoothing should preserve homology classes?}
+(To make Equation~\eqref{eq:cross-red3} into an oriented reduction, we
+need to invert one term on the LHS.)
 \begin{proof}
   Equation~(\ref{eq:cross-red1}) follows since $[a]$ (and $[a x^n]$)
-  cross~$[x]$ to the right. For Equation~(\ref{eq:cross-red3}), consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
+  cross~$[x]$ to the right.
+  \DPTtodo{Requires proof that $ax^n$ also crosses $x$ to the right}
+  For Equation~(\ref{eq:cross-red3}), consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
    \[\mathcenter{\svgfignormal{smint_1}}
 \]
     There are two possible choices of resolution. We choose the one which does not agree with the natural orientations of $[a]$ and $[x]$.
