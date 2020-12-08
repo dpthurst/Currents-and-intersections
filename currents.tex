@@ -70,6 +70,45 @@ There is a map $\Pi : \GC^{+}(\Sigma) \to\GC^{+}(\Sigma)$
 given by $\Pi(\mu)\coloneqq
 \frac{1}{2}(\mu + \sigma_*(\mu))$ with image the subset of unoriented currents.
 
+\subsection{Properties of geodesic currents as measures}
+
+The $\pi_1(S)$-invariance of geodesic currents highly constrains the atoms (see Definition~\ref{def:atommeasure}) they can have.
+
+\begin{proposition}
+The orbit $\pi_1(S)\widetilde{\gamma}$ for $\widetilde{\gamma} \in G^+(S)$ is discrete if and only if either $p(\widetilde{\gamma})$ is a closed geodesic.
+\end{proposition}
+\begin{proof}
+   If $p(\widetilde{\gamma})$ is a closed geodesic, then since the action of $\pi_1(S)$ is discrete, the orbit is discrete. On the other hand, then the $p(\widetilde{\gamma})$ is contained in some compact subset of $S - \partial S$. 
+In this case, $p(\widetilde{\gamma})$ is not closed if and only if there is a small disk intersecting  $p(\widetilde{\gamma})$ infinitely many times, if and only if, there is a small interval $I$ intersecting infinitely many elements of $\pi_1(S)\widetilde{\gamma}$, if and only if $\pi_1(S)\widetilde{\gamma}$ is not discrete.
+\end{proof}
+
+This says that the only $0$-dimensional subsets with atoms are subsets consisting of lifts of closed geodesics.
+Let a \emph{spike} $P(x,[y_1,y_2])$ be the subset of $G^+(S)$ of geodesics starting at $x \in \bdy\tilde{\Sigma}$ and with endpoint contained in the interval $[y_1,y_2] \subset \bdy\tilde{\Sigma}$.
+
+
+\begin{proposition}
+Suppose a spike $P(x,[y_1,y_2])$ doesn't contain any element $\widetilde{\gamma}$ with a discrete orbit.
+Then $\mu(P(x,[y_1,y_2]))=0$ for any geodesic current $\mu$.
+\label{prop:spikes}
+\end{proposition}
+\begin{proof}
+  See \cite[Lemma~2.27]{EM18:ErgodicGeodesicCurrents}. 
+\end{proof}
+
+\begin{comment}
+Let $P(x)$ be a \emph{pencil} of geodesics based at $x$, i.e., the subset of $G^+(S)$ of all geodesics starting at $x \in \bdy\tilde{\Sigma}$.
+By Proposition~\ref{prop:spikes}, the only way for a geodesic current $\mu$ to satisfy $\mu(P(z))>0$ for some $z\in \partial_{\infty} S$.
+Further, note that if $\mu$ has no $0$-dimensional atoms, then it can't have any $1$-dimensional atoms, by the following result.
+
+\begin{proposition}
+  If $\mu(\widetilde{\gamma})=0$ for any $\widetilde{\gamma} \in G^+(S)$, then $\mu(P(z))=0$ for any $z \in \partial_{\infty} S$.
+  \label{prop:pencil}
+\end{proposition}
+\begin{proof}
+  Suppose by contradiction $\mu(P(z))>0$.  Then there must exist some $\widetilde{\gamma} \in P(z,[y_1,y_2]) \subset P(z)$ for some $[y_1,y_2] \subset \partial_{\infty} S$ disjoint from $z$, so that $p(\widetilde{\gamma})=\gamma$ is a closed geodesic. Let $g \in \pi_1(\Sigma)$ be the element so that its translation axis is $\widetilde{\gamma}$. The north-south dynamics of $\pi_1(\Sigma)$ on $\bdy\tilde{\Sigma}$ then forces $\cap_{n > 0} g^n P(a,[y_1,y_2]) = \tilde{\gamma}$. Note that $\mu(P(a,[y_1,y_2])) < \infty$ since $\mu$ is locally compact.  But then $0 \neq \mu(\cap_{n > 0} g^n P(z,[y_1,y_2]))=\mu(\tilde{\gamma})$, by $\pi_1(S)$-invariance of $\mu$, which is a contradiction, by Proposition~\ref{prop:spikes}.
+\end{proof}
+\end{comment}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "Intersections"

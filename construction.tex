@@ -185,9 +185,7 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
 \item $a c^{-1} d b^{-1} = 1$;
 \item $a,b,c,d$ cross $x$ to the right; and
-    \DPTtodo[inline]{I think this is a typo: should be $c
-      d^{-1}bx^ndc^{-1} = ax^ndc^{-1}$}
-\item for sufficiently large~$n$, $ca^{-1}bx^n a c^{-1}$ crosses
+\item for sufficiently large~$n$, $d^{-1}bx^ndc^{-1} = ax^ndc^{-1}$ crosses
   $cx^n$ to the right.
 \end{enumerate}
 Then we call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
@@ -301,7 +299,24 @@ However, these are still enough to approximate any box.
   zero. This choice is more convenient for the proofs.
   \DPTtodo[inline]{Give a more precise ref for why weight of the
     boundary is zero}
+    \DMGtodo[inline]{I added an additional subsection on currents about 0 and 1 dimensional atoms for currents.}
+    
 \end{remark}
+
+\begin{proposition}
+Given any geodesic current $\mu$, and any right-handed box $B$, we have $\mu(\partial B)=0$.
+\end{proposition}
+\begin{proof}
+Say the right-handed box is given by
+\[
+B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
+\]
+Then,
+\[
+\partial B = P(p_1x^{-},[q_2x^{+}, q_1x^{+})) \cup P(q_2x^{+},[p_1x^{-}, p_2x^{-}))
+\]
+and by the result follows by Proposition~\ref{prop:spikes}, since the only closed geodesic with an endpoint starting at the base of any of the two spikes is a lift of $x$, and by definition of right-handed box, it is not contained in the spikes. \DMGtodo[inline]{As I was writing this I realized this is too much detail. Maybe we can just give reference to Proposition~\ref{prop:spikes}.}
+\end{proof}
 
 
 \DPTtodo[inline]{Corrected proposition: rectangles are not elements of
@@ -324,33 +339,18 @@ B_{\epsilon}(s)$.
    We will write $\gamma_r$ as $\gamma$ in this construction, and then repeat the same construction for $s$ with an element $\gamma_s$.
    This will give the necessary lifts with the correct orientations
    for $r$ and $s$.
-   \DPTtodo{Figures~\ref{fig:approx} and \ref{fig:approx2} have the
-     same caption. Can they be combined?}
- 
- \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{approx}}
-\caption{Approximating a boundary point of the interval of endpoints of a right-handed box}
-\label{fig:approx}
-}
-\end{figure}
 
-For the endpoints $p$ and $q$, take $\gamma^{-}$ in the above construction to appear after both $x^{-}$ and $x^{+}$ in clockwise order, as in Figure~\ref{fig:approx2}. 
- \begin{figure}
+\begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{approx2}}
+\resizebox{60mm}{!}{\svgfig{approxfin}}
 \caption{Approximating a boundary point of the interval of endpoints of a right-handed box}
 \label{fig:approx2}
 }
 \end{figure}
-Taking elements $\gamma_p$ and $\gamma_q$ as $\gamma$ for $p$ and $q$ respectively, we obtain the approximation. See Figure~\ref{fig:approxfin}.
- \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{approxfin}}
-\caption{Approximating a boundary points of a right-handed box}
-\label{fig:approxfin}
-}
-\end{figure}
+
+For the endpoints $p$ and $q$, take $\gamma^{-}$ in the above construction to appear after both $x^{-}$ and $x^{+}$ in clockwise order, as in left Figure~\ref{fig:approx2}. 
+Taking elements $\gamma_p$ and $\gamma_q$ as $\gamma$ for $p$ and $q$ respectively, we obtain the approximation. See right Figure~\ref{fig:approx2}.
 \end{proof}
 
 \subsection{Measures of boxes}

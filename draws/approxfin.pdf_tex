@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{496.83666319bp}%
+    \setlength{\unitlength}{471.8353704bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,26 +50,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.97668283)%
+  \begin{picture}(1,1.02843464)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{approxfin.pdf}}%
-    \put(0.28651502,0.84875485){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tilde{x}$\end{tabular}}}}%
-    \put(0.43527193,0.57465127){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_s$\end{tabular}}}}%
+    \put(0.31614777,0.8873054){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tilde{x}$\end{tabular}}}}%
+    \put(0.47278685,0.59867781){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_s$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{approxfin.pdf}}%
-    \put(0.81733357,0.16424747){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s$\end{tabular}}}}%
+    \put(0.87027597,0.19703567){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{approxfin.pdf}}%
-    \put(0.00467712,0.77076243){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{-}$\end{tabular}}}}%
-    \put(0.16257574,0.92143033){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{+}$\end{tabular}}}}%
+    \put(0.01937603,0.80518038){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{-}$\end{tabular}}}}%
+    \put(0.18564127,0.96383176){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{+}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{approxfin.pdf}}%
-    \put(0.90152538,0.6678439){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
+    \put(0.91075856,0.73052767){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{approxfin.pdf}}%
-    \put(0.473379,0.75228056){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_r$\end{tabular}}}}%
+    \put(0.51291316,0.7857192){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_r$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{approxfin.pdf}}%
-    \put(0.48862782,0.33446452){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_p$\end{tabular}}}}%
-    \put(0.28239913,0.1423301){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_q$\end{tabular}}}}%
+    \put(0.52896998,0.34576421){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_p$\end{tabular}}}}%
+    \put(0.31181378,0.1434491){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\gamma_q$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{approxfin.pdf}}%
-    \put(0.54949834,0.01214713){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
-    \put(0.16978763,0.05864522){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0.59306586,0.00636808){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$p$\end{tabular}}}}%
+    \put(0.1932353,0.05532998){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
