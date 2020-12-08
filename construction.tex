@@ -143,9 +143,6 @@ If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
   right? What does it look like when $a$ does not cross $x$? But do
   examples with just two lifts of~$x$ first}
 
-  \DPTtodo[inline]{To fix the sizing issues on Inkscape drawings, use
-    the command ``File/Document Properties/Resize Page to Content''.
-    You can then add extra margin in TeX if desired}
   \begin{figure}
 \subfloat[Type 1]{\resizebox{60mm}{!}{\svgfig{box1}}}\qquad
 \subfloat[Type 2]{\resizebox{60mm}{!}{\svgfig{box}}}\\
@@ -296,27 +293,12 @@ However, these are still enough to approximate any box.
   The reader may wonder why we choose to make the boxes half-open in
   the specified way. In fact it doesn't matter, as the weight of the
   boundary of these boxes under any geodesic current is necessarily
-  zero. This choice is more convenient for the proofs.
+  zero. This follows by Proposition~\ref{prop:spikes}, since the only closed geodesic with an endpoint starting at the base of any of the two spikes is a lift of $x$, and by definition of right-handed box, it is not contained in the spikes. This choice is more convenient for the proofs \DMGtodo[inline]{Write more precisely why this choice is more convenient for proofs after we finish proof reading the proof.}
   \DPTtodo[inline]{Give a more precise ref for why weight of the
     boundary is zero}
     \DMGtodo[inline]{I added an additional subsection on currents about 0 and 1 dimensional atoms for currents.}
     
 \end{remark}
-
-\begin{proposition}
-Given any geodesic current $\mu$, and any right-handed box $B$, we have $\mu(\partial B)=0$.
-\end{proposition}
-\begin{proof}
-Say the right-handed box is given by
-\[
-B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
-\]
-Then,
-\[
-\partial B = P(p_1x^{-},[q_2x^{+}, q_1x^{+})) \cup P(q_2x^{+},[p_1x^{-}, p_2x^{-}))
-\]
-and by the result follows by Proposition~\ref{prop:spikes}, since the only closed geodesic with an endpoint starting at the base of any of the two spikes is a lift of $x$, and by definition of right-handed box, it is not contained in the spikes. \DMGtodo[inline]{As I was writing this I realized this is too much detail. Maybe we can just give reference to Proposition~\ref{prop:spikes}.}
-\end{proof}
 
 
 \DPTtodo[inline]{Corrected proposition: rectangles are not elements of
