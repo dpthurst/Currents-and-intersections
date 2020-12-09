@@ -87,9 +87,9 @@ Let a \emph{spike} $P(x,[y_1,y_2])$ be the subset of $G^+(S)$ of geodesics start
 
 
 \begin{proposition}
+\label{prop:spikes}
 Suppose a spike $P(x,[y_1,y_2])$ doesn't contain any element $\widetilde{\gamma}$ with a discrete orbit.
 Then $\mu(P(x,[y_1,y_2]))=0$ for any geodesic current $\mu$.
-\label{prop:spikes}
 \end{proposition}
 \begin{proof}
   See \cite[Lemma~2.27]{EM18:ErgodicGeodesicCurrents}. 
@@ -101,8 +101,8 @@ By Proposition~\ref{prop:spikes}, the only way for a geodesic current $\mu$ to s
 Further, note that if $\mu$ has no $0$-dimensional atoms, then it can't have any $1$-dimensional atoms, by the following result.
 
 \begin{proposition}
-  If $\mu(\widetilde{\gamma})=0$ for any $\widetilde{\gamma} \in G^+(S)$, then $\mu(P(z))=0$ for any $z \in \partial_{\infty} S$.
   \label{prop:pencil}
+  If $\mu(\widetilde{\gamma})=0$ for any $\widetilde{\gamma} \in G^+(S)$, then $\mu(P(z))=0$ for any $z \in \partial_{\infty} S$.
 \end{proposition}
 \begin{proof}
   Suppose by contradiction $\mu(P(z))>0$.  Then there must exist some $\widetilde{\gamma} \in P(z,[y_1,y_2]) \subset P(z)$ for some $[y_1,y_2] \subset \partial_{\infty} S$ disjoint from $z$, so that $p(\widetilde{\gamma})=\gamma$ is a closed geodesic. Let $g \in \pi_1(\Sigma)$ be the element so that its translation axis is $\widetilde{\gamma}$. The north-south dynamics of $\pi_1(\Sigma)$ on $\bdy\tilde{\Sigma}$ then forces $\cap_{n > 0} g^n P(a,[y_1,y_2]) = \tilde{\gamma}$. Note that $\mu(P(a,[y_1,y_2])) < \infty$ since $\mu$ is locally compact.  But then $0 \neq \mu(\cap_{n > 0} g^n P(z,[y_1,y_2]))=\mu(\tilde{\gamma})$, by $\pi_1(S)$-invariance of $\mu$, which is a contradiction, by Proposition~\ref{prop:spikes}.

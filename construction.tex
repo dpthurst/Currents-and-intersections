@@ -69,6 +69,7 @@ be invariant under
       (p_1 g, g^{-1}q_1, p_2 g,  g^{-1}q_2).
   \]
 \end{itemize}
+\DPTtodo[inline]{Somewhere: taking limit $n \to \infty$ of $x^n p_i$}
 
   If we are only interested in the relative position of these lines
   (for instance to construct $\pi_1(S)$-invariant functionals), we
@@ -82,8 +83,8 @@ be invariant under
 \end{equation}
 so that
 \begin{align*}
-  r_1 &= a \cdot \ell_1 & \wt r_2 &= b \cdot \ell_1\\
-  r_1 &= c \cdot \ell_2 & \wt r_2 &= d \cdot \ell_2.
+  r_1 &= a \cdot \ell_1 & r_2 &= b \cdot \ell_1\\
+  r_1 &= c \cdot \ell_2 & r_2 &= d \cdot \ell_2.
 \end{align*}
 The action of translation has been baked in, but the measure
 corresponding to the associated window should be invariant under the
@@ -143,9 +144,6 @@ If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
   right? What does it look like when $a$ does not cross $x$? But do
   examples with just two lifts of~$x$ first}
 
-  \DPTtodo[inline]{To fix the sizing issues on Inkscape drawings, use
-    the command ``File/Document Properties/Resize Page to Content''.
-    You can then add extra margin in TeX if desired}
   \begin{figure}
 \subfloat[Type 1]{\resizebox{60mm}{!}{\svgfig{box1}}}\qquad
 \subfloat[Type 2]{\resizebox{60mm}{!}{\svgfig{box}}}\\
@@ -193,7 +191,6 @@ As explained above, this determines a $\pi_1(S)$-orbit of windows. In
 terms of the alternative data $(p_1,q_1,p_2,q_2)$ for a window (rather
 than for an orbit), condition~(1) is automatic and the others
 become
-\DPTtodo{Wrote what I think are the correct statements}
 \begin{enumerate}[label=(\arabic*$^\prime$),start=2]
 \item for $i,j \in \{1,2\}$, $p_iq_j$ crosses $x$ to the right; and
 \item for sufficiently large~$n$, $q_2x^np_1$ crosses $q_1x^np_2$ to
@@ -294,13 +291,11 @@ However, these are still enough to approximate any box.
 
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
-  the specified way. In fact it doesn't matter, as the weight of the
+  the specified way. In fact it doesn't matter, as by
+  Proposition~\ref{prop:spikes}
+  the weight of the
   boundary of these boxes under any geodesic current is necessarily
   zero. This choice is more convenient for the proofs.
-  \DPTtodo[inline]{Give a more precise ref for why weight of the
-    boundary is zero}
-    \DMGtodo[inline]{I added an additional subsection on currents about 0 and 1 dimensional atoms for currents.}
-    
 \end{remark}
 
 \begin{proposition}
