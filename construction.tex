@@ -28,7 +28,7 @@ the kind of windows we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four lines, all lifts of~$x$, with
 two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
-$[\wt\ell_2^-,\wt\ell_1^-) \times [\wt r_2^+,\wt r_1^+) \subset
+$[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+) \subset
 \partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
 for defining the measure. The precise conditions on the lifts are
 explained below, but we start by recalling some
@@ -42,7 +42,7 @@ group theory on the universal cover.
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3}}
-\caption{Determining a box from group theory data}
+\caption{Schematically determining a box from group theory data.}
 \label{fig:newmodel3}
 }
 \end{figure}
@@ -55,8 +55,8 @@ different lifts is determined by a double coset
 $\langle x\rangle a \langle x \rangle$.
 
 Thus, given a 4-tuple of elements $(p_1,q_1,p_2,q_2)$ of $\pi_1(S, *)$, we can construct
-four lifts of~$x$: $\wt \ell_i = (p_1)^{-1} \cdot \wt x$ and
-$\wt r_i = q_i \cdot \wt x$.
+four lifts of~$x$: $\ell_i = (p_1)^{-1} \cdot \wt x$ and
+$r_i = q_i \cdot \wt x$.
 
 The measure that we ultimately assign to the associated window should
 be invariant under
@@ -69,11 +69,13 @@ be invariant under
       (p_1 g, g^{-1}q_1, p_2 g,  g^{-1}q_2).
   \]
 \end{itemize}
-\DPTtodo[inline]{Somewhere: taking limit $n \to \infty$ of $x^n p_i$}
+In fact, ultimately we will take a limit of applying the first
+transformations: the limit as $n\to \infty$ of $p_i \mapsto x^np_i$
+and $q_i \mapsto q_i x^n$.
 
   If we are only interested in the relative position of these lines
   (for instance to construct $\pi_1(S)$-invariant functionals), we
-  can parameterize them instead by elements $(a,b,c,d)$ related by
+  can parameterize them instead by group elements $(a,b,c,d)$ related by
 \begin{equation}
 \begin{aligned}
   a &= p_1 q_1 &\qquad\qquad\qquad\qquad\qquad b &= p_1 q_2\\[2pt]
@@ -86,9 +88,9 @@ so that
   r_1 &= a \cdot \ell_1 & r_2 &= b \cdot \ell_1\\
   r_1 &= c \cdot \ell_2 & r_2 &= d \cdot \ell_2.
 \end{align*}
-The action of translation has been baked in, but the measure
-corresponding to the associated window should be invariant under the
-following four transformations:
+The action of translation all lifts by $\pi_1(S)$ has been baked in,
+but the measure corresponding to the associated window should be
+invariant under the following four transformations:
 \begin{itemize}
 \item translating on $\ell_1$: $a \mapsto xa$ and $b \mapsto xb$;
 \item translating on $\ell_2$: $c \mapsto xc$ and $d \mapsto xd$;
@@ -103,13 +105,13 @@ $p_2 = aC$.
 
 As mentioned above, we need some conditions on these lifts; for
 instance, we need the window
-$[\wt\ell_2^-,\wt\ell_1^-) \times [\wt r_2^+,\wt r_1^+)$ to avoid the
+$[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)$ to avoid the
 diagonal. For the proofs to go through easily, we will impose more
 conditions on the configurations of these lifts. We first distinguish
 between types of crossings.
 
 \begin{definition}[right handed crossing]
-We say that an essential crossing, as in
+We say that an essential crossing of an oriented curve, as in
 Definition~\ref{def:essential-crossing}, is \emph{right-handed} if the
 orientations of the strands are like in the following picture:
 \DPTtodo{Need to label the strands here: this is an anti-symmetric relation}
@@ -295,23 +297,13 @@ However, these are still enough to approximate any box.
   Proposition~\ref{prop:spikes}
   the weight of the
   boundary of these boxes under any geodesic current is necessarily
-  zero. This choice is more convenient for the proofs.
+  zero: the only closed geodesic with an endpoint starting at the base
+  of any of the involved spikes is a lift of~$x$, and by definition of
+  right-handed box, it is not contained in the spikes. This choice is
+  more convenient for the proofs \DMGtodo[inline]{Write more precisely
+    why this choice is more convenient for proofs after we finish
+    proof reading the proof.}
 \end{remark}
-
-\begin{proposition}
-Given any geodesic current $\mu$, and any right-handed box $B$, we have $\mu(\partial B)=0$.
-\end{proposition}
-\begin{proof}
-Say the right-handed box is given by
-\[
-B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
-\]
-Then,
-\[
-\partial B = P(p_1x^{-},[q_2x^{+}, q_1x^{+})) \cup P(q_2x^{+},[p_1x^{-}, p_2x^{-}))
-\]
-and by the result follows by Proposition~\ref{prop:spikes}, since the only closed geodesic with an endpoint starting at the base of any of the two spikes is a lift of $x$, and by definition of right-handed box, it is not contained in the spikes. \DMGtodo[inline]{As I was writing this I realized this is too much detail. Maybe we can just give reference to Proposition~\ref{prop:spikes}.}
-\end{proof}
 
 
 \DPTtodo[inline]{Corrected proposition: rectangles are not elements of
