@@ -110,41 +110,43 @@ diagonal. For the proofs to go through easily, we will impose more
 conditions on the configurations of these lifts. We first distinguish
 between types of crossings.
 
-\begin{definition}[right handed crossing]
-We say that an essential crossing of an oriented curve, as in
-Definition~\ref{def:essential-crossing}, is \emph{right-handed} if the
-orientations of the strands are like in the following picture:
-\DPTtodo{Need to label the strands here: this is an anti-symmetric relation}
-  \[\mathcenter{\resizebox{30mm}{!}{\svgfig{rh}}}.
-\]
-
-\DPTtodo[inline]{The notation here is off: this is not a condition on
-  conjugacy classes. The condition that $[a][x]\reducesto[ax]$ is
-  invariant under simultaneous conjugation of $a$ and $x$, but not
-  under conjugation of $a$ or $x$ by itself}
-If $[a]$, with $a \in \pi_1(S, \ast)$ \emph{crosses $[x]$ to the
-  right} or \emph{right-handedly} if there is an essential right-handed crossing between $[a]$ and $[x]$, as the following figure shows
+\begin{definition}[Right handed crossing]
+  Suppose that two elements $a$ and $x$ of $\pi_1(S)$ have an
+  essential crossing at the natural basepoint, so that
+  $[a][x] \reducesto [ax]$. We say that $a$ and $x$ have a
+  \emph{right-handed} crossing if, intuitively, $[a]$ crosses $[x]$ from left
+  to right, like this:
       
   \[\mathcenter{\resizebox{30mm}{!}{\svgfig{rhres}}}
-\]
-  
-  where $*$ denotes a basepoint.
-  
-  This ensures that
-  \begin{align}
-    \label{eq:cross-red}[a][x] &\reducesto [ax]
-  \end{align}
-  \label{def:righthanded}
-  An equivalent statement is that the four points $a^-,x^-,a^+, x^+$
-  occur on the circle at infinity in that cyclic order.
-  
-  If $[a]$ crosses $[x]$ essentially, but not to the right, we will say $[a]$ crosses $[x]$ \emph{to the left} or \emph{left handedly}.
+  \]
+  More precisely, let $\wt a$ and $\wt x$ be the lines in $\wt S$
+  corresponding to lifts of $a$ and $x$ to the universal cover, and
+  let $a^{\pm},x^{\pm} \in \bdy \wt S$ be their initial and final
+  endpoints. We require that the four points $a^-,x^-,a^+, x^+$
+  occur on the circle at infinity in that counterclockwise cyclic order.
 \end{definition}
-\DPTtodo[inline]{Spell out here how to see ``crossing'' from
-  universal cover pictures. In particular, in
-  Figure~\ref{fig:rhbox}, how to see that $a$ crosses $x$ to the
-  right? What does it look like when $a$ does not cross $x$? But do
-  examples with just two lifts of~$x$ first}
+
+Observe that whether a crossing is ``right-handed'' is invariant under
+simultaneous cyclic conjugation of $a$ and $x$, but does depend on
+more than the conjugacy classes $[a]$ and~$[x]$. (We need to specify
+which crossing we are considering.) Further, it is anti-symmetric: if
+the crossing between $a$ and~$x$ is right-handed, then the crossing
+between $x$ and~$a$ is left-handed.
+
+To recognize whether a crossing is essential and right-handed, it will
+be helpful to look just at two different lifts of~$x$.
+\begin{lemma}
+  Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
+  Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
+  $a \cdot \wt x$ are parallel, and not anti-parallel or crossing.
+  Furthermore, if they cross essentially, then $a$ and~$x$ have a
+  right-handed crossing iff $a \cdot \wt x$ is on the right-hand side
+  of $\wt x$, when viewed along the orientation of $\wt x$.
+\end{lemma}
+\begin{proof}
+  This follows easily by consider the North-South dynamics of $a$
+  acting on the circle at infinity of~$\wt S$.
+\end{proof}
 
   \begin{figure}
 \subfloat[Type 1]{\resizebox{60mm}{!}{\svgfig{box1}}}\qquad
