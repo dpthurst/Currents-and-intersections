@@ -135,7 +135,7 @@ between $x$ and~$a$ is left-handed.
 
 To recognize whether a crossing is essential and right-handed, it will
 be helpful to look just at two different lifts of~$x$.
-\DPTtodo[inline]{Make a picture}
+
 \begin{lemma}
   Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
   Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
@@ -144,6 +144,13 @@ be helpful to look just at two different lifts of~$x$.
   right-handed crossing iff $a \cdot \wt x$ is on the right-hand side
   of $\wt x$, when viewed along the orientation of~$\wt x$.
 \end{lemma}
+
+  \begin{figure}
+\resizebox{60mm}{!}{\svgfig{righthandedcrossing}}
+\caption{Determining a right-handed crossing between $a$ and $x$ by looking at the relative position of two lifts of $x$ in the universal cover.}
+\label{fig:rhc}
+\end{figure}
+
 \begin{proof}
   This follows easily by consider the North-South dynamics of $a$
   acting on the circle at infinity of~$\wt S$.
@@ -212,20 +219,21 @@ pair with the same orientation. Note that since $x$ is simple, lifts
 cannot intersect each other.
      
 \begin{remark}
-\begin{enumerate} 
-\item The reader might wonder why in condition (3) we require the condition
+%\begin{enumerate} 
+%\item
+The reader might wonder why in condition (3) we require the condition
   ``for $n$ large enough''. It turns out that requiring the condition
   for all $n$ is too restrictive, and while it does happen for some
   configurations of lifts, such as those of Type 1,
   in general it doesn't hold for the types of configurations of lifts
   that we are interested in. See Figure~\ref{fig:nestedpositivity}.
-\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
-  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
-    implications about the order in which things appear on the
-    boundary. But is the other direction correct? Could we end up
-    with a left-handed crossing?}
-  To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
-     \end{enumerate}
+%\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
+%$$  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
+%    implications about the order in which things appear on the
+%    boundary. But is the other direction correct? Could we end up
+%    with a left-handed crossing?}
+ % To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
+%     \end{enumerate}
 \end{remark}
 
 Given a right-handed dreamcatcher $(a,b,c,d)$ and given a choice of
