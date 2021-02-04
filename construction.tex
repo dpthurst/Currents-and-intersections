@@ -143,6 +143,7 @@ be helpful to look just at two different lifts of~$x$.
   Furthermore, if they cross essentially, then $a$ and~$x$ have a
   right-handed crossing iff $a \cdot \wt x$ is on the right-hand side
   of $\wt x$, when viewed along the orientation of~$\wt x$.
+  \label{lem:rhs}
 \end{lemma}
 
   \begin{figure}
@@ -153,41 +154,8 @@ be helpful to look just at two different lifts of~$x$.
 
 \begin{proof}
   This follows easily by consider the North-South dynamics of $a$
-  acting on the circle at infinity of~$\wt S$.
+  acting on the circle at infinity of~$\wt S$. See Figure~\ref{fig:rhc}.
 \end{proof}
-
-  \begin{figure}
-\subfloat[Type 1]{\resizebox{60mm}{!}{\svgfig{box1}}}\qquad
-\subfloat[Type 2]{\resizebox{60mm}{!}{\svgfig{box}}}\\
-\subfloat[Type 3]{\resizebox{60mm}{!}{\svgfig{box4}}}\qquad
-\caption{Right handed boxes of Type 1, Type 2 and Type 3, induced by
-  different choices of dreamcatchers and lift of $x$.}
-\label{fig:rhbox}
-\end{figure}
-
-\DMGtodo[inline]{There are four datums related to boxes: START COMMENT}
-\begin{enumerate} \item Dreamcatchers given by elements $(a,b,c,d)$ with a relation $aBcD=1$ \item Dreamcatchers given by elements $(p_1,q_1,p_2,q_2)$, \item Boxes 
-\item and $\pi_1(S)$-orbit of boxes
-\end{enumerate}
-Do we want to use just either 1 or 2. We use 1 for the definition, and
-then use 2 for other purposes. I wonder if just introducing one datum
-is enough and keeps exposition more simple. If we want to use both,
-writing out the relation (and ambiguity) between two more precisely
-might be necessary?
-
-\DPTtodo[inline]{START RESPONSE}
-Aren't 1/2 and 4 the same object? Especially 2 and 4?
-
-I think it's good to keep to as few objects as possible, as you note.
-I think that boxes should be primary over orbits of boxes. (Maybe we
-can also revisit what gets called a ``dreamcatcher''; I think it's a
-little confusing that an orbit of boxes is a dreamcatcher.) That means
-we need the $p_i, q_i$ parametrization. But the $a,b,c,d$
-parametrization has the advantage that it's manifestly conjugation
-invariant. Maybe try to use $p_i,q_i$ as much as possible?
-\DMGtodo[inline]{END COMMENT}
-
-
 
 \begin{definition}[Dreamcatcher]
 \label{def:righthandeddreamcatcher}
@@ -217,7 +185,7 @@ no nested lifts; type 2 has one pair of nested lifts with the same
 orientation; and type 3 has two pairs of nested lifts of $x$, each
 pair with the same orientation. Note that since $x$ is simple, lifts
 cannot intersect each other.
-     
+
 \begin{remark}
 %\begin{enumerate} 
 %\item
@@ -236,6 +204,35 @@ The reader might wonder why in condition (3) we require the condition
 %     \end{enumerate}
 \end{remark}
 
+\DMGtodo[inline]{Moved the definition of right-handed box here, to help reading continuity}
+
+\begin{definition}\label{def:dreamcatcher-box}
+Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
+\[
+B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
+\]
+
+\DMGtodo[inline]{This next line is already explained in our discussion above. Maybe make this into a Lemma so that we can call it to prove $\pi_1(S)$-invariance of the measures?}
+A different choice of lift $\tilde{x}'$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by conjugation by some element in $\pi_1(S,*)$.
+
+To recap, the datum $(p_1,p_2,q_1,q_2)$ determines a box
+$B_{p_1,p_2,q_1,q_2}$ and the dreamcatcher datum $(a,b,c,d)$
+determines a $\pi_1(S)$ orbit of boxes that we will denote
+$[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
+draw attention to a concrete representative of the orbit or to the
+orbit itself. Here $(p_1,p_2,q_1,q_2)$ is related to $(a,b,c,d)$ by
+Equations~\ref{eq:relationdatum}.
+
+We will denote by $\mathcal{B}$ the set of right-handed boxes, and by 
+\[\mathcal{E}=\{ (p_1 x^-, p_2 x^-, q_2 x^+, q_1x^+) : \mbox{$p_i,q_j$
+    determined by Eq~\ref{eq:relationdatum} form a dreamcatcher } \}
+  \subset (\bdy_\infty \Sigma)^4
+\]
+the set of 4-tuples of endpoints of right-handed boxes.
+\end{definition}
+
+
+\DMGtodo[inline]{Some of what follows seems to be repeated, too}
 Given a right-handed dreamcatcher $(a,b,c,d)$ and given a choice of
 lift of the geodesic $[x]$, we obtain lifts differing from each other
 by translating by $a,b,c,d$, respectively. For example, we could take
@@ -266,6 +263,8 @@ As we have pointed out above, a dreamcatcher only determines a box up to (left) 
 We will now introduce a different notation which will be more helpful to refer to  concrete boxes.  Fix once and for all a lift $\tilde{x}$ of $x$ and then pick four arbitrary elements $p_1,q_1,p_2,q_2 \in \pi_1(S,*)$ sending $\tilde{x}$ to four respective distinct lifts of $x$, as in Figure~\ref{fig:newmodel3}, with the property that $p_2x^{-},p_1x^{-}, q_1x^{+}, q_2x^{+}$ appear in this counter clockwise order.
 We will denote this datum by $(p_1,p_2,q_1,q_2)$.
 
+\DMGtodo[inline]{This relation is already explained in detail before.}
+
 We can relate the notations for a dreamcatcher in
 Figure~\ref{fig:rhbox} and Figure~\ref{fig:newmodel3} by setting
 \begin{equation}
@@ -275,32 +274,6 @@ Figure~\ref{fig:rhbox} and Figure~\ref{fig:newmodel3} by setting
 \end{aligned}
   \label{eq:relationdatum}
 \end{equation}
-
-Note that $a,b,c,d$ satisfy the relation $ab^{-1}cd^{-1} = 1$, whereas
-$p_1,p_2,q_1,q_2$ do not satisfy any relation.
-
-\begin{definition}\label{def:dreamcatcher-box}
-Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by
-\[
-B_{p_1,p_2,q_1,q_2} \coloneqq [p_1x^{-}, p_2x^{-}) \times [q_2x^{+}, q_1x^{+}).
-\]
-A different choice of lift $\tilde{x}'$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by conjugation by some element in $\pi_1(S,*)$.
-
-To recap, the datum $(p_1,p_2,q_1,q_2)$ determines a box
-$B_{p_1,p_2,q_1,q_2}$ and the dreamcatcher datum $(a,b,c,d)$
-determines a $\pi_1(S)$ orbit of boxes that we will denote
-$[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
-draw attention to a concrete representative of the orbit or to the
-orbit itself. Here $(p_1,p_2,q_1,q_2)$ is related to $(a,b,c,d)$ by
-Equations~\ref{eq:relationdatum}.
-
-We will denote by $\mathcal{B}$ the set of right-handed boxes, and by 
-\[\mathcal{E}=\{ (p_1 x^-, p_2 x^-, q_2 x^+, q_1x^+) : \mbox{$p_i,q_j$
-    determined by Eq~\ref{eq:relationdatum} form a dreamcatcher } \}
-  \subset (\bdy_\infty \Sigma)^4
-\]
-the set of 4-tuples of endpoints of right-handed boxes.
-\end{definition}
 
 Note that because of our interest in right-handed boxes, we are restricting our attention to a subset of the lifts of $[x]$.
 However, these are still enough to approximate any box.
@@ -389,8 +362,7 @@ We will need some key lemmas relating several curves by smoothing essential cros
 need to invert one term on the LHS.)
 \begin{proof}
   Equation~(\ref{eq:cross-red1}) follows since $[a]$ (and $[a x^n]$)
-  cross~$[x]$ to the right.
-  \DPTtodo{Requires proof that $ax^n$ also crosses $x$ to the right}
+  cross~$[x]$ to the right, by Lemma~\ref{lem:rhs} taking $x$ to be $x^n$.
   For Equation~(\ref{eq:cross-red3}), consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
    \[\mathcenter{\svgfignormal{smint_1}}
 \]
