@@ -17,7 +17,7 @@ We wish to construct a current $\mu_f$ and show that $f(C) = i(C,
 \mu_f)$. To construct $\mu_f$, we fix (arbitrarily) a simple closed
 oriented curve~$[x]$. The endpoints of the lifts of $[x]$  are dense
 in $\partial_{\infty} \Sigma$, by minimality of the action of
-$\pi_1(S,*)$. For convenience, we will work in $\pi_1(S,\ast)$ with a
+$\pi_1(S)$. For convenience, we will work in $\pi_1(S,\ast)$ with a
 basepoint~$\ast$ on~$[x]$ and use $x$ for the corresponding element
 of~$\pi_1$. We also fix a base lift $\wt x$ of $x$ to the universal
 cover~$\wt S$.
@@ -49,7 +49,7 @@ cosets $q\langle x\rangle$ of this subgroup. The relation between two
 different lifts is determined by a double coset
 $\langle x\rangle a \langle x \rangle$.
 
-Thus, given a 4-tuple of elements $(p_1,q_1,p_2,q_2)$ of $\pi_1(S, *)$, we can construct
+Thus, given a 4-tuple of elements $(p_1,q_1,p_2,q_2)$ of $\pi_1(S)$, we can construct
 four lifts of~$x$: $\ell_i = (p_1)^{-1} \cdot \wt x$ and
 $r_i = q_i \cdot \wt x$.
 
@@ -93,7 +93,7 @@ invariant under the following four transformations:
 \item translating on $r_2$: $b \mapsto bx$ and $d \mapsto dx$.
 \end{itemize}
 
-Conversely, given elements $a,b,c,d \in \pi_1(S, *)$ with $aCdB = 1$, we can
+Conversely, given elements $a,b,c,d \in \pi_1(S)$ with $aCdB = 1$, we can
 construct four lifts of $x$ differing pairwise by translating by these
 elements, for instance setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and
 $p_2 = aC$.
@@ -198,7 +198,9 @@ The reader might wonder why in condition (3) we require the condition
   for all $n$ is too restrictive, and while it does happen for some
   configurations of lifts, such as those of Type 1,
   in general it doesn't hold for the types of configurations of lifts
-  that we are interested in. See Figure~\ref{fig:nestedpositivity}.
+  that we are interested in. 
+ Consider Figure~\ref{fig:nestedpositivity}: item a) shows, $[bx^n]$ and $[cx^n]$ might not cross. However, for sufficiently large $n$, the $[b x^n]$ and $[c x^n]$ will cross, as item b) suggests. To prove it, consider the bands model centered at the outer most nested lift of $x$, as in item c). For sufficiently large $n$, it's clear that $[b x^n]$ and $[c x^n]$ cross each other.
+ There are some configurations of boxes, such as Type 1, Figure~\ref{fig:rhbox}, where the crossing is essential without passing to large $n$.
 %\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
 %$$  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
 %    implications about the order in which things appear on the
@@ -206,9 +208,9 @@ The reader might wonder why in condition (3) we require the condition
 %    with a left-handed crossing?}
  % To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
 %     \end{enumerate}
+\label{rmk:largeenough}
 \end{remark}
 
-\DMGtodo[inline]{Moved the definition of right-handed box here, to help reading continuity}
 
 \begin{definition}\label{def:dreamcatcher-box}
 Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
@@ -216,35 +218,19 @@ Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatche
 B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
 \]
 
-\DMGtodo[inline]{This next line is already explained in our discussion above. Maybe make this into a Lemma so that we can call it to prove $\pi_1(S)$-invariance of the measures?}
-A different choice of lift $\tilde{x}'$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by conjugation by some element in $\pi_1(S,*)$.
-
-To recap, the datum $(p_1,p_2,q_1,q_2)$ determines a box
-$B_{p_1,p_2,q_1,q_2}$ and the dreamcatcher datum $(a,b,c,d)$
-determines a $\pi_1(S)$ orbit of boxes that we will denote
+By construction, a different choice of lift $\tilde{x}$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by translation by some element in $\pi_1(S)$.
+On the other hand, the dreamcatcher datum $(a,b,c,d)$
+determines a $\pi_1(S)$-orbit of boxes that we will denote
 $[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
 draw attention to a concrete representative of the orbit or to the
-orbit itself. Here $(p_1,p_2,q_1,q_2)$ is related to $(a,b,c,d)$ by
-Equations~\ref{eq:relationdatum}.
+orbit itself. 
 
-We will denote by $\mathcal{B}$ the set of right-handed boxes, and by 
-\[\mathcal{E}=\{ (p_1 x^-, p_2 x^-, q_2 x^+, q_1x^+) : \mbox{$p_i,q_j$
-    determined by Eq~\ref{eq:relationdatum} form a dreamcatcher } \}
-  \subset (\bdy_\infty \Sigma)^4
-\]
-the set of 4-tuples of endpoints of right-handed boxes.
+We will denote by $\mathcal{B}$ the set of right-handed boxes.
 \end{definition}
 
 
-\DMGtodo[inline]{Some of what follows seems to be repeated, too}
-Given a right-handed dreamcatcher $(a,b,c,d)$ and given a choice of
-lift of the geodesic $[x]$, we obtain lifts differing from each other
-by translating by $a,b,c,d$, respectively. For example, we could take
-$\tilde{x}$, $a\cdot \tilde{x}$, $b\cdot \tilde{x}$, and $aC \cdot \tilde{x}$.
-There are other configurations of lifts possible, such as $\tilde{x},a\cdot \tilde{x}, b \tilde{x}, c \cdot \tilde{x}, Ba \cdot \tilde{x}$.
-Fixing a lift of the curve $[x]$, this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts of $x$ are placed as shown in Figure~\ref{fig:rhbox} respectively.
-Note how the lifts of $[x]$ are non-intersecting, since $[x]$ is simple, and these orientation of the lifts is always right-handed.
-A choice of one endpoint for each such lift of $x$, determines a box of geodesics in $G^+(\Sigma)$. 
+Given a right-handed dreamcatcher $(a,b,c,d)$ and a choice of lift $\tilde{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
+Note how the lifts are non-intersecting, since $[x]$ is simple, and these orientation of the lifts are always right-handed.
 \begin{example}
 The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
 \begin{figure}
@@ -260,27 +246,10 @@ The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ cro
 }
 \end{figure}
 \end{example}
-The elements $a,b,c,d$ in Figure~\ref{fig:rhbox} can be seen as deck transformations relating the lifts of $x$. 
 
-
-As we have pointed out above, a dreamcatcher only determines a box up to (left) action of $\pi_1(S)$ by isometries.
-We will now introduce a different notation which will be more helpful to refer to  concrete boxes.  Fix once and for all a lift $\tilde{x}$ of $x$ and then pick four arbitrary elements $p_1,q_1,p_2,q_2 \in \pi_1(S,*)$ sending $\tilde{x}$ to four respective distinct lifts of $x$, as in Figure~\ref{fig:newmodel3}, with the property that $p_2x^{-},p_1x^{-}, q_1x^{+}, q_2x^{+}$ appear in this counter clockwise order.
-We will denote this datum by $(p_1,p_2,q_1,q_2)$.
-
-\DMGtodo[inline]{This relation is already explained in detail before.}
-
-We can relate the notations for a dreamcatcher in
-Figure~\ref{fig:rhbox} and Figure~\ref{fig:newmodel3} by setting
-\begin{equation}
-\begin{aligned}
-  a &= q_1p_1 &\qquad\qquad b &= q_2p_1\\
-  c &= q_1p_2 & d &= q_2p_2.
-\end{aligned}
-  \label{eq:relationdatum}
-\end{equation}
-
-Note that because of our interest in right-handed boxes, we are restricting our attention to a subset of the lifts of $[x]$.
-However, these are still enough to approximate any box.
+In our construction, we want to use the fact that the endpoints of boxes are dense in $\partial_{\infty} \tilde{S}$, using that the action of $\pi_1(S)$ on $\partial_{\infty} \tilde{S}$ is minimal, i.e., for any $p \in \partial_{\infty} \tilde{S}$, the orbit $\pi_1(S)p$ is dense. 
+However, because of our interest in right-handed boxes, we are only considering a subset of the lifts of $[x]$ to construct our boxes.
+These are still enough to approximate any box.
 
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
@@ -293,17 +262,15 @@ However, these are still enough to approximate any box.
   right-handed box, it is not contained in the spikes. This choice is
   more convenient for the proofs \DMGtodo[inline]{Write more precisely
     why this choice is more convenient for proofs after we finish
-    proof reading the proof.}
+    proof reading the proof. This is related to the two types of final families.}
 \end{remark}
 
-
-\DPTtodo[inline]{Corrected proposition: rectangles are not elements of
-$G^+(S)$, they are subsets of it}
+\DMGtodo[inline]{Do we need to keep this proposition? Just wondering if we can say it's straightforward.}
 \begin{proposition}
 The family of right handed boxes $\mathcal{B}$ is dense in the space
 of rectangles in $G^+(\Sigma)$, in the following sense.
 For any rectangle $R = [p,q) \times [r,s) \subset G^+(\Sigma)$,
-and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S,*)$ forming a
+and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S)$ forming a
 right-handed box so that for some $B \in [B]_{a,b,c,d}$, with
 $B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in
 B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in
@@ -313,7 +280,7 @@ B_{\epsilon}(s)$.
 \begin{proof}
    Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
    Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively.
-   For $r$ (and similarly for $s$), we proceed as follows. Given a lift of $\tilde{x}$, and $p$, consider some element $\gamma \in \pi_1(\Sigma)$ with $\gamma_- \in (x^-, x^+)$ and $\gamma^+$ within $\epsilon/4$ of $p$. For $n$ large, we consider the lift of $[x]$ given by $\gamma^n \cdot \tilde{x}$, where $\cdot$ denotes the left action of $\gamma$, i.e., if $x$ is the element of $\pi_1(S,*)$ with invariant axis $\tilde{x}$, $\gamma^n \cdot \tilde{x}$ denotes the invariant axis of $\gamma^n x \gamma^{-n}$. For $n$ large enough we see that $(\gamma^n \cdot \tilde{x})^+$ and  $(\gamma^n \cdot \tilde{x})^-$ are within $\epsilon$ of $p$.   See Figure~\ref{fig:approx}.
+   For $r$ (and similarly for $s$), we proceed as follows. Given a lift of $\tilde{x}$, and $p$, consider some element $\gamma \in \pi_1(\Sigma)$ with $\gamma_- \in (x^-, x^+)$ and $\gamma^+$ within $\epsilon/4$ of $p$. For $n$ large, we consider the lift of $[x]$ given by $\gamma^n \cdot \tilde{x}$, where $\cdot$ denotes the left action of $\gamma$, i.e., if $x$ is the element of $\pi_1(S)$ with invariant axis $\tilde{x}$, $\gamma^n \cdot \tilde{x}$ denotes the invariant axis of $\gamma^n x \gamma^{-n}$. For $n$ large enough we see that $(\gamma^n \cdot \tilde{x})^+$ and  $(\gamma^n \cdot \tilde{x})^-$ are within $\epsilon$ of $p$.   See Figure~\ref{fig:approx2}.
    We will write $\gamma_r$ as $\gamma$ in this construction, and then repeat the same construction for $s$ with an element $\gamma_s$.
    This will give the necessary lifts with the correct orientations
    for $r$ and $s$.

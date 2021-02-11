@@ -34,14 +34,8 @@ This is the heart of the proof. Here we show that all the necessary hypothesis a
 
   For positivity, we will to show that $[b x^n] \cup [c x^n] \reducesto [a x^nd x^n]$.
   We fix the path $ca^{-1}bx^nac^{-1}$ in the conjugacy class $[bx^n]$, based at the same basepoint as the path $cx^n$.
-  By Definition~\ref{def:righthandeddreamcatcher}, item (3), the lifts of these paths to $\tilde{\Sigma}$ are linked for $n$ large enough.
-
-  \DPTtodo{Is this a duplicate?}
- We remark that in general, ``large enough'' is a necessary condition. 
- Consider Figure~\ref{fig:nestedpositivity} item a) shows, $[bx^n]$ and $[cx^n]$ might not cross. However, for sufficiently large $n$, the $[b x^n]$ and $[c x^n]$ will cross, as item b) suggests. To prove it, consider the bands model centered at the outer most nested lift of $x$, as in item c). For sufficiently large $n$, it's clear that $[b x^n]$ and $[c x^n]$ cross each other.
- There are some configurations of boxes, such as Type 1, Figure~\ref{fig:rhbox}, where the crossing is essential without passing to large $n$.
- 
- In any case, there is an essential crossing between $[bx^n]$ and $[cx^n]$ that we can resolve.
+  By Definition~\ref{def:righthandeddreamcatcher}, item (3), the lifts of these paths to $\tilde{\Sigma}$ are linked for $n$ large enough, as discussed in Remark~\ref{rmk:largeenough}.
+ So, for large enough $n$, there is an essential crossing between $[bx^n]$ and $[cx^n]$ that we can resolve.
   We thus get
   \[
      [bx^n][cx^n] = [ca^{-1}bx^nac^{-1}][cx^n] \searrow [ca^{-1}bx^nac^{-1}cx^n] = [dx^nax^n]
@@ -83,7 +77,7 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 \end{proposition}
 
 \begin{proof}
-  Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S, *)$.
+  Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S)$.
   Then
   \begin{align*}
     B_1 &= (q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2)\\
@@ -236,7 +230,7 @@ The collection $\{ F_{a,b,e,\tilde{x}} \mid a,b,e \in \pi_1(S) \mbox{ crossing }
     where the sets $B^i_j$ in the union are pairwise disjoint.
     We can take for each $B^i_j$ the same family as above. However, the number of necessary total final sequences might increase with $i$. To show that  a finite number of final sequences $(F^i_{a_i,b_i,e_i,\tilde{x}})$ suffice, let $X = \bigcap_i \overline{R_i}$, so that $X$ is non-empty and
 compact. For each $x \in X$, there is some $i$ so that $x \in \overline{R_i} - R_i$,
-i.e., it is on the upper or right edge of some box $\bar{B^i_j}$. Then there is an open neighborhood $U_x$ of $x$
+i.e., it is on the upper or right edge of some box $\bar{B^i_j}$. \DMGtodo[inline]{Definition of final family has to include two types of boxes: in one type the vertical endpoint is moved, in the other the horizontal one is moved.} Then there is an open neighborhood $U_x$ of $x$
 so that $X \cap U_x$ is contained in a horizontal or vertical line.
 By compactness, finitely many such $U_x$ cover $X$, and thus $X$ is
 contained in finitely many horizontal or vertical lines. \qedhere
