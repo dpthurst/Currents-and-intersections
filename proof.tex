@@ -167,16 +167,28 @@ constructing a final family in the sense of
 Definition~\ref{def:finalfamily}.
 
 \begin{definition}
-  For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, define a family of sequences of orbit of boxes
+  For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, define a family of sequences of orbit of boxes of two types. Figure~\ref{fig:finalfamily} shpws a box of the first type,
 \[
 \bigl([B]_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty.
 \]
-  By further fixing a choice of lift $\tilde{x}$ of $x$,  each fixed datum $(a,bx^ke,c,dx^k e)$ determines a sequence of boxes
-\DPTtodo{Write this}
+which in the box notation is given by $p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1$ and
 \[
-  F_{a,b,e,\tilde{x}}(k) \coloneqq 
+q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
 \]
-See Figure~\ref{fig:finalfamily} for an illustration.
+Since the endpoint corresponding to $q_2$ is the one changing, we will denote these boxes by
+\[
+F_{p_1,p_2,q_1,\vec{q_2}}.
+\]
+This allows us to produce vertically thin boxes.
+On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
+\[
+p_1^{(k)} = p_2 x^k p_2^{-1} p_1.
+\]
+and we denote the corresponding family of boxes,
+\[
+F_{\vec{p_1},p_2,q_1,q_2}.
+\]
+
 \end{definition}
 
 \begin{proposition}
@@ -189,13 +201,20 @@ See Figure~\ref{fig:finalfamily} for an illustration.
 \end{figure}
 
 \begin{itemize}
-\item For a fixed lift $\tilde{x}$ and fixed $a,b,e$, the sequence $F_{a,b,e,\tilde{x}}$ is a sequence of nested elements.
-\item For a fixed lift $\tilde{x}$ and for fixed $a,b,e$, we have $\lim_{k \to \infty} \mu_v(F_{a,b,e, \tilde{x}}(k)) = 0$.
+\item For a fixed lift $\tilde{x}$ and fixed $(p_1,p_2,q_1,q_2)$, the boxes in the two sequences $F_{\vec{p_1},p_2,q_1,q_2}(k)$ and $F_{p_1,p_2,q_1,\vec{q_2}}$ are nested.
+\item For a fixed lift $\tilde{x}$ and fixed $(p_1,p_2,q_1,q_2)$,  \[
+\lim_{k \to \infty} \mu_f(F_{\vec{p_1},p_2,q_1,q_2}(k))= 0
+\]
+and
+\[
+\lim_{k \to \infty} \mu_f(F_{p_1,p_2,q_1,\vec{q_2}}(k))= 0.
+\]
+
 \end{itemize}
 \label{prop:finalfamily1}
 \end{proposition}
 \begin{proof}
-We prove each one of the items:
+We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$, using the orbit notation.
 \begin{itemize}
     \item Obvious by construction.
     \item 
@@ -377,8 +396,31 @@ So it follows that either $f$ is always non-negative or $f$ is always non-positi
 But $f$ can't be non-positive, again by Equation~\ref{eq:cross-red3}. Indeed, just pick $a$ so that $f([a]) << -C$, for some large $C>0$, obtaining another contradiction.
 \end{remark}
 
+\section{Asymmetric intersection number and non-examples}
 
-\begin{remark}
+\begin{definition} Asymmetric intersection number. Define asymmetric intersection number as geometric intersection number picking right handed crossings between curves.
+\end{definition}
+
+For the triangular unpunctured torus, consider the 6 shortest curves, which by symmetry we can reduce to the following 3, in Figure~\ref{fig:shortcurves}
+
+\begin{figure}
+    \centering
+    \caption{Shortest curves in triangular torus}
+    \label{fig:shortcurves}
+\end{figure}
+
+Develop these curves in the universal cover of the triangular punctured torus, and consider the same triangulation as in Figure~\ref{fig:shortcurves} lifted to the universal cover.
+The corresponding lifts of geodesics intersect the edges of the triangulations. If we note the asymmetric intersection number of these geodesics as we develop the torus further and further, which corresponds to taking more powers of the curve, and keep track of the oriented intersections, we obtain the following diamgrams for each curve.
+\begin{figure}
+    \centering
+    \caption{Diagrams for oriented intersections for each of the three curves}
+    \label{fig:orientedintersectiontorus}
+\end{figure}
+
+We observe how each cyclic hexagon of intersections satisfies that the alternating sum is zero.
+On the other hand, if one considers 
+\DMGtodo[inline]{I am confused about that figure.}
+
 \label{rmk:orientedintersectiondoesnotrecover}
 The proof of Proposition~\ref{prop:recoverintersection} is the first and only place where we have used the symmetry condition of $f$.
 This means, that up to that Proposition, we managed to construct a geodesic current associated to an $f$ that wasn't necessarily symmetric.
@@ -390,7 +432,7 @@ One can hope that maybe the proof only uses symmetry of $f$ artificially, and th
   of these values is equal to zero. But for upper-right picture there,
   the alternating sum is not zero. Also expect such examples on
   hyperbolic torus.}
-\end{remark}
+
 
 \begin{comment}
 \subsection{The proof, older version}

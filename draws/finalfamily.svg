@@ -287,13 +287,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="699.64373"
+     inkscape:cx="537.14373"
      inkscape:cy="325.42453"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1004"
+     inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -309,7 +309,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -623,5 +623,45 @@
          x="159.27141"
          y="148.63644"
          style="stroke-width:0.26458332">$e$</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.00000003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000003,1.00000003;stroke-opacity:1;stroke-dashoffset:0"
+       d="m 65.234274,98.248937 c 19.286658,15.600613 28.07368,17.476443 49.863006,27.837043"
+       id="path28946-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff00ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 88.365604,225.37024 C 95.035302,133.44192 144.72185,77.997322 144.72185,77.997322"
+       id="path1109"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1,1;stroke-opacity:1;stroke-dashoffset:0"
+       d="m 115.09728,126.08598 c 6.32208,30.68186 7.37995,37.40539 29.69845,70.78474"
+       id="path28946-8-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="90.404236"
+       y="112.72543"
+       id="text9759-9"><tspan
+         sodipodi:role="line"
+         id="tspan9757-5"
+         x="90.404236"
+         y="112.72543"
+         style="stroke-width:0.26458332">$p_1$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="119.35131"
+       y="134.74475"
+       id="text9759-9-7"><tspan
+         sodipodi:role="line"
+         id="tspan9757-5-5"
+         x="119.35131"
+         y="134.74475"
+         style="stroke-width:0.26458332">$p_2$</tspan></text>
   </g>
 </svg>
