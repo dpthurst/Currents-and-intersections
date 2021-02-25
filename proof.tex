@@ -3,11 +3,14 @@
 
 This is the heart of the proof. Here we show that all the necessary hypothesis are satisfied to apply Theorem~\ref{thm:caratheodory}.
 
+\DPTtodo{Be explicit about assumptions: $a,b,x$ are arbitrary curves.
+  Other places too}
 \begin{proposition}\label{prop:join-split-alg}
-  If $a$ and $b$ cross $x$ to the right, then
+  If $a$ and $b$ cross $x$ to the right, then the limit
   \[
-    \lim_{n,m\to \infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m]) = 0.
+    \lim_{n,m\to \infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m])
   \]
+  exists and is equal to~$0$.
 \end{proposition}
 \begin{proof}
   Let $k$ be the value from Lemma~\ref{lem:join-split-geom} for $a$ and
@@ -222,10 +225,12 @@ We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}
 \[
 \lim_{k \to \infty} f(F_{a,b,e}(k))=\lim_{k \to \infty} \lim_{n,m \to \infty} f([ax^kex^ncx^m])-f([ax^n])-f([cx^kex^m])=0
 \]
-    By Proposition~\ref{prop:join-split-alg}, the limit in question is equivalent to the same limit for the expression
+    By Proposition~\ref{prop:join-split-alg}, the limit in question is
+    equivalent to the same limit for the expression
+    \DPTtodo{Could use more details}
     \begin{align*}
        f([ax^k]) - f([x^k]) + & f([ex^n]) - f([x^n]) + f([cx^m]) - f([x^m]) \\
-       &- (f([ax^n]) - f([x^n])) - (f([cx^k])-f([x^k])) - (f([ex^m])-f([x^m]))
+       &- \bigl(f([ax^n]) - f([x^n])\bigr) - \bigl(f([cx^k])-f([x^k])\bigr) - \bigl(f([ex^m])-f([x^m])\bigr)
     \end{align*}
     Since the order of limits doesn't matter, the claim follows by Corollary~\ref{cor:additivity-limit}.\qedhere
     
@@ -238,21 +243,37 @@ Now, we show that this subset of boxes we have described forms a final family.
 The collection $\{ F_{a,b,e,\tilde{x}} \mid a,b,e \in \pi_1(S) \mbox{ crossing } x \mbox{ to the right } \}$ is a final family in the sense of Definition~\ref{def:finalfamily}.
 \label{prop:finalfamily2}
 \end{proposition}
-    \begin{proof}
-    Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of elements of $\mathcal{R}$ with empty intersection. For simplicity, assume first $R_i=B^i$ for some right handed box $B^i_{p^i,q^j,r^j,s^j}=[x^i,y^i) \times [z^i,w^i)$. Let $X \coloneqq \cap \overline{R_i} \neq \emptyset$, Since we are assuming the intersection of the $R_i$ is empty, if $x \in X$, then $x$ must be on the upper or right edge of the boxes $\overline{B^i}$ for all $i \geq i_0$, for some $i_0$.
+\begin{proof}
+   \DMGtodo[inline]{Definition of final family has to include two types of boxes: in one type the vertical endpoint is moved, in the other the horizontal one is moved.}
+    Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of elements of
+    $\mathcal{R}$ with empty intersection. For simplicity, assume
+    first $R_i=B^i$ for some right handed box
+    $B^i_{p^i,q^j,r^j,s^j}=[x^i,y^i) \times [z^i,w^i)$. Let $X
+    \coloneqq \bigcap \overline{R_i}$; this is non-empty by
+    compactness. Since we are
+    assuming the intersection of the $R_i$ is empty, if $x \in X$,
+    then $x$ must be on the upper or right edge of the boxes
+    $\overline{B^i}$ for all $i \geq i_0$, for some $i_0$.
     It suffices then to take the sequence of final boxes $F_{a^j,b^j,C^jd^j}(k)=[p^i,q^i) \times [r^i,s^i_k)$, where only the endpoint $s^i_k$ depends on $k$. This vacuously satisfies the condition of final family for the sequence $R_i$.
     
     In general, however, by definition of ring, for each $i$, each $R_i$ will be a union of boxes
     \[
-        R_i = \cup_{j=1}^{n_i} B^i_j
+        R_i = \bigcup_{j=1}^{n_i} B^i_j
     \]
-    where the sets $B^i_j$ in the union are pairwise disjoint.
+    where the sets $B^i_j$ in the union are pairwise disjoint (for
+    fixed~$i$).
+    \DPTtodo{Following two sentences are squishy}
     We can take for each $B^i_j$ the same family as above. However, the number of necessary total final sequences might increase with $i$. To show that  a finite number of final sequences suffice, let $X = \bigcap_i \overline{R_i}$, so that $X$ is non-empty and
 compact. For each $x \in X$, there is some $i$ so that $x \in \overline{R_i} - R_i$,
-i.e., it is on the upper or right edge of some box $\bar{B^i_j}$. \DMGtodo[inline]{Definition of final family has to include two types of boxes: in one type the vertical endpoint is moved, in the other the horizontal one is moved.} Then there is an open neighborhood $U_x$ of $x$
-so that $X \cap U_x$ is contained in a horizontal or vertical line.
+i.e., it is on the upper or right edge of the closure of some box
+$\overline{B^i_j}$.
+\DPTtodo{This needs to be expanded. On it}
+Then there is an open neighborhood $U_x$ of $x$
+so that $X \cap U_x$ is contained in a horizontal line, a vertical
+line, or a corner, which is contained in a union of a horizontal and
+vertical line.
 By compactness, finitely many such $U_x$ cover $X$, and thus $X$ is
-contained in finitely many horizontal or vertical lines. \qedhere
+contained in the union of finitely many horizontal or vertical lines. \qedhere
 
 
 \begin{figure}
@@ -272,7 +293,7 @@ Then $\mu_f$ is a geodesic current.
 \end{proposition}
 \begin{proof}
 By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring} and Propositions~\ref{prop:finalfamily1} and~\ref{prop:finalfamily2}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
-Therefore, by Caratheodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$. By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant.  From this it follows the measure $\mu_f$ is Borel. Furthermore, $\mu_f$ is locally finite by construction. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
+Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$. By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant.  From this it follows the measure $\mu_f$ is Borel. Furthermore, $\mu_f$ is locally finite by construction. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
 We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain an unoriented geodesic current, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
 \[
 i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).

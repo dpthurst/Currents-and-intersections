@@ -346,7 +346,7 @@ need to invert one term on the LHS.)
 
 
 \begin{lemma}\label{lem:join-split-geom}
-  If $[a]$ and $[b]$ cross $[x]$ to the right, then there integers $k$ and $s\geq 0$
+  If $a$ and $b$ cross $x$ to the right, then there integers $k$ and $s\geq 0$
   so that, for all large enough $n,m$ and $r$ with either $s < r < m-n+k-s$ or $-s > r > m-n+k+s$,
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
@@ -388,12 +388,19 @@ need to invert one term on the LHS.)
   We first show that we can choose lifts for which the crossing is essential.
   Use the band model, centered on~$\tilde{x}$.
   By a \emph{window}, we mean an open interval $(x^-,x^+)$ cut out by the endpoints of another lift of $[x]$.
+\DPTtodo[inline]{This is imprecise, we do not want to label \textbf{all} lifts
+of $[x]$. Look at lifts of $a$, and use Lemma~\ref{lem:rhs}; lifts
+numbered $l$ come from lifting $x^{\pm l}ax^{\mp l}$ to get the
+lifts numbered $0$. DPT on it}
   Number the windows on top and bottom
   with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
   top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
   of~$b$ connect top window~$\ell$ to bottom window $\ell+k$.
-  Choose $s \geq 0$ so that translating a lift of $x$ at least $s$ times (to the left or to the right) gives two non-intersecting lifts of $x$. If $x$ is simple, $s$ can be taken to be $0$.
+  Choose $s \geq 0$ so that translating a lift of $x$ at least $s$
+  times (to the left or to the right) gives two non-intersecting lifts
+  of $x$. If $x$ is simple, $s$ can be taken to be $0$. If $a=b$, then $k=0$.
   See Figure~\ref{fig:abcrossings}.
+  \DPTtodo{In figure, orient the central lift of $x$}
   
   \begin{figure}
 \centering{
@@ -431,7 +438,7 @@ need to invert one term on the LHS.)
   exists.
 \end{corollary}
 
-\begin{proof}[of Corollary~\ref{cor:additivity-limit}]
+\begin{proof}[Proof of Corollary~\ref{cor:additivity-limit}]
   By Equation~(\ref{eq:cross_a}), with $k=0$ (since $a=b$) and $s=0$ ($x$ is simple), $m=t-1$ and $n=t+1$ for arbitrary $t$, and $r=0$, for $n$ large enough we get
   \[
     [a x^{t-1}] [a x^{t+1}] \reducesto [ax^{t}ax^{t}].
