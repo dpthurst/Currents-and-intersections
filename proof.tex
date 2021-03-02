@@ -6,6 +6,7 @@ This is the heart of the proof. Here we show that all the necessary hypothesis a
 \DPTtodo{Be explicit about assumptions: $a,b,x$ are arbitrary curves.
   Other places too}
 \begin{proposition}\label{prop:join-split-alg}
+Let $a,b,x$ be elements of $\pi_1(S)$.
   If $a$ and $b$ cross $x$ to the right, then the limit
   \[
     \lim_{n,m\to \infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m])
@@ -23,7 +24,18 @@ This is the heart of the proof. Here we show that all the necessary hypothesis a
   $\lim_{n \to \infty} f([a x^n b x^{n+k+l}]) -  f([x^{2n+k+l}])$ exists and is equal to
   $\lim_{n \to \infty} f([a x^n]) + f([b x^{n+k+l}]) -  f([x^{2n+k+l}])$.
   This proves the statement.
+  \DMGtodo[inline]{Does this proof require more detail?}
 \end{proof}
+
+It follows from Proposition~\ref{prop:join-split-alg} that
+
+\begin{corollary}
+The following three limits are equal
+  \[
+    \lim_{n,m\to \infty} f([a x^n b x^m]) = \lim_{n \to \infty} \lim_{m \to \infty} f([a x^n b x^m]) 
+  \]
+  exists and is equal to~$0$.
+\end{corollary}
 
 \subsubsection{$\mu_{f}$ is non-negative}
 
