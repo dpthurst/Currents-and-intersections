@@ -92,8 +92,7 @@ synchronized. This makes no difference for our purposes.)
 To show countable additivity, it suffices to show that there is a final
 family on which measures go to zero.
 
-\DPTtodo{Need some editing HERE. Is an element of $\mathcal{F}$
-  written $\mathbf{F}$ or $\mathbf{S}$?}
+\DPTtodo{Is an element of $\mathcal{F}$ written $\mathbf{F}$ or $\mathbf{S}$?}
 \begin{proposition}
   Let $\mu$ be a finitely additive function defined on a
   ring~$\mathcal{R}$. Suppose there is a final family
@@ -108,16 +107,19 @@ family on which measures go to zero.
   $B_n \coloneqq A - \bigcup_{i=0}^n A_i$ . The sequence
   $\mathbf{B} = (B_n)_{n=0}^\infty$ is a nested decreasing sequence of
   elements in $\mathcal{R}$ with empty intersection. Since
-  $\mathcal{F}$ is a final family, we can find
+  $\bigcup\mathcal{F}$ is a final family, we can find
   $\mathbf{S} \in \mathcal{F}$ so that $\mathbf{B}$ is eventually
-  contained in $\mathbf{S}$. On the one hand, note that, since
-  by hypothesis $\mu(S_j) \to 0$, we also have $\mu(B_i) \to 0$, by
-  definition of ``eventually contained'' and monotonicity of~$\mu$. On
-  the other hand,
+  contained in~$\mathbf{S}$. We decompose $\mathbf{S} = \bigcup
+  \mathbf{S}_l$, where $\mathbf{S}_l = (S_{l,j})_j \in \mathcal{F}$.
+  On the one hand, note that, since
+  by hypothesis $\mu(S_{l,j}) \to 0$, we also have $\mu(S_j) \to 0$
+  and $\mu(B_i) \to 0$, by finite additivity, the
+  definition of ``eventually contained'', and monotonicity of~$\mu$. On
+  the other hand, by finite additivity of~$\mu$,
 \[
 \mu(B_n) = \mu\Bigl(A - \bigcup\nolimits_{i=0}^n A_i \Bigr)= \mu(A) - \mu\Bigl( \bigcup\nolimits_{i=0}^n A_i \Bigr)
 \]
-by finite additivity of $\mu$, which proves that
+which proves that
 $\mu\bigl(\bigcup_{i=0}^n A_i\bigr) \to \mu(A)$, as desired.
 \end{proof}
 
