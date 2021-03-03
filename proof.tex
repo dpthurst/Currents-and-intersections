@@ -178,7 +178,7 @@ By Propositon~\ref{prop:RHsemiring}, $\mu_{f}$ is a finitely additive function.
 \label{sec:countable-additivity}
 
 \DPTtodo{Throughout section: use boldface $\mathbf{F}$ for sequences of
- nested elements, as in Section~\ref{sec:measure-thy}}
+ nested elements, as in Section~\ref{sec:measure-thy}. Or maybe $\mathbf{S}$?}
 We prove countable additivity of the function $\mu_{f}$ by
 constructing a final family in the sense of
 Definition~\ref{def:finalfamily}.
@@ -196,7 +196,11 @@ Since the endpoint corresponding to $q_2$ is the one changing, we will denote th
 \[
 F_{p_1,p_2,q_1,\vec{q_2}}.
 \]
-This allows us to produce boxes that are arbitrarily thin in the vertical direction. We will call these $F_{p_1,p_2,q_1,\vec{q_2}}$ \emph{vertically thin} boxes.
+This allows us to produce boxes that are arbitrarily thin in the
+vertical direction. We will call these $F_{p_1,p_2,q_1,\vec{q_2}}$
+\DPTtodo{I like the term ``vertically thin'', but these are sequences,
+not boxes}
+\emph{vertically thin} boxes.
 On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
 \[
 p_1^{(k)} = p_2 x^k p_2^{-1} p_1.
@@ -251,37 +255,63 @@ We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}
     \end{itemize}
 \end{proof}
 
-Now, we show that this subset of boxes we have described forms a final family.
+Now, we show that this subset of boxes we have described forms a final
+family.
+Let $\mathcal{F}$ be the family of all horizontally thin or vertically
+thin sequences of boxes.
 
 \begin{proposition}
-The collection $\{ F_{a,b,e,\tilde{x}} \mid a,b,e \in \pi_1(S) \mbox{ crossing } x \mbox{ to the right } \}$ is a final family in the sense of Definition~\ref{def:finalfamily}.
+The collection $\bigcup\mathcal{F}$ is a final family in the sense of
+Definition~\ref{def:finalfamily}.
 \label{prop:finalfamily2}
 \end{proposition}
 \begin{proof}
-   \DMGtodo[inline]{Definition of final family has to include two types of boxes: in one type the vertical endpoint is moved, in the other the horizontal one is moved.}
-    Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of elements of
-    $\mathcal{R}$ with empty intersection. For simplicity, assume
-    first $R_i=B^i$ for some right handed box
+    Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of non-empty elements of
+    $\mathcal{R}$ with empty intersection. To give the idea, we first assume
+    $R_i=B^i$ for some right handed box
     $B^i_{p^i,q^j,r^j,s^j}=[x^i,y^i) \times [z^i,w^i)$. Let $X
     \coloneqq \bigcap \overline{R_i}$; this is non-empty by
     compactness. Since we are
     assuming the intersection of the $R_i$ is empty, if $x \in X$,
     then $x$ must be on the upper or right edge of the boxes
-    $\overline{B^i}$ for all $i \geq i_0$, for some $i_0$.
+    $\overline{B^i}$ for all $i \geq i_0$, for some $i_0$. (Or both,
+    if $x$ is at the upper-right corner of the $\overline{R_i}$.)
     It suffices then to take the sequence of final boxes $F_{a^j,b^j,C^jd^j}(k)=[p^i,q^i) \times [r^i,s^i_k)$, where only the endpoint $s^i_k$ depends on $k$. This vacuously satisfies the condition of final family for the sequence $R_i$.
+    \DPTtodo[inline]{This simple case is missing some details: (1) We
+      only consider a single point $x$, and need to invoke compactness
+      and take unions to cover all points. (2) The listed boxes never
+      include the points at the upper-right corners. (3) We didn't
+      complete the argument to show that this implies $R$ is contained
+      in the given thin sequence. These complications
+      make me wonder if it's worth doing the simple case first, or
+      just doing the general case.}
+
+  \DPTtodo{Editing HERE}
+    Let $X \coloneqq \bigcap \overline{R_i}$ be the intersection of
+    the closures; by compactness, $X$ is non-empty. We first prove
+    that $X$ is contained in the union of finitely many horizontal and
+    vertical segments.
+    \begin{itemize}
+    \item $x \in \overline{R_i} \setminus R_i \subset \bigcup_j
+      \overline{B_{ij}} \setminus B_{ij}$ for some $i$
+    \end{itemize}
+    \DPTtodo[inline]{Is this claim easy? $\overline{R_i} \setminus
+      R_i$ is manifestly a union of finitely many h/v intervals, and $X$ is
+      manifestly contained in it}
+    \DPTtodo[inline]{In progress: Exactly how to leverage this to get
+      final family. I am worried this isn't enough}
     
+    \DPTtodo[inline]{Old proof below}
     In general, however, by definition of ring, for each $i$, each $R_i$ will be a union of boxes
     \[
         R_i = \bigcup_{j=1}^{n_i} B^i_j
     \]
     where the sets $B^i_j$ in the union are pairwise disjoint (for
     fixed~$i$).
-    \DPTtodo{Following two sentences are squishy}
     We can take for each $B^i_j$ the same family as above. However, the number of necessary total final sequences might increase with $i$. To show that  a finite number of final sequences suffice, let $X = \bigcap_i \overline{R_i}$, so that $X$ is non-empty and
 compact. For each $x \in X$, there is some $i$ so that $x \in \overline{R_i} - R_i$,
 i.e., it is on the upper or right edge of the closure of some box
 $\overline{B^i_j}$.
-\DPTtodo{This needs to be expanded. On it}
 Then there is an open neighborhood $U_x$ of $x$
 so that $X \cap U_x$ is contained in a horizontal line, a vertical
 line, or a corner, which is contained in a union of a horizontal and
