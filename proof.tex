@@ -288,18 +288,30 @@ Definition~\ref{def:finalfamily}.
 
   \DPTtodo{Editing HERE}
     Let $X \coloneqq \bigcap \overline{R_i}$ be the intersection of
-    the closures; by compactness, $X$ is non-empty. We first prove
-    that $X$ is contained in the union of finitely many horizontal and
-    vertical segments.
+    the closures; by compactness, $X$ is non-empty. The structure of
+    $X$ may be involved; see Figure~\ref{fig:limitingbox} for one
+    relatively simple example. But $X$ may also have Cantor set
+    behavior; nevertheless, we can give it some structure.
     \begin{itemize}
-    \item $x \in \overline{R_i} \setminus R_i \subset \bigcup_j
-      \overline{B_{ij}} \setminus B_{ij}$ for some $i$
+    \item For each~$i$, we have $X \subset \overline{R_i} \setminus
+      R_i$, which is a union of finitely many horizontal and vertical
+      segments.
+    \item Pick a collection of horizontal/vertical intervals that
+      cover~$X$, and let $U$ be the union of $\epsilon$-intervals
+      below/right of these intervals. \textbf{Claim:} For sufficiently
+      large~$i$, $R_i \subset U$.
+    \item Claim implies result: take union of horizontally/vertically
+      thin sequences covering these intervals that cover $X$.
+    \item Claim seems basically equivalent to \textbf{Lemma:} Let $U
+      \subset \R^2$ be open, and let $D$ be the union of $U$ and all
+      upper/right limits. If, for all $i$, $R_i \cap U \ne
+      \emptyset$, then $X \cap D \ne \emptyset$.
+      \begin{itemize}
+      \item This is related to compactness; it is obvious if we
+        replace $D$ by the closure of~$U$. Is there a different
+        topology to look at to make things clear?
+      \end{itemize}
     \end{itemize}
-    \DPTtodo[inline]{Is this claim easy? $\overline{R_i} \setminus
-      R_i$ is manifestly a union of finitely many h/v intervals, and $X$ is
-      manifestly contained in it}
-    \DPTtodo[inline]{In progress: Exactly how to leverage this to get
-      final family. I am worried this isn't enough}
     
     \DPTtodo[inline]{Old proof below}
     In general, however, by definition of ring, for each $i$, each $R_i$ will be a union of boxes
@@ -319,7 +331,9 @@ vertical line.
 By compactness, finitely many such $U_x$ cover $X$, and thus $X$ is
 contained in the union of finitely many horizontal or vertical lines. \qedhere
 
-
+\DPTtodo[inline]{In Figure~\ref{fig:limitingbox}, ideally shade boxes
+  according to where they are in the sequence. Could also try to show
+  some Cantor behavior. Cantor picture in DPT notes \texttt{2021-03-06 \#1}}
 \begin{figure}
 \centering{
 \resizebox{40mm}{!}{\svgfig{countable_additivity_whiskers}}
