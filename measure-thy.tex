@@ -133,7 +133,9 @@ A set function $\mu$ defined on the class of all subsets of a set $X$ and taking
       monotone; and
     \item $\mu$ is countably subadditive. 
 \end{enumerate}
-A set $A \subset X$ is called \emph{$\mu$-measurable} if, for every $E \subset X$, one has the equality
+A set $A \subset X$ is called \emph{$\mu$-measurable} if, for every $E
+\subset X$, one has the equality
+\DPTtodo{Hersonsky-Paulin only have one inequality here. The other is automatic}
 \[
 \mu(E \cap A) + \mu(E \backslash A) = \mu(E)
 \]
@@ -147,7 +149,10 @@ For $A \subset X$, let
 \[
 \mu^*(A) \coloneqq \inf \biggl\{ \sum_{i=1}^n \mu(A_n) \biggm\vert A_n \in \mathcal{R}, A \subset \bigcup\nolimits_{i=1}^{\infty} A_i\biggr\},
 \]
-where in the case of absence of such a sequence~$A_n$ we set $\mu^*(A) \coloneqq \infty$. Then
+where in the case of absence of such a sequence~$A_n$ we set $\mu^*(A)
+\coloneqq \infty$. Then
+\DPTtodo{Break this up: Finite additivity is enough for at least (1)
+  and (2)}
 \begin{enumerate}
     \item $\mu^*$ is an outer regular measure;
     \item all the sets in $\mathcal{R}$ are $\mu$-measurable;

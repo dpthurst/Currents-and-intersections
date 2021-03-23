@@ -12,13 +12,52 @@ Work with oriented currents for simplicity of notation (no need for
 $\Z/2$ quotient), although results ultimately apply to unoriented
 currents.
 
+As in Theorem~\ref{thm:caratheodory}, for $E \subset G^+(S)$ a subset
+of the space of geodesics, we define
+\[
+    \mu_f^*(E) \coloneqq \inf \Bigl\{\, \sum_{i \in I} \mu_f(B_i) \Bigm| \text{$\{B_i\}$
+          finite or countable cover of $E$ by right-handed boxes}\,\Bigr\}.
+\]
+Then $\mu_f^*$ is an outer measure.
+
+\begin{lemma}
+  The outer measure $\mu_f^*$ is a Borel measure.
+\end{lemma}
+
+\begin{proof}
+  Since $\mathcal{R}$ generates Borel sets as a $\sigma$-algebra, it
+  suffices to show that any right-handed box~$A \in \mathcal{R}$ is
+  $\mu_f^*$-measurable.
+  \DPTtodo[inline]{I started to write the proof, but it used no facts
+    about $\mathcal{R}$ other than being a ring, which means it should
+    be cited or proved in Section~\ref{sec:measure-thy}}
+\end{proof}
+
+It remains to prove that $\mu_f$ is countably additive, which is
+equivalent to showing that $\mu_f^*$ and $\mu_f$ agree
+on~$\mathcal{R}$. We introduce some notation.
+
+For $B$ a right-handed box $[a_1,a_2) \times [b_1,b_2)$, let
+$\overline{B} \coloneqq [a_1,a_2] \times [b_1,b_2]$ and
+$B^\circ \coloneqq (a_1,a_2) \times (b_1,b_2)$ be the corresponding
+closed and open boxes.
+
 \begin{definition}
-  For $E \subset G^+(S)$ a subset of the space of geodesics, define a map
-  \[
-    \mu^*(E) = \inf \left\{\, \sum_{i \in I} \mu(B_i) \mid| \text{$\{B_i\}$
-          finite or countable cover of $E$ by right-handed boxes}\,\right\}
-  \]
+  For $B = [a_1,a_2) \times [b_1,b_2)$ a right-handed box and
+  $\epsilon > 0$, let $V(B,\epsilon) = [a_1',a_2) \times [b_1',b_2)$
+  be an element of $\mathcal{R}$ so that
+  \begin{itemize}
+  \item $a_1' < a_1$ and $b_1' < b_1$ (i.e., $V(B,\epsilon)$ extend
+    $B$ slightly down and to the left)and
+  \item $\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
+  \end{itemize}
+  It is possible to find such $a_1'$ and $b_1'$ by
+  Proposition~\ref{prop:finalfamily1}.
+
+  Also set $W(B,\epsilon)$ (similar neighborhood of upper/right edges
 \end{definition}
+
+
 
 %%% Local Variables:
 %%% mode: latex
