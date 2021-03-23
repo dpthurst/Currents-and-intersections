@@ -286,7 +286,6 @@ Definition~\ref{def:finalfamily}.
       make me wonder if it's worth doing the simple case first, or
       just doing the general case.}
 
-  \DPTtodo{Editing HERE}
     Let $X \coloneqq \bigcap \overline{R_i}$ be the intersection of
     the closures; by compactness, $X$ is non-empty. The structure of
     $X$ may be involved; see Figure~\ref{fig:limitingbox} for one
@@ -478,112 +477,6 @@ which is a contradiction.
 So it follows that either $f$ is always non-negative or $f$ is always non-positive.
 But $f$ can't be non-positive, again by Equation~\ref{eq:cross-red3}. Indeed, just pick $a$ so that $f([a]) << -C$, for some large $C>0$, obtaining another contradiction.
 \end{remark}
-
-\section{Asymmetric intersection number and non-examples}
-
-\begin{definition} Asymmetric intersection number. Define asymmetric intersection number as geometric intersection number picking right handed crossings between curves.
-\end{definition}
-
-For the triangular unpunctured torus, consider the 6 shortest curves, which by symmetry we can reduce to the following 3, in Figure~\ref{fig:shortcurves}
-
-\begin{figure}
-    \centering
-    \caption{Shortest curves in triangular torus}
-    \label{fig:shortcurves}
-\end{figure}
-
-Develop these curves in the universal cover of the triangular punctured torus, and consider the same triangulation as in Figure~\ref{fig:shortcurves} lifted to the universal cover.
-The corresponding lifts of geodesics intersect the edges of the triangulations. If we note the asymmetric intersection number of these geodesics as we develop the torus further and further, which corresponds to taking more powers of the curve, and keep track of the oriented intersections, we obtain the following diamgrams for each curve.
-\begin{figure}
-    \centering
-    \caption{Diagrams for oriented intersections for each of the three curves}
-    \label{fig:orientedintersectiontorus}
-\end{figure}
-
-We observe how each cyclic hexagon of intersections satisfies that the alternating sum is zero.
-On the other hand, if one considers 
-\DMGtodo[inline]{I am confused about that figure.}
-
-\label{rmk:orientedintersectiondoesnotrecover}
-The proof of Proposition~\ref{prop:recoverintersection} is the first and only place where we have used the symmetry condition of $f$.
-This means, that up to that Proposition, we managed to construct a geodesic current associated to an $f$ that wasn't necessarily symmetric.
-One can hope that maybe the proof only uses symmetry of $f$ artificially, and therefore there is hope one can associate an oriented intersection number (see Remark~\ref{rmk:orientedintersection}). This is not the case, however, as one can show already in the torus. However, we will not spell out the details here. It is still interesting to consider the question of how is this measure then related to $f$.
-\DMGtodo[inline]{Include pictures of oriented intersection example that doesn't come from intersection with an oriented current. Also, there seem to be different definitions of oriented intersections, define exactly what we mean if we want to introduce this example}
-\DPTtodo[inline]{See blackboard pictures in shared album. On the
-  triangular (unpunctured) torus, look at values on the 6 shortest
-  curves. For any asymmetric intersection number, the alternating sum
-  of these values is equal to zero. But for upper-right picture there,
-  the alternating sum is not zero. Also expect such examples on
-  hyperbolic torus.}
-
-
-\begin{comment}
-\subsection{The proof, older version}
-\DMGtodo[inline]{This is the old version of the proof}
-\begin{proposition}\label{prop:premeasurewelldef}
-$\mu_{v}(B_{a,b,c,d,x})$ is well-defined.
-\end{proposition}
-\begin{proof}
-For the elements $x,a,b,c,d \in \pi_1(S)$, we consider the following curves
-
-\textbf{Type 1}
-
-\begin{enumerate}
-\item $cx^ndx^m$
-\item $cx^n$
-\item $dx^m$
-\end{enumerate}
-
-\textbf{Type 2}
-
-\begin{enumerate}
-\item $ax^nbx^m$
-\item $ax^n$
-\item $bx^m$
-\end{enumerate}
-
-
-If we define $f(n)\coloneqq v(cx^n)$, $g(m)\coloneqq v(dx^m)$ and $h(n,m)\coloneqq v(cx^ndx^m)$.
-Application of smoothing and additive union yields
-
-\begin{enumerate}
-\item $f(n) \sim K_1 + nv(x)$
-\item $g(m) \sim K_2 + mv(x)$.
-\end{enumerate}
-
-where $\sim$ here means asymptotically.
-(show intersections are essential by working in the band model).\\
-We want to show that
-
-$h(n,m) \sim K_1 + K_2 + (n+m)v(x)$.
-
-To do this, we use the smoothing property again, and take lifts in the bands model to see that intersections are essential and thus smoothing yields
-\[
-  [cx^n][dx^{n+k}] \searrow [cx^ldx^{n+k-l}]
-\]
-where $1 \leq l \leq k-1$.
-
-This shows that
-\[
-  f(n+k) + g(n) \geq h(n+l,n+k-l).
-\]
-Similarly,
-\[
-  [cx^ndx^m][cx^k] \searrow [dx^{n+m-k}]
-\]
-which yields
-\[
-  h(n,m) + f(k) \geq g(n+m-k)
-\]
-i.e.,
-\[
-  h(n,m) \geq K_1 + K_2 + (n+m)\nu(x) - C(k).
-\]
-For, $n+m \gg k$ (or $n+m > k + C$). \\
-
-Now we show that $v(cx^n)$ is convex as a function of $n$.
-\end{proof}
-\end{comment}
 
 %%% Local Variables:
 %%% mode: latex
