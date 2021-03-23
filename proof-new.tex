@@ -44,21 +44,74 @@ closed and open boxes.
 
 \begin{definition}
   For $B = [a_1,a_2) \times [b_1,b_2)$ a right-handed box and
-  $\epsilon > 0$, let $V(B,\epsilon) = [a_1',a_2) \times [b_1',b_2)$
-  be an element of $\mathcal{R}$ so that
+  $\epsilon > 0$, let
+  \[V(B,\epsilon) \coloneqq [a_1',a_2) \times [b_1',b_2)\]
+  be an element of $\mathcal{R}$ (extending
+    $B$ slightly down and to the left) so that
   \begin{itemize}
-  \item $a_1' < a_1$ and $b_1' < b_1$ (i.e., $V(B,\epsilon)$ extend
-    $B$ slightly down and to the left)and
+  \item $a_1' < a_1$ and $b_1' < b_1$ and
   \item $\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
   \end{itemize}
   It is possible to find such $a_1'$ and $b_1'$ by
+  \DPTtodo{I'm slightly more restrictive than necessary about what
+    type of neighborhood to consider. I think it's still fine.}
   Proposition~\ref{prop:finalfamily1}.
-  \DPTtodo[inline]{Maybe also $V' = V \setminus B$?}
 
-  Also set $W(B,\epsilon)$ (similar neighborhood of upper/right edges
+  Also set $W(B,\epsilon)$ to be a neighborhood of the upper-right
+  edges of~$B$:
+  \[
+    W(B,\epsilon) \coloneqq \bigl([a_1,a_2) \times [b_2',b_2)\bigr) \cup
+      \bigl([a_2',a_2) \times [b_1,b_2)\bigr)
+  \]
+  where
+  \begin{itemize}
+  \item $a_1 < a_2' < a_2$ and $b_1 < b_2' < b_2$;
+  \item $W(B,\epsilon)\in \mathcal{R}$; and
+  \item $\mu_f(W(B,\epsilon)) < \epsilon$.
+  \end{itemize}
+  Again, existence is guaranteed by Proposition~\ref{prop:finalfamily1}.
+  For variables as above, also set
+  \[
+    W^\circ(B,\epsilon) \coloneqq \bigl([a_1,a_2] \times (b_2',b_2]\bigr) \cup
+      \bigl((a_2',a_2] \times [b_1,b_2]\bigr);
+  \]
+  this is an open neighborhood of the upper-right edges of the
+  $\overline{B}$ in the subspace topology.
 \end{definition}
 
+\begin{proposition}
+  The finitely additive measure $\mu_f$ is countably additive.
+\end{proposition}
 
+\DPTtodo[inline]{I'm reframing things here, not talking about
+  $\mu_f^*$. But setup is still all fine}
+\begin{proof}
+  Let $B_0$ be a right-handed box, and suppose we are given a
+  countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
+  must show that
+  \[
+    \mu_f(B_0) \le \sum_{i=1}^\infty \mu_f(B_i).
+  \]
+  Fix $\epsilon > 0$. For $i \ge 1$, set
+  $V_i \coloneqq V(B_i, \epsilon/2^i)$. Also set
+  $V_0 \coloneqq W(B_0,\epsilon)$ and $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$.
+
+  Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$, since
+  $B_i \subset V_i^\circ$ and the upper-right edges of
+  $\overline{B_0}$ are contained in $V_0^\circ$. Since
+  $\overline{B_0}$ is compact and the $V_i^\circ$ are open in the
+  subspace topology, we have a finite subcover; let $I$ be the set of
+  indices included in the subcover.
+
+  By finite additivity, we then have
+  \begin{align*}
+    \mu_f(B_0) &\le \sum_{i \in I} \mu_f(V_i)\\
+      &\le \sum_{i \in I, i \ne 0} \mu_f(B_i) + \sum_{i \in I, i \ne 0}
+        \mu_f(V_i \setminus B_i) + \mu_f(V_0)\\
+      &< \sum_{i=1}^\infty \mu_f(B_i) + 2\epsilon.
+  \end{align*}
+  Since $\epsilon$ was arbitrary, we are done.
+\end{proof}
 
 %%% Local Variables:
 %%% mode: latex
