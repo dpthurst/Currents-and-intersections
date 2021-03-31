@@ -179,14 +179,16 @@ By Propositon~\ref{prop:RHsemiring}, $\mu_{f}$ is a finitely additive function.
 \subsection{$\mu_{f}$ is countably additive}
 \label{sec:countable-additivity}
 
-\DPTtodo{Throughout section: use boldface $\mathbf{F}$ for sequences of
- nested elements, as in Section~\ref{sec:measure-thy}. Or maybe $\mathbf{S}$?}
+\DPTtodo[inline]{Throughout section: use boldface $\mathbf{F}$ for sequences of
+ nested elements, as in Section~\ref{sec:measure-thy}. Or maybe
+ $\mathbf{S}$?}
+\DPTtodo[inline]{Or maybe not, ``final family'' notion is dropped.
+  Rewrite intro to section}
 We prove countable additivity of the function $\mu_{f}$ by
-constructing a final family in the sense of
-Definition~\ref{def:finalfamily}.
+proving approximation results.
 
 \begin{definition}
-  For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, define a family of sequences of orbit of boxes of two types. Figure~\ref{fig:finalfamily} shpws a box of the first type,
+  For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, define a family of sequences of orbit of boxes of two types. Figure~\ref{fig:finalfamily} shows a box of the first type,
 \[
 \bigl([B]_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty.
 \]
@@ -257,96 +259,99 @@ We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}
     \end{itemize}
 \end{proof}
 
-Now, we show that this subset of boxes we have described forms a final
-family.
-Let $\mathcal{F}$ be the family of all horizontally thin or vertically
-thin sequences of boxes.
+We now use Proposition~\ref{prop:finalfamily1} to prove that $\mu_f$
+is countably additive. We will need to consider more types of boxes
+than the half-open boxes we have been working with so for. For $B$ a
+right-handed box $[a_1,a_2) \times [b_1,b_2)$, let
+$\overline{B} \coloneqq [a_1,a_2] \times [b_1,b_2]$ and
+$B^\circ \coloneqq (a_1,a_2) \times (b_1,b_2)$ be the corresponding
+closed and open boxes.
 
-\begin{proposition}
-The collection $\bigcup\mathcal{F}$ is a final family in the sense of
-Definition~\ref{def:finalfamily}.
-\label{prop:finalfamily2}
-\end{proposition}
+\begin{lemma}\label{lem:extend1}
+  For $B = [a_1,a_2) \times [b_1,b_2)$ a right-handed box and
+  any $\epsilon > 0$, there is a right-handed box $V(B,\epsilon) =
+  [a_1',a_2) \times [b_1',b_2)$ in $\mathcal{R}$ so that
+  $a_1' < a_1$ and $b_1' < b_1$ and
+  $\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
+\end{lemma}
+
+That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
+without increasing the mass much.
+
 \begin{proof}
-    Suppose $(R_i)_{i=1}^{\infty}$ is a nested sequence of non-empty elements of
-    $\mathcal{R}$ with empty intersection. To give the idea, we first assume
-    $R_i=B^i$ for some right handed box
-    $B^i_{p^i,q^j,r^j,s^j}=[x^i,y^i) \times [z^i,w^i)$. Let $X
-    \coloneqq \bigcap \overline{R_i}$; this is non-empty by
-    compactness. Since we are
-    assuming the intersection of the $R_i$ is empty, if $x \in X$,
-    then $x$ must be on the upper or right edge of the boxes
-    $\overline{B^i}$ for all $i \geq i_0$, for some $i_0$. (Or both,
-    if $x$ is at the upper-right corner of the $\overline{R_i}$.)
-    It suffices then to take the sequence of final boxes $F_{a^j,b^j,C^jd^j}(k)=[p^i,q^i) \times [r^i,s^i_k)$, where only the endpoint $s^i_k$ depends on $k$. This vacuously satisfies the condition of final family for the sequence $R_i$.
-    \DPTtodo[inline]{This simple case is missing some details: (1) We
-      only consider a single point $x$, and need to invoke compactness
-      and take unions to cover all points. (2) The listed boxes never
-      include the points at the upper-right corners. (3) We didn't
-      complete the argument to show that this implies $R$ is contained
-      in the given thin sequence. These complications
-      make me wonder if it's worth doing the simple case first, or
-      just doing the general case.}
+  TBW. Should follow from
+  Proposition~\ref{prop:finalfamily1}.
+\end{proof}
 
-    Let $X \coloneqq \bigcap \overline{R_i}$ be the intersection of
-    the closures; by compactness, $X$ is non-empty. The structure of
-    $X$ may be involved; see Figure~\ref{fig:limitingbox} for one
-    relatively simple example. But $X$ may also have Cantor set
-    behavior; nevertheless, we can give it some structure.
-    \begin{itemize}
-    \item For each~$i$, we have $X \subset \overline{R_i} \setminus
-      R_i$, which is a union of finitely many horizontal and vertical
-      segments.
-      \begin{itemize}
-      \item Wait, that doesn't work, as example in Figure (slightly
-        upgraded) shows.
-      \end{itemize}
-    \item Pick a collection of horizontal/vertical intervals that
-      cover~$X$, and let $U$ be the union of $\epsilon$-intervals
-      below/right of these intervals. \textbf{Claim:} For sufficiently
-      large~$i$, $R_i \subset U$.
-    \item Claim implies result: take union of horizontally/vertically
-      thin sequences covering these intervals that cover $X$.
-    \item Claim seems basically equivalent to \textbf{Lemma:} Let $U
-      \subset \R^2$ be open, and let $D$ be the union of $U$ and all
-      upper/right limits. If, for all $i$, $R_i \cap U \ne
-      \emptyset$, then $X \cap D \ne \emptyset$.
-      \begin{itemize}
-      \item This is related to compactness; it is obvious if we
-        replace $D$ by the closure of~$U$. Is there a different
-        topology to look at to make things clear?
-      \end{itemize}
-    \end{itemize}
-    
-    \DPTtodo[inline]{Old proof below}
-    In general, however, by definition of ring, for each $i$, each $R_i$ will be a union of boxes
-    \[
-        R_i = \bigcup_{j=1}^{n_i} B^i_j
-    \]
-    where the sets $B^i_j$ in the union are pairwise disjoint (for
-    fixed~$i$).
-    We can take for each $B^i_j$ the same family as above. However, the number of necessary total final sequences might increase with $i$. To show that  a finite number of final sequences suffice, let $X = \bigcap_i \overline{R_i}$, so that $X$ is non-empty and
-compact. For each $x \in X$, there is some $i$ so that $x \in \overline{R_i} - R_i$,
-i.e., it is on the upper or right edge of the closure of some box
-$\overline{B^i_j}$.
-Then there is an open neighborhood $U_x$ of $x$
-so that $X \cap U_x$ is contained in a horizontal line, a vertical
-line, or a corner, which is contained in a union of a horizontal and
-vertical line.
-By compactness, finitely many such $U_x$ cover $X$, and thus $X$ is
-contained in the union of finitely many horizontal or vertical lines. \qedhere
+\begin{lemma}\label{lem:extend2}
+  For $B = [a_1,a_2) \times [b_1,b_2)$ a right-handed box and
+  any $\epsilon > 0$, there is a region $W(B,\epsilon) =
+  \bigl([a_1,a_2) \times [b_2',b_2)\bigr) \cup
+  \bigl([a_2',a_2) \times [b_1,b_2)\bigr)$ in $\mathcal{R}$ so that
+  $a_1 < a_2' < a_2$ and $b_1 < b_2' < b_2$ and
+  $\mu_f(W(B,\epsilon)) < \epsilon$.
+\end{lemma}
 
-\DPTtodo[inline]{In Figure~\ref{fig:limitingbox}, ideally shade boxes
-  according to where they are in the sequence. Could also try to show
-  some Cantor behavior. Cantor picture in DPT notes \texttt{2021-03-06 \#1}}
+That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
+edges of~$B$ with small mass.
+
+\begin{proof}
+  Again, from Proposition~\ref{prop:finalfamily1}.
+\end{proof}
+  
+In the setting of Lemma~\ref{lem:extend2}, also set
+\[
+  W^\circ(B,\epsilon) \coloneqq \bigl([a_1,a_2] \times (b_2',b_2]\bigr) \cup
+    \bigl((a_2',a_2] \times [b_1,b_2]\bigr);
+\]
+this is an open neighborhood of the upper-right edges of the
+$\overline{B}$ in the subspace topology.
+
+\begin{proposition}\label{prop:countablyadditive}
+  The finitely additive measure $\mu_f$ is countably subadditive.
+\end{proposition}
+
+\begin{proof}
+  Let $B_0$ be a right-handed box, and suppose we are given a
+  countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
+  must show that
+  \[
+    \mu_f(B_0) \le \sum_{i=1}^\infty \mu_f(B_i).
+  \]
+  Fix $\epsilon > 0$. For $i \ge 1$, set
+  $V_i \coloneqq V(B_i, \epsilon/2^i)$. Also add one more set by setting
+  $V_0 \coloneqq W(B_0,\epsilon)$ and $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$.
+
+  Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$, since
+  the $B_i$ cover $B_0$, $B_i \subset V_i^\circ$, and
+  $\overline{B_0}\setminus B_0 \subset V_0^\circ$. Since
+  $\overline{B_0}$ is compact and the $V_i^\circ$ are open (in the
+  subspace topology), we have a finite subcover; let $I \subset
+  \mathbb{N}$ be the set of
+  indices included in the subcover.
+
+  By finite additivity, we then have
+  \begin{align*}
+    \mu_f(B_0) &\le \sum_{i \in I} \mu_f(V_i)\\
+      &\le \sum_{i \in I, i \ne 0} \mu_f(B_i) + \sum_{i \in I, i \ne 0}
+        \mu_f(V_i \setminus B_i) + \mu_f(V_0)\\
+      &< \sum_{i=1}^\infty \mu_f(B_i) + 2\epsilon.
+  \end{align*}
+  Since $\epsilon$ was arbitrary, we are done.
+\end{proof}
+
+
+\DPTtodo[inline]{Something like Figure~\ref{fig:limitingbox} is
+  probably still good, not sure where it appears.
+  Could try to show some Cantor behavior. Cantor picture in DPT notes
+  \texttt{2021-03-06 \#1}}
 \begin{figure}
 \centering{
 \resizebox{40mm}{!}{\svgfig{countable_additivity_whiskers}}
-\caption{Figure of set $X$ in the proof countable subbadditivity. The M\"obius strip is broken up into nested sequences of boxes $B_i^j$ which accumulate into $X$, marked in red in the picture.}
+\caption{Figure of set $X$ in the proof of countable subbadditivity. The M\"obius strip is broken up into nested sequences of boxes $B_i^j$ which accumulate into $X$, marked in red in the picture.}
 \label{fig:limitingbox}
 }
 \end{figure}
-\end{proof}
 
 We now put everything together to show that $\mu_f$ is a geodesic current.
 
@@ -355,7 +360,7 @@ Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfyin
 Then $\mu_f$ is a geodesic current.
 \end{proposition}
 \begin{proof}
-By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring} and Propositions~\ref{prop:finalfamily1} and~\ref{prop:finalfamily2}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
+By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring}, and Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$. By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant.  From this it follows the measure $\mu_f$ is Borel. Furthermore, $\mu_f$ is locally finite by construction. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
 We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain an unoriented geodesic current, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
 \[
