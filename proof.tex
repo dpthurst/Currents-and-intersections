@@ -15,18 +15,18 @@ Let $a,b,x$ be elements of $\pi_1(S)$.
 \end{proposition}
 \begin{proof}
   Let $k$ be the value from Lemma~\ref{lem:join-split-geom} for $a$ and
-  $b$. Then, by that Lemma, for any $l>0$,
+  $b$. Then, by that Lemma, we have
   \[
-    f([a x^n]) + f([b x^{n+k+l+2}]) \ge f([a x^{n+1} b x^{n+k+l+1}])
-      \ge f([a x^{n+2}]) + f([b x^{n+k+l}]).
+    f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
+      \ge f([a x^{n+2}]) + f([b x^{m-2}]).
   \]
-  In particular, for any $l$, we have
-  $\lim_{n \to \infty} f([a x^n b x^{n+k+l}]) -  f([x^{2n+k+l}])$ exists and is equal to
-  $\lim_{n \to \infty} f([a x^n]) + f([b x^{n+k+l}]) -  f([x^{2n+k+l}])$.
-  This proves the statement.
+  for all $m,n$ so that $m-n + k -3-s >0$, or $m-n+k-3+s<0$.
+  By Corollary~\ref{cor:additivity-limit}, the claim follows in this case $|n-m|$ is big enough.
+  On the other hand, by Lemma~\ref{lem:rhs_limit} and equation~\ref{eq:cross-red1} and we have 
+  \[
+  f(ax^nbx^{n}) + f(x^k) \geq f(ax^nbx^{n+k})
+  \]
 
-  \DMGtodo[inline]{Does this proof require more detail? Yes.}
-  \DPTtodo[inline]{Shouldn't we invoke Corollary~\ref{cor:additivity-limit}?}
 \end{proof}
 
 \subsubsection{$\mu_{f}$ is non-negative}

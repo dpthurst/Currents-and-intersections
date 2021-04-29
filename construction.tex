@@ -152,6 +152,15 @@ be helpful to look just at two different lifts of~$x$.
   acting on the circle at infinity of~$\wt S$. See Figure~\ref{fig:rhc}.
 \end{proof}
 
+As a corollary we have the following lemmas that will be used later on.
+
+\begin{lemma}
+  Let $a,b,x \in \pi_1(S)$ be elements that do not share a common power.
+  Suppose both $a$ and $x$ and $b$ and $x$ have a right-handed crossing.
+  Then, for any integers $k, n$, $ax^nbx^k$ crosses $x$ to the right.
+  \label{lem:rhs_limit}
+\end{lemma}
+
 \begin{definition}[Dreamcatcher]
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
@@ -325,6 +334,7 @@ We will need some key lemmas relating several curves by smoothing essential cros
   unoriented geometric reductions:
   \begin{align}
     \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
+    \label{eq:cross-red2}[a x^{n+1}][a x^{n-1}] &\reducesto 2[a x^n]\\
     \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
   \end{align}
   \label{lem:smoothingskey}
@@ -349,8 +359,7 @@ need to invert one term on the LHS.)
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves.
   If $a$ and $b$ cross $x$ to the right, then there integers $k$ and $s\geq 0$
   so that, for all
-  \DPTtodo{Shouldn't need ``large enough''}
-  large enough $n,m$ and $r$ with either $s < r < m-n+k-s$ or $-s > r > m-n+k+s$,
+ $n,m$ and $r$ with either $s < r < m-n+k-s$ or $-s > r > m-n+k+s$,
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
@@ -450,7 +459,8 @@ lifts numbered $0$. DPT on it}
     \[
     [a x^t a x^t] \reducesto [ax^{t}][ax^{t}].
   \]
-  Thus, by the smoothing and additivity property of $f$, we get
+  \DMGtodo[inline]{This is what the argument is using, put that proof in the above lemma}
+  By equation~\ref{eq:cross-red2} we get
   \[
   f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
   \]
