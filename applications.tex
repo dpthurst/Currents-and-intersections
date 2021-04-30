@@ -6,7 +6,7 @@
   curved Riemannian metric}
 \label{sec:non-pos}
 
-Use Hamenstädt's result: Louisvilles currents of negatively curved
+Use Hamenstädt's result: Liouville currents of negatively curved
 Riemannian metrics are dense in currents \cite[Lemma 2.8]{Ham99:Cocycles}
 
 Bound diameter following MathOverflow answer
@@ -23,6 +23,7 @@ non-positive curvature, replacing systole with injectivity radius.)
 Combine with Gromov compactness.
 
 Unique if result is negatively curved, not in general (who did this?)
+\DMGtodo[inline]{For negatively curved Riemannian metrics it was Hersonsky-Paulin in the paper whose argument we used to prove countable additivity in our argument. But rigidity is true in more generality than just negatively curved Riemannian: for non-positively curved Riemannian was proved by Constantine in 2018. For non-positively curved Euclidean cone metrics the latest result is by Viveka, Chris Leininger and Chandrika Sadanand. I would say the first page of this preprint contains the lastest account of the history of this problem \url{https://arxiv.org/pdf/2104.12176.pdf}. One thing to note is that if we can actually show that our metric in the isospectral result is Riemannian then because of rigidity there is a unique such metric (it's uniquely determined by the lengths). So interestingly we are picking up a distinguished non-positively curved Riemannian metric... Kind of a uniformization procedure.}
 
 \subsection{Redefining geodesic currents}
 This result gives a new definition of geodesic currents in terms of functionals on curves. These functionals form a subset of the functionals that extend continuously to currents, by Theorem~\ref{thm:convex}.
@@ -170,7 +171,8 @@ B_{\rho}^{\alpha}(a,b,c,d)\coloneqq \mu_{\rho}^{\alpha}([a,b)\times[c,d)).
 It obviously satisfies the properties of cross-ratio: symmetry follows by flip invariance of geodesic currents and additivity of cross-ratio follows by additivity of geodesic currents. Positivity also follows. \DMGtodo[inline]{Flag this Proposition for now, because this cross-ratio need not be continuous, unlike the one defined by Martone-Zhang. Discontinuities in cross ratio come from atoms of the geodesic current. How can we show the resulting geodesic current has no atoms? Is there a characterization in terms of curve functionals? Also, this proof requires more detail overall.}
 \end{proof}
 
-\DMGtodo[inline]{Take a look at new paper by Bea, specifically propositions 3.11 to 3.13, and see how their cross-ratios relate to our functions. Are we giving a stronger result than theirs? Does their result include ours? Their cross-ratios are very general, they aren't continuous: https://arxiv.org/abs/2103.17161}
+\DMGtodo[inline]{Take a look at new paper by Bea, specifically propositions 3.11 to 3.13, and see how their cross-ratios relate to our functions. Are we giving a stronger result than theirs? Does their result include ours? Their cross-ratios are very general, they aren't continuous: https://arxiv.org/abs/2103.17161.
+DMG: took a look, and their cross-rations induce functions on unoriented oriented curves via periods. Our result is more general, indeed, we are saying that if we have a function on periods satisfying smoothing then we can construct a current, and therefore we can get a cross-ratio. Again, I am not sure how to show that their period functions satisfy smoothing, though, directly from the definition of cross-ratio, but they do a posteriori. Their cross-ratios are very general. So if we can show that their periods satisfy smoothing we would subsume their result, because we would reconstruct their cross-ratio from the periods.}
 
 
 \subsection{Inequalities between intersection numbers}
