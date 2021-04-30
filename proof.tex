@@ -14,24 +14,41 @@ Let $a,b,x$ be elements of $\pi_1(S)$.
   exists and is equal to~$0$.
 \end{proposition}
 \begin{proof}
-  Let $k$ be the value from Lemma~\ref{lem:join-split-geom} for $a$ and
-  $b$. Then, by that Lemma, we have
+  By Lemma~\ref{lem:join-split-geom}, we have
   \[
     f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
       \ge f([a x^{n+2}]) + f([b x^{m-2}]).
   \]
   for all $m,n$ so that $m-n + k -3-s >0$, or $m-n+k-3+s<0$.
-  By Corollary~\ref{cor:additivity-limit}, the claim follows in this case $|n-m|$ is big enough.
-  On the other hand, by Lemma~\ref{lem:rhs_limit} and equation~\ref{eq:cross-red1} and we have 
+  Thus, by Corollary~\ref{cor:additivity-limit}, the claim follows in this case $|n-m|$ is big enough. Suppose $|n-m| \leq |k -3-s|$.
+  By Lemma~\ref{lem:rhs_limit}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
   \[
-  f(ax^nbx^{n}) + f(x^k) \geq f(ax^nbx^{n+k})
+  [ax^nbx^{n}] [x^k] \reducesto [ax^nbx^{n+k}].
   \]
-
+  On the other hand, $bx^{n+k}a$ crosses $x$ to the right, also, and since
+  \[
+  [ax^{n+k}bx^{n+k}]=[x^{n+k}bx^{n+k}a]=[bx^{n+k}ax^{n+k}]
+  \]
+  we have
+  \[
+  [bx^{n+k}ax^{n}] [x^k] \reducesto [bx^{n+k}ax^{n+k}].
+  \]  
+  Therefore, by applying $f$ and using smoothing and additivity, we have that
+  for all $k, n$
+  \begin{align*}
+  [ax^n bx^{n-k}] [x^k] & \reducesto  [ax^n bx^{n}] [x^k]  \\
+  &\reducesto  [ax^n bx^{n+k}]
+  \end{align*}
+  Subtracting $2[x^n]$, applying $f$ using smoothing and additivity, and taking the limit when $n,k$ go to infinity we see that 
+  \[
+  \lim_{n \to \infty} f([ax^nbx^n])-2f([x^n])=0
+  \]  
+  as we wanted to show.
 \end{proof}
 
 \subsubsection{$\mu_{f}$ is non-negative}
 
-\begin{proposition}
+\begin{proposition}\DMGtodo[inline]{Needs proofreading}
   For a box $B\in \mathcal{B}$, we have $\mu_f(B) \geq 0$.
   \label{prop:positivity}
   \end{proposition}

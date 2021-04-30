@@ -161,6 +161,8 @@ As a corollary we have the following lemmas that will be used later on.
   \label{lem:rhs_limit}
 \end{lemma}
 
+As a corollary
+
 \begin{definition}[Dreamcatcher]
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
@@ -331,10 +333,8 @@ We will need some key lemmas relating several curves by smoothing essential cros
 \begin{lemma}
   Suppose $x,a \in \pi_1(S,\ast)$ and $[x]$ is simple.
   If $[a]$ crosses $[x]$ to the right, then we have the following
-  unoriented geometric reductions:
+  unoriented geometric reduction:
   \begin{align}
-    \label{eq:cross-red1}[a x^n][x^m] &\reducesto [a x^{n+m}]\\
-    \label{eq:cross-red2}[a x^{n+1}][a x^{n-1}] &\reducesto 2[a x^n]\\
     \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
   \end{align}
   \label{lem:smoothingskey}
@@ -342,9 +342,7 @@ We will need some key lemmas relating several curves by smoothing essential cros
 (To make Equation~\eqref{eq:cross-red3} into an oriented reduction, we
 need to invert one term on the LHS.)
 \begin{proof}
-  Equation~(\ref{eq:cross-red1}) follows since $[a]$ (and $[a x^n]$)
-  cross~$[x]$ to the right, by Lemma~\ref{lem:rhs} taking $x$ to be $x^n$.
-  For Equation~(\ref{eq:cross-red3}), consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
+Consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
    \[\mathcenter{\svgfignormal{smint_1}}
 \]
     There are two possible choices of resolution. We choose the one which does not agree with the natural orientations of $[a]$ and $[x]$.
@@ -365,6 +363,10 @@ Let $a,b,x \in \pi_1(S)$ be arbitrary curves.
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
   If $x$ is simple it suffices to take $s=0$. If $a=b$, $k$ can be taken to be $0$.
+  Thus,
+    \begin{align}
+    \label{eq:cross-red2} [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]
+    \end{align}
 \end{lemma}
 
 \begin{comment}
@@ -439,7 +441,15 @@ lifts numbered $0$. DPT on it}
 \]
 
   The other reduction is similar, instead choosing two different lifts of
-  $[a x^n b x^m]$.
+  $[a x^n b x^m]$. The above proof also shows the claim that if $a=b$, then $k$ can be taken to be 0. Using this, we show equation~\ref{eq:cross-red2}.
+   By Equation~(\ref{eq:cross_a}), with $k=0$ (since $a=b$) and $s=0$ ($x$ is simple), $m=t-1$ and $n=t+1$ for arbitrary $t$, and $r=1$, we get
+  \[
+    [a x^{t-1}] [a x^{t+1}] \reducesto [ax^{t}ax^{t}].
+  \]
+  Then, we apply Equation~(\ref{eq:cross_b}) with $m=t$ and $n=t$,  and $r=-1$, to get
+    \[
+    [a x^t a x^t] \reducesto [ax^{t-1}][ax^{t+1}].
+  \]
 \end{proof}
 
 \begin{corollary}\label{cor:additivity-limit}
@@ -451,23 +461,18 @@ lifts numbered $0$. DPT on it}
 \end{corollary}
 
 \begin{proof}[Proof of Corollary~\ref{cor:additivity-limit}]
-  By Equation~(\ref{eq:cross_a}), with $k=0$ (since $a=b$) and $s=0$ ($x$ is simple), $m=t-1$ and $n=t+1$ for arbitrary $t$, and $r=0$, for $n$ large enough we get
-  \[
-    [a x^{t-1}] [a x^{t+1}] \reducesto [ax^{t}ax^{t}].
-  \]
-  Then, we apply Equation~(\ref{eq:cross_b}) with $m=t$ and $n=t$,  and $r=0$, to get
-    \[
-    [a x^t a x^t] \reducesto [ax^{t}][ax^{t}].
-  \]
-  \DMGtodo[inline]{This is what the argument is using, put that proof in the above lemma}
-  By equation~\ref{eq:cross-red2} we get
+ 
+ By equation~\ref{eq:cross-red2} we get
   \[
   f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
   \]
   Hence, $f([a x^n])$ is a convex function
   of $n$, and thus so is $f([a x^n]) - f([x^n])$. By
-  Equations~(\ref{eq:cross-red1}) and~(\ref{eq:cross-red3}) (both with
-  $n=0$),
+ By Lemma~\ref{lem:rhs} we have that
+ \[
+ [ax^n][x^m] \reducesto [ax^{n+m}]
+ \]
+ Because of this and Equation~(\ref{eq:cross-red3}),
   \[
     -f([a]) \le f([a x^n]) - f([x^n]) \le f([a]).
   \]
