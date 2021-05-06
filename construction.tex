@@ -1,4 +1,57 @@
 \section{Boxes and their measures}
+
+\subsection{Actions on $\H^2$}
+\label{sec:actions}
+
+To fix conventions, we briefly recall elementary but slightly
+confusing facts about actions of $\pi_1(S,\ast)$ on the universal
+cover~$\wt S$ of a surface (or indeed any connected length space). We
+follow the convention that path composition works in the natural
+order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
+defined if $\gamma_1(1) = \gamma_2(0)$.
+
+For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
+$\ast \in S$, we then have a \emph{right} action of $\pi_1(S,\ast)$ on
+the fiber $p^{-1}(\ast)$, defined by
+$\mathbf{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
+unique lift of~$\gamma$ with $\wt\gamma(0) = \mathbf{x}$. We observe
+the following.
+\begin{itemize}
+\item This right action does not depend on a choice of basepoint
+  on~$\wt S$.
+\item In the induced length metric on~$\wt S$, the distance between
+  $\mathbf{x}$ and $\mathbf{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
+\end{itemize}
+
+When $\wt S$ is the universal cover of~$S$ (or, more generally, any
+normal cover), there is also a \emph{left} action of $\pi_1(S,\ast)$
+on all of $\wt S$ by deck transformations. If you take
+the standard model of $\wt S$ as homotopy classes of paths~$\gamma$
+in~$S$ from $\ast$ (with homotopies fixing the endpoints), then this
+action is defined by
+\DPTtodo{Get bold-face $\gamma$? Or maybe some other convention}
+$\gamma_1 \cdot \mathbf{[\gamma_2]} \coloneqq
+\mathbf{[\gamma_1\cdot\gamma_2]}$. Here we make the following observations.
+\begin{itemize}
+\item This left action is by an isometry of all of~$\wt S$.
+\item The left action depends on a lift $\wt \ast \in \wt S$ of
+  $\ast \in S$, for instance since the left and right actions are
+  related by $[\gamma] \cdot \wt \ast = \wt \ast \cdot [\gamma]$.
+\item The distance between $\mathbf{x}$ and $[\gamma] \cdot \mathbf{x}$
+  may be unbounded, although the translation length of $[\gamma]$ on
+  $\wt S$ is bounded by the length of $\gamma$ (by the previous property).
+\end{itemize}
+
+We will frequently draw pictures of group elements~$g\in\pi_1(S,\ast)$
+acting on~$\H^2$. In these pictures, the arrows will be paths that
+are lifts of~$g$, and thus correspond to the right action on the
+fiber.
+
+\begin{itemize}
+\item Move recollection about geodesics and relation to cosets here
+\item Move ``right-handed crossing'' discussion here
+\end{itemize}
+
 \subsection{Right-handed boxes}
 \label{sec:boxes}
 
