@@ -433,26 +433,31 @@ Consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figu
 \end{proof}
 
 
+\DPTtodo{Lemma statement changed to match proof}
 \begin{lemma}\label{lem:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
-crossing $x$ to the right. Then there integers $k$ and $s\geq 0$
+crossing $x$ to the right. Then there are integers $k$ and $s_1 \le s_2$
   so that, for all
- $n,m$ and $r$ with either $s < r < m-n+k-s$ or $-s > r > m-n+k+s$,
+ $n,m$ and $r$ with either $s_2 < r < m-n+k+s_1$ or $m-n+k+s_2 < r <
+ s_1$, we have
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
-  If $x$ is simple it suffices to take $s=0$. If $a=b$, $k$ can be taken to be $0$.
-  Thus,
-    \begin{align}
-    \label{eq:cross-red2} [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]
-    \end{align}
+  If $x$ is simple, we may take $s_1=s_2$. If $a=b$, we may take $k=0$
+  and $s_1 = -s_2$. If $x$ is simple and $a=b$, we have
+  \begin{equation}\label{eq:cross-red2} 
+    \begin{aligned}
+      [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]\\
+      [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].
+    \end{aligned}
+  \end{equation}
 \end{lemma}
-We consider cases when $x$ is not simple because we will also use this
+The lemma considers cases when $x$ is not simple because we will also use this
 lemma in Section~\ref{sec:recovery} to show $\mu_f$ recovers the value
 of $f$ on curves.
 
-\DPTtodo[inline]{Add figure of $(n,m)$ plane showing allowed and
+\DPTtodo[inline]{Add figure of $(m,n)$ or $(m-n,r)$ plane showing allowed and
   disallowed regions for these smoothings}
 
 \begin{comment}
@@ -487,7 +492,7 @@ of $f$ on curves.
 \begin{proof}
   We first show that we can choose lifts for which the crossing is
   essential. Use the band model, centered on~$\wt{x}$. We will
-  consider the windows on $\bdy^\infty\H$ cut out by certain other
+  consider the windows on $\bdy^\infty\wt S$ cut out by certain other
   lifts of~$x$. Specifically, let $w(x^na)$ be the interval on the
   boundary at infinity cut out by the endpoints of $x^n a \cdot \wt x$
   that does not contain the endpoints of $\wt x$. Similarly for
@@ -495,10 +500,12 @@ of $f$ on curves.
   on the upper or lower boundary in the bands model, by the assumption
   that $a$ and~$b$ cross $x$ to the right. Also observe that (for
   instance) $w(x^n a)$ is a translate of $w(a)$, and that the
-  endpoints of the lift of $x^k a x^\ell$ are in $w(x^{-\ell} a^{-1})$
-  and $w(x^k a)$.
+  endpoints of the lift of $x^n a x^m$ are in $w(x^{-m} a^{-1})$
+  and $w(x^n a)$.
 
-  \DPTtodo{HERE: Have described the windows, now get to the parameters}
+  \DPTtodo[inline]{HERE: Have described the windows, now get to the
+    parameters $s_1\dots s_2$ (range where $w(a)$ intersects $w(x^sb)$
+    and $k$ (shift between upper and lower intersections}
   By a \emph{window}, we mean an open interval $(x^-,x^+)$ cut out by the endpoints of another lift of $[x]$.
   Number the windows on top and bottom
   with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
