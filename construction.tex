@@ -114,7 +114,8 @@ be helpful to look just at two different lifts of~$x$.
 
 \DPTtodo[inline]{In Figure~\ref{fig:rhc}, mark and label some
   basepoints on $\wt x$ and $a \cdot \wt x$, and add arrows. Also the
-  tildes are not agreeing. Maybe also add the lift $\wt a$ and $a_\pm$}
+  tildes are not agreeing. Maybe also add the lift $\wt a$ to better
+  illustrate N-S dynamics}
   \begin{figure}
 \resizebox{60mm}{!}{\svgfig{righthandedcrossing}}
 \caption{Determining a right-handed crossing between $a$ and $x$ by looking at the relative position of two lifts of $x$ in the universal cover.}
@@ -157,6 +158,8 @@ $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 basepoint. The endpoints of the lifts of $[x]$ are dense in
 $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$.
 
+\DPTtodo{Later on we use ``windows'' for particular intervals on the
+  boundary, in the proof of Lemma~\ref{lem:join-split-geom}}
 The main objects in our proof are certain \emph{windows} in the
 space of geodesics to which we will assign measures. The prototype for
 the kind of windows we consider is shown in
@@ -238,7 +241,8 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \item $a c^{-1} d b^{-1} = 1$;
 \item $a,b,c,d$ cross $x$ to the right; and
 \item for sufficiently large~$n$,
-  \DPTtodo{Something went wrong, these two aren't equal}
+  \DPTtodo{Something went wrong, these two aren't equal. Maybe $dx^naC
+  = cAbx^naC$?}
   $d^{-1}bx^ndc^{-1} = ax^ndc^{-1}$ crosses
   $cx^n$ to the right.
 \end{enumerate}
@@ -404,6 +408,8 @@ We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
 
 We will need some key lemmas relating several curves by smoothing essential crossings.
 
+\DPTtodo[inline]{We're folding this Lemma into
+  Lemma~\ref{lem:join-split-geom}, right?}
 \begin{lemma}
   Suppose $x,a \in \pi_1(S,\ast)$ and $[x]$ is simple.
   If $[a]$ crosses $[x]$ to the right, then we have the following
@@ -428,8 +434,8 @@ Consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figu
 
 
 \begin{lemma}\label{lem:join-split-geom}
-Let $a,b,x \in \pi_1(S)$ be arbitrary curves.
-  If $a$ and $b$ cross $x$ to the right, then there integers $k$ and $s\geq 0$
+Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
+crossing $x$ to the right. Then there integers $k$ and $s\geq 0$
   so that, for all
  $n,m$ and $r$ with either $s < r < m-n+k-s$ or $-s > r > m-n+k+s$,
   \begin{align}
@@ -442,6 +448,12 @@ Let $a,b,x \in \pi_1(S)$ be arbitrary curves.
     \label{eq:cross-red2} [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]
     \end{align}
 \end{lemma}
+We consider cases when $x$ is not simple because we will also use this
+lemma in Section~\ref{sec:recovery} to show $\mu_f$ recovers the value
+of $f$ on curves.
+
+\DPTtodo[inline]{Add figure of $(n,m)$ plane showing allowed and
+  disallowed regions for these smoothings}
 
 \begin{comment}
 \begin{figure}
@@ -473,13 +485,21 @@ Let $a,b,x \in \pi_1(S)$ be arbitrary curves.
 
 
 \begin{proof}
-  We first show that we can choose lifts for which the crossing is essential.
-  Use the band model, centered on~$\tilde{x}$.
+  We first show that we can choose lifts for which the crossing is
+  essential. Use the band model, centered on~$\wt{x}$. We will
+  consider the windows on $\bdy^\infty\H$ cut out by certain other
+  lifts of~$x$. Specifically, let $w(x^na)$ be the interval on the
+  boundary at infinity cut out by the endpoints of $x^n a \cdot \wt x$
+  that does not contain the endpoints of $\wt x$. Similarly for
+  $w(x^n a^{-1})$, $w(x^n b)$, and $w(x^n b^{-1})$. All of these are intervals
+  on the upper or lower boundary in the bands model, by the assumption
+  that $a$ and~$b$ cross $x$ to the right. Also observe that (for
+  instance) $w(x^n a)$ is a translate of $w(a)$, and that the
+  endpoints of the lift of $x^k a x^\ell$ are in $w(x^{-\ell} a^{-1})$
+  and $w(x^k a)$.
+
+  \DPTtodo{HERE: Have described the windows, now get to the parameters}
   By a \emph{window}, we mean an open interval $(x^-,x^+)$ cut out by the endpoints of another lift of $[x]$.
-\DPTtodo[inline]{This is imprecise, we do not want to label \textbf{all} lifts
-of $[x]$. Look at lifts of $a$, and use Lemma~\ref{lem:rhs}; lifts
-numbered $l$ come from lifting $x^{\pm l}ax^{\mp l}$ to get the
-lifts numbered $0$. DPT on it}
   Number the windows on top and bottom
   with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
   top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
@@ -488,7 +508,8 @@ lifts numbered $0$. DPT on it}
   times (to the left or to the right) gives two non-intersecting lifts
   of $x$. If $x$ is simple, $s$ can be taken to be $0$. If $a=b$, then $k=0$.
   See Figure~\ref{fig:abcrossings}.
-  
+
+  \DPTtodo[inline]{Redo Figure~\ref{fig:abcrossings} once notation is settled}
   \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{abliftsbands}}
