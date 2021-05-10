@@ -455,7 +455,8 @@ $\mu_f$ recovers the value of $f$ on curves, so we consider cases when
 $x$ is not simple because
 
 \DPTtodo[inline]{Add figure of $(m,n)$ or $(m-n,r)$ plane showing allowed and
-  disallowed regions for these smoothings}
+  disallowed regions for these smoothings. DPT notes
+  \texttt{2021-05-10 \#1}}
 
 \begin{comment}
 \begin{figure}
@@ -495,14 +496,50 @@ $x$ is not simple because
   that does not contain the endpoints of $\wt x$. Similarly for
   $w(x^n a^{-1})$, $w(x^n b)$, and $w(x^n b^{-1})$. All of these are intervals
   on the upper or lower boundary in the bands model, by the assumption
-  that $a$ and~$b$ cross $x$ to the right. Also observe that (for
-  instance) $w(x^n a)$ is a translate of $w(a)$, and that the
-  endpoints of the lift of $x^n a x^m$ are in $w(x^{-m} a^{-1})$
-  and $w(x^n a)$.
+  that $a$ and~$b$ cross $x$ to the right, and the geodesic lift of
+  $x^kax^\ell$ has endpoints in $w(x^{-\ell}a^{-1})$ and $w(x^ka)$.
 
-  \DPTtodo[inline]{HERE: Have described the windows, now get to the
-    parameters $s_1\dots s_2$ (range where $w(a)$ intersects $w(x^sb)$
-    and $k$ (shift between upper and lower intersections}
+  Observe that (for instance) $w(x^n a)$ is a translate of $w(a)$, and
+  that the endpoints of the lift of $x^n a x^m$ are in
+  $w(x^{-m} a^{-1})$ and $w(x^n a)$. Furthermore, each window is a
+  finite size, so there is a finite range $[s_1,s_2]$ so that $w(a)$
+  is disjoint from $w(x^rb)$ if $r \notin [s_1,s_2]$. Similarly there
+  is a range $[s_1',s_2']$ so that $w(a^{-1})$ is disjoint from
+  $w(x^rb^{-1})$ if $r \notin [s_1',s_2']$. Set
+  $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$. Now consider the curves 
+  $ax^n$ and $x^rbx^{m-r}$, with $s < r < m-n-s$. We have
+  \[
+    r-m < -n-s \le -n+s_1'
+    \qquad\text{and}\qquad
+    s_2 \le s < r
+  \]
+  so $x^rbx^{m-r}$ crosses $ax^n$ to the left. Similarly if
+  $m-n+s < r < -s$, the curve $x^rbx^{m-r}$ crosses $ax^n$ to the
+  right. In either case, we have
+  \[
+    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
+  \]
+  proving Equation~\eqref{eq:cross_a}.
+
+  For Equation~\eqref{eq:cross_b}, write $ax^nbx^m$ as $gh$ with
+  $g=ax^{n+r}$ and $h=x^{-r}bx^m$. Note the endpoints of $gh$
+  are in $w(x^{-m}b^{-1})$ and $w(a)$, while the endpoints of its
+  conjugate $hg =x^{-r}bx^max^{n+r}$ are in $w(x^{-n-r}a^{-1})$ and
+  $w(x^{-r}b)$. Then if $s < r < m-n-s$, we have
+  \[
+    -r < -s \le -s_1,
+  \]
+  so $w(x^{-r}b)$ is to the left of $w(a)$, while
+  \[
+    -m \le -m+s+s_1' < -n - r + s_1',
+  \]
+  so $w(x^{-n-r}a^{-1})$ is to the right of  $w(x^{-m}b^{-1})$, and
+  $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross_b}.
+  We similarly get an essential self-crossing if $m-n+s < r < -s$,
+  with ``left'' and ``right'' reversed.
+
+  \DPTtodo[inline]{Old writing below HERE. Todo: words about the case
+    when $x$ is simple}
   By a \emph{window}, we mean an open interval $(x^-,x^+)$ cut out by the endpoints of another lift of $[x]$.
   Number the windows on top and bottom
   with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
