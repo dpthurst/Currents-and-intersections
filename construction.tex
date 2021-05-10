@@ -406,35 +406,11 @@ We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
 
 \subsubsection{Smoothing lemmas}
 
-We will need some key lemmas relating several curves by smoothing essential crossings.
-
-\DPTtodo[inline]{We're folding this Lemma into
-  Prop.~\ref{prop:join-split-geom}, right?}
-\begin{lemma}
-  Suppose $x,a \in \pi_1(S,\ast)$ and $[x]$ is simple.
-  If $[a]$ crosses $[x]$ to the right, then we have the following
-  unoriented geometric reduction:
-  \begin{align}
-    [a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
-  \end{align}
-  \label{lem:smoothingskey}
-\end{lemma}
-(To make Equation~\eqref{eq:cross-red3} into an oriented reduction, we
-need to invert one term on the LHS.)
-\begin{proof}
-Consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figure below. 
-   \[\mathcenter{\svgfignormal{smint_1}}
-\]
-    There are two possible choices of resolution. We choose the one which does not agree with the natural orientations of $[a]$ and $[x]$.
-    Smooth $[ax^n]$ with $[ax^m]$, as shown in the figure below ($n=4,m=3$), to obtain $[y]$ homotopic to $[x^{|n-m|}]$.
-  \[\mathcenter{\svgfignormal{smint_2}}
-\]
-  It remains to show that the crossing was essential. We justify this in the proof of Prop.~\ref{prop:join-split-geom}.
-\end{proof}
-
+We will need a key proposition relating several curves by smoothing
+essential crossings.
 
 \DPTtodo[inline]{Prop.\ statement simplified. More precise statements
-  appear in proof. Let's see what we need}
+  appear in proof, but I don't know that we need any of them}
 \begin{proposition}\label{prop:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
 crossing $x$ to the right. Then there is a number $s \ge 0$
@@ -454,66 +430,51 @@ We will also use this lemma in Section~\ref{sec:recovery} to show
 $\mu_f$ recovers the value of $f$ on curves, so we consider cases when
 $x$ is not simple because
 
-\DPTtodo[inline]{Add figure of $(m,n)$ or $(m-n,r)$ plane showing allowed and
-  disallowed regions for these smoothings. DPT notes
-  \texttt{2021-05-10 \#1}}
-
-\begin{comment}
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{case1}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{80mm}{!}{\svgfig{case2}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{ablifts}}
-\caption{}
-\label{fig:abcrossings}
-}
-\end{figure}
-\end{comment}
-
-
-
+\DPTtodo[inline]{Maybe add figure of $(m,n)$ or $(m-n,r)$ plane
+  showing allowed and disallowed regions for these smoothings. DPT
+  notes \texttt{2021-05-10 \#1}. But may be less necessary with
+  simplified statement?}
 \begin{proof}
   We first show that we can choose lifts for which the crossing is
   essential. Use the band model, centered on~$\wt{x}$. We will
   consider the windows on $\bdy^\infty\wt S$ cut out by certain other
   lifts of~$x$. Specifically, let $w(x^na)$ be the interval on the
   boundary at infinity cut out by the endpoints of $x^n a \cdot \wt x$
-  that does not contain the endpoints of $\wt x$. Similarly for
+  that does not contain the endpoints $x^\pm$ of $\wt x$. Similarly for
   $w(x^n a^{-1})$, $w(x^n b)$, and $w(x^n b^{-1})$. All of these are intervals
   on the upper or lower boundary in the bands model, by the assumption
   that $a$ and~$b$ cross $x$ to the right, and the geodesic lift of
-  $x^kax^\ell$ has endpoints in $w(x^{-\ell}a^{-1})$ and $w(x^ka)$.
+  $x^kax^\ell$ has endpoints $(x^kax^\ell)^- \in w(x^{-\ell}a^{-1})$
+  and $(x^kax^\ell)^+ \in w(x^ka)$.
+  See Figure~\ref{fig:abcrossings}; ``left'' and ``right'' will refer
+  to the order on the boundary (minus $x^\pm$) of that figure.
 
-  Observe that (for instance) $w(x^n a)$ is a translate of $w(a)$, and
-  that the endpoints of the lift of $x^n a x^m$ are in
-  $w(x^{-m} a^{-1})$ and $w(x^n a)$. Furthermore, each window is a
+ \DPTtodo[inline]{Redo Figure~\ref{fig:abcrossings} with new notation}
+  \begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{abliftsbands}}
+\caption{Lifts of $x$ in blue. The top blue lift labelled by $l$ relates to the central lift by $a$. The central blue lift relates to the lower lift in the $l$ position also by $a$. The other top and lower blue lifts are related from $l$ top and lower lifts, respectively, by translating by $x$.}
+\label{fig:abcrossings}
+}
+\end{figure}
+
+  Observe that (for instance) $w(x^n a)$ is a translate of $w(a)$.
+  Furthermore, each window is a
   finite size, so there is a finite range $[s_1,s_2]$ so that $w(a)$
-  is disjoint from $w(x^rb)$ if $r \notin [s_1,s_2]$. Similarly there
+  is to the left of to the right of $w(x^rb)$ if $r \notin [s_1,s_2]$. Similarly there
   is a range $[s_1',s_2']$ so that $w(a^{-1})$ is disjoint from
   $w(x^rb^{-1})$ if $r \notin [s_1',s_2']$. Set
   $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$. Now consider the curves 
   $ax^n$ and $x^rbx^{m-r}$, with $s < r < m-n-s$. We have
   \[
-    r-m < -n-s \le -n+s_1'
-    \qquad\text{and}\qquad
-    s_2 \le s < r
+    r-m < -n-s \le -n+s_1',
   \]
-  so $x^rbx^{m-r}$ crosses $ax^n$ to the left. Similarly if
+  so $w(x^{r-m}b^{-1})$ is to the left of $w(x^{-n}a^{-1})$, and
+  \[
+    s_2 \le s < r,
+  \]
+  so $w(x^rb)$ is to the right of $w(a)$. Combined, these mean that
+  $x^rbx^{m-r}$ crosses $ax^n$ to the left. Similarly if
   $m-n+s < r < -s$, the curve $x^rbx^{m-r}$ crosses $ax^n$ to the
   right. In either case, we have
   \[
@@ -535,56 +496,29 @@ $x$ is not simple because
   \]
   so $w(x^{-n-r}a^{-1})$ is to the right of  $w(x^{-m}b^{-1})$, and
   $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross_b}.
-  We similarly get an essential self-crossing if $m-n+s < r < -s$,
-  with ``left'' and ``right'' reversed.
+  We similarly get an essential self-crossing if $m-n+s < r < -s$.
 
-  \DPTtodo[inline]{Old writing below HERE. Todo: words about the case
-    when $x$ is simple}
-  By a \emph{window}, we mean an open interval $(x^-,x^+)$ cut out by the endpoints of another lift of $[x]$.
-  Number the windows on top and bottom
-  with an arbitrary basepoint on top, and chosen so that lifts of $a$ connect
-  top window~$\ell$ to bottom window~$\ell$. Choose $k$ so that lifts
-  of~$b$ connect top window~$\ell$ to bottom window $\ell+k$.
-  Choose $s \geq 0$ so that translating a lift of $x$ at least $s$
-  times (to the left or to the right) gives two non-intersecting lifts
-  of $x$. If $x$ is simple, $s$ can be taken to be $0$. If $a=b$, then $k=0$.
-  See Figure~\ref{fig:abcrossings}.
+  In the cases when $x$ is simple, two windows are disjoint, nested,
+  or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$. If in
+  addition $a=b$, we also see that all the $s_i$ are equal to~$0$.
+  Eq.~\eqref{eq:cross-red2} follows immediately.
 
-  \DPTtodo[inline]{Redo Figure~\ref{fig:abcrossings} once notation is settled}
-  \begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{abliftsbands}}
-\caption{Lifts of $x$ in blue. The top blue lift labelled by $l$ relates to the central lift by $a$. The central blue lift relates to the lower lift in the $l$ position also by $a$. The other top and lower blue lifts are related from $l$ top and lower lifts, respectively, by translating by $x$.}
-\label{fig:abcrossings}
-}
-\end{figure}
-
-
-  For the first reduction, note
-  lifts of $[a x^n]$ connect windows with a shift of~$n$, and
-  similarly lifts of $[b x^m]$ connect windows with a shift of $k+m$.
-  Choose a lift of $[a x^n]$ that connects window $0$ to window~$n$,
-  and choose a lift of $[b x^m]$ that connects window $n+r-k-m$ to
-  window $n+r$. Since $0$ and $n+r-k-m$ are at least $s$ apart from each other, and $n$ and $n+r$ are at least $s$ apart from each other, it follows that the lifts $[a x^n]$ and $[b x^m]$ intersect essentially.
-  Now, consider the union of $[ax^n]$ and $[bx^m]$, and the crossing marked in the figure below. 
-  
-  \[\mathcenter{\svgfignormal{smint_0}}
-\]
-    There are two possible choices of resolution. If we smooth the essential crossing choosing the reduction that agrees with the orientations of $[a],[b],[x]$, as shown in the figure below ($n=4,m=3$), we obtain $[ax^{n-r}b^{n+r}]$ as shown in the figure below.
-
-  \[\mathcenter{\svgfignormal{smint_3}}
-\]
-
-  The other reduction is similar, instead choosing two different lifts of
-  $[a x^n b x^m]$. The above proof also shows the claim that if $a=b$, then $k$ can be taken to be 0. Using this, we show equation~\ref{eq:cross-red2}.
-   By Equation~(\ref{eq:cross_a}), with $k=0$ (since $a=b$) and $s=0$ ($x$ is simple), $m=t-1$ and $n=t+1$ for arbitrary $t$, and $r=1$, we get
+  To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
+  that $n < m$. (If $n=m$, the reduction is trivial.) Then by the
+  analysis above, $(ax^n)^-$ is in $w(x^{-n}a^{-1})$, and thus to the
+  right of $(ax^m)^-$, which is in $w(x^{-m}a^{-1})$. For the forward
+  endpoints, the above simple analysis just says that both endpoints
+  lie in $w(a)$. We can do better by looking deeper in the words:
+  $(ax^n)^+$ lies in $w(ax^na)$, meaning the interval between the
+  endpoints of $ax^na\cdot\wt x$ that is disjoint from $x^\pm$.
+  Similarly $(ax^m)^+$ lies in $w(ax^ma)$, which is to the right of
+  $w(ax^na)$. It follows that $ax^n$ crosses $ax^m$ to the right, and
+  so
   \[
-    [a x^{t-1}] [a x^{t+1}] \reducesto [ax^{t}ax^{t}].
+    [ax^n][ax^m] \reducesto [(ax^n)^{-1}ax^m] = x^{m-n}
   \]
-  Then, we apply Equation~(\ref{eq:cross_b}) with $m=t$ and $n=t$,  and $r=-1$, to get
-    \[
-    [a x^t a x^t] \reducesto [ax^{t-1}][ax^{t+1}].
-  \]
+  as desired. Note that (unlike in the other cases above) we took the
+  non-oriented smoothing.
 \end{proof}
 
 \begin{corollary}\label{cor:additivity-limit}
@@ -595,15 +529,14 @@ $x$ is not simple because
   exists.
 \end{corollary}
 
-\begin{proof}[Proof of Corollary~\ref{cor:additivity-limit}]
- 
- By equation~\ref{eq:cross-red2} we get
+\begin{proof}
+  By Eq.~\eqref{eq:cross-red2} we get
   \[
   f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
   \]
   Hence, $f([a x^n])$ is a convex function
-  of $n$, and thus so is $f([a x^n]) - f([x^n])$. By
- By Lemma~\ref{lem:rhs} we have that
+  of $n$, and thus so is $f([a x^n]) - f([x^n])$.
+ By Lemma~\ref{lem:rhs}, we have that
  \[
  [ax^n][x^m] \reducesto [ax^{n+m}]
  \]
@@ -616,10 +549,10 @@ $x$ is not simple because
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-It follows immediately from Corollary~\ref{cor:additivity-limit}.
+This follows immediately from Corollary~\ref{cor:additivity-limit}.
 \end{proof}
 
-\DPTtodo{Expand on this, relate his conditions to ours}
+\DPTtodo[inline]{Expand on this, relate Luo's conditions to ours}
 \begin{remark}
 Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
 \end{remark}
