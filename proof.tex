@@ -14,11 +14,12 @@ Let $a,b,x$ be elements of $\pi_1(S)$.
   exists and is equal to~$0$.
 \end{proposition}
 \begin{proof}
-  By Lemma~\ref{lem:join-split-geom}, we have
+  By Proposition~\ref{prop:join-split-geom}, we have
   \[
     f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
       \ge f([a x^{n+2}]) + f([b x^{m-2}]).
   \]
+\DPTtodo{This is using an old version of Proposition}
   for all $m,n$ so that $m-n + k -3-s >0$, or $m-n+k-3+s<0$.
   Thus, by Corollary~\ref{cor:additivity-limit}, the claim follows in this case $|n-m|$ is big enough. Suppose $|n-m| \leq |k -3-s|$.
   By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$

@@ -159,7 +159,7 @@ basepoint. The endpoints of the lifts of $[x]$ are dense in
 $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$.
 
 \DPTtodo{Later on we use ``windows'' for particular intervals on the
-  boundary, in the proof of Lemma~\ref{lem:join-split-geom}}
+  boundary, in the proof of Prop.~\ref{prop:join-split-geom}}
 The main objects in our proof are certain \emph{windows} in the
 space of geodesics to which we will assign measures. The prototype for
 the kind of windows we consider is shown in
@@ -409,13 +409,13 @@ We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
 We will need some key lemmas relating several curves by smoothing essential crossings.
 
 \DPTtodo[inline]{We're folding this Lemma into
-  Lemma~\ref{lem:join-split-geom}, right?}
+  Prop.~\ref{prop:join-split-geom}, right?}
 \begin{lemma}
   Suppose $x,a \in \pi_1(S,\ast)$ and $[x]$ is simple.
   If $[a]$ crosses $[x]$ to the right, then we have the following
   unoriented geometric reduction:
   \begin{align}
-    \label{eq:cross-red3}[a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
+    [a x^n][a x^m] & \reducesto [x^{\abs{n-m}}]. 
   \end{align}
   \label{lem:smoothingskey}
 \end{lemma}
@@ -429,33 +429,30 @@ Consider the union of $[ax^n]$ and $[ax^m]$, and the crossing marked in the figu
     Smooth $[ax^n]$ with $[ax^m]$, as shown in the figure below ($n=4,m=3$), to obtain $[y]$ homotopic to $[x^{|n-m|}]$.
   \[\mathcenter{\svgfignormal{smint_2}}
 \]
-  It remains to show that the crossing was essential. We justify this in the proof of Lemma~\ref{lem:join-split-geom}.
+  It remains to show that the crossing was essential. We justify this in the proof of Prop.~\ref{prop:join-split-geom}.
 \end{proof}
 
 
-\DPTtodo{Lemma statement changed to match proof}
-\begin{lemma}\label{lem:join-split-geom}
+\DPTtodo[inline]{Prop.\ statement simplified. More precise statements
+  appear in proof. Let's see what we need}
+\begin{proposition}\label{prop:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
-crossing $x$ to the right. Then there are integers $k$ and $s_1 \le s_2$
+crossing $x$ to the right. Then there is a number $s \ge 0$
   so that, for all
- $n,m$ and $r$ with either $s_2 < r < m-n+k+s_1$ or $m-n+k+s_2 < r <
- s_1$, we have
+ $n,m$ and $r$ with either $s < r < m-n-s$ or $m-n+s < r < -s$, we have
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
-  If $x$ is simple, we may take $s_1=s_2$. If $a=b$, we may take $k=0$
-  and $s_1 = -s_2$. If $x$ is simple and $a=b$, we have
-  \begin{equation}\label{eq:cross-red2} 
-    \begin{aligned}
-      [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]\\
-      [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].
-    \end{aligned}
-  \end{equation}
-\end{lemma}
-The lemma considers cases when $x$ is not simple because we will also use this
-lemma in Section~\ref{sec:recovery} to show $\mu_f$ recovers the value
-of $f$ on curves.
+  If $x$ is simple and $a=b$, we may take $s=0$ and we have
+  \begin{align}
+    [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]\label{eq:cross-red2} \\
+    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}]\label{eq:cross-red3}.
+  \end{align}
+\end{proposition}
+We will also use this lemma in Section~\ref{sec:recovery} to show
+$\mu_f$ recovers the value of $f$ on curves, so we consider cases when
+$x$ is not simple because
 
 \DPTtodo[inline]{Add figure of $(m,n)$ or $(m-n,r)$ plane showing allowed and
   disallowed regions for these smoothings}
