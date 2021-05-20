@@ -187,32 +187,27 @@ By Propositon~\ref{prop:RHsemiring}, $\mu_{f}$ is a finitely additive function.
 \subsection{$\mu_{f}$ is countably additive}
 \label{sec:countable-additivity}
 
-\DPTtodo[inline]{Throughout section: use boldface $\mathbf{F}$ for sequences of
- nested elements, as in Section~\ref{sec:measure-thy}. Or maybe
- $\mathbf{S}$?}
-\DPTtodo[inline]{Or maybe not, ``final family'' notion is dropped.
-  Rewrite intro to section}
 We prove countable additivity of the function $\mu_{f}$ by
 proving approximation results.
 
+
+
 \begin{definition}
-  For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, define a family of sequences of orbit of boxes of two types. Figure~\ref{fig:finalfamily} shows a box of the first type,
+Let the dreamcatcher $(p_1,q_1,p_2,q_2)$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
+We define a \emph{top vertical accordion} of boxes based at $B$ the sequence of boxes, indexed by $k$, given for each $k$, by
 \[
-\bigl([B]_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty.
+p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
 \]
-which in the box notation is given by $p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1$ and
-\[
-q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
-\]
-Since the endpoint corresponding to $q_2$ is the one changing, we will denote these boxes by
+Since the endpoint corresponding to $q_2$ is the one changing, we will denote these sequence of boxes by
 \[
 F_{p_1,p_2,q_1,\vec{q_2}}.
 \]
-This allows us to produce boxes that are arbitrarily thin in the
-vertical direction. We will call these $F_{p_1,p_2,q_1,\vec{q_2}}$
-\DPTtodo{I like the term ``vertically thin'', but these are sequences,
-not boxes}
-\emph{vertically thin} boxes.
+This defines boxes whose vertical direction becomes narrower as $k$ grows, with the top endpoint fixed. 
+Similarly, we define \emph{bottom vertical accordion}, and denote it by 
+\[
+F_{p_1,p_2,\bar{q_1},q_2},
+\]
+giving a sequence of boxes whose vertical direction becomes narrower and the bottom endpoint fixed.
 On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
 \[
 p_1^{(k)} = p_2 x^k p_2^{-1} p_1.
@@ -221,8 +216,11 @@ and we denote the corresponding family of boxes,
 \[
 F_{\vec{p_1},p_2,q_1,q_2}.
 \]
-We will call them \emph{horizontally thin}.
+We will call them a \emph{right horizontal accordion} of boxes based at $B$ (the right endpoint is fixed).
+Similarly, we can define a \emph{left horizontal accordion} (the left endpoint is fixed).
 \end{definition}
+
+The following Proposition will be key to prove countable addivitity.
 
 \begin{proposition}
 \begin{figure}
@@ -247,23 +245,33 @@ and
 \label{prop:finalfamily1}
 \end{proposition}
 \begin{proof}
-We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$, using the orbit notation.
 \begin{itemize}
     \item Obvious by construction.
     \item 
+    We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$.
+    We will first go from the box notation to the orbit notation, since the latter is better suited for the definition of $\mu_f$.
+      For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, a horizontal accordion based at a box $B$ defines a family of orbits of boxes
+\[
+\bigl([B]_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty.
+\]
+Figure~\ref{fig:finalfamily} related the box to the orbit notation.
+
     We want to show
 \[
-\lim_{k \to \infty} f(F_{a,b,e}(k))=\lim_{k \to \infty} \lim_{n,m \to \infty} f([ax^kex^ncx^m])-f([ax^n])-f([cx^kex^m])=0
+\lim_{k \to \infty} \mu_f([B]_{a,bx^ke,c,dx^k e})=0
 \]
-    By Proposition~\ref{prop:join-split-alg}, the limit in question is
+By definition of $\mu_f$,
+\begin{align*}
+\mu_f([B]_{a,bx^ke,c,dx^k e})=\lim_{n\to \infty} f([bx^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n])
+\end{align*}
+    By Proposition~\ref{prop:join-split-alg} and by adding and subtracting terms of the type $f([x^k])$, $f([x^n])$ as needed, the limit in question is
     equivalent to the same limit for the expression
-    \DPTtodo{Could use more details}
     \begin{align*}
-       f([ax^k]) - f([x^k]) + & f([ex^n]) - f([x^n]) + f([cx^m]) - f([x^m]) \\
-       &- \bigl(f([ax^n]) - f([x^n])\bigr) - \bigl(f([cx^k])-f([x^k])\bigr) - \bigl(f([ex^m])-f([x^m])\bigr)
+       f([bx^k]) - f([b^k]) + f([ex^n]) - f([x^n]) +  \\
+        f([cx^n]) - f([x^n]) - \bigl(f([ax^n]) - f([x^n])\bigr)\\
+        -\bigl(f([cx^k])-f([x^k])\bigr)-\bigl(f([ex^n])-f([x^n])\bigr)
     \end{align*}
-    Since the order of limits doesn't matter, the claim follows by Corollary~\ref{cor:additivity-limit}.\qedhere
-    
+    This limit is zero by Corollary~\ref{cor:additivity-limit}.\qedhere
     \end{itemize}
 \end{proof}
 
@@ -287,15 +295,18 @@ That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
 without increasing the mass much.
 
 \begin{proof}
-  TBW. Should follow from
-  Proposition~\ref{prop:finalfamily1}.
-  \DMGtodo[inline]{DMG on it}
+  Let $B = [a_1,a_2) \times [b_1,b_2)$. By Proposition~\ref{prop:density} there is a right handed box $B'=[a_1'',a_1) \times [b_1'',b_1)$ in $\mathcal{R}$ so that
+  $a_1'' < a_1$ and $b_1'' < b_1$.
+  Let $H$ be a right horizontal accordion based at $B'$,
+  By Proposition~\ref{prop:finalfamily1}, for $k$ large enough, we have $\mu_f(F(k))<\epsilon$. 
+  Let $V'(B,\epsilon) \coloneqq B \cup F(k)$.
+  We can now repeat the same procedure with $V'(B,\epsilon)$ in the vertical direction.
 \end{proof}
 
 \begin{lemma}\label{lem:extend2}
   For $B = [a_1,a_2) \times [b_1,b_2)$ a right-handed box and
   any $\epsilon > 0$, there is a region $W(B,\epsilon) =
-  \bigl([a_1,a_2) \times [b_2',b_2)\bigr) \cup
+  \bigl([a_1,a_2) \times [b_1',b_2)\bigr) \cup
   \bigl([a_2',a_2) \times [b_1,b_2)\bigr)$ in $\mathcal{R}$ so that
   $a_1 < a_2' < a_2$ and $b_1 < b_2' < b_2$ and
   $\mu_f(W(B,\epsilon)) < \epsilon$.
@@ -305,8 +316,8 @@ That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
 edges of~$B$ with small mass.
 
 \begin{proof}
-  Again, from Proposition~\ref{prop:finalfamily1}.
-    \DMGtodo[inline]{DMG on it}
+Let $H(k)$ be a right horizontal accordion, and $F(k)$ a top vertical accordion.
+We tan take $k$ large enough so that $\mu_f(H(k)) < \epsilon/2$,  $\mu_f(F(k)) < \epsilon/2$, and then let $W(B,\epsilon) = H(k) \cup V(k)$.
 \end{proof}
   
 In the setting of Lemma~\ref{lem:extend2}, also set
@@ -320,7 +331,7 @@ $\overline{B}$ in the subspace topology.
 \begin{proposition}\label{prop:countablyadditive}
   The finitely additive measure $\mu_f$ is countably subadditive.
 \end{proposition}
-
+\DMGtodo[inline]{Compare this to what BIPP21 do in their construction of measure}
 \begin{proof}
   Let $B_0$ be a right-handed box, and suppose we are given a
   countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
@@ -370,13 +381,19 @@ Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfyin
 Then $\mu_f$ is a geodesic current.
 \end{proposition}
 \begin{proof}
-By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring}, and Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
-Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$. By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant.  From this it follows the measure $\mu_f$ is Borel. Furthermore, $\mu_f$ is locally finite by construction. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
-We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain an unoriented geodesic current, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
+By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring}, and Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, \DMGtodo[inline]{This is saying that the sigma algebra generated by right-handed boxes is the same as the Borel sigma algebra by denseness. Maybe state that in a lemma in the introduction? }and thus by elements of $\mathcal{R}$.
+Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$.
+We first show it is Radon. 
+Outer regularity follows by Proposition~\ref{lem:extend1} and inner regularity by Proposition~\ref{lem:extend2}.
+Local finiteness follows by definition of the pre-measure $\mu_f$, since for any compact box $K$ we can take a right handed box containing it.
+By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
+\DMGtodo[inline]{Is $\mu_f$ flip invariant?}
+\DMGtodo[inline]{What comes next is probably not needed}
+We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain a flip invariant geodesic current, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
 \[
 i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
 \]
-\DMGtodo[inline]{Not necessary, $\mu_f$ is flip invariant because of the symmetry condition of $f$.}
+\DMGtodo[inline]{Not necessary, $\mu_f$ is flip invariant because of the symmetry condition of $f$? No, not the same. Functional being symmetric is not the same as measure being flip invariant.}
 The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
 Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedhere
 \end{proof}

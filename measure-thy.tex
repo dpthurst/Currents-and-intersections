@@ -1,5 +1,8 @@
 \section{Background on measure theory}
 \label{sec:measure-thy}
+
+\subsection{General measure theory}
+
 Let $X$ be a set.
 
 \begin{definition}[Semi-ring, ring, $\sigma$-ring]
@@ -121,18 +124,24 @@ Given a measure space $(X,\mu)$, and $A\subset X$ a measurable subset, we say $A
 \label{def:atommeasure}
 \end{definition}
 
+\subsection{Radon measures}
 
-Let $X$ be a locally compact and thus Hausdorff space. A Borel measure $\mu$ on $X$ is  is \emph{locally finite} if every point has a neighborhood $U$ with $\mu(U)< \infty$. The measure $\mu$ is \emph{inner regular} if one has
+\begin{definition}
+Let $X$ be a locally compact and Hausdorff space. A Borel measure $\mu$ on $X$ is  is \emph{locally finite} if every point has a neighborhood $U$ with $\mu(U)< \infty$.
+The measure $\mu$ is \emph{inner regular} if one has
 \[
 \mu(U) = \sup \{ \mu(K) : K \subset U \mbox{ compact } \}
 \]
 for every $U$ open.
-
 For a Borel measure, being outer regular (see Definition~\ref{def:outermeasure}) can be phrased as
 \[
    \mu(B) = \inf \{ \mu(U) : U \supset B \mbox{ open } \}
 \]
-for every Borel set $B$. The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular and outer regular. The Riesz Representation theorem yields a characterization of Radon measures in terms of the associated functional on $C_c(X)$:
+for every Borel set $B$. The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular and outer regular.
+\label{def:radon}
+\end{definition}
+
+The Riesz Representation theorem yields a characterization of Radon measures in terms of the associated functional on $C_c(X)$:
 
 \begin{theorem}
   Let $X$ be a locally compact Hausdorff space. For any positive linear functional $F$ on $C_c(X)$ there is a unique Radon measure $\mu$ on $X$ so that
@@ -153,6 +162,7 @@ If $X$ is a metric space, the Radon property follows from the property of tightn
 \begin{proposition}
 Let $X$ be a metric space.
 A tight Borel measure $\mu$ on $X$ is Radon.
+\label{prop:tightborel}
 \end{proposition}
 \begin{proof}
   See \cite[Proposition~2.1.8]{Bogachev18:WeakConvergence}.
