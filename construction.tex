@@ -30,7 +30,8 @@ on all of $\wt S$ by deck transformations. If you take
 the standard model of $\wt S$ as homotopy classes of paths~$\gamma$
 in~$S$ from $\ast$ (with homotopies fixing the endpoints), then this
 action is defined by
-\DPTtodo{Is this notation for points in $\wt S$ too obscure?}
+\DPTtodo{Is this notation for points in $\wt S$ too obscure? Yes, add
+  some letter}
 $[\gamma_1] \cdot \bm{[\gamma_2]} \coloneqq
 \bm{[\gamma_1\cdot\gamma_2]}$. Here we make the following observations.
 \begin{itemize}
@@ -421,8 +422,9 @@ crossing $x$ to the right. Then there is a number $s \ge 0$
   \end{align}
   If $x$ is simple and $a=b$, we may take $s=0$ and we have
   \begin{align}
-    [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}]\label{eq:cross-red2} \\
-    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}]\label{eq:cross-red3}.
+    [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}].\label{eq:cross-red2} \\
+    \intertext{In this case, if $n \ne m$, we also have}
+    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-red3}
   \end{align}
 \end{proposition}
 We will also use this lemma in Section~\ref{sec:recovery} to show
@@ -503,7 +505,7 @@ $x$ is not simple because
   Eq.~\eqref{eq:cross-red2} follows immediately.
 
   To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
-  that $n < m$. (If $n=m$, the reduction is trivial.) Then by the
+  that $n < m$. Then by the
   analysis above, $(ax^n)^-$ is in $w(x^{-n}a^{-1})$, and thus to the
   right of $(ax^m)^-$, which is in $w(x^{-m}a^{-1})$. For the forward
   endpoints, the above simple analysis just says that both endpoints
@@ -516,9 +518,18 @@ $x$ is not simple because
   \[
     [ax^n][ax^m] \reducesto [(ax^n)^{-1}ax^m] = x^{m-n}
   \]
-  as desired. Note that (unlike in the other cases above) we took the
-  non-oriented smoothing.
+  as desired.
+  \DPTtodo[inline]{Can also prove that $f(a) \ge 0$, which allows adding back
+    in the case $n=m$}
 \end{proof}
+
+\begin{remark}
+  In the proof of Proposition~\ref{prop:join-split-geom}, the only
+  place we used an unoriented smoothing was in the proof of
+  Eq.~\eqref{eq:cross-red3}.
+  \DPTtodo{Verify this claim}
+  This is the only place we use unoriented smoothings in the paper.
+\end{remark}
 
 \begin{corollary}\label{cor:additivity-limit}
   Let $x$ be simple. If $a$ crosses $x$ to the right, then
