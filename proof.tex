@@ -1,4 +1,4 @@
-\section{Proof of Theorem~\ref{thm:intersect}}
+\section{Proof of the main theorem}
 \subsection{$\mu_{f}$ is a pre-measure on boxes}
 
 This is the heart of the proof. Here we show that all the necessary hypothesis are satisfied to apply Theorem~\ref{thm:caratheodory}.
@@ -403,6 +403,10 @@ Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedher
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
+\DPTtodo[inline]{I think some reminder is in order, about how to get a
+  function on curves from a geodesic current by picking a fundamental
+  domain}
+
 \begin{proposition}
 For $C$ a closed curve, we have
 \[
@@ -413,8 +417,12 @@ i(\mu_f,C)=f(C).
 \begin{proof}
 First we will show that we can use boxes of the type $B_{a,b,c,d,\tilde{x}}$ to construct a window containing a unique lift of every geodesic intersecting $C=[y]$ transversally, for $y \in \pi_1(S,*)$.
 Second, we'll show that computing intersection number of that fundamental domain yields the same value as $f([y])$.
+  \DPTtodo[inline]{$p,q$ are not elements of $\pi_1$; rather they are paths
+    from $*'$ to $*$. Is $r=q$? Is there any assumption about right-handed
+    crossings?}
 \begin{enumerate}
-    \item We take a basepoint $*$ on of the lifts of $x$. Let $p \in \pi_1(S,*)$ be sending a point $*'$ in a lift of $C$ to the basepoint $*$, and $q$ an element sending $*'$ to the translate of the basepoint $*$ in another lift of $x$, in such a way that the element $pq$ translates from one lift of $x$ to the other.
+\item We take a basepoint $*$ on of the lifts of $x$.
+  Let $p \in \pi_1(S,*)$ be sending a point $*'$ in a lift of $C$ to the basepoint $*$, and $q$ an element sending $*'$ to the translate of the basepoint $*$ in another lift of $x$, in such a way that the element $pq$ translates from one lift of $x$ to the other.
     Using the box notation $(p,q,r,s)$, we consider, for each $n$, the boxes associated to
     
     \[
@@ -426,7 +434,7 @@ Second, we'll show that computing intersection number of that fundamental domain
            \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{rec_window1}}
-\caption{Coniguration of lifts and elements of $\pi_1(S)$ used to approximate a fundamental domain of the action on $G(\Sigma)$ for a given curve $C=[y]$.}
+\caption{Configuration of lifts and elements of $\pi_1(S)$ used to approximate a fundamental domain of the action on $G(\Sigma)$ for a given curve $C=[y]$.}
 \label{fig:recwindow}
 }
 \end{figure}
@@ -473,19 +481,20 @@ Second, we'll show that computing intersection number of that fundamental domain
     
     Observe that by the above discussion
     
-    \begin{align*}
-    \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
-    &= \lim_{n} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,pY^nq})  \\
-    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}rx^{m}][pY^{n+1}qx^{m}])-f([py^{n}rx^{m}][pY^{n}qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}]) + f([rx^{m}]) + f([pY^{n+1}]) + f([qx^{m}])\\
-    &-f([py^{n}]) - f([rx^{m}]) - f([pY^{n}]) - f([qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}]) +  f([pY^{n+1}]) -f([py^{n}]) - f([pY^{n}])  \\
-    &= \frac{1}{2}\lim_{m} \lim_{n}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
-    &+ f([pY^{n+1}]) - f([Y^{n+1}]) + f([Y^{n}]) \\
-    &- f([pY^{n}])  + f([y]) + f([Y])\\
+    \begin{multline*}
+      \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
+      \begin{aligned}
+    &= \lim_{n\to\infty} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,pY^nq})  \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}rx^{m}][pY^{n+1}qx^{m}])-f([py^{n}rx^{m}][pY^{n}qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([pY^{n+1}]) + f([qx^{m}])\\
+    &\qquad-f([py^{n}]) - f([rx^{m}]) - f([pY^{n}]) - f([qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) +  f([pY^{n+1}]) -f([py^{n}]) - f([pY^{n}])  \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
+    &\qquad+ f([pY^{n+1}]) - f([Y^{n+1}]) + f([Y^{n}]) - f([pY^{n}])  + f([y]) + f([Y])\\
     &= \frac{1}{2}(f([y]) + f([Y]))\\
     &=f([y])
-    \end{align*}
+      \end{aligned}
+    \end{multline*}
       The first equality follows by the fact that the boxes defined above converge from below to $(\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)$ as $n \to \infty$. The second equality is by definition of the measure $\mu_f$ on boxes.
       For the third, we use \ref{lem:smoothingskey} to break up the limit into factors. In the fourth equality, we can cancel out terms, and in the fifth add and subtract the terms $f([y^{n+1}])$ and $f([Y^{n+1}])$. In the fifth equality, use Corollary~\ref{cor:additivity-limit}, and cancel out equivalent terms. Finally, use the symmetry property of $f$ to obtain the result.
     \end{enumerate}
