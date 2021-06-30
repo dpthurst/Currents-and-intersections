@@ -543,21 +543,35 @@ $x$ is not simple because
 \end{corollary}
 
 \begin{proof}
-  By Eq.~\eqref{eq:cross-red2} we get
+  By Eq.~\eqref{eq:cross-red2} we get \flagtodo{Additivity and oriented smoothing}
   \[
   f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
   \]
+  \flagtodo[inline]{This is where smoothing as opposed to just quasi-smoothing is crucial}
   Hence, $f([a x^n])$ is a convex function
   of $n$, and thus so is $f([a x^n]) - f([x^n])$.
  By Lemma~\ref{lem:rhs}, we have that
  \[
- [ax^n][x^m] \reducesto [ax^{n+m}]
+ [ax^m][x^n] \reducesto [ax^{n+m}]
  \]
- Because of this and Equation~(\ref{eq:cross-red3}),
+ which for $m=0$ yields
+ \[
+ [a][x^n] \reducesto [ax^{n}].
+ \] 
+ Thus, by additivity and oriented smoothing of $f$, we get
+ \[
+ f([a]) + f([x^n]) \geq f([ax^{n}]).
+ \]
+ Now, because of equation~(\ref{eq:cross-red3}),
+ with $m=0$, we get
+ \[
+ [ax^n][a] \reducesto [x^{n}].
+ \]  
+ Therefore, by additivity and unoriented smoothing of $f$, we get
   \[
-    -f([a]) \le f([a x^n]) - f([x^n]) \le f([a]).
+    -f([a]) \le f([a x^n]) - f([x^n]).
   \]
-  A convex function that is bounded as $n \to \infty$ has a
+  Thus, $f$ is a convex function that is bounded as $n \to \infty$, and therefore it has a
   well-defined limit.
 \end{proof}
 
