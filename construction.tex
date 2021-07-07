@@ -24,6 +24,8 @@ the following.
   $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
 \end{itemize}
 
+\DPTtodo{Notation clash: brackets for homotopy classes vs brackets for
+  conjugacy classes}
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover), there is also a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. If you take
@@ -63,9 +65,9 @@ other lift $q \cdot \wt x$ of~$x$ passes through the points of a left
 coset $q\langle x\rangle$ of this subgroup. Given two different lifts
 $\ell_1,\ell_2$, passing through cosets $q_1 \langle x \rangle$ and
 $q_2 \langle x \rangle$ respectively, they are related by the isometry
-\[
+\begin{equation}
   \ell_2 = q_2 q_1^{-1} \cdot \ell_1
-\]
+\end{equation}
 but the geometric relation between the two lifts (up to the
 $\pi_1(S,*)$ action) is captured instead by the double coset
 \begin{equation}\label{eq:double_coset}
@@ -75,7 +77,7 @@ $\pi_1(S,*)$ action) is captured instead by the double coset
 In order to guarantee that crossings are essential, we pick out one
 particular type of relation between lifts.
 
-\begin{definition}[Right handed crossing] \DMGtodo{added ``no common power''}
+\begin{definition}[Right handed crossing]
   Suppose that two elements $a$ and $x$ of $\pi_1(S)$ that do not have a common power have an
   essential crossing at the natural basepoint, so that
   $[a][x] \reducesto [ax]$. We say that $a$ and $x$ have a
@@ -101,9 +103,6 @@ between $x$ and~$a$ is left-handed.
 To recognize whether a crossing is essential and right-handed, it will
 be helpful to look just at two different lifts of~$x$.
 
-\DPTtodo{Probably put assumption ``no common power'' in def of
-  right-handed crossing}
-  \DMGtodo{I added that in the definition.}
 \begin{lemma}
   Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
   Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
