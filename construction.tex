@@ -75,8 +75,8 @@ $\pi_1(S,*)$ action) is captured instead by the double coset
 In order to guarantee that crossings are essential, we pick out one
 particular type of relation between lifts.
 
-\begin{definition}[Right handed crossing]
-  Suppose that two elements $a$ and $x$ of $\pi_1(S)$ have an
+\begin{definition}[Right handed crossing] \DMGtodo{added ``no common power''}
+  Suppose that two elements $a$ and $x$ of $\pi_1(S)$ that do not have a common power have an
   essential crossing at the natural basepoint, so that
   $[a][x] \reducesto [ax]$. We say that $a$ and $x$ have a
   \emph{right-handed} crossing if, intuitively, $[a]$ crosses $[x]$ from left
@@ -103,6 +103,7 @@ be helpful to look just at two different lifts of~$x$.
 
 \DPTtodo{Probably put assumption ``no common power'' in def of
   right-handed crossing}
+  \DMGtodo{I added that in the definition.}
 \begin{lemma}
   Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
   Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
@@ -161,6 +162,8 @@ $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$.
 
 \DPTtodo{Later on we use ``windows'' for particular intervals on the
   boundary, in the proof of Prop.~\ref{prop:join-split-geom}}
+  \DMGtodo{I think we want to call them boxes, as we do later on}
+  
 The main objects in our proof are certain \emph{windows} in the
 space of geodesics to which we will assign measures. The prototype for
 the kind of windows we consider is shown in
@@ -225,6 +228,7 @@ invariant under the following four transformations:
 
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
 \DPTtodo{Do we use capitals for inverses? Right below we do things differently}
+\flagtodo{We should decide on notation}
 $aCdB = 1$, we can
 construct four lifts of $x$ with the above relations, for instance
 setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = aC$.
@@ -303,6 +307,8 @@ The reader might wonder why in condition (3) we require the condition
 \DPTtodo[inline]{There should be some typographical distinction
   between the $(a,b,c,d)$ notation and $(p_1,p_2,q_1,q_2)$ notation.
   Maybe square brackets to mean conjugacy class?}
+  
+  \DMGtodo[inline]{I like that convention. DMG on implementing it.}
 
 \begin{definition}\label{def:dreamcatcher-box}
 Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
