@@ -90,7 +90,7 @@ particular type of relation between lifts.
   corresponding to lifts of $a$ and $x$ to the universal cover, and
   let $a^{\pm},x^{\pm} \in \bdy \wt S$ be their initial and final
   endpoints. We require that the four points $a^-,x^-,a^+, x^+$
-  occur on the circle at infinity in that counterclockwise cyclic order.
+  occur on the circle at infinity in that counterclockwise cyclic order. Otherwise, we say it is \emph{left-handed}.
 \end{definition}
 
 Observe that whether a crossing is ``right-handed'' is invariant under
@@ -98,7 +98,7 @@ simultaneous conjugation of $a$ and $x$, but does depend on
 more than the conjugacy classes $[a]$ and~$[x]$. (We need to specify
 which crossing we are considering.) Further, it is anti-symmetric: if
 the crossing between $a$ and~$x$ is right-handed, then the crossing
-between $x$ and~$a$ is left-handed.
+between $x$ and~$a$ is left-handed. \DMGtodo[inline]{We didn't define it, I just added definition of left-handed}
 
 To recognize whether a crossing is essential and right-handed, it will
 be helpful to look just at two different lifts of~$x$.
@@ -538,57 +538,7 @@ $x$ is not simple because
   This is the only place we use unoriented smoothings in the paper.
 \end{remark}
 
-\begin{corollary}\label{cor:additivity-limit}
-  Let $x$ be simple. If $a$ crosses $x$ to the right, then
-  \[
-    \lim_{n \to \infty} f([a x^n]) - f([x^n])
-  \]
-  exists.
-\end{corollary}
 
-\begin{proof}
-  By Eq.~\eqref{eq:cross-red2} we get \flagtodo{Additivity and oriented smoothing}
-  \[
-  f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
-  \]
-  \flagtodo[inline]{This is where smoothing as opposed to just
-    quasi-smoothing is crucial. Perhaps word-length in torus example
-    gives cases where the limit in the statement does not exist?}
-  Hence, $f([a x^n])$ is a convex function
-  of $n$, and thus so is $f([a x^n]) - f([x^n])$.
- By Lemma~\ref{lem:rhs}, we have that
- \[
- [ax^m][x^n] \reducesto [ax^{n+m}]
- \]
- which for $m=0$ yields
- \[
- [a][x^n] \reducesto [ax^{n}].
- \] 
- Thus, by additivity and oriented smoothing of $f$, we get
- \[
- f([a]) + f([x^n]) \geq f([ax^{n}]).
- \]
- Now, because of equation~(\ref{eq:cross-red3}),
- with $m=0$, we get
- \[
- [ax^n][a] \reducesto [x^{n}].
- \]  
- Therefore, by additivity and unoriented smoothing of $f$, we get
-  \[
-    -f([a]) \le f([a x^n]) - f([x^n]).
-  \]
-  Thus, $f$ is a convex function that is bounded as $n \to \infty$, and therefore it has a
-  well-defined limit.
-\end{proof}
-
-\begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-This follows immediately from Corollary~\ref{cor:additivity-limit}.
-\end{proof}
-
-\DPTtodo[inline]{Expand on this, relate Luo's conditions to ours}
-\begin{remark}
-Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
-\end{remark}
 
 %%% Local Variables:
 %%% mode: latex

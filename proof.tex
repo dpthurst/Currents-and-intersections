@@ -1,6 +1,108 @@
 \section{Proof of the main theorem}
 \subsection{$\mu_{f}$ is a pre-measure on boxes}
 
+
+Now we use the lemmas obtained in the previous subsection on our function on curves $f$ satisfying smoothing, convex union, homogeneity and stability to prove the existence of certain limits that will be crucial to construct our measure.
+
+An immediate consequence of smoothing and convex union is positivity of $f$.
+
+\begin{corollary}
+  Let $f$ be a functional satisfying convex union and smoothing. Then $f([x]) \geq 0$ for any $x \in \pi_1(S)$.
+  \label{cor:positivity}
+\end{corollary}
+\begin{proof}
+Let $a \in \pi_1(S)$ intersecting $x$ right-handedly. Then, by Lemma~\ref{lem:rhs_prod}, $axa^{-1}x^{-1}$ intersects $x$ right-handedly, and therefore
+\[
+    [axa^{-1}x^{-1}][x]  \reducesto [axa^{-1}]=[x]
+\]
+which implies, by convex union and smoothing of $f$, that
+\[
+    f([axa^{-1}x^{-1}]) \geq 0.
+\]
+for any $x$ and for any $a$ intersecting $x$ right-handedly.
+Now, by Lemma~\ref{lem:rhs_prod}, $ax^{-1}a^{-1}$ intersects $x$ right-handedly, and thus
+\[
+    [ax^{-1}a^{-1}][x]  \reducesto [ax^{-1}a^{-1}x]
+\]
+which implies, by convex union and smoothing property of $f$ that
+\[
+    f([ax^{-1}a^{-1}]) + f([x]) \geq f([ax^{-1}a^{-1}x])
+\]
+which by the above computation shows that $f([x]) \geq 0$.
+\end{proof}
+
+The following result shows a key limit to construct the measure exists and uses the smoothing lemmas.
+
+\begin{corollary}\label{cor:additivity-limit}
+Let $f$ satisfy convex union and smoothing.
+  Let $x$ be simple. If $a$ crosses $x$ to the right, then
+  \[
+    \lim_{n \to \infty} f([a x^n]) - f([x^n])
+  \]
+  exists.
+\end{corollary}
+
+\begin{proof}
+  By Eq.~\eqref{eq:cross-red2}, and smoothing and additivity (in fact, convex union is enough), we get
+  \[
+  f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
+  \]
+  \footnote{This is where smoothing as opposed to just
+    quasi-smoothing is crucial. See Remark~\ref{rmk:nonconvex} for an example.}
+  Hence, $f([a x^n])$ is a convex function
+  of $n$, and thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
+ By Lemma~\ref{lem:rhs}, we have that
+ \[
+ [ax^m][x^n] \reducesto [ax^{n+m}]
+ \]
+ which for $m=0$ yields
+ \[
+ [a][x^n] \reducesto [ax^{n}].
+ \] 
+ Thus, by additivity and oriented smoothing of $f$, we get
+ \[
+ f([a]) + f([x^n]) \geq f([ax^{n}]).
+ \]
+ Now, because of equation~(\ref{eq:cross-red3}),
+ with $m=0$, we get
+ \[
+ [ax^n][a] \reducesto [x^{n}].
+ \]  
+ Therefore, by additivity and unoriented smoothing of $f$, we get
+  \[
+    -f([a]) \le f([a x^n]) - f([x^n]).
+  \]
+  Thus, $g$ is a convex function that is bounded as $n \to \infty$, and therefore it has a
+  well-defined slope at infinity. Thus, the limit in the statement exists.
+  \DMGtodo[inline]{Does this need more detail?}
+\end{proof}
+
+\begin{remark}
+\label{rmk:nonconvex}
+The limit in Corollary~\ref{cor:additivity-limit} doesn't exist if one only assumes $f$ satisfies quasi-smoothing.
+Consider the once-punctured torus with generating set $\{a,b,a^2\}$, where $a$ and $b$ are the standard generators of $\pi_1(S)$.
+Let $f$ be the stable word-length with respect to this generating set.
+By picking the right orientations, $a$ crosses $b$ right-handedly, thus $ab$ also crosses $b$ right-handedly by Lemma~~\ref{lem:rhs_prod}.
+$f$ satisfies quasi-smoothing instead of smoothing (see \cite[Example~4.10]{MGT19:CurvesToCurrents}) for details). 
+The expression in the limit in Corollary~\ref{cor:additivity-limit} for the pair $ab$ and $b$ is
+\begin{equation*}
+f(ab^{n+1})-f(b^n)=\left\{ \begin{array}{cc} 1+ \frac{n+2}{2} - \frac{n}{2}=2& \mbox{ if } n \mbox{ is even } \\ 1+ \frac{n+1}{2} - \frac{n+1}{2}=1 & \mbox{ if } n \mbox{ is odd } \end{array} \right.
+\end{equation*}
+so the limit when $n$ goes to infinity doesn't exist.
+\end{remark}
+
+\begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
+This follows immediately from Corollary~\ref{cor:additivity-limit}.
+\end{proof}
+
+\DPTtodo[inline]{Expand on this, relate Luo's conditions to ours}
+\begin{remark}
+Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
+Feng Luo's work characterizes functions $f \colon \mathcal{S}(S) \to \mathbb{R}$ on simple closed curves that come from intersection numbers in terms of an infinite family of polynomial equations involving the $f$-value of triples of simple curves in the max-plus semi-ring structure on the real numbers.
+A consequence of this characterization is that $h(n) \coloneqq f([a^n b])$ is a convex function.
+In the proof of Corollary~\ref{cor:additivity-limit}, we generalize this convexity to possibly non-simple arbitrary curves $a,b$. See Proposition~\ref{cor:additivity-limit} to see how our conditions on a curve function $f$ imply Feng Luo's conditions for the restriction of $f$ to simple curves.
+\end{remark}
+
 This is the heart of the proof. Here we show that all the necessary hypothesis are satisfied to apply Theorem~\ref{thm:caratheodory}.
 
 \DPTtodo{Be explicit about assumptions: $a,b,x$ are arbitrary curves.
@@ -503,7 +605,7 @@ Second, we'll show that computing intersection number of that fundamental domain
     \end{enumerate}
 \end{proof}
 
-\begin{remark}
+\begin{remark}\DMGtodo[inline]{This can be deleted since we give a proof of positivity in Corollary~\ref{cor:positivity}
 This implies in particular that $f$ is non-negative. This can also be seen directly by using Lemma~\ref{lem:smoothingskey}.
 Indeed, suppose $f([a])$ is negative and $f([x])$ is positive for some $a$ and $x$ ($x$ being simple).
 If needed, we can take a power of $a$ and assume WLOG that $f([a])+f([x^2])<0$
