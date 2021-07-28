@@ -58,22 +58,25 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}
     \end{equation}
+    \label{prop:char_laminations}
 \end{proposition}
 \begin{proof}
 Let us call equation~\ref{eq:MLsmoothing} condition (1). Recall that Bonahon shows in \cite[Proposition~17]{Bonahon88:GeodesicCurrent} that $\mu$ is a measured lamination if and only if $i(\mu,\mu)=0$. Let us call this condition (2).
 First we show (2) implies (1).
 Suppose $\mu$ is a measured lamination, and let us assume for now $\mu$ is just a simple curve. Then Condition (1) is \cite[Lemma~1]{Thu00:GeometricIntersection}. If $\mu$ is any measured lamination, then by continuity of intersection number and density of weighted simple closed geodesics in the space of measured laminations, \cite[Lemma~1]{Thu00:GeometricIntersection} also holds, so the conclusion follows.
-On the other hand, suppose that condition (1) for a functional $f$ is satisfied, as well as additivity, homogeneity and stability. Since condition (1) implies the (unoriented) smoothing condition, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu$ so that $f(C)=i(\mu,C)$ for all curves $C$. We want to show $\mu$ is a measured lamination. Suppose first $\mu$ is a closed curve. After a finite number of applications of condition (1), we obtain
+On the other hand, suppose that condition (1) for a functional $f$ is satisfied, as well as additivity, homogeneity and stability. Since condition (1) implies the (unoriented) smoothing condition, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu$ so that $f(C)=i(\mu,C)$ for all curves $C$. We want to show $\mu$ is a measured lamination. 
+First, $f|_{\mathcal{S}}(s)=i(\lambda,s)$ for any simple curve $s$, by work of Feng Luo. Indeed, let $\alpha,\beta,\gamma$ be a triple of elements (triangle). The relations in \cite[Theorem~1.2]{Lu10} follows by the max smoothing relation. \DMGtodo[inline]{We did the computations, write them out.}
+Thus,
 \[
-i(\mu,\mu) = i(\mu,\mu_0)
+i(\mu, s)=i(\lambda, s)
 \]
-where $\mu_0$ is a simple multi-curve obtained by some sequence of unoriented smoothings of $\mu$. 
-\DMGtodo[inline]{I want to conclude that $i(\mu,\mu_0)=0$. }
-
-
-Anoter proof of this implication follows from work of Feng Luo. Let $\alpha,\beta,\gamma$ be a triple of elements (triangle). The relations in \cite[Theorem~1.2]{Lu10} follow by the max smoothing relation.
-Therefore, the restriction of $f$ to simple multi-curves satisfies $f(C)=i(\lambda,C)$ where $\lambda$ is a measured lamination and $C$ is any simple closed curve.
-A measured laminations is determined by the intersections on simple curves. Therefore, $\lambda=\alpha$.
+for any simple curve.
+By max-smoothing, a sequence of smoothings on $\mu$ yields a simple multi-curve $\mu_0$ so that
+\[
+i(\mu,\mu)=i(\mu,\mu_0)
+\]
+If $i(\lambda, \mu_0)=0$, then $i(\mu,\mu_0)=i(\mu,\mu)=0$, so we are done.
+If $i(\lambda, \mu_0) \neq 0$, then $i(\lambda, \mu) \neq 0$, since $\mu$ dominates $\mu_0$, but we know $i(\lambda, \mu)=i(\lambda,\lambda)= 0$, which is a contradiction. This finishes the proof.
 \end{proof}
 
 
