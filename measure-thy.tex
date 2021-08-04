@@ -72,8 +72,6 @@ A set function $\mu$ defined on the class of all subsets of a set $X$ and taking
 \end{enumerate}
 A set $A \subset X$ is called \emph{$\mu$-measurable} if, for every $E
 \subset X$, one has the equality
-\DPTtodo{Hersonsky-Paulin only have one inequality here. The other is automatic}
-\DMGtodo{This is related to comment above.}
 \[
 \mu(E \cap A) + \mu(E \backslash A) = \mu(E)
 \]
@@ -89,9 +87,6 @@ For $A \subset X$, let
 \]
 where in the case of absence of such a sequence~$A_n$ we set $\mu^*(A)
 \coloneqq \infty$. Then
-\DPTtodo{Could break this up: Finite additivity is enough for at least (1)
-  and (2)}
-  \DMGtodo{correct, I splitted it}
 \begin{enumerate}
     \item $\mu^*$ is an outer regular measure;
     \item all the sets in $\mathcal{R}$ are $\mu$-measurable;
@@ -151,7 +146,7 @@ The Riesz Representation theorem yields a characterization of Radon measures in 
    \[
      F(\psi) = \int_X \psi(x)\mu(x)
   \]
-  for all $\psi \in C_c(X)$, and a functional $F$ is called positive if $F(\psi) \geq 0$ for every function $\psi \in C_c(X) \geq 0$ and $x \in X$. The functional $F$ is not assumed to be continuous.
+  for all $\psi \in C_c(X)$, and a functional $F$ is called positive if $F(\psi) \geq 0$ for every function $\psi \in C_c(X) \geq 0$ and $x \in X$. The functional $F$ is not assumed to be continuous (a positive linear function on $C_c(X)$ is automatically continuous).
   \label{thm:Riesz}
 \end{theorem}
 

@@ -95,7 +95,6 @@ so the limit when $n$ goes to infinity doesn't exist.
 This follows immediately from Corollary~\ref{cor:additivity-limit}.
 \end{proof}
 
-\DPTtodo[inline]{Expand on this, relate Luo's conditions to ours}
 \begin{remark}
 Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
 Feng Luo's work characterizes functions $f \colon \mathcal{S}(S) \to \mathbb{R}$ on simple closed curves that come from intersection numbers in terms of an infinite family of polynomial equations involving the $f$-value of triples of simple curves in the max-plus semi-ring structure on the real numbers.
@@ -105,8 +104,6 @@ In the proof of Corollary~\ref{cor:additivity-limit}, we generalize this convexi
 
 This is the heart of the proof. Here we show that all the necessary hypothesis are satisfied to apply Theorem~\ref{thm:caratheodory}.
 
-\DPTtodo{Be explicit about assumptions: $a,b,x$ are arbitrary curves.
-  Other places too. HERE}
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   If $a$ and $b$ cross $x$ to the right, then the limit
@@ -116,37 +113,44 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   exists and is equal to~$0$.
 \end{proposition}
 \begin{proof}
-  By Proposition~\ref{prop:join-split-geom}, we have
+We separate the proof in two cases, depending on the magnitude of $|m-n|$.
+\begin{itemize}
+    \item Case 1: $|n-m|$ is large.  By Proposition~\ref{prop:join-split-geom}, we have
   \[
     f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
       \ge f([a x^{n+2}]) + f([b x^{m-2}]).
   \]
-\DPTtodo{This is using an old version of Proposition}
-  for all $m,n$ so that $m-n + k -3-s >0$, or $m-n+k-3+s<0$.
-  Thus, by Corollary~\ref{cor:additivity-limit}, the claim follows in this case $|n-m|$ is big enough. Suppose $|n-m| \leq |k -3-s|$.
-  By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
+  for all $m,n$ so that $m-n -s >r > s$, or $m-n+s<r<-s$, i.e.
+  For the first one, it suffices to have $m-n-s > s+1$, i.e., $m-n>2s+1$
+  For the second, $m-n+s<-s-1$, i.e. $m-n<-2s-1$.
+  In any case, $|m-n|>2s+1$
+  Thus, by Corollary~\ref{cor:additivity-limit}, the claim follows in this case.
+  \item Case 2: $|m-n|$ is small.  Let $p=m-n$ and suppose that $|p| \leq 2s+1$. By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
   \[
-  [ax^nbx^{n}] [x^k] \reducesto [ax^nbx^{n+k}].
+  [ax^nbx^{n+p}] [x^k] \reducesto [ax^nbx^{n+p+k}].
   \]
-  On the other hand, $bx^{n+k}a$ crosses $x$ to the right, also, and since
+  On the other hand, $bx^{n+p+k}a$ crosses $x$ to the right, also, and since
   \[
-  [ax^{n+k}bx^{n+k}]=[x^{n+k}bx^{n+k}a]=[bx^{n+k}ax^{n+k}]
+  [ax^{n+k}bx^{n+p+k}]=[x^{n+k}bx^{n+p+k}a]=[bx^{n+p+k}ax^{n+k}]
   \]
   we have
   \[
-  [bx^{n+k}ax^{n}] [x^k] \reducesto [bx^{n+k}ax^{n+k}].
+  [bx^{n+p}ax^{n}] [x^k] \reducesto [bx^{n+p}ax^{n+k}].
   \]  
   Therefore, by applying $f$ and using smoothing and additivity, we have that
   for all $k, n$
   \begin{align*}
-  [ax^n bx^{n-k}] [x^k] & \reducesto  [ax^n bx^{n}] [x^k]  \\
-  &\reducesto  [ax^n bx^{n+k}]
+  [ax^{n+p} bx^{n-k}] 2[x^k] & \reducesto  [ax^{n+p} bx^{n}] [x^k]  \\
+  &\reducesto  [ax^{n+p} bx^{n+k}]
   \end{align*}
-  Subtracting $2[x^n]$, applying $f$ using smoothing and additivity, and taking the limit when $n,k$ go to infinity we see that 
+  Subtracting $[x^{p+2n+k}]$, applying $f$ using smoothing and additivity, and taking the limit when $n,k$ go to infinity we see, by Case 1, that
   \[
-  \lim_{n \to \infty} f([ax^nbx^n])-2f([x^n])=0
+  \lim_{n\to \infty} f([ax^{n+p}bx^n])-f([x^n])=0
   \]  
   as we wanted to show.
+\end{itemize}
+ 
+
 \end{proof}
 
 \subsubsection{$\mu_{f}$ is non-negative}
@@ -207,9 +211,9 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
   Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S)$.
   Then
   \begin{align*}
-    B_1 &= (q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2)\\
-    B_2 &= (q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2)\\
-    B_1 \cup B_2 &= (q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2).
+    B_1 &= [q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2]\\
+    B_2 &= [q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2]\\
+    B_1 \cup B_2 &= [q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2].
   \end{align*}
   From this formula both items of the proposition follow immediately by the definition of $\mu_f$. \qedhere
 
@@ -295,7 +299,7 @@ proving approximation results.
 
 
 \begin{definition}
-Let the dreamcatcher $(p_1,q_1,p_2,q_2)$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
+Let the dreamcatcher $[p_1,q_1,p_2,q_2]$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
 We define a \emph{top vertical accordion} of boxes based at $B$ the sequence of boxes, indexed by $k$, given for each $k$, by
 \[
 p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
@@ -334,8 +338,8 @@ The following Proposition will be key to prove countable addivitity.
 \end{figure}
 
 \begin{itemize}
-\item For a fixed lift $\tilde{x}$ and fixed $(p_1,p_2,q_1,q_2)$, the boxes in the two sequences $F_{\vec{p_1},p_2,q_1,q_2}(k)$ and $F_{p_1,p_2,q_1,\vec{q_2}}$ are nested.
-\item For a fixed lift $\tilde{x}$ and fixed $(p_1,p_2,q_1,q_2)$,  \[
+\item For a fixed lift $\tilde{x}$ and fixed $[p_1,p_2,q_1,q_2]$, the boxes in the two sequences $F_{\vec{p_1},p_2,q_1,q_2}(k)$ and $F_{p_1,p_2,q_1,\vec{q_2}}$ are nested.
+\item For a fixed lift $\tilde{x}$ and fixed $[p_1,p_2,q_1,q_2]$,  \[
 \lim_{k \to \infty} \mu_f(F_{\vec{p_1},p_2,q_1,q_2}(k))= 0
 \]
 and
@@ -378,7 +382,10 @@ By definition of $\mu_f$,
 \end{proof}
 
 We now use Proposition~\ref{prop:finalfamily1} to prove that $\mu_f$
-is countably additive. We will need to consider more types of boxes
+is countably additive.
+We remark that at this point of the argument, we could also use an indirect strategy of using Riesz representation, as done in \cite[Proposition~3.11]{}
+
+We will need to consider more types of boxes
 than the half-open boxes we have been working with so for. For $B$ a
 right-handed box $[a_1,a_2) \times [b_1,b_2)$, let
 $\overline{B} \coloneqq [a_1,a_2] \times [b_1,b_2]$ and
@@ -433,7 +440,7 @@ $\overline{B}$ in the subspace topology.
 \begin{proposition}\label{prop:countablyadditive}
   The finitely additive measure $\mu_f$ is countably subadditive.
 \end{proposition}
-\DMGtodo[inline]{Compare this to what BIPP21 do in their construction of measure}
+
 \begin{proof}
   Let $B_0$ be a right-handed box, and suppose we are given a
   countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
@@ -528,10 +535,10 @@ Second, we'll show that computing intersection number of that fundamental domain
 \begin{enumerate}
 \item We take a basepoint $*$ on of the lifts of $x$.
   Let $p \in \pi_1(S,*)$ be sending a point $*'$ in a lift of $C$ to the basepoint $*$, and $q$ an element sending $*'$ to the translate of the basepoint $*$ in another lift of $x$, in such a way that the element $pq$ translates from one lift of $x$ to the other.
-    Using the box notation $(p,q,r,s)$, we consider, for each $n$, the boxes associated to
+    Using the box notation $[p,q,r,s]$, we consider, for each $n$, the boxes associated to
     
     \[
-      (p_n,q_n,r_n,s_n) \coloneqq (p,Y^nq,yp,y^{n+1}r)
+      [p_n,q_n,r_n,s_n] \coloneqq [p,y^{-n}q,yp,y^{-n-1}r]
     \]
     
     See Figure~\ref{fig:recwindow}.
@@ -548,11 +555,10 @@ Second, we'll show that computing intersection number of that fundamental domain
     
     Note that, in the dreamcatcher format $(a,b,c,d)$ it is given by
     \[
-      (a_n,b_n,c_n,d_n) \coloneqq (py^nq, pY^{n+1}q,py^{n+1}r,pY^nq)
+      (a_n,b_n,c_n,d_n) \coloneqq (py^nq, pY^{n+1}q,py^{n+1}r,py^{-n}q)
     \]
     
     here we are using $y$ as the element $\pi_1(S,*)$ with red axis in Figure~\ref{fig:recwindow}.
-    Capital $Y$ letter means the inverse of $y$.
     \item 
     \begin{comment}
     \begin{proposition}
@@ -589,43 +595,21 @@ Second, we'll show that computing intersection number of that fundamental domain
     \begin{multline*}
       \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
       \begin{aligned}
-    &= \lim_{n\to\infty} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,pY^nq})  \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}rx^{m}][pY^{n+1}qx^{m}])-f([py^{n}rx^{m}][pY^{n}qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([pY^{n+1}]) + f([qx^{m}])\\
-    &\qquad-f([py^{n}]) - f([rx^{m}]) - f([pY^{n}]) - f([qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) +  f([pY^{n+1}]) -f([py^{n}]) - f([pY^{n}])  \\
+    &= \lim_{n\to\infty} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,py^{-n}q})  \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}rx^{m}][py^{-n-1}qx^{m}])-f([py^{n}rx^{m}][py^{-n}qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([py^{-n-1}]) + f([qx^{m}])\\
+    &\qquad-f([py^{n}]) - f([rx^{m}]) - f([py^{-n}]) - f([qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) +  f([py^{-n-1}]) -f([py^{n}]) - f([py^{-n}])  \\
     &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
-    &\qquad+ f([pY^{n+1}]) - f([Y^{n+1}]) + f([Y^{n}]) - f([pY^{n}])  + f([y]) + f([Y])\\
-    &= \frac{1}{2}(f([y]) + f([Y]))\\
+    &\qquad+ f([py^{-n-1}]) - f([y^{-n-1}]) + f([y^{-n}]) - f([py^{-n}])  + f([y]) + f([y^{-1}])\\
+    &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
     &=f([y])
       \end{aligned}
     \end{multline*}
       The first equality follows by the fact that the boxes defined above converge from below to $(\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)$ as $n \to \infty$. The second equality is by definition of the measure $\mu_f$ on boxes.
-      For the third, we use \ref{lem:smoothingskey} to break up the limit into factors. In the fourth equality, we can cancel out terms, and in the fifth add and subtract the terms $f([y^{n+1}])$ and $f([Y^{n+1}])$. In the fifth equality, use Corollary~\ref{cor:additivity-limit}, and cancel out equivalent terms. Finally, use the symmetry property of $f$ to obtain the result.
+      For the third, we use \ref{lem:smoothingskey} to break up the limit into factors. In the fourth equality, we can cancel out terms, and in the fifth add and subtract the terms $f([y^{n+1}])$ and $f([y^{-n-1}])$. In the fifth equality, use Corollary~\ref{cor:additivity-limit}, and cancel out equivalent terms. Finally, use the symmetry property of $f$ to obtain the result.
     \end{enumerate}
 \end{proof}
-
-\begin{remark}\DMGtodo[inline]{This can be deleted since we give a proof of positivity in Corollary~\ref{cor:positivity}}
-This implies in particular that $f$ is non-negative. This can also be seen directly by using Lemma~\ref{lem:smoothingskey}.
-Indeed, suppose $f([a])$ is negative and $f([x])$ is positive for some $a$ and $x$ ($x$ being simple).
-If needed, we can take a power of $a$ and assume WLOG that $f([a])+f([x^2])<0$
-By right handedness we have
-\[
-  [a][x^2]\searrow [ax^2]
-\]
-and hence $f([ax^2]) <0$.
-Then, the left hand side of Equation~\ref{eq:cross-red3}, taking $n=1$ and $m=2$, is
-\[ 
-f([ax^1]) + f([ax^2]) <0
-\]
-whereas the right hand side of Equation~\ref{eq:cross-red3} is
-\[
-f([x])>0
-\]
-which is a contradiction.
-So it follows that either $f$ is always non-negative or $f$ is always non-positive.
-But $f$ can't be non-positive, again by Equation~\ref{eq:cross-red3}. Indeed, just pick $a$ so that $f([a]) << -C$, for some large $C>0$, obtaining another contradiction.
-\end{remark}
 
 %%% Local Variables:
 %%% mode: latex

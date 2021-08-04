@@ -159,20 +159,16 @@ $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 basepoint. The endpoints of the lifts of $[x]$ are dense in
 $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$.
 
-\DPTtodo{Later on we use ``windows'' for particular intervals on the
-  boundary, in the proof of Prop.~\ref{prop:join-split-geom}}
-  \DMGtodo{I think we want to call them boxes, as we do later on}
-  
-The main objects in our proof are certain \emph{windows} in the
+The main objects in our proof are certain boxes in the
 space of geodesics to which we will assign measures. The prototype for
-the kind of windows we consider is shown in
+the kind of boxes we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four lines, all lifts of~$x$, with
 two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
 $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+) \subset
 \partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
 for defining the measure. The lifts are defined by a 4-tuple of
-elements $(p_1,q_1,p_2,q_2)$ of $\pi_1(S)$ by
+elements $[p_1,q_1,p_2,q_2]$ of $\pi_1(S)$ by
 $\ell_i = (p_i)^{-1} \cdot \wt x$ and $r_i = q_i \cdot \wt x$, with
 conditions explained below.
 
@@ -191,8 +187,8 @@ be invariant under
 \item changing a $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$; and
 \item translating all the lifts by $g \in \pi_1(S)$:
   \[
-    (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
-      (p_1 g^{-1}, gq_1, p_2 g^{-1},  gq_2).
+    [p_1,q_1,p_2,q_2] \mapsto g \cdot [p_1,q_1,p_2,q_2] \coloneqq
+      [p_1 g^{-1}, gq_1, p_2 g^{-1},  gq_2].
   \]
 \end{itemize}
 In fact, ultimately we will take a limit of applying the first
@@ -226,10 +222,9 @@ invariant under the following four transformations:
 \end{itemize}
 
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
-\DPTtodo{Use $-1$, not capitals, for inverse}
-$aCdB = 1$, we can
+$ac^{-1}db^{-1} = 1$, we can
 construct four lifts of $x$ with the above relations, for instance
-setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = aC$.
+setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = ac^{-1}$.
 
 As mentioned above, we need some conditions on these lifts; for
 instance, we need the window
@@ -250,7 +245,7 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \end{enumerate}
 Then we call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
 As explained above, this determines a $\pi_1(S)$-orbit of windows. In
-terms of the alternative data $(p_1,q_1,p_2,q_2)$ for a window (rather
+terms of the alternative data $[p_1,q_1,p_2,q_2]$ for a window (rather
 than for an orbit), condition~(1) is automatic and the others
 become
 \begin{enumerate}[label=(\arabic*$^\prime$),start=2]
@@ -302,14 +297,8 @@ The reader might wonder why in condition (3) we require the condition
 \label{rmk:largeenough}
 \end{remark}
 
-\DPTtodo[inline]{There should be some typographical distinction
-  between the $(a,b,c,d)$ notation and $(p_1,p_2,q_1,q_2)$ notation.
-  Maybe square brackets to mean conjugacy class?}
-  
-  \DMGtodo[inline]{I like that convention. DMG on implementing it.}
-
 \begin{definition}\label{def:dreamcatcher-box}
-Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $(p_1,p_2,q_1,q_2)$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
+Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
 B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
 \]
@@ -416,6 +405,14 @@ We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
 We will need a key proposition relating several curves by smoothing
 essential crossings.
 
+\begin{figure}
+\centering{
+\resizebox{90mm}{!}{\svgfig{mn_plane}}
+\caption{$(m-n,r)$ plane. Allowed regions are shaded in grey.}
+\label{fig:mn_plane}
+}
+\end{figure}
+
 \DPTtodo[inline]{Prop.\ statement simplified. More precise statements
   appear in proof, but I don't know that we need any of them}
 \begin{proposition}\label{prop:join-split-geom}
@@ -442,6 +439,7 @@ $x$ is not simple because
   showing allowed and disallowed regions for these smoothings. DPT
   notes \texttt{2021-05-10 \#1}. But may be less necessary with
   simplified statement?}
+  \DMGtodo{added}
 \begin{proof}
   We first show that we can choose lifts for which the crossing is
   essential. Use the band model, centered on~$\wt{x}$. We will
@@ -526,8 +524,6 @@ $x$ is not simple because
     [ax^n][ax^m] \reducesto [(ax^n)^{-1}ax^m] = x^{m-n}
   \]
   as desired.
-  \DPTtodo[inline]{Can also prove that $f(a) \ge 0$, which allows adding back
-    in the case $n=m$}
 \end{proof}
 
 \begin{remark}
