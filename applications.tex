@@ -36,6 +36,18 @@ Unique if result is negatively curved, not in general (who did this?)
 $\mu$, systole positive $\Leftrightarrow$ $\mu$ is filling. Seems very
 relevant}
 
+
+\begin{proof}
+Given any (length) metric $\rho$ on $S$, consider $\ell_{\rho}$ its function length of free homotopy classes of curves.
+By our Theorem~\ref{thm:intersect}, there exist a geodesic current $\mu_{\rho}$ so that
+\[
+i(\mu_{\rho},C)=\ell_{\rho}(C)
+\]
+for any closed curve $C$.
+By \cite[Lemma~2.18]{Ham99:Cocycles}, there is a sequence of Liouville currents $L_{m_i}$ associated to negatively curved metrics on $S$ so that $L_{m_i} \to \mu_{\rho}$.
+
+\end{proof}
+
 \subsection{Redefining geodesic currents}
 This result gives a new definition of geodesic currents in terms of functionals on curves. These functionals form a subset of the functionals that extend continuously to currents, by Theorem~\ref{thm:convex}.
 
@@ -53,6 +65,7 @@ Let $S$ a closed surface, $\mu$ a geodesic current and $f$ the functional on cur
 (2) is equivalent to (3) by\cite[Theorem~4.1]{BIPP17:StructureThmCurrents}, where the lower bound in (3) is given by the systole of $\mu$.
 \end{proof}
 
+\DMGtodo[inline]{Can we use this to characterize small actions inside of the space of $G$ actions on $\mathbb{R}$-trees? For example, Parry characterizes $G$ actions on $\mathbb{R}$-trees as families of length functions satisfying certain axioms akin to the smoothing condition. And Skore shows that if $G$ is a surface group, then $G$-action on $\mathbb{R}$ is a measured lamination if and only if it is small. So, what conditions should we add to Culler-Morgan-Parry axioms to get small actions?}
 \begin{proposition}
 $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies
     \begin{equation}\label{eq:MLsmoothing}
@@ -79,6 +92,52 @@ If $i(\lambda, \mu_0)=0$, then $i(\mu,\mu_0)=i(\mu,\mu)=0$, so we are done.
 If $i(\lambda, \mu_0) \neq 0$, then $i(\lambda, \mu) \neq 0$, since $\mu$ dominates $\mu_0$, but we know $i(\lambda, \mu)=i(\lambda,\lambda)= 0$, which is a contradiction. This finishes the proof.
 \end{proof}
 
+As an application, we prove a conjecture of Morgan and Otal, giving another characterization of small actions of surface groups on $\mathbb{R}$-trees.
+
+- definition of R-tree
+- action of G on R-tree
+- axes
+- intersection of axes on R-tree (figures)
+- hyperbolic axes $A_g, A_h$ vs R-tree axes $T_g, T_h$ (discussion about intersections)
+- small action (definition)
+- Culler-Morgan, Morgan-Otal, Skora (are relevant references)
+
+
+\begin{proposition}
+An action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is small if and only if for any pair $g,h \in \pi_1(S)$, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$
+\end{proposition}
+\begin{proof}
+If an action is small, then it satisfies the condition in the theorem by Morgan-Otal 83.
+On the other hand, assume that for any pair $g,h \in \pi_1(S)$, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
+We will verify that $| \cdot |$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
+First, suppose that $g,h$ represent distinct closed curves on $S$ that intersect essentially.
+The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-smoothing can be phrased as
+
+\[
+|g| + |h| = \max \{ |gh|,|gh^{-1}| \}.
+\]
+
+This relation is true by Morgan-Culler Proposition 1.8, since $T_g \cap T_h \neq \emptyset$.
+Now, suppose that we have a closed curve with an essential self-intersection, represented by $g h$, where the concatenation is at the basepoint.
+Max-smoothing amounts to
+
+\[
+|gh| = \max \{ |g|+|h|,|gh^{-1}| \}.
+\]
+
+First, we note that the self-intersection corresponds to the intersection of the hyperbolic axes of the elements $gh$ and $hg$. Thus, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
+There are three cases to consider.
+\begin{enumerate}
+    \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $|gh|=|gh^{-1}| \geq |g|+|h|$ by Morgan-Culler, and the condition is satisfied.
+    \item $T_g$ and $T_h$ intersect in a non-degenerate interval with coherent orientations
+    Then, 
+    $|gh|=|g|+|h|>|gh^{-1}|$,and the condition is satisfied by Culler-Morgan 1.8
+    \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations
+    Then, 
+    $|gh^{-1}|=|g|+|h|>|gh|$, so the max-condition would be violated. However, this case cannot happen, since that would mean that $T_{g^{-1}h}$ and $T_{hg^{-1}}$ intersect in a non-degenerate interval with coherent orientations, and analysis of the axes (Figure here), would imply that $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
+\end{enumerate}
+
+\end{proof}
 
 By Bonahon's \cite[Proposition~17]{Bonahon88:GeodesicCurrent}, a geodesic current $\mu$ is a Liouville current for some hyperbolic structure $\Sigma$ if and only if for all pairs $(x,y,z,w)$ of cyclically oriented points in $\partial_{\infty}\Sigma$, we have
 
