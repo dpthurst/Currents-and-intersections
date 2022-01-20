@@ -1,0 +1,45 @@
+\subsection{Any length metric is isospectral to a non-positively
+  curved Riemannian metric}
+\label{sec:non-pos}
+
+Use Hamenstädt's result: Liouville currents of negatively curved
+Riemannian metrics are dense in currents \cite[Lemma 2.8]{Ham99:Cocycles}
+
+Bound diameter following MathOverflow answer
+\url{https://mathoverflow.net/questions/346811/can-the-diameter-be-controled-by-the-injectivity-radius-and-the-volume}:
+\begin{lemma}
+  For any non-positively curved metric $g$ on a surface~$\Sigma$,
+  \[
+    \diam(g) \le \frac{8\vol(g)}{\systole(g)}.
+  \]
+\end{lemma}
+(Similar results hold in any dimension, and without the assumption of
+non-positive curvature, replacing systole with injectivity radius.)
+
+Combine with Gromov compactness. Show that $\pi_1$ doesn't change in
+limit, again using positive systole.
+\DMGtodo[inline]{Gromov compactness requires uniform bound on curvature. but these metrics need not have uniform bounded sectional curvature, for example it could converge to -infinity as it converged to a tree?}
+Unique if result is negatively curved, not in general (who did this?)
+\DMGtodo[inline]{For negatively curved Riemannian metrics it was Hersonsky-Paulin in the paper whose argument we used to prove countable additivity in our argument. But rigidity is true in more generality than just negatively curved Riemannian: for non-positively curved Riemannian was proved by Constantine in 2018. For non-positively curved Euclidean cone metrics the latest result is by Viveka, Chris Leininger and Chandrika Sadanand. I would say the first page of this preprint contains the lastest account of the history of this problem \url{https://arxiv.org/pdf/2104.12176.pdf}. One thing to note is that if we can actually show that our metric in the isospectral result is Riemannian then because of rigidity there is a unique such metric (it's uniquely determined by the lengths). So interestingly we are picking up a distinguished non-positively curved Riemannian metric... Kind of a uniformization procedure.}
+
+\begin{remark}
+  Gromov-Hausdorff limit can be nasty in general, for instance if we
+  approximate a closed curve or measured lamination. Systole is zero
+  in these cases.
+\end{remark}
+
+\DPTtodo[inline]{BIPP 2019 prove that, for intersection with a current
+$\mu$, systole positive $\Leftrightarrow$ $\mu$ is filling. Seems very
+relevant}
+
+
+\begin{proof}
+Given any (length) metric $\rho$ on $S$, consider $\ell_{\rho}$ its function length of free homotopy classes of curves.
+By our Theorem~\ref{thm:intersect}, there exist a geodesic current $\mu_{\rho}$ so that
+\[
+i(\mu_{\rho},C)=\ell_{\rho}(C)
+\]
+for any closed curve $C$.
+By \cite[Lemma~2.18]{Ham99:Cocycles}, there is a sequence of Liouville currents $L_{m_i}$ associated to negatively curved metrics on $S$ so that $L_{m_i} \to \mu_{\rho}$.
+
+\end{proof}

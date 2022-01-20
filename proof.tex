@@ -102,7 +102,7 @@ A consequence of this characterization is that $h(n) \coloneqq f([a^n b])$ is a 
 In the proof of Corollary~\ref{cor:additivity-limit}, we generalize this convexity to possibly non-simple arbitrary curves $a,b$. See Proposition~\ref{cor:additivity-limit} to see how our conditions on a curve function $f$ imply Feng Luo's conditions for the restriction of $f$ to simple curves.
 \end{remark}
 
-This is the heart of the proof. Here we show that all the necessary hypothesis are satisfied to apply Theorem~\ref{thm:caratheodory}.
+ Here we show that all the necessary hypotheses are satisfied to apply Theorem~\ref{thm:caratheodory}.
 
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
@@ -352,7 +352,7 @@ and
 \end{proposition}
 \begin{proof}
 \begin{itemize}
-    \item Obvious by construction. \DMGtodo{This uses right handed}
+    \item Obvious by construction. \DMGtodo{This uses right handed. What details should we add?}
     \item 
     We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$.
     We will first go from the box notation to the orbit notation, since the latter is better suited for the definition of $\mu_f$.
@@ -496,13 +496,11 @@ We first show it is Radon.
 Outer regularity follows by Proposition~\ref{lem:extend1} and inner regularity by Proposition~\ref{lem:extend2}.
 Local finiteness follows by definition of the pre-measure $\mu_f$, since for any compact box $K$ we can take a right handed box containing it.
 By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:positivity}.
-\DMGtodo[inline]{Is $\mu_f$ flip invariant? This is related to the comments at the beginning on making clear what types of measures we are dealing with.}
-\DMGtodo[inline]{What comes next is probably not needed}
+\DMGtodo[inline]{Is $\mu_f$ flip invariant? Not clear, and thus we need to normalize. This is related to the comments at the beginning on making clear what types of measures we are dealing with.}
 We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain a flip invariant geodesic current, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
 \[
 i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
 \]
-\DMGtodo[inline]{Not necessary, $\mu_f$ is flip invariant because of the symmetry condition of $f$? No, not the same. Functional being symmetric is not the same as measure being flip invariant.}
 The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
 Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedhere
 \end{proof}
@@ -519,7 +517,7 @@ i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \]
 (see \cite[Lemma~4.4]{MZ19:PositivelyRatioed} for details).
 
-\begin{proposition}
+\begin{proposition}\DMGtodo[inline]{This requires edit, it is quite rough.}
 For $C$ a closed curve, we have
 \[
 i(\mu_f,C)=f(C).
@@ -599,8 +597,8 @@ Second, we'll show that computing intersection number of that fundamental domain
     &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}rx^{m}][py^{-n-1}qx^{m}])-f([py^{n}rx^{m}][py^{-n}qx^{m}]) \\
     &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([py^{-n-1}]) + f([qx^{m}])\\
     &\qquad-f([py^{n}]) - f([rx^{m}]) - f([py^{-n}]) - f([qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) +  f([py^{-n-1}]) -f([py^{n}]) - f([py^{-n}])  \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
+    &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) +  f([py^{-n-1}]) -f([py^{n}]) - f([py^{-n}])  \\
+    &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
     &\qquad+ f([py^{-n-1}]) - f([y^{-n-1}]) + f([y^{-n}]) - f([py^{-n}])  + f([y]) + f([y^{-1}])\\
     &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
     &=f([y])
@@ -610,6 +608,11 @@ Second, we'll show that computing intersection number of that fundamental domain
       For the third, we use \ref{lem:smoothingskey} to break up the limit into factors. In the fourth equality, we can cancel out terms, and in the fifth add and subtract the terms $f([y^{n+1}])$ and $f([y^{-n-1}])$. In the fifth equality, use Corollary~\ref{cor:additivity-limit}, and cancel out equivalent terms. Finally, use the symmetry property of $f$ to obtain the result.
     \end{enumerate}
 \end{proof}
+
+
+The proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. This condition is crucial to recover curve functionals as intersection numbers, as we explain in Section~\ref{sec:asymmetric}.
+
+
 
 %%% Local Variables:
 %%% mode: latex

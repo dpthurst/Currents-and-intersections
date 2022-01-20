@@ -1,0 +1,110 @@
+\section{Other applications}
+\DMGtodo[inline]{The following are applications that are still too rough to share in a shareable draft. I am hiding this here for now.}
+
+By Bonahon's \cite[Proposition~17]{Bonahon88:GeodesicCurrent}, a geodesic current $\mu$ is a Liouville current for some hyperbolic structure $\Sigma$ if and only if for all pairs $(x,y,z,w)$ of cyclically oriented points in $\partial_{\infty}\Sigma$, we have
+
+\begin{equation}\label{eq:BonahonLiouville}
+  e^{-\mu([a,b]\times[c,d])} + e^{-\mu([b,c] \times [d,a])}=1
+\end{equation}
+
+This result was subsequently strengthened by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles} as
+
+We claim that this can be rephrased in terms of the corresponding functional on curves as follows.
+
+\begin{conjecture}
+A functional $f$ on closed curves satisfying unoriented smoothing, additivity, stability and homogeneity is a Liouville current if and only if it satisfies
+    \begin{equation}
+      \exp(f\left(\mfig{curves-0}\right)) \simeq  \exp(f\left(\mfig{curves-1}\right)) + \exp(f\left(\mfig{curves-2}\right))
+    \end{equation}
+where $\simeq$ means the equality is up to error that goes to zero as the values of $f(C)$, $f(C_+)$ and $f(C_-)$ go to infinity \DMGtodo{Not sure if that is what it means.}
+\end{conjecture}
+
+Finally. Feng Luo in \cite{Luo98:GeodesicLength} characterizes functions on simple curves coming from hyperbolic geodesic lengths by a set of equations involving traces of triples of hyperbolic elements.
+
+\begin{proposition}\DMGtodo{This proposition is wrong but contains some interesting seeds.}
+A functional on currents satisfying unoriented smoothing, additivity, stability and homogeneity is a Liouville current if and only if, morevoer, it satisfies the following equation
+\[
+  e^{-A} + e^{-A-2\log\left(e^{\frac{1}{2}A}-1\right)}=1.
+\]
+where $A=\mu([a,b] \times [c,d])$
+\end{proposition}
+\begin{proof}
+If $\mu$ is a Liouville current, then the ptolomey relation holds, and one can use it to write
+$\mu([b,c] \times [d,a])$ in terms of $\mu([a,b] \times [c,d])$, since one can write it as a limit of the hyperbolic lengths of hyperbolic distance between horocycles that shrink.
+\DMGtodo[inline]{The other implication doesn't follow directly, because with one element of $\pi_1(S)$ we can't approximate any box. One has to use more elements of $\pi_1(S)$, probably pairs of elements. In our proof of the Intersection theorem we show that with three elements it suffices, and maybe that's what we want, but I'm not sure how to write it.}.
+\end{proof}
+
+\subsection{Topology on functionals}
+
+Note that by Subsection~\ref{sec:intersectioncurrents}, for functionals coming from currents, $f_i \to f$ if and only if $f_i(c) \to f(c)$ for each $c \in \Curves(S)$, i.e., pointwise convergence.
+This is therefore the natural topology in the space of functionals on curves.
+
+\subsection{A new expression for the Thurston metric}
+
+
+In \cite[Theorem~8.5]{Thu98:MinimalStretch} Bill Thurston defines the following (asymmetric) metric on $\Teich(S)$.
+
+\[
+d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq \sup_{\lambda \in \ML}\log \frac{\ell_{\Sigma}(\lambda)}{\ell_{\Sigma'}(\lambda)}
+\]
+
+As an immediate application of Theorem \ref{thm:intersect} we give a new characterization of Thurston metric in terms of a supremum over functionals on curves.
+
+\begin{corollary}
+\[
+d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq \sup_{f} \log \frac{f(\Sigma)}{f(\Sigma')}
+\]
+
+where $f$ runs over all non-zero functionals $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying smoothing, smoothing, stability and homogeneity properties.
+\label{cor:Thurston}
+\end{corollary}
+\begin{proof}
+\[
+d_{\mathit{Thu}}(\Sigma,\Sigma') \coloneqq sup_{f} \log \frac{f(\Sigma)}{f(\Sigma')} = \sup_{\mu \in \mathcal{G}\mathcal{C}(S)} \log \frac{i(\mu,\Sigma)}{i(\mu,\Sigma')} = \sup_{\lambda \in \ML(S)} \log \frac{i(\lambda,\Sigma)}{i(\lambda,\Sigma')}
+\]
+The first equality follows by our Theorem~\ref{thm:intersect}, and the second equality follows because, by \cite[Theorem~8.5]{Thu98:MinimalStretch}, the distance is attained by a minimal stretch map, which dilates the hyperbolic lengths by the same bounded amount.
+\end{proof}
+
+By considering different families of continuous functionals $\mathcal{F}$ on geodesic currents over which we take the supremum in Corollary~\ref{cor:Thurston}, we can obtain new distances.
+A possible future question is the following.
+
+\begin{question}
+
+What is the distance given by
+ \[
+d_{\mathcal{F}}(\Sigma,\Sigma')=\sup_{f \in \mathcal{F}} \log \frac{f(\mathcal{L}_\Sigma)}{f(\mathcal{L}_{\Sigma'})}
+\]
+where $\mathcal{F}$ consists of positive functionals $f : \mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfying convex union, quasi-smoothing (for a fixed uniform quasi-smoothing constant), stability and homogeneity properties.
+ 
+\end{question}
+
+By the formula above, each family of functionals $\mathcal{F}$ also gives a distance between currents.
+There are other natural notions of distances between measures, coming from the theory of optimal transport (e.g. Wasserstein metric).
+These can be adapted for geodesic currents. Are these two families of distances on geodesic currents related?
+
+\subsection{Positive cross-ratios and smoothing}
+
+\label{subsec:poscross}
+
+
+
+In \cite[Proposition~2.24]{MZ18:PositiveReps} define a cross-ratio $B_{\rho}^{\alpha}$ associated to  a projective Anosov representation $\rho$. Suppose $B_{\rho}^{\alpha}$  is a positive cross-ratio (recall Definition~\ref{def:poscrossratio}), Then there exists a unique
+geodesic current $\mu_{\rho}^{\alpha}$ so that $\ell_{\rho}^{\alpha}(c)=i(\mu_{\rho}^{\alpha},c)$. In particular, $l_{\rho}^{\alpha}$ extends to geodesic currents as an intersection number.
+We can give another characterization of positivity for cross-ratio in terms of the length function $l_{\rho}^{\alpha}$.
+ 
+\begin{proposition}
+ $B_{\rho}^{\alpha}$ is positive if and only if $l_{\rho}^{\alpha}$ satisfies smoothing condition.
+\end{proposition}
+\begin{proof}
+From the above mentioned result in \cite{MZ18:PositiveReps}, $l_{\rho}^{\alpha}$ is realized as an intersection number with a current, so the smoothing property follows. 
+On the other hand, suppose $l_{\rho}^{\alpha}$ satisfies smoothing, Stability follows by the additivity property of the cross-ratio. Additive union follows just by definition of $l_{\rho}^{\alpha}$ on weighted multi-curves, defined by extending linearly. Then we just apply theorem \ref{thm:intersect}
+to obtain a geodesic current $\mu_{\rho}^{\alpha}$. Finally, we define the cross-ratio 
+\[ 
+B_{\rho}^{\alpha}(a,b,c,d)\coloneqq \mu_{\rho}^{\alpha}([a,b)\times[c,d)).
+\]
+
+It obviously satisfies the properties of cross-ratio: symmetry follows by flip invariance of geodesic currents and additivity of cross-ratio follows by additivity of geodesic currents. Positivity also follows. \DMGtodo[inline]{Flag this Proposition for now, because this cross-ratio need not be continuous, unlike the one defined by Martone-Zhang. Discontinuities in cross ratio come from atoms of the geodesic current. How can we show the resulting geodesic current has no atoms? Is there a characterization in terms of curve functionals? Also, this proof requires more detail overall.}
+\end{proof}
+
+\DMGtodo[inline]{Take a look at new paper by Bea, specifically propositions 3.11 to 3.13, and see how their cross-ratios relate to our functions. Are we giving a stronger result than theirs? Does their result include ours? Their cross-ratios are very general, they aren't continuous: https://arxiv.org/abs/2103.17161.
+DMG: took a look, and their cross-rations induce functions on unoriented oriented curves via periods. Our result is more general, indeed, we are saying that if we have a function on periods satisfying smoothing then we can construct a current, and therefore we can get a cross-ratio. Again, I am not sure how to show that their period functions satisfy smoothing, though, directly from the definition of cross-ratio, but they do a posteriori. Their cross-ratios are very general. So if we can show that their periods satisfy smoothing we would subsume their result, because we would reconstruct their cross-ratio from the periods. Smoothing implies positivity.}

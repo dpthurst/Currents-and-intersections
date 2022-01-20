@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.0.2 (e86c870879, 2021-01-15), www.inkscape.org
+%% Creator: Inkscape 1.1.1 (3bf5ae0d25, 2021-09-20), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'abliftsbands.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{685.85998535bp}%
+    \setlength{\unitlength}{687.53237266bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,24 +50,30 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.43552347)%
+  \begin{picture}(1,0.45001631)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{abliftsbands.pdf}}%
-    \put(0.3070769,0.26234023){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0.56182275,0.26411659){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0.31913709,0.16010593){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b$\end{tabular}}}}%
+    \put(0.79880276,0.27096823){\color[rgb]{0.02352941,0.64705882,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{r}bx^{r-m}$\end{tabular}}}}%
+    \put(0.40925475,0.28649964){\color[rgb]{1,0,0.61960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^na$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{abliftsbands.pdf}}%
-    \put(0.0955418,0.24593261){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a$\end{tabular}}}}%
+    \put(0.02765321,0.43771903){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-3}b)$\end{tabular}}}}%
+    \put(0.18351491,0.43722794){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-1}a)$\end{tabular}}}}%
+    \put(0.4336144,0.43839691){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(a)$\end{tabular}}}}%
+    \put(0.69190241,0.43845539){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(xa)$\end{tabular}}}}%
+    \put(-0.0011008,0.21331931){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^-$\end{tabular}}}}%
+    \put(0.55017132,0.20831906){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tilde{x}$\end{tabular}}}}%
+    \put(0.94919837,0.21410208){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^+$\end{tabular}}}}%
+    \put(0.30076278,0.43882365){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-2}b)$\end{tabular}}}}%
+    \put(0.01160496,0.03445304){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-m} b^{-1})$\end{tabular}}}}%
+    \put(0.28181874,0.03597406){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-m+1} b^{-1})$\end{tabular}}}}%
+    \put(0.52575234,0.43797591){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-1}b)$\end{tabular}}}}%
+    \put(0.80821114,0.43831843){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^rb)$\end{tabular}}}}%
+    \put(0.18935335,0.03631605){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-n}a^{-1})$\end{tabular}}}}%
+    \put(0.11848042,0.28801643){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{r-3}b\cdot \tilde{x}$\end{tabular}}}}%
+    \put(0.14927837,0.41179798){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(x^{r-3}a)^+$\end{tabular}}}}%
+    \put(0.00545237,0.40962439){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(x^{r-3}b)^-$\end{tabular}}}}%
+    \put(0.44521995,0.03693773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-n+1}a^{-1})$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{abliftsbands.pdf}}%
-    \put(0.04267359,0.39642355){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l$\end{tabular}}}}%
-    \put(0.04715072,0.00771014){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l$\end{tabular}}}}%
-    \put(0.28592971,0.39777142){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l+1$\end{tabular}}}}%
-    \put(0.52214618,0.40186363){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l+2$\end{tabular}}}}%
-    \put(0.77893217,0.40084058){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l+3$\end{tabular}}}}%
-    \put(0.27252156,0.00901176){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l+1$\end{tabular}}}}%
-    \put(0.51703091,0.00798873){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l+2$\end{tabular}}}}%
-    \put(0.7738169,0.01003482){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$l+3$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{abliftsbands.pdf}}%
   \end{picture}%
 \endgroup%

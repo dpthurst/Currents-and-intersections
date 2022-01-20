@@ -61,8 +61,15 @@ Jeffrey Frazier asked Question \ref{q:intersection} and remarks how relevant it 
 
 \subsection{Main results}
 %\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
+
+In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
+Working with this intersection number is crucial for our results, although we will assume our curves to be oriented. In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise.
+In terms of geodesic currents, this means we will work with oriented geodesic currents.
+As we shall see, there are versions of intersection numbers which are oriented (detect the orientations of the intersections). See Section~\ref{sec:asymmetric}. For those, the main duality result~Theorem~\ref{thm:intersect} will not hold.
+Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$
+
 \begin{definition}\label{def:properties}
-  Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves. In the following, we define several properties that $f$ might satisfy.
+  Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a curve functional defined on weighted multi-curves. In the following, we define several properties that $f$ might satisfy.
 
   \begin{itemize}
   \item \textbf{(Smoothing)}  Let $C$~be an oriented curve on~$S$, and
@@ -134,7 +141,6 @@ Many natural notions of length do satisfy all these four properties and they hav
 
 The cited results cited above show the following properties for these currents:
 \begin{enumerate}
-    \item They have full support, except for the ones for conical metrics (for this exception, see, for example, \cite[Proposition~3.3]{Frazier12:SpectralRigidity}). In fact, the support of the geodesic current plays a key role for the rigidity result in non-positively curved Euclidean cone metrics (one can discern these metric structures by just looking at the support of its Liouville current \cite[Support~rigidity~theorem]{DELS18:ShapeBilliard}).
     \item They are filling currents. Indeed, any full support geodesic current is filling. The conical metric exceptions above are also filling since, for example, conical lengths are Lipschitz equivalent to the hyperbolic length, and therefore lower bounded by a multiple of the hyperbolic length, which is positive for any geodesic current.
     \item For each $T>0$, the set $N_{T}^{\rho} \coloneqq \{ C \in \mathcal{C}(S) \bigm\vert \ell_{\rho}(C) \leq T\}$ is finite. This follows since the associated current is filling, and thus the $\ell_{\rho}$ is a positive, homogeneous and continuous function on currents. Therefore, $N_{T}^{\rho}$ is compact. Since the set of non-weighted multi-curves $\mathcal{C}(S)$ is discrete inside the space of currents, $N_{T}^{\rho}$ is finite.
 \end{enumerate}
@@ -142,9 +148,9 @@ The cited results cited above show the following properties for these currents:
 On the other hand, not all functions on curves satisfy the smoothing, additivity, homogeneity and stability conditions. 
 
 \begin{enumerate}
-    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT:20}).
-    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT:20}. The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT:20}.
-    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT:20}).
+    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
+    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}. The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}).
+    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -152,30 +158,32 @@ In view of all this, it is natural to ask which additional conditions one needs 
 It turns out that one doesn't need more conditions.
 
 \begin{mainthm}\label{thm:intersect}
- Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves satisfying smoothing, additive union, homogeneity and stabilty properties. Then there exists a unique geodesic current $\mu_f$ such that the extension $\wt{f}\colon \mathcal{GC}(S) \to \mathbb{R}$ satisfies $\wt{f}(\alpha)=i(\alpha,\mu_f)$.
+ Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a symmetric functional defined on weighted multi-curves satisfying smoothing, additive union, homogeneity and stabilty properties. Then there exists a unique unoriented geodesic current $\mu_f$ such that the extension $\wt{f}\colon \mathcal{GC}(S) \to \mathbb{R}$ satisfies $\wt{f}(\alpha)=i(\alpha,\mu_f)$.
 \end{mainthm}
 
-\DMGtodo[inline]{Observations: we don't require positivity of functional, but it follows from our results (geodesic currents are positive measures). So negative currents satisfy anti-smoothing. I think in this paper it is important to discuss the setting of currents we work with: unsigned and symmetric currents. Unsigned means positive measures, and symmetric means flip invariant (the current gives the same value when you flip endpoints of box of geodesics). It might be worth mentioning the hypotheses in Culler-Morgan results to motivate study of currents and measured laminations as functionals on curves. Parry proves the conjecture that translation lengths as class functions on hyperbolic groups satisfy the axioms. Feng Luo
-s work is also related but in the simple closed curve case. This connects with applications.}
-This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions.
+\begin{remark}
+Observe that we do not require in the hypotheses that the curve functional is non-negative, but in fact it follows from the other conditions (see Corollary~\label{cor:positivity}).
+\end{remark}
 
-As immediate applications, we will obtain the following (see Section~\ref{sec:appsintersection}):
+This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions. See Section~\ref{subsec:newdef}.
 
-\begin{enumerate}
-    \item A new definition of geodesic currents on surfaces as functionals on curves. 
-    \item By \cite[Theorem~A]{MGT:20} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
+One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and Luo's work to give another characterization of measured laminations in terms of curve functionals.
+
+Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate (but are weaker than) to our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by translating the smoothing condition.
+Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$.
+
+By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
     Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic. For instance, if $\rho$
 has positive curvature, there may be an open set of Riemannian geodesics
 on~$\Sigma$ that stay inside a contractible set and so are not
 quasi-geodesic on~$\wt \Sigma$.
-\end{enumerate}
+In any case, as a further application, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
 
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-Thank Noelle Sawyer as appropriate. Others too?
-Thank Juan Souto, Ivan Telpukhovskiy
+We would like to thank Beatrice Pozzetti, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
 
 The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship.
 The second author was supported by the National Science
