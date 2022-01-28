@@ -56,4 +56,27 @@ beginmulti;
   shipmulti(4);
 endmulti;
 
+% Three crossings in a row
+beginmulti;
+  u := sqrt(2)*u;
+  a := 0.1u;
+  x0 = x4 = 0u;
+  x1 = x5 = 1u;
+  x2 = x6 = 2u;
+  x3 = x7 = 3u;
+  y0 = y3 = 0u; y4 = y7 = 1u;
+  y1 = y2 = a; y5 = y6 = 1u-a;
+
+  path p[];
+  p0 = z0..(1.5u,-0.5u)..z3..z7..(1.5u,1.5u)..z4..cycle;
+  p1 = z0{dir 45}..z5..z2..{dir 45}z7;
+  p2 = z4{dir -45}..z1..z6..{dir -45}z3;
+
+  skein_circle(p0);
+  draw p1;
+  draw p2;
+  pickup thinpen;
+  draw fullcircle scaled 0.5u shifted (1.5u,0.5u);
+  shipmulti(10);
+endmulti;
 end

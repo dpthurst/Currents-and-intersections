@@ -3,47 +3,16 @@
 Geodesic currents are measures. There are several competing viewpoints on where one can see this measures supported on.
 We'll work with all of them, but let us informally discuss the two most widely used in the literature, to our understanding, before we get to the precise definitions.
 One viewpoint is as measures supported on the space of geodesics of a surface.
-Another is as measures supported on the unit tangent bundle of the surface invariant under the flow.
-Both viewpoints have their cons and pros.
-The first is more algebraic, and can be easily generalized to hyperbolic groups.
+This viewpoint generalizes easily to hyperbolic groups.
 However, the space of geodesics is not well behaved (not Hausdorff), so one has to lift geodesics to the universal cover and work with $\pi_1(\Sigma)$-invariant measures.
-The second is more geometric, and allows to see geodesic currents as measures supported on $UT\Sigma$, which is a complete separable metric space. Thence, we don't need to consider the $\pi_1(\Sigma)$-invariance. On the other hand, though, we need to pay the price of considering measures invariant under the geodesic flow. Also, although this definition can be generalized to hyperbolic groups (see \cite[Section~3]{EPS:CountingCurves}) it takes a bit more work to define what unit tangent bundle is in that case (see Section~\cite{EPS:CountingCurves} for details on this).
+This is the viewpoint we will be using.
 
 
-\begin{definition}[Geodesic current definition 1]\label{def:currents-1}
+\begin{definition}[Geodesic current]\label{def:currents-1}
 We define $\GC^+(S)$, the space of oriented geodesic currents on $S$,
 to be the
 space of $\pi_1(S)$-invariant (positive) Radon measures on
 $G^{+}(S)$.
-\end{definition}
-
-Since the action of $\pi_1(S)$ on $G^+(S)$ is not discrete, by this
-definition is hard to visualize. We give alternate
-definitions that play a key role in our proofs. For a hyperbolic
-surface~$\Sigma$, let $UT\Sigma$ be the unit tangent bundle and let
-$\phi_t$ be the geodesic flow on it.
-
-\begin{definition}[Geodesic current definition 2]\label{def:currents-2}
-  We can also define oriented geodesic currents to be the (positive) finite
-  Radon measures $\mu$ on the unit tangent bundle
-$UT \Sigma$ which are invariant under the geodesic flow, in the sense
-that $(\phi_t)_*(\mu) = \mu$ for all $t\in\R$. We note that by Theorem~\ref{thm:Ulam}, it suffices to consider Borel measures, since $UT\Sigma$ is a complete separable metric space if $\Sigma$ is a compact surface.
-\end{definition}
-
-A measure as defined in Definition~\ref{def:currents-2} induces a flux
-measure on transversals to the geodesic foliation of the unit tangent
-bundle. This provides an
-alternative definition of geodesic currents, which we will exploit in the sequel.
-
-\begin{definition}[Geodesic current definition 3]\label{def:currents-3}
-A geodesic current is a family of measures $\{\mu_{\tau}\}_{\tau}$,
-where $\tau \subset UT \Sigma$ is a submanifold of the unit tangent
-bundle of real codimension 1 transverse to the geodesic
-foliation~$\mathcal{F}$, with the following invariance property:  if
-$x_1 \in \tau_1, x_2 \in \tau_2$ are two points on transversal
-submanifolds on the same leaf of $\mathcal{F}$, and $\phi \colon U_1
-\to U_2$ a holonomy diffeomorphism between neighborhoods of $x_1$ and
-$x_2$ respectively, then $\phi_{*}\mu_{\tau_1}=\mu_{\tau_2}$.
 \end{definition}
 
 
@@ -75,7 +44,7 @@ given by $\Pi(\mu)\coloneqq
 The $\pi_1(S)$-invariance of geodesic currents highly constrains the atoms (see Definition~\ref{def:atommeasure}) they can have.
 
 \begin{proposition}
-The orbit $\pi_1(S)\widetilde{\gamma}$ for $\widetilde{\gamma} \in G^+(S)$ is discrete if and only if either $p(\widetilde{\gamma})$ is a closed geodesic.
+The orbit $\pi_1(S)\widetilde{\gamma}$ for $\widetilde{\gamma} \in G^+(S)$ is discrete if and only if $p(\widetilde{\gamma})$ is a closed geodesic.
 \end{proposition}
 \begin{proof}
    If $p(\widetilde{\gamma})$ is a closed geodesic, then since the action of $\pi_1(S)$ is discrete, the orbit is discrete. On the other hand, then the $p(\widetilde{\gamma})$ is contained in some compact subset of $S - \partial S$. 

@@ -5,7 +5,8 @@
 structures embed in the space of currents, such as
 hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent} or even
  negatively curved Riemannian metrics
-\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}. In fact, the image of the embedding of negatively curved Riemannian metrics is dense, according to \cite[Lemma~2.8]{Ham99:Cocycles} and, furthermore, it consists of linearly independent vectors (as elements of the vector space of signed currents \cite[Theorem~2]{Glo19:Embedding}).
+\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}. In fact, the image of the embedding of negatively curved Riemannian metrics consists of linearly independent elements, as signed measures~\cite[Theorem~2]{Glo19:Embedding}).
+The fact that this maps from the space of certain metrics (up to equivalence) to the space of geodesic currents is known as the marked length rigidity problem.
 
 Other examples of geometric structures embedding inside the space of geodesic currents are given by
 Croke-Fathi-Feldman for non-positively curved Riemannian metrics
@@ -14,12 +15,10 @@ Hersonsky-Paulin \cite[Theorem~A]{HP97:RigidityNegCurvedCone} for
 negatively curved metrics with conical singularities,
 Duchin-Leininger-Rafi more explictly, as a subcase of the last one, give an embedding for singular Euclidean structures
 associated to quadratic differentials/half-translation structures
-\cite[Theorem~4]{DLR10:DegenerationFlatMetrics} or Bankovic-Leininger non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}.
-
-Our work does not contribute in any way (at least not obviously) to the marked spectrum rigidity problem, and therefore, we will not expand on the details of these papers. We comment though on how geodesic currents play a role in the proof. For reader interested to know more on how to construct the geodesic currents for each case, we recommend the excellent exposition \cite[Section~5]{AL17:HyperbolicStructures}.
+\cite[Theorem~4]{DLR10:DegenerationFlatMetrics} or Bankovic-Leininger non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}. The latest work in this direction is \cite{ELS21:Hyperbolic}.
 
 The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. This metric structure is usually defined up to some equivalence -as happens, for example, for Teichm\"uller space (see Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}.  Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures, but the term has also been used more generally for the geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
-The fundamental property that ties these Liouville currents to the geometric structure is the following.
+The fundamental property that ties these Liouville currents to the geometric structure via relating intersection numbers to the curve lengths with respect to that geometric structure, as follows.
 By Theorem~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}, weighted multi-curves on a surface embed in the space of geodesic currents.
 Also, in the same paper Bonahon \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}that extends the notion of geometric intersection
 number as a continuous bilinear function the space of pairs of geodesic currents.
@@ -32,12 +31,12 @@ Similarly, other notions of length of curves $\ell_{\rho}$ associated to the abo
 \]
 for any closed multi-curve $C$ in $S$. 
 Erlandsson shows that word-length with respect to simple generating sets of
-the fundamental group can also be realized as an intersection number with a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
+the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
 Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
-Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the \emph{marked spectrum rigidity problem}
+Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the marked spectrum.
 
 \begin{problem}
-Given a space of metric structures $\mathcal{D}$ on $S$ (up to some relation), and $\rho \in \mathcal{D}$,
+Given a space of metric structures $\mathcal{D}$ on $S$ (up to some equivalence relation), and $\rho \in \mathcal{D}$,
 is $\rho$ uniquely determined by $\Lambda_{\rho}$?
 \end{problem}
 By the discussion above, this is equivalent to the problem:
@@ -46,7 +45,7 @@ By the discussion above, this is equivalent to the problem:
 Let $\mathcal{D}$ be space of metric structures on $S$. Is the assignment $\mathcal{D} \to \GC(S), \rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
 \end{problem}
 
-As we have pointed out above, this problem has been solved for several types of metric structures. So, for example, one can throw out all simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type.
+As we have pointed out above, this problem has been solved for several types of metric structures. So, for example, one can throw out all simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type (see Noelle Sawyer's Ph.D. thesis).
 Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is to find a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$?
 More generally, we consider the following question.
 
@@ -65,7 +64,7 @@ Jeffrey Frazier asked Question \ref{q:intersection} and remarks how relevant it 
 In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
 Working with this intersection number is crucial for our results, although we will assume our curves to be oriented. In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise.
 In terms of geodesic currents, this means we will work with oriented geodesic currents.
-As we shall see, there are versions of intersection numbers which are oriented (detect the orientations of the intersections). See Section~\ref{sec:asymmetric}. For those, the main duality result~Theorem~\ref{thm:intersect} will not hold.
+As we shall see in section~\ref{sec:asymmetric} there are versions of intersection numbers which are asymmetric (i.e. they distinguish the orientations of the intersections). . For those, the main duality result~Theorem~\ref{thm:intersect} will not hold.
 Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$
 
 \begin{definition}\label{def:properties}
@@ -169,7 +168,7 @@ This can be seen as a duality result giving a one-to-one correspondence between 
 
 One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and Luo's work to give another characterization of measured laminations in terms of curve functionals.
 
-Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate (but are weaker than) to our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by translating the smoothing condition.
+Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate (but are weaker than) to our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
 Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$.
 
 By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).

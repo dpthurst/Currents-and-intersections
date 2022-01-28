@@ -20,18 +20,19 @@ These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1
 \end{proof}
 
 We can furthermore characterize measured laminations as a subset of curve functionals.
-\begin{proposition}
-$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies
+\begin{theorem}
+$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{max-smoothing property}:
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation}
     \label{prop:char_laminations}
-\end{proposition}
+\end{theorem}
 \begin{proof}
-Let us call equation~\eqref{eq:MLsmoothing} condition (1). Recall that Bonahon shows in \cite[Proposition~17]{Bonahon88:GeodesicCurrent} that $\mu$ is a measured lamination if and only if $i(\mu,\mu)=0$. Let us call this condition (2).
-First we show (2) implies (1).
-Suppose $\mu$ is a measured lamination, and let us assume for now $\mu$ is just a simple curve. Then Condition (1) is \cite[Lemma~1]{Thu00:GeometricIntersection}. If $\mu$ is any measured lamination, then by continuity of intersection number and density of weighted simple closed geodesics in the space of measured laminations, \cite[Lemma~1]{Thu00:GeometricIntersection} also holds, so the conclusion follows.
-On the other hand, suppose that condition (1) for a functional $f$ is satisfied, as well as additivity, homogeneity and stability. Since condition (1) implies the (unoriented) smoothing condition, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu$ so that $f(C)=i(\mu,C)$ for all curves $C$. We want to show $\mu$ is a measured lamination. 
+\begin{enumerate}
+\item \textbf{$\leftarrow$}
+Suppose $\mu$ is a measured lamination, and let us assume first that $\mu$ is a simple multi-curve. Then Equation~\ref{eq:MLsmoothing} follows by Lemma~\ref{lem:maxsmoothing}. If $\mu$ is any measured lamination, then by continuity of intersection number and density of weighted simple closed geodesics in the space of measured laminations, by Lemma~\ref{lem:maxsmoothing} also holds, so the conclusion follows.
+\item \textbf{$\rightarrow$}
+Suppose now that Equation~\ref{eq:MLsmoothing} for a functional $f$ is satisfied, as well as additivity, homogeneity and stability. Since Equation~\ref{eq:MLsmoothing} implies the (unoriented) smoothing condition, we have that, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu$ so that $f(C)=i(\mu,C)$ for all curves $C$. We want to show $\mu$ is a measured lamination. 
 First, there exists a measured lamination so that $f|_{\mathcal{S}}(s)=i(\lambda,s)$ for any simple curve $s$, by work of Feng Luo. Indeed, by \cite[Theorem~5.1]{Lu10}, it will follow that
 $f|_{\mathcal{S}}$ is an intersection number with a measured lamination $\lambda$ if for every essential subsurface $\Sigma'$ of $\Sigma$, which is either a once-holed torus or a four-holed sphere, the restriction of $f$ to $\mathcal{C}(\Sigma')$ satisfies conditions either (7), (8), or (10), (11) in the paper~\cite{Lu10}.
 
@@ -69,7 +70,8 @@ By max-smoothing, a sequence of smoothings on $\mu$ yields a simple multi-curve 
 i(\mu,\mu)=i(\mu,\mu_0)
 \]
 If $i(\lambda, \mu_0)=0$, then $i(\mu,\mu_0)=i(\mu,\mu)=0$, so we are done.
-If $i(\lambda, \mu_0) \neq 0$, then $i(\lambda, \mu) \neq 0$, since $\mu$ dominates $\mu_0$, but we know $i(\lambda, \mu)=i(\lambda,\lambda)= 0$, which is a contradiction. This finishes the proof.
+If $i(\lambda, \mu_0) \neq 0$, then $i(\lambda, \mu) \neq 0$, since $\mu$ dominates $\mu_0$, but we know $i(\lambda, \mu)=i(\lambda,\lambda)= 0$, which is a contradiction. This finishes the proof the second implication, and thus the proof of the theorem.
+\end{enumerate}
 \end{proof}
 
 \subsection{Measured laminations and $\mathbb{R}$-trees}
@@ -79,7 +81,7 @@ An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing both $x$ and $y$ isometric to the interval $[0, d(x, y)]$. This intersection is denoted
 $[x, y]$, and called an \emph{arc}. If $G$ is a group, a $G$-tree is an $\mathbb{R}$-tree together with a group action $G \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
-Given $g\in G$, $\| \|=\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$.
+Given $g\in G$, $\| g\|=\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$.
 If $g$ is elliptic, then $\| g \| =0$ (and the converse is also true).
 If $g$ is hyperbolic, then $\| g | >0$, and $g$ translates along $T_g$ by distance $\| g\|$, thus leaving $T_g$ invariant. We call $T_g$ the \emph{axis} of $g$.
 We say that $G \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
@@ -148,7 +150,39 @@ There are three cases to consider.
 
 We emphasize that condition (2) is not enough if instead of $\mathbb{R}$-trees one considers $\mathbb{Z}$-trees (see \cite[Section~4]{Sko90:GeometricAction}).
 
+We finish this section by posing a question.
+In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
 
+\begin{theorem}
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+   \[
+      e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
+   \]
+\end{theorem}
+
+
+An improvement of this theorem is given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
+
+\begin{theorem}
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+    \[
+      \frac{1}{\rho} e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho e^{-\mu([x,y]\times[z,w])} 
+   \]
+   \label{thm:ham}
+\end{theorem}
+
+The following question is interesting.
+
+\begin{question}
+What are necessary and sufficient conditions on a functional on curves $f \colon \mathcal{C}(S) \to \mathbb{R}$ in order to induce a Liouville current for some hyperbolic structure $\Sigma$? (in the sense of Theorem~\ref{thm:intersect}).
+\label{question:liouville}
+\end{question}
+
+In \cite[2.4(3)]{BIPP21:PositiveCrossratios}, it is shown that a geodesic current $\mu$ is a measured lamination if and only if $\mu([y,z]\times [w,x])\mu([x,y]\times[z,w])=0$ for all 4-tuples of ordered points $x,y,z,w \in  \partial_{\infty} \Sigma$.
+This condition is phrased in a similar way as Theorem~\ref{thm:ham}, this is, in terms of boxes of geodesics $[x,y,z,w]$ and their ``opposite'' box, $[y,z]\times [w,x]$.
+This condition translates into our condition in terms of smoothings in Theorem~\ref{prop:char_laminations}.
+A more concrete way to phrase Question~\ref{question:liouville}, is as follows:
+is there a similar way to translate the condition in Theorem~\ref{thm:ham} for Liouville currents in terms of boxes and opposite boxes as a condition in terms of smoothing triples?
 
 \subsection{Inequalities between intersection numbers}
 \label{subsec:ineqintersection}
@@ -161,11 +195,25 @@ In fact, we have something much stronger
 
 \begin{corollary}
 If $C_2$ dominates $C_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all metric lengths $g$ satisfying conditions of theorem \ref{thm:intersect} (not necessarily Riemannian).
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all metric lengths $g$ satisfying conditions of theorem~\ref{thm:intersect} (not necessarily Riemannian).
 \end{corollary}
-\begin{comment}
-The answer follows by realizing the length as a geodesic current, approximating the current by weighted multi-curves and using continuity of intersection number on currents.
-\end{comment}
+
+\begin{proof}
+First note that any length metric satisfies smoothing.
+This argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here.
+ Take a
+curve~$C$ with an
+essential self-intersection~$x$, and a representative~$\gamma$. Then $\gamma$ has
+a self-intersection point~$x'$ of the homotopy type of~$x$. If we
+consider the
+curve representative~$\gamma' \in C'$ obtained by smoothing at~$x'$, then,
+since $\ell_g$ is an infimum, we have
+\[
+  \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
+\]
+as desired. By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curve $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+\end{proof}
+
 
 %%% Local Variables:
 %%% mode: latex

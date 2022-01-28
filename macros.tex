@@ -1,0 +1,22 @@
+
+\def\mathcenter#1{%
+  \vcenter{\hbox{$#1$}}%
+}
+
+\def\graph#1{
+        \includegraphics{#1}
+}
+
+\def\mathgraph#1{
+        \mathcenter{\graph{#1}}
+}
+
+\def\mfigb#1{
+        \mathcenter{\includegraphics[trim=-1 -1 -1 -1]{#1}}
+}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "westbury"
+%%% End: 

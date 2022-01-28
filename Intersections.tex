@@ -45,6 +45,9 @@
 \usepackage[graphicx]{realboxes}
 \usepackage{bm} % Bold math symbols
 \usepackage{svg}
+
+\input{macros}
+
 \def\acts{\curvearrowright}
 
 \graphicspath{{mpdraws/}{draws/}}
@@ -175,6 +178,12 @@
 \DeclareMathOperator{\vol}{vol}
 \hyphenation{Teich-müller}
 
+%smoothing lemma appendix
+\newcommand{\SC}{\mathcal{SC}}
+\newcommand{\TC}{\mathcal{TC}}
+\DeclareMathOperator{\Sm}{Sm}
+\newcommand{\FLP}{{\textit{FLP}}} % Fathi, Laudenbach, Poenaru
+
 
 \usetikzlibrary{arrows}
 \tikzset{
@@ -185,7 +194,7 @@
 \tikzset{cdlabel/.style={execute at begin node=$\scriptstyle,execute at end node=$}}
 \tikzset{implication/.style={double equal sign distance, -implies}}
 \tikzset{biimplication/.style={double equal sign distance, implies-implies}}
-
+\input{macros}
 \begin{document}
 \title{Currents and intersections}
 \author[Martínez-Granado]{Dídac Martínez-Granado}
@@ -203,12 +212,11 @@
 \email{dpthurst@indiana.edu}
 \date{Draft of \today}
 \begin{abstract}
-We give a new definition of geodesic currents in terms of functions on curves satisfying the ``smoothing property'', i.e., non-increasing under surgery of essential crossings of curves.
+We give a new definition of geodesic currents in terms of functions on curves satisfying the ``smoothing property'', i.e., non-increasing under surgery of essential crossings of curves. As an application, we give a new characterization of measured laminations as curve functionals. 
 \end{abstract}
 \maketitle
 
 \tableofcontents
-
 
 \input{intro}
 \input{measure-thy}
@@ -219,6 +227,7 @@ We give a new definition of geodesic currents in terms of functions on curves sa
 \input{asymmetric}
 \input{applications}
 %\nocite{*}
+\input{appendix}
 \bibliographystyle{hamsalpha}
 \bibliography{Intersections}
 
