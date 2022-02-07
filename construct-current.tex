@@ -1,22 +1,23 @@
 \section{Construction of the geodesic current}
-
-\begin{proposition}\DMGtodo[inline]{Needs proofreading. DPT on it}
-  For a box $B\in \mathcal{B}$, we have $\mu_f(B) \geq 0$.
+\begin{proposition}
   \label{prop:positivity}
-  \end{proposition}
+  In the terminology of Section~\ref{sec:boxes}, for a box $B\in
+  \mathcal{B}$, we have $\mu_f(B) \geq 0$.
+\end{proposition}
 
 \begin{proof}
-  Existence is clear from Corollary~\ref{cor:additivity-limit}.
-
-  For positivity, we will to show that $[b x^n] \cup [c x^n] \reducesto [a x^nd x^n]$.
+  We will show that $[b x^n] \cup [c x^n] \reducesto [a x^nd x^n]$.
   We fix the path $ca^{-1}bx^nac^{-1}$ in the conjugacy class $[bx^n]$, based at the same basepoint as the path $cx^n$.
-  By Definition~\ref{def:righthandeddreamcatcher}, item (3), the lifts of these paths to $\tilde{\Sigma}$ are linked for $n$ large enough, as discussed in Remark~\ref{rmk:largeenough}.
- So, for large enough $n$, there is an essential crossing between $[bx^n]$ and $[cx^n]$ that we can resolve.
+  By Definition~\ref{def:righthandeddreamcatcher},
+  condition~\ref{item:box-diags-cross}, the lifts of these paths to
+  $\tilde{\Sigma}$ are linked for $n$ large enough. (See
+  Remark~\ref{rmk:largeenough}.)
+% So, for large enough $n$, there is an essential crossing between $[bx^n]$ and $[cx^n]$ that we can resolve.
   We thus get
   \[
      [bx^n][cx^n] = [ca^{-1}bx^nac^{-1}][cx^n] \searrow [ca^{-1}bx^nac^{-1}cx^n] = [dx^nax^n]
   \]  
-  where in the first equality we used conjugay of paths, in the second step we applied a smoothing to the essential crossing, and in the last equality we used item (2) in  Definition~\ref{def:righthandeddreamcatcher}.
+  where in the first equality we used conjugacy of paths, in the second step we applied a smoothing to the essential crossing, and in the last equality we used condition~\ref{item:box-close} in  Definition~\ref{def:righthandeddreamcatcher}.
   
    Thus, by smoothing property of $f$, we obtain
 \[
@@ -28,7 +29,8 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
   \[
   \mu_f(B_{p,q,r,s}) \geq 0. \qedhere
   \]
-  
+
+  \DPTtodo{HERE}
 
  \begin{figure}
 \centering{

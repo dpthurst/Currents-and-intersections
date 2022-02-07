@@ -233,13 +233,16 @@ $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)$ to avoid the
 diagonal. For the proofs to go through easily, we will impose more
 conditions on the configurations of these lifts.
 
+\DPTtodo[inline]{On reflection, I'm not comfortable with the term
+  ``dreamcatcher'' without consultation with people from a culture
+  that uses them}
 \begin{definition}[Dreamcatcher]
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
-\item $a c^{-1} d b^{-1} = 1$;
-\item $a,b,c,d$ cross $x$ to the right; and
-\item for sufficiently large~$n$,
+\item\label{item:box-close} $a c^{-1} d b^{-1} = 1$;
+\item\label{item:box-edges-cross} $a,b,c,d$ cross $x$ to the right; and
+\item\label{item:box-diags-cross} for sufficiently large~$n$,
   $dx^naC
   = cAbx^naC$ crosses
   $cx^n$ to the right.
@@ -280,7 +283,7 @@ cannot intersect each other.
 \begin{remark}
 %\begin{enumerate} 
 %\item
-The reader might wonder why in condition (3) we require the condition
+The reader might wonder why in condition~\ref{item:box-diags-cross} we require the condition
   ``for $n$ large enough''. It turns out that requiring the condition
   for all $n$ is too restrictive, and while it does happen for some
   configurations of lifts, such as those of Type 1,
