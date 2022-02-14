@@ -355,17 +355,20 @@ Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedher
 \subsection{$\mu_{f}$ recovers $f$ on curves}
 \label{sec:recovery}
 
-\DPTtodo{NEXT}
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
+\DPTtodo{What is $x$? Maybe $x_+$ is meant? Of course it can be an
+  arbitrary point distinct from $y_+,y_-$, but maybe we want it to be
+  on a particular side of $\wt y$}
 If $y$ is the hyperbolic element representing a closed curve $C \subset \Sigma$ and $\mu$ is a geodesic current, since $(y_+,y_-) \times [x,y \cdot x)$ is a Borel fundamental domain for the $\langle y \rangle$-action on
 $(\gamma_+,\gamma_-) \times (x,y \cdot x)$, the intersection of $C$ with $\mu$ can be computed as
 \[
 i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \]
+\DPTtodo{Seems like an odd reference, this goes back to Bonahon, no?}
 (see \cite[Lemma~4.4]{MZ19:PositivelyRatioed} for details).
 
-\begin{proposition}\DMGtodo[inline]{This requires edit, it is quite rough.}
+\begin{proposition}
 For $C$ a closed curve, we have
 \[
 i(\mu_f,C)=f(C).
@@ -373,7 +376,8 @@ i(\mu_f,C)=f(C).
 \label{prop:recoverintersection}
 \end{proposition}
 \begin{proof}
-First we will show that we can use boxes of the type $B_{a,b,c,d,\tilde{x}}$ to construct a window containing a unique lift of every geodesic intersecting $C=[y]$ transversally, for $y \in \pi_1(S,*)$.
+  Fix a representative $y \in \pi_1(S,*)$ for the conjugacy class~$C$.
+  First we will show that we can use boxes of the type $B_{a,b,c,d,\tilde{x}}$ to construct a window containing a unique lift of every geodesic intersecting $C=[y]$ transversally, for $y \in \pi_1(S,*)$.
 Second, we'll show that computing intersection number of that fundamental domain yields the same value as $f([y])$.
   \DPTtodo[inline]{$p,q$ are not elements of $\pi_1$; rather they are paths
     from $*'$ to $*$. Is $r=q$? Is there any assumption about right-handed
