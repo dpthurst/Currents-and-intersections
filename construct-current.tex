@@ -447,7 +447,7 @@ Second, we'll show that computing intersection number of that fundamental domain
       \begin{aligned}
     &= \lim_{n\to\infty} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,py^{-n}q})  \\
     &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}rx^{m}][py^{-n-1}qx^{m}])-f([py^{n}rx^{m}][py^{-n}qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([py^{-n-1}]) + f([qx^{m}])\\
+    &= \frac{1}{2}\lim_{m,n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([py^{-n-1}]) + f([qx^{m}])\\
     &\qquad-f([py^{n}]) - f([rx^{m}]) - f([py^{-n}]) - f([qx^{m}]) \\
     &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) +  f([py^{-n-1}]) -f([py^{n}]) - f([py^{-n}])  \\
     &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
@@ -456,8 +456,18 @@ Second, we'll show that computing intersection number of that fundamental domain
     &=f([y])
       \end{aligned}
     \end{multline*}
-      The first equality follows by the fact that the boxes defined above converge from below to $(\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)$ as $n \to \infty$. The second equality is by definition of the measure $\mu_f$ on boxes.
-      For the third, we use~\ref{prop:finalfamily1} to break up the limit into factors. In the fourth equality, we can cancel out terms, and in the fifth add and subtract the terms $f([y^{n+1}])$ and $f([y^{-n-1}])$. In the fifth equality, use Corollary~\ref{cor:additivity-limit}, and cancel out equivalent terms. Finally, use the symmetry property of $f$ to obtain the result.
+      The first equality follows by the fact that the boxes defined
+      above converge from below to $(\gamma_-,\gamma_+) \times [x_-,y
+      \cdot x_-)$ as $n \to \infty$. The second equality is by
+      definition of the measure $\mu_f$ on boxes.
+      For the third, we use Proposition~\ref{prop:join-split-alg} to
+      break up the limit into factors. In the fourth equality, we
+      restrict to the diagonal in the double limit and
+      cancel out terms, and in the fifth we add and subtract the terms
+      $f([y^{n+1}])$ and $f([y^{-n-1}])$. In the fifth equality, use
+      Corollary~\ref{cor:additivity-limit}, and cancel out equivalent
+      terms. Finally, use the symmetry property of $f$ to obtain the
+      result.
     \end{enumerate}
 \end{proof}
 
