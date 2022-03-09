@@ -68,12 +68,14 @@ $q_2 \langle x \rangle$ respectively, they are related by the isometry
 \begin{equation}
   \ell_2 = q_2 q_1^{-1} \cdot \ell_1
 \end{equation}
-but the geometric relation between the two lifts (up to the
-$\pi_1(S,*)$ action) \DMGtodo{which action? left or right?} is captured instead by the double coset
+but the geometric relation between the two lifts (up to the left
+$\pi_1(S,*)$ action) is captured instead by the double coset
 \begin{equation}\label{eq:double_coset}
   \langle x \rangle q_1^{-1} q_2 \langle x \rangle.
 \end{equation}
 
+\subsection{Right-handed crossings}
+\label{subsec:rhcrossings}
 In order to guarantee that crossings are essential, we pick out one
 particular type of relation between lifts.
 
@@ -137,6 +139,8 @@ As a corollary we have the following.
   right. As a result, so does $ax^nbx^k$ for any $n,k \in \Z$.
   \label{lem:rhs_prod}
 \end{lemma}
+
+\DMGtodo[inline]{Add new lemmas about RH crossings here. Lemma above  is a specific case of the more general lemmas we have discussed recently.}
 
 \subsection{Right-handed boxes}
 \label{sec:boxes}
@@ -236,7 +240,8 @@ conditions on the configurations of these lifts.
 \DPTtodo[inline]{On reflection, I'm not comfortable with the term
   ``dreamcatcher'' without consultation with people from a culture
   that uses them}
-\begin{definition}[Dreamcatcher]
+  \DMGtodo[inline]{changed to right-handed lift system}
+\begin{definition}[RHS lift system]
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
@@ -247,7 +252,7 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
   = cAbx^naC$ crosses
   $cx^n$ to the right.
 \end{enumerate}
-Then we call the datum $(a,b,c,d)$ a \emph{right-handed dreamcatcher}.
+Then we call the datum $(a,b,c,d)$ a \emph{right-handed lift system}.
 As explained above, this determines a $\pi_1(S)$-orbit of windows. In
 terms of the alternative data $[p_1,q_1,p_2,q_2]$ for a window (rather
 than for an orbit), condition~(1) is automatic and the others
@@ -259,9 +264,9 @@ become
 \end{enumerate}
 \end{definition}
 See Figure~\ref{fig:rhbox} for examples of
-dreamcatchers, and Figure~\ref{fig:box4} for non-examples.
+RH lift systems, and Figure~\ref{fig:box4} for non-examples.
  We
-distinguish three types of dreamcatchers: type 1 has
+distinguish three types of RH lift systems: type 1 has
 no nested lifts; type 2 has one pair of nested lifts with the same
 orientation; and type 3 has two pairs of nested lifts of $x$, each
 pair with the same orientation.
@@ -276,7 +281,7 @@ cannot intersect each other.
 \subfloat[Type 2]{\resizebox{60mm}{!}{\svgfig{box}}}\\
 \subfloat[Type 3]{\resizebox{60mm}{!}{\svgfig{box4}}}\qquad
 \caption{Right handed boxes of Type 1, Type 2 and Type 3, induced by
-  different choices of dreamcatchers and lift of $x$.}
+  different choices of RH lift systems and lift of $x$.}
 \label{fig:rhbox}
 \end{figure}
 
@@ -302,13 +307,13 @@ The reader might wonder why in condition~\ref{item:box-diags-cross} we require t
 \end{remark}
 
 \begin{definition}\label{def:dreamcatcher-box}
-Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed dreamcatcher given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
+Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed lift system given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
 B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
 \]
 
 By construction, a different choice of lift $\tilde{x}$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by translation by some element in $\pi_1(S)$.
-On the other hand, the dreamcatcher datum $(a,b,c,d)$
+On the other hand, the RH lift system $(a,b,c,d)$
 determines a $\pi_1(S)$-orbit of boxes that we will denote
 $[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
 draw attention to a concrete representative of the orbit or to the
@@ -318,7 +323,7 @@ We will denote by $\mathcal{B}$ the set of right-handed boxes.
 \end{definition}
 
 
-Given a right-handed dreamcatcher $(a,b,c,d)$ and a choice of lift $\tilde{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
+Given a right-handed lift system $(a,b,c,d)$ and a choice of lift $\tilde{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
 Note how the lifts are non-intersecting, since $[x]$ is simple, and these orientation of the lifts are always right-handed.
 \begin{example}
 The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
@@ -363,7 +368,7 @@ right-handed box so that for some $B \in [B]_{a,b,c,d}$, with
 $B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in
 B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in
 B_{\epsilon}(s)$.
-\label{prop:density}
+\label{prop:density} \DMGtodo[inline]{This proof needs to verify the additional right handed crossing conditions.}
 \end{proposition}
 \begin{proof}
    Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
@@ -403,7 +408,7 @@ then a measure) is automatically $\pi_1(S)$-invariant.
 
 We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
 
-\subsubsection{Smoothing lemmas}
+\subsection{Fundamental smoothing lemmas}
 
 We will need a key proposition relating several curves by smoothing
 essential crossings.
@@ -416,8 +421,6 @@ essential crossings.
 }
 \end{figure}
 
-\DPTtodo[inline]{Prop.\ statement simplified. More precise statements
-  appear in proof, but I don't know that we need any of them}
 \begin{proposition}\label{prop:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
 crossing $x$ to the right. Then there is a number $s \ge 0$
@@ -438,11 +441,7 @@ We will also use this lemma in Section~\ref{sec:recovery} to show
 $\mu_f$ recovers the value of $f$ on curves, so we consider cases when
 $x$ is not simple.
 
-\DPTtodo[inline]{Maybe add figure of $(m,n)$ or $(m-n,r)$ plane
-  showing allowed and disallowed regions for these smoothings. DPT
-  notes \texttt{2021-05-10 \#1}. But may be less necessary with
-  simplified statement?}
-  \DMGtodo{added}
+
 \begin{proof}
   We first show that we can choose lifts for which the crossing is
   essential. Use the band model, centered on~$\wt{x}$. We will
@@ -458,8 +457,7 @@ $x$ is not simple.
   See Figure~\ref{fig:abcrossings}; ``left'' and ``right'' will refer
   to the order on the boundary (minus $x^\pm$) of that figure.
 
- \DPTtodo[inline]{Redo Figure~\ref{fig:abcrossings} with new notation}
- \DMGtodo[inline]{added}
+
   \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
@@ -536,7 +534,6 @@ $x$ is not simple.
   In the proof of Proposition~\ref{prop:join-split-geom}, the only
   place we used an unoriented smoothing was in the proof of
   Eq.~\eqref{eq:cross-red3}.
-  \DPTtodo{Verify this claim}
   In fact, this is the only place we use unoriented smoothings in the paper.
 \end{remark}
 
