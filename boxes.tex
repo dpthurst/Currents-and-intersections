@@ -1,8 +1,7 @@
 \section{Boxes and their measures}
 
-\subsection{Actions on $\H^2$}
+\subsection{Left vs Right actions of $\pi_1(S)$}
 \label{sec:actions}
-\DPTtodo{Revisit section title}
 
 To fix conventions, we briefly recall elementary but slightly
 confusing facts about actions of $\pi_1(S,\ast)$ on the universal
@@ -92,7 +91,7 @@ particular type of relation between lifts.
   corresponding to lifts of $a$ and $x$ to the universal cover, and
   let $a^{\pm},x^{\pm} \in \bdy \wt S$ be their initial and final
   endpoints. We require that the four points $a^-,x^-,a^+, x^+$
-  occur on the circle at infinity in that counterclockwise cyclic order. Otherwise, we say it is \emph{left-handed}.
+  occur on the circle at infinity in that counterclockwise cyclic order. If they appear in clockwise order we say it is \emph{left-handed}.
   \label{def:righthandedcrossing}
 \end{definition}
 
@@ -120,6 +119,8 @@ be helpful to look just at two different lifts of~$x$.
   basepoints on $\wt x$ and $a \cdot \wt x$, and add arrows. Also the
   tildes are not agreeing. Maybe also add the lift $\wt a$ to better
   illustrate N-S dynamics}
+  \DMGtodo[inline]{This lemma will be a corollary of the more general arguments on right-handed crossings we have discussed recently. I think the figure will be replaced by the illustration of the more general arguments.}
+  \DMGtodo[inline]{Endpoints of different lifts of $\tilde{x}$ can't be anti-parallel, since all elements are hyperbolic (we are dealing with closed surfaces)}
   \begin{figure}
 \resizebox{60mm}{!}{\svgfig{righthandedcrossing}}
 \caption{Determining a right-handed crossing between $a$ and $x$ by looking at the relative position of two lifts of $x$ in the universal cover.}
@@ -237,10 +238,7 @@ $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)$ to avoid the
 diagonal. For the proofs to go through easily, we will impose more
 conditions on the configurations of these lifts.
 
-\DPTtodo[inline]{On reflection, I'm not comfortable with the term
-  ``dreamcatcher'' without consultation with people from a culture
-  that uses them}
-  \DMGtodo[inline]{changed to right-handed lift system}
+
 \begin{definition}[RHS lift system]
 \label{def:righthandeddreamcatcher}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
@@ -272,10 +270,10 @@ orientation; and type 3 has two pairs of nested lifts of $x$, each
 pair with the same orientation.
 \DPTtodo{Maybe need some words on why, e.g., lifts can't be
   anti-parallel. But maybe not, since these don't actually arise in
-  the proofs, right?}
+  the proofs, right?}\DMGtodo[inline]{Do you mean anti-parallel nested lifts? That would not be RH system, right? Or do you mean asymptotic lifts? Those can't arise since all group elements are hyperbolic.}
 Note that since $x$ is simple, lifts
 cannot intersect each other.
-\DMGtodo[inline]{Do we need to consider more cases, since we are also allowing $x$ to be non-simple in some arguments?}
+
   \begin{figure}
 \subfloat[Type 1]{\resizebox{60mm}{!}{\svgfig{box1}}}\qquad
 \subfloat[Type 2]{\resizebox{60mm}{!}{\svgfig{box}}}\\
@@ -354,9 +352,8 @@ These are still enough to approximate any box.
   zero: the only closed geodesic with an endpoint starting at the base
   of any of the involved spikes is a lift of~$x$, and by definition of
   right-handed box, it is not contained in the spikes. This choice is
-  more convenient for the proofs \DMGtodo[inline]{Write more precisely
-    why this choice is more convenient for proofs after we finish
-    proof reading the proof. This is related to the two types of final families.}
+  more convenient for the proofs.
+  \DMGtodo[inline]{Explain choice of endpoints of boxes}
 \end{remark}
 
 \begin{proposition}

@@ -199,7 +199,7 @@ and
 \end{proposition}
 \begin{proof}
 \begin{itemize}
-    \item Obvious by construction. \DMGtodo{This uses right handed. What details should we add?}
+    \item 
     We know:
     \begin{itemize}
         \item  $p_i q_i$ cross $x$ to the right
@@ -211,7 +211,7 @@ and
         \item $p_2 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.   
             \item  $q_1 x^k q_1^{-1} q_2x^n p_1$ cross $q_1x^n p_2$ to the right.
     \end{itemize}
-    \DMGtodo[inline]{Does not follow directly from Lemma 4.3}
+    \DMGtodo[inline]{Does not follow directly from Lemma 4.3. Probably needs full generality of right handed crossing statements.}
     \item 
     We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$.
     We will first go from the box notation to the orbit notation, since the latter is better suited for the definition of $\mu_f$.
@@ -368,16 +368,11 @@ Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedher
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
-\DPTtodo{What is $x$? Maybe $x_+$ is meant? Of course it can be an
-  arbitrary point distinct from $y_+,y_-$, but maybe we want it to be
-  on a particular side of $\wt y$}
-If $y$ is the hyperbolic element representing a closed curve $C \subset \Sigma$ and $\mu$ is a geodesic current, since $(y_+,y_-) \times [x,y \cdot x)$ is a Borel fundamental domain for the $\langle y \rangle$-action on
-$(\gamma_+,\gamma_-) \times (x,y \cdot x)$, the intersection of $C$ with $\mu$ can be computed as
+If $y$ is a hyperbolic element representing a closed curve $C \subset \Sigma$, let $x \in \partial_{\infty} \wt{\Sigma} - \{ y_-, y_+\}$ so that $y_-, x, y \cdot x, y_+$ are in cyclic order. Then $(y_+,y_-) \times [x,y \cdot x)$ is a Borel fundamental domain for the $\langle y \rangle$-action on $G(\wt{\Sigma})$, and  the intersection of $C$ with a geodesic current $\mu$ can be computed as
 \[
 i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \]
-\DPTtodo{Seems like an odd reference, this goes back to Bonahon, no?}
-(see \cite[Lemma~4.4]{MZ19:PositivelyRatioed} for details).
+(see \cite[Lemma~4.4]{MZ19:PositivelyRatioed}, cf. \cite[Page~153]{Otal90:SpectreMarqueNegative} for details).
 
 \begin{proposition}
 For $C$ a closed curve, we have
