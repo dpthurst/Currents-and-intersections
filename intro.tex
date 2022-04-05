@@ -33,7 +33,7 @@ for any closed multi-curve $C$ in $S$.
 Erlandsson shows that word-length with respect to simple generating sets of
 the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
 Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
-Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the marked spectrum.
+Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the marked spectrum. \DMGtodo[inline]{Is this motivation good? We don't say anything about length spectrum in this paper, though}
 
 \begin{problem}
 Given a space of metric structures $\mathcal{D}$ on $S$ (up to some equivalence relation), and $\rho \in \mathcal{D}$,
@@ -56,7 +56,7 @@ Under which conditions can a functional on curves $f \colon\mathbb{R}\mathcal{C}
 
 
 Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). In this case, the functions are defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}.
-Jeffrey Frazier asked Question \ref{q:intersection} and remarks how relevant it is for the study of spectral rigidity problems \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
+See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
 
 \subsection{Main results}
 %\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
@@ -67,62 +67,114 @@ In terms of geodesic currents, this means we will work with oriented geodesic cu
 As we shall see in section~\ref{sec:asymmetric} there are versions of intersection numbers which are asymmetric (i.e. they distinguish the orientations of the intersections). . For those, the main duality result~Theorem~\ref{thm:intersect} will not hold.
 Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$
 
+
 \begin{definition}\label{def:properties}
-  Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a curve functional defined on weighted multi-curves. In the following, we define several properties that $f$ might satisfy.
+  For $S$ a compact topological surface without boundary,
+  let
+  $f \colon \Curves^+(S) \to \R$ be a
+  function defined on the space of oriented multi-curves,
+  not-necessarily-simple oriented curves.
+  We will also refer to $f$ as a \emph{curve functional} for short.
+  (\emph{Functional} means that it takes values in scalars; it is not
+  assumed to be linear.)
+  We will also refer to \emph{unoriented} or \emph{weighted} curve
+  functionals for real-valued functions defined on the appropriate
+  type of multi-curves.
+  We define several
+  properties that $f$ might satisfy.
 
   \begin{itemize}
-  \item \textbf{(Smoothing)}  Let $C$~be an oriented curve on~$S$, and
+    \item \textbf{Quasi-smoothing:} There is a constant $R\ge 0$ with the
+      following property. Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
-    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
     have
+    \begin{equation}\label{eq:quasismoothing}
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
+    \end{equation}
+    See Definition~\ref{def:essential-crossing} for ``essential
+    crossing''. Loosely, it is a crossing that cannot be removed by homotopy. See Definition~\ref{def:smoothing} for ``oriented smoothing''.
+  \item \textbf{Smoothing:} We take $R=0$ in the above definition of quasi-smoothing:
     \begin{equation}\label{eq:smoothing}
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
     \end{equation}
-  \item \textbf{(additive union)}  Let $C_1$ and~$C_2$ be two curves
+  \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
     on~$S$. Then
+    \begin{equation}\label{eq:union-convex}
+      f(C_1 \cup C_2) \le f(C_1) + f(C_2).
+    \end{equation}
+  \item \textbf{Additive union:} The inequality in convex union
+    becomes an equality:
     \begin{equation}\label{eq:union-add}
       f(C_1 \cup C_2) = f(C_1) + f(C_2).
     \end{equation}
   \end{itemize}
 \end{definition}
 
+Natural examples curve lengths coming from length metric structures on the surface, word-lengths, stable lengths or extremal lengths.
+See~\cite{MGT21:Smoothings} for more details and examples.
+
 \begin{definition}
-  For $C$ a curve, $nC$ is the curve that consists of n parallel
-  copies of $C$ (so with $n$ times as many components), and
-  $C^n$ is the curve with as many components as~$C$, in which each
-  component of~$C$ is covered by an $n$-fold cover, i.e. if $g \in \pi_1(S,x)$ represents $C$, $g^n$ represents $C^n$.
+  For $C$ an oriented multi-curve, $nC$ is the oriented multi-curve
+  that consists of $n$~parallel
+  copies of~$C$ (so with $n$ times as many components or,
+  in the context of weighted oriented multi-curves,
+  with weights multiplied by~$n$), and
+  $C^n$ is the oriented multi-curve with as many components as~$C$, in which each
+  component of~$C$ is covered by an $n$-fold cover. That is, if
+  $g \in \pi_1(S,x)$ represents $C$, $g^n$ represents~$C^n$.
+\end{definition}
+
+\begin{definition}\label{def:homogeneous-stable}
+     Let $f$ be a curve
+     functional and let $n>0$ be an
+     integer. We define some
+     properties $f$ might satisfy:
+     \begin{itemize}
+     \item \textbf{Homogeneity:} For an arbitrary oriented multi-curve~$C$,
+       \begin{equation}
+         \label{eq:homogeneous}
+         f(nC) = nf(C).
+       \end{equation}
+     \item \textbf{Stability:} For an arbitrary oriented multi-curve~$C$,
+       \begin{equation}
+         \label{eq:stable}
+         f(C^n) = f(nC)
+       \end{equation}
+     \end{itemize}
+\end{definition}
+
+We note that additive union implies homogeneity.
+
+
+\begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
+In decreasing order of generality, we consider the following families of symmetric curve functionals.
+\begin{enumerate}
+    \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric curve functionals satisfying $R$-quasi-smoothing, convex union, stability and homogeneity. We call this the space of \emph{$R$-quasi-convex functionals}.
+    \item Define $\QConvex(S) \coloneqq \cup_{R \in \mathbb{R}} \QConvex_R(S)$, the space of \emph{quasiconvex curve functionals}.
+    \item Let $\Convex(S) \coloneqq \QConvex_{0}(S)$ be the space of \emph{convex curve functionals}.
+    \item Let $\AConvex(S)$ be the space of \emph{additive convex curve functionals}, i.e., the subset of $\Convex(S)$ of curve functionals that moreover satisfy the additive property.
+\end{enumerate}
+As we point out below, for any $R>0$, we have the following strict inclusions
+\[
+\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S).
+\]
 \end{definition}
 
 
 
-\begin{definition}\label{def:homogeneous}
-     Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves . We say
-  that $f$ is \emph{homogeneous} if it satisfies the following
-  scaling property for an arbitrary curve~$C$:
-  \begin{equation}
-    \label{eq:homogeneous}
-    f(nC) = nf(C).
-  \end{equation}
-\end{definition}
+\begin{remark}
+Curve functionals need not be positive. For example, the signed Lorentzian length or Margulis invariant~\cite{GM00:FlatLorentzian}) can take both positive/negative values. In fact any curve functional in $\Convex(S)$ is positive (see~\ref{cor:positivity}). We do not know of any curve functional in $\QConvex(S)$ that takes negative values. \DMGtodo[inline]{Do we have any such example?}
+\end{remark}
 
-\begin{definition}\label{def:stable}
-     Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a functional defined on weighted multi-curves. We say
-  that $f$ is \emph{stable} if it satisfies the following
-   property for an arbitrary curve~$C$:
-  \begin{equation}
-    \label{eq:stable}
-    f(C^n) = f(nC)
-  \end{equation}
-\end{definition}
-Note that, if $f$ satisfies smoothing, then $f(nC) \le f(C^n)$.
-The stability and homogeneity conditions mean that these two inequalities are
-equalities, respectively.
+In previous work, the authors proved the following result.
 
+\begin{mainthm}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
+   Let $f \in \QConvex(S)$. Then there is a unique continuous homogeneous function
+  $\bar{f} \colon \GC^+(S) \to \R_{\ge 0}$ that extends~$f$.
+\end{mainthm}
 
-The four conditions of smoothing, additivity, stability and homogeneity are obviously necessary conditions for a functional on curves satisfying the property of Question~\ref{q:intersection}.
-Indeed, stability is needed for any such extension to be well-defined, since by definition of geodesic current, $C^n$ and $nC$ are represented by the same current.
-On the other hand, homogeneity, additivity and smoothing are obviously satisfied by intersection number w.r.t a given current.
-
+We note that the four conditions of smoothing, additivity, stability and homogeneity, defining the space $\AConvex(S)$ are obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves(S) \to \mathbb{R}$, for $\mu$ a geodesic current.
 Many natural notions of length do satisfy all these four properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We list them here, along with the appropriate references.
 
 \begin{enumerate}
@@ -138,18 +190,13 @@ Many natural notions of length do satisfy all these four properties and they hav
     \item Translation lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
 \end{enumerate}
 
-The cited results cited above show the following properties for these currents:
-\begin{enumerate}
-    \item They are filling currents. Indeed, any full support geodesic current is filling. The conical metric exceptions above are also filling since, for example, conical lengths are Lipschitz equivalent to the hyperbolic length, and therefore lower bounded by a multiple of the hyperbolic length, which is positive for any geodesic current.
-    \item For each $T>0$, the set $N_{T}^{\rho} \coloneqq \{ C \in \mathcal{C}(S) \bigm\vert \ell_{\rho}(C) \leq T\}$ is finite. This follows since the associated current is filling, and thus the $\ell_{\rho}$ is a positive, homogeneous and continuous function on currents. Therefore, $N_{T}^{\rho}$ is compact. Since the set of non-weighted multi-curves $\mathcal{C}(S)$ is discrete inside the space of currents, $N_{T}^{\rho}$ is finite.
-\end{enumerate}
-
 On the other hand, not all functions on curves satisfy the smoothing, additivity, homogeneity and stability conditions. 
 
 \begin{enumerate}
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
-    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}. The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}).
-    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
+    It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
+    \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
+    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). This is an example of a curve functional which is not in $\QConvex(S)$, even though it does extend to geodesic currents by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -157,7 +204,7 @@ In view of all this, it is natural to ask which additional conditions one needs 
 It turns out that one doesn't need more conditions.
 
 \begin{mainthm}\label{thm:intersect}
- Let $f \colon \mathbb{R}\mathcal{C}(S) \to \R_{\ge 0}$ be a symmetric functional defined on weighted multi-curves satisfying smoothing, additive union, homogeneity and stabilty properties. Then there exists a unique unoriented geodesic current $\mu_f$ such that the extension $\wt{f}\colon \mathcal{GC}(S) \to \mathbb{R}$ satisfies $\wt{f}(\alpha)=i(\alpha,\mu_f)$.
+ For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stabilty properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 \end{mainthm}
 
 \begin{remark}
