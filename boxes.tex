@@ -1,4 +1,5 @@
 \section{Boxes and their measures}
+\DPTtodo[inline]{Section is now mistitled, maybe split out first parts}
 
 \subsection{Left vs Right actions of $\pi_1(S)$}
 \label{sec:actions}
@@ -141,7 +142,40 @@ As a corollary we have the following.
   \label{lem:rhs_prod}
 \end{lemma}
 
-\DMGtodo[inline]{Add new lemmas about RH crossings here. Lemma above  is a specific case of the more general lemmas we have discussed recently.}
+\DPTtodo[inline]{New lemmas here. Is notation consistent? Eg, we
+  haven't referred to $\Isom(\H^2)$ before. Introduce notation $\vec{a}$}
+\begin{lemma}
+  Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
+  $a^{-1}b$ are both hyperbolic. Then exactly one of the pairs
+  $(\vec{a},\vec{b})$; $(\vec{ab},\vec{ba})$; and
+  $(\vec{aB},\vec{Ab})$ cross. More precisely,
+  one and only one of the following possibilities hold.
+  \begin{enumerate}[label=(\Roman*)]
+  \item $(\vec{a}, \vec{b})$ cross, $(\vec{ab},\vec{ba})$ are
+    parallel, and $(\vec{aB},\vec{Ba})$ are parallel.
+  \item $(\vec{a},\vec{b})$ are parallel, $(\vec{ab},\vec{ba})$ cross,
+    and $(\vec{aB},\vec{Ba})$ are parallel.
+  \item $(\vec{a},\vec{b})$ are anti-parallel, $(\vec{ab},\vec{ba})$
+    are parallel, and $(\vec{aB},\vec{Ba})$ are parallel.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  Note that the actions of $a$ and $b$ on geodesics act by conjugation
+  on the underlying word. Specifically, this means that we have
+  \[
+    \begin{tikzpicture}[x=1.5cm]
+      \node (ba) at (0,0) {$\vec{ba}$};
+      \node (ab) at (1,0) {$\vec{ab}$};
+      \node (Ba) at (3,0) {$\vec{Ba}$};
+      \node (aB) at (4,0) {$\vec{aB}$};
+      \draw [->,bend left=15] (ba) to node[above,cdlabel]{a} (ab);
+      \draw [->,bend left=15] (ab) to node[below,cdlabel]{b} (ba);
+      \draw [->,bend left=15] (Ba) to node[above,cdlabel]{a} (aB);
+      \draw [->,bend right=15] (Ba) to node[below,cdlabel]{b} (aB);
+    \end{tikzpicture}
+  \]
+\end{proof}
 
 \subsection{Right-handed boxes}
 \label{sec:boxes}
