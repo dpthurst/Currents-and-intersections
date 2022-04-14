@@ -147,34 +147,60 @@ As a corollary we have the following.
 \begin{lemma}
   Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
   $a^{-1}b$ are both hyperbolic. Then exactly one of the pairs
-  $(\vec{a},\vec{b})$; $(\vec{ab},\vec{ba})$; and
-  $(\vec{aB},\vec{Ab})$ cross. More precisely,
+  $(\ora{a},\ora{b})$; $(\ora{ab},\ora{ba})$; and
+  $(\ora{aB},\ora{Ab})$ cross. More precisely,
   one and only one of the following possibilities hold.
   \begin{enumerate}[label=(\Roman*)]
-  \item $(\vec{a}, \vec{b})$ cross, $(\vec{ab},\vec{ba})$ are
-    parallel, and $(\vec{aB},\vec{Ba})$ are parallel.
-  \item $(\vec{a},\vec{b})$ are parallel, $(\vec{ab},\vec{ba})$ cross,
-    and $(\vec{aB},\vec{Ba})$ are parallel.
-  \item $(\vec{a},\vec{b})$ are anti-parallel, $(\vec{ab},\vec{ba})$
-    are parallel, and $(\vec{aB},\vec{Ba})$ are parallel.
+  \item $(\ora{a}, \ora{b})$ cross, $(\ora{ab},\ora{ba})$ are
+    parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
+  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ab},\ora{ba})$ cross,
+    and $(\ora{aB},\ora{Ba})$ are parallel.
+  \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
+    are parallel, and $(\ora{aB},\ora{Ba})$ cross.
   \end{enumerate}
 \end{lemma}
+
+In particular, if $g,h,gh,gH \in \pi_1(S)$ are all non-trivial, the
+hypotheses of the theorem are satisfied, and we see that exactly one
+of the multi-curves $[g][h]$, $[gh]$, and $[gH]$ has an essential
+crossing at the basepoint.
 
 \begin{proof}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
   on the underlying word. Specifically, this means that we have
   \[
     \begin{tikzpicture}[x=1.5cm]
-      \node (ba) at (0,0) {$\vec{ba}$};
-      \node (ab) at (1,0) {$\vec{ab}$};
-      \node (Ba) at (3,0) {$\vec{Ba}$};
-      \node (aB) at (4,0) {$\vec{aB}$};
+      \node (ba) at (0,0) {$\ora{ba}$};
+      \node (ab) at (1,0) {$\ora{ab}$};
+      \node (Ba) at (3,0) {$\ora{Ba}$};
+      \node (aB) at (4,0) {$\ora{aB}$.};
       \draw [->,bend left=15] (ba) to node[above,cdlabel]{a} (ab);
       \draw [->,bend left=15] (ab) to node[below,cdlabel]{b} (ba);
       \draw [->,bend left=15] (Ba) to node[above,cdlabel]{a} (aB);
       \draw [->,bend right=15] (Ba) to node[below,cdlabel]{b} (aB);
     \end{tikzpicture}
   \]
+  The hyperbolic elements $a$ and~$b$ have north-south dynamics. Using
+  this in the three cases depending on the relation of $\ora{a}$ and
+  $\ora{b}$ (crossing, parallel, or anti-parallel), we have the
+  following.
+  \begin{enumerate}[label=(\Roman*)]
+  \item If $\ora{a}$ and $\ora{b}$ cross, then we claim that the
+    endpoints of the various geodesics must be laid out like this:
+    \[
+      \mfig{hyp-crossings-0}
+    \]
+    To see this, note that $a$ and $b$ interchange $ab^-$ and $ba^-$,
+    so these two endpoints must lie in the portion of $\bdy \H^2$ in
+    which $a$ and $b$ move in opposite directions; these are the
+    intervals $(a^+,b^+)$ or $(a^-,b^-)$ (in each case taking the
+    counterclockwise interval). Furthermore, by consider the action of
+    (say) $ba$ on $a^-$, we see that $ba$ necessarily has NS dynamics
+    with a repelling fixed point in $(a^-,b^-)$ and an attracting
+    fixed point in $(a^+,b^+)$, giving the placement of $(ba)^\pm$ and
+    $(ab)^\pm$. By replacing $b$ with $B$, we can similarly place
+    $(aB)^\pm$ and $(Ba)^\pm$.
+  \end{enumerate}
 \end{proof}
 
 \subsection{Right-handed boxes}
