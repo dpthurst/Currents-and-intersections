@@ -53,6 +53,23 @@ vardef texlabel@#(expr s, p) =
   label@#(textext(s), p)
 enddef;
 
+% Label at a given angle
+def labelang(expr a, s, p) =
+  begingroup; save ang; ang = a mod 360;
+    if (ang < 15) or (ang > 345): label.rt(s,p);
+    elseif ang <= 75: label.urt(s,p);
+    elseif ang < 105: label.top(s,p);
+    elseif ang <= 165: label.ulft(s,p);
+    elseif ang < 195: label.lft(s,p);
+    elseif ang <= 255: label.llft(s,p);
+    elseif ang < 285: label.bot(s,p);
+    else: label.lrt(s,p);
+    fi
+  endgroup;
+enddef;
+
+def texlabelang(expr ang,s,p) = labelang(ang,textext(s),p) enddef;
+
 % ----------------------------------------
 % Colors
 color darkgreen, darkred, darkblue, purple;
