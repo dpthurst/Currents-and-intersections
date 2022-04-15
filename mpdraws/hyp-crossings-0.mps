@@ -2,7 +2,7 @@
 %%BoundingBox: -84 -73 79 73 
 %%HiResBoundingBox: -83.17046 -72.20792 78.88321 72.43459 
 %%Creator: MetaPost 2.00
-%%CreationDate: 2022.04.15:1212
+%%CreationDate: 2022.04.15:1546
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font CMMI10 CMSY7 CMR7 CMR10
@@ -44,9 +44,9 @@ newpath 56.6929 0 moveto
  0 0.432 0.048 setrgbcolor 1 setlinecap
 newpath -40.08798 -40.08798 moveto
 40.08798 40.08798 lineto stroke
-newpath -12.02774 -8.01868 moveto
--6.01418 -6.01418 lineto
--8.01868 -12.02774 lineto stroke
+newpath -28.0627 -24.05363 moveto
+-22.04912 -22.04912 lineto
+-24.05363 -28.0627 lineto stroke
  0 3 dtransform truncate idtransform setlinewidth pop
 newpath -40.08798 -40.08798 moveto 0 0 rlineto stroke
 newpath 40.08798 40.08798 moveto 0 0 rlineto stroke
@@ -61,9 +61,9 @@ newpath 40.08798 40.08798 moveto 0 0 rlineto stroke
  0.2 0.632 0.248 setrgbcolor 0 0.7 dtransform truncate idtransform setlinewidth pop
 newpath 40.08798 -40.08798 moveto
 -40.08798 40.08798 lineto stroke
-newpath 8.01868 -12.02774 moveto
-6.01418 -6.01418 lineto
-12.02774 -8.01868 lineto stroke
+newpath 24.05363 -28.0627 moveto
+22.04912 -22.04912 lineto
+28.0627 -24.05363 lineto stroke
  0 3 dtransform truncate idtransform setlinewidth pop
 newpath 40.08798 -40.08798 moveto 0 0 rlineto stroke
 newpath -40.08798 40.08798 moveto 0 0 rlineto stroke

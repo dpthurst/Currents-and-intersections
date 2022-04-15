@@ -41,8 +41,8 @@ enddef;
 beginmulti;
 path p[];
 draw hp_boundary;
-draw_geodesic(acol, "a", -135, 45, 0.4);
-draw_geodesic(bcol, "b", -45, 135, 0.4);
+draw_geodesic(acol, "a", -135, 45, 0.2);
+draw_geodesic(bcol, "b", -45, 135, 0.2);
 draw_geodesic(abcol, "(ab)", -67, 65, 0.5);
 draw_geodesic(bacol, "(ba)", -122, 118, 0.5);
 draw_geodesic(aBcol, "(aB)", 155, 30, 0.5);
@@ -66,6 +66,24 @@ draw p3; mark_arrow(p3); texlabel.rt("$b$", point 0.5 of p3);
 draw p5; mark_arrow(p5); texlabel.top("$b$", point 0.5 of p5);
 draw p7; mark_arrow(p7); texlabel.lft("$b$", point 0.5 of p7);
 shipmulti(0);
+
+draw hp_boundary;
+draw_geodesic(acol, "a", -135, 135, 0.5);
+draw_geodesic(bcol, "b", -45, 45, 0.5);
+draw_geodesic(abcol, "(ab)", -70, 124, 0.3);
+draw_geodesic(bacol, "(ba)", -115, 75, 0.3);
+draw_geodesic(aBcol, "(aB)", 155, 30, 0.65);
+draw_geodesic(Bacol, "(Ba)", -150, -20, 0.65);
+shipmulti(1);
+
+draw hp_boundary;
+draw_geodesic(acol, "a", -135, 135, 0.5);
+draw_geodesic(bcol, "b", 45, -45, 0.5);
+draw_geodesic(abcol, "(aB)", -70, 124, 0.3);
+draw_geodesic(bacol, "(Ba)", -115, 75, 0.3);
+draw_geodesic(aBcol, "(ab)", 155, 30, 0.65);
+draw_geodesic(Bacol, "(ba)", -150, -20, 0.65);
+shipmulti(2);
 
 endmulti;
 
