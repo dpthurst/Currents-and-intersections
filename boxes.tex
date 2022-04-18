@@ -79,7 +79,7 @@ $\pi_1(S,*)$ action) is captured instead by the double coset
 In order to guarantee that crossings are essential, we pick out one
 particular type of relation between lifts.
 
-\begin{definition}[Right handed crossing]
+\begin{definition}[Right handed crossing]\DMGtodo[inline]{Explain better the relation between right handed crossing and smoothing. Also, clarify that there are two possible smoothings for a right handed crossing.}
   Suppose that two elements $a$ and $x$ of $\pi_1(S)$ that do not have a common power have an
   essential crossing at the natural basepoint, so that
   $[a][x] \reducesto [ax]$. We say that $a$ and $x$ have a
@@ -158,6 +158,7 @@ As a corollary we have the following.
   \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
     are parallel, and $(\ora{aB},\ora{Ba})$ cross.
   \end{enumerate}
+  \label{lem:righthandedfoundation}
 \end{lemma}
 
 In particular, if $g,h,gh,gH \in \pi_1(S)$ are all non-trivial, the
@@ -439,6 +440,7 @@ right-handed box so that for some $B \in [B]_{a,b,c,d}$, with
 $B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in
 B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in
 B_{\epsilon}(s)$.
+\label{prop:density}
 \end{proposition}
 \begin{proof}
    Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
@@ -533,7 +535,7 @@ $x$ is not simple.
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
 \caption{Lifts of $x$ are depicted in blue. The central blue lift relates to the lower and upper lifts by translates of the type $x^k a$, $x^l a^{-1}$, $x^m a$ and $x^n a^{-1}$, as labelled. Each translate determines a window $w( \cdot )$, which is an interval on $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.}
 \label{fig:abcrossings}
-}
+}\DMGtodo[inline]{The lift $x^n a$ in the figure should be re-labelled $ax^n$ (according to the proof)}
 \end{figure}
 
 

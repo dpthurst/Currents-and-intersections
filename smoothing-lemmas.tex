@@ -6,28 +6,24 @@ Now we use the lemmas obtained in the previous subsection on our function on cur
 An immediate consequence of smoothing and convex union is positivity of $f$.
 
 \begin{corollary}
-  Let $f$ be a functional satisfying convex union and smoothing. Then $f([x]) \geq 0$ for any $x \in \pi_1(S)$.
+  Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
   \label{cor:positivity}
 \end{corollary}
-\begin{proof}\DMGtodo[inline]{This proof is not correct, but we had a correct proof and I'm failing to reproduce it}
-Let $a \in \pi_1(S)$ intersecting $x$ right-handedly. Then, by Lemma~\ref{lem:rhs_prod}, $axa^{-1}x^{-1}$ intersects $x$ right-handedly, and therefore
+\begin{proof}
+Let $x \in \pi_1(S)$ so that $a$ crosses $x$ to the right. Then, $a$ crosses $x^n$ to the right, and thus, by positive smoothing,\DMGtodo[inline]{I have called it oriented smoothing vs unoriented smoothing. Which one is better?}
 \[
-    [axa^{-1}x^{-1}][x]  \reducesto [axa^{-1}]=[x]
+[a][x^n] \reducesto [ax^n].
 \]
-which implies, by convex union and smoothing of $f$, that
+On the other hand, by Equation~\ref{eq:cross-red3} (which uses unoriented smoothing), we have
 \[
-    f([axa^{-1}x^{-1}]) \geq 0.
+[ax^n][a]\reducesto [x^n]
 \]
-for any $x$ and for any $a$ intersecting $x$ right-handedly.
-Now, by Lemma~\ref{lem:rhs_prod}, $ax^{-1}a^{-1}$ intersects $x$ right-handedly, and thus
-\[
-    [ax^{-1}a^{-1}][x]  \reducesto [ax^{-1}a^{-1}x]
-\]
-which implies, by convex union and smoothing property of $f$ that
-\[
-    f([ax^{-1}a^{-1}]) + f([x]) \geq f([ax^{-1}a^{-1}x])
-\]
-which by the above computation shows that $f([x]) \geq 0$.
+Since $f$ satisfies smoothing (oriented and unoriented), we get
+\begin{align*}
+    f(a) + f(x^n) &\geq f(ax^n)\\
+     f(ax^n) + f(a) &\geq f(x^n).\\   
+\end{align*}
+Adding both equations, we get $f(a) \geq 0$, as we wanted.
 \end{proof}
 
 The following result shows a key limit to construct the measure exists and uses the smoothing lemmas.
