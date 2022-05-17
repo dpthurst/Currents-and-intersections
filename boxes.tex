@@ -103,47 +103,12 @@ which crossing we are considering.) Further, it is anti-symmetric: if
 the crossing between $a$ and~$x$ is right-handed, then the crossing
 between $x$ and~$a$ is left-handed.
 
-To recognize whether a crossing is essential and right-handed, it will
-be helpful to look just at two different lifts of~$x$.
 
-\begin{lemma}
-  Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
-  Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
-  $a \cdot \wt x$ are parallel, and not anti-parallel or crossing.
-  Furthermore, if they cross essentially, then $a$ and~$x$ have a
-  right-handed crossing iff $a \cdot \wt x$ is on the right-hand side
-  of $\wt x$, when viewed along the orientation of~$\wt x$.
-  \label{lem:rhs}
-\end{lemma}
 
-\DPTtodo[inline]{In Figure~\ref{fig:rhc}, mark and label some
-  basepoints on $\wt x$ and $a \cdot \wt x$, and add arrows. Also the
-  tildes are not agreeing. Maybe also add the lift $\wt a$ to better
-  illustrate N-S dynamics}
-  \DMGtodo[inline]{This lemma will be a corollary of the more general arguments on right-handed crossings we have discussed recently. I think the figure will be replaced by the illustration of the more general arguments.}
-  \DMGtodo[inline]{Endpoints of different lifts of $\tilde{x}$ can't be anti-parallel, since all elements are hyperbolic (we are dealing with closed surfaces)}
-  \begin{figure}
-\resizebox{60mm}{!}{\svgfig{righthandedcrossing}}
-\caption{Determining a right-handed crossing between $a$ and $x$ by looking at the relative position of two lifts of $x$ in the universal cover.}
-\label{fig:rhc}
-\end{figure}
-
-\begin{proof}
-  This follows easily by consider the North-South dynamics of $a$
-  acting on the circle at infinity of~$\wt S$. See Figure~\ref{fig:rhc}.
-\end{proof}
-
-As a corollary we have the following.
-
-\begin{lemma}
-  Let $a,b,x \in \pi_1(S)$ be group elements so that $a$ and $b$ cross
-  $x$ to the right. Then $ab$, $x^{\pm 1}a$, and $ax^{\pm 1}$ also cross $x$ to the
-  right. As a result, so does $ax^nbx^k$ for any $n,k \in \Z$.
-  \label{lem:rhs_prod}
-\end{lemma}
 
 \DPTtodo[inline]{New lemmas here. Is notation consistent? Eg, we
   haven't referred to $\Isom(\H^2)$ before. Introduce notation $\vec{a}$}
+  \DMGtodo[inline]{The notion of parallel has an order, we should point that out. Also, we should specify ``crosses to the right'' in the lemmas.}
 \begin{lemma}
   Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
   $a^{-1}b$ are both hyperbolic. Then exactly one of the pairs
@@ -195,7 +160,7 @@ crossing at the basepoint.
     so these two endpoints must lie in the portion of $\bdy \H^2$ in
     which $a$ and $b$ move in opposite directions; these are the
     intervals $(a^+,b^+)$ or $(a^-,b^-)$ (in each case taking the
-    counterclockwise interval). Similarly $(ab)^+$ and $(ba)^+$ must
+    counterclockwise interval). \DMGtodo[inline]{$(a^+,b^+)$ is not oriented counterclockwise} Similarly $(ab)^+$ and $(ba)^+$ must
     lie in one of these two intervals. Furthermore, by consider the action of
     (say) $ba$ on $a^-$, we see that $ba$ necessarily has NS dynamics
     with a repelling fixed point in $(a^-,b^-)$ and an attracting
@@ -219,6 +184,77 @@ crossing at the basepoint.
       \mfig{hyp-crossings-2}
     \]
   \end{enumerate}
+\end{proof}
+
+We will use the following elementary observations about right handed crossings.
+
+\begin{lemma}
+\begin{enumerate}
+    \item If $a$ cross $b$ to the right,
+then $a^{-1}$ crosses $b^{-1}$ to the right.
+\item If $a$ and $b$ are parallel, then $b^{-1}$ and $a^{-1}$ are parallel.
+\item If $a$ and $b$ are parallel, then $a$ and $b^{-1}$ are anti-parallel.
+\end{enumerate}
+\end{lemma}
+
+As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following.
+
+\begin{lemma}
+  Let $a,b,x \in \pi_1(S)$ be group elements so that $a$ and $b$ cross
+  $x$ to the right. Then
+  \begin{enumerate}
+  \item $ab$ cross $x$ to the right.
+      \item $x^{\pm 1}a$, and $ax^{\pm 1}$ cross $x$ to the right.
+     \item  $ax^nbx^k$ for any $n,k \in \Z$ cross $x$ to the right.
+  \end{enumerate}
+    \label{lem:rhs_prod}
+\end{lemma}
+\begin{proof}
+  \begin{enumerate}
+      \item Since both $a$ and $b$ cross $x$ to the right, we have the following relative cases between $a$ and $b$.
+      
+      \begin{enumerate}
+          \item $a$ and $b$ cross to the right. In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we have that $ab$ crosses $x$ to the right.
+          \item $b$ and $a$ cross to the right.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we also have that $ab$ crosses $x$ to the right, switching the roles of $a$ and $b$ in that figure.
+          \item $a$ and $b$ are parallel.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (II), we have that $ab$ crosses $x$ to the right.
+          \item $b$ and $a$ are parallel.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (II), we also have that $ab$ crosses $x$ to the right, switching the roles of $a$ and $b$ in that figure.
+      \end{enumerate}
+      \item It follows by Lemma~\ref{lem:righthandedfoundation}, part (I).
+      \item It follows by combining the two previous parts.
+  \end{enumerate}
+\end{proof}
+
+The following facts follow from repeated application of Lemma~\ref{lem:righthandedfoundation} and Lemma~\ref{lem:rhs_prod}. 
+We collect them here since they will be useful in Section~\ref{sec:construct}.
+
+\begin{lemma}
+\begin{enumerate} \item If
+  $a$ crosses $b$ to the right, then $aba^{-1}$ and $a$  are parallel. 
+  \item If $a$ crosses $b$ to the right, then $aba^{-1}$ crosses $b$ to the right.
+  \item If $a$ and $b$ are parallel, then $a^{-1}b^{-1}a$ crosses $a$ to the right.
+  \item If $a$ and $b$ are parallel, then $a^{-1}b$ crosses $a$ to the right.
+  \item If $a$ and $b$ are parallel, then $Bab$ crosses $b$ to the right.
+  \end{enumerate}
+  \label{lem:conj}
+\end{lemma}
+\begin{proof}
+\begin{enumerate}
+\item Suppose $a$ crosses $b$ to the right. This means that $ba$ also crosses $b$ to the right, by Lemma~\ref{lem:rhs_prod}. Then, by part (I) of Lemma~\ref{lem:righthandedfoundation}, we get that $bab^{-1}$ and $a$ are parallel.
+\item Suppose $a$ crosses $b$ to the right. This means that $ba$ also crosses $b$ to the right, by Lemma~\ref{lem:rhs_prod}. Then, by part (I) of Lemma~\ref{lem:righthandedfoundation}, applied to $ba$ and $b$, we get that $baB$ crosses $b$ to the right.
+  \item Suppose $a$ and $b$ are parallel. Then $a$ and $ba$ are parallel, by part (II) of Lemma~\ref{lem:righthandedfoundation}. By that part again, it follows that $((ba)^{-1})a$ crosses $a$ to the right, so the result follows.
+ \item  If $a$ and $b$ are parallel, this means $b^{-1}$ and $a^{-1}$ are parallel. Then, by part (II) of Lemma~\ref{lem:righthandedfoundation}, we have $b^{-1}a$ crosses $a^{-1}$ to the right, and by taking inverses, $a^{-1}b$ crosses $a$ to the right.
+ \item If $a$ and $b$ are parallel, then, by part (I) of Lemma~\ref{lem:righthandedfoundation}, $Ba$ crosses $b$ to the right, and then by Lemma~\ref{lem:rhs_prod}, $Bab$ crosses $b$ to the right.
+  \end{enumerate}
+\end{proof}
+
+\begin{lemma}
+If $a$ crosses $b$ to the right and $a$ crosses $c$ to the right, then $a$ crosses $bc$ to the right.
+\label{lem:rightleftcomb}
+\end{lemma}
+\begin{proof}
+$a$ crosses $b$ to the right if and only if $a$ crosses $b^{-1}$ to the left, if and only if $b^{-1}$ crosses $a$ to the right.
+Similarly, $c^{-1}$ crosses $a$ to the right.
+Thus, $c^{-1}b^{-1}$ crosses $a$ to the right, by Lemma~\ref{lem:rhs_prod}, i.e., $(bc)^{-1}$ crosses $a$ to the right, i.e. $a$ crosses $(bc)^{-1}$ to the left, i.e., $a$ crosses $bc$ to the right.
 \end{proof}
 
 \subsection{Right-handed boxes}

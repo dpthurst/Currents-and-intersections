@@ -1,4 +1,5 @@
 \section{Construction of the geodesic current}
+\label{sec:construct}
 \begin{proposition}
   \label{prop:positivity}
   In the terminology of Section~\ref{sec:boxes}, for a box $B\in
@@ -199,19 +200,18 @@ and
 \end{proposition}
 \begin{proof}
 \begin{itemize}
-    \item 
-    We know:
-    \begin{itemize}
-        \item  $p_i q_i$ cross $x$ to the right
-        \item $q_2 x^n p_1$ cross $q_1x^n p_2$ to the right.
-    \end{itemize}
-    We need:
-    \begin{itemize}
+    \item We first prove that a top vertical accordion $F_{\vec{p_1},p_2,q_1,q_2}(k)$ is a right handed box for every $k >0$.
+    We know that $[p_1,p_2,q_1,q_2]$ form a rhs system, so 
+    $p_i q_i$ cross $x$ to the right
+        and $q_2 x^n p_1$ cross $q_1x^n p_2$ to the right (by Definition~\ref{def:righthandedcrossing}). We can furthermore assume, by choosing $p_i,q_i$ accordingly, that each one of $p_i,q_i$, $i=1,2$, cross $x$ to the right.
+    By Lemma~\ref{lem:conj}, part (2), $q_1 x q_1^{-1}$ crosses $x$ to the right. By Lemma~\ref{lem:rhs_prod}, part (1), it follows that
+    
+    \begin{enumerate}
         \item $p_1 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.
         \item $p_2 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.   
-            \item  $q_1 x^k q_1^{-1} q_2x^n p_1$ cross $q_1x^n p_2$ to the right.
-    \end{itemize}
-    \DMGtodo[inline]{Does not follow directly from Lemma 4.3. Probably needs full generality of right handed crossing statements.}
+        \item   $q_1 x^k q_1^{-1} q_2x^n p_1$ cross $q_1x^n p_2$ to the right.
+    \end{enumerate} 
+    This proves that top vertical accordions are right handed boxes. The proof is similar for other types of accordions.
     \item 
     We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$.
     We will first go from the box notation to the orbit notation, since the latter is better suited for the definition of $\mu_f$.
@@ -245,7 +245,7 @@ is countably additive.
 We remark that at this point of the argument, we could also use an indirect strategy of using Riesz representation, as done in \cite[Proposition~3.11]{BIPP21:PositiveCrossratios}.
 
 We will need to consider more types of boxes
-than the half-open boxes we have been working with so for. For $B$ a
+than the half-open boxes we have been working with so far. For $B$ a
 right-handed box $[a_1,a_2) \times [b_1,b_2)$, let
 $\overline{B} \coloneqq [a_1,a_2] \times [b_1,b_2]$ and
 $B^\circ \coloneqq (a_1,a_2) \times (b_1,b_2)$ be the corresponding
@@ -374,6 +374,10 @@ i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \]
 (see \cite[Lemma~4.4]{MZ19:PositivelyRatioed}, cf. \cite[Page~153]{Otal90:SpectreMarqueNegative} for details).
 
+
+
+
+
 \begin{proposition}
 For $C$ a closed curve, we have
 \[
@@ -381,72 +385,68 @@ i(\mu_f,C)=f(C).
 \]
 \label{prop:recoverintersection}
 \end{proposition}
-\begin{proof}
-  Fix a representative $y \in \pi_1(S,*)$ for the conjugacy class~$C$.
-  First we will show that we can use boxes of the type $B_{a,b,c,d,\tilde{x}}$ to construct a window containing a unique lift of every geodesic intersecting $C=[y]$ transversally, for $y \in \pi_1(S,*)$.
-Second, we'll show that computing intersection number of that fundamental domain yields the same value as $f([y])$.
-  \DPTtodo[inline]{$p,q$ are not elements of $\pi_1$; rather they are paths
-    from $*'$ to $*$. Is $r=q$? Is there any assumption about right-handed
-    crossings?}
+
+  Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
+Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
+Choose a conjugate $y$ in $[y]$ so that $x$ and $y$ are parallel. Thus, $x$ and $y^n$ are parallel for $n>0$ and anti-parallel for $n<0$.
+Pick $p_1, q_1 \in \pi_1(S,*)$, both of them crossing $x$ and $y$ to the right.
+For each $n$, define the following elements of $\pi_1$: $p_1^n \coloneqq p_1$, $p_2^n \coloneqq p_1 y$, $q_1^n \coloneqq y^n q_1$, and $q_2^n \coloneqq y^{-(n+1)} q_1$.
+\begin{proposition}
+The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a rhs system, i.e.,
 \begin{enumerate}
-\item We take a basepoint $*$ on of the lifts of $x$.
-  Let $p \in \pi_1(S,*)$ be sending a point $*'$ in a lift of $C$ to the basepoint $*$, and $q$ an element sending $*'$ to the translate of the basepoint $*$ in another lift of $x$, in such a way that the element $pq$ translates from one lift of $x$ to the other.
-    Using the box notation $[p,q,r,s]$, we consider, for each $n$, the boxes associated to
-    
-    \[
-      [p_n,q_n,r_n,s_n] \coloneqq [p,y^{-n}q,yp,y^{-n-1}r]
-    \]
-    
-    See Figure~\ref{fig:recwindow}.
-    
-           \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{rec_window1}}
-\caption{Configuration of lifts and elements of $\pi_1(S)$ used to approximate a fundamental domain of the action on $G(\Sigma)$ for a given curve $C=[y]$.}
-\label{fig:recwindow}
-}
-\end{figure}
-    
-    This determines, for each $n$, boxes of geodesics whose startpoints are confined in a fixed interval between the startpoints of two lifts of $x$ differing by a translate by $y$, and the endpoints are contained in interval growing as a function of $n$, with endpoints converging to the endpoints of a lift of $[y]$.
-    
-    Note that, in the RH lift system format $(a,b,c,d)$ it is given by
-    \[
-      (a_n,b_n,c_n,d_n) \coloneqq (py^nq, pY^{n+1}q,py^{n+1}r,py^{-n}q)
-    \]
-    
-    here we are using $y$ as the element $\pi_1(S,*)$ with red axis in Figure~\ref{fig:recwindow}.
-    \item 
-    \begin{comment}
-    \begin{proposition}
-       Let $x$ be the element of $\pi_1(S,*)$ corresponding to a lift of some simple closed curve, $y$ any lift of the closed curve $C$. Let $p,q \in \pi_1(S,*)$ as in Figure~\ref{fig:dreamcatcher}.
-       Then,
-       
-       \[
-         f(C)  =  i(\mu_f,C) \lim_{n_1,n_2} \lim_{m_1,m_2} \frac{1}{2} \left(f([py^{n_1+1}rx^{m_1}][py^{-n_2-1}qx^{m_2}])-f([py^{n_1}rx^{m_1}][py^{-n_2}qx^{m_2}]) \right)
-       \]
-           \end{proposition}
-       \end{comment}
-       
-       \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{dreamcatcher}}
-\caption{Configuration of lifts showing that intersection number with $\mu_f$ is defined by a limit of right handed boxes.}
-\label{fig:dreamcatcher}
-}
-\end{figure}
-       
+    \item $p_i^nq_j^n$ cross $x$ to the right, for $i,j=1,2$.
+    \item $q_2^n x^m p_1^n$ crosses $q_1^n x^m p_2^n$ to the right, for $m \geq 0$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The first part follows by Lemma~\ref{lem:sides}, and the second by Lemma~\ref{lem:diagonals}.
+\end{proof}
 
-       
-       
+
+\begin{lemma}
+ $p_1 y^n q_1$ crosses $x$ to the right, for all $n \in \mathbb{Z}$.
+ \label{lem:sides}
+\end{lemma}
+\begin{proof}
+For $n=0$, $p_1 q_1$ crosses $x$ to the right by the choice of $p_1$ and $q_1$ and Lemma~\ref{lem:rhs_prod}.
+Let $n>0$. Since $x$ and $y^n$ are parallel, by Claim~\ref{lem:conj}, it follows that $x^{-1}y^{-n}x$ crosses $x$ to the right.
+Since $p_1x$ crosses $x$ to the right, and $x^{-1}q_1$ crosses $x$ to the right, it follows that $(p_1x)(x^{-1}y^{-n}x)(x^{-1}q_1)=p_1y^{-n}q_1$ crosses $x$ to the right. 
+Now we assume $n<0$.
+Since $x$ and $y^n$ are antiparallel, then by Lemma~\ref{lem:righthandedfoundation}, part (III), $xy^{n}$ crosses $x$ to the right.
+Since $p_1x^{-1}$ crosses $x$ to the right by Lemma~\ref{lem:rhs_prod} and $q_1$ crosses $x$ to the right, it follows that $(p_1x^{-1})(xy^{n})(q_1)=p_1y^{n}q_1$ crosses $x$ to the right. This proves the claim.
+\end{proof}
+
+\begin{lemma}
+$y^{-(n+1)} q_1 x^m p_1$ crosses $y^n q_1 x^m p_1 y$ to the right, for all $n \geq 0$ and $m>0$.
+\label{lem:diagonals}
+\end{lemma}
+\begin{proof}
+Let $a=q_1 x^m p_1$ and $b=y^{n+1}$.
+We will prove it by induction.
+Let $n=0$. Then, $b=y$.
+We want to show that $y^{-1}a$ crosses $ay$ to the right.
+We claim that $a$ crosses $y$ to the right.
+Then, by Lemma~\ref{lem:righthandedfoundation}, part (I), $y^{-1}a$ crosses $ay$, as we wanted to see.
+Suppose that the claim is true for $n>0$, i.e., $c_n \coloneqq y^{-(n+1)}a$ crosses $d_n \coloneqq y^n a y$ to the right.
+Note that $c_{n+1} = y^{-1} c_n$ and $d_{n+1}=y d_n$.
+Since $a$ crosses $y$ to the right, by Lemma~\ref{lem:rhs_prod}, $d_n$ crosses $y$ to the right, i.e., $y^{-1}$ crosses $d_n$ to the right.
+Also, by assumption, $c_n$ crosses $d_n$ to the right.
+Thus, by Lemma~\ref{lem:rightleftcomb}, $y^{-1} c_n$ crosses $d_n$ to the right.
+Since $a$ crosses $y$ to the right, it follows again by Lemma~\ref{lem:rhs_prod},  that $y^{-1}c_n$ crosses $y$ to the right. Thus, by Lemma~\ref{lem:rightleftcomb}, $y^{-1}c_n$ crosses $y d_n$ to the right.
+\end{proof}
+
+\begin{claim}
+ $q_1 x^m p_1$ crosses $y$ to the right, for $m>0$.
+ \label{lem:cross2}
+\end{claim}
+\begin{proof}
+Without lost of generality, we can assume that $m=1$, since the following argument only uses that $x^m$ is parallel to $y$ for $m>0$, which is equivalent to $x$ being parallel to $y$.
+By the choice of $p_1,q_1$, we have that $p_1y$ crosses $y$ to the right, and $Yq_1$ crosses $y$ to the right.
+Since $x$ and $y$ are parallel, by Lemma~\ref{lem:conj}, part (iv), $Yxy$ crosses $y$ to the right, and thus by Lemma~\ref{lem:rhs_prod}, $p_1xq_1=(p_1y)(Yxy)(Yq_1)$ crosses $y$ to the right.
+\end{proof}
 
     
-    Note that we have
-    
-    \[
-       i(\mu_f,C) = \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-))
-    \] 
-    
-    Observe that by the above discussion
+    Observe that by the above discussion\DMGtodo[inline]{Requires edit and writing it according to notation above.}
     
     \begin{multline*}
       \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
@@ -474,8 +474,7 @@ Second, we'll show that computing intersection number of that fundamental domain
       Corollary~\ref{cor:additivity-limit}, and cancel out equivalent
       terms. Finally, use the symmetry property of $f$ to obtain the
       result.
-    \end{enumerate}
-\end{proof}
+
 
 
 The proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. This condition is crucial to recover curve functionals as intersection numbers, as we explain in Section~\ref{sec:asymmetric}.
