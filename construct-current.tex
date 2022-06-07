@@ -389,7 +389,19 @@ Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current.\qedher
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
-If $y$ is a hyperbolic element representing a closed curve $C \subset \Sigma$, let $x \in \partial_{\infty} \wt{\Sigma} - \{ y_-, y_+\}$ so that $y_-, x, y \cdot x, y_+$ are in cyclic order. Then $(y_+,y_-) \times [x,y \cdot x)$ is a Borel fundamental domain for the $\langle y \rangle$-action on $G(\wt{\Sigma})$, and  the intersection of $C$ with a geodesic current $\mu$ can be computed as
+\DPTtodo{I'm having trouble reading this: is $x$ not a fixed element
+  of $\pi_1$? How are you picking a point at infinity for it? Did you
+  mean to pick a different letter?}
+If $y$ is a hyperbolic element representing a closed curve
+$C \subset \Sigma$, let
+$x \in \partial_{\infty} \wt{\Sigma} - \{ y_-, y_+\}$ so that
+$y_-, x, y \cdot x, y_+$ are in cyclic order.
+\DPTtodo{This is not quite right, it's a domain for the action on the
+  \emph{crossing} geodesics}
+Then
+$(y_+,y_-) \times [x,y \cdot x)$ is a Borel fundamental domain for the
+$\langle y \rangle$-action on $G(\wt{\Sigma})$, and the intersection
+of $C$ with a geodesic current $\mu$ can be computed as
 \[
 i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \]
@@ -402,8 +414,6 @@ i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \label{fig:fundamental}
 }
 \end{figure}
-
-
 
 
 \begin{proposition}
@@ -423,7 +433,11 @@ Pick $p_1, q_1 \in \pi_1(S,*)$, so that $x$ crosses $p_1$ to the right, i.e., $p
 Furthermore, choose $q_1$ so that $q_1$ crosses $x$ and $y$ to the right. 
 Then, by Lemma~\ref{lem:rhs}, we have a configuration of lifts like the upper left and right lifts of $\wt{x}$ in Figure~\ref{fig:fundamental}. \DMGtodo[inline]{In the chain of equalities below we also need $p_1$ crosses $y$ to the right, and $q$ crosses $x$ to the right.}
 
-For each $n$, define the following elements of $\pi_1$: $p_1^n \coloneqq p_1$, $p_2^n \coloneqq p_1 y$, $q_1^n \coloneqq y^n q_1$, and $q_2^n \coloneqq y^{-(n+1)} q_1$.
+For each $n$, define the following elements of $\pi_1$:
+\begin{align*}
+  p_1^n &\coloneqq p_1 & q_1^n &\coloneqq y^n q_1\\
+  p_2^n &\coloneqq p_1 y &q_2^n &\coloneqq y^{-(n+1)} q_1.
+\end{align*}
 \begin{proposition}
 The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a rhs system, i.e.,
 \begin{enumerate}
@@ -435,16 +449,15 @@ The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a rhs system, i.e.,
 By NS dynamics of $y$, the translates of $\wt{x}$ by $(p_i^{(n)})^{-1}$ and $q_i^{(n)}$, for $i=1,2$, are like in Figure~\ref{fig:fundamental}.
 \end{proof}
 
+If we translate the rhs system
+$[p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)}]$ into the orbit notation,
+and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
+\begin{align*}
+  a_n &= p y^{n}   q &  b_n &= p y^{-(n+1)} q \\
+  c_n &= p y^{n+1} q &  d_n &= p y^{-n} q.
+\end{align*}
 
-    
-    Observe that by the above discussion, if we translate the rhs system $[p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)}]$ into the orbit notation, and set $p \coloneqq p_1$ and $q \coloneqq q_1$
-    \begin{align*}
-        b_n &= p y^{-(n+1)} q \\
-        c_n &= p y^{n+1} q \\        
-        a_n &= p y^{n} q \\  
-        d_n &= p y^{-n} q \\
-    \end{align*}
-    
+We then have    
     \begin{multline*}
       \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
       \begin{aligned}
