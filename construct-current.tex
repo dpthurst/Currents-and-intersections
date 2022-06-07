@@ -162,7 +162,11 @@ Similarly, we define \emph{bottom vertical accordion}, and denote it by
 \[
 F_{p_1,p_2,\bar{q_1},q_2},
 \]
-giving a sequence of boxes whose vertical direction becomes narrower and the bottom endpoint fixed.
+giving a sequence of boxes whose vertical direction becomes narrower and the bottom endpoint fixed, i.e.,
+\[
+p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
+\]
+
 On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
 \[
 p_1^{(k)} = p_2 x^k p_2^{-1} p_1.
@@ -173,41 +177,40 @@ F_{\vec{p_1},p_2,q_1,q_2}.
 \]
 We will call them a \emph{right horizontal accordion} of boxes based at $B$ (the right endpoint is fixed).
 Similarly, we can define a \emph{left horizontal accordion} (the left endpoint is fixed).
+\label{def:accordion}
 \end{definition}
 
-The following Proposition will be key to prove countable addivitity.
+The following Proposition will be key to prrrove countable addivitity.
 
-\begin{proposition}
 \begin{figure}
 \centering{
-\resizebox{80mm}{!}{\svgfig{finalfamily}}
-\caption{Box representing an element of the final family $F_{a,b,e}$. Here $e=Ab=Cd$.}
+\resizebox{80mm}{!}{\svgfig{final}}
+\caption{Sequence of boxes determining an accordion.r}
 \label{fig:finalfamily}
 }
 \end{figure}
 
-\DPTtodo{Add an assertion these are boxes. Need assumptions on initial
-  $p_i,q_i$}
-\begin{itemize}
-\item For a fixed lift $\tilde{x}$ and fixed $[p_1,p_2,q_1,q_2]$, the boxes in the two sequences $F_{\vec{p_1},p_2,q_1,q_2}(k)$ and $F_{p_1,p_2,q_1,\vec{q_2}}$ are nested.
-\item For a fixed lift $\tilde{x}$ and fixed $[p_1,p_2,q_1,q_2]$,  \[
-\lim_{k \to \infty} \mu_f(F_{\vec{p_1},p_2,q_1,q_2}(k))= 0
-\]
-and
-\[
-\lim_{k \to \infty} \mu_f(F_{p_1,p_2,q_1,\vec{q_2}}(k))= 0.
-\]
+\begin{proposition}
+ Given a rhs system $[p_1,p_2,q_1,q_2]$ so that, moreover, $q_1^{-1}q_2$ cross $x$ to the right. \DMGtodo[inline]{Needed in the proof. See comments below.} let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},p_2,q_1,q_2}(k)$, $F_{p_1,p_2,q_1,\vec{q_2}}$, $F_{p_1,\vec{p_2},q_1,q_2}(k)$ and $F_{p_1,p_2,\vec{q_1},q_2}(k)$. We have
 
+\begin{itemize}
+ \item For every $k \geq 0$, $F(k)$ is a right-handed box.
+\item For every $k$, $F(k+1) \subset F(k)$
+\item
+\[
+\lim_{k \to \infty} \mu_f(F(k))= 0
+\]
 \end{itemize}
 \label{prop:finalfamily1}
 \end{proposition}
 \begin{proof}
 \begin{itemize}
-    \item We first prove that a top vertical accordion $F_{\vec{p_1},p_2,q_1,q_2}(k)$ is a right handed box for every $k >0$.
+    \item We first prove that an accordion $F(k)$ is a right-handed box. Consider first a top vertical accordion $F_{\vec{p_1},p_2,q_1,q_2}(k)$ (the other types are similar).
     We know that $[p_1,p_2,q_1,q_2]$ form a rhs system, so 
     $p_i q_i$ cross $x$ to the right
-        and $q_2 x^n p_1$ cross $q_1x^n p_2$ to the right (by Definition~\ref{def:righthandedcrossing}). We can furthermore assume, by choosing $p_i,q_i$ accordingly, that each one of $p_i,q_i$, $i=1,2$, cross $x$ to the right.
-    By Lemma~\ref{lem:conj}, part (2), $q_1 x q_1^{-1}$ crosses $x$ to the right. By Lemma~\ref{lem:rhs_prod}, part (1), it follows that
+        and $q_2 x^n p_1$ cross $q_1x^n p_2$ to the right (by Definition~\ref{def:righthandedcrossing}). 
+        By north-south dynamics of $q_1 x q_1^{-1}$, the translates of $\tilde{x}$ look like in Figure~\ref{fig:finalfamily}.
+        The following properties follow immediately.
     
     \begin{enumerate}
         \item $p_1 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.
@@ -215,37 +218,52 @@ and
         \item   $q_1 x^k q_1^{-1} q_2x^n p_1$ cross $q_1x^n p_2$ to the right.
     \end{enumerate} 
     This proves that top vertical accordions are right handed boxes. The proof is similar for other types of accordions.
-    \item 
-    We prove each one of the items for the family of type $F_{p_1,p_2,q_1,\vec{q_2}}$.
+    \item We prove that for a fixed rhs sytem $[p_1,p_2,q_1,q_2]$ and a corresponding accordion $F(k)$, $\lim_{k \to \infty} \mu(F(k))=0$.
+    We give the argument for type $F_{p_1,p_2,q_1,\vec{q_2}}$, the other types are similar.
     We will first go from the box notation to the orbit notation, since the latter is better suited for the definition of $\mu_f$.
-      For $a,b,e$ crossing $x$ to the right, and $e=Ab=Cd$, a horizontal accordion based at a box $B$ defines a family of orbits of boxes
+    We have
+ \begin{align*}
+     a &= p_1 q_1 \\
+     b &= p_1 q_1 x^k q_1^{-1} q_2 \\     
+     c &= p_2 q_1  \\  
+     d &= p_2 q_1 x^k q_1^{-1} q_2 \\  
+ \end{align*}
+ Writing $e=q_1^{-1} q_2$, we have
+ \begin{align*}
+     b &= a x^k e \\     
+     d &= c x^k e \\  
+ \end{align*}
+We thus get the family of box orbits given by
 \[
-\bigl([B]_{a,bx^ke,c,dx^k e}\bigr)_{k=0}^\infty.
+\bigl([B]_{a,a x^k e,c,c x^k e}\bigr)_{k=0}^\infty.
 \]
 Figure~\ref{fig:finalfamily} related the box to the orbit notation.
 
     We want to show
 \[
-\lim_{k \to \infty} \mu_f([B]_{a,bx^ke,c,dx^k e})=0
+\lim_{k \to \infty} \mu_f([B]_{a,a x^k e,c,c x^k e})=0
 \]
 By definition of $\mu_f$,
 \begin{align*}
-\mu_f([B]_{a,bx^ke,c,dx^k e})=\lim_{n\to \infty} f([bx^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n])
+\mu_f([B]_{a,a x^k e,c,c x^k e})=\lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
 \end{align*}
-    By Proposition~\ref{prop:join-split-alg} and by adding and subtracting terms of the type $f([x^k])$, $f([x^n])$ as needed, the limit in question is
-    equivalent to the same limit for the expression
+So, we are left to evaluate the nested limit
+\begin{align*}
+\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
+\end{align*}
+    By Proposition~\ref{prop:join-split-alg} and by adding and subtracting a term $f([x^{k+n}])$ we this is equivalent to the double limit
     \begin{align*}
-       f([bx^k]) - f([b^k]) + f([ex^n]) - f([x^n]) +  \\
-        f([cx^n]) - f([x^n]) - \bigl(f([ax^n]) - f([x^n])\bigr)\\
+       \lim_{k,n} f([ax^k]) - f([x^k]) + f([ex^n]) - f([x^n]) +  \\
+        f([cx^n]) - f([x^n]) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
         -\bigl(f([cx^k])-f([x^k])\bigr)-\bigl(f([ex^n])-f([x^n])\bigr)
     \end{align*}
-    This limit is zero by Corollary~\ref{cor:additivity-limit}.\qedhere
+    Finally, this double limit is 0 by \DMGtodo[inline]{This uses that $e$ crosses $x$ to the right. We need to assume this.} Corollary~\ref{cor:additivity-limit}.\qedhere
     \end{itemize}
 \end{proof}
 
 We now use Proposition~\ref{prop:finalfamily1} to prove that $\mu_f$
 is countably additive.
-We remark that at this point of the argument, we could also use an indirect strategy of using Riesz representation, as done in \cite[Proposition~3.11]{BIPP21:PositiveCrossratios}.
+We remark that at this point of the argument, we could also use a more indirect argument, using Riesz representation, as done in \cite[Proposition~3.11]{BIPP21:PositiveCrossratios}.
 
 We will need to consider more types of boxes
 than the half-open boxes we have been working with so far. For $B$ a
@@ -377,6 +395,13 @@ i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
 \]
 (see \cite[Lemma~4.4]{MZ19:PositivelyRatioed}, cf. \cite[Page~153]{Otal90:SpectreMarqueNegative} for details).
 
+\begin{figure}
+\centering{
+\resizebox{80mm}{!}{\svgfig{fundamental}}
+\caption{Fundamental domain}
+\label{fig:fundamental}
+}
+\end{figure}
 
 
 
@@ -391,8 +416,13 @@ i(\mu_f,C)=f(C).
 
   Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
 Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
-Choose a conjugate $y$ in $[y]$ so that $x$ and $y$ are parallel. Thus, $x$ and $y^n$ are parallel for $n>0$ and anti-parallel for $n<0$.
-Pick $p_1, q_1 \in \pi_1(S,*)$, both of them crossing $x$ and $y$ to the right.
+Choose a conjugate $y$ in $[y]$, and $p_1,q_1 \in \pi_1(S,*)$ so that $p_1^{-1} \cdot \wt{x}$ is parallel to $\wt{y}$, $\wt{y}$ is parallel to $q_1 \cdot \wt{x}$.
+
+
+Pick $p_1, q_1 \in \pi_1(S,*)$, so that $x$ crosses $p_1$ to the right, i.e., $p_1^{-1}$ crosses $x$ to the right, and $p_1$ crosses $y$ to the right.
+Furthermore, choose $q_1$ so that $q_1$ crosses $x$ and $y$ to the right. 
+Then, by Lemma~\ref{lem:rhs}, we have a configuration of lifts like the upper left and right lifts of $\wt{x}$ in Figure~\ref{fig:fundamental}. \DMGtodo[inline]{In the chain of equalities below we also need $p_1$ crosses $y$ to the right, and $q$ crosses $x$ to the right.}
+
 For each $n$, define the following elements of $\pi_1$: $p_1^n \coloneqq p_1$, $p_2^n \coloneqq p_1 y$, $q_1^n \coloneqq y^n q_1$, and $q_2^n \coloneqq y^{-(n+1)} q_1$.
 \begin{proposition}
 The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a rhs system, i.e.,
@@ -402,69 +432,34 @@ The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a rhs system, i.e.,
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-The first part follows by Lemma~\ref{lem:sides}, and the second by Lemma~\ref{lem:diagonals}.
+By NS dynamics of $y$, the translates of $\wt{x}$ by $(p_i^{(n)})^{-1}$ and $q_i^{(n)}$, for $i=1,2$, are like in Figure~\ref{fig:fundamental}.
 \end{proof}
 
-
-\begin{lemma}
- $p_1 y^n q_1$ crosses $x$ to the right, for all $n \in \mathbb{Z}$.
- \label{lem:sides}
-\end{lemma}
-\begin{proof}
-For $n=0$, $p_1 q_1$ crosses $x$ to the right by the choice of $p_1$ and $q_1$ and Lemma~\ref{lem:rhs_prod}.
-Let $n>0$. Since $x$ and $y^n$ are parallel, by Claim~\ref{lem:conj}, it follows that $x^{-1}y^{-n}x$ crosses $x$ to the right.
-Since $p_1x$ crosses $x$ to the right, and $x^{-1}q_1$ crosses $x$ to the right, it follows that $(p_1x)(x^{-1}y^{-n}x)(x^{-1}q_1)=p_1y^{-n}q_1$ crosses $x$ to the right. 
-Now we assume $n<0$.
-Since $x$ and $y^n$ are antiparallel, then by Lemma~\ref{lem:righthandedfoundation}, part (III), $xy^{n}$ crosses $x$ to the right.
-Since $p_1x^{-1}$ crosses $x$ to the right by Lemma~\ref{lem:rhs_prod} and $q_1$ crosses $x$ to the right, it follows that $(p_1x^{-1})(xy^{n})(q_1)=p_1y^{n}q_1$ crosses $x$ to the right. This proves the claim.
-\end{proof}
-
-\begin{lemma}
-$y^{-(n+1)} q_1 x^m p_1$ crosses $y^n q_1 x^m p_1 y$ to the right, for all $n \geq 0$ and $m>0$.
-\label{lem:diagonals}
-\end{lemma}
-\begin{proof}
-Let $a=q_1 x^m p_1$ and $b=y^{n+1}$.
-We will prove it by induction.
-Let $n=0$. Then, $b=y$.
-We want to show that $y^{-1}a$ crosses $ay$ to the right.
-We claim that $a$ crosses $y$ to the right.
-Then, by Lemma~\ref{lem:righthandedfoundation}, part (I), $y^{-1}a$ crosses $ay$, as we wanted to see.
-Suppose that the claim is true for $n>0$, i.e., $c_n \coloneqq y^{-(n+1)}a$ crosses $d_n \coloneqq y^n a y$ to the right.
-Note that $c_{n+1} = y^{-1} c_n$ and $d_{n+1}=y d_n$.
-Since $a$ crosses $y$ to the right, by Lemma~\ref{lem:rhs_prod}, $d_n$ crosses $y$ to the right, i.e., $y^{-1}$ crosses $d_n$ to the right.
-Also, by assumption, $c_n$ crosses $d_n$ to the right.
-Thus, by Lemma~\ref{lem:rightleftcomb}, $y^{-1} c_n$ crosses $d_n$ to the right.
-Since $a$ crosses $y$ to the right, it follows again by Lemma~\ref{lem:rhs_prod},  that $y^{-1}c_n$ crosses $y$ to the right. Thus, by Lemma~\ref{lem:rightleftcomb}, $y^{-1}c_n$ crosses $y d_n$ to the right.
-\end{proof}
-
-\begin{claim}
- $q_1 x^m p_1$ crosses $y$ to the right, for $m>0$.
- \label{lem:cross2}
-\end{claim}
-\begin{proof}
-Without lost of generality, we can assume that $m=1$, since the following argument only uses that $x^m$ is parallel to $y$ for $m>0$, which is equivalent to $x$ being parallel to $y$.
-By the choice of $p_1,q_1$, we have that $p_1y$ crosses $y$ to the right, and $Yq_1$ crosses $y$ to the right.
-Since $x$ and $y$ are parallel, by Lemma~\ref{lem:conj}, part (iv), $Yxy$ crosses $y$ to the right, and thus by Lemma~\ref{lem:rhs_prod}, $p_1xq_1=(p_1y)(Yxy)(Yq_1)$ crosses $y$ to the right.
-\end{proof}
 
     
-    Observe that by the above discussion\DMGtodo[inline]{Requires edit and writing it according to notation above.}
+    Observe that by the above discussion, if we translate the rhs system $[p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)}]$ into the orbit notation, and set $p \coloneqq p_1$ and $q \coloneqq q_1$
+    \begin{align*}
+        b_n &= p y^{-(n+1)} q \\
+        c_n &= p y^{n+1} q \\        
+        a_n &= p y^{n} q \\  
+        d_n &= p y^{-n} q \\
+    \end{align*}
     
     \begin{multline*}
       \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
       \begin{aligned}
-    &= \lim_{n\to\infty} \mu_f(B_{py^nq, pY^{n+1}q,py^{n+1}r,py^{-n}q})  \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}rx^{m}][py^{-n-1}qx^{m}])-f([py^{n}rx^{m}][py^{-n}qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m,n\to\infty}f([py^{n+1}]) + f([rx^{m}]) + f([py^{-n-1}]) + f([qx^{m}])\\
-    &\qquad-f([py^{n}]) - f([rx^{m}]) - f([py^{-n}]) - f([qx^{m}]) \\
-    &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) +  f([py^{-n-1}]) -f([py^{n}]) - f([py^{-n}])  \\
+    &= \lim_{n\to\infty} \mu_f(B_{a_n, b_n, c_n, d_n})  \\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
+    &= \frac{1}{2}\lim_{m,n\to\infty}f([py^{n+1}]) + f([qx^{m}]) + f([py^{-(n+1)}]) + f([qx^{m}])\\
+    &\qquad-f([py^{n}]) - f([qx^{m}]) - f([py^{-n}]) - f([qx^{m}]) \\
+    &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) +  f([py^{-(n+1)}]) -f([py^{n}]) - f([py^{-n}])  \\
     &= \frac{1}{2} \lim_{n\to\infty}f([py^{n+1}]) - f([y^{n+1}]) + f([y^{n}]) -f([py^{n}]) \\
     &\qquad+ f([py^{-n-1}]) - f([y^{-n-1}]) + f([y^{-n}]) - f([py^{-n}])  + f([y]) + f([y^{-1}])\\
     &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
     &=f([y])
       \end{aligned}
     \end{multline*}
+    \DMGtodo[inline]{We need to prove that the limit $f(py^{n}) - f(y^n)$ when $p$ crosses $y$ to the left exists, for fifth equality to hold.}
       The first equality follows by the fact that the boxes defined
       above converge from below to $(\gamma_-,\gamma_+) \times [x_-,y
       \cdot x_-)$ as $n \to \infty$. The second equality is by

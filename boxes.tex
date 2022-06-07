@@ -186,6 +186,19 @@ crossing at the basepoint.
   \end{enumerate}
 \end{proof}
 
+From Lemma~\ref{lem:righthandedfoundation} it follows that.
+
+
+\begin{lemma}
+  Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
+  Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
+  $a \cdot \wt x$ are parallel, and not anti-parallel or crossing.
+  Furthermore, if they cross essentially, then $a$ and~$x$ have a
+  right-handed crossing iff $a \cdot \wt x$ is on the right-hand side
+  of $\wt x$, when viewed along the orientation of~$\wt x$.
+  \label{lem:rhs}
+\end{lemma}
+
 We will use the following elementary observations about right handed crossings.
 
 \DPTtodo[inline]{Use arrows more consistently to refer to the axis of
@@ -224,37 +237,6 @@ As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following
       \item It follows by Lemma~\ref{lem:righthandedfoundation}, part (I).
       \item It follows by combining the two previous parts.
   \end{enumerate}
-\end{proof}
-
-The following facts follow from repeated application of Lemma~\ref{lem:righthandedfoundation} and Lemma~\ref{lem:rhs_prod}. 
-We collect them here since they will be useful in Section~\ref{sec:construct}.
-
-\begin{lemma}
-  \begin{enumerate}
-  \item If $a$ crosses $b$ to the right, then $aba^{-1}$ and $a$  are parallel. 
-  \item If $a$ and $b$ are parallel, then $a^{-1}b^{-1}a$ crosses $a$ to the right.
-  \item If $a$ and $b$ are parallel, then $a^{-1}b$ crosses $a$ to the right.
-  \item If $a$ and $b$ are parallel, then $Bab$ crosses $b$ to the right.
-  \end{enumerate}
-  \label{lem:conj}
-\end{lemma}
-\begin{proof}
-\begin{enumerate}
-\item Suppose $a$ crosses $b$ to the right. This means that $ba$ also crosses $b$ to the right, by Lemma~\ref{lem:rhs_prod}. Then, by part (I) of Lemma~\ref{lem:righthandedfoundation}, we get that $bab^{-1}$ and $a$ are parallel.
-  \item Suppose $a$ and $b$ are parallel. Then $a$ and $ba$ are parallel, by part (II) of Lemma~\ref{lem:righthandedfoundation}. By that part again, it follows that $((ba)^{-1})a$ crosses $a$ to the right, so the result follows.
- \item  If $a$ and $b$ are parallel, this means $b^{-1}$ and $a^{-1}$ are parallel. Then, by part (II) of Lemma~\ref{lem:righthandedfoundation}, we have $b^{-1}a$ crosses $a^{-1}$ to the right, and by taking inverses, $a^{-1}b$ crosses $a$ to the right.
- \item If $a$ and $b$ are parallel, then, by part (I) of Lemma~\ref{lem:righthandedfoundation}, $Ba$ crosses $b$ to the right, and then by Lemma~\ref{lem:rhs_prod}, $Bab$ crosses $b$ to the right.
-  \end{enumerate}
-\end{proof}
-
-\begin{lemma}
-If $a$ crosses $b$ to the right and $a$ crosses $c$ to the right, then $a$ crosses $bc$ to the right.
-\label{lem:rightleftcomb}
-\end{lemma}
-\begin{proof}
-$a$ crosses $b$ to the right if and only if $a$ crosses $b^{-1}$ to the left, if and only if $b^{-1}$ crosses $a$ to the right.
-Similarly, $c^{-1}$ crosses $a$ to the right.
-Thus, $c^{-1}b^{-1}$ crosses $a$ to the right, by Lemma~\ref{lem:rhs_prod}, i.e., $(bc)^{-1}$ crosses $a$ to the right, i.e. $a$ crosses $(bc)^{-1}$ to the left, i.e., $a$ crosses $bc$ to the right.
 \end{proof}
 
 \subsection{Right-handed boxes}

@@ -125,3 +125,72 @@ Indeed, \DMGtodo[inline]{Need to discuss the antiparallel case, too, hopefully s
 Then by Lemma~\ref{lem:righthandedfoundation} part (II), we would have that 
 $y$ is parallel to $(q_1 x p_1)^{-1} y (q_1 x p_1)$.
 By then, by Lemma~\ref{lem:conj1}, $q_1 x p_1$ crosses $y$ to the right, which is a contradiction with the hypothesis.
+
+\section{More recent lemmas}
+
+\begin{proposition}
+For $C$ a closed curve, we have
+\[
+i(\mu_f,C)=f(C).
+\]
+\label{prop:recoverintersection}
+\end{proposition}
+
+  Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
+Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
+Choose a conjugate $y$ in $[y]$ so that $x$ and $y$ are parallel. Thus, $x$ and $y^n$ are parallel for $n>0$ and anti-parallel for $n<0$.
+Pick $p_1, q_1 \in \pi_1(S,*)$, both of them crossing $x$ and $y$ to the right.
+For each $n$, define the following elements of $\pi_1$: $p_1^n \coloneqq p_1$, $p_2^n \coloneqq p_1 y$, $q_1^n \coloneqq y^n q_1$, and $q_2^n \coloneqq y^{-(n+1)} q_1$.
+\begin{proposition}
+The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a rhs system, i.e.,
+\begin{enumerate}
+    \item $p_i^nq_j^n$ cross $x$ to the right, for $i,j=1,2$.
+    \item $q_2^n x^m p_1^n$ crosses $q_1^n x^m p_2^n$ to the right, for $m \geq 0$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The first part follows by Lemma~\ref{lem:sides}, and the second by Lemma~\ref{lem:diagonals}.
+\end{proof}
+
+
+\begin{lemma}
+ $p_1 y^n q_1$ crosses $x$ to the right, for all $n \in \mathbb{Z}$.
+ \label{lem:sides}
+\end{lemma}
+\begin{proof}
+For $n=0$, $p_1 q_1$ crosses $x$ to the right by the choice of $p_1$ and $q_1$ and Lemma~\ref{lem:rhs_prod}.
+Let $n>0$. Since $x$ and $y^n$ are parallel, by Claim~\ref{lem:conj}, it follows that $x^{-1}y^{-n}x$ crosses $x$ to the right.
+Since $p_1x$ crosses $x$ to the right, and $x^{-1}q_1$ crosses $x$ to the right, it follows that $(p_1x)(x^{-1}y^{-n}x)(x^{-1}q_1)=p_1y^{-n}q_1$ crosses $x$ to the right. 
+Now we assume $n<0$.
+Since $x$ and $y^n$ are antiparallel, then by Lemma~\ref{lem:righthandedfoundation}, part (III), $xy^{n}$ crosses $x$ to the right.
+Since $p_1x^{-1}$ crosses $x$ to the right by Lemma~\ref{lem:rhs_prod} and $q_1$ crosses $x$ to the right, it follows that $(p_1x^{-1})(xy^{n})(q_1)=p_1y^{n}q_1$ crosses $x$ to the right. This proves the claim.
+\end{proof}
+
+\begin{lemma}
+$y^{-(n+1)} q_1 x^m p_1$ crosses $y^n q_1 x^m p_1 y$ to the right, for all $n \geq 0$ and $m>0$.
+\label{lem:diagonals}
+\end{lemma}
+\begin{proof}
+Let $a=q_1 x^m p_1$ and $b=y^{n+1}$.
+We will prove it by induction.
+Let $n=0$. Then, $b=y$.
+We want to show that $y^{-1}a$ crosses $ay$ to the right.
+We claim that $a$ crosses $y$ to the right.
+Then, by Lemma~\ref{lem:righthandedfoundation}, part (I), $y^{-1}a$ crosses $ay$, as we wanted to see.
+Suppose that the claim is true for $n>0$, i.e., $c_n \coloneqq y^{-(n+1)}a$ crosses $d_n \coloneqq y^n a y$ to the right.
+Note that $c_{n+1} = y^{-1} c_n$ and $d_{n+1}=y d_n$.
+Since $a$ crosses $y$ to the right, by Lemma~\ref{lem:rhs_prod}, $d_n$ crosses $y$ to the right, i.e., $y^{-1}$ crosses $d_n$ to the right.
+Also, by assumption, $c_n$ crosses $d_n$ to the right.
+Thus, by Lemma~\ref{lem:rightleftcomb}, $y^{-1} c_n$ crosses $d_n$ to the right.
+Since $a$ crosses $y$ to the right, it follows again by Lemma~\ref{lem:rhs_prod},  that $y^{-1}c_n$ crosses $y$ to the right. Thus, by Lemma~\ref{lem:rightleftcomb}, $y^{-1}c_n$ crosses $y d_n$ to the right.
+\end{proof}
+
+\begin{claim}
+ $q_1 x^m p_1$ crosses $y$ to the right, for $m>0$.
+ \label{lem:cross2}
+\end{claim}
+\begin{proof}
+Without lost of generality, we can assume that $m=1$, since the following argument only uses that $x^m$ is parallel to $y$ for $m>0$, which is equivalent to $x$ being parallel to $y$.
+By the choice of $p_1,q_1$, we have that $p_1y$ crosses $y$ to the right, and $Yq_1$ crosses $y$ to the right.
+Since $x$ and $y$ are parallel, by Lemma~\ref{lem:conj}, part (iv), $Yxy$ crosses $y$ to the right, and thus by Lemma~\ref{lem:rhs_prod}, $p_1xq_1=(p_1y)(Yxy)(Yq_1)$ crosses $y$ to the right.
+\end{proof}
