@@ -394,16 +394,16 @@ It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves
   mean to pick a different letter?}
 If $y$ is a hyperbolic element representing a closed curve
 $C \subset \Sigma$, let
-$x \in \partial_{\infty} \wt{\Sigma} - \{ y_-, y_+\}$ so that
-$y_-, x, y \cdot x, y_+$ are in cyclic order.
+$z \in \partial_{\infty} \wt{\Sigma} - \{ y_-, y_+\}$ so that
+$y_-, z, y \cdot z, y_+$ are in cyclic order.
 \DPTtodo{This is not quite right, it's a domain for the action on the
   \emph{crossing} geodesics}
 Then
-$(y_+,y_-) \times [x,y \cdot x)$ is a Borel fundamental domain for the
-$\langle y \rangle$-action on $G(\wt{\Sigma})$, and the intersection
+$(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
+$\langle y \rangle$-action on $\DG(\wt{\Sigma})$, and the intersection
 of $C$ with a geodesic current $\mu$ can be computed as
 \[
-i(\mu, C) = \mu((y_+,y_-) \times (x,y \cdot x)).
+i(\mu, C) = \mu((y_+,y_-) \times (z,y \cdot z)).
 \]
 (see \cite[Lemma~4.4]{MZ19:PositivelyRatioed}, cf. \cite[Page~153]{Otal90:SpectreMarqueNegative} for details).
 
@@ -453,15 +453,15 @@ If we translate the rhs system
 $[p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)}]$ into the orbit notation,
 and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
 \begin{align*}
-  a_n &= p y^{n}   q &  b_n &= p y^{-(n+1)} q \\
-  c_n &= p y^{n+1} q &  d_n &= p y^{-n} q.
+  a^{(n)} &= p y^{n}   q &  b^{(n)} &= p y^{-(n+1)} q \\
+  c^{(n)} &= p y^{n+1} q &  d^{(n)} &= p y^{-n} q.
 \end{align*}
 
 We then have    
     \begin{multline*}
       \mu_f((\gamma_-,\gamma_+) \times [x_-,y \cdot x_-)) \\
       \begin{aligned}
-    &= \lim_{n\to\infty} \mu_f(B_{a_n, b_n, c_n, d_n})  \\
+    &= \lim_{n\to\infty} \mu_f(B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}})  \\
     &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
     &= \frac{1}{2}\lim_{m,n\to\infty}f([py^{n+1}]) + f([qx^{m}]) + f([py^{-(n+1)}]) + f([qx^{m}])\\
     &\qquad-f([py^{n}]) - f([qx^{m}]) - f([py^{-n}]) - f([qx^{m}]) \\
