@@ -59,7 +59,7 @@ Let $f$ satisfy convex union and smoothing.
     \lim_{n \to \infty} f([a x^n]) - f([x^n])
   \]
   exists.
-\end{corollary}\DMGtodo[inline]{Do we }
+\end{corollary}
 
 \begin{proof}
   By Eq.~\eqref{eq:cross-red2}, and smoothing and additivity (in fact, convex union is enough), we get%
@@ -91,8 +91,7 @@ Let $f$ satisfy convex union and smoothing.
   \[
     -f([a]) \le f([a x^n]) - f([x^n]).
   \]
-  Thus, $g$ is a convex function that is bounded as $n \to \infty$, and therefore it has a
-  well-defined slope at infinity. Thus, the limit in the statement exists.
+  Thus, by Lemma~\ref{lem:onevarconvexbounded}, the limit in the statement exists.
 \end{proof}
 
 \begin{remark}
@@ -168,7 +167,86 @@ We separate the proof in two cases, depending on the magnitude of $|m-n|$.
   as we wanted to show.\qedhere
 \end{itemize}
  \end{proof}
+ 
+We will also need to show existence of limits of words of the type $by^m ax^n$.
 
+ \begin{lemma}
+ Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
+ Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
+ Consider
+ \[
+ g(n,m) \coloneqq f(b y^m a x^n).
+ \]
+ Then, there exist $r_0,s_0 \in \mathbb{N}$ so that, 
+ \begin{enumerate}
+ \item For all $m$, and all $r>r_0$, $g(\cdot,m) \colon \mathbb{N} \to \mathbb{R}$ is $r$-midpoint convex.
+ \item For all $n$, and all $s>s_0$, $g(n,\cdot) \colon \mathbb{N} \to \mathbb{R}$ is $s$-midpoint convex.
+ \end{enumerate}
+ \label{lem:axbymidconvex}
+ \end{lemma}
+\begin{proof}
+It follows by applying $f$ to the left hand side of the smoothing resolutions in Proposition~\ref{prop:fundamental-aybx}, and using convex union, smoothing, stability and homogeneity in this order.
+\end{proof}
+
+The following lemma follows by the definition of right-handed crossing (Definition~\ref{def:righthandedcrossing}).
+\begin{lemma}
+Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right.
+\[
+[a][x^n] \reducesto [ax^n], \mbox{ for all } n \in \mathbb{N}
+\]
+\label{lem:P}
+\end{lemma}
+
+We will also need the following converse smoothing.
+
+\begin{lemma}
+Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right. There exists $s_0=s_0(a) \in \mathbb{N}$ so that
+\[
+[ax^n][x] \reducesto [x], \mbox{ for all } n \geq s_0,
+\]
+\label{lem:Q}
+\end{lemma}
+\begin{proof}
+The claim follows by Equation~\ref{eq:cross-red3} in Proposition~\ref{prop:join-split-geom}, taking $m=0$.
+\end{proof}
+
+As a consequence of these lemmas and the convexity results in Section~\ref{sec:convexity}, we get the following.
+
+
+ \begin{proposition}
+  Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
+ Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
+  Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
+ Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
+ Then, the double limit
+ \[
+\lim_{n,m} f(b y^m a x^n) - mf(y) - nf(x)
+\]
+exists.
+ \end{proposition}
+ \begin{proof}
+ We define $g(n,m) \coloneqq f(b y^m a x^n) - mf(y) - nf(x)$. We note that, by Lemma~\ref{lem:axbymidconvex}, $g$ is $(r,s)$-midconvex for some $r,s \in \mathbb{N}$.
+ If we can prove that $g$ is bounded, by Lemma~\ref{lem:limexistrmidconvextwovar}, the limits will exist.
+ On the one hand, 
+ \begin{align*}
+     g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
+     &\leq f([aby^m]) - m f([y]) \\
+     &\leq f([ab])
+ \end{align*}
+ In the first inequality, we have used Lemma~\ref{lem:P} with $by^ma$ in place of $a$. 
+ \DMGtodo[inline]{To apply this we need $by^ma$ crosses $x$ to the right. }
+ In the second inequality, we use Lemma~\ref{lem:P}, with $ab$ in place of $a$ and $y$ in place of $x$.  \DMGtodo[inline]{To apply this we need $ab$ crosses $y$ to the right. }
+ On the other hand, 
+ \begin{align*}
+     g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
+     &\geq -f([by^ma]) - m f([y]) \\
+     &\geq -f([ab])
+ \end{align*}
+ In the first inequality, we have used Lemma~\ref{lem:Q} with $by^ma$ in place of $a$. 
+
+ In the second inequality, we use Lemma~\ref{lem:P}, with $ab$ in place of $a$ and $y$ in place of $x$.  
+ It follows that $g$ is bounded, and thus the limit exists.
+ \end{proof}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "Intersections"

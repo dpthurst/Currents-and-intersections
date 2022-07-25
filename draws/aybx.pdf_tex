@@ -50,13 +50,23 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.45001631)%
+  \begin{picture}(1,0.38615838)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{aybx.pdf}}%
-    \put(-0.0011008,0.21331931){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^-$\end{tabular}}}}%
-    \put(0.55017132,0.20831906){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tilde{y}$\end{tabular}}}}%
-    \put(0.94919837,0.21410208){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^+$\end{tabular}}}}%
+    \put(-0.0011008,0.1731508){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^-$\end{tabular}}}}%
+    \put(0.55017132,0.16815055){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\tilde{y}$\end{tabular}}}}%
+    \put(0.94919837,0.17393357){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{aybx.pdf}}%
+    \put(0.02918231,0.11376684){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^{-s}a^{-1} \cdot \wt{x}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{aybx.pdf}}%
+    \put(0.3829514,0.0913634){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a^{-1} \cdot \wt{x}$\end{tabular}}}}%
+    \put(0.42682349,0.30537654){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^{m-s}b \cdot \wt{x}$\end{tabular}}}}%
+    \put(0.72422752,0.30561043){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y^{m}b \cdot \wt{x}$\end{tabular}}}}%
+    \put(0.01317438,0.002926){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(y^mbx^nay^s)^-$\end{tabular}}}}%
+    \put(0.71393612,0.37496571){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(y^mbx^nay^s)^+$\end{tabular}}}}%
+    \put(0.45298686,0.36918271){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(y^{m-s}bx^na)^+$\end{tabular}}}}%
+    \put(0.28147522,0.00678131){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(y^{m-s}bx^na)^-$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{aybx.pdf}}%
   \end{picture}%
 \endgroup%
