@@ -59,7 +59,7 @@ Let $f$ satisfy convex union and smoothing.
     \lim_{n \to \infty} f([a x^n]) - f([x^n])
   \]
   exists.
-\end{corollary}\DMGtodo[inline]{Do we }
+\end{corollary}\DPTtodo[inline]{Do we need this when $x$ is not simple?}
 
 \begin{proof}
   By Eq.~\eqref{eq:cross-red2}, and smoothing and additivity (in fact, convex union is enough), we get%
@@ -104,7 +104,9 @@ By picking the right orientations, $a$ crosses $b$ right-handedly, thus $ab$ als
 $f$ satisfies quasi-smoothing instead of smoothing (see \cite[Example~4.10]{MGT19:CurvesToCurrents}) for details). 
 The expression in the limit in Corollary~\ref{cor:additivity-limit} for the pair $ab$ and $b$ is
 \begin{equation*}
-f(ab^{n+1})-f(b^n)=\left\{ \begin{array}{cc} 1+ \frac{n+2}{2} - \frac{n}{2}=2& \mbox{ if } n \mbox{ is even } \\ 1+ \frac{n+1}{2} - \frac{n+1}{2}=1 & \mbox{ if } n \mbox{ is odd } \end{array} \right.
+  f(ab^{n+1})-f(b^n)=\begin{cases} 1+ \frac{n+2}{2} - \frac{n}{2}=2& \mbox{ if } n \mbox{ is even } \\
+    1+ \frac{n+1}{2} - \frac{n+1}{2}=1 & \mbox{ if } n \mbox{ is odd }
+  \end{cases}
 \end{equation*}
 so the limit when $n$ goes to infinity doesn't exist.
 \end{remark}
