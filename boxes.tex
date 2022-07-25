@@ -532,140 +532,101 @@ essential crossings.
 \end{figure}
 
 \begin{lemma}
-Given $x$ and $y$, there exist $a,b$ so that $a^{-1} \cdot \wt{x}$, $\wt{y}$, $b \cdot \wt{y}$ and $ab \cdot \wt{y}$ are parallel, in this order, as in Figure~\ref{fig:initial}
+Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that $a^{-1} \cdot \wt{x}$, $\wt{y}$, $b \cdot \wt{x}$ and $ab \cdot \wt{y}$ are parallel, in this order, as in Figure~\ref{fig:initial}
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate of $\wt{x}$, say $b \cdot \wt{x}$, so that $\wt{y}$ and $b \cdot \wt{x}$ are parallel.
-Finally, find $g \in \pi_1(X)$ so that $g^{-}$ is in the interval $(y_-, y_+)$ and $g^+$ is in the interval $((b \cdot \wt{x})^+, (b \cdot \wt{x})^-)$.
-For $n$ large enough, let $a=g^n$, to obtain the desired configuration of lifts.
+Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate of $\wt{x}$, $a^{-1} \cdot \wt{x}$, so that $a^{-1} \cdot \wt{x}$ and $\wt{y}$ and  are parallel. Therefore, $\wt{x}$ and $a \cdot \wt{y}$ are parallel, for any $b$, $b \wt{x}$ and $ba \cdot \wt{y}$ are parallel.
+Find $g \in \pi_1(X)$ so that $g^{+}$ is in the interval $(y_-, y_+)$ and $g^-$ is in the interval $((a^{-1} \cdot \wt{x})^+, (a^{-1} \cdot \wt{x})^-)$.
+If $n$ is large enough, letting $b=g^n$, by the North-South dynamics of $g$ we can ensure that $b \cdot \wt{x}$ is parallel to $\wt{y}$, and the configuration in Figure~\ref{fig:initial} follows.
 \end{proof}
 
-
-\DMGtodo[inline]{We need the following stronger lemma}
 
 \begin{proposition}\label{prop:fundamental-aybx}
 Let $a,b,x,y \in \pi_1(S)$ be arbitrary curves, ordered as in Figure~\ref{fig:initial}.
 There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
 
   \begin{align}
-    \label{eq:crossuniform_n} \mbox{For all } m \mbox{ } [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto 2[b y^m a x^{n}]\\
-    \label{eq:crossuniform_m} \mbox{For all } n \mbox{ } [b y^{m+s} a x^{n} ] [b y^{m-s} a x^{n}] &\reducesto 2[b y^m a x^{n}]
+    \label{eq:crossuniform_n} \mbox{For all } m \mbox{ } [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
+    \label{eq:crossuniform_m} \mbox{For all } n \mbox{ } [b y^{m+s} a x^{n} ] [b y^{m-s} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
   \end{align}
 \end{proposition}
 
-The strongest version we can get is
 
-\begin{proposition}\label{prop:convexfundamental-aybx}
-Let $a,b,x,y \in \pi_1(S)$ be arbitrary curves, ordered as in Figure~\ref{fig:initial}.
-We have,
-
-  \begin{align}
-    \label{eq:crossuniform_n} \mbox{For all } m,  \mbox{ } [b y ^m a x^{n+1}] [b y^m a x^{n-1}] &\reducesto 2[b y^m a x^{n}]\\
-    \label{eq:crossuniform_m} \mbox{For all } n, \mbox{ } [b y^{m+1} a x^{n} ] [b y^{m-1} a x^{n}] &\reducesto 2[b y^m a x^{n}]
-  \end{align}
-\end{proposition}
 
 
 
 \begin{figure}
 \centering{
-\resizebox{90mm}{!}{\svgfig{aybx}}
+\resizebox{120mm}{!}{\svgfig{aybx}}
 \caption{}
 \label{fig:aybx}
 }
 \end{figure}
 
+The following lemma follows from the north-south dynamics of $\pi_1(S)$ on the boundary at infinity.
 
-\begin{proof}
-  We first show that we can choose lifts for which the crossing is  essential. Use the band model, centered on~$\wt{y}$. We will
+\begin{lemma}
+Given $a,b, x \in \pi_1(\Sigma)$, so that $a^{-1} \cdot \wt{x}$ and $b \cdot \wt{x}$ are parallel, for every $k$, $(bx^ka)^+ \in w(b)$ and $(bx^ka)^- \in w(a^{-1})$.
+\label{lem:cornering}
+\end{lemma}
+
+
+
+
+\begin{proof}[Proof of Proposition~\ref{prop:fundamental-aybx}]
+  We prove Equation~\ref{eq:crossuniform_m} by showing  choose lifts of conjugates of the curves in the left hand-side of the smoothing for which the crossing is  essential. Use the band model, centered on~$\wt{y}$, and normalized so that the translation length of $y$ along $\wt{y}$ is equal to 1. This is what we will mean by \emph{normalized bands model}. We will
   consider the windows on $\bdy^\infty\wt \Sigma$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(a)$ be the interval on the
-  boundary at infinity cut out by the endpoints of $a \cdot \wt x$
-  that does not contain the endpoints $x^\pm$ of $\wt x$. Similarly for
-  $w(x^n a^{-1})$, $w(x^n b)$, and $w(x^n b^{-1})$. All of these are intervals
-  on the upper or lower boundary in the bands model, by the assumption
-  that $a$ and~$b$ cross $x$ to the right, and the geodesic lift of
-  $x^kax^\ell$ has endpoints $(x^kax^\ell)^- \in w(x^{-\ell}a^{-1})$
-  and $(x^kax^\ell)^+ \in w(x^ka)$.
-  See Figure~\ref{fig:abcrossings}; ``left'' and ``right'' will refer
+  lifts of~$x$. Specifically, let $w(y^m b)$ be the interval on the
+  boundary at infinity cut out by the endpoints of $y^m b \cdot \wt x$
+  that does not contain the endpoints $y^\pm$ of $\wt y$. Similarly for
+  $w(y^{m-s} b)$, $w(y^{-s} a^{-1})$, and $w(a^{-1})$. All of these are intervals
+  on the upper or lower boundary in the bands model, by the initial configuration assumption of Lemma~\ref{lem:initial}.
+  See Figure~\ref{fig:aybx}; ``left'' and ``right'' will refer
   to the order on the boundary (minus $x^\pm$) of that figure.
 
-
-  \begin{figure}
-\centering{
-\resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
-\caption{Lifts of $x$ are depicted in blue. The central blue lift relates to the lower and upper lifts by translates of the type $x^k a$, $x^l a^{-1}$, $x^m a$ and $x^n a^{-1}$, as labelled. Each translate determines a window $w( \cdot )$, which is an interval on $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.}
-\label{fig:abcrossings}
-}\DMGtodo[inline]{The lift $x^n a$ in the figure should be re-labelled $ax^n$ (according to the proof)}
-\end{figure}
-
-
-
-  Observe that (for instance) $w(x^n a)$ is a translate of $w(a)$.
+  Observe that (for instance) $w(y^n a^{-1})$ is a translate of $w(a^{-1})$.
   Furthermore, each window is a
-  finite size, so there is a finite range $[s_1,s_2]$ so that $w(a)$
-  is to the left of to the right of $w(x^rb)$ if $r \notin [s_1,s_2]$. Similarly there
-  is a range $[s_1',s_2']$ so that $w(a^{-1})$ is disjoint from
-  $w(x^rb^{-1})$ if $r \notin [s_1',s_2']$.
-  In fact, by the choice of $a$, 
+  finite size, so there is a number $s>0$ so that $w(y^{m-s}b)$
+  is to the left of $w(y^m b)$, and similarly,
+   $w(y^{-s}a^{-1})$ is to the left of
+  $w(a^{-1})$.
+  In fact, if we scale the bands model so that the translation distance of $y$ is 1, it suffices to take
+  \begin{equation*}
+  s \geq s_0 = \lfloor \max \{ \wid{y}(w(a^{-1})),\wid{y}(w(b)) \} \rfloor
+  \end{equation*}
+  where $\wid{y}(w(b))$ denotes the length of the interval defining the window $w(a)$ at the boundary at infinity of the normalized bands model.
+  Consider now the curves
+  $y^{m-s}bx^na$ and $y^m bx^n ay^s \in [y^{m+s}bx^na]$.
+  We note that, by the north-south dynamics of $y$, $w(y^{m-s}b)$ is to the left of $w(y^m b)$, and
+  $w(y^{-s} a^{-1})$ to the left of $w(a^{-1})$.
+  \begin{claim}
+  \begin{itemize}
+  \item $(y^{m-s} b x^n a)^+ \in w(y^{m-s} b)$
+  \item $(y^{m-s} b x^n a)^- \in w(a^{-1})$
+  \end{itemize}
+  \end{claim}
+  \begin{proof}
+  It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $a$ and $y^{m-s}b$. Note that the assumptions of the Lemma are satisfied: indeed, $a^{-1} \cdot \wt{x}$ and $b \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $a^{-1} \cdot \wt{x}$ and $y^{m-s} b \cdot \wt{x}$ are parallel.
+  \end{proof}
+  We also need the following claim, which follows similarly by Lemma~\ref{lem:cornering}.
+  \begin{claim}
+  \begin{itemize}
+  \item $(y^{m} b x^n a y^{s})^+ \in w(y^{m} b)$
+  \item $(y^{m} b x^n a y^{s})^- \in w(y^{-s} a^{-1})$
+  \end{itemize}
+  \end{claim}
   
-  Set
-  $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$. Now consider the curves 
-  $ax^n$ and $x^rbx^{m-r}$, with $s < r < m-n-s$. We have
+Combined, these mean that
+  $y^m bx^{n} y^s$ crosses $y^{m-s}bx^na$ to the right.  We have, thus,
   \[
-    r-m < -n-s \le -n+s_1',
+    [y^{m+s} bx^{n}][y^{m-s}bx^na]=[y^m bx^{n} y^s][y^{m-s}bx^na] \reducesto [(y^mbx^na)^2]
   \]
-  so $w(x^{r-m}b^{-1})$ is to the left of $w(x^{-n}a^{-1})$, and
-  \[
-    s_2 \le s < r,
-  \]
-  so $w(x^rb)$ is to the right of $w(a)$. Combined, these mean that
-  $x^rbx^{m-r}$ crosses $ax^n$ to the left. Similarly if
-  $m-n+s < r < -s$, the curve $x^rbx^{m-r}$ crosses $ax^n$ to the
-  right. In either case, we have
-  \[
-    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
-  \]
-  proving Equation~\eqref{eq:cross_a}.
-
-  For Equation~\eqref{eq:cross_b}, write $ax^nbx^m$ as $gh$ with
-  $g=ax^{n+r}$ and $h=x^{-r}bx^m$. Note the endpoints of $gh$
-  are in $w(x^{-m}b^{-1})$ and $w(a)$, while the endpoints of its
-  conjugate $hg =x^{-r}bx^max^{n+r}$ are in $w(x^{-n-r}a^{-1})$ and
-  $w(x^{-r}b)$. Then if $s < r < m-n-s$, we have
-  \[
-    -r < -s \le -s_1,
-  \]
-  so $w(x^{-r}b)$ is to the left of $w(a)$, while
-  \[
-    -m \le -m+s+s_1' < -n - r + s_1',
-  \]
-  so $w(x^{-n-r}a^{-1})$ is to the right of  $w(x^{-m}b^{-1})$, and
-  $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross_b}.
-  We similarly get an essential self-crossing if $m-n+s < r < -s$.
-
-  In the cases when $x$ is simple, two windows are disjoint, nested,
-  or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$. If in
-  addition $a=b$, we also see that all the $s_i$ are equal to~$0$.
-  Eq.~\eqref{eq:cross-red2} follows immediately.
-
-  To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
-  that $n < m$. Then by the
-  analysis above, $(ax^n)^-$ is in $w(x^{-n}a^{-1})$, and thus to the
-  right of $(ax^m)^-$, which is in $w(x^{-m}a^{-1})$. For the forward
-  endpoints, the above simple analysis just says that both endpoints
-  lie in $w(a)$. We can do better by looking deeper in the words:
-  $(ax^n)^+$ lies in $w(ax^na)$, meaning the interval between the
-  endpoints of $ax^na\cdot\wt x$ that is disjoint from $x^\pm$.
-  Similarly $(ax^m)^+$ lies in $w(ax^ma)$, which is to the right of
-  $w(ax^na)$. It follows that $ax^n$ crosses $ax^m$ to the right, and
-  so
-  \[
-    [ax^n][ax^m] \reducesto [(ax^n)^{-1}ax^m] = [x^{m-n}]
-  \]
-  as desired.
+  proving Equation~\eqref{eq:crossuniform_n}.
+  Equation~\eqref{eq:crossuniform_n} follows similarly.
 \end{proof}
+
+We will also need to control the following smoothings.
 
 
 \begin{proposition}\label{prop:join-split-geom}
@@ -677,11 +638,11 @@ crossing $x$ to the right. Then there is a number $s \ge 0$
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
-  If $x$ is simple and $a=b$, we may take $s=0$ and we have
+  If $x$ is simple and $a=b$, we may take $s=0$ and we have, for all $n$,
   \begin{align}
     [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}].\label{eq:cross-red2} \\
-    \intertext{In this case, if $n \ne m$, we also have}
-    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-red3}
+    \intertext{If $n \ne m$, there exists $s=s(a) \geq 0$ (with $s=0$ if $x$ is simple), and for all $n,m$ so that for $|n-m| \geq s_0$,}
+    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].    \label{eq:cross-red3}
   \end{align}
 \end{proposition}
 We will also use this lemma in Section~\ref{sec:recovery} to show
@@ -761,7 +722,7 @@ $x$ is not simple.
   Eq.~\eqref{eq:cross-red2} follows immediately.
 
   To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
-  that $n < m$. Then by the
+  that $n < m$. Let $s_0(a) \coloneqq \lfloor \wid{x}(w(a)) \rfloor$. Observe that, since the bands model is normalized so that the translation length of $x$ is 1, if $x$ is simple, necessarily $\wid{x}(w(a))<1$ (for otherwise two lifts of $x$ would intersect), and thus in that case $s_0=0$. Assume $n-m > s_0$.  Then by the
   analysis above, $(ax^n)^-$ is in $w(x^{-n}a^{-1})$, and thus to the
   right of $(ax^m)^-$, which is in $w(x^{-m}a^{-1})$. For the forward
   endpoints, the above simple analysis just says that both endpoints
