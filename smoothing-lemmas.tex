@@ -50,27 +50,17 @@ Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex 
 Adding both equations, we get $f(a^n) \geq -2R$. By stability and homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large enough we see that $f(a) \geq 0$.
 \end{proof}
 
-The following result shows a key limit to construct the measure exists and uses the smoothing lemmas.
 
-\begin{corollary}\label{cor:additivity-limit}
-Let $f$ satisfy convex union and smoothing.
-  Let $x$ be simple. If $a$ crosses $x$ to the right, then
-  \[
-    \lim_{n \to \infty} f([a x^n]) - f([x^n])
-  \]
-  exists.
-\end{corollary}\DPTtodo[inline]{Do we need this when $x$ is not simple?}
-
+The following lemma follows by the definition of right-handed crossing (Definition~\ref{def:righthandedcrossing}).
+\begin{lemma}
+Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right.
+\[
+[a][x^n] \reducesto [ax^n], \mbox{ for all } n \in \mathbb{N}
+\]
+\label{lem:P}
+\end{lemma}
 \begin{proof}
-  By Eq.~\eqref{eq:cross-red2}, and smoothing and additivity (in fact, convex union is enough), we get%
-  \footnote{This is where smoothing as opposed to just
-    quasi-smoothing is crucial. See Remark~\ref{rmk:nonconvex} for an example.}
-  \[
-  f([ax^{n-1}]) + f([ax^{n+1}]) \geq 2 f([ax^n]).
-  \]
-  Hence, $f([a x^n])$ is a convex function
-  of $n$, and thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
- By Lemma~\ref{lem:rhs}, we have that
+By Lemma~\ref{lem:rhs}, we have that
  \[
  [ax^m][x^n] \reducesto [ax^{n+m}]
  \]
@@ -78,20 +68,56 @@ Let $f$ satisfy convex union and smoothing.
  \[
  [a][x^n] \reducesto [ax^{n}].
  \] 
- Thus, by additivity and oriented smoothing of $f$, we get
+\end{proof}
+
+We will also need the following converse smoothing.
+
+\begin{lemma}
+Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right. There exists $s_0=s_0(a) \in \mathbb{N}$ so that
+\[
+[ax^n][x] \reducesto [x], \mbox{ for all } n \geq s_0,
+\]
+\label{lem:Q}
+\end{lemma}
+\begin{proof}
+The claim follows by Equation~\ref{eq:cross-red3} in Proposition~\ref{prop:join-split-geom}, taking $m=0$.
+\end{proof}
+
+The following result shows a key limit to construct the measure exists and uses the smoothing lemmas.
+
+\begin{corollary}\label{cor:additivity-limit}
+Let $f$ be a curve functional satisfying convex union and smoothing. Let $a,x \in \pi_1(\Sigma)$.
+  If $a$ crosses $x$ to the right, then
+  \[
+    \lim_{n \to \infty} f([a x^n]) - f([x^n])
+  \]
+  exists.
+\end{corollary}
+
+\begin{proof}
+  By Eq.~\eqref{eq:cross-red2}, with $a=b$, there exists $r>0$ so that, for all $n$,
+  \[
+     [ax^{n+r}] [ax^{n-r}] \reducesto [(ax^n)^2]
+  \]
+  (if $x$ is simple, we can take $r=1$).
+  By smoothing and convex union, we get%
+  \footnote{This is where smoothing as opposed to just
+    quasi-smoothing is crucial. See Remark~\ref{rmk:nonconvex} for an example.}
+  \[
+  f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
+  \]
+  Hence, $f([a x^n])$ is a $r$-midpoint convex function
+  of $n$, and thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
+ 
+ By Lemma~\ref{lem:P}, and by additivity and (oriented) smoothing properties of $f$, we get
  \[
- f([a]) + f([x^n]) \geq f([ax^{n}]).
+ f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
- Now, because of equation~(\ref{eq:cross-red3}),
- with $m=0$, we get
- \[
- [ax^n][a] \reducesto [x^{n}].
- \]  
- Therefore, by additivity and unoriented smoothing of $f$, we get
+By Lemma~\ref{lem:Q}, and by additivity and (unoriented) smoothing of $f$, we get, for
   \[
     -f([a]) \le f([a x^n]) - f([x^n]).
   \]
-  Thus, by Lemma~\ref{lem:onevarconvexbounded}, the limit in the statement exists.
+  This shows that $g$ is an $r$-midpoint convex and bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the limit in the statement exists.
 \end{proof}
 
 \begin{remark}
@@ -117,19 +143,20 @@ This follows immediately from Corollary~\ref{cor:additivity-limit}.
 \begin{remark}
 Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
 Feng Luo's work characterizes functions $f \colon \mathcal{S}(S) \to \mathbb{R}$ on simple closed curves that come from intersection numbers in terms of an infinite family of polynomial equations involving the $f$-value of triples of simple curves in the max-plus semi-ring structure on the real numbers.
-A consequence of this characterization is that $h(n) \coloneqq f([a^n b])$ is a convex function.
-In the proof of Corollary~\ref{cor:additivity-limit}, we generalize this convexity to possibly non-simple arbitrary curves $a,b$. See Proposition~\ref{cor:additivity-limit} to see how our conditions on a curve function $f$ imply Feng Luo's conditions for the restriction of $f$ to simple curves.
+One of the tools of this characterization is the fact that, for $a,b$ simple curves, the function $h(n) \coloneqq f([a^n b])$ is a convex.
+In the proof of Corollary~\ref{cor:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-midpoint convexity property of $g$.
+Also, see Proposition~\ref{prop:feng} to see how our conditions on a curve function $f$ imply Feng Luo's conditions for the restriction of $f$ to simple curves.
 \end{remark}
 
  Here we show that all the necessary hypotheses are satisfied to apply Theorem~\ref{thm:caratheodory}.
 
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
-  If $a$ and $b$ cross $x$ to the right, then the limit
+  If $a$ and $b$ cross $x$ to the right, then the limits
   \[
-    \lim_{n,m\to \infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m])
+    \lim_{n^{\pm},m^{\pm}} f([a x^n b x^m]) - f([ax^n]) - f([bx^m])
   \]
-  exists and is equal to~$0$.
+  exist and are equal to~$0$.
 \end{proposition}
 \begin{proof}
 We separate the proof in two cases, depending on the magnitude of $|m-n|$.
@@ -181,8 +208,8 @@ We will also need to show existence of limits of words of the type $by^m ax^n$.
  \]
  Then, there exist $r_0,s_0 \in \mathbb{N}$ so that, 
  \begin{enumerate}
- \item For all $m$, and all $r>r_0$, $g(\cdot,m) \colon \mathbb{N} \to \mathbb{R}$ is $r$-midpoint convex.
- \item For all $n$, and all $s>s_0$, $g(n,\cdot) \colon \mathbb{N} \to \mathbb{R}$ is $s$-midpoint convex.
+ \item For all $m$, and all $r>r_0$, $g(\cdot,m) \colon \mathbb{Z} \to \mathbb{R}$ is $r$-midpoint convex.
+ \item For all $n$, and all $s>s_0$, $g(n,\cdot) \colon \mathbb{Z} \to \mathbb{R}$ is $s$-midpoint convex.
  \end{enumerate}
  \label{lem:axbymidconvex}
  \end{lemma}
@@ -190,41 +217,18 @@ We will also need to show existence of limits of words of the type $by^m ax^n$.
 It follows by applying $f$ to the left hand side of the smoothing resolutions in Proposition~\ref{prop:fundamental-aybx}, and using convex union, smoothing, stability and homogeneity in this order.
 \end{proof}
 
-The following lemma follows by the definition of right-handed crossing (Definition~\ref{def:righthandedcrossing}).
-\begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right.
-\[
-[a][x^n] \reducesto [ax^n], \mbox{ for all } n \in \mathbb{N}
-\]
-\label{lem:P}
-\end{lemma}
-
-We will also need the following converse smoothing.
-
-\begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right. There exists $s_0=s_0(a) \in \mathbb{N}$ so that
-\[
-[ax^n][x] \reducesto [x], \mbox{ for all } n \geq s_0,
-\]
-\label{lem:Q}
-\end{lemma}
-\begin{proof}
-The claim follows by Equation~\ref{eq:cross-red3} in Proposition~\ref{prop:join-split-geom}, taking $m=0$.
-\end{proof}
-
-As a consequence of these lemmas and the convexity results in Section~\ref{sec:convexity}, we get the following.
-
 
  \begin{proposition}
   Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
  Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
   Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
  Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
- Then, the double limit
+ Then, the double limits
  \[
-\lim_{n,m} f(b y^m a x^n) - mf(y) - nf(x)
+\lim_{n^{\pm},m^{\pm}} f(b y^m a x^n) - mf(y) - nf(x)
 \]
-exists.
+exist.
+\label{prop:doublelimitxy}
  \end{proposition}
  \begin{proof}
  We define $g(n,m) \coloneqq f(b y^m a x^n) - mf(y) - nf(x)$. We note that, by Lemma~\ref{lem:axbymidconvex}, $g$ is $(r,s)$-midconvex for some $r,s \in \mathbb{N}$.
@@ -232,21 +236,22 @@ exists.
  On the one hand, 
  \begin{align*}
      g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
-     &\leq f([aby^m]) - m f([y]) \\
+     &\leq f([ax^n b]) - n f([x]) \\
      &\leq f([ab])
  \end{align*}
- In the first inequality, we have used Lemma~\ref{lem:P} with $by^ma$ in place of $a$. 
- \DMGtodo[inline]{To apply this we need $by^ma$ crosses $x$ to the right. }
- In the second inequality, we use Lemma~\ref{lem:P}, with $ab$ in place of $a$ and $y$ in place of $x$.  \DMGtodo[inline]{To apply this we need $ab$ crosses $y$ to the right. }
+ In the first inequality, we have used Lemma~\ref{lem:P} with $ax^nb$ in place of $a$, and $y$ in place of $x$. This is justified since $ax^nb$ crosses $y$ to the right. Indeed, by the initial configuration in Figure~\ref{fig:initial}, $b^{-1} \cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, and thus, by Lemma~\ref{lem:cornering}, for all $n \in \mathbb{Z}$, $\wt{ax^nb}$ has one endpoint in the window $w(a^{-1})$ and the other endpoint in the window $w(b)$. Since $b^{-1} \cdot \wt{x}$ is parallel to $\wt{y}$ and $\wt{y}$ is parallel to $a \cdot \wt{x}$, according to the initial configuration in Figure~\ref{fig:initial}, it follows that $ax^nb$ crosses $y$ to the right.
+ In the second inequality, we use Lemma~\ref{lem:P}, with $ba$ in place of $a$.  
+ It is justified since, according to Figure~\ref{fig:initial}, $b^{-1}\cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, so $\wt{x}$ is parallel to $ba \cdot \wt{x}$, and thus $ba$ crosses $x$ to the right.
+ 
  On the other hand, 
  \begin{align*}
      g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
-     &\geq -f([by^ma]) - m f([y]) \\
-     &\geq -f([ab])
+     &\geq -f([ax^nb]) - n f([x]) \\
+     &\geq -f([ba])
  \end{align*}
- In the first inequality, we have used Lemma~\ref{lem:Q} with $by^ma$ in place of $a$. 
+ In the first inequality, we have used Lemma~\ref{lem:Q} with $a x^n b$ in place of $a$ and $y$ in place of $x$, since, as shown above, $ax^nb$ crosses $y$ to the right.
 
- In the second inequality, we use Lemma~\ref{lem:P}, with $ab$ in place of $a$ and $y$ in place of $x$.  
+ In the second inequality, we use Lemma~\ref{lem:P}, with $ba$ in place of $a$, since $ba$ crosses $x$ to the right, as shown above.  
  It follows that $g$ is bounded, and thus the limit exists.
  \end{proof}
 %%% Local Variables:

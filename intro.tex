@@ -33,7 +33,7 @@ for any closed multi-curve $C$ in $S$.
 Erlandsson shows that word-length with respect to simple generating sets of
 the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
 Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
-Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the marked spectrum. \DMGtodo[inline]{Is this motivation good? We don't say anything about length spectrum in this paper, though}
+Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the marked spectrum. \DMGtodo[inline]{Is this motivation about marked length spectrum rigidity good? I feel it might be too detailed/long, given that we don't say anything about length spectrum in this paper.}
 
 \begin{problem}
 Given a space of metric structures $\mathcal{D}$ on $S$ (up to some equivalence relation), and $\rho \in \mathcal{D}$,
@@ -45,18 +45,20 @@ By the discussion above, this is equivalent to the problem:
 Let $\mathcal{D}$ be space of metric structures on $S$. Is the assignment $\mathcal{D} \to \GC(S), \rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
 \end{problem}
 
-As we have pointed out above, this problem has been solved for several types of metric structures. So, for example, one can throw out all simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type (see Noelle Sawyer's Ph.D. thesis).
-Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is to find a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$?
-More generally, we consider the following question.
+As we have pointed out above, this problem has been solved for several types of metric structures. In fact, for negatively curved Riemannian structures, for example, the spectrum is completely determined modulo simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type (more generally, modulo any set of curves growing sub-exponentially in their length) (see~\cite{S20:PartialMarkedLength}).
+Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is to find a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$.
+In this paper, we give an answer to the following question.
 
 \begin{question}\label{q:intersection}
 Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
-Under which conditions can a functional on curves $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ be realized as an intersection number with a fixed geodesic current?
+Under which conditions can a functional on curves $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ be realized as an intersection number with a geodesic current?
+\label{que:mainquestion}
 \end{question}
 
 
-Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). In this case, the functions are defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}.
-See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}.
+Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo studies functions defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. We outline the relation between our conditions and Feng Luo's conditions in Proposition~\ref{prop:feng}.
+See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems.
+
 
 \subsection{Main results}
 %\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
@@ -154,8 +156,7 @@ We note that additive union implies homogeneity.
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
 In decreasing order of generality, we consider the following families of symmetric curve functionals.
 \begin{enumerate}
-    \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric curve functionals satisfying $R$-quasi-smoothing, convex union, stability and homogeneity. We call this the space of \emph{$R$-quasi-convex functionals}.
-    \item Define $\QConvex(S) \coloneqq \cup_{R \in \mathbb{R}} \QConvex_R(S)$, the space of \emph{quasiconvex curve functionals}.
+    \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric curve functionals satisfying $R$-quasi-smoothing, convex union, stability and homogeneity. We call this the space of \emph{$R$-quasi-convex functionals}. Define $\QConvex(S) \coloneqq \cup_{R \in \mathbb{R}} \QConvex_R(S)$, the space of \emph{quasiconvex curve functionals}.
     \item Let $\Convex(S) \coloneqq \QConvex_{0}(S)$ be the space of \emph{convex curve functionals}.
     \item Let $\AConvex(S)$ be the space of \emph{additive convex curve functionals}, i.e., the subset of $\Convex(S)$ of curve functionals that moreover satisfy the additive property.
 \end{enumerate}
@@ -167,18 +168,8 @@ As we point out below, for any $R>0$, we have the following strict inclusions
 
 
 
-\begin{remark}
-  Curve functionals need not be positive. For example, the signed
-  Lorentzian length or Margulis invariant~\cite{GM00:FlatLorentzian})
-  can take both positive/negative values. In fact any curve functional
-  in $\Convex(S)$ is positive (see~\ref{cor:positivity}). We do not
-  know of any curve functional in $\QConvex(S)$ that takes negative
-  values.
-  \DPTtodo[inline]{This is outdated, we now prove that if it satisfies
-    q-smoothing, homogeneity, stability, then it is positive}
-\end{remark}
 
-In previous work, the authors proved the following result.
+In previous work, the authors of this paper proved the following result.
 
 \begin{mainthm}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex(S)$. Then there is a unique continuous homogeneous function
@@ -196,10 +187,10 @@ Many natural notions of length do satisfy all these four properties and they hav
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
 \item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}
 \item More generally, lengths with respect to negatively curved  metrics with conical singularities \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
-\item Even more generally, non-positively curved Euclidean cone metrics \cite[Proposition~3.3]{BL17:RigidityFlat}.
+\item Non-positively curved Euclidean cone metrics \cite[Proposition~3.3]{BL17:RigidityFlat}.
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
-    \item Translation lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
-\end{enumerate}
+    \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
+\end{enumerate}\DMGtodo[inline]{Update this account with recent results in Erlandsson-Leininger-Sadanand.}
 
 On the other hand, not all functions on curves satisfy the smoothing, additivity, homogeneity and stability conditions. 
 
@@ -210,7 +201,7 @@ On the other hand, not all functions on curves satisfy the smoothing, additivity
     \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). This is an example of a curve functional which is not in $\QConvex(S)$, even though it does extend to geodesic currents by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
 \end{enumerate}
 
-In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in order to satisfy the property in Question~\ref{q:intersection}.
+In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
 
 It turns out that one doesn't need more conditions.
 
@@ -219,18 +210,22 @@ It turns out that one doesn't need more conditions.
 \end{mainthm}
 
 \begin{remark}
-Observe that we do not require in the hypotheses that the curve functional is non-negative, but in fact it follows from the other conditions (see Corollary~\ref{cor:positivity}).
+Observe that we do not require in the hypotheses that the curve functional $f \in \AConvex(S)$ is non-negative: in fact it follows from the other conditions (see Corollary~\ref{cor:positivity}).
+In general, curve functionals need not be positive. For example, the signed
+  Lorentzian length or Margulis invariant~\cite{GM00:FlatLorentzian})
+  can take both positive/negative values. However, more generally, any curve functional
+  in $\QConvex(S)$ is positive (see Corollary~\ref{cor:positivity2}). 
 \end{remark}
 
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions. See Section~\ref{subsec:newdef}.
 
-One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and Luo's work to give another characterization of measured laminations in terms of curve functionals.
+One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and Luo's work to give another characterization of measured laminations in terms of curve functionals.\DMGtodo[inline]{this claim is really work in progress}
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate (but are weaker than) to our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
-Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$.
-
+Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$. \DMGtodo[inline]
+{say something about my work with Misha Kapovich?}
 By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic. For instance, if $\rho$
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic.\DMGtodo[inline]{This is vague, we should expand on this in applications, or give a reference for ``random geodesic''} For instance, if $\rho$
 has positive curvature, there may be an open set of Riemannian geodesics
 on~$\Sigma$ that stay inside a contractible set and so are not
 quasi-geodesic on~$\wt \Sigma$.

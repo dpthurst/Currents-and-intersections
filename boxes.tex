@@ -4,18 +4,22 @@
 \subsection{Left vs Right actions of $\pi_1(S)$}
 \label{sec:actions}
 
-To fix conventions, we briefly recall elementary but slightly
-confusing facts about actions of $\pi_1(S,\ast)$ on the universal
+To fix conventions, we briefly recall elementary facts about actions of $\pi_1(S,\ast)$ on the universal
 cover~$\wt S$ of a surface (or indeed any connected length space). We
 follow the convention that path composition works in the natural
 order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
 defined if $\gamma_1(1) = \gamma_2(0)$.
+If $a \in \pi_1(S,\ast)$, we let $[a]$ denote the free homotopy class of $a$.
+In particular, we note that $[g a g^{-1}]=[a]$. \DMGtodo[inline]{Is this okay? We always mean free homotopy class, and that also includes conjugacy class.}
 
+\begin{definition}[Right action]
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
 $\ast \in S$, we then have a \emph{right} action of $\pi_1(S,\ast)$ on
-the fiber $p^{-1}(\ast)$, defined by
+the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
 $\bm{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
-unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$. We observe
+unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
+The bold notation is to emphasize the point of the space we are acting on.
+We observe
 the following.
 \begin{itemize}
 \item This right action does not depend on a choice of basepoint
@@ -23,9 +27,13 @@ the following.
 \item In the induced length metric on~$\wt S$, the distance between
   $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
 \end{itemize}
+\end{definition}
 
 \DPTtodo{Notation clash: brackets for homotopy classes vs brackets for
   conjugacy classes}
+  \DMGtodo[inline]{I added we are always refering to homotopy classes in the text}
+  
+  \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover), there is also a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. If you take
@@ -44,8 +52,9 @@ $[\gamma_1] \cdot \bm{[\gamma_2]} \coloneqq
   related by $[\gamma] \cdot \wt \ast = \wt \ast \cdot [\gamma]$.
 \item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
   may be unbounded, although the translation length of $[\gamma]$ on
-  $\wt S$ is bounded by the length of $\gamma$ (by the previous property).
+  $\wt S$ is bounded by the length of $\gamma$ (by the previous bullet point).
 \end{itemize}
+\end{definition}
 
 We will frequently draw pictures of group elements~$g\in\pi_1(S,\ast)$
 acting on~$\H^2$. In these pictures, the arrows will be paths that
@@ -81,13 +90,14 @@ particular type of relation between lifts.
 
 \begin{definition}[Right handed crossing]\DMGtodo[inline]{Explain better the relation between right handed crossing and smoothing. Also, clarify that there are two possible smoothings for a right handed crossing.}
   Suppose that two elements $a$ and $x$ of $\pi_1(S)$ that do not have a common power have an
-  essential crossing at the natural basepoint, so that
-  $[a][x] \reducesto [ax]$. We say that $a$ and $x$ have a
+  essential crossing at the natural basepoint. We say that $a$ and $x$ have a
   \emph{right-handed} crossing if, intuitively, $[a]$ crosses $[x]$ from left
   to right, like this:
 
   \[\mathcenter{\resizebox{30mm}{!}{\svgfig{rhres}}}
   \]
+
+  
   More precisely, let $\wt a$ and $\wt x$ be the lines in $\wt S$
   corresponding to lifts of $a$ and $x$ to the universal cover, and
   let $a^{\pm},x^{\pm} \in \bdy \wt S$ be their initial and final
@@ -96,19 +106,36 @@ particular type of relation between lifts.
   \label{def:righthandedcrossing}
 \end{definition}
 
+The following observation will be used throughout.
+
+\begin{lemma}\DMGtodo[inline]{This used to be a claim in the definition, but I extracted it as a Lemma since we use it often. Does it need proof?}
+Let $a,x \in \pi_1(\Sigma)$. If $a$ crosses $x$ to the right, with an essential crossing at the basepoint, then
+\[
+  [a][x] \reducesto [ax].
+\]
+\end{lemma}
+
+
 Observe that whether a crossing is ``right-handed'' is invariant under
 simultaneous conjugation of $a$ and $x$, but does depend on
-more than the conjugacy classes $[a]$ and~$[x]$. (We need to specify
+more than the conjugacy classes of $a$ and~$x$. (We need to specify
 which crossing we are considering.) Further, it is anti-symmetric: if
 the crossing between $a$ and~$x$ is right-handed, then the crossing
 between $x$ and~$a$ is left-handed.
 
+\subsection{Parallelism and crossing of hyperbolic axes}
 
+Let $\Isom^+(\mathbb{H}^2)$ denote the group of oriented  isometries of the hyperbolic plane. Given $a \in \Isom^+(\mathbb{H}^2)$ a hyperbolic isometry, its axis will be denoted $\ora{a}$, with attractive fixed points at the boundary at infinity $a^+, a^-$.
+\begin{itemize}
+    \item A pair $(\ora{a},\ora{b})$ \emph{cross} if $b^+, a^-, b^-, a^+$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:cross}.
+    \item A pair $(\ora{a},\ora{b})$ is \emph{parallel} if $b^+, a^+, a^-, b^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:parallel}.
+   \item  A pair $(\ora{a},\ora{b})$ is \emph{anti-parallel} if $b^-, a^+, a^-, b^+$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
+\end{itemize}
 
+Note that if $(\ora{a},\ora{b})$ is parallel, $(\ora{b^{-1}},\ora{a^{-1}})$ is also parallel. However,  if $(\ora{a},\ora{b})$ is parallel,  $(\ora{b},\ora{a})$ is not parallel.
 
-\DPTtodo[inline]{New lemmas here. Is notation consistent? Eg, we
-  haven't referred to $\Isom(\H^2)$ before. Introduce notation $\vec{a}$}
-  \DMGtodo[inline]{The notion of parallel has an order, we should point that out. Also, we should specify ``crosses to the right'' in the lemmas.}
+In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid confusion with attractive and repelling endpoints, although we will prefer the latter notation throughout the text.
+
 \begin{lemma}
   Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
   $a^{-1}b$ are both hyperbolic. Then exactly one of the pairs
@@ -116,20 +143,15 @@ between $x$ and~$a$ is left-handed.
   $(\ora{aB},\ora{Ab})$ cross. More precisely,
   one and only one of the following possibilities hold.
   \begin{enumerate}[label=(\Roman*)]
-  \item $(\ora{a}, \ora{b})$ cross, $(\ora{ab},\ora{ba})$ are
+  \item $(\ora{a}, \ora{b})$ cross, $(\ora{ba},\ora{ab})$ are
     parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
-  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ab},\ora{ba})$ cross,
+  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
     and $(\ora{aB},\ora{Ba})$ are parallel.
   \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
-    are parallel, and $(\ora{aB},\ora{Ba})$ cross.
+    are parallel, and $(\ora{Ba},\ora{aB})$ cross.
   \end{enumerate}
   \label{lem:righthandedfoundation}
 \end{lemma}
-
-In particular, if $g,h,gh,gH \in \pi_1(S)$ are all non-trivial, the
-hypotheses of the theorem are satisfied, and we see that exactly one
-of the multi-curves $[g][h]$, $[gh]$, and $[gH]$ has an essential
-crossing at the basepoint.
 
 \begin{proof}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
@@ -153,14 +175,18 @@ crossing at the basepoint.
   \begin{enumerate}[label=(\Roman*)]
   \item If $\ora{a}$ crosses $\ora{b}$ to the right, then we claim that the
     endpoints of the various geodesics must be laid out like this:
+    \begin{figure}
     \[
-      \mfig{hyp-crossings-0}
-    \]
+ \mfig{hyp-crossings-0}
+ \]
+    \caption{$a$ and $b$ cross, together with the other crossing relations for related words. }
+    \label{fig:cross}
+    \end{figure}
     To see this, note that $a$ and $b$ interchange $(ab)^-$ and $(ba)^-$,
     so these two endpoints must lie in the portion of $\bdy \H^2$ in
     which $a$ and $b$ move in opposite directions; these are the
     intervals $(a^+,b^+)$ or $(a^-,b^-)$ (in each case taking the
-    counterclockwise interval). \DMGtodo[inline]{$(a^+,b^+)$ is not oriented counterclockwise} Similarly $(ab)^+$ and $(ba)^+$ must
+    counterclockwise interval).  Similarly $(ab)^+$ and $(ba)^+$ must
     lie in one of these two intervals. Furthermore, by consider the action of
     (say) $ba$ on $a^-$, we see that $ba$ necessarily has NS dynamics
     with a repelling fixed point in $(a^-,b^-)$ and an attracting
@@ -174,19 +200,41 @@ crossing at the basepoint.
     that the two initial endpoints $(ab)^-$ and $(ba)^-$ are in
     $(a^-,b^-)$. Similarly we can place the points $(aB)^\pm$ and
     $(Ba)^\pm$, getting this layout:
+    \begin{figure}[H]
     \[
       \mfig{hyp-crossings-1}
     \]
+    \caption{$a$ and $b$ are parallel, together with the other crossing relations for related words. }
+    \label{fig:parallel}
+    \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
     the parallel case by replacing $b$ with $b^{-1}$. The endpoints
     are necessarily arranged like this:
+    \begin{figure}[H]
     \[
       \mfig{hyp-crossings-2}
     \]
+    \caption{$a$ and $b$ are anti-parallel, together with the other crossing relations for related words. }
+    \label{fig:anti}
+    \end{figure}
   \end{enumerate}
 \end{proof}
 
-From Lemma~\ref{lem:righthandedfoundation} it follows that.
+\subsection{Right-handed crossing and parallelism}
+
+Now we connect the definition of right-handed crossing to the notions of crossing and parallelism of hyperbolic isometries.
+If we introduce a hyperbolic metric $\Sigma$ on $S$, this yields a homomorphism $\rho \colon \pi_1(S) \to \Isom^{+}(\mathbb{H}^2)$, so that any non-trivial $a \in \pi_1(S)$ can be  identified with a hyperbolic isometry $\rho(a) \in \Isom^+(\mathbb{H}^2)$. We will abuse notation and write $a$ instead of $\rho(a)$.
+We observe that the notions of crossing, parallelism, and anti-parallelism only depended on the relative order of the fixed points at infinity of the hyperbolic isometries. Thus, they are independent of the choice of hyperbolic metric $\Sigma$.
+Furthermore, if $a,x \in \pi_1(S)$, then $a$ crosses $x$ to the right if and only if $\ora{a}$ crosses $\ora{x}$.
+In particular, in order to detect crossing, parallelism or anti-parallelism between elements, one can look at any topological realization of lifts of elements in the universal cover, and not just the geodesic ones.
+Thus, $\ora{a}$ and $\ora{x}$ cross (resp. are parallel, anti-parallel), if and only if $\wt{a}$ and $\wt{x}$ cross (resp. are parallel, anti-parallel).
+
+From Lemma~\ref{lem:righthandedfoundation}, we get the following results.
+
+\begin{lemma}
+If $g,h,gh,gh^{-1} \in \pi_1(S)$ are all non-trivial, and $S$ is a closed surface,  \emph{exactly one}
+of the multi-curves $[g][h]$, $[gh]$, and $[gh^{-1}]$ has an essential crossing at the basepoint.
+\end{lemma}
 
 
 \begin{lemma}
@@ -201,8 +249,6 @@ From Lemma~\ref{lem:righthandedfoundation} it follows that.
 
 We will use the following elementary observations about right handed crossings.
 
-\DPTtodo[inline]{Use arrows more consistently to refer to the axis of
-  the geodesic}
 \begin{lemma}
 \begin{enumerate}
     \item If $a$ cross $b$ to the right,
@@ -342,8 +388,8 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \item\label{item:box-close} $a c^{-1} d b^{-1} = 1$;
 \item\label{item:box-edges-cross} $a,b,c,d$ cross $x$ to the right; and
 \item\label{item:box-diags-cross} for sufficiently large~$n$,
-  $dx^naC
-  = cAbx^naC$ crosses
+  $dx^na c^{-1}
+  = cAbx^na c^{-1}$ crosses
   $cx^n$ to the right.
 \end{enumerate}
 Then we call the datum $(a,b,c,d)$ a \emph{right-handed lift system}.
@@ -450,16 +496,16 @@ These are still enough to approximate any box.
 \end{remark}
 
 \begin{lemma}
-Let $x \in \pi_1(X)$.
-Given any $z \in \partial X$, and any $\epsilon>0$, there exists a lift $g \cdot \wt{x}$ whose endpoints $g\wt{x}_+$ and $g\wt{x}_-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise
-with respect to the $ \partial X$ order.
+Let $x \in \pi_1(\Sigma)$.
+Given any $z \in \partial \Sigma$, and any $\epsilon>0$, there exists a lift $g \cdot \wt{x}$ whose endpoints $g\wt{x}_+$ and $g\wt{x}_-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
+with respect to the $ \partial \Sigma$ order.
 \label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
-Axis of $\pi_1(X)$ elements are dense in $\partial X$. Consider an element $g$ so that its axis is parallel to $\wt{x}$ and $g^+ \in (z-\epsilon,z+\epsilon)$. Then, for large enough $n$, by north-south dynamics of $g$, we have that $(g^n x g^{-n})^+ \in (z-\epsilon,z+\epsilon)$.
+Endpoints of axes of $\pi_1(\Sigma)$ elements are dense in $\partial \Sigma$. Consider an element $g$ so that $\wt{x}$ is parallel (resp. anti-parallel) to $\ora{g}$ and $g^+ \in (z-\epsilon,z+\epsilon)$ (see Figure~\ref{fig:approx2}). Then, for large enough $n$, by north-south dynamics of $g$, we have that $(g^n x g^{-n})^{\pm} \in (z-\epsilon,z+\epsilon)$ in clockwise (resp. counter-clockwise) order.
 \end{proof}
 
-\begin{proposition}\DMGtodo[inline]{Refer to Lemma~\ref{lem:diagonaldense} in the proof.}
+\begin{proposition}
 The family of right handed boxes $\mathcal{B}$ is dense in the space
 of rectangles in $G^+(\Sigma)$, in the following sense.
 For any rectangle $R = [p,q) \times [r,s) \subset G^+(\Sigma)$,
@@ -472,11 +518,9 @@ B_{\epsilon}(s)$.
 \end{proposition}
 \begin{proof}
    Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
-   Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively.
-   For $r$ (and similarly for $s$), we proceed as follows. Given a lift of $\tilde{x}$, and $p$, consider some element $\gamma \in \pi_1(\Sigma)$ with $\gamma_- \in (x^-, x^+)$ and $\gamma^+$ within $\epsilon/4$ of $p$. For $n$ large, we consider the lift of $[x]$ given by $\gamma^n \cdot \tilde{x}$, where $\cdot$ denotes the left action of $\gamma$, i.e., if $x$ is the element of $\pi_1(S)$ with invariant axis $\tilde{x}$, $\gamma^n \cdot \tilde{x}$ denotes the invariant axis of $\gamma^n x \gamma^{-n}$. For $n$ large enough we see that $(\gamma^n \cdot \tilde{x})^+$ and  $(\gamma^n \cdot \tilde{x})^-$ are within $\epsilon$ of $p$.   See Figure~\ref{fig:approx2}.
-   We will write $\gamma_r$ as $\gamma$ in this construction, and then repeat the same construction for $s$ with an element $\gamma_s$.
-   This will give the necessary lifts with the correct orientations
-   for $r$ and $s$.
+   Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we will produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively, and with the right orientations.
+   For $r$ (resp. $s$), by Lemma~\ref{lem:diagonaldense}, we find a translate $g_r$ of $\wt{x}$ with endpoints in $B_{\epsilon}(r)$ (resp. a translate $g_s$ with endpoints in $B_{\epsilon}(r)$), with clockwise orientations.
+
 
 \begin{figure}
 \centering{
@@ -487,8 +531,7 @@ B_{\epsilon}(s)$.
 }
 \end{figure}
 
-For the endpoints $p$ and $q$, take $\gamma^{-}$ in the above construction to appear after both $x^{-}$ and $x^{+}$ in clockwise order, as in left Figure~\ref{fig:approx2}. 
-Taking elements $\gamma_p$ and $\gamma_q$ as $\gamma$ for $p$ and $q$ respectively, we obtain the approximation. See right Figure~\ref{fig:approx2}.
+   For $p$ (resp. $q$), by Lemma~\ref{lem:diagonaldense}, we find a translate $g_p$ of $\wt{x}$ with endpoints in $B_{\epsilon}(p)$ (resp. a translate $g_q$ with endpoints in $B_{\epsilon}(q)$), with counter-clockwise orientations. See right Figure~\ref{fig:approx2}.
 \end{proof}
 
 \subsection{Measures of boxes}
@@ -532,13 +575,13 @@ essential crossings.
 \end{figure}
 
 \begin{lemma}
-Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that $a^{-1} \cdot \wt{x}$, $\wt{y}$, $b \cdot \wt{x}$ and $ab \cdot \wt{y}$ are parallel, in this order, as in Figure~\ref{fig:initial}
+Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that $b^{-1} \cdot \wt{x}$, $\wt{y}$, $a \cdot \wt{x}$ and $ab \cdot \wt{y}$ are parallel, in this order, as in Figure~\ref{fig:initial}
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate of $\wt{x}$, $a^{-1} \cdot \wt{x}$, so that $a^{-1} \cdot \wt{x}$ and $\wt{y}$ and  are parallel. Therefore, $\wt{x}$ and $a \cdot \wt{y}$ are parallel, for any $b$, $b \wt{x}$ and $ba \cdot \wt{y}$ are parallel.
-Find $g \in \pi_1(X)$ so that $g^{+}$ is in the interval $(y_-, y_+)$ and $g^-$ is in the interval $((a^{-1} \cdot \wt{x})^+, (a^{-1} \cdot \wt{x})^-)$.
-If $n$ is large enough, letting $b=g^n$, by the North-South dynamics of $g$ we can ensure that $b \cdot \wt{x}$ is parallel to $\wt{y}$, and the configuration in Figure~\ref{fig:initial} follows.
+Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate of $\wt{x}$, $b^{-1} \cdot \wt{x}$, so that $b^{-1} \cdot \wt{x}$ and $\wt{y}$ and  are parallel. Therefore, $\wt{x}$ and $b \cdot \wt{y}$ are parallel, for any $b$, $a \wt{x}$ and $ab \cdot \wt{y}$ are parallel.
+Find $g \in \pi_1(X)$ so that $g^{+}$ is in the interval $(y_-, y_+)$ and $g^-$ is in the interval $((b^{-1} \cdot \wt{x})^+, (b^{-1} \cdot \wt{x})^-)$.
+If $n$ is large enough, letting $a=g^n$, by the North-South dynamics of $g$ we can ensure that $a \cdot \wt{x}$ is parallel to $\wt{y}$, and the configuration in Figure~\ref{fig:initial} follows.
 \end{proof}
 
 
@@ -547,8 +590,8 @@ Let $a,b,x,y \in \pi_1(S)$ be arbitrary curves, ordered as in Figure~\ref{fig:in
 There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
 
   \begin{align}
-    \label{eq:crossuniform_n} \mbox{For all } m \mbox{ } [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
-    \label{eq:crossuniform_m} \mbox{For all } n \mbox{ } [b y^{m+s} a x^{n} ] [b y^{m-s} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
+    \label{eq:crossuniform_n} \mbox{For all } m \in \mathbb{Z}, \mbox{ } [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
+    \label{eq:crossuniform_m} \mbox{For all } n \in \mathbb{Z},\mbox{ } [b y^{m+s} a x^{n} ] [b y^{m-s} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
   \end{align}
 \end{proposition}
 
@@ -558,8 +601,8 @@ There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
 
 \begin{figure}
 \centering{
-\resizebox{120mm}{!}{\svgfig{aybx}}
-\caption{}
+\resizebox{170mm}{!}{\svgfignormal{aybx}}
+\caption{Bands model centered on $\wt{y}$. Translates of $\wt{x}$ are coded in blue, while translates of $\wt{y}$ are coded in red. The translates of $\wt{x}$ by $y^{-s} b^{-1}$ and $b^{-1}$ are shown and labelled in the upper part, and translates of $\wt{x}$ by $y^{m-s} a$ and $y^m a$ are shown in the lower part. }
 \label{fig:aybx}
 }
 \end{figure}
@@ -567,7 +610,7 @@ There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
 The following lemma follows from the north-south dynamics of $\pi_1(S)$ on the boundary at infinity.
 
 \begin{lemma}
-Given $a,b, x \in \pi_1(\Sigma)$, so that $a^{-1} \cdot \wt{x}$ and $b \cdot \wt{x}$ are parallel, for every $k$, $(bx^ka)^+ \in w(b)$ and $(bx^ka)^- \in w(a^{-1})$.
+Given $a,b, x \in \pi_1(\Sigma)$, so that $b^{-1} \cdot \wt{x}$ and $a \cdot \wt{x}$ are parallel, for every $n \in \mathbb{Z}$, $(ax^n b)^+ \in w(a)$ and $(ax^n b)^- \in w(b^{-1})$.
 \label{lem:cornering}
 \end{lemma}
 
@@ -577,53 +620,54 @@ Given $a,b, x \in \pi_1(\Sigma)$, so that $a^{-1} \cdot \wt{x}$ and $b \cdot \wt
 \begin{proof}[Proof of Proposition~\ref{prop:fundamental-aybx}]
   We prove Equation~\ref{eq:crossuniform_m} by showing  choose lifts of conjugates of the curves in the left hand-side of the smoothing for which the crossing is  essential. Use the band model, centered on~$\wt{y}$, and normalized so that the translation length of $y$ along $\wt{y}$ is equal to 1. This is what we will mean by \emph{normalized bands model}. We will
   consider the windows on $\bdy^\infty\wt \Sigma$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(y^m b)$ be the interval on the
-  boundary at infinity cut out by the endpoints of $y^m b \cdot \wt x$
+  lifts of~$x$. Specifically, let $w(y^m a)$ be the interval on the
+  boundary at infinity cut out by the endpoints of $y^m a \cdot \wt x$
   that does not contain the endpoints $y^\pm$ of $\wt y$. Similarly for
-  $w(y^{m-s} b)$, $w(y^{-s} a^{-1})$, and $w(a^{-1})$. All of these are intervals
+  $w(y^{m-s} a)$, $w(y^{-s} b^{-1})$, and $w(b^{-1})$. All of these are intervals
   on the upper or lower boundary in the bands model, by the initial configuration assumption of Lemma~\ref{lem:initial}.
   See Figure~\ref{fig:aybx}; ``left'' and ``right'' will refer
   to the order on the boundary (minus $x^\pm$) of that figure.
 
-  Observe that (for instance) $w(y^n a^{-1})$ is a translate of $w(a^{-1})$.
+  Observe that (for instance) $w(y^{m} a)$ is a translate of $w(a)$.
   Furthermore, each window is a
-  finite size, so there is a number $s>0$ so that $w(y^{m-s}b)$
-  is to the left of $w(y^m b)$, and similarly,
-   $w(y^{-s}a^{-1})$ is to the left of
-  $w(a^{-1})$.
-  In fact, if we scale the bands model so that the translation distance of $y$ is 1, it suffices to take
+  finite size, so there is a number $s>0$ so that $w(y^{m-s}a)$
+  is to the left of $w(y^m a)$, and similarly,
+   $w(y^{-s}b^{-1})$ is to the left of
+  $w(b^{-1})$.
+  In fact, since the translation length of $y$ is 1, it suffices to take
   \begin{equation*}
   s \geq s_0 = \lfloor \max \{ \wid{y}(w(a^{-1})),\wid{y}(w(b)) \} \rfloor
   \end{equation*}
-  where $\wid{y}(w(b))$ denotes the length of the interval defining the window $w(a)$ at the boundary at infinity of the normalized bands model.
+  where $\wid{y}(w(b))$ denotes the length of the interval defining the window $w(a)$ at the boundary at infinity of the normalized bands model, where distances in the boundary are measured with the Euclidean distance.
   Consider now the curves
-  $y^{m-s}bx^na$ and $y^m bx^n ay^s \in [y^{m+s}bx^na]$.
-  We note that, by the north-south dynamics of $y$, $w(y^{m-s}b)$ is to the left of $w(y^m b)$, and
-  $w(y^{-s} a^{-1})$ to the left of $w(a^{-1})$.
+  $y^{m-s}ax^nb$ and $y^m ax^n by^s \in [y^{m+s}ax^nb]$.
+  We note that, by the north-south dynamics of $y$, $w(y^{m-s}a)$ is to the left of $w(y^m a)$, and
+  $w(y^{-s} b^{-1})$ to the left of $w(b^{-1})$.
   \begin{claim}
   \begin{itemize}
-  \item $(y^{m-s} b x^n a)^+ \in w(y^{m-s} b)$
-  \item $(y^{m-s} b x^n a)^- \in w(a^{-1})$
+  \item $(y^{m-s} a x^n b)^+ \in w(y^{m-s} a)$
+  \item $(y^{m-s} a x^n b)^- \in w(b^{-1})$
   \end{itemize}
   \end{claim}
   \begin{proof}
-  It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $a$ and $y^{m-s}b$. Note that the assumptions of the Lemma are satisfied: indeed, $a^{-1} \cdot \wt{x}$ and $b \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $a^{-1} \cdot \wt{x}$ and $y^{m-s} b \cdot \wt{x}$ are parallel.
+  It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $y^{m-s} a$ and $b$. Note that the assumptions of the Lemma are satisfied: indeed, $b^{-1} \cdot \wt{x}$ and $a \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $b^{-1} \cdot \wt{x}$ and $y^{m-s} a \cdot \wt{x}$ are parallel.
   \end{proof}
   We also need the following claim, which follows similarly by Lemma~\ref{lem:cornering}.
   \begin{claim}
   \begin{itemize}
-  \item $(y^{m} b x^n a y^{s})^+ \in w(y^{m} b)$
-  \item $(y^{m} b x^n a y^{s})^- \in w(y^{-s} a^{-1})$
+  \item $(y^{m} a x^n b y^{s})^+ \in w(y^{m} a)$
+  \item $(y^{m} a x^n b y^{s})^- \in w(y^{-s} b^{-1})$
   \end{itemize}
   \end{claim}
   
 Combined, these mean that
-  $y^m bx^{n} y^s$ crosses $y^{m-s}bx^na$ to the right.  We have, thus,
+  $y^m a x^{n} b y^s$ crosses $y^{m-s}a x^nb$ to the right.  We have, thus,
   \[
-    [y^{m+s} bx^{n}][y^{m-s}bx^na]=[y^m bx^{n} y^s][y^{m-s}bx^na] \reducesto [(y^mbx^na)^2]
+    [a x^{n} b y^{m+s}][y^{m-s}ax^nby^{m-s}]=[y^m ax^{n}b y^s][y^{m-s}ax^nb] \reducesto [(y^max^nb)^2]= [(ax^nby^m)^2]
   \]
   proving Equation~\eqref{eq:crossuniform_n}.
-  Equation~\eqref{eq:crossuniform_n} follows similarly.
+  Equation~\eqref{eq:crossuniform_n} follows similarly: indeed, $\wt{y}$ being parallel to $a \cdot \wt{x}$ and $a \cdot \wt{x}$ being parallel to $ab \cdot \wt{y}$ is equivalent, by acting by $a^{-1}$, to $a^{-1} \cdot \wt{y}$ being parallel to $\wt{x}$ and $\wt{x}$ being parallel to $b \cdot \wt{y}$.
+  Thus, we can consider a normalized bands model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
 \end{proof}
 
 We will also need to control the following smoothings.
@@ -633,7 +677,7 @@ We will also need to control the following smoothings.
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
 crossing $x$ to the right. Then there is a number $s \ge 0$
   so that, for all
- $n,m$ and $r$ with either $s < r < m-n-s$ or $m-n+s < r < -s$, we have
+ $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r < -s$, we have
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
@@ -671,7 +715,7 @@ $x$ is not simple.
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
 \caption{Lifts of $x$ are depicted in blue. The central blue lift relates to the lower and upper lifts by translates of the type $x^k a$, $x^l a^{-1}$, $x^m a$ and $x^n a^{-1}$, as labelled. Each translate determines a window $w( \cdot )$, which is an interval on $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.}
 \label{fig:abcrossings}
-}\DMGtodo[inline]{The lift $x^n a$ in the figure should be re-labelled $ax^n$ (according to the proof)}
+}
 \end{figure}
 
 

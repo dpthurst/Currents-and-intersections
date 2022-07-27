@@ -1,16 +1,16 @@
- \section{Convex functions on the naturals}
+ \section{Convex functions on the integers}
  \label{sec:convexity}
  
- The following basic results about existence of limits for integer-valued or doubly integer-valued functions with convexity properties will be very useful in Section~\ref{sec:construct}.
- 
- \subsection{One variable}
+ The following basic results about existence of limits functions on the integers with convexity properties will be very useful in Section~\ref{sec:construct}.
+
  
  \begin{lemma}
- Let $g \colon \mathbb{N} \to \mathbb{R}$ be a convex and bounded function.
- Then $\lim_n g(n)$ exists.
+ Let $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ be a convex and bounded function.
+ Then both $\lim_{n \to +\infty} g(n)$ and  $\lim_{n \to -\infty} g(n)$ exists.
  \label{lem:onevarconvexbounded}
  \end{lemma}
  \begin{proof}
+ We prove the claim first for $\lim_{n \to +\infty} g(n)$. For the existence of $\lim_{n \to -\infty} g(n)$, it will suffice to run the same argument for the function $h(n) \coloneqq g(-n)$.
  If $g(n) \geq g(n-1)$ for all $n$, then $g(n)$ is monotone decreasing, and since it is bounded below, it has a limit.
  Otherwise, there exists some $n_0$ so that $g(n_0) > g(n_0-1)$. Since $g$ is convex, the sequence $h(n) \coloneqq g(n+1)-g(n)$ is monotone increasing.
  But then, $g(n) \geq g(n-1)$ for all $n \geq n_0$.
@@ -19,24 +19,27 @@
  \end{proof}
  
  
- We say that a function $h \colon \mathbb{N}$ is \emph{$r$-midpoint convex}, for some $r \in \mathbb{N}$, if $h(n-r) + h(n+r) \geq 2 h(n)$ for all $n \in \mathbb{N}$ where the inequality makes sense.
+ We say that a function $h \colon \mathbb{Z}$ is \emph{$r$-midpoint convex}, for some $r \in \mathbb{N}$, if $h(n-r) + h(n+r) \geq 2 h(n)$ for all $n \in \mathbb{Z}$ where the inequality makes sense.
  
- \subsection{Two variable}
- 
- We say that a function $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is \emph{$(r,s)$-midpoint convex} if there exists $r,s \in \mathbb{N}$ so that, for all $m$, $g(\cdot, m)$ is $r$-midpoint convex, and for all $n$, $g(n, \cdot)$ is $s$-midpoint convex.
+ We say that a function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is \emph{$(r,s)$-midpoint convex} if there exists $r,s \in \mathbb{N}$ so that, for all $m$, $g(\cdot, m)$ is $r$-midpoint convex, and for all $n$, $g(n, \cdot)$ is $s$-midpoint convex.
  We say that $g$ is \emph{doubly convex} if it is $(1,1)$-midpoint convex.
  
+ Let $\lim_{n^{+}}$ denote the $\lim_{n \to +\infty}$ and $\lim_{n^{-}}$ denote the $\lim_{n \to -\infty}$.
+ An expression $\lim_{n^{\pm},mm^{\pm}} g(n,m) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m)$ means that the four equalities
+ $\lim_{n^{+},mm^{+}} g(n,m) = \lim_{n^{+}} \lim_{m^{+}} g(n,m)$, $\lim_{n^{-},m^{-}} g(n,m) = \lim_{n^{-}} \lim_{m^{-}} g(n,m)$, 
+ $\lim_{n,m} g(n^{+},m^{-}) = \lim_{n^{+}} \lim_{m^{-}} g(n,m)$,  $\lim_{n,m} g(n^{-},m^{+}) = \lim_{n^{-}} \lim_{m^{+}} g(n,m)$ are true.
+ 
  \begin{lemma}
-   If $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is doubly convex and bounded, then $\lim_{n,m} g(n,m) = \lim_{n} \lim_m g(n,m) = \lim_m \lim_n g(n,m)$ exists.
+   If $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is doubly convex and bounded, then $\lim_{n,m} g(n^{\pm},m^{\pm}) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exists.
  \end{lemma}
  \begin{proof}
  The proof is similar to the single-variable case.
  If $g$ is doubly decreasing, then the limit exist since the sequence is bounded.
- Otherwise, there exists $n_0,m_0$ so that $g(n_0,m_0) < g(n_0,m_0+1)$. Then, for fixed $n_0$, $(g(n_0,m))_{m \geq m_0}$ is monotone increasing, by a similar argument as in Lemma~\ref{lem:onevarconvexbounded}. Since it is bounded, the iterated limits and the double limit exists and are equal \DMGtodo[inline]{We need a reference for this.}
+ Otherwise, there exists $n_0,m_0$ so that $g(n_0,m_0) < g(n_0,m_0+1)$. Then, for fixed $n_0$, $(g(n_0,m))_{m \geq m_0}$ is monotone increasing, by a similar argument as in Lemma~\ref{lem:onevarconvexbounded}. Since it is bounded, the iterated limits and the double limit exists and are equal \DMGtodo[inline]{We need a reference for doubly monotone bounded sequence is convergent (in the sense that the two nested limits are equal to the double limit, and all limits exist.}
  \end{proof}
  
  \begin{lemma}
- Given a $r$-midpoint convex function $g \colon \mathbb{N} \to \mathbb{R}$ which is bounded, $\lim_n g(n)$ exists.
+ Given a $r$-midpoint convex function $g \colon \mathbb{Z} \to \mathbb{R}$ which is bounded, $\lim_n g(n)$ exists.
  \label{lem:limexistrmidconvex}
  \end{lemma}
  \begin{proof}
@@ -48,11 +51,12 @@ agree, for different $k$. To see that the limit of $g_{r_0/2}$ is less or equal 
 note that $2g((3+2n)r_0/2) \le g(nr_0) + g((n+3)r_0)$. We can iterate
 this construction to show all the limits are equal, for instance using
 $2g(5r_0/4) \le g(0) + g(5r_0/2)$.
+\DMGtodo[inline]{This needs to be spelled out.}
  \end{proof}
  
  The proof of the analogous lemma for two-variable functions is very similar to that of Lemma~\ref{lem:limexistrmidconvex}.
  
   \begin{lemma}
- Given a $(r,s)$-midpoint convex function $g \colon \mathbb{N} \to \mathbb{R}$ which is bounded, $\lim_{n, m} g(n,m) = \lim_n \lim_m g(n,m) = \lim_m \lim_n g(n,m)$ exist.
+ Given a $(r,s)$-midpoint convex function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ which is bounded, then $\lim_{n,m} g(n^{\pm},m^{\pm}) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exist.
  \label{lem:limexistrmidconvextwovar}
  \end{lemma}

@@ -347,7 +347,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -396,7 +396,7 @@
          id="tspan19548-1-9"
          x="40.671272"
          y="191.20049"
-         style="stroke-width:0.26458332">$a^{-1} \cdot \wt{x}$</tspan></text>
+         style="stroke-width:0.26458332">$b^{-1} \cdot \wt{x}$</tspan></text>
     <path
        style="fill:none;stroke:#0000e8;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-mid:url(#marker4950)"
        id="path7767-1"
@@ -443,7 +443,7 @@
          id="tspan19548-1-9-9"
          x="106.27065"
          y="108.39861"
-         style="stroke-width:0.26458332">$b \cdot \wt{x}$</tspan></text>
+         style="stroke-width:0.26458332">$a \cdot \wt{x}$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -454,6 +454,6 @@
          id="tspan19548-1-9-9-4"
          x="141.42439"
          y="91.560623"
-         style="stroke-width:0.26458332">$ba \cdot \wt{y}$</tspan></text>
+         style="stroke-width:0.26458332">$ab \cdot \wt{y}$</tspan></text>
   </g>
 </svg>
