@@ -459,22 +459,24 @@ If we let $z=(p_1^{-1} \cdot \wt{x})^-$, then we have
       \begin{aligned}
     &= \lim_{n\to\infty} \mu_f(B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}})  \\
     &= \frac{1}{2}\lim_{n\to\infty} \lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
-    &=\frac{1}{2}[\lim_{n\to\infty} \lim_{m\to\infty}(f([py^{n+1}qx^{m}]) - f([y^{n+1}]) - f([x^m]) \\
-    &+ (f([py^{-(n+1)}qx^{m}])-f([y^{-(n+1)}]) -f([x^m])) \\
-    &-(f([py^{n}qx^{m}])-f([y^n])-f([x^m]))\\
-    &- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
-    &+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}]) ]\\
+    &=\frac{1}{2}\lim_{n,m\to\infty}(f([py^{n+1}qx^{m}]) - f([y^{n+1}]) - f([x^m])) \\
+    &\qquad+ (f([py^{-(n+1)}qx^{m}])-f([y^{-(n+1)}]) -f([x^m])) \\
+    &\qquad-(f([py^{n}qx^{m}])-f([y^n])-f([x^m]))\\
+    &\qquad- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
+    &\qquad+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}])\\
     &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
     &=f([y])
       \end{aligned}
-    \end{multline*}
-      The first equality follows by the fact that the boxes defined
+    \end{multline*}      The first equality follows by the fact that the boxes defined
       above converge from below to $(\gamma_-,\gamma_+) \times [z,y
       \cdot z)$ as $n \to \infty$. The second equality is by
       definition of the measure $\mu_f$ on boxes.
-      For the third, we add and subtract the necessary powers of $y$, $y^{-1}$ and $x$. In the fourth equality, we apply Proposition~\ref{prop:doublelimitxy} and cancel out equivalent terms.
-      In the fifth equality, we use the symmetry property of $f$ to obtain the
-      result.
+      For the third, we add and subtract the necessary powers of~$y$,
+      $y^{-1}$ and $x$ to get to a double limit that exists by
+      Proposition~\ref{prop:doublelimitxy}.
+      In the fourth equality, we then apply that
+      Proposition to cancel out equivalent
+      terms. In the fifth equality, we use the symmetry property of~$f$ to obtain the result.
 \end{proof}
 
 \begin{remark}
