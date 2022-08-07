@@ -10,7 +10,7 @@ This result gives a new definition of geodesic currents in terms of functionals 
 We can also characterize filling geodesic currents.
 
 \begin{corollary}
-Let $S$ a closed surface, $\mu$ a geodesic current and $f$ the functional on curves associated to $\mu$, i.e., so that $\mu_f=\mu$. The following subsets in bijection.
+Let $S$ a closed surface \DMGtodo[inline]{(Punctures) For non- closed surfaces, one has to be more careful, see BIPP17 theorem.}, $\mu$ a geodesic current and $f$ the functional on curves associated to $\mu$, i.e., so that $\mu_f=\mu$. The following subsets in bijection.
 
 \begin{enumerate}
     \item The set of filling currents, i.e., $ \GC_{\mbox{fill}}(S)$
@@ -21,6 +21,39 @@ Let $S$ a closed surface, $\mu$ a geodesic current and $f$ the functional on cur
 \begin{proof}
 These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1]{BIPP17:StructureThmCurrents}.
 \end{proof}
+
+\begin{proposition}
+Given a right-handed box $B_{a,b,c,d}$, let $B_{a,b,c,d}^{\perp}$ denote the opposite box (in the sense of boxes of geodesics).
+Then,
+\[\mu_f(B_{a,b,c,d}^{\perp}) = \lim_{n,m} f(bx^n) + f(cx^m) - f(a^{-1}b x^n) - f(ca^{-1} x^m) \]
+\label{prop:oppositebox}
+\end{proposition}
+\begin{proof}
+Probably need to approximate opposite box by suitable family of right-handed boxes. \DMGtodo[inline]{To be worked}
+\end{proof}
+
+\begin{corollary}
+Given a right-handed box $B_{a,b,c,d}$, let $B_{a,b,c,d}^{\perp}$ denote the opposite box (in the sense of boxes of geodesics).
+Then,
+\begin{equation}
+\min \{ \mu(B_{a,b,c,d}), \mu_f(B_{a,b,c,d}^{\perp}) \} = \lim_{n,m}  f(bx^n) + f(cx^m) - \max \{ f(ax^n) + f(dx^m) ,  f(a^{-1}b x^n) + f(ca^{-1} x^m) \}
+\label{eq:oppositemaxsmoothing}
+\end{equation}\DMGtodo[inline]{Should we take the min before the limit or after? It shouldn't matter, but has to be proven.}
+\label{cor:oppositemaxsmoothing}
+\end{corollary}
+\begin{proof}
+Should follow immediately from Proposition~\ref{prop:oppositebox}\DMGtodo[inline]{To be worked}
+\end{proof}
+
+\begin{corollary}
+If $f$ satisfies max-smoothing equality, then $\mu_f$ is a measured lamination.
+\end{corollary}
+\begin{proof}
+By Corollary~\ref{cor:oppositemaxsmoothing} and max-smoothing the term in the limit of the right-hand side of Equation~\ref{eq:oppositemaxsmoothing} is eventually zero, and thus the left hand side of that equation is zero. Since right-handed-boxes are dense in the Borel sigma algebra of boxes of geodesics, it follows that $\mu_f$ satisfies $\min \{ \mu_f(B), \mu_f(B^{\perp}) \} =0$ for any box of geodesics $B$ and thus, $\mu_f$ is a measured lamination.
+\end{proof}
+
+\DMGtodo[inline]{I wonder if we can use Proposition~\ref{prop:oppositebox} to prove the other implication that is now proven using the ideas of tautness and combinatorial arguments. It ought to be similar.}
+
 
 We can furthermore characterize measured laminations as a subset of curve functionals.
 \begin{theorem}
@@ -37,7 +70,15 @@ Suppose $\mu$ is a measured lamination, and let us assume first that $\mu$ is a 
 \item \textbf{$\rightarrow$}
 Suppose that max-smoothing is satisfied, and consider a rhs $[a,b,c,d]$, as in Figure~\ref{fig:maxsmooth}, so that
 \[
-[bx^n] [cx^n] \reducesto [ax^n] [dx^b]
+[bx^n] [cx^n] \reducesto [ax^n] [dx^n]
+\]
+Suppose that \[
+f([bx^n][cx^n])=f([ca^{-1}bx^n ac^{-1})(cx^n))=f(ca^{-1}bx^nax^n])>f([dx^nax^n).
+\]
+Thus, by taking limits, $\mu_f(B_{a,b,c,d})>0$
+By max-smoothing, it must be that the other smoothing
+\[
+f([bx^n][cx^n])=f((ca^{-1}bx^n ac^{-1})(cx^n)^{-1})=f((a^{-1}bx^n ac^{-1})x^{-n})
 \]
 %  \begin{figure}
 %\centering{
@@ -51,8 +92,8 @@ Suppose that max-smoothing is satisfied, and consider a rhs $[a,b,c,d]$, as in F
 Suppose now that Equation~\ref{eq:MLsmoothing} for a functional $f$ is satisfied, as well as additivity, homogeneity and stability. Since Equation~\ref{eq:MLsmoothing} implies the (unoriented) smoothing condition, we have that, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu$ so that $f(C)=i(\mu,C)$ for all curves $C$. We want to show $\mu$ is a measured lamination. 
 
 
-
-Thus,
+By Proposition~\ref{prop:feng}, $f|_{\mathcal{S}}$ satisfies Feng Luo's conditions.
+Thus, there exists a measured lamination $\lambda$ so that
 \[
 i(\mu, s)=i(\lambda, s)
 \]

@@ -34,6 +34,8 @@ sometimes a curve system.
 %\nota{Use $\TC$ notation}
 \end{definition}
 
+\DMGtodo[inline]{This is the main different piece of language in this section, the notion of tautness. We don't use it previously, but we could define it here and use the same proof.}
+
 We exclude these various trivial cases so that for any $C \in
 \TC_S(\Sigma)$, there
 is a $D \in \TC_{\bar S}(\Sigma)$ which intersects $C$ essentially, where
@@ -59,6 +61,7 @@ There is a nice geometric characterization of tautness.
 Theorem~\ref{thm:taut-minimizing} is that in the excluded cases,
 length-minimizers are covers of a single curve and do not intersect
 themselves transversally.)
+\DMGtodo[inline]{This is in contrast to our definition of essential crossing in From curves to currents, where we do consider this ``self-intersections'' of a non-primitive curve as essential.}
 
 \begin{corollary}
   \label{cor:taut-extension}
@@ -80,7 +83,7 @@ We will generally be interested in parameterizing simple closed
   to homotopy) is denoted $\SC(\Sigma)$.  Similarly for $\SC_0(\Sigma)$ and
   $\SC_S(\Sigma)$.
 \end{definition}
-
+\DMGtodo[inline]{In the paper we say simple multi-curves (no weights, here)}
 Our ``simple curves'' are also called ``curve systems'' or ``integer
 measured laminations''.  The name ``integer measured lamination''
 comes from the general theory of measured laminations; all results in
@@ -101,8 +104,8 @@ To parametrize simple curves, we will use intersection numbers.
  The following lemma is a central tool in this paper.
 
 \begin{lemma}[Max-smoothing lemma]\label{lem:smoothing}
-  Let $S$ and $T$ be disjoint subsets of $\partial \Sigma$, and let $X \in \SC_S(\Sigma)$
-  and $A \in \C_T(\Sigma)$, with $A$ tautly embedded.  Let~$x$ be a crossing of
+  Let $S$ and $T$ be disjoint subsets of $\partial \Sigma$, \DMGtodo[inline]{In the paper we don't consider $\Sigma$ with boundary or punctures.} and let $X \in \SC_S(\Sigma)$
+  and $A \in \C_T(\Sigma)$, with $A$ tautly embedded.  Let~$x$ be a crossing of \DMGtodo[inline]{Recoincile with essential crossing. For self-intersections of non-primitive curves there is a discrepancy.}
   $A$, and let $A_+$ and $A_-$ be the two smoothings of~$A$ at~$x$.  Then
   \[
   i_X(A) = \max(i_X(A_+), i_X(A_-)).
@@ -209,7 +212,7 @@ intersecting more than once in the universal cover~$\tilde \Sigma$ of~$\Sigma$.
   excess intersection, then there is also a weak monogon, bigon, or
   boundary triangle.  The other direction seems more difficult.
 \end{question}
-
+\DMGtodo[inline]{I am not sure if we want to leave this question here.}
 \begin{proof}[Proof of Lemma~\ref{lem:smoothing}]
   By Corollary~\ref{cor:taut-extension}, we can suppose that~$X$
   and~$A$ are simultaneously embedded so that they are both taut.

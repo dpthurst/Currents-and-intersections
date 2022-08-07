@@ -41,7 +41,7 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 \label{fig:nestedpositivity}
 }
   \end{figure}
-
+\DMGtodo[inline]{This picture is a bit too schematic. Maybe draw a bit more accurate one?}
 \subsubsection{$\mu_f$ is side-by-side additive and finitely additive}
 
 First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
@@ -124,7 +124,7 @@ Given an element $x \in \pi_1(S,*)$ corresponding to a simple closed curve, a ch
 \end{figure}
 
 
-\DMGtodo[inline]{This is rough, needs to be written more carefully}Notice that the basepoints of whiskers correspond to startpoints/endpoints of lifts of a closed geodesic in $\tilde{\Sigma}$, and they are dense in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
+\DMGtodo[inline]{This is rough, needs to be written more carefully}Notice that the basepoints of whiskers correspond to startpoints/endpoints of lifts of a closed geodesic in $\tilde{\Sigma}$, and they are dense \DMGtodo[inline]{(Punctures) Uses surface is closed, otherwise replace with limit set.} in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
 \begin{figure}
 \centering{
 \resizebox{40mm}{!}{\svgfig{breakingup}}
@@ -371,7 +371,7 @@ Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfyin
 Then $\mu_f$ is a geodesic current.
 \end{proposition}
 \begin{proof}
-By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring}, and Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
+By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring}, and Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ \DMGtodo[inline]{(Punctures) This is for closed surface, otherwise change for limit set} can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$.
 We first show $\mu_f$ is Radon. 
 Outer regularity follows by Proposition~\ref{lem:extend1} and inner regularity by Proposition~\ref{lem:extend2}.
@@ -422,12 +422,13 @@ i(\mu_f,C)=f(C).
 \begin{proof}
   Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
 Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
-Choose a conjugate $y$ in $[y]$, and $p_1,q_1 \in \pi_1(S,*)$ so that $p_1^{-1} \cdot \wt{x}$ is parallel to $\wt{y}$, $\wt{y}$ is parallel to $q_1 \cdot \wt{x}$.
 
 
-Pick $p_1, q_1 \in \pi_1(S,*)$, so that $x$ crosses $p_1$ to the right, i.e., $p_1^{-1}$ crosses $x$ to the right, and $p_1$ crosses $y$ to the right.
+Choose a conjugate $y$ in $[y]$, 
+and $p_1, q_1 \in \pi_1(S,*)$, so that $x$ crosses $p_1$ to the right, i.e., $p_1^{-1}$ crosses $x$ to the right, and $p_1$ crosses $y$ to the right.
 Furthermore, choose $q_1$ so that $q_1$ crosses $x$ and $y$ to the right. 
 Then, by Lemma~\ref{lem:rhs}, we have a configuration of lifts like the upper left and right lifts of $\wt{x}$ in Figure~\ref{fig:fundamental}.
+Moreover, this choice guarantees that $q_1 p_1$ crosses $y$ to the right and thus, by Lemma~\ref{lem:rhs}, $\wt{y}$ is parallel to $q_1 p_1 \cdot \wt{y}$.
 
 For each $n$, define the following elements of $\pi_1$:
 \begin{align*}
@@ -453,7 +454,6 @@ and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
   c^{(n)} &= p y^{n+1} q &  d^{(n)} &= p y^{-n} q.
 \end{align*}
 
-\DPTtodo{Verify that these data satisfy hypotheses of Proposition~\ref{prop:fundamental-aybx}}
 If we let $z=(p_1^{-1} \cdot \wt{x})^-$, then we have
     \begin{multline*}
       \mu_f((\gamma_-,\gamma_+) \times [z,y \cdot z)) \\
@@ -474,7 +474,7 @@ If we let $z=(p_1^{-1} \cdot \wt{x})^-$, then we have
       definition of the measure $\mu_f$ on boxes.
       For the third, we add and subtract the necessary powers of~$y$,
       $y^{-1}$ and $x$ to get to a double limit that exists by
-      Proposition~\ref{prop:doublelimitxy}.
+      Proposition~\ref{prop:doublelimitxy}. The hypotheses of this Proposition are satisfied by the choice of $p_1$ and $q_1$.
       In the fourth equality, we then apply that
       Proposition to cancel out equivalent
       terms. In the fifth equality, we use the symmetry property of~$f$ to obtain the result.
