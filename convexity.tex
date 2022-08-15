@@ -29,8 +29,19 @@
  $\lim_{n^{+},mm^{+}} g(n,m) = \lim_{n^{+}} \lim_{m^{+}} g(n,m)$, $\lim_{n^{-},m^{-}} g(n,m) = \lim_{n^{-}} \lim_{m^{-}} g(n,m)$, 
  $\lim_{n,m} g(n^{+},m^{-}) = \lim_{n^{+}} \lim_{m^{-}} g(n,m)$,  $\lim_{n,m} g(n^{-},m^{+}) = \lim_{n^{-}} \lim_{m^{+}} g(n,m)$ are true.
  
+ The following result is standard.
+ 
  \begin{lemma}
-   If $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is doubly convex and bounded, then $\lim_{n,m} g(n^{\pm},m^{\pm}) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exists.
+  Let $(a_{n,m})_{n,m \in \mathbb{Z}}$ be a double sequence on the integers which is bounded and monotone, in the sense that $a_{n',m'} \leq a_{n,m}$, whenever $(n',m') \leq (n,m)$ (i.e., $n' \leq n$ and $m' \leq m$). Then the following limits exist and are equal
+  \[
+  \lim_{n^{\pm}}\lim_{m^{\pm}} a_{n,m} = \lim_{m^{\pm}}\lim_{n^{\pm}} a_{n,m} = \lim_{n^{\pm}, m^{\pm}} a_{n,m}  
+  \]
+ \end{lemma}
+ 
+ We will use it to prove the following.
+ 
+ \begin{lemma}
+   If $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is doubly convex and bounded, then $\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exists.
  \end{lemma}
  \begin{proof}
  The proof is similar to the single-variable case.
