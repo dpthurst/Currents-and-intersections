@@ -1,14 +1,64 @@
 \section{Asymmetric intersection number and non-examples}
 \label{sec:asymmetric}
-\DMGtodo[inline]{The problem with these examples is that they are not built on  a hyperbolic surface}
-\DMGtodo[inline]{(Punctures) Additionally, the closest hyperbolic example would be the once-punctured torus, but currently our results are written for closed surfaces.}
-Up to Proposition~\ref{prop:recoverintersection}, we managed to construct a geodesic current associated to a curve functional $f$ that wasn't necessarily symmetric.
-One can hope that this asymmetric intersection number can be realized as some version of an asymmetric intersection number with that oriented geodesic current. Section~\ref{sec:asymmetric} shows examples manifesting this is not the case: there are asymmetric curve functionals that are not realized as asymmetric intersection numbers with oriented geodesic currents.
+Up to Proposition~\ref{prop:recoverintersection}, we managed to
+construct a geodesic current associated to a curve functional $f$ that
+wasn't necessarily symmetric. One can hope that this asymmetric
+intersection number can be realized as some version of an asymmetric
+intersection number with that oriented geodesic current. In this
+section, we give asymmetric curve functionals satisfying smoothing and
+additivity that are not realized as asymmetric intersection numbers
+with oriented geodesic currents.
 
-The asymmetric intersection number is an intersection number between oriented curves, defined analogously as the geometric intersection number but only considering right-handed intersections, as in Definition~\ref{def:righthandedcrossing}.
+The asymmetric intersection number is an intersection number between oriented curves, defined analogously as the geometric intersection number but only considering right-handed intersections (Definition~\ref{def:righthandedcrossing}).
 
-\begin{definition} Given two oriented curves $C,D$, the asymmetric intersection number is the minimal number of right handed crossings in within the homotopy class representatives of $C$ and $D$.
+\begin{definition} Given two oriented curves $\vec C$, $\vec D$, the
+  asymmetric intersection number $\vec i(\vec C, \vec D)$ is the
+  minimal number of right-handed crossings between any two homotopy
+  class representatives of $C$ and~$D$.
+
+  Likewise define $h(\vec C)\in H_1(\Sigma)$ to be the homology class
+  associated to~$\vec C$, and let \DPTtodo[inline]{Check sign}
+  $\langle h(\vec C), h(\vec D)\rangle$ be the algebraic intersection
+  number, the number of right-handed crossings minus the number of
+  left-handed crossings in any generic representatives of $\vec C$
+  and~$\vec D$.
 \end{definition}
+
+\begin{lemma}\label{lem:asym-intersect}
+  If $\langle \vec C, \vec D\rangle$ is the algebraic intersection
+  number between the (homology classes of) $\vec C$ and $\vec D$, then
+  \[
+    \vec i(\vec C, \vec D) = i(C, D) + {\textstyle\frac12}\langle \vec C,\vec D\rangle.
+  \]
+\end{lemma}
+
+\begin{proof}
+  Immediate from the definitions.
+\end{proof}
+
+As a result, we have strong constraints on which asymmetric curve
+functionals can come from an asymmetric intersection number.
+
+\begin{proposition}
+  For any collection of oriented curves $\{\vec C_i\}_{i=1}^k$ so that
+  $\sum_i h(\vec C_i) = 0$, let $\vec{\mathbf{C}} = \bigcup_i (\vec C_i
+  \cup -\vec C_i)$. Then for any oriented curve~$\vec D$, we have
+  \[
+    \vec i(\vec{\mathbf C}) = 0.
+  \]
+\end{proposition}
+\begin{proof}
+  Immediate from Lemma~\ref{lem:asym-intersect}.
+\end{proof}
+
+It is now easy to construct asymmetric functionals that cannot come
+from intersection numbers. For instance, consider the functional $f$
+on the unpunctured torus given by word-length with respect to a monoid
+generating set corresponding to an oriented triangle. (In coordinates,
+the generators are $\vec C_1 = (1,0)$, $\vec C_2 = (0,1)$, and $\vec
+C_3 = (-1,-1)$.)
+
+\DPTtodo[inline]{Editing HERE}
 
 For the triangular unpunctured torus, consider the 6 shortest curves, which by symmetry we can reduce to the following 3, in Figure~\ref{fig:shortcurves}.
 
@@ -37,15 +87,6 @@ On the other hand, if one considers the length induced by such a generating set,
     \caption{Length corresponding to generating set}
     \label{fig:length_asymmetric}
 \end{figure}
-
-
-\DPTtodo[inline]{See blackboard pictures in shared album. On the
-  triangular (unpunctured) torus, look at values on the 6 shortest
-  curves. For any asymmetric intersection number, the alternating sum
-  of these values is equal to zero. But for upper-right picture there,
-  the alternating sum is not zero. Also expect such examples on
-  hyperbolic torus.}
-
 
 
 
