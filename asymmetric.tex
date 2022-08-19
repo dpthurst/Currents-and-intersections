@@ -1,13 +1,15 @@
 \section{Asymmetric intersection number and non-examples}
 \label{sec:asymmetric}
-Up to Proposition~\ref{prop:recoverintersection}, we managed to
-construct a geodesic current associated to a curve functional $f$ that
-wasn't necessarily symmetric. One can hope that this asymmetric
-intersection number can be realized as some version of an asymmetric
-intersection number with that oriented geodesic current. In this
-section, we give asymmetric curve functionals satisfying smoothing and
-additivity that are not realized as asymmetric intersection numbers
-with oriented geodesic currents.
+One might wonder whether Theorem~\ref{thm:intersect} applies to
+\emph{asymmetric} currents and an asymmetric notion of intersection.
+Indeed, up to Proposition~\ref{prop:recoverintersection}, we managed
+to construct a geodesic current~$\mu_f$ associated to a
+not-necessarily-symmetric curve functional~$f$. One could hope that
+(asymmetric) intersections with $\mu_f$ recover $f$ in the more
+general context. In this section, we dash this hope: there are
+asymmetric curve functionals satisfying smoothing and additivity that
+are not realized as asymmetric intersection numbers with any oriented
+geodesic currents.
 
 The asymmetric intersection number is an intersection number between oriented curves, defined analogously as the geometric intersection number but only considering right-handed intersections (Definition~\ref{def:righthandedcrossing}).
 
@@ -17,7 +19,7 @@ The asymmetric intersection number is an intersection number between oriented cu
   class representatives of $C$ and~$D$.
 
   Likewise define $h(\vec C)\in H_1(\Sigma)$ to be the homology class
-  associated to~$\vec C$, and let \DPTtodo[inline]{Check sign}
+  associated to~$\vec C$, and let \DPTtodo{Check sign}
   $\langle h(\vec C), h(\vec D)\rangle$ be the algebraic intersection
   number, the number of right-handed crossings minus the number of
   left-handed crossings in any generic representatives of $\vec C$
@@ -39,12 +41,12 @@ The asymmetric intersection number is an intersection number between oriented cu
 As a result, we have strong constraints on which asymmetric curve
 functionals can come from an asymmetric intersection number.
 
-\begin{proposition}
+\begin{proposition}\label{prop:asym-constraint}
   For any collection of oriented curves $\{\vec C_i\}_{i=1}^k$ so that
   $\sum_i h(\vec C_i) = 0$, let $\vec{\mathbf{C}} = \bigcup_i (\vec C_i
   \cup -\vec C_i)$. Then for any oriented curve~$\vec D$, we have
   \[
-    \vec i(\vec{\mathbf C}) = 0.
+    \vec i(\vec{\mathbf C},D) = 0.
   \]
 \end{proposition}
 \begin{proof}
@@ -52,43 +54,58 @@ functionals can come from an asymmetric intersection number.
 \end{proof}
 
 It is now easy to construct asymmetric functionals that cannot come
-from intersection numbers. For instance, consider the functional $f$
-on the unpunctured torus given by word-length with respect to a monoid
-generating set corresponding to an oriented triangle. (In coordinates,
-the generators are $\vec C_1 = (1,0)$, $\vec C_2 = (0,1)$, and $\vec
-C_3 = (-1,-1)$.)
+from intersection numbers. First consider the flat unpunctured torus,
+and, consider the functional $f$ on given by word-length with respect
+to a monoid generating set corresponding to an oriented triangle. With
+respect to standard generators $a,b$ with $[a,b] = e$, we consider the
+three (monoid) generators $a$, $b$, and $c = a^{-1}b^{-1}$. Word length with
+respect to this generating set behaves like this:
+\[
+  \resizebox{50mm}{!}{\svgfig{length_asymmetric}}
+\]
+In particular, consider the three curves
+\begin{align*}
+  \vec C_1 &= \overrightarrow{[a]} & 
+  \vec C_2 &= \overrightarrow{[b]} & 
+  \vec C_3 &= \overrightarrow{[c]}.
+\end{align*}
+These satisfy the conditions of
+Proposition~\ref{prop:asym-constraint}, but have lengths
+$\ell(\vec C_i) = 1$ and $\ell(-\vec C_i) = 2$. Concretely,
+Proposition~\ref{prop:asym-constraint} says that the alternating sum
+of lengths of curves around the central hexagon must be zero, as you
+can see by example in Figure~\ref{fig:shortcurves}.
+  
 
-\DPTtodo[inline]{Editing HERE}
+%For the triangular unpunctured torus, consider the 6 shortest curves, which by symmetry we can reduce to the following 3, in Figure~\ref{fig:shortcurves}.
 
-For the triangular unpunctured torus, consider the 6 shortest curves, which by symmetry we can reduce to the following 3, in Figure~\ref{fig:shortcurves}.
-
-  \begin{figure}
+\DPTtodo{Do you know why the arrows in Figure~\ref{fig:shortcurves}
+  are the wrong color in the PDF output? They look right in the SVG file.}
+\DPTtodo{The specific curves don't match the shown function. The blue
+  curve should be pointing straight to the right or left (depending on
+  sign). Would also be nice to have a more horizontal figure for the
+  unfolded torus to use less vertical space. Have not checked everything.}
+\begin{figure}
 \centering{
-\resizebox{50mm}{!}{\svgfignormal{torus_curves}}}
-\caption{The three shortest curves in the flat triangular unpunctured torus.
-}
+\resizebox{50mm}{!}{\svgfignormal{torus_curves}}} \\
+\resizebox{150mm}{!}{\svgfig{intersection_asymmetric}}
+\caption{The three shortest curves in the flat triangular unpunctured
+  torus (up to symmetry, shown in an unfolding in the universal
+  cover), and their corresponding intersection functions.}
 \label{fig:shortcurves}
 \end{figure}
 
-Develop these simple curves in the universal cover of the triangular punctured torus, and consider the same triangulation as in Figure~\ref{fig:shortcurves} lifted to the universal cover.
-The corresponding lifts of geodesics intersect the edges of the triangulations, which we orient. If we note the asymmetric intersection number of these geodesics as we develop the torus further and further, which corresponds to taking more powers of the curve, and keep track of the right-handed intersections, we obtain the diagrams of asymmetric intersections for each curve, color coded in Figure~\ref{fig:intersection_asymmetric}. We observe that counting right-handed crossings corresponds to taking the maximum of the algebraic intersection number, a linear function on simple curves, with 0. 
-\begin{figure}
-    \centering
-    \resizebox{150mm}{!}{\svgfig{intersection_asymmetric}}
-    \caption{Diagrams for asymmetric intersections for each of the three curves}
-    \label{fig:intersection_asymmetric}
-\end{figure}
+% Develop these simple curves in the universal cover of the triangular punctured torus, and consider the same triangulation as in Figure~\ref{fig:shortcurves} lifted to the universal cover.
 
-Each cyclic hexagon of intersection numbers in Figure~\ref{fig:intersection_asymmetric} satisfies that the alternating sum is zero.
-On the other hand, if one considers the length induced by such a generating set, the diagram obtained, in Figure~\ref{fig:length_asymmetric}, does not satisfy such a property. 
-\begin{figure}
-    \centering
-        \resizebox{50mm}{!}{\svgfig{length_asymmetric}}
-    \caption{Length corresponding to generating set}
-    \label{fig:length_asymmetric}
-\end{figure}
+% The corresponding lifts of geodesics intersect the edges of the triangulations, which we orient. If we note the asymmetric intersection number of these geodesics as we develop the torus further and further, which corresponds to taking more powers of the curve, and keep track of the right-handed intersections, we obtain the diagrams of asymmetric intersections for each curve, color coded in Figure~\ref{fig:intersection_asymmetric}. We observe that counting right-handed crossings corresponds to taking the maximum of the algebraic intersection number, a linear function on simple curves, with 0. 
 
-
+It is easy to upgrade this example to one living on a genus~$2$
+surface (so hyperbolic and in the context of this paper.) For
+instance, you can divide the genus~$2$ surface into two perforated
+tori, consider monoid generators $a,b,c$ on the right-hand torus as
+above, considered as edges with very long length in an embedded
+directed graph, and supplement them with (short) monoid generators on
+the left-hand torus.
 
 %%% Local Variables:
 %%% mode: latex
