@@ -224,7 +224,13 @@ In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid con
 \subsection{Right-handed crossing and parallelism}
 
 Now we connect the definition of right-handed crossing to the notions of crossing and parallelism of hyperbolic isometries.
-If we introduce a hyperbolic metric $\Sigma$ on $S$, this yields a homomorphism $\rho \colon \pi_1(S) \to \Isom^{+}(\mathbb{H}^2)$, so that any non-trivial $a \in \pi_1(S)$ can be  identified with a hyperbolic isometry $\rho(a) \in \Isom^+(\mathbb{H}^2)$. \DMGtodo[inline]{(Punctures) If punctures, we need to ask for hyperbolic, and peripheral sent to parabolic.} We will abuse notation and write $a$ instead of $\rho(a)$.
+If we introduce a hyperbolic metric $\Sigma$ on $S$, this yields a
+homomorphism $\rho \colon \pi_1(S) \to \Isom^{+}(\mathbb{H}^2)$, so
+that any non-trivial $a \in \pi_1(S)$ can be  identified with a
+hyperbolic isometry $\rho(a) \in \Isom^+(\mathbb{H}^2)$.
+% \DMGtodo[inline]{(Punctures) If punctures, we need to ask for
+%   hyperbolic, and peripheral sent to parabolic.}
+We will abuse notation and write $a$ instead of $\rho(a)$.
 We observe that the notions of crossing, parallelism, and anti-parallelism only depended on the relative order of the fixed points at infinity of the hyperbolic isometries. Thus, they are independent of the choice of hyperbolic metric $\Sigma$.
 Furthermore, if $a,x \in \pi_1(S)$, then $a$ crosses $x$ to the right if and only if $\ora{a}$ crosses $\ora{x}$.
 In particular, in order to detect crossing, parallelism or anti-parallelism between elements, one can look at any topological realization of lifts of elements in the universal cover, and not just the geodesic ones.
@@ -233,7 +239,12 @@ Thus, $\ora{a}$ and $\ora{x}$ cross (resp. are parallel, anti-parallel), if and 
 From Lemma~\ref{lem:righthandedfoundation}, we get the following results.
 
 \begin{lemma}
-If $g,h,gh,gh^{-1} \in \pi_1(S)$ are all non-trivial, and $S$ is a closed surface,  \DMGtodo[inline]{(Punctures) We use closed surface to ensure the elements are hyperbolic. Otherwise, we need to specify they are hyperbolic} \emph{exactly one}
+If $g,h,gh,gh^{-1} \in \pi_1(S)$ are all non-trivial, and $S$ is a
+closed surface,
+% \DMGtodo[inline]{(Punctures) We use closed surface to
+%   ensure the elements are hyperbolic. Otherwise, we need to specify
+%   they are hyperbolic}
+\emph{exactly one}
 of the multi-curves $[g][h]$, $[gh]$, and $[gh^{-1}]$ has an essential crossing at the basepoint.
 \end{lemma}
 
@@ -307,7 +318,7 @@ $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
 basepoint. The endpoints of the lifts of $[x]$ are dense in
 $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$.\DMGtodo[inline]{Add reference to this in actions section.}
-\DMGtodo[inline]{(Punctures) For surface with punctures, it is density in the limit set, not the whole circle.}
+% \DMGtodo[inline]{(Punctures) For surface with punctures, it is density in the limit set, not the whole circle.}
 
 The main objects in our proof are certain boxes in the
 space of geodesics to which we will assign measures. The prototype for
@@ -481,9 +492,10 @@ The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ cro
 \end{example}
 
 In our construction, we want to use the fact that the endpoints of boxes are dense in $\partial_{\infty} \tilde{S}$, using that the action of $\pi_1(S)$ on $\partial_{\infty} \tilde{S}$ is minimal, i.e., for any $p \in \partial_{\infty} \tilde{S}$, the orbit $\pi_1(S)p$ is dense. \DMGtodo[inline]{Reference to actions (this has been commented before}.
-\DMGtodo[inline]{(Punctures) Again, this uses surface is closed.}
+% \DMGtodo[inline]{(Punctures) Again, this uses surface is closed.}
 However, because of our interest in right-handed boxes, we are only considering a subset of the lifts of $[x]$ to construct our boxes.
-These are still enough to approximate any box.\DMGtodo[inline]{(Punctures) This uses surface is closed (commented before, too)}
+These are still enough to approximate any box.
+% \DMGtodo[inline]{(Punctures) This uses surface is closed (commented before, too)}
 
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
@@ -500,7 +512,10 @@ These are still enough to approximate any box.\DMGtodo[inline]{(Punctures) This 
 
 \begin{lemma}
 Let $x \in \pi_1(\Sigma)$.
-Given any $z \in \partial \Sigma$,\DMGtodo[inline]{(Punctures) Uses closed surface, otherwise replace by limit set.} and any $\epsilon>0$, there exists a lift $g \cdot \wt{x}$ whose endpoints $g\wt{x}_+$ and $g\wt{x}_-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
+Given any $z \in \partial \Sigma$,
+% \DMGtodo[inline]{(Punctures) Uses
+%   closed surface, otherwise replace by limit set.}
+and any $\epsilon>0$, there exists a lift $g \cdot \wt{x}$ whose endpoints $g\wt{x}_+$ and $g\wt{x}_-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
 with respect to the $ \partial \Sigma$ order.
 \label{lem:diagonaldense}
 \end{lemma}

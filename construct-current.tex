@@ -124,7 +124,13 @@ Given an element $x \in \pi_1(S,*)$ corresponding to a simple closed curve, a ch
 \end{figure}
 
 
-\DMGtodo[inline]{This is rough, needs to be written more carefully}Notice that the basepoints of whiskers correspond to startpoints/endpoints of lifts of a closed geodesic in $\tilde{\Sigma}$, and they are dense \DMGtodo[inline]{(Punctures) Uses surface is closed, otherwise replace with limit set.} in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
+\DMGtodo[inline]{This is rough, needs to be written more
+  carefully}Notice that the basepoints of whiskers correspond to
+startpoints/endpoints of lifts of a closed geodesic in
+$\tilde{\Sigma}$, and they are dense
+% \DMGtodo[inline]{(Punctures) Uses
+%   surface is closed, otherwise replace with limit set.}
+in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
 \begin{figure}
 \centering{
 \resizebox{40mm}{!}{\svgfig{breakingup}}
@@ -371,7 +377,17 @@ Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfyin
 Then $\mu_f$ is a geodesic current.
 \end{proposition}
 \begin{proof}
-By Proposition~\ref{prop:limitexists}, Proposition~\ref{prop:RHsemiring}, and Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely additive and countably subbadditive pre-measure on $\mathcal{R}$. Boxes have dense endpoints by Proposition~\ref{prop:density}, and moreover the endpoints are indexed by elements of $\pi_1(S)$, so they are countable. Therefore, any rectangle set in $\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$ \DMGtodo[inline]{(Punctures) This is for closed surface, otherwise change for limit set} can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
+By Proposition~\ref{prop:limitexists},
+Proposition~\ref{prop:RHsemiring}, and
+Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely
+additive and countably subbadditive pre-measure on $\mathcal{R}$.
+Boxes have dense endpoints by Proposition~\ref{prop:density}, and
+moreover the endpoints are indexed by elements of $\pi_1(S)$, so they
+are countable. Therefore, any rectangle set in
+$\partial_{\infty}\Sigma \times \partial_{\infty} \Sigma-\Delta$
+% \DMGtodo[inline]{(Punctures) This is for closed surface, otherwise
+% change for limit set}
+can be written as a countable union of right-handed boxes, and thus by elements of $\mathcal{R}$.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on the Borel sigma-algebra of $G^+(\Sigma)$.
 We first show $\mu_f$ is Radon. 
 Outer regularity follows by Proposition~\ref{lem:extend1} and inner regularity by Proposition~\ref{lem:extend2}.
