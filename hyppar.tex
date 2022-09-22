@@ -1,0 +1,57 @@
+
+\section{Hyperbolic parallelograms}
+\label{sec:hyp-par}
+
+\DPTtodo[inline]{Just putting this here for now, I don't know where it
+  actually belongs in the paper}
+
+\begin{definition}
+  A \emph{hyperbolic parallelogram} is a hyperbolic quadrilateral
+  where opposite sides have equal length, as shown in
+  Figure~\ref{fig:hyp-par}. Equivalently, it is a quadrilateral where
+  the diagonals bisect each other.
+\end{definition}
+
+\begin{figure}
+  \[
+    \includegraphics{hyp-quad-0}
+  \]
+  \caption{A hyperbolic parallelogram}
+  \label{fig:hyp-par}
+\end{figure}
+
+\DPTtodo{Figure should have more labels. But almost certainly the
+  naming of the variables in this lemma should change, since $a$
+  should be the name for the translation from $X$ to $Y$ along
+  the line $XY$.}
+
+The following geometric lemma is presumably standard. It is the
+hyperbolic version of the parallelogram law that, in a parallelogram
+with sides $c,d$ and diagonals $2a, 2b$, we have $2(a^2+b^2) =
+c^2+d^2$. It can also be thought of as a formula giving the median of
+a hyperbolic triangle in terms of its side lengths.
+\begin{lemma}
+  Given a hyperbolic parallelogram $XYZW$ with center $O$, let
+  $c = \abs{X-Y} = \abs{Z - W}$ and $d = \abs{Y - Z} = \abs{X - W}$ be
+  the lengths of the sides, and let $a = \abs{X - O} = \abs{Z
+    - O}$ and $b = \abs{Y - O} = \abs{W - O}$ be the half-lengths of
+  the diagonals. Then
+  \[
+    2 \cosh a \cosh b = \cosh c + \cosh d.
+  \]
+\end{lemma}
+
+\begin{proof}
+  Let $\gamma$ be the measure of $\angle XOY$ and $\delta=\pi-\gamma$ be the
+  measure of $\angle YOZ$. The hyperbolic law of cosines gives
+  \begin{align*}
+    \cosh c &= \cosh a \cosh b - \sinh a \sinh b \cos \gamma\\
+    \cosh d &= \cosh a \cosh b - \sinh a \sinh b \cos \delta.
+  \end{align*}
+  Adding these gives the desired result.
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Intersections"
+%%% End:
