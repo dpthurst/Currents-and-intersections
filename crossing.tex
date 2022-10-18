@@ -134,6 +134,7 @@ Note that if $(\ora{a},\ora{b})$ is parallel, $(\ora{b^{-1}},\ora{a^{-1}})$ is a
 
 In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid confusion with attractive and repelling endpoints, although we will prefer the latter notation throughout the text.
 
+\begin{comment}
 \begin{lemma}
   Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
   $a^{-1}b$ are both hyperbolic. Then exactly one of the pairs
@@ -150,6 +151,26 @@ In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid con
   \end{enumerate}
   \label{lem:righthandedfoundation}
 \end{lemma}
+\end{comment}
+
+\begin{lemma}
+  Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
+  $a^{-1}b$ are both hyperbolic. Then we have the following possibilities:
+  \begin{enumerate}[label=(\Roman*)]
+  \item $(\ora{a}, \ora{b})$ cross, $(\ora{ba},\ora{ab})$ are
+    parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
+  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
+    and $(\ora{aB},\ora{Ba})$ are parallel.
+  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
+    and $(\ora{aB},\ora{Ba})$ are cross.
+  \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
+    are parallel, and $(\ora{Ba},\ora{aB})$ cross.
+  \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
+    are cross, and $(\ora{Ba},\ora{aB})$ cross.
+  \end{enumerate}
+  \label{lem:righthandedfoundation}
+\end{lemma}
+
 
 \begin{proof}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
@@ -234,7 +255,7 @@ In particular, in order to detect crossing, parallelism or anti-parallelism betw
 Thus, $\ora{a}$ and $\ora{x}$ cross (resp. are parallel, anti-parallel), if and only if $\wt{a}$ and $\wt{x}$ cross (resp. are parallel, anti-parallel).
 
 From Lemma~\ref{lem:righthandedfoundation}, we get the following results.
-
+\begin{comment}
 \begin{lemma}
 If $g,h,gh,gh^{-1} \in \pi_1(S)$ are all non-trivial, and $S$ is a
 closed surface,
@@ -244,7 +265,7 @@ closed surface,
 \emph{exactly one}
 of the multi-curves $[g][h]$, $[gh]$, and $[gh^{-1}]$ has an essential crossing at the basepoint.
 \end{lemma}
-
+\end{comment}
 
 \begin{lemma}
   Let $a,x \in \pi_1(S)$ be elements that do not share a common power.

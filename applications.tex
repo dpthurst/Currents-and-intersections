@@ -3,10 +3,15 @@
 
 \subsection{New definition of geodesic currents, filling currents and measured laminations}
 \label{subsec:newdef}
-This result gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals. These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$.
+This result gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals. These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
+
+Thus, a reestatement of Theorem~\ref{thm:intersect} is as follows.
+
 \begin{theorem}
-   
+   Let $\Psi \colon \GC(S) \to \CurveFunct(S)$ be the homeomorphism onto its image $\mu \mapsto i(\mu, \cdot)$.
+   The image is equal to the subset of additive convex functionals $\AConvex(S)$.
 \end{theorem}
+
 We can also characterize filling geodesic currents.
 
 \begin{corollary}
@@ -26,6 +31,9 @@ We can also characterize filling geodesic currents.
 \begin{proof}
 These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1]{BIPP17:StructureThmCurrents}.
 \end{proof}
+
+We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
+We need first the following hyperbolic geometry lemma.
 
 \begin{proposition}
 Given two elements $g,h \in \pi_1(\Sigma)$ that are not conjugates of each other, with hyperbolic axes $A_g$ and $A_h$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
@@ -181,7 +189,7 @@ The other smoothing (right-middle torus) yields, on the one hand (left) two para
 \end{proof}
 \subsection{Measured laminations and $\mathbb{R}$-trees}
 
-As an application, we prove a conjecture of Morgan and Otal, giving another characterization of small actions of surface groups on $\mathbb{R}$-trees.
+As an application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing both $x$ and $y$ isometric to the interval $[0, d(x, y)]$. This intersection is denoted
 $[x, y]$, and called an \emph{arc}. If $G$ is a group, a $G$-tree is an $\mathbb{R}$-tree together with a group action $G \acts T$ by isometries.
@@ -206,24 +214,42 @@ Given two hyperbolic elements $g, h \in G$, their $\mathbb{R}$-tree axes $T_g,T_
 
 Given $G=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $A_g, A_h$ be the hyperbolic axes corresponding to these elements.
 If two axes $A_g,A_h$ with respect to $\Sigma$ intersect in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
-Given a measured lamination $\lambda$, one can produce an $\mathbb{R}$-tree by lifting the measured lamination to the universal cover, defining a pseudo-distance between $x,y \in \wt{\Sigma}$ given by the transverse measure of the segment $[x,y]$, and taking the quotient metric space. This $\mathbb{R}$-tree has a $\pi_1(S)$ action induced by the action on $\tilde{\Sigma}$. We call this graph the dual graph $T_{\lambda}$ of $\lambda$.
+A measured lamination $\lambda$ defines a (dual) $\pi_1(\Sigma)$ minimal irreducible action on $\mathbb{R}$-tree as follows (following~\cite{BIPP21:Systoles}). Lift the lamination to the universal cover $\wt{\Sigma}$ and define the pseudo-distance 
+
+\begin{equation}d_{\lambda}(x,y) \coloneqq 1/2(\lambda(G[x,y)) + \lambda(G(x,y])) 
+\label{eq:pseudo}
+\end{equation}
+on $\tilde{\Sigma}$, where $[x,y),(x,y]$ denote the half-closed/open geodesic segments between $x$ and $y$ in $\wt{\Sigma}$, and $G[x,y)$ denotes the space of geodesics transverse to $[x,y)$. One can check that the natural quotient metric space is $0$-hyperbolic and thus can be canonically embedded in an $\mathbb{R}$-tree $T(\lambda)$. An equivalent definition of $T(\lambda)$ is given in \cite[Chapter~11]{Kap09:HyperbolicManifold}.
+It follows from the construction of $T(\lambda)$ is that the translation length on $T$ of $g \in \pi_1(S)$, $\ell_T(g)$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the curve associated to $g$.
+Given a minimal action of a surface group $G$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\pi_1(\Sigma)$-equivariant isometry $\phi \colon T(\lambda) \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
+
 Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that an action of a surface group is dual to a measured lamination if and only if 
 \begin{enumerate}
     \item it is small,
-    \item for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
+    \item it \emph{preserves axis intersection}: for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
 \end{enumerate}
-In~\cite{Sko90:GeometricAction}, Skora showed that $G \acts T$ is dual to a measured lamination if and only if (1). It follows that (1) implies (2).
-Morgan-Otal asked if (2) implies (1). We answer this question in the affirmative.
+An action of a group $G$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
+\begin{enumerate}
+\item Irreducible: $\| \cdot \|$ trivial on $[G,G]$
+\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $G$.
+\item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $G$.
+\end{enumerate}
+Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if an action preserves axis intersection, does it follow it is small?
+Without further assumptions, the axis intersection being preserved alone does not imply in general the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
+However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $G \acts T$ of a surface group $G$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
+In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $G$ must be elliptic in $T$, Skora showed that $G \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axis intersection being preserved. 
 
 
-\begin{proposition}
-An action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is small if and only if condition (1) is satisfied.
+\begin{theorem}
+A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
 \label{prop:small}
-\end{proposition}
+\end{theorem}
 \begin{proof}
-By the above, it only remains to show that (2) implies (1).
-On the other hand, assume that for any pair $g,h \in \pi_1(S)$, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
+We assume it is irreducible and preserves axis intersection, and will prove $\| \cdot \|$ satisfies max-smoothing, and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication is clear.
+Assume that for any pair $g,h \in \pi_1(S)$, that act hyperbolically on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
 We will verify that $| \cdot |$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
+\begin{enumerate}
+\item Case 1 (hyperbolic): we suppose that for a pair of elements $g,h \in \pi_1(X)$, all $g,h$ act hyperbolically on $T$.
 First, suppose that $g,h$ represent distinct closed curves on $S$ that intersect essentially.
 The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-smoothing can be phrased as
 
@@ -239,7 +265,7 @@ Max-smoothing amounts to
 |gh| = \max \{ |g|+|h|,|gh^{-1}| \}.
 \]
 
-First, we note that the self-intersection corresponds to the intersection of the hyperbolic axes of the elements $gh$ and $hg$. Thus, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
+We note that the self-intersection corresponds to the intersection of the hyperbolic axes of the elements $gh$ and $hg$. Thus, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
 There are three cases to consider.
 \begin{enumerate}
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $|gh|=|gh^{-1}| \geq |g|+|h|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
@@ -248,14 +274,13 @@ There are three cases to consider.
     $|gh|=|g|+|h|>|gh^{-1}|$, and the condition is satisfied by the result~\cite[1.8]{CM87:GroupActions}
     \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations
     Then, 
-    $|gh^{-1}|=|g|+|h|>|gh|$, so the max-smoothing condition would be violated. However, this case cannot arise, since that would mean that $T_{g^{-1}h}$ and $T_{hg^{-1}}$ intersect in a non-degenerate interval with coherent orientations, and analysis of the axes shows that, in fact, $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
+    $|gh^{-1}|=|g|+|h|>|gh|$, so the max-smoothing condition would be violated. However, this case cannot arise, since that would mean that $T_{g^{-1}h}$ and $T_{hg^{-1}}$ intersect in a non-degenerate interval with coherent orientations, and analysis of the axes shows that, then $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
 \end{enumerate}
-
+\item Case 2: $g$ or $h$ are elliptic.
+It follows from a similar analysis comparison of translation lengths in the tree. The different cases when, say, $g$ is hyperbolic and $h$ is elliptic, have been analyzed in~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. The irreducibility of the action one checks max-smoothing is satisfied.
+\end{enumerate}
 \end{proof}
 
-We emphasize that condition (2) is not enough if instead of $\mathbb{R}$-trees one considers $\mathbb{Z}$-trees (see \cite[Section~4]{Sko90:GeometricAction}).
-\DMGtodo[inline]{check this}
-We finish this section by posing a question.
 In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
 
 \begin{theorem}
@@ -301,6 +326,7 @@ In fact, we have something much stronger
 \begin{corollary}
 If $C_2$ dominates $C_1$, then
     $\ell_g(C_1) \leq \ell_g(C_2)$ for all metric lengths $g$ satisfying conditions of theorem~\ref{thm:intersect} (not necessarily Riemannian).
+    \label{cor:domination}
 \end{corollary}
 
 \begin{proof}

@@ -154,6 +154,7 @@ We note that additive union implies homogeneity.
 
 \DPTtodo[inline]{Review this. Is the new terminology good?}
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
+Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals on $S$ satisfying convex union, and stability/homogeneity.
 In decreasing order of generality, we consider the following families of symmetric curve functionals.
 \begin{enumerate}
     \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric curve functionals satisfying $R$-quasi-smoothing, convex union, stability and homogeneity. We call this the space of \emph{$R$-quasi-convex functionals}. Define $\QConvex(S) \coloneqq \cup_{R \in \mathbb{R}} \QConvex_R(S)$, the space of \emph{quasiconvex curve functionals}.
@@ -162,7 +163,7 @@ In decreasing order of generality, we consider the following families of symmetr
 \end{enumerate}
 As we point out below, for any $R>0$, we have the following strict inclusions
 \[
-\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S).
+\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S) 
 \]
 \end{definition}
 
@@ -198,7 +199,18 @@ On the other hand, not all functions on curves satisfy the smoothing, additivity
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). This is an example of a curve functional which is not in $\QConvex(S)$, even though it does extend to geodesic currents by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
+    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). This is an example of a curve functional which is not in $\QConvex(S)$, even though it does extend to geodesic currents by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}. In fact, the arguments in the proof of~\cite[Theorem~A]{MGT21:Smoothings} go through replacing the convex union property (equation~\ref{eq:union-convex}), by the weaker property of \emph{coarse convex union}: there exist a uniform constant $K>0$ so that
+        \begin{equation}\label{eq:coarse-union-convex}
+      f(C_1 \cup C_2) \le f(C_1) + f(C_2) + K
+    \end{equation}
+    is satisfied for all weighted multi-curves $C_1,C_2$.
+    We point out that the square of self-intersection number does not satisfy this property either. By bilinearity and symmetry of intersection number, we have, setting $f(C) \coloneqq \sqrt{i(C,C)}$ we have,
+    \[
+      f(C_1 \cup C_2)^2 = f(C_1)^2 + f(C_2)^2 + 2i(C_1,C_2).
+    \]
+    Since $i(C_1,C_2)$ can be arbitrarily large, coarse convex union cannot be satisfied.
+    \item Translation lengths associated to biautomatic structures. An automatic structure is a combinatorial structure associated to a group that furnishes the group with features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. Such structures are described by use of a \emph{regular language}, a collection of words in the group satisfying certain properties. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
+    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used it to construct a new example of hierarchically hyperbolic group that is not biautomatic. It would be interesting to see if these translation lengths satisfy strict smoothing. We remark that a negative answer would yield a new proof of their work.
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -222,14 +234,41 @@ This can be seen as a duality result giving a one-to-one correspondence between 
 One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and Luo's work to give another characterization of measured laminations in terms of curve functionals.\DMGtodo[inline]{this claim is really work in progress}
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate (but are weaker than) to our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
-Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$. \DMGtodo[inline]
-{say something about my work with Misha Kapovich?}
+Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$. Misha Kapovich and the first author show, in~\cite{KMG:BBP} that for freely indecomposable hyperbolic groups acting via small action on an $\mathbb{R}$-tree, the stable length extends continuously to geodesic currents. 
+See also Section~\ref{sec:questions}.
+
 By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
     Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic.\DMGtodo[inline]{This is vague, we should expand on this in applications, or give a reference for ``random geodesic''} For instance, if $\rho$
 has positive curvature, there may be an open set of Riemannian geodesics
 on~$\Sigma$ that stay inside a contractible set and so are not
 quasi-geodesic on~$\wt \Sigma$.
 In any case, as a further application, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+
+\subsection{Open surfaces}
+
+A natural question is if our results can be extended to the setting of open surfaces (i.e., compact surfaces with boundary, or finite type surfaces with punctures).
+  Recall that geodesic currents can also be defined more generally for finite type hyperbolic surfaces. Depending on if we consider ends as cusps or funnels, we get two different spaces, that we will call $\GC_{\mathrm{cusp}}(S)$ and $\GC_{\mathrm{open}}(S)$, respectively.
+In the first case, we define the space of geodesic currents analogously to Definition~\ref{def:currents-1} for closed surfaces, i.e., as invariant measures supported on the space of geodesics of the universal cover, noting that now the space of geodesics contains arcs going from cusp to cusp. 
+In the second case, we consider geodesic currents supported on geodesics projecting to the convex core of the surface.
+
+In the case of $\GC_{\mathrm{cusp}}(S)$, 
+we gave an example in~\cite[Remark~2.26]{MGT21:Smoothings} showing that intersection number is not continuous on currents. See also the recent works by Sasaki~\cite{S20:CuspedCurrents} and Trin~\cite{T22:ThurstonCompactification}.
+
+We think there should be an analog of our result for $\GC_{\mathrm{cusp}}(S)$,
+but it's not clear that the conditions defining $\AConvex(S)$ would be enough or if one should also add conditions with regards to smoothings between arcs and arcs, and arcs and curves.
+More importantly, most of our arguments rely on the fact that the is a natural cyclic order at the boundary at infinity $\partial_{\infty}\wt{\Sigma}$, which we lose when $\Sigma$ has punctures, since the fundamental group will be free.
+
+The case of $\GC_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
+The key issue is that the intersection number is degenerate in this case: any geodesic current $\mu$ supported on boundary curves will have zero intersection number with all geodesic currents $\nu \in \GC(S)$.
+We can give a concrete example on how our theorem fails in this setting, similar to the second example in~\cite[Remark~2.26]{MGT21:Smoothings}.
+
+Let $\bar{\Sigma}$ denote the convex core of $\Sigma$.
+Let $\ell$ be the restriction to $\Sigma$ of the hyperbolic
+length on the double of $\bar{\Sigma}$.
+We note that $\ell$ satisfies additivity, stability and homogeneity
+properties. Also, it satisfies smoothing: for non-boundary parallel curves, smoothing is satisfied by the same argument as the proof of Corollary~\ref{cor:domination}. Since boundary parallel curves do not intersect each other or other non-boundary parallel curves, smoothing is vacuously satisfied.
+
+However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For a related example, see~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
 
 \subsection{Acknowledgments}
