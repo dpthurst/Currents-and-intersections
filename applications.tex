@@ -33,6 +33,25 @@ These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1
 \end{proof}
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
+
+We will need the following observation about the measure of sets intersecting pairs of geodesic segments.
+We introduce the following notation. Given two geodesics segments $k$ and $k'$, we denote with $G(k)$ the set of geodesics intersecting $k$ transversely and let $G(k , k')$ be the set of geodesics intersecting both $k$ and $k$ transversely.
+Let $G(k | k)$ be the set of geodesics separating $k$ from $k'$, i.e., $\gamma \in G(k | k')$ if $k$ and $k'$ lie in distinct connected components of $\wt{X}-\gamma$.
+\begin{lemma}
+Let $\mu$ be a geodesic current.
+Let $k=[x,y]$,$k'=[w,z]$ be two geodesic segments.
+Let $p=[x,w]$, $p'=[y,z]$
+Then, the following equation holds.
+\begin{align*}
+2\mu(G(p,p'))&=\mu(G(l))+\mu(G(l'))-\mu(G(k)) - \mu(G(k')).
+\end{align*}
+\label{lem:otalclaim}
+\end{lemma}
+\begin{proof}
+Note that the set of geodesics intersecting both $p$ and $p'$ is the same as the set of geodesics separating $k$ and $k'$, i.e., $G(p,p')=G(k|k')$.
+The claim then follows by an observation by Otal~\cite[Page~154]{Otal90:SpectreMarqueNegative}, which is proven in detail in \cite[Lemma~5.2]{dRMG22:Duals}.
+\end{proof}
+
 We need first the following hyperbolic geometry lemma.
 
 \begin{proposition}
@@ -41,11 +60,13 @@ Let $P$ be the point on $A_g$ obtained by moving forward from $O$ by distance $\
 Let $Q'$ be the point on $A_h$ obtained by moving forward from $O$ by distance $\ell(h)/2$. Let $P'$ be the point on $A_g$ obtained by moving backward from $O$ by distance $-\ell(g)/2$.
 we have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
-\item The hyperbolic axis of $A_{gh}$ is determined by the geodesic line going from $Q$ to $P$, and the hyperbolic distance from $Q$ to $P$ is $\ell(gh)/2$.
-\item The hyperbolic axis of $A_{hg}$ is determined by the geodesic line going from $P'$ to $Q'$, and the hyperbolic distance from $Q'$ to $P'$ is $\ell(hg)/2$.
+\item The hyperbolic axis of $A_{hg}$ is determined by the geodesic line going from $Q$ to $P$, and the hyperbolic distance from $Q$ to $P$ is $\ell(hg)/2$.
+\item The hyperbolic axis of $A_{gh}$ is determined by the geodesic line going from $P'$ to $Q'$, and the hyperbolic distance from $Q'$ to $P'$ is $\ell(hg)/2$.
 \item The hyperbolic axis of $A_{gh^{-1}}$ is determined by the geodesic line going from $Q'$ to $P$, and the hyperbolic distance from $Q'$ to $P$ is $\ell(gh^{-1})/2$.
 \item The hyperbolic axis of $A_{h^{-1}g}$ is determined by the geodesic line going from $P'$ to $Q$, and the hyperbolic distance from $P'$ to $Q$ is $\ell(h^{-1}g)/2$.
 \end{enumerate}
+Furthermore, the union $G([Q,P])\cup G([Q',P'])$ (resp. $G([Q',P]) \cup G([P',Q])$) is a fundamental domain for the action of $gh$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $gh^{-1}$).
+\label{prop:keygeometry}
 \end{proposition}
 
   \begin{figure}
@@ -56,7 +77,7 @@ we have the following (see Figure~\ref{fig:smoothing_1}):
 \end{figure}
 
 \begin{proof}
-We prove the first case. Since $A_g$ and $A_h$ intersect at $O$, so do the curves $[g]$ and $[h]$ at some point $p \in \Sigma$.
+We prove the first case. Since $A_g$ and $A_h$ intersect at $O$, so do the curves $[g]$ and $[h]$ at some point $o \in \Sigma$.
 Perform a smoothing opperation obtaining a new curve $\alpha$ of length $\ell(g) + \ell(h)$.
 A lift $a$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $A_h$ of length $\ell(h)$, then a segment of $A_{h^{-1}gh}$ of length $\ell(g)$, etc.
 Let $\alpha_*$ be the geodesic representative in the homotopy class of $\alpha$.
@@ -69,36 +90,42 @@ and $r_{Q'}$ is the corresponding reflection at $Q'$.
 Similarly, we can write $g=r_{P'}r_O$, and thus $gh=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $a'$ of translation length
 twice the distance between $P'$ and $Q'$.
 The other cases follow similarly.
+As for the assertion on fundamental domains, we note that the segment $[Q',P']$ on the axis of $A_{hg}$, is sent by $g$ to a segment $[P,R]$, where $R$ appears forward of $P$ in according to the orientation of $A_{hg}$, and the segment $[Q,R]$ is a fundamental domain for the action of $hg$ on its axis $A_{gh}$, thus $G([Q,R])=G([Q,P]) \cup g G([P',Q'])$ is a fundamental domain for the action of $hg$ on $G(\Sigma)$, thus the claim follows.
+The other claim is similar.
 \end{proof}
 
 \begin{theorem}
-$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{max-smoothing property}:
-    \begin{equation}\label{eq:MLsmoothing}
+$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{disconnected max-smoothing property}:
+    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation}
     \label{prop:char_laminations}
 \end{theorem}
 \begin{proof}
-Suppose first $f$ satisfies max-smoothing.
+Suppose first $f$ satisfies the disconnected max-smoothing.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a measured lamination.
 Consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
-The set of geodesics $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting the sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$ is equal to the set of geodesics intersecting the diagonals and separating the sides on $A_{gh}$ and $A_{hg}$.
-Let $B$ be a box of geodesics. By density of endpoints of closed geodesics, for every $\epsilon>0$, we can find geodesics $g$ and $h$ with endpoints very close to the diagonals of $B$.
-Taking large enough powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$, we obtain a set of geodesics $R_n \colon R_{g^n,h^n}$, so that $|\mu(R_n)-\mu(B)|< \epsilon$.
-If we let $a=g^n$ and $b=h^n$, we have
-$\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1}))$.
-Furthermore, if $R_n^T$ denotes the set of geodesics intersecting the sides of $H_n$ contained in $A_{gh}$ and $A_{hg}$, we also have
+Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. We will call them \emph{north-south geodesics} of $H$. 
+Similarly, we will call the geodesics intersecting the sides of $H$ on the axes $A_{gh}$ and $A_{hg}$, the \emph{east-west geodesics} of $H$. 
+
+Let $B$ be a box of geodesics. By density of endpoints of closed geodesics, for every $\epsilon>0$, we can find geodesics $g$ and $h$ with endpoints $\epsilon$-close to the endpoints of the diagonals of $B$.
+Taking large enough powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain a corresponding set of north-south geodesics of $H_n$ that we denote by $R_n \coloneqq R_{g^n,h^n}$, so that $|\mu(R_n)-\mu(B)|< \epsilon$.
+If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
+\[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
+Furthermore, if $R_n^T$ denotes the set of geodesics intersecting the sides of $H_n$ contained in $A_{ab}$ and $A_{ba}$, we also have
 $|\mu(R_n^T)-\mu(B^T)|< \epsilon$.
-Furthermore,
-$\mu(R_n^T)=1/2(f(a) + f(b)-f(ab))$.
-By taking a subsequence, and by max-smoothing, we have either $\mu(R_n^T)=0$ or $\mu(R_n)=0$ for all $n$.
+Furthermore, again by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
+\[
+\mu(R_n^T)=1/2(f(a) + f(b)-f(ab)).
+\]
+By taking a subsequence, and by disconnected max-smoothing, we have either $\mu(R_n^T)=0$ or $\mu(R_n)=0$ for all $n$.
 Thus, either $\mu(B)<\epsilon$ or $\mu(B^T)<\epsilon$. Since $\epsilon$ is arbitrary, it follows that $\mu$ is a measured lamination.
 Now we prove the other implication.
-First, note that max-smoothing means that for every box $R_{g,h}$, either $\mu(R_{g,h})=0$ or $\mu(R_{g,h})=0$ for any pair of non-conjugate intersecting $g,h \in \pi_1(\Sigma)$ (it means more, still need to figure out the self-intersecting case).
+First, note that disconnected max-smoothing means, by the same argument as before, that for every box $R_{g,h}$, either $\mu(R_{g,h})=0$ or $\mu(R_{g,h})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
 We proceed by proving the counter-positive.
 Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$.
-Thus, there are geodesics in the support of $\mu$ that cross the north-south segments of $R_{g,h}$ and geodesics in the support of $\mu$ that cross the east-west segments of $R_{g,h}$. These geodesics intersect, and thus $\mu$ cannot be a measured lamination.
+If $H$ denotes the corresponding hyperbolic parallelogram, this implies that there are north-south geodesics of $H$ in the support of $\mu$ as well as east-west geodesics. These two types of geodesics intersect, and thus $\mu$ cannot be a measured lamination.
 \end{proof}
 
 
@@ -110,6 +137,21 @@ Thus, there are geodesics in the support of $\mu$ that cross the north-south seg
 %}
 %\label{fig:maxsmooth}
 %\end{figure}
+
+\begin{remark}
+It turns out that it is only necessary to check max-smoothing for essential crossings between multi-curves to conclude $f$ is a measured lamination, as opposed to also having to check essential self-intersections of a multi-curve with itself. It is however true that intersection number with a measured lamination satisfies max-smoothing condition in this bigger generality, i.e., we claim the following theorem.
+
+\begin{theorem}
+$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{max-smoothing property}:
+    For any essential crossing of a multi-curve $C$, we have
+    \begin{equation}\label{eq:MLsmoothing}
+      f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
+    \end{equation}
+    \label{prop:char_laminations_plus}
+\end{theorem}
+A sketch of a proof of this fact is given in the Appendix, Section~\ref{sec:maxsmoothing}.
+We suspect it can also be proven using similar arguments as the ones in Theorem~\ref{prop:char_laminations} but the hyperbolic geometry gets considerably more complicated.
+\end{remark}
 
 \begin{remark}
 One can use Feng Luo's work alone to prove that if $f$ satisfies max-smoothing, then $f=i(\lambda,\cdot)$ must be a measured lamination.
@@ -238,7 +280,7 @@ Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if an action preserves axis in
 Without further assumptions, the axis intersection being preserved alone does not imply in general the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
 However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $G \acts T$ of a surface group $G$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
 In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $G$ must be elliptic in $T$, Skora showed that $G \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axis intersection being preserved. 
-
+We give a new proof of Skora's theorem, as a consequence of our main result~Theorem~\ref{thm:intersect} and Proposition~\ref{prop:char_laminations_plus}.
 
 \begin{theorem}
 A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
@@ -288,6 +330,7 @@ In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic char
    \[
       e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
    \]
+   \label{thm:bonahonliouville}
 \end{theorem}
 
 
@@ -301,18 +344,48 @@ An improvement of this theorem is given by Hamenst\"adt in \cite[Corollary~2.12]
    \label{thm:ham}
 \end{theorem}
 
-The following question is interesting.
+We can prove the following characterization.
 
-\begin{question}
-What are necessary and sufficient conditions on a functional on curves $f \colon \mathcal{C}(S) \to \mathbb{R}$ in order to induce a Liouville current for some hyperbolic structure $\Sigma$? (in the sense of Theorem~\ref{thm:intersect}).
-\label{question:liouville}
-\end{question}
+\begin{theorem}
+$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the so-called \emph{disconnected $\lambda$-smoothing property}:
+    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}\label{eq:MLsmoothing}
+      \lambda\left(\mfig{curves-0}\right) = \max \left\{ \lambda\left(\mfig{curves-1}\right),\lambda\left(\mfig{curves-2}\right) \right\}.
+    \end{equation}
+    where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
+    \label{prop:char_liouville}
+\end{theorem}
+\begin{proof}
+The proof is similar to that of Theorem~\ref{prop:char_laminations}.
+Suppose the disconnected $\lambda$-smoothing is satisfied. Then, by convexity of $\cosh$, it is easy to check that the smoothing property for $f$ follows.
+Hence, $f$ is dual to a geodesic current $\mu$.
+Given a box of geodesics $B$, and $\epsilon>0$, approximate a box of geodesics $B$ by a set $R=R_{g^n,h^n}$ of north-south geodesics (same as in the notation of that proof), for a pair of non-conjugate intersecting elements $g,h \in \pi_1(\Sigma)$.
+Taking $n$ arbitrarily large, the hyperbolic length of $a \coloneqq g^n$ and $b \coloneqq h^n$ can be considered arbitrarily long.
+On the other hand, if we let $R^{\perp}$ denote the set of east-west geodesics,
+ $A,B$ (half) the measure of the set of geodesics intersecting each diagonal of $R$, and $C,D$ (half) the measure of the set of geodesics intersecting each of the vertical and horizontal sides of the parallelogram $H$ associated to $R$, we get
+ \[
+\mu(R)=A+B-C
+ \]
+ and
+ \[
+\mu(R)=A+B-D.
+ \] 
+Thus, we get
+\[
+e^{-\mu(R)} + e^{-\mu(R^{\perp})} = e^{-(A+B)+C} + e^{-(A+B)+D} = e^{-(A+B)} (e^{C} + e^{D}).
+\]
+On the other hand, if $a,b$ are long enough,
+the disconnected $\lambda$-smoothing relation yields
+\[
+e^{A}e^{B} \sim e^{C}+e^{D}
+\]
+and thus, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
+On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation.
+\end{proof}
 
-In \cite[2.4(3)]{BIPP21:PositiveCrossratios}, it is shown that a geodesic current $\mu$ is a measured lamination if and only if $\mu([y,z]\times [w,x])\mu([x,y]\times[z,w])=0$ for all 4-tuples of ordered points $x,y,z,w \in  \partial_{\infty} \Sigma$.
-This condition is phrased in a similar way as Theorem~\ref{thm:ham}, this is, in terms of boxes of geodesics $[x,y,z,w]$ and their ``opposite'' box, $[y,z]\times [w,x]$.
-This condition translates into our condition in terms of smoothings in Theorem~\ref{prop:char_laminations}.
-A more concrete way to phrase Question~\ref{question:liouville}, is as follows:
-is there a similar way to translate the condition in Theorem~\ref{thm:ham} for Liouville currents in terms of boxes and opposite boxes as a condition in terms of smoothing triples?
+
+\begin{remark}
+Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
+\end{remark}
 
 \subsection{Inequalities between intersection numbers}
 \label{subsec:ineqintersection}
@@ -325,7 +398,7 @@ In fact, we have something much stronger
 
 \begin{corollary}
 If $C_2$ dominates $C_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all metric lengths $g$ satisfying conditions of theorem~\ref{thm:intersect} (not necessarily Riemannian).
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $\Sigma$.
     \label{cor:domination}
 \end{corollary}
 
@@ -342,7 +415,9 @@ since $\ell_g$ is an infimum, we have
 \[
   \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
 \]
-as desired. By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curve $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+as desired. $\ell_g$ satisfies homogeneity and stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
+It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
+Thus, by theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
 
 

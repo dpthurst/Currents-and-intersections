@@ -209,8 +209,8 @@ On the other hand, not all functions on curves satisfy the smoothing, additivity
       f(C_1 \cup C_2)^2 = f(C_1)^2 + f(C_2)^2 + 2i(C_1,C_2).
     \]
     Since $i(C_1,C_2)$ can be arbitrarily large, coarse convex union cannot be satisfied.
-    \item Translation lengths associated to biautomatic structures. An automatic structure is a combinatorial structure associated to a group that furnishes the group with features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. Such structures are described by use of a \emph{regular language}, a collection of words in the group satisfying certain properties. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
-    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used it to construct a new example of hierarchically hyperbolic group that is not biautomatic. It would be interesting to see if these translation lengths satisfy strict smoothing. We remark that a negative answer would yield a new proof of their work.
+    \item Translation lengths associated to biautomatic structures. An automatic structure is a combinatorial/algorithmic structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. Such structures are described by use of a \emph{regular language}, a collection of words in the group satisfying certain properties. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
+    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used it to construct a new example of hierarchically hyperbolic group that is not biautomatic. It would be interesting to see if these translation lengths satisfy strict smoothing.
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -231,7 +231,7 @@ In general, curve functionals need not be positive. For example, the signed
 
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions. See Section~\ref{subsec:newdef}.
 
-One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and Luo's work to give another characterization of measured laminations in terms of curve functionals.\DMGtodo[inline]{this claim is really work in progress}
+One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and an argument about fundamental domains of intersecting curves (for the $\pi_1(\Sigma)$-action on $G(\Sigma)$)  to give a new characterization of measured laminations in terms of curve functionals.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate (but are weaker than) to our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
 Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$. Misha Kapovich and the first author show, in~\cite{KMG:BBP} that for freely indecomposable hyperbolic groups acting via small action on an $\mathbb{R}$-tree, the stable length extends continuously to geodesic currents. 
@@ -274,9 +274,9 @@ However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geo
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-We would like to thank Beatrice Pozzetti, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
+We would like to thank Giuseppe Martone, Beatrice Pozzetti, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
 
-The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship.
+The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship, for part of this work.
 The second author was supported by the National Science
 Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
 

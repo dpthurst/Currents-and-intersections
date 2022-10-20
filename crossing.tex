@@ -155,17 +155,11 @@ In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid con
   Let $a,b\in \Isom^+(\H^2)$ be hyperbolic elements so that $ab$ and
   $a^{-1}b$ are both hyperbolic. Then we have the following possibilities:
   \begin{enumerate}[label=(\Roman*)]
-  \item $(\ora{a}, \ora{b})$ cross, $(\ora{ba},\ora{ab})$ are
-    parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
-  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
-    and $(\ora{aB},\ora{Ba})$ are parallel.
-  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
-    and $(\ora{aB},\ora{Ba})$ are cross.
-  \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
-    are parallel, and $(\ora{Ba},\ora{aB})$ cross.
-  \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
-    are cross, and $(\ora{Ba},\ora{aB})$ cross.
+  \item If $(\ora{a}, \ora{b})$ cross, then $(\ora{ba},\ora{ab})$ 
+  \item If $(\ora{a},\ora{b})$ are parallel, then $(\ora{ba},\ora{ab})$ cross.
+    \item If $(\ora{a},\ora{b})$ are anti-parallel, then $(\ora{Ba},\ora{aB})$ cross.
   \end{enumerate}
+  In the first two cases, (resp. the third case) the attractive endpoints of $(\ora{ba},\ora{ab})$ (resp. $(\ora{ba},\ora{ab})$) are in the interval $(a^+,b^+)$ and repelling endpoints are in the interval $(a^-,b^-)$.
   \label{lem:righthandedfoundation}
 \end{lemma}
 
@@ -208,29 +202,29 @@ In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid con
     (say) $ba$ on $a^-$, we see that $ba$ necessarily has NS dynamics
     with a repelling fixed point in $(a^-,b^-)$ and an attracting
     fixed point in $(a^+,b^+)$, giving the placement of $(ba)^\pm$ and
-    $(ab)^\pm$. By replacing $b$ with $B$, we can similarly place
-    $(aB)^\pm$ and $(Ba)^\pm$.
+    $(ab)^\pm$. 
   \item If $\ora{a}$ and $\ora{b}$ are parallel, then again the
     endpoints of $\ora{ab}$ and $\ora{ba}$ must be in the intervals
     $(b^+,a^+) \cup (a^-,b^-)$
     where $a$ and $b$ act in opposite directions, and again we can see
     that the two initial endpoints $(ab)^-$ and $(ba)^-$ are in
-    $(a^-,b^-)$. Similarly we can place the points $(aB)^\pm$ and
-    $(Ba)^\pm$, getting this layout:
+    $(a^-,b^-)$.  See the following figure for an illustration.
     \begin{figure}[H]
     \[
       \mfig{hyp-crossings-1}
     \]
+    The points $(aB)^\pm$ and
+    $(Ba)^\pm$ need not be in the configuration in the picture, and there are several cases to consider, but this is not needed in our analysis.
     \caption{$a$ and $b$ are parallel, together with the other crossing relations for related words. }
     \label{fig:parallel}
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
-    the parallel case by replacing $b$ with $b^{-1}$. The endpoints
-    are necessarily arranged like this:
+    the parallel case by replacing $b$ with $b^{-1}$. The endpoints of $(\ora{Ba},\ora{aB})$ are necessarily arranged like the following picture
     \begin{figure}[H]
     \[
       \mfig{hyp-crossings-2}
     \]
+    even though the endpoints of $(\ora{ba},\ora{ab})$ might be arranged differently.
     \caption{$a$ and $b$ are anti-parallel, together with the other crossing relations for related words. }
     \label{fig:anti}
     \end{figure}
