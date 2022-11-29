@@ -17,10 +17,23 @@ Duchin-Leininger-Rafi more explictly, as a subcase of the last one, give an embe
 associated to quadratic differentials/half-translation structures
 \cite[Theorem~4]{DLR10:DegenerationFlatMetrics} or Bankovic-Leininger non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}. The latest work in this direction is \cite{ELS21:Hyperbolic}.
 
-The way the embedding works is associating a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric structure $\rho$. This metric structure is usually defined up to some equivalence---as happens, for example, for Teichm\"uller space (see Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}.  Then one shows that this assignment is in fact an injection. This canonical geodesic current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of hyperbolic structures, but the term has also been used more generally for the geodesic currents associated to other metric structures (see, for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
-The fundamental property that ties these Liouville currents to the geometric structure via relating intersection numbers to the curve lengths with respect to that geometric structure, as follows.
+The way the embedding works in each of the above cases is associating
+a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric
+structure $\rho$. This metric structure is usually defined up to some
+equivalence---as happens, for example, for Teichm\"uller space (see
+Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}.  Then one shows
+that this assignment is in fact an injection. This canonical geodesic
+current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by
+Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of
+hyperbolic structures, but the term has also been used more generally
+for the geodesic currents associated to other metric structures (see,
+for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
+The fundamental property that ties these Liouville currents to the
+geometric structure via relating intersection numbers to the curve lengths with respect to that geometric structure, as follows.
 By Theorem~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}, weighted multi-curves on a surface embed in the space of geodesic currents.
-Also, in the same paper Bonahon \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}that extends the notion of geometric intersection
+Also, in the same paper Bonahon
+\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} that extends
+the notion of geometric intersection
 number as a continuous bilinear function the space of pairs of geodesic currents.
  This allowed him to extend hyperbolic length to geodesic currents by
 following the principle of realizing it as an intersection number with
@@ -33,7 +46,23 @@ for any closed multi-curve $C$ in $S$.
 Erlandsson shows that word-length with respect to simple generating sets of
 the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
 Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
-Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a geodesic current is uniquely determined by its intersection numbers with closed curves. Thus, the assignment of a Liouville current to a metric structure provides with the first step towards attempting the marked spectrum. \DMGtodo[inline]{Is this motivation about marked length spectrum rigidity good? I feel it might be too detailed/long, given that we don't say anything about length spectrum in this paper.}
+Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a
+geodesic current is uniquely determined by its intersection numbers
+with closed curves. Thus, the assignment of a Liouville current to a
+metric structure provides with the first step towards attempting the
+marked spectrum. \DMGtodo[inline]{Is this motivation about marked
+  length spectrum rigidity good? I feel it might be too detailed/long,
+  given that we don't say anything about length spectrum in this
+  paper.}
+\DPTtodo[inline]{A couple things: I would write
+  $(\ell_p(C))_{C\in\mathcal{C}(S)}$, since we explicitly don't want
+  the undordered set. But I also agree we don't need to give that
+  definition. On the other hand, I
+  think a point that is missing is that our result combined with
+  Otal's gives a bijection between geodesic currents and appropriate
+  curve functionals. I also think this introduction spends a little
+  too long before getting to our main result, can we move up our
+  statement a little before getting to the broader context.}
 
 \begin{problem}
 Given a space of metric structures $\mathcal{D}$ on $S$ (up to some equivalence relation), and $\rho \in \mathcal{D}$,
