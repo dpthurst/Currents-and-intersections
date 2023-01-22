@@ -1,0 +1,61 @@
+\section{Cross ratios}
+\label{sec:crossratios}
+
+Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $c$ on $\Sigma$ represented by a group element $g$, be defined as
+\[
+\ell(g) \coloneqq [g^-, x , g \cdot x, g^+ ]
+\]
+
+
+\begin{lemma}
+Given two $C_1$ and $C_2$ represented by group elements $a$ and $b$ with an essential crossing, we prove that
+
+\[
+\ell(a) + \ell(b) \geq \ell(ab).
+\]
+\end{lemma}
+\begin{proof}
+
+
+
+We can write $\ell(ab)=[(ab)^-, b^+, ab \cdot b^+, (ab)^+]$.
+We furthermore note that $ab \cdot b^+-=a \cdot b^+$, and write
+
+\begin{align*}
+[(ab)^-, b^+, ab \cdot b^+, (ab)^+] &= \\
+& [a \cdot b^+, (ab)^+, (ab)^-, b^+] = \\
+[a \cdot b^+, (ab)^+, (bA)^-, b^+] + \\
+[a \cdot b^+, (bA)^-, (ab)^-, b^+]
+\end{align*}
+where in the first equality we used flip relation, and the additivity relation in the second equality, which is justified since $(bA)^-$ is located in the interval $((ab)^+, (ab)^-)$ in the natural cyclic order.
+We shall prove that both factors are smaller than $\ell(a)$ now.
+For the first one, apply $A$ and use $\pi_1(\Sigma)$-invariance, to get
+
+\[
+[a \cdot b^+, (ab)^+, (bA)^-, b^+] = [b^+, A\cdot (ab)^+, a^+, A \cdot b^+]
+\]
+and use the fact that 
+
+\[
+[(Ab)^-, B \cdot a^-, a^-, (ab)^+] 
+\]
+which, by monotonicity is smaller than
+\[
+[b^-, B \cdot a^-, a^-, b^+].
+\]
+As for the other summand, we have, acting by $b$ and applying $\Gamma$-invariance of the cross-ratio,
+
+\begin{align*}
+=[b\cdot a^-, (bA)^-, (ba)^-, a^-]&= \\
+& [ (ba)^-, a^-, b\cdot a^-, (bA)^-] \leq \\
+&[(ba)^-, a^-, a^+, (bA)^-] = \\
+&[a^-,(ba)^- , (bA)^-, a^+] \leq \\
+&=[a^-,(ba)^- , ab^-, a^+] 
+\end{align*}
+where in the first equality we applied $\Gamma$-invariance and the north-south dynamics, in the first inequality we went from $b\cdot a^-$ to $a^+$, moving the third coordinate counter-clockwise, and thus increasing the value of the cross-ratio, in the second equality we applied two peripheral swaps,  
+
+\end{proof}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Intersections"
+%%% End:
