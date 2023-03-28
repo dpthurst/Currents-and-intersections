@@ -180,31 +180,37 @@ See~\cite{MGT21:Smoothings} for more details and examples.
 
 We note that additive union implies homogeneity.
 
-
-\DPTtodo[inline]{Review this. Is the new terminology good?}
+\DPTtodo{Terminology is good, but I wonder if it's appropriate to have
+  such a lengthy summary of the situation in this paper, which is
+  proving a pretty specific result}
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
-Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals on $S$ satisfying convex union, and stability/homogeneity.
-In decreasing order of generality, we consider the following families of symmetric curve functionals.
+Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals
+on $S$ satisfying convex union, stability, and homogeneity.
+In decreasing order of generality, we consider the following subsets
+of $\CurveFunct(S)$.
 \begin{enumerate}
-    \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric curve functionals satisfying $R$-quasi-smoothing, convex union, stability and homogeneity. We call this the space of \emph{$R$-quasi-convex functionals}. Define $\QConvex(S) \coloneqq \cup_{R \in \mathbb{R}} \QConvex_R(S)$, the space of \emph{quasiconvex curve functionals}.
+    \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric
+      curve functionals satisfying $R$-quasi-smoothing, convex union,
+      stability and homogeneity. We call this the space of
+      \emph{$R$-quasi-convex functionals}. Define $\QConvex(S)
+      \coloneqq \cup_{R \in \mathbb{R}_+} \QConvex_R(S)$, the space of
+      \emph{quasiconvex curve functionals}.
     \item Let $\Convex(S) \coloneqq \QConvex_{0}(S)$ be the space of \emph{convex curve functionals}.
     \item Let $\AConvex(S)$ be the space of \emph{additive convex curve functionals}, i.e., the subset of $\Convex(S)$ of curve functionals that moreover satisfy the additive property.
 \end{enumerate}
-As we point out below, for any $R>0$, we have the following strict inclusions
-\[
-\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S) 
-\]
 \end{definition}
-
-
+Examples below show we have strict inclusions
+\[
+\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S).
+\]
 
 
 In previous work, we proved the following result.
 
-\begin{mainthm}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
+\begin{theorem}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex(S)$. Then there is a unique continuous homogeneous function
   $\bar{f} \colon \GC^+(S) \to \R_{\ge 0}$ that extends~$f$.
-\end{mainthm}
+\end{theorem}
 
 We note that the four conditions of smoothing, additivity, stability and homogeneity, defining the space $\AConvex(S)$ are obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves(S) \to \mathbb{R}$, for $\mu$ a geodesic current.
 Many natural notions of length do satisfy all these four properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We list them here, along with the appropriate references.
@@ -228,7 +234,15 @@ On the other hand, not all functions on curves satisfy the smoothing, additivity
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item Square root of self-intersection number satisfies stability, homogeneity and smoothing, but does not satisfy additivity or even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). This is an example of a curve functional which is not in $\QConvex(S)$, even though it does extend to geodesic currents by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}. In fact, the arguments in the proof of~\cite[Theorem~A]{MGT21:Smoothings} go through replacing the convex union property (equation~\ref{eq:union-convex}), by the weaker property of \emph{coarse convex union}: there exist a uniform constant $K>0$ so that
+    \item Square root of self-intersection number satisfies stability,
+      homogeneity and smoothing, but does not satisfy additivity or
+      even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
+      This is an example of a curve functional which is not in
+      $\QConvex(S)$, even though it does extend to geodesic currents
+      by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
+      \DPTtodo{This is an interesting comment, but doesn't belong in
+        this itemized list and maybe not in this paper}
+      In fact, the arguments in the proof of~\cite[Theorem~A]{MGT21:Smoothings} go through replacing the convex union property (equation~\ref{eq:union-convex}), by the weaker property of \emph{coarse convex union}: there exist a uniform constant $K>0$ so that
         \begin{equation}\label{eq:coarse-union-convex}
       f(C_1 \cup C_2) \le f(C_1) + f(C_2) + K
     \end{equation}
@@ -254,16 +268,27 @@ It turns out that one doesn't need more conditions.
 Observe that we do not require in the hypotheses that the curve functional $f \in \AConvex(S)$ is non-negative: in fact it follows from the other conditions (see Corollary~\ref{cor:positivity}).
 In general, curve functionals need not be positive. For example, the signed
   Lorentzian length or Margulis invariant~\cite{GM00:FlatLorentzian})
-  can take both positive/negative values. However, more generally, any curve functional
+  can take either positive or negative values. However, more
+  generally, any curve functional
   in $\QConvex(S)$ is positive (see Corollary~\ref{cor:positivity2}). 
 \end{remark}
 
+\DPTtodo{Some editing error here}
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions. See Section~\ref{subsec:newdef}.
 
 One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and an argument about fundamental domains of intersecting curves (for the $\pi_1(\Sigma)$-action on $G(\Sigma)$)  to give a new characterization of measured laminations in terms of curve functionals.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate to (but are weaker than) our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
-Walter Parry~\cite{Par91:Translation} characterized functions on conjugacy classes in $G$ that are translation lengths of $G$-trees in terms of Culler-Morgan axioms. One can see our result in terms of the smoothing condition as further characterizing which functions on conjugacy classes in $G$ come from small $G$-tree actions, when $G=\pi_1(S)$. It would be interesting to see what can be said for small actions of a general hyperbolic group $G$. Misha Kapovich and the first author show, in~\cite{KMG:BBP} that for one ended hyperbolic groups acting via small action on an $\mathbb{R}$-tree, the stable length extends continuously to geodesic currents. 
+Walter Parry~\cite{Par91:Translation} characterized functions on
+conjugacy classes in $G$ that are translation lengths of $G$-trees in
+terms of Culler-Morgan axioms. One can see our result in terms of the
+smoothing condition as further characterizing which functions on
+conjugacy classes in $G$ come from small $G$-tree actions, when
+$G=\pi_1(S)$. It would be interesting to see what can be said for
+small actions of a general hyperbolic group $G$. Misha Kapovich and
+the first author show \cite{KMG:BBP} that for one ended hyperbolic
+groups acting via small action on an $\mathbb{R}$-tree, the stable
+length extends continuously to geodesic currents.
 See also Section~\ref{sec:questions}.
 
 By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).

@@ -7,9 +7,9 @@ Let $X$ be a set.
 
 \begin{definition}[Semi-ring, ring, $\sigma$-ring]
   A family $\mathcal{S}$ of subsets of a set $X$ is called a
-  \emph{semiring} (of sets) if it contains the empty set,
-  $A \cap B \in \mathcal{S}$ for all $A,B \in \mathcal{S}$ and, for
-  every pair of sets $A,B \in \mathcal{S}$ with $A \subset B$, the set
+  \emph{semiring} (of sets) if it contains the empty set and, for
+  every $A,B \in \mathcal{S}$, we have
+  $A \cap B \in \mathcal{S}$ and if $A \subset B$ the difference
   $B \backslash A$ is a disjoint union of finitely many sets
   in~$\mathcal{S}$. A family $\mathcal{R}$ of subsets of a set $X$ is
   called a \emph{ring} if it contains the empty set and for all
@@ -20,7 +20,7 @@ Let $X$ be a set.
 \end{definition}
 
 \begin{definition}[semialgebra, algebra, $\sigma$-algebra]
-  If in the above definitions one assumes $X$ is also an element of
+  If in the above definitions one assumes also that $X$ is an element of
   the family, one gets, respectively, the definitions of
   \emph{semialgebra}, \emph{algebra} and \emph{$\sigma$-algebra}.
 \end{definition}
@@ -48,7 +48,10 @@ A_i \in \mathcal{A}$,
 \[
 \mu\Bigl(\bigcup\nolimits_{i=1}^{\infty} A_i \Bigr) \leq \sum_{i=1}^{\infty} \mu(A_i).
 \]
-We say $\mu$ is called \emph{countably additive} if the above inequality is replaced by an equality, which is true if and only if $\mu$ is finitely additive and countably subadditive (see \cite[1.3.9~Proposition]{Bo07:MeasureTheory}).
+We say $\mu$ is \emph{countably additive} if the above inequality is
+replaced by an equality, which is true if and only if $\mu$ is
+finitely additive and countably subadditive (see
+\cite[1.3.9~Proposition]{Bo07:MeasureTheory}).
 \end{definition}
 
 \begin{proposition}
@@ -63,7 +66,7 @@ See \cite[1.3.10~Proposition]{Bo07:MeasureTheory}.
 
 \begin{definition}
 \label{def:outermeasure}
-A set function $\mu$ defined on the class of all subsets of a set $X$ and taking values in $[0,\infty]$ is called an \emph{outer measure} if \DMGtodo[inline]{There is a clash of nomenclature, \emph{outer measure} can be confused with \emph{outer reguar}, but they are different notions}.
+A set function $\mu$ defined on the class of all subsets of a set $X$ and taking values in $[0,\infty]$ is called an \emph{outer measure} if \DMGtodo[inline]{There is a clash of nomenclature, \emph{outer measure} can be confused with \emph{outer regular}, but they are different notions.}
 \begin{enumerate}
     \item $\mu(\emptyset)=0$;
     \item $\mu(A) \leq \mu(B)$ whenever $A \subset B$, i.e., $\mu$ is
