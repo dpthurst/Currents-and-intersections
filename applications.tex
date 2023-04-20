@@ -291,7 +291,7 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{prop:small}
 \end{theorem}
 \begin{proof}
-We assume it is irreducible and preserves axis intersection, and will prove $\| \cdot \|$ satisfies max-smoothing, and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication is clear.
+We assume it is irreducible and preserves axis intersection, and will prove $\| \cdot \|$ satisfies smoothing for all essential crossings and max-smoothing for \DPTtodo{Terminology not great}disconnected essential crossings, and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication is clear.
 Assume that for any pair $g,h \in \pi_1(S)$, that act hyperbolically on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
 We will verify that $| \cdot |$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
 \begin{enumerate}
@@ -304,6 +304,7 @@ The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-s
 \]
 
 This relation is true by result~\cite[1.8]{CM87:GroupActions}, since $T_g \cap T_h \neq \emptyset$.
+\item
 Now, suppose that we have a closed curve with an essential self-intersection, represented by $g h$, where the concatenation is at the basepoint.
 Max-smoothing amounts to
 
