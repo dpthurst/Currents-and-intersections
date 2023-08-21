@@ -101,7 +101,7 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
     \end{equation}
     \label{prop:char_laminations}
 \end{theorem}
-\begin{proof}\DMGtodo[inline]{This proof can be written better, probably}
+\begin{proof}\DMGtodo[inline]{needs editing}
 Suppose first $f$ satisfies the disconnected max-smoothing.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a measured lamination.
@@ -233,7 +233,6 @@ for all closed multi-curves $c$.
 \end{remark}
 
 \subsection{Measured laminations and $\mathbb{R}$-trees}
-\DMGtodo[inline]{This section is unfinished}
 
 As an application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
@@ -244,35 +243,24 @@ Given $g\in G$, $\| g\|=\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in 
 If $g$ is elliptic, then $\| g \| =0$ (and the converse is also true).
 If $g$ is hyperbolic, then $\| g | >0$, and $g$ translates along $T_g$ by distance $\| g\|$, thus leaving $T_g$ invariant. We call $T_g$ the \emph{axis} of $g$.
 We say that $G \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
-Given two hyperbolic elements $g, h \in G$, their $\mathbb{R}$-tree axes $T_g,T_h$ can have the following relative positions, and translation length relations (by work of Culler-Morgan~\cite{CM87:GroupActions}).
-\begin{enumerate}
-    \item $T_g \cap T_h =\emptyset$. $|gh|=|g|+|h|+2d(T_g,T_h)$.
-    \item $T_g \cap T_h \neq \emptyset$.
-    \begin{itemize}
-        \item $T_g \cap T_h$ is a singleton. $|gh|=|gh^{-1}|=|g|+|h|$
-        \item The overlap $T_g \cap T_h$ is a non-degenerate interval.
-        \begin{itemize}
-            \item The two axes overlap with the same orientation. $|gh|=|g|+|h|$, $|gh^{-1}|=|g|+|h|-2\ell(T_g \cap T_h)$
-            \item The two axes overlap with opposite orientations. $|gh^{-1}|=|g|+|h|$, $|gh|=|g|+|h|-2\ell(T_g \cap T_h)$
-        \end{itemize}
-    \end{itemize}
-\end{enumerate}
+We say that $G \acts T$ is \emph{minimal} if there is no proper subtree of $T$ that is $G$-invariant.
+Consider two hyperbolic elements $g, h \in G$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
+If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}. Otherwise, we say that they do not intersect.
+Let $\Delta \coloneqq T_g \cap T_h$. Suppose $\Delta$ is not a singleton, and $g$ and $h$ translate in the same direction along $\Delta$, we say that $g,h$ and \emph{overlap coherently}.
+If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite directions along $\Delta$, we say that $g,h$ and \emph{overlap incoherently}.
+Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if they are both hyperbolic, their overlap $\Delta$ is not a singleton, they overlap coherently and $\Delta< \min \{ \| g \|, \| h \| \}$.
+
 
 Given $G=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $A_g, A_h$ be the hyperbolic axes corresponding to these elements.
-If two axes $A_g,A_h$ with respect to $\Sigma$ intersect in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
-A measured lamination $\lambda$ defines a (dual) $\pi_1(\Sigma)$ minimal irreducible action on $\mathbb{R}$-tree as follows (following~\cite{BIPP21:Systoles}). Lift the lamination to the universal cover $\wt{\Sigma}$ and define the pseudo-distance 
-
-\begin{equation}d_{\lambda}(x,y) \coloneqq 1/2(\lambda(G[x,y)) + \lambda(G(x,y])) 
-\label{eq:pseudo}
-\end{equation}
-on $\tilde{\Sigma}$, where $[x,y),(x,y]$ denote the half-closed/open geodesic segments between $x$ and $y$ in $\wt{\Sigma}$, and $G[x,y)$ denotes the space of geodesics transverse to $[x,y)$. One can check that the natural quotient metric space is $0$-hyperbolic and thus can be canonically embedded in an $\mathbb{R}$-tree $T(\lambda)$. An equivalent definition of $T(\lambda)$ is given in \cite[Chapter~11]{Kap09:HyperbolicManifold}.
-It follows from the construction of $T(\lambda)$ is that the translation length on $T$ of $g \in \pi_1(S)$, $\ell_T(g)$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the curve associated to $g$.
+If two axes $A_g,A_h$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
+It is standard that a measured lamination $\lambda$ defines a (dual) $\pi_1(\Sigma)$ minimal irreducible action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
+It follows from the construction of $T(\lambda)$ is that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
 Given a minimal action of a surface group $G$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\pi_1(\Sigma)$-equivariant isometry $\phi \colon T(\lambda) \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
 
-Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that an action of a surface group is dual to a measured lamination if and only if 
+Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
 \begin{enumerate}
     \item it is small,
-    \item it \emph{preserves axis intersection}: for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
+    \item it \emph{preserves axes intersection}: for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
 \end{enumerate}
 An action of a group $G$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
@@ -280,51 +268,160 @@ An action of a group $G$ on an $\mathbb{R}$-tree with non-trivial translation le
 \item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $G$.
 \item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $G$.
 \end{enumerate}
-Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if an action preserves axis intersection, does it follow it is small?
-Without further assumptions, the axis intersection being preserved alone does not imply in general the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
-However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $G \acts T$ of a surface group $G$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
-In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $G$ must be elliptic in $T$, Skora showed that $G \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axis intersection being preserved. 
+Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axes intersection, does it follow it is small?
+Without further assumptions, the axes intersection being preserved alone does not imply in general the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
+However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $G \acts T$ of a surface group $G$ is dual to a measured lamination if and only if it is irreducible and preserves axes intersection.
+In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $G$ must be elliptic in $T$, Skora showed that $G \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axes intersection being preserved. 
 We give a new proof of Skora's theorem, as a consequence of our main result~Theorem~\ref{thm:intersect} and Proposition~\ref{prop:char_laminations_plus}.
 
 \begin{theorem}
-A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
+A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured lamination if and only if it is irreducible and preserves axes intersection.
 \label{prop:small}
 \end{theorem}
 \begin{proof}
-We assume it is irreducible and preserves axis intersection, and will prove $\| \cdot \|$ satisfies smoothing for all essential crossings and max-smoothing for \DPTtodo{Terminology not great}disconnected essential crossings, and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication is clear.
-Assume that for any pair $g,h \in \pi_1(S)$, that act hyperbolically on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
-We will verify that $| \cdot |$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
+We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication follows by work of Morgan~Otal~\cite{MO93:RelativeGrowths}.
+Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
+We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
+There are several cases to consider. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree. In each case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface.
+For this, the following lemma to find pairs of non-intersecting axes in the tree will be useful. Its proof is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
+
+\begin{lemma}
+    If $g,h$ form a good pair, then $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
+    \label{lem:oppgoodpair}
+\end{lemma}
+
+In order to prove Theorem~\ref{prop:small}, let's consider several cases.
+
 \begin{enumerate}
 \item Case 1 (hyperbolic): we suppose that for a pair of elements $g,h \in \pi_1(X)$, all $g,h$ act hyperbolically on $T$.
-First, suppose that $g,h$ represent distinct closed curves on $S$ that intersect essentially.
+\begin{enumerate}
+    \item Case 1a. First, suppose that $g,h$ represent distinct closed curves on $S$ that intersect essentially.
 The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-smoothing can be phrased as
 
 \[
-|g| + |h| = \max \{ |gh|,|gh^{-1}| \}.
+\|g \| + \| h \| = \max \{ \| gh \|, \| gh^{-1} \| \}.
 \]
 
 This relation is true by result~\cite[1.8]{CM87:GroupActions}, since $T_g \cap T_h \neq \emptyset$.
-\item
-Now, suppose that we have a closed curve with an essential self-intersection, represented by $g h$, where the concatenation is at the basepoint.
+\item Case 1b. 
+Second, suppose that we have a closed curve with an essential self-intersection, represented by $g h$, where the concatenation is at the basepoint.
 Max-smoothing amounts to
 
 \[
-|gh| = \max \{ |g|+|h|,|gh^{-1}| \}.
+\| gh \| = \max \{ \| g \| +\| h \| , \| gh^{-1} \| \}.
 \]
 
 We note that the self-intersection corresponds to the intersection of the hyperbolic axes of the elements $gh$ and $hg$. Thus, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
-There are three cases to consider.
+There are three subcases to consider.
 \begin{enumerate}
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $|gh|=|gh^{-1}| \geq |g|+|h|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
     \item $T_g$ and $T_h$ intersect in a non-degenerate interval with coherent orientations
     Then, 
     $|gh|=|g|+|h|>|gh^{-1}|$, and the condition is satisfied by the result~\cite[1.8]{CM87:GroupActions}
-    \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations
-    Then, 
-    $|gh^{-1}|=|g|+|h|>|gh|$, so the max-smoothing condition would be violated. However, this case cannot arise, since that would mean that $T_{g^{-1}h}$ and $T_{hg^{-1}}$ intersect in a non-degenerate interval with coherent orientations, and analysis of the axes shows that, then $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
+    \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations. Then, we would have
+    $|gh^{-1}|=|g|+|h|>|gh|$, so the max-smoothing condition would be violated.
+    We show this cannot happen. 
+    Within this subcase, are two subcases to consider. Let $\Delta$ denote the length of the overlap between $T_g$ and $T_h$.
+    \begin{enumerate}
+        \item If $\Delta<\min \{ \| g \|, \| h \| \}$, then $g, h^{-1}$ form a good pair, and thus by Lemma~\ref{lem:oppgoodpair} and then $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
+        \item If $\Delta \geq \min \{ \| g \|, \| h \| \}$, we develop further the analysis of axes in~\cite[Lemma~3.4]{Chi01:LambdaTrees} for this setting in Figure~\ref{fig:oppositehyp} (assuming $\Delta> \|g \| > \| h \|$).
+              \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{oppositehyp}}
+    \caption{Configuration of axes when $T_{g}$ and $T_{h}$ are intersecting their overlap $\Delta \geq  \min \{ \| g \|, \| h \| \}$}\label{fig:oppositehyp}}
+\end{figure}
+
+\begin{lemma}
+    Let $g,h$ be two hyperbolic isometries of a tree overlapping coherently in a segment of length $\Delta$ so that $\Delta \geq \min \{ \| g \|, \|h \| \}$. Then there exists some $n>0$ so that $T_{ (gh^{-1})^{-n} (h^{-1}g)}$ and $T_{(gh^{-1})^{-(n+1)} (h^{-1}g)}$ do not intersect.
+    \label{lem:nonintersect1}
+\end{lemma}
+\begin{proof}[of Lemma~\ref{lem:nonintersect1}]
+We note that the axes of $h^{-1}g=(g^{-1}h)^{-1}$ and $gh^{-1}$ overlap coherently. Let $\Delta'$ be the length of such overlap, and let $x$ denote the length of the segment $[g\ell, h^{-1}r]$.
+Observe that since $[g \ell, r]$ is contained in $T_{gh^{-1}}$, and the two backward and forward segments are of length $\|gh^{-1} \|$, the length of $[g \ell, r]$ must be equal to an integer multiple of $\| gh^{-1} \|$, say $n \| gh^{-1} \|$ for $n \geq 1$. Then, $x = n \| gh^{-1} \| - \|h \|$.
+Let $k \coloneqq (gh^{-1})^{-n} (h^{-1}g) (gh^{-1})^n$.
+Note that $T_k$ and $T_{(gh^{-1})^n}=T_{gh^{-1}}$ overlap in a segment of length $\| gh^{-1} \| - \|h \|$.
+Thus, $k$ and $(gh^{-1})^n$ form a good pair and, hence, by Lemma~\ref{lem:oppgoodpair} $T_{k(gh^{-1})^{-n}}$ and $T_{(gh^{-n})^{-1} k}$ do not intersect.
+Finally, note that $k(gh^{-1})^{-n} = (gh^{-1})^{-n} (h^{-1}g)$ and $(gh^{-n})^{-1} k = (gh^{-1})^{-(n+1)} (h^{-1}g)$, so the claim follows.
+\end{proof}
+We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain that $T_{(gh)^{-n} (hg)}$ and $T_{(gh)^{-(n+1)} (hg)}$ do not intersect. On the other hand, by application of Lemma~\ref{lem:righthandedfoundation}, part 1, Figure~\ref{fig:selfdyn} shows the configuration of axes obtained on the surface, which shows that $A_{(gh)^{-n} (hg)}$ and $A_{(gh)^{-(n+1)} (hg)}$ do intersect.
+
+              \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{selfdyn}}
+    \caption{Configuration of axes on the surface when $A_{gh}$ and $A_{hg}$ are intersecting.}\label{fig:selfdyn}}
+\end{figure}
 \end{enumerate}
+    
+    \end{enumerate}
+        \end{enumerate}
 \item Case 2: $g$ or $h$ are elliptic.
-It follows from a similar analysis comparison of translation lengths in the tree. The different cases when, say, $g$ is hyperbolic and $h$ is elliptic, have been analyzed in~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. From that result, it suffices to check that 
+It follows from a similar analysis comparison of translation lengths in the tree. The different cases when, say, $g$ is elliptic and $h$ is hyperbolic, have been analyzed in~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. 
+We go over these cases and rule out the problematic ones using the assumption of preservation of axes.
+
+\begin{enumerate}
+\item Suppose $T_g \cap T_h = \emptyset$. In the disconnected smoothing case, we show that this case, in fact, never occurs. Indeed, if $T_g \cap T_h = \emptyset$, it follows by~\cite[Lemma~3.2]{Chi01:LambdaTrees} that $gh$ is hyperbolic, and in fact,
+ \[
+ \| g h \| = \| gh^{-1} \| = \| g \| + \| h \| + 2d(T_g, T_h)
+ \]
+ and if $\Delta_1$ denotes the length of $T_{gh} \cap T_h$ and $\Delta_2$ denotes the length of $T_{gh} \cap T_g$, then $\Delta_1=\|h\|$ and $\Delta_2=\|g\|$.
+ Thus, by the equation above, we have that $\|gh \| > \|h\|$.
+ Then we are in~~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, case (2). We reproduce the more complete configuration of axes in Figure~\ref{fig:tree}.
+ 
+      \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{tree}}
+    \caption{Configuration of axes when $A_{g}$ and $A_{h}$ are not intersecting}\label{fig:tree}}
+\end{figure}
+
+We observe that $g h$ and $(h g)^{-1}$ overlap in $\Delta=d(z,y)$ so they form a good pair. Thus,  by Lemma~\ref{lem:oppgoodpair}, $T_{g h^2 g}$ and $T_{h g^2 h}$ do not intersect.
+On the other hand, since $A_{g},A_{h}$ cross, then $A_{gh}$ and $A_{hg}$ are parallel, by Lemma~\ref{lem:righthandedfoundation}, part 1, and thus $A_{gh^2g}$ and $A_{hg^2h}$ intersect by Lemma~\ref{lem:righthandedfoundation}, part 2, so we have a contradiction. This finishes the proof for the disconnected smoothing case.
+In the connected smoothing case, the formula above says $\| g h \| = \| gh^{-1} \|$, so max-smoothing is satisfied.
+\item  Suppose $T_g \cap T_h \neq \emptyset$. 
+\begin{itemize}
+\item Suppose $T_h$ and $T_{ghg^{-1}}$ are equal. Max smoothing would fail (both connected and disconnected) if $g$ acted as a reflection about the only fixed-point of $g$ on $T_h$, since then $\| gh \|=\| g^{-1}h \|=0$. 
+But in that case, $gh$ (and $hg$) are elliptic, and $gh^2g$ is hyperbolic (with axis equal to $A_{h}$).
+In the connected smoothing case, we can apply Case 3 to $gh, hg$ in the \emph{disconnected} smoothing case, since $A_{gh},A_{hg}$ intersect, ruling this case out.
+In the disconnected smoothing case, we can apply Case 3 to $g, hg$ in the \emph{disconnected} smoothing case
+since $A_{g},A_{hg}$ intersect, and rule this case out.
+\item Suppose $T_h$ and $T_{ghg^{-1}}$ intersect in a compact segment.
+For disconnected max-smoothing we have that $A_g \cap A_h$ intersect, and we want to see $\| h \| = \max \{ \|gh\| , \|gh^{-1}\| \}$.
+By ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that either $T_{g h g^{-1}}$ and $T_{h}$ intersect coherently, or $T_{g h g^{-1}}$ and $T_{h^{-1}}$ intersect coherently. In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, by~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, case (1), (ii), and in the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$. Thus, disconnected max-smoothing is satisfied in any case.
+In the connected smoothing case, $A_{gh}$ and $A_{hg}$ intersect, and we have $\| gh \| = \max \{ \|h\| , \|gh^{-1}\| \}$.
+Again, by ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that either $T_{g h g^{-1}}$ and $T_{h}$ intersect coherently, or $T_{g h g^{-1}}$ and $T_{h^{-1}}$ intersect coherently. In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, so max-smoothing is satisfied. 
+In the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$, which would be a problem.
+However, can rule this out. First, suppose that $\| h \| > \Delta$, where $\Delta$ is the overlap between $T_{h}$ and $T_{g h g^{-1}}$. Building from Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, it follows that $T_{gh}$ and $T_{hg}$ are disjoint, as Figure~\ref{fig:oppositehypell} illustrates. It remains to justify that $g(x)=y$ and $x=g(y)$. We claim that $z$ is the middle point between $x$ and $y$.
+Following Paulin's notation, let $[z, +\infty)_{h}$ (resp. $(-\infty, z]_{h}$)  be the open half-line of $A_h$, with endpoint $z$, that does not contain $x$ (resp. $y$) but
+contains $y$ (resp. $x$). In the same way, let $[z, +\infty)_{ghg^{-1}}$ (resp. $(-\infty, z]_{ghg^{-1}}$ be the
+open half-line of $A_{ghg^{-1}}$ with endpoint $z$, that does not contain $x$ (resp. $y$) but
+contains $y$ (resp. $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{ghg^{-1}}$ and sends $(-\infty, z]_{ghg^{-1}}$ to $[z, +\infty)_{ghg^{-1}}$, it follows that $[z,y]$ must be sent to $[z,x]$, and $[z,y]$ to $[z,x]$. Thus, the two segments must have equal length, half the length of the overlap $\Delta$, so $z$ must be the middle point of $[x,y]$ and $g(x)=y$, $g(y)=x$. 
+If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
+      \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{oppositehypell}}
+    \caption{Configuration of axes when $A_{ghg^{-1}}$ and $A_h$ overlap incoherently with overlap less than $\| h \|$.}\label{fig:oppositehypell}}
+\end{figure}
+\item Suppose $T_h$ and $T_{ghg^{-1}}$ intersect in a ray $R_{\infty}$ with endpoint $x$.
+This is similar to the preceeding subcase.
+\begin{comment} If both $h$ and $ghg^{-1}$ translate in the same direction along the ray $R_{\infty}$, then $\| gh \| = \| h \|$ and max-smoothing is satisfied in (both connected and disconnected). If they translate in opposite directions, and $\gamma x \notin R_{\infty}$ \end{comment}
+
+\end{itemize}
+\end{enumerate}
+\item Case 3. Suppose $g$ and $h$ are elliptic. We explore~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}.
+If $gh$ is elliptic, we are done in both connected and disconnected smoothing.
+If $gh$ is hyperbolic, then the diagram in the proof of~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT} shows that
+$T_{gh}$ and $T_{hg}$ overlap in $[z,z']$ with opposite orientations. Indeed, the overlap can only be in $[z,z']$, since if $ w \in T_{hg} \cap [z',gz] \neq \emptyset$, then $hg(w)=w'$ in Figure~\ref{fig:ell}. But on the other hand we should have $hg(w) \in [hg z', hg z]$, since $w \in [\delta(z'), \delta(z)]$, because $\delta(z')=z')$.
+Given that $\| gh \| = 2d(z,z)$, this implies that $gh$ and $(hg)^{-1}$ form a good pair, and by Lemma~\ref{lem:oppgoodpair},
+$T_{gh^2g}$ and $T_{hg^2h}$ do not intersect.
+In the disconnected smoothing case, when $A_g$ and $A_h$ intersect, an application of Lemma~\ref{lem:righthandedfoundation} part 2, and then part 1, shows that $A_{gh^2g}$ and $A_{hg^2 h}$ intersect, which contradicts axes preservation.
+In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoothing is verified.
+
+      \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{ell}}
+    \caption{Configuration of axes when $g$ and $h$ are elliptic}\label{fig:ell}}
+\end{figure}
+
+
 \end{enumerate}
 \end{proof}
 
@@ -379,10 +476,11 @@ Thus, we get
 e^{-\mu(R)} + e^{-\mu(R^{\perp})} = e^{-(A+B)+C} + e^{-(A+B)+D} = e^{-(A+B)} (e^{C} + e^{D}).
 \]
 On the other hand, if $a,b$ are long enough,
-the disconnected $\lambda$-smoothing relation yields\DMGtodo[inline]{This is rough, and in any case should show where it comes from. Also, what does $\sim$ mean.}
+the disconnected $\lambda$-smoothing relation yields
 \[
 e^{A}e^{B} \sim e^{C}+e^{D}
 \]
+\DMGtodo[inline]{Should we define $\sim$ somewhere?}
 and thus, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
 On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation.
 \end{proof}

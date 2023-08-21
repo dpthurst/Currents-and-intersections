@@ -1,13 +1,13 @@
 \section{Introduction}
 \DMGtodo[inline]{Notation issues throughout paper:}
 \DMGtodo[inline]{We keep going back and forth between $S$ and $\Sigma$ for surface}
+Geodesic currents on a hyperbolic surface are measures realizing a suitable closure of the space of weighted closed geodesics on the surface.
  Perhaps the most interesting trait of geodesic currents is that many metric
 structures embed in the space of currents, such as
 hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent} or even
  negatively curved Riemannian metrics
-\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}. In fact, the image of the embedding of negatively curved Riemannian metrics consists of linearly independent elements, as signed measures~\cite[Theorem~2]{Glo19:Embedding}).
-The fact that this maps from the space of certain metrics (up to equivalence) to the space of geodesic currents is known as the marked length rigidity problem.
-
+\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}. 
+The injectivity of the map from the space of metrics to the space of geodesic currents is known as the marked length rigidity property.
 Other examples of geometric structures embedding inside the space of geodesic currents are given by
 Croke-Fathi-Feldman for non-positively curved Riemannian metrics
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem},
@@ -19,17 +19,16 @@ associated to quadratic differentials/half-translation structures
 
 The way the embedding works in each of the above cases is associating
 a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric
-structure $\rho$. This metric structure is usually defined up to some
+structure $\rho$. This metric structure is usually defined up to a notion of homotopy
 equivalence---as happens, for example, for Teichm\"uller space (see
-Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}.  Then one shows
+Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}).  Then one shows
 that this assignment is in fact an injection. This canonical geodesic
 current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by
 Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of
 hyperbolic structures, but the term has also been used more generally
 for the geodesic currents associated to other metric structures (see,
 for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
-The fundamental property that ties these Liouville currents to the
-geometric structure via relating intersection numbers to the curve lengths with respect to that geometric structure, as follows.
+These Liouville currents are tied to the geometric structure as follows.
 By Theorem~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}, weighted multi-curves on a surface embed in the space of geodesic currents.
 Also, in the same paper Bonahon
 \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} that extends
@@ -42,54 +41,41 @@ Similarly, other notions of length of curves $\ell_{\rho}$ associated to the abo
 \[
   i(\mathcal{L}_{\rho},C)=\ell_{\rho}(C)
 \]
-for any closed multi-curve $C$ in $S$. 
-Erlandsson shows that word-length with respect to simple generating sets of
-the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
-Let $\mathcal{C}(S)$ denote the closed curves on $S$. For a metric structure $\rho$, we define $\Lambda_{\rho}\coloneqq \{ \ell_{\rho}(C)\}_{C \in \mathcal{C}(S)}$ the \emph{marked length spectrum of} $\rho$.
-Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} proves how a
-geodesic current is uniquely determined by its intersection numbers
-with closed curves. Thus, the assignment of a Liouville current to a
-metric structure provides with the first step towards attempting the
-marked spectrum. \DMGtodo[inline]{Is this motivation about marked
-  length spectrum rigidity good? I feel it might be too detailed/long,
-  given that we don't say anything about length spectrum in this
-  paper.}
-\DPTtodo[inline]{A couple things: I would write
-  $(\ell_p(C))_{C\in\mathcal{C}(S)}$, since we explicitly don't want
-  the undordered set. But I also agree we don't need to give that
-  definition. On the other hand, I
-  think a point that is missing is that our result combined with
-  Otal's gives a bijection between geodesic currents and appropriate
-  curve functionals. I also think this introduction spends a little
-  too long before getting to our main result, can we move up our
-  statement a little before getting to the broader context.}
+for any closed multi-curve $C$ in $S$. We will say that the current $\mu_{\rho}$ is \emph{dual} to $\ell_{\rho}$.
 
-\begin{problem}
-Given a space of metric structures $\mathcal{D}$ on $S$ (up to some equivalence relation), and $\rho \in \mathcal{D}$,
-is $\rho$ uniquely determined by $\Lambda_{\rho}$?
-\end{problem}
-By the discussion above, this is equivalent to the problem:
+There are many other lengths with an associated dual geodesic current.
+For example, Erlandsson shows that word-length with respect to simple generating sets of the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
 
-\begin{problem} 
-Let $\mathcal{D}$ be space of metric structures on $S$. Is the assignment $\mathcal{D} \to \GC(S), \rho \mapsto \mathcal{L}_{\rho}$, from the space of metric structures to the space of currents, an embedding?
-\end{problem}
-
-As we have pointed out above, this problem has been solved for several types of metric structures. In fact, for negatively curved Riemannian structures, for example, the spectrum is completely determined modulo simple closed curves, or closed curves of bounded self-intersecting number, or closed curves of a fixed type (more generally, modulo any set of curves growing sub-exponentially in their length) (see~\cite{S20:PartialMarkedLength}).
-Given a metric structure $\rho$ on $S$, we obtain a curve functional $\ell_{\rho}$ by considering the length of closed curves on $S$ and extending linearly. One possible first step to attempt the rigidity problem is to find a geodesic current $\mu_{\rho}$ for which $\ell_{\rho}(C)=i(\mu_{\rho},C)$ for all closed curve $C$ on $S$.
+In fact, the usual first step in the solution to a marked length rigidity problems for a metric structure $\rho$ is to find a geodesic current $\mu_{\rho}$ satisfying the above intersection  property
 In this paper, we give an answer to the following question.
 
 \begin{question}\label{q:intersection}
 Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
-Under which conditions can a functional on curves $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ be realized as an intersection number with a geodesic current?
+What are sufficient and necessary conditions for $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ to have a dual geodesic current?
 \label{que:mainquestion}
 \end{question}
 
+The main result of this paper can be succintly phrased as follows.
+
+\begin{theorem*}
+    Suppose that $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
+     \[
+      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
+   \]
+   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components, \emph{stable} and \emph{homogeneous} (see~\ref{subsec:mainresult} for definitions).
+Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
+\[
+i(\mu_f,C)=f(C)
+\]
+for every multi-curve $C$.
+\end{theorem*}
 
 Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo studies functions defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. We outline the relation between our conditions and Feng Luo's conditions in Proposition~\ref{prop:feng}.
 See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems.
 
 
 \subsection{Main results}
+\label{subsec:mainresult}
 %\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
 
 In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
@@ -183,6 +169,7 @@ We note that additive union implies homogeneity.
 \DPTtodo{Terminology is good, but I wonder if it's appropriate to have
   such a lengthy summary of the situation in this paper, which is
   proving a pretty specific result}
+  \DMGtodo[inline]{I agree, all this terminology makes the main statement obscure. I changed the first part of the introduction, deleting the detailed discussion on marked length spectrum rigidity, and adding a vague version of the main result.}
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
 Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals
 on $S$ satisfying convex union, stability, and homogeneity.
@@ -226,34 +213,23 @@ Many natural notions of length do satisfy all these four properties and they hav
 \item Non-positively curved Euclidean cone metrics \cite[Proposition~3.3]{BL17:RigidityFlat}.
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
     \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
-\end{enumerate}\DMGtodo[inline]{Update this account with recent results in Erlandsson-Leininger-Sadanand.}
+\end{enumerate}
 
-On the other hand, not all functions on curves satisfy the smoothing, additivity, homogeneity and stability conditions. 
+On the other hand, not all functions on curves satisfy the $\AConvex$ properties.  
 
 \begin{enumerate}
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
+        \item  \DMGtodo[inline]{This paragraph should be shortened} Translation lengths associated to biautomatic structures. An automatic structure is a combinatorial/algorithmic structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. Such structures are described by use of a \emph{regular language}, a collection of words in the group satisfying certain properties. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
+    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used it to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they don't satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
       homogeneity and smoothing, but does not satisfy additivity or
       even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
       This is an example of a curve functional which is not in
       $\QConvex(S)$, even though it does extend to geodesic currents
-      by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
-      \DPTtodo{This is an interesting comment, but doesn't belong in
-        this itemized list and maybe not in this paper}
-      In fact, the arguments in the proof of~\cite[Theorem~A]{MGT21:Smoothings} go through replacing the convex union property (equation~\ref{eq:union-convex}), by the weaker property of \emph{coarse convex union}: there exist a uniform constant $K>0$ so that
-        \begin{equation}\label{eq:coarse-union-convex}
-      f(C_1 \cup C_2) \le f(C_1) + f(C_2) + K
-    \end{equation}
-    is satisfied for all weighted multi-curves $C_1,C_2$.
-    We point out that the square of self-intersection number does not satisfy this property either. By bilinearity and symmetry of intersection number, we have, setting $f(C) \coloneqq \sqrt{i(C,C)}$ we have,
-    \[
-      f(C_1 \cup C_2)^2 = f(C_1)^2 + f(C_2)^2 + 2i(C_1,C_2).
-    \]
-    Since $i(C_1,C_2)$ can be arbitrarily large, coarse convex union cannot be satisfied.
-    \item Translation lengths associated to biautomatic structures. An automatic structure is a combinatorial/algorithmic structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. Such structures are described by use of a \emph{regular language}, a collection of words in the group satisfying certain properties. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
-    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used it to construct a new example of hierarchically hyperbolic group that is not biautomatic. 
+      by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}. 
+\item Lorentzian length of an affine action of a Fuchsiaon group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}.
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -272,11 +248,10 @@ In general, curve functionals need not be positive. For example, the signed
   generally, any curve functional
   in $\QConvex(S)$ is positive (see Corollary~\ref{cor:positivity2}). 
 \end{remark}
-
 \DPTtodo{Some editing error here}
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions. See Section~\ref{subsec:newdef}.
 
-One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and an argument about fundamental domains of intersecting curves (for the $\pi_1(\Sigma)$-action on $G(\Sigma)$)  to give a new characterization of measured laminations in terms of curve functionals.
+One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and an argument about fundamental domains of intersecting curves (for the $\pi_1(\Sigma)$-action on $G(\Sigma)$)  to give a new characterization of measured laminations in terms of curve functionals. Feng Luo also characterized which functions on simple closed curves are dual to hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our Theorem~\ref{prop:char_liouville} can be seen as an extension of that theorem for closed curves.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate to (but are weaker than) our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
 Walter Parry~\cite{Par91:Translation} characterized functions on
