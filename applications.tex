@@ -279,16 +279,21 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{prop:small}
 \end{theorem}
 \begin{proof}
-We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication follows by work of Morgan~Otal~\cite{MO93:RelativeGrowths}.
+We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
 We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
 There are several cases to consider. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree. In each case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface.
-For this, the following lemma to find pairs of non-intersecting axes in the tree will be useful. Its proof is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
+For this, the following lemma to find pairs of non-intersecting axes in the tree will be useful.
 
 \begin{lemma}
-    If $g,h$ form a good pair, then $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
+  For any action of a finitely-generated group on an $\R$-tree,
+    if $g,h$ form a good pair, then $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
     \label{lem:oppgoodpair}
 \end{lemma}
+
+\begin{proof}
+   This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
+\end{proof}
 
 In order to prove Theorem~\ref{prop:small}, let's consider several cases.
 
