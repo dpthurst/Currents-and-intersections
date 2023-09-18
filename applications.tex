@@ -340,7 +340,7 @@ There are three subcases to consider.
     Let $g,h$ be two hyperbolic isometries of a tree overlapping coherently in a segment of length $\Delta$ so that $\Delta \geq \min \{ \| g \|, \|h \| \}$. Then there exists some $n>0$ so that $T_{ (gh^{-1})^{-n} (h^{-1}g)}$ and $T_{(gh^{-1})^{-(n+1)} (h^{-1}g)}$ do not intersect.
     \label{lem:nonintersect1}
 \end{lemma}
-\begin{proof}[of Lemma~\ref{lem:nonintersect1}]
+\begin{proof}[Proof of Lemma~\ref{lem:nonintersect1}]
 We note that the axes of $h^{-1}g=(g^{-1}h)^{-1}$ and $gh^{-1}$ overlap coherently. Let $\Delta'$ be the length of such overlap, and let $x$ denote the length of the segment $[g\ell, h^{-1}r]$.
 Observe that since $[g \ell, r]$ is contained in $T_{gh^{-1}}$, and the two backward and forward segments are of length $\|gh^{-1} \|$, the length of $[g \ell, r]$ must be equal to an integer multiple of $\| gh^{-1} \|$, say $n \| gh^{-1} \|$ for $n \geq 1$. Then, $x = n \| gh^{-1} \| - \|h \|$.
 Let $k \coloneqq (gh^{-1})^{-n} (h^{-1}g) (gh^{-1})^n$.
@@ -465,12 +465,16 @@ We can prove the following characterization.
 
 \begin{theorem}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the so-called \emph{disconnected $\lambda$-smoothing property}:
-    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}\label{eq:MLsmoothing}
+    For any pair of curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}\label{eq:MLsmoothing}
       \lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
     \end{equation}
     where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
     \label{prop:char_liouville}
-\end{theorem}
+  \end{theorem}
+\DPTtodo[inline]{Expand out what LHS means, $\lambda(C_1)
+  \lambda(C_2)$. Is there a version of this result where you allow an
+  additive error in the equality? And if so, can $2\cosh(x/2)$ be
+  replaced by $e^{x/2}$ on both sides?}
 \begin{proof}
 The proof is similar to that of Theorem~\ref{prop:char_laminations}.
 Suppose the disconnected $\lambda$-smoothing is satisfied. Then, by convexity of $\cosh$, it is easy to check that the smoothing property for $f$ follows.
