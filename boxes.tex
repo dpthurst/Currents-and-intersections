@@ -95,9 +95,8 @@ $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)$ to avoid the
 diagonal. For the proofs to go through easily, we will impose more
 conditions on the configurations of these lifts.
 
-
 \begin{definition}[RHS lift system]
-\label{def:righthandeddreamcatcher}
+\label{def:RH-lift-sys}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
 \item\label{item:box-close} $a c^{-1} d b^{-1} = 1$;
@@ -148,7 +147,7 @@ The reader might wonder why in condition~\ref{item:box-diags-cross} we require t
   that we are interested in. 
  Consider Figure~\ref{fig:nestedpositivity}: item a) shows, $[bx^n]$ and $[cx^n]$ might not cross. However, for sufficiently large $n$, the $[b x^n]$ and $[c x^n]$ will cross, as item b) suggests. To prove it, consider the bands model centered at the outer most nested lift of $x$, as in item c). For sufficiently large $n$, it's clear that $[b x^n]$ and $[c x^n]$ cross each other.
  There are some configurations of boxes, such as Type 1, Figure~\ref{fig:rhbox}, where the crossing is essential without passing to large $n$.
-%\item Condition (3) in the definition of dreamcatcher is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
+%\item Condition (3) in the definition of RH lift is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
 %$$  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
 %    implications about the order in which things appear on the
 %    boundary. But is the other direction correct? Could we end up
@@ -158,7 +157,7 @@ The reader might wonder why in condition~\ref{item:box-diags-cross} we require t
 \label{rmk:largeenough}
 \end{remark}
 
-\begin{definition}\label{def:dreamcatcher-box}
+\begin{definition}\label{def:RH-box}
 Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed lift system given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
 B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
@@ -392,7 +391,8 @@ Combined, these mean that
 
 We will also need to control the following smoothings.
 
-
+\DPTtodo{This is the central proposition of \S6. Move out other stuff
+  that isn't directly relevant}
 \begin{proposition}\label{prop:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
 crossing $x$ to the right. Then there is a number $s \ge 0$
