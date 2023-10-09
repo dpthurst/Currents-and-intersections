@@ -14,32 +14,36 @@ In particular, we note that $[g a g^{-1}]=[a]$.
 
 \begin{definition}[Right action]
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
-$\ast \in S$, we then have a \emph{right} action of $\pi_1(S,\ast)$ on
+$\ast \in S$, we have a \emph{right} action of $\pi_1(S,\ast)$ on
 the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
 $\bm{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
 unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
-The bold font denotes points in $\wt{S}$.
+\end{definition}
+(The bold font denotes points in $\wt{S}$.)
 We observe
 the following.
 \begin{itemize}
 \item This right action does not depend on a choice of basepoint
-  on~$\wt S$.
+  on~$\wt S$, and works for any covering space.%
+  \footnote{One succinct statement of the classification theorem for
+    covering spaces is that coverings of $S$ are in bijections with
+    sets with a right action of $\pi_1(S)$.}
 \item In the induced length metric on~$\wt S$, the distance between
   $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
 \end{itemize}
-\end{definition}
 
 \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
-normal cover), there is also a \emph{left} action of $\pi_1(S,\ast)$
+normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. If you take
-the standard model of $\wt S$ as homotopy classes of paths~$\gamma$
-in~$S$ from $\ast$ (with homotopies fixing the endpoints), then this
+the standard model of $\wt S$ where points $P_{[\gamma]}$ correspond
+to homotopy classes of paths~$\gamma$
+in~$S$ with $\gamma(0) = \ast$ (with homotopies fixing the endpoints), then this
 action is defined by
-\DPTtodo{Is this notation for points in $\wt S$ too obscure? Yes, add
-  some letter}
-$[\gamma_1] \cdot \bm{[\gamma_2]} \coloneqq
-\bm{[\gamma_1\cdot\gamma_2]}$. Here we make the following observations.
+$[\gamma_1] \cdot P_{[\gamma_2]} \coloneqq
+P_{[\gamma_1\cdot\gamma_2]}$.
+\end{definition}
+Here we make the following observations.
 \begin{itemize}
 \item This left action is by an isometry of all of~$\wt S$.
 \item The left action depends on a lift of
@@ -48,19 +52,18 @@ $[\gamma_1] \cdot \bm{[\gamma_2]} \coloneqq
   related by $[\gamma] \cdot \wt \ast = \wt \ast \cdot [\gamma]$.
 \item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
   may be unbounded, although the translation length of $[\gamma]$ on
-  $\wt S$ is bounded by the length of $\gamma$ (by the previous bullet point).
+  $\wt S$ is bounded by the length of $\gamma$ (by the previous bullet
+  point).
+\item This left action extends to an action on the circle at infinity $\partial\wt S$.
 \end{itemize}
-\end{definition}
 
-We will frequently draw pictures of group elements~$g\in\pi_1(S,\ast)$
+We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, the arrows will be paths that
 are lifts of~$g$, and thus correspond to the \emph{right} action on the
 fiber.
 
 In our constructions, we will use a choice of closed curve~$[x]$ and
-different lifts of it to~$\wt S$.%
-\footnote{In the main construction $[x]$ is a simple curve, although
-  we will sometimes work with non-simple curves.} %
+different lifts of it to~$\wt S$.
 For convenience, we will work in $\pi_1(S,\ast)$ with a
 basepoint~$\ast$ on the curve~$[x]$ and use $x$ for the corresponding
 element of~$\pi_1$. There is then a base lift $\wt x$ of~$x$ to
@@ -79,10 +82,14 @@ $\pi_1(S,*)$ action) is captured instead by the double coset
   \langle x \rangle q_1^{-1} q_2 \langle x \rangle.
 \end{equation}
 
+\DPTtodo[inline]{IN PROGRESS: Specify (left) action of $\pi_1$ on
+  geodesics. Fix notation for starting and ending points of geodesics}
+
 \subsection{Right-handed crossings}
 \label{subsec:rhcrossings}
 In order to guarantee that crossings are essential, we pick out one
 particular type of relation between lifts.
+\DPTtodo[inline]{I will expand this section}
 
 \begin{definition}[Right handed crossing]\DMGtodo[inline]{Explain better the relation between right handed crossing and smoothing. Also, clarify that there are two possible smoothings for a right handed crossing.}
   Suppose that two elements $a$ and $x$ of $\pi_1(S)$ that do not have a common power have an

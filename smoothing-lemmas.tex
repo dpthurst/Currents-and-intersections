@@ -5,6 +5,9 @@ Now we use the lemmas obtained in the previous subsection on our function on cur
 
 An immediate consequence of smoothing and convex union is positivity of $f$.
 
+\DPTtodo{This Cor. is hard to move earlier, since it invokes a thing
+  from the complicated proof. But probably we can prove it in a more
+  easy way using basic lemmas about crossing}
 \begin{corollary}
   Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
   \label{cor:positivity}
@@ -51,7 +54,9 @@ Adding both equations, we get $f(a^n) \geq -2R$. By stability and homogeneity, t
 \end{proof}
 
 
-The following lemma follows by the definition of right-handed crossing (Definition~\ref{def:righthandedcrossing}).
+The following lemma follows by the definition of right-handed crossing
+(Definition~\ref{def:righthandedcrossing}).
+\DPTtodo{This is directly in Lemma~\ref{lem:rhs_prod}}
 \begin{lemma}
 Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right.
 \[
