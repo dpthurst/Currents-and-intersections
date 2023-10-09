@@ -96,10 +96,12 @@ The other claim is similar.
 
 \begin{theorem}
 $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{disconnected max-smoothing property}:
-    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}\label{eq:MLsmoothing}
+    For any pair of multi-curves $C_1$ and $C_2$ with an essential
+    crossing between $C_1,C_2$, we have
+    \begin{equation}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation}
-    \label{prop:char_laminations}
+    \label{thm:char_laminations}
 \end{theorem}
 \begin{proof}\DMGtodo[inline]{needs editing}
 Suppose first $f$ satisfies the disconnected max-smoothing.
@@ -149,8 +151,9 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
     \end{equation}
     \label{prop:char_laminations_plus}
 \end{theorem}
-A sketch of a proof of this fact is given in the Appendix, Section~\ref{sec:maxsmoothing}.
-We suspect it can also be proven using similar arguments as the ones in Theorem~\ref{prop:char_laminations} but the hyperbolic geometry gets considerably more complicated.
+A sketch of a proof of this fact is given in the Appendix.
+\DPTtodo{This has apparently been banished?}
+We suspect it can also be proven using similar arguments as the ones in Theorem~\ref{thm:char_laminations} but the hyperbolic geometry gets considerably more complicated.
 \end{remark}
 
 
@@ -279,14 +282,14 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{prop:small}
 \end{theorem}
 \begin{proof}
-We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{prop:char_laminations}. \DMGtodo[inline]{Write short summary of how the proof relates to Paulin's work} The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. \DMGtodo[inline]{Write short summary of how the proof relates to Paulin's work} The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
 We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
 There are several cases to consider. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree. In each case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface.
 For this, the following lemma to find pairs of non-intersecting axes in the tree will be useful.
 
 \begin{lemma}
-  For any action of a finitely-generated group on an $\R$-tree,
+  For any action of a finitely-generated group on an $\bbR$-tree,
     if $g,h$ form a good pair, then $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
     \label{lem:oppgoodpair}
 \end{lemma}
@@ -330,7 +333,7 @@ There are three subcases to consider.
     \begin{enumerate}
         \item If $\Delta<\min \{ \| g \|, \| h \| \}$, then $g, h^{-1}$ form a good pair, and thus by Lemma~\ref{lem:oppgoodpair} and then $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
         \item If $\Delta \geq \min \{ \| g \|, \| h \| \}$, we develop further the analysis of axes in~\cite[Lemma~3.4]{Chi01:LambdaTrees} for this setting in Figure~\ref{fig:oppositehyp} (assuming $\Delta> \|g \| > \| h \|$).
-              \begin{figure}[h!]
+              \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehyp}}
     \caption{Configuration of axes when $T_{g}$ and $T_{h}$ are intersecting their overlap $\Delta \geq  \min \{ \| g \|, \| h \| \}$}\label{fig:oppositehyp}}
@@ -350,7 +353,7 @@ Finally, note that $k(gh^{-1})^{-n} = (gh^{-1})^{-n} (h^{-1}g)$ and $(gh^{-n})^{
 \end{proof}
 We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain that $T_{(gh)^{-n} (hg)}$ and $T_{(gh)^{-(n+1)} (hg)}$ do not intersect. On the other hand, by application of Lemma~\ref{lem:righthandedfoundation}, part 1, Figure~\ref{fig:selfdyn} shows the configuration of axes obtained on the surface, which shows that $A_{(gh)^{-n} (hg)}$ and $A_{(gh)^{-(n+1)} (hg)}$ do intersect.
 
-              \begin{figure}[h!]
+              \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{selfdyn}}
     \caption{Configuration of axes on the surface when $A_{gh}$ and $A_{hg}$ are intersecting.}\label{fig:selfdyn}}
@@ -372,7 +375,7 @@ We go over these cases and rule out the problematic ones using the assumption of
  Thus, by the equation above, we have that $\|gh \| > \|h\|$.
  Then we are in~~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, case (2). We reproduce the more complete configuration of axes in Figure~\ref{fig:tree}.
  
-      \begin{figure}[h!]
+      \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{tree}}
     \caption{Configuration of axes when $A_{g}$ and $A_{h}$ are not intersecting}\label{fig:tree}}
@@ -410,7 +413,7 @@ contains $y$ (resp. $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{g
 \end{proof}
 
 If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
-      \begin{figure}[h!]
+      \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
     \caption{Configuration of axes when $A_{ghg^{-1}}$ and $A_h$ overlap incoherently with overlap less than $\| h \|$.}\label{fig:oppositehypell}}
@@ -430,7 +433,7 @@ $T_{gh^2g}$ and $T_{hg^2h}$ do not intersect.
 In the disconnected smoothing case, when $A_g$ and $A_h$ intersect, an application of Lemma~\ref{lem:righthandedfoundation} part 2, and then part 1, shows that $A_{gh^2g}$ and $A_{hg^2 h}$ intersect, which contradicts axes preservation.
 In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoothing is verified.
 
-      \begin{figure}[h!]
+      \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{ell}}
     \caption{Configuration of axes when $g$ and $h$ are elliptic}\label{fig:ell}}
@@ -465,7 +468,7 @@ We can prove the following characterization.
 
 \begin{theorem}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the so-called \emph{disconnected $\lambda$-smoothing property}: \DMGtodo[inline]{Change to curves, and also }
-    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}\label{eq:MLsmoothing}
+    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
      \lambda(C_1)\lambda(C_2)= \lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
     \end{equation}
     where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
@@ -476,7 +479,7 @@ $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional
   additive error in the equality? And if so, can $2\cosh(x/2)$ be
   replaced by $e^{x/2}$ on both sides?}
 \begin{proof}
-The proof is similar to that of Theorem~\ref{prop:char_laminations}.
+The proof is similar to that of Theorem~\ref{thm:char_laminations}.
 Suppose the disconnected $\lambda$-smoothing is satisfied. Then, by convexity of $\cosh$, it is easy to check that the smoothing property for $f$ follows.
 Hence, $f$ is dual to a geodesic current $\mu$.
 Given a box of geodesics $B$, and $\epsilon>0$, approximate a box of geodesics $B$ by a set $R_n=R_{g^n,h^n}$ of north-south geodesics (same as in the notation of that proof), for a pair of non-conjugate intersecting elements $g,h \in \pi_1(\Sigma)$.

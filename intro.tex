@@ -80,13 +80,11 @@ As a corollary, we can further characterize which curve functionals correspond t
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:intersections}. Then,
 \begin{itemize}
 \item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}:
-\begin{equation*}\label{eq:MLsmoothing}
+\begin{equation*}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation*}
-    \label{prop:char_laminations}
-
     \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the so-called \emph{disconnected $\lambda$-smoothing property}:
-    \begin{equation}\label{eq:MLsmoothing}
+    \begin{equation}
       \lambda\left(\mfig{curves-0}\right) = \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
     \end{equation}
     where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
@@ -123,7 +121,7 @@ Thus, even though our curve functionals will be defined on oriented curves, to s
 \begin{definition}\label{def:properties}
   For $S$ a compact topological surface without boundary,
   let
-  $f \colon \Curves^+(S) \to \R$ be a
+  $f \colon \Curves^+(S) \to \bbR$ be a
   function defined on the space of oriented multi-curves,
   not-necessarily-simple oriented curves.
   We will also refer to $f$ as a \emph{curve functional} for short.
@@ -228,7 +226,7 @@ In previous work, we proved the following result.
 
 \begin{theorem}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex(S)$. Then there is a unique continuous homogeneous function
-  $\bar{f} \colon \GC^+(S) \to \R_{\ge 0}$ that extends~$f$.
+  $\bar{f} \colon \GC^+(S) \to \bbR_{\ge 0}$ that extends~$f$.
 \end{theorem}
 
 We note that the four conditions of smoothing, additivity, stability and homogeneity, defining the space $\AConvex(S)$ are obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves(S) \to \mathbb{R}$, for $\mu$ a geodesic current.
@@ -283,7 +281,19 @@ In general, curve functionals need not be positive. For example, the signed
 \DPTtodo{Some editing error here}
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}.
 
-One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and an argument about fundamental domains of intersecting curves (for the $\pi_1(\Sigma)$-action on $G(\Sigma)$)  to give a new characterization of measured laminations in terms of curve functionals. Feng Luo also characterized which functions on simple closed curves are dual to hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our Theorem~\ref{prop:char_liouville} can be seen as an extension of that theorem for closed curves.
+One should compare this result to previous work of Feng
+Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve
+functionals on simple closed curves which can be realized as
+intersection numbers with measured laminations, obtaining thus a
+characterization of measured laminations in terms of simple curve
+functionals. In Section XXX, we use Theorem~\ref{thm:intersect} and an
+argument about fundamental domains of intersecting curves (for the
+$\pi_1(\Sigma)$-action on $G(\Sigma)$) to give a new characterization
+of measured laminations in terms of curve functionals. Feng Luo also
+characterized which functions on simple closed curves are dual to
+hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our
+Theorem~\ref{prop:char_liouville} can be seen as an extension of that
+theorem for closed curves.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate to (but are weaker than) our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
 Walter Parry~\cite{Par91:Translation} characterized functions on
