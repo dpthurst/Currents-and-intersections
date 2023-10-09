@@ -57,7 +57,7 @@ What are sufficient and necessary conditions for $f \colon\mathbb{R}\mathcal{C}(
 
 The main result of this paper can be succintly phrased as follows.
 
-\begin{theorem*}
+\begin{mainthm}
     Suppose that $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
@@ -68,11 +68,43 @@ Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
 i(\mu_f,C)=f(C)
 \]
 for every multi-curve $C$.
-\end{theorem*}
+\label{mainthm:intersections}
+\end{mainthm}
 
 Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo studies functions defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. We outline the relation between our conditions and Feng Luo's conditions in Proposition~\ref{prop:feng}.
 See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems.
 
+As a corollary, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
+
+\begin{mainthm}
+Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:intersections}. Then,
+\begin{itemize}
+\item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}:
+\begin{equation*}\label{eq:MLsmoothing}
+      f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
+    \end{equation*}
+    \label{prop:char_laminations}
+
+    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the so-called \emph{disconnected $\lambda$-smoothing property}:
+    \begin{equation}\label{eq:MLsmoothing}
+      \lambda\left(\mfig{curves-0}\right) = \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
+    \end{equation}
+    where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
+\end{itemize}
+    The left-hand-side of both equations depicts an essential crossing between any pair of multi-curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
+    \label{mainthm:apps}
+\end{mainthm}
+
+As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
+ If $G$ is a finitely generated group with no torsion and $T$ an $\mathbb{R}$-tree. Suppose $G$ acts on $T$ by isometries. It follows that an isometry $g$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or they have fixed points (elliptic).
+The action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in \pi_1(S)$ with intersecting surface axes and acting hyperbolically on $T$, have intersecting axes in the tree.
+An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by endowing $\wt{X}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{X}$.
+We give a new proof of the following result, that was originally proven by Skora in~\cite{Sko90:GeometricAction}.
+
+\begin{mainthm}
+A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured lamination if and only if it is irreducible and preserves axes intersection.
+\label{mainthm:skora}
+\end{mainthm}
 
 \subsection{Main results}
 \label{subsec:mainresult}
@@ -249,7 +281,7 @@ In general, curve functionals need not be positive. For example, the signed
   in $\QConvex(S)$ is positive (see Corollary~\ref{cor:positivity2}). 
 \end{remark}
 \DPTtodo{Some editing error here}
-This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces and a certain subset of real valued functionals on geodesic currents on the surface and functionals $f \colon GC(S) \to \mathbb{R}$ satisfying some conditions. See Section~\ref{subsec:newdef}.
+This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}.
 
 One should compare this result to previous work of Feng Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve functionals on simple closed curves which can be realized as intersection numbers with measured laminations, obtaining thus a characterization of measured laminations in terms of simple curve functionals. In Section~\ref{prop:char_laminations}, we use Theorem~\ref{thm:intersect} and an argument about fundamental domains of intersecting curves (for the $\pi_1(\Sigma)$-action on $G(\Sigma)$)  to give a new characterization of measured laminations in terms of curve functionals. Feng Luo also characterized which functions on simple closed curves are dual to hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our Theorem~\ref{prop:char_liouville} can be seen as an extension of that theorem for closed curves.
 
@@ -305,7 +337,7 @@ However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geo
 
 We would like to thank Giuseppe Martone, Beatrice Pozzetti, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
 
-The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship, for part of this work.
+The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship, for the initial part of this work, and by an AFR/Bilateral-ReSurface grant number 22/17145118 for last part of this project.
 The second author was supported by the National Science
 Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
 
