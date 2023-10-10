@@ -55,6 +55,8 @@ What are sufficient and necessary conditions for $f \colon\mathbb{R}\mathcal{C}(
 \label{que:mainquestion}
 \end{question}
 
+\subsection{Main results}
+
 The main result of this paper can be succintly phrased as follows.
 
 \begin{mainthm}
@@ -94,9 +96,9 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:
 \end{mainthm}
 
 As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
- If $G$ is a finitely generated group with no torsion and $T$ an $\mathbb{R}$-tree. Suppose $G$ acts on $T$ by isometries. It follows that an isometry $g$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or they have fixed points (elliptic).
-The action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in \pi_1(S)$ with intersecting surface axes and acting hyperbolically on $T$, have intersecting axes in the tree.
-An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by endowing $\wt{X}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{X}$.
+ Let $G$ be a surface group, i.e. $G=\pi_1(X)$ for some closed hyperbolic surface $X$, and $T$ an $\mathbb{R}$-tree. Suppose $G$ acts on $T$ by isometries. It turns out that an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or it has fixed points (elliptic).
+The action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in G$ with transversely intersecting axes in $\wt{X}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
+An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{X}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{X}$.
 We give a new proof of the following result, that was originally proven by Skora in~\cite{Sko90:GeometricAction}.
 
 \begin{mainthm}
@@ -104,17 +106,19 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{mainthm:skora}
 \end{mainthm}
 
-\subsection{Main results}
+\subsection{General context}
 \label{subsec:mainresult}
 %\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
+
+In this section we discuss how our result fits into our previous work in~\cite{MGT21:Smoothings}.
 
 In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
 Working with this intersection number is crucial for our results, although we will assume our curves to be oriented. In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise.
 In terms of geodesic currents, this means we will work with oriented geodesic currents.
-As we shall see in section~\ref{sec:asymmetric} there are versions of
+As we shall see in Section~\ref{sec:asymmetric} there are versions of
 intersection numbers which are asymmetric (i.e. they distinguish the
-orientations of the intersections). For those, the main duality
-result, Theorem~\ref{thm:intersect}, will not hold.
+orientations of the intersections). For those, the analog of the main duality
+result, Theorem~\ref{mainthm:intersections}, will not hold.
 Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$.
 
 
@@ -264,11 +268,11 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
 
-It turns out that one doesn't need more conditions.
+It turns out that one doesn't need more conditions. Theorem~\ref{mainthm:intersections} can thus be reestated, in the previous terminology, as follows.
 
-\begin{mainthm}\label{thm:intersect}
+\begin{mainthmprime}\label{thm:intersect}
  For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stabilty properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
-\end{mainthm}
+\end{mainthmprime}
 
 \begin{remark}
 Observe that we do not require in the hypotheses that the curve functional $f \in \AConvex(S)$ is non-negative: in fact it follows from the other conditions (see Corollary~\ref{cor:positivity}).
@@ -337,7 +341,7 @@ Let $\bar{\Sigma}$ denote the convex core of $\Sigma$.
 Let $\ell$ be the restriction to $\Sigma$ of the hyperbolic
 length on the double of $\bar{\Sigma}$.
 We note that $\ell$ satisfies additivity, stability and homogeneity
-properties. Also, it satisfies smoothing: for non-boundary parallel curves, smoothing is satisfied by the same argument as the proof of Corollary~\ref{cor:domination}. Since boundary parallel curves do not intersect each other or other non-boundary parallel curves, smoothing is vacuously satisfied.
+properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoothing is satisfied by the same argument as the proof of Corollary~\ref{cor:domination}. Since boundary parallel curves do not intersect each other or other non-boundary parallel curves, smoothing is vacuously satisfied.
 
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For a related example, see~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
@@ -347,7 +351,7 @@ However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geo
 
 We would like to thank Giuseppe Martone, Beatrice Pozzetti, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
 
-The first author was supported by the Mathematics Department Indiana University Bloomington, via the Hazel King Thompson fellowship, for the initial part of this work, and by an AFR/Bilateral-ReSurface grant number 22/17145118 for last part of this project.
+The first author was supported by the Hazel King Thompson fellowship of the Mathematics Department of the Indiana University Bloomington, for the initial part of this work, and by the Luxembourg National research Fund AFR/Bilateral-ReSurface 22/17145118 for the last part of the project.
 The second author was supported by the National Science
 Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
 
