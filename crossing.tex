@@ -74,7 +74,11 @@ $\wt S$. This is conveniently specified by $x$ itself: $x$ determines
 a sequence of points $\{\bm{x^k} \mid k \in \bbZ\}$, which is a
 quasi-geodesic in $\wt S$, and thus determines an oriented geodesic
 denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} \bm{x^k}$
-and $x^- = \lim_{k \to -\infty} \bm{x^k}$.
+and $x^- = \lim_{k \to -\infty} \bm{x^k}$. Note that $x$ acting on the
+left on $\overline{\wt S}$ has north-south (NS) dynamics, with unique
+attracting point $x^+$ and repelling point $x^-$: for any point
+$\bm{p} \in \wt S \cup \partial \wt S$ other
+than $x^-$, we have $\lim _{k \to \infty} x^k \cdot \bm{p} = x^+$.
 
 The other lifts of $[x]$ to $\wt S$ are translates $q \cdot \ora{x}$
 of $\ora{x}$ by a
@@ -158,41 +162,91 @@ which crossing we are considering.)
 
 \subsection{Parallelism and crossing of hyperbolic axes}
 
-Let $\Isom^+(\mathbb{H}^2)$ denote the group of oriented  isometries of the hyperbolic plane. Given $a \in \Isom^+(\mathbb{H}^2)$ a hyperbolic isometry, its axis will be denoted $\ora{a}$, with attractive fixed points at the boundary at infinity $a^+, a^-$.
+\DPTtodo[inline]{Experimenting with different terminologies for types
+  of crossing/parallelism/etc}
+
+We now turn to some elementary lemmas about crossing. For this
+purpose, we also distinguish the various other types of relations
+between two geodesics $\ora{a}, \ora{b}$.
+
+We will switch to using elements of $\Isom^+(\bbH^2)$. On the one
+hand, if we fix any hyperbolic metric on~$S$, any non-trivial element
+$a \in \pi_1(X)$ acts on $\wt S = \bbH^2$ on the left by an isometry
+of $\bbH^2$ that is hyperbolic (in the sense of having two distinct
+fixed points on $\partial\bbH^2$). On the other hand, the notions we
+will consider will only depend on the cyclic order on the circle at
+infinity of endpoints of geodesics, and in particular do not depend on
+the metric.
+In principle one should invoke a representation $\rho \colon \pi_1(S)
+\to \Isom^+(\bbH^2)$, but since nothing depends on this representation
+we will suppress it.
+% \DMGtodo[inline]{(Punctures) If punctures, we need to ask for
+%   hyperbolic, and peripheral sent to parabolic.}
+
+\begin{definition}
+  Let $a,b$
+  be hyperbolic elements in $\Isom^+(\mathbb{H}^2)$, and let
+  $\ora{a}, \ora{b}$ be the oriented geodesics that are the
+  corresponding axes.
 \begin{itemize}
-    \item A pair $(\ora{a},\ora{b})$ \emph{cross} if $b^+, a^-, b^-, a^+$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:cross}.
-    \item A pair $(\ora{a},\ora{b})$ is \emph{parallel} if $b^+, a^+, a^-, b^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:parallel}.
-   \item  A pair $(\ora{a},\ora{b})$ is \emph{anti-parallel} if $b^-, a^+, a^-, b^+$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
+    \item As before, the pair $(\ora{a},\ora{b})$ \emph{cross to the
+        right} or \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
+      ccw order on the boundary at infinity. See
+      Figure~\ref{fig:cross}.
+    \item The pair $(\ora{a},\ora{b})$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}.
+   \item  The pair $(\ora{a},\ora{b})$ is \emph{R-anti-parallel} if $b^+,b^-, a^+, a^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
 \end{itemize}
+\end{definition}
 
-\DPTtodo{Let's brainstorm about an alternate term to avoid this awkwardness}
-Note that if $(\ora{a},\ora{b})$ is parallel, $(\ora{b^{-1}},\ora{a^{-1}})$ is also parallel. However,  if $(\ora{a},\ora{b})$ is parallel,  $(\ora{b},\ora{a})$ is not parallel.
+Note that if $(\ora{a},\ora{b})$ is R-parallel, $(\ora{B},\ora{A})$ is
+also R-parallel, but $(\ora{b},\ora{a})$ is L-parallel. On the other hand, if
+$(\ora{a},\ora{b})$ is R-anti-parallel, then
+$(\ora{b},\ora{a})$ is R-anti-parallel as well, but
+$(\ora{A},\ora{B})$ and $(\ora{B},\ora{A})$ are L-anti-parallel.
 
-In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid confusion with attractive and repelling endpoints, although we will prefer the latter notation throughout the text.
-
-\begin{comment}
-\begin{lemma}
-  Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements so that $ab$ and
-  $a^{-1}b$ are both hyperbolic. Then exactly one of the pairs
-  $(\ora{a},\ora{b})$; $(\ora{ab},\ora{ba})$; and
-  $(\ora{aB},\ora{Ab})$ cross. More precisely,
-  one and only one of the following possibilities hold.
-  \begin{enumerate}[label=(\Roman*)]
-  \item $(\ora{a}, \ora{b})$ cross, $(\ora{ba},\ora{ab})$ are
-    parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
-  \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
-    and $(\ora{aB},\ora{Ba})$ are parallel.
-  \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
-    are parallel, and $(\ora{Ba},\ora{aB})$ cross.
-  \end{enumerate}
-  \label{lem:righthandedfoundation}
+\begin{lemma} Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements.
+\begin{enumerate}
+  \item If $(\ora{a},\ora{b})$ R-cross, then $(\ora{A},\ora{B})$ R-cross.
+  \item If $(\ora{a},\ora{b})$ are R-parallel, then
+    $(\ora{B}),\ora{A})$ are R-parallel and $(\ora{a},\ora{B})$ are
+    R-anti-parallel.
+  \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then
+    $(\ora{b},\ora{a})$ are R-anti-parallel and $(\ora{a},\ora{B})$
+    are R-parallel.
+\end{enumerate}
 \end{lemma}
-\end{comment}
+
+\begin{proof}
+  Immediate from the definitions. Note that other combinations are
+  often not true; for instance if $(\ora{a},\ora{b})$ are R-parallel,
+  then $(\ora{b},\ora{a})$ could be said to be L-parallel.
+\end{proof}
+
+
+% XXX: This was the old claim, which is false, keeping it for
+% reference for the moment
+% 
+% \begin{lemma}
+%   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements so that $ab$ and
+%   $Ab$ are both hyperbolic. Then exactly one of the pairs
+%   $(\ora{a},\ora{b})$; $(\ora{ab},\ora{ba})$; and
+%   $(\ora{aB},\ora{Ab})$ cross. More precisely,
+%   one and only one of the following possibilities hold.
+%   \begin{enumerate}[label=(\Roman*)]
+%   \item $(\ora{a}, \ora{b})$ cross, $(\ora{ba},\ora{ab})$ are
+%     parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
+%   \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
+%     and $(\ora{aB},\ora{Ba})$ are parallel.
+%   \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
+%     are parallel, and $(\ora{Ba},\ora{aB})$ cross.
+%   \end{enumerate}
+%   \label{lem:righthandedfoundation}
+% \end{lemma}
 
 \DPTtodo{simplify this lemma}
 \begin{lemma}
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements so that $ab$ and
-  $a^{-1}b$ are both hyperbolic. Then we have the following possibilities:
+  $Ab$ are both hyperbolic. Then we have the following possibilities:
   \begin{enumerate}[label=(\Roman*)]
   \item If $(\ora{a}, \ora{b})$ cross, then $(\ora{ba},\ora{ab})$ are parallel.
   \item If $(\ora{a},\ora{b})$ are parallel, then $(\ora{ba},\ora{ab})$ cross.
@@ -248,57 +302,32 @@ In the following Lemma, we use the notation $A$ instead of $a^{-1}$ to avoid con
     where $a$ and $b$ act in opposite directions, and again we can see
     that the two initial endpoints $(ab)^-$ and $(ba)^-$ are in
     $(a^-,b^-)$.  See the following figure for an illustration.
-    \begin{figure}[H]
+    \DPTtodo{This comment is confusing, we should probably drop them
+      or give at least one more case}
+    The points $(aB)^\pm$ and
+    $(Ba)^\pm$ need not be in the configuration in the picture, and there are several cases to consider, but this is not needed in our analysis.
+    \begin{figure}
     \[
       \mfig{hyp-crossings-1}
     \]
-    The points $(aB)^\pm$ and
-    $(Ba)^\pm$ need not be in the configuration in the picture, and there are several cases to consider, but this is not needed in our analysis.
     \caption{$a$ and $b$ are parallel, together with the other crossing relations for related words. }
     \label{fig:parallel}
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
-    the parallel case by replacing $b$ with $b^{-1}$. The endpoints of $(\ora{Ba},\ora{aB})$ are necessarily arranged like the following picture
-    \begin{figure}[H]
+    the parallel case by replacing $b$ with $b^{-1}$. The endpoints of
+    $(\ora{Ba},\ora{aB})$ are necessarily arranged like in Figure~\ref{fig:anti}
+    even though the endpoints of $(\ora{ba},\ora{ab})$ might be arranged differently.
+    \begin{figure}
     \[
       \mfig{hyp-crossings-2}
     \]
-    even though the endpoints of $(\ora{ba},\ora{ab})$ might be arranged differently.
     \caption{$a$ and $b$ are anti-parallel, together with the other crossing relations for related words. }
     \label{fig:anti}
     \end{figure}
   \end{enumerate}
 \end{proof}
 
-\subsection{Right-handed crossing and parallelism}
-
-Now we connect the definition of right-handed crossing to the notions of crossing and parallelism of hyperbolic isometries.
-If we introduce a hyperbolic metric $\Sigma$ on $S$, this yields a
-homomorphism $\rho \colon \pi_1(S) \to \Isom^{+}(\mathbb{H}^2)$, so
-that any non-trivial $a \in \pi_1(S)$ can be  identified with a
-hyperbolic isometry $\rho(a) \in \Isom^+(\mathbb{H}^2)$.
-% \DMGtodo[inline]{(Punctures) If punctures, we need to ask for
-%   hyperbolic, and peripheral sent to parabolic.}
-We will abuse notation and write $a$ instead of $\rho(a)$.
-We observe that the notions of crossing, parallelism, and anti-parallelism only depended on the relative order of the fixed points at infinity of the hyperbolic isometries. Thus, they are independent of the choice of hyperbolic metric $\Sigma$.
-Furthermore, if $a,x \in \pi_1(S)$, then $a$ crosses $x$ to the right if and only if $\ora{a}$ crosses $\ora{x}$.
-In particular, in order to detect crossing, parallelism or anti-parallelism between elements, one can look at any topological realization of lifts of elements in the universal cover, and not just the geodesic ones.
-Thus, $\ora{a}$ and $\ora{x}$ cross (resp. are parallel, anti-parallel), if and only if $\wt{a}$ and $\wt{x}$ cross (resp. are parallel, anti-parallel).
-
-From Lemma~\ref{lem:righthandedfoundation}, we get the following results.
-\begin{comment}
-\begin{lemma}
-If $g,h,gh,gh^{-1} \in \pi_1(S)$ are all non-trivial, and $S$ is a
-closed surface,
-% \DMGtodo[inline]{(Punctures) We use closed surface to
-%   ensure the elements are hyperbolic. Otherwise, we need to specify
-%   they are hyperbolic}
-\emph{exactly one}
-of the multi-curves $[g][h]$, $[gh]$, and $[gh^{-1}]$ has an essential crossing at the basepoint.
-\end{lemma}
-\end{comment}
-
-\DPTtodo{Prove this lemma using NS dynamics instead}
+\DPTtodo[inline]{IN PROGRESS: Substantial reorg}
 \begin{lemma}
   Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
   Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
@@ -309,18 +338,7 @@ of the multi-curves $[g][h]$, $[gh]$, and $[gh^{-1}]$ has an essential crossing 
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
-\flagtodo[inline]{Proof is a north-south dynamics argument. Need to be worked}
 \end{proof}
-We will use the following elementary observations about right handed crossings.
-
-\begin{lemma}
-\begin{enumerate}
-    \item If $a$ cross $b$ to the right,
-then $a^{-1}$ crosses $b^{-1}$ to the right.
-\item If $a$ and $b$ are parallel, then $b^{-1}$ and $a^{-1}$ are parallel.
-\item If $a$ and $b$ are parallel, then $a$ and $b^{-1}$ are anti-parallel.
-\end{enumerate}
-\end{lemma}
 
 As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following.
 
