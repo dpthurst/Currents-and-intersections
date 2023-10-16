@@ -54,16 +54,21 @@ The claim then follows by an observation by Otal~\cite[Page~154]{Otal90:SpectreM
 
 We need first the following hyperbolic geometry lemma.
 
-\begin{proposition}\DMGtodo[inline]{This has to be edited}
-Given two elements $g,h \in \pi_1(\Sigma)$ that are not conjugates of each other, with hyperbolic axes $A_g$ and $A_h$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
-Let $P$ be the point on $A_g$ obtained by moving forward from $O$ by distance $\ell(g)/2$. Let $Q$ be the point on $A_h$ obtained by moving backward from $O$ by distance $-\ell(h)/2$.
-Let $Q'$ be the point on $A_h$ obtained by moving forward from $O$ by distance $\ell(h)/2$. Let $P'$ be the point on $A_g$ obtained by moving backward from $O$ by distance $-\ell(g)/2$.
-we have the following (see Figure~\ref{fig:smoothing_1}):
+\begin{proposition}\DMGtodo[inline]{I edited this}
+Consider two elements $g,h \in \pi_1(\Sigma)$ with hyperbolic axes $A_g$ and $A_h$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
+We define the following four points:
+
+\begin{itemize} \item $P$ is the point on $A_g$ obtained by moving forward from $O$ by distance $\ell(g)/2$;
+\item $Q$ is the point on $A_h$ obtained by moving backward from $O$ by distance $-\ell(h)/2$;
+\item $Q'$ is the point on $A_h$ obtained by moving forward from $O$ by distance $\ell(h)/2$;
+\item $P'$ is the point on $A_g$ obtained by moving backward from $O$ by distance $-\ell(g)/2$.
+\end{itemize}
+We have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
-\item The hyperbolic axis of $A_{hg}$ is determined by the geodesic line going from $Q$ to $P$, and the hyperbolic distance from $Q$ to $P$ is $\ell(hg)/2$.
-\item The hyperbolic axis of $A_{gh}$ is determined by the geodesic line going from $P'$ to $Q'$, and the hyperbolic distance from $Q'$ to $P'$ is $\ell(hg)/2$.
-\item The hyperbolic axis of $A_{gh^{-1}}$ is determined by the geodesic line going from $Q'$ to $P$, and the hyperbolic distance from $Q'$ to $P$ is $\ell(gh^{-1})/2$.
-\item The hyperbolic axis of $A_{h^{-1}g}$ is determined by the geodesic line going from $P'$ to $Q$, and the hyperbolic distance from $P'$ to $Q$ is $\ell(h^{-1}g)/2$.
+\item $A_{hg}$ is the line containing the segment $[Q,P]$ of length $\ell(hg)/2$.
+\item $A_{gh}$ is the line containing the segment $[P',Q']$ of length $\ell(hg)/2$.
+\item $A_{gh^{-1}}$ is the line containing the segment $[Q',P']$ of length $\ell(gh^{-1})/2$.
+\item $A_{h^{-1}g}$ is the line containing the segment $[P',Q]$ of length $\ell(h^{-1}g)/2$.
 \end{enumerate}
 Furthermore, the union $G([Q,P])\cup G([Q',P'])$ (resp. $G([Q',P]) \cup G([P',Q])$) is a fundamental domain for the action of $gh$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $gh^{-1}$).
 \label{prop:keygeometry}
@@ -103,31 +108,44 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
     \end{equation}
     \label{thm:char_laminations}
 \end{theorem}
-\begin{proof}\DMGtodo[inline]{needs editing}
+\begin{proof}\DMGtodo[inline]{I edited this}
 Suppose first $f$ satisfies the disconnected max-smoothing.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a measured lamination.
-Consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
-Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. We will call them \emph{north-south geodesics} of $H$. 
-Similarly, we will call the geodesics intersecting the sides of $H$ on the axes $A_{gh}$ and $A_{hg}$, the \emph{east-west geodesics} of $H$. 
+Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
+consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
+Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. 
 
-Let $B$ be a box of geodesics. By density of endpoints of closed geodesics, for every $\epsilon>0$, we can find geodesics $g$ and $h$ with endpoints $\epsilon$-close to the endpoints of the diagonals of $B$.
-Taking large enough powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain a corresponding set of north-south geodesics of $H_n$ that we denote by $R_n \coloneqq R_{g^n,h^n}$, so that $|\mu(R_n)-\mu(B)|< \epsilon$.
+Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $A_{gh}$ and $A_{hg}$.
+
+Given elements $g$ and $h$  with intersecting axes, let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
+
+Taking powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as analogously.
+Observe that $R_n \subset R_{n+1}$, and $\cup_{n \geq 1} R_n = B_{g,h}$.
+Hence, by continuity of measures from below, we have
+\[
+\lim_n \mu(R_n) \to \mu(B_{g,h}).
+\]
 If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
-Furthermore, if $R_n^T$ denotes the set of geodesics intersecting the sides of $H_n$ contained in $A_{ab}$ and $A_{ba}$, we also have
-$|\mu(R_n^T)-\mu(B^T)|< \epsilon$.
-Furthermore, again by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
+
+Similarly, let $R_n^T$ denote the set of geodesics intersecting the sides of $H_n$ contained in $A_{ab}$ and $A_{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
 \[
 \mu(R_n^T)=1/2(f(a) + f(b)-f(ab)).
 \]
-By taking a subsequence, and by disconnected max-smoothing, we have either $\mu(R_n^T)=0$ or $\mu(R_n)=0$ for all $n$.
-Thus, either $\mu(B)<\epsilon$ or $\mu(B^T)<\epsilon$. Since $\epsilon$ is arbitrary, it follows that $\mu$ is a measured lamination.
+We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
+Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
+By max-smoothing, for every $n$, we have$\mu(R_n^T)=0$ or $\mu(R_n)=0$.
+Since the sets $R_n$ and $R_n^{\perp}$ are nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $0$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
+Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h})=0$.
+By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of the boundary of $\partial \wt{\Sigma}$.
+Therefore, by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is a measured lamination.
+
 Now we prove the other implication.
-First, note that disconnected max-smoothing means, by the same argument as before, that for every box $R_{g,h}$, either $\mu(R_{g,h})=0$ or $\mu(R_{g,h})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
+First, note that disconnected max-smoothing means that $\mu(R_{g,h})=0$ or $\mu(R_{g,h})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
 We proceed by proving the counter-positive.
 Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$.
-If $H$ denotes the corresponding hyperbolic parallelogram, this implies that there are north-south geodesics of $H$ in the support of $\mu$ as well as east-west geodesics. These two types of geodesics intersect, and thus $\mu$ cannot be a measured lamination.
+This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, so by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is not a measured lamination.
 \end{proof}
 
 
@@ -153,6 +171,7 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
 \end{theorem}
 A sketch of a proof of this fact is given in the Appendix.
 \DPTtodo{This has apparently been banished?}
+\DMGtodo{Yes, it's in the folder old, file maxsmoothing.tex. I think we could add it once we finish with the rest, but the language there is a bit different from the rest of the paper.}
 We suspect it can also be proven using similar arguments as the ones in Theorem~\ref{thm:char_laminations} but the hyperbolic geometry gets considerably more complicated.
 \end{remark}
 
