@@ -254,6 +254,75 @@ and thus it follows that $f(c)=i(\lambda,s_c')=i(\lambda,c)$
 for all closed multi-curves $c$.
 \end{remark}
 
+In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
+
+\begin{theorem}
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+   \[
+      e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
+   \]
+   \label{thm:bonahonliouville}
+\end{theorem}
+
+
+An improvement of this theorem is given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
+
+\begin{theorem}
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+    \[
+      \frac{1}{\rho} e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho e^{-\mu([x,y]\times[z,w])} 
+   \]
+   \label{thm:ham}
+\end{theorem}
+
+We can prove the following characterization.
+
+\begin{theorem}
+$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the so-called \emph{disconnected $\lambda$-smoothing property}: \DMGtodo[inline]{Change to curves, and also }
+    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
+     \lambda(C_1)\lambda(C_2)= \lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
+    \end{equation}
+    where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
+    \label{prop:char_liouville}
+  \end{theorem}
+\DPTtodo[inline]{Expand out what LHS means, $\lambda(C_1)
+  \lambda(C_2)$. Is there a version of this result where you allow an
+  additive error in the equality? And if so, can $2\cosh(x/2)$ be
+  replaced by $e^{x/2}$ on both sides?}
+\begin{proof}
+The proof is similar to that of Theorem~\ref{thm:char_laminations}.
+By the assumptions on $f$, we have that
+$f$ is dual to a geodesic current $\mu$.
+Given a box of geodesics $B$, and $\epsilon>0$, approximate a box of geodesics $B$ by a set $R_n=R_{g^n,h^n}$ of north-south geodesics (same as in the notation of that proof), for a pair of non-conjugate intersecting elements $g,h \in \pi_1(\Sigma)$.
+Taking $n$ arbitrarily large, the hyperbolic length of $a \coloneqq g^n$ and $b \coloneqq h^n$ can be considered arbitrarily long.
+On the other hand, if we let $R_n^{\perp}$ denote the set of east-west geodesics,
+ $A_n,B_n$ (half) the measure of the set of geodesics intersecting each diagonal of $R_n$, and $C_n,D_n$ (half) the measure of the set of geodesics intersecting each of the vertical and horizontal sides of the parallelogram $H_n$ associated to $R_n$, we get
+ \[
+\mu(R_n)=A_n+B_n-C_n
+ \]
+ and
+ \[
+\mu(R_n^{\perp})=A_n+B_n-D_n
+ \] 
+Thus, we get
+\[
+e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
+\]
+On the other hand, when $n$ goes to infinity,
+the disconnected $\lambda$-smoothing relation yields
+\[
+e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
+\]
+where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity.
+Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
+On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation.
+\end{proof}
+
+
+\begin{remark}
+Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
+\end{remark}
+
 \section{A new proof of Skora's theorem}
 
 As an application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
@@ -462,74 +531,7 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 \end{enumerate}
 \end{proof}
 
-In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
 
-\begin{theorem}
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
-   \[
-      e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
-   \]
-   \label{thm:bonahonliouville}
-\end{theorem}
-
-
-An improvement of this theorem is given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
-
-\begin{theorem}
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
-    \[
-      \frac{1}{\rho} e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho e^{-\mu([x,y]\times[z,w])} 
-   \]
-   \label{thm:ham}
-\end{theorem}
-
-We can prove the following characterization.
-
-\begin{theorem}
-$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the so-called \emph{disconnected $\lambda$-smoothing property}: \DMGtodo[inline]{Change to curves, and also }
-    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
-     \lambda(C_1)\lambda(C_2)= \lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
-    \end{equation}
-    where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
-    \label{prop:char_liouville}
-  \end{theorem}
-\DPTtodo[inline]{Expand out what LHS means, $\lambda(C_1)
-  \lambda(C_2)$. Is there a version of this result where you allow an
-  additive error in the equality? And if so, can $2\cosh(x/2)$ be
-  replaced by $e^{x/2}$ on both sides?}
-\begin{proof}
-The proof is similar to that of Theorem~\ref{thm:char_laminations}.
-Suppose the disconnected $\lambda$-smoothing is satisfied. Then, by convexity of $\cosh$, it is easy to check that the smoothing property for $f$ follows.
-Hence, $f$ is dual to a geodesic current $\mu$.
-Given a box of geodesics $B$, and $\epsilon>0$, approximate a box of geodesics $B$ by a set $R_n=R_{g^n,h^n}$ of north-south geodesics (same as in the notation of that proof), for a pair of non-conjugate intersecting elements $g,h \in \pi_1(\Sigma)$.
-Taking $n$ arbitrarily large, the hyperbolic length of $a \coloneqq g^n$ and $b \coloneqq h^n$ can be considered arbitrarily long.
-On the other hand, if we let $R_n^{\perp}$ denote the set of east-west geodesics,
- $A_n,B_n$ (half) the measure of the set of geodesics intersecting each diagonal of $R_n$, and $C_n,D_n$ (half) the measure of the set of geodesics intersecting each of the vertical and horizontal sides of the parallelogram $H_n$ associated to $R_n$, we get
- \[
-\mu(R_n)=A_n+B_n-C_n
- \]
- and
- \[
-\mu(R_n^{\perp})=A_n+B_n-D_n
- \] 
-Thus, we get
-\[
-e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
-\]
-On the other hand, when $n$ goes to infinity,
-the disconnected $\lambda$-smoothing relation yields
-\[
-e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
-\]
-where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity.
-Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
-On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation.
-\end{proof}
-
-
-\begin{remark}
-Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
-\end{remark}
 
 \subsection{Inequalities between intersection numbers}
 \label{subsec:ineqintersection}
