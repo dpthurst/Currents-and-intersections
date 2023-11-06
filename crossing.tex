@@ -44,7 +44,6 @@ action is defined by
 $[\gamma_1] \cdot \bm{P}_{[\gamma_2]} \coloneqq
 \bm{P}_{[\gamma_1\cdot\gamma_2]}$.
 
-\DPTtodo{Carrying around the $P$'s got too annoying pretty quickly}
 We will also denote the point in the cover corresponding to a group
 element by bold-face: $\bm{P}_{[\gamma]} = \bm{[\gamma]}$.
 \end{definition}
@@ -57,7 +56,7 @@ Here we make the following observations.
   related by $[\gamma] \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot [\gamma]$.
 \item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
   may be unbounded, although the translation length of $[\gamma]$ on
-  $\wt S$ is bounded by the length of $\gamma$ (by the previous bullet
+  $\wt S$ is bounded by the length of $\gamma$ (by the first bullet
   point).
 \item This left action extends to an action on the circle at infinity $\partial\wt S$.
 \end{itemize}
@@ -195,31 +194,32 @@ we will suppress it.
       Figure~\ref{fig:cross}.
     \item The pair $(\ora{a},\ora{b})$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}.
    \item  The pair $(\ora{a},\ora{b})$ is \emph{R-anti-parallel} if $b^+,b^-, a^+, a^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
-\end{itemize}
+   \end{itemize}
+   We can similarly define L-cross, L-parallel, and L-anti-parallel.
 \end{definition}
 
-Note that if $(\ora{a},\ora{b})$ is R-parallel, $(\ora{B},\ora{A})$ is
-also R-parallel, but $(\ora{b},\ora{a})$ is L-parallel. On the other hand, if
-$(\ora{a},\ora{b})$ is R-anti-parallel, then
-$(\ora{b},\ora{a})$ is R-anti-parallel as well, but
-$(\ora{A},\ora{B})$ and $(\ora{B},\ora{A})$ are L-anti-parallel.
+If we swap $\ora{a}$ and $\ora{b}$, the type of crossing/parallelism
+can change, as explained below.
 
 \begin{lemma} Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements.
 \begin{enumerate}
-  \item If $(\ora{a},\ora{b})$ R-cross, then $(\ora{A},\ora{B})$ R-cross.
+  \item If $(\ora{a},\ora{b})$ R-cross, then $(\ora{A},\ora{B})$
+    R-cross and $(\ora{b},\ora{a})$ L-cross.
   \item If $(\ora{a},\ora{b})$ are R-parallel, then
-    $(\ora{B}),\ora{A})$ are R-parallel and $(\ora{a},\ora{B})$ are
+    $(\ora{B},\ora{A})$ are R-parallel, $(\ora{b},\ora{a})$ are
+    L-parallel, and $(\ora{a},\ora{B})$ are
     R-anti-parallel.
   \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then
-    $(\ora{b},\ora{a})$ are R-anti-parallel and $(\ora{a},\ora{B})$
+    $(\ora{b},\ora{a})$ are R-anti-parallel, $(\ora{A},\ora{B})$ are
+    L-anti-parallel,
+    and $(\ora{a},\ora{B})$
     are R-parallel.
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-  Immediate from the definitions. Note that other combinations are
-  often not true; for instance if $(\ora{a},\ora{b})$ are R-parallel,
-  then $(\ora{b},\ora{a})$ could be said to be L-parallel.
+  Immediate from the definitions (and this lemma can be taken to be a
+  definition of the ``L'' variants).
 \end{proof}
 
 
@@ -243,21 +243,27 @@ $(\ora{A},\ora{B})$ and $(\ora{B},\ora{A})$ are L-anti-parallel.
 %   \label{lem:righthandedfoundation}
 % \end{lemma}
 
-\DPTtodo{simplify this lemma}
+\DPTtodo{IN PROGRESS: simplifying this lemma}
 \begin{lemma}
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements so that $ab$ and
   $Ab$ are both hyperbolic. Then we have the following possibilities:
   \begin{enumerate}[label=(\Roman*)]
-  \item If $(\ora{a}, \ora{b})$ cross, then $(\ora{ba},\ora{ab})$ are parallel.
-  \item If $(\ora{a},\ora{b})$ are parallel, then $(\ora{ba},\ora{ab})$ cross.
-    \item If $(\ora{a},\ora{b})$ are anti-parallel, then $(\ora{Ba},\ora{aB})$ cross.
+  \item If $(\ora{a}, \ora{b})$ R-cross, then
+    $(\ora{ba},\ora{ab})$ and  $(\ora{Ba},\ora{aB})$ are both  R-parallel.
+  \item If $(\ora{a},\ora{b})$ are R-parallel, then $(\ora{ba},\ora{ab})$ R-cross.
+  \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $(\ora{Ba},\ora{aB})$ R-cross.
   \end{enumerate}
-  In the first two cases, (resp. the third case) the attractive endpoints of $(\ora{ba},\ora{ab})$ (resp. $(\ora{ba},\ora{ab})$) are in the interval $(a^+,b^+)$ and repelling endpoints are in the interval $(a^-,b^-)$.
+  \DPTtodo{This last claim got mangled}
+  In the first two cases, the attracting endpoints of
+ both $\ora{ba}$ and $\ora{ab})$ are in the
+  interval $(a^+,b^+)$ and repelling endpoints are in the interval
+  $(a^-,b^-)$.
+  In the third case, ???
   \label{lem:righthandedfoundation}
 \end{lemma}
 
 
-\begin{proof}\flagtodo[inline]{This proof is not fully fleshed}
+\begin{proof}\DPTtodo[inline]{Fleshing out this proof}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
   on the underlying word. Specifically, this means that we have
   \[
@@ -278,12 +284,15 @@ $(\ora{A},\ora{B})$ and $(\ora{B},\ora{A})$ are L-anti-parallel.
   following.
   \begin{enumerate}[label=(\Roman*)]
   \item If $\ora{a}$ crosses $\ora{b}$ to the right, then we claim that the
-    endpoints of the various geodesics must be laid out like this:
+    endpoints of the various geodesics must be laid out as in
+    Figure~\ref{fig:cross}.
+    \DPTtodo{exaggerate the light/dark distinctions more evident in
+      these figures}
     \begin{figure}
     \[
  \mfig{hyp-crossings-0}
  \]
-    \caption{$a$ and $b$ cross, together with the other crossing relations for related words. }
+    \caption{$a$ and $b$ R-cross, together with the other crossing relations for related words. }
     \label{fig:cross}
     \end{figure}
     To see this, note that $a$ and $b$ interchange $(ab)^-$ and $(ba)^-$,
@@ -291,7 +300,12 @@ $(\ora{A},\ora{B})$ and $(\ora{B},\ora{A})$ are L-anti-parallel.
     which $a$ and $b$ move in opposite directions; these are the
     intervals $(a^+,b^+)$ or $(a^-,b^-)$ (in each case taking the
     counterclockwise interval).  Similarly $(ab)^+$ and $(ba)^+$ must
-    lie in one of these two intervals. Furthermore, by consider the action of
+    lie in one of these two intervals.
+    \DPTtodo[inline]{This last sentence is vague. On general
+      principles, $ba \cdot a^-$ is
+      inside the interval $(b^+,a^-)$ and $ba \cdot a^+ \in
+      (a^+,b^+)$. That should be enough to give NS dynamics}
+    Furthermore, by consider the action of
     (say) $ba$ on $a^-$, we see that $ba$ necessarily has NS dynamics
     with a repelling fixed point in $(a^-,b^-)$ and an attracting
     fixed point in $(a^+,b^+)$, giving the placement of $(ba)^\pm$ and
