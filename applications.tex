@@ -137,12 +137,12 @@ We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\pe
 Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
 By max-smoothing, for every $n$, we have$\mu(R_n^T)=0$ or $\mu(R_n)=0$.
 Since the sets $R_n$ and $R_n^{\perp}$ are nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $0$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
-Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h})=0$.
+Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of the boundary of $\partial \wt{\Sigma}$.
 Therefore, by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is a measured lamination.
 
 Now we prove the other implication.
-First, note that disconnected max-smoothing means that $\mu(R_{g,h})=0$ or $\mu(R_{g,h})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
+First, note that disconnected max-smoothing means that $\mu(R_{g,h})=0$ or $\mu(R_{g,h}^{\perp})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
 We proceed by proving the counter-positive.
 Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$.
 This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, so by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is not a measured lamination.
@@ -291,6 +291,40 @@ $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional
   replaced by $e^{x/2}$ on both sides?}
 \begin{proof}
 The proof is similar to that of Theorem~\ref{thm:char_laminations}.
+
+Suppose first $f$ satisfies the disconnected max-smoothing.
+By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
+It remains to show that $\mu_f$ is a measured lamination.
+Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
+consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
+Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. 
+
+Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $A_{gh}$ and $A_{hg}$.
+
+Given elements $g$ and $h$  with intersecting axes, let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
+
+Taking powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as analogously.
+Observe that $R_n \subset R_{n+1}$, and $\cup_{n \geq 1} R_n = B_{g,h}$.
+Hence, by continuity of measures from below, we have
+\[
+\lim_n \mu(R_n) \to \mu(B_{g,h}).
+\]
+If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
+\[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
+
+Similarly, let $R_n^T$ denote the set of geodesics intersecting the sides of $H_n$ contained in $A_{ab}$ and $A_{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
+\[
+\mu(R_n^T)=1/2(f(a) + f(b)-f(ab)).
+\]
+We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
+Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
+By max-smoothing, for every $n$, we have$\mu(R_n^T)=0$ or $\mu(R_n)=0$.
+Since the sets $R_n$ and $R_n^{\perp}$ are nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $0$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
+Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
+By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of the boundary of $\partial \wt{\Sigma}$.
+Therefore, by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is a measured lamination.
+
+
 By the assumptions on $f$, we have that
 $f$ is dual to a geodesic current $\mu$.
 Given a box of geodesics $B$, and $\epsilon>0$, approximate a box of geodesics $B$ by a set $R_n=R_{g^n,h^n}$ of north-south geodesics (same as in the notation of that proof), for a pair of non-conjugate intersecting elements $g,h \in \pi_1(\Sigma)$.
@@ -315,7 +349,7 @@ e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
 \]
 where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity.
 Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
-On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation.
+On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$.
 \end{proof}
 
 
@@ -370,11 +404,12 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{prop:small}
 \end{theorem}
 \begin{proof}
-We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. \DMGtodo[inline]{Write short summary of how the proof relates to Paulin's work} The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
 We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
-There are several cases to consider. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree. In each case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface.
-For this, the following lemma to find pairs of non-intersecting axes in the tree will be useful.
+There are several cases to consider, depending on the relative position of the axes of the elements in the tree. For each case, different inequalities between $\| g\| + \| h \|$, $\| gh \|$ and $\| gh^{-1} \|$ are satisfied, and were analyzed by Paulin~\cite{Pa89:Paulin1989TheGT}. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree, for each one of those cases.
+In some of them, max-smoothing will be satisfied, but it will not in all of them. In the latter case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface, which will allow us to rule that case out.
+In order to implement this strategy, the following lemma to find pairs of non-intersecting axes in the tree will be useful.
 
 \begin{lemma}
   For any action of a finitely-generated group on an $\bbR$-tree,
@@ -410,12 +445,12 @@ Max-smoothing amounts to
 We note that the self-intersection corresponds to the intersection of the hyperbolic axes of the elements $gh$ and $hg$. Thus, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
 There are three subcases to consider.
 \begin{enumerate}
-    \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $|gh|=|gh^{-1}| \geq |g|+|h|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
+    \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
     \item $T_g$ and $T_h$ intersect in a non-degenerate interval with coherent orientations
     Then, 
-    $|gh|=|g|+|h|>|gh^{-1}|$, and the condition is satisfied by the result~\cite[1.8]{CM87:GroupActions}
+    $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, and the condition is satisfied by the result~\cite[1.8]{CM87:GroupActions}
     \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations. Then, we would have
-    $|gh^{-1}|=|g|+|h|>|gh|$, so the max-smoothing condition would be violated.
+    $\|gh^{-1}\|=\|g\|+\|h\|>\|gh\|$, so the max-smoothing condition would be violated.
     We show this cannot happen. 
     Within this subcase, are two subcases to consider. Let $\Delta$ denote the length of the overlap between $T_g$ and $T_h$.
     \begin{enumerate}

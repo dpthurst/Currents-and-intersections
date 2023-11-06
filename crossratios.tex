@@ -55,6 +55,19 @@ As for the other summand, we have, acting by $b$ and applying $\Gamma$-invarianc
 \end{align*}
 where in the first equality we applied $\Gamma$-invariance and the north-south dynamics, in the first inequality we went from $b\cdot a^-$ to $a^+$, moving the third coordinate counter-clockwise, and thus increasing the value of the cross-ratio, in the second equality we applied two peripheral swaps,  
 
+Another technique for cross-ratio:
+
+\begin{align*}
+l(g^{-1}) &= \lim_{n \to \infty} [g^{-n}y, g^-, g^+, g^{n} y]/(2n)
+  =\\& \lim_{n \to \infty}
+        [g^{-n}y, g^-, g^{-n}x, g^{n} y]/(2n) +
+        [g^{-n}y, g^{-n}x, g^{n}x, g^{n} y]/(2n) +
+        [g^{-n}y, g^{n}x, g^+, g^{n} y]/(2n)
+\end{align*}
+The first and last terms have limit zero as $n \to \infty$ (by a
+$\Gamma$-invariance argument). And the middle term is symmetric under
+switching $g$ and $g^{-1}$.
+
 \end{proof}
 %%% Local Variables:
 %%% mode: latex
