@@ -146,8 +146,8 @@ Thus, even though our curve functionals will be defined on oriented curves, to s
     \begin{equation}\label{eq:quasismoothing}
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
     \end{equation}
-    See Definition \DMGtodo[inline]{Do we need the definition of essential crossing in this paper?} for ``essential
-    crossing''. Loosely, it is a crossing that cannot be removed by homotopy. See Definition \DMGtodo[inline]{Do we need the definition of smoothing? We talk later about right handed crossing and smoothing.} for ``oriented smoothing''.
+    See Subsection~\ref{subsec:essential} for ``essential
+    crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
   \item \textbf{Smoothing:} We take $R=0$ in the above definition of quasi-smoothing:
     \begin{equation}\label{eq:smoothing}
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
@@ -204,6 +204,7 @@ We note that additive union implies homogeneity.
   such a lengthy summary of the situation in this paper, which is
   proving a pretty specific result}
   \DMGtodo[inline]{I agree, all this terminology makes the main statement obscure. I changed the first part of the introduction, deleting the detailed discussion on marked length spectrum rigidity, and adding a vague version of the main result.}
+  \DMGtodo[inline]{I wonder if the terminology convex and quasi-convex is a good one. Convexity is not really motivated in any of our papers, except for the fact that in this one }
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
 Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals
 on $S$ satisfying convex union, stability, and homogeneity.
@@ -282,7 +283,6 @@ In general, curve functionals need not be positive. For example, the signed
   generally, any curve functional
   in $\QConvex(S)$ is positive (see Corollary~\ref{cor:positivity2}). 
 \end{remark}
-\DPTtodo{Some editing error here}
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}.
 
 One should compare this result to previous work of Feng
@@ -313,11 +313,7 @@ length extends continuously to geodesic currents.
 See also Section~\ref{sec:questions}.
 
 By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. We note that the geodesic current we associated to an arbitrary Riemannian metric is not the long-term behavior of a random geodesic.\DMGtodo[inline]{This is vague, we should expand on this in applications, or give a reference for ``random geodesic''} For instance, if $\rho$
-has positive curvature, there may be an open set of Riemannian geodesics
-on~$\Sigma$ that stay inside a contractible set and so are not
-quasi-geodesic on~$\wt \Sigma$.
-In any case, as a further application, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
 \subsection{Open surfaces}
 
