@@ -292,53 +292,17 @@ $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional
 \begin{proof}
 The proof is similar to that of Theorem~\ref{thm:char_laminations}.
 
-Suppose first $f$ satisfies the disconnected max-smoothing.
-By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
-It remains to show that $\mu_f$ is a measured lamination.
-Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
-consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
-Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. 
-
-Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $A_{gh}$ and $A_{hg}$.
-
-Given elements $g$ and $h$  with intersecting axes, let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
-
-Taking powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as analogously.
-Observe that $R_n \subset R_{n+1}$, and $\cup_{n \geq 1} R_n = B_{g,h}$.
-Hence, by continuity of measures from below, we have
+By the assumptions on $f$, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
+It remains to show that $\mu_f$ is a Liouville current.
+Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes, we consider powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as in the proof of Theorem~\ref{thm:char_laminations}.
+By the same considerations as in that proof, if we let $a=g^n$ and $b=h^n$, we get
+\[\mu(R_n)=A_n + B_n-C_n\]
+and
 \[
-\lim_n \mu(R_n) \to \mu(B_{g,h}).
+\mu(R_n^T)=A_n + B_n -D_n.
 \]
-If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
-\[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
-
-Similarly, let $R_n^T$ denote the set of geodesics intersecting the sides of $H_n$ contained in $A_{ab}$ and $A_{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
-\[
-\mu(R_n^T)=1/2(f(a) + f(b)-f(ab)).
-\]
-We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
-Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
-By max-smoothing, for every $n$, we have$\mu(R_n^T)=0$ or $\mu(R_n)=0$.
-Since the sets $R_n$ and $R_n^{\perp}$ are nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $0$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
-Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
-By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of the boundary of $\partial \wt{\Sigma}$.
-Therefore, by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is a measured lamination.
-
-
-By the assumptions on $f$, we have that
-$f$ is dual to a geodesic current $\mu$.
-Given a box of geodesics $B$, and $\epsilon>0$, approximate a box of geodesics $B$ by a set $R_n=R_{g^n,h^n}$ of north-south geodesics (same as in the notation of that proof), for a pair of non-conjugate intersecting elements $g,h \in \pi_1(\Sigma)$.
-Taking $n$ arbitrarily large, the hyperbolic length of $a \coloneqq g^n$ and $b \coloneqq h^n$ can be considered arbitrarily long.
-On the other hand, if we let $R_n^{\perp}$ denote the set of east-west geodesics,
- $A_n,B_n$ (half) the measure of the set of geodesics intersecting each diagonal of $R_n$, and $C_n,D_n$ (half) the measure of the set of geodesics intersecting each of the vertical and horizontal sides of the parallelogram $H_n$ associated to $R_n$, we get
- \[
-\mu(R_n)=A_n+B_n-C_n
- \]
- and
- \[
-\mu(R_n^{\perp})=A_n+B_n-D_n
- \] 
-Thus, we get
+where $A_n=f(a)$, $B_n=f(b)/2$, $C_n=f(ab^{-1})/2$ and $D_n=f(ab)/2$.
+Now, we compute
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
 \]
@@ -347,7 +311,31 @@ the disconnected $\lambda$-smoothing relation yields
 \[
 e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
 \]
-where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity.
+where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity (since $e^{A_n} \sim 2\cosh(f(a)/2)$).
+Therefore, we have
+\[
+e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} =1.
+\]
+We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, determined by the endpoints of $g$ and $h$.
+Thus, we have $\lim_n \mu(R_n)=\mu(B_{g,h})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
+Therefore, we have the following relation
+\[
+e^{-\mu(B_{g,h})} + e^{-\mu(B_{g,h}^{\perp})} =1
+\]
+for any intersecting pair $g,h \in \pi_1(\Sigma)$.
+By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a pair $g',h'$ and another pair $g'', h''$ so that $B_{g',h'} \subset B \subset B_{g'',h''}$ and $B_{g'',h''}^{\perp} \subset B^{\perp} \subset B_{g',h'}^{\perp}$.
+Therefore, we get the inequalities
+\[
+e^{-\mu(B_{g'',h''})} \leq e^{-\mu(B)} \leq e^{-\mu(B_{g',h'})}
+\]
+and
+\[
+1-e^{-\mu(B_{g'',h''})} \leq 1- e^{-\mu(B)} \leq 1-e^{-\mu(B_{g',h'})}.
+\]
+Adding them up, we get
+\[
+e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
+\]
 Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
 On the other hand, if Bonahon's relation for a geodesic current is satisfied then it is a hyperbolic Liouville current, and then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$.
 \end{proof}
