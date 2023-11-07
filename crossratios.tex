@@ -1,5 +1,5 @@
 \section{Cross ratios}
-\DMGtodo[inline]{remove this section, we don't have a proof for cross-ratios yet}
+
 \label{sec:crossratios}
 
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $c$ on $\Sigma$ represented by a group element $g$, be defined as
@@ -17,56 +17,144 @@ Given two $C_1$ and $C_2$ represented by group elements $a$ and $b$ with an esse
 \end{lemma}
 \begin{proof}
 
+The proof consists on decomposing $[(ba)^-, (Ab)^+, (ba) \cdot (Ab)^+, (ba)^+]$ into boxes $(1,I), (1,II), (2,I), (2,II), (3,I)$ and $(3, II)$ and showing, by splitting these boxes into sub-boxes and applying $b$ and $b^{-1}$ conveniently, that each one of these sub-boxes can be contained in either $[a^-, (Ab)^+, a \cdot (Ab)^+, a^+]$ or $[b^-, (ba)^+, b \cdot (bA)^+, b^+]$ without overlaps. We also note that $(ba)(Ab)(ba)^{-1}=b(bA)b^{-1}$, which will play a key role in the pictures below.
+In the pictures, the bold font in the caption indicates that the result is final, and will not be perturbed further.
+
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr0}}
+    \caption{Initial configuration}\label{fig:cr0}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a1}}
+    \caption{Box (1, I)}\label{fig:cr1a1}}
+     \end{subfigure}
+\end{figure}
+
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a2}}
+    \caption{\textbf{$b^{-1}$ applied to box $(1,I)$. Keep only one portion.}}\label{fig:cr1a2}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a5}}
+    \caption{Split from previous}\label{fig:cr1a5}}
+     \end{subfigure}
+\end{figure}
+
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a3}}
+    \caption{\textbf{$b$ applied to previous}}\label{fig:cr1a3}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a4}}
+    \caption{$b$ applied to $(1,II)$}\label{fig:cr1a4}}
+     \end{subfigure}
+\end{figure}
+
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a6}}
+    \caption{\textbf{Split one portion}}\label{fig:cr1a6}}
+     \end{subfigure}
+\hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr1a5}}
+    \caption{\textbf{Split other portion, apply $b^{-1}$}}\label{fig:cr1a5}}
+     \end{subfigure}
+\end{figure}
 
 
-We can write $\ell(ab)=[(ab)^-, b^+, ab \cdot b^+, (ab)^+]$.
-We furthermore note that $ab \cdot b^+-=a \cdot b^+$, and write
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr2a1}}
+    \caption{\textbf{$(2,I)$}}\label{fig:cr2a1}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr2b1}}
+    \caption{$(2,II)$}\label{fig:cr2b1}}
+     \end{subfigure}
+\end{figure}
 
-\begin{align*}
-[(ab)^-, b^+, ab \cdot b^+, (ab)^+] &= \\
-& [a \cdot b^+, (ab)^+, (ab)^-, b^+] = \\
-[a \cdot b^+, (ab)^+, (bA)^-, b^+] + \\
-[a \cdot b^+, (bA)^-, (ab)^-, b^+]
-\end{align*}
-where in the first equality we used flip relation, and the additivity relation in the second equality, which is justified since $(bA)^-$ is located in the interval $((ab)^+, (ab)^-)$ in the natural cyclic order.
-We shall prove that both factors are smaller than $\ell(a)$ now.
-For the first one, apply $A$ and use $\pi_1(\Sigma)$-invariance, to get
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr2b2}}
+    \caption{Split portion of $(2,II)$}\label{fig:cr2b2}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr2b3}}
+    \caption{\textbf{Apply $b$ to previous}}\label{fig:cr2b3}}
+     \end{subfigure}
+\end{figure}
 
-\[
-[a \cdot b^+, (ab)^+, (bA)^-, b^+] = [b^+, A\cdot (ab)^+, a^+, A \cdot b^+]
-\]
-and use the fact that 
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr3a1}}
+    \caption{Box $(3,I)$}\label{fig:cr3a1}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr3a2}}
+    \caption{ $b^{-1}$ applied to previous}\label{fig:cr3a2}}
+     \end{subfigure}
+\end{figure}
 
-\[
-[(Ab)^-, B \cdot a^-, a^-, (ab)^+] 
-\]
-which, by monotonicity is smaller than
-\[
-[b^-, B \cdot a^-, a^-, b^+].
-\]
-As for the other summand, we have, acting by $b$ and applying $\Gamma$-invariance of the cross-ratio,
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr3b1}}
+    \caption{Box $(3,II)$}\label{fig:cr3b1}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr3b2}}
+    \caption{Split previous}\label{fig:cr3b2}}
+     \end{subfigure}
+\end{figure}
 
-\begin{align*}
-=[b\cdot a^-, (bA)^-, (ba)^-, a^-]&= \\
-& [ (ba)^-, a^-, b\cdot a^-, (bA)^-] \leq \\
-&[(ba)^-, a^-, a^+, (bA)^-] = \\
-&[a^-,(ba)^- , (bA)^-, a^+] \leq \\
-&=[a^-,(ba)^- , ab^-, a^+] 
-\end{align*}
-where in the first equality we applied $\Gamma$-invariance and the north-south dynamics, in the first inequality we went from $b\cdot a^-$ to $a^+$, moving the third coordinate counter-clockwise, and thus increasing the value of the cross-ratio, in the second equality we applied two peripheral swaps,  
-
-Another technique for cross-ratio:
-
-\begin{align*}
-l(g^{-1}) &= \lim_{n \to \infty} [g^{-n}y, g^-, g^+, g^{n} y]/(2n)
-  =\\& \lim_{n \to \infty}
-        [g^{-n}y, g^-, g^{-n}x, g^{n} y]/(2n) +
-        [g^{-n}y, g^{-n}x, g^{n}x, g^{n} y]/(2n) +
-        [g^{-n}y, g^{n}x, g^+, g^{n} y]/(2n)
-\end{align*}
-The first and last terms have limit zero as $n \to \infty$ (by a
-$\Gamma$-invariance argument). And the middle term is symmetric under
-switching $g$ and $g^{-1}$.
+\begin{figure}[htp]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr3b3}}
+    \caption{\textbf{$b$ applied to previous}}\label{fig:cr3b3}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{cr3b4}}
+    \caption{\textbf{Remaining portion of $(3,II)$}}\label{fig:cr3b4}}
+     \end{subfigure}
+\end{figure}
 
 \end{proof}
 %%% Local Variables:
