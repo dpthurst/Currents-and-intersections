@@ -264,17 +264,6 @@ In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic char
    \label{thm:bonahonliouville}
 \end{theorem}
 
-
-An improvement of this theorem is given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
-
-\begin{theorem}
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
-    \[
-      \frac{1}{\rho} e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho e^{-\mu([x,y]\times[z,w])} 
-   \]
-   \label{thm:ham}
-\end{theorem}
-
 We can prove the following characterization.
 
 \begin{theorem}
@@ -297,7 +286,7 @@ and
 \[
 \mu(R_n^T)=A_n + B_n -D_n,
 \]
-where $A_n=f(a)$, $B_n=f(b)/2$, $C_n=f(ab^{-1})/2$ and $D_n=f(ab)/2$.
+where $A_n=f(a)/2$, $B_n=f(b)/2$, $C_n=f(ab^{-1})/2$ and $D_n=f(ab)/2$.
 Now, we compute
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
@@ -336,7 +325,111 @@ Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current
 On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$.
 \end{proof}
 
+In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
 
+\begin{theorem}
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+    \[
+      \frac{1}{\rho} e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho e^{-\mu([x,y]\times[z,w])} 
+   \]
+   \label{thm:ham}
+\end{theorem}
+
+Using this, we can prove the following.
+
+\begin{theorem}
+$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the following condition.
+    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
+    \exp{f(C_1) + f(C_2)} +\exp{|f(C_1)-f(C_2)|} = O(1) + \exp{\left(\mfig{curves-1}\right)} + \exp{\left(\mfig{curves-2}\right)}.
+    \end{equation}
+    \label{prop:char_liouville_strong}
+  \end{theorem}
+
+\begin{proof}
+    As in the proof of Theorem~\ref{prop:char_liouville}, for an intersecting pair $g,h \in \pi_1(\Sigma)$,
+    we apply this to a pair of curves $a=g^n$, $b=h^n$, for $n$ large.
+    Denoting $A_n=f(a), B_n = f(b), C_n=f(ab^{-1}), D_n=f(ab)$, and assuming $f(a) > f(b)$, we have, by stability $A_n > B_n$, and thus, the condition translates into: there exists $C>1$ such that
+    \[
+   \log(-C +\exp(C_n) + \exp(D_n) - \exp(A_n - B_n)) \leq A_n + B_n \leq \log(C +\exp(C_n) + \exp(D_n) - \exp(A_n - B_n)),
+    \]
+  Thus, subtracting $C_n$ everywhere and extracting a factor of $C_n$ outside of the logs, we get
+      \begin{align*}
+    \log(-C\exp(-C_n) & +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))  \\
+     & \leq A_n + B_n - C_n \leq \log(C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n).
+    \end{align*}
+    and, doing the same with $D_n$, we get
+      \begin{align*}
+    \log(-C\exp(-D_n) +1 + \exp(C_n-D_n)- \exp(A_n - B_n-D_n)) \\
+    & \leq A_n + B_n - D_n \leq & \\\log(C\exp{-D_n} +1 + \exp{C_n-D_n} - \exp{A_n - B_n-C_n}).
+    \end{align*}
+Hence,
+      \begin{align*}
+    &\frac{1}{(-C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}} \\ & \geq \exp(-\mu(R_n)) \geq \frac{1}{(C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}}
+    \end{align*}
+    and
+      \begin{align*}
+    &\frac{1}{(-C\exp(-D_n) +1 + \exp(C_n-D_n) - \exp(A_n - B_n-D_n))^{1/2}} \\& \geq \exp(-\mu(R_n^{\perp})) \geq \frac{1}{(C\exp(-D_n) +1 + \exp(C_n-D_n) - \exp(A_n - B_n-D_n))^{1/2}}.
+    \end{align*}
+Hence,
+      \begin{align*}
+    &\frac{1}{(-C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}} \\& \geq \exp(-\mu(R_n)) \\ & \geq \frac{1}{(C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}}
+    \end{align*}
+    and
+      \begin{align*}
+   & 1-\frac{1}{(-C\exp(-D_n) +1 + \exp(C_n-D_n) - \exp(A_n - B_n-D_n))^{1/2}} \\& \leq 1-\exp(-\mu(R_n^{\perp})) \\ & \leq 1-\frac{1}{(C\exp(-D_n) +1 + \exp(C_n-D_n) - \exp(A_n - B_n-D_n))^{1/2}}.
+    \end{align*}
+Hence,
+      \begin{align*}
+    (-C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}-& \\ \frac{(-C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}}{(-C\exp(-D_n) +1 + \exp(C_n-D_n) - \exp(A_n - B_n-D_n))^{1/2}} & \\ \leq \frac{1-\exp(-\mu(R_n^{\perp}))}{\exp(-\mu(R_n))} \leq (C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2} &\\-\frac{(C\exp(-C_n) +1 + \exp(D_n-C_n) - \exp(A_n - B_n-C_n))^{1/2}}{(C\exp(-D_n) +1 + \exp(C_n-D_n) - \exp(A_n - B_n-D_n))^{1/2}}.
+    \end{align*}
+\DMGtodo[inline]{Note both $D_n$ and $C_n$ go to infinity, but if $D_n$ goes to infinity much faster than $C_n$ and than $A_n- B_n -C_n$ then both bounds go to infinity. This is a bound for the $R_n$, which are not boxes, but an infinite nested union of them gives us a box, (as in the proof of the previous characterization). Thus, the same bounds would apply for a box.}
+\end{proof}
+
+Using this, we can prove the following.
+
+\begin{theorem}\DMGtodo[inline]{This is the current strong characterization that works.}
+$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the following inequalities.
+    There exists a constant $C>1$ so that, for any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
+    1/C \leq \frac{e^{f\left(\mfig{curves-0}\right)/2} - e^{f\left(\mfig{curves-1}\right)/2}}{f\left(\mfig{curves-2}\right)/2} \leq C
+    \end{equation}
+    and
+    \begin{equation}
+     1/C \leq \frac{e^{f\left(\mfig{curves-0}\right)/2} - e^{f\left(\mfig{curves-2}\right)/2}}{e^{f\left(\mfig{curves-1}\right)/2}} \leq C
+    \end{equation}
+    \label{prop:char_liouville_strong}
+  \end{theorem}
+
+\begin{proof}
+The assumption can be written as 
+
+ \begin{equation}
+     1/C \leq  \frac{1- e^{-\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-1}\right)/2}}{e^{- f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-2}\right)/2}} \leq C
+    \end{equation}
+    and
+ \begin{equation}
+    1/C \leq \frac{1- e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-2}\right)/2}}{e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-1}\right)/2}} \leq C.
+    \end{equation}
+    \label{prop:char_liouville_strong}
+    
+    Now, as in the proof of Theorem~\ref{prop:char_liouville}, this gives us
+
+     \begin{equation}
+    1/C \leq \frac{1 - e^{-\mu(B)}}{e^{-\mu(B^{\perp})}} \leq C
+    \end{equation}
+    and
+    \begin{equation}
+    1/C \leq \frac{1 - e^{-\mu(B^{\perp})}}{e^{-\mu(B)}} \leq C
+    \end{equation}
+which, by Theorem~\ref{thm:ham}, implies $\mu$ is a hyperbolic Liouville current.
+On the other hand, if $\mu$ is a Liouville current, by Theorem~\ref{prop:char_liouville}, letting $x \coloneqq f\left(\mfig{curves-0}\right)/2$, $y \coloneqq f\left(\mfig{curves-1}\right)/2$ and $z \coloneqq f\left(\mfig{curves-0}\right)/2$, we get
+\[
+e^{x} - e^{y}  = e^{-x} -e^{-y}  + e^{z} - e^{-z}.
+\]
+Thus, since $y \leq x$, we have $e^{-x} -e^{-y} >0$, and therefore
+\[
+e^{z} \leq e^{x} - e^{y} \leq 3 e^{z}
+\]
+which gives one pair of inequalities. The other follows by an analogous computation.
 \begin{remark}
 Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
 \end{remark}
