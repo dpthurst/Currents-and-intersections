@@ -343,21 +343,23 @@ can change, as explained below.
   $Ab$ are both hyperbolic. Then we have the following possibilities:
   \begin{enumerate}[label=(\Roman*)]
   \item If $(\ora{a}, \ora{b})$ R-cross, then
-    $(\ora{ba},\ora{ab})$ and  $(\ora{Ba},\ora{aB})$ are both  R-parallel.
+    $(\ora{ba},\ora{ab})$ and  $(\ora{aB},\ora{Ba})$ are both  R-parallel.
   \item If $(\ora{a},\ora{b})$ are R-parallel, then $(\ora{ba},\ora{ab})$ R-cross.
   \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $(\ora{Ba},\ora{aB})$ R-cross.
   \end{enumerate}
   \DPTtodo{This last claim got mangled}
   In the first two cases, the attracting endpoints of
- both $\ora{ba}$ and $\ora{ab})$ are in the
+ both $\ora{ba}$ and $\ora{ab}$ are in the
   interval $(a^+,b^+)$ and repelling endpoints are in the interval
   $(a^-,b^-)$.
-  In the third case, ???
+  In the third case, (XXX: Something)
   \label{lem:righthandedfoundation}
 \end{lemma}
 
 
-\begin{proof}\DPTtodo[inline]{Fleshing out this proof}
+\begin{proof}
+  \DPTtodo[inline]{Explain somewhere earlier that circular intervals
+    are always written ccw}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
   on the underlying word. Specifically, this means that we have
   \[
@@ -377,7 +379,7 @@ can change, as explained below.
   $\ora{b}$ (crossing, parallel, or anti-parallel), we have the
   following.
   \begin{enumerate}[label=(\Roman*)]
-  \item If $\ora{a}$ crosses $\ora{b}$ to the right, then we claim that the
+  \item If $(\ora{a},\ora{b})$ R-cross, then we claim that the
     endpoints of the various geodesics must be laid out as in
     Figure~\ref{fig:cross}.
     \DPTtodo{exaggerate the light/dark distinctions more evident in
@@ -392,28 +394,28 @@ can change, as explained below.
     To see this, note that $a$ and $b$ interchange $(ab)^-$ and $(ba)^-$,
     so these two endpoints must lie in the portion of $\bdy \bbH^2$ in
     which $a$ and $b$ move in opposite directions; these are the
-    intervals $(a^+,b^+)$ or $(a^-,b^-)$ (in each case taking the
-    counterclockwise interval).  Similarly $(ab)^+$ and $(ba)^+$ must
+    intervals $(a^+,b^+)$ or $(a^-,b^-)$ (necessarily both in the same
+    interval).  Similarly $(ab)^+$ and $(ba)^+$ must also
     lie in one of these two intervals.
-    \DPTtodo[inline]{This last sentence is vague. On general
-      principles, $ba \cdot a^-$ is
-      inside the interval $(b^+,a^-)$ and $ba \cdot a^+ \in
-      (a^+,b^+)$. That should be enough to give NS dynamics}
-    Furthermore, by consider the action of
-    (say) $ba$ on $a^-$, we see that $ba$ necessarily has NS dynamics
-    with a repelling fixed point in $(a^-,b^-)$ and an attracting
-    fixed point in $(a^+,b^+)$, giving the placement of $(ba)^\pm$ and
-    $(ab)^\pm$. 
-  \item If $\ora{a}$ and $\ora{b}$ are parallel, then again the
-    endpoints of $\ora{ab}$ and $\ora{ba}$ must be in the intervals
+    
+    Furthermore, the dynamics imply that
+    $ba \cdot (a^+,b^+) \subsetneq (a^+,b^+)$, which then implies that
+    $(ba)^+$ and so $(ab)^+$ is in $(a^+,b^+)$. Similarly, we have
+    $(ba)^-,(ab)^- \in(a^-,b^-)$. It follows immediately that
+    $(\ora{ba},\ora{ab})$ are R-parallel.
+
+    Since in this situation $(\ora{B},\ora{a})$ also R-cross, the
+    other conclusion follows.
+  \item If $(\ora{a},\ora{b})$ are R-parallel, then again the
+    endpoints of $\ora{ab}$ and $\ora{ba}$ must be in the region
     $(b^+,a^+) \cup (a^-,b^-)$
-    where $a$ and $b$ act in opposite directions, and again we can see
-    that the two initial endpoints $(ab)^-$ and $(ba)^-$ are in
-    $(a^-,b^-)$.  See the following figure for an illustration.
-    \DPTtodo{This comment is confusing, we should probably drop them
-      or give at least one more case}
-    The points $(aB)^\pm$ and
-    $(Ba)^\pm$ need not be in the configuration in the picture, and there are several cases to consider, but this is not needed in our analysis.
+    where $a$ and $b$ act in opposite directions. Again the dynamics
+    imply that $ba \cdot (b^+,a^+) \subsetneq (b^+,a^+)$, so
+    $(ab)^+, (ba)^+ \in (b^+,a^+)$  and
+    $(ab)^-, (ba)^- \in (a^-,b^-)$. From this we see that
+    $(\ora{ba},\ora{ab})$ R-cross, as in Figure~\ref{fig:parallel} for an illustration.
+    \DPTtodo{Add direction arrows for action of $a,b$ to the illustration}
+
     \begin{figure}
     \[
       \mfig{hyp-crossings-1}
@@ -422,9 +424,8 @@ can change, as explained below.
     \label{fig:parallel}
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
-    the parallel case by replacing $b$ with $b^{-1}$. The endpoints of
-    $(\ora{Ba},\ora{aB})$ are necessarily arranged like in Figure~\ref{fig:anti}
-    even though the endpoints of $(\ora{ba},\ora{ab})$ might be arranged differently.
+    the parallel case by replacing $b$ with $B$, arranged as in
+    Figure~\ref{fig:anti}.
     \begin{figure}
     \[
       \mfig{hyp-crossings-2}
@@ -434,6 +435,19 @@ can change, as explained below.
     \end{figure}
   \end{enumerate}
 \end{proof}
+
+\begin{remark}
+  Note that in the R-parallel case we do not make claims about the
+  relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
+  determined by the hypotheses: while we can argue as before that all endpoints
+  $(aB)^\pm, (Ba)^\pm$ are in the union $(a^+,a^-) \cup (b^-,b^+)$
+  where $a$ and $b$ act in the same direction, it can happen that all
+  four endpoints are in the same one of these two regions and there
+  are many possibilities for the result.
+
+  Similarly the R-anti-parallel case says nothing about the relation
+  of $\ora{ab}$ and $\ora{ba}$.
+\end{remark}
 
 \DPTtodo[inline]{IN PROGRESS: Substantial reorg}
 \begin{lemma}

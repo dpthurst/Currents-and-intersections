@@ -72,8 +72,8 @@ draw_geodesic(acol, "a", -135, 135, 0.5);
 draw_geodesic(bcol, "b", -45, 45, 0.5);
 draw_geodesic(abcol, "(ab)", -70, 124, 0.3);
 draw_geodesic(bacol, "(ba)", -115, 75, 0.3);
-draw_geodesic(aBcol, "(aB)", 155, 30, 0.65);
-draw_geodesic(Bacol, "(Ba)", -150, -20, 0.65);
+%draw_geodesic(aBcol, "(aB)", 155, 30, 0.65);
+%draw_geodesic(Bacol, "(Ba)", -150, -20, 0.65);
 shipmulti(1);
 
 draw hp_boundary;
@@ -81,8 +81,8 @@ draw_geodesic(acol, "a", -135, 135, 0.5);
 draw_geodesic(bcol, "b", 45, -45, 0.5);
 draw_geodesic(abcol, "(aB)", -70, 124, 0.3);
 draw_geodesic(bacol, "(Ba)", -115, 75, 0.3);
-draw_geodesic(aBcol, "(ab)", 155, 30, 0.65);
-draw_geodesic(Bacol, "(ba)", -150, -20, 0.65);
+%draw_geodesic(aBcol, "(ab)", 155, 30, 0.65);
+%draw_geodesic(Bacol, "(ba)", -150, -20, 0.65);
 shipmulti(2);
 
 endmulti;

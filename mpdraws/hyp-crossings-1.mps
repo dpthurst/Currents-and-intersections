@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -82 -66 84 68 
-%%HiResBoundingBox: -81.2777 -65.79736 83.05975 67.28441 
-%%Creator: MetaPost 2.00
-%%CreationDate: 2022.10.04:1200
+%%BoundingBox: -58 -66 58 68 
+%%HiResBoundingBox: -57.70663 -65.79736 57.04291 67.28441 
+%%Creator: MetaPost 2.02
+%%CreationDate: 2023.11.10:1658
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font CMMI10 CMSY7 CMR7 CMR10
@@ -124,60 +124,6 @@ newpath 14.67323 54.76122 moveto 0 0 rlineto stroke
 30.18933 59.35191 moveto
 (\)) cmr10 9.96265 fshow
 34.06372 62.96732 moveto
-(+) cmr7 6.97385 fshow
- 0 0 0.64 setrgbcolor 0 0.7 dtransform truncate idtransform setlinewidth pop
-newpath -51.38141 23.9597 moveto
--19.17824 8.94302 18.32573 10.58034 49.09763 28.34645 curveto stroke
-newpath 11.5837 17.95143 moveto
-13.56587 17.33101 15.57408 16.74808 17.60774 16.20328 curveto
-15.94032 14.89401 14.23387 13.61076 12.4887 12.35445 curveto stroke
- 0 3 dtransform truncate idtransform setlinewidth pop
-newpath -51.38141 23.9597 moveto 0 0 rlineto stroke
-newpath 49.09763 28.34645 moveto 0 0 rlineto stroke
--81.2777 28.5504 moveto
-(\() cmr10 9.96265 fshow
--77.40329 28.5504 moveto
-(aB) cmmi10 9.96265 fshow
--64.0806 28.5504 moveto
-(\)) cmr10 9.96265 fshow
--60.20619 32.1658 moveto
-(\000) cmsy7 6.97385 fshow
-51.19762 32.93715 moveto
-(\() cmr10 9.96265 fshow
-55.07202 32.93715 moveto
-(aB) cmmi10 9.96265 fshow
-68.39471 32.93715 moveto
-(\)) cmr10 9.96265 fshow
-72.26912 36.55255 moveto
-(+) cmr7 6.97385 fshow
- 0.2 0.2 0.84 setrgbcolor 0 0.7 dtransform truncate idtransform setlinewidth pop
-newpath -49.09763 -28.34645 moveto
--17.97453 -10.37758 19.5037 -7.09885 53.27417 -19.39043 curveto stroke
-newpath 14.10588 -9.2464 moveto
-16.00523 -10.24324 17.87502 -11.26881 19.71494 -12.32259 curveto
-17.77974 -13.15633 15.87334 -14.02068 13.99611 -14.91501 curveto stroke
- 0 3 dtransform truncate idtransform setlinewidth pop
-newpath -49.09763 -28.34645 moveto 0 0 rlineto stroke
-newpath 53.27417 -19.39043 moveto 0 0 rlineto stroke
--78.99391 -38.37894 moveto
-(\() cmr10 9.96265 fshow
--75.1195 -38.37894 moveto
-(B) cmmi10 9.96265 fshow
--67.06291 -38.37894 moveto
-(a) cmmi10 9.96265 fshow
--61.79681 -38.37894 moveto
-(\)) cmr10 9.96265 fshow
--57.92241 -34.76353 moveto
-(\000) cmsy7 6.97385 fshow
-55.37416 -29.42291 moveto
-(\() cmr10 9.96265 fshow
-59.24857 -29.42291 moveto
-(B) cmmi10 9.96265 fshow
-67.30516 -29.42291 moveto
-(a) cmmi10 9.96265 fshow
-72.57126 -29.42291 moveto
-(\)) cmr10 9.96265 fshow
-76.44566 -25.80751 moveto
 (+) cmr7 6.97385 fshow
 showpage
 %%EOF
