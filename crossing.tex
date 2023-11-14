@@ -316,38 +316,19 @@ can change, as explained below.
   definition of the ``L'' variants).
 \end{proof}
 
-
-% XXX: This was the old claim, which is false, keeping it for
-% reference for the moment
-% 
-% \begin{lemma}
-%   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements so that $ab$ and
-%   $Ab$ are both hyperbolic. Then exactly one of the pairs
-%   $(\ora{a},\ora{b})$; $(\ora{ab},\ora{ba})$; and
-%   $(\ora{aB},\ora{Ab})$ cross. More precisely,
-%   one and only one of the following possibilities hold.
-%   \begin{enumerate}[label=(\Roman*)]
-%   \item $(\ora{a}, \ora{b})$ cross, $(\ora{ba},\ora{ab})$ are
-%     parallel, and $(\ora{aB},\ora{Ba})$ are parallel.
-%   \item $(\ora{a},\ora{b})$ are parallel, $(\ora{ba},\ora{ab})$ cross,
-%     and $(\ora{aB},\ora{Ba})$ are parallel.
-%   \item $(\ora{a},\ora{b})$ are anti-parallel, $(\ora{ab},\ora{ba})$
-%     are parallel, and $(\ora{Ba},\ora{aB})$ cross.
-%   \end{enumerate}
-%   \label{lem:righthandedfoundation}
-% \end{lemma}
-
-\DPTtodo{IN PROGRESS: simplifying this lemma}
 \begin{lemma}
-  Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements so that $ab$ and
-  $Ab$ are both hyperbolic. Then we have the following possibilities:
+  Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements. Then:
   \begin{enumerate}[label=(\Roman*)]
-  \item If $(\ora{a}, \ora{b})$ R-cross, then
+  \item If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
+    hyperbolic, and the pairs
     $(\ora{ba},\ora{ab})$ and  $(\ora{aB},\ora{Ba})$ are both  R-parallel.
-  \item If $(\ora{a},\ora{b})$ are R-parallel, then $(\ora{ba},\ora{ab})$ R-cross.
-  \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $(\ora{Ba},\ora{aB})$ R-cross.
+  \item If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
+    and $(\ora{ba},\ora{ab})$ R-cross.
+  \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $aB$ is
+    hyperbolic and $(\ora{Ba},\ora{aB})$ R-cross.
   \end{enumerate}
-  \DPTtodo{This last claim got mangled}
+  \DPTtodo{This is a little wrong by the ccw convention, and a little
+    awkward to correct. Do we need this stronger statement?}
   In the first two cases, the attracting endpoints of
  both $\ora{ba}$ and $\ora{ab}$ are in the
   interval $(a^+,b^+)$ and repelling endpoints are in the interval
@@ -357,9 +338,9 @@ can change, as explained below.
 \end{lemma}
 
 
+\DPTtodo[inline]{Explain somewhere earlier that circular intervals
+  are always written ccw}
 \begin{proof}
-  \DPTtodo[inline]{Explain somewhere earlier that circular intervals
-    are always written ccw}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
   on the underlying word. Specifically, this means that we have
   \[
@@ -391,29 +372,26 @@ can change, as explained below.
     \caption{$a$ and $b$ R-cross, together with the other crossing relations for related words. }
     \label{fig:cross}
     \end{figure}
-    To see this, note that $a$ and $b$ interchange $(ab)^-$ and $(ba)^-$,
-    so these two endpoints must lie in the portion of $\bdy \bbH^2$ in
-    which $a$ and $b$ move in opposite directions; these are the
-    intervals $(a^+,b^+)$ or $(a^-,b^-)$ (necessarily both in the same
-    interval).  Similarly $(ab)^+$ and $(ba)^+$ must also
-    lie in one of these two intervals.
-    
-    Furthermore, the dynamics imply that
-    $ba \cdot (a^+,b^+) \subsetneq (a^+,b^+)$, which then implies that
-    $(ba)^+$ and so $(ab)^+$ is in $(a^+,b^+)$. Similarly, we have
-    $(ba)^-,(ab)^- \in(a^-,b^-)$. It follows immediately that
-    $(\ora{ba},\ora{ab})$ are R-parallel.
+    To see this, observe that, by the dynamics of $a$ and $b$ on the
+    circle as shown, $ab$ maps the interval
+    $(a^+,b^+)$ strictly inside itself, which implies that it is
+    hyperbolic with attracting endpoint $(ab)^+$ in that interval;
+    similarly we see $(ab)^- \in (a^-,b^-)$. The actions of
+    $a$ and $b$ interchange $(ab)^- \leftrightarrow (ba)^-$ and
+    $(ab)^+ \leftrightarrow (ba)^+$, forcing the configuration shown.
+    (Note that all these endpoints $(ab)^\pm,(ba)^\pm$ are on the
+    portions of the circle
+    where $a$ and $b$ move in opposite directions.)
 
     Since in this situation $(\ora{B},\ora{a})$ also R-cross, the
     other conclusion follows.
-  \item If $(\ora{a},\ora{b})$ are R-parallel, then again the
-    endpoints of $\ora{ab}$ and $\ora{ba}$ must be in the region
-    $(b^+,a^+) \cup (a^-,b^-)$
-    where $a$ and $b$ act in opposite directions. Again the dynamics
-    imply that $ba \cdot (b^+,a^+) \subsetneq (b^+,a^+)$, so
+  \item If $(\ora{a},\ora{b})$ are R-parallel, then again the dynamics
+    imply that $ab \cdot (b^+,a^+) \subsetneq (b^+,a^+)$, so $ab$ is
+    hyperbolic and $(ab)^+ \in (b^+,a^+)$. The same interchange
+    property then forces
     $(ab)^+, (ba)^+ \in (b^+,a^+)$  and
     $(ab)^-, (ba)^- \in (a^-,b^-)$. From this we see that
-    $(\ora{ba},\ora{ab})$ R-cross, as in Figure~\ref{fig:parallel} for an illustration.
+    $(\ora{ba},\ora{ab})$ R-cross, as in Figure~\ref{fig:parallel}.
     \DPTtodo{Add direction arrows for action of $a,b$ to the illustration}
 
     \begin{figure}
@@ -437,9 +415,10 @@ can change, as explained below.
 \end{proof}
 
 \begin{remark}
-  Note that in the R-parallel case we do not make claims about the
+  In the R-parallel case we do not make claims about the
   relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
-  determined by the hypotheses: while we can argue as before that all endpoints
+  determined by the hypotheses. For starters, $aB$ need not be
+  hyperbolic. If it is, while we can argue that all endpoints
   $(aB)^\pm, (Ba)^\pm$ are in the union $(a^+,a^-) \cup (b^-,b^+)$
   where $a$ and $b$ act in the same direction, it can happen that all
   four endpoints are in the same one of these two regions and there
@@ -448,11 +427,15 @@ can change, as explained below.
   Similarly the R-anti-parallel case says nothing about the relation
   of $\ora{ab}$ and $\ora{ba}$.
 \end{remark}
-\DPTtodo[inline]{D\'idac points out that to go from cross-ratio to
-  satisfying smoothing, we need to understand how $\ora{a}$ and
-  $\ora{b}$ can be related of $\ora{ab}$ and $\ora{ba}$ cross. This is
-  related to above. We do seem to use this connected smoothing
-  essentially in the proof}
+
+\begin{remark}
+  Lemma~\ref{lem:righthandedfoundation} applies to disconnected
+  smoothings. It would be very handy to have a similar lemma for
+  self-crossings of $\ora{ab}$ with $\ora{ba}$, but a correct
+  statement is more complicated are several cases, related to the
+  previous remark. In particular if $\ora{ab}$ R-crosses $\ora{ba}$,
+  then $\ora{a}$ and $\ora{b}$ could be parallel or anti-parallel.
+\end{remark}
 
 \DPTtodo[inline]{IN PROGRESS: Substantial reorg}
 \begin{lemma}
