@@ -7,6 +7,7 @@ Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period
 \ell(g) \coloneqq [g^-, x , g \cdot x, g^+ ]
 \]
 
+\DMGtodo[inline]{disconnected smoothing}
 
 \begin{lemma}
 Given two $C_1$ and $C_2$ represented by group elements $a$ and $b$ with an essential crossing, we prove that
@@ -159,6 +160,34 @@ In the pictures, the bold font in the caption indicates that the result is final
 \end{figure}
 
 \end{proof}
+
+\DMGtodo[inline]{connected smoothing}
+
+If $C$ represents a curve with a self-intersection decomposing as $ab$, we have several cases to consider.
+
+\begin{lemma}
+\[
+\ell(ab) \geq \ell(aB).
+\]
+\end{lemma}
+\begin{proof}
+    The proof follows by noticing that $bA(ab)(bA)^{-1}=b (ba) B$ and $(ba)(Ab)(ba)^{-1} = b(bA)B$.
+    We can then see that
+    $(ba^-, ba^+) \times (b(bA)B^+ , (Ab)^+)$
+    contains
+    $(bA^-, bA^+) \times (b(ba)B^-, ab^-)$.
+    Therefore,
+    \[
+    [bA^+, bA^-, b(ba)B^-, ab^-] \leq [ba^+,  b(bA)B^+ , (Ab)^+,     ba^-].
+    \]
+\end{proof}
+
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c1}}
+    \caption{$\ell(ab) \geq \ell(aB)$}\label{fig:c1}
+\end{figure}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "Intersections"
