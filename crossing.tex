@@ -44,6 +44,7 @@ action is defined by
 $[\gamma_1] \cdot \bm{P}_{[\gamma_2]} \coloneqq
 \bm{P}_{[\gamma_1\cdot\gamma_2]}$.
 
+\DPTtodo{Change this bold-face convention}
 We will also denote the point in the cover corresponding to a group
 element by bold-face: $\bm{P}_{[\gamma]} = \bm{[\gamma]}$.
 \end{definition}
@@ -106,6 +107,11 @@ $\pi_1(S,*)$ action) is captured instead by the double coset
 \end{equation}
 Note that the order of the product is, confusingly, reversed relative to
 \eqref{eq:line-translate}.
+
+\DPTtodo[inline]{Explain somewhere around here that circular intervals
+  are always written ccw. Furthermore, if $a$ is hyperbolic, then
+  $a^+ \in (x,y)$ iff $a \cdot (x,y) \subsetneq (x,y)$. Finally, go
+  back and forth between $\pi_1$ and $\Isom^+(\bbH^2)$.}
 
 \subsection{Essential crossings}
 \label{subsec:essential}
@@ -199,7 +205,7 @@ more restrictive than checking at the beginning.)
   that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
 
-\DMGtodo[inline]{I did not include the weighted version (smoothings for weighted curves}
+\DMGtodo[inline]{Not including smoothings for weighted curves currently}
 
 \subsection{Right-handed crossings}
 \label{subsec:rhcrossings}
@@ -225,8 +231,7 @@ $\ora{a}$ to the right. In the first case (as in the Definition) the picture loo
 intuitively like
 \[\mathcenter{\resizebox{20mm}{!}{\svgfig{rhres}}}.\]
 
-\DPTtodo{Added this paragraph at your suggestion, I think it was a
-  good comment. It might deserve a picture}
+\DPTtodo{This comment deserves a picture}
 If we wish to talk about some essential crossing of $[a]$ and $[b]$
 that is \emph{not} at the basepoint, we can always conjugate by a
 suitable element~$c$, and ask about the crossing between $\ora{caC}$
@@ -254,9 +259,6 @@ which crossing we are considering.)
 % between $x$ and~$a$ is left-handed.
 
 \subsection{Parallelism and crossing of hyperbolic axes}
-
-\DPTtodo[inline]{Experimenting with different terminologies for types
-  of crossing/parallelism/etc}
 
 We now turn to some elementary lemmas about crossing. For this
 purpose, we also distinguish the various other types of relations
@@ -318,28 +320,21 @@ can change, as explained below.
 
 \begin{lemma}
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements. Then:
+  \DPTtodo[inline]{If we need it, add statements about placement of
+    attracting/repelling endpoints into the cases}
   \begin{enumerate}[label=(\Roman*)]
   \item If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
-    hyperbolic, and the pairs
-    $(\ora{ba},\ora{ab})$ and  $(\ora{aB},\ora{Ba})$ are both  R-parallel.
+    hyperbolic, and the pair
+    $(\ora{ba},\ora{ab})$ is R-parallel and  $(\ora{aB},\ora{Ba})$ are both  R-parallel.
   \item If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
     and $(\ora{ba},\ora{ab})$ R-cross.
   \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $aB$ is
     hyperbolic and $(\ora{Ba},\ora{aB})$ R-cross.
   \end{enumerate}
-  \DPTtodo{This is a little wrong by the ccw convention, and a little
-    awkward to correct. Do we need this stronger statement?}
-  In the first two cases, the attracting endpoints of
- both $\ora{ba}$ and $\ora{ab}$ are in the
-  interval $(a^+,b^+)$ and repelling endpoints are in the interval
-  $(a^-,b^-)$.
-  In the third case, (XXX: Something)
   \label{lem:righthandedfoundation}
 \end{lemma}
 
 
-\DPTtodo[inline]{Explain somewhere earlier that circular intervals
-  are always written ccw}
 \begin{proof}
   Note that the actions of $a$ and $b$ on geodesics act by conjugation
   on the underlying word. Specifically, this means that we have
@@ -403,7 +398,9 @@ can change, as explained below.
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
     the parallel case by replacing $b$ with $B$, arranged as in
-    Figure~\ref{fig:anti}.
+    Figure~\ref{fig:anti}.\qedhere
+  \end{enumerate}
+\end{proof}
     \begin{figure}
     \[
       \mfig{hyp-crossings-2}
@@ -411,8 +408,6 @@ can change, as explained below.
     \caption{$a$ and $b$ are anti-parallel, together with the other crossing relations for related words. }
     \label{fig:anti}
     \end{figure}
-  \end{enumerate}
-\end{proof}
 
 \begin{remark}
   In the R-parallel case we do not make claims about the
@@ -432,24 +427,28 @@ can change, as explained below.
   Lemma~\ref{lem:righthandedfoundation} applies to disconnected
   smoothings. It would be very handy to have a similar lemma for
   self-crossings of $\ora{ab}$ with $\ora{ba}$, but a correct
-  statement is more complicated are several cases, related to the
-  previous remark. In particular if $\ora{ab}$ R-crosses $\ora{ba}$,
-  then $\ora{a}$ and $\ora{b}$ could be parallel or anti-parallel.
+  statement is more complicated with several cases. (This is related to the
+  previous remark.) In particular if $\ora{ab}$ R-crosses $\ora{ba}$,
+  then $\ora{a}$ and $\ora{b}$ could be parallel or anti-parallel. The
+  full analysis is similar to the discussion of maximal bracelet
+  chains in the second author's earlier work \cite{Thurston14:PBI}.
 \end{remark}
 
-\DPTtodo[inline]{IN PROGRESS: Substantial reorg}
 \begin{lemma}
-  Let $a,x \in \pi_1(S)$ be elements that do not share a common power.
-  Then $a$ and~$x$ cross essentially iff the lifts $\wt x$ and
-  $a \cdot \wt x$ are parallel, and not anti-parallel or crossing.
-  Furthermore, if they cross essentially, then $a$ and~$x$ have a
-  right-handed crossing iff $a \cdot \wt x$ is on the right-hand side
-  of $\wt x$, when viewed along the orientation of~$\wt x$.
+  Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolicx elements that do not share any endpoints.
+  Then $\ora{a}$ and~$\ora{x}$ R-cross (resp.\ L-cross) iff
+  $(\ora{x},a \cdot \ora{x})$ are R-parallel (resp.\ L-parallel).
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
+  The statement that $(\ora{x},a\cdot\ora{x})$ are R-parallel is (by
+  definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
+  which in turn is equivalent to $a^+ \in (x^-,x^+)$ and
+  $a^- \notin (x^-,x^+)$, which is turn is equivalent to $\ora{a}$ and
+  $\ora{x}$ R-crossing.
 \end{proof}
 
+\DPTtodo[inline]{IN PROGRESS: Substantial reorg}
 As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following.
 
 \begin{lemma}
