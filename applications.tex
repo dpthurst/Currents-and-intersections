@@ -267,11 +267,10 @@ In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic char
 We can prove the following characterization.
 
 \begin{theorem}
-$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the so-called \emph{disconnected $\lambda$-smoothing property}:
-    For any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
-     \lambda(C_1)\lambda(C_2)= \lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right)
+$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and,
+    for any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
+     e^{f(C_1) + f(C_2)}= e^{\left(\mfig{curves-0}\right)} =  e^{\left(\mfig{curves-1}\right)}+e^{\lambda\left(\mfig{curves-2}\right)}
     \end{equation}
-    where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
     \label{prop:char_liouville}
   \end{theorem}
 \begin{proof}
@@ -294,9 +293,8 @@ e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} 
 On the other hand, when $n$ goes to infinity,
 the disconnected $\lambda$-smoothing relation yields
 \[
-e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
+e^{A_n}e^{B_n} = e^{C_n}+e^{D_n}
 \]
-where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity (since $e^{A_n} \sim 2\cosh(f(a)/2)$).
 Therefore, we have
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} =1.
@@ -322,8 +320,31 @@ Adding them up, we get
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
 Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
-On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$.
+The other implication follows from an elementary computation of hyperbolic cross-ratio.
 \end{proof}
+
+\begin{remark}
+Another way to phrase the condition in Theorem~\ref{thm:bonahonliouville} is as in terms of the following \emph{disconnected $\lambda$-smoothing property}
+
+\[
+\lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right)
+\]
+where $\lambda(C) \coloneqq 2\cosh(f(C)/2)$.
+Indeed, from this relation, following the proof, one obtains
+\[
+e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
+\]
+where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity (since $e^{A_n} \sim 2\cosh(f(a)/2)$). \DMGtodo[inline]{add here why this relation is interesting and reference to lambda length in positivity paper, maybe}
+On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$.
+\end{remark}
+
+\begin{remark}
+  The countable set of equalities in Theorem~\ref{thm:bonahonliouville} can be seen as an extreme case of a more general set of inequalities satisfied by any so-called \emph{strongly hyperbolic} space, in the sense of~\cite{BS16:StrongHyp}. One can check these spaces satisfy the inequality
+  \[
+       e^{f(C_1) + f(C_2)}= e^{f\left(\mfig{curves-0}\right)} \leq e^{f\left(\mfig{curves-1}\right)}+e^{f\left(\mfig{curves-2}\right)}.
+  \]
+  For more details see~\cite{JMG:StrongDuals}.
+\end{remark}
 
 In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
 
@@ -385,6 +406,9 @@ analogous computation.
 \begin{remark}
 Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
 \end{remark}
+
+
+
 
 \section{A new proof of Skora's theorem}
 

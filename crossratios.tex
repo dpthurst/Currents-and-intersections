@@ -171,14 +171,14 @@ If $C$ represents a curve with a self-intersection decomposing as $ab$, we have 
 \]
 \end{lemma}
 \begin{proof}
-    The proof follows by noticing that $bA(ab)(bA)^{-1}=b (ba) B$ and $(ba)(Ab)(ba)^{-1} = b(bA)B$.
-    We can then see that
-    $(ba^-, ba^+) \times (b(bA)B^+ , (Ab)^+)$
-    contains
-    $(bA^-, bA^+) \times (b(ba)B^-, ab^-)$.
-    Therefore,
+    The proof follows by noticing that $AB \cdot (baB)^- = a^-$,
+    and
     \[
-    [bA^+, bA^-, b(ba)B^-, ab^-] \leq [ba^+,  b(bA)B^+ , (Ab)^+,     ba^-].
+    [baB^+, ba^+, ba^-, a-] = [ba^-, a^-, baB^-, ba^+]=\ell(ba).
+    \]
+    Since $(aB^+, aB^-) \subset (AB^+, AB^-)$, we have
+    \[
+    \ell(aB)= [aB^-, (baB)^-, a^-, aB^+] \leq [ba^-, a^-, baB^-, ba^+]=\ell(ba).
     \]
 \end{proof}
 
