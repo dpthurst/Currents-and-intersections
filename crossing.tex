@@ -108,10 +108,26 @@ $\pi_1(S,*)$ action) is captured instead by the double coset
 Note that the order of the product is, confusingly, reversed relative to
 \eqref{eq:line-translate}.
 
-\DPTtodo[inline]{Explain somewhere around here that circular intervals
-  are always written ccw. Furthermore, if $a$ is hyperbolic, then
-  $a^+ \in (x,y)$ iff $a \cdot (x,y) \subsetneq (x,y)$. Finally, go
-  back and forth between $\pi_1$ and $\Isom^+(\bbH^2)$.}
+We can express many of our constructions as working with either
+elements of $\pi_1(S)$ (acting by isometries on the universal cover)
+or with general hyperbolic elements of the group $\Isom^+(\bbH^2)$.
+(Every element of $\pi_1(S)$ necessarily acts hyperbolically on
+$\wt S$.) When there is a choice, we prefer to state lemmas in terms
+of $\Isom^+(\bbH^2)$, since in principle it is more general (as we do
+not need to assume the group elements generate a discrete subgroup).
+
+We can conveniently express R-crossing in terms of the north-south
+dynamics on the unit circle. To express intervals on the circle, we
+adopt the convention that such intervals are always written with
+endpoints in counterclockwise order. (Thus if
+$x,y \in \partial \bbH^2$ are distinct points, $(x,y) \cup (y,x)$ is
+almost the entire circle).
+\DPTtodo{HERE. This is wrong, that inclusion also implies $a^- \in
+  (y,x)$. Also add something to R-crossing section}
+With these conventions, if a group element
+$a$ is hyperbolic with endpoint distinct from $x,y$, then NS dynamics
+says that the attracting endpoint $a^+$ is in $(x,y)$ iff $a \cdot
+(x,y) \subsetneq (x,y)$.
 
 \subsection{Essential crossings}
 \label{subsec:essential}
@@ -216,7 +232,8 @@ oriented geodesics, we pick out one type of essential crossing.
   \label{def:righthandedcrossing}
   For non-trivial $x,a \in \pi_1(S)$ that do not share a common power,
   the corresponding geodesics $\ora{a}$ and $\ora{x}$ have a
-  \emph{right-handed crossing} if the endpoints $a^-, x^-, a^+, x^+$ appear in that
+  \emph{right-handed crossing} or \emph{R-cross} if the endpoints
+  $a^-, x^-, a^+, x^+$ appear in that
   (counter-clockwise) cyclic order on $\partial \wt S$. (We also apply
   rules of English grammar, for instance talking about left-handed
   crossings if they have the opposite cyclic order.)
@@ -257,6 +274,8 @@ which crossing we are considering.)
 % Further, it is anti-symmetric: if
 % the crossing between $a$ and~$x$ is right-handed, then the crossing
 % between $x$ and~$a$ is left-handed.
+
+
 
 \subsection{Parallelism and crossing of hyperbolic axes}
 
@@ -320,13 +339,13 @@ can change, as explained below.
 
 \begin{lemma}
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements. Then:
-  \DPTtodo[inline]{If we need it, add statements about placement of
-    attracting/repelling endpoints into the cases}
+  \DPTtodo[inline]{Maybe we need statements about placement of
+    attracting/repelling endpoints. If so, add into the cases}
   \begin{enumerate}[label=(\Roman*)]
-  \item If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
-    hyperbolic, and the pair
-    $(\ora{ba},\ora{ab})$ is R-parallel and  $(\ora{aB},\ora{Ba})$ are both  R-parallel.
-  \item If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
+  \item\label{item:ab-cross} If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
+    hyperbolic, and the pairs
+    $(\ora{ba},\ora{ab})$ and $(\ora{aB},\ora{Ba})$ are both R-parallel.
+  \item\label{item:ab-parallel} If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
     and $(\ora{ba},\ora{ab})$ R-cross.
   \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $aB$ is
     hyperbolic and $(\ora{Ba},\ora{aB})$ R-cross.
@@ -444,29 +463,43 @@ can change, as explained below.
   The statement that $(\ora{x},a\cdot\ora{x})$ are R-parallel is (by
   definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
   which in turn is equivalent to $a^+ \in (x^-,x^+)$ and
-  $a^- \notin (x^-,x^+)$, which is turn is equivalent to $\ora{a}$ and
-  $\ora{x}$ R-crossing.
+  $a^- \notin (x^-,x^+)$, which is turn is equivalent to
+  $(\ora{a},\ora{x})$ R-crossing.
 \end{proof}
 
-\DPTtodo[inline]{IN PROGRESS: Substantial reorg}
 As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following.
 
 \begin{lemma}
-  Let $a,b,x \in \pi_1(S)$ be group elements so that $a$ and $b$ cross
-  $x$ to the right. Then
+  Let $a,b,x \in \pi_1(S)$ be group elements so that $(\ora{a},\ora{x})$ and $\ora{b},\ora{x})$ R-cross. Then:
   \begin{enumerate}
-  \item $ab$ cross $x$ to the right.
-      \item $x^{\pm 1}a$, and $ax^{\pm 1}$ cross $x$ to the right.
-     \item  $ax^nbx^k$ for any $n,k \in \bbZ$ cross $x$ to the right.
+  \item All four geodesics $\ora{xa}$, $\ora{Xa}$, $\ora{ax}$, and
+    $\ora{aX}$ R-cross $\ora{x}$.
+  \item $(\ora{ab},\ora{x})$ R-cross.
+  \item More generally, for any $n,k \in \bbZ$, $(\ora{ax^nbx^k},\ora{x})$ R-cross.
   \end{enumerate}
     \label{lem:rhs_prod}
 \end{lemma}
 \begin{proof}
+  \DPTtodo[inline]{IN PROGRESS: New proof of this fact.}
+  For the first claim, consider the action on the interval
+  $(x^-,x^+)$: we have $x^{\pm1} \cdot (x^-,x^+) = (x^-,x^+)$ and $a
+  \cdot (x^-,x^+) \subsetneq (x^-,x^+)$, so $ax^{\pm1}$ and
+  $x^{\pm1}a$ all map this interval strictly inside itself. It follows
+  that all these elements are hyperbolic and R-cross $\ora{x}$.
+
+  For the second claim, we similarly have that both $a$ and $b$ map
+  $(x^-,x^+)$ strictly inside itself, so their product does as well.
+
+  The last claim is an immediate consequence of the first two parts.
+\end{proof}
+
+\DPTtodo[inline]{Old proof below}
+\begin{proof}
   \begin{enumerate}
-      \item Since both $a$ and $b$ cross $x$ to the right, we have the following relative cases between $a$ and $b$.
-      
-      \begin{enumerate}
-          \item $a$ and $b$ cross to the right. In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we have that $ab$ crosses $x$ to the right.
+  \item Since both $a$ and $b$ cross $x$ to the right, we have the following relative cases between $a$ and $b$.
+    \begin{enumerate}
+    \item \DPTtodo{For this proof, need to expand earlier lemma}
+      $a$ and $b$ cross to the right. In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we have that $ab$ crosses $x$ to the right.
           \item $b$ and $a$ cross to the right.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we also have that $ab$ crosses $x$ to the right, switching the roles of $a$ and $b$ in that figure.
           \item $a$ and $b$ are parallel.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (II), we have that $ab$ crosses $x$ to the right.
           \item $b$ and $a$ are parallel.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (II), we also have that $ab$ crosses $x$ to the right, switching the roles of $a$ and $b$ in that figure.
