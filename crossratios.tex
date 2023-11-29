@@ -2,12 +2,29 @@
 
 \label{sec:crossratios}
 
+A \emph{generalized cross-ratio} is a function $[ \cdot, \cdot, \cdot, \cdot ]$ on $\partial S^{(4)}$ satisfying:
+
+\begin{enumerate}
+\item $[a,b,c,d]=[c,d,a,b]$ for any ccw tuple $(a,b,c,d)$.
+\item If $a,b,c,d,e$ appear ccw, $[a,b,d,e]=[a,b,c,e]+[a,c,d,e]$
+\item $\Gamma$-invariance.
+\end{enumerate}
+
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $c$ on $\Sigma$ represented by a group element $g$, be defined as
 \[
 \ell(g) \coloneqq [g^-, x , g \cdot x, g^+ ]
 \]
+From the properties of a generalized cross-ratio, it is easy to see that $\ell(g)=\ell(G)$. \DMGtodo[inline]{insert proof here? we have it.}
 
-\DMGtodo[inline]{disconnected smoothing}
+$\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
+We note that this can be inferred a posteriori from \cite{BIPP21:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy smoothing. However, the proof we give here uses only the definition of generalized cross-ratio and thus subsumes the work in \cite{BIPP21:PositiveCrossratios} under the scope of our theorem. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries on the surface.
+THis will also be helpful in establishing the generalized max-smoothing property for measured laminations.
+
+We divide the proof into several cases, depending on the type of smoothing (connected vs disconnected) and the relative position of certain axes of the resolutions.
+
+\subsection{Disconnected smoothing}
+
+In this situation, we will see that even though there is only one case to consider, the proof is a bit more involved, relying on some tricks using the $\Gamma$ invariance property of the cross-ratio.
 
 \begin{lemma}
 Given two $C_1$ and $C_2$ represented by group elements $a$ and $b$ with an essential crossing, we prove that
@@ -161,17 +178,40 @@ In the pictures, the bold font in the caption indicates that the result is final
 
 \end{proof}
 
-\DMGtodo[inline]{connected smoothing}
+\subsection{Connected smoothing}
 
-If $C$ represents a curve with a self-intersection decomposing as $ab$, we have several cases to consider.
+If $C$ represents a curve with a self-intersection decomposing as $ab$, we have several cases to consider, depending on the relative position of $a$ and $b$, and on the position of $aB$ and $Ba$ (intersecting or non-intersecting).
+
+\subsubsection{Parallel $a$ and $b$}
+
+In the case when $a$ and $b$ are parallel, there are two cases to consider.
+
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c1}}
+    \caption{$a$ and $b$ parallel, case 1 ($aB$ and $Ba$ do not intersect)}\label{fig:c1}
+\end{figure}
+
+
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c2}}
+    \caption{$a$ and $b$ parallel, case 2 ($aB$ and $Ba$  intersect)}\label{fig:c2}
+\end{figure}
 
 \begin{lemma}
+We have
 \[
-\ell(ab) \geq \ell(aB).
+\ell(ab) \geq \ell(aB)
+\]
+and
+\[
+\ell(ab) \geq \ell(a) + \ell(b).
 \]
 \end{lemma}
 \begin{proof}
-    The proof follows by noticing that $AB \cdot (baB)^- = a^-$,
+We start by analyzing case 1 first.
+For the first inequality compare Figure \ref{fig:c1}. The proof follows by noticing that $AB \cdot (baB)^- = a^-$,
     and
     \[
     [baB^+, ba^+, ba^-, a-] = [ba^-, a^-, baB^-, ba^+]=\ell(ba).
@@ -180,13 +220,28 @@ If $C$ represents a curve with a self-intersection decomposing as $ab$, we have 
     \[
     \ell(aB)= [aB^-, (baB)^-, a^-, aB^+] \leq [ba^-, a^-, baB^-, ba^+]=\ell(ba).
     \]
+For the second inequality, we can write, using the flip relation and the additive relation of the cross-ratio
+\begin{align*}
+\ell(ba)&=[ba^-, a^-, b \cdot a^-, ba^+] = [b \cdot a^-, ba^+,ba^-, a^-] =\\
+&[b \cdot a^-, ba^+,b^+, a^-] +  [b \cdot a^-, b^+,b^-, a^-] + \\
+&[b \cdot a^-, b^-,ab^-, a^-] + [b \cdot a^-, ab^-,ba^-, a^-].
+\end{align*}
+Therefore, by using the addivity property repeatedly, we get
+\begin{align*}
+\ell(ba) &\geq  [b \cdot a^-, b^+,b^-, a^-] + [b \cdot a^-, ab^-,ba^-, a^-] =\\
+&[b \cdot a^-, b^+,b^-, a^-] +[ba^-, a^-, b \cdot a^-, ab^-]\\
+&[b \cdot a^-, b^+,b^-, a^-] +[ba^-, a^-, a^+, ab^-] +  [ba^-, a^+, b \cdot a^-, ab^-] \geq \\
+& [b \cdot a^-, b^+,b^-, a^-] +[ba^-, a^-, a^+, ab^-] = \\
+& [b \cdot a^-, b^+,b^-, a^-] +[ba^-, A^+, A^-, ab^-] = \\
+& \ell(b) + \ell(A) = \ell(b) + \ell(a)
+\end{align*}
+where in the last equation we used the fact that $\ell(a)=\ell(A)$.
+The same proof follows verbatim in case 2 for the second inequality, since we have not used the position of the axes $aB$ and $Ba$.
+
+It remains to prove the first inequality for case 2.
 \end{proof}
 
-\begin{figure}[h!]
-     \centering
-\resizebox{80mm}{!}{\svgfig{c1}}
-    \caption{$\ell(ab) \geq \ell(aB)$}\label{fig:c1}
-\end{figure}
+
 
 %%% Local Variables:
 %%% mode: latex
