@@ -80,6 +80,8 @@ See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on 
 
 As a corollary, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
 
+
+
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:intersections}. Then,
 \begin{itemize}
@@ -87,11 +89,10 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:
 \begin{equation*}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation*}
-    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the so-called \emph{disconnected $\lambda$-smoothing property}: \DMGtodo[inline]{state in terms of exponentials}
-    \begin{equation}
-      \lambda\left(\mfig{curves-0}\right) = \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right).
+    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the so-called \emph{disconnected $\lambda$-smoothing property}: 
+\begin{equation}
+     e^{f(C_1) + f(C_2)}= e^{\left(\mfig{curves-0}\right)} =  e^{\left(\mfig{curves-1}\right)}+e^{\lambda\left(\mfig{curves-2}\right)}
     \end{equation}
-    where $\lambda(C) \coloneqq 2\cosh\left(\frac{f(C)}{2}\right)$.
 \end{itemize}
     The left-hand-side of both equations depicts an essential crossing between any pair of multi-curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
     \label{mainthm:apps}

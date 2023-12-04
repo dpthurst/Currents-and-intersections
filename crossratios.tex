@@ -33,7 +33,7 @@ Given two $C_1$ and $C_2$ represented by group elements $a$ and $b$ with an esse
 \ell(a) + \ell(b) \geq \ell(ab).
 \]
 \end{lemma}
-\begin{proof}
+\begin{proof} 
 
 The proof consists on decomposing $[(ba)^-, (Ab)^+, (ba) \cdot (Ab)^+, (ba)^+]$ into boxes $(1,I), (1,II), (2,I), (2,II), (3,I)$ and $(3, II)$ and showing, by splitting these boxes into sub-boxes and applying $b$ and $b^{-1}$ conveniently, that each one of these sub-boxes can be contained in either $[a^-, (Ab)^+, a \cdot (Ab)^+, a^+]$ or $[b^-, (ba)^+, b \cdot (bA)^+, b^+]$ without overlaps. We also note that $(ba)(Ab)(ba)^{-1}=b(bA)b^{-1}$, which will play a key role in the pictures below.
 In the pictures, the bold font in the caption indicates that the result is final, and will not be perturbed further.
@@ -180,24 +180,50 @@ In the pictures, the bold font in the caption indicates that the result is final
 
 \subsection{Connected smoothing}
 
-If $C$ represents a curve with a self-intersection decomposing as $ab$, we have several cases to consider, depending on the relative position of $a$ and $b$, and on the position of $aB$ and $Ba$ (intersecting or non-intersecting).
+If $C$ represents a curve with a self-intersection decomposing as $ab$, we have several cases to consider, depending on the relative position of $a$ and $b$ (parallel or anti-parallel) and, in each of these cases, one has to consider several subcases, too, depending on the relative position of the reflection lines.
 
-\subsubsection{Parallel $a$ and $b$}
+In the case when $a$ and $b$ are parallel, consider the common perpendicular of $a$ and $b$.
+Write $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$, where $R_i$ are reflections along pairwise non-intersecting reflection lines (since $aB$ and $ab$ are hyperbolic).
+Then, we can write
+$ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
+We have the following possible four configurations of non-intersecting reflection lines. We also draw their corresponding translation axes for each isometry.
+Case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and they should stay on the same side of $\ora{b}$, which does not happen in that configuration.
 
-In the case when $a$ and $b$ are parallel, there are two cases to consider.
+
+
 
 \begin{figure}[h!]
      \centering
-\resizebox{80mm}{!}{\svgfig{c1}}
-    \caption{$a$ and $b$ parallel, case 1 ($aB$ and $Ba$ do not intersect)}\label{fig:c1}
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{r3}}
+    \caption{$a$ and $b$ parallel, case 1}\label{fig:r3}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{r2}}
+    \caption{$a$ and $b$ parallel, case 2}\label{fig:r2}}
+     \end{subfigure}
 \end{figure}
-
 
 \begin{figure}[h!]
      \centering
-\resizebox{80mm}{!}{\svgfig{c2}}
-    \caption{$a$ and $b$ parallel, case 2 ($aB$ and $Ba$  intersect)}\label{fig:c2}
+\resizebox{80mm}{!}{\svgfig{r1}}
+    \caption{$a$ and $b$ parallel, case 3}\label{fig:r1}
 \end{figure}
+
+We note there is another case where the reflection lines below $R_1$ are exchanged by the ones above it.
+Also, in case 3, $\ora{aB}$ and $\ora{Ba}$ need not cross.
+Therefore, when $a$ and $b$ are anti-parallel, the only case when $\ora{ab}$ and $\ora{ba}$ may cross is obtained from case 3 by exchanging $b$ for $B$.
+
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{r4}}
+    \caption{$a$ and $b$ anti-parallel, case 4}\label{fig:r4}
+\end{figure}
+
+In order to check the smoothing property for $\ell$ for a connected smoothing, we have to prove the following lemma.
 
 \begin{lemma}
 We have
@@ -210,7 +236,13 @@ and
 \]
 \end{lemma}
 \begin{proof}
-We start by analyzing case 1 first.
+The first inequality involves the relative position of $aB, Ba$ with respect to the other axes, so we must proceed case by case. We start by analyzing case 1 first.
+
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c1}}
+    \caption{Checking $\ell(ab) \geq \ell(aB)$ in case 1}\label{fig:c1}
+\end{figure}
 For the first inequality compare Figure \ref{fig:c1}. The proof follows by noticing that $AB \cdot (baB)^- = a^-$,
     and
     \[
@@ -220,6 +252,16 @@ For the first inequality compare Figure \ref{fig:c1}. The proof follows by notic
     \[
     \ell(aB)= [aB^-, (baB)^-, a^-, aB^+] \leq [ba^-, a^-, baB^-, ba^+]=\ell(ba).
     \]
+    The same argument works for case 3.
+    
+
+    
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c2}}
+    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c2}
+\end{figure}
+
 For the second inequality, we can write, using the flip relation and the additive relation of the cross-ratio
 \begin{align*}
 \ell(ba)&=[ba^-, a^-, b \cdot a^-, ba^+] = [b \cdot a^-, ba^+,ba^-, a^-] =\\
@@ -236,7 +278,7 @@ Therefore, by using the addivity property repeatedly, we get
 & \ell(b) + \ell(A) = \ell(b) + \ell(a)
 \end{align*}
 where in the last equation we used the fact that $\ell(a)=\ell(A)$.
-The same proof follows verbatim in case 2 for the second inequality, since we have not used the position of the axes $aB$ and $Ba$.
+Note this computation works for case 1, case 2 and case 3, since we have not used the position of the axes $aB$ and $Ba$. For case 4, we need a separate argument \DMGtodo[inline]{finish argument for case 4}
 
 It remains to prove the first inequality for case 2.
 \end{proof}
