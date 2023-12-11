@@ -5,8 +5,8 @@
 A \emph{generalized cross-ratio} is a function $[ \cdot, \cdot, \cdot, \cdot ]$ on $\partial S^{(4)}$ satisfying:
 
 \begin{enumerate}
-\item $[a,b,c,d]=[c,d,a,b]$ for any ccw tuple $(a,b,c,d)$.
-\item If $a,b,c,d,e$ appear ccw, $[a,b,d,e]=[a,b,c,e]+[a,c,d,e]$
+\item (flip) $[a,b,c,d]=[c,d,a,b]$ for any ccw tuple $(a,b,c,d)$.
+\item (additivity) If $a,b,c,d,e$ appear ccw, $[a,b,d,e]=[a,b,c,e]+[a,c,d,e]$
 \item $\Gamma$-invariance.
 \end{enumerate}
 
@@ -24,18 +24,32 @@ We divide the proof into several cases, depending on the type of smoothing (conn
 
 \subsection{Disconnected smoothing}
 
-In this situation, we will see that even though there is only one case to consider, the proof is a bit more involved, relying on some tricks using the $\Gamma$ invariance property of the cross-ratio.
+
 
 \begin{lemma}
-Given two $C_1$ and $C_2$ represented by group elements $a$ and $b$ with an essential crossing, we prove that
-
+Suppose we have curves $[a]$ and $[b]$ so that $b$ right crosses $a$, and therefore $[a] \cup [b] \searrow [ab]$ and  $[a] \cup [b] \searrow [aB]$.
+Then
 \[
-\ell(a) + \ell(b) \geq \ell(ab).
+\ell(a) + \ell(b) \geq \ell(ab)
+\]
+and
+\[
+\ell(a) + \ell(B) \geq \ell(aB).
 \]
 \end{lemma}
 \begin{proof} 
+We will only prove the first inequality, since the second one follows from the first by noting that if $b$ right crosses $a$, then $a$ right crosses $B$, and thus the first inequality applied to this pair becomes
+\[
+\ell(a) + \ell(B) \geq \ell(Ba)
+\]
+which is the same as the second inequality noting that $\ell(B)=\ell(b)$ and $\ell(Ba)=\ell(aB)$.
 
-The proof consists on decomposing $[(ba)^-, (Ab)^+, (ba) \cdot (Ab)^+, (ba)^+]$ into boxes $(1,I), (1,II), (2,I), (2,II), (3,I)$ and $(3, II)$ and showing, by splitting these boxes into sub-boxes and applying $b$ and $b^{-1}$ conveniently, that each one of these sub-boxes can be contained in either $[a^-, (Ab)^+, a \cdot (Ab)^+, a^+]$ or $[b^-, (ba)^+, b \cdot (bA)^+, b^+]$ without overlaps. We also note that $(ba)(Ab)(ba)^{-1}=b(bA)b^{-1}$, which will play a key role in the pictures below.
+The proof of the first inequality consists on partitioning the fundamental domain of $Ab$ given by $(Ab^+, Ab^-) \times ((ba)^-, ba \cdot (Ab)^+)$ (which will compute $\ell(ba)$ via 
+$[(ba)^-, (Ab)^+, (ba) \cdot (Ab)^+, (ba)^+]$)
+into boxes $(1,I), (1,II), (2,I), (2,II), (3,I)$ and $(3, II)$ and showing, by splitting these boxes into sub-boxes and applying $b$ and $b^{-1}$ conveniently, that each one of these sub-boxes can be contained without intersections in either the fundamental domain of $a$ given by $(a^+, a^-) \times ((Ab)^+, a \cdot (Ab)^+)$ (computing $\ell(a)$ via 
+$[a^-, (Ab)^+, a \cdot (Ab)^+, a^+]$) or the fundamental domain of $b$ given by $(b^+, b^-) \times ((bA)^+, b \cdot (bA)^+)$ (computing $\ell(b)$ with the cross-ratio $[b^-, (bA)^+, b \cdot (bA)^+, b^+]$). 
+
+We also note that $(ba)(Ab)(ba)^{-1}=b(bA)b^{-1}$, which will play a key role in the pictures below.
 In the pictures, the bold font in the caption indicates that the result is final, and will not be perturbed further.
 
 \begin{figure}[h!]
@@ -81,7 +95,7 @@ In the pictures, the bold font in the caption indicates that the result is final
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{80mm}{!}{\svgfig{cr1a4}}
-    \caption{$b$ applied to $(1,II)$}\label{fig:cr1a4}}
+    \caption{$bA$ applied to $(1,II)$}\label{fig:cr1a4}}
      \end{subfigure}
 \end{figure}
 
@@ -89,14 +103,8 @@ In the pictures, the bold font in the caption indicates that the result is final
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr1a6}}
-    \caption{\textbf{Split one portion}}\label{fig:cr1a6}}
-     \end{subfigure}
-\hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
 \resizebox{80mm}{!}{\svgfig{cr1a5}}
-    \caption{\textbf{Split other portion, apply $b^{-1}$}}\label{fig:cr1a5}}
+    \caption{\textbf{$b$ applied to previous}}\label{fig:cr1a5}}
      \end{subfigure}
 \end{figure}
 
@@ -142,7 +150,8 @@ In the pictures, the bold font in the caption indicates that the result is final
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{80mm}{!}{\svgfig{cr3a2}}
-    \caption{ $b^{-1}$ applied to previous}\label{fig:cr3a2}}
+    \caption{ \textbf{$b^{-1}$ applied to previous
+    }\label{fig:cr3a2}}
      \end{subfigure}
 \end{figure}
 
@@ -157,7 +166,7 @@ In the pictures, the bold font in the caption indicates that the result is final
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{80mm}{!}{\svgfig{cr3b2}}
-    \caption{Split previous}\label{fig:cr3b2}}
+    \caption{$b^{-1}$}\label{fig:cr3b2}}
      \end{subfigure}
 \end{figure}
 
@@ -180,17 +189,31 @@ In the pictures, the bold font in the caption indicates that the result is final
 
 \subsection{Connected smoothing}
 
-If $C$ represents a curve with a self-intersection decomposing as $ab$, we have several cases to consider, depending on the relative position of $a$ and $b$ (parallel or anti-parallel) and, in each of these cases, one has to consider several subcases, too, depending on the relative position of the reflection lines.
+\begin{lemma}
+Suppose $C$ represents a curve with a self-intersection decomposing as $ab$, so that one of its smoothings is the multi-curve $[a] \cup [b]$, and the other resolution in $[aB]$.
+Then, we have
+\[
+\ell(ab) \geq \ell(aB)
+\]
+and
+\[
+\ell(ab) \geq \ell(a) + \ell(b).
+\]
+\end{lemma}
 
-In the case when $a$ and $b$ are parallel, consider the common perpendicular of $a$ and $b$.
-Write $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$, where $R_i$ are reflections along pairwise non-intersecting reflection lines (since $aB$ and $ab$ are hyperbolic).
-Then, we can write
+\begin{proof}
+
+If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
+
+One of the resolutions of $[ab]$ is the multi-curve $[a] \cup [b]$.
+The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel. \DMGtodo[inline]{does this need justification? This is essentially saying that we only need to consider the case $a$ and $b$ parallel, and we do not need to worry about $a$ and $b$ being anti-parallel.}
+It remains to determine the position of the lifts $\ora{aB}$ and $\ora{Ba}$.
+
+To that end, consider the common perpendicular line of $a$ and $b$. Let $R_1$ be the reflection along this line.
+Let $R_2, R_3, R_4, R_5$ be reflections so that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Note that $R_i$ are reflections along pairwise non-intersecting reflection lines, since $aB$ and $ab$ are hyperbolic.
+It then follows that 
 $ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
-We have the following possible four configurations of non-intersecting reflection lines. We also draw their corresponding translation axes for each isometry.
-Case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and they should stay on the same side of $\ora{b}$, which does not happen in that configuration.
-
-
-
+We have the following possible four configurations of non-intersecting reflection lines. 
 
 \begin{figure}[h!]
      \centering
@@ -203,7 +226,7 @@ Case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{80mm}{!}{\svgfig{r2}}
-    \caption{$a$ and $b$ parallel, case 2}\label{fig:r2}}
+    \caption{$a$ and $b$ parallel, case 2 (can be ruled out)}\label{fig:r2}}
      \end{subfigure}
 \end{figure}
 
@@ -213,56 +236,90 @@ Case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}
     \caption{$a$ and $b$ parallel, case 3}\label{fig:r1}
 \end{figure}
 
-We note there is another case where the reflection lines below $R_1$ are exchanged by the ones above it.
-Also, in case 3, $\ora{aB}$ and $\ora{Ba}$ need not cross.
-Therefore, when $a$ and $b$ are anti-parallel, the only case when $\ora{ab}$ and $\ora{ba}$ may cross is obtained from case 3 by exchanging $b$ for $B$.
 
-\begin{figure}[h!]
-     \centering
-\resizebox{80mm}{!}{\svgfig{r4}}
-    \caption{$a$ and $b$ anti-parallel, case 4}\label{fig:r4}
-\end{figure}
+In the figures, we also draw their corresponding translation axes for each isometry.
+We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.
+We note there is another case, analogous to case 2, where the reflection lines below $R_1$ are exchanged by the ones above it, which can be similarly ruled out.
 
-In order to check the smoothing property for $\ell$ for a connected smoothing, we have to prove the following lemma.
+We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross.
 
-\begin{lemma}
-We have
-\[
-\ell(ab) \geq \ell(aB)
-\]
-and
-\[
-\ell(ab) \geq \ell(a) + \ell(b).
-\]
-\end{lemma}
-\begin{proof}
+Now that we know which possible configurations of lifts can arise in the universal cover, we proceed to check both inequalities in the Lemma.
+
 The first inequality involves the relative position of $aB, Ba$ with respect to the other axes, so we must proceed case by case. We start by analyzing case 1 first.
 
+We will compare a fundamental domain of $BA$ to that of $Ab$.
+Figure \ref{fig:c7} shows these two fundamental domains, with the fundamental domain of $Ab$ partitioned into three subsets $I$, $II$ and $III$. Figure \ref{fig:c71} singles out the first one of these regions, region $I$, corresponding to $(Ab^+, Ab^-) \times (B \cdot a^+, ab^-)$. 
+Noting that $Ab^+ = Ba^-$ and $Ab^- = Ba^+$,
+this set of geodesics is translated by $b$ to $(aB^-, aB^+) \times (a^+, ba^-)$, represented in Figure \ref{fig:c721}, which is contained in the fundamental domain of $BA$.
+Region $II$ is already contained in the fundamental domain of $BA$, and it does not intersect the $b$ translate of region $I$ considered above.
+We focus on region $III$, to finish, singled out in Figure \ref{fig:c72}, given by $(Ba^-, Ba^+) \times (ab^+, a^+)$. Applying $B$ to it, we obtain $ (B \cdot Ba^-, B \cdot Ba^+) \times (B \cdot ab^+, B \cdot a^+)$. Since $ba^- < Ba^-$, we have $ab^- < B \cdot Ba^-$, and thus $(B \cdot ab^+, B \cdot a^+) \subset (ab^-, ab^+)$. Also, $(B \cdot ab^+, B \cdot a^+) \subset (a^+, B \cdot a^+)$. Thus, the $B$ translate of region $III$ is contained in the fundamental domain of $BA$. The last observation is that the $B$ translate of region $III$ does not intersect either the $b$ translate of region $I$ or region $II$. This concludes the proof.
+
 \begin{figure}[h!]
      \centering
-\resizebox{80mm}{!}{\svgfig{c1}}
-    \caption{Checking $\ell(ab) \geq \ell(aB)$ in case 1}\label{fig:c1}
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{c7}}
+    \caption{Fundamental domain of $Ab$ partitioned into three subsets, $I$, $II$ and $III$.}\label{fig:c7}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{c71}}
+    \caption{Box I}\label{fig:c71}}
+     \end{subfigure}
 \end{figure}
-For the first inequality compare Figure \ref{fig:c1}. The proof follows by noticing that $AB \cdot (baB)^- = a^-$,
-    and
-    \[
-    [baB^+, ba^+, ba^-, a-] = [ba^-, a^-, baB^-, ba^+]=\ell(ba).
-    \]
-    Since $(aB^+, aB^-) \subset (AB^+, AB^-)$, we have
-    \[
-    \ell(aB)= [aB^-, (baB)^-, a^-, aB^+] \leq [ba^-, a^-, baB^-, ba^+]=\ell(ba).
-    \]
-    The same argument works for case 3.
-    
+
+\newpage
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{c712}}
+    \caption{\textbf{$b$ applied to box $I$. }\label{fig:c712}}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{c72}}
+    \caption{Box $III$}\label{fig:c72}}
+     \end{subfigure}
+\end{figure}
+
+\begin{figure}[h!]
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{c721}}
+    \caption{\textbf{$B$ applied to box $III$}}\label{fig:c721}}
+     \end{subfigure}
+\end{figure}
+
+
 
     
+    For case 3, compare Figure \ref{fig:c5}. 
+    \begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c5}}
+    \caption{Checking $\ell(ab) \geq \ell(aB)$ in case 3}\label{fig:c5}
+\end{figure} 
+
+Following that figure, note that $B \cdot a^- = BA \cdot a^-$, thus $(a^-, B \cdot a^-) \subset (ab^+, ab^-)$.
+    Also, $ab \cdot Ba^- = a \cdot aB^-$. Observe then that since $ba^+ > aB^-$ in ccw order, we have that $a \cdot aB^- > ab^+$ in ccw order.
+    We thus have $(Ba^+, Ba^-) \subset (Ba^-, a \cdot aB)$, and therefore
+    $\ell(Ba) \leq \ell(ab)$. 
+
+
+
+For the second inequality, compare Figure \ref{fig:c2}.
+
 \begin{figure}[h!]
      \centering
 \resizebox{80mm}{!}{\svgfig{c2}}
     \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c2}
-\end{figure}
+\end{figure} 
 
-For the second inequality, we can write, using the flip relation and the additive relation of the cross-ratio
+We can write, using the flip relation and the additive relation of the cross-ratio
 \begin{align*}
 \ell(ba)&=[ba^-, a^-, b \cdot a^-, ba^+] = [b \cdot a^-, ba^+,ba^-, a^-] =\\
 &[b \cdot a^-, ba^+,b^+, a^-] +  [b \cdot a^-, b^+,b^-, a^-] + \\
@@ -278,9 +335,7 @@ Therefore, by using the addivity property repeatedly, we get
 & \ell(b) + \ell(A) = \ell(b) + \ell(a)
 \end{align*}
 where in the last equation we used the fact that $\ell(a)=\ell(A)$.
-Note this computation works for case 1, case 2 and case 3, since we have not used the position of the axes $aB$ and $Ba$. For case 4, we need a separate argument \DMGtodo[inline]{finish argument for case 4}
-
-It remains to prove the first inequality for case 2.
+Note this computation works for case 1 and case 3, since we have not used the position of the axes $aB$ and $Ba$.
 \end{proof}
 
 
