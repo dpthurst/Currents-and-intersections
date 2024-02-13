@@ -51,6 +51,8 @@ For example, Erlandsson shows that word-length with respect to simple generating
 In fact, the usual first step in the solution to a marked length rigidity problems for a metric structure $\rho$ is to find a geodesic current $\mu_{\rho}$ satisfying the above intersection  property
 In this paper, we give an answer to the following question.
 
+There are other natural notions of lengths associated to surface groups that are not dual to a geodesic current. For example, Fricker-Furman show in \cite[Theorem A]{FF21:QF} that for a quasi-fuchsian representation $\rho$, that is, a deformation of a fuchsian representation of $\pi_1(S)$ inside of $\PSL(2,\mathbb{C})$ whose limit set is still homeomorphic to a circle, the natural notion of stable length $\ell_{\rho}$ associated to this representation is dual to a geodesic current if and only if the representation is fuchsian (i.e., the deformation is trivial).
+
 \begin{question}\label{q:intersection}
 Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
 What are sufficient and necessary conditions for $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ to have a dual geodesic current?
@@ -76,11 +78,12 @@ for every multi-curve $C$.
 \end{mainthm}
 
 Feng Luo considered the version of this question for measured laminations, which can be seen as geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo studies functions defined on simple closed curves \cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. We outline the relation between our conditions and Feng Luo's conditions in Proposition~\ref{prop:feng}.
-See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems.
+See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems. In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details) Fricker-Furman \cite[Theorem A]{FF21:QF} show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. In their paper, they note that the smoothing property is indeed a necessary condition for a negatively curved length, which is dual to a geodesic current by \cite[Theorem 2]{Otal90:SpectreMarqueNegative}(although they phrase it in a slightly different terminology, see  \cite[Section 2]{FF21:QF}).
+In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current.
+Our result implies that, in fact, the smoothing property is a \emph{necessary} condition for \emph{any} length dual to a geodesic current. More importantly, adding a few more mild assumptions, it shows that it is also a \emph{sufficient} condition.
+\DMGtodo[inline]{add here a comment on how our result can be useful in the study of left invariant pseudo-metrics on surface groups, such as those coming from Green metrics}.
 
 As a corollary, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
-
-
 
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:intersections}. Then,
@@ -90,13 +93,13 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation*}
     \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the so-called \emph{disconnected $\lambda$-smoothing property}: 
-\begin{equation}
+\begin{equation} 
      e^{f(C_1) + f(C_2)}= e^{\left(\mfig{curves-0}\right)} =  e^{\left(\mfig{curves-1}\right)}+e^{\lambda\left(\mfig{curves-2}\right)}
     \end{equation}
 \end{itemize}
     The left-hand-side of both equations depicts an essential crossing between any pair of multi-curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
-    \label{mainthm:apps}
-\end{mainthm}
+    \label{mainthm:apps} \DMGtodo[inline]{not stated as the one in that section}
+\end{mainthm} 
 
 As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
  Let $G$ be a surface group, i.e. $G=\pi_1(X)$ for some closed hyperbolic surface $X$, and $T$ an $\mathbb{R}$-tree. Suppose $G$ acts on $T$ by isometries. It turns out that an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or it has fixed points (elliptic).
@@ -247,8 +250,8 @@ Many natural notions of length do satisfy all these four properties and they hav
     \item Even more generally, non-positively curved Riemannian metrics
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
 \item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}
-\item More generally, lengths with respect to negatively curved  metrics with conical singularities \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
-\item Non-positively curved Euclidean cone metrics \cite[Proposition~3.3]{BL17:RigidityFlat}.
+\item More generally, lengths with respect to negatively curved  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
+\item Non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
     \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
 \end{enumerate}
@@ -259,6 +262,7 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
+    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$. \DMGtodo[inline]{Does $R$ depend on the quasi-conformal constant of the limit set? Probably. That would be a good way to show proper containment of $\QConvex_R(S) \subset \QConvex(S)$. }
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
@@ -266,7 +270,8 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
       even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
       This is an example of a curve functional which is not in
       $\QConvex(S)$, even though it does extend to geodesic currents
-      by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}. 
+      by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
+\item Translation lengths associated to embedded graphs on a surface whose actions are not proper \cite[Proposition 11]{Bonahon91:CurrentsGroups} do not satisfy quasi-smoothing and, moreover, do not extend to geodesic currents. 
 \item Lorentzian length of an affine action of a Fuchsiaon group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}.
 \end{enumerate}
 
@@ -318,6 +323,8 @@ See also Section~\ref{sec:questions}.
 By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
     Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
+\DMGtodo[inline]{add something about cross ratios}
+
 \subsection{Open surfaces}
 
 A natural question is if our results can be extended to the setting of open surfaces (i.e., compact surfaces with boundary, or finite type surfaces with punctures).
@@ -348,7 +355,7 @@ However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geo
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-We would like to thank Giuseppe Martone, Beatrice Pozzetti, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
+We would like to thank Giuseppe Martone, Beatrice Pozzetti, Eduardo Reyes, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
 
 The first author was supported by the Hazel King Thompson fellowship of the Mathematics Department of the Indiana University Bloomington, for the initial part of this work, and by the Luxembourg National research Fund AFR/Bilateral-ReSurface 22/17145118 for the last part of the project.
 The second author was supported by the National Science

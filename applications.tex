@@ -37,7 +37,7 @@ We will now characterize measured laminations as curve functionals in $\AConvex(
 We will need the following observation about the measure of sets intersecting pairs of geodesic segments.
 We introduce the following notation. Given two geodesics segments $k$ and $k'$, we denote with $G(k)$ the set of geodesics intersecting $k$ transversely and let $G(k , k')$ be the set of geodesics intersecting both $k$ and $k$ transversely.
 Let $G(k | k)$ be the set of geodesics separating $k$ from $k'$, i.e., $\gamma \in G(k | k')$ if $k$ and $k'$ lie in distinct connected components of $\wt{X}-\gamma$.
-\begin{lemma}
+\begin{lemma} \DMGtodo[inline]{state lemma being careful about endpoints}
 Let $\mu$ be a geodesic current.
 Let $k=[x,y]$,$k'=[w,z]$ be two geodesic segments.
 Let $p=[x,w]$, $p'=[y,z]$
@@ -54,7 +54,7 @@ The claim then follows by an observation by Otal~\cite[Page~154]{Otal90:SpectreM
 
 We need first the following hyperbolic geometry lemma.
 
-\begin{proposition}\DMGtodo[inline]{I edited this}
+\begin{proposition} \DMGtodo[inline]{edit lemma being careful about endpoints}
 Consider two elements $g,h \in \pi_1(\Sigma)$ with hyperbolic axes $A_g$ and $A_h$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
 We define the following four points:
 
@@ -176,7 +176,7 @@ We suspect it can also be proven using similar arguments as the ones in Theorem~
 \end{remark}
 
 
-
+\DMGtodo[inline]{Checking that our assumptions imply Feng Luo's could probably go to an Appendix}
 In previous work~\cite{Lu10}, Feng Luo gave conditions on a curve functional on simple curves $f \colon \mathcal{S} \to \mathbb{R}$ to be realized as an intersection number with a measured lamination.
 Specifically, in \cite[Theorem~5.1]{Lu10}, Feng Luo proved that such
 $f$ is an intersection number with a measured lamination $\lambda$ if, for every essential subsurface $\Sigma'$ of $\Sigma$, which is a once-holed torus (resp. a four-holed sphere), the restriction of $f$ to $\mathcal{C}(\Sigma')$ satisfies certain conditions (in the statement of \cite[Theorem~5.1]{Lu10}, (7), (8) for one-holed torus (resp. (10), (11) for four-holed sphere).
@@ -380,7 +380,7 @@ The assumption can be written as
  \begin{equation}
     1/C \leq \frac{1- e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-2}\right)/2}}{e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-1}\right)/2}} \leq C.
     \end{equation}
-    \label{prop:char_liouville_strong}
+
     
     Now, as in the proof of Theorem~\ref{prop:char_liouville}, this gives us
 
@@ -457,7 +457,7 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{prop:small}
 \end{theorem}
 \begin{proof}
-We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+\DMGtodo[inline]{Figure out how irreducibility is being used, we never invoke it explicitly but we surely use it} We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
 We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
 There are several cases to consider, depending on the relative position of the axes of the elements in the tree. For each case, different inequalities between $\| g\| + \| h \|$, $\| gh \|$ and $\| gh^{-1} \|$ are satisfied, and were analyzed by Paulin~\cite{Pa89:Paulin1989TheGT}. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree, for each one of those cases.

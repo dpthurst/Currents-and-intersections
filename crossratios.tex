@@ -8,14 +8,36 @@ A \emph{generalized cross-ratio} is a function $[ \cdot, \cdot, \cdot, \cdot ]$ 
 \item (flip) $[a,b,c,d]=[c,d,a,b]$ for any ccw tuple $(a,b,c,d)$.
 \item (additivity) If $a,b,c,d,e$ appear ccw, $[a,b,d,e]=[a,b,c,e]+[a,c,d,e]$
 \item $\Gamma$-invariance.
+\item (positive) For any ccw tuple $a,b,c,d$, we have $[a,b,c,d] \geq 0$.
 \end{enumerate}
 
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $c$ on $\Sigma$ represented by a group element $g$, be defined as
 \[
 \ell(g) \coloneqq [g^-, x , g \cdot x, g^+ ]
 \]
-From the properties of a generalized cross-ratio, it is easy to see that $\ell(g)=\ell(G)$. \DMGtodo[inline]{insert proof here? we have it.}
+From the properties of a generalized cross-ratio, it is easy to see that 
 
+\begin{lemma}
+    For every $g \in \Gamma$, we have
+    \[
+    \ell(g)=\ell(g^{-1}).
+    \]
+    \label{lem:crinv}
+\end{lemma}
+\begin{proof}
+The geodesic $\gamma$ with endpoints $g^-, g^+$ divides $\partial \Gamma$ into two open intervals: one on the left in the forward direction of $\gamma$, the other on the right.
+Let $x \in \partial \Gamma$ be on the left interval, and $y \in \partial \Gamma$ on the right interval.
+We then have
+\begin{align*}
+\ell(g^{-1}) &= \lim_{n \to \infty} \frac{[g^{-n}y, g^-, g^+, g^{n} y]}{2n} \\
+  &= \lim_{n \to \infty}
+     \frac{[g^{-n}y, g^-, g^{-n}x, g^{n} y]}{2n} +  \\
+  &      \frac{[g^{-n}y, g^{-n}x, g^{n}x, g^{n} y]}{2n} + \\
+  &      \frac{[g^{-n}y, g^{n}x, g^+, g^{n} y]}{2n} = \ell(g) \\
+\end{align*}
+The first and last terms have limit zero as $n \to \infty$, by $\Gamma$-invariance, and the middle term is symmetric under
+switching $g$ and $g^{-1}$.
+\end{proof}
 $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
 We note that this can be inferred a posteriori from \cite{BIPP21:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy smoothing. However, the proof we give here uses only the definition of generalized cross-ratio and thus subsumes the work in \cite{BIPP21:PositiveCrossratios} under the scope of our theorem. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries on the surface.
 THis will also be helpful in establishing the generalized max-smoothing property for measured laminations.
@@ -38,89 +60,35 @@ and
 \]
 \end{lemma}
 \begin{proof} 
-We will only prove the first inequality, since the second one follows from the first by noting that if $b$ right crosses $a$, then $a$ right crosses $B$, and thus the first inequality applied to this pair becomes
+The second inequality follows from the first by noting that if $b$ right crosses $a$, then $a$ right crosses $B$, and thus the first inequality applied to this pair becomes
 \[
 \ell(a) + \ell(B) \geq \ell(Ba)
 \]
-which is the same as the second inequality noting that $\ell(B)=\ell(b)$ and $\ell(Ba)=\ell(aB)$.
+which is the same as the second inequality noting that $\ell(B)=\ell(b)$, by Lemma\ref{lem:crinv} and $\ell(Ba)=\ell(aB)$, by $\Gamma$-invariance.
 
-The proof of the first inequality consists on partitioning the fundamental domain of $Ab$ given by $(Ab^+, Ab^-) \times ((ba)^-, ba \cdot (Ab)^+)$ (which will compute $\ell(ba)$ via 
-$[(ba)^-, (Ab)^+, (ba) \cdot (Ab)^+, (ba)^+]$)
-into boxes $(1,I), (1,II), (2,I), (2,II), (3,I)$ and $(3, II)$ and showing, by splitting these boxes into sub-boxes and applying $b$ and $b^{-1}$ conveniently, that each one of these sub-boxes can be contained without intersections in either the fundamental domain of $a$ given by $(a^+, a^-) \times ((Ab)^+, a \cdot (Ab)^+)$ (computing $\ell(a)$ via 
-$[a^-, (Ab)^+, a \cdot (Ab)^+, a^+]$) or the fundamental domain of $b$ given by $(b^+, b^-) \times ((bA)^+, b \cdot (bA)^+)$ (computing $\ell(b)$ with the cross-ratio $[b^-, (bA)^+, b \cdot (bA)^+, b^+]$). 
-
-We also note that $(ba)(Ab)(ba)^{-1}=b(bA)b^{-1}$, which will play a key role in the pictures below.
-In the pictures, the bold font in the caption indicates that the result is final, and will not be perturbed further.
-
-\begin{figure}[h!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{cr0}}
-    \caption{Initial configuration}\label{fig:cr0}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{cr1a1}}
-    \caption{Box (1, I)}\label{fig:cr1a1}}
-     \end{subfigure}
-\end{figure}
-
-\newpage
+The proof of the first inequality will start by considering the fundamental domain of $ab$ given by $(B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure\ref{fig:d1}. At each step, we will apply an isometry given by either $a$ or $b$ (say, for example, $a$) and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
+Box I will be contained in either the fundamental domain of $a$, depicted in blue in Figure\ref{fig:d1} or a fundamental domain for $b$ depicted in red in that same Figure.
+We will apply the inverse of the isometry $a$, denoted by $A$, to Box II, and continue the process: apply a different isometry, say $b$ or $B$, partition so that one box is in a fundamental domain of $a$ or $b$, and apply the inverse isometry to the next.
+After a finite number of such steps we will end up having partitioned the fundamental domain of $ba$ into a union of disjoint boxes $(\mathfrak{a}_i)_{i=1}^k$, (resp. boxes $(\mathfrak{b}_j)_{j=1}^{\ell}$) contained without overlap in $\mathfrak{a}$, the fundamental domain of $a$, (resp. $\mathfrak{b}$, the fundamental domain of $b$) and whose total cross-ratio value is equal to $\ell(ab)$.
+Since we are assuming the cross ratio is positive, and $\cup_{i=1}^k \mathfrak{a}_i \subset \mathfrak{a}$, $\cup_{j=1}^{\ell} \mathfrak{b}_j \subset \mathfrak{b}$, we obtain the desired inequality.
+In what follows we illustrate the sequence of operations performed, at each step labeling the endpoints of the box of geodesics we are operating on, and highlighting it in bold purple.
+At most one isometry among $a$, $b$ or its inverses is applied to each partitioned box at the end of the process, so we can assume we are in the free group.
 
 \begin{figure}[h!]
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr1a2}}
-    \caption{\textbf{$b^{-1}$ applied to box $(1,I)$. Keep only one portion.}}\label{fig:cr1a2}}
-     \end{subfigure}
-     \hfill
-%      \begin{subfigure}[b]{0.45\textwidth}
-% \centering{
-% \resizebox{80mm}{!}{\svgfig{cr1a5}}
-%     \caption{Split from previous}\label{fig:cr1a5}}
-%      \end{subfigure}
-\end{figure}
-
-\begin{figure}[h!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{cr1a3}}
-    \caption{\textbf{$b$ applied to previous}}\label{fig:cr1a3}}
+\resizebox{60mm}{!}{\svgfig{d1}}
+    \caption{Initial configuration. Red is f.d. of $a$,
+blue is f.d. of $b$
+green is f.d. of $ab$}\label{fig:d1}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr1a4}}
-    \caption{$bA$ applied to $(1,II)$}\label{fig:cr1a4}}
-     \end{subfigure}
-\end{figure}
-
-% \begin{figure}[h!]
-%      \centering
-%      \begin{subfigure}[b]{0.45\textwidth}
-% \centering{
-% \resizebox{80mm}{!}{\svgfig{cr1a5}}
-%     \caption{\textbf{$b$ applied to previous}}\label{fig:cr1a5}}
-%      \end{subfigure}
-% \end{figure}
-
-
-\begin{figure}[h!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{cr2a1}}
-    \caption{\textbf{$(2,I)$}}\label{fig:cr2a1}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{cr2b1}}
-    \caption{$(2,II)$}\label{fig:cr2b1}}
+\resizebox{60mm}{!}{\svgfig{d2}}
+    \caption{Result of
+applying $A$ to f.d. of $ab$}\label{fig:d2}}
      \end{subfigure}
 \end{figure}
 
@@ -128,14 +96,17 @@ In the pictures, the bold font in the caption indicates that the result is final
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr2b2}}
-    \caption{Split portion of $(2,II)$}\label{fig:cr2b2}}
+\resizebox{60mm}{!}{\svgfig{d3}}
+    \caption{Purple portion
+is in f.d. of $b$.}\label{fig:d3}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr2b3}}
-    \caption{\textbf{Apply $b$ to previous}}\label{fig:cr2b3}}
+\resizebox{60mm}{!}{\svgfig{d4}}
+    \caption{\textbf{Result of applying $a$
+to purple box. This is
+in f.d. of $b$}}\label{fig:d4}}
      \end{subfigure}
 \end{figure}
 
@@ -143,14 +114,17 @@ In the pictures, the bold font in the caption indicates that the result is final
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr3a1}}
-    \caption{Box $(3,I)$}\label{fig:cr3a1}}
+\resizebox{60mm}{!}{\svgfig{d5}}
+    \caption{Remaining
+portion from Figure \ref{fig:d3} highlighted in purple here}\label{fig:d5}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
-\resizebox{80mm}{!}{\svgfig{cr3a2}}
-    \caption{ \textbf{$b^{-1}$ applied to previous
-    }\label{fig:cr3a2}}
+\centering{
+\resizebox{60mm}{!}{\svgfig{d6}}
+    \caption{Purple box shows
+result of applying
+a to previous purple in Figure \ref{fig:d5}}\label{fig:d6}}
      \end{subfigure}
 \end{figure}
 
@@ -158,33 +132,37 @@ In the pictures, the bold font in the caption indicates that the result is final
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr3b1}}
-    \caption{Box $(3,II)$}\label{fig:cr3b1}}
+\resizebox{60mm}{!}{\svgfig{d7}}
+    \caption{Result of
+applying $b$ to purple box}\label{fig:d7}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr3b2}}
-    \caption{$b^{-1}$}\label{fig:cr3b2}}
+\resizebox{60mm}{!}{\svgfig{d8}}
+    \caption{\textbf{Highlighted purple box is in f.d. of $a$} }\label{fig:d8}}
      \end{subfigure}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr3b3}}
-    \caption{\textbf{$b$ applied to previous}}\label{fig:cr3b3}}
+\resizebox{60mm}{!}{\svgfig{d9}}
+    \caption{The remaining purple portion from Figure \ref{fig:d8}}\label{fig:d9}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
-\resizebox{80mm}{!}{\svgfig{cr3b4}}
-    \caption{\textbf{Remaining portion of $(3,II)$}}\label{fig:cr3b4}}
+\resizebox{60mm}{!}{\svgfig{d10}}
+    \caption{\textbf{Result of applying $B$
+to remaining purple box in Figure \ref{fig:d9}. This
+is in f.d. of $b$}}\label{fig:d10}}
      \end{subfigure}
 \end{figure}
 
 \end{proof}
+
 
 \subsection{Connected smoothing}
 
@@ -336,6 +314,8 @@ Therefore, by using the addivity property repeatedly, we get
 where in the last equation we used the fact that $\ell(a)=\ell(A)$.
 Note this computation works for case 1 and case 3, since we have not used the position of the axes $aB$ and $Ba$.
 \end{proof}
+
+\DMGtodo[inline]{state a theorem on how to produce the current from a cross-ratio and viceversa}
 
 
 

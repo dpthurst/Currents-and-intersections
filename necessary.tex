@@ -1,0 +1,109 @@
+\section{Intersection numbers satisfy smoothing}
+\label{sec:necessary}
+In this section we give a detailed proof that intersection numbers satisfy the hypotheses of our theorem. The only non-trivial condition to check is smoothing. In \cite[4.1. Examples]{MGT21:Smoothings} we gave a topological proof of this fact for curves, and then conclude the result for any geodesic current by invoking density of weighted closed curves in the space of currents.
+Here we give a different proof for an arbitrary current that works in the universal cover, since it will be useful to prove later that measured laminations satisfy max-smoothing.
+
+\begin{proposition}
+Given a geodesic current $\mu$, the curve functional $i(\mu, \cdot)$ satisfies the hypotheses of Theorem\ref{mainthm:intersections}.
+\end{proposition}
+\begin{proof}
+\item (additivity and homogeneity) By definition (see \cite{Bonahon86:EndsHyperbolicManifolds}, intersection number is bilinear in both factors. In particular, additivity and homogeneity hold.
+\item (stability) Observe that given a curve $C$ with hyperbolic lift $\gamma$, and $x \in \gamma$, the set of geodesics $G(x, \gamma^n x]$ can be partitioned into $\cup_{i=1}^{n-1} G(x, \gamma^{i} \cdot x]$.  Thus, by \cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed}, 
+\[
+i(\mu, \gamma^n) = \mu(G(x, \gamma^n x]) = \sum_{i=1}^{n-1} \mu(G(x, \gamma^{i} \cdot x]) = n\mu(G(x, \gamma x]) = n i(\mu, \gamma).
+\]
+where in the second inequality we used finite additivity of $\mu$, and in the third one, $\Gamma$-invariance.
+\item (smoothing) Follows from Proposition \ref{prop:smoothing_nec}
+\end{proof}
+
+The following proof follows similar ideas as in the proof of \cite[Theorem A]{FF21:QF}.
+
+\begin{proposition}
+Suppose $a,b \in \Gamma$ are non-trivial elements with distinct fixed points on the boundary circle $\partial \Gamma$.
+Let $\mu$ be any geodesic current.
+Then,
+\begin{enumerate}
+\item If $b$ crosses $a$ to the right, then
+\[
+i(\mu, a) + i(\mu, b) \geq i(\mu, ab)
+\]
+and
+\[
+i(\mu, a) + i(\mu, b) \geq i(\mu, ab^{-1})
+\]
+\item If $a$ and $b$ are $R$-parallel, then
+\[
+ i(\mu, ab) \geq i(\mu, a) + i(\mu, b)
+\]
+and
+\[
+ i(\mu, ab) \geq i(\mu, ab^{-1})
+\]
+\item If $a$ and $b$ are $R$-anti-parallel, then
+\[
+ i(\mu, ab^{-1}) \geq i(\mu, a) + i(\mu, b)
+\]
+and
+\[
+ i(\mu, ab^{-1}) \geq i(\mu, ab)
+\]
+\end{enumerate}
+\label{prop:smoothing_nec}
+\end{proposition}
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{smoothnec1}}
+    \caption{$b$ right crosses $a$}\label{fig:smoothing1}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{smoothnec2}}
+    \caption{$a$ and $b$ are $R$-parallel}\label{fig:smoothing2}}
+     \end{subfigure}
+\end{figure}
+
+\DMGtodo[inline]{probably want to add the MZ result in the text}
+\begin{proof}
+\begin{enumerate}
+\item We have a situation like in Figure \ref{fig:smoothing1}.
+Let $p$ be the intersection point between the hyperbolic axis $A_a$ of $a$ and $A_b$ of $b$.
+Since $p \in A_a$, we have $x=b^{-1} \cdot p \in A_b$.
+We have $p$ and $y= a \cdot p$ are in $A_a$. Thus
+\begin{align*}
+i(\mu, ab) \leq & \mu(G(x, ab x]) \leq \mu(G(x, b x]) + \mu(G(bx, ab x]) = \\
+&  = \mu(G(b^{-1} p, p]) + \mu(G(p, ap]) = i(\mu, b) + i(\mu, a)
+\end{align*}
+In the first inequality we used \cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed},, in the second, we used that 
+$G(x, b x] \subset G(x, b x] \cup G(bx, ab x]$, and in the last equality we used the fact that $p$ is in the
+axis of $a$ and of $b$, and \cite[Proposition 3.14(i)]{MZ19:PositivelyRatioed},
+A similar argument with $ab^{-1}$ gives the other inequality.
+\item We have a situation like in Figure \ref{fig:smoothing2} (note that the axes of $aB$ and $Ba$ can be in another relative position, but this will not matter).
+The first inequality can be proven as follows.
+Let $p$ be the intersection between $A_{ab}$ and $b \cdot A_{ab} = A_{ba}$.
+Since $p \in b \cdot A_{ab}$, we have that $x = b^{-1} \cdot p$ is in $A_{ab}$ and thus $ab \cdot x \in A_{ab}$, also.
+We thus have
+\begin{align*}
+i(\mu, ab) &= \mu(G(x, ab x]) =  \mu(G(x, p]) +  \mu(G(p, ab \cdot x]) = \\
+ & =  \mu(G(b^{-1} p, p]) +  \mu(G(p, a p]) \geq i(\mu, a) + i(\mu, b).
+\end{align*}
+In the first equality we use \cite[Proposition 3.14(i)]{MZ19:PositivelyRatioed}, in the second equality we used the fact that $G(x, ab x] = G(x, p] \cup G(p, ab \cdot x]$
+gives a partition of $G(x, ab x]$, and $\mu$ is finitely additive. The last inequality uses again \cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed},.
+For the second inequality, let $y = a^{-1} \cdot p$, which is in $A_{ba}$, since $p \in a \cdot A_{ba}=A_{ab}$.
+Thus, similarly as before, we get
+\begin{align*}
+i(\mu, ba) &= \mu(G(y, ba y]) =  \mu(G(y, p]) +  \mu(G(p, x]) = \\
+ & =  \mu(G(a^{-1} \cdot p, p]) +  \mu(G(p, b^{-1} p]) \geq \mu(G(a^{-1} \cdot p, b^{-1} p]) \geq \\
+i(\mu, b^{-1} a).
+\end{align*}
+The only inequality that is different from the arguments above is the second. We partitioned
+$G(y, ba y]$ as $G(y, p] \cup G(p, ba y]$, and then applied $b^{-1}$ to $G(p, ba y]$ to obtain $G(p,x]$.
+Since $\mu$ is $\Gamma$-invariant, the third equality then holds. The fourth inequality is because
+$G(a^{-1} \cdot p, b^{-1} p] \subset G(a^{-1} \cdot p, p] \cup G(p, b^{-1} p]$. The last inequality follows by 
+\cite[Proposition 3.14(i)]{MZ19:PositivelyRatioed}. This concludes the proof of the second inequality.
+\item This case is the same as the second case, by changing $b$ to $b^{-1}$.
+\end{enumerate}
+\end{proof}
