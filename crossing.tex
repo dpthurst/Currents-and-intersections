@@ -116,18 +116,13 @@ $\wt S$.) When there is a choice, we prefer to state lemmas in terms
 of $\Isom^+(\bbH^2)$, since in principle it is more general (as we do
 not need to assume the group elements generate a discrete subgroup).
 
-We can conveniently express R-crossing in terms of the north-south
-dynamics on the unit circle. To express intervals on the circle, we
-adopt the convention that such intervals are always written with
-endpoints in counterclockwise order. (Thus if
-$x,y \in \partial \bbH^2$ are distinct points, $(x,y) \cup (y,x)$ is
-almost the entire circle).
-\DPTtodo{HERE. This is wrong, that inclusion also implies $a^- \in
-  (y,x)$. Also add something to R-crossing section}
-With these conventions, if a group element
-$a$ is hyperbolic with endpoint distinct from $x,y$, then NS dynamics
-says that the attracting endpoint $a^+$ is in $(x,y)$ iff $a \cdot
-(x,y) \subsetneq (x,y)$.
+\DPTtodo[inline]{Deleted a bit about R-crossing here, moved it later.
+  Maybe this convention is now misplaced.}
+\begin{convention}\label{conv:circle-intervals}
+  Intervals on the circle are always written with endpoints in counterclockwise
+  order. (Thus if $x,y \in \partial \bbH^2$ are distinct points,
+  $(x,y) \cup (y,x)$ is almost the entire circle).
+\end{convention}
 
 \subsection{Essential crossings}
 \label{subsec:essential}
@@ -271,6 +266,17 @@ Observe that whether a crossing is ``right-handed'' is invariant under
 simultaneous conjugation of $a$ and $x$, but does depend on
 more than the conjugacy classes of $a$ and~$x$. (We need to specify
 which crossing we are considering.)
+
+We also make the following trivial observation, using
+Convention~\ref{conv:circle-intervals}.
+\begin{lemma}\label{lem:hyperbolic}
+  The geodesics $(\ora{a}, \ora{x})$ R-cross iff
+  $a \cdot (x^-, x^+) \subsetneq (x^-, x^+)$. More generally, if
+  $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
+  endpoint $a^+$ in an interval $(x,y)$ iff
+  $a \cdot (x,y) \subsetneq (x,y)$.
+\end{lemma}
+
 % Further, it is anti-symmetric: if
 % the crossing between $a$ and~$x$ is right-handed, then the crossing
 % between $x$ and~$a$ is left-handed.
@@ -385,7 +391,9 @@ can change, as explained below.
  \]
     \caption{$a$ and $b$ R-cross, together with the other crossing relations for related words. }
     \label{fig:cross}
-    \end{figure} \DMGtodo[inline]{It is not clear in this picture that the axes $aB, b, ba$ meet in a single point, for example.}
+    \end{figure} \DMGtodo[inline]{It is not clear in this picture that
+      the axes $aB, b, ba$ meet in a single point, for example. DMG
+      will adopt later pictures.}
     To see this, observe that, by the dynamics of $a$ and $b$ on the
     circle as shown, $ab$ maps the interval
     $(a^+,b^+)$ strictly inside itself, which implies that it is
@@ -461,10 +469,13 @@ can change, as explained below.
   $(\ora{a},\ora{x})$ R-crossing.
 \end{proof}
 
-As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following.
+As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the
+following. \DPTtodo[inline]{The new proof actually doesn't use any of
+  Lemma~\ref{lem:righthandedfoundation}, just
+  Lemma~\ref{lem:hyperbolic} (newly pulled out).}
 
 \begin{lemma}
-  Let $a,b,x \in \pi_1(S)$ be group elements so that $(\ora{a},\ora{x})$ and $\ora{b},\ora{x})$ R-cross. Then:
+  Let $a,b,x \in \pi_1(S)$ be group elements so that $(\ora{a},\ora{x})$ and $(\ora{b},\ora{x})$ R-cross. Then:
   \begin{enumerate}
   \item All four geodesics $\ora{xa}$, $\ora{Xa}$, $\ora{ax}$, and
     $\ora{aX}$ R-cross $\ora{x}$.
@@ -474,11 +485,11 @@ As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following
     \label{lem:rhs_prod}
 \end{lemma}
 \begin{proof}
-  \DPTtodo[inline]{IN PROGRESS: New proof of this fact.}
-  For the first claim, consider the action on the interval
-  $(x^-,x^+)$: we have $x^{\pm1} \cdot (x^-,x^+) = (x^-,x^+)$ and $a
-  \cdot (x^-,x^+) \subsetneq (x^-,x^+)$, so $ax^{\pm1}$ and
-  $x^{\pm1}a$ all map this interval strictly inside itself. It follows
+  For the first claim, consider the action of the respective group
+  element on the interval $(x^-,x^+)$: we have
+  $x^{\pm1} \cdot (x^-,x^+) = (x^-,x^+)$ and
+  $a \cdot (x^-,x^+) \subsetneq (x^-,x^+)$, so four of $ax^{\pm1}$ and
+  $x^{\pm1}a$ map this interval strictly inside itself. It follows
   that all these elements are hyperbolic and R-cross $\ora{x}$.
 
   For the second claim, we similarly have that both $a$ and $b$ map
@@ -486,23 +497,6 @@ As a consequence of Lemma~\ref{lem:righthandedfoundation}, we have the following
 
   The last claim is an immediate consequence of the first two parts.
 \end{proof}
-
-\DPTtodo[inline]{Old proof below}
-\begin{proof}
-  \begin{enumerate}
-  \item Since both $a$ and $b$ cross $x$ to the right, we have the following relative cases between $a$ and $b$.
-    \begin{enumerate}
-    \item \DPTtodo{For this proof, need to expand earlier lemma}
-      $a$ and $b$ cross to the right. In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we have that $ab$ crosses $x$ to the right.
-          \item $b$ and $a$ cross to the right.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (I), we also have that $ab$ crosses $x$ to the right, switching the roles of $a$ and $b$ in that figure.
-          \item $a$ and $b$ are parallel.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (II), we have that $ab$ crosses $x$ to the right.
-          \item $b$ and $a$ are parallel.  In this case, by Lemma~\ref{lem:righthandedfoundation}, part (II), we also have that $ab$ crosses $x$ to the right, switching the roles of $a$ and $b$ in that figure.
-      \end{enumerate}
-      \item It follows by Lemma~\ref{lem:righthandedfoundation}, part (I).
-      \item It follows by combining the two previous parts.
-  \end{enumerate}
-\end{proof}
-
 
 %%% Local Variables:
 %%% mode: latex
