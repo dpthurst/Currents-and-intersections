@@ -5,28 +5,24 @@ Now we use the lemmas obtained in the previous subsection on our function on cur
 
 An immediate consequence of smoothing and convex union is positivity of $f$.
 
-\DPTtodo{This Cor. is hard to move earlier, since it invokes a thing
-  from the complicated proof. But probably we can prove it in a more
-  easy way using basic lemmas about crossing}
+\DPTtodo{Corollary rewritten to use more basic lemmas}
 \begin{corollary}
   Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
   \label{cor:positivity}
 \end{corollary}
 \begin{proof}
-Let $x \in \pi_1(S)$ so that $a$ crosses $x$ to the right. By oriented smoothing,
-\[
-[a][x] \reducesto [ax].
-\]
-On the other hand, by Equation~\ref{eq:cross-red3} (which uses unoriented smoothing), we have
-\[
-[ax][a]\reducesto [x]
-\]
-Since $f$ satisfies smoothing (oriented and unoriented) as well as convex union, we get
+Let $x \in \pi_1(S)$ so that $a$ crosses $x$ to the right. By oriented
+smoothing, we have
+$[a][x] \reducesto [ax]$.
+By Lemma~\ref{lem:rhs_prod}, we see that
+$(\ora{ax},\ora{a})$ R-cross, so
+$[ax][A]\reducesto [x]$ and (by unoriented smoothing) $[ax][a]
+\reducesto [x]$. We thus have
 \begin{align*}
     f(a) + f(x) &\geq f([a] [x]) \geq f(ax)\\
-     f(ax) + f(a) &\geq f([ax] [a]) \geq f(x).\\   
+     f(ax) + f(a) &\geq f([ax] [a]) \geq f(x).
 \end{align*}
-Adding both equations, we get $f(a) \geq 0$, as we wanted.
+Adding the equations, we get $f(a) \geq 0$.
 \end{proof}
 
 A similar argument with different assumptions also yields positivity.
