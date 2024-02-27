@@ -28,7 +28,9 @@ Adding the equations, we get $f(a) \geq 0$.
 A similar argument with different assumptions also yields positivity.
 
 \begin{corollary}
-  Let $f$ be a functional satisfying convex union and quasi-smoothing and stability/homogeneity. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
+  Let $f$ be a functional satisfying convex union, quasi-smoothing,
+  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
+  \pi_1(S)$.
   \label{cor:positivity2}
 \end{corollary}
 
@@ -50,27 +52,7 @@ Adding both equations, we get $f(a^n) \geq -2R$. By stability and homogeneity, t
 \end{proof}
 
 
-The following lemma follows by the definition of right-handed crossing
-(Definition~\ref{def:righthandedcrossing}).
-\DPTtodo{This is directly in Lemma~\ref{lem:rhs_prod}}
-\begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right.
-\[
-[a][x^n] \reducesto [ax^n], \mbox{ for all } n \in \mathbb{N}
-\]
-\label{lem:P}
-\end{lemma}
-\begin{proof}
-By Lemma~\ref{lem:rhs}, we have that
- \[
- [ax^m][x^n] \reducesto [ax^{n+m}]
- \]
- which for $m=0$ yields
- \[
- [a][x^n] \reducesto [ax^{n}].
- \] 
-\end{proof}
-
+\DPTtodo[inline]{Deleted redundant here}
 We will also need the following converse smoothing.
 
 \begin{lemma}
@@ -110,7 +92,8 @@ Let $f$ be a curve functional satisfying convex union and smoothing. Let $a,x \i
   Hence, $f([a x^n])$ is a $r$-midpoint convex function
   of $n$, and thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
  
- By Lemma~\ref{lem:P}, and by additivity and (oriented) smoothing properties of $f$, we get
+ By Lemma~\ref{lem:rhs_prod}, and by additivity and (oriented)
+ smoothing properties of $f$, we get
  \[
  f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
@@ -239,8 +222,8 @@ exist. (Here, $n^\pm$ means the limit for either $n \to \infty$ or $n
      &\leq f([ax^n b]) - n f([x]) \\
      &\leq f([ab])
  \end{align*}
- In the first inequality, we have used Lemma~\ref{lem:P} with $ax^nb$ in place of $a$, and $y$ in place of $x$. This is justified since $ax^nb$ crosses $y$ to the right. Indeed, by the initial configuration in Figure~\ref{fig:initial}, $b^{-1} \cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, and thus, by Lemma~\ref{lem:cornering}, for all $n \in \mathbb{Z}$, $\wt{ax^nb}$ has one endpoint in the window $w(a^{-1})$ and the other endpoint in the window $w(b)$. Since $b^{-1} \cdot \wt{x}$ is parallel to $\wt{y}$ and $\wt{y}$ is parallel to $a \cdot \wt{x}$, according to the initial configuration in Figure~\ref{fig:initial}, it follows that $ax^nb$ crosses $y$ to the right.
- In the second inequality, we use Lemma~\ref{lem:P}, with $ba$ in place of $a$.  
+ In the first inequality, we have used Lemma~\ref{lem:rhs_prod} with $ax^nb$ in place of $a$, and $y$ in place of $x$. This is justified since $ax^nb$ crosses $y$ to the right. Indeed, by the initial configuration in Figure~\ref{fig:initial}, $b^{-1} \cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, and thus, by Lemma~\ref{lem:cornering}, for all $n \in \mathbb{Z}$, $\wt{ax^nb}$ has one endpoint in the window $w(a^{-1})$ and the other endpoint in the window $w(b)$. Since $b^{-1} \cdot \wt{x}$ is parallel to $\wt{y}$ and $\wt{y}$ is parallel to $a \cdot \wt{x}$, according to the initial configuration in Figure~\ref{fig:initial}, it follows that $ax^nb$ crosses $y$ to the right.
+ In the second inequality, we use Lemma~\ref{lem:rhs_prod}, with $ba$ in place of $a$.  
  It is justified since, according to Figure~\ref{fig:initial}, $b^{-1}\cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, so $\wt{x}$ is parallel to $ba \cdot \wt{x}$, and thus $ba$ crosses $x$ to the right.
  
  On the other hand, 
@@ -251,7 +234,7 @@ exist. (Here, $n^\pm$ means the limit for either $n \to \infty$ or $n
  \end{align*}
  In the first inequality, we have used Lemma~\ref{lem:Q} with $a x^n b$ in place of $a$ and $y$ in place of $x$, since, as shown above, $ax^nb$ crosses $y$ to the right.
 
- In the second inequality, we use Lemma~\ref{lem:P}, with $ba$ in place of $a$, since $ba$ crosses $x$ to the right, as shown above.  
+ In the second inequality, we use Lemma~\ref{lem:rhs_prod}, with $ba$ in place of $a$, since $ba$ crosses $x$ to the right, as shown above.  
  It follows that $g$ is bounded, and thus the limit exists.
  \end{proof}
 %%% Local Variables:
