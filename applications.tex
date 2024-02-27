@@ -34,27 +34,27 @@ These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
 
-We will need the following observation about the measure of sets intersecting pairs of geodesic segments.
-We introduce the following notation. Given two geodesics segments $k$ and $k'$, we denote with $G(k)$ the set of geodesics intersecting $k$ transversely and let $G(k , k')$ be the set of geodesics intersecting both $k$ and $k$ transversely.
-Let $G(k | k)$ be the set of geodesics separating $k$ from $k'$, i.e., $\gamma \in G(k | k')$ if $k$ and $k'$ lie in distinct connected components of $\wt{X}-\gamma$.
-\begin{lemma} \DMGtodo[inline]{state lemma being careful about endpoints}
-Let $\mu$ be a geodesic current.
-Let $k=[x,y]$,$k'=[w,z]$ be two geodesic segments.
-Let $p=[x,w]$, $p'=[y,z]$
-Then, the following equation holds.
+We will need the following observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals}.
+
+\begin{lemma}
+For any points $x,y,z,w \in \wt{\Sigma}$, we have the following equalities:
 \begin{align*}
-2\mu(G(p,p'))&=\mu(G(l))+\mu(G(l'))-\mu(G(k)) - \mu(G(k')).
+\mu(G([{x},{w}), [{y},{z}))) +  &\mu(G(({x},{w}], ({y},{z}])) = \\
+&\mu(G[{x},{z})) + \mu(G[{w},{y})) \\
+&- \mu(G([{w},{z})) - \mu(G([{x},{y}))
+\end{align*}
+and
+\begin{align*}
+\mu(G(({x},{w}], ({y},{z}])) +   &\mu(G([{x},{w}), [{y},{z})))= \\
+&\mu(G({x},{z}]) + \mu(G({w},{y}]) \\
+&- \mu(G(({w},{z}]) - \mu(G(({x},{y}])
 \end{align*}
 \label{lem:otalclaim}
 \end{lemma}
-\begin{proof}
-Note that the set of geodesics intersecting both $p$ and $p'$ is the same as the set of geodesics separating $k$ and $k'$, i.e., $G(p,p')=G(k|k')$.
-The claim then follows by an observation by Otal~\cite[Page~154]{Otal90:SpectreMarqueNegative}, which is proven in detail in \cite[Lemma~5.2]{dRMG22:Duals}.
-\end{proof}
 
 We need first the following hyperbolic geometry lemma.
 
-\begin{proposition} \DMGtodo[inline]{edit lemma being careful about endpoints}
+\begin{proposition}
 Consider two elements $g,h \in \pi_1(\Sigma)$ with hyperbolic axes $A_g$ and $A_h$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
 We define the following four points:
 
@@ -65,12 +65,12 @@ We define the following four points:
 \end{itemize}
 We have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
-\item $A_{hg}$ is the line containing the segment $[Q,P]$ of length $\ell(hg)/2$.
-\item $A_{gh}$ is the line containing the segment $[P',Q']$ of length $\ell(hg)/2$.
-\item $A_{gh^{-1}}$ is the line containing the segment $[Q',P']$ of length $\ell(gh^{-1})/2$.
-\item $A_{h^{-1}g}$ is the line containing the segment $[P',Q]$ of length $\ell(h^{-1}g)/2$.
+\item $A_{gh}$ is the line containing the segment $(Q,P]$ of length $\ell(hg)/2$.
+\item $A_{hg}$ is the line containing the segment $(P',Q']$ of length $\ell(hg)/2$.
+\item $A_{gh^{-1}}$ is the line containing the segment $(Q',P]$ of length $\ell(gh^{-1})/2$.
+\item $A_{h^{-1}g}$ is the line containing the segment $(P',Q]$ of length $\ell(h^{-1}g)/2$.
 \end{enumerate}
-Furthermore, the union $G([Q,P])\cup G([Q',P'])$ (resp. $G([Q',P]) \cup G([P',Q])$) is a fundamental domain for the action of $gh$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $gh^{-1}$).
+Furthermore, the union $G((Q,P])\cup G((P',Q'])$ (resp. $G((Q',P]) \cup G((P',Q])$) is a fundamental domain for the action of $gh$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $gh^{-1}$).
 \label{prop:keygeometry}
 \end{proposition}
 
@@ -95,7 +95,7 @@ and $r_{Q'}$ is the corresponding reflection at $Q'$.
 Similarly, we can write $g=r_{P'}r_O$, and thus $gh=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $a'$ of translation length
 twice the distance between $P'$ and $Q'$.
 The other cases follow similarly.
-As for the assertion on fundamental domains, we note that the segment $[Q',P']$ on the axis of $A_{hg}$, is sent by $g$ to a segment $[P,R]$, where $R$ appears forward of $P$ in according to the orientation of $A_{hg}$, and the segment $[Q,R]$ is a fundamental domain for the action of $hg$ on its axis $A_{gh}$, thus $G([Q,R])=G([Q,P]) \cup g G([P',Q'])$ is a fundamental domain for the action of $hg$ on $G(\Sigma)$, thus the claim follows.
+As for the assertion on fundamental domains, we note that the segment $(P',Q']$ on the axis of $A_{hg}$, is sent by $g$ to a segment $(P,R]$, where $R=g(Q')$ appears forward of $P$ in according to the orientation of $A_{hg}$, and the segment $(Q,R]$ is a fundamental domain for the action of $gh$ on its axis $A_{gh}$, thus $G((Q,R])=G((Q,P]) \cup g G((P',Q'])$ is a fundamental domain for the action of $hg$ on $G(\Sigma)$, thus the claim follows.
 The other claim is similar.
 \end{proof}
 
@@ -108,7 +108,7 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
     \end{equation}
     \label{thm:char_laminations}
 \end{theorem}
-\begin{proof}\DMGtodo[inline]{I edited this}
+\begin{proof}
 Suppose first $f$ satisfies the disconnected max-smoothing.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a measured lamination.
@@ -269,7 +269,7 @@ We can prove the following characterization.
 \begin{theorem}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and,
     for any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
-     e^{f(C_1) + f(C_2)}= e^{\left(\mfig{curves-0}\right)} =  e^{\left(\mfig{curves-1}\right)}+e^{\lambda\left(\mfig{curves-2}\right)}
+     e^{f(C_1) + f(C_2)/2}= e^{f\left(\mfig{curves-0}\right)/2} =  e^{f\left(\mfig{curves-1}\right)/2}+e^{f\left(\mfig{curves-2}\right)/2}
     \end{equation}
     \label{prop:char_liouville}
   \end{theorem}
@@ -324,7 +324,7 @@ The other implication follows from an elementary computation of hyperbolic cross
 \end{proof}
 
 \begin{remark}
-Another way to phrase the condition in Theorem~\ref{thm:bonahonliouville} is as in terms of the following \emph{disconnected $\lambda$-smoothing property}
+Another characterizing condition that turns out to be equivalent to the hypothesis in     Theorem~\ref{prop:char_liouville}  is the \emph{disconnected $\lambda$-smoothing property}
 
 \[
 \lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right)
@@ -339,11 +339,11 @@ On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnecte
 \end{remark}
 
 \begin{remark}
-  The countable set of equalities in Theorem~\ref{thm:bonahonliouville} can be seen as an extreme case of a more general set of inequalities satisfied by any so-called \emph{strongly hyperbolic} space, in the sense of~\cite{BS16:StrongHyp}. One can check these spaces satisfy the inequality
+  The countable set of equalities in Theorem~\ref{thm:bonahonliouville} can be seen as an extreme case of a more general set of inequalities satisfied by any so-called \emph{strongly hyperbolic} space (with parameter $\epsilon=1$), in the sense of~\cite{BS16:StrongHyp}. One can check these spaces satisfy the inequality
   \[
-       e^{f(C_1) + f(C_2)}= e^{f\left(\mfig{curves-0}\right)} \leq e^{f\left(\mfig{curves-1}\right)}+e^{f\left(\mfig{curves-2}\right)}.
+       e^{f(C_1) + f(C_2)}= e^{f\left(\mfig{curves-0}\right)/2} \leq e^{f\left(\mfig{curves-1}\right)/2}+e^{f\left(\mfig{curves-2}\right)/2}.
   \]
-  For more details see~\cite{JMG:StrongDuals}.
+  It would be interesting to see if this condition characterizes currents whose dual pseudo-metric spaces are strongly hyperbolic. For more details see~\cite{JMG:StrongDuals}.
 \end{remark}
 
 In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
@@ -351,7 +351,7 @@ In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamen
 \begin{theorem}
    A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
     \[
-      \frac{1}{\rho} e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho e^{-\mu([x,y]\times[z,w])} 
+      \frac{1}{\rho} \cdot  e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho \cdot e^{-\mu([x,y]\times[z,w])} 
    \]
    \label{thm:ham}
 \end{theorem}
@@ -360,7 +360,7 @@ Using this, we can prove the following.
 
 \begin{theorem}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the following inequalities.
-    There exists a constant $C>1$ so that, for any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
+    There exists a constant $C \geq 1$ so that, for any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
     1/C \leq \exp \left[ f\left(\mfig{curves-0}\right)/2-f\left(\mfig{curves-2}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-1}\right)/2-f\left(\mfig{curves-2}\right)/2 \right] \leq C
     \end{equation}
     and
@@ -403,6 +403,10 @@ e^{z} \leq e^{x} - e^{y} \leq 3 e^{z}
 which gives one pair of inequalities. The other follows by an
 analogous computation.
 \end{proof}
+\begin{remark}
+Observe that when $C=1$, the hypothesis simplifies to that of Theorem~\ref{prop:char_liouville}. This condition is however, in principle, easier to check.
+\end{remark}
+
 \begin{remark}
 Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
 \end{remark}

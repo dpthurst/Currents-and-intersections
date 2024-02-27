@@ -40,7 +40,6 @@ switching $g$ and $g^{-1}$.
 \end{proof}
 $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
 We note that this can be inferred a posteriori from \cite{BIPP21:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy smoothing. However, the proof we give here uses only the definition of generalized cross-ratio and thus subsumes the work in \cite{BIPP21:PositiveCrossratios} under the scope of our theorem. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries on the surface.
-THis will also be helpful in establishing the generalized max-smoothing property for measured laminations.
 
 We divide the proof into several cases, depending on the type of smoothing (connected vs disconnected) and the relative position of certain axes of the resolutions.
 
@@ -165,6 +164,7 @@ is in f.d. of $b$}}\label{fig:d10}}
 
 
 \subsection{Connected smoothing}
+\label{subsec:connected_smoothing}
 
 \begin{lemma}
 Suppose $C$ represents a curve with a self-intersection decomposing as $ab$, so that one of its smoothings is the multi-curve $[a] \cup [b]$, and the other resolution in $[aB]$.
@@ -218,7 +218,13 @@ In the figures, we also draw their corresponding translation axes for each isome
 We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.
 We note there is another case, analogous to case 2, where the reflection lines below $R_1$ are exchanged by the ones above it, which can be similarly ruled out.
 
-We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross.
+We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross (see Figure~\ref{fig:c2}).
+
+\begin{figure}[h!]
+     \centering
+\resizebox{50mm}{!}{\svgfig{c2}}
+    \caption{In case 3, $aB$ and $Ba$ can cross.}\label{fig:c2}
+\end{figure} 
 
 Now that we know which possible configurations of lifts can arise in the universal cover, we proceed to check both inequalities in the Lemma.
 
@@ -286,17 +292,7 @@ Following that figure, note that $B \cdot a^- = BA \cdot a^-$, thus $(a^-, B \cd
     We thus have $(Ba^+, Ba^-) \subset (Ba^-, a \cdot aB)$, and therefore
     $\ell(Ba) \leq \ell(ab)$. 
 
-
-
-For the second inequality, compare Figure \ref{fig:c2}.
-
-\begin{figure}[h!]
-     \centering
-\resizebox{80mm}{!}{\svgfig{c2}}
-    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c2}
-\end{figure} 
-
-We can write, using the flip relation and the additive relation of the cross-ratio
+For the second inequality, we can write using the flip relation and the additive relation of the cross-ratio
 \begin{align*}
 \ell(ba)&=[ba^-, a^-, b \cdot a^-, ba^+] = [b \cdot a^-, ba^+,ba^-, a^-] =\\
 &[b \cdot a^-, ba^+,b^+, a^-] +  [b \cdot a^-, b^+,b^-, a^-] + \\

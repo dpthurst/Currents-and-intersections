@@ -92,13 +92,13 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:
 \begin{equation*}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation*}
-    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the so-called \emph{disconnected $\lambda$-smoothing property}: 
+    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition:
 \begin{equation} 
-     e^{f(C_1) + f(C_2)}= e^{\left(\mfig{curves-0}\right)} =  e^{\left(\mfig{curves-1}\right)}+e^{\lambda\left(\mfig{curves-2}\right)}
+     e^{(f(C_1) + f(C_2))/2}= e^{f\left(\mfig{curves-0}\right)/2} =  e^{f\left(\mfig{curves-1}\right)}+e^{f\left(\mfig{curves-2}\right)/2}
     \end{equation}
 \end{itemize}
     The left-hand-side of both equations depicts an essential crossing between any pair of multi-curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
-    \label{mainthm:apps} \DMGtodo[inline]{not stated as the one in that section}
+    \label{mainthm:apps}
 \end{mainthm} 
 
 As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
@@ -227,6 +227,10 @@ of $\CurveFunct(S)$.
     \item Let $\AConvex(S)$ be the space of \emph{additive convex curve functionals}, i.e., the subset of $\Convex(S)$ of curve functionals that moreover satisfy the additive property.
 \end{enumerate}
 \end{definition}
+
+\DMGtodo[inline]{add comment on motivating ``convex''. Refer to the fact that restricting to train-track coordinates, intersection numbers are convex. For functions satisfying smoothing but not additivity (thus ``convex'' according to our definition), one needs a stronger smoothing property to conclude this, namely, that the function reduces under smoothing any number of essential crossing at once, as opposed to just one.}
+
+
 Examples below show we have strict inclusions
 \[
 \AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S).
@@ -253,16 +257,18 @@ Many natural notions of length do satisfy all these four properties and they hav
 \item More generally, lengths with respect to negatively curved  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
 \item Non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
-    \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ18:PositiveReps}
+    \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ19:PositivelyRatioed}
 \end{enumerate}
 
-On the other hand, not all functions on curves satisfy the $\AConvex$ properties.  
+On the other hand, not all functions on curves satisfy the $\AConvex$ properties, even some that extend continuously to geodesic currents.
 
 \begin{enumerate}
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$. \DMGtodo[inline]{Does $R$ depend on the quasi-conformal constant of the limit set? Probably. That would be a good way to show proper containment of $\QConvex_R(S) \subset \QConvex(S)$. }
+    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$. In fact, if $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the constant so that $\ell_{\rho} \in \QConvex_R(S)$, we have that $R \to \infty$ as $K \to \infty$. In particular, one can leave the space $\QConvex_R(S)$ by taking a degenerating sequence of quasi-fuchsian representations. 
+    
+    \DMGtodo[inline]{ This is not written, but can probably be proven using that a lower bound for $R$ in terms of a constant $\delta$ is given in \cite[Theorem A]{FF21:QF}, and this constant $\delta$ is a Busemann function value of points of the limit set of $\rho$, which probably can be checked to grow as a function of the quasi-symmetric constant of the lift of the representation. }
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
@@ -272,7 +278,7 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
       $\QConvex(S)$, even though it does extend to geodesic currents
       by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
 \item Translation lengths associated to embedded graphs on a surface whose actions are not proper \cite[Proposition 11]{Bonahon91:CurrentsGroups} do not satisfy quasi-smoothing and, moreover, do not extend to geodesic currents. 
-\item Lorentzian length of an affine action of a Fuchsiaon group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}.
+\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}.
 \end{enumerate}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -280,7 +286,7 @@ In view of all this, it is natural to ask which additional conditions one needs 
 It turns out that one doesn't need more conditions. Theorem~\ref{mainthm:intersections} can thus be reestated, in the previous terminology, as follows.
 
 \begin{mainthmprime}\label{thm:intersect}
- For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stabilty properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
+ For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stability properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 \end{mainthmprime}
 
 \begin{remark}
