@@ -1,0 +1,80 @@
+In previous work~\cite{Lu10}, Feng Luo gave conditions on a curve functional on simple curves $f \colon \mathcal{S} \to \mathbb{R}$ to be realized as an intersection number with a measured lamination.
+Specifically, in \cite[Theorem~5.1]{Lu10}, Feng Luo proved that such
+$f$ is an intersection number with a measured lamination $\lambda$ if, for every essential subsurface $\Sigma'$ of $\Sigma$, which is a once-holed torus (resp. a four-holed sphere), the restriction of $f$ to $\mathcal{C}(\Sigma')$ satisfies certain conditions (in the statement of \cite[Theorem~5.1]{Lu10}, (7), (8) for one-holed torus (resp. (10), (11) for four-holed sphere).
+
+The following Proposition outlines how our max-smoothing condition on a curve functional $f$ implies Feng Luo's conditions on the restricted curve functional $f|_{\mathcal{S}}$.
+
+\begin{proposition}
+Let $f$ be a curve functional satisfying max-smoothing, additivity, and stability. Let $f|_{\mathcal{S}}$ denote the restriction of this curve functional to simple curves.
+Then $f|_{\mathcal{S}}$ satisfies Feng Luo's hypotheses of \cite[Theorem~5.1]{Lu10}
+\label{prop:feng}
+\end{proposition}
+\begin{proof}
+  \begin{figure}
+\centering{
+\resizebox{115mm}{!}{\svgfignormal{luo1}}}
+\caption{Applying max-smoothing to obtain condition (7) in Feng Luo's work (step 1). We first do a smoothing operation at the crossing between the curves marked with a dashed circle, in the upper torus. Each smoothing yields two homotopically distinct multicurves. One of them gives to parallel copies of the horizontal curve. The other gives a more complicated multi-curve that will be smoothed further in the subsequent steps (see Figure~\ref{fig:luo2}).
+}
+\label{fig:luo1}
+\end{figure}
+
+We claim that all conditions (7), (8), (10), (11) in~\cite[Theorem~5.1]{Lu10} follow from max-smoothing.
+We show that condition (7) for the once punctured torus follows by max-smoothing, and leave the rest to the reader. Consider a triple of curves shown in the upper once-holed torus in Figure~\ref{fig:luo1}, which we will refer to as horizontal, vertical and diagonal. Smoothing the crossing between the vertical and diagonal curve yields two homotopically distinct multicurves, each one for each smoothing (oriented and unoriented).
+One of the smoothings (left-middle holed torus in Figure~\ref{fig:luo1}) yields a curve that after homotopy results in a parallel copy of the vertical curve, yielding thus two parallel copies of the vertical curve. The other smoothing yields another curve intersecting the horizontal curve (right-middle torus in Figure~\ref{fig:luo1}).
+
+  \begin{figure}
+\centering{
+\resizebox{140mm}{!}{\svgfignormal{luo2}}}
+\caption{Applying max-smoothing to obtain condition (7) in Feng Luo's work (step 2). This time we do a smoothing operation at the crossing between the curves obtained in one of the resolutions after the first smoothing (Figure~\ref{fig:luo1}). Each smoothing yields two homotopically distinct multicurves. One of them will end up yielding, after further smoothing, to parallel copies of the vertical curve. The other smoothing will yield, after smoothing again, two parallel copies of the diagonal curve on one hand and a copy of the boundary parallel curve on the other, showing condition 
+}
+\label{fig:luo2}
+\end{figure}
+
+We smooth this crossing in  Figure~\ref{fig:luo2}. One of the smoothings (left-middle torus) yields a curve homotopic to a self-intersecting curve which, after further smoothing, results in two parallel copies of the vertical curve.
+The other smoothing (right-middle torus) yields, on the one hand (left) two parallel copies of the diagonal curve and, on the other hand, (right),  a copy of the boundary parallel curve. This proves Feng Luo's condition (7).
+\end{proof}
+
+\begin{remark}
+One can use Feng Luo's work alone to prove that if $f$ satisfies max-smoothing, then $f=i(\lambda,\cdot)$ must be a measured lamination.
+Suppose now that Equation~\ref{eq:MLsmoothing} for a functional $f$ is satisfied, as well as additivity, homogeneity and stability. 
+
+By Proposition~\ref{prop:feng}, the restriction of $f$ to simple multi-curves, $f|_{\mathcal{S}}$, satisfies Feng Luo's conditions.
+Thus, there exists a measured lamination $\lambda$ so that
+\[
+f(s)=i(\lambda, s)
+\]
+for all simple closed curves $s$.
+By max-smoothing, for every closed multi-curve $c$, there is a sequence of smoothings on $c$ that yields a simple multi-curve $s_c$ so that
+\[
+f(c)=f(s_c)
+\]
+Thus, for every closed curve $c$,
+\[
+f(c)=f(s_c)=i(\lambda,s_c).
+\]
+Note that $c$ dominates $s_c$, and thus,
+$i(\lambda,c) \geq i(\lambda,s_c)$.
+Hence, $i(\lambda,c) \geq f(c)$.
+On the other hand, $i(\lambda,\cdot)$ also satisfies max-smoothing, thus for every closed multi-curve $c$, there is a multi-curve $s_c'$ so that
+\[
+i(\lambda,c)=i(\lambda,s_c').
+\]
+Thus,
+\[
+i(\lambda,s_c') \geq i(\lambda,s_c)
+\]
+But, at the same time, $c$ dominates $s_c'$, and hence
+\[
+f(c) \geq f(s_c')=i(\lambda,s_c').
+\]
+Thus,
+\[
+f(c) \geq f(s_c')=i(\lambda,s_c') \geq i(\lambda, s_c)=f(c),
+\]
+and thus it follows that $f(c)=i(\lambda,s_c')=i(\lambda,c)$
+for all closed multi-curves $c$.
+\end{remark}
+
+\begin{remark}
+Following exactly the same resolutions as in the proof of Proposition~\ref{prop:feng}, one can check that the trace conditions in Feng Luo's work that guarantee that a curve functional on simple curves $f$ is a hyperbolic length~\cite{Luo98:GeodesicLength} follow from the disconnected $\lambda$-smoothing property.
+\end{remark}

@@ -216,8 +216,6 @@ more restrictive than checking at the beginning.)
   that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
 
-\DMGtodo[inline]{Not including smoothings for weighted curves currently}
-
 \subsection{Right-handed crossings}
 \label{subsec:rhcrossings}
 In order to work better with group elements and crossings between
@@ -386,14 +384,11 @@ can change, as explained below.
     \DPTtodo{exaggerate the light/dark distinctions more evident in
       these figures}
     \begin{figure}
-    \[
- \mfig{hyp-crossings-0}
- \]
+\centering{
+\resizebox{60mm}{!}{\svgfig{rcrossing}}
     \caption{$a$ and $b$ R-cross, together with the other crossing relations for related words. }
-    \label{fig:cross}
-    \end{figure} \DMGtodo[inline]{It is not clear in this picture that
-      the axes $aB, b, ba$ meet in a single point, for example. DMG
-      will adopt later pictures.}
+    \label{fig:cross}}
+    \end{figure} 
     To see this, observe that, by the dynamics of $a$ and $b$ on the
     circle as shown, $ab$ maps the interval
     $(a^+,b^+)$ strictly inside itself, which implies that it is
@@ -417,11 +412,10 @@ can change, as explained below.
     \DPTtodo{Add direction arrows for action of $a,b$ to the illustration}
 
     \begin{figure}
-    \[
-      \mfig{hyp-crossings-1}
-    \]
+\centering{
+\resizebox{60mm}{!}{\svgfig{parallel}}
     \caption{$a$ and $b$ are parallel, together with the other crossing relations for related words. }
-    \label{fig:parallel}
+    \label{fig:parallel}}
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
     the parallel case by replacing $b$ with $B$, arranged as in
@@ -429,11 +423,10 @@ can change, as explained below.
   \end{enumerate}
 \end{proof}
     \begin{figure}
-    \[
-      \mfig{hyp-crossings-2}
-    \]
+\centering{
+\resizebox{60mm}{!}{\svgfig{antiparallel}}
     \caption{$a$ and $b$ are anti-parallel, together with the other crossing relations for related words. }
-    \label{fig:anti}
+    \label{fig:anti}}
     \end{figure}
 
 \begin{remark}
@@ -446,9 +439,8 @@ can change, as explained below.
 
 \begin{remark}
   Lemma~\ref{lem:righthandedfoundation} applies to disconnected
-  smoothings. It would be very handy to have a similar lemma for
-  self-crossings of $\ora{ab}$ with $\ora{ba}$, but a correct
-  statement is more complicated with several cases. (This is related to the
+  smoothings. For a similar result for a
+  (self-)crossings of $a$ $\ora{ab}$ with $\ora{ba}$ one has to deal with several cases  (This is related to the
   previous remark.) In particular if $\ora{ab}$ R-crosses $\ora{ba}$,
   then $\ora{a}$ and $\ora{b}$ could be parallel or anti-parallel. The
   full analysis is similar to the discussion of maximal bracelet

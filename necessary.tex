@@ -4,16 +4,19 @@ In this section we give a detailed proof that intersection numbers satisfy the h
 Here we give a different proof for an arbitrary current that works in the universal cover, since it will be useful to prove later that measured laminations satisfy max-smoothing.
 
 \begin{proposition}
-Given a geodesic current $\mu$, the curve functional $i(\mu, \cdot)$ satisfies the hypotheses of Theorem\ref{mainthm:intersections}.
+Given a geodesic current $\mu$, the curve functional $i(\mu, \cdot)$ satisfies the hypotheses of Theorem~\ref{mainthm:intersections}.
 \end{proposition}
 \begin{proof}
+We will check each hypothesis:
+\begin{itemize}
 \item (additivity and homogeneity) By definition (see \cite{Bonahon86:EndsHyperbolicManifolds}, intersection number is bilinear in both factors. In particular, additivity and homogeneity hold.
 \item (stability) Observe that given a curve $C$ with hyperbolic lift $\gamma$, and $x \in \gamma$, the set of geodesics $G(x, \gamma^n x]$ can be partitioned into $\cup_{i=1}^{n-1} G(x, \gamma^{i} \cdot x]$.  Thus, by \cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed}, 
 \[
 i(\mu, \gamma^n) = \mu(G(x, \gamma^n x]) = \sum_{i=1}^{n-1} \mu(G(x, \gamma^{i} \cdot x]) = n\mu(G(x, \gamma x]) = n i(\mu, \gamma).
 \]
 where in the second inequality we used finite additivity of $\mu$, and in the third one, $\Gamma$-invariance.
-\item (smoothing) Follows from Proposition \ref{prop:smoothing_nec}
+\item (smoothing) Follows from Proposition \ref{prop:smoothing_nec} below.
+\end{itemize}
 \end{proof}
 
 \begin{figure}[h!]
@@ -85,7 +88,7 @@ and
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{80mm}{!}{\svgfig{smoothnec1}}
-    \caption{$b$ right crosses $a$}\label{fig:smoothing1}}
+    \caption{$b$ R-crosses $a$}\label{fig:smoothing1}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
@@ -108,7 +111,7 @@ i(\mu, ab) \leq & \mu(G(x, ab x]) \leq \mu(G(x, b x]) + \mu(G(bx, ab x]) = \\
 \end{align*}
 In the first inequality we used Proposition~\ref{prop:defect} (i), in the second, we used that 
 $G(x, b x] \subset G(x, b x] \cup G(bx, ab x]$, and in the last equality we used the fact that $p$ is in the
-axis of $a$ and of $b$, and Proposition~\ref{prop:defect} (ii), ,
+axis of $a$ and of $b$, and Proposition~\ref{prop:defect} (ii).
 A similar argument with $ab^{-1}$ gives the other inequality.
 \item We have a situation like in Figure \ref{fig:smoothing2} (note that the axes of $aB$ and $Ba$ can be in another relative position, but this will not matter).
 The first inequality can be proven as follows.

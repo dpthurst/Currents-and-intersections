@@ -41,33 +41,23 @@ given by $\Pi(\mu)\coloneqq
 \subsection{Properties of geodesic currents as measures}
 
 The $\pi_1(S)$-invariance of geodesic currents highly constrains the atoms (see Definition~\ref{def:atommeasure}) they can have.
-\DMGtodo[inline]{we can probably cite the two following propositions}
-\begin{proposition}
+
+\begin{proposition}[{\cite[Lemma~8.2.8]{Martelli16:IntroGeoTop}}]
 The orbit $\pi_1(S)\widetilde{\gamma}$ for $\widetilde{\gamma} \in
 G^+(S)$ is discrete if and only if $p(\widetilde{\gamma})$ is a closed
 geodesic.
-% \DMGtodo[inline]{(Punctures) This is not true if $\Sigma$ has
-% punctures: in that case, currents supported on arcs from cusp to
-% cusp are also atoms. This might not be an issue since endpoints of
-% hyperbolic elements are still dense in limit set.}
 \end{proposition}
-\begin{proof}
-   If $p(\widetilde{\gamma})$ is a closed geodesic, then since the action of $\pi_1(S)$ is discrete, the orbit is discrete. On the other hand, then the $p(\widetilde{\gamma})$ is contained in some compact subset of $S - \partial S$. 
-In this case, $p(\widetilde{\gamma})$ is not closed if and only if there is a small disk intersecting  $p(\widetilde{\gamma})$ infinitely many times, if and only if, there is a small interval $I$ intersecting infinitely many elements of $\pi_1(S)\widetilde{\gamma}$, if and only if $\pi_1(S)\widetilde{\gamma}$ is not discrete.
-\end{proof}
+
 
 This says that the only $0$-dimensional subsets with atoms are subsets consisting of lifts of closed geodesics.
-Let a \emph{spike} $P(x,[y_1,y_2])$ be the subset of $G^+(S)$ of geodesics starting at $x \in \bdy\tilde{\Sigma}$ and with endpoint contained in the interval $[y_1,y_2] \subset \bdy\tilde{\Sigma}$.
+Let a \emph{pencil} $P(x)$ be the subset of $G^+(S)$ of geodesics with one endpoint at $x \in \bdy\tilde{\Sigma}$.
 
-
-\begin{proposition}
+\begin{proposition}[{\cite[Lemma~2.6]{dRMG22:Duals}}]
 \label{prop:spikes}
-Suppose a spike $P(x,[y_1,y_2])$ doesn't contain any element $\widetilde{\gamma}$ with a discrete orbit.
-Then $\mu(P(x,[y_1,y_2]))=0$ for any geodesic current $\mu$.
+Suppose a pencil $P(x)$ does not contain any element $\widetilde{\gamma}$ with a discrete orbit.
+Then $\mu(P(x))=0$ for any geodesic current $\mu$.
 \end{proposition}
-\begin{proof}
-  See \cite[Lemma~2.27]{EM18:ErgodicGeodesicCurrents}. 
-\end{proof}
+
 
 \begin{comment}
 Let $P(x)$ be a \emph{pencil} of geodesics based at $x$, i.e., the subset of $G^+(S)$ of all geodesics starting at $x \in \bdy\tilde{\Sigma}$.
