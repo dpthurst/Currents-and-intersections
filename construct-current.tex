@@ -1,147 +1,6 @@
 \section{Construction of the geodesic current}
 \label{sec:construct}
-\begin{proposition}
-  \label{prop:positivity}
-  In the terminology of Section~\ref{sec:boxes}, for a box $B\in
-  \mathcal{B}$, we have $\mu_f(B) \geq 0$.
-\end{proposition}
 
-\begin{proof}
-  We will show that $[b x^n] \cup [c x^n] \reducesto [a x^nd x^n]$.
-  We fix the path $ca^{-1}bx^nac^{-1}$ in the conjugacy class $[bx^n]$, based at the same basepoint as the path $cx^n$.
-  By Definition~\ref{def:RH-lift-sys},
-  condition~\ref{item:box-diags-cross}, the lifts of these paths to
-  $\tilde{\Sigma}$ are linked for $n$ large enough. (See
-  Remark~\ref{rmk:largeenough}.)
-% So, for large enough $n$, there is an essential crossing between $[bx^n]$ and $[cx^n]$ that we can resolve.
-  We thus get
-  \[
-     [bx^n][cx^n] = [ca^{-1}bx^nac^{-1}][cx^n] \searrow [ca^{-1}bx^nac^{-1}cx^n] = [dx^nax^n]
-  \]  
-  where in the first equality we used conjugacy of paths, in the second step we applied a smoothing to the essential crossing, and in the last equality we used condition~\ref{item:box-close} in  Definition~\ref{def:RH-lift-sys}.
-  
-   Thus, by smoothing property of $f$, we obtain
-\[
-f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
-\]
-  
-  Finally, by Proposition~\ref{prop:join-split-alg}, and taking the
-  limit as $n \to \infty$, we obtain
-  
-  \[
-  \mu_f(B_{p,q,r,s}) \geq 0. \qedhere
-  \]
-\end{proof}
-
- \begin{figure}
-\centering{
-\resizebox{100mm}{!}{\svgfig{nestedpositivity}}
-\caption{$\mu_f$ is non-negative on right-handed boxes. By definition, the fact that $[bx^n]$ and $[cx^n]$ have a right-handed crossing for large $n$, gives non-negativity. Taking $n$ large might be necessary. Item a) shows one configuration of lifts where it is necessary, where for low values of $n$ there is no crossing. Item b) shows that for $n$ large we obtain a right-handed crossing. Item c) shows a figure of the bands model centered at one of the lifts of $x$, and showing how the crossing between the chosen lifts of $[bx^n]$ and $[cx^n]$ cross essentially.}
-\label{fig:nestedpositivity}
-}
-  \end{figure}
-\DMGtodo[inline]{This picture is a bit too schematic. Maybe draw a bit more accurate one?}
-\subsubsection{$\mu_f$ is side-by-side additive and finitely additive}
-
-First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
-
-\begin{proposition}
-  If two boxes $B_1$ and $B_2$ fit together side-by-side (as in Figure~\ref{fig:finiteadditivity}), then
-  \begin{enumerate}
-      \item $B_1 \cup B_2$ is a box.
-      \item $\mu_f(B_1 \cup B_2) = \mu_f(B_1) + \mu_f(B_2)$
-  \end{enumerate}
-  \label{prop:sidebyside}
-\end{proposition}
-
-\begin{proof}
-  Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S)$.
-  Then
-  \begin{align*}
-    B_1 &= [q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2]\\
-    B_2 &= [q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2]\\
-    B_1 \cup B_2 &= [q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2].
-  \end{align*}
-  From this formula both items of the proposition follow immediately by the definition of $\mu_f$. \qedhere
-
-  \begin{figure}
-\centering{
-\resizebox{80mm}{!}{\svgfig{finiteadditivity}}
-\caption{Illustration of side-by-side additivity for boxes}
-\label{fig:finiteadditivity}
-}
-\end{figure}
-\end{proof}
-
-Now, we show that this in fact implies that $\mu_f$ is finitely additive.
-
-\begin{proposition}
-\label{prop:RHsemiring}
-The right handed boxes $B_{a,b,c,d,\tilde{x}}$ form a semi-ring and $\mu_f$ is finitely additive.
-\end{proposition}
-
-\begin{proof}
-The intersection of boxes is obviously a box.
-We show that if $A,B$ are boxes, then $A - B$ is a finite union of boxes.
-\begin{comment}There are at least two ways to see this.
-
-\begin{enumerate} \item One is by induction on the number of vertical and horizontal divisions.
-Look at any vertical division whose whisker
-reaches
-the upper boundary. There are two cases:
-\begin{itemize} \item If there isn't any, then here's a rectangle that
-reaches clear across the top; remove that rectangle, and by induction on the number of horizontal divisions,
-build up the rest using side-by-side additivity on the lower region, and then add that
-missing rectangle.
-\item Otherwise, that is, if there is such a division, divide the entire collection of rectangles at the location
-of that vertical division (by taking a longer vertical whisker. By induction, build up each half
-by side-by-side additivity, and then attach the two sides together.
-\end{itemize}
-
-\item
-
-\end{enumerate}
-
-\end{comment}
-
-Given an element $x \in \pi_1(S,*)$ corresponding to a simple closed curve, a choice of geodesic lift $\tilde{x}$ with endpoints $x^{+}$ and $x^{-}$ and an arbitrary element $a \in \pi_1(S,*)$, we can determine a \emph{whisker}, a half-closed half-open segment $G(\Sigma)$, as follows. The whisker is a vertical segment in the space $G(\Sigma)$ with horizontal coordinate determined by $a \cdot x^{+}$ and vertical span given by the complement of $[a \cdot x^{-},a \cdot x^{+})$, as in Figure~\ref{fig:whiskers}.
-
-\begin{figure}
-\centering{
-\resizebox{120mm}{!}{\svgfig{originwhiskers}}
-\caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
-\label{fig:whiskers}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{150mm}{!}{\svgfig{originwhiskers2}}
-\caption{Example of correspondence between right-handed boxes and collections of four whiskers}
-\label{fig:whiskers2}
-}
-\end{figure}
-
-
-\DMGtodo[inline]{This is rough, needs to be written more
-  carefully}Notice that the basepoints of whiskers correspond to
-startpoints/endpoints of lifts of a closed geodesic in
-$\tilde{\Sigma}$, and they are dense
-% \DMGtodo[inline]{(Punctures) Uses
-%   surface is closed, otherwise replace with limit set.}
-in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
-\begin{figure}
-\centering{
-\resizebox{40mm}{!}{\svgfig{breakingup}}
-\caption{Breaking up a union of boxes into a finer collection of boxes where we can apply side-by-side additivity. We use vertical and horizontal whiskers. Density of whiskers allow us to cut the boxes by using as many vertical and horizontal whiskers as needed.}
-\label{fig:breaking}
-}
-\end{figure}
-\end{proof}
-
-From now on, let's denote the semiring by $\mathcal{S}$.
-Let $\mathcal{R}$ be the ring generated by $\mathcal{S}$.
-By Propositon~\ref{prop:RHsemiring}, $\mu_{f}$ is a finitely additive function.
 
 
 \subsection{$\mu_{f}$ is countably additive}
@@ -185,7 +44,7 @@ Similarly, we can define a \emph{left horizontal accordion} (the left endpoint i
 \label{def:accordion}
 \end{definition}
 
-The following Proposition will be key to control how much $\mu_f$ when the right-handed boxes are varied in a control way. In particular, it will be crucial in proving inner and outer regularity as well as countable addivitity of $\mu_f$.
+The following Proposition will be key to control how much $\mu_f$ when the right-handed boxes are varied in a control way. In particular, it will be crucial in proving countable addivitity of $\mu_f$.
 
 \begin{figure}
 \centering{
@@ -291,7 +150,7 @@ without increasing the mass much.
 \begin{proof}
   Let $B = [a_1,a_2) \times [b_1,b_2)$. By Proposition~\ref{prop:density} there is a right handed box $B'=[a_1'',a_1) \times [b_1'',b_1)$ in $\mathcal{R}$ so that
   $a_1'' < a_1$ and $b_1'' < b_1$.
-  Let $H$ be a right horizontal accordion based at $B'$,
+  Let $H$ be a right horizontal accordion based at $B'$. \DMGtodo[inline]{what does based at mean?}
   By Proposition~\ref{prop:finalfamily1}, for $k$ large enough, we have $\mu_f(F(k))<\epsilon$. 
   Let $V'(B,\epsilon) \coloneqq B \cup F(k)$.
   We can now repeat the same procedure with $V'(B,\epsilon)$ in the vertical direction.

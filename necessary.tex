@@ -32,13 +32,13 @@ Given a hyperbolic transformation $\gamma \in \pi_1(\Sigma)$, and $\mu$ any geod
 \begin{enumerate}
 \item For every $q \in \wt{\Sigma}$,
 \[
-\mu(G(q,\gamma \cdot q]) = \mu(A) + \mu(B) + \mu(G(p,\gamma \cdot p]) =  \mu(A) + \mu(B) + i(\mu, \gamma).
+\mu(G(q,\gamma \cdot q]) = \mu(X) + \mu(Y) + \mu(G(p,\gamma \cdot p]) =  \mu(X + \mu(Y) + i(\mu, \gamma).
 \]
 where (compare Figure~\ref{fig:defect}):
 \begin{itemize}
     \item $p$ is the orthogonal projection of $q$ onto the axis of $\gamma$ (and, therefore, $\gamma \cdot p$ is the orthogonal projection of $\gamma \cdot q$ onto the axis of $\gamma$);
-    \item $A$ is the set of geodesics with one endpoint on $(z, x]$ and transverse to $(q, \gamma \cdot q]$, where $z$ is the negative endpoint of the geodesic from $q$ to $\gamma \cdot q$;
-    \item  and $B$ is the set of geodesics with one endpoint on $[y, w)$ and transverse to $(q, \gamma \cdot q]$, where $w$ is the positive endpoint of the geodesic from $q$ to $\gamma \cdot q$,
+    \item $X$ is the set of geodesics with one endpoint on $(z, x]$ and transverse to $(q, \gamma \cdot q]$, where $z$ is the negative endpoint of the geodesic from $q$ to $\gamma \cdot q$;
+    \item  and $Y$ is the set of geodesics with one endpoint on $[y, w)$ and transverse to $(q, \gamma \cdot q]$, where $w$ is the positive endpoint of the geodesic from $q$ to $\gamma \cdot q$,
 \end{itemize}
 \label{prop:defect}
 \item  In particular, if $q \in A_{\gamma}$, then 
@@ -141,7 +141,7 @@ Proposition~\ref{prop:defect} (i). This concludes the proof of the second inequa
 \end{proof}
 
 We now analyze under what conditions case (ii) in the previous proposition any of the inequalities becomes an equality.
-\DMGtodo[inline]{this is confusing, since it should also allow for $i(\mu, ab)=i(\mu, ab^{-1})$ and $i(\mu, ab) >  i(\mu, a) + i(\mu, b)$, but it seems that in this configuration this never happens from the analysis below?}
+
 
 \begin{proposition}
 Suppose $a,b \in \Gamma$ are non-trivial elements with distinct fixed points on the boundary circle $\partial \Gamma$. Suppose $a$ and $b$ are $R$-parallel.
@@ -167,17 +167,88 @@ and
 \]
 By Proposition~\ref{prop:defect}, the first condition is equivalent to
 \[
-\mu(A) + \mu(B) = 0
+\mu(X) + \mu(Y) = 0
 \]
-where $A$ is the set of geodesics with one endpoint in $(ab^+, a^+)$ and transverse to $(p, a \cdot p]$, and
-$B$ is the set of geodesics with one endpoint in $(a^-, ab^-)$ and transverse to $(p, a \cdot p]$.
-Observe, however, that $a^{-1} \cdot A$ is the set of geodesics with an endpoint in $(ba^+, a^+)$ and transverse to $(p, a^{-1} \cdot p]$. Thus, if $l \in A$, then $a^{-1} \cdot l$ must intersect $l$. But this is impossible, since $\mu$ is assumed to be a measured lamination.
-Hence, $\mu(A)=0$. A similar analysis shows that $\mu(B)=0$.
-The proof of the other equality is similar.
+where $X$ is the set of geodesics with one endpoint in $(ab^+, a^+)$ and transverse to $(p, a \cdot p]$, and
+$Y$ is the set of geodesics with one endpoint in $(a^-, ab^-)$ and transverse to $(p, a \cdot p]$ (see Figure~\ref{fig:equality}, where $X$ is depicted in purple, and $Y$ is depicted in pink.
+Observe, however, that $a^{-1} \cdot X$ is the set of geodesics with an endpoint in $(ba^+, a^+)$ and transverse to $(p, a^{-1} \cdot p]$. Thus, if $\gamma \in X$, then $a^{-1} \cdot \gamma$ must intersect $\gamma$. But this is impossible, since $\mu$ is assumed to be a measured lamination.
+Hence, $\mu(X)=0$.
 
     \begin{figure}[h!]
 \centering{
 \resizebox{80mm}{!}{\svgfig{equality}}
-    \caption{Analyzing equality in connected smoothing}\label{fig:equality}}
+    \caption{Analyzing equality in connected smoothing. The defect region $X$ for a fundamental domain of $a$ is depicted in purple, whereas the defect region $Y$ is depicted in pink.  }\label{fig:equality}}
 \end{figure}
+
+We will assume $\mu(Y)>0$, and then show that the defect associated to $Ba$ must be $0$.
+Let $\gamma \in (\supp \mu) \cap Y$.
+The first thing we note is that this implies
+$\mu(G(y, p]) + \mu(G(p,x]) = \mu(G(y, x])$.
+Indeed, 
+\[
+(G(y, p]) \cup G(p,x]) - G(y,x] = G((y,p], (p,x])
+\]
+where the last set denotes the geodesics intersecting transversely both $(y,p]$ \emph{and} $(p,x]$. However, $\mu(G((y,p], (p,x]))=0$, since if $\eta \in G((y,p], (p,x]) \cap \supp(\mu)$, then $\eta$ would intersect $\gamma$, contradicting the fact that $\mu$ is a measured lamination.
+We now consider the segment $(y,x]$, and compare its measure to the fundamental domain of $Ba$ obtained by orthogonally projecting to the axis of $Ba$, with defect sets $Z$ and $W$ (see Figure~\ref{fig:equality_2b1}).
+
+\begin{enumerate}
+    \item Suppose the endpoint of $\gamma$ in $(a^-, ab^-)$ is contained in $(a^-, Ba^-)$.
+    Then $A \cdot \gamma$ intersects $\gamma$, contradicting that $\mu$ is a measured lamination (see Figure~\ref{fig:equality_2c}).
+
+
+    \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{equality_2c}}
+    \caption{Case 1 for defect set $Y$  }\label{fig:equality_2c}}
+\end{figure}
+
+    
+    \item Suppose the endpoint of $\gamma$ in $(a^-, ab^-)$ is contained in $(Ba^-, Ba^+)$.
+    Let $Z$ and $W$ be the sets associated to the defect of the segment $(A \cdot p, B \cdot p]$ depicted in pink in Figure~\ref{fig:equality_2}.
+
+
+    
+    \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{equality_2}}
+    \caption{Case 2 for defect set $Y$  }\label{fig:equality_2}}
+\end{figure}
+
+
+    First, $\mu(Z)=0$, since if $\eta \in Z \cap \supp(\mu)$, then $\eta$ would have to intersect $\gamma$ or $A \cdot \gamma$.
+    Also, similarly, $\mu(W)=0$, since if  $\eta \in W \cap \supp(\mu)$, then $\eta$ would intersect $b \cdot \gamma$. \DMGtodo[inline]{include this in picture}.
+
+    \item   Suppose the endpoint of $\gamma$ in $(a^-, ab^-)$ is contained in $(Ba^+, ab^-)$.
+    There are two subcases. Subcase 1: Consider $\eta \in W$ with the other endpoint forward of $a^-$.
+    Then $a \cdot \eta$ intersects $\gamma$ (see Figure~\ref{fig:equality_2b1}.
+    
+    \begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{equality_2b1}}
+    \caption{Subcase 1 for defect set $W$  }\label{fig:equality_2b1}}
+\end{figure}
+
+ Subcase 2: Consider $\eta \in W$ with the other endpoint backward of $a^-$.
+    Then $a \cdot \eta$ intersects $\eta$ (see Figure~\ref{fig:equality_2b2}.
+
+\begin{figure}[h!]
+\centering{
+\resizebox{80mm}{!}{\svgfig{equality_2b2}}
+    \caption{Subcase 2 for defect set $W$  }\label{fig:equality_2b2}}
+\end{figure}
+
+
+    
+\end{enumerate}
+
+The proof for the case when the defect of $b$ is positive is analogous.
+It remains to assume that $\mu(Z)>0$ or $\mu(W)>0$ and conclude $\mu(W)=0$ and $\mu(Z)=0$. \DMGtodo[inline]{finish proof.}
+
 \end{proof}
+
+
+
+
+
+
+
