@@ -1,4 +1,4 @@
-\section{Characterizing subsets of currents via functionals}
+\section{Measured laminations and hyperbolic metrics as curve functionals}
 \label{sec:appsintersection}
 
 \subsection{New definition of geodesic currents, filling currents and measured laminations}
@@ -31,6 +31,8 @@ We can also characterize filling geodesic currents.
 \begin{proof}
 These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1]{BIPP17:StructureThmCurrents}.
 \end{proof}
+
+\subsection{Measured laminations}
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
 
@@ -158,26 +160,22 @@ This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, so by~\cite[P
 %\label{fig:maxsmooth}
 %\end{figure}
 
-\begin{remark}
-It turns out that it is only necessary to check max-smoothing for essential crossings between multi-curves to conclude $f$ is a measured lamination, as opposed to also having to check essential self-intersections of a multi-curve with itself. It is however true that intersection number with a measured lamination satisfies max-smoothing condition in this bigger generality, i.e., we claim the following theorem.
+Hence, it is only necessary to check max-smoothing for essential crossings between multi-curves (disconnected max-smoothing) to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-intersections of a multi-curve with itself. It is however true that intersection number with a measured lamination satisfies max-smoothing condition in this bigger generality. Putting everything together, we get the following result.
 
 \begin{theorem}
-$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{max-smoothing property}:
+A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity, homogeneity, stability and the \emph{max-smoothing property}:
     For any essential crossing of a multi-curve $C$, we have
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
     \end{equation}
     \label{prop:char_laminations_plus}
 \end{theorem}
-A sketch of a proof of this fact is given in the Appendix.
-\DPTtodo{This has apparently been banished?}
-\DMGtodo{Yes, it's in the folder old, file maxsmoothing.tex. I think we could add it once we finish with the rest, but the language there is a bit different from the rest of the paper.}
-We suspect it can also be proven using similar arguments as the ones in Theorem~\ref{thm:char_laminations} but the hyperbolic geometry gets considerably more complicated.
-\end{remark}
+\begin{proof}
+Suppose $f$ is a curve functional satisfying max-smoothing, additivity, stability and homogeneity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from Proposition~\ref{prop:smoothing_eq}.
+\end{proof}
 
-
-
-
+\subsection{Liouville currents}
+\label{subsec:liouville}
 In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
 
 \begin{theorem}
@@ -336,7 +334,7 @@ Observe that when $C=1$, the hypothesis simplifies to that of Theorem~\ref{prop:
 
 
 
-\section{A new proof of Skora's theorem}
+\section{Skora's theorem: $\mathbb{R}$-trees dual to measured laminations}
 \label{sec:skora}
 As an application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for

@@ -93,13 +93,12 @@ By Lemma~\ref{lem:Q}, and by additivity and (unoriented) smoothing of $f$, we ge
   This shows that $g$ is an $r$-midpoint convex and bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the limit in the statement exists.
 \end{proof}
 
-\begin{remark}\DMGtodo[inline]{addcomment on how to relate this to a closed surface example, like we do in the asymmetric intersection number section}
-\label{rmk:nonconvex}
+\begin{remark}
 The limit in Corollary~\ref{cor:additivity-limit} need not exist if one only assumes $f$ satisfies quasi-smoothing.
+The following is an example on the once-holed torus, which can be easily promoted into a genus two surface.
 Consider the once-punctured torus with generating set $\{a,b,a^2\}$, where $a$ and $b$ are the standard generators of $\pi_1(S)$.
-Let $f$ be the stable word-length with respect to this generating set.
+Let $f$ be the stable word-length with respect to this generating set. Note that $f$ satisfies quasi-smoothing instead of smoothing (see \cite[Example~4.10]{MGT21:Smoothings}) for details).
 By picking the right orientations, $a$ crosses $b$ right-handedly, thus $ab$ also crosses $b$ right-handedly by Lemma~~\ref{lem:rhs_prod}.
-$f$ satisfies quasi-smoothing instead of smoothing (see \cite[Example~4.10]{MGT21:Smoothings}) for details). 
 The expression in the limit in Corollary~\ref{cor:additivity-limit} for the pair $ab$ and $b$ is
 \begin{equation*}
   f(ab^{n+1})-f(b^n)=\begin{cases} 1+ \frac{n+2}{2} - \frac{n}{2}=2& \mbox{ if } n \mbox{ is even } \\
@@ -107,6 +106,7 @@ The expression in the limit in Corollary~\ref{cor:additivity-limit} for the pair
   \end{cases}
 \end{equation*}
 so the limit when $n$ goes to infinity doesn't exist.
+\label{rmk:nonconvex}
 \end{remark}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
@@ -274,9 +274,9 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
 
 \begin{proposition}
-  If two boxes $B_1$ and $B_2$ fit together side-by-side (as in Figure~\ref{fig:finiteadditivity}), then
+  If two rh boxes $B_1$ and $B_2$ fit together side-by-side (as in Figure~\ref{fig:finiteadditivity}), then
   \begin{enumerate}
-      \item $B_1 \cup B_2$ is a box.
+      \item $B_1 \cup B_2$ is a rh box.
       \item $\mu_f(B_1 \cup B_2) = \mu_f(B_1) + \mu_f(B_2)$
   \end{enumerate}
   \label{prop:sidebyside}
@@ -284,7 +284,7 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 
 \begin{proof}
   Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S)$.
-  Then
+  Then, in the orbit box notation, we have
   \begin{align*}
     B_1 &= [q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2]\\
     B_2 &= [q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2]\\
@@ -309,8 +309,8 @@ The right handed boxes $B_{a,b,c,d,\tilde{x}}$ form a semi-ring and $\mu_f$ is f
 \end{proposition}
 
 \begin{proof}
-The intersection of boxes is obviously a box.
-We show that if $A,B$ are boxes, then $A - B$ is a finite union of boxes.
+The intersection of boxes is obviously a box. \DMGtodo{should we give the proof?}
+We show that if $A,B$ are boxes, then $A - B$ is a finite union of boxes. 
 \begin{comment}There are at least two ways to see this.
 
 \begin{enumerate} \item One is by induction on the number of vertical and horizontal divisions.

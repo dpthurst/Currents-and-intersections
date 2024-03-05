@@ -19,7 +19,7 @@ We wish to construct a current $\mu_f$ and show that
 $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
 basepoint. The endpoints of the lifts of $[x]$ are dense in
-$\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$.\DMGtodo[inline]{Add reference to this in actions section.}
+$\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$ (Lemma~\ref{lem:minimal}).
 % \DMGtodo[inline]{(Punctures) For surface with punctures, it is density in the limit set, not the whole circle.}
 
 The main objects in our proof are certain boxes in the
@@ -203,12 +203,6 @@ The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ cro
 \end{figure}
 \end{example}
 
-In our construction, we want to use the fact that the endpoints of boxes are dense in $\partial_{\infty} \tilde{S}$, using that the action of $\pi_1(S)$ on $\partial_{\infty} \tilde{S}$ is minimal, i.e., for any $p \in \partial_{\infty} \tilde{S}$, the orbit $\pi_1(S)p$ is dense. \DMGtodo[inline]{Reference to actions (this has been commented before}.
-% \DMGtodo[inline]{(Punctures) Again, this uses surface is closed.}
-However, because of our interest in right-handed boxes, we are only considering a subset of the lifts of $[x]$ to construct our boxes.
-These are still enough to approximate any box.
-% \DMGtodo[inline]{(Punctures) This uses surface is closed (commented before, too)}
-
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
   the specified way. In fact it doesn't matter, as by
@@ -219,8 +213,20 @@ These are still enough to approximate any box.
   of any of the involved spikes is a lift of~$x$, and by definition of
   right-handed box, it is not contained in the spikes. This choice is
   more convenient for the proofs.
-  \DMGtodo[inline]{Explain choice of endpoints of boxes}
 \end{remark}
+
+In our construction, we want to use the following fact.
+
+\begin{lemma}
+The action of $\pi_1(S)$ on $\partial_{\infty} \tilde{S}$ is minimal, i.e., for any $p \in \partial_{\infty} \tilde{S}$, the orbit $\pi_1(S)p$ is dense.
+\label{lem:minimal}
+\end{lemma}
+% \DMGtodo[inline]{(Punctures) Again, this uses surface is closed.}
+However, because of our interest in right-handed boxes, we are only considering a subset of the lifts of $[x]$ to construct our boxes.
+These are still enough to approximate any box.
+% \DMGtodo[inline]{(Punctures) This uses surface is closed (commented before, too)}
+
+
 
 \begin{lemma}
 Let $x \in \pi_1(\Sigma)$.
@@ -232,7 +238,7 @@ with respect to the $ \partial \Sigma$ order.
 \label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
-Endpoints of axes of $\pi_1(\Sigma)$ elements are dense in $\partial \Sigma$. Consider an element $g$ so that $\wt{x}$ is parallel (resp. anti-parallel) to $\ora{g}$ and $g^+ \in (z-\epsilon,z+\epsilon)$ (see Figure~\ref{fig:approx2}). Then, for large enough $n$, by north-south dynamics of $g$, we have that $(g^n x g^{-n})^{\pm} \in (z-\epsilon,z+\epsilon)$ in clockwise (resp. counter-clockwise) order.
+By Lemma~\ref{lem:minimal}, endpoints of axes of $\pi_1(\Sigma)$ elements are dense in $\partial \Sigma$. Consider an element $g$ so that $\wt{x}$ is parallel (resp. anti-parallel) to $\ora{g}$ and $g^+ \in (z-\epsilon,z+\epsilon)$ (see Figure~\ref{fig:approx2}). Then, for large enough $n$, by north-south dynamics of $g$, we have that $(g^n x g^{-n})^{\pm} \in (z-\epsilon,z+\epsilon)$ in clockwise (resp. counter-clockwise) order.
 \end{proof}
 
 \begin{proposition}
@@ -246,7 +252,7 @@ B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in
 B_{\epsilon}(s)$. 
 \label{prop:density}
 \end{proposition}
-\begin{proof}\DMGtodo[inline]{it is not clear how all the conditions of rhs are being checked here }
+\begin{proof}\DMGtodo[inline]{do we need to explain why all the conditions of right handed box are met? }
    Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
    Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we will produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively, and with the right orientations.
    For $r$ (resp. $s$), by Lemma~\ref{lem:diagonaldense}, we find a translate $g_r$ of $\wt{x}$ with endpoints in $B_{\epsilon}(r)$ (resp. a translate $g_s$ with endpoints in $B_{\epsilon}(r)$), with clockwise orientations.

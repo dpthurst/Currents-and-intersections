@@ -219,6 +219,11 @@ more restrictive than checking at the beginning.)
   that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
 
+We will distinguish two types of smoothings.
+
+A \emph{disconnected smoothing} is a smoothing of a crossing of two distinct curves.
+A \emph{connected smoothing} is a smoothing of a self-crossing of two distinct curves.
+
 \subsubsection{Right-handed crossings}
 \label{subsec:rhcrossings}
 In order to work better with group elements and crossings between
@@ -267,6 +272,10 @@ Observe that whether a crossing is ``right-handed'' is invariant under
 simultaneous conjugation of $a$ and $x$, but does depend on
 more than the conjugacy classes of $a$ and~$x$. (We need to specify
 which crossing we are considering.)
+
+In terms of smoothings, in a disconnected smoothing, $a$ and $x$ above are non-conjugates and non-inverses of each other. In a connected smoothing, 
+$a$ and $x$ above are conjugate.
+
 
 We also make the following trivial observation, using
 Convention~\ref{conv:circle-intervals}.
@@ -474,6 +483,8 @@ following.
     \label{fig:anti}}
     \end{figure}
 
+    See Section~\ref{sec:appsintersection} for a more in depth analysis of the configurations of lifts that can arise from disconnected smoothings.
+
 \begin{remark}
   In the R-parallel case we do not make claims about the
   relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
@@ -482,7 +493,6 @@ following.
   See Section~~\ref{subsec:connected_smoothing}, in particular Figure \ref{fig:r3} and Figure \ref{fig:r1} for the full analysis.
 \end{remark}
 
-\begin{remark}
   Lemma~\ref{lem:righthandedfoundation} applies to disconnected
   smoothings. For a similar result for a
   (self-)crossings of $a$ $\ora{ab}$ with $\ora{ba}$ one has to deal with several cases  (This is related to the
@@ -490,8 +500,54 @@ following.
   then $\ora{a}$ and $\ora{b}$ could be parallel or anti-parallel. The
   full analysis is similar to the discussion of maximal bracelet
   chains in the second author's earlier work \cite{Thurston14:PBI}.
-\end{remark}
 
+  \subsection{Analysis for connected smoothings}
+
+If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
+
+One of the resolutions of $[ab]$ is the multi-curve $[a] \cup [b]$.
+The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel. \DMGtodo[inline]{does this need justification? This is essentially saying that we only need to consider the case $a$ and $b$ parallel, and we do not need to worry about $a$ and $b$ being anti-parallel.}
+It remains to determine the position of the lifts $\ora{aB}$ and $\ora{Ba}$.
+
+To that end, consider the common perpendicular line of $a$ and $b$. Let $R_1$ be the reflection along this line.
+Let $R_2, R_3, R_4, R_5$ be reflections so that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Note that $R_i$ are reflections along pairwise non-intersecting reflection lines, since $aB$ and $ab$ are hyperbolic.
+It then follows that 
+$ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
+We have the following possible four configurations of non-intersecting reflection lines. 
+
+\begin{figure}[h!]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{r3}}
+    \caption{$a$ and $b$ parallel, case 1}\label{fig:r3}}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+\centering{
+\resizebox{80mm}{!}{\svgfig{r2}}
+    \caption{$a$ and $b$ parallel, case 2 (can be ruled out)}\label{fig:r2}}
+     \end{subfigure}
+\end{figure}
+
+\begin{figure}[h!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{r1}}
+    \caption{$a$ and $b$ parallel, case 3}\label{fig:r1}
+\end{figure}
+
+
+In the figures, we also draw their corresponding translation axes for each isometry.
+We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.
+We note there is another case, analogous to case 2, where the reflection lines below $R_1$ are exchanged by the ones above it, which can be similarly ruled out.
+
+We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross (see Figure~\ref{fig:c2}).
+
+\begin{figure}[h!]
+     \centering
+\resizebox{50mm}{!}{\svgfig{c2}}
+    \caption{In case 3, $aB$ and $Ba$ can cross.}\label{fig:c2}
+\end{figure} 
 
 
 

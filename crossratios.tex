@@ -180,51 +180,7 @@ and
 
 \begin{proof}
 
-If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
 
-One of the resolutions of $[ab]$ is the multi-curve $[a] \cup [b]$.
-The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel. \DMGtodo[inline]{does this need justification? This is essentially saying that we only need to consider the case $a$ and $b$ parallel, and we do not need to worry about $a$ and $b$ being anti-parallel.}
-It remains to determine the position of the lifts $\ora{aB}$ and $\ora{Ba}$.
-
-To that end, consider the common perpendicular line of $a$ and $b$. Let $R_1$ be the reflection along this line.
-Let $R_2, R_3, R_4, R_5$ be reflections so that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Note that $R_i$ are reflections along pairwise non-intersecting reflection lines, since $aB$ and $ab$ are hyperbolic.
-It then follows that 
-$ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
-We have the following possible four configurations of non-intersecting reflection lines. 
-
-\begin{figure}[h!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{r3}}
-    \caption{$a$ and $b$ parallel, case 1}\label{fig:r3}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{r2}}
-    \caption{$a$ and $b$ parallel, case 2 (can be ruled out)}\label{fig:r2}}
-     \end{subfigure}
-\end{figure}
-
-\begin{figure}[h!]
-     \centering
-\resizebox{80mm}{!}{\svgfig{r1}}
-    \caption{$a$ and $b$ parallel, case 3}\label{fig:r1}
-\end{figure}
-
-
-In the figures, we also draw their corresponding translation axes for each isometry.
-We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.
-We note there is another case, analogous to case 2, where the reflection lines below $R_1$ are exchanged by the ones above it, which can be similarly ruled out.
-
-We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross (see Figure~\ref{fig:c2}).
-
-\begin{figure}[h!]
-     \centering
-\resizebox{50mm}{!}{\svgfig{c2}}
-    \caption{In case 3, $aB$ and $Ba$ can cross.}\label{fig:c2}
-\end{figure} 
 
 Now that we know which possible configurations of lifts can arise in the universal cover, we proceed to check both inequalities in the Lemma.
 
@@ -292,7 +248,7 @@ Following that figure, note that $B \cdot a^- = BA \cdot a^-$, thus $(a^-, B \cd
     We thus have $(Ba^+, Ba^-) \subset (Ba^-, a \cdot aB)$, and therefore
     $\ell(Ba) \leq \ell(ab)$. 
 
-For the second inequality, we can write using the flip relation and the additive relation of the cross-ratio
+For the second inequality, we can write using the flip relation and the additive relation of the cross-ratio \DMGtodo[inline]{double check the following computation, it seems the boxes involved might self-overlap}
 \begin{align*}
 \ell(ba)&=[ba^-, a^-, b \cdot a^-, ba^+] = [b \cdot a^-, ba^+,ba^-, a^-] =\\
 &[b \cdot a^-, ba^+,b^+, a^-] +  [b \cdot a^-, b^+,b^-, a^-] + \\
