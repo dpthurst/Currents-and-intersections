@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%BoundingBox: -14 -14 14 14 
 %%HiResBoundingBox: -13.10582 -13.10582 13.10582 13.10582 
-%%Creator: MetaPost 2.00
-%%CreationDate: 2019.11.18:0837
+%%Creator: MetaPost 2.02
+%%CreationDate: 2024.03.05:0858
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%DocumentSuppliedResources: procset mpost-minimal

@@ -77,6 +77,31 @@ beginmulti;
   draw p2;
   pickup thinpen;
   draw fullcircle scaled 0.5u shifted (1.5u,0.5u);
-  shipmulti(10);
+  shipmulti(20);
 endmulti;
+
+% Smaller, unfilled versions of the basic skein elements for equations
+% Basic unit for all figures
+u := 0.25cm;
+
+beginmulti;
+  for i = 0 upto 3: z[i] = u*dir(-135+90*i); endfor
+%  z0 = (0u, 0u); z1 = (1u, 0u); z2 = (1u, 1u); z3 = (0u, 1u);
+  path p[];
+  p0 = z0..z1..z2..z3..cycle;
+
+%% Simple skein relation
+  draw p0 dashed stddash;
+  draw z0--z2; draw z1--z3;
+  shipmulti(10);
+
+  draw p0 dashed stddash;
+  draw z0{dir 45}..{dir -45}z1; draw z3{dir -45}..{dir 45}z2;
+  shipmulti(11);
+
+  draw p0 dashed stddash;
+  draw z0{dir 45}..{dir 135}z3; draw z1{dir 135}..{dir 45}z2;
+  shipmulti(12);
+endmulti;
+
 end
