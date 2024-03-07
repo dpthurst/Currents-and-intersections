@@ -249,7 +249,7 @@ The other implication follows from an elementary computation of hyperbolic cross
 Another characterizing condition that turns out to be equivalent to the hypothesis in     Theorem~\ref{prop:char_liouville}  is the \emph{disconnected $\lambda$-smoothing property}
 
 \[
-\lambda\left(\mfig{curves-0}\right) =  \lambda\left(\mfig{curves-1}\right)+\lambda\left(\mfig{curves-2}\right)
+\lambda\left(\mfig{curves-10}\right) =  \lambda\left(\mfig{curves-11}\right)+\lambda\left(\mfig{curves-12}\right)
 \]
 where $\lambda(C) \coloneqq 2\cosh(f(C)/2)$.
 Indeed, from this relation, following the proof, one obtains
@@ -264,7 +264,7 @@ The $\lambda$-length functional appears naturally in the study of the skein alge
 \begin{remark}
   The countable set of equalities in Theorem~\ref{thm:bonahonliouville} can be seen as an extreme case of a more general set of inequalities satisfied by any so-called \emph{strongly hyperbolic} space (with parameter $\epsilon=1$), in the sense of~\cite{BS16:StrongHyp}. One can check these spaces satisfy the inequality
   \[
-       e^{f(C_1) + f(C_2)}= e^{f\left(\mfig{curves-0}\right)/2} \leq e^{f\left(\mfig{curves-1}\right)/2}+e^{f\left(\mfig{curves-2}\right)/2}.
+        \exp \left[ f\left(\mfig{curves-10}\right)/2 \right] \leq \exp \left[ f\left(\mfig{curves-11}\right)/2 \right] + \exp \left[ \left(\mfig{curves-12}\right)/2 \right].
   \]
   It would be interesting to see if this condition characterizes currents whose dual pseudo-metric spaces are strongly hyperbolic. For more details see~\cite{JMG:StrongDuals}.
 \end{remark}
@@ -284,11 +284,11 @@ Using this, we can prove the following.
 \begin{theorem}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the following inequalities.
     There exists a constant $C \geq 1$ so that, for any pair of multi-curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
-    1/C \leq \exp \left[ f\left(\mfig{curves-0}\right)/2-f\left(\mfig{curves-2}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-1}\right)/2-f\left(\mfig{curves-2}\right)/2 \right] \leq C
+    1/C \leq \exp \left[ f\left(\mfig{curves-10}\right)/2-f\left(\mfig{curves-12}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-11}\right)/2-f\left(\mfig{curves-12}\right)/2 \right] \leq C
     \end{equation}
     and
     \begin{equation}
-     1/C \leq  \exp \left[ f\left(\mfig{curves-0}\right)/2-f\left(\mfig{curves-1}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-2}\right)/2-f\left(\mfig{curves-1}\right)/2 \right] \leq C
+     1/C \leq  \exp \left[ f\left(\mfig{curves-10}\right)/2-f\left(\mfig{curves-11}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-12}\right)/2-f\left(\mfig{curves-11}\right)/2 \right] \leq C
     \end{equation}
     \label{thm:char_liouville_strong}
   \end{theorem}
@@ -297,11 +297,11 @@ $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional
 The assumption can be written as 
 
  \begin{equation}
-     1/C \leq  \frac{1- e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-1}\right)/2}}{e^{- f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-2}\right)/2}} \leq C
+     1/C \leq  \frac{1- \exp \left[-f\left(\mfig{curves-10}\right)/2 + f\left(\mfig{curves-11}\right)/2 \right]}{\exp \left[ f\left(\mfig{curves-10}\right)/2 + f\left(\mfig{curves-12}\right)/2 \right]} \leq C
     \end{equation}
     and
  \begin{equation}
-    1/C \leq \frac{1- e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-2}\right)/2}}{e^{-f\left(\mfig{curves-0}\right)/2 + f\left(\mfig{curves-1}\right)/2}} \leq C.
+    1/C \leq \frac{1- \exp \left[-f\left(\mfig{curves-10}\right)/2 + f\left(\mfig{curves-12}\right)/2\right]}{\exp \left[-f\left(\mfig{curves-10}\right)/2 + f\left(\mfig{curves-11}\right)/2\right]} \leq C.
     \end{equation}
 
     
@@ -315,7 +315,7 @@ The assumption can be written as
     1/C \leq \frac{1 - e^{-\mu(B^{\perp})}}{e^{-\mu(B)}} \leq C
     \end{equation}
 which, by Theorem~\ref{thm:ham}, implies $\mu$ is a hyperbolic Liouville current.
-On the other hand, if $\mu$ is a Liouville current, by Theorem~\ref{prop:char_liouville}, letting $x \coloneqq f\left(\mfig{curves-0}\right)/2$, $y \coloneqq f\left(\mfig{curves-1}\right)/2$ and $z \coloneqq f\left(\mfig{curves-0}\right)/2$, we get
+On the other hand, if $\mu$ is a Liouville current, by Theorem~\ref{prop:char_liouville}, letting $x \coloneqq f\left(\mfig{curves-10}\right)/2$, $y \coloneqq f\left(\mfig{curves-11}\right)/2$ and $z \coloneqq f\left(\mfig{curves-10}\right)/2$, we get
 \[
 e^{x} - e^{y}  = e^{-x} -e^{-y}  + e^{z} - e^{-z}.
 \]

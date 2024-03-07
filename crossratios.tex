@@ -2,6 +2,22 @@
 
 \label{sec:crossratios}
 
+There are many definitions of cross ratios in the literature (Ledrappier, Hamenstadt, Otal, etc.).
+Typically the authors consider them to be continuous or even Holder continuous.
+Under this condition, cross ratios are uniquely determined by their period.
+We consider cross-ratios in the sense of Burger-Iozzi-Parreau-Pozzetti. Our cross-ratios need not be continuous. In this setting, there are two natural cross-ratios associated to a geodesic current.
+\[
+[a,b,c,d]^+ \coloneqq \mu([a,b) \cdot [c,d))
+\]
+and
+\[
+[a,b,c,d]^- \coloneqq \mu((a,b] \cdot (c,d])
+\]
+and these cross-ratios are different in general if $\mu$ has atoms (see example when $\mu$ is a closed curve), even though they have the same period.
+On the other hand, by our theorem below every cross-ratio induces a period curve functional, which in turn induces a (unique) current.
+Thus, the map from cross-ratios to currents is surjective but non-injective.
+However, our theorem below wll  there is a bijective correspondence between cross ratio periods and geodesic currents.
+
 A \emph{generalized cross-ratio} is a function $[ \cdot, \cdot, \cdot, \cdot ]$ on $\partial S^{(4)}$ satisfying:
 
 \begin{enumerate}
@@ -267,7 +283,13 @@ where in the last equation we used the fact that $\ell(a)=\ell(A)$.
 Note this computation works for case 1 and case 3, since we have not used the position of the axes $aB$ and $Ba$.
 \end{proof}
 
-\DMGtodo[inline]{state a theorem on how to produce the current from a cross-ratio and viceversa}
+\begin{theorem}
+There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
+\end{theorem}
+\begin{proof}
+By the above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and thus furnishes a geodesic current $\ell(C)=i(\mu,C)$, which is uniquely determined since geodesic currents are uniquely determined by its intersection numbers (\cite[Theoreme~2]{Otal90:SpectreMarqueNegative}).
+On the other hand, a geodesic current $\mu$ induces two cross-ratios $\pm$. Their periods $\ell^{\pm}$ satisfy $\ell^{\pm}(C)=i(\mu,C)$.
+\end{proof}
 
 
 

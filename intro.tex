@@ -113,25 +113,54 @@ theorem for closed curves. We give a further characterization in Theorem~\ref{th
 See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems. In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details) Fricker-Furman \cite[Theorem A]{FF21:QF} show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. In their paper, they note that the smoothing property is indeed a necessary condition for a negatively curved length, which is dual to a geodesic current by \cite[Theorem 2]{Otal90:SpectreMarqueNegative}(although they phrase it in a slightly different terminology, see  \cite[Section 2]{FF21:QF}).
 In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current.
 Our result implies that, in fact, the smoothing property is a \emph{necessary} condition for \emph{any} length dual to a geodesic current. More importantly, adding a few more mild assumptions, it shows that it is also a \emph{sufficient} condition.
-\DMGtodo[inline]{add here a comment on how our result can be useful in the study of left invariant pseudo-metrics on surface groups, such as those coming from Green metrics}.
 
-As a corollary, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
+Given a hyperbolic group $\Gamma$, let $\mathcal{D}(\Gamma)$ be the set of left-invariant pseudo-metrics on $\Gamma$. In the literature some subsets of relevance have been studied, such as those pseudo-metrics quasi-isometric to (some/any) word metric on $\Gamma$  (cite Furman, Reyes, Cantrell-Reyes, etc), but here we will keep the framework general.
+Any pseudo-metric $d$ has a naturally defined stable length $\ell_d(g) = \lim_n \frac{d(e, g^n e)}{n}$, where $e$ is the identity in the Cayley graph of $\Gamma$. By definition, $\ell_d$ is conjugacy class invariant, and $\ell_d(g)=\ell_d(g^{-1})$.
+Thus, specializing to the case when $\Gamma=\pi_1(S)$, $\ell_d$ gives thus a curve functional.
+Every geodesic current induces a natural left invariant pseudo-metric on $\wt{\Sigma}$ equipped with an auxiliary hyperbolic metric (and thus on $\Gamma$ equipped with an auxiliarly word metric), where $d_{\mu}(x,y)$ on $\wt{\Sigma}$ is (roughly speaking) defined as the $\mu$-mass of the set of geodesics tranverse to the $\Sigma$-hyperbolic segment $[x,y]$ (see \cite{dRMG22:Duals}, \cite{OR22:Metric} for precise statements).
+We thus have the following natural maps
+\[
+\iota \colon \GC(S) \to  \CurveFunct(S)
+\]
+sending a current $\mu$ to its intersection functional $i(\mu, \cdot)$;
+\[
+\partial \colon \Curr(S) \to \mathcal{D}(\pi_1(S))
+\]
+sending a current $\mu$, to its dual pseudo-metric $d_{\mu}$;
+\[
+\ell \colon \mathcal{D}(\pi_1(S) \to \CurveFunct(S)
+\]
+sending a pseudo-metric $d$ to its stable length $\ell_d$.
+We note that (\cite{BIPP19:CurrentSystoles})
+\[
+\iota = \ell \circ \partial.
+\]
+A pseudo-metric need not be uniquely determined in general by its stable length. \DMGtodo{I don't think it is known? check}. For pseudo-metrics quasi-isometric to a word metric, the stable length characterizes the pseudo-metric up to uniform additive error (Cantrell-Tanaka), i.e., if $\ell_d(g)=\ell_{d'}$ then there exists $k$ so that $|d-d'| \leq k$.
+If the pseudo-metric space is isometric to an $\mathbb{R}$-tree, work of Culler-Morgan~\cite{CM87:GroupActions} shows that its stable length fully determines the pseudo-metric.
+For pseudo-metrics coming from geodesic currents, the situation is much nicer: the stable length does fully characterize the pseudo-metric (by Otal~\cite{Otal90:SpectreMarqueNegative}), thus all the maps above are injections.
+Theorem~\ref{thm:intersect} can be seen as a characterization of the image of $\iota$ as well as $\ell$. 
+As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
 
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:intersections}. Then,
 \begin{itemize}
 \item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}:
 \begin{equation*}
-      f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
+      f\left(\mfig{curves-10}\right) = \max \left\{ f\left(\mfig{curves-11}\right),f\left(\mfig{curves-12}\right) \right\}.
     \end{equation*}
     \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition:
 \begin{equation} 
-     e^{(f(C_1) + f(C_2))/2}= e^{f\left(\mfig{curves-0}\right)/2} =  e^{f\left(\mfig{curves-1}\right)/2}+e^{f\left(\mfig{curves-2}\right)/2}
+      \exp \left[ f\left(\mfig{curves-10}\right)/2 \right] =  \exp \left[ f\left(\mfig{curves-11}\right)/2 \right] + \exp \left[ f\left(\mfig{curves-12}\right)/2 \right]
+      \label{eq:liouville_char}
     \end{equation}
 \end{itemize}
     The left-hand-side of both equations depicts an essential crossing between any pair of multi-curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
     \label{mainthm:apps}
 \end{mainthm} 
+
+In fact, the second condition characterizing Liouville currents can be replaced by an (a priori) easier to check condition, where equation~\ref{eq:liouville_char} is replaced by two inequalities (see Theorem~\ref{thm:char_liouville_strong}). \DMGtodo[inline]{Is this the best way to announce this result? In the current way, we are not giving the strongest result, but the one with the easier to state condition.}
+
+Parry~\cite{Par91:Translation} characterized precisely which curve functionals are stable lengths of pseudo-metrics isometric to a real tree.
 
 As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
  Let $G$ be a surface group, i.e. $G=\pi_1(X)$ for some closed hyperbolic surface $X$, and $T$ an $\mathbb{R}$-tree. Suppose $G$ acts on $T$ by isometries. It turns out that an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or it has fixed points (elliptic).
@@ -154,11 +183,29 @@ conjugacy classes in $G$ that are translation lengths of $G$-trees in
 terms of Culler-Morgan axioms. One can see our result in terms of the
 smoothing condition as further characterizing which functions on
 conjugacy classes in $G$ come from small $G$-tree actions, when
-$G=\pi_1(S)$. It would be interesting to see what can be said for
+$G=\pi_1(S)$. \DMGtodo[inline]{state here the table of conditions?}
+
+It would be interesting to see what can be said for
 small actions of a general hyperbolic group $G$. Misha Kapovich and
 the first author show \cite{KMG:BBP} that for one ended hyperbolic
 groups acting via small action on an $\mathbb{R}$-tree, the stable
 length extends continuously to geodesic currents.
+
+Finally, we subsume previous work of Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every generalized cross-ratio. Every generalized cross-ratio induces a curve functional called its period, giving a function
+\[
+\pi \colon \operatorname{CR}(S) \to \CurveFunct(S).
+\]
+On the other hand, \cite{BIPP21:PositiveCrossratios} associate, to every cross-ratio, a geodesic current,
+\[
+c \colon \operatorname{CR}(S) \to \GC(S).
+\]
+We show that period curve functionals (i.e., the image of the map $\pi$) satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce geodesic currents.
+
+\begin{mainthm}
+There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
+\end{mainthm}
+
+Unlike the work in~\cite{BIPP21:PositiveCrossratios}, our construction relies solely on the period function to generate the geodesic current. Although a given geodesic current is associated with two distinct cross-ratios, they share the same period. Our proof demonstrates that the mapping from cross-ratios to geodesic currents is mediated by the period map, providing a clearer insight into the relationship between these elements compared to previous approaches.
 
 \subsection{Questions about generalizations}
 \label{sec:questions}
@@ -187,8 +234,6 @@ What is a generalization of smoothing and quasi-smoothing for functionals on hyp
 Is there a notion of intersection number for geodesic currents on a hyperbolic group?
 \end{question}
 
-
-\DMGtodo[inline]{add something about cross ratios}
 
 \subsection{General context}
 \label{subsec:mainresult}
