@@ -1,22 +1,12 @@
 \section{Cross ratios}
-
 \label{sec:crossratios}
 
-There are many definitions of cross ratios in the literature (Ledrappier, Hamenstadt, Otal, etc.).
-Typically the authors consider them to be continuous or even Holder continuous.
-Under this condition, cross ratios are uniquely determined by their period.
-We consider cross-ratios in the sense of Burger-Iozzi-Parreau-Pozzetti. Our cross-ratios need not be continuous. In this setting, there are two natural cross-ratios associated to a geodesic current.
-\[
-[a,b,c,d]^+ \coloneqq \mu([a,b) \cdot [c,d))
-\]
-and
-\[
-[a,b,c,d]^- \coloneqq \mu((a,b] \cdot (c,d])
-\]
-and these cross-ratios are different in general if $\mu$ has atoms (see example when $\mu$ is a closed curve), even though they have the same period.
-On the other hand, by our theorem below every cross-ratio induces a period curve functional, which in turn induces a (unique) current.
-Thus, the map from cross-ratios to currents is surjective but non-injective.
-However, our theorem below wll  there is a bijective correspondence between cross ratio periods and geodesic currents.
+In this section we will see that there is a one-to-one correspondence between geodesic currents and periods of cross-ratios. Precisely, we will prove that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}.
+
+There are many definitions of cross ratios in the literature (Ledrappier, Hamenstadt, Otal, etc.) and, for some of those, people have showed they can be upgraded to geodesic currents.
+Typically the authors consider them to be continuous or even Holder continuous, but we will not assume this here.
+In this section we show that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}, and thus induce geodesic currents.
+This recovers a result of~\cite{BIPP21:PositiveCrossratios}.
 
 A \emph{generalized cross-ratio} is a function $[ \cdot, \cdot, \cdot, \cdot ]$ on $\partial S^{(4)}$ satisfying:
 
@@ -27,10 +17,27 @@ A \emph{generalized cross-ratio} is a function $[ \cdot, \cdot, \cdot, \cdot ]$ 
 \item (positive) For any ccw tuple $a,b,c,d$, we have $[a,b,c,d] \geq 0$.
 \end{enumerate}
 
+Generalized cross-ratios were studied in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios}.
+In this setting, there are two natural cross-ratios associated to a geodesic current.
+\[
+[a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))
+\]
+and
+\[
+[a,b,c,d]^- \coloneqq \mu((d,a] \times (b,c])
+\]
+It is easily checked that these satisfy the properties of generalized cross-ratios,
+and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP21:PositiveCrossratios}, when $\mu$ is a closed curve).
+
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $c$ on $\Sigma$ represented by a group element $g$, be defined as
 \[
 \ell(g) \coloneqq [g^-, x , g \cdot x, g^+ ]
 \]
+
+Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[]^{\pm}$ it induces have the same period. Thus, in general, cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be continuous, cross ratios are uniquely determined by their period (cite Ledrappier).
+
+
+
 From the properties of a generalized cross-ratio, it is easy to see that 
 
 \begin{lemma}
@@ -54,7 +61,7 @@ We then have
 The first and last terms have limit zero as $n \to \infty$, by $\Gamma$-invariance, and the middle term is symmetric under
 switching $g$ and $g^{-1}$.
 \end{proof}
-$\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
+There $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
 We note that this can be inferred a posteriori from \cite{BIPP21:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy smoothing. However, the proof we give here uses only the definition of generalized cross-ratio and thus subsumes the work in \cite{BIPP21:PositiveCrossratios} under the scope of our theorem. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries on the surface.
 
 We divide the proof into several cases, depending on the type of smoothing (connected vs disconnected) and the relative position of certain axes of the resolutions.
@@ -264,23 +271,14 @@ Following that figure, note that $B \cdot a^- = BA \cdot a^-$, thus $(a^-, B \cd
     We thus have $(Ba^+, Ba^-) \subset (Ba^-, a \cdot aB)$, and therefore
     $\ell(Ba) \leq \ell(ab)$. 
 
-For the second inequality, we can write using the flip relation and the additive relation of the cross-ratio \DMGtodo[inline]{double check the following computation, it seems the boxes involved might self-overlap}
-\begin{align*}
-\ell(ba)&=[ba^-, a^-, b \cdot a^-, ba^+] = [b \cdot a^-, ba^+,ba^-, a^-] =\\
-&[b \cdot a^-, ba^+,b^+, a^-] +  [b \cdot a^-, b^+,b^-, a^-] + \\
-&[b \cdot a^-, b^-,ab^-, a^-] + [b \cdot a^-, ab^-,ba^-, a^-].
-\end{align*}
-Therefore, by using the addivity property repeatedly, we get
-\begin{align*}
-\ell(ba) &\geq  [b \cdot a^-, b^+,b^-, a^-] + [b \cdot a^-, ab^-,ba^-, a^-] =\\
-&[b \cdot a^-, b^+,b^-, a^-] +[ba^-, a^-, b \cdot a^-, ab^-]\\
-&[b \cdot a^-, b^+,b^-, a^-] +[ba^-, a^-, a^+, ab^-] +  [ba^-, a^+, b \cdot a^-, ab^-] \geq \\
-& [b \cdot a^-, b^+,b^-, a^-] +[ba^-, a^-, a^+, ab^-] = \\
-& [b \cdot a^-, b^+,b^-, a^-] +[ba^-, A^+, A^-, ab^-] = \\
-& \ell(b) + \ell(A) = \ell(b) + \ell(a)
-\end{align*}
-where in the last equation we used the fact that $\ell(a)=\ell(A)$.
-Note this computation works for case 1 and case 3, since we have not used the position of the axes $aB$ and $Ba$.
+For the second inequality, we observe (compare Figure~\ref{fig:c5}) that the fundamental domain for $ba$ given by
+$[ba^+, ba^-) \times [A \cdot b^+, b^+)$ 
+contains the non-intersecting boxes $[a^+, a^-) \times [A \cdot b^+, b^+)$ and $[b^-, b^+) \times [ba^+, ab^+)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
+using positivity of cross-ratio and flip-invariance, we get
+\[
+\ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b)
+\]
+Note this computation works for both cases of connected smoothing, since we have not used the position of the axes $aB$ and $Ba$.
 \end{proof}
 
 \begin{theorem}

@@ -351,7 +351,13 @@ Consider two hyperbolic elements $g, h \in G$ with axes in $\mathbb{R}$-tree giv
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}. Otherwise, we say that they do not intersect.
 Let $\Delta \coloneqq T_g \cap T_h$. Suppose $\Delta$ is not a singleton, and $g$ and $h$ translate in the same direction along $\Delta$, we say that $g,h$ and \emph{overlap coherently}.
 If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite directions along $\Delta$, we say that $g,h$ and \emph{overlap incoherently}.
-Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if they are both hyperbolic, their overlap $\Delta$ is not a singleton, they overlap coherently and $\Delta< \min \{ \| g \|, \| h \| \}$.
+Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
+\begin{itemize} 
+\item they are both hyperbolic, 
+\item their axes in the tree intersect and their overlap is not a singleton,
+\item they overlap coherently 
+\item and $\Delta< \min \{ \| g \|, \| h \| \}$.
+\end{itemize}
 
 
 Given $G=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $A_g, A_h$ be the hyperbolic axes corresponding to these elements.
@@ -390,14 +396,33 @@ In some of them, max-smoothing will be satisfied, but it will not in all of them
 In order to implement this strategy, the following lemma to find pairs of non-intersecting axes in the tree will be useful.
 
 \begin{lemma}
-  For any action of a finitely-generated group on an $\bbR$-tree,
-    if $g,h$ form a good pair, then $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
+$\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
+\label{lem:char_irred_good}
+\end{lemma}
+\begin{proof}
+By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and only if there exist a pair of hyperbolic elements whose axes have bounded non-empty intersection. By~\cite[Theorem~3.3]{CM87:GroupActions} this implies the existence of a good pair. On the other hand, one of the requirements of a good pair is that both elements are hyperbolic and their axes have bounded overlap.
+\end{proof}
+
+\begin{lemma}
+  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
     \label{lem:oppgoodpair}
 \end{lemma}
-
 \begin{proof}
    This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
 \end{proof}
+
+
+Another way to characterize irreducibility is in terms of non-intersection of axes.
+\begin{lemma}
+$\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h = \empty$.
+\label{lem:char_irred_noninter}
+\end{lemma}
+\begin{proof}
+Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
+\end{proof}
+
+It is worth noticing that a reducible action does not satisfy smoothing. Indeed, as a consequence of Lemma~\ref{lem:char_irred_noninter}, we have for 
+
 
 In order to prove Theorem~\ref{prop:small}, let's consider several cases.
 
@@ -513,7 +538,9 @@ open half-line of $A_{ghg^{-1}}$ with endpoint $z$, that does not contain $x$ (r
 contains $y$ (resp. $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{ghg^{-1}}$ and sends $(-\infty, z]_{ghg^{-1}}$ to $[z, +\infty)_{ghg^{-1}}$, it follows that $[z,y]$ must be sent to $[z,x]$, and $[z,y]$ to $[z,x]$. Thus, the two segments must have equal length, half the length of the overlap $\Delta$, so $z$ must be the middle point of $[x,y]$ and $g(x)=y$, $g(y)=x$. 
 \end{proof}
 
-If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
+If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. 
+
+However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic \DMGtodo[inline]{This is not true if the action is reducible}. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
