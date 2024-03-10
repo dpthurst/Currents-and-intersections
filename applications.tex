@@ -102,7 +102,7 @@ The other claim is similar.
 \end{proof}
 
 \begin{theorem}
-$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the so-called \emph{disconnected max-smoothing property}:
+$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfied the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
     For any pair of multi-curves $C_1$ and $C_2$ with an essential
     crossing between $C_1,C_2$, we have
     \begin{equation}
@@ -111,9 +111,9 @@ $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corr
     \label{thm:char_laminations}
 \end{theorem}
 \begin{proof}
-Suppose first $f$ satisfies the disconnected max-smoothing.
+Suppose first $f$ satisfies the hypotheses of the statement.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
-It remains to show that $\mu_f$ is a measured lamination.
+It remains to show that $\mu_f$ is a measured lamination, using the disconnected max-smoothing property.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
 consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
 Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. 
@@ -421,7 +421,34 @@ $\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if th
 Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 \end{proof}
 
-It is worth noticing that a reducible action does not satisfy smoothing. Indeed, as a consequence of Lemma~\ref{lem:char_irred_noninter}, we have for 
+It is worth noticing that a reducible action does not satisfy smoothing. Indeed, as a consequence of 
+Suppose $\Gamma$ acts on a line.
+Then, by Paulin we have the following cases:
+\begin{itemize}
+\item If $g,h$ are both hyperbolic, then either $g,h$ overlap in the same direction, in which case ($\ell(gh)=\ell(g)+\ell(h)$ and $\ell(gh^{-1}) = |\ell(g)-\ell(h)|$) or $g,h$ overlap in opposite directions in which case ($\ell(gh^{-1})=\ell(g)+\ell(h)$ and $\ell(gh) = |\ell(g)-\ell(h)|$).
+From this it follows, in particular, that in this case the maximum among $\ell(gh), \ell(gh^{-1}), \ell(g)+\ell(h)$ appears exactly twice
+\begin{comment}
+If there is a pair $(g,h)$ of $R$-parallel elements whose axes in the tree overlap incoherently, then max-smoothing would be violated, then on the one hand $\ell(gh)$ should be the maximum among $\ell(gh), \ell(gh^{-1}), \ell(g)+\ell(h)$, but the above analysis implies that $\ell(gh)$ is the minimum. Suppose thus that all $R$-parallel pairs are sent to axes 
+\end{comment}
+Consider Equation~\ref{eq:cross_b} in Proposition~\ref{eq:cross-red3}, with $a=b$, $a$ crossing $x$ to the right, $x$ simple, so that $s=0$, and $m=-n$. Let $r=1$. Then
+\[
+[ax^n ax^{-n}] \searrow [x^{2n}].
+\]
+Assume that $a$ and $x$ translate to the right with different translation lengths.
+Thus, for $n$ large enough, $ax^n$ and $ax^{-n}$ overlap incoherently. Thus, by the equations above, the left hand side is $\ell(ax^n) - \ell(ax^{-n})=2\ell(a)$. On the other hand, the right hand side is $2nf(x)$.
+By (unoriented) smoothing,
+\[
+ 2\ell(a) \geq 2nf(x)
+\]
+which is a contradiction.
+\item If $g$ is elliptic and $h$ is hyperbolic, either $g$ is the identity, in which case $\ell(gh)=\ell(h)$, or $g$ is the reflection about the unique fixed point, in which case $\ell(gh)=0$. If $g,h$ $R$-cross, then $hg^{-1}$ and $gh$ $R$-cross. In the first case, $\ell(gh^{-1})=\ell(h^{-1})=\ell(h)$.
+\item If $g,h$ are both elliptic and distinct, then their fixed points are distinct. We have $\ell(gh)=2d(x,y)$ where $x$ (resp. $y$) is the fixed point of $g$ (resp. $h$).
+This contradicts max-smoothing, since the maximum only appears once among $\ell(gh)>0, \ell(gh^{-1})=0, \ell(g) + \ell(h)=0$.
+\end{itemize})
+
+Let's finally address the minimality assumption.
+The translation length does not determine the tree uniquely.
+Given a curve functional satisfying max-smoothing, it satisfies in particular Parry's axioms~\cite{Par91:Translation}, and hence it is dual to an action of a real tree. Since the length is non-zero, by \cite[Proposition~3.1]{CM87:GroupActions}, there is a unique minimal invariant subtree (a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is given by the same functional. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree.
 
 
 In order to prove Theorem~\ref{prop:small}, let's consider several cases.
