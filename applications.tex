@@ -450,19 +450,23 @@ Without lost of generality, we can furthermore assume that $a$ and $x$ overlap c
 If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. \DMGtodo{this reference might have to be updated after changes in crossings}
 Then $\ell(ax)=\ell(x)-\ell(a)$ and $\ell(xa^{-1})=\ell(a)+\ell(x)$. Since $\ell((xa^{-1})(ax))=\ell(x^2)$ is equal to $\ell(ax) + \ell(xa^{-1}) = 2\ell(x)$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
 \end{proof}
-If $(a,x)$ R-cross, we have $(ax, ax^{-1})$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}.
-Thus, by (unoriented) smoothing,
+If $(a,x)$ R-cross, we use Equation~\ref{eq:cross_b} in Proposition~\ref{prop:join-split-geom}, with $m=-n$, $a=b$, and $n$ large enough, and choosing some admissible $r$ for the inequalities there, by smoothing,
 \begin{equation}
- 2\ell(axax^{-1}) \geq 2 \ell(x)
+ \ell(ax^nax^{-n}) \geq \ell(ax^{n+r}) + \ell(ax^{-n-r})
  \label{eq:unoriented1}
 \end{equation}
-On the other hand, by a similar argument as in the proof of the above Claim, $ax, ax^{-1}$ overlap incoherently, so, by  we have
+On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, by  we have that the left hans die is
 \begin{equation}
-\ell(axax^{-1}) = \ell(ax) - \ell(ax^{-1}) = \ell(a) + \ell(x) - (\ell(x)-\ell(a)) = 2\ell(a)
+\ell(ax^nax^{-n}) = \ell(ax^n) - \ell(ax^{-n}) = \ell(a) + n\ell(x) - (n\ell(x)-\ell(a)) = 2\ell(a)
 \label{eq:lhs1}
 \end{equation}
-where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax,ax^{-1}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-1})$ in th second equality.
-Combining Equation~\ref{eq:unoriented1} with Equation~\ref{eq:lhs1}, we get $\ell(a) \geq \ell(x)$, which contradicts our assumption.
+where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax^n,ax^{-n}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x^n)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-n})$ in the second equality.
+A similar computation, yields the following result for the right hand side.
+\begin{equation}
+\ell(ax^{n+r})=\ell(a)+(n+r)\ell(x) + (n+r)\ell(x)-\ell(a) = 2(n+r)\ell(x)
+\label{eq:rhs1}
+\end{equation}
+Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\ell(a) \geq (n+r)\ell(x)$, which contradicts our assumption.
 \end{proof}
 
 \begin{remark}
