@@ -421,32 +421,62 @@ $\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if th
 Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 \end{proof}
 
-It is worth noticing that a reducible action does not satisfy smoothing.
+Even though we will not needed it, as a warm-up, it is worth noticing that a reducible action does not satisfy smoothing.
 
-If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlaping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap in the same direction, in which case ($\ell(gh)=\ell(g)+\ell(h)$ and $\ell(gh^{-1}) = |\ell(g)-\ell(h)|$) or $g,h$ overlap in opposite directions in which case ($\ell(gh^{-1})=\ell(g)+\ell(h)$ and $\ell(gh) = |\ell(g)-\ell(h)|$).
+\begin{lemma}
+If $(\Gamma, T)$ satisfies smoothing, then it is irreducible.
+\end{lemma}
+\begin{proof}
+We start with a reducible action and show it cannot satisfy smoothing.
+If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlaping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap in the same direction, in which case
+
+\begin{equation}
+\ell(gh)=\ell(g)+\ell(h) \mbox{ and } \ell(gh^{-1}) = |\ell(g)-\ell(h)|
+\label{eq:reducible1}
+\end{equation}
+or $g,h$ overlap in opposite directions in which case
+\begin{equation}
+\ell(gh^{-1})=\ell(g)+\ell(h) \mbox{ and } \ell(gh) = |\ell(g)-\ell(h)|.
+\label{eq:reducible2}
+\end{equation}
+
 Take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
-Consider Equation~\ref{eq:cross_b} in Proposition~\ref{eq:cross-red3}, with $a=b$, $(a,x)$ $R$-cross, $x$ simple, so that $s=0$, and $m=-n$. Let $r=1$. Then
-\[
-[ax^n ax^{-n}] \searrow [x^{2n}].
-\]
-We can always find a pair where this happens. Indeed, wlog, assume $\ell(x)>\ell(a)$.
-If $a,x$ overlap incoherently, then $(a^{-1}x, ax)$ $R$-cross, by Lemma~\ref{lem:righthandedfoundation}.\DMGtodo{this reference might have to be updated after changes in crossings}., 
+WLOG, assume $\ell(a)<\ell(x)$.
 
+\begin{claim}
+Without lost of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
+\end{claim}
+\begin{proof}[Proof of Claim]
+If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. \DMGtodo{this reference might have to be updated after changes in crossings}
+Then $\ell(ax)=\ell(x)-\ell(a)$ and $\ell(xa^{-1})=\ell(a)+\ell(x)$. Since $\ell((xa^{-1})(ax))=\ell(x^2)$ is equal to $\ell(ax) + \ell(xa^{-1}) = 2\ell(x)$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
+\end{proof}
+If $(a,x)$ R-cross, we have $(ax, ax^{-1})$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}.
+Thus, by (unoriented) smoothing,
+\begin{equation}
+ 2\ell(axax^{-1}) \geq 2 \ell(x)
+ \label{eq:unoriented1}
+\end{equation}
+On the other hand, by a similar argument as in the proof of the above Claim, $ax, ax^{-1}$ overlap incoherently, so, by  we have
+\begin{equation}
+\ell(axax^{-1}) = \ell(ax) - \ell(ax^{-1}) = \ell(a) + \ell(x) - (\ell(x)-\ell(a)) = 2\ell(a)
+\label{eq:lhs1}
+\end{equation}
+where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax,ax^{-1}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-1})$ in th second equality.
+Combining Equation~\ref{eq:unoriented1} with Equation~\ref{eq:lhs1}, we get $\ell(a) \geq \ell(x)$, which contradicts our assumption.
+\end{proof}
 
-Note that, for $n$ large enough, $ax^n$ and $ax^{-n}$ overlap incoherently in $T$. Thus, by the equations above, the left hand side is $\ell(ax^n) - \ell(ax^{-n})=2\ell(a)$. On the other hand, the right hand side is $2nf(x)$.
-By (unoriented) smoothing,
-\[
- 2\ell(a) \geq 2nf(x)
-\]
-which is a contradiction.
-\item If $g$ is elliptic and $h$ is hyperbolic, either $g$ is the identity, in which case $\ell(gh)=\ell(h)$, or $g$ is the reflection about the unique fixed point, in which case $\ell(gh)=0$. If $g,h$ $R$-cross, then $hg^{-1}$ and $gh$ $R$-cross. In the first case, $\ell(gh^{-1})=\ell(h^{-1})=\ell(h)$.
-\item If $g,h$ are both elliptic and distinct, then their fixed points are distinct. We have $\ell(gh)=2d(x,y)$ where $x$ (resp. $y$) is the fixed point of $g$ (resp. $h$).
-This contradicts max-smoothing, since the maximum only appears once among $\ell(gh)>0, \ell(gh^{-1})=0, \ell(g) + \ell(h)=0$.
-\end{itemize})
+\begin{remark}
+The proof above shows more that what it is stated: if the action $(\Gamma, T)$ has \emph{any} pair of distinct hyperbolic elements overlapping in a ray with coherent orientations, then the action does not satisfy smoothing. This is in consonance with the fact that in that case, the commutator $[g,h]$ must fix the ray where $g,h$ overlap, and thus the stabilizer of any subarc will be the commutator subgroup of $\langle g, h\rangle$, which is not cyclic, hence the action cannot be small.
+\end{remark}
+
+\begin{remark}
+Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing.
+\label{rmk:reducible_action}
+\end{remark}
 
 Let's finally address the minimality assumption.
 The translation length does not determine the tree uniquely.
-Given a curve functional satisfying max-smoothing, it satisfies in particular Parry's axioms~\cite{Par91:Translation}, and hence it is dual to an action of a real tree. Since the length is non-zero, by \cite[Proposition~3.1]{CM87:GroupActions}, there is a unique minimal invariant subtree (a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is given by the same functional. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree.
+Given a curve functional satisfying max-smoothing, it satisfies in particular Parry's axioms~\cite{Par91:Translation}, and hence it is dual to an action of a real tree. Since the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions}, there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is given by the same curve functional. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional.
 
 
 In order to prove Theorem~\ref{prop:small}, let's consider several cases.
