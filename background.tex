@@ -245,10 +245,11 @@ In particular, the set of bounded measures on a locally compact space is compact
  We say that $g$ is \emph{doubly convex} if it is $(1,1)$-midpoint convex.
  
  Let $\lim_{n^{+}}$ denote the $\lim_{n \to +\infty}$ and $\lim_{n^{-}}$ denote the $\lim_{n \to -\infty}$.
- An expression $\lim_{n^{\pm},mm^{\pm}} g(n,m) = \lim_{n^{\pm}}
+ An expression $\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}}
  \lim_{m^{\pm}} g(n,m)$ means that the four equalities
+ \DPTtodo{I don't know what the last two equalities mean}
  \begin{align*}
-   \lim_{n^{+},mm^{+}} g(n,m) &= \lim_{n^{+}} \lim_{m^{+}} g(n,m)\\
+   \lim_{n^{+},m^{+}} g(n,m) &= \lim_{n^{+}} \lim_{m^{+}} g(n,m)\\
    \lim_{n^{-},m^{-}} g(n,m) &= \lim_{n^{-}} \lim_{m^{-}} g(n,m)\\
    \lim_{n,m} g(n^{+},m^{-}) &= \lim_{n^{+}} \lim_{m^{-}} g(n,m)\\
    \lim_{n,m} g(n^{-},m^{+}) &= \lim_{n^{-}} \lim_{m^{+}} g(n,m)
@@ -256,7 +257,9 @@ In particular, the set of bounded measures on a locally compact space is compact
  are true.
  
  The following result is standard.
- 
+
+ \DPTtodo{This seems false? There's only one-sided monotonicity, are
+   the $\pm$'s intended?}
  \begin{lemma}
   Let $(a_{n,m})_{n,m \in \mathbb{Z}}$ be a double sequence on the integers which is bounded and monotone, in the sense that $a_{n',m'} \leq a_{n,m}$, whenever $(n',m') \leq (n,m)$ (i.e., $n' \leq n$ and $m' \leq m$). Then the following limits exist and are equal
   \[
@@ -280,6 +283,7 @@ In particular, the set of bounded measures on a locally compact space is compact
  \label{lem:limexistrmidconvex}
  \end{lemma}
  \begin{proof}
+   \DPTtodo{This proof is a little too sketchy}
  Let $g$ be a $r$-midpoint convex function, i.e., that $g(n) \le (g(n+r) + g(n-r))/2$ for $r$ larger than some
 $r_0$. WLOG, assume $r_0$ is a power of $2$. For $0 \le k
 < r_0$, define $g_k(n) \coloneqq g(k + r_0 \cdot n)$. Then $g_k$ is convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded} has
@@ -292,6 +296,7 @@ $2g(5r_0/4) \le g(0) + g(5r_0/2)$.
  
  The proof of the analogous lemma for two-variable functions is very similar to that of Lemma~\ref{lem:limexistrmidconvex}.
  
+   \DPTtodo{Write proof for this one}
   \begin{lemma}
  Given a $(r,s)$-midpoint convex function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ which is bounded, then $\lim_{n,m} g(n^{\pm},m^{\pm}) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exist.
  \label{lem:limexistrmidconvextwovar}
