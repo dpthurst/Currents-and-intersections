@@ -421,21 +421,18 @@ $\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if th
 Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 \end{proof}
 
-It is worth noticing that a reducible action does not satisfy smoothing. Indeed, as a consequence of 
-Suppose $\Gamma$ acts on a line.
-Then, by Paulin we have the following cases:
-\begin{itemize}
-\item If $g,h$ are both hyperbolic, then either $g,h$ overlap in the same direction, in which case ($\ell(gh)=\ell(g)+\ell(h)$ and $\ell(gh^{-1}) = |\ell(g)-\ell(h)|$) or $g,h$ overlap in opposite directions in which case ($\ell(gh^{-1})=\ell(g)+\ell(h)$ and $\ell(gh) = |\ell(g)-\ell(h)|$).
-From this it follows, in particular, that in this case the maximum among $\ell(gh), \ell(gh^{-1}), \ell(g)+\ell(h)$ appears exactly twice
-\begin{comment}
-If there is a pair $(g,h)$ of $R$-parallel elements whose axes in the tree overlap incoherently, then max-smoothing would be violated, then on the one hand $\ell(gh)$ should be the maximum among $\ell(gh), \ell(gh^{-1}), \ell(g)+\ell(h)$, but the above analysis implies that $\ell(gh)$ is the minimum. Suppose thus that all $R$-parallel pairs are sent to axes 
-\end{comment}
-Consider Equation~\ref{eq:cross_b} in Proposition~\ref{eq:cross-red3}, with $a=b$, $a$ crossing $x$ to the right, $x$ simple, so that $s=0$, and $m=-n$. Let $r=1$. Then
+It is worth noticing that a reducible action does not satisfy smoothing.
+
+If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlaping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap in the same direction, in which case ($\ell(gh)=\ell(g)+\ell(h)$ and $\ell(gh^{-1}) = |\ell(g)-\ell(h)|$) or $g,h$ overlap in opposite directions in which case ($\ell(gh^{-1})=\ell(g)+\ell(h)$ and $\ell(gh) = |\ell(g)-\ell(h)|$).
+Take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
+Consider Equation~\ref{eq:cross_b} in Proposition~\ref{eq:cross-red3}, with $a=b$, $(a,x)$ $R$-cross, $x$ simple, so that $s=0$, and $m=-n$. Let $r=1$. Then
 \[
 [ax^n ax^{-n}] \searrow [x^{2n}].
 \]
-Assume that $a$ and $x$ translate to the right with different translation lengths.
-Thus, for $n$ large enough, $ax^n$ and $ax^{-n}$ overlap incoherently. Thus, by the equations above, the left hand side is $\ell(ax^n) - \ell(ax^{-n})=2\ell(a)$. On the other hand, the right hand side is $2nf(x)$.
+We can always find a pair where this happens. Indeed, wlog, assume $\ell(a)>\ell(x)$.
+If $a,x$ overlap incoherently, then $(a^{-1}x, ax)$ $R$-cross (by Lemma~\ref{lem:righthandedfoundation}
+
+Note that, for $n$ large enough, $ax^n$ and $ax^{-n}$ overlap incoherently in $T$. Thus, by the equations above, the left hand side is $\ell(ax^n) - \ell(ax^{-n})=2\ell(a)$. On the other hand, the right hand side is $2nf(x)$.
 By (unoriented) smoothing,
 \[
  2\ell(a) \geq 2nf(x)
