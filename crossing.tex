@@ -435,12 +435,13 @@ following.
   \item If $(\ora{a},\ora{b})$ R-cross, then we claim that the
     endpoints of the various geodesics must be laid out as in
     Figure~\ref{fig:cross}.
-    \DPTtodo{exaggerate the light/dark distinctions more evident in
-      these figures}
+    \DPTtodo{Combine Figs. 3.1--3.3 into one figure/subfigures. Mark
+      the $a$ and $b$ arrows to
+      indicate group actions. Captions are outdated.}
     \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{rcrossing}}
-    \caption{$a$ and $b$ R-cross, together with the other crossing relations for related words. }
+    \caption{$\ora{a}$ and $\ora{b}$ R-cross, together with the other crossing relations for related words. }
     \label{fig:cross}}
     \end{figure} 
     To see this, observe that, by the dynamics of $a$ and $b$ on the
@@ -468,7 +469,7 @@ following.
     \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{parallel}}
-    \caption{$a$ and $b$ are parallel, together with the other crossing relations for related words. }
+    \caption{$a$ and $b$ are R-parallel, together with the other crossing relations for related words. }
     \label{fig:parallel}}
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
@@ -501,7 +502,7 @@ following.
   full analysis is similar to the discussion of maximal bracelet
   chains in the second author's earlier work \cite{Thurston14:PBI}.
 
-  \subsection{Analysis for connected smoothings}
+\subsection{Connected smoothings}
 
 If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
 
@@ -515,39 +516,37 @@ It then follows that
 $ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
 We have the following possible four configurations of non-intersecting reflection lines. 
 
-\begin{figure}[h!]
+\begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
-\centering{
 \resizebox{80mm}{!}{\svgfig{r3}}
-    \caption{$a$ and $b$ parallel, case 1}\label{fig:r3}}
+    \caption{Case 1}\label{fig:r3}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
-\centering{
 \resizebox{80mm}{!}{\svgfig{r2}}
-    \caption{$a$ and $b$ parallel, case 2 (can be ruled out)}\label{fig:r2}}
-     \end{subfigure}
+    \caption{Case 2 (not possible)}\label{fig:r2}
+\end{subfigure}\\
+\begin{subfigure}{0.45\textwidth}
+     \resizebox{80mm}{!}{\svgfig{r1}}
+     \caption{Case 3}\label{fig:r1}
+   \end{subfigure}\hfill
+\begin{subfigure}{0.45\textwidth}
+  \centering{\resizebox{45mm}{!}{\svgfig{c2}}}
+    \caption{In case 3, $aB$ and $Ba$ can cross.}\label{fig:c2}
+   \end{subfigure}\hfill
+   \caption{Topological cases for
+     connected smoothing of $\ora{ab}$ with $\ora{ba}$.}
 \end{figure}
-
-\begin{figure}[h!]
-     \centering
-\resizebox{80mm}{!}{\svgfig{r1}}
-    \caption{$a$ and $b$ parallel, case 3}\label{fig:r1}
-\end{figure}
-
+\DPTtodo{Combined figures, but they are not uniformly cropped to same
+  size. In general it's better to scale by a percentage than to an
+  absolute width}
 
 In the figures, we also draw their corresponding translation axes for each isometry.
 We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.
 We note there is another case, analogous to case 2, where the reflection lines below $R_1$ are exchanged by the ones above it, which can be similarly ruled out.
 
-We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross (see Figure~\ref{fig:c2}).
-
-\begin{figure}[h!]
-     \centering
-\resizebox{50mm}{!}{\svgfig{c2}}
-    \caption{In case 3, $aB$ and $Ba$ can cross.}\label{fig:c2}
-\end{figure} 
+We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ may cross (Figure~\ref{fig:c2}).
 
 
 
@@ -556,32 +555,34 @@ We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ could cross (see Figure~\re
 We will need a key proposition relating several curves by smoothing
 essential crossings.
 
-\begin{figure}
-\centering{
-\resizebox{90mm}{!}{\svgfig{mn_plane}}
-\caption{$(m-n,r)$ plane. Allowed regions are shaded in grey.}
-\label{fig:mn_plane}
-}
-\end{figure}
-
 
 
 \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{initial}}
-\caption{Initial configuration.}
+\caption{Setup configuration for fundamental smoothing lemma.}
 \label{fig:initial}
 }
 \end{figure}
 
 \begin{lemma}
-Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that $b^{-1} \cdot \wt{x}$, $\wt{y}$, $a \cdot \wt{x}$ and $ab \cdot \wt{y}$ are parallel, in this order, as in Figure~\ref{fig:initial}
+  \DPTtodo{Should this be $\ora{x}$ rather than $\widetilde{x}$?}
+  Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
+  $b^{-1} \cdot \wt{x}$, $\wt{y}$, $a \cdot \wt{x}$ and
+  $ab \cdot \wt{y}$ are R-parallel, in this order, as in
+  Figure~\ref{fig:initial}.
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate of $\wt{x}$, $b^{-1} \cdot \wt{x}$, so that $b^{-1} \cdot \wt{x}$ and $\wt{y}$ and  are parallel. Therefore, $\wt{x}$ and $b \cdot \wt{y}$ are parallel, for any $b$, $a \wt{x}$ and $ab \cdot \wt{y}$ are parallel.
-Find $g \in \pi_1(X)$ so that $g^{+}$ is in the interval $(y_-, y_+)$ and $g^-$ is in the interval $((b^{-1} \cdot \wt{x})^+, (b^{-1} \cdot \wt{x})^-)$.
-If $n$ is large enough, letting $a=g^n$, by the North-South dynamics of $g$ we can ensure that $a \cdot \wt{x}$ is parallel to $\wt{y}$, and the configuration in Figure~\ref{fig:initial} follows.
+  Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate
+  of $\wt{x}$, denoted $b^{-1} \cdot \wt{x}$, so that
+  $b^{-1} \cdot \wt{x}$ and $\wt{y}$ and are R-parallel. For any $a$,
+  be translation we see $a \wt{x}$ and $ab \cdot \wt{y}$ are
+  R-parallel. Find $g \in \pi_1(X)$ so that $g^{+}\in(y_-, y_+)$ and
+  $g^-\in((b^{-1} \cdot \wt{x})^+, (b^{-1} \cdot \wt{x})^-)$. Set
+  $a = g^n$ for large~$n$. By the North-South
+  dynamics of $g$, for $n$ is large enough $a \cdot \wt{x}$ is R-parallel to $\wt{y}$, as
+  desired.
 \end{proof}
 
 
@@ -594,11 +595,20 @@ There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
     \label{eq:crossuniform_m} \mbox{For all } n \in \mathbb{Z},\mbox{ } [b y^{m+s} a x^{n} ] [b y^{m-s} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
   \end{align}
 \end{proposition}
+\begin{figure}
+\centering{
+\resizebox{90mm}{!}{\svgfig{mn_plane}}
+\caption{The smoothings covered by
+  Proposition~\ref{prop:fundamental-aybx}, shown in the $(m-n,r)$
+  plane. Allowed regions are shaded in grey.}
+\label{fig:mn_plane}
+}
+\end{figure}
 
 
 
-
-
+\DPTtodo{Figure~\ref{fig:aybx} is too busy, I think there are too many
+  lines shown and it's not clear what the key parts are.}
 \begin{figure}
 \centering{
 \resizebox{170mm}{!}{\svgfignormal{aybx}}
@@ -672,8 +682,6 @@ Combined, these mean that
 
 We will also need to control the following smoothings.
 
-\DPTtodo{This is the central proposition of \S6. Move out other stuff
-  that isn't directly relevant}
 \begin{proposition}\label{prop:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
 crossing $x$ to the right. Then there is a number $s \ge 0$
