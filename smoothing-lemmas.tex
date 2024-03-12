@@ -124,6 +124,7 @@ Also, see Proposition~\ref{prop:feng} to see how our conditions on a curve funct
  \DPTtodo[inline]{Reference also/instead something in Sec.
    \ref{subsec:convexity} for the notation}
 
+\DMGtodo[inline]{we don't seem to need the proposition below, now}
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   If $a$ and $b$ cross $x$ to the right, then the limits
@@ -191,21 +192,17 @@ We will also need to show existence of limits of words of the type $by^m ax^n$.
 It follows by applying $f$ to the left hand side of the smoothing resolutions in Proposition~\ref{prop:fundamental-aybx}, and using convex union, smoothing, stability and homogeneity in this order.
 \end{proof}
 
-
  \begin{proposition}
   Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
  Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
- Then the double limits
+ Then
  \[
-\lim_{n^{\pm},m^{\pm}} f(b y^m a x^n) - mf(y) - nf(x)
+- f([ab]) \leq f(b y^m a x^n) - mf(y) - nf(x) \leq f([ab]) \l
 \]
-exist. (Here, $n^\pm$ means the limit for either $n \to \infty$ or $n
-\to -\infty$, and similarly for $m^\pm$.)
-\label{prop:doublelimitxy}
+\label{prop:bounded_double}
  \end{proposition}
  \begin{proof}
- We define $g(n,m) \coloneqq f(b y^m a x^n) - mf(y) - nf(x)$. We note that, by Lemma~\ref{lem:axbymidconvex}, $g$ is $(r,s)$-midconvex for some $r,s \in \mathbb{N}$.
- If we can prove that $g$ is bounded, by Lemma~\ref{lem:limexistrmidconvextwovar}, the limits will exist.
+ We define $g(n,m) \coloneqq f(b y^m a x^n) - mf(y) - nf(x)$. 
  On the one hand, 
  \begin{align*}
      g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\

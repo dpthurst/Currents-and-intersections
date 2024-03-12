@@ -111,17 +111,24 @@ By definition of $\mu_f$,
 \begin{align*}
 \mu_f([B]_{a,a x^k e,c,c x^k e})=\lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
 \end{align*}
-So, we are left to evaluate the nested limit
+So, we are left to evaluate the nested limit \flagtodo{nested limit}
 \begin{align*}
 \lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
 \end{align*}
-    By Proposition~\ref{prop:join-split-alg} and by adding and subtracting a term $f([x^{k+n}])$ we this is equivalent to the double limit
+    We use Proposition~\ref{prop:join-split-geom}, equations~\ref{eq:cross_a}
+    \ref{eq:cross_b}, taking $r=1$ (using the fact that $x$ is simple).
+    We then have the expression in the above iterated limit is upper bounded by
+    \[
+  f([ax^{k+1}]) + f([e x^{n-1}]) + f([cx^n])-f([ax^n])-f([cx^{k+1}]) - f([ex^{n-1}])
+    \]
+    by adding and subtracting a term $f([x^{k+n}])$, the iterated limit of the last expression is equivalent to the iterated limit
+    \DMGtodo[inline]{I don't see where the latex error is}
     \begin{align*}
-       \lim_{k,n} f([ax^k]) - f([x^k]) + f([ex^n]) - f([x^n]) +  \\
-        f([cx^n]) - f([x^n]) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
-        -\bigl(f([cx^k])-f([x^k])\bigr)-\bigl(f([ex^n])-f([x^n])\bigr)
+       \lim_{k \to \infty} \lim_{n\to \infty}  \bigl( f([ax^{k+1}]) - f([x^{k+1}]\bigr) + \bigl( f([ex^{n-1}]) - f([x^{n-1}])\bigr) +  \\
+        \bigl( f([cx^n]) - f([x^n]) \bigr) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
+        -\bigl(f([cx^{k+1}])-f([x^{k+1}])\bigr)-\bigl(f([ex^{n-1])-f([x^{n-1}])\bigr)
     \end{align*}
-    Finally, this double limit is 0 by  Corollary~\ref{cor:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
+    Finally, this iterated limit is 0 by  Corollary~\ref{cor:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
     \end{itemize}
 \end{proof}
 
@@ -322,31 +329,49 @@ and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
   a^{(n)} &= p y^{n}   q &  b^{(n)} &= p y^{-(n+1)} q \\
   c^{(n)} &= p y^{n+1} q &  d^{(n)} &= p y^{-n} q.
 \end{align*}
+\flagtodo{nested limit}
+Let $w \coloneqq y^r$.
+Let $a_{n,m} \coloneqq f(pw^{n+1}qx^m) - f(pw^{n}qx^m)$.
+From Proposition~\ref{prop:convex}, we know $f(py^{n}qx^m)$ is $r$-convex in the variable $y$.
+As a consequence, $f(pw^{n}qx^m)$ is convex in the variable $w$, i.e., 
+\[
+f(pw^{n+1}qx^m) + f(pw^{n-1}qx^m) \geq 2f(pw^{n}qx^m)
+\]
+which can be rewritten as
+\[
+f(pw^{n+1}qx^m) - f(pw^{n}qx^m) \geq f(pw^{n}qx^m) - f(pw^{n-1}qx^m)
+\]
+i.e., $a_{n,m}$ is increasing in $n$.
+Let $b_{n,m} \coloneqq a_{n,m} - a_{n,m-1}$.
+Adding and subtracting $f([x^m])$ and applying Proposition~\ref{cor:additivity-limit} twice, we get $\lim_{m} b_{n,m}$ exists.
+Finally, we note that by Proposition~\ref{prop:bounded_double}, $b_{n,m} \leq 2f([wx])$.
+Hence, the assumptions of Proposition~\ref{prop:exchange_limits} apply, and thus
+\[
+\lim_m \lim_n f(pw^{n+1}qx^m) - f(pw^{n}qx^m) = \lim_n \lim_m f(pw^{n+1}qx^m) - f(pw^{n}qx^m)
+\]
 
-If we let $z=(p_1^{-1} \cdot \wt{x})^-$, then we have
+Now, if we let $z=(p_1^{-1} \cdot \wt{x})^-$, and replace $y$ by $w=y^r$ in the above definition of $B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ we have
     \begin{multline*}
-      \mu_f((\gamma_-,\gamma_+) \times [z,y \cdot z)) \\
       \begin{aligned}
+      \mu_f((\gamma_-,\gamma_+) \times [z,w \cdot z)) \\
     &= \lim_{n\to\infty} \mu_f(B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}})  \\
-    &= \frac{1}{2}\lim_{n\to\infty} \lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
-    &=\frac{1}{2}\lim_{n,m\to\infty}(f([py^{n+1}qx^{m}]) - f([y^{n+1}]) - f([x^m])) \\
-    &\qquad+ (f([py^{-(n+1)}qx^{m}])-f([y^{-(n+1)}]) -f([x^m])) \\
-    &\qquad-(f([py^{n}qx^{m}])-f([y^n])-f([x^m]))\\
-    &\qquad- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
-    &\qquad+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}])\\
-    &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
-    &=f([y])
+    &= \frac{1}{2}\lim_{n\to\infty} \lim_{m\to\infty}f([pw^{n+1}qx^{m}]) + f([pw^{-(n+1)}qx^{m}])\\
+    &-f([pw^{n}qx^{m}]) - f([pw^{-n}qx^{m}]) \\
+    &= \frac{1}{2}\lim_{n\to\infty} \lim_{m\to\infty}f([pw^{n+1}qx^{m}]) -f([pw^{n}qx^{m}])  \\
+     + \lim_{n\to\infty} \lim_{m\to\infty}  f([pw^{-(n+1)}qx^{m}]) - f([pw^{-n}qx^{m}])
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([pw^{n+1}qx^{m}]) -f([pw^{n}qx^{m}]) -  \\
+      \lim_{m\to\infty} \lim_{n\to\infty}  f([pw^{-(n+1)}qx^{m}]) - f([pw^{-n}qx^{m}])
+    &= \frac{1}{2}(f([w]) + f([w^{-1}]))\\
+    &=f([w])
       \end{aligned}
-    \end{multline*}      The first equality follows by the fact that the boxes defined
-      above converge from below to $(\gamma_-,\gamma_+) \times [z,y
+    \end{multline*}      The first equality follows by the fact that the boxes defined above converge from below to $(\gamma_-,\gamma_+) \times [z,y
       \cdot z)$ as $n \to \infty$. The second equality is by
       definition of the measure $\mu_f$ on boxes.
-      For the third, we add and subtract the necessary powers of~$y$,
-      $y^{-1}$ and $x$ to get to a double limit that exists by
-      Proposition~\ref{prop:doublelimitxy}. The hypotheses of this Proposition are satisfied by the choice of $p_1$ and $q_1$.
+      For the third, we split the nested limit into a sum of nested limits, for the fourth we exchange nested limits thanks to the above. For the fifth we add and subtract $f([y^{n+1}])$, and use the fact that $a_{n,m}$ is a monotone increasing and upper bounded sequence of $n$.
+       The hypotheses of this Proposition are satisfied by the choice of $p_1$ and $q_1$.
       In the fourth equality, we then apply that
       Proposition to cancel out equivalent
-      terms. In the fifth equality, we use the symmetry property of~$f$ to obtain the result.
+      terms. In the sixth equality, we use the symmetry property of~$f$ to obtain the result.
 \end{proof}
 
 \begin{remark}
