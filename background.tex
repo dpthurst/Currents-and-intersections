@@ -238,13 +238,18 @@ In particular, the set of bounded measures on a locally compact space is compact
  Thus, $g(n)$ for $n \geq n_0$ is monotone increasing, and since it is upper bounded, it has a limit.
  \end{proof}
  
+\begin{definition}
+  A function $h \colon \mathbb{Z}$ is \emph{$r$-midpoint convex}, for
+  some $r \in \mathbb{N}$, if $h(n-r) + h(n+r) \geq 2 h(n)$ for all
+  $n \in \mathbb{Z}$ where the inequality makes sense. Similarly a
+  function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is
+  \emph{$(r,s)$-midpoint convex} if, for all $m$, $g(\cdot, m)$ is
+  $r$-midpoint convex and, for
+  all $n$, $g(n, \cdot)$ is $s$-midpoint convex. We say that $g$ is
+  \emph{doubly convex} if it is $(1,1)$-midpoint convex.
+\end{definition}
  
- We say that a function $h \colon \mathbb{Z}$ is \emph{$r$-midpoint convex}, for some $r \in \mathbb{N}$, if $h(n-r) + h(n+r) \geq 2 h(n)$ for all $n \in \mathbb{Z}$ where the inequality makes sense.
- 
- We say that a function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is \emph{$(r,s)$-midpoint convex} if there exists $r,s \in \mathbb{N}$ so that, for all $m$, $g(\cdot, m)$ is $r$-midpoint convex, and for all $n$, $g(n, \cdot)$ is $s$-midpoint convex.
- We say that $g$ is \emph{doubly convex} if it is $(1,1)$-midpoint convex.
- 
- Let $\lim_{n^{+}}$ denote the $\lim_{n \to +\infty}$ and $\lim_{n^{-}}$ denote the $\lim_{n \to -\infty}$.
+ Let $\lim_{n^{+}}$ denote $\lim_{n \to +\infty}$ and $\lim_{n^{-}}$ denote $\lim_{n \to -\infty}$.
  An expression $\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}}
  \lim_{m^{\pm}} g(n,m)$ means that the four equalities
  \DPTtodo{I don't know what the last two equalities mean}
