@@ -122,11 +122,10 @@ So, we are left to evaluate the nested limit \flagtodo{nested limit}
   f([ax^{k+1}]) + f([e x^{n-1}]) + f([cx^n])-f([ax^n])-f([cx^{k+1}]) - f([ex^{n-1}])
     \]
     by adding and subtracting a term $f([x^{k+n}])$, the iterated limit of the last expression is equivalent to the iterated limit
-    \DMGtodo[inline]{I don't see where the latex error is}
     \begin{align*}
-       \lim_{k \to \infty} \lim_{n\to \infty}  \bigl( f([ax^{k+1}]) - f([x^{k+1}]\bigr) + \bigl( f([ex^{n-1}]) - f([x^{n-1}])\bigr) +  \\
+       \lim_{k\to\infty} \lim_{n\to\infty}  \bigl( f([ax^{k+1}]) - f([x^{k+1}]\bigr) + \bigl( f([ex^{n-1}]) - f([x^{n-1}])\bigr) +  \\
         \bigl( f([cx^n]) - f([x^n]) \bigr) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
-        -\bigl(f([cx^{k+1}])-f([x^{k+1}])\bigr)-\bigl(f([ex^{n-1])-f([x^{n-1}])\bigr)
+        -\bigl(f([cx^{k+1}])-f([x^{k+1}])\bigr)-\bigl(f([ex^{n-1}])-f([x^{n-1}])\bigr)
     \end{align*}
     Finally, this iterated limit is 0 by  Corollary~\ref{cor:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
     \end{itemize}
