@@ -569,7 +569,9 @@ crossings in this context.
 Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
 crossing $x$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
   so that, for all
- $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r < -s$, we have
+ $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
+ -s$, we have
+ \DPTtodo{May have messed up the statement in the editing}
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].\\
@@ -590,39 +592,51 @@ For the allowed values of $r$, Eqs.\ \eqref{eq:cross_a} and
 $m=n$.
 
 \begin{proof}
-  We first show that we can choose lifts for which the crossing is
-  essential. Use the band model, centered on~$\wt{x}$. We will
-  consider the windows on $\bdy^\infty\wt S$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(x^na)$ be the interval on the
-  boundary at infinity cut out by the endpoints of $x^n a \cdot \wt x$
-  that does not contain the endpoints $x^\pm$ of $\wt x$. Similarly for
-  $w(x^n a^{-1})$, $w(x^n b)$, and $w(x^n b^{-1})$. All of these are intervals
+  In each case, we must show that we can choose lifts for which a
+  relevant crossing is essential. We use the bands model, centered
+  on~$\ora{x}$, and normalized so that $x$ acts by translation to the
+  right by $1$. We will
+  consider intervals on $\bdy^\infty\wt S$ cut out by certain other
+  lifts of~$x$. Specifically, let $w(x^ka) = (x^ka\cdot x^-, x^k\cdot
+  x^+)$ be the interval on $\bdy^\infty \wt{S}$ cut out by the
+  endpoints of $x^k a \cdot \ora x$
+  that does not contain the endpoints $x^\pm$ of $\ora x$. Similarly for
+  $w(x^k a^{-1}) = x^ka^{-1} \cdot (x^+,x^-)$, $w(x^k b) = x^k b \cdot
+  (x^-,x^+)$, and $w(x^k b^{-1}) = x^kb^{-1}\cdot (x^+,x^-)$. All of
+  these are intervals
   on the upper or lower boundary in the bands model, by the assumption
-  that $a$ and~$b$ cross $x$ to the right, and the geodesic lift of
-  $x^kax^\ell$ has endpoints $(x^kax^\ell)^- \in w(x^{-\ell}a^{-1})$
+  that $a$ and~$b$ cross $x$ to the right, and
+  $\ora{x^kax^\ell}$ has endpoints $(x^kax^\ell)^- \in w(x^{-\ell}a^{-1})$
   and $(x^kax^\ell)^+ \in w(x^ka)$.
-  See Figure~\ref{fig:abcrossings}; ``left'' and ``right'' will refer
-  to the order on the boundary (minus $x^\pm$) of that figure.
+  See Figure~\ref{fig:abcrossings}.
 
-
+\DPTtodo{Figure \ref{fig:abcrossings} has $a$ crossing $x$ to the
+  left. Reflect it vertically. Also some labels are misplaced}
   \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
-\caption{Lifts of $x$ are depicted in blue. The central blue lift relates to the lower and upper lifts by translates of the type $x^k a$, $x^l a^{-1}$, $x^m a$ and $x^n a^{-1}$, as labelled. Each translate determines a window $w( \cdot )$, which is an interval on $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.}
+\caption{The bands model centered on $\ora{x}$ used in
+  Proposition~\ref{prop:join-split-geom}, in a case where $[x]$ is simple.
+  Lifts of $x$ are depicted in blue. The central blue lift relates to
+  the lower and upper lifts by translates of the type $x^k a$, $x^l
+  a^{-1}$, $x^m a$ and $x^n a^{-1}$, as labelled. Each translate
+  determines a window $w( \cdot )$, which is an interval on
+  $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.
+  If $[x]$ is not simple, the blue lifts can intersect each other.}
 \label{fig:abcrossings}
 }
 \end{figure}
 
 
-
   Observe that (for instance) $w(x^n a)$ is a translate of $w(a)$.
   Furthermore, each window is a
   finite size, so there is a finite range $[s_1,s_2]$ so that $w(a)$
-  is to the left of to the right of $w(x^rb)$ if $r \notin [s_1,s_2]$. Similarly there
+  is to the left of (resp.\ to the right of) $w(x^rb)$ if $r < s_1$
+  (resp.\ $r > s_2$). Similarly there
   is a range $[s_1',s_2']$ so that $w(a^{-1})$ is disjoint from
   $w(x^rb^{-1})$ if $r \notin [s_1',s_2']$. Set
   $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$. Now consider the curves 
-  $ax^n$ and $x^rbx^{m-r}$, with $s < r < m-n-s$. We have
+  $\ora{ax^n}$ and $\ora{x^rbx^{m-r}}$, with $s < r < m-n-s$. We have
   \[
     r-m < -n-s \le -n+s_1',
   \]
@@ -661,7 +675,11 @@ $m=n$.
   Eq.~\eqref{eq:cross-red2} follows immediately.
 
   To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
-  that $n < m$. Let $s_0(a) \coloneqq \lfloor \wid{x}(w(a)) \rfloor$. Observe that, since the bands model is normalized so that the translation length of $x$ is 1, if $x$ is simple, necessarily $\wid{x}(w(a))<1$ (for otherwise two lifts of $x$ would intersect), and thus in that case $s_0=0$. Assume $n-m > s_0$.  Then by the
+  that $n < m$. Let $s_0(a) \coloneqq \lfloor \wid{x}(w(a)) \rfloor$.
+  Observe that, since the bands model is normalized so that the
+  translation length of $x$ is~$1$, if $x$ is simple, necessarily
+  $\wid{x}(w(a))<1$ (for otherwise two lifts of $x$ would intersect),
+  and thus in that case $s_0=0$. Assume $n-m > s_0$.  Then by the
   analysis above, $(ax^n)^-$ is in $w(x^{-n}a^{-1})$, and thus to the
   right of $(ax^m)^-$, which is in $w(x^{-m}a^{-1})$. For the forward
   endpoints, the above simple analysis just says that both endpoints
@@ -701,7 +719,8 @@ The claim follows by Equation~\ref{eq:cross-red3} in Proposition~\ref{prop:join-
 We also need some lemmas about smoothings where we have high powers of
 two different elements.
 
-\DPTtodo{I don't think this lemma belongs in this section at all}
+\DPTtodo{I don't think this lemma belongs in this section at all, move
+  it to where we use the lemma}
 \begin{lemma}
   Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
   $b^{-1} \cdot \ora{x}$, $\ora{y}$, $a \cdot \ora{x}$ and
