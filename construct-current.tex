@@ -116,16 +116,16 @@ So, we are left to evaluate the nested limit
 \lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
 \end{align*}
     We use Proposition~\ref{prop:join-split-geom}, equations~\ref{eq:cross_a}
-    \ref{eq:cross_b}, taking $r=1$ (using the fact that $x$ is simple).
+    \ref{eq:cross_b}, taking $r=1$ and $r'=2$ (using the fact that if $x$ is simple, we can take $s=0$ and $s'=1$).
     We then have the expression in the above iterated limit is upper bounded by
     \[
-  f([ax^{k+1}]) + f([e x^{n-1}]) + f([cx^n])-f([ax^n])-f([cx^{k+1}]) - f([ex^{n-1}])
+  f([ax^{k+1}]) + f([e x^{n-1}]) + f([cx^n])-f([ax^n])-f([cx^{k+2}]) - f([ex^{n-2}])
     \]
     by adding and subtracting a term $f([x^{k+n}])$, the iterated limit of the last expression is equivalent to the iterated limit
     \begin{align*}
        \lim_{k\to\infty} \lim_{n\to\infty}  \bigl( f([ax^{k+1}]) - f([x^{k+1}]\bigr) + \bigl( f([ex^{n-1}]) - f([x^{n-1}])\bigr) +  \\
         \bigl( f([cx^n]) - f([x^n]) \bigr) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
-        -\bigl(f([cx^{k+1}])-f([x^{k+1}])\bigr)-\bigl(f([ex^{n-1}])-f([x^{n-1}])\bigr)
+        -\bigl(f([cx^{k+2}])-f([x^{k+2}])\bigr)-\bigl(f([ex^{n-2}])-f([x^{n-2}])\bigr)
     \end{align*}
     Finally, this iterated limit is 0 by  Corollary~\ref{cor:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
     \end{itemize}
