@@ -354,7 +354,7 @@ can change, as explained below.
 \end{proof}
 
 \begin{lemma}
-  Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolicx elements that do not share any endpoints.
+  Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
   Then $\ora{a}$ and~$\ora{x}$ R-cross (resp.\ L-cross) iff
   $(\ora{x},a \cdot \ora{x})$ are R-parallel (resp.\ L-parallel).
  \label{lem:rhs}
@@ -376,7 +376,8 @@ following.
   \item All four geodesics $\ora{xa}$, $\ora{Xa}$, $\ora{ax}$, and
     $\ora{aX}$ R-cross $\ora{x}$.
   \item $(\ora{ab},\ora{x})$ R-cross.
-  \item More generally, for any $n,k \in \bbZ$, $(\ora{ax^nbx^k},\ora{x})$ R-cross.
+  \item More generally, for any $n,k \in \bbZ$, $(\ora{a x^n},\ora{x}$
+    and $(\ora{ax^nbx^k},\ora{x})$ R-cross.
   \end{enumerate}
     \label{lem:rhs_prod}
 \end{lemma}
@@ -597,17 +598,26 @@ $m=n$.
   on~$\ora{x}$, and normalized so that $x$ acts by translation to the
   right by $1$. We will
   consider intervals on $\bdy^\infty\wt S$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(x^ka) = (x^ka\cdot x^-, x^k\cdot
+  lifts of~$x$. Specifically, let $w(x^ka) = (x^ka\cdot x^-, x^ka\cdot
   x^+)$ be the interval on $\bdy^\infty \wt{S}$ cut out by the
   endpoints of $x^k a \cdot \ora x$
-  that does not contain the endpoints $x^\pm$ of $\ora x$. Similarly for
-  $w(x^k a^{-1}) = x^ka^{-1} \cdot (x^+,x^-)$, $w(x^k b) = x^k b \cdot
-  (x^-,x^+)$, and $w(x^k b^{-1}) = x^kb^{-1}\cdot (x^+,x^-)$. All of
+  that does not contain the endpoints $x^\pm$ of $\ora x$. Similarly
+  for $w(x^k a^{-1}) = x^ka^{-1} \cdot (x^+,x^-)$,
+  $w(x^k b) = x^k b \cdot (x^-,x^+)$, and
+  $w(x^k b^{-1}) = x^kb^{-1}\cdot (x^+,x^-)$. All of
   these are intervals
   on the upper or lower boundary in the bands model, by the assumption
-  that $a$ and~$b$ cross $x$ to the right, and
-  $\ora{x^kax^\ell}$ has endpoints $(x^kax^\ell)^- \in w(x^{-\ell}a^{-1})$
-  and $(x^kax^\ell)^+ \in w(x^ka)$.
+  that $a$ and~$b$ cross $x$ to the right.
+
+  \DPTtodo{Expanded this key fact}
+
+  Furthermore, $\ora{x^kax^\ell}$ R-crosses $x^ka \cdot \ora x$. To
+  see this, conjugate by $(x^k a)^{-1}$: this is equivalent to
+  $\ora{a x^{k+\ell}}$ R-crossing $\ora x$, which is immediate from
+  Lemma~\ref{lem:rhs_prod}. Thus $(x^ka x^\ell)^+ \in w(x^k a)$.
+  Similarly, $\ora{x^k a x^\ell}$ R-crosses $x^{-\ell}a^{-1} \cdot
+  \ora{x}$ (which we can see by conjugating by $a x^\ell$), so
+  $(x^k a x^\ell)^- \in w(x^{-\ell a})$.
   See Figure~\ref{fig:abcrossings}.
 
 \DPTtodo{Figure \ref{fig:abcrossings} has $a$ crossing $x$ to the
@@ -635,7 +645,9 @@ $m=n$.
   (resp.\ $r > s_2$). Similarly there
   is a range $[s_1',s_2']$ so that $w(a^{-1})$ is disjoint from
   $w(x^rb^{-1})$ if $r \notin [s_1',s_2']$. Set
-  $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$. Now consider the curves 
+  $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$.
+
+  Now consider the curves 
   $\ora{ax^n}$ and $\ora{x^rbx^{m-r}}$, with $s < r < m-n-s$. We have
   \[
     r-m < -n-s \le -n+s_1',
