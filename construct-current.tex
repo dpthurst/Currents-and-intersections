@@ -371,10 +371,10 @@ Now, if we let $z=(p_1^{-1} \cdot \wt{x})^-$, and replace $y$ by $w=y^r$ in the 
     &-f([pw^{n}qx^{m}]) - f([pw^{-n}qx^{m}]) \\
     &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty}f([pw^{n+1}qx^{m}]) -f([pw^{n}qx^{m}]) -  \\
         f([pw^{-(n+1)}qx^{m}]) - f([pw^{-n}qx^{m}]) \\
-    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty} \bigl( f([pw^{n+1}qx^{m}]) - f([y^{n+1}])\bigr) \\
-    &-\bigl( f([pw^{n}qx^{m}]) - f([y^{-(n+1)}])\bigr)+  \\
-    &    \bigl( f([pw^{-(n+1)}qx^{m}]) - f([y^{n}])\bigr) \\
-    &- \bigl( f([pw^{-n}qx^{m}]) -  f([y^{-n}])\bigr) +\\
+    &= \frac{1}{2}\lim_{m\to\infty} \lim_{n\to\infty} \bigl( f([pw^{n+1}qx^{m}]) - f([w^{n+1}])\bigr) \\
+    &-\bigl( f([pw^{n}qx^{m}]) - f([w^{-(n+1)}])\bigr)+  \\
+    &    \bigl( f([pw^{-(n+1)}qx^{m}]) - f([w^{n}])\bigr) \\
+    &- \bigl( f([pw^{-n}qx^{m}]) -  f([w^{-n}])\bigr) +\\
     &    f([w]) + f([w^{-1}]) \\
     &= \frac{1}{2}(f([w]) + f([w^{-1}]))\\
     &=f([w])
@@ -382,7 +382,7 @@ Now, if we let $z=(p_1^{-1} \cdot \wt{x})^-$, and replace $y$ by $w=y^r$ in the 
     \end{multline*}      The first equality follows by the fact that the boxes defined above converge from below to $(\gamma_-,\gamma_+) \times [z,y
       \cdot z)$ as $n \to \infty$. The second equality is by
       definition of the measure $\mu_f$ on boxes.
-      For the third, we exchange nested limits thanks to the above. For the fourth we add and subtract $f([y^{n+1}])$, as well as $f([y^{-(n+1)}])$ and collect terms in brackets.
+      For the third, we exchange nested limits thanks to the above. \footnote{This is a key step, since upon exchanging the limit, the nested limit can be evaluated. Note this was not possible before: it was possible to conclude the limit existed, but not what its value was.} For the fourth we add and subtract $f([w^{n+1}])$, as well as $f([w^{-(n+1)}])$ and collect terms in brackets.
      By Lemma~\ref{lem:axbymidconvex} and~Proposition~\ref{prop:bounded_double}, they are mid-convex bounded functions of $n$.
      Therefore, by Lemma~\ref{lem:limitconvex},  the bracketed terms have well-defined limits in $n$. It is key to notice that these limits come in pairs of opposite signs, and thus cancel out.
        In the sixth equality, we use the symmetry property of~$f$ to obtain the result.
