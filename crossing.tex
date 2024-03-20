@@ -530,11 +530,11 @@ We have the following possible four configurations of non-intersecting reflectio
 \end{subfigure}\\
 \begin{subfigure}{0.45\textwidth}
      \resizebox{80mm}{!}{\svgfig{r1}}
-     \caption{Case 3}\label{fig:r1}
+     \caption{Case 3, $aB$ and $Ba$ disjoint}\label{fig:r1}
    \end{subfigure}\hfill
 \begin{subfigure}{0.45\textwidth}
   \centering{\resizebox{45mm}{!}{\svgfig{c2}}}
-    \caption{In case 3, $aB$ and $Ba$ can cross.}\label{fig:c2}
+    \caption{Case 3, $aB$ and $Ba$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
      connected smoothing of $\ora{ab}$ with $\ora{ba}$.}
@@ -572,7 +572,7 @@ crossing $x$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
   so that, for all
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
  -s$, we have
- \DPTtodo{May have messed up the statement in the editing}
+\DPTtodo{Some inconsistency with strict vs nonstrict inequalities}
   \begin{align}
     \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].\\
@@ -593,13 +593,14 @@ For the allowed values of $r$, Eqs.\ \eqref{eq:cross_a} and
 $m=n$.
 
 \begin{proof}
-  In each case, we must show that we can choose lifts for which a
+  In each case, we will show that we can choose lifts of the curves
+  for which a
   relevant crossing is essential. We use the bands model, centered
   on~$\ora{x}$, and normalized so that $x$ acts by translation to the
   right by $1$. We will
   consider intervals on $\bdy^\infty\wt S$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(x^ka) = (x^ka\cdot x^-, x^ka\cdot
-  x^+)$ be the interval on $\bdy^\infty \wt{S}$ cut out by the
+  lifts of~$x$. Specifically, let $w(x^ka) = x^ka \cdot (x^-, x^+)$ be
+  the interval on $\bdy^\infty \wt{S}$ cut out by the
   endpoints of $x^k a \cdot \ora x$
   that does not contain the endpoints $x^\pm$ of $\ora x$. Similarly
   for $w(x^k A) = x^kA \cdot (x^+,x^-)$,
@@ -613,13 +614,13 @@ $m=n$.
   see this, conjugate by $(x^k a)^{-1}$: this is equivalent to
   $\ora{a x^{k+\ell}}$ R-crossing $\ora x$, which is immediate from
   Lemma~\ref{lem:rhs_prod}. Thus $(x^ka x^\ell)^+ \in w(x^k a)$.
-  Similarly, $\ora{x^k a x^\ell}$ R-crosses $x^{-\ell}A \cdot
-  \ora{x}$ (which we can see by conjugating by $a x^\ell$), so
-  $(x^k a x^\ell)^- \in w(x^{-\ell a})$.
+  Similarly, by conjugating by $ax^\ell$ we see that
+  $\ora{x^k a x^\ell}$ R-crosses $x^{-\ell}A \cdot \ora{x}$, so
+  $(x^k a x^\ell)^- \in w(x^{-\ell} A)$.
   See Figure~\ref{fig:abcrossings}.
 
-\DPTtodo{Figure \ref{fig:abcrossings} has $a$ crossing $x$ to the
-  left. Reflect it vertically. Also some labels are misplaced}
+\DPTtodo{Figure \ref{fig:abcrossings} has $\ora a$ crossing $\ora x$ to the
+  left. Reflect it vertically. Also some window labels are misplaced}
   \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
@@ -627,7 +628,7 @@ $m=n$.
   Proposition~\ref{prop:join-split-geom}, in a case where $[x]$ is simple.
   Lifts of $x$ are depicted in blue. The central blue lift relates to
   the lower and upper lifts by translates of the type $x^k a$, $x^l
-  A$, $x^m a$ and $x^n A$, as labelled. Each translate
+  A$, $x^m b$ and $x^n B$, as labelled. Each translate
   determines a window $w( \cdot )$, which is an interval on
   $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.
   If $[x]$ is not simple, the blue lifts can intersect each other.}
@@ -679,19 +680,25 @@ $m=n$.
   $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross_b}.
   We similarly get an essential self-crossing if $m-n+s < r < -s$.
 
-  In the cases when $x$ is simple, two windows are disjoint, nested,
-  or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$. If in
-  addition $a=b$, we also see that all the $s_i$ are equal to~$0$.
-  Eq.~\eqref{eq:cross-red2} follows immediately.
-
   To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
-  that $n < m$. Let $s_0(a) \coloneqq \lfloor \wid{x}(w(a)) \rfloor$.
-  Observe that, since the bands model is normalized so that the
-  translation length of $x$ is~$1$, if $x$ is simple, necessarily
-  $\wid{x}(w(a))<1$ (for otherwise two lifts of $x$ would intersect),
-  and thus in that case $s_0=0$. Assume $n-m > s_0$.  Then by the
-  analysis above, $(ax^n)^-$ is in $w(x^{-n}A)$, and thus to the
-  right of $(ax^m)^-$, which is in $w(x^{-m}A)$. For the forward
+  that $n < m$. Let $s_0 = \lceil \wid{x}(w(a)) \rceil$, where we
+  measure the width of the window in the normalized band model,
+  and
+  let $s' = 2s_0$. By the assumption on $m-n$, we can pick $r$ so that
+  $s_0 \le r \le m-n-s_0$. By the above argument, $\ora{ax^n}$ and
+  $x^rax^{m-r}$ R-cross (since, e.g., $(ax^n)^+ \in w(a)$ and
+  $(x^rax^{m-r})^+ \in w(x^r a)$, which are disjoint), so we see the
+  desired smoothing in Eq.~\eqref{eq:cross-red3}.
+
+  In the cases when $x$ is simple, two windows are disjoint, nested,
+  or identical; this implies that $s_1 = s_2$, $s_1' = s_2'$, and $s_0 = 1$.
+  \DPTtodo{Editing here}
+  \DPTtodo{This needs to be expanded}
+  If in
+  addition $a=b$, we also see that all the $s_i$ are equal to~$0$.
+
+
+For the forward
   endpoints, the above simple analysis just says that both endpoints
   lie in $w(a)$. We can do better by looking deeper in the words:
   $(ax^n)^+$ lies in $w(ax^na)$, meaning the interval between the
@@ -703,6 +710,8 @@ $m=n$.
     [ax^n][ax^m] \reducesto [(ax^n)^{-1}ax^m] = [x^{m-n}]
   \]
   as desired.
+
+  Eq.~\eqref{eq:cross-red2} follows immediately.
 \end{proof}
 
 \begin{remark}
