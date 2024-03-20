@@ -115,8 +115,11 @@ So, we are left to evaluate the nested limit
 \begin{align*}
 \lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
 \end{align*}
-    We use Proposition~\ref{prop:join-split-geom}, equations~\ref{eq:cross_a}
-    \ref{eq:cross_b}, taking $r=1$ and $r'=2$ (using the fact that if $x$ is simple, we can take $s=0$ and $s'=1$).
+    We use Proposition~\ref{prop:join-split-geom},
+    equations~\ref{eq:cross-join} and
+    \ref{eq:cross-split},
+    \DPTtodo{Needs tweaking}
+    taking $r=1$ and $r'=2$ (using the fact that if $x$ is simple, we can take $s=0$ and $s'=1$).
     We then have the expression in the above iterated limit is upper bounded by
     \[
   f([ax^{k+1}]) + f([e x^{n-1}]) + f([cx^n])-f([ax^n])-f([cx^{k+2}]) - f([ex^{n-2}])

@@ -574,22 +574,22 @@ crossing $x$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
  -s$, we have
 \DPTtodo{Some inconsistency with strict vs nonstrict inequalities}
   \begin{align}
-    \label{eq:cross_a} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
-    \label{eq:cross_b} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].\\
-    \intertext{There exists $s' > 0$ (depending on $a$) so that for
-    all $n,m$ with $|n-m| \ge s'$,}
-    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-red3}\\
-    \intertext{If $x$ is simple and $a=b$, we may take $s=0$ and
-    $s'=1$. In particular, for all $n\in\bbZ$,}
-    [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}].\label{eq:cross-red2}
+    \label{eq:cross-join} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
+    \label{eq:cross-split} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].\\
+    \intertext{There exists $s' \ge 0$ (depending on $a$) so that for
+    all $n,m$ with $|n-m| > s'$,}
+    [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-cancel}\\
+    \intertext{If $x$ is simple and $a=b$, we may take $s=s'=0$. In
+    particular, for all $n\in\bbZ$,}
+    [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}].\label{eq:cross-simple}
   \end{align}
 \end{proposition}
 % We will also use this lemma in Section~\ref{sec:recovery} to show
 % $\mu_f$ recovers the value of $f$ on curves, so we consider cases when
 % $x$ is not simple.
 
-For the allowed values of $r$, Eqs.\ \eqref{eq:cross_a} and
-\eqref{eq:cross_b} move the exponents $n,m$ closer to the diagonal
+For the allowed values of $r$, Eqs.\ \eqref{eq:cross-join} and
+\eqref{eq:cross-split} move the exponents $n,m$ closer to the diagonal
 $m=n$.
 
 \begin{proof}
@@ -662,9 +662,9 @@ $m=n$.
   \[
     [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
   \]
-  proving Equation~\eqref{eq:cross_a}.
+  proving Equation~\eqref{eq:cross-join}.
 
-  For Equation~\eqref{eq:cross_b}, write $ax^nbx^m$ as $gh$ with
+  For Equation~\eqref{eq:cross-split}, write $ax^nbx^m$ as $gh$ with
   $g=ax^{n+r}$ and $h=x^{-r}bx^m$, so endpoints of $\ora{gh}$
   are in $w(x^{-m}B)$ and $w(a)$, while the endpoints of its
   conjugate $\ora{hg} =\ora{x^{-r}bx^max^{n+r}}$ are in $w(x^{-n-r}A)$ and
@@ -677,10 +677,10 @@ $m=n$.
     -m \le -m+s+s_1' < -n - r + s_1',
   \]
   so $w(x^{-n-r}A)$ is to the right of  $w(x^{-m}B)$, and
-  $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross_b}.
+  $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}.
   We similarly get an essential self-crossing if $m-n+s < r < -s$.
 
-  To see Eq.~\eqref{eq:cross-red3}, suppose without loss of generality
+  To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
   that $n < m$. Let $s_0 = \lceil \wid{x}(w(a)) \rceil$, where we
   measure the width of the window in the normalized band model,
   and
@@ -688,7 +688,7 @@ $m=n$.
   $s_0 \le r \le m-n-s_0$. By the above argument, $\ora{ax^n}$ and
   $x^rax^{m-r}$ R-cross (since, e.g., $(ax^n)^+ \in w(a)$ and
   $(x^rax^{m-r})^+ \in w(x^r a)$, which are disjoint), so we see the
-  desired smoothing in Eq.~\eqref{eq:cross-red3}.
+  desired smoothing in Eq.~\eqref{eq:cross-cancel}.
 
   In the cases when $x$ is simple, two windows are disjoint, nested,
   or identical; this implies that $s_1 = s_2$, $s_1' = s_2'$, and $s_0 = 1$.
@@ -711,29 +711,13 @@ For the forward
   \]
   as desired.
 
-  Eq.~\eqref{eq:cross-red2} follows immediately.
+  Eq.~\eqref{eq:cross-simple} follows immediately.
 \end{proof}
 
 \begin{remark}
-  In the proof of Proposition~\ref{prop:join-split-geom}, the only
-  place we used an unoriented smoothing was in the proof of
-  Eq.~\eqref{eq:cross-red3}.
-  In fact, this is the only place we use unoriented smoothings in the paper.
+  The main place we use unoriented smoothings in this paper is in the
+  proof of Eq.~\eqref{eq:cross-cancel}.
 \end{remark}
-
-We will also need the following converse smoothing.
-
-\DPTtodo{Put this in the bigger lemma}
-\begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$ so that $a$ crosses $x$ to the right. There exists $s_0=s_0(a) \in \mathbb{N}$ so that
-\[
-[ax^n][a] \reducesto [x^n], \mbox{ for all } n \geq s_0,
-\]
-\label{lem:Q}
-\end{lemma}
-\begin{proof}
-The claim follows by Equation~\ref{eq:cross-red3} in Proposition~\ref{prop:join-split-geom}, taking $m=0$.
-\end{proof}
 
 We also need some lemmas about smoothings where we have high powers of
 two different elements.

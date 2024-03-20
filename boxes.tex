@@ -356,7 +356,8 @@ Let $f$ be a curve functional satisfying convex union and smoothing. Let $a,x \i
 \end{corollary}
 
 \begin{proof}
-  By Eq.~\eqref{eq:cross-red2}, with $a=b$, there exists $r>0$ so that, for all $n$,
+  By Eq.~\eqref{eq:cross-join}, with $a=b$, there exists $r>0$ so
+  that, for all $n$,
   \[
      [ax^{n+r}] [ax^{n-r}] \reducesto [(ax^n)^2]
   \]
@@ -375,7 +376,9 @@ Let $f$ be a curve functional satisfying convex union and smoothing. Let $a,x \i
  \[
  f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
-By Lemma~\ref{lem:Q}, and by additivity and (unoriented) smoothing of $f$, we get, for
+By Eq.~\eqref{eq:cross-cancel} (using simplicity of $x$), and by
+additivity and (unoriented)
+smoothing of $f$, we get, for $n > 0$,
   \[
     -f([a]) \le f([a x^n]) - f([x^n]).
   \]
@@ -510,7 +513,9 @@ It follows by applying $f$ to the left hand side of the smoothing resolutions in
      &\geq -f([ax^nb]) - n f([x]) \\
      &\geq -f([ba])
  \end{align*}
- In the first inequality, we have used Lemma~\ref{lem:Q} with $a x^n b$ in place of $a$ and $y$ in place of $x$, since, as shown above, $ax^nb$ crosses $y$ to the right.
+ In the first inequality, we have used Eq.~\eqref{eq:cross-cancel}
+ with $a x^n b$ in place of $a$ and $y$ in place of $x$, since, as
+ shown above, $ax^nb$ crosses $y$ to the right.
 
  In the second inequality, we use Lemma~\ref{lem:rhs_prod}, with $ba$ in place of $a$, since $ba$ crosses $x$ to the right, as shown above.  
  It follows that $g$ is bounded, and thus the limit exists.
