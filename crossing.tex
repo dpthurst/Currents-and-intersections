@@ -593,7 +593,17 @@ For the allowed values of $r$, Eqs.\ \eqref{eq:cross-join} and
 \eqref{eq:cross-split} move the exponents $n,m$ closer to the diagonal
 $m=n$.
 
+\DPTtodo[inline]{Reorganize slightly. Move bands model outside of
+  proof, define windows, state this lemma. But maybe call the elements
+  something different. And can we actually use this lemma in case with
+  both $x$ and $y$?}
+\begin{lemma}
+Given $a,b, x \in \pi_1(\Sigma)$, so that $B \cdot \ora{x}$ and $a \cdot \ora{x}$ are parallel, for every $n \in \mathbb{Z}$, $(ax^n b)^+ \in w(a)$ and $(ax^n b)^- \in w(B)$.
+\label{lem:cornering}
+\end{lemma}
+
 \begin{proof}
+  \DPTtodo{This can probably be shortened by making it less explicit}
   In each case, we will show that we can choose lifts of the curves
   for which a
   relevant crossing is essential. We use the bands model, centered
@@ -755,12 +765,13 @@ two different elements.
 \end{figure}
 
 \begin{proposition}\label{prop:fundamental-aybx}
-Let $a,b,x,y \in \pi_1(S)$ be arbitrary curves, ordered as in Figure~\ref{fig:initial}.
-There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
-
+Let $a,b,x,y \in \pi_1(S)$ be chosen so $(B\cdot \ora{x}, \ora{y},
+a\cdot\ora{x}, ab\cdot\ora{y})$ are R-parallel in that order, as in
+Figure~\ref{fig:initial}.
+There exists $s \ge 0$ so that for all $r > s$ and all $m,n \in \bbZ$,
   \begin{align}
-    \label{eq:crossuniform_n} \mbox{For all } m \in \mathbb{Z}, \mbox{ } [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
-    \label{eq:crossuniform_m} \mbox{For all } n \in \mathbb{Z},\mbox{ } [b y^{m+s} a x^{n} ] [b y^{m-s} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
+    \label{eq:crossuniform_n} [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
+    \label{eq:crossuniform_m} [b y^{m+r} a x^{n} ] [b y^{m-r} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
   \end{align}
 \end{proposition}
 
@@ -776,49 +787,36 @@ There exist $r_0,s_0$ so that for all $r > r_0$ and $s>s_0$, we have
 }
 \end{figure}
 
-\DPTtodo[inline]{Following lemma misplaced, have not yet introduced window}
-The following lemma follows from Lemma~\ref{lem:rhs}.
-
-\begin{lemma}
-Given $a,b, x \in \pi_1(\Sigma)$, so that $B \cdot \ora{x}$ and $a \cdot \ora{x}$ are parallel, for every $n \in \mathbb{Z}$, $(ax^n b)^+ \in w(a)$ and $(ax^n b)^- \in w(B)$.
-\label{lem:cornering}
-\end{lemma}
-
-
-
-
 \begin{proof}[Proof of Proposition~\ref{prop:fundamental-aybx}]
-  We prove Equation~\ref{eq:crossuniform_m} by showing  choose lifts of conjugates of the curves in the left hand-side of the smoothing for which the crossing is  essential. Use the band model, centered on~$\ora{y}$, and normalized so that the translation length of $y$ along $\ora{y}$ is equal to 1. This is what we will mean by \emph{normalized bands model}.  \DMGtodo[inline]{We use this several times, we should extract a definition} We will
-  consider the windows on $\bdy^\infty\wt \Sigma$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(y^m a)$ be the interval on the
-  boundary at infinity cut out by the endpoints of $y^m a \cdot \wt x$
-  that does not contain the endpoints $y^\pm$ of $\wt y$. Similarly for
-  $w(y^{m-s} a)$, $w(y^{-s} B)$, and $w(B)$. All of these are intervals
-  on the upper or lower boundary in the bands model, by the initial configuration assumption of Lemma~\ref{lem:initial}.
-  See Figure~\ref{fig:aybx}; ``left'' and ``right'' will refer
-  to the order on the boundary (minus $x^\pm$) of that figure.
+  We again use the normalized bands model, centered on $\ora{y}$ so
+  the translation length of $y$ is equal to $1$, as in
+  Figure~\ref{fig:aybx}. By $w(a)$, $w(y^mB)$, etc., we will mean
+  the interval on the boundary between the endpoints of $a \cdot
+  \ora{x}$, $y^mB \cdot \ora{x}$, etc., that do not contain $y^-$, $y^+$.
+  \DPTtodo{Not sure this is needed}
+  Again by Lemma~\ref{lem:rhs_prod}, $(ax^nb)^+
+  \in w(a)$ and $(ax^nb)^- \in w(B)$.
 
-  Observe that (for instance) $w(y^{m} a)$ is a translate of $w(a)$.
-  Furthermore, each window is a
-  finite size, so there is a number $s>0$ so that $w(y^{m-s}a)$
-  is to the left of $w(y^m a)$, and similarly,
+  As before, since each window is of
+  finite width, we can find $s>0$ so that $w(y^{m-s}a)$
+  is to the left of $w(y^m a)$ and
    $w(y^{-s}B)$ is to the left of
   $w(B)$.
   In fact, since the translation length of $y$ is 1, it suffices to take
   \begin{equation*}
-  s \geq s_0 = \lfloor \max \{ \wid{y}(w(A)),\wid{y}(w(b)) \} \rfloor
+  s \geq s_0 = \lceil \max \{ \wid{y}(w(a)),\wid{y}(w(B)) \} \rceil.
   \end{equation*}
-  where $\wid{y}(w(b))$ denotes the length of the interval defining the window $w(a)$ at the boundary at infinity of the normalized bands model, where distances in the boundary are measured with the Euclidean distance.
+
   Consider now the curves
-  $y^{m-s}ax^nb$ and $y^m ax^n by^s \in [y^{m+s}ax^nb]$.
-  We note that, by the north-south dynamics of $y$, $w(y^{m-s}a)$ is to the left of $w(y^m a)$, and
-  $w(y^{-s} B)$ to the left of $w(B)$.
-  \begin{claim}
-  \begin{itemize}
-  \item $(y^{m-s} a x^n b)^+ \in w(y^{m-s} a)$
-  \item $(y^{m-s} a x^n b)^- \in w(B)$
-  \end{itemize}
-  \end{claim}
+  $\ora{y^{m-s}ax^nb}$ and $\ora{y^m ax^n by^s} \in [y^{m+s}ax^nb]$.
+  We claim
+  \begin{align*}
+    (y^{m-s} a x^n b)^+ &\in w(y^{m-s} a) &
+       (y^{m} a x^n b y^{s})^+ &\in w(y^{m} a)\\
+    (y^{m-s} a x^n b)^- &\in w(B) &
+       (y^{m} a x^n b y^{s})^- \in w(y^{-s} B).
+  \end{align*}
+  \DPTtodo{HERE. Not convinced we can use the same lemma}
   \begin{proof}
   It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $y^{m-s} a$ and $b$. Note that the assumptions of the Lemma are satisfied: indeed, $B \cdot \wt{x}$ and $a \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $B \cdot \wt{x}$ and $y^{m-s} a \cdot \wt{x}$ are parallel.
   \end{proof}
