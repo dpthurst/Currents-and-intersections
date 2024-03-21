@@ -680,38 +680,40 @@ $m=n$.
   $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}.
   We similarly get an essential self-crossing if $m-n+s < r < -s$.
 
+  \DPTtodo[inline]{The following argument conjugates by $x^r$. Later,
+    to get the optimal result when $x$ is simple, we need to conjugate
+    instead by $a$. Maybe we should do that already in the non-simple
+    case? The disadvantage is that we go outside of the one bands
+    model, switching to the bands model centered on $a \cdot \ora{x}$.}
   To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
   that $n < m$. Let $s_0 = \lceil \wid{x}(w(a)) \rceil$, where we
   measure the width of the window in the normalized band model,
   and
-  let $s' = 2s_0$. By the assumption on $m-n$, we can pick $r$ so that
+  let $s' = 2s_0 - 1$. By assumption $m-n \ge 2s'$, so we can pick $r$ so that
   $s_0 \le r \le m-n-s_0$. By the above argument, $\ora{ax^n}$ and
   $x^rax^{m-r}$ R-cross (since, e.g., $(ax^n)^+ \in w(a)$ and
   $(x^rax^{m-r})^+ \in w(x^r a)$, which are disjoint), so we see the
   desired smoothing in Eq.~\eqref{eq:cross-cancel}.
 
   In the cases when $x$ is simple, two windows are disjoint, nested,
-  or identical; this implies that $s_1 = s_2$, $s_1' = s_2'$, and $s_0 = 1$.
-  \DPTtodo{Editing here}
-  \DPTtodo{This needs to be expanded}
+  or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$.
   If in
-  addition $a=b$, we also see that all the $s_i$ are equal to~$0$.
+  addition $a=b$, we also see that $s_1=s_1'=0$ and (equivalently)
+  $s_0=1$. This gives the desired strengthening of Eqs.\
+  \eqref{eq:cross-join} and \eqref{eq:cross-split}, and the special
+  case Eq.\ \eqref{eq:cross-simple}.
 
-
-For the forward
-  endpoints, the above simple analysis just says that both endpoints
-  lie in $w(a)$. We can do better by looking deeper in the words:
-  $(ax^n)^+$ lies in $w(ax^na)$, meaning the interval between the
-  endpoints of $ax^na\cdot\wt x$ that is disjoint from $x^\pm$.
-  Similarly $(ax^m)^+$ lies in $w(ax^ma)$, which is to the right of
-  $w(ax^na)$. It follows that $ax^n$ crosses $ax^m$ to the right, and
-  so
-  \[
-    [ax^n][ax^m] \reducesto [(ax^n)^{-1}ax^m] = [x^{m-n}]
-  \]
-  as desired.
-
-  Eq.~\eqref{eq:cross-simple} follows immediately.
+  To see that with $x$ simple we get Eq.\ \eqref{eq:cross-cancel} with
+  $s'=0$ (i.e., smoothing $[ax^n][ax^{n+1}]$, we look slightly deeper
+  in the words. The analysis above shows $(ax^n)^- \in w(x^{-n}A)$ and
+  $(ax^{n+1})^- \in w(x^{-n-1}A)$, which are disjoint as desired. By
+  looking at the bands model centered on $a \cdot \ora{x}$ (or
+  equivalently by conjugating by $a$), we see that
+  $(ax^n)^+ \in w(ax^na) \subset w(a)$, where
+  $w(ax^na) \coloneqq ax^na \cdot (x^-,x^+)$. Similarly
+  $(ax^{n+1})^+ \in w(ax^{n+1}a) \subset w(a)$. These two smaller
+  windows are disjoint, so $\ora{ax^n}$ crosses $\ora{ax^m}$ as
+  desired.
 \end{proof}
 
 \begin{remark}
