@@ -537,8 +537,9 @@ We have the following possible four configurations of non-intersecting reflectio
     \caption{Case 3, $aB$ and $Ba$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
-     connected smoothing of $\ora{ab}$ with $\ora{ba}$.}
+     connected smoothing of $\ora{ab}$ with $\ora{ba}$.} 
 \end{figure}
+\DMGtodo{can we rule the crossing in the last case 3?}
 \DPTtodo{Combined figures, but they are not uniformly cropped to same
   size. In general it's better to scale by a percentage than to an
   absolute width}
@@ -549,7 +550,70 @@ We note there is another case, analogous to case 2, where the reflection lines b
 
 We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ may cross (Figure~\ref{fig:c2}).
 
+\subsection{Relation between connected/disconnected smoothing and crossing/parallel conditions}
 
+An equivalent way to state Theorem~\ref{thm:intersect} is as follows.
+
+\begin{theorem}
+Let $f \colon \Gamma \to \mathbb{R}$ be a function satisfying the following conditions:
+\begin{enumerate}
+\item class invariant $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
+\item inverse invariant: $f(a)=f(A)$, for $A$ the inverse of $a$. 
+\item stable: $f(a^n) = nf(a)$.
+\item For any pair of $R$-crossing elements $(a,b)$, 
+\[
+f(a)+f(b) \geq f(ab)
+\]
+\item For any pair of $R$-parallel elements $(a,b)$, 
+\[
+f(ab)\geq \max\{  f(a) + f(b), f(aB) \}
+\]
+\end{enumerate}
+Then, there exists a geodesic current $\mu_f$ on $S$ so that
+\[
+i(\mu_f, [g]) = f(g)
+\]
+for every $g \in \Gamma$.
+Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
+\end{theorem}
+\begin{proof}
+Extend $f$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves.
+\[
+f(s \cdot a + t \cdot b) = s\cdot f(a) + t \cdot f(b)
+\]
+for every $s,t \geq 0$, and $a,b \in \Gamma$.
+
+The smoothing condition of Theorem~\ref{thm:intersect} is a priori stronger than the hypotheses of this theorem.
+It remains to show the hypotheses of this theorem imply smoothing.
+Noting that if $(a,b)$ is $R$-crossing, we have
+\[
+f(a)+f(b) = f(a + b) \geq f(ab).
+\]
+Also, $(B,a)$ is $R$-crossing, and thus
+\[
+f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB)
+\]
+Also, if  $(a,b)$ are $L$-crossing, thus $(b,a)$ is $R$-crossing, hence
+\[
+f(b)+f(a) \geq f(ba) = f(ab).
+\]
+Also, if  $(a,b)$ are $L$-crossing, thus $(a,B)$ is $R$-crossing, hence
+\[
+f(a)+f(b) = f(b)+f(B) \geq f(aB).
+\]
+All in all, $f$ satisfies $f(a) + f(b) \geq \max \{ f(ab) , f(aB) \}$, so $f$ satisfies disconnected smoothing.
+
+For $ab$ with a self-intersection, this is equivalent to $(a,b)$ being $R$-parallel or $(a,b)$ being $L$-parallel.
+For any pair of $R$-parallel elements $(a,b)$, 
+\[
+f(ab)\geq \max \{ f(a) + f(b), f(aB)\}
+\]
+If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
+\[
+f(ab)=f(ba)\geq \max \{ f(b) + f(a), f(bA)\} = \max \{ f(a) + f(b), f(aB)\} 
+\]
+Hence, connected smoothing is satisfied.
+\end{proof}
 
 \subsection{Fundamental smoothing lemmas}
 
