@@ -655,20 +655,47 @@ crossing $x$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
 % $\mu_f$ recovers the value of $f$ on curves, so we consider cases when
 % $x$ is not simple.
 
-For the allowed values of $r$, Eqs.\ \eqref{eq:cross-join} and
+Note that for the allowed values of $r$, Eqs.\ \eqref{eq:cross-join} and
 \eqref{eq:cross-split} move the exponents $n,m$ closer to the diagonal
 $m=n$.
 
-\DPTtodo[inline]{Reorganize slightly. Move bands model outside of
-  proof, define windows, state this lemma. But maybe call the elements
-  something different. And can we actually use this lemma in case with
-  both $x$ and $y$?}
+We will make heavy use of the \emph{band model} centered on
+$\ora{x}$, meaning the conformal map from $\bbH^2$ to a horizontal
+strip $(-\infty,\infty) \times [-v,v]$ mapping $x^-$ to infinity along
+the negative $x$-axis and $x^+$ to infinity on the positive $x$-axis.
+We choose the \emph{normalized} bands model, picking $v$ so that the
+action of $x$ is horizontal translation by $z \mapsto z+1$.
+
+For any geodesic $\ora{y} = g\cdot\ora{x}$ that is parallel to
+$\ora{x}$, there is a \emph{window} $w(\ora{y})$ cut out by the
+endpoints on the bands model, the interval between $y^\pm$ that
+misses~$x^\pm$. Observe that $w(x^k\cdot\ora{y})$ is the horizontal
+translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
+
 \begin{lemma}
-Given $a,b, x \in \pi_1(\Sigma)$, so that $B \cdot \ora{x}$ and $a \cdot \ora{x}$ are parallel, for every $n \in \mathbb{Z}$, $(ax^n b)^+ \in w(a)$ and $(ax^n b)^- \in w(B)$.
+  Given $a,b, x \in \pi_1(\Sigma)$ so that $a$ and $b$ cross $x$ to
+  the right and $g_1 = x^k ax^\ell$ with $k,\ell \in \bbZ$, we have
+  $g_1^+ \in w(x^k a\cdot\ora{x})$ and
+  $g_1^- \in w(x^{-\ell}A\cdot\ora{x})$. Similarly
+  $g_2 = x^k a x^\ell b x^n$ with $k,\ell,n\in\bbZ$, we have
+  $g_2^+ \in w(x^ka \cdot \ora{x})$ and $g_2^- \in w(x^{-n} B \cdot\ora{x})$.
 \label{lem:cornering}
 \end{lemma}
 
+\begin{proof}
+  For the first part, it suffices to show that $\ora{g_1}$ crosses
+  $x^ka \cdot \ora{x}$ and $x^{-\ell A} \cdot \ora{x}$ to the right,
+  or (by translation) that $\ora{x^{\ell+k}a}$ and $\ora{ax^{k+\ell}}$
+  cross $\ora{x}$ to the right. This follows from
+  Lemma~\ref{lem:rhs_prod}.
 
+  For the second part, we similarly use Lemma~\ref{lem:rhs_prod} to
+  see that $\ora{g_2}$ crosses $x^ka \cdot \ora{x}$ and $x^{-n}B \cdot
+  \ora{x}$ to the right.
+\end{proof}
+
+\DPTtodo[inline]{IN PROGRESS: Reorganizing. Moved stuff outside
+  proposition, now delete it from proof below}
 
 \begin{proof}[Proof of Proposition~\ref{prop:join-split-geom}]
   \DPTtodo{This can probably be shortened by making it less explicit}
