@@ -327,6 +327,8 @@ we will suppress it.
    \item  The pair $(\ora{a},\ora{b})$ is \emph{R-anti-parallel} if $b^+,b^-, a^+, a^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
    \end{itemize}
    We can similarly define L-cross, L-parallel, and L-anti-parallel.
+   We will also say a triple $(\ora{a},\ora{b},\ora{c})$ is R-parallel
+   if $(\ora{a},\ora{b})$ and $(\ora{b},\ora{c})$ are.
 \end{definition}
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of crossing/parallelism
@@ -470,7 +472,7 @@ following.
     \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{parallel}}
-    \caption{$a$ and $b$ are R-parallel, together with the other crossing relations for related words. }
+    \caption{$\ora{a}$ and $\ora{b}$ are R-parallel, together with the other crossing relations for related words. }
     \label{fig:parallel}}
     \end{figure}
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
@@ -666,7 +668,9 @@ Given $a,b, x \in \pi_1(\Sigma)$, so that $B \cdot \ora{x}$ and $a \cdot \ora{x}
 \label{lem:cornering}
 \end{lemma}
 
-\begin{proof}
+
+
+\begin{proof}[Proof of Proposition~\ref{prop:join-split-geom}]
   \DPTtodo{This can probably be shortened by making it less explicit}
   In each case, we will show that we can choose lifts of the curves
   for which a
@@ -694,8 +698,6 @@ Given $a,b, x \in \pi_1(\Sigma)$, so that $B \cdot \ora{x}$ and $a \cdot \ora{x}
   $(x^k a x^\ell)^- \in w(x^{-\ell} A)$.
   See Figure~\ref{fig:abcrossings}.
 
-\DPTtodo{Figure \ref{fig:abcrossings} has $\ora a$ crossing $\ora x$ to the
-  left. Reflect it vertically. Also some window labels are misplaced}
   \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
@@ -797,46 +799,95 @@ Given $a,b, x \in \pi_1(\Sigma)$, so that $B \cdot \ora{x}$ and $a \cdot \ora{x}
 \end{remark}
 
 We also need some lemmas about smoothings where we have high powers of
-two different elements.
+two different elements. We work with three elements $a,x,y\in\pi_1(S)$
+so that $(\ora{x},\ora{y},a\cdot\ora{x})$ that are R-parallel; this
+implies, for instance, that $(a\cdot\ora{x},a\cdot\ora{y})$ are also
+R-parallel. We will work in the normalized bands model
+centered on $\ora{y}$. We first prove another crossing lemma.
 
-\DPTtodo{I don't think this lemma belongs in this section at all, move
-  it to where we use the lemma}
-\begin{lemma}
-  Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
-  $B \cdot \ora{x}$, $\ora{y}$, $a \cdot \ora{x}$ and
-  $ab \cdot \ora{y}$ are R-parallel, in this order, as in
-  Figure~\ref{fig:initial}.
-\label{lem:initial}
+\begin{lemma}\label{lem:ayx-window}
+  For any triple $a,x,y\in\pi_1(S)$ so that
+  $(\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel, and for
+  $g=y^m ax^n y^k$ with $k,n,m\in\bbZ$, we have $\ora{g}$ R-crosses
+  $\ora{y}$ with $g^- \in w_y(y^{-k}\cdot\ora{x})$ and
+  $g^+\in w_y(ay^m\cdot\ora{x})$.
 \end{lemma}
+
 \begin{proof}
-  Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate
-  of $\ora{x}$, denoted $B \cdot \ora{x}$, so that
-  $B \cdot \ora{x}$ and $\ora{y}$ and are R-parallel. For any $a$,
-  be translation we see $a \ora{x}$ and $ab \cdot \ora{y}$ are
-  R-parallel. Find $g \in \pi_1(X)$ so that $g^{+}\in(y_-, y_+)$ and
-  $g^-\in((B \cdot \ora{x})^+, (B \cdot \ora{x})^-)$. Set
-  $a = g^n$ for large~$n$. By the North-South
-  dynamics of $g$, for $n$ is large enough $a \cdot \ora{x}$ is R-parallel to $\ora{y}$, as
-  desired.
+  For the crossing statement, by Lemma~\ref{lem:rhs_prod} it suffices
+  to show that $\ora{ax^n}$ R-crosses $\ora{y}$. Consider $ax^n$
+  acting on $(x^-,x^+)$. (Note that this is the complement of
+  $w_y(\ora{x})$.) We have
+  $ax^n \cdot(x^-,x^+) = a\cdot (x^-,x^+) \subsetneq (y^-,y^+)
+  \subsetneq (x^-,x^+)$, showing the crossing statement and
+  furthermore that $(ax^n)^- \in w_y(\ora{x})$ and
+  $(ax^n)^+ \in w_y(a\cdot \ora{x})$. The statements about $g^{\pm}$
+  follow by translation by~$y$.
 \end{proof}
 
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{initial}}
-\caption{Setup configuration for fundamental smoothing lemma.}
-\label{fig:initial}
-}
-\end{figure}
+\begin{proposition}\label{prop:fundamental-ayx}
+  Let $a,x,y\in\pi_1(S)$ be chosen so that
+  $(\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel. Then there exists
+  $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
+  \begin{align}
+    \label{eq:crossuniform_n}
+       [y^m a x^{n+r}][y^m a x^{n-r}] &\reducesto [(y^m a x^n)^2]\\
+    \label{eq:crossuniform_m}
+       [y^{m+r} a x^n][y^{m-r} a x^n] &\reducesto [(y^m a x^n)^2].
+  \end{align}
+\end{proposition}
+
+\begin{proof}
+  We first prove Eq.~(\ref{eq:crossuniform_m}). We will have a number
+  of windows $w(y^m \cdot \ora{x})$ on the top, all of equal width
+  in the normalized bands model, and $w(y^ma \cdot \ora{x})$ on the
+  bottom, also of equal widths (but not necessarily equal to widths on
+  the bottom). Take
+  \[
+    s_0 \coloneqq \lceil\max(\wid_y(w(\ora{x})),
+    \wid_y(w(a\cdot\ora{x})))\rceil.
+  \]
+  For $r > s_0$, consider the elements $g_1 = y^m ax^n y^r$ and $g_2 =
+  y^{m-r} a x^n$. By Lemma~\ref{lem:ayx-window}, we have
+  \begin{align*}
+    g_1^+ &\in w(ay^r\ora{x}) & g_1^- &\in w(y^{-m}\ora{x})\\
+    g_2^+ &\in w(a\ora{x}) & g_2^- &\in w(y^{-m+r}\ora{x}).
+  \end{align*}
+  The endpoints therefore appear in the cyclic order
+  $(y^-,g_2^+,g_1^+,y^+,g_2^-,g_1^-)$ on $\bdy^\infty S$. In
+  particular $\ora{g_1}$ and $\ora{g_2}$ cross essentially and we get
+  the desired smoothing (for $r > s_0$).
+  
+  To see Eq.~(\ref{eq:crossuniform_n}), apply
+  Eq.~(\ref{eq:crossuniform_m}) with a change of variables:
+  \begin{align*}
+    a' &= a & x' &= y & y' &= axA.
+  \end{align*}
+  This gives the desired result for some $s_1 \ge 0$. For the full
+  statement, take $s =
+  \max(s_0,s_1)$.
+\end{proof}
+
+% \begin{figure}
+% \centering{
+% \resizebox{60mm}{!}{\svgfig{initial}}
+% \caption{Setup configuration for fundamental smoothing lemma.}
+% \label{fig:initial}
+% }
+% \end{figure}
+
+\DPTtodo[inline]{Old statement/proof below. Figure has also been
+  commented out, not sure it's needed now.}
 
 \begin{proposition}\label{prop:fundamental-aybx}
 Let $a,b,x,y \in \pi_1(S)$ be chosen so $(B\cdot \ora{x}, \ora{y},
 a\cdot\ora{x}, ab\cdot\ora{y})$ are R-parallel in that order, as in
 Figure~\ref{fig:initial}.
 There exists $s \ge 0$ so that for all $r > s$ and all $m,n \in \bbZ$,
-  \begin{align}
-    \label{eq:crossuniform_n} [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
-    \label{eq:crossuniform_m} [b y^{m+r} a x^{n} ] [b y^{m-r} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
-  \end{align}
+  \begin{align*}
+    [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
+    [b y^{m+r} a x^{n} ] [b y^{m-r} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
+  \end{align*}
 \end{proposition}
 
 
@@ -868,7 +919,7 @@ There exists $s \ge 0$ so that for all $r > s$ and all $m,n \in \bbZ$,
   $w(B)$.
   In fact, since the translation length of $y$ is 1, it suffices to take
   \begin{equation*}
-  s \geq s_0 = \lceil \max \{ \wid{y}(w(a)),\wid{y}(w(B)) \} \rceil.
+  s \geq s_0 = \lceil \max \{ \wid_y(w(a)),\wid_y(w(B)) \} \rceil.
   \end{equation*}
 
   Consider now the curves
@@ -900,6 +951,27 @@ Combined, these mean that
   proving Equation~\eqref{eq:crossuniform_n}.
   Equation~\eqref{eq:crossuniform_n} follows similarly: indeed, $\wt{y}$ being parallel to $a \cdot \wt{x}$ and $a \cdot \wt{x}$ being parallel to $ab \cdot \wt{y}$ is equivalent, by acting by $A$, to $A \cdot \wt{y}$ being parallel to $\wt{x}$ and $\wt{x}$ being parallel to $b \cdot \wt{y}$.
   Thus, we can consider a normalized bands model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
+\end{proof}
+
+\DPTtodo[inline]{Rework this lemma so it works with new algebra
+  organization. Move it to where it is used.}
+\begin{lemma}
+  Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
+  $B \cdot \ora{x}$, $\ora{y}$, $a \cdot \ora{x}$ and
+  $ab \cdot \ora{y}$ are R-parallel, in this order, as in
+  Figure~\ref{fig:initial}.
+\label{lem:initial}
+\end{lemma}
+\begin{proof}
+  Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate
+  of $\ora{x}$, denoted $B \cdot \ora{x}$, so that
+  $B \cdot \ora{x}$ and $\ora{y}$ and are R-parallel. For any $a$,
+  be translation we see $a \ora{x}$ and $ab \cdot \ora{y}$ are
+  R-parallel. Find $g \in \pi_1(X)$ so that $g^{+}\in(y_-, y_+)$ and
+  $g^-\in((B \cdot \ora{x})^+, (B \cdot \ora{x})^-)$. Set
+  $a = g^n$ for large~$n$. By the North-South
+  dynamics of $g$, for $n$ is large enough $a \cdot \ora{x}$ is R-parallel to $\ora{y}$, as
+  desired.
 \end{proof}
 
 %%% Local Variables:
