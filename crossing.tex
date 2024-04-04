@@ -670,13 +670,15 @@ For any geodesic $\ora{y} = g\cdot\ora{x}$ that is parallel to
 $\ora{x}$, there is a \emph{window} $w(\ora{y})$ cut out by the
 endpoints on the bands model, the interval between $y^\pm$ that
 misses~$x^\pm$. Observe that $w(x^k\cdot\ora{y})$ is the horizontal
-translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
+translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings} for
+examples.
 
+\DPTtodo{Check refs to this lemma, which changed considerably}
 \begin{lemma}
   Given $a,b, x \in \pi_1(\Sigma)$ so that $a$ and $b$ cross $x$ to
   the right and $g_1 = x^k ax^\ell$ with $k,\ell \in \bbZ$, we have
   $g_1^+ \in w(x^k a\cdot\ora{x})$ and
-  $g_1^- \in w(x^{-\ell}A\cdot\ora{x})$. Similarly
+  $g_1^- \in w(x^{-\ell}A\cdot\ora{x})$. Similarly for
   $g_2 = x^k a x^\ell b x^n$ with $k,\ell,n\in\bbZ$, we have
   $g_2^+ \in w(x^ka \cdot \ora{x})$ and $g_2^- \in w(x^{-n} B \cdot\ora{x})$.
 \label{lem:cornering}
@@ -694,38 +696,7 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
   \ora{x}$ to the right.
 \end{proof}
 
-\DPTtodo[inline]{IN PROGRESS: Reorganizing. Moved stuff outside
-  proposition, now delete it from proof below}
-
-\begin{proof}[Proof of Proposition~\ref{prop:join-split-geom}]
-  \DPTtodo{This can probably be shortened by making it less explicit}
-  In each case, we will show that we can choose lifts of the curves
-  for which a
-  relevant crossing is essential. We use the bands model, centered
-  on~$\ora{x}$, and normalized so that $x$ acts by translation to the
-  right by $1$. We will
-  consider intervals on $\bdy^\infty\wt S$ cut out by certain other
-  lifts of~$x$. Specifically, let $w(x^ka) = x^ka \cdot (x^-, x^+)$ be
-  the interval on $\bdy^\infty \wt{S}$ cut out by the
-  endpoints of $x^k a \cdot \ora x$
-  that does not contain the endpoints $x^\pm$ of $\ora x$. Similarly
-  for $w(x^k A) = x^kA \cdot (x^+,x^-)$,
-  $w(x^k b) = x^k b \cdot (x^-,x^+)$, and
-  $w(x^k B) = x^kB\cdot (x^+,x^-)$. All of
-  these are intervals
-  on the upper or lower boundary in the bands model, by the assumption
-  that $a$ and~$b$ cross $x$ to the right.
-
-  Furthermore, $\ora{x^kax^\ell}$ R-crosses $x^ka \cdot \ora x$. To
-  see this, conjugate by $(x^k a)^{-1}$: this is equivalent to
-  $\ora{a x^{k+\ell}}$ R-crossing $\ora x$, which is immediate from
-  Lemma~\ref{lem:rhs_prod}. Thus $(x^ka x^\ell)^+ \in w(x^k a)$.
-  Similarly, by conjugating by $ax^\ell$ we see that
-  $\ora{x^k a x^\ell}$ R-crosses $x^{-\ell}A \cdot \ora{x}$, so
-  $(x^k a x^\ell)^- \in w(x^{-\ell} A)$.
-  See Figure~\ref{fig:abcrossings}.
-
-  \begin{figure}
+\begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
 \caption{The bands model centered on $\ora{x}$ used in
@@ -740,11 +711,13 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
 }
 \end{figure}
 
-
-  Observe that (for instance) $w(x^n a)$ is a translate of $w(a)$.
-  Furthermore, each window is a
-  finite size, so there is a finite range $[s_1,s_2]$ so that $w(a)$
-  is to the left of (resp.\ to the right of) $w(x^rb)$ if $r < s_1$
+\begin{proof}[Proof of Proposition~\ref{prop:join-split-geom}]
+  In each case, we will show that we can choose lifts of the curves to
+  the normalized bands model for which a
+  relevant crossing is essential.
+  Since each window is a
+  finite size, so there is a finite range $[s_1,s_2]$ so that $w(a\cdot\ora{x})$
+  is to the left of (resp.\ to the right of) $w(x^rb\cdot\ora{x})$ if $r < s_1$
   (resp.\ $r > s_2$). Similarly there
   is a range $[s_1',s_2']$ so that $w(A)$ is disjoint from
   $w(x^rB)$ if $r \notin [s_1',s_2']$. Set
@@ -755,12 +728,13 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
   \[
     r-m < -n-s \le -n+s_1',
   \]
-  so $w(x^{r-m}B)$ is to the left of $w(x^{-n}A)$, and
+  so $w(x^{r-m}B\cdot\ora{x})$ is to the left of $w(x^{-n}A\cdot\ora{x})$, and
   \[
     s_2 \le s < r,
   \]
-  so $w(x^rb)$ is to the right of $w(a)$. Combined, these mean that
-  $x^rbx^{m-r}$ crosses $ax^n$ to the left. Similarly if
+  so $w(x^rb\cdot\ora{x})$ is to the right of $w(a\cdot\ora{x})$.
+  Combined with Lemma~\ref{lem:cornering}, these mean that
+  $\ora{x^rbx^{m-r}}$ crosses $ax^n$ to the left. Similarly if
   $m-n+s < r < -s$, the curve $x^rbx^{m-r}$ crosses $ax^n$ to the
   right. In either case, we have
   \[
@@ -769,10 +743,10 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
   proving Equation~\eqref{eq:cross-join}.
 
   For Equation~\eqref{eq:cross-split}, write $ax^nbx^m$ as $gh$ with
-  $g=ax^{n+r}$ and $h=x^{-r}bx^m$, so endpoints of $\ora{gh}$
-  are in $w(x^{-m}B)$ and $w(a)$, while the endpoints of its
-  conjugate $\ora{hg} =\ora{x^{-r}bx^max^{n+r}}$ are in $w(x^{-n-r}A)$ and
-  $w(x^{-r}b)$. Then if $s < r < m-n-s$, we have
+  $g=ax^{n+r}$ and $h=x^{-r}bx^m$, so the endpoints of $\ora{gh}$
+  are in $w(x^{-m}B\cdot\ora{x})$ and $w(a\cdot\ora{x})$, while the endpoints of its
+  conjugate $\ora{hg} =\ora{x^{-r}bx^max^{n+r}}$ are in $w(x^{-n-r}A\cdot\ora{x})$ and
+  $w(x^{-r}b\cdot\ora{x})$. Then if $s < r < m-n-s$, we have
   \[
     -r < -s \le -s_1,
   \]
@@ -780,7 +754,7 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
   \[
     -m \le -m+s+s_1' < -n - r + s_1',
   \]
-  so $w(x^{-n-r}A)$ is to the right of  $w(x^{-m}B)$, and
+  so $w(x^{-n-r}A\cdot\ora{x})$ is to the right of  $w(x^{-m}B\cdot\ora{x})$, and
   $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}.
   We similarly get an essential self-crossing if $m-n+s < r < -s$.
 
@@ -790,13 +764,13 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
     case? The disadvantage is that we go outside of the one bands
     model, switching to the bands model centered on $a \cdot \ora{x}$.}
   To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
-  that $n < m$. Let $s_0 = \lceil \wid{x}(w(a)) \rceil$, where we
-  measure the width of the window in the normalized band model,
+  that $n < m$. Let $s_0 = \lceil \wid(w(a\cdot\ora{x})) \rceil$
+  (with width measured in the normalized band model,
   and
   let $s' = 2s_0 - 1$. By assumption $m-n \ge 2s'$, so we can pick $r$ so that
   $s_0 \le r \le m-n-s_0$. By the above argument, $\ora{ax^n}$ and
-  $x^rax^{m-r}$ R-cross (since, e.g., $(ax^n)^+ \in w(a)$ and
-  $(x^rax^{m-r})^+ \in w(x^r a)$, which are disjoint), so we see the
+  $x^rax^{m-r}$ R-cross (since, e.g., $(ax^n)^+ \in w(a\cdot\ora{x})$ and
+  $(x^rax^{m-r})^+ \in w(x^r a\cdot\ora{x})$, which are disjoint), so we see the
   desired smoothing in Eq.~\eqref{eq:cross-cancel}.
 
   In the cases when $x$ is simple, two windows are disjoint, nested,
@@ -808,15 +782,16 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
   case Eq.\ \eqref{eq:cross-simple}.
 
   To see that with $x$ simple we get Eq.\ \eqref{eq:cross-cancel} with
-  $s'=0$ (i.e., smoothing $[ax^n][ax^{n+1}]$, we look slightly deeper
-  in the words. The analysis above shows $(ax^n)^- \in w(x^{-n}A)$ and
-  $(ax^{n+1})^- \in w(x^{-n-1}A)$, which are disjoint as desired. By
+  $s'=0$ (i.e., smoothing $[ax^n][ax^{n+1}]$), we look slightly deeper
+  in the words. The analysis above shows $(ax^n)^- \in w(x^{-n}A\cdot\ora{x})$ and
+  $(ax^{n+1})^- \in w(x^{-n-1}A\cdot\ora{x})$, which are disjoint as desired. By
   looking at the bands model centered on $a \cdot \ora{x}$ (or
   equivalently by conjugating by $a$), we see that
-  $(ax^n)^+ \in w(ax^na) \subset w(a)$, where
-  $w(ax^na) \coloneqq ax^na \cdot (x^-,x^+)$. Similarly
-  $(ax^{n+1})^+ \in w(ax^{n+1}a) \subset w(a)$. These two smaller
-  windows are disjoint, so $\ora{ax^n}$ crosses $\ora{ax^m}$ as
+  $(ax^n)^+ \in w(ax^na\cdot\ora{x}) \subset w(a\cdot\ora{x})$. Similarly
+  $(ax^{n+1})^+ \in w(ax^{n+1}a\cdot\ora{x}) \subset w(a)$. These two smaller
+  windows are
+  \DPTtodo{Specify ordering}
+  disjoint, so $\ora{ax^n}$ crosses $\ora{ax^m}$ as
   desired.
 \end{proof}
 
@@ -827,34 +802,36 @@ translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings}.
 
 We also need some lemmas about smoothings where we have high powers of
 two different elements. We work with three elements $a,x,y\in\pi_1(S)$
-so that $(\ora{x},\ora{y},a\cdot\ora{x})$ that are R-parallel; this
-implies, for instance, that $(a\cdot\ora{x},a\cdot\ora{y})$ are also
-R-parallel. We will work in the normalized bands model
-centered on $\ora{y}$. We first prove another crossing lemma.
+so that $(\ora{y},\ora{x},a\cdot\ora{y})$ that are R-parallel; this
+implies, for instance, that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
+R-parallel.
+We again work in the normalized bands model
+centered on~$\ora{x}$. We first prove another crossing lemma.
 
 \begin{lemma}\label{lem:ayx-window}
   For any triple $a,x,y\in\pi_1(S)$ so that
-  $(\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel, and for
-  $g=y^m ax^n y^k$ with $k,n,m\in\bbZ$, we have $\ora{g}$ R-crosses
-  $\ora{y}$ with $g^- \in w_y(y^{-k}\cdot\ora{x})$ and
-  $g^+\in w_y(ay^m\cdot\ora{x})$.
+  $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel, and for
+  $g=x^k ay^n x^\ell$ with $k,\ell,n\in\bbZ$, the geodesic $\ora{g}$
+  has $g^- \in w(x^{-k}\cdot\ora{y})$ and
+  $g^+\in w(ax^\ell\cdot\ora{y})$.
 \end{lemma}
 
 \begin{proof}
-  For the crossing statement, by Lemma~\ref{lem:rhs_prod} it suffices
-  to show that $\ora{ax^n}$ R-crosses $\ora{y}$. Consider $ax^n$
-  acting on $(x^-,x^+)$. (Note that this is the complement of
-  $w_y(\ora{x})$.) We have
-  $ax^n \cdot(x^-,x^+) = a\cdot (x^-,x^+) \subsetneq (y^-,y^+)
-  \subsetneq (x^-,x^+)$, showing the crossing statement and
-  furthermore that $(ax^n)^- \in w_y(\ora{x})$ and
-  $(ax^n)^+ \in w_y(a\cdot \ora{x})$. The statements about $g^{\pm}$
-  follow by translation by~$y$.
+  \DPTtodo{Different proof than earlier very similar lemma, decide
+    which is better}
+  Consider $ay^n$
+  acting on $(y^-,y^+)$. (Note that this is the complement of
+  $w(\ora{y})$.) We have
+  $ay^n \cdot(y^-,y^+) = a\cdot (y^-,y^+) = w(a \cdot \ora{y})
+  \subsetneq (x^-,x^+)
+  \subsetneq (y^-,y^+)$, showing that $(ay^n)^- \in w(\ora{y})$ and
+  $(ay^n)^+ \in w(a\cdot \ora{y})$. The statements about $g^{\pm}$
+  follow by pre and post translations by~$x$.
 \end{proof}
 
 \begin{proposition}\label{prop:fundamental-ayx}
   Let $a,x,y\in\pi_1(S)$ be chosen so that
-  $(\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel. Then there exists
+  $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel. Then there exists
   $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
   \begin{align}
     \label{eq:crossuniform_n}
@@ -865,30 +842,30 @@ centered on $\ora{y}$. We first prove another crossing lemma.
 \end{proposition}
 
 \begin{proof}
-  We first prove Eq.~(\ref{eq:crossuniform_m}). We will have a number
-  of windows $w(y^m \cdot \ora{x})$ on the top, all of equal width
-  in the normalized bands model, and $w(y^ma \cdot \ora{x})$ on the
+  We first prove Eq.~(\ref{eq:crossuniform_n}). We will have a number
+  of windows $w(x^m \cdot \ora{y})$ on the top, all of equal width
+  in the normalized bands model, and $w(x^m a \cdot \ora{y})$ on the
   bottom, also of equal widths (but not necessarily equal to widths on
-  the bottom). Take
+  the top). Take
   \[
-    s_0 \coloneqq \lceil\max(\wid_y(w(\ora{x})),
-    \wid_y(w(a\cdot\ora{x})))\rceil.
+    s_0 \coloneqq \lceil\max(\wid(w(\ora{y})),
+    \wid(w(a\cdot\ora{y})))\rceil.
   \]
-  For $r > s_0$, consider the elements $g_1 = y^m ax^n y^r$ and $g_2 =
-  y^{m-r} a x^n$. By Lemma~\ref{lem:ayx-window}, we have
+  For $r > s_0$, consider the elements $g_1 = x^n ay^m x^r$ and $g_2 =
+  x^{n-r} a y^m$. By Lemma~\ref{lem:ayx-window}, we have
   \begin{align*}
-    g_1^+ &\in w(ay^r\ora{x}) & g_1^- &\in w(y^{-m}\ora{x})\\
-    g_2^+ &\in w(a\ora{x}) & g_2^- &\in w(y^{-m+r}\ora{x}).
+    g_1^+ &\in w(ax^r\cdot\ora{y}) & g_1^- &\in w(x^{-n}\cdot\ora{y})\\
+    g_2^+ &\in w(a\cdot\ora{x}) & g_2^- &\in w(x^{-n+r}\cdot\ora{x}).
   \end{align*}
-  The endpoints therefore appear in the cyclic order
-  $(y^-,g_2^+,g_1^+,y^+,g_2^-,g_1^-)$ on $\bdy^\infty S$. In
+  Since $r>s_0$, the endpoints appear in the cyclic order
+  $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\bdy^\infty S$. In
   particular $\ora{g_1}$ and $\ora{g_2}$ cross essentially and we get
-  the desired smoothing (for $r > s_0$).
+  the desired smoothing.
   
   To see Eq.~(\ref{eq:crossuniform_n}), apply
   Eq.~(\ref{eq:crossuniform_m}) with a change of variables:
   \begin{align*}
-    a' &= a & x' &= y & y' &= axA.
+    a' &= a & y' &= x & x' &= ayA.
   \end{align*}
   This gives the desired result for some $s_1 \ge 0$. For the full
   statement, take $s =
@@ -903,82 +880,82 @@ centered on $\ora{y}$. We first prove another crossing lemma.
 % }
 % \end{figure}
 
-\DPTtodo[inline]{Old statement/proof below. Figure has also been
-  commented out, not sure it's needed now.}
+% \DPTtodo[inline]{Old statement/proof below. Figure has also been
+%   commented out, not sure it's needed now.}
 
-\begin{proposition}\label{prop:fundamental-aybx}
-Let $a,b,x,y \in \pi_1(S)$ be chosen so $(B\cdot \ora{x}, \ora{y},
-a\cdot\ora{x}, ab\cdot\ora{y})$ are R-parallel in that order, as in
-Figure~\ref{fig:initial}.
-There exists $s \ge 0$ so that for all $r > s$ and all $m,n \in \bbZ$,
-  \begin{align*}
-    [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
-    [b y^{m+r} a x^{n} ] [b y^{m-r} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
-  \end{align*}
-\end{proposition}
+% \begin{proposition}\label{prop:fundamental-aybx}
+% Let $a,b,x,y \in \pi_1(S)$ be chosen so $(B\cdot \ora{x}, \ora{y},
+% a\cdot\ora{x}, ab\cdot\ora{y})$ are R-parallel in that order, as in
+% Figure~\ref{fig:initial}.
+% There exists $s \ge 0$ so that for all $r > s$ and all $m,n \in \bbZ$,
+%   \begin{align*}
+%     [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
+%     [b y^{m+r} a x^{n} ] [b y^{m-r} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
+%   \end{align*}
+% \end{proposition}
 
 
-\DPTtodo[inline]{Figure~\ref{fig:aybx} is too busy, I think there are
-  too many lines shown and it's not clear what the key parts are. It
-  also needs to be reflected vertically, but don't change it yet.}
-\begin{figure}
-\centering{
-\resizebox{170mm}{!}{\svgfignormal{aybx}}
-\caption{Bands model centered on $\ora{y}$. Translates of $\ora{x}$ are coded in blue, while translates of $\ora{y}$ are coded in red. The translates of $\ora{x}$ by $y^{-s} B$ and $B$ are shown and labelled in the upper part, and translates of $\ora{x}$ by $y^{m-s} a$ and $y^m a$ are shown in the lower part. }
-\label{fig:aybx}
-}
-\end{figure}
+% \DPTtodo[inline]{Figure~\ref{fig:aybx} is too busy, I think there are
+%   too many lines shown and it's not clear what the key parts are. It
+%   also needs to be reflected vertically, but don't change it yet.}
+% \begin{figure}
+% \centering{
+% \resizebox{170mm}{!}{\svgfignormal{aybx}}
+% \caption{Bands model centered on $\ora{y}$. Translates of $\ora{x}$ are coded in blue, while translates of $\ora{y}$ are coded in red. The translates of $\ora{x}$ by $y^{-s} B$ and $B$ are shown and labelled in the upper part, and translates of $\ora{x}$ by $y^{m-s} a$ and $y^m a$ are shown in the lower part. }
+% \label{fig:aybx}
+% }
+% \end{figure}
 
-\begin{proof}
-  We again use the normalized bands model, centered on $\ora{y}$ so
-  the translation length of $y$ is equal to $1$, as in
-  Figure~\ref{fig:aybx}. By $w(a)$, $w(y^mB)$, etc., we will mean
-  the interval on the boundary between the endpoints of $a \cdot
-  \ora{x}$, $y^mB \cdot \ora{x}$, etc., that do not contain $y^-$, $y^+$.
-  \DPTtodo{Not sure this is needed}
-  Again by Lemma~\ref{lem:rhs_prod}, $(ax^nb)^+
-  \in w(a)$ and $(ax^nb)^- \in w(B)$.
+% \begin{proof}
+%   We again use the normalized bands model, centered on $\ora{y}$ so
+%   the translation length of $y$ is equal to $1$, as in
+%   Figure~\ref{fig:aybx}. By $w(a)$, $w(y^mB)$, etc., we will mean
+%   the interval on the boundary between the endpoints of $a \cdot
+%   \ora{x}$, $y^mB \cdot \ora{x}$, etc., that do not contain $y^-$, $y^+$.
+%   \DPTtodo{Not sure this is needed}
+%   Again by Lemma~\ref{lem:rhs_prod}, $(ax^nb)^+
+%   \in w(a)$ and $(ax^nb)^- \in w(B)$.
 
-  As before, since each window is of
-  finite width, we can find $s>0$ so that $w(y^{m-s}a)$
-  is to the left of $w(y^m a)$ and
-   $w(y^{-s}B)$ is to the left of
-  $w(B)$.
-  In fact, since the translation length of $y$ is 1, it suffices to take
-  \begin{equation*}
-  s \geq s_0 = \lceil \max \{ \wid_y(w(a)),\wid_y(w(B)) \} \rceil.
-  \end{equation*}
+%   As before, since each window is of
+%   finite width, we can find $s>0$ so that $w(y^{m-s}a)$
+%   is to the left of $w(y^m a)$ and
+%    $w(y^{-s}B)$ is to the left of
+%   $w(B)$.
+%   In fact, since the translation length of $y$ is 1, it suffices to take
+%   \begin{equation*}
+%   s \geq s_0 = \lceil \max \{ \wid_y(w(a)),\wid_y(w(B)) \} \rceil.
+%   \end{equation*}
 
-  Consider now the curves
-  $\ora{y^{m-s}ax^nb}$ and $\ora{y^m ax^n by^s} \in [y^{m+s}ax^nb]$.
-  We claim
-  \begin{align*}
-    (y^{m-s} a x^n b)^+ &\in w(y^{m-s} a) &
-       (y^{m} a x^n b y^{s})^+ &\in w(y^{m} a)\\
-    (y^{m-s} a x^n b)^- &\in w(B) &
-       (y^{m} a x^n b y^{s})^- &\in w(y^{-s} B).
-  \end{align*}
-  \DPTtodo{HERE. Not convinced we can use the same lemma}
-  \begin{proof}
-  It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $y^{m-s} a$ and $b$. Note that the assumptions of the Lemma are satisfied: indeed, $B \cdot \wt{x}$ and $a \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $B \cdot \wt{x}$ and $y^{m-s} a \cdot \wt{x}$ are parallel.
-  \end{proof}
-  We also need the following claim, which follows similarly by Lemma~\ref{lem:cornering}.
-  \begin{claim}
-  \begin{itemize}
-  \item $(y^{m} a x^n b y^{s})^+ \in w(y^{m} a)$
-  \item $(y^{m} a x^n b y^{s})^- \in w(y^{-s} B)$
-  \end{itemize}
-  \end{claim}
+%   Consider now the curves
+%   $\ora{y^{m-s}ax^nb}$ and $\ora{y^m ax^n by^s} \in [y^{m+s}ax^nb]$.
+%   We claim
+%   \begin{align*}
+%     (y^{m-s} a x^n b)^+ &\in w(y^{m-s} a) &
+%        (y^{m} a x^n b y^{s})^+ &\in w(y^{m} a)\\
+%     (y^{m-s} a x^n b)^- &\in w(B) &
+%        (y^{m} a x^n b y^{s})^- &\in w(y^{-s} B).
+%   \end{align*}
+%   \DPTtodo{HERE. Not convinced we can use the same lemma}
+%   \begin{proof}
+%   It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $y^{m-s} a$ and $b$. Note that the assumptions of the Lemma are satisfied: indeed, $B \cdot \wt{x}$ and $a \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $B \cdot \wt{x}$ and $y^{m-s} a \cdot \wt{x}$ are parallel.
+%   \end{proof}
+%   We also need the following claim, which follows similarly by Lemma~\ref{lem:cornering}.
+%   \begin{claim}
+%   \begin{itemize}
+%   \item $(y^{m} a x^n b y^{s})^+ \in w(y^{m} a)$
+%   \item $(y^{m} a x^n b y^{s})^- \in w(y^{-s} B)$
+%   \end{itemize}
+%   \end{claim}
   
-Combined, these mean that
-  $y^m a x^{n} b y^s$ crosses $y^{m-s}a x^nb$ to the right.  We have, thus,
-  \[
-    [a x^{n} b y^{m+s}][y^{m-s}ax^nby^{m-s}]=[y^m ax^{n}b y^s][y^{m-s}ax^nb] \reducesto [(y^max^nb)^2]= [(ax^nby^m)^2]
-  \]
-  proving Equation~\eqref{eq:crossuniform_n}.
-  Equation~\eqref{eq:crossuniform_n} follows similarly: indeed, $\wt{y}$ being parallel to $a \cdot \wt{x}$ and $a \cdot \wt{x}$ being parallel to $ab \cdot \wt{y}$ is equivalent, by acting by $A$, to $A \cdot \wt{y}$ being parallel to $\wt{x}$ and $\wt{x}$ being parallel to $b \cdot \wt{y}$.
-  Thus, we can consider a normalized bands model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
-\end{proof}
+% Combined, these mean that
+%   $y^m a x^{n} b y^s$ crosses $y^{m-s}a x^nb$ to the right.  We have, thus,
+%   \[
+%     [a x^{n} b y^{m+s}][y^{m-s}ax^nby^{m-s}]=[y^m ax^{n}b y^s][y^{m-s}ax^nb] \reducesto [(y^max^nb)^2]= [(ax^nby^m)^2]
+%   \]
+%   proving Equation~\eqref{eq:crossuniform_n}.
+%   Equation~\eqref{eq:crossuniform_n} follows similarly: indeed, $\wt{y}$ being parallel to $a \cdot \wt{x}$ and $a \cdot \wt{x}$ being parallel to $ab \cdot \wt{y}$ is equivalent, by acting by $A$, to $A \cdot \wt{y}$ being parallel to $\wt{x}$ and $\wt{x}$ being parallel to $b \cdot \wt{y}$.
+%   Thus, we can consider a normalized bands model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
+% \end{proof}
 
 \DPTtodo[inline]{Rework this lemma so it works with new algebra
   organization. Move it to where it is used.}
