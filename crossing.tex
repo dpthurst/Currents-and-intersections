@@ -633,8 +633,8 @@ crossings in this context.
 % \end{figure}
 
 \begin{proposition}\label{prop:join-split-geom}
-Let $a,b,x \in \pi_1(S)$ be arbitrary curves, with $a$ and $b$
-crossing $x$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
+Let $a,b,x \in \pi_1(S)$ be curves with $\ora{a}$ and $\ora{b}$
+crossing $\ora{x}x$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
   so that, for all
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
  -s$, we have
@@ -663,12 +663,12 @@ We will make heavy use of the \emph{band model} centered on
 $\ora{x}$, meaning the conformal map from $\bbH^2$ to a horizontal
 strip $(-\infty,\infty) \times [-v,v]$ mapping $x^-$ to infinity along
 the negative $x$-axis and $x^+$ to infinity on the positive $x$-axis.
-We choose the \emph{normalized} bands model, picking $v$ so that the
+We choose the \emph{normalized} band model, picking $v$ so that the
 action of $x$ is horizontal translation by $z \mapsto z+1$.
 
-For any geodesic $\ora{y} = g\cdot\ora{x}$ that is parallel to
+For any geodesic $\ora{y}$ that is parallel to
 $\ora{x}$, there is a \emph{window} $w(\ora{y})$ cut out by the
-endpoints on the bands model, the interval between $y^\pm$ that
+endpoints on the band model, the interval between $y^\pm$ that
 misses~$x^\pm$. Observe that $w(x^k\cdot\ora{y})$ is the horizontal
 translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings} for
 examples.
@@ -696,10 +696,11 @@ examples.
   \ora{x}$ to the right.
 \end{proof}
 
+\DPTtodo{Add $\ora{x}$ to the notation for windows in figure}
 \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
-\caption{The bands model centered on $\ora{x}$ used in
+\caption{The band model centered on $\ora{x}$ used in
   Proposition~\ref{prop:join-split-geom}, in a case where $[x]$ is simple.
   Lifts of $x$ are depicted in blue. The central blue lift relates to
   the lower and upper lifts by translates of the type $x^k a$, $x^l
@@ -713,35 +714,37 @@ examples.
 
 \begin{proof}[Proof of Proposition~\ref{prop:join-split-geom}]
   In each case, we will show that we can choose lifts of the curves to
-  the normalized bands model for which a
-  relevant crossing is essential.
+  the normalized band model for which a
+  relevant crossing is essential. We start with Eq.~\eqref{eq:cross-join}.
   Since each window is a
-  finite size, so there is a finite range $[s_1,s_2]$ so that $w(a\cdot\ora{x})$
-  is to the left of (resp.\ to the right of) $w(x^rb\cdot\ora{x})$ if $r < s_1$
+  finite size, there is a finite range $[s_1,s_2]$ so that $w(x^rb\cdot\ora{x})$
+  is to the left of (resp.\ to the right of) $w(a\cdot\ora{x})$ if $r < s_1$
   (resp.\ $r > s_2$). Similarly there
-  is a range $[s_1',s_2']$ so that $w(A)$ is disjoint from
-  $w(x^rB)$ if $r \notin [s_1',s_2']$. Set
+  is a range $[s_1',s_2']$ so that $w(A\cdot\ora{x})$ is disjoint from
+  $w(x^rB\cdot\ora{x})$ if $r \notin [s_1',s_2']$, and determining the
+  ordering of the windows. Set
   $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$.
 
-  Now consider the curves 
-  $\ora{ax^n}$ and $\ora{x^rbx^{m-r}}$, with $s < r < m-n-s$. We have
+  Now consider
+  $g_1 = ax^n$ and $g_2 = x^rbx^{m-r}$, with $s < r < m-n-s$. We have
   \[
     r-m < -n-s \le -n+s_1',
   \]
-  so $w(x^{r-m}B\cdot\ora{x})$ is to the left of $w(x^{-n}A\cdot\ora{x})$, and
+  so $g_1^- \in w(x^{r-m}B\cdot\ora{x})$ is to the left of $g_2^- \in
+  w(x^{-n}A\cdot\ora{x})$, and
   \[
     s_2 \le s < r,
   \]
-  so $w(x^rb\cdot\ora{x})$ is to the right of $w(a\cdot\ora{x})$.
-  Combined with Lemma~\ref{lem:cornering}, these mean that
-  $\ora{x^rbx^{m-r}}$ crosses $ax^n$ to the left. Similarly if
-  $m-n+s < r < -s$, the curve $x^rbx^{m-r}$ crosses $ax^n$ to the
-  right. In either case, we have
+  so $g_1^+ \in w(x^rb\cdot\ora{x})$ is to the right of $g_2^+ \in
+  w(a\cdot\ora{x})$ (using Lemma~\ref{lem:cornering}). Thus
+  $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the left. Similarly if
+  $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the
+  right. In either case,
   \[
-    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
+    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}].
   \]
-  proving Equation~\eqref{eq:cross-join}.
 
+  \DPTtodo[inline]{Proofreading HERE}
   For Equation~\eqref{eq:cross-split}, write $ax^nbx^m$ as $gh$ with
   $g=ax^{n+r}$ and $h=x^{-r}bx^m$, so the endpoints of $\ora{gh}$
   are in $w(x^{-m}B\cdot\ora{x})$ and $w(a\cdot\ora{x})$, while the endpoints of its
@@ -761,8 +764,8 @@ examples.
   \DPTtodo[inline]{The following argument conjugates by $x^r$. Later,
     to get the optimal result when $x$ is simple, we need to conjugate
     instead by $a$. Maybe we should do that already in the non-simple
-    case? The disadvantage is that we go outside of the one bands
-    model, switching to the bands model centered on $a \cdot \ora{x}$.}
+    case? The disadvantage is that we go outside of the one band
+    model, switching to the band model centered on $a \cdot \ora{x}$.}
   To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
   that $n < m$. Let $s_0 = \lceil \wid(w(a\cdot\ora{x})) \rceil$
   (with width measured in the normalized band model,
@@ -785,7 +788,7 @@ examples.
   $s'=0$ (i.e., smoothing $[ax^n][ax^{n+1}]$), we look slightly deeper
   in the words. The analysis above shows $(ax^n)^- \in w(x^{-n}A\cdot\ora{x})$ and
   $(ax^{n+1})^- \in w(x^{-n-1}A\cdot\ora{x})$, which are disjoint as desired. By
-  looking at the bands model centered on $a \cdot \ora{x}$ (or
+  looking at the band model centered on $a \cdot \ora{x}$ (or
   equivalently by conjugating by $a$), we see that
   $(ax^n)^+ \in w(ax^na\cdot\ora{x}) \subset w(a\cdot\ora{x})$. Similarly
   $(ax^{n+1})^+ \in w(ax^{n+1}a\cdot\ora{x}) \subset w(a)$. These two smaller
@@ -805,7 +808,7 @@ two different elements. We work with three elements $a,x,y\in\pi_1(S)$
 so that $(\ora{y},\ora{x},a\cdot\ora{y})$ that are R-parallel; this
 implies, for instance, that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
 R-parallel.
-We again work in the normalized bands model
+We again work in the normalized band model
 centered on~$\ora{x}$. We first prove another crossing lemma.
 
 \begin{lemma}\label{lem:ayx-window}
@@ -817,8 +820,6 @@ centered on~$\ora{x}$. We first prove another crossing lemma.
 \end{lemma}
 
 \begin{proof}
-  \DPTtodo{Different proof than earlier very similar lemma, decide
-    which is better}
   Consider $ay^n$
   acting on $(y^-,y^+)$. (Note that this is the complement of
   $w(\ora{y})$.) We have
@@ -844,7 +845,7 @@ centered on~$\ora{x}$. We first prove another crossing lemma.
 \begin{proof}
   We first prove Eq.~(\ref{eq:crossuniform_n}). We will have a number
   of windows $w(x^m \cdot \ora{y})$ on the top, all of equal width
-  in the normalized bands model, and $w(x^m a \cdot \ora{y})$ on the
+  in the normalized band model, and $w(x^m a \cdot \ora{y})$ on the
   bottom, also of equal widths (but not necessarily equal to widths on
   the top). Take
   \[
@@ -901,13 +902,13 @@ centered on~$\ora{x}$. We first prove another crossing lemma.
 % \begin{figure}
 % \centering{
 % \resizebox{170mm}{!}{\svgfignormal{aybx}}
-% \caption{Bands model centered on $\ora{y}$. Translates of $\ora{x}$ are coded in blue, while translates of $\ora{y}$ are coded in red. The translates of $\ora{x}$ by $y^{-s} B$ and $B$ are shown and labelled in the upper part, and translates of $\ora{x}$ by $y^{m-s} a$ and $y^m a$ are shown in the lower part. }
+% \caption{Band model centered on $\ora{y}$. Translates of $\ora{x}$ are coded in blue, while translates of $\ora{y}$ are coded in red. The translates of $\ora{x}$ by $y^{-s} B$ and $B$ are shown and labelled in the upper part, and translates of $\ora{x}$ by $y^{m-s} a$ and $y^m a$ are shown in the lower part. }
 % \label{fig:aybx}
 % }
 % \end{figure}
 
 % \begin{proof}
-%   We again use the normalized bands model, centered on $\ora{y}$ so
+%   We again use the normalized band model, centered on $\ora{y}$ so
 %   the translation length of $y$ is equal to $1$, as in
 %   Figure~\ref{fig:aybx}. By $w(a)$, $w(y^mB)$, etc., we will mean
 %   the interval on the boundary between the endpoints of $a \cdot
@@ -954,7 +955,7 @@ centered on~$\ora{x}$. We first prove another crossing lemma.
 %   \]
 %   proving Equation~\eqref{eq:crossuniform_n}.
 %   Equation~\eqref{eq:crossuniform_n} follows similarly: indeed, $\wt{y}$ being parallel to $a \cdot \wt{x}$ and $a \cdot \wt{x}$ being parallel to $ab \cdot \wt{y}$ is equivalent, by acting by $A$, to $A \cdot \wt{y}$ being parallel to $\wt{x}$ and $\wt{x}$ being parallel to $b \cdot \wt{y}$.
-%   Thus, we can consider a normalized bands model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
+%   Thus, we can consider a normalized band model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
 % \end{proof}
 
 \DPTtodo[inline]{Rework this lemma so it works with new algebra
