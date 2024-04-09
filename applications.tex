@@ -191,8 +191,9 @@ We can prove the following characterization.
 \begin{theorem}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and,
     for any pair of curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have   \[
-        \exp \left[ f\left(\mfig{curves-10}\right)/2 \right] = \exp \left[ f\left(\mfig{curves-11}\right)/2 \right] + \exp \left[ \left(\mfig{curves-12}\right)/2 \right].
+        \lambda \left(\mfig{curves-10}\right) = \lambda \left(\mfig{curves-11}\right) + \left(\mfig{curves-12}\right),
   \]
+  where $\lambda( \cdot ) \coloneqq 2\cosh(f(\cdot)/2)$.
     \label{prop:char_liouville}
   \end{theorem}
 \begin{proof}
@@ -212,14 +213,13 @@ Now, we compute
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
 \]
-On the other hand, when $n$ goes to infinity,
-the disconnected $\lambda$-smoothing relation yields
+On the other hand, when $n$ goes to infinity, since $e^{A_n} \sim \lambda(A_n)$ (where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity), the disconnected $\lambda$-smoothing relation yields
 \[
-e^{A_n}e^{B_n} = e^{C_n}+e^{D_n}
+e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}.
 \]
 Therefore, we have
 \[
-e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} =1.
+e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} \sim 1.
 \]
 We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, determined by the endpoints of $g$ and $h$.
 Thus, we have $\lim_n \mu(R_n)=\mu(B_{g,h})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
@@ -242,31 +242,29 @@ Adding them up, we get
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
 Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
-The other implication follows from an elementary computation of hyperbolic cross-ratio.
+On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$ or, equivalently, the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Appendix~\ref{sec:hyp-par}).
 \end{proof}
 
-\begin{remark}
-Another characterizing condition that turns out to be equivalent to the hypothesis in     Theorem~\ref{prop:char_liouville}  is the \emph{disconnected $\lambda$-smoothing property}
+A scrutiny of the above proof shows that the following result also follows.
 
+\begin{theorem}
+Let $f \colon \Gamma \to \mathbb{R}$ be a function satisfying the hypothesis of Theorem~\ref{thm:intersections_group}. Suppose that, in addition, for every $R$-crossing pair $(a,b)$,
+\begin{equation}
+       \lim_n \exp \left[ \bigl( f\left(a^nb^n\right) -  f(a^n) - f(b^n)  \bigr)/2 \right] + \exp  \left[ \bigl( f(a^nB^n) -  f(a^n) - f(b^n)\bigr)/2 \right]=1, \label{thm:exponential_smoothing}
+\end{equation}
+where $B$ denotes the inverse of $b$. We will refer to this condition as the \emph{exponential disconnected smoothing (EDS)}.
+Then there exist a point $X \in \Teich(S)$ so that the geodesic current  $\mu_f$  in Theorem~\ref{thm:intersections_group} is the Liouville current $L_X$ of $X$, i.e., $f$ is dual to $L_X$. Moreover, any $i(L_X, \cdot)$, for any $X \in \Teich(S)$ satisfies EDS.
+\label{thm:liouville_char_EDS}
+\end{theorem}
+\begin{proof}
+In the proof of Theorem~\ref{prop:char_liouville}, the $\lambda$-length hypotheses was used in order to guarantee EDS. On the other hand, EDS implies 
 \[
-\lambda\left(\mfig{curves-10}\right) =  \lambda\left(\mfig{curves-11}\right)+\lambda\left(\mfig{curves-12}\right)
+e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1
 \]
-where $\lambda(C) \coloneqq 2\cosh(f(C)/2)$.
-Indeed, from this relation, following the proof, one obtains
-\[
-e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}
-\]
-where $\sim$ means the ratio of the left hand side to the right hand side tends to $1$ as $n$ goes to infinity (since $e^{A_n} \sim 2\cosh(f(A_n)/2)$).
-On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$ or, equivalently, the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Appendix~\ref{sec:hyp-par}).
+for any box of geodesics $B$, and hence, by Theorem~\ref{thm:bonahonliouville}, $\mu$ is a Liouville current. Hence, again, the disconnected $\lambda$-length smoothing relation is satisfied (see Appendix~see Appendix~\ref{sec:hyp-par}).
+\end{proof}
+\begin{remark}
 The $\lambda$-length functional appears naturally in the study of the skein algebra of a surface (see, for example, \cite[3. Skein algebra]{Thurston14:PBI}). \DMGtodo{maybe find a good reference for this}
-\end{remark}
-
-\begin{remark}
-  The countable set of equalities in Theorem~\ref{thm:bonahonliouville} can be seen as an extreme case of a more general set of inequalities satisfied by any so-called \emph{strongly hyperbolic} space (with parameter $\epsilon=1$) (or 1-strongly hyperbolic), in the sense of~\cite{BS16:StrongHyp}. One can check these spaces satisfy the inequality
-  \[
-        \exp \left[ f\left(\mfig{curves-10}\right)/2 \right] \leq \exp \left[ f\left(\mfig{curves-11}\right)/2 \right] + \exp \left[ \left(\mfig{curves-12}\right)/2 \right].
-  \]
-  It would be interesting to see if this condition characterizes currents whose dual pseudo-metric spaces are 1-strongly hyperbolic. For more details see~\cite{JMG:StrongDuals}.
 \end{remark}
 
 In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
@@ -281,7 +279,7 @@ In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamen
 
 Using this, we can prove the following.
 
-\begin{theorem}
+\begin{theorem}\DMGtodo[inline]{edit here}
 $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the following inequalities.
     There exists a constant $C \geq 1$ so that, for any pair of curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
     1/C \leq \exp \left[ f\left(\mfig{curves-10}\right)/2-f\left(\mfig{curves-12}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-11}\right)/2-f\left(\mfig{curves-12}\right)/2 \right] \leq C
