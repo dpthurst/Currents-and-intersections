@@ -326,9 +326,10 @@ we will suppress it.
     \item The pair $(\ora{a},\ora{b})$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}.
    \item  The pair $(\ora{a},\ora{b})$ is \emph{R-anti-parallel} if $b^+,b^-, a^+, a^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
    \end{itemize}
-   We can similarly define L-cross, L-parallel, and L-anti-parallel.
+   We can similarly (swapping the role of $a$ and $b$) define L-cross, L-parallel, and L-anti-parallel.
    We will also say a triple $(\ora{a},\ora{b},\ora{c})$ is R-parallel
    if $(\ora{a},\ora{b})$ and $(\ora{b},\ora{c})$ are.
+   \label{def:crossing_parallel}
 \end{definition}
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of crossing/parallelism
@@ -522,20 +523,20 @@ We have the following possible four configurations of non-intersecting reflectio
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
-\resizebox{80mm}{!}{\svgfig{r3}}
+\resizebox{\textwidth}{!}{\svgfig{r3}}
     \caption{Case 1}\label{fig:r3}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
-\resizebox{80mm}{!}{\svgfig{r2}}
+\resizebox{\textwidth}{!}{\svgfig{r2}}
     \caption{Case 2 (not possible)}\label{fig:r2}
 \end{subfigure}\\
 \begin{subfigure}{0.45\textwidth}
-     \resizebox{80mm}{!}{\svgfig{r1}}
+     \resizebox{\textwidth}{!}{\svgfig{r1}}
      \caption{Case 3, $aB$ and $Ba$ disjoint}\label{fig:r1}
    \end{subfigure}\hfill
 \begin{subfigure}{0.45\textwidth}
-  \centering{\resizebox{45mm}{!}{\svgfig{c2}}}
+  \centering{\resizebox{0.9\textwidth}{!}{\svgfig{c2}}}
     \caption{Case 3, $aB$ and $Ba$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
@@ -552,41 +553,19 @@ We note there is another case, analogous to case 2, where the reflection lines b
 
 We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ may cross (Figure~\ref{fig:c2}).
 
-\subsection{Relation between connected/disconnected smoothing and crossing/parallel conditions}
+\subsection{Relation between connected/disconnected smoothing and crossing/parallel conditions} \DMGtodo[inline]{I moved the statement to the introduction. The proof is still here, but should we moved elsewhere.}
 
-An equivalent way to state Theorem~\ref{thm:intersect} is as follows.
+We are now ready to prove Theorem~\ref{thm:intersections_group}
 
-\begin{theorem}
-Let $f \colon \Gamma \to \mathbb{R}$ be a function satisfying the following conditions:
-\begin{enumerate}
-\item class invariant $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item inverse invariant: $f(a)=f(A)$, for $A$ the inverse of $a$. 
-\item stable: $f(a^n) = nf(a)$.
-\item For any pair of $R$-crossing elements $(a,b)$, 
-\[
-f(a)+f(b) \geq f(ab)
-\]
-\item For any pair of $R$-parallel elements $(a,b)$, 
-\[
-f(ab)\geq \max\{  f(a) + f(b), f(aB) \}
-\]
-\end{enumerate}
-Then, there exists a geodesic current $\mu_f$ on $S$ so that
-\[
-i(\mu_f, [g]) = f(g)
-\]
-for every $g \in \Gamma$.
-Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
-\label{thm:intersections_group}
-\end{theorem}
-\begin{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
 Extend $f$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves.
 \[
 f(s \cdot a + t \cdot b) = s\cdot f(a) + t \cdot f(b)
 \]
 for every $s,t \geq 0$, and $a,b \in \Gamma$.
 
-The smoothing condition of Theorem~\ref{thm:intersect} is a priori stronger than the hypotheses of this theorem.
+The smoothing condition of Theorem~\ref{thm:intersect_primeprime} is a priori stronger than the hypotheses of this theorem.
 It remains to show the hypotheses of this theorem imply smoothing.
 Suppose $a,b$ have an essential crossing. 
 Then, either $(a,b)$ are $R$-crossing, or $(a,b)$ are $L$-crossing. If $(a,b)$ is $R$-crossing, we have

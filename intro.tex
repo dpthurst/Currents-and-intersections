@@ -100,15 +100,53 @@ for every multi-curve $C$.
 \end{mainthm}
 
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}. By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{mainthm:intersections} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
+    The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
+    For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases.
+
+  Let $a,b \in \pi_1(S)$ and let
+  $\ora{a}, \ora{b}$ be the oriented geodesics that are the corresponding hyperbolic axes (for some hyperbolic structure fixed once and for all).
+ We say the pair $(\ora{a},\ora{b})$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
+      ccw order on the boundary at infinity. See
+      Figure~\ref{fig:cross}: we say the pair $(\ora{a},\ora{b})$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. One can similarly define a notion of $L$-crossing and $L$-parallel pair. Let a \emph{crossing} (resp. \emph{parallel}) pair mean $L$-crossing or $R$-crossing (resp. $L$-parallel or $R$-parallel). See Definition~\ref{def:crossing_parallel} for more details.
+    
+\begin{mainthmprime}
+Let $a,b \in \pi_1(S)$.
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
+\begin{enumerate}
+\item class invariant $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
+\item inverse invariant: $f(a)=f(A)$, for $A$ the inverse of $a$. 
+\item stable: $f(a^n) = nf(a)$.
+\item disconnected smoothing: For any pair of $R$-crossing elements $(a,b)$, 
+ \begin{align}
+    \label{eq:conn_oriented} f(a) + f(b) &\geq f(ab)
+  \end{align}
+
+
+\item connected smoothing: For any pair of $R$-parallel elements $(a,b)$, 
+ \begin{align}
+    \label{eq:conn_oriented} \mbox{oriented} \quad f(ab) &\geq  f(a) + f(b)\\
+    \label{eq:conn_unoriented} \mbox{unoriented} \quad f(ab) &\geq f(aB).
+  \end{align}
+\end{enumerate}
+Then, there exists a geodesic current $\mu_f$ on $S$ so that
+\[
+i(\mu_f, [g]) = f(g)
+\]
+for every $g \in \Gamma$.
+Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
+\label{thm:intersections_group}
+\end{mainthmprime}
+See section [XXX] \DMGtodo{add reference to section once the proof has been moved to the right position} for a proof of the equivalence of the smoothing condition in Theorem~\ref{mainthm:intersections} to conditions (4) \emph{and} (5) in Theorem~\ref{thm:intersections_group}.
+We emphasize that condition (4) alone is not enough to imply the smoothing condition: see Remark~\ref{rmk:reducible_action} and also Example~\ref{ex:linEL}.
 
 One should compare this result to previous work of Feng
 Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve
 functionals on simple closed curves which can be realized as
 intersection numbers with measured laminations, i.e., geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo obtained a 
 characterization of measured laminations in terms of simple curve
-functionals~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. In Section~\ref{sec:appsintersection}, we use Theorem~\ref{thm:intersect} and an
+functionals~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. In Section~\ref{sec:appsintersection}, we use Theorem~\ref{mainthm:intersections} and an
 argument about fundamental domains of intersecting curves (for the
 $\pi_1(\Sigma)$-action on $G(\Sigma)$) to give a new characterization
 of measured laminations in terms of curve functionals~\ref{thm:char_laminations}. Feng Luo also
@@ -145,7 +183,7 @@ We note that (\cite{BIPP19:CurrentSystoles})
 A general pseudo-metric is not uniquely determined by its stable length.  For pseudo-metrics quasi-isometric to a word metric, the stable length characterizes the pseudo-metric only up to uniform additive error (Cantrell-Tanaka), i.e., if $\ell_d(g)=\ell_{d'}$ then there exists $k$ so that $|d-d'| \leq k$.
 If the pseudo-metric space is isometric to an $\mathbb{R}$-tree, work of Culler-Morgan~\cite{CM87:GroupActions} shows that its stable length fully determines the pseudo-metric.
 For pseudo-metrics coming from geodesic currents, the situation is much nicer: the stable length does fully characterize the pseudo-metric (by Otal~\cite{Otal90:SpectreMarqueNegative}), thus all the maps above are injections.
-Theorem~\ref{thm:intersect} can be seen as a characterization of the image of $\iota$ as well as $\ell$. 
+Theorem~\ref{mainthm:intersections} can be seen as a characterization of the image of $\iota$ as well as $\ell$. 
 As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
 
 \begin{mainthm}
@@ -155,17 +193,16 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:
 \begin{equation*}
       f\left(\mfig{curves-10}\right) = \max \left\{ f\left(\mfig{curves-11}\right),f\left(\mfig{curves-12}\right) \right\}.
     \end{equation*}
-    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition:
-\begin{equation} 
-      \exp \left[ f\left(\mfig{curves-10}\right)/2 \right] =  \exp \left[ f\left(\mfig{curves-11}\right)/2 \right] + \exp \left[ f\left(\mfig{curves-12}\right)/2 \right]
-      \label{eq:liouville_char}
-    \end{equation}
+    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition:\[
+        \lambda \left(\mfig{curves-10}\right) = \lambda \left(\mfig{curves-11}\right) + \lambda \left(\mfig{curves-12}\right),
+  \]
+  where $\lambda( \cdot ) \coloneqq 2\cosh(f(\cdot)/2)$.
 \end{itemize}
     The left-hand-side of both equations depicts an essential crossing between any pair of curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
     \label{mainthm:apps}
 \end{mainthm} 
 
-In fact, the second condition characterizing Liouville currents can be replaced by an (a priori) easier to check condition, where equation~\ref{eq:liouville_char} is replaced by two inequalities (see Theorem~\ref{thm:char_liouville_strong}). \DMGtodo[inline]{Is this the best way to announce this result? In the current way, we are not giving the strongest result, but the one with the easier to state condition.}
+In fact, the second condition characterizing Liouville currents can be replaced other equivalent conditions (see Section~\ref{subsec:liouville}). \DMGtodo[inline]{Is this the best way to announce this result? In the current way, we are not giving the strongest result, but the one with the easier to state condition.}
 
 Parry~\cite{Par91:Translation} characterized precisely which curve functionals are stable lengths of pseudo-metrics isometric to a real tree.
 
@@ -206,7 +243,7 @@ On the other hand, \cite{BIPP21:PositiveCrossratios} associate, to every cross-r
 \[
 c \colon \operatorname{CR}(S) \to \GC(S).
 \]
-We show that period curve functionals (i.e., the image of the map $\pi$) satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce geodesic currents.
+We show that period curve functionals (i.e., the image of the map $\pi$) satisfy the conditions of our main Theorem~\ref{mainthm:intersections} and thus induce geodesic currents.
 
 \begin{mainthm}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
@@ -409,13 +446,36 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
 \item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}.
 \end{enumerate}
 
+For an example of a curve functional that does not extend continuously to geodesic currents (and thus does not satisfy smoothing, by~\cite[Theorem~A]{MGT21:Smoothings}), we have the following.
+\begin{example}\label{ex:linEL}
+Let $\sqrt{EL}$ denote the (square root of) extremal length.
+In \cite[Examples]{MGT21:Smoothings} the authors proved that $\sqrt{EL}$ satisfies stability, homogeneity, smoothing, and convex union. By  \cite[Theorem~A]{MGT21:Smoothings}, $\sqrt{EL}$ extends continuously to a continuous on geodesic currents.
+$\sqrt{EL}$ does not satisfy additivity, so it is not dual to a geodesic current. However, $\sqrt{EL}$, as a function on connected curves can be linearly extended to a function $G$ on (weighted) multi-curves, 
+(which is thus not equal to $\sqrt{EL}$ on multi-curves). $G$ cannot extend continuously to currents, since we know $G=\sqrt{EL}$ on (weighted) connected curves, which are dense in the space of geodesic currents.
+Thus, the purported continuous extension $\overline{G}$ would have to satisfy $\overline{G}=\sqrt{EL}$ on all geodesic currents, hence on all multi-curves, a contradiction.
+It follows from this that $G$ cannot satisfy smoothing, since it trivially satisfies convex union (in fact, additivity),
+homogeneity and stability.  One can also see that, specifically, it does not satisfy connected smoothing.
+Indeed, let $F=\sqrt{EL}$. For a crossing pair $(a,b)$, we have
+\[
+F(a + b) \geq F(ab).
+\] 
+Then, by disconnected smoothing of $F$, we have
+\[
+G(a+b)=G(a) + G(b)=F(a) + F(b) \geq F(a+b) \geq F(ab)=G(ab)
+\]
+where we used the fact that $F$ and $G$ take the same values on closed curves; hence,
+$G$ satisfies disconnected smoothing.
+This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair of $(a,b)$ parallel so that
+$G(ab) < G(a) + G(b)$.
+\end{example}
+
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
 
 It turns out that one doesn't need more conditions. Theorem~\ref{mainthm:intersections} can thus be reestated, in the previous terminology, as follows.
 
-\begin{mainthmprime}\label{thm:intersect}
+\begin{mainthmprimeprime}\label{thm:intersect_primeprime}
  For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stability properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
-\end{mainthmprime}
+\end{mainthmprimeprime}
 
 \begin{remark}
 Observe that we do not require in the hypotheses that the curve functional $f \in \AConvex(S)$ is non-negative: in fact it follows from the other conditions (see Corollary~\ref{cor:positivity}).
