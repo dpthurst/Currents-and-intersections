@@ -273,6 +273,25 @@ simultaneous conjugation of $a$ and $x$, but does depend on
 more than the conjugacy classes of $a$ and~$x$. (We need to specify
 which crossing we are considering.)
 
+\DMGtodo[inline]{nomenclature about smoothings is here:}
+
+Following the statement of Theorem~\ref{thm:intersections_group}, we will distinguish between two different types of smoothings depending on the connectedness of the multi-curve in the pre-smoothing, and, in turn, each case will have two subcases depending on orientation.
+
+\begin{enumerate}
+\item disconnected smoothing: For any pair of crossing elements $(a,b)$, 
+ \begin{align}
+    \label{eq:sm_disconn_oriented} \mbox{oriented} \quad [a] \cup [b] &\searrow [ab]\\
+    \label{eq:sm_disconn_unoriented} \mbox{unoriented} \quad [a] \cup [b] &\searrow [aB]\\
+  \end{align}
+\item connected smoothing: For any pair of parallel elements $(a,b)$, 
+ \begin{align}
+    \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] \cup [b] \\
+    \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].
+  \end{align}
+\end{enumerate}
+
+Observe that requiring the above condition for $R$-crossing or $R$-parallel is the same as requiring them for $L$-crossing or $L$-parallel, by the symmetry of the conditions, conjugacy invariance, and the fact that if $(a,b)$ are $R$-crossing, $(b,a)$ are $L$-crossing, and if $(a,b)$ are $R$-parallel, then $(b,a)$ are $L$-parallel.
+
 In terms of smoothings, in a disconnected smoothing, $a$ and $x$ above are non-conjugates and non-inverses of each other. In a connected smoothing, 
 $a$ and $x$ above are conjugate.
 
