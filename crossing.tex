@@ -854,110 +854,40 @@ centered on~$\ora{x}$. We first prove another crossing lemma.
   \max(s_0,s_1)$.
 \end{proof}
 
-% \begin{figure}
-% \centering{
-% \resizebox{60mm}{!}{\svgfig{initial}}
-% \caption{Setup configuration for fundamental smoothing lemma.}
-% \label{fig:initial}
-% }
-% \end{figure}
+In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
+four group elements, in a configuration that is easy to find.
+\begin{corollary}
+  Let $a,b,x,y \in \pi_1(S)$ be chosen so that $(B\cdot \ora{x},
+  \ora{y}, a\cdot\ora{x})$ are R-parallel.
+  Then there exists
+  $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
+  \begin{align}
+%    \label{eq:crossuniform_n}
+       [by^m a x^{n+r}][by^m a x^{n-r}] &\reducesto [(by^m a x^n)^2]\\
+%    \label{eq:crossuniform_m}
+       [by^{m+r} a x^n][by^{m-r} a x^n] &\reducesto [(by^m a x^n)^2].
+  \end{align}
+\end{corollary}
 
-% \DPTtodo[inline]{Old statement/proof below. Figure has also been
-%   commented out, not sure it's needed now.}
-
-% \begin{proposition}\label{prop:fundamental-aybx}
-% Let $a,b,x,y \in \pi_1(S)$ be chosen so $(B\cdot \ora{x}, \ora{y},
-% a\cdot\ora{x}, ab\cdot\ora{y})$ are R-parallel in that order, as in
-% Figure~\ref{fig:initial}.
-% There exists $s \ge 0$ so that for all $r > s$ and all $m,n \in \bbZ$,
-%   \begin{align*}
-%     [b y ^m a x^{n+r}] [b y^m a x^{n-r}] &\reducesto [(b y^m a x^{n})^2]\\
-%     [b y^{m+r} a x^{n} ] [b y^{m-r} a x^{n}] &\reducesto [(b y^m a x^{n})^2]
-%   \end{align*}
-% \end{proposition}
+\begin{proof}
+  Apply Proposition~\ref{prop:fundamental-ayx} with
+  \begin{align*}
+    x' &= Bxb & y' &= y & a' &= ab. \qedhere
+  \end{align*}
+\end{proof}
 
 
-% \DPTtodo[inline]{Figure~\ref{fig:aybx} is too busy, I think there are
-%   too many lines shown and it's not clear what the key parts are. It
-%   also needs to be reflected vertically, but don't change it yet.}
-% \begin{figure}
-% \centering{
-% \resizebox{170mm}{!}{\svgfignormal{aybx}}
-% \caption{Band model centered on $\ora{y}$. Translates of $\ora{x}$ are coded in blue, while translates of $\ora{y}$ are coded in red. The translates of $\ora{x}$ by $y^{-s} B$ and $B$ are shown and labelled in the upper part, and translates of $\ora{x}$ by $y^{m-s} a$ and $y^m a$ are shown in the lower part. }
-% \label{fig:aybx}
-% }
-% \end{figure}
-
-% \begin{proof}
-%   We again use the normalized band model, centered on $\ora{y}$ so
-%   the translation length of $y$ is equal to $1$, as in
-%   Figure~\ref{fig:aybx}. By $w(a)$, $w(y^mB)$, etc., we will mean
-%   the interval on the boundary between the endpoints of $a \cdot
-%   \ora{x}$, $y^mB \cdot \ora{x}$, etc., that do not contain $y^-$, $y^+$.
-%   \DPTtodo{Not sure this is needed}
-%   Again by Lemma~\ref{lem:rhs_prod}, $(ax^nb)^+
-%   \in w(a)$ and $(ax^nb)^- \in w(B)$.
-
-%   As before, since each window is of
-%   finite width, we can find $s>0$ so that $w(y^{m-s}a)$
-%   is to the left of $w(y^m a)$ and
-%    $w(y^{-s}B)$ is to the left of
-%   $w(B)$.
-%   In fact, since the translation length of $y$ is 1, it suffices to take
-%   \begin{equation*}
-%   s \geq s_0 = \lceil \max \{ \wid_y(w(a)),\wid_y(w(B)) \} \rceil.
-%   \end{equation*}
-
-%   Consider now the curves
-%   $\ora{y^{m-s}ax^nb}$ and $\ora{y^m ax^n by^s} \in [y^{m+s}ax^nb]$.
-%   We claim
-%   \begin{align*}
-%     (y^{m-s} a x^n b)^+ &\in w(y^{m-s} a) &
-%        (y^{m} a x^n b y^{s})^+ &\in w(y^{m} a)\\
-%     (y^{m-s} a x^n b)^- &\in w(B) &
-%        (y^{m} a x^n b y^{s})^- &\in w(y^{-s} B).
-%   \end{align*}
-%   \DPTtodo{HERE. Not convinced we can use the same lemma}
-%   \begin{proof}
-%   It follows by Lemma~\ref{lem:cornering}, taking as the elements $a,b$ in that Lemma, the elements $y^{m-s} a$ and $b$. Note that the assumptions of the Lemma are satisfied: indeed, $B \cdot \wt{x}$ and $a \cdot \wt{x}$ are parallel, by the assumptions of Lemma~\ref{lem:initial} and north-south dynamics of $y$ guarantees then that $B \cdot \wt{x}$ and $y^{m-s} a \cdot \wt{x}$ are parallel.
-%   \end{proof}
-%   We also need the following claim, which follows similarly by Lemma~\ref{lem:cornering}.
-%   \begin{claim}
-%   \begin{itemize}
-%   \item $(y^{m} a x^n b y^{s})^+ \in w(y^{m} a)$
-%   \item $(y^{m} a x^n b y^{s})^- \in w(y^{-s} B)$
-%   \end{itemize}
-%   \end{claim}
-  
-% Combined, these mean that
-%   $y^m a x^{n} b y^s$ crosses $y^{m-s}a x^nb$ to the right.  We have, thus,
-%   \[
-%     [a x^{n} b y^{m+s}][y^{m-s}ax^nby^{m-s}]=[y^m ax^{n}b y^s][y^{m-s}ax^nb] \reducesto [(y^max^nb)^2]= [(ax^nby^m)^2]
-%   \]
-%   proving Equation~\eqref{eq:crossuniform_n}.
-%   Equation~\eqref{eq:crossuniform_n} follows similarly: indeed, $\wt{y}$ being parallel to $a \cdot \wt{x}$ and $a \cdot \wt{x}$ being parallel to $ab \cdot \wt{y}$ is equivalent, by acting by $A$, to $A \cdot \wt{y}$ being parallel to $\wt{x}$ and $\wt{x}$ being parallel to $b \cdot \wt{y}$.
-%   Thus, we can consider a normalized band model centered on $\wt{x}$ this time to prove Equation~\eqref{eq:crossuniform_n}.
-% \end{proof}
-
-\DPTtodo[inline]{Rework this lemma so it works with new algebra
-  organization. Move it to where it is used.}
 \begin{lemma}
   Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
-  $B \cdot \ora{x}$, $\ora{y}$, $a \cdot \ora{x}$ and
-  $ab \cdot \ora{y}$ are R-parallel, in this order, as in
-  Figure~\ref{fig:initial}.
+  $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel.
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-  Given $y$, by Lemma~\ref{lem:diagonaldense}, we can find a translate
-  of $\ora{x}$, denoted $B \cdot \ora{x}$, so that
-  $B \cdot \ora{x}$ and $\ora{y}$ and are R-parallel. For any $a$,
-  be translation we see $a \ora{x}$ and $ab \cdot \ora{y}$ are
-  R-parallel. Find $g \in \pi_1(X)$ so that $g^{+}\in(y_-, y_+)$ and
-  $g^-\in((B \cdot \ora{x})^+, (B \cdot \ora{x})^-)$. Set
-  $a = g^n$ for large~$n$. By the North-South
-  dynamics of $g$, for $n$ is large enough $a \cdot \ora{x}$ is R-parallel to $\ora{y}$, as
-  desired.
+  Given
+  $\ora{y}$, by Lemma~\ref{lem:diagonaldense}, we can find translates
+  $B \cdot \ora{x}$ and $a \cdot \ora{x}$ of $\ora{x}$ so that $(B
+  \cdot \ora{x}, \ora{y})$ and $(\ora{y},a\cdot\ora{x})$ are
+  R-parallel.
 \end{proof}
 
 %%% Local Variables:
