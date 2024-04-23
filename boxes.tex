@@ -2,19 +2,17 @@
 \subsection{Right-handed boxes}
 \label{sec:boxes}
 
-We now turn to the outline of the construction and its principal
-ingredients.
+We now turn to the outline of the construction.
 Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing, stability
 and homogeneity.
-Recall that since $f$ satisfies the symmetry condition,
-$f([a])=f([a^{-1}])$ for any $a \in \pi_1(S,\ast)$.
-Recall, also, that the fact that $f$ satisfies the smoothing condition
-for unoriented curves means $f$ is non-increasing under smoothing
-essential crossings for either of the two possible unoriented resolutions
-(the one coherent with the chosen orientation, and the one which
-isn't).
-
+% Recall that since $f$ satisfies the symmetry condition,
+% $f([a])=f([A])$ for any $a \in \pi_1(S,\ast)$.
+% Recall, also, that the fact that $f$ satisfies the smoothing condition
+% for unoriented curves means $f$ is non-increasing under smoothing
+% essential crossings for either of the two possible unoriented resolutions
+% (the one coherent with the chosen orientation, and the one which
+% isn't).
 We wish to construct a current $\mu_f$ and show that
 $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
@@ -25,14 +23,14 @@ $\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$ (Lemma~\re
 The main objects in our proof are certain boxes in the
 space of geodesics to which we will assign measures. The prototype for
 the kind of boxes we consider is shown in
-Figure~\ref{fig:newmodel3}: we have four lines, all lifts of~$x$, with
+Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$x$, with
 two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
 $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+) \subset
 \partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
 for defining the measure. The lifts are defined by a 4-tuple of
 elements $[p_1,q_1,p_2,q_2]$ of $\pi_1(S)$ by
-$\ell_i = (p_i)^{-1} \cdot \wt x$ and $r_i = q_i \cdot \wt x$, with
+$\ell_i = P_i \cdot \ora{x}$ and $r_i = q_i \cdot \ora{x}$, with
 conditions explained below.
 
 \begin{figure}
@@ -42,16 +40,16 @@ conditions explained below.
 \label{fig:newmodel3}
 }
 \end{figure}
-
+\DPTtodo[inline]{In figure, replace $\wt{x}$ by $\ora{x}$}
 The measure that we ultimately assign to the associated window should
 be invariant under
 \begin{itemize}
-\item changing a $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$;
-\item changing a $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$; and
+\item changing $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$;
+\item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$; and
 \item translating all the lifts by $g \in \pi_1(S)$:
   \[
     [p_1,q_1,p_2,q_2] \mapsto g \cdot [p_1,q_1,p_2,q_2] \coloneqq
-      [p_1 g^{-1}, gq_1, p_2 g^{-1},  gq_2].
+      [p_1 G, gq_1, p_2 G,  gq_2].
   \]
 \end{itemize}
 In fact, ultimately we will take a limit of applying the first
@@ -69,7 +67,7 @@ and $q_i \mapsto q_i x^n$.
 \end{aligned}
   \label{eq:relationdatum}
 \end{equation}
-\DPTtodo[inline]{Necessarily have $aCdB = 1$}
+We thus necessarily have $aCbD = 1$.
 Note that, by Equation~\eqref{eq:double_coset}, the relative position
 of (say) $\ell_1$ and $r_1$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
@@ -86,26 +84,27 @@ invariant under the following four transformations:
 \end{itemize}
 
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
-$ac^{-1}db^{-1} = 1$, we can
-construct four lifts of $x$ with the above relations, for instance
+$aCdB = 1$, we can
+construct four lifts of $[x]$ with the above relations, for instance
 setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = ca^{-1}$.
 
 As mentioned above, we need some conditions on these lifts; for
 instance, we need the window
 $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)$ to avoid the
-diagonal. For the proofs to go through easily, we will impose more
-conditions on the configurations of these lifts.
+diagonal.
+% For the proofs to go through easily, we will impose more
+% conditions on the configurations of these lifts.
 
-\begin{definition}[RHS lift system]
+\begin{definition}[RH lift system]
 \label{def:RH-lift-sys}
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
-\item\label{item:box-close} $a c^{-1} d b^{-1} = 1$;
-\item\label{item:box-edges-cross} $a,b,c,d$ cross $x$ to the right; and
+\item\label{item:box-close} $a C d B = 1$;
+\item\label{item:box-edges-cross} $\ora{a},\ora{b},\ora{c},\ora{d}$ cross $\ora{x}$ to the right; and
 \item\label{item:box-diags-cross} for sufficiently large~$n$,
-  $dx^na c^{-1}
-  = cAbx^na c^{-1}$ crosses
-  $cx^n$ to the right.
+  $\ora{dx^na C}
+  = \ora{cAbx^na C}$ crosses
+  $\ora{cx^n}$ to the right.
 \end{enumerate}
 Then we call the datum $(a,b,c,d)$ a \emph{right-handed lift system}.
 As explained above, this determines a $\pi_1(S)$-orbit of windows. In
@@ -113,8 +112,8 @@ terms of the alternative data $[p_1,q_1,p_2,q_2]$ for a window (rather
 than for an orbit), condition~(1) is automatic and the others
 become
 \begin{enumerate}[label=(\arabic*$^\prime$),start=2]
-\item for $i,j \in \{1,2\}$, $p_iq_j$ crosses $x$ to the right; and
-\item for sufficiently large~$n$, $q_2x^np_1$ crosses $q_1x^np_2$ to
+\item for $i,j \in \{1,2\}$, $\ora{p_iq_j}$ crosses $\ora{x}$ to the right; and
+\item for sufficiently large~$n$, $\ora{q_2x^np_1}$ crosses $\ora{q_1x^np_2}$ to
   the right.
 \end{enumerate}
 \end{definition}
@@ -122,44 +121,40 @@ See Figure~\ref{fig:box4} for examples of
 RH lift systems, and Figure~\ref{fig:box4} for non-examples.
  We
 distinguish three types of RH lift systems: type 1 has
-no nested lifts; type 2 has one parallel pair of nested lifts; and
-type 3 has two parallel pairs of nested lifts of $x$.
-Note that since $x$ is simple, lifts
+no nested lifts of $[x]$; type 2 has one parallel pair of nested lifts; and
+type 3 has two parallel pairs of nested lifts.
+Note that since $[x]$ is simple, lifts
 cannot intersect each other, and nested lifts cannot be anti-parallel
-by the right-handed condition.
+by condition \ref{item:box-edges-cross}.
 
 
-\begin{figure}[h!]
+\DPTtodo[inline]{In Figure \ref{fig:rhbox}, I think the $x$ in each
+  figure is more confusing than helpful. If kept it should have an arrow.}
+\begin{figure}
      \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{30mm}{!}{\svgfig{box1}}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{30mm}{!}{\svgfig{box}}}
-     \end{subfigure}
-          \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{30mm}{!}{\svgfig{box4}}}
-     \end{subfigure}
-     \caption{Examples of right-handed boxes}
+\resizebox{40mm}{!}{\svgfig{box1}}
+\quad
+     \resizebox{40mm}{!}{\svgfig{box}}
+\quad
+\resizebox{40mm}{!}{\svgfig{box4}}
+     \caption{Examples of right-handed boxes, of Type 1 (left), Type 2
+     (middle), and Type 3 (right).}
      \label{fig:rhbox}
 \end{figure}
 
 \begin{remark}
-%\begin{enumerate} 
-%\item
-The reader might wonder why in condition~\ref{item:box-diags-cross} we require the condition
+\DPTtodo{This seems needlessly wordy. Can it be replaced by saying its needed for
+  translation invariance for boxes of Type 2 and 3?}
+  The reader might wonder why in condition~\ref{item:box-diags-cross} we require the condition
   ``for $n$ large enough''. It turns out that requiring the condition
   for all $n$ is too restrictive, and while it does happen for some
   configurations of lifts, such as those of Type 1,
   in general it doesn't hold for the types of configurations of lifts
   that we are interested in. 
  Consider Figure~\ref{fig:nestedpositivity}: item a) shows, $[bx^n]$ and $[cx^n]$ might not cross. However, for sufficiently large $n$, the $[b x^n]$ and $[c x^n]$ will cross, as item b) suggests. To prove it, consider the bands model centered at the outer most nested lift of $x$, as in item c). For sufficiently large $n$, it's clear that $[b x^n]$ and $[c x^n]$ cross each other.
- There are some configurations of boxes, such as Type 1, Figure~\ref{fig:rhbox}, where the crossing is essential without passing to large $n$.
-%\item Condition (3) in the definition of RH lift is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
+ There are some configurations of boxes, such as Type~1, Figure~\ref{fig:rhbox}, where the crossing is essential without passing to large $n$.
+% 
+ % \item Condition (3) in the definition of RH lift is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
 %$$  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
 %    implications about the order in which things appear on the
 %    boundary. But is the other direction correct? Could we end up
@@ -169,8 +164,9 @@ The reader might wonder why in condition~\ref{item:box-diags-cross} we require t
 \label{rmk:largeenough}
 \end{remark}
 
+\DPTtodo{HERE}
 \begin{definition}\label{def:RH-box}
-Fix once and for all a lift $\tilde{x}$ of $[x]$. Every right handed lift system given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
+Fix once and for all a lift $\ora{x}$ of $[x]$. Every right handed lift system given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
 B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
 \]
@@ -185,15 +181,17 @@ orbit itself.
 We will denote by $\mathcal{B}$ the set of right-handed boxes.
 \end{definition}
 
+\DPTtodo[inline]{Insert proof that a RH lift system determines a box
+  in given cyclic order without intersecting diagonal}
 
 Given a right-handed lift system $(a,b,c,d)$ and a choice of lift $\tilde{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
 Note how the lifts are non-intersecting, since $[x]$ is simple, and these orientation of the lifts are always right-handed.
 \begin{example}
 The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
 \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{nonbox}}
-\resizebox{60mm}{!}{\svgfig{box3}}
+  \centering{
+\resizebox{45mm}{!}{\svgfig{nonbox}}\qquad
+\resizebox{45mm}{!}{\svgfig{box3}}
 \caption{Two non-examples of right-handed boxes. The left is not
   right-handed because $b$ and $c$ cross in the wrong way, while the
   right is a non-example because $c$ does not cross $x$ essentially(to
