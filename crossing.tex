@@ -673,7 +673,6 @@ misses~$x^\pm$. Observe that $w(x^k\cdot\ora{y})$ is the horizontal
 translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings} for
 examples.
 
-\DPTtodo{Check refs to this lemma, which changed considerably}
 \begin{lemma}
   Given $a,b, x \in \pi_1(\Sigma)$ so that $a$ and $b$ cross $x$ to
   the right and $g_1 = x^k ax^\ell$ with $k,\ell \in \bbZ$, we have
@@ -681,7 +680,7 @@ examples.
   $g_1^- \in w(x^{-\ell}A\cdot\ora{x})$. Similarly for
   $g_2 = x^k a x^\ell b x^n$ with $k,\ell,n\in\bbZ$, we have
   $g_2^+ \in w(x^ka \cdot \ora{x})$ and $g_2^- \in w(x^{-n} B \cdot\ora{x})$.
-\label{lem:cornering}
+\label{lem:windows}
 \end{lemma}
 
 \begin{proof}
@@ -736,7 +735,7 @@ examples.
     s_2 \le s < r,
   \]
   so $g_1^+ \in w(x^rb\cdot\ora{x})$ is to the right of $g_2^+ \in
-  w(a\cdot\ora{x})$ (using Lemma~\ref{lem:cornering}). Thus
+  w(a\cdot\ora{x})$ (using Lemma~\ref{lem:windows}). Thus
   $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the left. Similarly if
   $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the
   right. In either case,
@@ -823,9 +822,9 @@ centered on~$\ora{x}$, starting with another crossing lemma.
   $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
   \begin{align}
     \label{eq:crossuniform_n}
-       [y^m a x^{n+r}][y^m a x^{n-r}] &\reducesto [(y^m a x^n)^2]\\
+       [a y^m x^{n+r}][a y^m x^{n-r}] &\reducesto [(a y^m x^n)^2]\\
     \label{eq:crossuniform_m}
-       [y^{m+r} a x^n][y^{m-r} a x^n] &\reducesto [(y^m a x^n)^2].
+       [a y^{m+r} x^n][a y^{m-r} x^n] &\reducesto [(a y^m x^n)^2].
   \end{align}
 \end{proposition}
 
@@ -839,7 +838,6 @@ centered on~$\ora{x}$, starting with another crossing lemma.
     s_0 \coloneqq \lceil\max(\wid(w(\ora{y})),
     \wid(w(a\cdot\ora{y})))\rceil.
   \]
-\DPTtodo[inline]{Proofreading HERE}
   For $r > s_0$, consider the elements $g_1 = x^n ay^m x^r$ and $g_2 =
   x^{n-r} a y^m$. By Lemma~\ref{lem:ayx-window}, we have
   \begin{align*}
@@ -848,8 +846,7 @@ centered on~$\ora{x}$, starting with another crossing lemma.
   \end{align*}
   Since $r>s_0$, the endpoints appear in the cyclic order
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\bdy^\infty S$. In
-  particular $\ora{g_1}$ and $\ora{g_2}$ cross essentially and we get
-  the desired smoothing.
+  particular $[g_1][g_2] \reducesto [g_1 g_2]$ as desired.
   
   To see Eq.~(\ref{eq:crossuniform_n}), apply
   Eq.~(\ref{eq:crossuniform_m}) with the change of variables
@@ -875,7 +872,7 @@ four group elements, in a configuration that is easy to find.
 
 \begin{proof}
   Apply Proposition~\ref{prop:fundamental-ayx} with
-  $x' = Bxb$, $y'  y$, and $a' = ab$.
+  $x' = y$, $y' = Bxb$, and $a' = ab$.
 \end{proof}
 
 
