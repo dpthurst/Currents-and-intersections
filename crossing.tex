@@ -744,23 +744,18 @@ examples.
     [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}].
   \]
 
-  \DPTtodo[inline]{Proofreading HERE}
-  For Equation~\eqref{eq:cross-split}, write $ax^nbx^m$ as $gh$ with
-  $g=ax^{n+r}$ and $h=x^{-r}bx^m$, so the endpoints of $\ora{gh}$
-  are in $w(x^{-m}B\cdot\ora{x})$ and $w(a\cdot\ora{x})$, while the endpoints of its
-  conjugate $\ora{hg} =\ora{x^{-r}bx^max^{n+r}}$ are in $w(x^{-n-r}A\cdot\ora{x})$ and
-  $w(x^{-r}b\cdot\ora{x})$. Then if $s < r < m-n-s$, we have
-  \[
-    -r < -s \le -s_1,
-  \]
-  so $w(x^{-r}b)$ is to the left of $w(a)$, while
-  \[
-    -m \le -m+s+s_1' < -n - r + s_1',
-  \]
-  so $w(x^{-n-r}A\cdot\ora{x})$ is to the right of  $w(x^{-m}B\cdot\ora{x})$, and
-  $gh$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}.
+  For Equation~\eqref{eq:cross-split}, write $x^r ax^n bx^{m-r}]=[gh]$ with
+  $g=x^r ax^n$ and $h=bx^{m-r}$, so the endpoints of $\ora{gh}$
+  are in $w(x^{r-m}B\cdot\ora{x})$ and $w(x^r a\cdot\ora{x})$, while
+  the endpoints of $\ora{hg} =\ora{bx^m ax^n}$ are in $w(x^{-n}A\cdot\ora{x})$ and
+  $w(b\cdot\ora{x})$. Then if $s < r < m-n-s$, we have $s_1 < r$
+  so $w(b\cdot\ora{x})$ is to the left of $w(x^r a\cdot\ora{x})$,
+  while $r-m < -n+s_1'$, so $w(x^{r-m}B \cdot\ora{x})$ is to the left
+  of $w(x^{-n}A\cdot\ora{x})$. Thus
+  $[gh]$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}.
   We similarly get an essential self-crossing if $m-n+s < r < -s$.
 
+  \DPTtodo[inline]{Proofreading HERE}
   \DPTtodo[inline]{The following argument conjugates by $x^r$. Later,
     to get the optimal result when $x$ is simple, we need to conjugate
     instead by $a$. Maybe we should do that already in the non-simple
