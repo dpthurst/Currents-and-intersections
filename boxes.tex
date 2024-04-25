@@ -41,13 +41,13 @@ conditions explained below.
 \caption{Schematically determining a RH box from group theory data
   with different lifts of a single curve $[x]$. There are no
   constraints on how the base lift $\ora{x}$ sits with respect to the
-  other lifts. The other four lifts do have constraints in how they
-  sit, with some other possibilities shown in Figure~\ref{fig:rhbox}.}
+  other lifts. The other four lifts have constraints in how they
+  sit; some other possibilities are shown in Figure~\ref{fig:rhbox}.}
 \label{fig:newmodel3}
 }
 \end{figure}
 \DPTtodo[inline]{In figure, replace $\wt{x}$ by $\ora{x}$}
-The measure that we ultimately assign to the associated window should
+The measure that we ultimately assign to the associated windows will
 be invariant under
 \begin{itemize}
 \item changing $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$;
@@ -271,7 +271,7 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} a right-handed boxes, since $c
   \begin{align*}
     cx^n &= p_2 q_1 x^n&
     dx^naC &= p_2 q_2 x^n p_1 P_2\\
-    \intertext{which after conjugating by $p_2$ yields}
+    \intertext{which after conjugating by $P_2$ yields}
     q_1 x^n p_2 &= g_{2,1,n} & q_2 x^n p_1 &= g_{1,2,n}.
   \end{align*}
   Thus the two crossing conditions are equivalent.
@@ -284,15 +284,17 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} a right-handed boxes, since $c
   the weight of the
   boundary of these boxes under any geodesic current is necessarily
   zero: the only closed geodesic with an endpoint starting at the base
-  of any of the involved spikes is a lift of~$x$, and by definition of
-  right-handed box, it is not contained in the spikes. This choice is
+  of any of the involved spikes is a lift of~$[x]$, and by definition of
+  right-handed box, this lift is not contained in the spikes. This choice is
   more convenient for the proofs.
 \end{remark}
 
-In our construction, we want to use the following fact.
+In constructing the measure, we want to use the following fact.
 
 \begin{lemma}
-The action of $\pi_1(S)$ on $\partial_{\infty} \tilde{S}$ is minimal, i.e., for any $p \in \partial_{\infty} \tilde{S}$, the orbit $\pi_1(S)p$ is dense.
+The action of $\pi_1(S)$ on $\partial_{\infty} \wt{S}$ is minimal,
+i.e., for any $p \in \partial_{\infty} \wt{S}$, the orbit
+$\pi_1(S)\cdot p$ is dense.
 \label{lem:minimal}
 \end{lemma}
 % \DMGtodo[inline]{(Punctures) Again, this uses surface is closed.}
@@ -307,30 +309,47 @@ Let $x \in \pi_1(\Sigma)$.
 Given any $z \in \partial \Sigma$,
 % \DMGtodo[inline]{(Punctures) Uses
 %   closed surface, otherwise replace by limit set.}
-and any $\epsilon>0$, there exists a lift $g \cdot \wt{x}$ whose endpoints $g\wt{x}_+$ and $g\wt{x}_-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
+and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
+endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
 with respect to the $ \partial \Sigma$ order.
 \label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
-By Lemma~\ref{lem:minimal}, endpoints of axes of $\pi_1(\Sigma)$ elements are dense in $\partial \Sigma$. Consider an element $g$ so that $\wt{x}$ is parallel (resp. anti-parallel) to $\ora{g}$ and $g^+ \in (z-\epsilon,z+\epsilon)$ (see Figure~\ref{fig:approx2}). Then, for large enough $n$, by north-south dynamics of $g$, we have that $(g^n x g^{-n})^{\pm} \in (z-\epsilon,z+\epsilon)$ in clockwise (resp. counter-clockwise) order.
+  \DPTtodo{Proof modified. Previous proof had requirements on both
+    endpoints of $\ora{g}$, which is problematic since the action on
+    $(\bdy\Sigma)^2$ is not minimal. Figure needs adjustment to match,
+  should show how to change local orientation}
+By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
+$\pi_1(\Sigma)$ are dense in $\partial \Sigma$; choose any $g$ so that
+$g^+ \in (z-\epsilon,z+\epsilon)$. Then choose a translate $h^k\cdot
+\ora{x}$ of $\ora{x}$ that does not cross $\ora{g}$; we can do this,
+e.g., by choosing $\ora{h}$ that crosses $\ora{g}$ and taking $k$
+sufficiently large.
+Then, for large enough $n$, by north-south dynamics of $g$, we have
+that $g^n h^k \cdot x^{\pm} \in (z-\epsilon,z+\epsilon)$. We can
+change the order of the endpoints between clockwise and
+counter-clockwise by changing the sign of~$k$.
 \end{proof}
 
 \begin{proposition}
+  \DPTtodo{Adjust both statement and proof}
 The family of right handed boxes $\mathcal{B}$ is dense in the space
 of rectangles in $G^+(\Sigma)$, in the following sense.
-For any rectangle $R = [p,q) \times [r,s) \subset G^+(\Sigma)$,
-and any $\epsilon>0$, there exist $a,b,c,d \in \pi_1(S)$ forming a
-right-handed box so that for some $B \in [B]_{a,b,c,d}$, with
-$B=[p',q') \times [r',s')$, we have $p' \in B_{\epsilon}(p)$, $q' \in
-B_{\epsilon}(q)$, $r' \in B_{\epsilon}(r)$ and $s' \in
-B_{\epsilon}(s)$. 
+For any rectangle $R = [v_1,v_2) \times [w_1,w_2) \subset G^+(\Sigma)$,
+and any $\epsilon>0$, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
+RH box $B_{p_1,p_2,q_1,q_2}$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
+and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 \label{prop:density}
 \end{proposition}
-\begin{proof}\DMGtodo[inline]{do we need to explain why all the conditions of right handed box are met? }
-   Consider a lift $\tilde{x}$ of $[x]$ with startpoint $x^-$ and endpoint $x^+$.
-   Given a points $p,q,r,s \in \partial_{\infty} \tilde{\Sigma}$ in this clockwise order, and any $\epsilon>0$, we will produce lifts $\tilde{x}_p,\tilde{x}_q,\tilde{x}_r,\tilde{x}_s$ of $[x]$ with endpoints within $\epsilon$ of $p,q,r,s$, respectively, and with the right orientations.
-   For $r$ (resp. $s$), by Lemma~\ref{lem:diagonaldense}, we find a translate $g_r$ of $\wt{x}$ with endpoints in $B_{\epsilon}(r)$ (resp. a translate $g_s$ with endpoints in $B_{\epsilon}(r)$), with clockwise orientations.
-
+\begin{proof}
+  By Lemma~\ref{lem:diagonaldense}, we can find translates
+  $p_i\cdot \ora{x}$ and $q_j \cdot \ora{x}$ with both endpoints in
+  the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. To
+  make a RH box, we must require that
+  $p_i \cdot \ora{x}$ be clockwise $B_\epsilon(v_i)$ and the endpoints
+  of $q_i \cdot \ora{x}$ be counterclockwise within $B_\epsilon(w_i)$;
+  again we can achieve this. See Figure~\ref{fig:approx2} (right).
+\end{proof}
 
 \begin{figure}
 \centering{
@@ -340,9 +359,6 @@ B_{\epsilon}(s)$.
 \label{fig:approx2}
 }
 \end{figure}
-
-   For $p$ (resp. $q$), by Lemma~\ref{lem:diagonaldense}, we find a translate $g_p$ of $\wt{x}$ with endpoints in $B_{\epsilon}(p)$ (resp. a translate $g_q$ with endpoints in $B_{\epsilon}(q)$), with counter-clockwise orientations. See right Figure~\ref{fig:approx2}.
-\end{proof}
 
 \subsection{Measures of boxes}
 
