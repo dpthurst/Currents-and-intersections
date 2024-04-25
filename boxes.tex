@@ -26,6 +26,8 @@ the kind of boxes we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$x$, with
 two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
+\DPTtodo{We need to write this as $(\ell_1^-,\ell_2^+]$ to follow our
+  ccw convention. This affects many places.}
 $[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+) \subset
 \partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
 for defining the measure. The lifts are defined by a 4-tuple of
@@ -36,7 +38,11 @@ conditions explained below.
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3}}
-\caption{Schematically determining a box from group theory data.}
+\caption{Schematically determining a RH box from group theory data
+  with different lifts of a single curve $[x]$. There are no
+  constraints on how the base lift $\ora{x}$ sits with respect to the
+  other lifts. The other four lifts do have constraints in how they
+  sit, with some other possibilities shown in Figure~\ref{fig:rhbox}.}
 \label{fig:newmodel3}
 }
 \end{figure}
@@ -100,6 +106,7 @@ diagonal.
 Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
 \begin{enumerate}
 \item\label{item:box-close} $a C d B = 1$;
+\item\label{item:box-nontriv} $aC=bD$ and $Ab=Cd$ are not powers of~$x$;
 \item\label{item:box-edges-cross} $\ora{a},\ora{b},\ora{c},\ora{d}$ cross $\ora{x}$ to the right; and
 \item\label{item:box-diags-cross} for sufficiently large~$n$,
   $\ora{dx^na C}
@@ -112,8 +119,9 @@ terms of the alternative data $[p_1,q_1,p_2,q_2]$ for a window (rather
 than for an orbit), condition~(1) is automatic and the others
 become
 \begin{enumerate}[label=(\arabic*$^\prime$),start=2]
-\item for $i,j \in \{1,2\}$, $\ora{p_iq_j}$ crosses $\ora{x}$ to the right; and
-\item for sufficiently large~$n$, $\ora{q_2x^np_1}$ crosses $\ora{q_1x^np_2}$ to
+\item\label{item:box-nontriv-2} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
+\item\label{item:box-edges-cross-2} for $i,j \in \{1,2\}$, $\ora{p_iq_j}$ crosses $\ora{x}$ to the right; and
+\item\label{item:box-diags-cross-2} for sufficiently large~$n$, $\ora{q_2x^np_1}$ crosses $\ora{q_1x^np_2}$ to
   the right.
 \end{enumerate}
 \end{definition}
@@ -164,7 +172,6 @@ by condition \ref{item:box-edges-cross}.
 \label{rmk:largeenough}
 \end{remark}
 
-\DPTtodo{HERE}
 \begin{definition}\label{def:RH-box}
 Fix once and for all a lift $\ora{x}$ of $[x]$. Every right handed lift system given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
@@ -181,26 +188,94 @@ orbit itself.
 We will denote by $\mathcal{B}$ the set of right-handed boxes.
 \end{definition}
 
-\DPTtodo[inline]{Insert proof that a RH lift system determines a box
-  in given cyclic order without intersecting diagonal}
-
 Given a right-handed lift system $(a,b,c,d)$ and a choice of lift $\tilde{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
 Note how the lifts are non-intersecting, since $[x]$ is simple, and these orientation of the lifts are always right-handed.
 \begin{example}
-The box in Figure~\ref{fig:box4} is \emph{not} a right-handed box, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
+The boxes in Figure~\ref{fig:box4} are \emph{not} a right-handed boxes, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
 \begin{figure}
   \centering{
 \resizebox{45mm}{!}{\svgfig{nonbox}}\qquad
 \resizebox{45mm}{!}{\svgfig{box3}}
 \caption{Two non-examples of right-handed boxes. The left is not
-  right-handed because $b$ and $c$ cross in the wrong way, while the
-  right is a non-example because $c$ does not cross $x$ essentially(to
+  right-handed because $\ora{b}$ and $\ora{c}$ cross in the wrong way, while the
+  right is a non-example because $\ora{c}$ does not cross $\ora{x}$
+  essentially (to
   the right
   or to the left)}
 \label{fig:box4}
 }
 \end{figure}
 \end{example}
+
+\begin{proposition}\label{prop:rh-boxes}
+  Let $(p_1,q_1,p_2,q_2)$ be a RH box, with $\ora{\ell_i} =
+  P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
+  endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
+  counter-clockwise order. In particular the boxes in $\cB$ avoid the
+  diagonal. (Something about orbits $[a,b,c,d]$.)
+\end{proposition}
+
+\begin{proof}
+  We first note that condition \ref{item:box-edges-cross-2} implies
+  that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
+  are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
+  $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel.
+
+  To exploit condition~\ref{item:box-diags-cross-2}, we prove a lemma.
+
+  \begin{lemma}\label{lem:box-endpoints}
+    In the setting above, fix $n \in \bbZ$ and $i,j \in \{1,2\}$, and
+    set $g = q_j x^n p_i$. Then $g$ is hyperbolic, with
+    \begin{align*}
+      g^- &\in P_i x^{-n}Q_j P_i \cdot (x^+,x^-) \subset (\ell_i^+,\ell_i^-)\\
+      g^+ &\in q_j x^n p_i q_j \cdot (x^-,x^+) \subset (r_j^+,r_j^-).
+    \end{align*}
+  \end{lemma}
+
+  \begin{proof}
+    First note that $g \cdot (\ell_i^-,\ell_i^+) = q_j x^n p_i P_i
+    \cdot (x^-,x^+) = (r_j^-,r_j^+) \subset (\ell_i^-,\ell_i^+)$, so
+    $g^-,g^+$ are in the regions cut out by $\ora{\ell_i}, \ora{r_j}$,
+    respectively. 
+
+    For convenience, set
+    $\ora{\ell_{i,j,n}} = P_i x^{-n}Q_j \cdot \ora{\ell_i}$ and
+    $\ora{r_{j,i,n}} = q_j x^n p_i \cdot \ora{r_j}$. Now consider
+    translating $(\ora{\ell_i}, \ora{r_j})$ by $g^\pm$. We find
+    \begin{align*}
+      g \cdot (\ora{\ell_i}, \ora{r_j}) &= (\ora{r_j}, \ora{r_{j,i,n}})\\
+      G \cdot (\ora{\ell_i}, \ora{r_j}) &= (\ora{\ell_{i,j,n}}, \ora{\ell_i}).
+    \end{align*}
+    The result follows.
+  \end{proof}
+
+  Returning to the proof of Proposition~\ref{prop:rh-boxes}, note that
+  $r_j \cdot \ora{r_{j,i,n}} = \ora{r_{j,i,n+1}}$ (setting
+  $r_j = q_jxQ_j$ to match the convention on geodesics). Thus
+  $\lim_{n\to\infty} \ora{r_{j,i,n}} = r_j^+$. Similarly
+  $\lim_{n\to\infty} \ora{\ell_{i,j,n}} = \ell_i^-$. If we set
+  $g_{i,j,n} = q_j x^n p_i$, it follows that
+  $\lim_{n\to\infty} g_{i,j,n}^+ = r_j^+$ and
+  $\lim_{n\to\infty} g_{i,j,n}^- = \ell_i^-$.
+
+  By condition~\ref{item:box-diags-cross-2}, for sufficiently large $n$
+  the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$
+  appear in that ccw order, which by the limiting behavior implies
+  that $\ell_1,\ell_2,r_2,r_1$ appear in that order as desired. (At
+  the last step we need condition~\ref{item:box-nontriv-2} to
+  guarantee that $\ell_1 \ne \ell_2$ and $r_1 \ne r_2$.)
+
+  The statements for RH lift systems follow immediately, except we
+  should check that condition~\ref{item:box-diags-cross} corresponds
+  to condition~\ref{item:box-diags-cross-2}. We compute
+  \begin{align*}
+    cx^n &= p_2 q_1 x^n&
+    dx^naC &= p_2 q_2 x^n p_1 P_2\\
+    \intertext{which after conjugating by $p_2$ yields}
+    q_1 x^n p_2 &= g_{2,1,n} & q_2 x^n p_1 &= g_{1,2,n}.
+  \end{align*}
+  Thus the two crossing conditions are equivalent.
+\end{proof}
 
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
