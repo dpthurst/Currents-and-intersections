@@ -317,22 +317,22 @@ with respect to the $ \partial \Sigma$ order.
 \begin{proof}
   \DPTtodo{Proof modified. Previous proof had requirements on both
     endpoints of $\ora{g}$, which is problematic since the action on
-    $(\bdy\Sigma)^2$ is not minimal. Figure needs adjustment to match,
-  should show how to change local orientation}
+    $(\bdy\Sigma)^2$ is not minimal. Figure needs adjustment to
+    match.}
 By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
 $\pi_1(\Sigma)$ are dense in $\partial \Sigma$; choose any $g$ so that
-$g^+ \in (z-\epsilon,z+\epsilon)$. Then choose a translate $h^k\cdot
-\ora{x}$ of $\ora{x}$ that does not cross $\ora{g}$; we can do this,
-e.g., by choosing $\ora{h}$ that crosses $\ora{g}$ and taking $k$
-sufficiently large.
-Then, for large enough $n$, by north-south dynamics of $g$, we have
-that $g^n h^k \cdot x^{\pm} \in (z-\epsilon,z+\epsilon)$. We can
-change the order of the endpoints between clockwise and
-counter-clockwise by changing the sign of~$k$.
+$g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
+$\ora{h}$ crosses $\ora{g}$. Then for sufficiently large $k$, $h^{\pm k}\cdot
+\ora{x}$ will be in a neighborhood of $h^{\pm}$ and in particular will
+not cross $\ora{g}$.
+Finally, for large enough $n$, we have
+that $g^n h^{\pm k} \cdot x^{\pm} \in (z-\epsilon,z+\epsilon)$.
+Tracing through orientations shows that one of these translates will
+be clockwise and the other will be counterclockwise.
 \end{proof}
 
 \begin{proposition}
-  \DPTtodo{Adjust both statement and proof}
+  \DPTtodo{Adjusted both statement and proof}
 The family of right handed boxes $\mathcal{B}$ is dense in the space
 of rectangles in $G^+(\Sigma)$, in the following sense.
 For any rectangle $R = [v_1,v_2) \times [w_1,w_2) \subset G^+(\Sigma)$,
@@ -362,12 +362,10 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 
 \subsection{Measures of boxes}
 
-Fix $x$ and a lift $\tilde{x}$ once and for all.
-
 \begin{proposition}
 \label{prop:limitexists}
 Let $B_{p_1,p_2,q_1,q_2}$ be a right-handed box so that $[B_{p_1,p_2,q_1,q_2}]=[B]_{a,b,c,d}$.
-The following limit exists:
+Then following limit exists:
 \[
 \mu_{f}(B_{p_1,p_2,q_1,q_2})\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \]
@@ -375,63 +373,59 @@ The following limit exists:
 Note this function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically $\pi_1(S)$-invariant.
 
-We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas.
+\DMGtodo[inline]{mention somewhere that these limits are reminiscent to certain limits involving Lyapunov projections in semisimple Lie groups (cite Benoit-Quint book on random walks on reductive groups,chapter 7}
 
-\subsection{Smoothing property and existence of limits}
-\label{subsec:smoothing}
-Now we use the lemmas obtained in the previous subsection on our function on curves $f$ satisfying smoothing, convex union, homogeneity and stability to prove the existence of certain limits that will be crucial to construct our measure.
+We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas,
+using the results from Section~\ref{sec:fund-smoothing}.
 
 An immediate consequence of smoothing and convex union is positivity of $f$.
 
-\begin{corollary}
+\begin{proposition}
   Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
-  \label{cor:positivity}
-\end{corollary}
+  \label{prop:curve-positive}
+\end{proposition}
 \begin{proof}
-Let $x \in \pi_1(S)$ so that $a$ crosses $x$ to the right. By oriented
-smoothing, we have
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right, so
 $[a][x] \reducesto [ax]$.
 By Lemma~\ref{lem:rhs_prod}, we see that
 $(\ora{ax},\ora{a})$ L-cross, so
-$[ax][A]\reducesto [x]$ and (by unoriented smoothing) $[ax][a]
+(by unoriented smoothing) $[ax][a]
 \reducesto [x]$. We thus have
 \begin{align*}
-    f(a) + f(x) &\geq f([a] [x]) \geq f(ax)\\
-     f(ax) + f(a) &\geq f([ax] [a]) \geq f(x).
+    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
+     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
 \end{align*}
 Adding the equations, we get $f(a) \geq 0$.
 \end{proof}
 
-A similar argument with different assumptions also yields positivity.
+Although we will not use it in this paper, we note that a similar
+argument with different assumptions also yields positivity.
 
-\begin{corollary}
+\begin{proposition}
   Let $f$ be a functional satisfying convex union, quasi-smoothing,
   stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
   \pi_1(S)$.
-  \label{cor:positivity2}
-\end{corollary}
+  \label{prop:curve-positive2}
+\end{proposition}
 
 \begin{proof}
-Let $x \in \pi_1(S)$ so that $a$ crosses $x$ to the right. As in the proof of Corollary~\ref{cor:positivity}, we have
-\[
-[a^n][x] \reducesto [a^nx].
-\]
-and
-\[
-[a^nx][a^n]\reducesto [x]
-\]
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
+\begin{align*}
+[a^n][x] &\reducesto [a^nx]\\
+[a^nx][a^n]&\reducesto [x].
+\end{align*}
 Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
 \begin{align*}
-    f(a^n) + f(x) &\geq f([a^n] [x]) \geq f(a^nx) - R\\
-     f(a^nx) + f(a^n) &\geq f([ax] [a^n]) \geq f(x) - R.
+    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
+     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
 \end{align*}
-Adding both equations, we get $f(a^n) \geq -2R$. By stability and homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large enough we see that $f(a) \geq 0$.
+Adding the equations, we get $f(a^n) \geq -2R$. By stability and
+homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
+enough we see that $f(a) \geq 0$.
 \end{proof}
 
-
-\DPTtodo[inline]{Deleted redundant here}
-
-\DMGtodo[inline]{mention somewhere that these limits are reminiscent to certain limits involving Lyapunov projections in semisimple Lie groups (cite Benoit-Quint book on random walks on reductive groups,chapter 7}
 
 The following result shows a key limit to construct the measure exists and uses the smoothing lemmas.
 
@@ -612,7 +606,7 @@ It follows by applying $f$ to the left hand side of the smoothing resolutions in
 
 
 \begin{proposition}
-  \label{prop:positivity}
+  \label{prop:box-positive}
   In the terminology of Section~\ref{sec:boxes}, for a box $B\in
   \mathcal{B}$, we have $\mu_f(B) \geq 0$.
 \end{proposition}
