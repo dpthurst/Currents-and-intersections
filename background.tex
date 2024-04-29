@@ -220,22 +220,31 @@ In particular, the set of bounded measures on a locally compact space is compact
 
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}
- 
- The following basic results about existence of limits functions on the integers with convexity properties will be useful in Section~\ref{sec:construct}.
 
- 
+ We need some basic results on convexity and existence of limits of
+ functions on the integers.
+ Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$ and
+ $\lim_{n^{-}}f(n)$ denote $\lim_{n \to -\infty}f(n)$.
+
+
+ \DPTtodo[inline]{This can't be a relevant lemma, since the proof actually
+   shows $g$ is constant. I'm currently suspect whole business with
+   $\pm \infty$ is unnecessary}
  \begin{lemma}
  Let $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ be a convex and bounded function.
- Then both $\lim_{n \to +\infty} g(n)$ and  $\lim_{n \to -\infty} g(n)$ exists.
+ Then $\lim_{n^+} g(n)$ and  $\lim_{n^-} g(n)$ exist.
  \label{lem:onevarconvexbounded}
  \end{lemma}
  \begin{proof}
- We prove the claim first for $\lim_{n \to +\infty} g(n)$. For the existence of $\lim_{n \to -\infty} g(n)$, it will suffice to run the same argument for the function $h(n) \coloneqq g(-n)$.
- If $g(n) \geq g(n-1)$ for all $n$, then $g(n)$ is monotone decreasing, and since it is bounded below, it has a limit.
- Otherwise, there exists some $n_0$ so that $g(n_0) > g(n_0-1)$. Since $g$ is convex, the sequence $h(n) \coloneqq g(n+1)-g(n)$ is monotone increasing.
- But then, $g(n) \geq g(n-1)$ for all $n \geq n_0$.
- Indeed, it is true for $n=n_0$ by assumption, and if $g(n) \geq g(n-1)$ for $n > n_0$, then since $h$ is monotone increasing, $g(n+1)-g(n) \geq g(n)-g(n-1)$, so adding both inequalities, $g(n+1) \geq g(n)$.
- Thus, $g(n)$ for $n \geq n_0$ is monotone increasing, and since it is upper bounded, it has a limit.
+   WLOG, we prove the claim for $\lim_{n^+} g(n)$. (For
+   $\lim_{n^-} g(n)$, we run the same argument argument for
+   $n\mapsto g(-n)$.) If $g(n) \geq g(n-1)$ for all $n$, then $g(n)$
+   is monotone decreasing, and since it is bounded below, it has a
+   limit. Otherwise, there exists some $n_0$ so that
+   $g(n_0) > g(n_0-1)$. Since $g$ is convex, the sequence
+   $h(n) \coloneqq g(n+1)-g(n)$ is monotone increasing. In particular,
+   for $n \ge n_0$, we have $h(n) \ge h(n_0) > 0$, so $g$ is monotone
+   increasing for $n \ge n_0$ and thus has a limit.
  \end{proof}
  
 \begin{definition}
@@ -249,42 +258,54 @@ In particular, the set of bounded measures on a locally compact space is compact
   \emph{doubly convex} if it is $(1,1)$-midpoint convex.
 \end{definition}
  
- Let $\lim_{n^{+}}$ denote $\lim_{n \to +\infty}$ and $\lim_{n^{-}}$ denote $\lim_{n \to -\infty}$.
  An expression $\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}}
- \lim_{m^{\pm}} g(n,m)$ means that the four equalities
- \DPTtodo{I don't know what the last two equalities mean}
+ \lim_{m^{\pm}} g(n,m)$ means that the four equalities hold:
  \begin{align*}
-   \lim_{n^{+},m^{+}} g(n,m) &= \lim_{n^{+}} \lim_{m^{+}} g(n,m)\\
+   \lim_{n^{+},m^{+}} g(n,m) &= \lim_{n^{+}} \lim_{m^{+}} g(n,m)&
    \lim_{n^{-},m^{-}} g(n,m) &= \lim_{n^{-}} \lim_{m^{-}} g(n,m)\\
-   \lim_{n,m} g(n^{+},m^{-}) &= \lim_{n^{+}} \lim_{m^{-}} g(n,m)\\
-   \lim_{n,m} g(n^{-},m^{+}) &= \lim_{n^{-}} \lim_{m^{+}} g(n,m)
+   \lim_{n^+,m^-} g(n^{+},m^{-}) &= \lim_{n^{+}} \lim_{m^{-}} g(n,m)&
+   \lim_{n^-,m^+} g(n^{-},m^{+}) &= \lim_{n^{-}} \lim_{m^{+}} g(n,m).
  \end{align*}
- are true.
  
  The following result is standard.
-
- \DPTtodo{This seems false? There's only one-sided monotonicity, are
-   the $\pm$'s intended?}
-   \DMGtodo[inline]{Indeed, this is false. But we do not need double limits, so this is not needed.}
- \begin{lemma}
-  Let $(a_{n,m})_{n,m \in \mathbb{Z}}$ be a double sequence on the integers which is bounded and monotone, in the sense that $a_{n',m'} \leq a_{n,m}$, whenever $(n',m') \leq (n,m)$ (i.e., $n' \leq n$ and $m' \leq m$). Then the following limits exist and are equal
+   \begin{lemma}
+  Let $(a_{n,m})_{n,m \in \mathbb{Z}}$ be a double sequence on the integers which is bounded and monotone, in the sense that $a_{n',m'} \leq a_{n,m}$, whenever $n' \leq n$ and $m' \leq m$. Then the following limits exist and are equal:
   \[
-  \lim_{n^{\pm}}\lim_{m^{\pm}} a_{n,m} = \lim_{m^{\pm}}\lim_{n^{\pm}} a_{n,m} = \lim_{n^{\pm}, m^{\pm}} a_{n,m}  
+  \lim_{n^+}\lim_{m^+} a_{n,m} = \lim_{m^+}\lim_{n^+} a_{n,m} = \lim_{n^+, m^+} a_{n,m}  
   \]
- \end{lemma}
+\end{lemma}
+\DPTtodo[inline]{We should prove or cite this. One proof goes through
+  order ideals. Let $V = \inf a_{n,m}$, and consider
+  $\{(n,m) \mid a_{n,m} < V + \epsilon\}$. For $\epsilon > 0$, this
+  set is an order ideal by monotonicity and is non-empty by def.\ of
+  $\inf$. The result follows pretty easily thinking about what order
+  ideals look like.}
  
  We will use it to prove the following.
  
  \begin{lemma}
-   If $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is doubly convex and bounded, then $\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exists.
+   If $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is doubly
+   convex and bounded, then the following limits exist and are equal:
+   \[\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m).\]
  \end{lemma}
  \begin{proof}
- The proof is similar to the single-variable case.
- If $g$ is doubly decreasing, then the limit exist since the sequence is bounded.
- Otherwise, there exists $n_0,m_0$ so that $g(n_0,m_0) < g(n_0,m_0+1)$. Then, for fixed $n_0$, $(g(n_0,m))_{m \geq m_0}$ is monotone increasing, by a similar argument as in Lemma~\ref{lem:onevarconvexbounded}. Since it is bounded, the iterated limits and the double limit exists and are equal.
+ The proof is similar to the single-variable case,
+ Lemma~\ref{lem:onevarconvexbounded}. The assumptions are symmetric in
+ $\pm \infty$, so WLOG we consider $\lim_{n^+,m^+} g(n,m)$.
+ If $g$ is doubly decreasing, then the limit exists since the sequence
+ is bounded.
+ Otherwise, there exists $n_0,m_0$ so that $g(n_0,m_0) <
+ g(n_0,m_0+1)$. Then, for fixed $n_0$, $(g(n_0,m))_{m \geq m_0}$ is
+ monotone increasing, by a similar argument as in
+ Lemma~\ref{lem:onevarconvexbounded}.
+\DPTtodo{Should stop proof here, get a contradiction with being
+  bounded by having a step up anywhere.}
+ Since it is bounded, the iterated limits and the double limit exists and are equal.
  \end{proof}
 
- \DMGtodo[inline]{In our case, we can reduce to convex case by replacing the variable by a ow}
+ \DMGtodo[inline]{In our case, we can reduce to convex case by
+   replacing the variable by a ow}
+ \DPTtodo[inline]{I can't tell what you mean, there's a typo}
  \begin{lemma}
  Given a $r$-midpoint convex function $g \colon \mathbb{Z} \to \mathbb{R}$ which is bounded, $\lim_n g(n)$ exists.
  \label{lem:limexistrmidconvex}
@@ -295,7 +316,7 @@ In particular, the set of bounded measures on a locally compact space is compact
 $r_0$. WLOG, assume $r_0$ is a power of $2$. For $0 \le k
 < r_0$, define $g_k(n) \coloneqq g(k + r_0 \cdot n)$. Then $g_k$ is convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded} has
 a well-defined limit as $n \to \infty$. We must show these limits
-agree, for different $k$. To see that the limit of $g_{r_0/2}$ is less or equal than the limit of $g_0$,
+agree for different $k$. To see that the limit of $g_{r_0/2}$ is less or equal than the limit of $g_0$,
 note that $2g((3+2n)r_0/2) \le g(nr_0) + g((n+3)r_0)$. We can iterate
 this construction to show all the limits are equal, for instance using
 $2g(5r_0/4) \le g(0) + g(5r_0/2)$.

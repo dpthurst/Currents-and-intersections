@@ -252,8 +252,8 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} a right-handed boxes, since $c
   Returning to the proof of Proposition~\ref{prop:rh-boxes}, note that
   $r_j \cdot \ora{r_{j,i,n}} = \ora{r_{j,i,n+1}}$ (setting
   $r_j = q_jxQ_j$ to match the convention on geodesics). Thus
-  $\lim_{n\to\infty} \ora{r_{j,i,n}} = r_j^+$. Similarly
-  $\lim_{n\to\infty} \ora{\ell_{i,j,n}} = \ell_i^-$. If we set
+  $\lim_{n\to\infty} r_{j,i,n}^\pm = r_j^+$. Similarly
+  $\lim_{n\to\infty} \ell_{i,j,n}^\pm = \ell_i^-$. If we set
   $g_{i,j,n} = q_j x^n p_i$, it follows that
   $\lim_{n\to\infty} g_{i,j,n}^+ = r_j^+$ and
   $\lim_{n\to\infty} g_{i,j,n}^- = \ell_i^-$.
@@ -279,7 +279,7 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} a right-handed boxes, since $c
 
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
-  the specified way. In fact it doesn't matter, as by
+  the specified way. It doesn't matter for the resulting current, as by
   Proposition~\ref{prop:spikes}
   the weight of the
   boundary of these boxes under any geodesic current is necessarily
@@ -375,9 +375,12 @@ then a measure) is automatically $\pi_1(S)$-invariant.
 
 \DMGtodo[inline]{mention somewhere that these limits are reminiscent to certain limits involving Lyapunov projections in semisimple Lie groups (cite Benoit-Quint book on random walks on reductive groups,chapter 7}
 
+\DPTtodo{This no longer seems to be a correct summary of structure}
 We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas,
 using the results from Section~\ref{sec:fund-smoothing}.
 
+\DPTtodo{Do we use this positivity directly? If not acknowledge that,
+  or maybe move positivity to the intro (with forward refs)}
 An immediate consequence of smoothing and convex union is positivity of $f$.
 
 \begin{proposition}
@@ -426,82 +429,90 @@ homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
 enough we see that $f(a) \geq 0$.
 \end{proof}
 
+Using the smoothing lemmas, we can see a key limit to construct the measure
+exists, 
 
-The following result shows a key limit to construct the measure exists and uses the smoothing lemmas.
-
-\begin{corollary}\label{cor:additivity-limit}
+\begin{lemma}\label{lem:additivity-limit}
 Let $f$ be a curve functional satisfying convex union and smoothing. Let $a,x \in \pi_1(\Sigma)$.
-  If $a$ crosses $x$ to the right, then
-  \[
+  If $\ora{a}$ crosses $\ora{x}$ to the right, then
+  \begin{equation}\label{eq:additivity-limit}
     \lim_{n \to \infty} f([a x^n]) - f([x^n])
-  \]
+  \end{equation}
   exists.
-\end{corollary}
+\end{lemma}
 
 \begin{proof}
   By Eq.~\eqref{eq:cross-join}, with $a=b$, there exists $r>0$ so
   that, for all $n$,
   \[
-     [ax^{n+r}] [ax^{n-r}] \reducesto [(ax^n)^2]
+    f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
   \]
-  (if $x$ is simple, we can take $r=1$).
-  By smoothing and convex union, we get%
-  \footnote{This is where smoothing as opposed to just
-    quasi-smoothing is crucial. See Remark~\ref{rmk:nonconvex} for an example.}
-  \[
-  f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
-  \]
-  Hence, $f([a x^n])$ is a $r$-midpoint convex function
-  of $n$, and thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
+  If $x$ is simple, we can take $r=1$. We also used smoothing and
+  convex union. (Quasi-smoothing does not suffice; see
+  Remark~\ref{rmk:nonconvex}.)
+  Hence, $n \mapsto f([a x^n])$ is $r$-midpoint convex, and
+  thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
  
- By Lemma~\ref{lem:rhs_prod}, and by additivity and (oriented)
- smoothing properties of $f$, we get
+  By Lemma~\ref{lem:rhs_prod} and additivity and (oriented)
+ smoothing of~$f$, we get
  \[
  f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
-By Eq.~\eqref{eq:cross-cancel} (using simplicity of $x$), and by
+ By Eq.~\eqref{eq:cross-cancel}, and by
 additivity and (unoriented)
-smoothing of $f$, we get, for $n > 0$,
+smoothing of $f$, there is $N>0$ so that, for $n > N$,
   \[
     -f([a]) \le f([a x^n]) - f([x^n]).
   \]
-  This shows that $g$ is an $r$-midpoint convex and bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the limit in the statement exists.
+  This shows that $g$ for $n > N$ is an $r$-midpoint convex and
+  bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the
+  limit \eqref{eq:additivity-limit} exists.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
+This follows immediately from Lemma~\ref{lem:additivity-limit}.
 \end{proof}
 
 \begin{remark}
-The limit in Corollary~\ref{cor:additivity-limit} need not exist if one only assumes $f$ satisfies quasi-smoothing.
-The following is an example on the once-holed torus, which can be easily promoted into a genus two surface.
-Consider the once-punctured torus with generating set $\{a,b,a^2\}$, where $a$ and $b$ are the standard generators of $\pi_1(S)$.
+The limit \eqref{eq:additivity-limit} need not exist if one only assumes $f$ satisfies quasi-smoothing.
+We give an example on the once-holed torus, which can be easily
+promoted into a genus two surface.
+Let $S$ be the once-punctured torus with generating set $\{a,b,a^2\}$,
+where $a$ and $b$ are the standard generators of $\pi_1(S)$, chosen so
+$\ora{a}$ crosses $\ora{b}$ to the right.
 Let $f$ be the stable word-length with respect to this generating set. Note that $f$ satisfies quasi-smoothing instead of smoothing (see \cite[Example~4.10]{MGT21:Smoothings}) for details).
-By picking the right orientations, $a$ crosses $b$ right-handedly, thus $ab$ also crosses $b$ right-handedly by Lemma~~\ref{lem:rhs_prod}.
-The expression in the limit in Corollary~\ref{cor:additivity-limit} for the pair $ab$ and $b$ is
+By Lemma~\ref{lem:rhs_prod}, $\ora{ab}$ also crosses $\ora{b}$ to the
+right.
+The expression in the limit in \eqref{eq:additivity-limit} for the
+pair $ab$ and $b$ is
 \begin{equation*}
   f(ab^{n+1})-f(b^n)=\begin{cases} 1+ \frac{n+2}{2} - \frac{n}{2}=2& \mbox{ if } n \mbox{ is even } \\
     1+ \frac{n+1}{2} - \frac{n+1}{2}=1 & \mbox{ if } n \mbox{ is odd }
   \end{cases}
 \end{equation*}
-so the limit when $n$ goes to infinity doesn't exist.
+which does not approach a limit.
 \label{rmk:nonconvex}
 \end{remark}
 
-\begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-This follows immediately from Corollary~\ref{cor:additivity-limit}.
-\end{proof}
-
 \begin{remark}
 Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
-Feng Luo's work characterizes functions $f \colon \mathcal{S}(S) \to \mathbb{R}$ on simple closed curves that come from intersection numbers in terms of an infinite family of polynomial equations involving the $f$-value of triples of simple curves in the max-plus semi-ring structure on the real numbers.
-One of the tools of this characterization is the fact that, for $a,b$ simple curves, the function $h(n) \coloneqq f([a^n b])$ is a convex.
-In the proof of Corollary~\ref{cor:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-midpoint convexity property of $g$.
-Also, see Proposition~\ref{prop:feng} to see how our conditions on a curve function $f$ imply Feng Luo's conditions for the restriction of $f$ to simple curves.
+Luo's work characterizes functions $f \colon \mathcal{S}(S) \to
+\mathbb{R}$ on simple closed curves that come from intersection
+numbers in terms of an infinite family of polynomial equations
+involving the $f$-value of triples of simple curves in the $(\max,+)$
+semi-ring structure on the real numbers.
+One of the tools in the proof of this characterization is the fact
+that, for $a,b$ simple curves, the function $h(n) \coloneqq f([a^n
+b])$ is convex.
+In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-midpoint convexity of $g$.
+See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ imply Luo's conditions for the restriction of $f$ to simple curves.
 \end{remark}
 
- Here we show that all the necessary hypotheses are satisfied to apply
- Theorem~\ref{thm:caratheodory}.
- \DPTtodo[inline]{Reference also/instead something in Sec.
-   \ref{subsec:convexity} for the notation}
-
-\DMGtodo[inline]{we don't seem to need the proposition below, now}
+We next check the hypotheses to apply
+ Theorem~\ref{thm:caratheodory} to construct a measure.
+ \DMGtodo[inline]{we don't seem to need the proposition below, now}
+ \DPTtodo[inline]{We need it in proving positivity of $\mu_f(B)$}
+ \DPTtodo[inline]{IN PROGRESS: Sort out exactly what we need}
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   If $a$ and $b$ cross $x$ to the right, then the limits
@@ -522,7 +533,7 @@ We separate the proof in two cases, depending on the magnitude of $|m-n|$.
   For the first one, it suffices to have $m-n-s > s+1$, i.e., $m-n>2s+1$
   For the second, $m-n+s<-s-1$, i.e. $m-n<-2s-1$.
   In any case, $|m-n|>2s+1$
-  Thus, by Corollary~\ref{cor:additivity-limit}, the claim follows in this case.
+  Thus, by Lemma~\ref{lem:additivity-limit}, the claim follows in this case.
   \item Case 2: $|m-n|$ is small.  Let $p=m-n$ and suppose that $|p| \leq 2s+1$. By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
   \[
   [ax^nbx^{n+p}] [x^k] \reducesto [ax^nbx^{n+p+k}].
