@@ -362,10 +362,6 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 }
 \end{figure}
 
-\DPTtodo[inline]{Maybe insert more detailed structure of boxes here,
-  giving the ``whiskers'' picture. See DPT notes \texttt{2024-04-29 \#
-  1--2}}
-
 \subsection{Measures of boxes}
 
 \begin{proposition}
@@ -695,7 +691,61 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 \end{figure}
 \end{proof}
 
-Now, we show that this in fact implies that $\mu_f$ is finitely additive.
+Now, we show that this in fact implies that $\mu_f$ is finitely
+additive.
+\DPTtodo[inline]{Gave this more detailed description of whiskers
+  before diving into the proof.}
+First, we examine exactly which boxes are allowed, making concrete the
+constraints in Definition~\ref{def:RH-lift-sys}. Note that the boxes
+are bounded at positive or negative ends of translates of $\ora{x}$,
+i.e., at $P_i \cdot x^-$ (also referred to as $\ell_i^-$) or at
+$q_j \cdot x^+$ (also referred to as $r_j^+$).
+Conditions~\ref{item:box-nontriv-2} and \ref{item:box-diags-cross-2}
+together say that $\ell_2^-,\ell_1^-,r_1^+,r_2^+$ are distinct points
+in that counterclockwise order. This is easy to understand once we
+have understood Condition~\ref{item:box-edges-cross-2}, which is a
+condition on relative positions of the $\ora{\ell_i}$ and $\ora{r_j}$
+for each pair separately.
+
+Now consider a single pair
+$(\ora{\ell},\ora{r}) = (P \cdot \ora{x}, q \cdot \ora{x})$. We claim
+this pair is R-parallel iff $r^+ \in (\ell^-,\ell^+)$ and
+$\ell^- \in (r^+, r^-)$. Indeed, $\ora{\ell}$ and $\ora{r}$ can not
+cross (since they are both lifts of $[x]$, which is simple), and then
+checking the cases shows that $r^+ \in (\ell^-,\ell^+)$ iff
+$(\ora{\ell},\ora{r})$ are R-parallel or R-anti-parallel, and
+$\ell^- \in (r^+,r^-)$ iff $(\ora{\ell},\ora{r})$ are R-parallel or
+L-anti-parallel.
+
+To visualize these conditions better, consider the space of oriented
+geodesics \DPTtodo{Is this how we use notation? I think we forgot to
+  define $G(S)$}
+$G^+(S) = S^1_\infty \times S^1_\infty \setminus \Delta$, drawn in the
+usual way as a square with opposite sides identified. We represent
+$(\ell^-,\ell^+)$ by drawing a ``whisker'', a horizontal segment at
+$y$-coordinate $\ell^-$ from $\ell^-$ (on the diagonal) to $\ell^+$.
+Similarly represent $(r^+,r^=)$ by a vertical segment at
+$x$-coordinate $r^+$ from $r^+$ to $r^-$. Then $(\ora{\ell}, \ora{r})$
+are R-parallel iff these two segments intersect. See
+Figures~\ref{fig:whiskers} and~\ref{fig:whiskers2}.
+Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
+(horizontal or vertical) whiskers that extend from the diagonal almost
+all the way back to the diagonal.
+
+\begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfig{originwhiskers}}
+\caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
+\label{fig:whiskers}
+}
+\end{figure}
+\begin{figure}
+\centering{
+\resizebox{150mm}{!}{\svgfig{originwhiskers2}}
+\caption{Example of correspondence between right-handed boxes and collections of four whiskers}
+\label{fig:whiskers2}
+}
+\end{figure}
 
 \begin{proposition}
 \label{prop:RHsemiring}
@@ -732,22 +782,6 @@ by side-by-side additivity, and then attach the two sides together.
 \end{comment}
 
 Given an element $x \in \pi_1(S,*)$ corresponding to a simple closed curve, a choice of geodesic lift $\tilde{x}$ with endpoints $x^{+}$ and $x^{-}$ and an arbitrary element $a \in \pi_1(S,*)$, we can determine a \emph{whisker}, a half-closed half-open segment $G(\Sigma)$, as follows. The whisker is a vertical segment in the space $G(\Sigma)$ with horizontal coordinate determined by $a \cdot x^{+}$ and vertical span given by the complement of $[a \cdot x^{-},a \cdot x^{+})$, as in Figure~\ref{fig:whiskers}.
-
-\begin{figure}
-\centering{
-\resizebox{120mm}{!}{\svgfig{originwhiskers}}
-\caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
-\label{fig:whiskers}
-}
-\end{figure}
-
-\begin{figure}
-\centering{
-\resizebox{150mm}{!}{\svgfig{originwhiskers2}}
-\caption{Example of correspondence between right-handed boxes and collections of four whiskers}
-\label{fig:whiskers2}
-}
-\end{figure}
 
 
 \DMGtodo[inline]{This is rough, needs to be written more
