@@ -436,6 +436,7 @@ exists.
 
 \DPTtodo{Added stability to the hypotheses, I think we use it
   essentially. Could be convinced otherwise}
+  \DMGtodo[inline]{I agree, we need stability to see $g(n)$ is $r$-midpoint convex.}
 \begin{lemma}\label{lem:additivity-limit}
 Let $f$ be a curve functional satisfying convex union, smoothing, and
 stability.
@@ -460,7 +461,7 @@ Let $a,b,x \in \pi_1(\Sigma)$, with $\ora{a}$, $\ora{b}$ crossing $\ora{x}$ to t
   convex union. (Quasi-smoothing does not suffice; see
   Remark~\ref{rmk:nonconvex}.)
   Hence, $n \mapsto f([a x^n])$ is $r$-midpoint convex, and
-  thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$.
+  thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$, by stability of $f$.
  
   By Lemma~\ref{lem:rhs_prod} and additivity and (oriented)
  smoothing of~$f$, we get
@@ -604,7 +605,7 @@ We separate the proof in two cases, depending on the magnitude of $|m-n|$.
  \end{proof}
 
  \begin{remark}
- The existence of these limits is reminiscent to the existence of similar limits in the context of the eigenvalue projection function on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}). However, the (log of) eigenvalue functions do not always arise as intersection numbers with a geodesic current. It is the case for top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}. Even more, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of measure geodesic currents).
+ The existence of these limits is reminiscent to the existence of similar limits in the context of the eigenvalue projection function on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}). However, the (log of ratio of) eigenvalue functions do not always arise as intersection number with a geodesic current (see, for example, quasi-fuchsian representations~\cite{FF21:QF}). However,  the case for top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}. Even more, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of measure geodesic currents).
  \end{remark}
  
 We will also need to show existence of limits of words of the type $by^m ax^n$.
