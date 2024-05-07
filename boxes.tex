@@ -432,19 +432,26 @@ enough we see that $f(a) \geq 0$.
 \end{proof}
 
 Using the smoothing lemmas, we can see a key limit to construct the measure
-exists, 
+exists.
 
+\DPTtodo{Added stability to the hypotheses, I think we use it
+  essentially. Could be convinced otherwise}
 \begin{lemma}\label{lem:additivity-limit}
-Let $f$ be a curve functional satisfying convex union and smoothing. Let $a,x \in \pi_1(\Sigma)$.
-  If $\ora{a}$ crosses $\ora{x}$ to the right, then
+Let $f$ be a curve functional satisfying convex union, smoothing, and
+stability.
+Let $a,b,x \in \pi_1(\Sigma)$, with $\ora{a}$, $\ora{b}$ crossing $\ora{x}$ to the right. Then
   \begin{equation}\label{eq:additivity-limit}
     \lim_{n \to \infty} f([a x^n]) - f([x^n])
+  \end{equation}
+  exists. Similarly,
+  \begin{equation}
+    \lim_{n,m \to \infty} f([ax^nbx^m]) - f([x^{n+m}])
   \end{equation}
   exists.
 \end{lemma}
 
 \begin{proof}
-  By Eq.~\eqref{eq:cross-join}, with $a=b$, there exists $r>0$ so
+  By Eq.~\eqref{eq:cross-join}, with $b=a$, there exists $r>0$ so
   that, for all $n$,
   \[
     f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
@@ -469,6 +476,29 @@ smoothing of $f$, there is $N>0$ so that, for $n > N$,
   This shows that $g$ for $n > N$ is an $r$-midpoint convex and
   bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the
   limit \eqref{eq:additivity-limit} exists.
+
+  For the two variable-case, similarly define $g(n,m) \coloneqq f([a
+  x^n b x^m]) - f([x^n]) - f([x^m])$.
+  Proposition~\ref{prop:join-split-geom} (in particular
+  the last claim, with $a'=b'=b x^m a$ or $a'=b'=a x^n b$) shows that
+  there are some $r,s > 0$ so that for $n,m$ large enough,
+  \begin{align*}
+    [a x^{n+r} b x^m] [a x^{n-r} b x^m] &\reducesto 2[a x^n b x^m]\\
+    [a x^n b x^{m+s}] [a x^n b x^{m-s}] &\reducesto 2[a x^n b x^m].
+  \end{align*}
+  This implies $g(n,m)$ is $(r,s)$-midpoint convex. We similarly get
+  boundedness:
+  \[
+    [ab][x^n][x^m] \reducesto [ab x^m][x^n] \reducesto [a x^n b x^m]
+  \]
+  (using Lemma~\ref{lem:rhs_prod} twice) so $g(n,m)$ is bounded above,
+  while
+  \[
+    [a x^n b x^m][a][b] \reducesto [x^n b x^m][b] \reducesto [x^{n+m}]
+  \]
+  (using Eqs.~\eqref{eq:cross-cancel-2} and~\eqref{eq:cross-cancel})
+  so $g(n,m)$ is bounded below. Then
+  Lemma~\ref{lem:limexistrmidconvextwovar} implies the limit exists.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
@@ -523,6 +553,17 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   \]
   exist and are equal to~$0$.
 \end{proposition}
+\DPTtodo[inline]{IN PROGRESS: Rewrite this proof, following outline
+  below. Also switch to only looking at positive limit}
+\begin{proof}[Proof in progress]
+  \begin{itemize}
+  \item Limit exists by Lemma~\ref{lem:additivity-limit}. Must compare
+  \item $\lim f([ax^n b x^m]) \ge \lim \bigl(f([a x^n]) + f([b
+    x^m])\bigr)$ by Eq.~\eqref{eq:cross-join}.
+  \item Reverse inequality by Eq.~\eqref{eq:cross-split}.
+  \end{itemize}
+\end{proof}
+\DPTtodo[inline]{Old proof below}
 \begin{proof}
 We separate the proof in two cases, depending on the magnitude of $|m-n|$.
 \begin{itemize}
