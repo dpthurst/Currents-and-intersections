@@ -434,9 +434,6 @@ enough we see that $f(a) \geq 0$.
 Using the smoothing lemmas, we can see a key limit to construct the measure
 exists.
 
-\DPTtodo{Added stability to the hypotheses, I think we use it
-  essentially. Could be convinced otherwise}
-  \DMGtodo[inline]{I agree, we need stability to see $g(n)$ is $r$-midpoint convex.}
 \begin{lemma}\label{lem:additivity-limit}
 Let $f$ be a curve functional satisfying convex union, smoothing, and
 stability.
@@ -508,8 +505,7 @@ This follows immediately from Lemma~\ref{lem:additivity-limit}.
 
 \begin{remark}
 The limit \eqref{eq:additivity-limit} need not exist if one only assumes $f$ satisfies quasi-smoothing.
-We give an example on the once-holed torus, which can be easily
-promoted into a genus two surface.
+We give an example on the once-holed torus.
 Let $S$ be the once-punctured torus with generating set $\{a,b,a^2\}$,
 where $a$ and $b$ are the standard generators of $\pi_1(S)$, chosen so
 $\ora{a}$ crosses $\ora{b}$ to the right.
@@ -524,11 +520,12 @@ pair $ab$ and $b$ is
   \end{cases}
 \end{equation*}
 which does not approach a limit.
+This example can be promoted to one on the genus-two surface.
 \label{rmk:nonconvex}
 \end{remark}
 
 \begin{remark}
-Convexity of $f([ax^n])$ as a function of $n$ also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves (see \cite[Corollary~4.4]{Luo98:IntersectionNumbers}).
+Convexity of $f([ax^n])$ as a function of $n$ plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves \cite[Corollary~4.4]{Luo98:IntersectionNumbers}.
 Luo's work characterizes functions $f \colon \mathcal{S}(S) \to
 \mathbb{R}$ on simple closed curves that come from intersection
 numbers in terms of an infinite family of polynomial equations
@@ -537,85 +534,99 @@ semi-ring structure on the real numbers.
 One of the tools in the proof of this characterization is the fact
 that, for $a,b$ simple curves, the function $h(n) \coloneqq f([a^n
 b])$ is convex.
-In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-midpoint convexity of $g$.
+In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-midpoint convexity of~$g$.
 See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ imply Luo's conditions for the restriction of $f$ to simple curves.
 \end{remark}
 
 We next check the hypotheses to apply
  Theorem~\ref{thm:caratheodory} to construct a measure.
- \DMGtodo[inline]{we don't seem to need the proposition below, now}
- \DPTtodo[inline]{We need it in proving positivity of $\mu_f(B)$}
- \DPTtodo[inline]{IN PROGRESS: Sort out exactly what we need}
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
-  If $a$ and $b$ cross $x$ to the right, then the limits
+  If $a$ and $b$ cross $x$ to the right, then
   \[
-    \lim_{n^{\pm},m^{\pm}} f([a x^n b x^m]) - f([ax^n]) - f([bx^m])
+    \lim_{n,m\to\infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m]) = 0.
   \]
-  exist and are equal to~$0$.
 \end{proposition}
-\DPTtodo[inline]{IN PROGRESS: Rewrite this proof, following outline
-  below. Also switch to only looking at positive limit}
-\begin{proof}[Proof in progress]
-  \begin{itemize}
-  \item Limit exists by Lemma~\ref{lem:additivity-limit}. Must compare
-  \item $\lim f([ax^n b x^m]) \ge \lim \bigl(f([a x^n]) + f([b
-    x^m])\bigr)$ by Eq.~\eqref{eq:cross-join}.
-  \item Reverse inequality by Eq.~\eqref{eq:cross-split}.
-  \end{itemize}
-\end{proof}
-\DPTtodo[inline]{Old proof below}
 \begin{proof}
-We separate the proof in two cases, depending on the magnitude of $|m-n|$.
-\begin{itemize}
-    \item Case 1: $|n-m|$ is large.  By Proposition~\ref{prop:join-split-geom}, we have
-  \[
-    f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
-      \ge f([a x^{n+2}]) + f([b x^{m-2}]).
-  \]
-  for all $m,n$ so that $m-n -s >r > s$, or $m-n+s<r<-s$, i.e.
-  For the first one, it suffices to have $m-n-s > s+1$, i.e., $m-n>2s+1$
-  For the second, $m-n+s<-s-1$, i.e. $m-n<-2s-1$.
-  In any case, $|m-n|>2s+1$
-  Thus, by Lemma~\ref{lem:additivity-limit}, the claim follows in this case.
-  \item Case 2: $|m-n|$ is small.  Let $p=m-n$ and suppose that $|p| \leq 2s+1$. By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
-  \[
-  [ax^nbx^{n+p}] [x^k] \reducesto [ax^nbx^{n+p+k}].
-  \]
-  On the other hand, $bx^{n+p+k}a$ crosses $x$ to the right, also, and since
-  \[
-  [ax^{n+k}bx^{n+p+k}]=[x^{n+k}bx^{n+p+k}a]=[bx^{n+p+k}ax^{n+k}]
-  \]
-  we have
-  \[
-  [bx^{n+p}ax^{n}] [x^k] \reducesto [bx^{n+p}ax^{n+k}].
-  \]  
-  Therefore, by applying $f$ and using smoothing and additivity, we have that
-  for all $k, n$
+  First, Lemma~\ref{lem:additivity-limit} implies that the limit
+  exists. We must now compare the limits as $n,m \to \infty$ of
   \begin{align*}
-  [ax^{n+p} bx^{n-k}] 2[x^k] & \reducesto  [ax^{n+p} bx^{n}] [x^k]  \\
-  &\reducesto  [ax^{n+p} bx^{n+k}]
+    g(n,m) &= f([ax^nbx^m]) - f([x^{n+m}])\\
+    \shortintertext{and}
+    h(n,m) &= f([ax^n]) + f([bx^m]) - f([x^{n+m}]).
   \end{align*}
-  Subtracting $[x^{p+2n+k}]$, applying $f$ using smoothing and additivity, and taking the limit when $n,k$ go to infinity we see, by Case 1, that
-  \[
-  \lim_{n \to \infty} f([ax^{n+p}bx^n])-f([x^n])=0
-  \]  
-  as we wanted to show.\qedhere
-\end{itemize}
- \end{proof}
+  Equation \eqref{eq:cross-join} says that there are arbitrarily large
+  $n,m$ so that $g(n',m') \le h(n,m)$ with $n'+m' = n+m$, and $n',m'$
+  closer to the diagonal. This immediately implies
+  $\lim g(n,m) \le \lim h(n,m)$. (Take
+  $n,m$ large enough so that both $h(n,m)$ and $g(n',m')$ are within
+  $\epsilon$ of their limiting value.) Conversely,
+  Equation~\eqref{eq:cross-split} implies $\lim h(n,m) \le \lim g(n,m)$.
+\end{proof}
+\DPTtodo[inline]{Old proof in comments}
+% \begin{proof}
+% We separate the proof in two cases, depending on the magnitude of $|m-n|$.
+% \begin{itemize}
+%     \item Case 1: $|n-m|$ is large.  By Proposition~\ref{prop:join-split-geom}, we have
+%   \[
+%     f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
+%       \ge f([a x^{n+2}]) + f([b x^{m-2}]).
+%   \]
+%   for all $m,n$ so that $m-n -s >r > s$, or $m-n+s<r<-s$, i.e.
+%   For the first one, it suffices to have $m-n-s > s+1$, i.e., $m-n>2s+1$
+%   For the second, $m-n+s<-s-1$, i.e. $m-n<-2s-1$.
+%   In any case, $|m-n|>2s+1$
+%   Thus, by Lemma~\ref{lem:additivity-limit}, the claim follows in this case.
+%   \item Case 2: $|m-n|$ is small.  Let $p=m-n$ and suppose that $|p| \leq 2s+1$. By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
+%   \[
+%   [ax^nbx^{n+p}] [x^k] \reducesto [ax^nbx^{n+p+k}].
+%   \]
+%   On the other hand, $bx^{n+p+k}a$ crosses $x$ to the right, also, and since
+%   \[
+%   [ax^{n+k}bx^{n+p+k}]=[x^{n+k}bx^{n+p+k}a]=[bx^{n+p+k}ax^{n+k}]
+%   \]
+%   we have
+%   \[
+%   [bx^{n+p}ax^{n}] [x^k] \reducesto [bx^{n+p}ax^{n+k}].
+%   \]  
+%   Therefore, by applying $f$ and using smoothing and additivity, we have that
+%   for all $k, n$
+%   \begin{align*}
+%   [ax^{n+p} bx^{n-k}] 2[x^k] & \reducesto  [ax^{n+p} bx^{n}] [x^k]  \\
+%   &\reducesto  [ax^{n+p} bx^{n+k}]
+%   \end{align*}
+%   Subtracting $[x^{p+2n+k}]$, applying $f$ using smoothing and additivity, and taking the limit when $n,k$ go to infinity we see, by Case 1, that
+%   \[
+%   \lim_{n \to \infty} f([ax^{n+p}bx^n])-f([x^n])=0
+%   \]  
+%   as we wanted to show.\qedhere
+% \end{itemize}
+%  \end{proof}
 
+\DPTtodo[inline]{In general, we have a lot of remarks that kind of
+  interrupt the flow of the argument. Maybe move most of them to the
+  end of sections?}
  \begin{remark}
- The existence of these limits is reminiscent to the existence of similar limits in the context of the eigenvalue projection function on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}). However, the (log of ratio of) eigenvalue functions do not always arise as intersection number with a geodesic current (see, for example, quasi-fuchsian representations~\cite{FF21:QF}). However,  the case for top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}. Even more, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of measure geodesic currents).
+ The existence of these limits is reminiscent to the existence of
+ similar limits in the context of the eigenvalue projection function
+ on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}).
+ However, the (log of ratio of) eigenvalue functions do not always
+ arise as intersection number with a geodesic current (see, for
+ example, quasi-fuchsian representations~\cite{FF21:QF}).
+ \DPTtodo{This sentence no verb}
+ However,  the case for top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}. Even more, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of measure geodesic currents).
  \end{remark}
- 
-We will also need to show existence of limits of words of the type $by^m ax^n$.
 
+ \DPTtodo[inline]{IN PROGRESS: We used this with $x=y$ above. Proof
+   seemed harder there, why? Consolidate, simplify.}
+We will also need to show existence of limits of words of the type $by^m ax^n$.
  \begin{lemma}
- Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
- Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
+  Let $a, b, x, y \in \pi_1(\Sigma)$ be so that
+  $(B\cdot\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel, and
+ let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
  Consider
  \[
- g(n,m) \coloneqq f(b y^m a x^n).
+ g(n,m) \coloneqq f([b y^m a x^n]).
  \]
  Then, there exist $r_0,s_0 \in \mathbb{N}$ so that, 
  \begin{enumerate}
@@ -625,15 +636,16 @@ We will also need to show existence of limits of words of the type $by^m ax^n$.
  \label{lem:axbymidconvex}
  \end{lemma}
 \begin{proof}
-It follows by applying $f$ to the left hand side of the smoothing resolutions in Proposition~\ref{prop:fundamental-aybx}, and using convex union, smoothing, stability and homogeneity in this order.
+It follows by applying $f$ to the left hand side of the smoothing resolutions in Corollary~\ref{cor:fund-aybx}, and using convex union, smoothing, stability and homogeneity in this order.
 \end{proof}
 
  \begin{proposition}
-  Let $a, b, x, y \in \pi_1(\Sigma)$ configured as in Lemma~\ref{lem:initial}.
- Let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
+  Let $a, b, x, y \in \pi_1(\Sigma)$ be so that
+  $(B\cdot\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel, and
+ let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
  Then
  \[
-- f([ab]) \leq f(b y^m a x^n) - mf(y) - nf(x) \leq f([ab]) \l
+- f([ab]) \leq f([b y^m a x^n]) - mf([y]) - nf([x]) \leq f([ab]) \l
 \]
 \label{prop:bounded_double}
  \end{proposition}
