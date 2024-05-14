@@ -441,10 +441,6 @@ Let $a,b,x \in \pi_1(\Sigma)$, with $\ora{a}$, $\ora{b}$ crossing $\ora{x}$ to t
   \begin{equation}\label{eq:additivity-limit}
     \lim_{n \to \infty} f([a x^n]) - f([x^n])
   \end{equation}
-  exists. Similarly,
-  \begin{equation}
-    \lim_{n,m \to \infty} f([ax^nbx^m]) - f([x^{n+m}])
-  \end{equation}
   exists.
 \end{lemma}
 
@@ -474,29 +470,6 @@ smoothing of $f$, there is $N>0$ so that, for $n > N$,
   This shows that $g$ for $n > N$ is an $r$-midpoint convex and
   bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the
   limit \eqref{eq:additivity-limit} exists.
-
-  For the two variable-case, similarly define $g(n,m) \coloneqq f([a
-  x^n b x^m]) - f([x^n]) - f([x^m])$.
-  Proposition~\ref{prop:join-split-geom} (in particular
-  the last claim, with $a'=b'=b x^m a$ or $a'=b'=a x^n b$) shows that
-  there are some $r,s > 0$ so that for $n,m$ large enough,
-  \begin{align*}
-    [a x^{n+r} b x^m] [a x^{n-r} b x^m] &\reducesto 2[a x^n b x^m]\\
-    [a x^n b x^{m+s}] [a x^n b x^{m-s}] &\reducesto 2[a x^n b x^m].
-  \end{align*}
-  This implies $g(n,m)$ is $(r,s)$-midpoint convex. We similarly get
-  boundedness:
-  \[
-    [ab][x^n][x^m] \reducesto [ab x^m][x^n] \reducesto [a x^n b x^m]
-  \]
-  (using Lemma~\ref{lem:rhs_prod} twice) so $g(n,m)$ is bounded above,
-  while
-  \[
-    [a x^n b x^m][a][b] \reducesto [x^n b x^m][b] \reducesto [x^{n+m}]
-  \]
-  (using Eqs.~\eqref{eq:cross-cancel-2} and~\eqref{eq:cross-cancel})
-  so $g(n,m)$ is bounded below. Then
-  Lemma~\ref{lem:limexistrmidconvextwovar} implies the limit exists.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
@@ -538,6 +511,109 @@ In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case
 See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ imply Luo's conditions for the restriction of $f$ to simple curves.
 \end{remark}
 
+\DPTtodo[inline]{IN PROGRESS: Consolidating proof of $(r,s)$ convexity.
+  We need it a little earlier than it was placed earlier.}
+We also need a two-variable version of
+Lemma~\ref{lem:additivity-limit}.
+\begin{lemma}
+  Let $a,b,x,y \in \pi_1(\Sigma)$ be so that
+  $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel, and
+  let $f \colon \Curves(S) \to \bbR$ satisfy convex union, smoothing,
+  stability, and homogeneity. Then
+  \begin{equation}
+    \lim_{n,m \to \infty} f([ax^nby^m]) - nf([x]) - mf([y])
+  \end{equation}
+  exists.  
+\end{lemma}
+
+Note that elements as in the hypotheses can come from
+Lemma~\ref{lem:initial}, or alternatively from taking $y=x$ and any
+$\ora{a},\ora{b}$ that cross $\ora{x}$ to the right.
+
+\begin{proof}[Proof 1, assuming $x=y$]
+  For the two variable-case, similarly define $g(n,m) \coloneqq f([a
+  x^n b x^m]) - f([x^n]) - f([x^m])$.
+  Proposition~\ref{prop:join-split-geom} (in particular
+  the last claim, with $a'=b'=b x^m a$ or $a'=b'=a x^n b$) shows that
+  there are some $r,s > 0$ so that for $n,m$ large enough,
+  \begin{align*}
+    [a x^{n+r} b x^m] [a x^{n-r} b x^m] &\reducesto 2[a x^n b x^m]\\
+    [a x^n b x^{m+s}] [a x^n b x^{m-s}] &\reducesto 2[a x^n b x^m].
+  \end{align*}
+  This implies $g(n,m)$ is $(r,s)$-midpoint convex. We similarly get
+  boundedness:
+  \[
+    [ab][x^n][x^m] \reducesto [ab x^m][x^n] \reducesto [a x^n b x^m]
+  \]
+  (using Lemma~\ref{lem:rhs_prod} twice) so $g(n,m)$ is bounded above,
+  while
+  \[
+    [a x^n b x^m][a][b] \reducesto [x^n b x^m][b] \reducesto [x^{n+m}]
+  \]
+  (using Eqs.~\eqref{eq:cross-cancel-2} and~\eqref{eq:cross-cancel})
+  so $g(n,m)$ is bounded below. Then
+  Lemma~\ref{lem:limexistrmidconvextwovar} implies the limit exists.
+\end{proof}
+\begin{proof}[Proof 2, D\'idac's version]
+  Define $g(n,m) \coloneqq f([ax^nby^m]) - nf([x]) - mf([y])$. First,
+  by Corollary~\ref{cor:fund-aybx}, there is some $s$ so that $g(n,m)$
+  is $(s,s)$-midpoint convex: apply $f$ to the left hand side of the
+  equations in Corollary~\ref{cor:fund-aybx}, and use
+  convex union, smoothing, stability, and homogeneity. (The extra
+  linear terms of $-nf([x])-mf([y])$ are irrelevant for convexity.)
+
+  Next we check that $g$ is bounded.
+  On the one hand,
+  \begin{align*}
+    [ab][x^n][y^m] &\reducesto [ax^nb][y^m] \reducesto [ax^nby^m]\\
+    g(n,m) &\le f([ab])
+  \end{align*}
+   \begin{align*}
+     g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
+           &\leq f([ax^n b]) - n f([x]) \\
+           &\leq f([ab])
+   \end{align*}
+   In the first inequality, we have used Lemma~\ref{lem:rhs_prod} with
+   $ax^nb$ in place of $a$, and $y$ in place of $x$. This is justified
+   since $ax^nb$ crosses $y$ to the right. Indeed, by the initial
+   configuration in Figure~\ref{fig:initial}, $b^{-1} \cdot \wt{x}$ is
+   parallel to $a \cdot \wt{x}$, and thus, by
+   Lemma~\ref{lem:cornering}, for all $n \in \mathbb{Z}$, $\wt{ax^nb}$
+   has one endpoint in the window $w(a^{-1})$ and the other endpoint
+   in the window $w(b)$. Since $b^{-1} \cdot \wt{x}$ is parallel to
+   $\wt{y}$ and $\wt{y}$ is parallel to $a \cdot \wt{x}$, according to
+   the initial configuration in Figure~\ref{fig:initial}, it follows
+   that $ax^nb$ crosses $y$ to the right. In the second inequality, we
+   use Lemma~\ref{lem:rhs_prod}, with $ba$ in place of $a$. It is
+   justified since, according to Figure~\ref{fig:initial},
+   $b^{-1}\cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, so $\wt{x}$
+   is parallel to $ba \cdot \wt{x}$, and thus $ba$ crosses $x$ to the
+   right.
+ 
+   On the other hand,
+   \DPTtodo[inline]{IN PROGRESS: What smoothings are being used here?
+     Signs don't seem to be working}
+   \begin{align*}
+     [ax^nby^m][ax^nb] &\reducesto [y^m]\\
+     f([ax^nby^m]) - mf([y]) &\ge -f([ax^nb])\\
+     [ab][x^n] &\reducesto [ax^nb]\\
+     f([ax^nb]) &\le f([ab]) + nf([x])
+   \end{align*}
+   \begin{align*}
+     g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
+           &\geq -f([ax^nb]) - n f([x]) \\
+           &\geq -f([ba])
+   \end{align*}
+   In the first inequality, we have used Eq.~\eqref{eq:cross-cancel}
+   with $a x^n b$ in place of $a$ and $y$ in place of $x$, since, as
+   shown above, $ax^nb$ crosses $y$ to the right.
+
+   In the second inequality, we use Lemma~\ref{lem:rhs_prod}, with
+   $ba$ in place of $a$, since $ba$ crosses $x$ to the right, as shown
+   above.
+   It follows that $g$ is bounded, and thus the limit exists.
+\end{proof}
+
 We next check the hypotheses to apply
  Theorem~\ref{thm:caratheodory} to construct a measure.
 \begin{proposition}\label{prop:join-split-alg}
@@ -558,7 +634,9 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   Equation \eqref{eq:cross-join} says that there are arbitrarily large
   $n,m$ so that $g(n',m') \le h(n,m)$ with $n'+m' = n+m$, and $n',m'$
   closer to the diagonal. This immediately implies
-  $\lim g(n,m) \le \lim h(n,m)$. (Take
+  $\lim g(n,m) \le \lim h(n,m)$.
+  \DPTtodo{Is the following too much or too little detail?}
+  (Take
   $n,m$ large enough so that both $h(n,m)$ and $g(n',m')$ are within
   $\epsilon$ of their limiting value.) Conversely,
   Equation~\eqref{eq:cross-split} implies $\lim h(n,m) \le \lim g(n,m)$.
@@ -613,68 +691,9 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
  However, the (log of ratio of) eigenvalue functions do not always
  arise as intersection number with a geodesic current (see, for
  example, quasi-fuchsian representations~\cite{FF21:QF}).
- \DPTtodo{This sentence no verb}
+ \DPTtodo{This sentence no verb (and I don't know how to fix it)}
  However,  the case for top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}. Even more, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of measure geodesic currents).
  \end{remark}
-
- \DPTtodo[inline]{IN PROGRESS: We used this with $x=y$ above. Proof
-   seemed harder there, why? Consolidate, simplify.}
-We will also need to show existence of limits of words of the type $by^m ax^n$.
- \begin{lemma}
-  Let $a, b, x, y \in \pi_1(\Sigma)$ be so that
-  $(B\cdot\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel, and
- let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
- Consider
- \[
- g(n,m) \coloneqq f([b y^m a x^n]).
- \]
- Then, there exist $r_0,s_0 \in \mathbb{N}$ so that, 
- \begin{enumerate}
- \item For all $m$, and all $r>r_0$, $g(\cdot,m) \colon \mathbb{Z} \to \mathbb{R}$ is $r$-midpoint convex.
- \item For all $n$, and all $s>s_0$, $g(n,\cdot) \colon \mathbb{Z} \to \mathbb{R}$ is $s$-midpoint convex.
- \end{enumerate}
- \label{lem:axbymidconvex}
- \end{lemma}
-\begin{proof}
-It follows by applying $f$ to the left hand side of the smoothing resolutions in Corollary~\ref{cor:fund-aybx}, and using convex union, smoothing, stability and homogeneity in this order.
-\end{proof}
-
- \begin{proposition}
-  Let $a, b, x, y \in \pi_1(\Sigma)$ be so that
-  $(B\cdot\ora{x},\ora{y},a\cdot\ora{x})$ are R-parallel, and
- let $f \colon \Curves(S) \to \mathbb{R}$ satisfy convex union, smoothing, stability and homogeneity.
- Then
- \[
-- f([ab]) \leq f([b y^m a x^n]) - mf([y]) - nf([x]) \leq f([ab]) \l
-\]
-\label{prop:bounded_double}
- \end{proposition}
- \begin{proof}
- We define $g(n,m) \coloneqq f(b y^m a x^n) - mf(y) - nf(x)$. 
- On the one hand, 
- \begin{align*}
-     g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
-     &\leq f([ax^n b]) - n f([x]) \\
-     &\leq f([ab])
- \end{align*}
- In the first inequality, we have used Lemma~\ref{lem:rhs_prod} with $ax^nb$ in place of $a$, and $y$ in place of $x$. This is justified since $ax^nb$ crosses $y$ to the right. Indeed, by the initial configuration in Figure~\ref{fig:initial}, $b^{-1} \cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, and thus, by Lemma~\ref{lem:cornering}, for all $n \in \mathbb{Z}$, $\wt{ax^nb}$ has one endpoint in the window $w(a^{-1})$ and the other endpoint in the window $w(b)$. Since $b^{-1} \cdot \wt{x}$ is parallel to $\wt{y}$ and $\wt{y}$ is parallel to $a \cdot \wt{x}$, according to the initial configuration in Figure~\ref{fig:initial}, it follows that $ax^nb$ crosses $y$ to the right.
- In the second inequality, we use Lemma~\ref{lem:rhs_prod}, with $ba$ in place of $a$.  
- It is justified since, according to Figure~\ref{fig:initial}, $b^{-1}\cdot \wt{x}$ is parallel to $a \cdot \wt{x}$, so $\wt{x}$ is parallel to $ba \cdot \wt{x}$, and thus $ba$ crosses $x$ to the right.
- 
- On the other hand, 
- \begin{align*}
-     g(n,m)&=f([ax^n by^m])-nf(x) - mf(y) \\
-     &\geq -f([ax^nb]) - n f([x]) \\
-     &\geq -f([ba])
- \end{align*}
- In the first inequality, we have used Eq.~\eqref{eq:cross-cancel}
- with $a x^n b$ in place of $a$ and $y$ in place of $x$, since, as
- shown above, $ax^nb$ crosses $y$ to the right.
-
- In the second inequality, we use Lemma~\ref{lem:rhs_prod}, with $ba$ in place of $a$, since $ba$ crosses $x$ to the right, as shown above.  
- It follows that $g$ is bounded, and thus the limit exists.
- \end{proof}
-
 
 \begin{proposition}
   \label{prop:box-positive}

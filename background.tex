@@ -245,16 +245,21 @@ In particular, the set of bounded measures on a locally compact space is compact
    $h(n) \coloneqq g(n+1)-g(n)$ is monotone increasing. In particular,
    for $n \ge n_0$, we have $h(n) \ge h(n_0) > 0$, so $g$ is monotone
    increasing for $n \ge n_0$ and thus has a limit.
- \end{proof}
- 
+\end{proof}
+
+\DPTtodo[inline]{Modified this definition so it's what we need in
+  proofs. With the previous def, the function $h(n)$ which is $0$ for
+  even $n$ and $1$ for odd $n$ was $2$-midpoint-convex. Also changed
+  domain to be $\bbN$.}
 \begin{definition}
-  A function $h \colon \mathbb{Z}$ is \emph{$r$-midpoint convex}, for
-  some $r \in \mathbb{N}$, if $h(n-r) + h(n+r) \geq 2 h(n)$ for all
-  $n \in \mathbb{Z}$ where the inequality makes sense. Similarly a
+  A function $h \colon \bbN \to \bbR$ is \emph{$R$-midpoint convex},
+  if for all $r \ge R$ and $n \in \bbN$ for which the inequality makes
+  sense, we have $h(n-r) + h(n+r) \geq
+  2 h(n)$. Similarly a
   function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is
-  \emph{$(r,s)$-midpoint convex} if, for all $m$, $g(\cdot, m)$ is
-  $r$-midpoint convex and, for
-  all $n$, $g(n, \cdot)$ is $s$-midpoint convex. We say that $g$ is
+  \emph{$(R,S)$-midpoint convex} if, for all $m$, $g(\cdot, m)$ is
+  $R$-midpoint convex and, for
+  all $n$, $g(n, \cdot)$ is $S$-midpoint convex. We say that $g$ is
   \emph{doubly convex} if it is $(1,1)$-midpoint convex.
 \end{definition}
  

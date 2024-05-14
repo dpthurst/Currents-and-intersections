@@ -634,10 +634,10 @@ crossings in this context.
 % }
 % \end{figure}
 
-\DPTtodo[inline]{Added some claims. But they're now getting kind of
-  granular. Is there some more general statement that cleanly implies
-  these? Have not put in the proofs until statements settle down, they
-  are all the same. We can also maybe generalize the ``simplicity'' results}
+% \DPTtodo[inline]{Added some claims. But they're now getting kind of
+%   granular. Is there some more general statement that cleanly implies
+%   these? Have not put in the proofs until statements settle down, they
+%   are all the same. We can also maybe generalize the ``simplicity'' results}
 \begin{proposition}\label{prop:join-split-geom}
 Let $a,b,c,d,x \in \pi_1(S)$ be curves with $\ora{a}$, $\ora{b}$,
 $\ora{c}$, $\ora{d}$
@@ -649,8 +649,8 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
     \label{eq:cross-join} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross-split} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
-  \DPTtodo{This claim new.}
-  If $a=b=c x^k d$ then $s$ can be chosen independently of~$k$.
+%  \DPTtodo{This claim new.}
+%  If $a=b=c x^k d$ then $s$ can be chosen independently of~$k$.
 
   There exists $s' \ge 0$ (depending on $a,b$) so that for all
   $n > s'$,
@@ -659,12 +659,12 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
   %   [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-cancel}
   % \end{align}
   \begin{align}
-    \label{eq:cross-cancel}[ax^n][a] &\reducesto [x^n]\\
-    \intertext{and for all $n+m > s'$,}
-    \label{eq:cross-cancel-2}[a x^n b x^m][a] \reducesto [x^n b x^m].
+    \label{eq:cross-cancel}[ax^n][a] &\reducesto [x^n]
+%    \intertext{and for all $n+m > s'$,}
+%    \label{eq:cross-cancel-2}[a x^n b x^m][a] \reducesto [x^n b x^m].
   \end{align}
-  \DPTtodo{Second claim above and claim below new}
-  If $a = c x^k d$ then $s'$ can be chosen independently of~$k$.
+%  \DPTtodo{Second claim above and claim below new}
+%  If $a = c x^k d$ then $s'$ can be chosen independently of~$k$.
 
  If $x$ is simple and $a=b$, we may take $s=s'=0$. In particular, for
  all $n\in\bbZ$,
@@ -805,16 +805,6 @@ examples.
   w(a\cdot\ora{x})$. We therefore have that $(ax^n)^+$ is to the left
   of $(ax^{n+1})^+$, implying that $\ora{ax^n}$ crosses $\ora{ax^{n+1}}$ as
   desired.
-
-  % \DPTtodo{New proof for new statement}
-  % Finally, for the last statement with $a=b=c x^k d$, note that we
-  % have
-  % \begin{align*}
-  %   w(a \cdot \ora{x}) &\subset w(c \cdot \ora{x}) &
-  %   w(A \cdot \ora{x}) &\subset w(D \cdot \ora{x}).
-  % \end{align*}
-  % Thus $s_1,s_2,s_1',s_2'$ can all be chosen based on the width of
-  % $w(c\cdot \ora{x})$ and $w(D\cdot \ora{x})$, independently of~$k$.
 \end{proof}
 
 \begin{remark}
