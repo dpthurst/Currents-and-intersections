@@ -700,7 +700,8 @@ examples.
   $g_1^+ \in w(x^k a\cdot\ora{x})$ and
   $g_1^- \in w(x^{-\ell}A\cdot\ora{x})$. Similarly for
   $g_2 = x^k a x^\ell b x^n$ with $k,\ell,n\in\bbZ$, we have
-  $g_2^+ \in w(x^ka \cdot \ora{x})$ and $g_2^- \in w(x^{-n} B \cdot\ora{x})$.
+  $g_2^+ \in w(x^ka \cdot \ora{x})$ and $g_2^- \in w(x^{-n} B
+  \cdot\ora{x})$.
 \label{lem:windows}
 \end{lemma}
 
@@ -819,7 +820,7 @@ so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel; this
 implies, for instance, that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
 R-parallel.
 We again work in the normalized band model
-centered on~$\ora{x}$, starting with another crossing lemma.
+centered on~$\ora{x}$, starting with another lemma about endpoints.
 
 \begin{lemma}\label{lem:ayx-window}
   For any triple $a,x,y\in\pi_1(S)$ so that
@@ -847,6 +848,10 @@ centered on~$\ora{x}$, starting with another crossing lemma.
     \label{eq:crossuniform_m}
        [a y^{m+r} x^n][a y^{m-r} x^n] &\reducesto [(a y^m x^n)^2].
   \end{align}
+  Furthermore, there is $s' > 0$ so that, for $n,m \ge s'$,
+  \begin{equation}\label{eq:cancel-ayx}
+    [a y^m x^n][a] \reducesto [y^m][x^n].
+  \end{equation}
 \end{proposition}
 
 \begin{proof}
@@ -869,11 +874,32 @@ centered on~$\ora{x}$, starting with another crossing lemma.
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\bdy^\infty S$. In
   particular $[g_1][g_2] \reducesto [g_1 g_2]$ as desired.
   
-  To see Eq.~(\ref{eq:crossuniform_n}), apply
-  Eq.~(\ref{eq:crossuniform_m}) with the change of variables
+  To see Eq.~\eqref{eq:crossuniform_n}, apply
+  Eq.~\eqref{eq:crossuniform_m} with the change of variables
   $a' = a$, $y' = x$, and $x' = ayA$.
   This gives the desired result for some $s_1 \ge 0$. For the full
   statement, take $s \coloneqq\max(s_0,s_1)$.
+
+  For Eq.~\eqref{eq:cancel-ayx}, we consider $g = a y ^m x^n$ and
+  compare its endpoints to those of $a$. By
+  Lemma~\ref{lem:ayx-window}, we have
+  $g^- \in w(x^{-n} \cdot \ora{y})$, which for large enough $n$ is to
+  the left of $a^- \in w(\ora{y})$. \DPTtodo{Consider adding this
+    ``deeper look'' stuff into the general window lemmas} For $g^+$,
+  we again have to look deeper at the endpoints: since
+  $g \cdot (x^+,x^-) = a y^m \dot (x^+, x^=) = w(a y^m \cdot
+  \ora{x})$, we have
+  $g^+ \in w(a y^m \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
+  Similarly $a^+ \in w(a \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
+  Consider the bands model centered on $a \cdot \ora{y}$ shows that,
+  for $m$ large enough, $g^+$ is to the right of $a^+$, and thus
+  $\ora{g}$ crosses $\ora{a}$ to the right. We therefore have
+  \[
+    [a x^n y^m][a] = [g][a] \reducesto [x^n y^m].
+  \]
+  Finally, by Lemma~\ref{lem:righthandedfoundation}, since $\ora{x^n}$
+  and $\ora{y^m}$ are R-parallel, the geodesics $\ora{y^m x^n}$ and
+  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$.
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
@@ -889,11 +915,17 @@ four group elements, in a configuration that is easy to find.
 %    \label{eq:crossuniform_m}
        [by^{m+r} a x^n][by^{m-r} a x^n] &\reducesto [(by^m a x^n)^2].
   \end{align}
+  Furthermore, there is $s' > 0$ so that, for $n,m \ge s'$,
+  \begin{equation}\label{eq:cancel-ayx}
+    [b y^m a x^n][ab] \reducesto [y^m][x^n].
+  \end{equation}
 \end{corollary}
 
 \begin{proof}
-  Apply Proposition~\ref{prop:fundamental-ayx} with
-  $x' = y$, $y' = Bxb$, and $a' = ab$.
+  \DPTtodo{Tweak change of variables so that we don't switch $x$ and $y$}
+  Apply Proposition~\ref{prop:fundamental-ayx} with $x' = y$,
+  $y' = Bxb$, and $a' = ab$, so that
+  $[b y^m a x^n] = [a b B x^n b y^m] = [a' (y')^n (x')^m]$.
 \end{proof}
 
 

@@ -512,7 +512,8 @@ See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ i
 \end{remark}
 
 \DPTtodo[inline]{IN PROGRESS: Consolidating proof of $(r,s)$ convexity.
-  We need it a little earlier than it was placed earlier.}
+  We need it a little earlier than it was placed earlier. Write a new
+  version of proof using statement added to Cor.~\ref{prop:fundamental-aybx}}
 We also need a two-variable version of
 Lemma~\ref{lem:additivity-limit}.
 \begin{lemma}
@@ -554,7 +555,7 @@ $\ora{a},\ora{b}$ that cross $\ora{x}$ to the right.
   so $g(n,m)$ is bounded below. Then
   Lemma~\ref{lem:limexistrmidconvextwovar} implies the limit exists.
 \end{proof}
-\begin{proof}[Proof 2, D\'idac's version]
+\begin{proof}[Proof 2, somewhat edited from D\'idac's version]
   Define $g(n,m) \coloneqq f([ax^nby^m]) - nf([x]) - mf([y])$. First,
   by Corollary~\ref{cor:fund-aybx}, there is some $s$ so that $g(n,m)$
   is $(s,s)$-midpoint convex: apply $f$ to the left hand side of the
@@ -591,11 +592,11 @@ $\ora{a},\ora{b}$ that cross $\ora{x}$ to the right.
    right.
  
    On the other hand,
-   \DPTtodo[inline]{IN PROGRESS: What smoothings are being used here?
-     Signs don't seem to be working}
    \begin{align*}
-     [ax^nby^m][ax^nb] &\reducesto [y^m]\\
-     f([ax^nby^m]) - mf([y]) &\ge -f([ax^nb])\\
+     [ax^nby^m][ab] &\reducesto [ax^nAy^m] \reducesto [x^n][y^m]\\
+     f([a x^n b y^m]) \ge -f([ab]) + nf([x]) + mf([y])\\
+     g(n,m) \ge -f([ab]).\\
+     f([ax^n by^m]) - mf([y]) &\ge -f([ax^nb])\\
      [ab][x^n] &\reducesto [ax^nb]\\
      f([ax^nb]) &\le f([ab]) + nf([x])
    \end{align*}
