@@ -904,28 +904,27 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
 four group elements, in a configuration that is easy to find.
-\begin{corollary}\label{cor:fund-aybx}
+\begin{corollary}\label{cor:fund-axby}
   Let $a,b,x,y \in \pi_1(S)$ be chosen so that $(B\cdot \ora{x},
   \ora{y}, a\cdot\ora{x})$ are R-parallel.
   Then there exists
   $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
   \begin{align}
-%    \label{eq:crossuniform_n}
-       [by^m a x^{n+r}][by^m a x^{n-r}] &\reducesto [(by^m a x^n)^2]\\
-%    \label{eq:crossuniform_m}
-       [by^{m+r} a x^n][by^{m-r} a x^n] &\reducesto [(by^m a x^n)^2].
+    \label{eq:axby-cross-n}
+       [a x^{n+r} by^m][ax^{n-r} by^m] &\reducesto [(ax^n by^m)^2]\\
+    \label{eq:axby-cross-m}
+       [ax^n by^{m+r}][ax^n by^{m-r}] &\reducesto [(ax^n by^m)^2].
   \end{align}
   Furthermore, there is $s' > 0$ so that, for $n,m \ge s'$,
-  \begin{equation}\label{eq:cancel-ayx}
-    [b y^m a x^n][ab] \reducesto [y^m][x^n].
+  \begin{equation}\label{eq:cancel-axby}
+    [a x^n b y^m][ab] \reducesto [x^n][y^m].
   \end{equation}
 \end{corollary}
 
 \begin{proof}
-  \DPTtodo{Tweak change of variables so that we don't switch $x$ and $y$}
-  Apply Proposition~\ref{prop:fundamental-ayx} with $x' = y$,
-  $y' = Bxb$, and $a' = ab$, so that
-  $[b y^m a x^n] = [a b B x^n b y^m] = [a' (y')^n (x')^m]$.
+  Apply Proposition~\ref{prop:fundamental-ayx} with $y' = y$,
+  $x' = axA$, and $a' = ba$. (Observe that the conditions imply that
+  $(\ora{y}, a \cdot \ora{x}, ba \cdot \ora{y})$ are R-parallel.)
 \end{proof}
 
 
@@ -935,11 +934,7 @@ four group elements, in a configuration that is easy to find.
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-  Given
-  $\ora{y}$, by Lemma~\ref{lem:diagonaldense}, we can find translates
-  $B \cdot \ora{x}$ and $a \cdot \ora{x}$ of $\ora{x}$ so that $(B
-  \cdot \ora{x}, \ora{y})$ and $(\ora{y},a\cdot\ora{x})$ are
-  R-parallel.
+  Immediate from Lemma~\ref{lem:diagonaldense}.
 \end{proof}
 
 %%% Local Variables:
