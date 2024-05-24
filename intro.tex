@@ -251,8 +251,37 @@ There is a one-to-one correspondence between periods of generalized cross-ratios
 
 Unlike the work in~\cite{BIPP21:PositiveCrossratios}, our construction relies solely on the period function to generate the geodesic current. Although a given geodesic current is associated with two distinct cross-ratios, they share the same period. Our proof demonstrates that the mapping from cross-ratios to geodesic currents is mediated by the period map, providing a clearer insight into the relationship between these elements compared to previous approaches.
 
-\subsection{Questions about generalizations}
+\subsection{Further questions}
 \label{sec:questions}
+
+\subsubsection{Green metrics}
+
+Let $\Gamma=\pi_1(\Sigma) \subset \Isom^+(\mathbb{H})=\PSL_2(\mathbb{R})$ be a countable, discrete cocompact subgroup, for some hyperbolic metric $\Sigma$ on $S$.
+Let $\mu$ be a finitely supported probability measure on $\Gamma$ whose support generates $\Gamma$.
+Let $w_n \coloneqq g_1 \cdots g_n$ be the random walk with respect to $\mu$, where each $(g_i)$ is identically and independently distributed with distribution $\mu$. Let $(\Gamma^{\mathbb{N}}, \mu^{\mathbb{N}})$ be the step space, and the map $\pi \colon \Gamma^{\mathbb{N}} \to \Gamma^{\mathbb{N}}$ as $\pi((g_n)_{n \in \mathbb{N}}) \coloneqq (w_n)_{n \in \mathbb{N}}$. The image of $\pi$ is equipped with the measure $(\mathbb{P}_{\mu})_*(\mu^{\mathbb{N}})$.
+Define the metric \[ d_{\mu}(x,y) \coloneqq - \log \mathbb{P}_{\mu}(\exists n : w_n x =y).\]
+This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves(S) \to \mathbb{R}$.
+
+\begin{question}
+Does $\ell_{\mu}$ satisfy the hypotheses of Theorem~\ref{thm:intersections_group}? If so, does it satisfy the hypotheses in Theorem~\ref{thm:char_liouville_strong}?
+\label{q:Green}
+\end{question}
+
+If any of the answers to these questions is negative, they would imply a negative answer to the following question.
+
+\begin{question}
+Given $\Sigma$, is there a probability measure $\mu$ on $\Gamma=\pi_1(\Sigma)$ so that the induced translation length $\ell_{\mu}$ is dual to (a multiple of) the Liouville current $\mathcal{L}_{\Sigma}$?
+\label{q:singularity}
+\end{question}
+
+As noted by
+[Reyes, Cantrell-Reyes], this would settle
+the singularity conjecture for $\SL_2(\mathbb{R})$ [Kaimanovich-LePrince, page 259].
+Kosenko-Tiozzo have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with symmetric fundamental domains.
+It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer would be interesting, since then Theorem~\ref{mainthm:intersections} would give a dual geodesic current, and then the machinery of geodesic currents could be used to study Green metrics.
+
+
+\subsubsection{Questions about generalizations to hyperbolic groups}
 In recent work of Cantrell and Oreg\'on-Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $G$ acting on uniformly quasi-geodesic hyperbolic spaces $X$.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $G$ is said to be Gromov hyperbolic if its Cayley graph is.
 A metric space $X$ is uniformy quasi-geodesic if there exists constants $\lambda_1,\lambda_2 >0$ and $\epsilon \geq 0$, so that every two points $x, y \in X$ are connected by a $(\lambda_1,\lambda_2,\epsilon)$-quasi-geodesic.
@@ -285,6 +314,7 @@ Is there a notion of intersection number for geodesic currents on a hyperbolic g
   intersecting once in a genus-1 subsurface provide a counterexample?
   Is there an $L^1$ vs $L^2$ thing? Or maybe think about hyperelliptic
   involution on genus 2 subsurface to give a counterexample}
+  \DMGtodo[inline]{If we end up saying something about this, maybe we should point out the gap in Ursula's paper?}
 
 \subsection{General context}
 \label{subsec:mainresult}
