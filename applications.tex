@@ -32,6 +32,15 @@ We can also characterize filling geodesic currents.
 These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1]{BIPP17:StructureThmCurrents}.
 \end{proof}
 
+\begin{remark}
+Since the space of geodesic currents is locally compact, this shows $\AConvex$ is locally compact in the product topology, which is not obvious.
+One shadow of this local compactness can be seen as follows. Let $f \in \AConvex$. We know, from~\cite[Theorem~A]{MGT21:Smoothings} $f$ extends to geodesic currents continuously. Let $\bar{f}$ be its restriction to $\ML(S)$.
+Given any complete train track on $S$, let $\phi_t \to \mathbb{R^n} \to ML(\tau)$ be the train-track chart associated to $\tau$.
+The same ideas as in~\cite[Appendix~A.1]{Mir04:SimpleGeodesics} show that $f \circ \phi_\tau \colon \mathbb{R}^n \to \mathbb{R}$ is a convex and homogeneous function.
+Let $A^f_{\tau} \coloneqq \{ \lambda \in \ML(S) \colon f(\lambda) \leq 1\}$, which is a convex and compact subset of $\mathbb{R^n}$.
+Given $f_i \to f$, we have $A^{f_i}_{\tau} \to A^{f}_{\tau}$ in Hausdorff topology. By Blaschke's selection theorem, the space of convex and compact subsets of $\mathbb{R}^n$ with the Hausdorff topology is locally compact. 
+\end{remark}
+
 \subsection{Measured laminations}
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
@@ -464,8 +473,9 @@ A similar computation, yields the following result for the right hand side.
 \end{equation}
 Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\ell(a) \geq (n+r)\ell(x)$, which contradicts our assumption.
 \end{proof}
-
-\begin{remark}
+\DMGtodo[inline]{Related to: Let $\Gamma$ act on 
+a real tree $T$. If $N$ is a normal subgroup of $\Gamma$ so that for every $n \in N$, $\ell(n)=0$, the stable length does not extend continuously to currents. The argument is by Bonahon. We show this does not satisfy smoothing: take $b \in N$ and $a \in \Gamma$ so that $a$ and $b$ are parallel. This can be done since any $a \in \Gamma$ can be approximated by elements in $N$ (taking elements $a^n b a^{-n} b$). Since $a$,$b$ are parallel, $ab^n$ and $b^na$ cross, and since $\ell(b^n) > \ell(a)$ for $n$ large enough, we are in a Case 1 of connected smoothing. Hence, $ab^n$ and $aB^n$ are parallel. Thus, $\ell(ab^n aB^n) \geq \ell(ab^n) + \ell(aB^n)$. But $ab^n aB^n \in N$, by normality of $N$, so $\ell(ab^n aB^n)=0$. On the other hand, $\ell(ab^n) \geq \ell(a) + \ell(b^n) = \ell(a)>0$, so smoothing is contradicted.   }
+\begin{remark}\DMGtodo[inline]{check}
 The proof above shows more that what it is stated: if the action $(\Gamma, T)$ has \emph{any} pair of distinct hyperbolic elements overlapping in a ray with coherent orientations, then the action does not satisfy smoothing. This is in consonance with the fact that in that case, the commutator $[g,h]$ must fix the ray where $g,h$ overlap, and thus the stabilizer of any subarc will be the commutator subgroup of $\langle g, h\rangle$, which is not cyclic, hence the action cannot be small.
 \end{remark}
 
