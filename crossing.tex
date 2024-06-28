@@ -282,19 +282,7 @@ Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) t
 \]
 \end{lemma}
 
-\DMGtodo[inline]{We have two viewpoints on smoothing: topological (in terms of resolutions of essential crossings) and algebraic+geometric (in terms of the hyerbolic elements $ab$, $aB$ and $a+b$, and the relative position of their axes ). We need to reconcile them. }
-
-\begin{lemma}
-Suppose $\gamma$ is a concrete multi-curve on $S$, and $p,q \in X(\gamma)$. Set $x=\gamma(p)=\gamma(q) \in S$ so that $(p,q)$ forms an essential crossing and the endpoints of $\wt{\gamma_p}$ and $\wt{\gamma_q}$ are linked.
-This is equivalent to the following.
- Let $\ora{a}$ denote the geodesic representative of $\wt{\gamma_p}$ and $\ora{b}$ the geodesic representative $\wt{\gamma_q}$, for $a,b \in \pi_1(\Sigma)$ distinct hyperbolic elements.
-\begin{enumerate}
-\item If $a$ and $b$ are not conjugate to each other (or to their inverse), $\ora{a}$ and $\ora{b}$ cross.
-\item Otherwise, let $c \in \pi_1(\Sigma)$ so that $cac^{-1}=b$.
-\DMGtodo[inline]{Question: Can we always find $g, h$ hyperbolic so that $a=gh$ and $b=hg$ and $g$ and $h$ are parallel?}
-
-\end{enumerate}
-\end{lemma}
+\input{smoothings}
 
 
 Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
@@ -788,16 +776,26 @@ examples.
   \]
 
   For Equation~\eqref{eq:cross-split}, write $x^r ax^n bx^{m-r}]=[gh]$ with
-  $g=x^r ax^n$ and $h=bx^{m-r}$, so the endpoints of $\ora{gh}$
+  $g=x^r ax^n$ and $h=bx^{m-r}$, 
+  so $g^+ \in w(x^ra\cdot\ora{x})$ and $g^- \in w(x^{-n}A \cdot \ora{x})$, and $h^+ \in w(b \cdot \ora{x})$, $h^- \in w(x^{r-m} B \cdot \ora{x})$.
+  Hence, if $s < r < m-n-s$, we have $s_1 < r$
+  so $w(b\cdot\ora{x})$ is to the left of $w(x^r a\cdot\ora{x})$,
+  while $r-m < -n+s_1'$, so $w(x^{r-m}B \cdot\ora{x})$ is to the left
+  of $w(x^{-n}A\cdot\ora{x})$, and hence $h$ and $g$ are $R$-parallel, giving Eq.~\eqref{eq:cross-split}. 
+  
+  
+  \begin{comment} Old argument checking self-crossing: so the endpoints of $\ora{gh}$
   are in $w(x^{r-m}B\cdot\ora{x})$ and $w(x^r a\cdot\ora{x})$, while
   the endpoints of $\ora{hg} =\ora{bx^m ax^n}$ are in $w(x^{-n}A\cdot\ora{x})$ and
   $w(b\cdot\ora{x})$. Then if $s < r < m-n-s$, we have $s_1 < r$
   so $w(b\cdot\ora{x})$ is to the left of $w(x^r a\cdot\ora{x})$,
   while $r-m < -n+s_1'$, so $w(x^{r-m}B \cdot\ora{x})$ is to the left
   of $w(x^{-n}A\cdot\ora{x})$. Thus
-  $[gh]$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}. 
-  \flagtodo[inline]{HERE WE USE SELF-CROSSING}\DMGtodo[inline]{Do we also need to check that $g$ and $h$ are parallel? See for example Figure~\ref{fig:c2}, with $b$ replaced by $B$. That case would corresponds to $a$ and $b$ anti-parallel, but $ab$ and $ba$ would cross.}
-  We similarly get an essential self-crossing if $m-n+s < r < -s$.
+  $[gh]$ has an essential self-crossing giving Eq.~\eqref{eq:cross-split}.\end{comment}
+  
+  \flagtodo[inline]{HERE WE USE SELF-CROSSING}\DMGtodo[inline]{DMG: I have checked that in this case we get $g$ and $h$ are parallel, so the algebraic smoothing suffices.}
+  
+  We similarly get parallelism if $m-n+s < r < -s$.
 
   To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
   that $n < m$. Let $s_0 = \lceil \wid(w(a\cdot\ora{x})) \rceil$
@@ -922,8 +920,8 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \]
   Finally, by Lemma~\ref{lem:righthandedfoundation}, since $\ora{x^n}$
   and $\ora{y^m}$ are R-parallel, the geodesics $\ora{y^m x^n}$ and
-  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$. \DMGtodo[inline]{This is related to my comment above, too, but here it seems we are checking the relevant words are parallel instead of checking self-crossing, which seems the correct thing to do.}
-  \flagtodo[inline]{Do we also get that $aB$ and $Ba$ are placed as in the pair of pants case?}
+  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$. 
+  \flagtodo[inline]{Here we check directly parallelism, so we are good with algebraic smoothing}
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
