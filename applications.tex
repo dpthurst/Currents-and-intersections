@@ -473,8 +473,7 @@ A similar computation, yields the following result for the right hand side.
 \end{equation}
 Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\ell(a) \geq (n+r)\ell(x)$, which contradicts our assumption.
 \end{proof}
-\DMGtodo[inline]{Related to: Let $\Gamma$ act on 
-a real tree $T$. If $N$ is a normal subgroup of $\Gamma$ so that for every $n \in N$, $\ell(n)=0$, the stable length does not extend continuously to currents. The argument is by Bonahon. We show this does not satisfy smoothing: take $b \in N$ and $a \in \Gamma$ so that $a$ and $b$ are parallel. This can be done since any $a \in \Gamma$ can be approximated by elements in $N$ (taking elements $a^n b a^{-n} b$). Since $a$,$b$ are parallel, $ab^n$ and $b^na$ cross, and since $\ell(b^n) > \ell(a)$ for $n$ large enough, we are in a Case 1 of connected smoothing. Hence, $ab^n$ and $aB^n$ are parallel. Thus, $\ell(ab^n aB^n) \geq \ell(ab^n) + \ell(aB^n)$. But $ab^n aB^n \in N$, by normality of $N$, so $\ell(ab^n aB^n)=0$. On the other hand, $\ell(ab^n) \geq \ell(a) + \ell(b^n) = \ell(a)>0$, so smoothing is contradicted.   }
+
 \begin{remark}\DMGtodo[inline]{check}
 The proof above shows more that what it is stated: if the action $(\Gamma, T)$ has \emph{any} pair of distinct hyperbolic elements overlapping in a ray with coherent orientations, then the action does not satisfy smoothing. This is in consonance with the fact that in that case, the commutator $[g,h]$ must fix the ray where $g,h$ overlap, and thus the stabilizer of any subarc will be the commutator subgroup of $\langle g, h\rangle$, which is not cyclic, hence the action cannot be small.
 \end{remark}
@@ -593,9 +592,9 @@ Again, by ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that eithe
 In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, so max-smoothing is satisfied. 
 In the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$, which would be a problem.
 However, can rule this out. First, suppose that $\| h \| > \Delta$, where $\Delta$ is the overlap between $T_{h}$ and $T_{g h g^{-1}}$. Building from Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, it follows that $T_{gh}$ and $T_{hg}$ are disjoint, as Figure~\ref{fig:oppositehypell} illustrates. 
-It remains to justify that $g(x)=y$ and $x=g(y)$.
+It remains to justify that $g(x)=y$ and $x=g(y)$. We start by proving the following, which is implied by  Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} but not proven.
 
-\begin{claim} $z$ is the middle point between $x$ and $y$, and $g(x)=y$, $g(y)=x$.\end{claim}
+\begin{claim}Let $z$ be the unique fixed point of $h$ in the interval $[x,y]$. Then $z$ is the middle point between $x$ and $y$, and $g(x)=y$, $g(y)=x$.\end{claim}
 \begin{proof}[Proof of Claim]
 Following Paulin's notation, let $[z, +\infty)_{h}$ (resp. $(-\infty, z]_{h}$)  be the open half-line of $A_h$, with endpoint $z$, that does not contain $x$ (resp. $y$) but
 contains $y$ (resp. $x$). In the same way, let $[z, +\infty)_{ghg^{-1}}$ (resp. $(-\infty, z]_{ghg^{-1}}$ be the
@@ -605,7 +604,7 @@ contains $y$ (resp. $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{g
 
 If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. 
 
-However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic \DMGtodo[inline]{This is not true if the action is reducible}. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
+However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic \DMGtodo[inline]{This is not true if the action is reducible, but Guirardel forgot to include that assumption. Perhaps it would be good to give a proof. }. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
