@@ -543,8 +543,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1317907"
-     inkscape:cx="303.94312"
-     inkscape:cy="193.0569"
+     inkscape:cx="336.63468"
+     inkscape:cy="314.98757"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -856,7 +856,7 @@
          id="tspan8742"
          x="52.463421"
          y="117.28275"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-3}b)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-3}b \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -867,18 +867,18 @@
          id="tspan8742-5"
          x="91.903496"
          y="117.16809"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{-1}a)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{-1}a \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="151.39529"
-       y="115.94946"
+       x="152.79794"
+       y="116.41702"
        id="text8744-70-4"><tspan
          sodipodi:role="line"
          id="tspan8742-5-0"
-         x="151.39529"
-         y="115.94946"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(a)$</tspan></text>
+         x="152.79794"
+         y="116.41702"
+         style="font-size:3.52778px;stroke-width:0.264583">$w(a \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -889,7 +889,7 @@
          id="tspan8742-5-0-9"
          x="213.34073"
          y="116.16905"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(xa)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(xa \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -933,7 +933,7 @@
          id="tspan8742-1"
          x="121.97794"
          y="116.07973"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-2}b)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-2}b \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -944,29 +944,29 @@
          id="tspan8742-0"
          x="50.67495"
          y="27.372786"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-m} B)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-m} B \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="115.27916"
-       y="27.938959"
+       y="28.172733"
        id="text8744-3-6"><tspan
          sodipodi:role="line"
          id="tspan8742-0-6"
          x="115.27916"
-         y="27.938959"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-m+1} B)$</tspan></text>
+         y="28.172733"
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-m+1} B \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="174.21054"
-       y="115.58403"
+       x="170.00261"
+       y="116.28535"
        id="text8744-33-2"><tspan
          sodipodi:role="line"
          id="tspan8742-8-7"
-         x="174.21054"
-         y="115.58403"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-1}b)$</tspan></text>
+         x="170.00261"
+         y="116.28535"
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{r-1}b \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -977,18 +977,18 @@
          id="tspan8742-8-7-1"
          x="242.48605"
          y="116.43604"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^rb)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^rb \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="90.046753"
-       y="28.089775"
+       x="91.449394"
+       y="27.622227"
        id="text8744-33-4"><tspan
          sodipodi:role="line"
          id="tspan8742-8-0"
-         x="90.046753"
-         y="28.089775"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{-n}A)$</tspan></text>
+         x="91.449394"
+         y="27.622227"
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{-n}A \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -999,7 +999,7 @@
          id="tspan8742-8-0-1"
          x="152.1062"
          y="27.938971"
-         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{-n+1}A)$</tspan></text>
+         style="font-size:3.52778px;stroke-width:0.264583">$w(x^{-n+1}A \cdot \ora{x})$</tspan></text>
     <path
        style="opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.706;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
        d="m 110.27743,71.361104 h 60.73109"

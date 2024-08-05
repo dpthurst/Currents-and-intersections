@@ -41,14 +41,14 @@ conditions explained below.
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3}}
 \caption{Schematically determining a RH box from group theory data
-  with different lifts of a single curve $[x]$. There are no
-  constraints on how the base lift $\ora{x}$ sits with respect to the
+  with different lifts of a single curve $\protect[x]$. There are no
+  constraints on how the base lift $\protect\ora{x}$ sits with respect to the
   other lifts. The other four lifts have constraints in how they
   sit; some other possibilities are shown in Figure~\ref{fig:rhbox}.}
 \label{fig:newmodel3}
 }
 \end{figure}
-\DPTtodo[inline]{In figure, replace $\wt{x}$ by $\ora{x}$}
+
 The measure that we ultimately assign to the associated windows will
 be invariant under
 \begin{itemize}
@@ -138,8 +138,6 @@ cannot intersect each other, and nested lifts cannot be anti-parallel
 by condition \ref{item:box-edges-cross}.
 
 
-\DPTtodo[inline]{In Figure \ref{fig:rhbox}, I think the $x$ in each
-  figure is more confusing than helpful. If kept it should have an arrow.}
 \begin{figure}
      \centering
 \resizebox{40mm}{!}{\svgfig{box1}}
@@ -153,10 +151,7 @@ by condition \ref{item:box-edges-cross}.
 \end{figure}
 
 \begin{remark}
-\DPTtodo{This seems needlessly wordy. Can it be replaced by saying its needed for
-  translation invariance for boxes of Type 2 and 3?}
-Condition~\ref{item:box-diags-cross} is required to ensure translation invariance for boxes of Type 2 and Type 3. 
- Consider Figure~\ref{fig:nestedpositivity}: item a) shows, $[bx^n]$ and $[cx^n]$ might not cross. However, for sufficiently large $n$, the $[b x^n]$ and $[c x^n]$ will cross, as item b) suggests. To prove it, consider the bands model centered at the outer most nested lift of $x$, as in item c). For sufficiently large $n$, it's clear that $[b x^n]$ and $[c x^n]$ cross each other.
+Condition~\ref{item:box-diags-cross} is required to ensure translation invariance for boxes of Type 2 and Type 3: $[bx^n]$ and $[cx^n]$ might only cross for large enough $n$.
  For Type~1, Figure~\ref{fig:rhbox}, the crossing is essential without passing to large $n$.
 % 
  % \item Condition (3) in the definition of RH lift is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
@@ -194,11 +189,9 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} right-handed boxes, since $c$ 
 \resizebox{45mm}{!}{\svgfig{nonbox}}\qquad
 \resizebox{45mm}{!}{\svgfig{box3}}
 \caption{Two non-examples of right-handed boxes. The left is not
-  right-handed because $\ora{b}$ and $\ora{c}$ cross in the wrong way, while the
-  right is a non-example because $\ora{c}$ does not cross $\ora{x}$
-  essentially (to
-  the right
-  or to the left)}
+  right-handed because $\protect\ora{b}$ and $\protect\ora{c}$ cross in the wrong way, while the
+  right is a non-example because $\protect\ora{c}$ does not cross $\protect\ora{x}$
+  essentially (to the right or to the left)}
 \label{fig:box4}
 }
 \end{figure}
@@ -312,10 +305,6 @@ with respect to the $ \partial \Sigma$ order.
 \label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
-  \DPTtodo{Proof modified. Previous proof had requirements on both
-    endpoints of $\ora{g}$, which is problematic since the action on
-    $(\bdy\Sigma)^2$ is not minimal. Figure needs adjustment to
-    match.}
 By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
 $\pi_1(\Sigma)$ are dense in $\partial \Sigma$; choose any $g$ so that
 $g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
@@ -329,7 +318,6 @@ be clockwise and the other will be counterclockwise.
 \end{proof}
 
 \begin{proposition}
-  \DPTtodo{Adjusted both statement and proof}
 The family of right handed boxes $\mathcal{B}$ is dense in the space
 of rectangles in $G^+(\Sigma)$, in the following sense.
 For any rectangle $R = [v_1,v_2) \times [w_1,w_2) \subset G^+(\Sigma)$,
@@ -430,8 +418,6 @@ Using the smoothing lemmas, we can see a key limit to construct the measure
 exists.
 
 \begin{lemma}\label{lem:additivity-limit}
-  \DPTtodo{Switched to assuming additivity, which we need for one
-    direction of boundedness}
 Let $f$ be a curve functional satisfying additivity, smoothing, and
 stability.
 Let $a,b,x \in \pi_1(\Sigma)$, with $\ora{a}$, $\ora{b}$ crossing $\ora{x}$ to the right. Then
@@ -578,7 +564,6 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   $n,m$ so that $g(n',m') \le h(n,m)$ with $n'+m' = n+m$, and $n',m'$
   closer to the diagonal. This immediately implies
   $\lim_{n,m \to\infty} g(n,m) \le \lim_{n,m\to\infty} h(n,m)$.
-  \DPTtodo{Is the following enough detail?}
   (Take
   $n,m$ large enough so that both $h(n,m)$ and $g(n',m')$ are within
   $\epsilon$ of their limiting value.) Conversely,
@@ -630,7 +615,6 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
 \end{proposition}
 
 \begin{proof}
-  \DPTtodo{Substantially shortened this proof}
   By condition~\ref{item:box-diags-cross}, for sufficiently large~$n$,
   \[
     [bx^n][cx^n] = [dx^naC][cx^n] \reducesto [dx^nax^n].
@@ -653,9 +637,7 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 % \label{fig:nestedpositivity}
 % }
 %   \end{figure}
-\DMGtodo[inline]{This picture is a bit too schematic. Maybe draw a bit
-  more accurate one?}
-\DPTtodo[inline]{Deleted it instead}
+
 \subsubsection{$\mu_f$ is side-by-side additive and finitely additive}
 
 First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
@@ -673,7 +655,7 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
   \begin{align*}
     [B_1] &= [q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2]\\
     [B_2] &= [q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2]\\
-    [B_1] \cup B_2 &= [q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2].
+    [B_1] \cup [B_2] &= [q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2].
   \end{align*}
   From this formula both items of the proposition follow immediately by the definition of $\mu_f$.
 \end{proof}
@@ -688,8 +670,7 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 
 Now, we show that this in fact implies that $\mu_f$ is finitely
 additive.
-\DPTtodo[inline]{Gave this more detailed description of whiskers
-  before diving into the proof.}
+
 First, we examine exactly which boxes are allowed, making concrete the
 constraints in Definition~\ref{def:RH-lift-sys}. Note that the boxes
 are bounded at positive or negative ends of translates of $\ora{x}$,
@@ -717,7 +698,7 @@ To visualize these conditions better, consider the space of oriented
 geodesics \DPTtodo{Is this how we use notation? I think we forgot to
   define $G(S)$}
 $G^+(S) = S^1_\infty \times S^1_\infty \setminus \Delta$, drawn in the
-usual way as a square with opposite sides identified. We represent
+usual way as a square with opposite sides identified.\DMGtodo[inline]{as written, opposite edges are not identified (oriented geodesics)} We represent
 $(\ell^-,\ell^+)$ by drawing a ``whisker'', a horizontal segment at
 $y$-coordinate $\ell^-$ from $\ell^-$ (on the diagonal) to $\ell^+$.
 Similarly represent $(r^+,r^-)$ by a vertical segment at

@@ -18,6 +18,44 @@
      id="defs2">
     <marker
        style="overflow:visible"
+       id="marker2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path1" />
+    </marker>
+    <marker
+       style="overflow:visible"
        id="ConcaveTriangle"
        refX="0"
        refY="0"
@@ -226,18 +264,18 @@
        rx="79.750595"
        ry="79.37262" />
     <path
-       style="fill:none;stroke:#006e00;stroke-width:0.809155;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 187.16036,176.58677 C 144.43719,134.07802 99.941203,101.14322 68.647417,69.972608"
+       style="fill:none;stroke:#006e00;stroke-width:0.7849;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2)"
+       d="M 187.16737,176.59691 C 145.76466,135.32273 102.64394,103.34445 72.317363,73.07911"
        id="path835"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#00b800;stroke-width:0.8628;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 67.045198,174.66428 C 109.583,137.84636 152.25331,107.29644 187.67647,73.28052"
+       style="fill:none;stroke:#00b800;stroke-width:0.835758;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1)"
+       d="M 67.028286,174.66681 C 108.41323,139.17471 149.9271,109.7249 184.39022,76.933891"
        id="path837"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 197.47778,88.604903 C 159.58594,107.86997 174.68433,154.80723 193.4414,167.73615"
+       style="fill:none;stroke:#0000ff;stroke-width:0.913449;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2)"
+       d="M 194.51195,92.164234 C 161.45621,110.59052 175.38356,155.1062 193.25859,167.6612"
        id="path1393-8"
        sodipodi:nodetypes="cc" />
     <text
@@ -307,8 +345,8 @@
          y="88.934998"
          style="stroke-width:0.264583">$b^-$</tspan></text>
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 56.548825,88.164611 c 24.633153,15.908649 33.061254,53.771439 0.03473,72.013279"
+       style="fill:none;stroke:#ff0000;stroke-width:0.873217;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2)"
+       d="M 60.773825,91.970018 C 80.54581,107.08291 85.798783,143.42976 59.2898,160.75913"
        id="path1393-8-53"
        sodipodi:nodetypes="cc" />
     <text

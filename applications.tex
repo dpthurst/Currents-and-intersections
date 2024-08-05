@@ -35,7 +35,7 @@ These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1
 \begin{remark}
 Since the space of geodesic currents is locally compact, this shows $\AConvex$ is locally compact in the product topology, which is not obvious.
 One shadow of this local compactness can be seen as follows. Let $f \in \AConvex$. We know, from~\cite[Theorem~A]{MGT21:Smoothings} $f$ extends to geodesic currents continuously. Let $\bar{f}$ be its restriction to $\ML(S)$.
-Given any complete train track on $S$, let $\phi_t \to \mathbb{R^n} \to ML(\tau)$ be the train-track chart associated to $\tau$.
+Given any complete train track on $S$, let $\phi_t \colon \mathbb{R}^n \to ML(\tau)$ be the train-track chart associated to $\tau$.
 The same ideas as in~\cite[Appendix~A.1]{Mir04:SimpleGeodesics} show that $f \circ \phi_\tau \colon \mathbb{R}^n \to \mathbb{R}$ is a convex and homogeneous function.
 Let $A^f_{\tau} \coloneqq \{ \lambda \in \ML(S) \colon f(\lambda) \leq 1\}$, which is a convex and compact subset of $\mathbb{R}^n$.
 Given $f_i \to f$, we have $A^{f_i}_{\tau} \to A^{f}_{\tau}$ in Hausdorff topology. By Blaschke's selection theorem, the space of convex and compact subsets of $\mathbb{R}^n$ with the Hausdorff topology is locally compact. 
@@ -43,12 +43,12 @@ Given $f_i \to f$, we have $A^{f_i}_{\tau} \to A^{f}_{\tau}$ in Hausdorff topolo
 
 \subsection{Multi-curves}
 
-We have the following characterization of integral multi-curves.
+We have the following characterization of curves that are one-half of an integral multi-curve.
 
 \begin{corollary}
 Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves(C)$. Then there exists an integral multi-curve $M$ so that
 \[
-i(M,\cdot)=f(\cdot).
+i(1/2 M,\cdot)=f(\cdot).
 \]
 \label{cor:int_multicurve}
 \end{corollary}
@@ -58,14 +58,18 @@ Since $f \in \AConvex(S)$, by Theorem~\ref{mainthm:intersections} there exists a
 i(\mu, C) = f(C)
 \]
 for every closed curve $C$.
-It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\´eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial S$ whose measure can be approximated by a sequence of difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $\alpha_n, \beta_n, \gamma_n, \eta_n \in \Curves(S)$ so that
+It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $\alpha_n, \beta_n, \gamma_n, \eta_n \in \Curves(S)$ so that
 \[
-\mu(R) = \lim_n i(\mu, \alpha_n) + i(\mu, \beta_n) - i(\mu, \gamma_n) - i(\mu, \eta_n).
+\mu(R) = \frac{1}{2}\lim_n i(\mu, \alpha_n) + i(\mu, \beta_n) - i(\mu, \gamma_n) - i(\mu, \eta_n).
 \]
-Since the expression in the limit is an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$).
-Hence, $\mu(R)$ is an integer for every $R \in \mathcal{R}$.
-By~\cite[Proposition~4.12]{BIPP21:PositiveCrossratios}, it follows that $\mu$ must be an integral multi-curve.
+Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$).
+Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$.
+By~\cite[Proposition~4.12]{BIPP21:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve.
 \end{proof}
+
+\begin{remark}
+We note that the factor of $1/2$ is necessary, since there are examples of word-lengths (whose marked length spectrum is integral) that are dual to one-half of an integral multi-curves~\cite[Theorem~1.1]{Erlandsson:WordLength}. For a more concrete example, let $\mu$ be the geodesic current supported on a separating simple closed curve. Then $1/2 \mu$ has an integral length spectrum but it is not an integral multi-curve.
+\end{remark}
 
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
@@ -315,7 +319,7 @@ e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1
 for any box of geodesics $B$, and hence, by Theorem~\ref{thm:bonahonliouville}, $\mu$ is a Liouville current. Hence, again, the disconnected $\lambda$-length smoothing relation is satisfied (see Appendix~see Appendix~\ref{sec:hyp-par}).
 \end{proof}
 \begin{remark}
-The $\lambda$-length functional appears naturally in the study of the skein algebra of a surface (see, for example, \cite[3. Skein algebra]{Thurston14:PBI}). \DMGtodo{maybe find a good reference for this}
+The $\lambda$-length functional appears naturally in the study of the skein algebra of a surface (see, for example, \cite[3. Skein algebra]{Thurston14:PBI}). 
 \end{remark}
 
 In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
