@@ -57,20 +57,20 @@
     \put(0.7737431,0.20446372){\color[rgb]{0.02352941,0.64705882,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x^{r}bx^{r-m}}$\end{tabular}}}}%
     \put(0.30708844,0.26336764){\color[rgb]{1,0,0.61960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{ax^n}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{abliftsbands.pdf}}%
-    \put(0.02379788,0.04254731){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-3}b)$\end{tabular}}}}%
-    \put(0.18640642,0.04302005){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-1}a)$\end{tabular}}}}%
-    \put(0.43168675,0.04804436){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(a)$\end{tabular}}}}%
-    \put(0.68708325,0.04713901){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(xa)$\end{tabular}}}}%
+    \put(0.02379788,0.04254731){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-3}b \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.18640642,0.04302005){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-1}a \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.43746977,0.04611665){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(a \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.68708325,0.04713901){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(xa \cdot \ora{x})$\end{tabular}}}}%
     \put(-0.0011008,0.21331928){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^-$\end{tabular}}}}%
     \put(0.55017132,0.20831902){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x}$\end{tabular}}}}%
     \put(0.94919837,0.21410204){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^+$\end{tabular}}}}%
-    \put(0.31040117,0.04750729){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-2}b)$\end{tabular}}}}%
-    \put(0.01642414,0.41323952){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-m} B)$\end{tabular}}}}%
-    \put(0.28278257,0.41090523){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-m+1} B)$\end{tabular}}}}%
-    \put(0.52575234,0.04955102){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-1}b)$\end{tabular}}}}%
-    \put(0.80724729,0.04603823){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^rb)$\end{tabular}}}}%
-    \put(0.1787512,0.41028343){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-n}A)$\end{tabular}}}}%
-    \put(0.43461777,0.41090519){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-n+1}A)$\end{tabular}}}}%
+    \put(0.31040117,0.04750729){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-2}b \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.01642414,0.41323952){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-m} B \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.28278257,0.4099414){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-m+1} B \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.50840335,0.04665954){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{r-1}b \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.80724729,0.04603823){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^rb \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.18453419,0.4122111){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-n}A \cdot \ora{x})$\end{tabular}}}}%
+    \put(0.43461777,0.41090519){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w(x^{-n+1}A \cdot \ora{x})$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{abliftsbands.pdf}}%
   \end{picture}%
 \endgroup%

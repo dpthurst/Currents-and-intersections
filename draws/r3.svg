@@ -16,6 +16,101 @@
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
     <rect
        x="644.47736"
        y="100.0051"
@@ -147,7 +242,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
      inkscape:cx="558.57143"
-     inkscape:cy="398.21429"
+     inkscape:cy="398.92857"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -181,8 +276,8 @@
      id="layer1"
      transform="translate(-35.011471,-44.017337)">
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 77.923321,63.380153 C 91.667818,76.927818 133.79527,108.48356 177.9732,64.088098"
+       style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#ConcaveTriangle)"
+       d="M 81.892071,64.514082 C 95.636568,78.061747 133.79527,108.48356 177.9732,64.088098"
        id="path1393-8-5"
        sodipodi:nodetypes="cc" />
     <ellipse
@@ -193,18 +288,18 @@
        rx="79.750595"
        ry="79.37262" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.809155;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 187.16036,176.58677 C 144.43719,134.07802 99.941203,101.14322 68.647417,69.972608"
+       style="fill:none;stroke:#ff0000;stroke-width:0.809155;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4)"
+       d="M 187.16036,176.58677 C 144.43719,134.07802 103.90995,104.35602 72.616167,73.185406"
        id="path835"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.8628;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 67.045198,174.66428 C 109.583,137.84636 152.25331,107.29644 187.67647,73.28052"
+       style="fill:none;stroke:#ff0000;stroke-width:0.8628;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5)"
+       d="M 67.045198,174.66428 C 109.583,137.84636 149.2295,110.13126 184.65266,76.115341"
        id="path837"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#e37600;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 197.47778,88.604903 C 159.58594,107.86997 174.68433,154.80723 193.4414,167.73615"
+       style="fill:none;stroke:#e37600;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6)"
+       d="M 194.83195,94.652522 C 161.8538,110.13783 175.62927,154.99622 193.4414,167.73615"
        id="path1393-8"
        sodipodi:nodetypes="cc" />
     <text
@@ -279,8 +374,8 @@
        id="path1393-8-5-2"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#008e00;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 56.548825,88.164611 c 24.633153,15.908649 33.061254,53.771439 0.03473,72.013279"
+       style="fill:none;stroke:#008e00;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker8)"
+       d="M 58.627694,92.133361 C 83.260847,108.04201 89.610079,141.93605 56.583555,160.17789"
        id="path1393-8-53"
        sodipodi:nodetypes="cc" />
     <text
@@ -380,7 +475,7 @@
        style="white-space:pre;shape-inside:url(#rect4);display:inline;fill:none;stroke:#000000;stroke-width:1.88976;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
          x="644.47656"
          y="110.95382"
-         id="tspan1">$R_5$</tspan></text>
+         id="tspan6">$R_5$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-134.80413,87.647131)"
@@ -388,7 +483,7 @@
        style="white-space:pre;shape-inside:url(#rect4-5);display:inline;fill:none;stroke:#000000;stroke-width:1.88976;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
          x="644.47656"
          y="110.95382"
-         id="tspan2">$R_4$</tspan></text>
+         id="tspan7">$R_4$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,39.050902,95.621281)"
@@ -396,7 +491,7 @@
        style="white-space:pre;shape-inside:url(#rect4-5-6);display:inline;fill:none;stroke:#000000;stroke-width:1.88976;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
          x="644.47656"
          y="110.95382"
-         id="tspan3">$R_1$</tspan></text>
+         id="tspan8">$R_1$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-135.49658,100.03765)"
@@ -404,7 +499,7 @@
        style="white-space:pre;shape-inside:url(#rect4-5-6-1);display:inline;fill:none;stroke:#000000;stroke-width:1.88976;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
          x="644.47656"
          y="110.95382"
-         id="tspan4">$R_2$</tspan></text>
+         id="tspan9">$R_2$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,39.05897,106.10735)"
@@ -412,7 +507,7 @@
        style="white-space:pre;shape-inside:url(#rect4-5-6-1-0);display:inline;fill:none;stroke:#000000;stroke-width:1.88976;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"><tspan
          x="644.47656"
          y="110.95382"
-         id="tspan5">$R_3$</tspan></text>
+         id="tspan10">$R_3$</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.160891;stroke-dasharray:0.160891, 0.160891;stroke-dashoffset:0;stroke-opacity:1"
        d="m 79.537267,111.62969 2.189775,3.86275 -3.338653,1.79438"

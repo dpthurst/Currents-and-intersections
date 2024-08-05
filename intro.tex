@@ -367,8 +367,7 @@ of $\CurveFunct(S)$.
 \end{enumerate}
 \end{definition}
 
-\DMGtodo[inline]{add comment on motivating ``convex''. Refer to the fact that restricting to train-track coordinates, intersection numbers are convex. For functions satisfying smoothing but not additivity (thus ``convex'' according to our definition), one needs a stronger smoothing property to conclude this, namely, that the function reduces under smoothing any number of essential crossing at once, as opposed to just one.}
-
+For a motivation for the use of the adjective ``convex'' in this setting, see Subsection~\ref{subsubsec:convexity_charts}.
 
 Examples below show we have strict inclusions
 \[
@@ -427,7 +426,7 @@ If smoothing was satisfied, we would have
 \ell(a^{-n}ba^n b) \geq \ell(a^{-n}b) + \ell(ba^n)
 \]
 which is violated, since the left hand side is $0$, whereas the right hand side is lower bounded by $n\ell(a)$, which is positive.
-\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}. \DMGtodo[inline]{They do it for free groups, check if the previous paper by Labourie on surface groups does it for surface groups}
+\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}. \DMGtodo[inline]{They do it for free groups, check if the previous paper by Labourie on surface groups extends it continuously for surface groups}
 \end{enumerate}
 
 For an example of a curve functional that does not extend continuously to geodesic currents (and thus does not satisfy smoothing, by~\cite[Theorem~A]{MGT21:Smoothings}), we have the following.
@@ -450,7 +449,13 @@ G(a+b)=G(a) + G(b)=F(a) + F(b) \geq F(a+b) \geq F(ab)=G(ab)
 where we used the fact that $F$ and $G$ take the same values on closed curves; hence,
 $G$ satisfies disconnected smoothing.
 This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair of $(a,b)$ parallel so that
-$G(ab) < G(a) + G(b)$.\DMGtodo[inline]{can we find it}
+$G(ab) < G(a) + G(b)$. This is indeed the case. For an example, consider the extremal length of a figure-eight curve in a genus two surface $S$. Consider the pair of pants $P$ bounding $ab$, and let us think of it as obtained by gluing adjacent sides in a Swiss cross. The extremal metric has been computed numerically in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of the Swiss cross. If the width is chosen to be a fourth of the total size of the Swiss cross, and the normalization $w=1$ is chosen, the extremal length of the figure-eight can be computed to be 2.4251
+ (see Table in \cite[Page~36]{HZ20:SwissCross}, row $t=4$), hence its square root is $G_P(ab) \simeq 1.557273$. On the other hand, the length of each one of the resulting smoothings is $3$, while the area of the surface with the extremal metric associated to $ab$ is computed as $A=6.5977$. 
+ 
+ Hence, $G_{S}(a) + G_S(b) =2G_S(a)=\sqrt{2}G_P(a)$ is lower bounded by $\simeq 1.6517335$, showing the inequality
+ \[
+ G_S(ab) < G_P(ab) < G_S(a) + G_S(b) = 2G_S(a)=\sqrt{2} G_P(a).
+ \]
 \end{example}
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
@@ -523,6 +528,7 @@ If a curve functional satisfies homogeneity, stability, convex union and smoothi
 \end{question}
 
 \subsubsection{Convexity on train-track charts and local compactness}
+\label{subsubsec:convexity_charts}
 
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
 Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~\cite[Theorem~4.7]{AH23}, shows $f_{\tau}$ is convex and homogeneous. 

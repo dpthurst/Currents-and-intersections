@@ -472,12 +472,34 @@ following.
     \DPTtodo{Combine Figs. 3.1--3.3 into one figure/subfigures. Mark
       the $a$ and $b$ arrows to
       indicate group actions. Captions are outdated.}
-    \begin{figure}
-\centering{
+  
+
+
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.2\textwidth}
 \resizebox{60mm}{!}{\svgfig{rcrossing}}
-    \caption{$\ora{a}$ and $\ora{b}$ R-cross, together with the other crossing relations for related words. }
-    \label{fig:cross}}
-    \end{figure} 
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross, together with the other crossing relations for related words. }
+    \label{fig:cross}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.2\textwidth}
+\resizebox{60mm}{!}{\svgfig{parallel}}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel, together with the other crossing relations for related words. }
+    \label{fig:parallel}
+\end{subfigure} 
+\hfill \hspace{-2cm}
+\begin{subfigure}{0.2\textwidth}
+    \resizebox{60mm}{!}{\svgfig{antiparallel}}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are anti-parallel, together with the other crossing relations for related words. }
+    \label{fig:anti}
+   \end{subfigure}
+   \caption{Cases for relative position 
+      of $\protect\ora{a}$ with $\protect\ora{b}$.} 
+\end{figure}
+\DMGtodo[inline]{combined figures. There is a floating issue with right-most figure that I can't figure out.}
+
+    
     To see this, observe that, by the dynamics of $a$ and $b$ on the
     circle as shown, $ab$ maps the interval
     $(a^+,b^+)$ strictly inside itself, which implies that it is
@@ -498,25 +520,13 @@ following.
     $(ab)^+, (ba)^+ \in (b^+,a^+)$  and
     $(ab)^-, (ba)^- \in (a^-,b^-)$. From this we see that
     $(\ora{ba},\ora{ab})$ R-cross, as in Figure~\ref{fig:parallel}.
-    \DPTtodo{Add direction arrows for action of $a,b$ to the illustration}
-
-    \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{parallel}}
-    \caption{$\ora{a}$ and $\ora{b}$ are R-parallel, together with the other crossing relations for related words. }
-    \label{fig:parallel}}
-    \end{figure}
+ 
+   
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
     the parallel case by replacing $b$ with $B$, arranged as in
     Figure~\ref{fig:anti}.\qedhere
   \end{enumerate}
 \end{proof}
-    \begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{antiparallel}}
-    \caption{$a$ and $b$ are anti-parallel, together with the other crossing relations for related words. }
-    \label{fig:anti}}
-    \end{figure}
 
     See Section~\ref{sec:appsintersection} for a more in depth analysis of the configurations of lifts that can arise from disconnected smoothings.
 
@@ -570,9 +580,8 @@ We have the following possible four configurations of non-intersecting reflectio
     \caption{Case 3, $aB$ and $Ba$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
-     connected smoothing of $\ora{ab}$ with $\ora{ba}$.} 
+     connected smoothing of $\protect\ora{ab}$ with $\protect\ora{ba}$.} 
 \end{figure}
-\DMGtodo{can we rule the crossing in the last case 3?}
 \DPTtodo{Combined figures, but they are not uniformly cropped to same
   size. In general it's better to scale by a percentage than to an
   absolute width}
@@ -727,18 +736,16 @@ examples.
   \ora{x}$ to the right.
 \end{proof}
 
-\DPTtodo{Add $\ora{x}$ to the notation for windows in figure}
 \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfignormal{abliftsbands}}
-\caption{The band model centered on $\ora{x}$ used in
-  Proposition~\ref{prop:join-split-geom}, in a case where $[x]$ is simple.
-  Lifts of $x$ are depicted in blue. The central blue lift relates to
-  the lower and upper lifts by translates of the type $x^k a$, $x^l
-  A$, $x^m b$ and $x^n B$, as labelled. Each translate
-  determines a window $w( \cdot )$, which is an interval on
-  $\partial_{\infty} \Sigma$ determined by its endpoints at infinity.
-  If $[x]$ is not simple, the blue lifts can intersect each other.}
+\caption{The band model centered on $\protect\ora{x}$ used in
+  Proposition~\ref{prop:join-split-geom}, in a case where $\protect [x]$ is simple.
+  Lifts of $\protect x$ are depicted in blue. The central blue lift relates to
+  the lower and upper lifts by translates of the type $ \protect x^k a$, $\protect x^l
+  A$, $\protect x^m b$ and $\protect x^n B$, as labelled. Each translate
+  determines a window $\protect w( \cdot )$, which is an interval on $\protect\partial_{\infty} \Sigma$ determined by its endpoints at infinity.
+  If $\protect [x]$ is not simple, the blue lifts can intersect each other.}
 \label{fig:abcrossings}
 }
 \end{figure}
