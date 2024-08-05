@@ -1,0 +1,88 @@
+
+\section{Crossings (take 2)}
+
+This is a work-in-progress to give revised proofs of the correct
+conditions for crossings to be essential.
+
+\begin{definition}
+  Recall some facts about connecting curves with RIII moves to make
+  crossings in bijection and make precise the topological notion of
+  \emph{essential crossing}. Define (topological) smoothing.
+\end{definition}
+
+\begin{definition}
+  Non-trivial group elements $a,b\in \pi_1$ are \emph{common powers}
+  if there are non-zero $k,\ell$ so that $a^k = b^\ell$. Since $\pi_1$
+  has no torsion, we may assume that $k,\ell$ are relatively prime and
+  then we see this is equivalent to the existence of a $c$ so that
+  $a = c^\ell$ and $b = c^k$.
+\end{definition}
+
+Define embedding of 4-valent graph $[a * b]$. Homotopic under
+simultaneous conjugation of $a,b$. \emph{Taut} still means minimal
+intersections.
+
+\begin{theorem}
+  Let $S$ be a surface with basepoint~$*$ and $a,b \in \pi_1(S,*)$ be
+  any non-trivial elements that are not common powers. Then in the
+  following three trialities the same possibility holds in each case.
+  \begin{enumerate}
+  \item Exactly one of the following multi-curve reduces to the other two:
+    \begin{enumerate}
+    \item $[ab]$
+    \item $[aB]$
+    \item $[a][b]$.
+    \end{enumerate}
+  \item Every taut embedding of the 4-valent graph $a * b$ has cyclic
+    order (up to orientation reversal)
+    \begin{enumerate}
+    \item $a$ in, $a$ out, $b$ out, $b$ in;
+    \item $a$ in, $a$ out, $b$ in, $b$ out; or
+    \item $a$ in, $b$ in, $a$ out, $b$ out
+    \end{enumerate}
+  \item The geodesics $\ora{a}$ and $\ora{b}$ are
+    \begin{enumerate}
+    \item parallel;
+    \item anti-parallel; or
+    \item cross.
+    \end{enumerate}
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We start with the second triality. Consider any taut embedding
+  $\Gamma$ of $[a * b]$. The branches around the $4$-valent vertex
+  appear in some cyclic order, and the list given in the statement is
+  exhaustive. (We have not yet proved the same case appears for each
+  taut embedding of $[a * b]$.)
+
+  Now consider the (concrete) multi-curve~$C$ given by replacing the
+  $4$-valent vertex with a crossing. If we pick orientations on $C$
+  correctly, this is an embedding of $[ab]$, $[aB]$, or $[a][b]$,
+  respectively, with a distinguished crossing~$x$.
+
+  We claim that $C$ is taut. Otherwise, there is some reducing isotopy
+  of $C$, using only RIII moves and RI/RII reductions. Any RIII move
+  can be copied with an isotopy of $\Gamma$. An RI or RII reduction of
+  $C$ that does not involve~$x$ gives a reduction of~$\Gamma$. An RI
+  reduction at~$x$ is only possible if $a$ or $b$ is the identity. And
+  an RII reduction involving~$x$ also reduces $\Gamma$, though
+  reducing the number of intersections of $\Gamma$ by one rather than
+  by two. In any case this contradicts tautness of~$\Gamma$ or another
+  assumption.
+
+  We have thus shown that one of $[ab]$, $[aB]$, or $[a][b]$ has a
+  taut representative $C$ with an essential crossing~$x$ that can be
+  smoothed to give the other two multi-curves. We cannot have a
+  circular chain of essential smoothings (since every essential
+  smoothing strictly decreases self-intersection number) so it follows
+  that the cases are exclusive and thus that \emph{every} taut
+  representative of $[a * b]$ has the same cyclic order.
+
+  We have completed proving equivalence of the first two trialities. 
+\end{proof}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Intersections"
+%%% End:
