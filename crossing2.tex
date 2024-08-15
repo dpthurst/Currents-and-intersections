@@ -27,49 +27,57 @@ intersections.
   any non-trivial elements that are not common powers. Then in the
   following three trialities the same possibility holds in each case.
   \begin{enumerate}
-  \item Exactly one of the following multi-curve reduces to the other two:
-    \begin{enumerate}
-    \item $[ab]$
-    \item $[aB]$
+  \item (Reduction) Exactly one of the following multi-curve reduces to the other two:\\
+    \begin{enumerate*}[itemjoin=\qquad]
+    \item $[ab]$;
+    \item $[aB]$; or
     \item $[a][b]$.
-    \end{enumerate}
-  \item Every taut embedding of the 4-valent graph $a * b$ has cyclic
-    order (up to orientation reversal)
-    \begin{enumerate}
+    \end{enumerate*}
+  \item (Geometric) For every taut embedding of $a * b$, around the
+    4-valent vertex we see in cyclic
+    order (up to orientation reversal):\\
+    \begin{enumerate*}
     \item $a$ in, $a$ out, $b$ out, $b$ in;
     \item $a$ in, $a$ out, $b$ in, $b$ out; or
     \item $a$ in, $b$ in, $a$ out, $b$ out
-    \end{enumerate}
-  \item The geodesics $\ora{a}$ and $\ora{b}$ are
-    \begin{enumerate}
+    \end{enumerate*}
+  \item (Algebraic) The geodesics $\ora{a}$ and $\ora{b}$ are:\\
+    \begin{enumerate*}[itemjoin=\qquad]
     \item parallel;
     \item anti-parallel; or
     \item cross.
-    \end{enumerate}
+    \end{enumerate*}
   \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  We start with the second triality. Consider any taut embedding
-  $\Gamma$ of $[a * b]$. The branches around the $4$-valent vertex
-  appear in some cyclic order, and the list given in the statement is
-  exhaustive. (We have not yet proved the same case appears for each
-  taut embedding of $[a * b]$.)
-
-  Now consider the (concrete) multi-curve~$C$ given by replacing the
+  Note that the algebraic triality is clearly mutually exclusive and
+  exhaustive (since the endpoints of $\ora{a}$ and $\ora{b}$ are
+  distinct since they are not common powers). For the geometric triality,
+  for any given embedding of $a * b$, one of the three given
+  possibilities holds, but it is not a priori clear that the same
+  possibility holds for all taut embeddings. For the reduction triality,
+  the possibilities are mutually exclusive (we can't have circular
+  reductions, since at each reduction length with respect any
+  Riemannian metric strictly decreases) but it is not a priori clear
+  that any of the three possibilities holds.
+  
+  We start with the geometric triality. Consider any taut embedding
+  $\Gamma$ of $[a * b]$ in one of the cases (a), (b), or~(c). Consider
+  the (concrete) multi-curve~$C$ given by replacing the
   $4$-valent vertex with a crossing. If we pick orientations on $C$
   correctly, this is an embedding of $[ab]$, $[aB]$, or $[a][b]$,
   respectively, with a distinguished crossing~$x$.
 
   We claim that $C$ is taut. Otherwise, there is some reducing isotopy
-  of $C$, using only RIII moves and RI/RII reductions. Any RIII move
-  can be copied with an isotopy of $\Gamma$. An RI or RII reduction of
-  $C$ that does not involve~$x$ gives a reduction of~$\Gamma$. An RI
-  reduction at~$x$ is only possible if $a$ or $b$ is the identity. And
+  of $C$, using only RIII moves and some RI/RII reduction. Any RIII move on~$C$
+  can be copied with an isotopy of~$\Gamma$, as can an RI or RII reduction of
+  $C$ that does not involve~$x$. An RI
+  reduction at~$x$ is only possible if $a$ or $b$ is the identity, and
   an RII reduction involving~$x$ also reduces $\Gamma$, though
   reducing the number of intersections of $\Gamma$ by one rather than
-  by two. In any case this contradicts tautness of~$\Gamma$ or another
-  assumption.
+  by two. In any case this contradicts tautness of~$\Gamma$ or
+  non-triviality of $a,b$.
 
   We have thus shown that one of $[ab]$, $[aB]$, or $[a][b]$ has a
   taut representative $C$ with an essential crossing~$x$ that can be
@@ -77,12 +85,19 @@ intersections.
   circular chain of essential smoothings (since every essential
   smoothing strictly decreases self-intersection number) so it follows
   that the cases are exclusive and thus that \emph{every} taut
-  representative of $[a * b]$ has the same cyclic order.
+  representative of $[a * b]$ has the same cyclic order around the
+  4-valent vertex, proving equivalence of the first two trialities.
 
-  We have completed proving equivalence of the first two trialities.
+  For the remaining equivalence, suppose first we
+  are in case~(c) of the geometric triality. For the fixed hyperbolic
+  structure, take $C$ to be the geodesic representative of the free
+  homotopy class $[a][b]$, intersecting at the distinguished point
+  $x \in \Sigma$, and let $\ora{a}$ and $\ora{b}$ be the respective
+  lifts passing through some lift $\wt{x}$ of~$x$. Then $\ora{a}$ and
+  $\ora{b}$ intersect only once and thus cross at infinity, so we are
+  also in case~(c) of the algebraic triality.
+  
   \begin{itemize}
-  \item In the crossing case (c), take the geodesic representative. Then
-    $\ora{a}$ and $\ora{b}$ are geodesics crossing exactly once.
   \item In the parallel case (a), again take the geodesic
     representative, but now we need to argue that after the smoothing
     there is still no monogon. This is exactly claim 4 from my notes
