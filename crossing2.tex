@@ -22,7 +22,7 @@ Define embedding of 4-valent graph $[a * b]$. Homotopic under
 simultaneous conjugation of $a,b$. \emph{Taut} still means minimal
 intersections.
 
-\begin{theorem}
+\begin{theorem}\label{thm:crossings-triality}
   Let $S$ be a surface with basepoint~$*$ and $a,b \in \pi_1(S,*)$ be
   any non-trivial elements that are not common powers. Then in the
   following three trialities the same possibility holds in each case.
@@ -96,14 +96,47 @@ intersections.
   lifts passing through some lift $\wt{x}$ of~$x$. Then $\ora{a}$ and
   $\ora{b}$ intersect only once and thus cross at infinity, so we are
   also in case~(c) of the algebraic triality.
-  
-  \begin{itemize}
-  \item In the parallel case (a), again take the geodesic
-    representative, but now we need to argue that after the smoothing
-    there is still no monogon. This is exactly claim 4 from my notes
-    \texttt{2024-06-03 \#3}.
-  \end{itemize}
+
+  If we are in case~(a) of the geometric triality, again take the
+  geodesic representative $C$ of $ab$, with distinguished
+  crossing~$x$. (For concreteness, if necessary reverse the
+  orientation of~$S$ so the branches appear in order \dots crossing to
+  the right) If we
+  perform the disconnected (oriented) smoothing at $x$, we get two
+  components $C_a \in [a]$ and $C_b \in [b]$; note these are concrete
+  curves that are typically not taut. However, $C_a$ and $C_b$ are
+  regular isotopic to a taut curve \cite[Lemma 5.5]{Thurston14:PBI},
+  i.e., there is no RI move required in making them taut. This is
+  equivalent to saying that the lifts $\wt{C_a}$ and $\wt{C_b}$ to
+  $\wt{\Sigma}$, passing through a neighborhood of $\wt{x}$, the
+  distinguished lift of~$x$, are embedded in the disk. Now consider
+  the endpoints $a^+, a^-$ of $\wt{C_a}$. As an oriented curve,
+  $\wt{C_a}$ is geodesic outside of neighborhoods of lifts of $x$, and
+  inside those neighborhoods turns to the left. It then follows that
+  $(ab)^+, a^+, a^-, (ba)^-$ occur in that cyclic order on
+  $\partial \wt{\Sigma}$, and similarly $(ab)^-, b^-,b^+,(ba)^+$ occur
+  in that cyclic order. It therefore follows that $\ora{a}$ and
+  $\ora{b}$ are parallel, so we are in case~(a) of the algebraic
+  triality.
+  \DPTtodo[inline]{This needs an image, maybe modified from Figure 3.2(a).}
+
+  Case~(b) follows in the same way, taking $a'=a$ and $b'=B$.
 \end{proof}
+
+As a result of Theorem~\ref{thm:crossings-triality}, the curve $[ab]$
+has an essential self-crossing~$x$ giving a reduction to $[a][b]$ iff
+$\ora{a}$ and $\ora{b}$ are parallel. This implies that $\ora{ab}$ and
+$\ora{ba}$ cross (Lemma~\ref{lem:righthandedfoundation}), and it is
+tempting to assert the converse; indeed the authors implicitly
+asserted this in an earlier paper \cite[Definition
+2.6]{MGT21:Smoothings}. For a counterexample, let $a,b \in \pi_1(S,*)$
+be elements in case~(a) of Theorem~\ref{thm:crossings-triality}, for
+instance simple loops around two cuffs of a pair of pants. Then
+$a' = aba$ and $b' = A$ satisfy $a'b' = ab$ and $b'a' = ba$, so
+$\ora{a'b'}$ and $\ora{b'a'}$ cross, but $[a'b']$ never reduces to
+$[a'][b']$. For more counterexamples, one may take $a' = (ab)^ka$ and
+$b' = b(ab)^{-k}$ for any non-zero $k \in \bbZ$.
+
 
 %%% Local Variables:
 %%% mode: latex
