@@ -126,16 +126,59 @@ intersections.
 As a result of Theorem~\ref{thm:crossings-triality}, the curve $[ab]$
 has an essential self-crossing~$x$ giving a reduction to $[a][b]$ iff
 $\ora{a}$ and $\ora{b}$ are parallel. This implies that $\ora{ab}$ and
-$\ora{ba}$ cross (Lemma~\ref{lem:righthandedfoundation}), and it is
-tempting to assert the converse; indeed the authors implicitly
-asserted this in an earlier paper \cite[Definition
-2.6]{MGT21:Smoothings}. \DMGtodo[inline]{It is not clear to me we assert that in the cited definition} For a counterexample, let $a,b \in \pi_1(S,*)$
-be elements in case~(a) of Theorem~\ref{thm:crossings-triality}, for
-instance simple loops around two cuffs of a pair of pants. Then
-$a' = aba$ and $b' = A$ satisfy $a'b' = ab$ and $b'a' = ba$, so
-$\ora{a'b'}$ and $\ora{b'a'}$ cross, but $[a'b']$ never reduces to
-$[a'][b']$. For more counterexamples, one may take $a' = (ab)^ka$ and
-$b' = b(ab)^{-k}$ for any non-zero $k \in \bbZ$.
+$\ora{ba}$ cross (see Lemma~\ref{lem:righthandedfoundation}). There is
+also a partial converse.
+
+\begin{proposition}\label{prop:selfcrossing}
+  Let $\gamma = \gamma_1 * \gamma_2$ be a concrete curve with a
+  self-crossing at~$x \in S$, where $\gamma_1,\gamma_2$ are the
+  constituent paths from $x$ to itself. Fix a basepoint~$*$ and a path
+  $\gamma_3$ from $*$ to~$x$. Let $a,b \in \pi_1(S, *)$ be the classes
+  of $\gamma_3 * \gamma_1 * (\gamma_3)^{-1}$ and
+  $\gamma_3 * \gamma_2 * (\gamma_3)^{-1}$, so that $\gamma \in [ab]$.
+  Then if $\ora{ab}$ and $\ora{ba}$ cross, $[ab]$ reduces to $[a][b]$
+  and to $[aB]$.
+\end{proposition}
+
+\begin{proof}
+  I don't know yet how to prove this\dots Maybe consider the
+  hyperbolic geodesic representative? It's not logically necessary for
+  this paper, but seems like crucial background especially for the
+  previous paper.
+\end{proof}
+
+It is not in general true that if $\ora{ab}$ and $\ora{ba}$ intersect,
+then $[ab] \reducesto [a][b]$ and $[ab] \reducesto [aB]$. Let
+$a,b \in \pi_1(S,*)$ be elements in case~(a) of
+Theorem~\ref{thm:crossings-triality}, for instance simple loops around
+two cuffs of a pair of pants. Then $a' = aba$ and $b' = A$ satisfy
+$a'b' = ab$ and $b'a' = ba$, so $\ora{a'b'}$ and $\ora{b'a'}$ cross,
+\DPTtodo{I think this argument is not so hard but it probably doesn't belong
+  here.} but some analysis along the lines of
+Lemma~\ref{lem:righthandedfoundation} shows that $\ora{a'}$ and
+$\ora{b'}$ are anti-parallel so $[a'B'] \reducesto [a'b']$ rather than
+the opposite reduction. More generally, you can get counterexamples
+from $a' = (ab)^k a$ and $b' = b (ab)^{-k}$ with nonzero $k \in \bbZ$.
+\DPTtodo[inline]{For some values of $k$, will have $\ora{a}$ and
+  $\ora{b}$ cross rather than be anti-parallel}
+
+Essentially, in order to apply Proposition~\ref{prop:selfcrossing}, we
+need to guarantee that the group elements $a,b$ each go halfway around
+the curve (from the self-crossing to itself) rather than (e.g.)\ $3/2$
+and $-1/2$ times around, as in the counterexample above.
+
+In a previous paper, the authors essentially used
+Proposition~\ref{prop:selfcrossing} as the \emph{definition} of an
+essential crossing \cite[Def.\ 2.16]{MGT21:Smoothings}, although
+stated more geometrically. As illustrated above, there are some
+subtleties in switch to the more group-theoretic point of view. In
+that prior paper, we stuck almost entirely to the more geometric point
+of view, with the exception of step (iii$'$) in the proof of
+\cite[Lemma 8.1(b)]{MGT21:Smoothings}. In the terminology there, we
+have $a = \delta^M \alpha$ and $b = \beta \delta^M$ and only checked
+that $\ora{ab}$ crosses $\ora{ba}$. This can easily be converted to a
+geometric argument, or alternatively it is not hard to check that
+$\ora{a}$ and $\ora{b}$ are parallel.
 
 
 %%% Local Variables:
