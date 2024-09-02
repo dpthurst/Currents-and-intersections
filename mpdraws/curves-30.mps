@@ -2,7 +2,7 @@
 %%BoundingBox: -21 -21 21 21 
 %%HiResBoundingBox: -20.19246 -20.19246 20.19246 20.19246 
 %%Creator: MetaPost 2.10
-%%CreationDate: 2024.08.26:1933
+%%CreationDate: 2024.09.02:1719
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font CMMI7

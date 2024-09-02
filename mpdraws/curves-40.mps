@@ -1,14 +1,15 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -155 -65 129 65 
-%%HiResBoundingBox: -154.75989 -64.28134 128.05905 64.28134 
+%%BoundingBox: -129 -65 129 65 
+%%HiResBoundingBox: -128.05905 -64.28134 128.05905 64.28134 
 %%Creator: MetaPost 2.10
-%%CreationDate: 2024.09.02:1042
+%%CreationDate: 2024.09.02:1719
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
-%%+ font CMR10
+%%+ font CMSY10 CMMI10
 %%DocumentSuppliedResources: procset mpost-minimal
-%%DocumentNeededResources: font CMR10
-%%IncludeResource: font CMR10
+%%DocumentNeededResources: font CMSY10 CMMI10
+%%IncludeResource: font CMSY10
+%%IncludeResource: font CMMI10
 %%EndComments
 %%BeginProlog
 %%BeginResource: procset mpost-minimal
@@ -21,7 +22,8 @@
 %%EndResource
 %%EndProlog
 %%BeginSetup
- /cmr10 /CMR10 def
+ /cmsy10 /CMSY10 def
+ /cmmi10 /CMMI10 def
 %%EndSetup
 %%Page: 1 1
  0.9 0.9 0.9 setrgbcolor
@@ -84,8 +86,8 @@ newpath -127.55905 0 moveto
 -99.01219 -64.04395 -127.55905 -35.3253 -127.55905 0 curveto closepath stroke
  0 3 dtransform truncate idtransform setlinewidth pop 1 setlinecap
 newpath 0 0 moveto 0 0 rlineto stroke
-3 -3.4039 moveto
-(LaTeXMP\0401) cmr10 9.96265 fshow
+3 -2.3177 moveto
+(\003) cmsy10 9.96265 fshow
  0 0.7 dtransform truncate idtransform setlinewidth pop
  [1.5 2.5 ] 0.75 setdash
 newpath 0 0 moveto
@@ -97,8 +99,8 @@ newpath 0 0 moveto
 newpath -94.84578 2.5771 moveto
 -95.89244 0.88847 -96.83691 -0.91719 -97.66919 -2.83116 curveto
 -98.72598 -0.9731 -99.67052 1.0002 -100.49275 3.08354 curveto stroke
--154.75989 -3.4039 moveto
-(LaTeXMP\0402) cmr10 9.96265 fshow
+-106.06151 -2.14476 moveto
+(a) cmmi10 9.96265 fshow
  [1.5 2.5 ] 0.75 setdash
 newpath 0 0 moveto
 18.06853 18.06853 38.57454 36.5201 63.77953 34.01588 curveto
@@ -109,7 +111,7 @@ newpath 0 0 moveto
 newpath 100.49275 3.08354 moveto
 99.67052 1.0002 98.72598 -0.9731 97.66919 -2.83116 curveto
 96.83691 -0.91719 95.89244 0.88847 94.84578 2.5771 curveto stroke
-40.83093 -3.4039 moveto
-(LaTeXMP\0403) cmr10 9.96265 fshow
+90.5198 -3.45926 moveto
+(b) cmmi10 9.96265 fshow
 showpage
 %%EOF

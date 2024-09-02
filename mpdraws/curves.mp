@@ -104,14 +104,16 @@ beginmulti;
   shipmulti(12);
 endmulti;
 
-% A non-essential crossing in a pair of pants
+% Curves in the pair of pants
 beginmulti;
   u := 1.5cm;
   path p[], p[]a;
 
-  % The pair of pants
-  p0 = fullcircle scaled u shifted (-1.5u,0);
-  p1 = fullcircle scaled u shifted (1.5u,0);
+  % The pair of pants, marked
+  z5 = (-1.5u,0);
+  z6 = (1.5u,0);
+  p0 = fullcircle scaled u shifted z5;
+  p1 = fullcircle scaled u shifted z6;
   p2 = (-3u,0)..(-1.5u,1.5u)..(0,1.2u)..(1.5u,1.5u)..(3u,0)..(1.5u,-1.5u)..(0,-1.2u)..(-1.5u,-1.5u)..cycle;
 
   pickup thickpen;
@@ -129,8 +131,7 @@ beginmulti;
   draw p4 dashed stddash; mark_dir(p4, 2); texlabel.lft("$b$", point 2 of p4);
   shipmulti(40);
 
-  % Adding the problematic curve
-
+  % Adding the problematic curve, errata counterexample
   p10 = (0.5u*dir -135){dir 135}..{dir 180}(-1.5u,0.65u)..(subpath(2,4) of p3 shift_arc 0.1u);
   p11 = p4 shift_arc 0.1u;
   p12 = ((-0.1u,0u){dir 90}...(-0.2u,0.6u)...{dir -90}(-0.3u,0u)) rotated 45;
@@ -140,12 +141,28 @@ beginmulti;
 
   z10 = p12 intersectionpoint subpath(1,2) of p14;
 
-  addto currentpicture also outpicture[20];
+  addto currentpicture also outpicture[40];
   draw p10; mark_dir(p10,1.5);
   draw p11; mark_dir(p11,6);
   draw p12; draw p13; mark_dir(p13,10) draw p14; draw p15; mark_dir(p15,6);
   pickup vertexmarker; draw z10; texlabel.top("$x$", z10);
   shipmulti(41);
+
+  % Triple winding
+  p20 = p3 shift_arc 0.2u;
+  p21 = (z6+(0,-1.4u))..(z6+(1.35u,0))..(z6+(0,1.3u))..(z6+(-1.25u,0))..(z6+(0,-1.2u))..(z6+(1.15u,0))..(z6+(0,1.1u))..(z6+(-1.05u,0))..(z6+(0,-1.0u))..(z6+(0.95u,0))..(z6+(0,0.9u))..reverse p20 .. cycle;
+
+  z20 = p20 intersectionpoint (reverse p20);
+  z21 = subpath (10,11) of p21 intersectionpoint subpath(0,4) of p21;
+  z22 = subpath (10,11) of p21 intersectionpoint subpath(4,8) of p21;
+
+  addto currentpicture also outpicture[40];
+  draw p21;
+  pickup vertexmarker;
+  draw z20; texlabel.top("$x_1$", z20);
+  draw z21; texlabel.ulft("$x_2$", z21);
+  draw z22; texlabel.ulft("$x_3$", z22);
+  shipmulti(42);
 endmulti;
 
   

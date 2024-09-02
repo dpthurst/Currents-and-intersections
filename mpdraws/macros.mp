@@ -403,6 +403,14 @@ tertiarydef p shift_arc disp =
   endfor
 enddef;
 
+% Varying displacement over time
+def shift_arc_vary(expr p, disp_s, disp_e) =
+  (point 0 of p + disp_s*(unitvector direction 0 of p) rotated 90)
+  for i = 1/4 step 1/4 until length p:
+    ..(point i of p + (i/length p)[disp_s,disp_e]*(unitvector direction i of p) rotated 90)
+  endfor
+enddef;
+
 % ------------------------------------------------------------
 % Mark the measurement of a given segment
 numeric measure_disp; measure_disp = 5pt;
