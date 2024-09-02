@@ -7,6 +7,8 @@
 \subsubsection{Left vs right actions of \texorpdfstring{$\pi_1(S)$}{π1(S)}}
 \label{sec:actions}
 
+\DMGtodo[inline]{left vs right actions}
+
 To fix conventions, we briefly recall elementary facts about actions of $\pi_1(S,\ast)$ on the universal
 cover~$\wt S$ of a surface (or indeed any connected length space). We
 follow the convention that path composition works in the natural
@@ -127,97 +129,35 @@ not need to assume the group elements generate a discrete subgroup).
   $(x,y) \cup (y,x)$ is almost the entire circle).
 \end{convention}
 
-\subsection{Essential crossings}
+\subsection{Crossings}
 \label{subsec:essential}
-The following subsection follows closely~\cite[\S2.2]{MGT21:Smoothings}.
 
-Loosely speaking, an essential crossing is a crossing of a
-multi-curve that can't be homotoped away. We make this definition
-precise as follows. We cover cases where $\gamma$ does not have
-transverse crossings for convenience of some of the examples.
-
-\begin{definition}[linked points on a circle]
-  We say that two sets of two points $\{a,b\}$ and $\{c,d\}$ in
-  $S^1$ are \emph{linked} if the four points are distinct and both
-  connected components of
-  $S^1- \{ a,b \}$ have an element of $\{c,d\}$.
+\DMGtodo[inline]{definition of minimal/essential crossing}
+\begin{definition}
+  A representative~$\gamma$ of a multi-curve~$C$ is \emph{minimal} if
+  it has only transverse self-intersections and a minimum number of
+  them. A crossing that appears in some minimal representative is said
+  to be \emph{essential}, and induces a reduction relation
+  $C \reducesto C_1$ and $C \reducesto C_2$ for the two different ways
+  of smoothing the crossing.
 \end{definition}
 
-\begin{definition}[lift of a concrete curve]\label{def:lift}
-  Given a concrete multi-curve~$\gamma$ on~$S$ and a choice
-  $p \in X(\gamma)$, set $x=\gamma(p) \in S$. Pick a lift
-  $\wt x \in \wt S$ of~$x$. The unique lifting property gives a unique
-  lift $\wt{\gamma_p}: \wt{X}(\gamma;p) \to \wt S$ of $\gamma$ with
-  $\wt{\gamma_p}(\wt p) = \wt x$, where $X(\gamma;p)$ is the component
-  of~$X(\gamma)$ containing~$p$ and $\wt{X}(\gamma;p)$ is its
-  universal cover with basepoint~$\wt p$.
-\end{definition}
-
-\begin{definition}[essential crossing]\label{def:essential-crossing}
-  Let $\gamma$ be a concrete multi-curve on~$S$, and suppose we have
-  points $p,q \in X(\gamma)$ so that
-  $x \coloneqq \gamma(p) = \gamma(q) \in S$. Pick a lift
-  $\wt x \in \wt{S}$ of $x$, and let $\wt{\gamma_p}$ and
-  $\wt{\gamma_q}$ be
-  the corresponding lifts of components of~$\gamma$ following
-  Definition~\ref{def:lift}.
-  Then the pair $(p,q)$ form an \emph{essential crossing} if the following two conditions hold:
-  \begin{enumerate}
-  \item both components of $X(\gamma)$ containing $p$ and $q$ are not
-    null-homotopic, so that $\wt{\gamma_p}$ and $\wt{\gamma_q}$ are quasi-geodesic components of $\wt \gamma$; and
-  \item either
-    \begin{enumerate}
-    \item the endpoints $\{a,b\}$ of $\wt{\gamma_p}$
-      and the endpoints $\{c,d\}$ of $\wt{\gamma_q}$
-      are linked in $S^1_\infty$; or
-    \item\label{item:ess-multi} $p$ and $q$ lie on the same component of $X(\gamma)$,
-      $[\gamma] = [\delta^n]$ for some $n > 1$ and some
-      primitive $\delta \in \pi_1(S,x)$,
-      the loop from $p$ to~$q$ in $X(\gamma)$ maps to $[\delta^m]$ for
-      some $0 < m < n$, and so the loop from $q$ to~$p$ maps to $[\delta^{n-m}]$.
-    \end{enumerate}
-  \end{enumerate}
-\end{definition}
-In case~\ref{item:ess-multi}, the endpoints of $\wt {\gamma_p}$ and
-$\wt{\gamma_q}$ are the same.
-
-This definition might be somewhat looser than expected. For
-instance, in the chain of three crossings
-\[
-  \mfig{curves-20}
-\]
-the circled middle crossing is
-essential iff the other two are, since ``linking at infinity'' doesn't
-see the direction of crossing. This does not matter for our purposes.
-
-\begin{definition}[smoothings]
-  \label{def:smoothing}
-  Let $(p,q) \in X(\gamma)$ be an essential crossing of~$\gamma$
-  on~$S$. To make a \emph{smoothing}~$\gamma'$ of $(p,q)$, cut
-  $X(\gamma)$ at $p$ and~$q$ and reglue the resulting four endpoints
-  in one of the two other possible ways, getting a new $1$-manifold
-  $X(\gamma')$. The map $\gamma'$ agrees with~$\gamma$; this is
-  well-defined since $\gamma(p) = \gamma(q)$. In pictures we will
-  homotop $\gamma'$ slightly to round out the resulting
-  corners. If $\gamma$ is oriented, then the \emph{oriented smoothing}
-  is the smoothing that respects the orientation on $X(\gamma)$:
-  \begin{equation*}
-    \mfig{curves-3} \reducesto \mfig{curves-4}
-  \end{equation*}
-If we obtain a concrete curve $\gamma'$ from $\gamma$ by a sequence of
-$k$ smoothings of essential crossings,  we will write
-$\gamma \reducesto_k \gamma'$. (We check whether the
-crossings are essential at each stage of this process; this is
-more restrictive than checking at the beginning.)
-\end{definition}
-
-\begin{lemma}[{\cite[Lemma~2.8]{MGT21:Smoothings}}]
-  Essential crossings are unavoidable in a homotopy class, in the
-  sense that if $\gamma$ and $\gamma'$ are homotopic concrete
-  multi-curves and $(p,q) \in X(\gamma)$ is an essential crossing of~$\gamma$,
-  then there is an essential crossing $(p',q') \in X(\gamma')$ so
-  that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
+``Some'' above can be replaced by ``every'':
+\begin{lemma}
+  If there is a crossing $x$ in some minimal representative
+  $\gamma$ of~$C$, then for any other minimal representative $\gamma'$
+  there is a corresponding crossing~$x'$ giving the same
+  smoothings.
 \end{lemma}
+
+\begin{proof}
+  By results of Haas and Scott \cite{HS94:ShorteningCurves}, any two
+  minimal representatives of a curve are related by Reidemeister III
+  (RIII) moves and by interchanging two components that are powers of
+  the same curve. Both of these operations induce a natural bijection
+  between crossings that preserves the curves that result from
+  smoothing.
+\end{proof}
 
 We will distinguish two types of smoothings.
 
@@ -226,6 +166,8 @@ A \emph{connected smoothing} is a smoothing of a self-crossing of two distinct c
 
 \subsubsection{Right-handed crossings}
 \label{subsec:rhcrossings}
+
+\DMGtodo[inline]{right handed crossings}
 In order to work better with group elements and crossings between
 oriented geodesics, we pick out one type of essential crossing.
 
@@ -259,6 +201,8 @@ class of the loop that runs along~$[b]$ from $*$ to the chosen
 intersection, and back along~$[a]$ from the chosen intersection
 to~$*$.
 
+\DMGtodo[inline]{ basic smoothing lemmas (essentially follow or are equivalent to statements in Triality)}
+
 Since a right-handed crossing is essential, we have the following.
 \begin{lemma}
 Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{x}$ to the
@@ -283,6 +227,8 @@ Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) t
 \end{lemma}
 
 \input{smoothings}
+
+\DMGtodo[inline]{types of smoothings according to orientation and connectedness}
 
 
 Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
@@ -323,6 +269,8 @@ Convention~\ref{conv:circle-intervals}.
 
 
 \subsubsection{Parallelism and crossing of hyperbolic axes}
+
+\DMGtodo[inline]{basic lemmas about parallelism and crossing}
 
 We now turn to some elementary lemmas about crossing. For this
 purpose, we also distinguish the various other types of relations
