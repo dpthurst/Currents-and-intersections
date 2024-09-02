@@ -1,5 +1,7 @@
 \subsection{Algebraic vs Topological smoothing}
 
+\DMGtodo[inline]{algebraic and topological version of theorem axioms}
+
 In this section we relate to notions of smoothing.
 
 \textbf{Algebraic intersection conditions}
@@ -84,10 +86,16 @@ $\ora{a}$ and $\ora{b}$ are
 \item \emph{cross} if they appear in order $a^-,b^-,a^+,b^+$.
 \end{itemize}
 
-We can now reformulate essential
-crossings in the (interesting) first case of \cite[Def.\
-2.16]{MGT21:Smoothings}, when $a$ and
-$b$ are not common powers.
+\DMGtodo[inline]{definition of common powers}
+
+\begin{definition}
+  Non-trivial group elements $a,b\in \pi_1$ are \emph{common powers}
+  if there are non-zero $k,\ell$ so that $a^k = b^\ell$. Since $\pi_1$
+  has no torsion, we may assume that $k,\ell$ are relatively prime and
+  then we see this is equivalent to the existence of a $c$ so that
+  $a = c^\ell$ and $b = c^k$.
+\end{definition}
+
 
 \begin{proposition}\label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not

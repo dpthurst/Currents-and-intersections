@@ -1,14 +1,14 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%BoundingBox: -69 -21 69 21 
-%%HiResBoundingBox: -68.06117 -20.19246 68.06117 20.19246 
+%%BoundingBox: -21 -21 21 21 
+%%HiResBoundingBox: -20.19246 -20.19246 20.19246 20.19246 
 %%Creator: MetaPost 2.10
-%%CreationDate: 2024.09.02:1042
+%%CreationDate: 2024.08.26:1933
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
-%%+ font CMR10
+%%+ font CMMI7
 %%DocumentSuppliedResources: procset mpost-minimal
-%%DocumentNeededResources: font CMR10
-%%IncludeResource: font CMR10
+%%DocumentNeededResources: font CMMI7
+%%IncludeResource: font CMMI7
 %%EndComments
 %%BeginProlog
 %%BeginResource: procset mpost-minimal
@@ -21,7 +21,7 @@
 %%EndResource
 %%EndProlog
 %%BeginSetup
- /cmr10 /CMR10 def
+ /cmmi7 /CMMI7 def
 %%EndSetup
 %%Page: 1 1
  0.9 0.9 0.9 setrgbcolor
@@ -44,13 +44,13 @@ newpath -14.03073 -14.03073 moveto
 newpath -11.02444 -7.01538 moveto
 -5.01105 -5.01105 lineto
 -7.01538 -11.02444 lineto stroke
--4.91537 -15.92316 moveto
-(LaTeXMP\0409) cmr10 9.96265 fshow
+-4.91537 -12.11795 moveto
+(a) cmmi7 6.97385 fshow
 newpath 7.01535 -3.00629 moveto
 9.01968 -9.01968 lineto
 3.00629 -7.01535 lineto stroke
 9.11536 -4.91537 moveto
-(LaTeXMP\04010) cmr10 9.96265 fshow
+(a) cmmi7 6.97385 fshow
  0 0 0.8 setrgbcolor
 newpath 14.03073 14.03073 moveto
 0 0 lineto
@@ -58,13 +58,13 @@ newpath 14.03073 14.03073 moveto
 newpath 11.02444 7.01538 moveto
 5.01105 5.01105 lineto
 7.01538 11.02444 lineto stroke
--54.03044 9.11536 moveto
-(LaTeXMP\04011) cmr10 9.96265 fshow
+1.41188 9.11536 moveto
+(b) cmmi7 6.97385 fshow
 newpath -7.01535 3.00629 moveto
 -9.01968 9.01968 lineto
 -3.00629 7.01535 lineto stroke
--68.06117 -1.89243 moveto
-(LaTeXMP\04012) cmr10 9.96265 fshow
+-12.61885 0.07248 moveto
+(b) cmmi7 6.97385 fshow
  0 0 0 setrgbcolor 0 3 dtransform truncate idtransform setlinewidth pop
 newpath 0 0 moveto 0 0 rlineto stroke
 showpage
