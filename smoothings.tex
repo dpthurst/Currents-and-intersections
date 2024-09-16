@@ -49,158 +49,52 @@ Let $f \colon \Curves(S) \to \mathbb{R}$ be a curve functional. $f$ satisfies th
 
  Our main theorem is phrased in terms of topological smoothing, even though our proof uses the algebraic smoothing axioms. Both versions of the axioms are of independent interest, since the topological version is easier to verify for curve functionals arising from geometric functionals on the surface (such as length functions or intersection numbers) whereas the algebraic axioms are easier to check for curve functionals of more algebraic nature (such as periods of cross-ratios, stable lengths of word metrics, etc.).
 
-\subsubsection{Triality}
 
-To give a more workable and algebraic criterion for essential
-crossings, we
-adopt a group-theoretic point of view. For $a,b \in \pi_1(S,*)$, write
-$[a]$ for the free homotopy class of curves represented by $a$;
-algebraically this is the union of the conjugacy classes of~$a$ and
-of~$A$. Write $[a][b]$ for the multi-curve $[a] \cup [b]$. Say that a
-factorization $[ab]$ \emph{reduces} if some (equiv.\ every) taut
-representative of $[ab]$ has a crossing so that one smoothing gives
-$[a][b]$ and the other smoothing gives $[aB]$. Similarly say that
-$[a][b]$ \emph{reduces} if some/every taut representative has a crossing
-whose smoothings give $[ab]$ and $[aB]$. (This is an abuse of
-notation, since the reduction is not invariant under individual
-conjugation of $a$ and $b$.)
+\subsection{Relation between connected/disconnected smoothing and crossing/parallel conditions} 
 
-For $a,b \in \pi_1(S,*)$, let $a * b$ be a 4-valent graph mapped into
-$S$ obtained by taking the union of the paths $a,b$ joined at the
-basepoint~$*$, and let $[a * b]$
-be its free homotopy class.
-Free homotopy means in particular invariance under simultaneous
-conjugation: $[a * b] = [caC * cbC]$. A \emph{minimal} representative of $[a * b]$
-is one with a minimum number of transverse crossings.
+\DMGtodo[inline]{proof of the equivalence of Intersections when phrased in the algebraic way}
 
-Finally, if we fix a hyperbolic structure on~$S$, a non-trivial
-element $a \in \pi_1(S,*)$ determines a geodesic $\ora{a}$ in
-$\wt{S}$, the unique geodesic that stays a bounded distance from
-$a^k \cdot \wt{*}$, with endpoints $a^+$ and $a^-$. Depending on the
-cyclic order of the endpoints up to orientation reversal, we say that
-$\ora{a}$ and $\ora{b}$ are
-\begin{itemize}
-\item \emph{parallel} if they appear in order $a^-,a^+,b^+,b^-$;
-\item \emph{anti-parallel} if they appear in order $a^-,a^+,b^-,b^+$;
-  and
-\item \emph{cross} if they appear in order $a^-,b^-,a^+,b^+$.
-\end{itemize}
+\DMGtodo[inline]{I moved the statement to the introduction. The proof is still here, but should we moved elsewhere.}
 
-\DMGtodo[inline]{definition of common powers}
-
-\begin{definition}
-  Non-trivial group elements $a,b\in \pi_1$ are \emph{common powers}
-  if there are non-zero $k,\ell$ so that $a^k = b^\ell$. Since $\pi_1$
-  has no torsion, we may assume that $k,\ell$ are relatively prime and
-  then we see this is equivalent to the existence of a $c$ so that
-  $a = c^\ell$ and $b = c^k$.
-\end{definition}
+We are now ready to prove Theorem~\ref{thm:intersections_group}
 
 
-\begin{proposition}\label{prop:crossings-triality}
-  Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
-  common powers. Then in the following three trialities the same
-  possibility holds in each case.
-  \begin{enumerate}
-  \item (Reduction) One of the following factorizations reduces
-    to the other two:\\
-    \begin{enumerate*}[itemjoin=\qquad]
-    \item $[ab]$;
-    \item $[aB]$; or
-    \item $[a][b]$.
-    \end{enumerate*}
-  \item (Geometric) For every taut embedding of $a * b$, around the
-    4-valent vertex we see in cyclic
-    order, up to orientation reversal:\\
-    \begin{enumerate*}[itemjoin=\qquad]
-    \item $\mfig{curves-30}$;
-    \item $\mfig{curves-31}$; or
-    \item $\mfig{curves-32}$.
-    \end{enumerate*}
-  \item (Algebraic) The geodesics $\ora{a}$ and $\ora{b}$ are:\\
-    \begin{enumerate*}[itemjoin=\qquad]
-    \item parallel;
-    \item anti-parallel; or
-    \item cross.
-    \end{enumerate*}
-  \end{enumerate}
-\end{proposition}
+\begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
+Extend $f$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves.
+\[
+f(s \cdot a + t \cdot b) = s\cdot f(a) + t \cdot f(b)
+\]
+for every $s,t \geq 0$, and $a,b \in \Gamma$.
 
-\begin{proof}
-  Since $a$ and $b$ are not common powers, the endpoints of
-  $\ora{a}$ and $\ora{b}$ are all distinct from each other (XXX: cite), so
-  the algebraic triality is mutually exclusive and exhaustive. For the
-  geometric triality, for any given embedding of $a * b$, one of the
-  three given possibilities holds, but it is not \emph{a priori} clear that
-  the same possibility holds for all taut embeddings. For the
-  reduction triality, the possibilities are mutually exclusive (we
-  can't have circular reductions, since at each reduction length with
-  respect any Riemannian metric strictly decreases) but now it is not
-  clear that any of the three possibilities holds.
-  
-  We start with the geometric triality. Consider any minimal representative
-  $\rho$ of $[a * b]$ in one of the cases (a), (b), or~(c). Consider
-  the (concrete) multi-curve~$\gamma$ given by replacing the
-  $4$-valent vertex with a crossing. If we pick orientations on $\gamma$
-  correctly, this is an embedding of $[ab]$, $[aB]$, or $[a][b]$,
-  respectively, with a distinguished crossing~$x$.
+The smoothing condition of Theorem~\ref{thm:intersect_primeprime} is a priori stronger than the hypotheses of this theorem.
+It remains to show the hypotheses of this theorem imply smoothing.
+Suppose $a,b$ have an essential crossing. 
+Then, either $(a,b)$ are $R$-crossing, or $(a,b)$ are $L$-crossing. If $(a,b)$ is $R$-crossing, we have
+\[
+f(a)+f(b) = f(a + b) \geq f(ab).
+\]
+Also, $(B,a)$ is $R$-crossing, and thus
+\[
+f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB)
+\]
+On the other hand, if $(a,b)$ are $L$-crossing, then $(b,a)$ is $R$-crossing, hence
+\[
+f(b)+f(a) \geq f(ba) = f(ab).
+\]
+Also, if  $(a,b)$ are $L$-crossing, thus $(a,B)$ is $R$-crossing, hence
+\[
+f(a)+f(b) = f(b)+f(B) \geq f(aB).
+\]
+All in all, if $a,b$ cross essentially, $f$ satisfies $f(a) + f(b) \geq \max \{ f(ab) , f(aB) \}$, so $f$ satisfies disconnected smoothing.
 
-  We claim that $\gamma$ is minimal. Otherwise, there is some reducing
-  isotopy using RIII moves and some RI/RII reduction
-  \cite{HS94:ShorteningCurves}. Any RIII move on~$\gamma$
-  can be copied with an isotopy of~$\rho$, as can an RI or RII reduction of
-  $\gamma$ that does not involve~$x$. An RI
-  reduction at~$x$ is only possible if $a$ or $b$ is the identity, and
-  an RII reduction involving~$x$ also reduces $\rho$,
-  reducing the number of intersections of $\rho$ by one. In any case
-  this contradicts minimality of~$\rho$ or
-  non-triviality of $a,b$.
-
-  We have thus shown that one of $[ab]$, $[aB]$, or $[a][b]$ has a
-  minimal representative $\gamma$ with a crossing~$x$ that can be
-  smoothed to give the other two multi-curves. Since we cannot have a
-  circular chain of essential smoothings (for instance because we get
-  strict inequalities of hyperbolic length), it follows that the cases
-  are exclusive and thus that \emph{every} minimal representative of
-  $[a * b]$ has the same cyclic order around the 4-valent vertex.
-  Combined this
-  proves equivalence of the first two trialities.
-
-  For the remaining equivalence, suppose first we
-  are in case~(c) of the geometric triality. For the fixed hyperbolic
-  structure, take $\gamma$ to be the geodesic representative of the free
-  homotopy class $[a][b]$, intersecting at the distinguished point
-  $x \in S$, and let $\ora{a}$ and $\ora{b}$ be the respective
-  lifts passing through some lift $\wt{x}$ of~$x$. Then $\ora{a}$ and
-  $\ora{b}$ intersect only once and thus cross at infinity, so we are
-  also in case~(c) of the algebraic triality.
-
-  If we are in case~(a) of the geometric triality, again take the
-  geodesic representative $\gamma$ of $ab$, with distinguished
-  crossing~$x$. For concreteness, if necessary reverse the
-  orientation of~$S$ so the branches appear in the order shown below.
-  If we
-  perform the disconnected (oriented) smoothing at $x$, we get two
-  components $\gamma_a \in [a]$ and $\gamma_b \in [b]$; these concrete
-  curves are typically not minimal. However, $\gamma_a$ and $\gamma_b$ are
-  regular isotopic to a taut curve \cite[Lemma 5.5]{Thurston14:PBI},
-  i.e., there is no RI move required in making them taut. This is
-  equivalent to saying that their lifts $\wt{\gamma_a}$ and $\wt{\gamma_b}$ to
-  $\wt{S}$ passing through a neighborhood of $\wt{x}$ are embedded in
-  the disk (XXX: cite). Now consider
-  the endpoints $a^+, a^-$ of $\wt{\gamma_a}$. As an oriented curve,
-  $\wt{\gamma_a}$ is geodesic outside of neighborhoods of lifts of $x$, and
-  inside those neighborhoods turns to the left. It then follows that
-  $(ab)^+, a^+, a^-, (ba)^-$ occur in that cyclic order on
-  $\partial \wt{S}$, and similarly $(ab)^-, b^-,b^+,(ba)^+$ occur
-  in that cyclic order:
-  \[
-    \resizebox{40mm}{!}{\svgfig{lifts}}
-  \]
-  It therefore
-  follows that $\ora{a}$ and
-  $\ora{b}$ are parallel, so we are in case~(a) of the algebraic
-  triality.
-
-  Case~(b) follows in the same way, interchanging $b \leftrightarrow B$.
+For $ab$ with a self-intersection, this is equivalent to $(a,b)$ being $R$-parallel or $(a,b)$ being $L$-parallel.
+For any pair of $R$-parallel elements $(a,b)$, 
+\[
+f(ab)\geq \max \{ f(a) + f(b), f(aB)\}
+\]
+If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
+\[
+f(ab)=f(ba)\geq \max \{ f(b) + f(a), f(bA)\} = \max \{ f(a) + f(b), f(aB)\} 
+\]
+Hence, connected smoothing is satisfied.
 \end{proof}

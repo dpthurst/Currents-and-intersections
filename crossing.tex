@@ -1,13 +1,8 @@
 \section{Crossings and Smoothings}
 \label{sec:smoothing}
 
-\subsection{Crossings}
-\label{sec:crossings}
-
-\subsubsection{Left vs right actions of \texorpdfstring{$\pi_1(S)$}{π1(S)}}
+\subsection{Left vs right actions of \texorpdfstring{$\pi_1(S)$}{π1(S)}}
 \label{sec:actions}
-
-\DMGtodo[inline]{left vs right actions}
 
 To fix conventions, we briefly recall elementary facts about actions of $\pi_1(S,\ast)$ on the universal
 cover~$\wt S$ of a surface (or indeed any connected length space). We
@@ -130,42 +125,25 @@ not need to assume the group elements generate a discrete subgroup).
 \end{convention}
 
 \subsection{Crossings}
-\label{subsec:essential}
+\label{subsec:crossings}
 
-\DMGtodo[inline]{definition of minimal/essential crossing}
-\begin{definition}
+Loosely speaking, an essential crossing is a crossing of a
+multi-curve that can't be homotoped away. We make this definition
+precise as follows.
+
+
+
+
+\begin{definition}\label{def:essential-crossing}
   A representative~$\gamma$ of a multi-curve~$C$ is \emph{minimal} if
   it has only transverse self-intersections and a minimum number of
-  them. A crossing that appears in some minimal representative is said
-  to be \emph{essential}, and induces a reduction relation
-  $C \reducesto C_1$ and $C \reducesto C_2$ for the two different ways
-  of smoothing the crossing.
+  them.
+    Let $\gamma$ be a concrete multi-curve on~$S$ representing a multi-curve $C$. A \emph{crossing} of $\gamma$ is a pair $(p,q)$ of
+  points $p,q \in X(\gamma)$ so that
+  $x \coloneqq \gamma(p) = \gamma(q) \in S$.
+  A crossing that appears in some minimal representative is said
+  to be an \emph{essential crossing}.
 \end{definition}
-
-``Some'' above can be replaced by ``every'':
-\begin{lemma}
-  If there is a crossing $x$ in some minimal representative
-  $\gamma$ of~$C$, then for any other minimal representative $\gamma'$
-  there is a corresponding crossing~$x'$ giving the same
-  smoothings.
-\end{lemma}
-
-\begin{proof}
-  By results of Haas and Scott \cite{HS94:ShorteningCurves}, any two
-  minimal representatives of a curve are related by Reidemeister III
-  (RIII) moves and by interchanging two components that are powers of
-  the same curve. Both of these operations induce a natural bijection
-  between crossings that preserves the curves that result from
-  smoothing.
-\end{proof}
-
-We will distinguish two types of smoothings.
-
-A \emph{disconnected smoothing} is a smoothing of a crossing of two distinct curves.
-A \emph{connected smoothing} is a smoothing of a self-crossing of two distinct curves.
-
-\subsubsection{Right-handed crossings}
-\label{subsec:rhcrossings}
 
 \DMGtodo[inline]{right handed crossings}
 In order to work better with group elements and crossings between
@@ -200,67 +178,57 @@ they pass through the basepoint~$*$, and take $c$ to be the homotopy
 class of the loop that runs along~$[b]$ from $*$ to the chosen
 intersection, and back along~$[a]$ from the chosen intersection
 to~$*$.
-
-\DMGtodo[inline]{ basic smoothing lemmas (essentially follow or are equivalent to statements in Triality)}
-
-Since a right-handed crossing is essential, we have the following.
-\begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{x}$ to the
-right (or to the left), then
-\[
-  [a][x] \reducesto [ax]\qquad\text{and}\qquad[a][x] \reducesto [aX].
-\]
-\end{lemma}
-
 Observe that whether a crossing is ``right-handed'' is invariant under
 simultaneous conjugation of $a$ and $x$, but does depend on
 more than the conjugacy classes of $a$ and~$x$. (We need to specify
 which crossing we are considering.)
 
-We also have the following.
+\subsection{Smoothing}
+\label{subsec:smoothing}
 
-\begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) to $\ora{x}$, then
-\[
-  [ax] \reducesto [a][x]\qquad\text{and}\qquad[ax] \reducesto [aX].
-\]
-\end{lemma}
-
-\input{smoothings}
-
-\DMGtodo[inline]{types of smoothings according to orientation and connectedness}
+Given an essential crossing of a multi-curve, we can do an operation of ``smoothing'' in two different ways, each reducing the original multi-curve to a different one. We follow~\cite[2.2.~Crossings]{MGT21:Smoothings} closely.
 
 
-Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
-Indeed, if $(a,b)$ is a pair of crossing or parallel distinct elements, then the curves $[ab]$ and $[aB]$ are connected.
-
-\begin{definition}
-We will coin the following types of smoothing.
-\begin{enumerate}
-\item disconnected smoothing: For any pair of crossing elements $(a,b)$, 
- \begin{align}
-    \label{eq:sm_disconn_oriented} \mbox{oriented} \quad [a] \cup [b] &\searrow [ab]\\
-    \label{eq:sm_disconn_unoriented} \mbox{unoriented} \quad [a] \cup [b] &\searrow [aB]
-  \end{align}
-\item connected smoothing: For any pair of parallel elements $(a,b)$, 
- \begin{align}
-    \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] \cup [b] \\
-    \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].
-  \end{align}
-\end{enumerate}
+\begin{definition}[smoothings]
+  \label{def:smoothing}
+  Let $(p,q) \in X(\gamma)$ be an essential crossing of~$\gamma$
+  on~$S$. To make a \emph{smoothing}~$\gamma'$ of $(p,q)$, cut
+  $X(\gamma)$ at $p$ and~$q$ and reglue the resulting four endpoints
+  in one of the two other possible ways, getting a new $1$-manifold
+  $X(\gamma')$. The map $\gamma'$ agrees with~$\gamma$; this is
+  well-defined since $\gamma(p) = \gamma(q)$. In pictures we will
+  homotop $\gamma'$ slightly to round out the resulting
+  corners, and we will write $\gamma \reducesto \gamma'$. If $\gamma$ is oriented, then the \emph{oriented smoothing}
+  is the smoothing that respects the orientation on $X(\gamma)$:
+  \begin{equation*}
+    \mfig{curves-3} \reducesto \mfig{curves-4}
+  \end{equation*}
+  
+  If we obtain a curve $C'$ from $C$ by a sequence of
+$k$ smoothings of essential crossings,  we will write
+$C \reducesto_k C'$. (We check whether the
+crossings are essential at each stage of this process; this is
+more restrictive than checking at the beginning.)
 \end{definition}
 
-Observe that requiring the above condition for $R$-crossing (resp. $R$-parallel) is the same as requiring them for $L$-crossing (resp. $L$-parallel), by the symmetry of the conditions, conjugacy invariance, and the fact that if $(a,b)$ are $R$-crossing, then $(b,a)$ are $L$-crossing, and if $(a,b)$ are $R$-parallel, then $(b,a)$ are $L$-parallel.
+``Some'' in the definition of essential crossing can be replaced by ``every'':  if there is a crossing $x$ in some minimal representative
+  $\gamma$ of~$C$, then for any other minimal representative $\gamma'$
+  there is a corresponding crossing~$x'$ giving the same
+  smoothings.
 
-We also make the following trivial observation, using
-Convention~\ref{conv:circle-intervals}.
-\begin{lemma}\label{lem:hyperbolic}
-  The geodesics $(\ora{a}, \ora{x})$ R-cross iff
-  $a \cdot (x^-, x^+) \subsetneq (x^-, x^+)$. More generally, if
-  $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
-  endpoint $a^+$ in an interval $(x,y)$ iff
-  $a \cdot (x,y) \subsetneq (x,y)$.
+
+
+\begin{lemma}[{\cite[Lemma~2.6]{MGT21:Smoothings}}]\label{lem:essential-cross}
+  If $\gamma$ and $\gamma'$ are homotopic concrete
+  multi-curves, with $\gamma$ minimal and $(p,q) \in X(\gamma)$ is an essential crossing of~$\gamma$,
+  then there is a crossing $(p',q') \in X(\gamma')$ so
+  that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
+
+As a result of Lemma~\ref{lem:essential-cross}, we can speak of essential crossings also for concrete curves $\gamma$ that are not minimal.
+
+
+
 
 % Further, it is anti-symmetric: if
 % the crossing between $a$ and~$x$ is right-handed, then the crossing
@@ -268,10 +236,8 @@ Convention~\ref{conv:circle-intervals}.
 
 
 
-\subsubsection{Parallelism and crossing of hyperbolic axes}
-
-\DMGtodo[inline]{basic definitions and lemmas about parallelism and crossing}
-
+\subsection{Parallelism and crossing of hyperbolic axes}
+\label{subsec:parallel_crossing}
 We now turn to some elementary lemmas about crossing. For this
 purpose, we also distinguish the various other types of relations
 between two geodesics $\ora{a}, \ora{b}$.
@@ -469,32 +435,229 @@ following.
   \end{enumerate}
 \end{proof}
 
-    See Section~\ref{sec:appsintersection} for a more in depth analysis of the configurations of lifts that can arise from disconnected smoothings.
-
 \begin{remark}
   In the R-parallel case we do not make claims about the
   relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
   determined by the hypotheses.  Similarly the R-anti-parallel case says nothing about the relation
   of $\ora{ab}$ and $\ora{ba}$.
-  See Section~~\ref{subsec:connected_smoothing}, in particular Figure \ref{fig:r3} and Figure \ref{fig:r1} for the full analysis.
+  See Section~\ref{subsec:parallel_aB}, in particular Figure \ref{fig:r3} and Figure \ref{fig:r1} for the full analysis.
 \end{remark}
 
-  Lemma~\ref{lem:righthandedfoundation} applies to disconnected
-  smoothings. For a similar result for a
-  (self-)crossings of $a$ $\ora{ab}$ with $\ora{ba}$ one has to deal with several cases  (This is related to the
-  previous remark.) In particular if $\ora{ab}$ R-crosses $\ora{ba}$,
-  then $\ora{a}$ and $\ora{b}$ could be parallel or anti-parallel. The
-  full analysis is similar to the discussion of maximal bracelet
-  chains in the second author's earlier work \cite{Thurston14:PBI}.
 
-\subsection{Position of axes in parallel  case}
+\subsection{Triality of crossings: topological, geometric and algebraic}
 
-\DMGtodo[inline]{analyzing position of $aB$ and $Ba$ axes in the $a$ and $b$ parallel case.}
+To give a more workable and algebraic criterion for essential
+crossings, we
+adopt a group-theoretic point of view. For $a,b \in \pi_1(S,*)$, write
+$[a]$ for the free homotopy class of curves represented by $a$;
+algebraically this is the union of the conjugacy classes of~$a$ and
+of~$A$. Write $[a][b]$ for the multi-curve $[a] \cup [b]$. Say that a
+factorization $[ab]$ \emph{reduces} if some (equiv.\ every) taut
+representative of $[ab]$ has a crossing so that one smoothing gives
+$[a][b]$ and the other smoothing gives $[aB]$. Similarly say that
+$[a][b]$ \emph{reduces} if some/every taut representative has a crossing
+whose smoothings give $[ab]$ and $[aB]$. (This is an abuse of
+notation, since the reduction is not invariant under individual
+conjugation of $a$ and $b$.)
+
+For $a,b \in \pi_1(S,*)$, let $a * b$ be a 4-valent graph mapped into
+$S$ obtained by taking the union of the paths $a,b$ joined at the
+basepoint~$*$, and let $[a * b]$
+be its free homotopy class.
+Free homotopy means in particular invariance under simultaneous
+conjugation: $[a * b] = [caC * cbC]$. A \emph{minimal} representative of $[a * b]$
+is one with a minimum number of transverse crossings.
+
+Finally, if we fix a hyperbolic structure on~$S$, a non-trivial
+element $a \in \pi_1(S,*)$ determines a geodesic $\ora{a}$ in
+$\wt{S}$, the unique geodesic that stays a bounded distance from
+$a^k \cdot \wt{*}$, with endpoints $a^+$ and $a^-$. Depending on the
+cyclic order of the endpoints up to orientation reversal, we say that
+$\ora{a}$ and $\ora{b}$ are
+\begin{itemize}
+\item \emph{parallel} if they appear in order $a^-,a^+,b^+,b^-$;
+\item \emph{anti-parallel} if they appear in order $a^-,a^+,b^-,b^+$;
+  and
+\item \emph{cross} if they appear in order $a^-,b^-,a^+,b^+$.
+\end{itemize}
+These correspond to the notions of parallelism and crossing defined in Section~\ref{subsec:crossings} after dropping the distinction on orientation.
+
+\begin{definition}
+  Non-trivial group elements $a,b\in \pi_1$ are \emph{common powers}
+  if there are non-zero $k,\ell$ so that $a^k = b^\ell$. Since $\pi_1$
+  has no torsion, we may assume that $k,\ell$ are relatively prime and
+  then we see this is equivalent to the existence of a $c$ so that
+  $a = c^\ell$ and $b = c^k$.
+\end{definition}
+
+
+\begin{proposition}\label{prop:crossings-triality}
+  Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
+  common powers. Then in the following three trialities the same
+  possibility holds in each case.
+  \begin{enumerate}
+  \item (Reduction) One of the following factorizations reduces
+    to the other two:\\
+    \begin{enumerate*}[itemjoin=\qquad]
+    \item $[ab]$;
+    \item $[aB]$; or
+    \item $[a][b]$.
+    \end{enumerate*}
+  \item (Geometric) For every taut embedding of $a * b$, around the
+    4-valent vertex we see in cyclic
+    order, up to orientation reversal:\\
+    \begin{enumerate*}[itemjoin=\qquad]
+    \item $\mfig{curves-30}$;
+    \item $\mfig{curves-31}$; or
+    \item $\mfig{curves-32}$.
+    \end{enumerate*}
+  \item (Algebraic) The geodesics $\ora{a}$ and $\ora{b}$ are:\\
+    \begin{enumerate*}[itemjoin=\qquad]
+    \item parallel;
+    \item anti-parallel; or
+    \item cross.
+    \end{enumerate*}
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  Since $a$ and $b$ are not common powers, the endpoints of
+  $\ora{a}$ and $\ora{b}$ are all distinct from each other, so
+  the algebraic triality is mutually exclusive and exhaustive. For the
+  geometric triality, for any given embedding of $a * b$, one of the
+  three given possibilities holds, but it is not \emph{a priori} clear that
+  the same possibility holds for all taut embeddings. For the
+  reduction triality, the possibilities are mutually exclusive (we
+  can't have circular reductions, since at each reduction length with
+  respect any Riemannian metric strictly decreases) but now it is not
+  clear that any of the three possibilities holds.
+  
+  We start with the geometric triality. Consider any minimal representative
+  $\rho$ of $[a * b]$ in one of the cases (a), (b), or~(c). Consider
+  the (concrete) multi-curve~$\gamma$ given by replacing the
+  $4$-valent vertex with a crossing. If we pick orientations on $\gamma$
+  correctly, this is an embedding of $[ab]$, $[aB]$, or $[a][b]$,
+  respectively, with a distinguished crossing~$x$.
+
+  We claim that $\gamma$ is minimal. Otherwise, there is some reducing
+  isotopy using RIII moves and some RI/RII reduction
+  \cite{HS94:ShorteningCurves}. Any RIII move on~$\gamma$
+  can be copied with an isotopy of~$\rho$, as can an RI or RII reduction of
+  $\gamma$ that does not involve~$x$. An RI
+  reduction at~$x$ is only possible if $a$ or $b$ is the identity, and
+  an RII reduction involving~$x$ also reduces $\rho$,
+  reducing the number of intersections of $\rho$ by one. In any case
+  this contradicts minimality of~$\rho$ or
+  non-triviality of $a,b$.
+
+  We have thus shown that one of $[ab]$, $[aB]$, or $[a][b]$ has a
+  minimal representative $\gamma$ with a crossing~$x$ that can be
+  smoothed to give the other two multi-curves. Since we cannot have a
+  circular chain of essential smoothings (for instance because we get
+  strict inequalities of hyperbolic length), it follows that the cases
+  are exclusive and thus that \emph{every} minimal representative of
+  $[a * b]$ has the same cyclic order around the 4-valent vertex.
+  Combined this
+  proves equivalence of the first two trialities.
+
+  For the remaining equivalence, suppose first we
+  are in case~(c) of the geometric triality. For the fixed hyperbolic
+  structure, take $\gamma$ to be the geodesic representative of the free
+  homotopy class $[a][b]$, intersecting at the distinguished point
+  $x \in S$, and let $\ora{a}$ and $\ora{b}$ be the respective
+  lifts passing through some lift $\wt{x}$ of~$x$. Then $\ora{a}$ and
+  $\ora{b}$ intersect only once and thus cross at infinity, so we are
+  also in case~(c) of the algebraic triality.
+
+  If we are in case~(a) of the geometric triality, again take the
+  geodesic representative $\gamma$ of $ab$, with distinguished
+  crossing~$x$. For concreteness, if necessary reverse the
+  orientation of~$S$ so the branches appear in the order shown below.
+  If we
+  perform the disconnected (oriented) smoothing at $x$, we get two
+  components $\gamma_a \in [a]$ and $\gamma_b \in [b]$; these concrete
+  curves are typically not minimal. However, $\gamma_a$ and $\gamma_b$ are
+  regular isotopic to a taut curve \cite[Lemma 5.5]{Thurston14:PBI},
+  i.e., there is no RI move required in making them taut. This is
+  equivalent to saying that their lifts $\wt{\gamma_a}$ and $\wt{\gamma_b}$ to
+  $\wt{S}$ passing through a neighborhood of $\wt{x}$ are embedded in
+  the disk. Now consider
+  the endpoints $a^+, a^-$ of $\wt{\gamma_a}$. As an oriented curve,
+  $\wt{\gamma_a}$ is geodesic outside of neighborhoods of lifts of $x$, and
+  inside those neighborhoods turns to the left. It then follows that
+  $(ab)^+, a^+, a^-, (ba)^-$ occur in that cyclic order on
+  $\partial \wt{S}$, and similarly $(ab)^-, b^-,b^+,(ba)^+$ occur
+  in that cyclic order (see Figure~\ref{fig:parallel}).
+  It therefore
+  follows that $\ora{a}$ and
+  $\ora{b}$ are parallel, so we are in case~(a) of the algebraic
+  triality.
+
+  Case~(b) follows in the same way, interchanging $b \leftrightarrow B$.
+\end{proof}
+
+We extract the following two lemmas that follow immediately from Proposition~\ref{prop:crossings-triality}, and we will use extensively without referring to them.
+
+\begin{lemma}
+Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{x}$ to the
+right (or to the left), then
+\[
+  [a][x] \reducesto [ax]\qquad\text{and}\qquad[a][x] \reducesto [aX].
+\]
+\end{lemma}
+
+
+
+We also have the following.
+
+\begin{lemma}
+Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) to $\ora{x}$, then
+\[
+  [ax] \reducesto [a][x]\qquad\text{and}\qquad[ax] \reducesto [aX].
+\]
+\end{lemma}
+
+Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
+Indeed, if $(a,b)$ is a pair of crossing or parallel distinct elements, then the curves $[ab]$ and $[aB]$ are connected.
+
+\begin{definition}
+We will coin the following types of smoothing.
+\begin{enumerate}
+\item disconnected smoothing: For any pair of crossing elements $(a,b)$, 
+ \begin{align}
+    \label{eq:sm_disconn_oriented} \mbox{oriented} \quad [a] \cup [b] &\searrow [ab]\\
+    \label{eq:sm_disconn_unoriented} \mbox{unoriented} \quad [a] \cup [b] &\searrow [aB]
+  \end{align}
+\item connected smoothing: For any pair of parallel elements $(a,b)$, 
+ \begin{align}
+    \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] \cup [b] \\
+    \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].
+  \end{align}
+\end{enumerate}
+\end{definition}
+
+Observe that requiring the above condition for $R$-crossing (resp. $R$-parallel) is the same as requiring them for $L$-crossing (resp. $L$-parallel), by the symmetry of the conditions, conjugacy invariance, and the fact that if $(a,b)$ are $R$-crossing, then $(b,a)$ are $L$-crossing, and if $(a,b)$ are $R$-parallel, then $(b,a)$ are $L$-parallel.
+
+We also make the following trivial observation, using
+Convention~\ref{conv:circle-intervals}.
+\begin{lemma}\label{lem:hyperbolic}
+  The geodesics $(\ora{a}, \ora{x})$ R-cross iff
+  $a \cdot (x^-, x^+) \subsetneq (x^-, x^+)$. More generally, if
+  $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
+  endpoint $a^+$ in an interval $(x,y)$ iff
+  $a \cdot (x,y) \subsetneq (x,y)$.
+\end{lemma}
+
+
+\subsection{Position of axes $aB$ and $Ba$ in parallel  case}
+\label{subsec:parallel_aB}
+In order to check the smoothing property in more algebraic settings, we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be useful in particular when curve functionals arise from periods of cross-ratios in Section~\ref{sec:crossratios}.
+Observe that the relative of position of $\ora{aB}$ and $\ora{Ba}$ is completely determined  when $\ora{a}$ and $\ora{b}$ cross, by Lemma~\ref{lem:righthandedfoundation} (I). However, when $\ora{a}$ and $\ora{b}$ are parallel (or anti-parallel), several cases arise. In this section we study these cases.
 
 If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
 
 One of the resolutions of $[ab]$ is the multi-curve $[a] \cup [b]$.
-The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel. \DMGtodo[inline]{does this need justification? This is essentially saying that we only need to consider the case $a$ and $b$ parallel, and we do not need to worry about $a$ and $b$ being anti-parallel.}
+The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel.
 It remains to determine the position of the lifts $\ora{aB}$ and $\ora{Ba}$.
 
 To that end, consider the common perpendicular line of $a$ and $b$. Let $R_1$ be the reflection along this line.
@@ -536,6 +699,9 @@ We note there is another case, analogous to case 2, where the reflection lines b
 We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ may cross
 (Figure~\ref{fig:c2}).
 
+\begin{remark}
+Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are antiparallel). Let us show a concrete example where this situation arises.
+
 \DPTtodo[inline]{More text to be written here. It's awkward that I
   named the generators of $\pi_1(P)$ by $a$ and $b$. Maybe $g$ and $h$
   should be used above? I have not double-checked the cases}
@@ -546,55 +712,9 @@ $\ora{aB}$ parallel to $\ora{Ba}$.
 \[
   \mfigb{curves-42}
 \]
-
-\subsection{Relation between connected/disconnected smoothing and crossing/parallel conditions} 
-
-\DMGtodo[inline]{proof of the equivalence of Intersections when phrased in the algebraic way}
-
-\DMGtodo[inline]{I moved the statement to the introduction. The proof is still here, but should we moved elsewhere.}
-
-We are now ready to prove Theorem~\ref{thm:intersections_group}
+\end{remark}
 
 
-\begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
-Extend $f$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves.
-\[
-f(s \cdot a + t \cdot b) = s\cdot f(a) + t \cdot f(b)
-\]
-for every $s,t \geq 0$, and $a,b \in \Gamma$.
-
-The smoothing condition of Theorem~\ref{thm:intersect_primeprime} is a priori stronger than the hypotheses of this theorem.
-It remains to show the hypotheses of this theorem imply smoothing.
-Suppose $a,b$ have an essential crossing. 
-Then, either $(a,b)$ are $R$-crossing, or $(a,b)$ are $L$-crossing. If $(a,b)$ is $R$-crossing, we have
-\[
-f(a)+f(b) = f(a + b) \geq f(ab).
-\]
-Also, $(B,a)$ is $R$-crossing, and thus
-\[
-f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB)
-\]
-On the other hand, if $(a,b)$ are $L$-crossing, then $(b,a)$ is $R$-crossing, hence
-\[
-f(b)+f(a) \geq f(ba) = f(ab).
-\]
-Also, if  $(a,b)$ are $L$-crossing, thus $(a,B)$ is $R$-crossing, hence
-\[
-f(a)+f(b) = f(b)+f(B) \geq f(aB).
-\]
-All in all, if $a,b$ cross essentially, $f$ satisfies $f(a) + f(b) \geq \max \{ f(ab) , f(aB) \}$, so $f$ satisfies disconnected smoothing.
-
-For $ab$ with a self-intersection, this is equivalent to $(a,b)$ being $R$-parallel or $(a,b)$ being $L$-parallel.
-For any pair of $R$-parallel elements $(a,b)$, 
-\[
-f(ab)\geq \max \{ f(a) + f(b), f(aB)\}
-\]
-If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
-\[
-f(ab)=f(ba)\geq \max \{ f(b) + f(a), f(bA)\} = \max \{ f(a) + f(b), f(aB)\} 
-\]
-Hence, connected smoothing is satisfied.
-\end{proof}
 
 \subsection{Fundamental smoothing lemmas}
 \label{sec:fund-smoothing}
