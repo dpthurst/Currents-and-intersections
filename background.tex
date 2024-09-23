@@ -321,7 +321,8 @@ $G^{+}(S)$.
   \lim_{n^+}\lim_{m^+} a_{n,m} = \lim_{m^+}\lim_{n^+} a_{n,m} = \lim_{n^+, m^+} a_{n,m}  
   \]
 \end{lemma}
-\DPTtodo[inline]{We should prove or cite this. One proof goes through
+\DPTtodo[inline]{Check if we agree with Habil's proof. Otherwise,
+  prove or cite this. One proof goes through
   order ideals. Let $V = \inf a_{n,m}$, and consider
   $\{(n,m) \mid a_{n,m} < V + \epsilon\}$. For $\epsilon > 0$, this
   set is an order ideal by monotonicity and is non-empty by def.\ of
@@ -371,9 +372,11 @@ $2g(5r_0/4) \le g(0) + g(5r_0/2)$.
  
  The proof of the analogous lemma for two-variable functions is very similar to that of Lemma~\ref{lem:limexistrmidconvex}.
  
-   \DPTtodo{Write proof for this one}
+   \DPTtodo{This is what we actually need. DPT HW}
   \begin{lemma}
- Given a $(r,s)$-midpoint convex function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ which is bounded, then $\lim_{n,m} g(n^{\pm},m^{\pm}) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m)$ exist.
+ Given a $(r,s)$-midpoint convex function $g \colon \mathbb{N} \times
+ \mathbb{N} \to \mathbb{R}$ which is bounded, then the following
+ limits exist and are equal: $\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+} \lim_{n^+} g(n,m)$.
  \label{lem:limexistrmidconvextwovar}
  \end{lemma}
 
@@ -385,7 +388,9 @@ $2g(5r_0/4) \le g(0) + g(5r_0/2)$.
 
 
  \begin{proposition}
- Let $a_{n,m}$ for $n,m \geq 0$ be a double sequence of real numbers. Define $b_{n,m} \coloneqq a_{n,m} - a_{n-1,m}$ satisfying the following conditions:
+ Let $a_{n,m}$ for $n,m \geq 0$ be a double sequence of real numbers,
+ and define $b_{n,m} \coloneqq a_{n,m} - a_{n-1,m}$. Suppose the
+ numbers satisfy the following conditions:
  \begin{enumerate}
  \item $a_{n,m}$ is weakly increasing in $n$ (i.e., $b_{n,m} \geq 0$).
  \item For every $n \geq 0$, $\lim_m b_{n,m}$ exists.
@@ -394,7 +399,7 @@ $2g(5r_0/4) \le g(0) + g(5r_0/2)$.
  \end{enumerate}
  Then
  \[
- \lim_{m^+} \lim_n a_{n,m} =  \lim_{n^+} \lim_m a_{n,m}.
+ \lim_{m^+} \lim_{n^+} a_{n,m} =  \lim_{n^+} \lim_{m^+} a_{n,m}.
  \]
  \label{prop:exchange_limits}
  \end{proposition}
