@@ -1,10 +1,62 @@
 \section{Boxes and their measures}
-\DPTtodo[inline]{Proposal: Move positivity statements here}
+
+Our goal is to define a measure on the space of geodesics -in fact, a geodesic current- associated to a curve functional $f$.
+Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the sigma algebra of open sets of $G^+(\Sigma)$.
+The following two results, which will be used later on, hint at where the positivity comes from.
+
+In fact, an immediate consequence of smoothing and convex union is positivity of $f$.
+
+\begin{proposition}
+  Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
+  \label{prop:curve-positive}
+\end{proposition}
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right, so
+$[a][x] \reducesto [ax]$.
+By Lemma~\ref{lem:rhs_prod}, we see that
+$(\ora{ax},\ora{a})$ L-cross, so
+(by unoriented smoothing) $[ax][a]
+\reducesto [x]$. We thus have
+\begin{align*}
+    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
+     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
+\end{align*}
+Adding the equations, we get $f(a) \geq 0$.
+\end{proof}
+
+Although we will not use it in this paper, we note that a similar
+argument with different assumptions also yields positivity.
+
+\begin{proposition}
+  Let $f$ be a functional satisfying convex union, quasi-smoothing,
+  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
+  \pi_1(S)$.
+  \label{prop:curve-positive2}
+\end{proposition}
+
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
+\begin{align*}
+[a^n][x] &\reducesto [a^nx]\\
+[a^nx][a^n]&\reducesto [x].
+\end{align*}
+Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
+\begin{align*}
+    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
+     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
+\end{align*}
+Adding the equations, we get $f(a^n) \geq -2R$. By stability and
+homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
+enough we see that $f(a) \geq 0$.
+\end{proof}
 
 \subsection{Right-handed boxes}
 \label{sec:boxes}
 
-We now turn to the outline of the construction.
+We now turn to the outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
+
 Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing, stability
 and homogeneity.
@@ -330,11 +382,20 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
   By Lemma~\ref{lem:diagonaldense}, we can find translates
   $p_i\cdot \ora{x}$ and $q_j \cdot \ora{x}$ with both endpoints in
   the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. To
-  make a RH box, we must require that
+  make a RH box (which will be automatically of Type I, since both endpoints of the lifts of $\wt{x}$ are constrained in a small neighborhood), we must require that
   $p_i \cdot \ora{x}$ be clockwise $B_\epsilon(v_i)$ and the endpoints
   of $q_i \cdot \ora{x}$ be counterclockwise within $B_\epsilon(w_i)$;
-  again we can achieve this. See Figure~\ref{fig:approx2} (right). \DMGtodo[inline]{Are we approximating by boxes of Type I? Do we need to check condition (4)?}
+  again we can achieve this. See Figure~\ref{fig:approx2} (right).
+  This guarantees condition (3').
+  If condition (2') is not satisfied, we can slightly perturb the choice in Lemma~\ref{lem:diagonaldense} to ensure it.
+  Moreover, since the box is of Type I, condition (4') is automatically satisfied.
 \end{proof}
+
+\begin{remark}
+A similar argument as in the above proof guarantees that the boxes of Type II and Type III are also dense in the above sense.
+\end{remark}
+
+\DMGtodo[inline]{added more detail in checking the conditions of RH, and showing that in fact we prove that boxes of Type I are dense.}
 
 \begin{figure}
 \centering{
@@ -364,55 +425,7 @@ then a measure) is automatically $\pi_1(S)$-invariant.
 We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas,
 using the results from Section~\ref{sec:fund-smoothing}.
 
-\DPTtodo{Do we use this positivity directly? If not acknowledge that,
-  or maybe move positivity to the intro (with forward refs)}
-An immediate consequence of smoothing and convex union is positivity of $f$.
 
-\begin{proposition}
-  Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
-  \label{prop:curve-positive}
-\end{proposition}
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right, so
-$[a][x] \reducesto [ax]$.
-By Lemma~\ref{lem:rhs_prod}, we see that
-$(\ora{ax},\ora{a})$ L-cross, so
-(by unoriented smoothing) $[ax][a]
-\reducesto [x]$. We thus have
-\begin{align*}
-    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
-     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
-\end{align*}
-Adding the equations, we get $f(a) \geq 0$.
-\end{proof}
-
-Although we will not use it in this paper, we note that a similar
-argument with different assumptions also yields positivity.
-
-\begin{proposition}
-  Let $f$ be a functional satisfying convex union, quasi-smoothing,
-  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
-  \pi_1(S)$.
-  \label{prop:curve-positive2}
-\end{proposition}
-
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
-\begin{align*}
-[a^n][x] &\reducesto [a^nx]\\
-[a^nx][a^n]&\reducesto [x].
-\end{align*}
-Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
-\begin{align*}
-    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
-     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
-\end{align*}
-Adding the equations, we get $f(a^n) \geq -2R$. By stability and
-homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
-enough we see that $f(a) \geq 0$.
-\end{proof}
 
 Using the smoothing lemmas, we can see a key limit to construct the measure
 exists.
@@ -695,10 +708,10 @@ $\ell^- \in (r^+,r^-)$ iff $(\ora{\ell},\ora{r})$ are R-parallel or
 L-anti-parallel.
 
 To visualize these conditions better, consider the space of oriented
-geodesics \DPTtodo{Is this how we use notation? I think we forgot to
-  define $G(S)$}
-$G^+(S) = S^1_\infty \times S^1_\infty \setminus \Delta$, drawn in the
-usual way as a square with opposite sides identified.\DMGtodo[inline]{as written, opposite edges are not identified (oriented geodesics)} We represent
+geodesics 
+$G^+(S) = S^1_\infty \times S^1_\infty \setminus \Delta$ (recall Definition~\ref{def:spacegeodesics}),
+drawn in the
+usual way as a square with opposite sides identified. We represent
 $(\ell^-,\ell^+)$ by drawing a ``whisker'', a horizontal segment at
 $y$-coordinate $\ell^-$ from $\ell^-$ (on the diagonal) to $\ell^+$.
 Similarly represent $(r^+,r^-)$ by a vertical segment at
@@ -724,50 +737,18 @@ all the way back to the diagonal.
 }
 \end{figure}
 
+Finally, we show that the set of RH boxes $\mathbb{B} \coloneqq \{ B_{a,b,c,d} \}$ forms a semi-ring, in the sense of Definition~\ref{def:semiring}.
+First, the intersection of boxes is obviously a box. Indeed, all sides of a box are necessarily in the
+    respective whisker, and any new vertices of the intersection are thus intersections of whiskers.
+Second, we show that if $A,B$ are boxes, then $A \backslash B$ is a finite union of boxes. 
+By density of endpoints of translates of $\wt{x}$, we can take sufficiently many long horizontal and vertical whiskers that cut $A \backslash B$ into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. We have thus proven the following.
+
 \begin{proposition}
 \label{prop:RHsemiring}
 The right handed boxes $B_{a,b,c,d,\tilde{x}}$ form a semi-ring and $\mu_f$ is finitely additive.
 \end{proposition}
-
-\begin{proof}
-  The intersection of boxes is obviously a box.
-  \DMGtodo[inline]{should we give the proof?}
-  \DPTtodo[inline]{Yes. All sides of a box are necessarily in the
-    respective whisker. Any new vertices of the intersection are thuse
- intersections of whiskers.}
-  
-We show that if $A,B$ are boxes, then $A - B$ is a finite union of boxes. 
-\begin{comment}There are at least two ways to see this.
-
-\begin{enumerate} \item One is by induction on the number of vertical and horizontal divisions.
-Look at any vertical division whose whisker
-reaches
-the upper boundary. There are two cases:
-\begin{itemize} \item If there isn't any, then here's a rectangle that
-reaches clear across the top; remove that rectangle, and by induction on the number of horizontal divisions,
-build up the rest using side-by-side additivity on the lower region, and then add that
-missing rectangle.
-\item Otherwise, that is, if there is such a division, divide the entire collection of rectangles at the location
-of that vertical division (by taking a longer vertical whisker. By induction, build up each half
-by side-by-side additivity, and then attach the two sides together.
-\end{itemize}
-
-\item
-
-\end{enumerate}
-
-\end{comment}
-
-Given an element $x \in \pi_1(S,*)$ corresponding to a simple closed curve, a choice of geodesic lift $\tilde{x}$ with endpoints $x^{+}$ and $x^{-}$ and an arbitrary element $a \in \pi_1(S,*)$, we can determine a \emph{whisker}, a half-closed half-open segment $G(\Sigma)$, as follows. The whisker is a vertical segment in the space $G(\Sigma)$ with horizontal coordinate determined by $a \cdot x^{+}$ and vertical span given by the complement of $[a \cdot x^{-},a \cdot x^{+})$, as in Figure~\ref{fig:whiskers}.
-
-
-\DMGtodo[inline]{This is rough, needs to be written more
-  carefully}Notice that the basepoints of whiskers correspond to
-startpoints/endpoints of lifts of a closed geodesic in
-$\tilde{\Sigma}$, and they are dense
-% \DMGtodo[inline]{(Punctures) Uses
-%   surface is closed, otherwise replace with limit set.}
-in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long horizontal and vertical whiskers that cut the box division into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. \qedhere
+ 
+ 
 \begin{figure}
 \centering{
 \resizebox{40mm}{!}{\svgfig{breakingup}}
@@ -775,7 +756,7 @@ in $\partial_{\infty}\tilde{\Sigma}$. We can thus take sufficiently many long ho
 \label{fig:breaking}
 }
 \end{figure}
-\end{proof}
+
 
 
 From now on, let's denote the semiring by $\mathcal{S}$.

@@ -17,6 +17,7 @@ Let $X$ be a set.
   $A \backslash B$ belong to~$\mathcal{R}$. If $\mathcal{R}$ is a
   ring, the \emph{$\sigma$-ring} of $\mathcal{R}$ is the set of
   countable unions of elements of~$\mathcal{R}$.
+  \label{def:semiring}
 \end{definition}
 
 \begin{definition}[semialgebra, algebra, $\sigma$-algebra]
@@ -217,6 +218,47 @@ Let $X$ be a locally compact space. A closed set $A \subset \mathcal{M}(X)$ is c
 \end{theorem}
 
 In particular, the set of bounded measures on a locally compact space is compact.
+
+\subsection{Geodesic currents}
+
+\subsection{Space of geodesics}
+
+\begin{definition}[Boundary at infinity]
+\label{def:boundaryinfty}
+Endow $S$ with a complete
+hyperbolic  metric~$g$; we denote the pair $(S,g)$ by~$\Sigma$. Then
+we can consider the metric
+universal covering $p \colon \wt{\Sigma} \to \Sigma$, with
+$\wt{\Sigma}$ isometric to the hyperbolic plane.
+Two quasi-geodesic rays $c,c' \colon [0,\infty) \to \wt{\Sigma}$ are
+said to be \emph{asymptotic} if there exists a constant $K$ for which
+$d(c(t),c'(t)) \leq K$ for all $t \geq 0$. We define
+$\partial_{\infty} \Sigma$, the \emph{boundary at infinity}
+of~$S$, to be the set of equivalence classes of
+asymptotic quasi-geodesic rays. This boundary at infinity is
+independent of the hyperbolic structure on~$S$ up to canonical
+homeomorphism.
+\end{definition}
+
+\begin{definition}[Space of oriented geodesics]
+
+\label{def:spacegeodesics}
+Let $G^{+}(\Sigma)$ denote the space of \emph{oriented geodesics} in
+$\wt{\Sigma}$, i.e.,
+\[
+G^+(\Sigma) \coloneqq\partial_\infty \Sigma  \times\partial_\infty\Sigma - \Delta.
+\]
+Since this is independent of the hyperbolic structure, we will also
+write $G^+(S)$.
+\end{definition}
+
+
+\begin{definition}\label{def:currents}
+We define $\Curr(S)$, the space of geodesic currents on $S$,
+to be the
+space of $\pi_1(S)$-invariant and flip invariant Radon measures on
+$G^{+}(S)$.
+\end{definition}
 
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}

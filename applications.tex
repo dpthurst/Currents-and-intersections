@@ -53,7 +53,7 @@ i(1/2 M,\cdot)=f(\cdot).
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
-Since $f \in \AConvex(S)$, by Theorem~\ref{mainthm:intersections} there exists a geodesic current $\mu$ so that
+Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesic current $\mu$ so that
 \[
 i(\mu, C) = f(C)
 \]
@@ -112,20 +112,20 @@ and
 We need first the following hyperbolic geometry lemma.
 
 \begin{proposition}
-Consider two elements $g,h \in \pi_1(\Sigma)$ with hyperbolic axes $A_g$ and $A_h$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
+Consider two elements $g,h \in \pi_1(\Sigma)$ with hyperbolic axes $\ora{g}$ and $\ora{h}$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
 We define the following four points:
 
-\begin{itemize} \item $P$ is the point on $A_g$ obtained by moving forward from $O$ by distance $\ell(g)/2$;
-\item $Q$ is the point on $A_h$ obtained by moving backward from $O$ by distance $\ell(h)/2$;
-\item $Q'$ is the point on $A_h$ obtained by moving forward from $O$ by distance $\ell(h)/2$;
-\item $P'$ is the point on $A_g$ obtained by moving backward from $O$ by distance $\ell(g)/2$.
+\begin{itemize} \item $P$ is the point on $\ora{g}$ obtained by moving forward from $O$ by distance $\ell(g)/2$;
+\item $Q$ is the point on $\ora{h}$ obtained by moving backward from $O$ by distance $\ell(h)/2$;
+\item $Q'$ is the point on $\ora{h}$ obtained by moving forward from $O$ by distance $\ell(h)/2$;
+\item $P'$ is the point on $\ora{g}$ obtained by moving backward from $O$ by distance $\ell(g)/2$.
 \end{itemize}
 We have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
-\item $A_{gh}$ is the line containing the segment $(Q,P]$ of length $\ell(hg)/2$.
-\item $A_{hg}$ is the line containing the segment $(P',Q']$ of length $\ell(hg)/2$.
-\item $A_{gh^{-1}}$ is the line containing the segment $(Q',P]$ of length $\ell(gh^{-1})/2$.
-\item $A_{h^{-1}g}$ is the line containing the segment $(P',Q]$ of length $\ell(h^{-1}g)/2$.
+\item $\ora{gh}$ is the line containing the segment $(Q,P]$ of length $\ell(hg)/2$.
+\item $\ora{hg}$ is the line containing the segment $(P',Q']$ of length $\ell(hg)/2$.
+\item $\ora{gh^{-1}}$ is the line containing the segment $(Q',P]$ of length $\ell(gh^{-1})/2$.
+\item $\ora{h^{-1}g}$ is the line containing the segment $(P',Q]$ of length $\ell(h^{-1}g)/2$.
 \end{enumerate}
 Furthermore, the union $G((Q,P])\cup G((P',Q'])$ (resp. $G((Q',P]) \cup G((P',Q])$) is a fundamental domain for the action of $gh$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $gh^{-1}$).
 \label{prop:keygeometry}
@@ -139,20 +139,20 @@ Furthermore, the union $G((Q,P])\cup G((P',Q'])$ (resp. $G((Q',P]) \cup G((P',Q]
 \end{figure}
 
 \begin{proof}
-We prove the first case. Since $A_g$ and $A_h$ intersect at $O$, so do the curves $[g]$ and $[h]$ at some point $o \in \Sigma$.
+We prove the first case. Since $\ora{g}$ and $\ora{h}$ intersect at $O$, so do the curves $[g]$ and $[h]$ at some point $o \in \Sigma$.
 Perform a smoothing opperation obtaining a new curve $\alpha$ of length $\ell(g) + \ell(h)$.
-A lift $a$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $A_h$ of length $\ell(h)$, then a segment of $A_{h^{-1}gh}$ of length $\ell(g)$, etc.
+A lift $a$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $\ora{h}$ of length $\ell(h)$, then a segment of $\ora{h^{-1}gh}$ of length $\ell(g)$, etc.
 Let $\alpha_*$ be the geodesic representative in the homotopy class of $\alpha$.
 Now, connecting the midpoints of the geodesic segments of $a$ we obtain another piecewise geodesic $a'$ which is, in fact, a geodesic segment.
 Indeed, we note that $a$ is invariant under angle $\pi$ rotation around any of the intersection points between $a$ and $a'$.
 Since $a$ and $a'$ have the same stabilizer, they are lifts of the same geodesic $\alpha$.
 Thus, the lift of $\alpha_*$ is $a'$, which is determined by two of the midpoints defining $a$, such as $P'$ and $Q'$.
-As for the translation lengths, we note that $h=r_O r_{Q'}$ where $r_O$ denotes the reflection along the geodesic perpendicular to $A_h$ at $O$,
+As for the translation lengths, we note that $h=r_O r_{Q'}$ where $r_O$ denotes the reflection along the geodesic perpendicular to $\ora{h}$ at $O$,
 and $r_{Q'}$ is the corresponding reflection at $Q'$.
 Similarly, we can write $g=r_{P'}r_O$, and thus $gh=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $a'$ of translation length
 twice the distance between $P'$ and $Q'$.
 The other cases follow similarly.
-As for the assertion on fundamental domains, we note that the segment $(P',Q']$ on the axis of $A_{hg}$, is sent by $g$ to a segment $(P,R]$, where $R=g(Q')$ appears forward of $P$ in according to the orientation of $A_{hg}$, and the segment $(Q,R]$ is a fundamental domain for the action of $gh$ on its axis $A_{gh}$, thus $G((Q,R])=G((Q,P]) \cup g G((P',Q'])$ is a fundamental domain for the action of $hg$ on $G(\Sigma)$, thus the claim follows.
+As for the assertion on fundamental domains, we note that the segment $(P',Q']$ on the axis of $\ora{hg}$, is sent by $g$ to a segment $(P,R]$, where $R=g(Q')$ appears forward of $P$ in according to the orientation of $\ora{hg}$, and the segment $(Q,R]$ is a fundamental domain for the action of $gh$ on its axis $\ora{gh}$, thus $G((Q,R])=G((Q,P]) \cup g G((P',Q'])$ is a fundamental domain for the action of $hg$ on $G(\Sigma)$, thus the claim follows.
 The other claim is similar.
 \end{proof}
 
@@ -171,9 +171,9 @@ By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that 
 It remains to show that $\mu_f$ is a measured lamination, using the disconnected max-smoothing property.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
 consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
-Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $A_{h^{-1}g}$ and $A_{gh^{-1}}$. 
+Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$. 
 
-Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $A_{gh}$ and $A_{hg}$.
+Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
 
 Given elements $g$ and $h$  with intersecting axes, let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
 
@@ -186,7 +186,7 @@ Hence, by continuity of measures from below, we have
 If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
 
-Similarly, let $R_n^T$ denote the set of geodesics intersecting the sides of $H_n$ contained in $A_{ab}$ and $A_{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
+Similarly, let $R_n^T$ denote the set of geodesics intersecting the sides of $H_n$ contained in $\ora{ab}$ and $\ora{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
 \[
 \mu(R_n^T)=1/2(f(a) + f(b)-f(ab)).
 \]
@@ -411,8 +411,8 @@ Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pai
 \end{itemize}
 
 
-Given $G=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $A_g, A_h$ be the hyperbolic axes corresponding to these elements.
-If two axes $A_g,A_h$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
+Given $G=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
+If two axes $\ora{g},\ora{h}$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
 It is standard that a measured lamination $\lambda$ defines a (dual) $\pi_1(\Sigma)$ minimal irreducible action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
 It follows from the construction of $T(\lambda)$ is that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
 Given a minimal action of a surface group $G$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\pi_1(\Sigma)$-equivariant isometry $\phi \colon T(\lambda) \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
@@ -420,7 +420,7 @@ Given a minimal action of a surface group $G$ on an $\mathbb{R}$-tree, if there 
 Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
 \begin{enumerate}
     \item it is small,
-    \item it \emph{preserves axes intersection}: for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$.
+    \item it \emph{preserves axes intersection}: for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g} \cap \ora{h}$ cross.
 \end{enumerate}
 An action of a group $G$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
@@ -440,19 +440,12 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \end{theorem}
 \begin{proof}
 \DMGtodo[inline]{Figure out how irreducibility is being used, we never invoke it explicitly but we surely use it} We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
-Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $A_g \cap A_h \neq \emptyset$, where $T_g$ denotes the axis of $g$ in the tree, and $A_g$ the hyperbolic axis on $\Sigma$.
+Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}$ and $\ora{h}$ cross, where $T_g$ denotes the axis of $g$ in the tree.
 We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
 There are several cases to consider, depending on the relative position of the axes of the elements in the tree. For each case, different inequalities between $\| g\| + \| h \|$, $\| gh \|$ and $\| gh^{-1} \|$ are satisfied, and were analyzed by Paulin~\cite{Pa89:Paulin1989TheGT}. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree, for each one of those cases.
 In some of them, max-smoothing will be satisfied, but it will not in all of them. In the latter case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface, which will allow us to rule that case out.
-In order to implement this strategy, the following lemma to find pairs of non-intersecting axes in the tree will be useful.
+In order to implement this strategy, we will use the following lemma to find pairs of non-intersecting axes in the tree will be useful.
 
-\begin{lemma}
-$\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
-\label{lem:char_irred_good}
-\end{lemma}
-\begin{proof}
-By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and only if there exist a pair of hyperbolic elements whose axes have bounded non-empty intersection. By~\cite[Theorem~3.3]{CM87:GroupActions} this implies the existence of a good pair. On the other hand, one of the requirements of a good pair is that both elements are hyperbolic and their axes have bounded overlap.
-\end{proof}
 
 \begin{lemma}
   For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
@@ -462,10 +455,19 @@ By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and o
    This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
 \end{proof}
 
+We start with some elementary lemmas about irreducibility.
+
+\begin{lemma}
+$\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
+\label{lem:char_irred_good}
+\end{lemma}
+\begin{proof}
+By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and only if there exist a pair of hyperbolic elements whose axes have bounded non-empty intersection. By~\cite[Theorem~3.3]{CM87:GroupActions} this implies the existence of a good pair. On the other hand, one of the requirements of a good pair is that both elements are hyperbolic and their axes have bounded overlap.
+\end{proof}
 
 Another way to characterize irreducibility is in terms of non-intersection of axes.
 \begin{lemma}
-$\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h = \empty$.
+$\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h = \emptyset$.
 \label{lem:char_irred_noninter}
 \end{lemma}
 \begin{proof}
@@ -506,7 +508,7 @@ If $(a,x)$ R-cross, we use Equation~\ref{eq:cross-split} in Proposition~\ref{pro
  \ell(ax^nax^{-n}) \geq \ell(ax^{n+r}) + \ell(ax^{-n-r})
  \label{eq:unoriented1}
 \end{equation}
-On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, by  we have that the left hans die is
+On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, by  we have that the left hand side is
 \begin{equation}
 \ell(ax^nax^{-n}) = \ell(ax^n) - \ell(ax^{-n}) = \ell(a) + n\ell(x) - (n\ell(x)-\ell(a)) = 2\ell(a)
 \label{eq:lhs1}
@@ -525,7 +527,7 @@ The proof above shows more that what it is stated: if the action $(\Gamma, T)$ h
 \end{remark}
 
 \begin{remark}
-Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing.
+Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows once again that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing. We had already seen a previous example in the setting of the linear extension of extremal length, in Example~\ref{ex:linEL}.
 \label{rmk:reducible_action}
 \end{remark}
 
@@ -539,7 +541,7 @@ In order to prove Theorem~\ref{prop:small}, let's consider several cases.
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item Case 1 (hyperbolic): we suppose that for a pair of elements $g,h \in \pi_1(X)$, all $g,h$ act hyperbolically on $T$.
 \begin{enumerate}
-    \item Case 1a. First, suppose that $g,h$ represent distinct closed curves on $S$ that intersect essentially.
+    \item Case 1a. First, suppose that $\ora{g}$ and $\ora{h}$ cross.
 The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-smoothing can be phrased as
 
 \[
@@ -547,15 +549,14 @@ The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-s
 \]
 
 This relation is true by result~\cite[1.8]{CM87:GroupActions}, since $T_g \cap T_h \neq \emptyset$.
-\item Case 1b. 
-Second, suppose that we have a closed curve with an essential self-intersection, represented by $g h$, where the concatenation is at the basepoint.
+\item Case 1b. Suppose that $\ora{g}$ and $\ora{h}$ are parallel.
 Max-smoothing amounts to
 
 \[
 \| gh \| = \max \{ \| g \| +\| h \| , \| gh^{-1} \| \}.
 \]
 
-We note that the self-intersection corresponds to the intersection of the hyperbolic axes of the elements $gh$ and $hg$. Thus, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
+ We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, by the axes intersection hypothesis, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
 There are three subcases to consider.
 \begin{enumerate}
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
@@ -587,12 +588,12 @@ Note that $T_k$ and $T_{(gh^{-1})^n}=T_{gh^{-1}}$ overlap in a segment of length
 Thus, $k$ and $(gh^{-1})^n$ form a good pair and, hence, by Lemma~\ref{lem:oppgoodpair} $T_{k(gh^{-1})^{-n}}$ and $T_{(gh^{-n})^{-1} k}$ do not intersect.
 Finally, note that $k(gh^{-1})^{-n} = (gh^{-1})^{-n} (h^{-1}g)$ and $(gh^{-n})^{-1} k = (gh^{-1})^{-(n+1)} (h^{-1}g)$, so the claim follows.
 \end{proof}
-We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain that $T_{(gh)^{-n} (hg)}$ and $T_{(gh)^{-(n+1)} (hg)}$ do not intersect. On the other hand, by application of Lemma~\ref{lem:righthandedfoundation}, part 1, Figure~\ref{fig:selfdyn} shows the configuration of axes obtained on the surface, which shows that $A_{(gh)^{-n} (hg)}$ and $A_{(gh)^{-(n+1)} (hg)}$ do intersect.
+We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain that $T_{(gh)^{-n} (hg)}$ and $T_{(gh)^{-(n+1)} (hg)}$ do not intersect. On the other hand, by application of Lemma~\ref{lem:righthandedfoundation}, part 1, Figure~\ref{fig:selfdyn} shows the configuration of axes obtained on the surface, which shows that $\ora{(gh)^{-n} (hg)}$ and $\ora{(gh)^{-(n+1)} (hg)}$ do intersect.
 
               \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{selfdyn}}
-    \caption{Configuration of axes on the surface when $A_{gh}$ and $A_{hg}$ are intersecting.}\label{fig:selfdyn}}
+    \caption{Configuration of axes on the surface when $\protect\ora{gh}$ and $\protect\ora{hg}$ are intersecting.}\label{fig:selfdyn}}
 \end{figure}
 \end{enumerate}
     
@@ -614,25 +615,25 @@ We go over these cases and rule out the problematic ones using the assumption of
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{tree}}
-    \caption{Configuration of axes when $A_{g}$ and $A_{h}$ are not intersecting}\label{fig:tree}}
+    \caption{Configuration of axes when $\protect\ora{g}$ and $\protect\ora{h}$ are not intersecting}\label{fig:tree}}
 \end{figure}
 
 We observe that $g h$ and $(h g)^{-1}$ overlap in $\Delta=d(z,y)$ so they form a good pair. Thus,  by Lemma~\ref{lem:oppgoodpair}, $T_{g h^2 g}$ and $T_{h g^2 h}$ do not intersect.
-On the other hand, since $A_{g},A_{h}$ cross, then $A_{gh}$ and $A_{hg}$ are parallel, by Lemma~\ref{lem:righthandedfoundation}, part 1, and thus $A_{gh^2g}$ and $A_{hg^2h}$ intersect by Lemma~\ref{lem:righthandedfoundation}, part 2, so we have a contradiction. This finishes the proof for the disconnected smoothing case.
+On the other hand, since $\ora{g},\ora{h}$ cross, then $\ora{gh}$ and $\ora{hg}$ are parallel, by Lemma~\ref{lem:righthandedfoundation}, part 1, and thus $\ora{gh^2g}$ and $\ora{hg^2h}$ intersect by Lemma~\ref{lem:righthandedfoundation}, part 2, so we have a contradiction. This finishes the proof for the disconnected smoothing case.
 In the connected smoothing case, the formula above says $\| g h \| = \| gh^{-1} \|$, so max-smoothing is satisfied.
 \item  Suppose $T_g \cap T_h \neq \emptyset$. 
 \begin{itemize}[wide, labelwidth=!, labelindent=0pt]
 \item Suppose $T_h$ and $T_{ghg^{-1}}$ are equal. Max smoothing would fail (both connected and disconnected) if $g$ acted as a reflection about the only fixed-point of $g$ on $T_h$, since then $\| gh \|=\| g^{-1}h \|=0$. 
-But in that case, $gh$ (and $hg$) are elliptic, and $gh^2g$ is hyperbolic (with axis equal to $A_{h}$).
-In the connected smoothing case, we can apply Case 3 to $gh, hg$ in the \emph{disconnected} smoothing case, since $A_{gh},A_{hg}$ intersect, ruling this case out.
+But in that case, $gh$ (and $hg$) are elliptic, and $gh^2g$ is hyperbolic (with hyperbolic axis equal to $\ora{h}$).
+In the connected smoothing case, we can apply Case 3 to $gh, hg$ in the \emph{disconnected} smoothing case, since $\ora{gh},\ora{hg}$ intersect, ruling this case out.
 In the disconnected smoothing case, we can apply Case 3 to $g, hg$ in the \emph{disconnected} smoothing case
-since $A_{g},A_{hg}$ intersect, and rule this case out.
+since $\ora{g},\ora{hg}$ intersect, and rule this case out.
 \item Suppose $T_h$ and $T_{ghg^{-1}}$ intersect in a compact segment.
 
-For disconnected max-smoothing we have that $A_g \cap A_h$ intersect, and we want to see $\| h \| = \max \{ \|gh\| , \|gh^{-1}\| \}$.
+For disconnected max-smoothing we have that $\ora{g}$ and $\ora{h}$ cross, and we want to see $\| h \| = \max \{ \|gh\| , \|gh^{-1}\| \}$.
 By ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that either $T_{g h g^{-1}}$ and $T_{h}$ intersect coherently, or $T_{g h g^{-1}}$ and $T_{h^{-1}}$ intersect coherently. In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, by~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, case (1), (ii), and in the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$. Thus, disconnected max-smoothing is satisfied in any case.
 
-In the connected smoothing case, $A_{gh}$ and $A_{hg}$ intersect, and we have $\| gh \| = \max \{ \|h\| , \|gh^{-1}\| \}$.
+In the connected smoothing case, $\ora{gh}$ and $\ora{hg}$ intersect, and we have $\| gh \| = \max \{ \|h\| , \|gh^{-1}\| \}$.
 Again, by ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that either $T_{g h g^{-1}}$ and $T_{h}$ intersect coherently, or $T_{g h g^{-1}}$ and $T_{h^{-1}}$ intersect coherently. 
 
 In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, so max-smoothing is satisfied. 
@@ -642,19 +643,19 @@ It remains to justify that $g(x)=y$ and $x=g(y)$. We start by proving the follow
 
 \begin{claim}Let $z$ be the unique fixed point of $h$ in the interval $[x,y]$. Then $z$ is the middle point between $x$ and $y$, and $g(x)=y$, $g(y)=x$.\end{claim}
 \begin{proof}[Proof of Claim]
-Following Paulin's notation, let $[z, +\infty)_{h}$ (resp. $(-\infty, z]_{h}$)  be the open half-line of $A_h$, with endpoint $z$, that does not contain $x$ (resp. $y$) but
+Following Paulin's notation, let $[z, +\infty)_{h}$ (resp. $(-\infty, z]_{h}$)  be the open half-line of $\ora{h}$, with endpoint $z$, that does not contain $x$ (resp. $y$) but
 contains $y$ (resp. $x$). In the same way, let $[z, +\infty)_{ghg^{-1}}$ (resp. $(-\infty, z]_{ghg^{-1}}$ be the
-open half-line of $A_{ghg^{-1}}$ with endpoint $z$, that does not contain $x$ (resp. $y$) but
+open half-line of $\ora{ghg^{-1}}$ with endpoint $z$, that does not contain $x$ (resp. $y$) but
 contains $y$ (resp. $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{ghg^{-1}}$ and sends $(-\infty, z]_{ghg^{-1}}$ to $[z, +\infty)_{ghg^{-1}}$, it follows that $[z,y]$ must be sent to $[z,x]$, and $[z,y]$ to $[z,x]$. Thus, the two segments must have equal length, half the length of the overlap $\Delta$, so $z$ must be the middle point of $[x,y]$ and $g(x)=y$, $g(y)=x$. 
 \end{proof}
 
 If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. 
 
-However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic \DMGtodo[inline]{This is not true if the action is reducible}. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $A_{h^k g}$ and $A_{gh^k}$ intersect for all $k>0$.
+However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic \DMGtodo[inline]{This is not true if the action is reducible}. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^k g}$ and $\ora{gh^k}$ intersect for all $k>0$.
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
-    \caption{Configuration of axes when $A_{ghg^{-1}}$ and $A_h$ overlap incoherently with overlap less than $\| h \|$.}\label{fig:oppositehypell}}
+    \caption{Configuration of axes when $\protect\ora{ghg^{-1}}$ and $\protect\ora{h}$ overlap incoherently with overlap less than $\| h \|$.}\label{fig:oppositehypell}}
 \end{figure}
 \item Suppose $T_h$ and $T_{ghg^{-1}}$ intersect in a ray $R_{\infty}$ with endpoint $x$.
 This is similar to the preceeding subcase.
@@ -668,7 +669,7 @@ If $gh$ is hyperbolic, then the diagram in the proof of~\cite[Proposition~1.8]{P
 $T_{gh}$ and $T_{hg}$ overlap in $[z,z']$ with opposite orientations. Indeed, the overlap can only be in $[z,z']$, since if $ w \in T_{hg} \cap [z',gz] \neq \emptyset$, then $hg(w)=w'$ in Figure~\ref{fig:ell}. But on the other hand we should have $hg(w) \in [hg z', hg z]$, since $w \in [\delta(z'), \delta(z)]$, because $\delta(z')=z')$.
 Given that $\| gh \| = 2d(z,z')$, this implies that $gh$ and $(hg)^{-1}$ form a good pair, and by Lemma~\ref{lem:oppgoodpair},
 $T_{gh^2g}$ and $T_{hg^2h}$ do not intersect.
-In the disconnected smoothing case, when $A_g$ and $A_h$ intersect, an application of Lemma~\ref{lem:righthandedfoundation} part 2, and then part 1, shows that $A_{gh^2g}$ and $A_{hg^2 h}$ intersect, which contradicts axes preservation.
+In the disconnected smoothing case, when $\ora{g}$ and $\ora{h}$ intersect, an application of Lemma~\ref{lem:righthandedfoundation} part 2, and then part 1, shows that $\ora{gh^2g}$ and $\ora{hg^2 h}$ intersect, which contradicts axes preservation.
 In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoothing is verified.
 
       \begin{figure}

@@ -98,11 +98,11 @@ Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
 i(\mu_f,C)=f(C)
 \]
 for every multi-curve $C$.
-\label{mainthm:intersections}
+\label{thm:intersect}
 \end{mainthm}
 
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}. By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{mainthm:intersections} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
     The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
     For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases.
@@ -140,7 +140,7 @@ for every $g \in \Gamma$.
 Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
 \label{thm:intersections_group}
 \end{mainthmprime}
-See section [XXX] \DMGtodo{add reference to section once the proof has been moved to the right position} for a proof of the equivalence of the smoothing condition in Theorem~\ref{mainthm:intersections} to conditions (4) \emph{and} (5) in Theorem~\ref{thm:intersections_group}.
+See section [XXX] \DMGtodo{add reference to section once the proof has been moved to the right position} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to conditions (4) \emph{and} (5) in Theorem~\ref{thm:intersections_group}.
 We emphasize that condition (4) alone is not enough to imply the smoothing condition: see Remark~\ref{rmk:reducible_action} and also Example~\ref{ex:linEL}.
 
 One should compare this result to previous work of Feng
@@ -148,7 +148,7 @@ Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve
 functionals on simple closed curves which can be realized as
 intersection numbers with measured laminations, i.e., geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo obtained a 
 characterization of measured laminations in terms of simple curve
-functionals~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. In Section~\ref{sec:appsintersection}, we use Theorem~\ref{mainthm:intersections} and an
+functionals~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. In Section~\ref{sec:appsintersection}, we use Theorem~\ref{thm:intersect} and an
 argument about fundamental domains of intersecting curves (for the
 $\pi_1(\Sigma)$-action on $G(\Sigma)$) to give a new characterization
 of measured laminations in terms of curve functionals~\ref{thm:char_laminations}. Feng Luo also
@@ -185,11 +185,11 @@ We note that \cite{BIPP21:Systoles}
 A general pseudo-metric is not uniquely determined by its stable length.  For pseudo-metrics quasi-isometric to a word metric, the stable length characterizes the pseudo-metric only up to uniform additive error (Cantrell-Tanaka), i.e., if $\ell_d(g)=\ell_{d'}$ then there exists $k$ so that $|d-d'| \leq k$.
 If the pseudo-metric space is isometric to an $\mathbb{R}$-tree, work of Culler-Morgan~\cite{CM87:GroupActions} shows that its stable length fully determines the pseudo-metric.
 For pseudo-metrics coming from geodesic currents, the situation is much nicer: the stable length does fully characterize the pseudo-metric (by Otal~\cite{Otal90:SpectreMarqueNegative}), thus all the maps above are injections.
-Theorem~\ref{mainthm:intersections} can be seen as a characterization of the image of $\iota$ as well as $\ell$. 
+Theorem~\ref{thm:intersect} can be seen as a characterization of the image of $\iota$ as well as $\ell$. 
 As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
 
 \begin{mainthm}
-Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{mainthm:intersections}. Then,
+Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}. Then,
 \begin{itemize}
 \item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}:
 \begin{equation*}
@@ -229,10 +229,28 @@ conjugacy classes in $G$ that are translation lengths of $G$-trees in
 terms of Culler-Morgan axioms. One can see our result in terms of the
 smoothing condition as further characterizing which functions on
 conjugacy classes in $G$ come from small $G$-tree actions, when
-$G=\pi_1(S)$. \DMGtodo[inline]{state here the table of conditions?}
+$G=\pi_1(S)$. 
 
-It would be interesting to see what can be said for
-small actions of a general hyperbolic group $G$. Misha Kapovich and
+In fact, what we prove is the following.
+
+\begin{mainthm}
+Let $\pi_1(S)$ act on a real tree $T$ minimally, and let $\ell \colon \pi_1(S) \to \mathbb{R}$ be its associated translation length on the tree.
+The action $\pi_1(S) \acts T$ is small if and only if $\ell$ satisfies the following.
+\begin{enumerate}
+\item For any pair of $R$-crossing elements $(a,b)$, 
+ \begin{align}
+    \label{eq:small_disconn} \ell(a) + \ell(b) & = \max \{ \ell(ab), \ell(aB) \}.
+  \end{align}
+\item For any pair of $R$-parallel elements $(a,b)$, 
+ \begin{align}
+    \label{eq:small_conn}  \quad \ell(ab) &= \max \{ \ell(a) + \ell(b), \ell(aB)\}.
+  \end{align}
+\end{enumerate}
+\label{thm:skora_maxsmoothing}
+\end{mainthm}
+
+It would be interesting to give similar conditions for 
+small actions of a non-elementary hyperbolic group $G$. Misha Kapovich and
 the first author show \cite{KMG:BBP} that for one ended hyperbolic
 groups acting via small action on an $\mathbb{R}$-tree, the stable
 length extends continuously to geodesic currents.
@@ -245,7 +263,7 @@ On the other hand, \cite{BIPP21:PositiveCrossratios} associate, to every cross-r
 \[
 c \colon \operatorname{CR}(S) \to \GC(S).
 \]
-We show that period curve functionals (i.e., the image of the map $\pi$) satisfy the conditions of our main Theorem~\ref{mainthm:intersections} and thus induce geodesic currents.
+We show that period curve functionals (i.e., the image of the map $\pi$) satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce geodesic currents.
 
 \begin{mainthm}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
@@ -267,7 +285,7 @@ In terms of geodesic currents, this means we will work with oriented geodesic cu
 As we shall see in Section~\ref{sec:asymmetric} there are versions of
 intersection numbers which are asymmetric (i.e. they distinguish the
 orientations of the intersections). For those, the analog of the main duality
-result, Theorem~\ref{mainthm:intersections}, will not hold.
+result, Theorem~\ref{thm:intersect}, will not hold.
 Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$.
 
 
@@ -295,7 +313,7 @@ Thus, even though our curve functionals will be defined on oriented curves, to s
     \begin{equation}\label{eq:quasismoothing}
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
     \end{equation}
-    See Subsection~\ref{subsec:essential} for ``essential
+    See Definition~\ref{def:essential-crossing} for ``essential
     crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
   \item \textbf{Smoothing:} We take $R=0$ in the above definition of quasi-smoothing:
     \begin{equation}\label{eq:smoothing}
@@ -373,6 +391,8 @@ Examples below show we have strict inclusions
 \[
 \AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S).
 \]
+
+Finally, we point out that in $\Convex(S)$, the defining properties are preserved under taking supremum. \DMGtodo[inline]{does this have a name? It is not ``lattice'', but something weaker}
 
 
 \subsection{Examples and non-examples}
@@ -460,7 +480,7 @@ $G(ab) < G(a) + G(b)$. This is indeed the case. For an example, consider the ext
 
 In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
 
-It turns out that one doesn't need more conditions. Theorem~\ref{mainthm:intersections} can thus be reestated, in the previous terminology, as follows.
+It turns out that one doesn't need more conditions. Theorem~\ref{thm:intersect} can thus be reestated, in the previous terminology, as follows.
 
 \begin{mainthmprimeprime}\label{thm:intersect_primeprime}
  For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stability properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
@@ -515,12 +535,12 @@ However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geo
 
 \subsubsection{Smoothing vs multi-smoothing}
 
-The hypotheses of smoothing in Equation~\ref{eq:smoothing} of Theorem~\ref{mainthm:intersections} apply to one essential crossing at a time. There is a stronger condition of smoothing, where multiple smoothings at essential crossings are performed at once, and the function is required to be non-increasing under such operation.
+The hypotheses of smoothing in Equation~\ref{eq:smoothing} of Theorem~\ref{thm:intersect} apply to one essential crossing at a time. There is a stronger condition of smoothing, where multiple smoothings at essential crossings are performed at once, and the function is required to be non-increasing under such operation.
 We will refer to this condition as \emph{multi-smoothing}.
 It is clear multi-smoothing implies smoothing.
-It is easily checked that intersection numbers satisfy the multi-smoothing property (see, for example, \cite{AH23}).
-What is not so clear is that functionals of $\AConvex(S)$ (that is, satisfying stability, homogeneity, smoothing and additivity) must satisfy multi-smoothing. This is, of course, a consequence Theorem~\ref{mainthm:intersections}.
-Other curve functionals that are not in $\AConvex(S)$ also satisfy multi-smoothing. For example, the same proof as  \cite{AH23}) shows that extremal length satisfies multi-smoothing.
+It is easily checked that intersection numbers satisfy the multi-smoothing property (see, for example, \cite{AH21:EffectiveCounting3}).
+What is not so clear is that functionals of $\AConvex(S)$ (that is, satisfying stability, homogeneity, smoothing and additivity) must satisfy multi-smoothing. This is, of course, a consequence Theorem~\ref{thm:intersect}.
+Other curve functionals that are not in $\AConvex(S)$ also satisfy multi-smoothing. For example, the same proof as  \cite{AH21:EffectiveCounting3}) shows that extremal length satisfies multi-smoothing.
 This prompts the following question.
 
 \begin{question}
@@ -531,9 +551,9 @@ If a curve functional satisfies homogeneity, stability, convex union and smoothi
 \label{subsubsec:convexity_charts}
 
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
-Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~\cite[Theorem~4.7]{AH23}, shows $f_{\tau}$ is convex and homogeneous. 
+Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
-It is a consequence of our main Theorem~\ref{mainthm:intersections}, that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals, but can be proven similarly ideas as in~\cite[Theorem~4.2]{CM87:GroupActions}. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
+It is a consequence of our main Theorem~\ref{thm:intersect}, that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals, but can be proven similarly ideas as in~\cite[Theorem~4.2]{CM87:GroupActions}. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
 The sublevel set $\Lambda_{f_{\tau}} \coloneqq \{ \vec{x} \in V(\tau) : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of $\mathbb{R}^N$ (for some $N>0$ depending on the combinatorics of $\tau$).
 Let $f_i(\cdot) = i(\mu_i, \cdot)$ for some sequence of geodesic currents $\mu_i \to \mu$, and $f(\cdot) = i(\mu, \cdot)$.
 Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the class of compact convex subsets of $\mathbb{R}^N$ is locally compact (by Banach's selection theorem~[REF Chapter 6 in Convex subsets and their applications, by Lay]).
@@ -553,7 +573,7 @@ It is clear, by definition, that intersection numbers satisfy domination.
 
 All in all, $f$ satisfying domination implies $f$ satisfying multi-smoothing which in turn implies $f$ satisfying smoothing.
 
-From Theorem~\ref{mainthm:intersections} we obtain the following weaker theorem (which, nevertheless, seems interesting from a conceptual viewpoint).
+From Theorem~\ref{thm:intersect} we obtain the following weaker theorem (which, nevertheless, seems interesting from a conceptual viewpoint).
 
 \begin{theorem}
 A curve functional satisfies additivity, domination, stability and homogeneity if and only if it is dual to a geodesic current
@@ -569,6 +589,15 @@ The above prompts the following question.
 Suppose curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies domination if and only if it satisfies smoothing?
 \end{question}
 
+\DMGtodo[inline]{added this bit about taut smoothings, not sure if it's too much since we cannot really say anything, other than putting it in a more general framework}
+
+Finally, there is another condition a priori stronger than smoothing, that we will call \emph{taut smoothing}: given a multi-curve $C$, $f$ satisfies taut smoothing if it satisfies smoothing and, moreover, for every $C$ with essential crossings, there exist at least one essential crossing so that, after reduction $C \reducesto C'$, we have $f(C)=f(C')-1$.
+
+\begin{question}
+Suppose a curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies smoothing if and only if it satisfies taut smoothing?
+\end{question}
+
+The above question has been recently considered in~\cite[Question~1]{ANC24:TautSmoothings} in the setting of additive functionals (i.e. when the functional $f$ is dual to a geodesic current, and partially answered in their~\cite[Theorem~C]{ANC24:TautSmoothings}.
 
 
 \subsubsection{Green metrics}
@@ -599,7 +628,7 @@ As noted by
 [Reyes, Cantrell-Reyes], this would settle
 the singularity conjecture for $\SL_2(\mathbb{R})$ [Kaimanovich-LePrince, page 259].
 Kosenko-Tiozzo have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with symmetric fundamental domains.
-It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer would be interesting, since then Theorem~\ref{mainthm:intersections} would give a dual geodesic current, and then the machinery of geodesic currents could be used to study Green metrics.
+It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer would be interesting, since then Theorem~\ref{thm:intersect} would give a dual geodesic current, and then the machinery of geodesic currents could be used to study Green metrics.
 
 
 \subsubsection{Questions about generalizations to hyperbolic groups}
