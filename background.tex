@@ -308,28 +308,20 @@ $G^{+}(S)$.
     double limits exist and are equal to $V$.
   \end{proof}
 
-\DPTtodo[inline]{We need some extra qualifier, this doesn't deserve to
-be called ``doubly convex''. In particular it does not imply that
-$g(n+1,m+1) + g(n-1,m-1) \ge 2 g(n,m)$, eg for $g(n,m) = -nm$. For a
-smooth function to be
-doubly convex,
-we want the Hessian to be positive-definite at each point, and we have
-only checked the coordinate axes. Maybe ``axis-convex''?}
 \begin{definition}
-  A function $g \colon \bbN \to \bbR$ is \emph{$R$-midpoint convex}
+  A function $g \colon \bbN \to \bbR$ is \emph{$R$-midpoint-convex}
   if for all $r \ge R$ and $n \in \bbN$ for which the inequality makes
   sense, we have $g(n-r) + g(n+r) \geq
   2 g(n)$. Similarly a
   function $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is
-  \emph{$(R,S)$-midpoint convex} if, for all $m$, $g(\cdot, m)$ is
-  $R$-midpoint convex and, for
-  all $n$, $g(n, \cdot)$ is $S$-midpoint convex. We say that $g$ is
-  \emph{doubly convex} if it is $(1,1)$-midpoint convex.
+  \emph{$(R,S)$-axis-convex} if, for all $n,m$, $g(\cdot, m)$ is
+  $R$-midpoint-convex and $g(n, \cdot)$ is $S$-midpoint-convex. We say that $g$ is
+  \emph{axis convex} if it is $(1,1)$-axis-convex.
 \end{definition}
  
  \begin{lemma}
-   If $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is doubly
-   convex and bounded, then the following limits exist and are equal:
+   Let $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ be axis
+   convex and bounded. Then the following limits exist and are equal:
    \[\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+} \lim_{n^+} g(n,m).\]
  \end{lemma}
 \begin{proof}
@@ -337,7 +329,7 @@ only checked the coordinate axes. Maybe ``axis-convex''?}
   g(n+1,m) - g(n,m)$ is increasing as a function of $n$ by convexity
   and hence non-positive by boundedness of $g$. Similarly for
   $h_2(n,m) = g(n,m+1) - g(n,m)$. Thus $g$ is monotonically decreasing
-  and we can apply Lemma~\ref{lem:monotone-double-limit}.
+  and the result follows by Lemma~\ref{lem:monotone-double-limit}.
 \end{proof}
 
 \begin{lemma}
@@ -346,25 +338,42 @@ only checked the coordinate axes. Maybe ``axis-convex''?}
  \label{lem:limexistrmidconvex}
 \end{lemma}
 \begin{proof}
-   \DPTtodo{This proof is a little too sketchy}
-   WLOG, assume $R$ is a power of $2$. For $0 \le k
-< R$, define $g_k(n) \coloneqq g(k + R \cdot n)$. Then each $g_k$ is
-convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded}
-has
-a well-defined limit as $n \to \infty$. We must show these limits
-agree for different $k$. To see that the limit of $g_{R/2}$ is less or equal than the limit of $g_0$,
-note that $2g((3+2n)R/2) \le g(nR) + g((n+3)R)$. We can iterate
-this construction to show all the limits are equal, for instance using
-$2g(5R/4) \le g(0) + g(5R/2)$.
- \end{proof}
+  WLOG, we may assume $R=2^s$ is a power of~$2$. For $0 \le k < R$,
+  define $g_k(n) \coloneqq g(k + R \cdot n)$. Then each $g_k$ is
+  convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded}
+  has a well-defined limit as $n \to \infty$. We must show these
+  limits agree for different $k$. To compare $g_{R/2}$ to $g_0$,
+  note that for $n \ge 1$, $2g(nR + R/2) \le g((n-1)R) + g((n+2)R$, so
+  $\lim_{n^+} g_{R/2}(n) \le \lim_{n^+} g_0(n)$, and similarly for the
+  other direction.
+
+  In general consider $g_k$ with $k = a 2^{s-i}$ with $a$ odd and
+  proceed by induction on $i$. Applying $R$-convexity with
+  $r=R+2^{s-i}$, we see
+  \begin{align*}
+    \lim_{n^+} g_k
+      &= \lim_{n^+} g(nR + a 2^{s-i})\\
+      &\le \frac{1}{2} \lim_{n^+} \left(g((n-1)R + (a-1) 2^{s-i}) + g((n+1)R + (a+1) 2^{s-i}) \right)\\
+      &\le \frac{1}{2}\left(\lim_{n^+} g_{(a-1)2^{s-i}} + \lim_{n^+} g_{(a+1)2^{s-i}}\right) \le \lim_{n^+} g_0
+  \end{align*}
+  where in the last step we use the inductive hypothesis. In the same
+  way we get inequalities the other way.
+\end{proof}
  
-   \DPTtodo{This is what we actually need. DPT HW}
-  \begin{lemma}
- Given a bounded, $(R,S)$-midpoint convex function $g \colon \mathbb{N} \times
- \mathbb{N} \to \mathbb{R}$, then the following
- limits exist and are equal: $\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+} \lim_{n^+} g(n,m)$.
- \label{lem:limexistrmidconvextwovar}
- \end{lemma}
+\begin{lemma}
+  Let $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ be a
+  bounded, $(R,S)$-axis-convex function. Then the
+  following limits exist and are equal:
+  \[
+    \lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+}
+    \lim_{n^+} g(n,m).
+  \]
+  \label{lem:limexistrmidconvextwovar}
+\end{lemma}
+
+\begin{proof}
+  As in Lemma
+\end{proof}
 
  \begin{lemma}
  Let $f_m \colon \mathbb{Z} \to \mathbb{R}$ be a sequence of midpoint convex functions converging to a  function
@@ -372,40 +381,46 @@ $2g(5R/4) \le g(0) + g(5R/2)$.
  \label{lem:limitconvex}
  \end{lemma}
 
+\begin{remark}
+  We use the term \emph{axis convex} because the condition is not
+  strong enough to deserve the term convex. For instance, the
+  function $g(n,m) = -mn$ is axis convex, but
+  $g(n+1,m+1) + g(n-1,m-1) - 2g(n,m) = -2 < 0$.
+\end{remark}
 
- \begin{proposition}
- Let $a_{n,m}$ for $n,m \geq 0$ be a double sequence of real numbers,
- and define $b_{n,m} \coloneqq a_{n,m} - a_{n-1,m}$. Suppose the
- numbers satisfy the following conditions:
- \begin{enumerate}
- \item $a_{n,m}$ is weakly increasing in $n$ (i.e., $b_{n,m} \geq 0$).
- \item For every $n \geq 0$, $\lim_m b_{n,m}$ exists.
- \item There exists a sequence $c_n \geq 0$ so that for every $m \geq 0$,
-   $b_{n,m} \leq c_n$, and $\sum_n c_n$ is finite.
- \end{enumerate}
- Then
- \[
- \lim_{m^+} \lim_{n^+} a_{n,m} =  \lim_{n^+} \lim_{m^+} a_{n,m}.
- \]
- \label{prop:exchange_limits}
- \end{proposition}
-\begin{proof}
-We will think of $b_{n,m}$ as a family of functions of $n$ indexed by $m$, i.e., $f_m(n) \coloneqq b_{n,m}$.
-By the second assumption, $f_m$ converge pointwise. By the third assumption, $f_m(n) \leq c_n$.
-By the dominated convergence theorem with respect to the counting measure on the natural numbers, we have
-\[
-\lim_{m \to \infty} \sum_{n=1}^{\infty} b_{n,m} = \sum_{n=1}^{\infty}  \lim_{m \to \infty} b_{n,m}.
-\]
-By writing the series as limits of partial sums, we have
-\[
-\lim_{m \to \infty} \lim_{N \to \infty} \sum_{n=1}^{N} b_{n,m} = \lim_{N \to \infty} \sum_{n=1}^{N} \lim_{m \to \infty} b_{n,m}.
-\]
-By the definition of $b_{n,m}$, we get
-\[
-\lim_{m \to \infty} \lim_{N \to \infty} a_{N,m} = \lim_{N \to \infty}
-\lim_{m \to \infty} a_{N,m}. \qedhere
-\]
-\end{proof}
+%  \begin{proposition}
+%  Let $a_{n,m}$ for $n,m \geq 0$ be a double sequence of real numbers,
+%  and define $b_{n,m} \coloneqq a_{n,m} - a_{n-1,m}$. Suppose the
+%  numbers satisfy the following conditions:
+%  \begin{enumerate}
+%  \item $a_{n,m}$ is weakly increasing in $n$ (i.e., $b_{n,m} \geq 0$).
+%  \item For every $n \geq 0$, $\lim_m b_{n,m}$ exists.
+%  \item There exists a sequence $c_n \geq 0$ so that for every $m \geq 0$,
+%    $b_{n,m} \leq c_n$, and $\sum_n c_n$ is finite.
+%  \end{enumerate}
+%  Then
+%  \[
+%  \lim_{m^+} \lim_{n^+} a_{n,m} =  \lim_{n^+} \lim_{m^+} a_{n,m}.
+%  \]
+%  \label{prop:exchange_limits}
+%  \end{proposition}
+% \begin{proof}
+% We will think of $b_{n,m}$ as a family of functions of $n$ indexed by $m$, i.e., $f_m(n) \coloneqq b_{n,m}$.
+% By the second assumption, $f_m$ converge pointwise. By the third assumption, $f_m(n) \leq c_n$.
+% By the dominated convergence theorem with respect to the counting measure on the natural numbers, we have
+% \[
+% \lim_{m \to \infty} \sum_{n=1}^{\infty} b_{n,m} = \sum_{n=1}^{\infty}  \lim_{m \to \infty} b_{n,m}.
+% \]
+% By writing the series as limits of partial sums, we have
+% \[
+% \lim_{m \to \infty} \lim_{N \to \infty} \sum_{n=1}^{N} b_{n,m} = \lim_{N \to \infty} \sum_{n=1}^{N} \lim_{m \to \infty} b_{n,m}.
+% \]
+% By the definition of $b_{n,m}$, we get
+% \[
+% \lim_{m \to \infty} \lim_{N \to \infty} a_{N,m} = \lim_{N \to \infty}
+% \lim_{m \to \infty} a_{N,m}. \qedhere
+% \]
+% \end{proof}
 
  \subsection{Geodesic currents}
 \label{subsec:currents}
