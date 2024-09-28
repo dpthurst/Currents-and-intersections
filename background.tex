@@ -293,10 +293,10 @@ $G^{+}(S)$.
     \lim_{n^+, m^+} a_{n,m} = \sup_{n,m \ge 0} a_{n,m}.
   \]
   \end{lemma}
+This lemma appears in Habil \cite[Thm.\ 4.2]{Hab16:DoubleSeq}, but we
+include a proof for reference.
+
   \begin{proof}
-    (This is also proved by Habil \cite[Thm.\ 4.2]{Hab16:DoubleSeq},
-    who points out some subtleties.)
-    
     Let $V = \sup_{n,m} a_{n,m}$. For any $\epsilon > 0$, let
     $A_\epsilon \coloneqq \{(n,m) \mid a_{n,m} > V - \epsilon\}$. By
     definition of $\sup$, this set is non-empty; say $(n_0,m_0) \in
@@ -309,13 +309,13 @@ $G^{+}(S)$.
   \end{proof}
 
 \begin{definition}
-  A function $g \colon \bbN \to \bbR$ is \emph{$R$-midpoint-convex}
+  A function $g \colon \bbN \to \bbR$ is \emph{$R$-convex}
   if for all $r \ge R$ and $n \in \bbN$ for which the inequality makes
   sense, we have $g(n-r) + g(n+r) \geq
   2 g(n)$. Similarly a
   function $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is
   \emph{$(R,S)$-axis-convex} if, for all $n,m$, $g(\cdot, m)$ is
-  $R$-midpoint-convex and $g(n, \cdot)$ is $S$-midpoint-convex. We say that $g$ is
+  $R$-convex and $g(n, \cdot)$ is $S$-convex. We say that $g$ is
   \emph{axis convex} if it is $(1,1)$-axis-convex.
 \end{definition}
  
@@ -333,31 +333,21 @@ $G^{+}(S)$.
 \end{proof}
 
 \begin{lemma}
-  Let $g$ be a bounded, $R$-midpoint convex function
-  $g \colon \mathbb{N} \to \mathbb{R}$. Then $\lim_{n^+} g(n)$ exists.
+  Let $g$ be a bounded, $R$-convex function
+  $g \colon \bbN \to \bbR$. Then $\lim_{n^+} g(n)$ exists.
  \label{lem:limexistrmidconvex}
 \end{lemma}
 \begin{proof}
-  WLOG, we may assume $R=2^s$ is a power of~$2$. For $0 \le k < R$,
-  define $g_k(n) \coloneqq g(k + R \cdot n)$. Then each $g_k$ is
-  convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded}
-  has a well-defined limit as $n \to \infty$. We must show these
-  limits agree for different $k$. To compare $g_{R/2}$ to $g_0$,
-  note that for $n \ge 1$, $2g(nR + R/2) \le g((n-1)R) + g((n+2)R$, so
-  $\lim_{n^+} g_{R/2}(n) \le \lim_{n^+} g_0(n)$, and similarly for the
-  other direction.
-
-  In general consider $g_k$ with $k = a 2^{s-i}$ with $a$ odd and
-  proceed by induction on $i$. Applying $R$-convexity with
-  $r=R+2^{s-i}$, we see
-  \begin{align*}
-    \lim_{n^+} g_k
-      &= \lim_{n^+} g(nR + a 2^{s-i})\\
-      &\le \frac{1}{2} \lim_{n^+} \left(g((n-1)R + (a-1) 2^{s-i}) + g((n+1)R + (a+1) 2^{s-i}) \right)\\
-      &\le \frac{1}{2}\left(\lim_{n^+} g_{(a-1)2^{s-i}} + \lim_{n^+} g_{(a+1)2^{s-i}}\right) \le \lim_{n^+} g_0
-  \end{align*}
-  where in the last step we use the inductive hypothesis. In the same
-  way we get inequalities the other way.
+  For $0 \le k < R$, define $g_k(n) \coloneqq g(k + nR)$. Then each
+  $g_k$ is convex and bounded, and thus by
+  Lemma~\ref{lem:onevarconvexbounded} has a well-defined limit as
+  $n \to \infty$. We must show these limits agree for different~$k$.
+  By $R$-convexity,
+  $g(k + nR) \le \frac{1}{2} \bigl(g((k-1) + (n-1)R) + g((k+1) +
+  (n+1)R\bigr)$. Taking the limit, we see that
+  $\lim_{n^+} g_k \le \frac{1}{2} (\lim_{n^+} g_{k-1} + \lim_{n^+}
+  g_{k+1})$. The limits are thus a convex function on $\bbZ/R\bbZ$ and
+  thus constant.
 \end{proof}
  
 \begin{lemma}
@@ -372,19 +362,25 @@ $G^{+}(S)$.
 \end{lemma}
 
 \begin{proof}
-  As in Lemma
+  As in Lemma~\ref{lem:limexistrmidconvex}, for $0 \le k < R$ and $0
+  \le \ell < R$, let $g_{k,\ell}(n,m) \coloneqq g(k+nR, \ell+mS)$.
+  Then each $g_{k,\ell}$ is axis convex and thus has a well-defined limit
+  as $n,m \to \infty$ (agreeing with the iterated limits), while the
+  same averaging argument shows that the limits don't depend on
+  $k,\ell$ and thus the overall limits exist and are equal.
 \end{proof}
 
+\DPTtodo[inline]{Do we really need to prove this next lemma?}
  \begin{lemma}
- Let $f_m \colon \mathbb{Z} \to \mathbb{R}$ be a sequence of midpoint convex functions converging to a  function
- $f \colon \mathbb{Z} \to \mathbb{R}$. Then $f$ is also midpoint convex.
+ Let $f_m \colon \mathbb{Z} \to \mathbb{R}$ be a sequence of convex functions converging to a  function
+ $f \colon \mathbb{Z} \to \mathbb{R}$. Then $f$ is also convex.
  \label{lem:limitconvex}
  \end{lemma}
 
 \begin{remark}
   We use the term \emph{axis convex} because the condition is not
   strong enough to deserve the term convex. For instance, the
-  function $g(n,m) = -mn$ is axis convex, but
+  function $g(n,m) = -mn$ is axis convex by the above definition, but
   $g(n+1,m+1) + g(n-1,m-1) - 2g(n,m) = -2 < 0$.
 \end{remark}
 
@@ -440,7 +436,7 @@ $G^{+}(S)$.
 \end{definition}
 
 
-\subsection{Oriented vs unoriented currents}
+%\subsection{Oriented vs unoriented currents}
 
 We will be mostly working on the setting of oriented geodesic
 currents, but most of our natural examples use unoriented currents.
@@ -463,7 +459,7 @@ There is a map $\Pi : \GC^{+}(\Sigma) \to\GC^{+}(\Sigma)$
 given by $\Pi(\mu)\coloneqq
 \frac{1}{2}(\mu + \sigma_*(\mu))$ with image the subset of unoriented currents.
 
-\subsection{Properties of geodesic currents as measures}
+%\subsection{Properties of geodesic currents as measures}
 
 The $\pi_1(S)$-invariance of geodesic currents highly constrains the atoms (see Definition~\ref{def:atommeasure}) they can have.
 

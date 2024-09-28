@@ -447,7 +447,7 @@ Let $a,b,x \in \pi_1(\Sigma)$, with $\ora{a}$, $\ora{b}$ crossing $\ora{x}$ to t
   If $x$ is simple, we can take $r=1$. We also used smoothing and
   convex union. (Quasi-smoothing does not suffice; see
   Remark~\ref{rmk:nonconvex}.)
-  Hence, $n \mapsto f([a x^n])$ is $r$-midpoint convex, and
+  Hence, $n \mapsto f([a x^n])$ is $r$-convex, and
   thus so is $g(n) \coloneqq f([a x^n]) - f([x^n])$, by stability of $f$.
  
   By Lemma~\ref{lem:rhs_prod} and additivity and (oriented)
@@ -461,7 +461,7 @@ smoothing of $f$, there is $N>0$ so that, for $n > N$,
   \[
     -f([a]) \le f([a x^n]) - f([x^n]).
   \]
-  This shows that $g$ for $n > N$ is an $r$-midpoint convex and
+  This shows that $g$ for $n > N$ is an $r$-convex and
   bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the
   limit \eqref{eq:additivity-limit} exists.
 \end{proof}
@@ -501,7 +501,7 @@ semi-ring structure on the real numbers.
 One of the tools in the proof of this characterization is the fact
 that, for $a,b$ simple curves, the function $h(n) \coloneqq f([a^n
 b])$ is convex.
-In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-midpoint convexity of~$g$.
+In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-convexity of~$g$.
 See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ imply Luo's conditions for the restriction of $f$ to simple curves.
 \end{remark}
 
@@ -520,7 +520,7 @@ Lemma~\ref{lem:additivity-limit}.
 \begin{proof}
   Define $g(n,m) \coloneqq f([ax^nby^m]) - nf([x]) - mf([y])$. First,
   by Corollary~\ref{cor:fund-axby}, there is some $s$ so that $g(n,m)$
-  is $(s,s)$-midpoint convex: apply $f$ to the left hand side of
+  is $(s,s)$-axis-convex: apply $f$ to the left hand side of
   Eqs.~\eqref{eq:axby-cross-n} and~\eqref{eq:axby-cross-m}, and use
   convex union, smoothing, stability, and homogeneity. (The extra
   linear terms in $g(n,m)$ are irrelevant for convexity.)
