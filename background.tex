@@ -263,119 +263,105 @@ $G^{+}(S)$.
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}
 
- We need some basic results on convexity and existence of limits of
- functions on the integers.
- Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$ and
- $\lim_{n^{-}}f(n)$ denote $\lim_{n \to -\infty}f(n)$.
+ We recall some basic results on convexity and existence of limits of
+ functions on the integers. We start with an old result and then
+ generalize to two variables (which should be standard, but we have
+ not found older references) and to less-standard notions of convexity.
+ Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$.
 
-
- \DPTtodo[inline]{This can't be a relevant lemma, since the proof actually
-   shows $g$ is constant. I'm currently suspect whole business with
-   $\pm \infty$ is unnecessary}
  \begin{lemma}
- Let $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ be a convex and bounded function.
- Then $\lim_{n^+} g(n)$ and  $\lim_{n^-} g(n)$ exist.
+ Let $g \colon \mathbb{\mathbb{N}} \to \mathbb{R}$ be a convex and bounded function.
+ Then $\lim_{n^+} g(n)$ exists.
  \label{lem:onevarconvexbounded}
  \end{lemma}
  \begin{proof}
-   WLOG, we prove the claim for $\lim_{n^+} g(n)$. (For
-   $\lim_{n^-} g(n)$, we run the same argument argument for
-   $n\mapsto g(-n)$.) If $g(n) \geq g(n-1)$ for all $n$, then $g(n)$
-   is monotone decreasing, and since it is bounded below, it has a
-   limit. Otherwise, there exists some $n_0$ so that
-   $g(n_0) > g(n_0-1)$. Since $g$ is convex, the sequence
-   $h(n) \coloneqq g(n+1)-g(n)$ is monotone increasing. In particular,
-   for $n \ge n_0$, we have $h(n) \ge h(n_0) > 0$, so $g$ is monotone
-   increasing for $n \ge n_0$ and thus has a limit.
+   Consider $h(n) \coloneqq g(n+1) - g(n)$. Convexity of $g$ implies
+   that $h$ is monotone increasing. Thus if $h(n_0) > 0$,
+   then $g(n)$ increases monotonically without bound for $n > n_0$,
+   contradicting boundedness. Therefore $h(n) \le 0$ for all $n$, so $g$ is
+   monotonically decreasing, so has a limit.
 \end{proof}
 
-\DPTtodo[inline]{Modified this definition so it's what we need in
-  proofs. With the previous def, the function $h(n)$ which is $0$ for
-  even $n$ and $1$ for odd $n$ was $2$-midpoint-convex. Also changed
-  domain to be $\bbN$.}
+  \begin{lemma}\label{lem:monotone-double-limit}
+  Let $(a_{n,m})_{n,m \in \mathbb{N}}$ be a double sequence that is
+  bounded and monotone, in the sense that if $n' \leq n$ and
+  $m' \leq m$ then
+  $a_{n',m'} \leq a_{n,m}$. Then the following limits
+  exist and are equal:
+  \[
+  \lim_{n^+}\lim_{m^+} a_{n,m} = \lim_{m^+}\lim_{n^+} a_{n,m} =
+    \lim_{n^+, m^+} a_{n,m} = \sup_{n,m \ge 0} a_{n,m}.
+  \]
+  \end{lemma}
+  \begin{proof}
+    (This is also proved by Habil \cite[Thm.\ 4.2]{Hab16:DoubleSeq},
+    who points out some subtleties.)
+    
+    Let $V = \sup_{n,m} a_{n,m}$. For any $\epsilon > 0$, let
+    $A_\epsilon \coloneqq \{(n,m) \mid a_{n,m} > V - \epsilon\}$. By
+    definition of $\sup$, this set is non-empty; say $(n_0,m_0) \in
+    A_\epsilon$. By monotonicity, $A_\epsilon$ contains all $(n,m)$
+    with $n\ge n_0, m \ge m_0$. Since $\epsilon$ is arbitrary, it
+    follows that $\lim_{n^+,m^+} a_{n,m} = V$. It also follows that
+    for $n \ge n_0$, $\lim_{m^+} a_{n,m} > V-\epsilon$. (This limit
+    exists by single-variable monotonicity.) Again we see that the
+    double limits exist and are equal to $V$.
+  \end{proof}
+
+\DPTtodo[inline]{We need some extra qualifier, this doesn't deserve to
+be called ``doubly convex''. In particular it does not imply that
+$g(n+1,m+1) + g(n-1,m-1) \ge 2 g(n,m)$, eg for $g(n,m) = -nm$. For a
+smooth function to be
+doubly convex,
+we want the Hessian to be positive-definite at each point, and we have
+only checked the coordinate axes. Maybe ``axis-convex''?}
 \begin{definition}
-  A function $h \colon \bbN \to \bbR$ is \emph{$R$-midpoint convex},
+  A function $g \colon \bbN \to \bbR$ is \emph{$R$-midpoint convex}
   if for all $r \ge R$ and $n \in \bbN$ for which the inequality makes
-  sense, we have $h(n-r) + h(n+r) \geq
-  2 h(n)$. Similarly a
-  function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is
+  sense, we have $g(n-r) + g(n+r) \geq
+  2 g(n)$. Similarly a
+  function $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is
   \emph{$(R,S)$-midpoint convex} if, for all $m$, $g(\cdot, m)$ is
   $R$-midpoint convex and, for
   all $n$, $g(n, \cdot)$ is $S$-midpoint convex. We say that $g$ is
   \emph{doubly convex} if it is $(1,1)$-midpoint convex.
 \end{definition}
  
- An expression $\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}}
- \lim_{m^{\pm}} g(n,m)$ means that the four equalities hold:
- \begin{align*}
-   \lim_{n^{+},m^{+}} g(n,m) &= \lim_{n^{+}} \lim_{m^{+}} g(n,m)&
-   \lim_{n^{-},m^{-}} g(n,m) &= \lim_{n^{-}} \lim_{m^{-}} g(n,m)\\
-   \lim_{n^+,m^-} g(n^{+},m^{-}) &= \lim_{n^{+}} \lim_{m^{-}} g(n,m)&
-   \lim_{n^-,m^+} g(n^{-},m^{+}) &= \lim_{n^{-}} \lim_{m^{+}} g(n,m).
- \end{align*}
- 
- The following result is standard~\cite[Theorem~4.2]{Hab16:DoubleSeq}.
-   \begin{lemma}
-  Let $(a_{n,m})_{n,m \in \mathbb{Z}}$ be a double sequence on the integers which is bounded and monotone, in the sense that $a_{n',m'} \leq a_{n,m}$, whenever $n' \leq n$ and $m' \leq m$. Then the following limits exist and are equal:
-  \[
-  \lim_{n^+}\lim_{m^+} a_{n,m} = \lim_{m^+}\lim_{n^+} a_{n,m} = \lim_{n^+, m^+} a_{n,m}  
-  \]
-\end{lemma}
-\DPTtodo[inline]{Check if we agree with Habil's proof. Otherwise,
-  prove or cite this. One proof goes through
-  order ideals. Let $V = \inf a_{n,m}$, and consider
-  $\{(n,m) \mid a_{n,m} < V + \epsilon\}$. For $\epsilon > 0$, this
-  set is an order ideal by monotonicity and is non-empty by def.\ of
-  $\inf$. The result follows pretty easily thinking about what order
-  ideals look like.}
- 
- We will use it to prove the following.
- 
  \begin{lemma}
-   If $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is doubly
+   If $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is doubly
    convex and bounded, then the following limits exist and are equal:
-   \[\lim_{n^{\pm},m^{\pm}} g(n,m) = \lim_{n^{\pm}} \lim_{m^{\pm}} g(n,m) = \lim_{m^{\pm}} \lim_{n^{\pm}} g(n,m).\]
+   \[\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+} \lim_{n^+} g(n,m).\]
  \end{lemma}
- \begin{proof}
- The proof is similar to the single-variable case,
- Lemma~\ref{lem:onevarconvexbounded}. The assumptions are symmetric in
- $\pm \infty$, so WLOG we consider $\lim_{n^+,m^+} g(n,m)$.
- If $g$ is doubly decreasing, then the limit exists since the sequence
- is bounded.
- Otherwise, there exists $n_0,m_0$ so that $g(n_0,m_0) <
- g(n_0,m_0+1)$. Then, for fixed $n_0$, $(g(n_0,m))_{m \geq m_0}$ is
- monotone increasing, by a similar argument as in
- Lemma~\ref{lem:onevarconvexbounded}.
-\DPTtodo{Should stop proof here, get a contradiction with being
-  bounded by having a step up anywhere.}
- Since it is bounded, the iterated limits and the double limit exists and are equal.
- \end{proof}
+\begin{proof}
+  As in Lemma~\ref{lem:onevarconvexbounded}, the function $h_1(n,m) =
+  g(n+1,m) - g(n,m)$ is increasing as a function of $n$ by convexity
+  and hence non-positive by boundedness of $g$. Similarly for
+  $h_2(n,m) = g(n,m+1) - g(n,m)$. Thus $g$ is monotonically decreasing
+  and we can apply Lemma~\ref{lem:monotone-double-limit}.
+\end{proof}
 
- \DMGtodo[inline]{In our case, we can reduce to convex case by
-   replacing the variable by a power (fixed the typo in the comment)}
- \DPTtodo[inline]{I can't tell what you mean, there's a typo}
- \begin{lemma}
- Given a $r$-midpoint convex function $g \colon \mathbb{Z} \to \mathbb{R}$ which is bounded, $\lim_n g(n)$ exists.
+\begin{lemma}
+  Let $g$ be a bounded, $R$-midpoint convex function
+  $g \colon \mathbb{N} \to \mathbb{R}$. Then $\lim_{n^+} g(n)$ exists.
  \label{lem:limexistrmidconvex}
- \end{lemma}
- \begin{proof}
+\end{lemma}
+\begin{proof}
    \DPTtodo{This proof is a little too sketchy}
- Let $g$ be a $r$-midpoint convex function, i.e., that $g(n) \le (g(n+r) + g(n-r))/2$ for $r$ larger than some
-$r_0$. WLOG, assume $r_0$ is a power of $2$. For $0 \le k
-< r_0$, define $g_k(n) \coloneqq g(k + r_0 \cdot n)$. Then $g_k$ is convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded} has
+   WLOG, assume $R$ is a power of $2$. For $0 \le k
+< R$, define $g_k(n) \coloneqq g(k + R \cdot n)$. Then each $g_k$ is
+convex and bounded, and thus by Lemma~\ref{lem:onevarconvexbounded}
+has
 a well-defined limit as $n \to \infty$. We must show these limits
-agree for different $k$. To see that the limit of $g_{r_0/2}$ is less or equal than the limit of $g_0$,
-note that $2g((3+2n)r_0/2) \le g(nr_0) + g((n+3)r_0)$. We can iterate
+agree for different $k$. To see that the limit of $g_{R/2}$ is less or equal than the limit of $g_0$,
+note that $2g((3+2n)R/2) \le g(nR) + g((n+3)R)$. We can iterate
 this construction to show all the limits are equal, for instance using
-$2g(5r_0/4) \le g(0) + g(5r_0/2)$.
+$2g(5R/4) \le g(0) + g(5R/2)$.
  \end{proof}
- 
- The proof of the analogous lemma for two-variable functions is very similar to that of Lemma~\ref{lem:limexistrmidconvex}.
  
    \DPTtodo{This is what we actually need. DPT HW}
   \begin{lemma}
- Given a $(r,s)$-midpoint convex function $g \colon \mathbb{N} \times
- \mathbb{N} \to \mathbb{R}$ which is bounded, then the following
+ Given a bounded, $(R,S)$-midpoint convex function $g \colon \mathbb{N} \times
+ \mathbb{N} \to \mathbb{R}$, then the following
  limits exist and are equal: $\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+} \lim_{n^+} g(n,m)$.
  \label{lem:limexistrmidconvextwovar}
  \end{lemma}
