@@ -145,7 +145,6 @@ precise as follows.
   to be an \emph{essential crossing}.
 \end{definition}
 
-\DMGtodo[inline]{right handed crossings}
 In order to work better with group elements and crossings between
 oriented geodesics, we pick out one type of essential crossing.
 
@@ -699,6 +698,14 @@ We note there is another case, analogous to case 2, where the reflection lines b
 We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ may cross
 (Figure~\ref{fig:c2}).
 
+From this discussion we can extract the following.
+
+\begin{lemma}
+Let $a,b \in \pi_1(S)$.
+If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-parallel or crossing.
+\label{lem:ab_parallel_aB}
+\end{lemma}
+
 \begin{remark}
 Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are antiparallel). Let us show a concrete example where this situation arises.
 
@@ -714,7 +721,110 @@ $\ora{aB}$ parallel to $\ora{Ba}$.
 \]
 \end{remark}
 
+\subsection{Continuity, connected and disconnected smoothing}
+\label{sec:continuity_conn_disc_smoothing}
 
+In this subsection we show that if a curve functional is continuous and homogeneous, then one type of smoothing (connected/disconnected) implies the other.
+
+The following lemma is a straightforward fact of the weak$^*$-topology convergence of geodesic currents.
+
+\begin{lemma}
+  Given any $g,h \in \pi_1(S)$, we have
+\[
+\lim_n \frac{\mu_{g^n h^n}}{n} = \mu_g + \mu_h
+\]
+in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geodesic current representing the curve $[g]$.
+\label{lem:gnhn_to_gsumh}
+\end{lemma}
+
+The next result immediately by Lemma~\ref{lem:righthandedfoundation}.
+
+\begin{lemma}
+Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, the element $a^n b^n$ $R$-crosses $b^k a^k$ for every $k,n \in \mathbb{N}$ 
+\label{lem:anbn_vs_bkak}
+\end{lemma}
+
+\begin{proposition}
+Suppose $f \colon \Curves(S) \to \mathbb{R}$ is a curve functional that extends continuously to geodesic currents and is homogeneous.
+If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ satisfies connected smoothing (resp. disconnected smoothing).
+\label{prop:cont_conn_disc}
+\end{proposition}
+\begin{proof}
+Suppose first $f \colon \Curves(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
+Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented disconnected smoothing, i.e., $f(ab) \geq f(a) + f(b)$.
+We will start by showing the following claim, by induction on $n$:
+\[
+2nf(ab) \geq f(a^{2n}b^{2n}).
+\]
+The base case $n=1$, follows from the fact that if $a,b$ are parallel, $ab$ and $ba$ cross, and hence,
+\[
+2[ab]=[ab] + [ba] \reducesto [ab^2a]=[a^2b^2].
+\]
+Hence, by homogeneity, the base case follows.
+Now, we prove the induction step.
+\begin{align*}
+2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
+&f(a^{2(n-1)}b^{2(n-1)} + f(b^2a^2) \geq  \\
+& f(a^{2(n-1)}b^{2(n-1)} b^2a^2) = f(a^{2n}b^{2n}).
+\end{align*}
+In the first inequality we used induction step, then we used Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
+Thus, by we have
+\[
+2nf(ab) \geq f(a^{2n}b^{2n})
+\]
+as we wanted to show.
+Finally, we divide this expression by $2n$, let $n$ go to infinity and use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
+\[
+f(ab) \geq f(a) + f(b)
+\]
+which proves oriented disconnected smoothing.
+Second, we prove the unoriented disconnected smoothing.
+We split it into two cases, depending on the relative position of $aB$ and $Ba$. Observe that, according to Subsection~\ref{subsec:parallel_aB}, if $a$ and $b$ are parallel, recall that by Lemma~\ref{lem:ab_parallel_aB}, $aB$ and $Ba$ are either anti-parallel or crossing. 
+If $aB$ and $Ba$ are crossing, we can proceed in a very similar fashion as above. Namely, we prove by induction, as above,
+\[
+2nf(ab) \geq f(a^{2n}B^{2n}).
+\]
+divide by $2n$, take the limit when $n$ goes to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
+If $aB$ and $Ba$ are antiparallel, we will prove by induction that
+\begin{equation}
+2nf(ab) \geq f((aB)^n (Ab)^n).
+\label{eq:antiparallel_induction}
+\end{equation}
+The base case, $n=1$, follows since $ab$ and $(ba)^{-1}$ cross, hence
+\[
+[ab] + [ba] \reducesto [abAB] = [(Ba)(bA)]=[(aB)(Ab)]
+\]
+where we used disconnected unoriented smoothing first, then we conjugated by $B$, and then we took inverses.
+Evaluating the above equation by $f$, and homogeneity and disconnected smoothing, we get the base case.
+Now, we prove the induction step.
+\begin{align*}
+2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
+&f((aB)^{n-1} (Ab)^{n-1}) + f((Ab)(aB)) \geq  \\
+& f((aB)^{n-1} (Ab)^{n-1} (Ab)(aB)) = f((aB)^n (Ab)^n)
+\end{align*}
+In the first inequality we used induction step, then we used the fact that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to this pair to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross, therefore, since $f$ satisfies disconnected smoothing, the conclusion followed. This proves the claim by induction.
+Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
+\[
+f([ab]) \geq \frac{f([aB]\cup [Ab])}{2} = f([aB])
+\]
+where we used homogeneity in the last equality.
+This finishes the proof of the first part.
+
+We now prove the second part, namely, if $f \colon \Curves(S) \to \mathbb{R}$ satisfies connected smoothing, ho and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
+\[
+f(a^{2n}b^{2n}) \geq 2nf(ab).
+\]
+This computation follows by applying connected smoothing to the pair $ab$, $ba$ for the base case, and applying the induction step and homogeneity. We omit the details.
+Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
+\[
+f([a] \cup [b]) \geq f([ab])
+\]
+which proves oriented disconnected smoothing. The unoriented one is proved in the same way, replacing $b$ by $B$.
+\end{proof}
+
+\begin{remark}
+The statement can be strengthened by replacing ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing'', but we will not use it in this paper.
+\end{remark}
 
 \subsection{Fundamental smoothing lemmas}
 \label{sec:fund-smoothing}
@@ -994,7 +1104,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   the left of $a^- \in w(\ora{y})$. \DPTtodo{Consider adding this
     ``deeper look'' stuff into the general window lemmas} For $g^+$,
   we again have to look deeper at the endpoints: since
-  $g \cdot (x^+,x^-) = a y^m \dot (x^+, x^=) = w(a y^m \cdot
+  $g \cdot (x^+,x^-) = a y^m \dot (x^+, x^-) = w(a y^m \cdot
   \ora{x})$, we have
   $g^+ \in w(a y^m \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
   Similarly $a^+ \in w(a \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
@@ -1047,19 +1157,6 @@ four group elements, in a configuration that is easy to find.
 An alternate construction of such elements is to take $x=y$ and any
 $\ora{a},\ora{b}$ that cross $\ora{x}$ to the right.
 
-
-\DMGtodo[inline]{probably not the best place to put this:}
-
-\begin{lemma}
-  Given any $g,h \in \pi_1(S)$, we have
-%\[
-%\lim_n \frac{\mu_{g^n h^n}{n} = \mu_g + \mu_h
-%\]
-in the weak$^*$-topology of geodesic currents.
-\end{lemma}
-
-\begin{proposition}
-\end{proposition}
 
 
 
