@@ -343,11 +343,10 @@ If we let $z=(p_1^{-1} \cdot \wt{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)},
       above converge from below to $(\gamma_-,\gamma_+) \times [z,y
       \cdot z)$ as $n \to \infty$, since $B_{n-1} \subset B_n$. The second equality is by
       definition of the measure $\mu_f$ on boxes.
-      For the third, we add and subtract the necessary powers of~$y$,
-      $y^{-1}$ and $x$ to get to a double limit that exists by
-      Lemma~\ref{lem:additivity-limit-2}. The hypotheses of this Proposition are satisfied by the choice of $p_1$ and $q_1$.
+      For the third, we pass from double limit to each one of the iterated limits by Lemma~\ref{lem:additivity-limit-2} and we add and subtract the necessary powers of~$y$,
+      $y^{-1}$ and $x$. The hypotheses of that Lemma are satisfied by the choice of $p_1$ and $q_1$.
       In the fourth equality, we then apply that
-      Proposition to cancel out equivalent
+      Lemma to cancel out equivalent
       terms. In the fifth equality, we use the symmetry property of~$f$ to obtain the result.
 
 
@@ -385,7 +384,6 @@ Moreover,
 \]
 This last limit exists since the sequence $\mu_f(B_N) - \mu_f(B_1)$ is weakly monotone increasing, and
 by Lemma~\ref{lem:additivity-limit-2}, it is bounded.
-\DMGtodo[inline]{as written now, it does not use double limits. Only iterated limits.}
 Hence, the assumptions of Proposition~\ref{prop:exchange_limits} apply to $a_{n,m}$ and thus we can exchange limits
 \[
 \lim_m \lim_n a_{n,m} = \lim_n \lim_m a_{n,m}

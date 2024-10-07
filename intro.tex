@@ -426,9 +426,9 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$. In fact, if $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the constant so that $\ell_{\rho} \in \QConvex_R(S)$, we have that $R \to \infty$ as $K \to \infty$. In particular, one can leave the space $\QConvex_R(S)$ by taking a degenerating sequence of quasi-fuchsian representations. 
+    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  In fact, if $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the constant so that $\ell_{\rho} \in \QConvex_R(S)$, we have that $R \to \infty$ as $K \to \infty$. In particular, one can leave the space $\QConvex_R(S)$ by taking a degenerating sequence of quasi-fuchsian representations. 
     
-    \DMGtodo[inline]{ This is not written, but can probably be proven using that a lower bound for $R$ in terms of a constant $\delta$ is given in \cite[Theorem A]{FF21:QF}, and this constant $\delta$ is a Busemann function value of points of the limit set of $\rho$, which probably can be checked to grow as a function of the quasi-symmetric constant of the lift of the representation. }
+    \DMGtodo[inline]{ This is not written, but can probably be proven using that a lower bound for $R$ in terms of a constant $\delta$ is given in \cite[Theorem A]{FF21:QF}, and this constant $\delta$ is a Busemann function value of points of the limit set of $\rho$, which probably can be checked to grow as a function of the quasi-symmetric constant of the lift of the representation. } 
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
@@ -588,16 +588,6 @@ The above prompts the following question.
 \begin{question}
 Suppose curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies domination if and only if it satisfies smoothing?
 \end{question}
-
-\DMGtodo[inline]{added this bit about taut smoothings, not sure if it's too much since we cannot really say anything, other than putting it in a more general framework}
-
-Finally, there is another condition a priori stronger than smoothing, that we will call \emph{taut smoothing}: given a multi-curve $C$, $f$ satisfies taut smoothing if it satisfies smoothing and, moreover, for every $C$ with essential crossings, there exist at least one essential crossing so that, after reduction $C \reducesto C'$, we have $f(C)=f(C')-1$.
-
-\begin{question}
-Suppose a curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies smoothing if and only if it satisfies taut smoothing?
-\end{question}
-
-The above question has been recently considered in~\cite[Question~1]{ANC24:TautSmoothings} in the setting of additive functionals (i.e. when the functional $f$ is dual to a geodesic current, and partially answered in their~\cite[Theorem~C]{ANC24:TautSmoothings}.
 
 
 \subsubsection{Green metrics}

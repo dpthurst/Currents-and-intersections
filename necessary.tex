@@ -19,36 +19,8 @@ where in the second inequality we used finite additivity of $\mu$, and in the th
 \end{itemize}
 \end{proof}
 
-\begin{figure}[h!]
-\centering{
-\resizebox{80mm}{!}{\svgfig{defect}}
-    \caption{Defect between $\mu$-mass of set of transverse geodesics $(q,\gamma \cdot q]$ and $i(\mu, \gamma)$.}\label{fig:defect}}
-\end{figure}
 
-The following claim can be extracted from the proof of~\cite[Proposition~4.14]{MZ19:PositivelyRatioed}.
 
-\begin{proposition}
-Given a hyperbolic transformation $\gamma \in \pi_1(\Sigma)$, and $\mu$ any geodesic current, we have:
-\begin{enumerate}
-\item For every $q \in \wt{\Sigma}$,
-\[
-\mu(G(q,\gamma \cdot q]) = \mu(X) + \mu(Y) + \mu(G(p,\gamma \cdot p]) =  \mu(X) + \mu(Y) + i(\mu, \gamma).
-\]
-where (compare Figure~\ref{fig:defect}):
-\begin{itemize}
-    \item $p$ is the orthogonal projection of $q$ onto the axis of $\gamma$ (and, therefore, $\gamma \cdot p$ is the orthogonal projection of $\gamma \cdot q$ onto the axis of $\gamma$);
-    \item $X$ is the set of geodesics with one endpoint on $(z, x]$ and transverse to $(q, \gamma \cdot q]$, where $z$ is the negative endpoint of the geodesic from $q$ to $\gamma \cdot q$;
-    \item  and $Y$ is the set of geodesics with one endpoint on $[y, w)$ and transverse to $(q, \gamma \cdot q]$, where $w$ is the positive endpoint of the geodesic from $q$ to $\gamma \cdot q$,
-\end{itemize}
-\label{prop:defect}
-\item  In particular, if $q \in A_{\gamma}$, then 
-\[
-\mu(G(q,\gamma \cdot q]) = i(\mu, \gamma).
-\]
-\end{enumerate}
-\end{proposition}
-
-The following proof follows similar ideas as in the proof of \cite[Theorem A]{FF21:QF}.
 
 \begin{proposition}
 Suppose $a,b \in \Gamma$ are non-trivial elements with distinct fixed points on the boundary circle $\partial \Gamma$.
@@ -90,12 +62,13 @@ and
 \resizebox{80mm}{!}{\svgfig{smoothnec1}}
     \caption{$b$ R-crosses $a$}\label{fig:smoothing1}}
      \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{smoothnec2}}
-    \caption{$a$ and $b$ are $R$-parallel}\label{fig:smoothing2}}
-     \end{subfigure}
+%
+%     \hfill
+%     \begin{subfigure}[b]{0.45\textwidth}
+%\centering{
+%\resizebox{80mm}{!}{\svgfig{smoothnec2}}
+%    \caption{$a$ and $b$ are $R$-parallel}\label{fig:smoothing2}}
+%     \end{subfigure}
 \end{figure}
 
 
@@ -113,7 +86,9 @@ In the first inequality we used Proposition~\ref{prop:defect} (i), in the second
 $G(x, b x] \subset G(x, b x] \cup G(bx, ab x]$, and in the last equality we used the fact that $p$ is in the
 axis of $a$ and of $b$, and Proposition~\ref{prop:defect} (ii).
 A similar argument with $ab^{-1}$ gives the other inequality.
-\item We have a situation like in Figure \ref{fig:smoothing2} (note that the axes of $aB$ and $Ba$ can be in another relative position, but this will not matter).
+\item The inequalities can be checked directly using a similar analysis as in the previous part. However, since $i(\mu, \dot)$ is continuous by~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} and homogeneous, it follows from Proposition~\ref{prop:cont_conn_disc} that $i(\mu, \cdot)$ satisfies connected smoothing, as we wanted to show.
+\begin{comment}%I commented out the direct computation
+We have a situation like in Figure \ref{fig:smoothing2} (note that the axes of $aB$ and $Ba$ can be in another relative position, but this will not matter).
 The first inequality can be proven as follows.
 Let $p$ be the intersection between $A_{ab}$ and $b \cdot A_{ab} = A_{ba}$.
 Since $p \in b \cdot A_{ab}$, we have that $x = b^{-1} \cdot p$ is in $A_{ab}$ and thus $ab \cdot x \in A_{ab}$, also.
@@ -136,10 +111,12 @@ $G(y, ba y]$ as $G(y, p] \cup G(p, ba y]$, and then applied $b^{-1}$ to $G(p, ba
 Since $\mu$ is $\Gamma$-invariant, the third equality then holds. The fourth inequality is because
 $G(a^{-1} \cdot p, b^{-1} p] \subset G(a^{-1} \cdot p, p] \cup G(p, b^{-1} p]$. The last inequality follows by 
 Proposition~\ref{prop:defect} (i). This concludes the proof of the second inequality.
+\end{comment}
 \item This case is the same as the second case, by changing $b$ to $b^{-1}$.
 \end{enumerate}
 \end{proof}
 
+\begin{comment}
 We now analyze under what conditions case (ii) in the previous proposition any of the inequalities becomes an equality.
 
 
@@ -271,6 +248,7 @@ $i(\mu, ab)=i(\mu, a) + i(\mu, b)$.
 \end{figure}
 
 \end{proof}
+\end{comment}
 
 
 
