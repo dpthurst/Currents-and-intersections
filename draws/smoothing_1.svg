@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg12"
    width="412"
    height="452"
    viewBox="0 0 412 452"
    sodipodi:docname="smoothing_1.svg"
-   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata18">
     <rdf:RDF>
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -53,16 +53,19 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="2560"
-     inkscape:window-height="1009"
+     inkscape:window-height="1494"
      id="namedview14"
      showgrid="false"
      inkscape:zoom="1.8628319"
-     inkscape:cx="102.66271"
-     inkscape:cy="204.52732"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:cx="102.53206"
+     inkscape:cy="204.79572"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g20" />
+     inkscape:current-layer="g20"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
@@ -102,11 +105,6 @@
        d="M 352.13278,182.96867 C 269.09007,177.52545 180.34726,183.95044 39.705239,87.952048"
        id="path1159-3-5-2"
        sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#1aefbe;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 253.91449,317.25891 c 4.60781,-13.05342 12.39345,-21.65788 24.15677,-24.69359 L 175.53919,191.64371 202.91686,121.85748 C 175.16267,110.60296 153.73013,93.026802 137.42518,70.32304 152.43217,59.809356 161.60324,45.405062 163.72922,26.304038"
-       id="path1221"
-       sodipodi:nodetypes="cccccc" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"

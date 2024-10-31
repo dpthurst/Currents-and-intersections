@@ -34,11 +34,7 @@ These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1
 
 \begin{remark}
 Since the space of geodesic currents is locally compact, this shows $\AConvex$ is locally compact in the product topology, which is not obvious.
-One shadow of this local compactness can be seen as follows. Let $f \in \AConvex$. We know, from~\cite[Theorem~A]{MGT21:Smoothings} $f$ extends to geodesic currents continuously. Let $\bar{f}$ be its restriction to $\ML(S)$.
-Given any complete train track on $S$, let $\phi_t \colon \mathbb{R}^n \to ML(\tau)$ be the train-track chart associated to $\tau$.
-The same ideas as in~\cite[Appendix~A.1]{Mir04:SimpleGeodesics} show that $f \circ \phi_\tau \colon \mathbb{R}^n \to \mathbb{R}$ is a convex and homogeneous function.
-Let $A^f_{\tau} \coloneqq \{ \lambda \in \ML(S) \colon f(\lambda) \leq 1\}$, which is a convex and compact subset of $\mathbb{R}^n$.
-Given $f_i \to f$, we have $A^{f_i}_{\tau} \to A^{f}_{\tau}$ in Hausdorff topology. By Blaschke's selection theorem, the space of convex and compact subsets of $\mathbb{R}^n$ with the Hausdorff topology is locally compact. 
+See also Subsection~\ref{subsubsec:convexity_charts} for a related discussion.
 \end{remark}
 
 \subsection{Multi-curves}
@@ -177,7 +173,7 @@ Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the a
 
 Given elements $g$ and $h$  with intersecting axes, let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
 
-Taking powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as analogously.
+Taking powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined analogously.
 Observe that $R_n \subset R_{n+1}$, and $\cup_{n \geq 1} R_n = B_{g,h}$.
 Hence, by continuity of measures from below, we have
 \[
@@ -186,9 +182,9 @@ Hence, by continuity of measures from below, we have
 If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
 
-Similarly, let $R_n^T$ denote the set of geodesics intersecting the sides of $H_n$ contained in $\ora{ab}$ and $\ora{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
+Similarly, let $R_n^{\perp}$ denote the set of geodesics intersecting the sides of $H_n$ contained in $\ora{ab}$ and $\ora{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
 \[
-\mu(R_n^T)=1/2(f(a) + f(b)-f(ab)).
+\mu(R_n^{\perp})=1/2(f(a) + f(b)-f(ab)).
 \]
 We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
 Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
@@ -215,7 +211,7 @@ This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, so by~\cite[P
 %\label{fig:maxsmooth}
 %\end{figure}
 
-Hence, it is only necessary to check max-smoothing for essential crossings between multi-curves (disconnected max-smoothing) to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-intersections of a multi-curve with itself. It is however true that intersection number with a measured lamination satisfies max-smoothing condition in this bigger generality. Putting everything together, we get the following result.
+The above result shows that if one knows $f$ is dual to a geodesic current, then it is only necessary to check max-smoothing for essential crossings between multi-curves (disconnected max-smoothing) to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-crossings. It is however true that intersection number with a measured lamination also satisfies connected max-smoothing.
 
 \begin{theorem}
 A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity, homogeneity, stability and the \emph{max-smoothing property}:
@@ -256,43 +252,40 @@ The proof is similar to that of Theorem~\ref{thm:char_laminations}.
 
 By the assumptions on $f$, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a Liouville current.
-Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes, we consider powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as in the proof of Theorem~\ref{thm:char_laminations}.
-By the same considerations as in that proof, if we let $a=g^n$ and $b=h^n$, we get
+Given elements $g, h \in \pi_1(\Sigma)$ with $\ora{g}, \ora{h}$ crossing, we consider powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as in the proof of Theorem~\ref{thm:char_laminations}.
+By the same considerations as in that proof, if we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
+we get
 \[\mu(R_n)=A_n + B_n-C_n\]
 and
 \[
 \mu(R_n^T)=A_n + B_n -D_n,
 \]
-where $A_n=f(a)/2$, $B_n=f(b)/2$, $C_n=f(ab^{-1})/2$ and $D_n=f(ab)/2$.
+where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$ and $D_n=f(a_nb_n)/2$.
 Now, we compute
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
 \]
-On the other hand, when $n$ goes to infinity, since $e^{A_n} \sim \lambda(A_n)$ (where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity), the disconnected $\lambda$-smoothing relation yields
+On the other hand, when $n$ goes to infinity, we have $e^{A_n} \sim \lambda(a_n)$, $e^{B_n} \sim \lambda(b_n)$, $e^{C_n} \sim \lambda(c_n)$ and $e^{D_n} \sim \lambda(d_n)$ (where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity). Since the disconnected $\lambda$-smoothing relation for $a_n, b_n$ is given by
+\[
+\lambda(a_n)\lambda(b_n) = \lambda(c_n) + \lambda(d_n)
+\]
+we get
 \[
 e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}.
 \]
 Therefore, we have
 \[
-e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} \sim 1.
+\lim_n e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})}=1.
 \]
-We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, determined by the endpoints of $g$ and $h$.
+We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, and $B_{g,h}$ is the open box determined by the endpoints of $g$ and $h$.
 Thus, we have $\lim_n \mu(R_n)=\mu(B_{g,h})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
 Therefore, we have the following relation
 \[
 e^{-\mu(B_{g,h})} + e^{-\mu(B_{g,h}^{\perp})} =1
 \]
 for any intersecting pair $g,h \in \pi_1(\Sigma)$.
-By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find pairs $g',h'$ and $g'', h''$ so that $B_{g',h'} \subset B \subset B_{g'',h''}$ and $B_{g'',h''}^{\perp} \subset B^{\perp} \subset B_{g',h'}^{\perp}$.
-Therefore, we get the inequalities
-\[
-e^{-\mu(B_{g'',h''})} \leq e^{-\mu(B)} \leq e^{-\mu(B_{g',h'})}
-\]
-and
-\[
-1-e^{-\mu(B_{g'',h''})} \leq 1- e^{-\mu(B)} \leq 1-e^{-\mu(B_{g',h'})}.
-\]
-Adding them up, we get
+By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\cup_n B_n = B$, and $\cap_n B_n^{\perp} = B$.
+Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$, and hence
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
@@ -334,15 +327,16 @@ In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamen
 
 Using this, we can prove the following.
 
-\begin{theorem}\DMGtodo[inline]{edit here}
-$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and the following inequalities.
-    There exists a constant $C \geq 1$ so that, for any pair of curves $C_1$ and $C_2$ with an essential crossing between $C_1,C_2$, we have \begin{equation}
+\begin{theorem}
+A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, homogeneity and the following inequalities.
+    There exists a constant $C \geq 1$ so that, \begin{equation}
     1/C \leq \exp \left[ f\left(\mfig{curves-10}\right)/2-f\left(\mfig{curves-12}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-11}\right)/2-f\left(\mfig{curves-12}\right)/2 \right] \leq C
     \end{equation}
     and
     \begin{equation}
-     1/C \leq  \exp \left[ f\left(\mfig{curves-10}\right)/2-f\left(\mfig{curves-11}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-12}\right)/2-f\left(\mfig{curves-11}\right)/2 \right] \leq C
+     1/C \leq  \exp \left[ f\left(\mfig{curves-10}\right)/2-f\left(\mfig{curves-11}\right)/2 \right] - \exp \left[ f\left(\mfig{curves-12}\right)/2-f\left(\mfig{curves-11}\right)/2 \right] \leq C,
     \end{equation}
+    where the crossing is assumed to be between two any pair of curves with an essential crossing.
     \label{thm:char_liouville_strong}
   \end{theorem}
 
@@ -391,14 +385,14 @@ analogous computation.
 As an application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing both $x$ and $y$ isometric to the interval $[0, d(x, y)]$. This intersection is denoted
-$[x, y]$, and called an \emph{arc}. If $G$ is a group, a $G$-tree is an $\mathbb{R}$-tree together with a group action $G \acts T$ by isometries.
+$[x, y]$, and called an \emph{arc}. If $\Gamma$ is a finitely generated group, a $\Gamma$-tree is an $\mathbb{R}$-tree together with a group action $\Gamma \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
-Given $g\in G$, $\| g\|=\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$.
+Given $g\in \Gamma$, $\| g\|=\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$.
 If $g$ is elliptic, then $\| g \| =0$ (and the converse is also true).
 If $g$ is hyperbolic, then $\| g | >0$, and $g$ translates along $T_g$ by distance $\| g\|$, thus leaving $T_g$ invariant. We call $T_g$ the \emph{axis} of $g$.
-We say that $G \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
-We say that $G \acts T$ is \emph{minimal} if there is no proper subtree of $T$ that is $G$-invariant.
-Consider two hyperbolic elements $g, h \in G$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
+We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
+We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper subtree of $T$ that is $\Gamma$-invariant.
+Consider two hyperbolic elements $g, h \in \Gamma$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}. Otherwise, we say that they do not intersect.
 Let $\Delta \coloneqq T_g \cap T_h$. Suppose $\Delta$ is not a singleton, and $g$ and $h$ translate in the same direction along $\Delta$, we say that $g,h$ and \emph{overlap coherently}.
 If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite directions along $\Delta$, we say that $g,h$ and \emph{overlap incoherently}.
@@ -411,54 +405,39 @@ Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pai
 \end{itemize}
 
 
-Given $G=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
+Given $\Gamma=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
 If two axes $\ora{g},\ora{h}$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
-It is standard that a measured lamination $\lambda$ defines a (dual) $\pi_1(\Sigma)$ minimal irreducible action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
+It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
 It follows from the construction of $T(\lambda)$ is that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
-Given a minimal action of a surface group $G$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\pi_1(\Sigma)$-equivariant isometry $\phi \colon T(\lambda) \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
+Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T(\lambda) \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
 
 Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
 \begin{enumerate}
     \item it is small,
-    \item it \emph{preserves axes intersection}: for any pair $g,h \in \pi_1(S)$ of hyperbolic elements, we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g} \cap \ora{h}$ cross.
+    \item it \emph{preserves axes intersection}: for any pair $g,h \in \Gamma$ acting as hyperbolic isometries on $T$, we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g} \cap \ora{h}$ cross.
 \end{enumerate}
-An action of a group $G$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
+An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
 \item Fixed end: $\| \cdot \|$ trivial on $[G,G]$
-\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $G$.
-\item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $G$.
+\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$.
+\item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{enumerate}
 Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axes intersection, does it follow it is small?
 Without further assumptions, the axes intersection being preserved alone does not imply in general the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
-However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $G \acts T$ of a surface group $G$ is dual to a measured lamination if and only if it is irreducible and preserves axes intersection.
-In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $G$ must be elliptic in $T$, Skora showed that $G \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axes intersection being preserved. 
+However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\Gamma \acts T$ of a surface group $\Gamma$ is dual to a measured lamination if and only if it is irreducible and preserves axes intersection.
+In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $\Gamma$ must be elliptic in $T$, Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axes intersection being preserved. 
 We give a new proof of Skora's theorem, as a consequence of our main result~Theorem~\ref{thm:intersect} and Proposition~\ref{prop:char_laminations_plus}.
+The main result of this section will be the following.
 
 \begin{theorem}
-A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured lamination if and only if it is irreducible and preserves axes intersection.
+Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axes intersection. Then follows that $\ell_T$ satisfies max-smoothing.
 \label{prop:small}
 \end{theorem}
-\begin{proof}
-\DMGtodo[inline]{Figure out how irreducibility is being used, we never invoke it explicitly but we surely use it} We assume it is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing and thus it is dual to a measured lamination by Theorem~\ref{thm:char_laminations}. The other implication follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
-Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}$ and $\ora{h}$ cross, where $T_g$ denotes the axis of $g$ in the tree.
-We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
-There are several cases to consider, depending on the relative position of the axes of the elements in the tree. For each case, different inequalities between $\| g\| + \| h \|$, $\| gh \|$ and $\| gh^{-1} \|$ are satisfied, and were analyzed by Paulin~\cite{Pa89:Paulin1989TheGT}. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree, for each one of those cases.
-In some of them, max-smoothing will be satisfied, but it will not in all of them. In the latter case, we will find a pair of elements whose axes do not intersect in the tree, but they do in the surface, which will allow us to rule that case out.
-In order to implement this strategy, we will use the following lemma to find pairs of non-intersecting axes in the tree will be useful.
 
+Before we embark on the proof of the Theorem, we start with some elementary lemmas about irreducibility.
 
 \begin{lemma}
-  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
-    \label{lem:oppgoodpair}
-\end{lemma}
-\begin{proof}
-   This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
-\end{proof}
-
-We start with some elementary lemmas about irreducibility.
-
-\begin{lemma}
-$\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
+Let $\Gamma$ be a finitely generated group. $\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
 \label{lem:char_irred_good}
 \end{lemma}
 \begin{proof}
@@ -467,7 +446,7 @@ By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and o
 
 Another way to characterize irreducibility is in terms of non-intersection of axes.
 \begin{lemma}
-$\Gamma$ a f.g. group acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h = \emptyset$.
+A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h = \emptyset$.
 \label{lem:char_irred_noninter}
 \end{lemma}
 \begin{proof}
@@ -477,54 +456,50 @@ Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 Even though we will not needed it, as a warm-up, it is worth noticing that a reducible action does not satisfy smoothing.
 
 \begin{lemma}
-If $(\Gamma, T)$ satisfies smoothing, then it is irreducible.
+Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
+If $\| \cdot \| \colon \Curves(S) \to \mathbb{R}$ satisfies smoothing, then $(\Gamma, T)$ is irreducible.
 \end{lemma}
 \begin{proof}
 We start with a reducible action and show it cannot satisfy smoothing.
-If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlaping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap in the same direction, in which case
-
+If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlapping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap in the same direction, in which case
 \begin{equation}
-\ell(gh)=\ell(g)+\ell(h) \mbox{ and } \ell(gh^{-1}) = |\ell(g)-\ell(h)|
+\|gh \|=\| g \| + \| h \| \mbox{ and } \|gh^{-1} \| = |\|g \|- \| h \| |
 \label{eq:reducible1}
 \end{equation}
 or $g,h$ overlap in opposite directions in which case
 \begin{equation}
-\ell(gh^{-1})=\ell(g)+\ell(h) \mbox{ and } \ell(gh) = |\ell(g)-\ell(h)|.
+\|gh^{-1} \| =\| g\| + \| h \| \mbox{ and } \| gh \| = | \| g \| - \| h \||.
 \label{eq:reducible2}
 \end{equation}
 
 Take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
-WLOG, assume $\ell(a)<\ell(x)$.
+WLOG, assume $\| a \|<\| x \|$.
 
 \begin{claim}
 Without lost of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
 \end{claim}
 \begin{proof}[Proof of Claim]
-If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. \DMGtodo{this reference might have to be updated after changes in crossings}
-Then $\ell(ax)=\ell(x)-\ell(a)$ and $\ell(xa^{-1})=\ell(a)+\ell(x)$. Since $\ell((xa^{-1})(ax))=\ell(x^2)$ is equal to $\ell(ax) + \ell(xa^{-1}) = 2\ell(x)$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
+If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. 
+Then $\| ax \| =\| x\|- \|a \|$ and $\| xa^{-1} \| =\| a \| + \| x \|$. Since $\| (xa^{-1})(ax) \| =\| x^2 \|$ is equal to $\| ax \| + \| xa^{-1} \|= 2\| x \|$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
 \end{proof}
 If $(a,x)$ R-cross, we use Equation~\ref{eq:cross-split} in Proposition~\ref{prop:join-split-geom}, with $m=-n$, $a=b$, and $n$ large enough, and choosing some admissible $r$ for the inequalities there, by smoothing,
 \begin{equation}
- \ell(ax^nax^{-n}) \geq \ell(ax^{n+r}) + \ell(ax^{-n-r})
+ \| ax^nax^{-n} \| \geq \| ax^{n+r} \| + \| ax^{-n-r} \|
  \label{eq:unoriented1}
 \end{equation}
-On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, by  we have that the left hand side is
+On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, we have that the left hand side is
 \begin{equation}
-\ell(ax^nax^{-n}) = \ell(ax^n) - \ell(ax^{-n}) = \ell(a) + n\ell(x) - (n\ell(x)-\ell(a)) = 2\ell(a)
+\|ax^nax^{-n} \| = \| ax^n \| - \|ax^{-n} \| = \| a \| + n\| x \| - (n\| x \|-\|a\|) = 2\|a\|
 \label{eq:lhs1}
 \end{equation}
 where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax^n,ax^{-n}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x^n)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-n})$ in the second equality.
-A similar computation, yields the following result for the right hand side.
+A similar computation, yields the following result for the right hand side:
 \begin{equation}
-\ell(ax^{n+r})=\ell(a)+(n+r)\ell(x) + (n+r)\ell(x)-\ell(a) = 2(n+r)\ell(x)
+\|ax^{n+r}\|=\|a\|+(n+r)\|x\| + (n+r)\|x\|-\|a\| = 2(n+r)\|x\|.
 \label{eq:rhs1}
 \end{equation}
-Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\ell(a) \geq (n+r)\ell(x)$, which contradicts our assumption.
+Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\|a \| \geq (n+r)\|x\|$, which contradicts our assumption.
 \end{proof}
-
-\begin{remark}\DMGtodo[inline]{check}
-The proof above shows more that what it is stated: if the action $(\Gamma, T)$ has \emph{any} pair of distinct hyperbolic elements overlapping in a ray with coherent orientations, then the action does not satisfy smoothing. This is in consonance with the fact that in that case, the commutator $[g,h]$ must fix the ray where $g,h$ overlap, and thus the stabilizer of any subarc will be the commutator subgroup of $\langle g, h\rangle$, which is not cyclic, hence the action cannot be small.
-\end{remark}
 
 \begin{remark}
 Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows once again that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing. We had already seen a previous example in the setting of the linear extension of extremal length, in Example~\ref{ex:linEL}.
@@ -535,6 +510,24 @@ Let's finally address the minimality assumption.
 The translation length does not determine the tree uniquely.
 Given a curve functional satisfying max-smoothing, it satisfies in particular Parry's axioms~\cite{Par91:Translation}, and hence it is dual to an action of a real tree. Since the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions}, there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is given by the same curve functional. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional.
 
+The following result will be useful in the proof of Theorem~\ref{prop:small}.
+
+\begin{lemma}
+  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
+    \label{lem:oppgoodpair}
+\end{lemma}
+\begin{proof}
+   This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
+\end{proof}
+
+Let us now address the proof of Theorem~\ref{prop:small}.
+
+\begin{proof}[Proof of Theorem~\ref{prop:small}]
+We assume $(\Gamma, T)$ is irreducible and preserves axes intersection, and will prove $\| \cdot \|$ satisfies max-smoothing. 
+Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}$ and $\ora{h}$ cross, where $T_g$ denotes the axis of $g$ in the tree.
+We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
+There are several cases to consider, depending on the relative position of the axes of the elements in the tree. For each case, different inequalities between $\| g\| + \| h \|$, $\| gh \|$ and $\| gh^{-1} \|$ are satisfied, and were analyzed by Paulin~\cite{Pa89:Paulin1989TheGT}. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree, for each one of those cases.
+In some of them, max-smoothing will be satisfied, but it will not in all of them. In the latter case, we will find, using Lemma~\ref{lem:oppgoodpair}, pairs of elements whose axes do not intersect in the tree, but they do in the surface, which will allow us to rule that case out.
 
 In order to prove Theorem~\ref{prop:small}, let's consider several cases.
 
@@ -651,7 +644,7 @@ contains $y$ (resp. $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{g
 
 If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. 
 
-However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic \DMGtodo[inline]{This is not true if the action is reducible}. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^k g}$ and $\ora{gh^k}$ intersect for all $k>0$.
+However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^k g}$ and $\ora{gh^k}$ intersect for all $k>0$.
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
@@ -682,6 +675,22 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 \end{enumerate}
 \end{proof}
 
+Now we prove Theorem~\ref{mainthm:skora}.
+\begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
+If $\Gamma \acts T$ is irreducible and satisfies axis intersection, it follows by Theorem~\ref{prop:small} that it satisfies max-smoothing. 
+Hence, by~Theorem~\ref{prop:char_laminations_plus}, it follows $\ell_T$ is dual to a measured lamination $\lambda$. By~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$.
+For the other implication, note that 
+given a measured lamination $\lambda$, then $T_{\lambda}$ satisfies irreducibility and axis intersection  by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+ If $T$ is equivariantly isometric to $T_{\lambda}$, it then follows $T$ satisfies these properties as well.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:skora_maxsmoothing}]
+ If $\pi_1(S) \acts T$ is irreducible and satisfies preservation of axis intersection, then by Theorem~\ref{prop:small} it satisfies max-smoothing, and hence the hypotheses of the statement are in particular satisfied.
+
+ If the hypotheses of the statement are satisfied, then by the same arguments as in Subsection~\ref{subsec:algebraic_vs_top}, max-smoothing follows. Hence, by Theorem~\ref{prop:char_laminations_plus}, we get $\ell_T(g)=i(\lambda, g)$ for some measured lamination $\lambda$. Again, by~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$ and thus by Morgan-Otal~\cite{MO93:RelativeGrowths}, 
+ irreducibility and axis preservation are satisfied.
+\end{proof}
+
 
 
 \subsection{Inequalities between intersection numbers}
@@ -695,7 +704,7 @@ In fact, we have something much stronger
 
 \begin{corollary}
 If $C_2$ dominates $C_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $\Sigma$.
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
     \label{cor:domination}
 \end{corollary}
 

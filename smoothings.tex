@@ -1,7 +1,5 @@
 \subsection{Algebraic vs Topological smoothing}
 
-\DMGtodo[inline]{algebraic and topological version of theorem axioms}
-
 In this section we relate to notions of smoothing.
 
 \textbf{Algebraic intersection conditions}
@@ -56,45 +54,3 @@ Let $f \colon \Curves(S) \to \mathbb{R}$ be a curve functional. $f$ satisfies th
 
 \DMGtodo[inline]{I moved the statement to the introduction. The proof is still here, but should we moved elsewhere.}
 
-We are now ready to prove Theorem~\ref{thm:intersections_group}
-
-
-\begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
-Extend $f$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves.
-\[
-f(s \cdot a + t \cdot b) = s\cdot f(a) + t \cdot f(b)
-\]
-for every $s,t \geq 0$, and $a,b \in \Gamma$.
-
-The smoothing condition of Theorem~\ref{thm:intersect_primeprime} is a priori stronger than the hypotheses of this theorem.
-It remains to show the hypotheses of this theorem imply smoothing.
-Suppose $a,b$ have an essential crossing. 
-Then, either $(a,b)$ are $R$-crossing, or $(a,b)$ are $L$-crossing. If $(a,b)$ is $R$-crossing, we have
-\[
-f(a)+f(b) = f(a + b) \geq f(ab).
-\]
-Also, $(B,a)$ is $R$-crossing, and thus
-\[
-f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB)
-\]
-On the other hand, if $(a,b)$ are $L$-crossing, then $(b,a)$ is $R$-crossing, hence
-\[
-f(b)+f(a) \geq f(ba) = f(ab).
-\]
-Also, if  $(a,b)$ are $L$-crossing, thus $(a,B)$ is $R$-crossing, hence
-\[
-f(a)+f(b) = f(b)+f(B) \geq f(aB).
-\]
-All in all, if $a,b$ cross essentially, $f$ satisfies $f(a) + f(b) \geq \max \{ f(ab) , f(aB) \}$, so $f$ satisfies disconnected smoothing.
-
-For $ab$ with a self-intersection, this is equivalent to $(a,b)$ being $R$-parallel or $(a,b)$ being $L$-parallel.
-For any pair of $R$-parallel elements $(a,b)$, 
-\[
-f(ab)\geq \max \{ f(a) + f(b), f(aB)\}
-\]
-If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
-\[
-f(ab)=f(ba)\geq \max \{ f(b) + f(a), f(bA)\} = \max \{ f(a) + f(b), f(aB)\} 
-\]
-Hence, connected smoothing is satisfied.
-\end{proof}

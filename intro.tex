@@ -4,10 +4,9 @@
 \begin{enumerate}
 \item Most important: Connect the algebraic and topological notions of
   smoothing, especially in the connected case.
-\item Important: math of sections 3--5 has to be checked
-\item Less important: check math of cross ratios
-\item Less important: check math of Skora's theorem. 
-\item Extract list the conditions of inequalities satisfied by small actions.
+\item Important: math of sections 4--5 has to be checked
+\item Less important: check math of section 9
+\item Less important: check math of section 5
 \end{enumerate}
 
 \textbf{Notation issues throughout paper:}
@@ -19,9 +18,6 @@
 \item $a^{-1}$ vs $A$ for inverse element of group,
   \DPTtodo[inline]{Both are acceptable. Use $A$ if we're not
     specifically emphasizing the inverse}
-\item $A_g$ vs $\ora{g}$ for hyperbolic axis (note the first is used
-  specially in the section about trees, because we have to distinguish
-  the hyperbolic axis $A_g$ from the axis in the tree $T_g$
 \item Sometimes we use $\gamma$ for element of group, and sometimes to refer to a geodesic line in the Poincare disk. I suggest we use $g$ and other latin letters for group elements, and $\gamma$ and other greek letters for geodesics of Poincare disk.
   \item Figure colors for lifts of $a, b, ab, aB$, and so on should be uniformized.
   \item Trees figures should be uniformized.
@@ -38,14 +34,14 @@ Other examples of geometric structures embedding inside the space of geodesic cu
 Croke-Fathi-Feldman for non-positively curved Riemannian metrics
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem},
 Hersonsky-Paulin \cite[Theorem~A]{HP97:RigidityNegCurvedCone} for
-negatively curved metrics with conical singularities,
-Duchin-Leininger-Rafi more explictly, as a subcase of the last one, give an embedding for singular Euclidean structures
+negatively curved metrics with conical singularities.
+Duchin-Leininger-Rafi subsequently gave, as a subcase of the last one, a more explicit embedding for singular Euclidean structures
 associated to quadratic differentials/half-translation structures
-\cite[Theorem~4]{DLR10:DegenerationFlatMetrics} or Bankovic-Leininger non-positively curved Euclidean cone metrics \cite[Main Theorem]{BL17:RigidityFlat}. The latest work in this direction is \cite{ELS21:Hyperbolic}.
+\cite[Theorem~4]{DLR10:DegenerationFlatMetrics}. Later, Bankovic-Leininger have embedded non-positively curved Euclidean cone metrics in the space of geodesic currents \cite[Main Theorem]{BL17:RigidityFlat}. The latest work in this direction is \cite{ELS21:Hyperbolic}. 
 
-The way the embedding works in each of the above cases is associating
+The way the embedding works in each of the above cases is by associating
 a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric
-structure $\rho$. This metric structure is usually defined up to a notion of homotopy
+structure $\rho$. This metric structure is usually defined up to a certain
 equivalence---as happens, for example, for Teichm\"uller space (see
 Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}).  Then one shows
 that this assignment is in fact an injection. This canonical geodesic
@@ -70,12 +66,13 @@ Similarly, other notions of length of curves $\ell_{\rho}$ associated to the abo
 for any closed multi-curve $C$ in $S$. We will say that the current $\mu_{\rho}$ is \emph{dual} to $\ell_{\rho}$.
 
 There are many other lengths with an associated dual geodesic current.
-For example, Erlandsson shows that word-length with respect to simple generating sets of the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}.
+For example, Erlandsson shows that word-length with respect to simple generating sets of the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}, which, in this case, turns out to be a weighted multi-curve. 
+In the context of representations of surface groups into higher rank lie groups (specifically, certain Anosov representations), work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and, more recently, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} provides geodesic currents dual to length functions arising from logarithms of ratios of eigenvalues of the representation.
 
-In fact, the usual first step in the solution to a marked length rigidity problems for a metric structure $\rho$ is to find a geodesic current $\mu_{\rho}$ satisfying the above intersection  property
+There are other natural notions of lengths associated to surface groups that are not dual to a geodesic current. For example, Brody-Reyes~\cite[Proposition~1.8] show, mostly using work of Fricker-Furman~ \cite[Theorem A]{FF21:QF}, that for a quasi-fuchsian representation $\rho$, that is, a deformation of a fuchsian representation of $\pi_1(S)$ inside of $\PSL(2,\mathbb{C})$ whose limit set is still homeomorphic to a circle, the natural notion of stable length $\ell_{\rho}$ associated to this representation is dual to a geodesic current if and only if the representation is fuchsian (i.e., the deformation is trivial).
+
+In fact, the usual first step in verifying marked length rigidity property for a family metric structures is to associate, to a metric structure $\rho$, a geodesic current $\mu_{\rho}$ dual to the length function $\ell_{\rho}$.
 In this paper, we give an answer to the following question.
-
-There are other natural notions of lengths associated to surface groups that are not dual to a geodesic current. For example, Fricker-Furman show in \cite[Theorem A]{FF21:QF} that for a quasi-fuchsian representation $\rho$, that is, a deformation of a fuchsian representation of $\pi_1(S)$ inside of $\PSL(2,\mathbb{C})$ whose limit set is still homeomorphic to a circle, the natural notion of stable length $\ell_{\rho}$ associated to this representation is dual to a geodesic current if and only if the representation is fuchsian (i.e., the deformation is trivial).
 
 \begin{question}\label{q:intersection}
 Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
@@ -102,7 +99,7 @@ for every multi-curve $C$.
 \end{mainthm}
 
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}. By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$. As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$ (for example, for any Finsler metric). As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
     The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
     For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases.
@@ -140,7 +137,7 @@ for every $g \in \Gamma$.
 Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
 \label{thm:intersections_group}
 \end{mainthmprime}
-See section [XXX] \DMGtodo{add reference to section once the proof has been moved to the right position} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to conditions (4) \emph{and} (5) in Theorem~\ref{thm:intersections_group}.
+See subsection~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to conditions (4) \emph{and} (5) in Theorem~\ref{thm:intersections_group}.
 We emphasize that condition (4) alone is not enough to imply the smoothing condition: see Remark~\ref{rmk:reducible_action} and also Example~\ref{ex:linEL}.
 
 One should compare this result to previous work of Feng
@@ -157,35 +154,12 @@ hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our
 Theorem~\ref{prop:char_liouville} can be seen as an extension of that
 theorem for closed curves. We give a further characterization in Theorem~\ref{thm:char_liouville_strong}, in terms of a condition on the curve functional which is a priori easier to check.
  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
-See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems. In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details) Fricker-Furman \cite[Theorem A]{FF21:QF} show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. In their paper, they note that the smoothing property is indeed a necessary condition for a negatively curved length, which is dual to a geodesic current by \cite[Theorem 2]{Otal90:SpectreMarqueNegative}(although they phrase it in a slightly different terminology, see  \cite[Section 2]{FF21:QF}).
-In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current.
+See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems. In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details). Recently, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}, following essentially on work of Fricker-Furman \cite[Theorem A]{FF21:QF}, show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
+In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current, and hence smoothing is satisfied.
 Our result implies that, in fact, the smoothing property is a \emph{necessary} condition for \emph{any} length dual to a geodesic current. More importantly, adding a few more mild assumptions, it shows that it is also a \emph{sufficient} condition.
 
-Given a hyperbolic group $\Gamma$, let $\mathcal{D}(\Gamma)$ be the set of left-invariant pseudo-metrics on $\Gamma$. In the literature some subsets of relevance have been studied, such as those pseudo-metrics quasi-isometric to (some/any) word metric on $\Gamma$  (cite Furman, Reyes, Cantrell-Reyes, etc), but here we will keep the framework general.
-Any pseudo-metric $d$ has a naturally defined stable length $\ell_d(g) = \lim_n \frac{d(e, g^n e)}{n}$, where $e$ is the identity in the Cayley graph of $\Gamma$. By definition, $\ell_d$ is conjugacy class invariant, and $\ell_d(g)=\ell_d(g^{-1})$.
-Thus, specializing to the case when $\Gamma=\pi_1(S)$, $\ell_d$ gives thus a curve functional.
-Every geodesic current induces a natural left invariant pseudo-metric on $\wt{\Sigma}$ equipped with an auxiliary hyperbolic metric (and thus on $\Gamma$ equipped with an auxiliarly word metric), where $d_{\mu}(x,y)$ on $\wt{\Sigma}$ is (roughly speaking) defined as the $\mu$-mass of the set of geodesics tranverse to the $\Sigma$-hyperbolic segment $[x,y]$ (see \cite{dRMG22:Duals}, \cite{OR22:Metric} for precise statements).
-We thus have the following natural maps
-\[
-\iota \colon \GC(S) \to  \CurveFunct(S)
-\]
-sending a current $\mu$ to its intersection functional $i(\mu, \cdot)$;
-\[
-\partial \colon \Curr(S) \to \mathcal{D}(\pi_1(S))
-\]
-sending a current $\mu$, to its dual pseudo-metric $d_{\mu}$;
-\[
-\ell \colon \mathcal{D}(\pi_1(S) \to \CurveFunct(S)
-\]
-sending a pseudo-metric $d$ to its stable length $\ell_d$.
-We note that \cite{BIPP21:Systoles}
-\[
-\iota = \ell \circ \partial.
-\]
-A general pseudo-metric is not uniquely determined by its stable length.  For pseudo-metrics quasi-isometric to a word metric, the stable length characterizes the pseudo-metric only up to uniform additive error (Cantrell-Tanaka), i.e., if $\ell_d(g)=\ell_{d'}$ then there exists $k$ so that $|d-d'| \leq k$.
-If the pseudo-metric space is isometric to an $\mathbb{R}$-tree, work of Culler-Morgan~\cite{CM87:GroupActions} shows that its stable length fully determines the pseudo-metric.
-For pseudo-metrics coming from geodesic currents, the situation is much nicer: the stable length does fully characterize the pseudo-metric (by Otal~\cite{Otal90:SpectreMarqueNegative}), thus all the maps above are injections.
-Theorem~\ref{thm:intersect} can be seen as a characterization of the image of $\iota$ as well as $\ell$. 
+\subsubsection{Characterize measured laminations and hyperbolic metrics}
+
 As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
 
 \begin{mainthm}
@@ -204,14 +178,16 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:inte
     \label{mainthm:apps}
 \end{mainthm} 
 
-In fact, the second condition characterizing Liouville currents can be replaced other equivalent conditions (see Section~\ref{subsec:liouville}). \DMGtodo[inline]{Is this the best way to announce this result? In the current way, we are not giving the strongest result, but the one with the easier to state condition.}
+ In addition to assuming the disconnected max-smoothing hypothesis, one can further assume the \emph{connected max-smoothing} hypothesis, obtained by replacing the essential crossing between two closed curves by a self-crossing in the max-smoothing equation above. This property is also satisfied by curve functionals dual to measured laminations and, together with additivity, homogeneity and stability, characterizes curve functionals dual to measured laminations~(see Theorem~\ref{thm:char_laminations}).
 
-Parry~\cite{Par91:Translation} characterized precisely which curve functionals are stable lengths of pseudo-metrics isometric to a real tree.
+Furthermore, the second family of equations characterizing Liouville currents can be replaced by a family of inequalities (which are, a priori, easier to check) providing an alternative characterization of Liouville currents (see Section~\ref{subsec:liouville}).
+
+\subsubsection{Characterizing small actions on real trees}
 
 As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
- Let $G$ be a surface group, i.e. $G=\pi_1(X)$ for some closed hyperbolic surface $X$, and $T$ an $\mathbb{R}$-tree. Suppose $G$ acts on $T$ by isometries. It turns out that an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or it has fixed points (elliptic).
-The action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in G$ with transversely intersecting axes in $\wt{X}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
-An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{X}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{X}$.
+ Let $\Gamma$ be a surface group, i.e. $\Gamma=\pi_1(\Sigma)$ for some closed hyperbolic surface $\Sigma$, and $T$ an $\mathbb{R}$-tree. Suppose $\Gamma$ acts on $T$ by isometries. It turns out that an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or it has fixed points (elliptic).
+The action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
+An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
 We give a new proof of the following result, that was originally proven by Skora in~\cite{Sko90:GeometricAction}.
 
 \begin{mainthm}
@@ -225,17 +201,17 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate to (but are weaker than) our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
 Walter Parry~\cite{Par91:Translation} characterized functions on
-conjugacy classes in $G$ that are translation lengths of $G$-trees in
-terms of Culler-Morgan axioms. One can see our result in terms of the
+conjugacy classes in $\Gamma$ that are translation lengths of $\Gamma$-trees in
+terms of the Culler-Morgan axioms. One can see our result in terms of the
 smoothing condition as further characterizing which functions on
-conjugacy classes in $G$ come from small $G$-tree actions, when
-$G=\pi_1(S)$. 
+conjugacy classes in $\Gamma$ are translation lengths of \emph{small} $\Gamma$-tree actions (i.e. actions with cyclic edge stabilizers), when
+$\Gamma=\pi_1(S)$. 
 
-In fact, what we prove is the following.
+We prove the following.
 
 \begin{mainthm}
 Let $\pi_1(S)$ act on a real tree $T$ minimally, and let $\ell \colon \pi_1(S) \to \mathbb{R}$ be its associated translation length on the tree.
-The action $\pi_1(S) \acts T$ is small if and only if $\ell$ satisfies the following.
+The action $\pi_1(S) \acts T$ is irreducible and satisfies axis intersection if and only if $\ell$ satisfies the following conditions.
 \begin{enumerate}
 \item For any pair of $R$-crossing elements $(a,b)$, 
  \begin{align}
@@ -250,12 +226,14 @@ The action $\pi_1(S) \acts T$ is small if and only if $\ell$ satisfies the follo
 \end{mainthm}
 
 It would be interesting to give similar conditions for 
-small actions of a non-elementary hyperbolic group $G$. Misha Kapovich and
+small actions of a non-elementary hyperbolic group $\Gamma$. Misha Kapovich and
 the first author show \cite{KMG:BBP} that for one ended hyperbolic
 groups acting via small action on an $\mathbb{R}$-tree, the stable
 length extends continuously to geodesic currents.
 
-Finally, we subsume previous work of Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every generalized cross-ratio. Every generalized cross-ratio induces a curve functional called its period, giving a function
+\subsubsection{Generalized cross-ratios}
+
+Finally, we subsume previous work of Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every generalized cross-ratio. Every generalized cross-ratio induces a curve functional, its \emph{period}, giving a function
 \[
 \pi \colon \operatorname{CR}(S) \to \CurveFunct(S).
 \]
@@ -269,7 +247,7 @@ We show that period curve functionals (i.e., the image of the map $\pi$) satisfy
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{mainthm}
 
-Unlike the work in~\cite{BIPP21:PositiveCrossratios}, our construction relies solely on the period function to generate the geodesic current. Although a given geodesic current is associated with two distinct cross-ratios, they share the same period. Our proof demonstrates that the mapping from cross-ratios to geodesic currents is mediated by the period map, providing a clearer insight into the relationship between these elements compared to previous approaches.
+Unlike the work in~\cite{BIPP21:PositiveCrossratios}, our construction relies solely on the period function to generate the geodesic current. Although a given geodesic current is associated with two distinct cross-ratios, they share the same period. Our proof demonstrates that the mapping from cross-ratios to geodesic currents is mediated by the period map.
 
 
 
@@ -426,9 +404,13 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  In fact, if $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the constant so that $\ell_{\rho} \in \QConvex_R(S)$, we have that $R \to \infty$ as $K \to \infty$. In particular, one can leave the space $\QConvex_R(S)$ by taking a degenerating sequence of quasi-fuchsian representations. 
-    
-    \DMGtodo[inline]{ This is not written, but can probably be proven using that a lower bound for $R$ in terms of a constant $\delta$ is given in \cite[Theorem A]{FF21:QF}, and this constant $\delta$ is a Busemann function value of points of the limit set of $\rho$, which probably can be checked to grow as a function of the quasi-symmetric constant of the lift of the representation. } 
+    \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
+    \begin{question}
+    If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
+    \end{question}
+    \begin{comment}
+    It can probably be proven using that a lower bound for $R$ in terms of a constant $\delta$ is given in \cite[Theorem A]{FF21:QF}, and this constant $\delta$ is a Busemann function value of points of the limit set of $\rho$, which probably can be checked to grow as a function of the quasi-symmetric constant of the lift of the representation.
+    \end{comment}
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
@@ -446,7 +428,7 @@ If smoothing was satisfied, we would have
 \ell(a^{-n}ba^n b) \geq \ell(a^{-n}b) + \ell(ba^n)
 \]
 which is violated, since the left hand side is $0$, whereas the right hand side is lower bounded by $n\ell(a)$, which is positive.
-\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[Theorem]{GML09:ProperAffine}. \DMGtodo[inline]{They do it for free groups, check if the previous paper by Labourie on surface groups extends it continuously for surface groups}
+\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[6.1]{GML09:ProperAffine}. Strictly speaking, the paper deals with the case of surfaces with boundary, but the same arguments go through for closed surfaces, by~\cite{Lab01:Diffusion}
 \end{enumerate}
 
 For an example of a curve functional that does not extend continuously to geodesic currents (and thus does not satisfy smoothing, by~\cite[Theorem~A]{MGT21:Smoothings}), we have the following.
@@ -553,10 +535,10 @@ If a curve functional satisfies homogeneity, stability, convex union and smoothi
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
 Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
-It is a consequence of our main Theorem~\ref{thm:intersect}, that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals, but can be proven similarly ideas as in~\cite[Theorem~4.2]{CM87:GroupActions}. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
+It is a consequence of our main Theorem~\ref{thm:intersect}, that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
 The sublevel set $\Lambda_{f_{\tau}} \coloneqq \{ \vec{x} \in V(\tau) : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of $\mathbb{R}^N$ (for some $N>0$ depending on the combinatorics of $\tau$).
 Let $f_i(\cdot) = i(\mu_i, \cdot)$ for some sequence of geodesic currents $\mu_i \to \mu$, and $f(\cdot) = i(\mu, \cdot)$.
-Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the class of compact convex subsets of $\mathbb{R}^N$ is locally compact (by Banach's selection theorem~[REF Chapter 6 in Convex subsets and their applications, by Lay]).
+Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the subset of compact convex subsets of $\mathbb{R}^N$ is locally compact (by Banach's selection theorem~[REF Chapter 6 in Convex subsets and their applications, by Lay]).
 The same convexity argument would work if we worked with $\Convex(S)$ as opposed to $\AConvex(S)$ (that is, we only required convex union).
 Hence, we conjecture the following, which we think can also be proved with ideas similar to~\cite[Theorem~4.2]{CM87:GroupActions}.
 
@@ -610,32 +592,30 @@ If any of the answers to these questions is negative for every $\mu$,
 they would imply a negative answer to the following question.
 
 \begin{question}
-Given $\Sigma$, is there a finitely-supported probability measure $\mu$ on $\Gamma=\pi_1(\Sigma)$ so that the induced translation length $\ell_{\mu}$ is dual to (a multiple of) the Liouville current $\mathcal{L}_{\Sigma}$?
+Given $\Sigma$, is there a finitely-supported probability measure $\mu$ on $\Gamma=\pi_1(\Sigma)$ so that the induced translation length $\ell_{\mu}$ is dual to the Liouville current $\mathcal{L}_{\Sigma}$?
 \label{q:singularity}
 \end{question}
 
-As noted by
-[Reyes, Cantrell-Reyes], this would settle
-the singularity conjecture for $\SL_2(\mathbb{R})$ [Kaimanovich-LePrince, page 259].
-Kosenko-Tiozzo have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with symmetric fundamental domains.
+A negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ see~\cite[Conjecture, page~~259]{KLP11:Singularity}.
+Kosenko-Tiozzo~\cite{KT22:Inequality} have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with symmetric fundamental domains.
 It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer would be interesting, since then Theorem~\ref{thm:intersect} would give a dual geodesic current, and then the machinery of geodesic currents could be used to study Green metrics.
 
 
 \subsubsection{Questions about generalizations to hyperbolic groups}
-In recent work of Cantrell and Oreg\'on-Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $G$ acting on uniformly quasi-geodesic hyperbolic spaces $X$.
-Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $G$ is said to be Gromov hyperbolic if its Cayley graph is.
+In recent work of Cantrell and Oreg\'on-Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$.
+Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
 A metric space $X$ is uniformy quasi-geodesic if there exists constants $\lambda_1,\lambda_2 >0$ and $\epsilon \geq 0$, so that every two points $x, y \in X$ are connected by a $(\lambda_1,\lambda_2,\epsilon)$-quasi-geodesic.
-We say that $G \acts X$ of a non-elementary hyperbolic group on a uniformly quasi-geodesic hyperbolic metric space $X$ has the \emph{bounded backtracking property} if given an orbit map $f \colon \Cay(G) \to X$, there exist a constant $C>0$ so that for every two points $x,y \in \Cay(G)$, and geodesic $[x,y]$, there exists some quasi-geodesic $[f(x),f(y)]$ in $X$ so that $f([x,y]) \subset N_C([f(x),f(y)])$, where $N_C([f(x),f(y)])$ denotes the $C$-neighborhood of $[f(x),f(y)])$ with respect to the Hausdorff metric.
+We say that $\Gamma \acts X$ of a non-elementary hyperbolic group on a uniformly quasi-geodesic hyperbolic metric space $X$ has the \emph{bounded backtracking property} if given an orbit map $f \colon \Cay(\Gamma) \to X$, there exist a constant $C>0$ so that for every two points $x,y \in \Cay(\Gamma)$, and geodesic $[x,y]$, there exists some quasi-geodesic $[f(x),f(y)]$ in $X$ so that $f([x,y]) \subset N_C([f(x),f(y)])$, where $N_C([f(x),f(y)])$ denotes the $C$-neighborhood of $[f(x),f(y)])$ with respect to the Hausdorff metric.
 In~\cite{KMG:BBP}, Kapovich and the first author show that actions with bounded backtracking property extend continuously to geodesic currents (see also~\cite{COR22:Manhattan}). 
 
 \begin{question}
-Let $G$ be a surface group, and $G \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$.
+Let $\Gamma$ be a surface group, and $\Gamma \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$.
 Let $\ell_X$ denote the stable length of the action.
-Suppose that $\ell_X \in \QConvex(S)$. Does it follow that $G \acts X$ has the bounded backtracking property?
+Suppose that $\ell_X \in \QConvex(S)$. Does it follow that $\Gamma \acts X$ has the bounded backtracking property?
 \end{question}
 
 \begin{question}
-Let $G$ be a surface group, and $G \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property.
+Let $\Gamma$ be a surface group, and $\Gamma \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property.
 Let $\ell_X$ denote the stable length of the action. Does it follow that $\ell_X \in \QConvex(S)$.
 \end{question}
 

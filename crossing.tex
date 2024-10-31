@@ -116,8 +116,6 @@ $\wt S$.) When there is a choice, we prefer to state lemmas in terms
 of $\Isom^+(\bbH^2)$, since in principle it is more general (as we do
 not need to assume the group elements generate a discrete subgroup).
 
-\DPTtodo[inline]{Deleted a bit about R-crossing here, moved it later.
-  Maybe this convention is now misplaced.}
 \begin{convention}\label{conv:circle-intervals}
   Intervals on the circle are always written with endpoints in counterclockwise
   order. (Thus if $x,y \in \partial \bbH^2$ are distinct points,
@@ -243,7 +241,7 @@ between two geodesics $\ora{a}, \ora{b}$.
 
 We will switch to using elements of $\Isom^+(\bbH^2)$. On the one
 hand, if we fix any hyperbolic metric on~$S$, any non-trivial element
-$a \in \pi_1(X)$ acts on $\wt S = \bbH^2$ on the left by an isometry
+$a \in \pi_1(\Sigma)$ acts on $\wt S = \bbH^2$ on the left by an isometry
 of $\bbH^2$ that is hyperbolic (in the sense of having two distinct
 fixed points on $\partial\bbH^2$). On the other hand, the notions we
 will consider will only depend on the cyclic order on the circle at
@@ -342,10 +340,8 @@ following.
 \end{proof}
 
 
-\begin{lemma} \DMGtodo[inline]{This lemma might be combined in the future with the more precise statements about smoothings in the application section}
+\begin{lemma} 
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements. Then:
-  \DPTtodo[inline]{Maybe we need statements about placement of
-    attracting/repelling endpoints. If so, add into the cases}
   \begin{enumerate}[label=(\Roman*)]
   \item\label{item:ab-cross} If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
     hyperbolic, and the pairs
@@ -598,10 +594,10 @@ These correspond to the notions of parallelism and crossing defined in Section~\
 We extract the following two lemmas that follow immediately from Proposition~\ref{prop:crossings-triality}, and we will use extensively without referring to them.
 
 \begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{x}$ to the
+Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{b}$ to the
 right (or to the left), then
 \[
-  [a][x] \reducesto [ax]\qquad\text{and}\qquad[a][x] \reducesto [aX].
+  [a][b] \reducesto [ab]\qquad\text{and}\qquad[a][b] \reducesto [aB].
 \]
 \end{lemma}
 
@@ -610,9 +606,9 @@ right (or to the left), then
 We also have the following.
 
 \begin{lemma}
-Let $a,x \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) to $\ora{x}$, then
+Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) to $\ora{b}$, then
 \[
-  [ax] \reducesto [a][x]\qquad\text{and}\qquad[ax] \reducesto [aX].
+  [ab] \reducesto [a][b]\qquad\text{and}\qquad[ab] \reducesto [aB].
 \]
 \end{lemma}
 
@@ -764,11 +760,11 @@ Hence, by homogeneity, the base case follows.
 Now, we prove the induction step.
 \begin{align*}
 2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
-&f(a^{2(n-1)}b^{2(n-1)} + f(b^2a^2) \geq  \\
+&f(a^{2(n-1)}b^{2(n-1)}) + f(b^2a^2) \geq  \\
 & f(a^{2(n-1)}b^{2(n-1)} b^2a^2) = f(a^{2n}b^{2n}).
 \end{align*}
 In the first inequality we used induction step, then we used Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
-Thus, by we have
+Thus, we have
 \[
 2nf(ab) \geq f(a^{2n}b^{2n})
 \]
@@ -779,13 +775,13 @@ f(ab) \geq f(a) + f(b)
 \]
 which proves oriented disconnected smoothing.
 Second, we prove the unoriented disconnected smoothing.
-We split it into two cases, depending on the relative position of $aB$ and $Ba$. Observe that, according to Subsection~\ref{subsec:parallel_aB}, if $a$ and $b$ are parallel, recall that by Lemma~\ref{lem:ab_parallel_aB}, $aB$ and $Ba$ are either anti-parallel or crossing. 
+We split it into two cases, depending on the relative position of $aB$ and $Ba$. Observe that, if $a$ and $b$ are parallel, by Lemma~\ref{lem:ab_parallel_aB}, $aB$ and $Ba$ are either anti-parallel or crossing. 
 If $aB$ and $Ba$ are crossing, we can proceed in a very similar fashion as above. Namely, we prove by induction, as above,
 \[
 2nf(ab) \geq f(a^{2n}B^{2n}).
 \]
 divide by $2n$, take the limit when $n$ goes to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
-If $aB$ and $Ba$ are antiparallel, we will prove by induction that
+If $aB$ and $Ba$ are anti-parallel, we will prove by induction that
 \begin{equation}
 2nf(ab) \geq f((aB)^n (Ab)^n).
 \label{eq:antiparallel_induction}
@@ -795,14 +791,14 @@ The base case, $n=1$, follows since $ab$ and $(ba)^{-1}$ cross, hence
 [ab] + [ba] \reducesto [abAB] = [(Ba)(bA)]=[(aB)(Ab)]
 \]
 where we used disconnected unoriented smoothing first, then we conjugated by $B$, and then we took inverses.
-Evaluating the above equation by $f$, and homogeneity and disconnected smoothing, we get the base case.
+Evaluating the above equation by $f$, and using homogeneity and disconnected smoothing, we get the base case.
 Now, we prove the induction step.
 \begin{align*}
 2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
 &f((aB)^{n-1} (Ab)^{n-1}) + f((Ab)(aB)) \geq  \\
 & f((aB)^{n-1} (Ab)^{n-1} (Ab)(aB)) = f((aB)^n (Ab)^n)
 \end{align*}
-In the first inequality we used induction step, then we used the fact that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to this pair to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross, therefore, since $f$ satisfies disconnected smoothing, the conclusion followed. This proves the claim by induction.
+In the first inequality we used the induction step, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
 Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
 \[
 f([ab]) \geq \frac{f([aB]\cup [Ab])}{2} = f([aB])
@@ -810,7 +806,7 @@ f([ab]) \geq \frac{f([aB]\cup [Ab])}{2} = f([aB])
 where we used homogeneity in the last equality.
 This finishes the proof of the first part.
 
-We now prove the second part, namely, if $f \colon \Curves(S) \to \mathbb{R}$ satisfies connected smoothing, ho and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
+We now prove the second part, namely, if $f \colon \Curves(S) \to \mathbb{R}$ satisfies connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
 \[
 f(a^{2n}b^{2n}) \geq 2nf(ab).
 \]
@@ -823,7 +819,7 @@ which proves oriented disconnected smoothing. The unoriented one is proved in th
 \end{proof}
 
 \begin{remark}
-The statement can be strengthened by replacing ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing'', but we will not use it in this paper.
+The statement can be strengthened by replacing ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing'', but we will not use it in this paper, so we didn't write it in that level of generality.
 \end{remark}
 
 \subsection{Fundamental smoothing lemmas}
@@ -1007,13 +1003,13 @@ examples.
   or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$.
   If in
   addition $a=b$, we also see that $s_1=s_1'=0=s$. This gives the
-  desired strengthening of Eqs.\
+\DMGtodo{what is the ``desired strengthening?''}  desired strengthening of Eqs.\
   \eqref{eq:cross-join} and \eqref{eq:cross-split}, and the special
   case Eq.\ \eqref{eq:cross-simple}.
 
   To see that with $x$ simple we get Eq.\ \eqref{eq:cross-cancel} with
   $s'=0$ (i.e., $[ax^n][ax^{n+1}] \reducesto [x]$), we look slightly deeper
-  in the words. The analysis above shows $(ax^n)^- \in
+  in the words. \DMGtodo{the other instance of ``deeper words''} The analysis above shows $(ax^n)^- \in
   w(x^{-n}A\cdot\ora{x})$, which is to the right of
   $(ax^{n+1})^- \in w(x^{-n-1}A\cdot\ora{x})$. By
   looking at the band model centered on $a \cdot \ora{x}$ (or

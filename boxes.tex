@@ -57,7 +57,7 @@ enough we see that $f(a) \geq 0$.
 
 We now turn to the outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
 
-Let $f\colon \mathbb{R}\Curves^+(\Sigma) \to \mathbb{R}$ be a
+Let $f\colon \mathbb{R}\Curves^+(S) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing, stability
 and homogeneity.
 % Recall that since $f$ satisfies the symmetry condition,
@@ -71,7 +71,7 @@ We wish to construct a current $\mu_f$ and show that
 $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
 basepoint. The endpoints of the lifts of $[x]$ are dense in
-$\partial_{\infty} \Sigma$, by minimality of the action of $\pi_1(S)$ (Lemma~\ref{lem:minimal}).
+$\partial_\infty \wt S$, by minimality of the action of $\pi_1(S)$ (Lemma~\ref{lem:minimal}).
 % \DMGtodo[inline]{(Punctures) For surface with punctures, it is density in the limit set, not the whole circle.}
 
 The main objects in our proof are certain boxes in the
@@ -80,9 +80,7 @@ the kind of boxes we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$x$, with
 two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
-\DPTtodo{We need to write this as $(\ell_1^-,\ell_2^+]$ to follow our
-  ccw convention. This affects many places.}
-$[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+) \subset
+$(\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+) \subset
 \partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
 for defining the measure. The lifts are defined by a 4-tuple of
 elements $[p_1,q_1,p_2,q_2]$ of $\pi_1(S)$ by
@@ -150,7 +148,7 @@ setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = ca^{-1}$.
 
 As mentioned above, we need some conditions on these lifts; for
 instance, we need the window
-$[\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)$ to avoid the
+$(\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+)$ to avoid the
 diagonal.
 % For the proofs to go through easily, we will impose more
 % conditions on the configurations of these lifts.
@@ -219,7 +217,7 @@ Condition~\ref{item:box-diags-cross} is required to ensure translation invarianc
 \begin{definition}\label{def:RH-box}
 Fix once and for all a lift $\ora{x}$ of $[x]$. Every right handed lift system given by the datum $[p_1,p_2,q_1,q_2]$  determines uniquely a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
-B_{p_1,p_2,q_1,q_2} \coloneqq [\ell_2^-,\ell_1^-) \times [r_2^+,r_1^+)
+B_{p_1,p_2,q_1,q_2} \coloneqq (\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+)
 \]
 
 By construction, a different choice of lift $\tilde{x}$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by translation by some element in $\pi_1(S)$.
@@ -347,8 +345,8 @@ These are still enough to approximate any box.
 
 
 \begin{lemma}
-Let $x \in \pi_1(\Sigma)$.
-Given any $z \in \partial \Sigma$,
+Let $x \in \pi_1(S)$.
+Given any $z \in \partial_\infty \wt S$
 % \DMGtodo[inline]{(Punctures) Uses
 %   closed surface, otherwise replace by limit set.}
 and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
@@ -358,7 +356,7 @@ with respect to the $ \partial \Sigma$ order.
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
-$\pi_1(\Sigma)$ are dense in $\partial \Sigma$; choose any $g$ so that
+$\pi_1(S)$ are dense in $\partial_\infty \wt S$; choose any $g$ so that
 $g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
 $\ora{h}$ crosses $\ora{g}$. Then for sufficiently large $k$, $h^{\pm k}\cdot
 \ora{x}$ will be in a neighborhood of $h^{\pm}$ and in particular will
@@ -371,8 +369,8 @@ be clockwise and the other will be counterclockwise.
 
 \begin{proposition}
 The family of right handed boxes~$\mathcal{B}$ is dense in the space
-of rectangles in $G^+(\Sigma)$, in the following sense.
-For any rectangle $R = [v_1,v_2) \times [w_1,w_2) \subset G^+(\Sigma)$,
+of rectangles in $G^+(S)$, in the following sense.
+For any rectangle $R = (v_1,v_2]\times [w_1,w_2) \subset G^+(S)$,
 and any $\epsilon>0$, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
 Type~I RH box $B_{p_1,p_2,q_1,q_2}$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
@@ -420,10 +418,9 @@ then a measure) is automatically $\pi_1(S)$-invariant.
 
 
 \DPTtodo{This no longer seems to be a correct summary of structure}
+\DMGtodo{the only reason I see for this not being a correct summary is because some results have been moved to the beginning of section 4, I added a sentence to that effect. Does this look better now?}
 We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas,
-using the results from Section~\ref{sec:fund-smoothing}.
-
-
+using the results from Section~\ref{sec:fund-smoothing} and from the beginning of Section-\ref{sec:boxes}.
 
 Using the smoothing lemmas, we can see a key limit to construct the measure
 exists.
@@ -735,7 +732,7 @@ all the way back to the diagonal.
 }
 \end{figure}
 
-Finally, we show that the set of RH boxes $\mathbb{B} \coloneqq \{ B_{a,b,c,d} \}$ forms a semi-ring, in the sense of Definition~\ref{def:semiring}.
+Finally, we show that the set of RH boxes $\mathcal{B} \coloneqq \{ B_{a,b,c,d} \}$ forms a semi-ring, in the sense of Definition~\ref{def:semiring}.
 First, the intersection of boxes is obviously a box. Indeed, all sides of a box are necessarily in the
     respective whisker, and any new vertices of the intersection are thus intersections of whiskers.
 Second, we show that if $A,B$ are boxes, then $A \backslash B$ is a finite union of boxes. 
@@ -768,7 +765,7 @@ By Propositon~\ref{prop:RHsemiring}, $\mu_{f}$ is a finitely additive function.
  In fact, some (log of ratio of) eigenvalue functions extend continuously to geodesic currents and, in the case of top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}, they arise as intersection number with a geodesic current. But they do not always
  arise as intersection number (see, for
  example, quasi-fuchsian representations~\cite{FF21:QF}).
-  In fact, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of measure geodesic currents).
+  In fact, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of H\"older geodesic currents).
  \end{remark}
  
 %%% Local Variables:
