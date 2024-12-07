@@ -5,8 +5,6 @@
 \item  $S$ vs $\Sigma$: $S$ is a topological surface,
   $\Sigma$ has some extra structure like hyperbolic. Usually we want
   $S$ here
-\item $S^1$ vs $\partial \Sigma$ (Gromov boundary),
-  \DPTtodo{To fix up, Dídac will investigate}
 \item $a^{-1}$ vs $A$ for inverse element of group: Both are
   acceptable. Use $A$ if we're not specifically emphasizing the inverse
 \item Use $g$ and other latin letters for group elements, and $\gamma$
@@ -73,6 +71,30 @@ What are sufficient and necessary conditions for $f \colon\mathbb{R}\mathcal{C}(
 \end{question}
 
 \subsection{Main results}
+
+\begin{table}
+    \begin{tabular}{@{}ll@{}}
+      \toprule
+      Notation & Meaning \\
+      \midrule
+         $S$ &  topological surface \\
+         $\Sigma$ & Riemannian surface \\
+         $\Curves(S)$ & unoriented multi-curves \\
+         $\Curves^+(S)$ & oriented multi-curves \\
+         $\partial_{\infty} S$ & boundary at infinity of $\tilde{S}$ \\
+         $G(S)$ & oriented geodesics on $\tilde{S}$ \\
+         $\R\Curves(S)$ & weighted unoriented multi-curves \\
+         $\R\Curves^+(S)$ & weighted oriented multi-curves \\ 
+         $\GC(S)$ & unoriented geodesic currents \\
+         $\GC^+(S)$ & oriented geodesic currents \\
+         $\gamma$ & concrete multi-curve on $S$ \\
+         $C$ & multi-curve on $S$\\
+         $a, A \in \pi_1(S)$ & $A$ is the inverse of $a$, sometimes also $a^{-1}$\\
+         $\ora{g}$ for $g \in \pi_1(S)$ & the hyperbolic axis of $g$
+    \end{tabular}
+  \caption{Notation for the objects related to surfaces, curves, and
+    geodesic currents.}\label{tab:object-notation}
+\end{table}
 
 The main result of this paper can be succintly phrased as follows.
 
@@ -362,9 +384,6 @@ Examples below show we have strict inclusions
 \AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S).
 \]
 
-Finally, we point out that in $\Convex(S)$, the defining properties are preserved under taking supremum. \DMGtodo[inline]{does this have a name? It is not ``lattice'', but something weaker}
-
-
 \subsection{Examples and non-examples}
 
 In previous work, we proved the following result.
@@ -413,13 +432,14 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
       by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
 \item Translation lengths associated to embedded graphs on a surface whose actions are not proper \cite[Proposition 11]{Bonahon91:CurrentsGroups} do not satisfy quasi-smoothing and, moreover, do not extend to geodesic currents. 
 Suppose $G$ is acting on a space $X$, and let $\ell$ be the stable length of the action. Suppose $\ell$ is non-trivial. Let $N$ be an infinite normal subgroup of $G=\pi_1(S)$ so that $\ell(b)=0$ for all $b \in N$. Let $a \in G$, and fix $b\in N$. Then $\frac{1}{2n} a^n b a^{-n} b$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
-Hence, $\ell$ cannot extend continuously. In fact, $\ell$ does not satisfy smoothing. By the above argument,  the endpoints of elements axes of elements of $N$ are dense in the space of geodesics of $G$. Hence, for a given $a \in G$ with $\ell(a)>0$, we can find $b \in N$ so that $\ora{a}$ and $\ora{b}$ are parallel.
-We can also pick $b$ with hyperbolic length longer than $a$. This forces $a^{-n}b$ and $ba^n$ to be parallel (Figure~\ref{fig:smoothing_1}).
+Hence, $\ell$ cannot extend continuously. In fact, $\ell$ does not satisfy smoothing. By the above argument,  the endpoints of elements axes of elements of $N$ are dense in the space of geodesics of $G$. Hence, for a given $a \in G$ with $\ell(a)>0$, we can find $b \in N$ so that $\ora{a}$ and $\ora{b}$ are R-parallel.
+This forces $ba^n$ and $ba^{-n}$ to be parallel, by Lemma~\ref{lem:ba_parallel_Ab}.
 If smoothing was satisfied, we would have
 \[
-\ell(a^{-n}ba^n b) \geq \ell(a^{-n}b) + \ell(ba^n)
+\ell(ba^n ba^{-n}) \geq \ell(ba^n) + \ell(ba^{-n})
 \]
-which is violated, since the left hand side is $0$, whereas the right hand side is lower bounded by $n\ell(a)$, which is positive.
+which is violated, since the left hand side is $0$.
+On the other hand, the right hand side is not zero.
 \item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[6.1]{GML09:ProperAffine}. Strictly speaking, the paper deals with the case of surfaces with boundary, but the same arguments go through for closed surfaces, by~\cite{Lab01:Diffusion}
 \end{enumerate}
 
@@ -486,7 +506,7 @@ we gave an example in~\cite[Remark~2.26]{MGT21:Smoothings} showing that intersec
 
 We think there should be an analog of our result for $\GC_{\mathrm{cusp}}(S)$,
 but it's not clear that the conditions defining $\AConvex(S)$ would be enough or if one should also add conditions with regards to smoothings between arcs and arcs, and arcs and curves.
-More importantly, most of our arguments rely on the fact that the is a natural cyclic order at the boundary at infinity $\partial_{\infty}\wt{\Sigma}$, which we lose when $\Sigma$ has punctures, since the fundamental group will be free.
+More importantly, most of our arguments rely on the fact that the is a natural cyclic order at the boundary at infinity $\partial_{\infty}\Sigma$, which we lose when $\Sigma$ has punctures, since the fundamental group will be free.
 
 The case of $\GC_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
 The key issue is that the intersection number is degenerate in this case: any geodesic current $\mu$ supported on boundary curves will have zero intersection number with all geodesic currents $\nu \in \GC(S)$.

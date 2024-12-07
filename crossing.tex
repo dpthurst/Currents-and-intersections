@@ -59,7 +59,7 @@ Here we make the following observations.
   may be unbounded, although the translation length of $[\gamma]$ on
   $\wt S$ is bounded by the length of $\gamma$ (by the first bullet
   point).
-\item This left action extends to an action on the circle at infinity $\partial\wt S$.
+\item This left action extends to an action on the circle at infinity $\partial_{\infty} S$.
 \end{itemize}
 
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
@@ -77,7 +77,7 @@ denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} \bm{x^k}$
 and $x^- = \lim_{k \to -\infty} \bm{x^k}$. Note that $x$ acting on the
 left on $\overline{\wt S}$ has north-south (NS) dynamics, with unique
 attracting point $x^+$ and repelling point $x^-$: for any point
-$\bm{p} \in \wt S \cup \partial \wt S$ other
+$\bm{p} \in \wt S \cup \partial_{\infty} S$ other
 than $x^-$, we have $\lim _{k \to \infty} x^k \cdot \bm{p} = x^+$.
 
 The other lifts of $[x]$ to $\wt S$ are translates $q \cdot \ora{x}$
@@ -118,7 +118,7 @@ not need to assume the group elements generate a discrete subgroup).
 
 \begin{convention}\label{conv:circle-intervals}
   Intervals on the circle are always written with endpoints in counterclockwise
-  order. (Thus if $x,y \in \partial \bbH^2$ are distinct points,
+  order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
   $(x,y) \cup (y,x)$ is almost the entire circle).
 \end{convention}
 
@@ -152,7 +152,7 @@ oriented geodesics, we pick out one type of essential crossing.
   the corresponding geodesics $\ora{a}$ and $\ora{x}$ have a
   \emph{right-handed crossing} or \emph{R-cross} if the endpoints
   $a^-, x^-, a^+, x^+$ appear in that
-  (counter-clockwise) cyclic order on $\partial \wt S$. (We also apply
+  (counter-clockwise) cyclic order on $\partial_{\infty} S$. (We also apply
   rules of English grammar, for instance talking about left-handed
   crossings if they have the opposite cyclic order.)
 \end{definition}
@@ -167,6 +167,7 @@ intuitively like
 \[\mathcenter{\resizebox{20mm}{!}{\svgfig{rhres}}}.\]
 
 \DPTtodo{This comment deserves a picture}
+\DMGtodo{I think the current picture is related to the comment, because the base-point is not at the crossing.}
 If we wish to talk about some essential crossing of $[a]$ and $[b]$
 that is \emph{not} at the basepoint, we can always conjugate by a
 suitable element~$c$, and ask about the crossing between $\ora{caC}$
@@ -243,7 +244,7 @@ We will switch to using elements of $\Isom^+(\bbH^2)$. On the one
 hand, if we fix any hyperbolic metric on~$S$, any non-trivial element
 $a \in \pi_1(\Sigma)$ acts on $\wt S = \bbH^2$ on the left by an isometry
 of $\bbH^2$ that is hyperbolic (in the sense of having two distinct
-fixed points on $\partial\bbH^2$). On the other hand, the notions we
+fixed points on $\partial_{\infty}\bbH^2$). On the other hand, the notions we
 will consider will only depend on the cyclic order on the circle at
 infinity of endpoints of geodesics, and in particular do not depend on
 the metric.
@@ -320,7 +321,7 @@ following.
   \item All four geodesics $\ora{xa}$, $\ora{Xa}$, $\ora{ax}$, and
     $\ora{aX}$ R-cross $\ora{x}$.
   \item $(\ora{ab},\ora{x})$ R-cross.
-  \item More generally, for any $n,k \in \bbZ$, $(\ora{a x^n},\ora{x}$
+  \item More generally, for any $n,k \in \bbZ$, $(\ora{a x^n},\ora{x})$
     and $(\ora{ax^nbx^k},\ora{x})$ R-cross.
   \end{enumerate}
     \label{lem:rhs_prod}
@@ -581,7 +582,7 @@ These correspond to the notions of parallelism and crossing defined in Section~\
   $\wt{\gamma_a}$ is geodesic outside of neighborhoods of lifts of $x$, and
   inside those neighborhoods turns to the left. It then follows that
   $(ab)^+, a^+, a^-, (ba)^-$ occur in that cyclic order on
-  $\partial \wt{S}$, and similarly $(ab)^-, b^-,b^+,(ba)^+$ occur
+  $\partial_{\infty}S$, and similarly $(ab)^-, b^-,b^+,(ba)^+$ occur
   in that cyclic order (see Figure~\ref{fig:parallel}).
   It therefore
   follows that $\ora{a}$ and
@@ -701,6 +702,13 @@ Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-parallel or crossing.
 \label{lem:ab_parallel_aB}
 \end{lemma}
+
+\begin{lemma}
+Let $a,b \in \pi_1(S)$.
+If $\ora{a},\ora{b}$ are R-parallel, then $\ora{ba}$ and $\ora{bA}$ are parallel.
+\label{lem:ba_parallel_Ab}
+\end{lemma} \DMGtodo[inline]{added this lemma}
+
 
 \begin{remark}
 Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are antiparallel). Let us show a concrete example where this situation arises.
@@ -1084,7 +1092,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
     g_2^+ &\in w(x^{n-r} a \cdot\ora{y}) & g_2^- &\in w(\ora{y}).
   \end{align*}
   Since $r>s_0$, the endpoints appear in the cyclic order
-  $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\bdy^\infty S$. In
+  $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\partial_\infty S$. In
   particular $[g_1][g_2] \reducesto [g_1 g_2]$ as desired.
   
   To see Eq.~\eqref{eq:crossuniform_n}, apply

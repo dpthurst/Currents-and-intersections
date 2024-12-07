@@ -71,7 +71,7 @@ We wish to construct a current $\mu_f$ and show that
 $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
 basepoint. The endpoints of the lifts of $[x]$ are dense in
-$\partial_\infty \wt S$, by minimality of the action of $\pi_1(S)$ (Lemma~\ref{lem:minimal}).
+$\partial_\infty S$, by minimality of the action of $\pi_1(S)$ (Lemma~\ref{lem:minimal}).
 % \DMGtodo[inline]{(Punctures) For surface with punctures, it is density in the limit set, not the whole circle.}
 
 The main objects in our proof are certain boxes in the
@@ -81,7 +81,7 @@ Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$x$, with
 two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
 and consider the window
 $(\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+) \subset
-\partial_\infty \wt S \times \partial_\infty \wt S$ as a basic domain
+\partial_\infty S \times \partial_\infty  S$ as a basic domain
 for defining the measure. The lifts are defined by a 4-tuple of
 elements $[p_1,q_1,p_2,q_2]$ of $\pi_1(S)$ by
 $\ell_i = P_i \cdot \ora{x}$ and $r_i = q_i \cdot \ora{x}$, with
@@ -332,8 +332,8 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} right-handed boxes, since $c$ 
 In constructing the measure, we want to use the following fact.
 
 \begin{lemma}
-The action of $\pi_1(S)$ on $\partial_{\infty} \wt{S}$ is minimal,
-i.e., for any $p \in \partial_{\infty} \wt{S}$, the orbit
+The action of $\pi_1(S)$ on $\partial_{\infty} S$ is minimal,
+i.e., for any $p \in \partial_{\infty} S$, the orbit
 $\pi_1(S)\cdot p$ is dense.
 \label{lem:minimal}
 \end{lemma}
@@ -351,12 +351,12 @@ Given any $z \in \partial_\infty \wt S$
 %   closed surface, otherwise replace by limit set.}
 and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
 endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
-with respect to the $ \partial \Sigma$ order.
+with respect to the $\partial_\infty \Sigma$ order.
 \label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
-$\pi_1(S)$ are dense in $\partial_\infty \wt S$; choose any $g$ so that
+$\pi_1(S)$ are dense in $\partial_\infty S$; choose any $g$ so that
 $g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
 $\ora{h}$ crosses $\ora{g}$. Then for sufficiently large $k$, $h^{\pm k}\cdot
 \ora{x}$ will be in a neighborhood of $h^{\pm}$ and in particular will
@@ -704,7 +704,7 @@ L-anti-parallel.
 
 To visualize these conditions better, consider the space of oriented
 geodesics 
-$G^+(S) = S^1_\infty \times S^1_\infty \setminus \Delta$ (recall Definition~\ref{def:spacegeodesics}),
+$G^+(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (recall Definition~\ref{def:spacegeodesics}),
 drawn in the
 usual way as a square with opposite sides identified. We represent
 $(\ell^-,\ell^+)$ by drawing a ``whisker'', a horizontal segment at

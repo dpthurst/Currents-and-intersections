@@ -54,7 +54,7 @@ Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesi
 i(\mu, C) = f(C)
 \]
 for every closed curve $C$.
-It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $\alpha_n, \beta_n, \gamma_n, \eta_n \in \Curves(S)$ so that
+It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $\alpha_n, \beta_n, \gamma_n, \eta_n \in \Curves(S)$ so that
 \[
 \mu(R) = \frac{1}{2}\lim_n i(\mu, \alpha_n) + i(\mu, \beta_n) - i(\mu, \gamma_n) - i(\mu, \eta_n).
 \]
@@ -191,7 +191,7 @@ Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
 By max-smoothing, for every $n$, we have$\mu(R_n^T)=0$ or $\mu(R_n)=0$.
 Since the sets $R_n$ and $R_n^{\perp}$ are nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $0$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
 Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
-By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of the boundary of $\partial \wt{\Sigma}$.
+By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
 Therefore, by~\cite[Proposition~2.1]{BIPP21:PositiveCrossratios}, $\mu$ is a measured lamination.
 
 Now we prove the other implication.
@@ -230,7 +230,7 @@ Suppose $f$ is a curve functional satisfying max-smoothing, additivity, stabilit
 In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
 
 \begin{theorem}
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} S$, we have
    \[
       e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
    \]
@@ -279,7 +279,7 @@ Therefore, we have
 \]
 We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, and $B_{g,h}$ is the open box determined by the endpoints of $g$ and $h$.
 Thus, we have $\lim_n \mu(R_n)=\mu(B_{g,h})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
-Therefore, we have the following relation
+Therefore, we have the relation
 \[
 e^{-\mu(B_{g,h})} + e^{-\mu(B_{g,h}^{\perp})} =1
 \]
@@ -318,7 +318,7 @@ The $\lambda$-length functional appears naturally in the study of the skein alge
 In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamenst\"adt in \cite[Corollary~2.12]{Ham99:Cocycles}.
 
 \begin{theorem}
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} \Sigma$, we have
+   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} S$, we have
     \[
       \frac{1}{\rho} \cdot  e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho \cdot e^{-\mu([x,y]\times[z,w])} 
    \]
@@ -454,6 +454,7 @@ Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 \end{proof}
 
 Even though we will not needed it, as a warm-up, it is worth noticing that a reducible action does not satisfy smoothing.
+In what follows, when we say a pair $a, b \in \pi_1(S)$ \emph{overlaps coherently} (resp. \emph{incoherently}) we mean the axes $T_a$ and $T_b$ in the tree overlap coherently (resp. incoherently). \DMGtodo[inline]{added this clarification}
 
 \begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.

@@ -3,6 +3,24 @@
 
 In this section we will see that there is a one-to-one correspondence between geodesic currents and periods of cross-ratios. Precisely, we will prove that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}.
 
+\begin{definition}
+A \emph{cross-ratio} on $S$ is a function of type
+\[
+[\cdot, \cdot, \cdot, \cdot] \colon (\partial_{\infty} S)^{(4)} \to \mathbb{R}
+\]
+where $(\partial_{\infty} S)^{(4)}$ denotes the space of ccw oriented 4-tuples in $(\partial_{\infty} S)^{4}$ such that $\{ a,d\} \cap \{b,c\} = \emptyset$, satisfying the following four properties:
+\begin{enumerate}
+\item \emph{flip-invariance} $[a,b,c,d]=[c,d,a, b]$
+\item \emph{additivity} For any ccw oriented $a,b,c,d,e$, we have
+$[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
+\item \emph{$\pi_1(S)$-invariance} For any ccw oriented $a,b,c,d$ and every $g \in \pi_1(S)$, $[g \cdot a, g \cdot b, g \cdot c, g \cdot d] = [a,b,c,d]$.
+\item \emph{positivity} For every ccw oriented $a,b,c,d$, we have
+\[
+[a,b,c,d] \geq 0.
+\]
+\end{enumerate}
+\end{definition}
+
 There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Otal92:Symplectique}). 
 Typically the authors consider them to be continuous or even H\"older continuous, but we will not assume this here.
 In this section we show that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}, and thus induce geodesic currents.
@@ -22,7 +40,7 @@ and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Ex
 
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $c$ on $\Sigma$ represented by a group element $g$, be defined as
 \[
-\ell(g) \coloneqq [g^-, x , g \cdot x, g^+ ]
+\ell(g) \coloneqq [g^+, x , g \cdot x, g^- ]
 \]
 
 Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[]^{\pm}$ it induces have the same period. Thus, in general, cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be continuous, cross ratios are uniquely determined by their period (cite Ledrappier).
@@ -32,15 +50,15 @@ Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[]^{\p
 From the properties of a generalized cross-ratio, it is easy to see that 
 
 \begin{lemma}
-    For every $g \in \Gamma$, we have
+    For every $g \in \pi_1(S)$, we have
     \[
     \ell(g)=\ell(g^{-1}).
     \]
     \label{lem:crinv}
 \end{lemma}
 \begin{proof}
-The geodesic $\gamma$ with endpoints $g^-, g^+$ divides $\partial \Gamma$ into two open intervals: one on the left in the forward direction of $\gamma$, the other on the right.
-Let $x \in \partial \Gamma$ be on the left interval, and $y \in \partial \Gamma$ on the right interval.
+The geodesic $\gamma$ with endpoints $g^-, g^+$ divides $\partial_{\infty}S$ into two open intervals: one on the left in the forward direction of $\gamma$, the other on the right.
+Let $x \in  \partial_{\infty}S$ be on the left interval, and $y \in  \partial_{\infty}S$ on the right interval.
 We then have
 \begin{align*}
 \ell(g^{-1}) &= \lim_{n \to \infty} \frac{[g^{-n}y, g^-, g^+, g^{n} y]}{2n} \\
@@ -49,7 +67,7 @@ We then have
   &      \frac{[g^{-n}y, g^{-n}x, g^{n}x, g^{n} y]}{2n} + \\
   &      \frac{[g^{-n}y, g^{n}x, g^+, g^{n} y]}{2n} = \ell(g) \\
 \end{align*}
-The first and last terms have limit zero as $n \to \infty$, by $\Gamma$-invariance, and the middle term is symmetric under
+The first and last terms have limit zero as $n \to \infty$, by $\pi_1(S)$-invariance, and the middle term is symmetric under
 switching $g$ and $g^{-1}$.
 \end{proof}
 There $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
@@ -77,7 +95,7 @@ The second inequality follows from the first by noting that if $b$ right crosses
 \[
 \ell(a) + \ell(B) \geq \ell(Ba)
 \]
-which is the same as the second inequality noting that $\ell(B)=\ell(b)$, by Lemma~\ref{lem:crinv} and $\ell(Ba)=\ell(aB)$, by $\Gamma$-invariance.
+which is the same as the second inequality noting that $\ell(B)=\ell(b)$, by Lemma~\ref{lem:crinv} and $\ell(Ba)=\ell(aB)$, by $\pi_1(S)$-invariance.
 
 The proof of the first inequality will start by considering the fundamental domain of $ab$ given by $(B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure\ref{fig:d1}. At each step, we will apply an isometry given by either $a$ or $b$ (say, for example, $a$) and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
 Box I will be contained in either the fundamental domain of $a$, depicted in blue in Figure\ref{fig:d1} or a fundamental domain for $b$ depicted in red in that same Figure.
