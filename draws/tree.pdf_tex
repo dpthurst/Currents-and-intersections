@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.0.2-2 (e86c870879, 2021-01-15), www.inkscape.org
+%% Creator: Inkscape 1.3 (0e150ed6c4, 2023-07-21), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'tree.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{602.74261715bp}%
+    \setlength{\unitlength}{453.60001373bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,24 +50,23 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.3360474)%
+  \begin{picture}(1,0.36507935)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{tree.pdf}}%
-    \put(0.16662489,0.04918877){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h^{-1} (y)$\end{tabular}}}}%
-    \put(0.42691062,0.04949942){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
-    \put(0.68332749,0.04384309){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h(y)$\end{tabular}}}}%
+    \put(0.05423196,0.01229612){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^{-1} (y)$\end{tabular}}}}%
+    \put(0.35014848,0.01187379){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
+    \put(0.7263413,0.01412576){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h(y)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{tree.pdf}}%
-    \put(0.47457641,0.16294232){\color[rgb]{0,0.56862745,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{gh}$\end{tabular}}}}%
-    \put(0.74722412,0.16275811){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{hg}$\end{tabular}}}}%
-    \put(0.3349461,0.0464907){\color[rgb]{0.79215686,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{g^{-1}h}$\end{tabular}}}}%
+    \put(0.44954704,0.14925467){\color[rgb]{0,0.56862745,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{gh}$\end{tabular}}}}%
+    \put(0.61475414,0.0780253){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{hg}$\end{tabular}}}}%
+    \put(0.23797734,0.01205142){\color[rgb]{0.79215686,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{g^{-1}h}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{tree.pdf}}%
-    \put(0.39601733,0.15351518){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g^{-1}(y)$\end{tabular}}}}%
-    \put(0.43538643,0.29774603){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
-    \put(0.49820464,0.23867836){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g(y)$\end{tabular}}}}%
-    \put(0.69994441,0.29272701){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h(z)$\end{tabular}}}}%
-    \put(0.80300073,0.19404809){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$hg(y)$\end{tabular}}}}%
+    \put(0.32538657,0.14507903){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^{-1}(y)$\end{tabular}}}}%
+    \put(0.38346642,0.28996631){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$z$\end{tabular}}}}%
+    \put(0.49805849,0.18308349){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g(y)$\end{tabular}}}}%
+    \put(0.73419273,0.29248329){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h(z)$\end{tabular}}}}%
+    \put(0.86136375,0.16469943){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$hg(y)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{tree.pdf}}%
-    \put(0.29119177,0.26170341){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g^{-1}(y)$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

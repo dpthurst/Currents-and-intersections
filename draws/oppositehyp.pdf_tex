@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.0.2-2 (e86c870879, 2021-01-15), www.inkscape.org
+%% Creator: Inkscape 1.3 (0e150ed6c4, 2023-07-21), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'oppositehyp.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{670.54167019bp}%
+    \setlength{\unitlength}{576bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,26 +50,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.67506571)%
+  \begin{picture}(1,0.78587502)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{oppositehyp.pdf}}%
-    \put(-0.00025475,0.44231413){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g^{-1}h$\end{tabular}}}}%
-    \put(0.11165952,0.24436883){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell$\end{tabular}}}}%
-    \put(0.708761,0.27884454){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
-    \put(0.25497006,0.35554154){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h \ell$\end{tabular}}}}%
-    \put(0.4214966,0.35554161){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g \ell$\end{tabular}}}}%
-    \put(0.54315208,0.23797749){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h^{-1} r$\end{tabular}}}}%
+    \put(0.14844208,0.52807381){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^{-1}h$\end{tabular}}}}%
+    \put(0.18648426,0.30158479){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell$\end{tabular}}}}%
+    \put(0.87474895,0.35618749){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r$\end{tabular}}}}%
+    \put(0.32502431,0.40075276){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h \ell$\end{tabular}}}}%
+    \put(0.56598025,0.3981222){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g \ell$\end{tabular}}}}%
+    \put(0.70485096,0.29282908){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^{-1} r$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{oppositehyp.pdf}}%
-    \put(0.37982144,0.4805129){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h^{-1}g h^{-1} r$\end{tabular}}}}%
+    \put(0.65116285,0.59358718){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^{-1}g h^{-1} r$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{oppositehyp.pdf}}%
-    \put(0.29047249,0.096689){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$hg^{-1} h \ell$\end{tabular}}}}%
-    \put(-0.00338607,0.00788625){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_h$\end{tabular}}}}%
-    \put(0.76476711,0.6335684){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_g$\end{tabular}}}}%
-    \put(0.24408472,0.64063703){\color[rgb]{1,0.80392157,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{g^{-1}h}$\end{tabular}}}}%
-    \put(0.59559919,0.61826705){\color[rgb]{0,0.90588235,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{gh^{-1}}$\end{tabular}}}}%
-    \put(0.75760041,0.43809473){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$gh^{-1} r$\end{tabular}}}}%
+    \put(0.33444593,0.06258507){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$hg^{-1} h \ell$\end{tabular}}}}%
+    \put(0.81236025,0.15781741){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_h$\end{tabular}}}}%
+    \put(0.98423857,0.60472095){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_g$\end{tabular}}}}%
+    \put(0.31572251,0.72475055){\color[rgb]{1,0.80392157,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{g^{-1}h}$\end{tabular}}}}%
+    \put(0.77622957,0.68687115){\color[rgb]{0,0.90588235,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{gh^{-1}}$\end{tabular}}}}%
+    \put(1.06674003,0.50080172){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$gh^{-1} r$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{oppositehyp.pdf}}%
-    \put(0.33393919,0.2460081){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$h^{-1} g \ell$\end{tabular}}}}%
+    \put(0.41460318,0.29691652){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^{-1} g \ell$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

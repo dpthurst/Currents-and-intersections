@@ -1,4 +1,4 @@
-%% Creator: Inkscape 1.0.2-2 (e86c870879, 2021-01-15), www.inkscape.org
+%% Creator: Inkscape 1.3 (0e150ed6c4, 2023-07-21), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'ell.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{415.61508539bp}%
+    \setlength{\unitlength}{415.61509323bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -54,27 +54,27 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{ell.pdf}}%
-    \put(-0.00546299,0.54430145){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.05655074,0.54430147){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{ell.pdf}}%
-    \put(0.28357333,0.55281577){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
-    \put(0.67011174,0.56375305){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$z'$\end{tabular}}}}%
-    \put(0.87050959,0.55099297){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
+    \put(0.34319038,0.55281579){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$z$\end{tabular}}}}%
+    \put(0.69020353,0.56193028){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$z'$\end{tabular}}}}%
+    \put(0.92705471,0.55281589){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$y$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{ell.pdf}}%
-    \put(0.07676477,1.10386845){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$gx$\end{tabular}}}}%
-    \put(0.20260127,0.89961091){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$gz$\end{tabular}}}}%
+    \put(0.19407662,1.11115995){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$gx$\end{tabular}}}}%
+    \put(0.31204784,0.89778803){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$gz$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{ell.pdf}}%
-    \put(0.66110309,0.014521){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$hy$\end{tabular}}}}%
-    \put(0.58951566,0.33871803){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$hz'$\end{tabular}}}}%
+    \put(0.88778746,0.08743604){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$hy$\end{tabular}}}}%
+    \put(0.6543208,0.37152981){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$hz'$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{ell.pdf}}%
-    \put(0.03512114,0.28861548){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$hgz$\end{tabular}}}}%
+    \put(0.13094902,0.2922613){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$hgz$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{ell.pdf}}%
-    \put(0.59031575,0.42603399){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{hg}$\end{tabular}}}}%
-    \put(0.63859473,0.82978545){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_{gh}$\end{tabular}}}}%
+    \put(0.61600027,0.44608569){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{hg}$\end{tabular}}}}%
+    \put(0.81557789,0.82978546){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{gh}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{ell.pdf}}%
-    \put(0.59373228,0.74323076){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w$\end{tabular}}}}%
+    \put(0.65116273,0.75234517){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$w$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{ell.pdf}}%
-    \put(0.44563136,0.64893542){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d$\end{tabular}}}}%
-    \put(0.3564318,0.36365539){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d$\end{tabular}}}}%
-    \put(0.49521277,0.50037101){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$w'$\end{tabular}}}}%
+    \put(0.50877294,0.64893544){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$d$\end{tabular}}}}%
+    \put(0.41957335,0.36365542){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$d$\end{tabular}}}}%
+    \put(0.52405521,0.5222455){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$w'$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

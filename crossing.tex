@@ -26,7 +26,7 @@ the following.
 \item This right action does not depend on a choice of basepoint
   on~$\wt S$, and works for any covering space.%
   \footnote{One succinct statement of the classification theorem for
-    covering spaces is that coverings of $S$ are in bijections with
+    covering spaces is that coverings of $S$ are in bijection with
     sets with a right action of $\pi_1(S)$.}
 \item In the induced length metric on~$\wt S$, the distance between
   $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
@@ -381,23 +381,22 @@ following.
     Figure~\ref{fig:cross}.
 
 \begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.2\textwidth}
-\resizebox{60mm}{!}{\svgfig{rcrossing}}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross, together with the other crossing relations for related words. }
+    \begin{subfigure}[b]{0.3\textwidth}
+ \svgfignormal{rcrossing}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross}
     \label{fig:cross}
      \end{subfigure}
      \hfill
-     \begin{subfigure}[b]{0.2\textwidth}
- \framebox{ \resizebox{60mm}{!} {\svgfig{parallel}} }
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel, together with the other crossing relations for related words. }
+     \begin{subfigure}[b]{0.3\textwidth}
+ \svgfignormal{parallel} 
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel }
     \label{fig:parallel}
 \end{subfigure} 
 \hfill
-\begin{subfigure}{0.2\textwidth}
-\framebox{
-    \svgfignormal{antiparallel}} 
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are anti-parallel, together with the other crossing relations for related words. }
+\begin{subfigure}[b]{0.3\textwidth}
+
+    \svgfignormal{antiparallel}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are anti-parallel }
     \label{fig:anti}
    \end{subfigure}
    \caption{Cases for relative position 
@@ -487,6 +486,7 @@ These correspond to the notions of parallelism and crossing defined in Section~\
   $a = c^\ell$ and $b = c^k$.
 \end{definition}
 
+The proof of the following result appears in~\cite[Proposition~3]{MGT21:SmoothingsErratum}.
 
 \begin{proposition}\label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
@@ -516,7 +516,7 @@ These correspond to the notions of parallelism and crossing defined in Section~\
     \end{enumerate*}
   \end{enumerate}
 \end{proposition}
-
+\begin{comment}
 \begin{proof}
   Since $a$ and $b$ are not common powers, the endpoints of
   $\ora{a}$ and $\ora{b}$ are all distinct from each other, so
@@ -592,7 +592,7 @@ These correspond to the notions of parallelism and crossing defined in Section~\
 
   Case~(b) follows in the same way, interchanging $b \leftrightarrow B$.
 \end{proof}
-
+\end{comment}
 We extract the following two lemmas that follow immediately from Proposition~\ref{prop:crossings-triality}, and we will use extensively without referring to them.
 
 \begin{lemma}
@@ -602,8 +602,6 @@ right (or to the left), then
   [a][b] \reducesto [ab]\qquad\text{and}\qquad[a][b] \reducesto [aB].
 \]
 \end{lemma}
-
-
 
 We also have the following.
 
@@ -657,8 +655,8 @@ One of the resolutions of $[ab]$ is the multi-curve $[a] \cup [b]$.
 The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel.
 It remains to determine the position of the lifts $\ora{aB}$ and $\ora{Ba}$.
 
-To that end, consider the common perpendicular line of $a$ and $b$. Let $R_1$ be the reflection along this line.
-Let $R_2, R_3, R_4, R_5$ be reflections so that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Note that $R_i$ are reflections along pairwise non-intersecting reflection lines, since $aB$ and $ab$ are hyperbolic.
+To that end, consider the common perpendicular line of $a$ and $b$. We will denote this line by $R_1$, and will use the same notation for the reflection along $R_1$.
+Let $R_2, R_3, R_4, R_5$ be perpendicular lines and corresponding reflections so that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Note that $R_i$ are reflections along pairwise non-intersecting reflection lines, since $aB$ and $ab$ are hyperbolic.
 It then follows that 
 $ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
 We have the following possible four configurations of non-intersecting reflection lines. 
@@ -666,28 +664,26 @@ We have the following possible four configurations of non-intersecting reflectio
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
-\resizebox{\textwidth}{!}{\svgfig{r3}}
+\svgfignormal{r3}
     \caption{Case 1}\label{fig:r3}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
-\resizebox{\textwidth}{!}{\svgfig{r2}}
+\svgfignormal{r2}
     \caption{Case 2 (not possible)}\label{fig:r2}
 \end{subfigure}\\
 \begin{subfigure}{0.45\textwidth}
-     \resizebox{\textwidth}{!}{\svgfig{r1}}
-     \caption{Case 3, $aB$ and $Ba$ disjoint}\label{fig:r1}
+   \svgfignormal{r1}
+     \caption{Case 3, $\protect\ora{aB}$ and $\protect\ora{Ba}$  disjoint}\label{fig:r1}
    \end{subfigure}\hfill
 \begin{subfigure}{0.45\textwidth}
-  \centering{\resizebox{0.9\textwidth}{!}{\svgfig{c2}}}
-    \caption{Case 3, $aB$ and $Ba$ crossing}\label{fig:c2}
+  \svgfignormal{c2}
+    \caption{Case 3, $\protect\ora{aB}$ and $\protect\ora{Ba}$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
      connected smoothing of $\protect\ora{ab}$ with $\protect\ora{ba}$.} 
 \end{figure}
-\DPTtodo{Combined figures, but they are not uniformly cropped to same
-  size. In general it's better to scale by a percentage than to an
-  absolute width}
+
 
 In the figures, we also draw their corresponding translation axes for each isometry.
 We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.

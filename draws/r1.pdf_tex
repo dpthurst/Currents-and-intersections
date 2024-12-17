@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{512.18080055bp}%
+    \setlength{\unitlength}{216bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,29 +50,28 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.99706784)%
+  \begin{picture}(1,1)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{r1.pdf}}%
-    \put(0.36219517,0.94054508){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$ba^+$\end{tabular}}}}%
-    \put(0.13998638,0.07516203){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$ba^-$\end{tabular}}}}%
-    \put(0.12078965,0.90532102){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$ab^+$\end{tabular}}}}%
-    \put(0.33455963,0.01679919){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$ab^-$\end{tabular}}}}%
-    \put(0.41564011,0.01032463){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b^-$\end{tabular}}}}%
-    \put(0.42073392,0.95199418){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$b^+$\end{tabular}}}}%
+    \put(0.44543972,0.97531526){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ba^+$\end{tabular}}}}%
+    \put(0.22373227,0.06945046){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ba^-$\end{tabular}}}}%
+    \put(0.25353752,0.91982042){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ab^+$\end{tabular}}}}%
+    \put(0.73297598,0.94536673){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_5$\end{tabular}}}}%
+    \put(0.82051106,0.89849176){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_4$\end{tabular}}}}%
+    \put(0.40585628,0.00254628){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ab^-$\end{tabular}}}}%
+    \put(0.4866816,0.00421744){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^-$\end{tabular}}}}%
+    \put(0.50310142,0.98771012){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{r1.pdf}}%
-    \put(-0.004433,0.72133895){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a^+$\end{tabular}}}}%
-    \put(-0.00208893,0.2378139){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a^-$\end{tabular}}}}%
-    \put(0.88568154,0.59112094){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$aB^+$\end{tabular}}}}%
-    \put(0.51428518,0.9402998){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$aB^-$\end{tabular}}}}%
-    \put(0.49973847,0.01077196){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Ba^+$\end{tabular}}}}%
-    \put(0.88632834,0.37174695){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$Ba^-$\end{tabular}}}}%
+    \put(0.06368169,0.72436099){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^+$\end{tabular}}}}%
+    \put(0.06151462,0.2368573){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^-$\end{tabular}}}}%
+    \put(0.97432026,0.65283091){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$aB^+$\end{tabular}}}}%
+    \put(0.60722283,0.97504968){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$aB^-$\end{tabular}}}}%
+    \put(0.62098077,0.00842181){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Ba^+$\end{tabular}}}}%
+    \put(0.99015686,0.37441328){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Ba^-$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{r1.pdf}}%
-    \put(0.61301403,0.92077285){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$R_5$\end{tabular}}}}%
-    \put(0.83595855,0.73843503){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$R_4$\end{tabular}}}}%
-    \put(0.91118918,0.49557234){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$R_1$\end{tabular}}}}%
-    \put(0.71502885,0.12234006){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$R_2$\end{tabular}}}}%
-    \put(0.58885897,0.05908403){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$R_3$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{r1.pdf}}%
+    \put(0.94228691,0.51332313){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_1$\end{tabular}}}}%
+    \put(0.67393377,0.06267832){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_3$\end{tabular}}}}%
+    \put(0.81579866,0.07135871){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_2$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

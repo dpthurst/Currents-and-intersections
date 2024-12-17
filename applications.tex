@@ -108,49 +108,50 @@ and
 We need first the following hyperbolic geometry lemma.
 
 \begin{proposition}
-Consider two elements $g,h \in \pi_1(\Sigma)$ with hyperbolic axes $\ora{g}$ and $\ora{h}$ that intersect at a point $O$, and translation lengths $\ell(g),\ell(h)$.
+Consider two elements $a, b \in \pi_1(\Sigma)$ with hyperbolic axes $\ora{a}$ and $\ora{b}$ that intersect at a point $O$, and translation lengths $\ell(a),\ell(b)$.
 We define the following four points:
 
-\begin{itemize} \item $P$ is the point on $\ora{g}$ obtained by moving forward from $O$ by distance $\ell(g)/2$;
-\item $Q$ is the point on $\ora{h}$ obtained by moving backward from $O$ by distance $\ell(h)/2$;
-\item $Q'$ is the point on $\ora{h}$ obtained by moving forward from $O$ by distance $\ell(h)/2$;
-\item $P'$ is the point on $\ora{g}$ obtained by moving backward from $O$ by distance $\ell(g)/2$.
+\begin{itemize} \item $P$ is the point on $\ora{a}$ obtained by moving forward from $O$ by distance $\ell(a)/2$;
+\item $Q$ is the point on $\ora{b}$ obtained by moving backward from $O$ by distance $\ell(b)/2$;
+\item $Q'$ is the point on $\ora{b}$ obtained by moving forward from $O$ by distance $\ell(b)/2$;
+\item $P'$ is the point on $\ora{a}$ obtained by moving backward from $O$ by distance $\ell(a)/2$.
 \end{itemize}
 We have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
-\item $\ora{gh}$ is the line containing the segment $(Q,P]$ of length $\ell(hg)/2$.
-\item $\ora{hg}$ is the line containing the segment $(P',Q']$ of length $\ell(hg)/2$.
-\item $\ora{gh^{-1}}$ is the line containing the segment $(Q',P]$ of length $\ell(gh^{-1})/2$.
-\item $\ora{h^{-1}g}$ is the line containing the segment $(P',Q]$ of length $\ell(h^{-1}g)/2$.
+\item $\ora{ab}$ is the line containing the segment $(Q,P]$ of length $\ell(ba)/2$.
+\item $\ora{ba}$ is the line containing the segment $(P',Q']$ of length $\ell(ba)/2$.
+\item $\ora{ab^{-1}}$ is the line containing the segment $(Q',P]$ of length $\ell(ab^{-1})/2$.
+\item $\ora{b^{-1}a}$ is the line containing the segment $(P',Q]$ of length $\ell(b^{-1}a)/2$.
 \end{enumerate}
-Furthermore, the union $G((Q,P])\cup G((P',Q'])$ (resp. $G((Q',P]) \cup G((P',Q])$) is a fundamental domain for the action of $gh$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $gh^{-1}$).
+Furthermore, the union $G((Q,P])\cup G((P',Q'])$ (resp. $G((Q',P]) \cup G((P',Q])$) is a fundamental domain for the action of $ab$ on the set of geodesics $G(\Sigma)$, (resp. a fundamental domain for the action of $ab^{-1}$).
 \label{prop:keygeometry}
 \end{proposition}
 
   \begin{figure}
 \centering{
-\resizebox{115mm}{!}{\svgfignormal{smoothing_1}}}
+\svgfignormal{smoothing_1}}
 \caption{Hyperbolic geometry of the smoothing between two distinct curves.}
 \label{fig:smoothing_1}
 \end{figure}
 
 \begin{proof}
-We prove the first case. Since $\ora{g}$ and $\ora{h}$ intersect at $O$, so do the curves $[g]$ and $[h]$ at some point $o \in \Sigma$.
-Perform a smoothing opperation obtaining a new curve $\alpha$ of length $\ell(g) + \ell(h)$.
-A lift $a$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $\ora{h}$ of length $\ell(h)$, then a segment of $\ora{h^{-1}gh}$ of length $\ell(g)$, etc.
+We prove the first case. Since $\ora{a}$ and $\ora{b}$ intersect at $O$, so do the curves $[a]$ and $[b]$ at some point $o \in \Sigma$.
+Perform a smoothing operation obtaining a new curve $\alpha$ of length $\ell(a) + \ell(b)$.
+A lift $\alpha$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $\ora{b}$ of length $\ell(b)$, then a segment of $\ora{b^{-1}ab}$ of length $\ell(a)$, etc.
 Let $\alpha_*$ be the geodesic representative in the homotopy class of $\alpha$.
-Now, connecting the midpoints of the geodesic segments of $a$ we obtain another piecewise geodesic $a'$ which is, in fact, a geodesic segment.
-Indeed, we note that $a$ is invariant under angle $\pi$ rotation around any of the intersection points between $a$ and $a'$.
-Since $a$ and $a'$ have the same stabilizer, they are lifts of the same geodesic $\alpha$.
-Thus, the lift of $\alpha_*$ is $a'$, which is determined by two of the midpoints defining $a$, such as $P'$ and $Q'$.
-As for the translation lengths, we note that $h=r_O r_{Q'}$ where $r_O$ denotes the reflection along the geodesic perpendicular to $\ora{h}$ at $O$,
+Now, connecting the midpoints of the geodesic segments of $\alpha$ we obtain another piecewise geodesic $\alpha'$ which is, in fact, a geodesic segment.
+Indeed, we note that $\alpha$ is invariant under angle $\pi$ rotation around any of the intersection points between $\alpha$ and $\alpha'$.
+Since $\alpha$ and $\alpha'$ have the same stabilizer, they are lifts of the same geodesic $\alpha$.
+Thus, the lift of $\alpha_*$ is $\alpha'$, which is determined by two of the midpoints defining $\alpha$, such as $P'$ and $Q'$.
+As for the translation lengths, we note that $b=r_O r_{Q'}$ where $r_O$ denotes the reflection along the geodesic perpendicular to $\ora{b}$ at $O$,
 and $r_{Q'}$ is the corresponding reflection at $Q'$.
-Similarly, we can write $g=r_{P'}r_O$, and thus $gh=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $a'$ of translation length
+Similarly, we can write $a=r_{P'}r_O$, and thus $ab=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $\alpha'$ of translation length
 twice the distance between $P'$ and $Q'$.
 The other cases follow similarly.
-As for the assertion on fundamental domains, we note that the segment $(P',Q']$ on the axis of $\ora{hg}$, is sent by $g$ to a segment $(P,R]$, where $R=g(Q')$ appears forward of $P$ in according to the orientation of $\ora{hg}$, and the segment $(Q,R]$ is a fundamental domain for the action of $gh$ on its axis $\ora{gh}$, thus $G((Q,R])=G((Q,P]) \cup g G((P',Q'])$ is a fundamental domain for the action of $hg$ on $G(\Sigma)$, thus the claim follows.
+As for the assertion on fundamental domains, we note that the segment $(P',Q']$ on the axis of $\ora{ba}$, is sent by $a$ to a segment $(P,R]$, where $R=a(Q')$ appears forward of $P$ in according to the orientation of $\ora{ba}$, and the segment $(Q,R]$ is a fundamental domain for the action of $ab$ on its axis $\ora{ab}$, thus $G((Q,R])=G((Q,P]) \cup a G((P',Q'])$ is a fundamental domain for the action of $ba$ on $G(\Sigma)$, thus the claim follows.
 The other claim is similar.
 \end{proof}
+
 
 \begin{theorem}
 $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfied the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
@@ -586,7 +587,7 @@ We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain th
 
               \begin{figure}
 \centering{
-\resizebox{80mm}{!}{\svgfig{selfdyn}}
+\svgfignormal{selfdyn}
     \caption{Configuration of axes on the surface when $\protect\ora{gh}$ and $\protect\ora{hg}$ are intersecting.}\label{fig:selfdyn}}
 \end{figure}
 \end{enumerate}
@@ -608,7 +609,7 @@ We go over these cases and rule out the problematic ones using the assumption of
  
       \begin{figure}
 \centering{
-\resizebox{80mm}{!}{\svgfig{tree}}
+\svgfignormal{tree}
     \caption{Configuration of axes when $\protect\ora{g}$ and $\protect\ora{h}$ are not intersecting}\label{fig:tree}}
 \end{figure}
 
@@ -668,7 +669,7 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 
       \begin{figure}
 \centering{
-\resizebox{80mm}{!}{\svgfig{ell}}
+\resizebox{60mm}{!}{\svgfig{ell}}
     \caption{Configuration of axes when $g$ and $h$ are elliptic}\label{fig:ell}}
 \end{figure}
 

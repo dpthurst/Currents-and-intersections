@@ -1,5 +1,6 @@
 \section{Introduction}
 
+\begin{comment}
 \textbf{Notation guidelines:}
 \begin{enumerate}
 \item  $S$ vs $\Sigma$: $S$ is a topological surface,
@@ -12,13 +13,56 @@
 \item Figure colors for lifts of $a, b, ab, aB$, and so on should be uniformized.
 \item Trees figures should be uniformized.
 \end{enumerate}
-
+\end{comment}
 Geodesic currents on a hyperbolic surface are measures realizing a suitable closure of the space of weighted closed geodesics on the surface.
  Perhaps the most interesting trait of geodesic currents is that many metric
 structures embed in the space of currents, such as
-hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent} or even
+hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
  negatively curved Riemannian metrics
-\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}. 
+\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} or even non-positively curved Riemannian metrics
+\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}.
+
+
+
+Bonahon constructed
+\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} a continuous bilinear function on the space of currents
+extending the geometric intersection of closed multi-curves on the surface.
+
+ This allowed him to extend hyperbolic length to geodesic currents by realizing it as an intersection number with
+a distinguished geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current}. 
+Similarly, other notions of length of curves or \emph{curve functionals} $\ell$ can be realized as intersection numbers with a dual geodesic current $\mu_{\ell}$, this is,
+\[
+  i(\mu_{\ell},C)=\ell(C)
+\]
+for any (non-necessarily-simple) closed curve $C$ in $S$. We will say that the current $\mu_{\ell}$ is \emph{dual} to the curve functional $\ell$, or that $\ell$ \emph{has a dual current} $\mu_{\ell}$. 
+
+There are many other notions of curve  with an associated dual geodesic current.
+For example, Erlandsson shows that word-length with respect to simple generating sets of the fundamental group have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}, which, in this case, turns out to be a weighted multi-curve. 
+In the context of representations of surface groups into higher rank lie groups (specifically, certain Anosov representations), work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and, more recently, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} provides geodesic currents dual to length functions arising from logarithms of ratios of eigenvalues of the representation.
+
+There are other natural notions of lengths associated to surface groups that are not dual to a geodesic current. For example, extremal length, or the hyperbolic length
+of curves associated to a quasi-fuchsian (non-fuchsian) representation~\cite[Proposition~1.8]{BR24:Cubulations},\cite[Theorem A]{FF21:QF}.
+
+In this paper we give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
+Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$ (i.e. finite unions of non-negatively weighted non-necessarily-simple closed curves on $S$, where the curves are considered up to free homotopy).
+The main result of this paper can be succintly phrased as follows.
+
+\begin{mainthm}
+    Suppose that a curve functional $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
+     \[
+      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
+   \]
+   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components, \emph{stable} and \emph{homogeneous} (see~\ref{subsec:mainresult} for definitions).
+Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
+\[
+i(\mu_f,C)=f(C)
+\]
+for every curve $C$.
+\label{thm:intersect}
+\end{mainthm}
+See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
+
+\begin{comment}
 The injectivity of the map from the space of metrics to the space of geodesic currents is known as the marked length rigidity property.
 Other examples of geometric structures embedding inside the space of geodesic currents are given by
 Croke-Fathi-Feldman for non-positively curved Riemannian metrics
@@ -111,9 +155,10 @@ i(\mu_f,C)=f(C)
 for every multi-curve $C$.
 \label{thm:intersect}
 \end{mainthm}
+See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.\end{comment}
 
 This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}. By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    Note that a continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$ (for example, for any Finsler metric). As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+    A continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$ (for example, for any Finsler metric). As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
 
     The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
     For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases.
@@ -168,7 +213,8 @@ hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our
 Theorem~\ref{prop:char_liouville} can be seen as an extension of that
 theorem for closed curves. We give a further characterization in Theorem~\ref{thm:char_liouville_strong}, in terms of a condition on the curve functional which is a priori easier to check.
  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
-See also \cite[Appendix~A.1]{Frazier12:SpectralRigidity}, for an observation on how Question~\ref{que:mainquestion} ties to rigidity problems. In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details). Recently, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}, following essentially on work of Fricker-Furman \cite[Theorem A]{FF21:QF}, show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
+ 
+ In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details). Recently, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}, following essentially on work of Fricker-Furman \cite[Theorem A]{FF21:QF}, show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
 In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current, and hence smoothing is satisfied.
 Our result implies that, in fact, the smoothing property is a \emph{necessary} condition for \emph{any} length dual to a geodesic current. More importantly, adding a few more mild assumptions, it shows that it is also a \emph{sufficient} condition.
 
@@ -240,10 +286,7 @@ The action $\pi_1(S) \acts T$ is irreducible and satisfies axis intersection if 
 \end{mainthm}
 
 It would be interesting to give similar conditions for 
-small actions of a non-elementary hyperbolic group $\Gamma$. Misha Kapovich and
-the first author show \cite{KMG:BBP} that for one ended hyperbolic
-groups acting via small action on an $\mathbb{R}$-tree, the stable
-length extends continuously to geodesic currents.
+small actions of a non-elementary hyperbolic group $\Gamma$. 
 
 \subsubsection{Generalized cross-ratios}
 
@@ -472,16 +515,11 @@ $G(ab) < G(a) + G(b)$. This is indeed the case. For an example, consider the ext
  \]
 \end{example}
 
-In view of all this, it is natural to ask which additional conditions one needs to impose on a function $f$ in $\AConvex(S)$ in order to satisfy the property in Question~\ref{q:intersection}.
 
-It turns out that one doesn't need more conditions. Theorem~\ref{thm:intersect} can thus be reestated, in the previous terminology, as follows.
-
-\begin{mainthmprimeprime}\label{thm:intersect_primeprime}
- For every $f \in \AConvex(S)$, i.e., satisfying smoothing, additive union, homogeneity and stability properties, there exists a unique geodesic current $\mu_f$ such $f(C)=i(\mu_f,C)$ for all closed curve $C$.
-\end{mainthmprimeprime}
 
 \begin{remark}
-Observe that we do not require in the hypotheses that the curve
+Note that the functionals in $\AConvex(S)$ are exactly the ones satisfying the hypotheses of our Theorem~\ref{thm:intersect}.
+Furthermore, observe that we do not require in the hypotheses that the curve
 functional $f \in \AConvex(S)$ is non-negative: in fact it follows
 from the other conditions (see Proposition~\ref{prop:curve-positive}).
 In general, curve functionals need not be positive. For example, the signed
@@ -550,7 +588,7 @@ Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Sm
 It is a consequence of our main Theorem~\ref{thm:intersect}, that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
 The sublevel set $\Lambda_{f_{\tau}} \coloneqq \{ \vec{x} \in V(\tau) : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of $\mathbb{R}^N$ (for some $N>0$ depending on the combinatorics of $\tau$).
 Let $f_i(\cdot) = i(\mu_i, \cdot)$ for some sequence of geodesic currents $\mu_i \to \mu$, and $f(\cdot) = i(\mu, \cdot)$.
-Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the subset of compact convex subsets of $\mathbb{R}^N$ is locally compact (by Banach's selection theorem~[REF Chapter 6 in Convex subsets and their applications, by Lay]).
+Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the subset of compact convex subsets of $\mathbb{R}^N$ is locally compact.
 The same convexity argument would work if we worked with $\Convex(S)$ as opposed to $\AConvex(S)$ (that is, we only required convex union).
 Hence, we conjecture the following, which we think can also be proved with ideas similar to~\cite[Theorem~4.2]{CM87:GroupActions}.
 
@@ -580,7 +618,7 @@ For similar reasons as for the smoothing (or multi-smoothing) condition, the add
 The above prompts the following question.
 
 \begin{question}
-Suppose curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies domination if and only if it satisfies smoothing?
+Suppose a curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies domination if and only if it satisfies smoothing?
 \end{question}
 
 
@@ -628,15 +666,11 @@ Suppose that $\ell_X \in \QConvex(S)$. Does it follow that $\Gamma \acts X$ has 
 
 \begin{question}
 Let $\Gamma$ be a surface group, and $\Gamma \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property.
-Let $\ell_X$ denote the stable length of the action. Does it follow that $\ell_X \in \QConvex(S)$.
+Let $\ell_X$ denote the stable length of the action. Does it follow that $\ell_X \in \QConvex(S)$?
 \end{question}
 
 \begin{question}
 What is a generalization of smoothing and quasi-smoothing for functionals on hyperbolic groups? (compare with~\cite{KMG:BBP}).
-\end{question}
-
-\begin{question}
-Is there a notion of intersection number for geodesic currents on a hyperbolic group?
 \end{question}
 
 \DPTtodo[inline]{Note that we get a ``Liouville'' current from an

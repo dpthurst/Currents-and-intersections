@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="161.61786mm"
-   height="164.97099mm"
-   viewBox="0 0 161.61786 164.97099"
+   width="3in"
+   height="3in"
+   viewBox="0 0 76.2 76.200001"
    version="1.1"
    id="svg1992"
-   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
-   sodipodi:docname="selfdyn.svg">
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="selfdyn.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs1986">
     <marker
@@ -96,9 +96,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="383.8744"
-     inkscape:cy="269.54706"
+     inkscape:zoom="1.979899"
+     inkscape:cx="507.09658"
+     inkscape:cy="91.166267"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -107,11 +107,14 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata1989">
     <rdf:RDF>
@@ -120,7 +123,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -130,73 +132,73 @@
      id="layer1"
      transform="translate(-23.890483,-30.694049)">
     <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.6;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.275921;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1994"
-       cx="104.69941"
-       cy="109.99107"
-       rx="80.508926"
-       ry="78.997025" />
+       cx="61.807938"
+       cy="69.050156"
+       rx="37.023537"
+       ry="36.328266" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2601)"
-       d="M 55.184524,171.60118 148.92262,45.357141"
+       style="fill:none;stroke:#ff0000;stroke-width:0.275921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2601)"
+       d="M 39.037587,97.382717 82.144809,39.327028"
        id="path2557" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="M 55.184524,48.002977 148.92262,174.24702"
+       style="fill:none;stroke:#0000ff;stroke-width:0.275921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+       d="M 39.037587,40.543765 82.144809,98.599456"
        id="path2557-3" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="152.32442"
-       y="42.333332"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.121673"
+       x="87.047615"
+       y="37.669205"
        id="text2629"><tspan
          sodipodi:role="line"
          id="tspan2627"
-         x="152.32442"
-         y="42.333332"
-         style="fill:#ff0000;fill-opacity:1;stroke-width:0.264583">$gh$</tspan></text>
+         x="87.047615"
+         y="37.669205"
+         style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke-width:0.121673">$\ora{gh}$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
-       x="149.12234"
-       y="185.91962"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.121866;stroke-miterlimit:4;stroke-dasharray:none"
+       x="83.704193"
+       y="101.82917"
        id="text2629-3"><tspan
          sodipodi:role="line"
          id="tspan2627-5"
-         x="149.12234"
-         y="185.91962"
-         style="fill:#0000ff;fill-opacity:1;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none">$hg$</tspan></text>
+         x="83.704193"
+         y="101.82917"
+         style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke-width:0.121866;stroke-miterlimit:4;stroke-dasharray:none">$\ora{hg}$</tspan></text>
     <path
-       style="fill:none;stroke:#6c16ff;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2665)"
-       d="M 89.958332,31.75 77.863093,183.31845"
+       style="fill:none;stroke:#6c16ff;stroke-width:0.275921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2665)"
+       d="M 55.028975,33.069529 49.466752,102.77112"
        id="path2655"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#6c16ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="82.598541"
-       y="167.77676"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#6c16ff;fill-opacity:1;stroke:none;stroke-width:0.121673"
+       x="55.463791"
+       y="94.822174"
        id="text2629-3-8"><tspan
          sodipodi:role="line"
          id="tspan2627-5-9"
-         x="82.598541"
-         y="167.77676"
-         style="fill:#6c16ff;fill-opacity:1;stroke-width:0.264583">$(gh)^{-n} hg$</tspan></text>
+         x="55.463791"
+         y="94.822174"
+         style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#6c16ff;fill-opacity:1;stroke-width:0.121673">$\ora{(gh)^{-n} hg}$</tspan></text>
     <path
-       style="fill:none;stroke:#009200;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Lstart)"
-       d="M 63.554718,176.77793 135.26124,36.966297"
+       style="fill:none;stroke:#009200;stroke-width:0.275921;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Lstart)"
+       d="M 42.886777,99.763345 75.862367,35.468341"
        id="path2757"
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#009200;fill-opacity:1;stroke:none;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none"
-       x="29.430235"
-       y="191.21127"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#009200;fill-opacity:1;stroke:none;stroke-width:0.121866;stroke-miterlimit:4;stroke-dasharray:none"
+       x="41.149483"
+       y="102.79657"
        id="text2629-3-8-0"><tspan
          sodipodi:role="line"
          id="tspan2627-5-9-0"
-         x="29.430235"
-         y="191.21127"
-         style="fill:#009200;fill-opacity:1;stroke-width:0.265;stroke-miterlimit:4;stroke-dasharray:none">$(gh)^{-(n+1)} hg$</tspan></text>
+         x="41.149483"
+         y="102.79657"
+         style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#009200;fill-opacity:1;stroke-width:0.121866;stroke-miterlimit:4;stroke-dasharray:none">$\ora{(gh)^{-(n+1)} hg}$</tspan></text>
   </g>
 </svg>
