@@ -3,9 +3,11 @@
 
 \subsection{General measure theory}
 \label{subsec:backround}
+
+To be able to ultimately construct the geodesic current, we review some measure theory.
 Let $X$ be a set.
 
-\begin{definition}[Semi-ring, ring, $\sigma$-ring]
+\begin{definition}[Semi-ring, ring, $\sigma$-algebra]
   A family $\mathcal{S}$ of subsets of a set $X$ is called a
   \emph{semiring} (of sets) if it contains the empty set and, for
   every $A,B \in \mathcal{S}$, we have
@@ -15,15 +17,9 @@ Let $X$ be a set.
   called a \emph{ring} if it contains the empty set and for all
   $A,B \in \mathcal{R}$, the sets $A \cap B$, $A \cup B$ and
   $A \backslash B$ belong to~$\mathcal{R}$. If $\mathcal{R}$ is a
-  ring, the \emph{$\sigma$-ring} of $\mathcal{R}$ is the set of
-  countable unions of elements of~$\mathcal{R}$.
+  ring,  the \emph{$\sigma$-algebra} of $\mathcal{R}$, denoted by $\sigma(\mathcal{R})$, is the family of
+  countable unions of elements of~$\mathcal{R}$ as well as the element $X$ itself.
   \label{def:semiring}
-\end{definition}
-
-\begin{definition}[semialgebra, algebra, $\sigma$-algebra]
-  If in the above definitions one assumes also that $X$ is an element of
-  the family, one gets, respectively, the definitions of
-  \emph{semialgebra}, \emph{algebra} and \emph{$\sigma$-algebra}.
 \end{definition}
 
 \begin{lemma}
@@ -38,75 +34,48 @@ See \cite[1.2.14~Lemma]{Bo07:MeasureTheory}.
 \end{proof}
 
 \begin{definition}
-A real-valued set function $\mu$ defined on a class of sets $\mathcal{A}$ is called \emph{finitely additive} if 
+A real-valued set function $\mu$ defined on a class of sets $\mathcal{A}$ is called \emph{finitely additive} (resp. \emph{countably sub-additive}) if 
 \[
 \mu\Bigl(\bigcup\nolimits_{i=1}^n A_i \Bigr) = \sum_{i=1}^n \mu(A_i)
 \]
-for all $n$ and all disjoint sets $A_1,\cdots,A_n \in \mathcal{A}$ such that $\bigcup_{i=1}^n A_i \in \mathcal{A}$.
-We say $\mu$ is \emph{countably subadditive} if, for all pairwise
-disjoint sets $A_i \in \mathcal{A}$ such that $\bigcup_{i=1}^{\infty}
-A_i \in \mathcal{A}$,
+(resp. 
 \[
-\mu\Bigl(\bigcup\nolimits_{i=1}^{\infty} A_i \Bigr) \leq \sum_{i=1}^{\infty} \mu(A_i).
+\mu\Bigl(\bigcup\nolimits_{i=1}^{\infty} A_i \Bigr) \leq \sum_{i=1}^{\infty} \mu(A_i)).
 \]
-We say $\mu$ is \emph{countably additive} if the above inequality is
-replaced by an equality, which is true if and only if $\mu$ is
-finitely additive and countably subadditive (see
-\cite[1.3.9~Proposition]{Bo07:MeasureTheory}).
+ for all pairwise
+disjoint sets $A_i \in \mathcal{A}$
+such that $\bigcup_{i=1}^{n}
+A_i \in \mathcal{A}$ (resp. $\bigcup_{i=1}^{\infty}
+A_i \in \mathcal{A}$).
+
+
+We say $\mu$ is \emph{countably additive} if the inequality in countable subadditivity is
+replaced by an equality. 
 \end{definition}
 
-\begin{proposition}
+A finitely additive $\mu$ is countably additive if and only if is countably subadditive (see
+\cite[1.3.9~Proposition]{Bo07:MeasureTheory}).
+A finitely and countably additive function on a semiring can be uniquely extended to the ring.
+
+\begin{proposition}[{\cite[1.3.10~Proposition]{Bo07:MeasureTheory}}]
 A finitely additive function $\mu$ on a semiring $\mathcal{S}$ extends
-uniquely to a finitely additive function on $\mathcal{R}_{S}$.
+uniquely to a finitely additive function on $\mathcal{R}_{S}$. Moreover, this extension is countably additive provided $\mu$ is countably additive on $\mathcal{S}$.
 \label{prop:addsemitoring}
 \end{proposition}
-\begin{proof}
-See \cite[1.3.10~Proposition]{Bo07:MeasureTheory}.
-\end{proof}
 
+Finally, a finitely and countably additive function on a ring can be extended to the $\sigma$-algebra.
 
-\begin{definition}
-\label{def:outermeasure}
-A set function $\mu$ defined on the class of all subsets of a set $X$ and taking values in $[0,\infty]$ is called an \emph{outer measure} if 
-\begin{enumerate}
-    \item $\mu(\emptyset)=0$;
-    \item $\mu(A) \leq \mu(B)$ whenever $A \subset B$, i.e., $\mu$ is
-      monotone; and
-    \item $\mu$ is countably subadditive. 
-\end{enumerate}
-A set $A \subset X$ is called \emph{$\mu$-measurable} if, for every $E
-\subset X$, one has the equality
-\[
-\mu(E \cap A) + \mu(E \backslash A) = \mu(E)
-\]
-The class of all $\mu$-measurable sets is denoted by $\mathcal{M}_{\mu}$, and is an algebra \cite[Theorem~1.11.4]{Bo07:MeasureTheory}.
-An outer measure is called \emph{regular} if, for every set $A \subset X$, there exist a $\mu$-measurable set $B$ so that $A \subset B$ and $\mu(A)=\mu(B)$.
-\end{definition}
-
-\begin{theorem}[Carathéodory extension theorem]
-Given a ring~$\mathcal{R}$ on a set~$X$ and an additive function~$\mu$ on~$\mathcal{R}$.
-For $A \subset X$, let 
-\[
-\mu^*(A) \coloneqq \inf \biggl\{ \sum_{i=1}^n \mu(A_n) \biggm\vert A_n \in \mathcal{R}, A \subset \bigcup\nolimits_{i=1}^{\infty} A_i\biggr\},
-\]
-where in the case of absence of such a sequence~$A_n$ we set $\mu^*(A)
-\coloneqq \infty$. Then
-\begin{enumerate}
-    \item $\mu^*$ is an outer regular measure;
-    \item all the sets in $\mathcal{R}$ are $\mu$-measurable;
-\end{enumerate}
-Moreover, if $\mu$ is countably additive, we have
-\begin{enumerate}
-\item $\mu^*$ coincides with $\mu$ on $\mathcal{R}$; and
-    \item $\mu$ extends as a measure on $\mathcal{M}_{\mu}$.
-\end{enumerate}
+\begin{theorem}[Carathéodory extension theorem, {\cite[1.11.8~Theorem]{Bo07:MeasureTheory}}]
+Given a ring~$\mathcal{R}$ on a set~$X$ and an additive function and countably additive function~$\mu$ on~$\mathcal{R}$.
+Then $\mu$ extends as a measure on the $\sigma$-algebra $\sigma(\mathcal{R})$ generated by $\mathcal{R}$. If, moreover, $\mu$ is $\sigma$-finite, this extension is unique.
 \label{thm:caratheodory}
 \end{theorem}
-\begin{proof}
-See \cite[1.11.8~Theorem]{Bo07:MeasureTheory}.
-\end{proof}
 
 From now on, let $X$ be a topological space.
+A set $A \subset X$ is called \emph{$\mu$-measurable} of for every $E \subset X$ one has
+\[
+\mu(E \cap A) + \mu(E \backslash A) = \mu(E).
+\]
 
 \begin{definition}[Borel $\sigma$-algebra, Borel measure]
 The \emph{Borel $\sigma$-algebra} is the smallest $\sigma$-algebra containing all open sets in $X$. A \emph{Borel measure} is a measure on $\mathcal{B}(X)$.
@@ -118,7 +87,7 @@ Let $\mu$ be a Borel measure on $X$. The \emph{support} of $\mu$ is defined as t
 \end{definition}
 
 \begin{definition}[Atom of a measure]
-Given a measure space $(X,\mu)$, and $A\subset X$ a measurable subset, we say $A$ is an atom of $\mu$ if the following two conditions are satisfied:
+Given a topological space $X$, a measure $\mu$ and and $A\subset X$ a measurable subset, we say $A$ is an atom of $\mu$ if the following two conditions are satisfied:
 \begin{enumerate}
     \item $\mu(A) > 0$
     \item For any measurable set $B \subset A$ properly contained, $\mu(B)=0$.
@@ -126,61 +95,28 @@ Given a measure space $(X,\mu)$, and $A\subset X$ a measurable subset, we say $A
 \label{def:atommeasure}
 \end{definition}
 
-\subsection{Radon measures}
+\subsection{Radon and Borel measures}
 
 \begin{definition}
 Let $X$ be a locally compact and Hausdorff space. A Borel measure $\mu$ on $X$ is  is \emph{locally finite} if every point has a neighborhood $U$ with $\mu(U)< \infty$.
-The measure $\mu$ is \emph{inner regular} if one has
+The measure $\mu$ is \emph{inner regular} if one has, for every $U$ open,
 \[
-\mu(U) = \sup \{ \mu(K) : K \subset U \mbox{ compact } \}
+\mu(U) = \sup \{ \mu(K) : K \subset U \mbox{ compact } \}.
 \]
-for every $U$ open.
-For a Borel measure, being outer regular can be phrased as
+We say that $\mu$ is \emph{outer regular} if, for every Borel set $B$,
 \[
-   \mu(B) = \inf \{ \mu(U) : U \supset B \mbox{ open } \}
+   \mu(B) = \inf \{ \mu(U) : U \supset B \mbox{ open } \}.
 \]
-for every Borel set $B$. The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular and outer regular.
+ The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular and outer regular.
 \label{def:radon}
 \end{definition}
 
-The Riesz Representation theorem yields a characterization of Radon measures in terms of the associated functional on $C_c(X)$:
+On a general topological space $X$, not all Borel measures are Radon. However, the following Theorem of Ulam will play an important role.
 
-\begin{theorem}
-  Let $X$ be a locally compact Hausdorff space. For any positive linear functional $F$ on $C_c(X)$ there is a unique Radon measure $\mu$ on $X$ so that
-   \[
-     F(\psi) = \int_X \psi(x)\mu(x)
-  \]
-  for all $\psi \in C_c(X)$, and a functional $F$ is called positive if $F(\psi) \geq 0$ for every function $\psi \in C_c(X) \geq 0$ and $x \in X$. The functional $F$ is not assumed to be continuous (a positive linear function on $C_c(X)$ is automatically continuous).
-  \label{thm:Riesz}
-\end{theorem}
-
-On a general topological space $X$, not all Borel measures are Radon.
-If $X$ is a metric space, the Radon property follows from the property of tightness
-
-\begin{definition}
-  A \emph{Borel measure} $\mu$ is \emph{tight} if, for every $\epsilon>0$, there exists a compact set $K_{\epsilon}$ so that $\mu(X \backslash K_{\epsilon}) < \epsilon$
-\end{definition}
-
-\begin{proposition}
-Let $X$ be a metric space.
-A tight Borel measure $\mu$ on $X$ is Radon.
-\label{prop:tightborel}
-\end{proposition}
-\begin{proof}
-  See \cite[Proposition~2.1.8]{Bogachev18:WeakConvergence}.
-\end{proof}
-
-However, tightness and Borel is not equivalent to Radon property: indeed, using the axiom of choice one can construct a separable metric space with a Borel probability measure which is not Radon (see \cite[Example~1.1.2]{Bogachev18:WeakConvergence}).
-On complete metric spaces, there are examples of Borel measures which are not Radon. See \cite[Proposition~4.1.6]{Bogachev18:WeakConvergence}.
-However, the following Theorem of Ulam will play an important role.
-
-\begin{theorem}
+\begin{theorem}[Ulam, {\cite[Theorem~2.1.9]{Bogachev18:WeakConvergence}}]
 On a complete separable metric space all Borel measures are Radon.
 \label{thm:Ulam}
 \end{theorem}
-\begin{proof}
-  See \cite[Theorem~2.1.9]{Bogachev18:WeakConvergence}.
-\end{proof}
 
 \begin{definition}
   By the \emph{space of measures $\mathcal{M}(X)$} on a topological space $X$ is the set of all positive Radon measures on $X$.
@@ -197,31 +133,10 @@ is continuous for all $\psi \in C_c(X)$.
 \end{definition}
 
 We suppose that $\mathcal{M}(X)$ is endowed with the weak$^*$-topology.
-If $X$ is locally compact, Theorem \ref{thm:Riesz} implies $\mathcal{M}(X)$ is Hausdorff.
-In fact, even more is true.
-
-\begin{theorem}
-Let $X$ be locally compact. If $X$ is second countable, then $\mathcal{M}(X)$ is metrizable and second countable.
-\label{thm:spacemeasureswell}
-\end{theorem}
-
-In fact, $\mathcal{M}(X)$ has the Heine-Borel property.
-A set $A \subset \mathcal{X}$ is \emph{bounded} whenever
-\[
-  \sup_{\mu \in H} \int \psi \mu < \infty
-\]
-for every $\psi \in C_c(X)$.
-
-\begin{theorem}
-Let $X$ be a locally compact space. A closed set $A \subset \mathcal{M}(X)$ is compact if and only if it is bounded.
-\label{thm:heineborelproperty}
-\end{theorem}
-
-In particular, the set of bounded measures on a locally compact space is compact.
 
 \subsection{Geodesic currents}
 
-\subsection{Space of geodesics}
+We introduce the definition of geodesic current. For a more complete treatement, we refer the reader to~\cite[Chapter~3]{ES22:GeodesicCount}.
 
 \begin{definition}[Boundary at infinity]
 \label{def:boundaryinfty}
@@ -259,6 +174,19 @@ to be the
 space of $\pi_1(S)$-invariant and flip invariant Radon measures on
 $G(S)$.
 \end{definition}
+
+The space of geodesic currents enjoys the following nice topological properties.
+
+\begin{proposition}[{\cite[Theorem~3.3]{ES22:GeodesicCount}}]
+The space $\Curr(\Sigma)$ is locally compact, metrizable, second countable and Hausdorff space.
+\end{proposition}
+
+As a consequence of the previous result and Theorem~\ref{thm:Ulam}, we can redefine geodesic currents as follows.
+
+\begin{proposition}
+$\Curr(S)$ are the $\pi_1(S)$-invariant and flip invariant locally finite Borel measures on
+$G(S)$.
+\end{proposition}
 
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}

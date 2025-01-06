@@ -35,7 +35,7 @@
 \usepackage[shortlabels,inline]{enumitem}
 %\newcommand*{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
 \newcommand{\ora}[1]{\overrightarrow{#1}}
-%5\newcommand{\DPTtodo}[2][]{}
+%\newcommand{\DPTtodo}[2][]{}
 %\newcommand{\DMGtodo}[2][]{}
 %\newcommand{\flagtodo}[2][]{}
 \newcommand{\DPTtodo}[2][]{\todo[color=green!40,#1]{#2}}
@@ -237,28 +237,25 @@
 \email{dpthurst@indiana.edu}
 \date{Draft of \today}
 \begin{abstract}
-We give a new definition of geodesic currents on surfaces in terms of functions on
-curves satisfying the ``smoothing property'', i.e., non-increasing
-under surgery of essential crossings of curves.
-As applications, we give new characterizations of measured laminations and hyperbolic lengths as curve functionals, a new characterization of small actions of surface groups on real trees, and show that cross-ratio periods satisfy the hypotheses of our theorem and thus induce geodesic currents.
+We introduce a characterization of geodesic currents on surfaces based on functions on curves that satisfy a "smoothing property," meaning they are non-increasing under the surgery of essential crossings. Applications include novel characterizations of measured laminations and hyperbolic lengths as curve functionals, a new description of small surface group actions on real trees, and a proof that cross-ratio periods meet the criteria of our definition, thereby inducing geodesic currents.
 \end{abstract}
 \maketitle
-Comments are welcome!
-\tableofcontents
+
 
 \input{intro}
 \input{background}
 \input{crossing}
 \input{boxes}
 \input{construct-current}
-\input{necessary}
-\input{asymmetric}
 \input{applications}
 \input{crossratios}
 % \nocite{*}
 \appendix
-\input{appendix}
+\input{functionals}
+\input{luo}
 \input{hyppar}
+\input{asymmetric}
+\input{necessary}
 %\input{maxsmoothing}
 \bibliographystyle{hamsalpha}
 \bibliography{Intersections}

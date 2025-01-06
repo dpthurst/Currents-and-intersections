@@ -1,8 +1,83 @@
 \section{Boxes and their measures}
 
-Our goal is to define a measure on the space of geodesics -in fact, a geodesic current- associated to a curve functional $f$.
-Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the sigma algebra of open sets of $G^+(\Sigma)$.
-The following two results, which will be used later on, hint at where the positivity comes from.
+Our goal is to define a measure on the space of geodesics -in fact, a geodesic current- associated to a curve functional $f$. 
+Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the $\sigma$-algebra of open sets of $G^+(\Sigma)$.
+
+
+\subsection{Curve functionals and their properties}
+\label{subsec:mainhypotheses}
+%\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
+
+In this Subsection, we describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
+
+In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
+Working with this intersection number is crucial for our results, although we will assume our curves to be oriented. In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise.
+In terms of geodesic currents, this means we will work with oriented geodesic currents.
+As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
+intersection numbers which are asymmetric (i.e. they distinguish the
+orientations of the intersections). For those, the analog of the main duality
+result, Theorem~\ref{thm:intersect}, will not hold.
+Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$.
+
+
+\begin{definition}\label{def:properties}
+  For $S$ a compact topological surface without boundary,
+  let
+  $f \colon \Curves^+(S) \to \bbR$ be a
+  function defined on the space of oriented multi-curves,
+  not-necessarily-simple oriented curves.
+  We will also refer to $f$ as a \emph{curve functional} for short.
+  (\emph{Functional} means that it takes values in scalars; it is not
+  assumed to be linear.)
+  We will also refer to \emph{unoriented} or \emph{weighted} curve
+  functionals for real-valued functions defined on the appropriate
+  type of multi-curves.
+  We define several
+  properties that $f$ might satisfy.
+
+  \begin{itemize}
+    \item \textbf{Smoothing:} Let $C$~be an oriented curve on~$S$, and
+    let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
+    have
+    \begin{equation}\label{eq:quasismoothing}
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
+    \end{equation}
+    See Definition~\ref{def:essential-crossing} for ``essential
+    crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
+  \item \textbf{Additivity: } Let $C_1$ and~$C_2$ be two oriented curves
+    on~$S$. Then
+    \begin{equation}\label{eq:union-additive}
+      f(C_1 \cup C_2) = f(C_1) + f(C_2).
+    \end{equation}
+  \end{itemize}
+\end{definition}
+
+
+Natural examples of curve functionals satisfying the properties above come from curve lengths of length metric structures on the surface, or word-lengths with respect to some generating sets, for example.
+See Appendix~\ref{sec:functionals} for examples and non-examples of curve functionals.
+
+\begin{definition}
+  For $C$ an oriented multi-curve, $nC$ is the oriented multi-curve
+  that consists of $n$~parallel
+  copies of~$C$ (so with $n$ times as many components or,
+  in the context of weighted oriented multi-curves,
+  with weights multiplied by~$n$), and
+  $C^n$ is the oriented multi-curve with as many components as~$C$, in which each
+  component of~$C$ is covered by an $n$-fold cover. That is, if
+  $g \in \pi_1(S,x)$ represents $C$, $g^n$ represents~$C^n$.
+\end{definition}
+
+\begin{definition}\label{def:stable}
+     Let $f$ be a curve
+     functional and let $n>0$ be an
+     integer. We say $f$ satisfies \emph{stability} if, for an arbitrary oriented multi-curve~$C$,
+       \begin{equation}
+         \label{eq:stable}
+         f(C^n) = f(nC)
+       \end{equation}
+\end{definition}
+
 
 In fact, an immediate consequence of smoothing and convex union is positivity of $f$.
 
