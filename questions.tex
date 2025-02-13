@@ -5,7 +5,7 @@
 
 A natural question is if our results can be extended to the setting of open surfaces (i.e., compact surfaces with boundary, or finite type surfaces with punctures).
   Recall that geodesic currents can also be defined more generally for finite type hyperbolic surfaces. Depending on if we consider ends as cusps or funnels, we get two different spaces, that we will call $\GC_{\mathrm{cusp}}(S)$ and $\GC_{\mathrm{open}}(S)$, respectively.
-In the first case, we define the space of geodesic currents analogously to Definition~\ref{def:currents-1} for closed surfaces, i.e., as invariant measures supported on the space of geodesics of the universal cover, noting that now the space of geodesics contains arcs going from cusp to cusp. 
+In the first case, we define the space of geodesic currents analogously to Definition~\ref{def:currents} for closed surfaces, i.e., as invariant measures supported on the space of geodesics of the universal cover, noting that now the space of geodesics contains arcs going from cusp to cusp. 
 In the second case, we consider geodesic currents supported on geodesics projecting to the convex core of the surface.
 
 In the case of $\GC_{\mathrm{cusp}}(S)$, 
@@ -27,9 +27,6 @@ properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoo
 
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For a related example, see~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
-\DPTtodo[inline]{In related work: Add a citation to
-  Arenas--Neumann-Coto \cite{ANC24:TautSmoothings}}
-
 \subsubsection{Smoothing vs multi-smoothing}
 
 The hypotheses of smoothing in Equation~\ref{eq:smoothing} of Theorem~\ref{thm:intersect} apply to one essential crossing at a time. There is a stronger condition of smoothing, where multiple smoothings at essential crossings are performed at once, and the function is required to be non-increasing under such operation.
@@ -43,6 +40,15 @@ This prompts the following question.
 \begin{question}
 If a curve functional satisfies homogeneity, stability, convex union and smoothing, does it satisfy multi-smoothing?
 \end{question}
+
+In a related note, in recent work, Arenas--Neumann-Coto \cite{ANC24:TautSmoothings} consider smoothing for closed multi-curves (as well as arcs), and prove, under certain hypotheses for multi-curves, that given a closed curve in minimal position there is always an essential crossing such that once smoothed decreases intersection number by at most 1. They call such a smoothing a \emph{taut smoothing}.
+Can this be used to give a more efficient criterion for checking the smoothing property of a curve functional? That is,
+
+\begin{question}
+Let $f$ be a curve functional. For every multi-curve $C$, let $C'_{\mbox{taut}}$ be a multi-curve obtained by a taut smoothing of $C$.
+If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that $f$ satisfies smoothing?
+\end{question}
+
 
 \subsubsection{Convexity on train-track charts and local compactness}
 \label{subsubsec:convexity_charts}
@@ -138,11 +144,3 @@ Let $\ell_X$ denote the stable length of the action. Does it follow that $\ell_X
 What is a generalization of smoothing and quasi-smoothing for functionals on hyperbolic groups? (compare with~\cite{KMG:BBP}).
 \end{question}
 
-\DPTtodo[inline]{Note that we get a ``Liouville'' current from an
-  arbitrary Riemannian metric. Can this be represented by a
-  non-positively-curved Liouville current? Are NPC Liouville currents
-  dense in space of currents? TO THINK ABOUT: Do two curves
-  intersecting once in a genus-1 subsurface provide a counterexample?
-  Is there an $L^1$ vs $L^2$ thing? Or maybe think about hyperelliptic
-  involution on genus 2 subsurface to give a counterexample}
-  \DMGtodo[inline]{If we end up saying something about this, maybe we should point out the gap in Ursula's paper?}

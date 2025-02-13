@@ -1,8 +1,9 @@
 \section{Boxes and their measures}
 
 Our goal is to define a measure on the space of geodesics -in fact, a geodesic current- associated to a curve functional $f$. 
-Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the $\sigma$-algebra of open sets of $G^+(\Sigma)$.
+Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the $\sigma$-algebra of open sets of $G(\Sigma)$.
 
+In order to achieve this, we first introduce the basic properties we will assume of our curve functionals, and explore some basic consequences of these properties~(Subsection~\ref{subsec:mainhypotheses}) such as positivity and their relation to the continuity of the functional (Subsection~\ref{sec:continuity_conn_disc_smoothing}) We then define the family of boxes of geodesics (Subsection~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
 
 \subsection{Curve functionals and their properties}
 \label{subsec:mainhypotheses}
@@ -17,7 +18,7 @@ As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
 intersection numbers which are asymmetric (i.e. they distinguish the
 orientations of the intersections). For those, the analog of the main duality
 result, Theorem~\ref{thm:intersect}, will not hold.
-Thus, even though our curve functionals will be defined on oriented curves, to state our results it will be necessary to assume our curve functionals are \emph{symmetric}, i.e., $f(C)=f(C^{-1})$.
+Thus, even though in a lot of our constructions the curves involved will be oriented, our functionals will be defined on unoriented curves. Equivalently, they can be thought of as defined on oriented curves and \emph{symmetric}, i.e., satisfying $f(C)=f(C^{-1})$.
 
 
 \begin{definition}\label{def:properties}
@@ -38,10 +39,10 @@ Thus, even though our curve functionals will be defined on oriented curves, to s
   \begin{itemize}
     \item \textbf{Smoothing:} Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
-    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
     have
-    \begin{equation}\label{eq:quasismoothing}
-      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
+    \begin{equation}\label{eq:smoothing}
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
     \end{equation}
     See Definition~\ref{def:essential-crossing} for ``essential
     crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
@@ -126,6 +127,111 @@ Adding the equations, we get $f(a^n) \geq -2R$. By stability and
 homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
 enough we see that $f(a) \geq 0$.
 \end{proof}
+
+\subsection{Continuity and connected implies disconnected smoothing}
+\label{sec:continuity_conn_disc_smoothing}
+
+In this subsection we show that if a curve functional is continuous and homogeneous, then one type of smoothing (connected/disconnected) implies the other. This can be seen as a weak converse of the main result in our previous paper~\cite{MGT21:Smoothings}.
+
+The following lemma is a straightforward fact of the weak$^*$-topology convergence of geodesic currents.
+
+\begin{lemma}
+  Given any $g,h \in \pi_1(S)$, we have
+\[
+\lim_n \frac{\mu_{g^n h^n}}{n} = \mu_g + \mu_h
+\]
+in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geodesic current representing the curve $[g]$.
+\label{lem:gnhn_to_gsumh}
+\end{lemma}
+
+The next result immediately by Lemma~\ref{lem:righthandedfoundation}.
+
+\begin{lemma}
+Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, the element $a^n b^n$ $R$-crosses $b^k a^k$ for every $k,n \in \mathbb{N}$ 
+\label{lem:anbn_vs_bkak}
+\end{lemma}
+
+\begin{proposition}
+Suppose $f \colon \Curves(S) \to \mathbb{R}$ is a curve functional that extends continuously to geodesic currents and is homogeneous.
+If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ satisfies connected smoothing (resp. disconnected smoothing).
+\label{prop:cont_conn_disc}
+\end{proposition}
+\begin{proof}
+Suppose first $f \colon \Curves(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
+Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented disconnected smoothing, i.e., $f(ab) \geq f(a) + f(b)$.
+We will start by showing the following claim, by induction on $n$:
+\[
+2nf(ab) \geq f(a^{2n}b^{2n}).
+\]
+The base case $n=1$, follows from the fact that if $a,b$ are parallel, $ab$ and $ba$ cross, and hence,
+\[
+2[ab]=[ab] + [ba] \reducesto [ab^2a]=[a^2b^2].
+\]
+Hence, by homogeneity, the base case follows.
+Now, we prove the induction step.
+\begin{align*}
+2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
+&f(a^{2(n-1)}b^{2(n-1)}) + f(b^2a^2) \geq  \\
+& f(a^{2(n-1)}b^{2(n-1)} b^2a^2) = f(a^{2n}b^{2n}).
+\end{align*}
+In the first inequality we used induction step, then we used Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
+Thus, we have
+\[
+2nf(ab) \geq f(a^{2n}b^{2n})
+\]
+as we wanted to show.
+Finally, we divide this expression by $2n$, let $n$ go to infinity and use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
+\[
+f(ab) \geq f(a) + f(b)
+\]
+which proves oriented disconnected smoothing.
+Second, we prove the unoriented disconnected smoothing.
+We split it into two cases, depending on the relative position of $aB$ and $Ba$. Observe that, if $a$ and $b$ are parallel, by Lemma~\ref{lem:ab_parallel_aB}, $aB$ and $Ba$ are either anti-parallel or crossing. 
+If $aB$ and $Ba$ are crossing, we can proceed in a very similar fashion as above. Namely, we prove by induction, as above,
+\[
+2nf(ab) \geq f(a^{2n}B^{2n}).
+\]
+divide by $2n$, take the limit when $n$ goes to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
+If $aB$ and $Ba$ are anti-parallel, we will prove by induction that
+\begin{equation}
+2nf(ab) \geq f((aB)^n (Ab)^n).
+\label{eq:antiparallel_induction}
+\end{equation}
+The base case, $n=1$, follows since $ab$ and $(ba)^{-1}$ cross, hence
+\[
+[ab] + [ba] \reducesto [abAB] = [(Ba)(bA)]=[(aB)(Ab)]
+\]
+where we used disconnected unoriented smoothing first, then we conjugated by $B$, and then we took inverses.
+Evaluating the above equation by $f$, and using homogeneity and disconnected smoothing, we get the base case.
+Now, we prove the induction step.
+\begin{align*}
+2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
+&f((aB)^{n-1} (Ab)^{n-1}) + f((Ab)(aB)) \geq  \\
+& f((aB)^{n-1} (Ab)^{n-1} (Ab)(aB)) = f((aB)^n (Ab)^n)
+\end{align*}
+In the first inequality we used the induction step, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
+Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
+\[
+f([ab]) \geq \frac{f([aB]\cup [Ab])}{2} = f([aB])
+\]
+where we used homogeneity in the last equality.
+This finishes the proof of the first part.
+
+We now prove the second part, namely, if $f \colon \Curves(S) \to \mathbb{R}$ satisfies connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
+\[
+f(a^{2n}b^{2n}) \geq 2nf(ab).
+\]
+This computation follows by applying connected smoothing to the pair $ab$, $ba$ for the base case, and applying the induction step and homogeneity. We omit the details.
+Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
+\[
+f([a] \cup [b]) \geq f([ab])
+\]
+which proves oriented disconnected smoothing. The unoriented one is proved in the same way, replacing $b$ by $B$.
+\end{proof}
+
+\begin{remark}
+The statement can be strengthened by replacing ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing'', but we will not use it in this paper, so we didn't write it in that level of generality.
+\end{remark}
 
 \subsection{Right-handed boxes}
 \label{sec:boxes}
@@ -327,7 +433,7 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} right-handed boxes, since $c$ 
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular the boxes in $\cB$ avoid the
-  diagonal. (Something about orbits $[a,b,c,d]$.)
+  diagonal. (Something about orbits $[a,b,c,d]$.) \DMGtodo{why is this comment here?}
 \end{proposition}
 
 \begin{proof}
@@ -444,8 +550,8 @@ be clockwise and the other will be counterclockwise.
 
 \begin{proposition}
 The family of right handed boxes~$\mathcal{B}$ is dense in the space
-of rectangles in $G^+(S)$, in the following sense.
-For any rectangle $R = (v_1,v_2]\times [w_1,w_2) \subset G^+(S)$,
+of rectangles in $G(S)$, in the following sense.
+For any rectangle $R = (v_1,v_2]\times [w_1,w_2) \subset G(S)$,
 and any $\epsilon>0$, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
 Type~I RH box $B_{p_1,p_2,q_1,q_2}$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
@@ -479,6 +585,8 @@ A similar argument guarantees that boxes of Type II and Type III are also dense 
 
 \subsection{Measures of boxes}
 
+In this Section we will start setting up the definition of the measure of a right-handed box $B_{a,b,c,d}$. In particular, if $\mathcal{B}$ denotes the family of right-handed boxes, we will define a function $\mu_f \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit involving the $f$-value of a  certain combination of words involving $a,b,c,d,x$. We will then prove such a limit exists using the properties of $f$ introduced in Subsection~\ref{subsec:mainhypotheses} and the Lemmata about how certain words behave under smoothings proven in Section~\ref{subsec:crossings}. Finally, we will show $\mathcal{B}$ is a semi-ring (in the sense of Definition~\ref{def:semiring}) and $\mu_f$ is finitely additive.
+
 \begin{proposition}
 \label{prop:limitexists}
 Let $B_{p_1,p_2,q_1,q_2}$ be a right-handed box so that $[B_{p_1,p_2,q_1,q_2}]=[B]_{a,b,c,d}$.
@@ -490,12 +598,8 @@ Then following limit exists:
 Note this function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically $\pi_1(S)$-invariant.
 
-
-
-\DPTtodo{This no longer seems to be a correct summary of structure}
-\DMGtodo{the only reason I see for this not being a correct summary is because some results have been moved to the beginning of section 4, I added a sentence to that effect. Does this look better now?}
 We prove Proposition~\ref{prop:limitexists} by breaking it into several lemmas,
-using the results from Section~\ref{sec:fund-smoothing} and from the beginning of Section-\ref{sec:boxes}.
+using the results from Section~\ref{sec:fund-smoothing}, the hypotheses on the curve functional $f$ introduced in Subsection~\ref{subsec:mainhypotheses}, and the convexity results discussed in Section~\ref{subsec:convexity}.
 
 Using the smoothing lemmas, we can see a key limit to construct the measure
 exists.
@@ -777,9 +881,9 @@ $(\ora{\ell},\ora{r})$ are R-parallel or R-anti-parallel, and
 $\ell^- \in (r^+,r^-)$ iff $(\ora{\ell},\ora{r})$ are R-parallel or
 L-anti-parallel.
 
-To visualize these conditions better, consider the space of oriented
+To visualize these conditions better, recall the space of oriented
 geodesics 
-$G^+(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (recall Definition~\ref{def:spacegeodesics}),
+$G(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (Definition~\ref{def:spacegeodesics}),
 drawn in the
 usual way as a square with opposite sides identified. We represent
 $(\ell^-,\ell^+)$ by drawing a ``whisker'', a horizontal segment at
@@ -834,13 +938,16 @@ Let $\mathcal{R}$ be the ring generated by $\mathcal{S}$.
 By Propositon~\ref{prop:RHsemiring}, $\mu_{f}$ is a finitely additive function.
 
 \begin{remark}
- The existence of the double limits in Lemma~\ref{prop:join-split-alg} (and the other similar limits in this section) is reminiscent to the existence of
+ The existence of the double limits in Lemma~\ref{prop:join-split-alg} (and the other limits in this section) is reminiscent to the existence of
  similar limits in the context of the eigenvalue projection function
  on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}).
- In fact, some (log of ratio of) eigenvalue functions extend continuously to geodesic currents and, in the case of top over bottom eigenvalues of positively ratioed representations, or positively framed~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots}, they arise as intersection number with a geodesic current. But they do not always
- arise as intersection number (see, for
- example, quasi-fuchsian representations~\cite{FF21:QF}).
-  In fact, they do not always extend to geodesic currents continuously. For example, if $\rho \colon \Gamma \to G$ is $P_1$-Anosov but not $P_2$-Anosov, $\log \lambda_1/\lambda_2$ might fail to be continuous. They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of H\"older geodesic currents).
+ In fact, some (log of ratio of) eigenvalue functions extend continuously to geodesic currents and, in the case of (log of) top over bottom eigenvalues of certain Anosov representations-- such as positively ratioed representations or positively framed representations (see precise definitions in~\cite{MZ19:PositivelyRatioed, BIPP21:PositiveCrossratios, BridgemanCanaryLabourieSambarino18:SimpleRoots})-- they arise as an intersection number with a geodesic current. 
+ However, that is not the case for general Anosov representations. See, for
+ example, quasi-fuchsian representations~\cite{FF21:QF}), as well as our discussion in Subsection~\ref{subsec:examples_and_non}, Examples.
+  
+  In fact, in general these functions do not even extend to geodesic currents continuously.  
+  
+  They do extend continuously, for example, for Hitchin representations~\cite{Dre13:Hitchin} (where in fact they extend continuously to the bigger space of H\"older geodesic currents). This was later reproven by~\cite{MZ19:PositivelyRatioed} from the fact that they arise as intersection numbers, as mentioned before. 
  \end{remark}
  
 %%% Local Variables:

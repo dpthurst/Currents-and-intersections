@@ -71,5 +71,21 @@ newpath -50.10999 50.10999 moveto 0 0 rlineto stroke
 newpath -56.9059 -81.26993 moveto 0 0 rlineto stroke
 -70.69879 -84.67383 moveto
 (W) cmmi10 9.96265 fshow
+53.50794 15.58 moveto
+(c) cmmi10 9.96265 fshow
+-53.50794 -15.58 moveto
+(c) cmmi10 9.96265 fshow
+-0.358795 62.28606 moveto
+(d) cmmi10 9.96265 fshow
+-8.7944 -69.09386 moveto
+(d) cmmi10 9.96265 fshow
+-26.31175 29.35304 moveto
+(a) cmmi10 9.96265 fshow
+27.05499 -25.05499 moveto
+(a) cmmi10 9.96265 fshow
+-39.09939 -42.33692 moveto
+(b) cmmi10 9.96265 fshow
+26.95295 44.63497 moveto
+(b) cmmi10 9.96265 fshow
 showpage
 %%EOF

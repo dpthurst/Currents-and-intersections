@@ -3,7 +3,7 @@
 
 
 
-\subsection{$\mu_{f}$ is countably additive}
+\subsection{\texorpdfstring{$\protect{\mu_{f}}$}{muf} is countably additive}
 \label{sec:countable-additivity}
 
 We prove countable additivity of the function $\mu_{f}$ by
@@ -95,7 +95,7 @@ The following Proposition will be key to control how much $\mu_f$ when the right
  Writing $e=q_1^{-1} q_2$, we have
  \begin{align*}
      b &= a x^k e \\     
-     d &= c x^k e \\  
+     d &= c x^k e. \\  
  \end{align*}
 We thus get the family of box orbits given by
 \[
@@ -105,7 +105,7 @@ Figure~\ref{fig:finalfamily} related the box to the orbit notation.
 
     We want to show
 \[
-\lim_{k \to \infty} \mu_f([B]_{a,a x^k e,c,c x^k e})=0
+\lim_{k \to \infty} \mu_f([B]_{a,a x^k e,c,c x^k e})=0.
 \]
 By definition of $\mu_f$,
 \begin{align*}
@@ -118,9 +118,7 @@ So, we are left to evaluate the nested limit
     We use Proposition~\ref{prop:join-split-geom},
     equations~\ref{eq:cross-join} and
     \ref{eq:cross-split}.
-    \DPTtodo{Needs tweaking for revised statements}
-    \DMGtodo{Revised statements do no longer include any strengthening for $s$ for equations~\ref{eq:cross-join} and
-    \ref{eq:cross-split} in the case when $x$ is simple. I change the lines below to adapt to that. }
+    
     Let $s>0$ be the constant (depending on $a,e$) furnished by Equation~\ref{eq:cross-join}, and let 
     $s'$ be the constant (depending on $c,e$) from Equation~\ref{eq:cross-split}.
     We assume $n$ is large enough so that $n-k-s>s$ and  $n-k-s'>s'$.
@@ -133,7 +131,7 @@ So, we are left to evaluate the nested limit
     \begin{align*}
        \lim_{k\to\infty} \lim_{n\to\infty}  \bigl( f([ax^{k+1}]) - f([x^{k+1}]\bigr) + \bigl( f([ex^{n-1}]) - f([x^{n-1}])\bigr) +  \\
         \bigl( f([cx^n]) - f([x^n]) \bigr) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
-        -\bigl(f([cx^{k+2}])-f([x^{k+2}])\bigr)-\bigl(f([ex^{n-2}])-f([x^{n-2}])\bigr)
+        -\bigl(f([cx^{k+2}])-f([x^{k+2}])\bigr)-\bigl(f([ex^{n-2}])-f([x^{n-2}])\bigr).
     \end{align*}
     Finally, this iterated limit is 0 by  Lemma~\ref{lem:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
     \end{itemize}
@@ -251,23 +249,19 @@ On the other hand, given a half-open box of geodesics $B=[a,b) \times [c,d) \in 
 Note that $\mu_f$ is locally finite, since any compact subset of $G(S)$ can be covered by one of the boxes in $\mathcal{R}$, where the measure takes a finite value.
 Therefore, $\mu_f$ is a Borel and locally finite measure. 
 By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:box-positive}.
-It remains to address flip invariance.
-We can consider $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ to obtain a flip invariant measure, since if $\sigma_*$ is the flip map on oriented geodesic currents (Definition~\ref{def:unorientedcurrents}), we have, for all closed curve $C$,
-\[
-i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
-\]
-The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
-Therefore, $\frac{1}{2}(\mu_f + \sigma_{*} \mu_f)$ is a geodesic current with the same intersection numbers as $\mu_f$.\qedhere
+\qedhere
 \end{proof}
 
-In order to obtain an unoriented geodesic current, we can write
-
+\begin{remark}
+It is not a priori clear from the definition of $\mu_f$ that it is an unoriented geodesic current (recall Definition~\ref{def:currents}).
+In order to obtain an unoriented geodesic current, we can take
 \[
-1/2(\mu_f + \sigma_*(\mu_f))
+\overline{\mu_f} \coloneqq 1/2(\mu_f + \sigma_*(\mu_f)).
 \]
-is a geodesic current.\DMGtodo{introduce definition of oriented current}
+\end{remark}
 
-\subsection{$\mu_{f}$ recovers $f$ on curves}
+\subsection{
+\texorpdfstring{$\protect\mu_{f}$}{muf} recovers \texorpdfstring{$\protect{f}$}{f} on curves}
 \label{sec:recovery}
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
@@ -278,12 +272,26 @@ $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
 $y_-, z, y \cdot z, y_+$ are in cyclic order.
 Then
 $(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
-$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing geodesics), and the intersection
-of $C$ with a geodesic current $\mu$ can be computed as
+$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing geodesics).
+
+First we note that the following.
+
+\begin{lemma}The intersection
+of a closed curve $C$ with an oriented (or unoriented) geodesic current $\mu$ can be computed as
 \[
 i(\mu, C) = \mu((y_+,y_-) \times [z,y \cdot z)).
 \]
-(see \cite[Lemma~4.4]{MZ19:PositivelyRatioed}, cf. \cite[Page~153]{Otal90:SpectreMarqueNegative} for details).
+\end{lemma}
+\begin{proof}
+The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the element representing $C$, then for any $q \in \ora{y}$,
+\[
+\mu[q, y \cdot q) = \mu((y_+,y_-) \times [z,y \cdot z))
+\]
+for every $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
+$y_-, z, y \cdot z, y_+$ are in cyclic order.
+This is
+spelled out in detail in the proof of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, (cf. \cite[Page~153]{Otal90:SpectreMarqueNegative}), and the proof only uses the $\Gamma$-invariance of $\mu$, and no flip-invariance.
+\end{proof}
 
 \begin{figure}
 \centering{
@@ -297,12 +305,12 @@ i(\mu, C) = \mu((y_+,y_-) \times [z,y \cdot z)).
 \begin{proposition}
 For $C$ a closed curve, we have
 \[
-i(\mu_f,C)=f(C).
+i(\mu_f,C)=i(\overline{\mu_f},C)=f(C).
 \]
 \label{prop:recoverintersection}
 \end{proposition}
 \begin{proof}
-  Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
+We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
 Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
 
 
@@ -348,7 +356,7 @@ If we let $z=(p_1^{-1} \cdot \wt{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)},
     &\qquad- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
     &\qquad+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}])\\
     &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
-    &=f([y])
+    &=f([y]).
       \end{aligned}
     \end{multline*}      The first equality follows by the fact that the boxes defined
       above converge from below to $(\gamma_-,\gamma_+) \times [z,y
@@ -359,6 +367,13 @@ If we let $z=(p_1^{-1} \cdot \wt{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)},
       In the fourth equality, we then apply that
       Lemma to cancel out equivalent
       terms. In the fifth equality, we use the symmetry property of~$f$ to obtain the result.
+
+      It remains then to check the property $i(\overline{\mu}_f, C)=f(C)$ for any closed curve $C$ persists. Indeed,
+\[
+i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
+\]
+The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
+Therefore, $\overline{\mu_f}$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\mu_f$.
 
 %The following is another proof that does not rely on double limits directly.
 \begin{comment}
@@ -433,7 +448,7 @@ Now, if we let $z=(p_1^{-1} \cdot \wt{x})^-$, and replace $y$ by $w=y^r$ in the 
 The proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. This condition is crucial to recover curve functionals as intersection numbers, as we explain in Section~\ref{sec:asymmetric}.
 \end{remark}
 
-\subsection{Proof of Theorem~\ref{thm:intersections_group}}
+\subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{muf}}
 \label{subsec:algebraic_vs_top}
 We finish this section by proving its algebraic version, namely, Theorem~\ref{thm:intersections_group}.
 
@@ -457,7 +472,7 @@ f(a)+f(b) = f(a + b) \geq f(ab).
 \]
 Also, $(B,a)$ is $R$-crossing, and thus
 \[
-f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB)
+f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB).
 \]
 On the other hand, if $(\ora{a},\ora{b})$ are $L$-crossing, then $(\ora{b},\ora{a})$ is $R$-crossing, hence
 \[

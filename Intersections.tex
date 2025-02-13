@@ -35,6 +35,7 @@
 \usepackage[shortlabels,inline]{enumitem}
 %\newcommand*{\doi}[1]{\href{https://doi.org/#1}{doi:#1}}
 \newcommand{\ora}[1]{\overrightarrow{#1}}
+\newcommand{\ole}[1]{\overleftarrow{#1}}
 %\newcommand{\DPTtodo}[2][]{}
 %\newcommand{\DMGtodo}[2][]{}
 %\newcommand{\flagtodo}[2][]{}
@@ -224,7 +225,7 @@
 \tikzset{biimplication/.style={double equal sign distance, implies-implies}}
 \input{macros}
 \begin{document}
-\title{Currents and intersections}
+\title{The intersection dual of geodesic currents}
 \author[Martínez-Granado]{Dídac Martínez-Granado}
 \address{Department of Mathematics\\University of Luxembourg\\Av. de la Fonte 6, Esch-sur-Alzette, L-4364, Luxembourg}       
 \email{didac.martinezgranado@uni.lu}
@@ -237,9 +238,13 @@
 \email{dpthurst@indiana.edu}
 \date{Draft of \today}
 \begin{abstract}
-We introduce a characterization of geodesic currents on surfaces based on functions on curves that satisfy a "smoothing property," meaning they are non-increasing under the surgery of essential crossings. Applications include novel characterizations of measured laminations and hyperbolic lengths as curve functionals, a new description of small surface group actions on real trees, and a proof that cross-ratio periods meet the criteria of our definition, thereby inducing geodesic currents.
+We characterize geodesic currents on closed surfaces in terms of functions on multi-curves that satisfy a ``smoothing property'', meaning that they are
+non-increasing under surgery of essential crossings. Specifically, a geodesic current can be defined as the ``dual'' to a function on multi-curves that satisfies this 
+smoothing property, is additive under disjoint union of curves, and satisfies natural stability and homogeneity properties, where the duality is given by the intersection pairing.
+ Applications include new characterizations of measured laminations and hyperbolic lengths as curve functionals, a new description of small surface group actions on real trees, and a proof that cross-ratio periods meet the criteria of our definition.
 \end{abstract}
 \maketitle
+\tableofcontents
 
 
 \input{intro}
