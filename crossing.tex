@@ -75,9 +75,9 @@ a sequence of points $\{\bm{x^k} \mid k \in \bbZ\}$, which is a
 quasi-geodesic in $\wt S$, and thus determines an oriented geodesic
 denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} \bm{x^k}$
 and $x^- = \lim_{k \to -\infty} \bm{x^k}$. Note that $x$ acting on the
-left on $\overline{\wt S}$ has north-south (NS) dynamics, with unique
+left on $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ has north-south (NS) dynamics, with unique
 attracting point $x^+$ and repelling point $x^-$: for any point
-$\bm{p} \in \wt S \cup \partial_{\infty} S$ other
+$\bm{p} \in \overline{\wt S}$ other
 than $x^-$, we have $\lim _{k \to \infty} x^k \cdot \bm{p} = x^+$.
 
 The other lifts of $[x]$ to $\wt S$ are translates $q \cdot \ora{x}$
@@ -116,11 +116,7 @@ $\wt S$.) When there is a choice, we prefer to state lemmas in terms
 of $\Isom^+(\bbH^2)$, since in principle it is more general (as we do
 not need to assume the group elements generate a discrete subgroup).
 
-\begin{convention}\label{conv:circle-intervals}
-  Intervals on the circle are always written with endpoints in counterclockwise
-  order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
-  $(x,y) \cup (y,x)$ is almost the entire circle).
-\end{convention}
+
 
 \subsection{Crossings}
 \label{subsec:crossings}
@@ -199,6 +195,7 @@ Given an essential crossing of a multi-curve, we can do an operation of ``smooth
   \begin{equation*}
     \mfig{curves-3} \reducesto \mfig{curves-4}
   \end{equation*}
+  The \emph{unoriented smoothing} is the one that does not respect the orientation.
   
   If we obtain a curve $C'$ from $C$ by a sequence of
 $k$ smoothings of essential crossings,  we will write
@@ -251,6 +248,11 @@ In principle one should invoke a representation $\rho \colon \pi_1(S)
 we will suppress it.
 % \DMGtodo[inline]{(Punctures) If punctures, we need to ask for
 %   hyperbolic, and peripheral sent to parabolic.}
+\begin{convention}\label{conv:circle-intervals}
+  Intervals on the circle are always written with endpoints in counterclockwise
+  order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
+  $(x,y) \cup (y,x)$ is almost the entire circle).
+\end{convention}
 
 \begin{definition}
   Let $a,b$
@@ -300,6 +302,10 @@ can change, as explained below.
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
   Then $\ora{a}$ and~$\ora{x}$ R-cross (resp.\ L-cross) iff
   $(\ora{x},a \cdot \ora{x})$ are R-parallel (resp.\ L-parallel).
+  More generally, if
+  $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
+  endpoint $a^+$ in an interval $(x,y)$ iff
+  $a \cdot (x,y) \subsetneq (x,y)$.
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
@@ -307,8 +313,10 @@ can change, as explained below.
   definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
   which in turn is equivalent to $a^+ \in (x^-,x^+)$ and
   $a^- \notin (x^-,x^+)$, which is turn is equivalent to
-  $(\ora{a},\ora{x})$ R-crossing.
+  $(\ora{a},\ora{x})$ R-crossing. The last claim follows similarly.
 \end{proof}
+
+
 
 We also have the
 following. 
@@ -611,7 +619,6 @@ Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) t
 \end{lemma}
 
 Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
-Indeed, if $(a,b)$ is a pair of crossing or parallel distinct elements, then the curves $[ab]$ and $[aB]$ are connected.
 
 \begin{definition}
 We will coin the following types of smoothing.
@@ -623,23 +630,14 @@ We will coin the following types of smoothing.
   \end{align}
 \item connected smoothing: For any pair of parallel elements $(a,b)$, 
  \begin{align}
-    \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] \cup [b] \\
-    \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].
+      \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] \cup [b] \\
+    \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].\\
   \end{align}
 \end{enumerate}
+\label{def:smoothing_types}
 \end{definition}
 
 Observe that requiring the above condition for $R$-crossing (resp. $R$-parallel) is the same as requiring them for $L$-crossing (resp. $L$-parallel), by the symmetry of the conditions, conjugacy invariance, and the fact that if $(a,b)$ are $R$-crossing, then $(b,a)$ are $L$-crossing, and if $(a,b)$ are $R$-parallel, then $(b,a)$ are $L$-parallel.
-
-We also make the following trivial observation, using
-Convention~\ref{conv:circle-intervals}.
-\begin{lemma}\label{lem:hyperbolic}
-  The geodesics $(\ora{a}, \ora{x})$ R-cross iff
-  $a \cdot (x^-, x^+) \subsetneq (x^-, x^+)$. More generally, if
-  $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
-  endpoint $a^+$ in an interval $(x,y)$ iff
-  $a \cdot (x,y) \subsetneq (x,y)$.
-\end{lemma}
 
 
 \subsection{Position of axes \texorpdfstring{$\protect\ora{aB}$}{aB} and \texorpdfstring{$\protect\ora{Ba}$}{Ba} in parallel  case}
@@ -755,14 +753,14 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
 %  \DPTtodo{This claim new.}
 %  If $a=b=c x^k d$ then $s$ can be chosen independently of~$k$.
 
-  There exists $s' \ge 0$ (depending on $a,b$) so that for all
-  $n > s'$,
+  There exists $s' \ge 0$ (depending on $a,x$) so that for all
+  $|n-m| > s'$,
 %  $n,m$ with $|n-m| > s'$,
   % \begin{align}
   %   [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-cancel}
   % \end{align}
   \begin{align}
-    \label{eq:cross-cancel}[ax^n][a] &\reducesto [x^n]
+    \label{eq:cross-cancel}[ax^n][ax^m] &\reducesto [x^{|n-m|}]
 %    \intertext{and for all $n+m > s'$,}
 %    \label{eq:cross-cancel-2}[a x^n b x^m][a] \reducesto [x^n b x^m].
   \end{align}
@@ -863,16 +861,16 @@ examples.
   $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the
   right. In either case,
   \[
-    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}].
+    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
   \]
-
+  by oriented disconnected smoothing.
   For Equation~\eqref{eq:cross-split}, write $[x^r ax^n bx^{m-r}]=[gh]$ with
   $g=x^r ax^n$ and $h=bx^{m-r}$, 
   so $g^+ \in w(x^ra\cdot\ora{x})$ and $g^- \in w(x^{-n}A \cdot \ora{x})$, and $h^+ \in w(b \cdot \ora{x})$, $h^- \in w(x^{r-m} B \cdot \ora{x})$.
   Hence, if $s < r < m-n-s$, we have $s_1 < r$
   so $w(b\cdot\ora{x})$ is to the left of $w(x^r a\cdot\ora{x})$,
   while $r-m < -n+s_1'$, so $w(x^{r-m}B \cdot\ora{x})$ is to the left
-  of $w(x^{-n}A\cdot\ora{x})$, and hence $\ora{h}$ and $\ora{g}$ are $R$-parallel, giving Eq.~\eqref{eq:cross-split}. 
+  of $w(x^{-n}A\cdot\ora{x})$, and hence $\ora{h}$ and $\ora{g}$ are $R$-parallel, giving Eq.~\eqref{eq:cross-split} by oriented connected smoothing.
   
   
   \begin{comment} Old argument checking self-crossing: so the endpoints of $\ora{gh}$
@@ -893,9 +891,9 @@ examples.
   and
   let $s' = 2s_0 - 1$. Since $m-n \ge 2s_0$, we can pick $r$ so that
   $s_0 \le r \le m-n-s_0$. By the above argument, $\ora{ax^n}$ and
-  $x^rax^{m-r}$ R-cross (since, e.g., $(ax^n)^+ \in w(a\cdot\ora{x})$ and
+  $\ora{x^rax^{m-r}}$ R-cross (since, e.g., $(ax^n)^+ \in w(a\cdot\ora{x})$ and
   $(x^rax^{m-r})^+ \in w(x^r a\cdot\ora{x})$, which are disjoint), so we get the
-  desired smoothing in Eq.~\eqref{eq:cross-cancel}.
+  desired smoothing in Eq.~\eqref{eq:cross-cancel} by using unoriented smoothing.
 
   In the cases when $x$ is simple, two windows are disjoint, nested,
   or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$.
@@ -919,7 +917,7 @@ examples.
 \end{proof}
 
 \begin{remark}
-  The main place we use unoriented smoothings in this paper is in the
+  Note the main place we use unoriented smoothings in this paper is in the
   proof of Eq.~\eqref{eq:cross-cancel}, but it is necessary. See
   Sec.~\ref{sec:asymmetric}.
 \end{remark}
@@ -982,7 +980,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \end{align*}
   Since $r>s_0$, the endpoints appear in the cyclic order
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\partial_\infty S$. In
-  particular $[g_1][g_2] \reducesto [g_1 g_2]$ as desired.
+  particular $[g_1][g_2] \reducesto [g_1 g_2]$ by oriented disconnected smoothing, as desired.
   
   To see Eq.~\eqref{eq:crossuniform_n}, apply
   Eq.~\eqref{eq:crossuniform_m} with the change of variables
@@ -1004,11 +1002,12 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   for $m$ large enough, $g^+$ is to the right of $a^+$, and thus
   $\ora{g}$ crosses $\ora{a}$ to the right. We therefore have
   \[
-    [a x^n y^m][a] = [g][a] \reducesto [x^n y^m].
+    [a x^n y^m][a] = [g][a] \reducesto [x^n y^m]
   \]
+  by oriented disconnected smoothing.
   Finally, by Lemma~\ref{lem:righthandedfoundation}, since $\ora{x^n}$
   and $\ora{y^m}$ are R-parallel, the geodesics $\ora{y^m x^n}$ and
-  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$. 
+  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$, by oriented connected smoothing.
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with

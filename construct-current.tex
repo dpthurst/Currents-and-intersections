@@ -187,7 +187,7 @@ edges of~$B$ with small mass.
 
 \begin{proof}
 Let $H(k)$ be a right horizontal accordion, and $F(k)$ a top vertical accordion.
-We tan take $k$ large enough so that $\mu_f(H(k)) < \epsilon/2$,  $\mu_f(F(k)) < \epsilon/2$, and then let $W(B,\epsilon) = H(k) \cup V(k)$.
+We tan take $k$ large enough so that $\mu_f(H(k)) < \epsilon/2$,  $\mu_f(F(k)) < \epsilon/2$, and then let $W(B,\epsilon) = B \cup H(k) \cup V(k)$.
 \end{proof}
   
 In the setting of Lemma~\ref{lem:extend2}, also set
@@ -277,13 +277,13 @@ $\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing geodesics).
 First we note that the following.
 
 \begin{lemma}The intersection
-of a closed curve $C$ with an oriented (or unoriented) geodesic current $\mu$ can be computed as
+of an oriented (or unoriented) closed curve $C$ with an oriented (or unoriented) geodesic current $\mu$ can be computed as
 \[
 i(\mu, C) = \mu((y_+,y_-) \times [z,y \cdot z)).
 \]
 \end{lemma}
 \begin{proof}
-The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the element representing $C$, then for any $q \in \ora{y}$,
+The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the element representing the oriented curve $C$, then for any $q \in \ora{y}$,
 \[
 \mu[q, y \cdot q) = \mu((y_+,y_-) \times [z,y \cdot z))
 \]
@@ -445,7 +445,9 @@ Now, if we let $z=(p_1^{-1} \cdot \wt{x})^-$, and replace $y$ by $w=y^r$ in the 
 
 
 \begin{remark}
-The proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. This condition is crucial to recover curve functionals as intersection numbers, as we explain in Section~\ref{sec:asymmetric}.
+The end of the proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. In fact, note that before that step, the proof shows the curve functional induced by the intersection number must be symmetric. 
+The symmetry condition has also been used in Proposition~\ref{prop:cont_conn_disc}, and will be used in proving the equivalent algebraic statement Theorem~\ref{thm:intersections_group}.
+This condition is thus crucial to recover curve functionals as intersection numbers. In Section~\ref{sec:asymmetric} we show that the asymmetric intersection numbers do not satisfy an analogous duality result.
 \end{remark}
 
 \subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{muf}}
@@ -472,16 +474,18 @@ f(a)+f(b) = f(a + b) \geq f(ab).
 \]
 Also, $(B,a)$ is $R$-crossing, and thus
 \[
-f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB).
+f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB),
 \]
+where we used symmetry in the first equality.
 On the other hand, if $(\ora{a},\ora{b})$ are $L$-crossing, then $(\ora{b},\ora{a})$ is $R$-crossing, hence
 \[
 f(b)+f(a) \geq f(ba) = f(ab).
 \]
 Also, if  $(\ora{a},\ora{b})$ are $L$-crossing, thus $(\ora{a},\ora{B})$ is $R$-crossing, hence
 \[
-f(a)+f(b) = f(b)+f(B) \geq f(aB).
+f(a)+f(b) = f(b)+f(B) \geq f(aB),
 \]
+where we used symmetry in the first equality.
 All in all, if $a,b$ cross essentially, $f$ satisfies $f(a) + f(b) \geq \max \{ f(ab) , f(aB) \}$, so $f$ satisfies disconnected smoothing.
 
 Now, we assume an essential self-crossing of a multi-curve, and prove connected smoothing.

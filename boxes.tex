@@ -3,7 +3,7 @@
 Our goal is to define a measure on the space of geodesics -in fact, a geodesic current- associated to a curve functional $f$. 
 Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the $\sigma$-algebra of open sets of $G(\Sigma)$.
 
-In order to achieve this, we first introduce the basic properties we will assume of our curve functionals, and explore some basic consequences of these properties~(Subsection~\ref{subsec:mainhypotheses}) such as positivity and their relation to the continuity of the functional (Subsection~\ref{sec:continuity_conn_disc_smoothing}) We then define the family of boxes of geodesics (Subsection~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
+In order to achieve this, we first introduce the basic properties we will assume of our curve functionals, and explore some basic consequences of these properties~(Subsection~\ref{subsec:mainhypotheses}) such as positivity and their relation to the continuity of the functional (Proposition~\ref{prop:cont_conn_disc}) We then define the family of boxes of geodesics (Subsection~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
 
 \subsection{Curve functionals and their properties}
 \label{subsec:mainhypotheses}
@@ -12,37 +12,43 @@ In order to achieve this, we first introduce the basic properties we will assume
 In this Subsection, we describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 
 In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
-Working with this intersection number is crucial for our results, although we will assume our curves to be oriented. In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise.
-In terms of geodesic currents, this means we will work with oriented geodesic currents.
-As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
-intersection numbers which are asymmetric (i.e. they distinguish the
-orientations of the intersections). For those, the analog of the main duality
-result, Theorem~\ref{thm:intersect}, will not hold.
-Thus, even though in a lot of our constructions the curves involved will be oriented, our functionals will be defined on unoriented curves. Equivalently, they can be thought of as defined on oriented curves and \emph{symmetric}, i.e., satisfying $f(C)=f(C^{-1})$.
+Let $\mathcal{D}(S) \subset \{ (\gamma_1,\gamma_2) | \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented curves intersecting transversely.
+The map induces a continuous equivariant map $(\gamma_1,\gamma_2) \mapsto  \gamma_1 \cap \gamma_2$ from $\mathcal{D}(S)$ to $\wt{S}$, hence the action of $\pi_1(S)$ is properly discontinuous and free. Let $\mathcal{F}$ denote a fundamental domain of such action. Following Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented currents $\mu, \nu$ we 
+\[
+i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
+\]
+Bonahon defined the same intersection number in the context of unoriented geodesic currents, but the definition is the same for oriented ones. Moreover, this intersection number remains unchanged upon flipping the orientation of any of its factors.
+It enjoys all the other properties of Bonahon's intersection: it is continuous, extends the geometric intersection of closed curves.
+Note that, however, two oriented currents are not uniquely determined by their intersections with all oriented curves, since for example $\sigma(\mu)$ and $\mu$ have the same intersection numbers. The result does hold for unoriented geodesic currents~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 
+ In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
+As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
+intersection numbers for oriented curves which are asymmetric (i.e. they distinguish the
+orientations of the intersections). For those, the analog of the main duality
+result, Theorem~\ref{thm:intersect}, will not hold. This will also be reflected in the proof of the main theorem~\ref{thm:intersect}.
+However, in a lot of our examples the curve functionals will be assumed \emph{symmetric}, i.e., satisfying $f(C)=f(C^{-1})$.
+Equivalently, they can be seen as curve functionals on unoriented curves.
 
 \begin{definition}\label{def:properties}
   For $S$ a compact topological surface without boundary,
   let
-  $f \colon \Curves^+(S) \to \bbR$ be a
+  $f \colon \Curves(S) \to \bbR$ be a
   function defined on the space of oriented multi-curves,
-  not-necessarily-simple oriented curves.
+  not-necessarily-simple oriented curves, which is a natural 
   We will also refer to $f$ as a \emph{curve functional} for short.
   (\emph{Functional} means that it takes values in scalars; it is not
-  assumed to be linear.)
-  We will also refer to \emph{unoriented} or \emph{weighted} curve
-  functionals for real-valued functions defined on the appropriate
-  type of multi-curves.
+  assumed to be linear, although the relevant examples to which our Theorem will apply will be additive).
   We define several
   properties that $f$ might satisfy.
 
   \begin{itemize}
-    \item \textbf{Smoothing:} Let $C$~be an oriented curve on~$S$, and
+    \item \textbf{Symmetry:} Let $C$ be an oriented closed curve, and $C^{-1}$ the curve with the opposite orientation. We have $f(C)=f(C^{-1})$.
+    \item \textbf{Oriented Smoothing:} Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
     have
     \begin{equation}\label{eq:smoothing}
-      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
+      f\left(\mfig{curves-3}\right) \ge  f\left(\mfig{curves-4}\right),
     \end{equation}
     See Definition~\ref{def:essential-crossing} for ``essential
     crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
@@ -54,9 +60,11 @@ Thus, even though in a lot of our constructions the curves involved will be orie
   \end{itemize}
 \end{definition}
 
-
-Natural examples of curve functionals satisfying the properties above come from curve lengths of length metric structures on the surface, or word-lengths with respect to some generating sets, for example.
-See Appendix~\ref{sec:functionals} for examples and non-examples of curve functionals.
+\begin{remark}
+The oriented smoothing condition can be further divided into two types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve, or if it is a sef-crossing of the one connected component. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
+We emphasize that oriented connected smoothing does not imply the oriented disconnected smoothing, or viceversa.
+For example, the curve functional $f$ assigning to a multi-curve its number of connected components is a natural function satisfying oriented disconnected smoothing but not oriented connected smoothing. Also, the curve functional $g$ assigning to a multi-curve the maximal hyperbolic length among its connected components satisfies connected smoothing but not disconnected smoothing (by a computation using Lemma~\ref{lem:hyp_parallelogram}). For more examples see Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
+\end{remark}
 
 \begin{definition}
   For $C$ an oriented multi-curve, $nC$ is the oriented multi-curve
@@ -75,63 +83,44 @@ See Appendix~\ref{sec:functionals} for examples and non-examples of curve functi
      integer. We say $f$ satisfies \emph{stability} if, for an arbitrary oriented multi-curve~$C$,
        \begin{equation}
          \label{eq:stable}
-         f(C^n) = f(nC)
+         f(C^n) = f(nC).
        \end{equation}
 \end{definition}
 
+Theorem~\ref{thm:intersect} considered curve functions on unoriented curves.
 
-In fact, an immediate consequence of smoothing and convex union is positivity of $f$.
+\begin{definition}
+Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
+     \[
+      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
+   \]
+\end{definition}
 
-\begin{proposition}
-  Let $f$ be a functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
-  \label{prop:curve-positive}
-\end{proposition}
+We can extend this definition for symmetric curve functionals on oriented curves.
+If $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ is symmetric, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \mathcal{C}(S) \to \mathbb{R}$.
+
+\begin{definition}
+We say $f$ satisfies \emph{smoothing} if its associated curve functional on unoriented curves $\bar{f}$ satisfies smoothing.
+\end{definition}
+
+A priori the hypothesis of oriented smoothing on $f$ is weaker than smoothing, since it does not seem to include unoriented smoothing. However, it follows from the other hypotheses, by our previous work in~\cite{MGT21:Smoothings}.
+
+\begin{lemma}
+If $f$ is symmetric, and satisfies oriented smoothing, convex union, stability and homogeneity then $f$ satisfies smoothing.
+\label{lem:oriented_smoothing_unoriented}
+\end{lemma}
 \begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right, so
-$[a][x] \reducesto [ax]$.
-By Lemma~\ref{lem:rhs_prod}, we see that
-$(\ora{ax},\ora{a})$ L-cross, so
-(by unoriented smoothing) $[ax][a]
-\reducesto [x]$. We thus have
-\begin{align*}
-    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
-     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
-\end{align*}
-Adding the equations, we get $f(a) \geq 0$.
+First we will show that $f$ satisfies disconnected smoothing (both oriented and unoriented).
+Since $f$ satisfies oriented smoothing, in particular it satisfies disconnected oriented smoothing. Since $f$ is symmetric, it follows it also satisfies disconnected unoriented smoothing: indeed, let $(a,b)$ $R$-cross. Then $(B,a)$ $R$-cross. Hence, by disconnected oriented smoothing
+\[
+f(B \cup a) \geq f(Ba)
+\]
+and since $f$ is symmetric, $f(b)=f(B)$, and thus unoriented smoothing follows.
+Hence, $f$ satisfies disconnected smoothing.
+Since $f$ satisfies oriented smoothing convex union, stability and homogeneity by hypothesis, $f$ extends continuously and homogeneously to oriented geodesic currents. Hence by Proposition~\ref{prop:cont_conn_disc} below, it satisfies connected smoothing. Hence, $f$ satisfies smoothing.
 \end{proof}
 
-Although we will not use it in this paper, we note that a similar
-argument with different assumptions also yields positivity.
-
-\begin{proposition}
-  Let $f$ be a functional satisfying convex union, quasi-smoothing,
-  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
-  \pi_1(S)$.
-  \label{prop:curve-positive2}
-\end{proposition}
-
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
-\begin{align*}
-[a^n][x] &\reducesto [a^nx]\\
-[a^nx][a^n]&\reducesto [x].
-\end{align*}
-Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
-\begin{align*}
-    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
-     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
-\end{align*}
-Adding the equations, we get $f(a^n) \geq -2R$. By stability and
-homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
-enough we see that $f(a) \geq 0$.
-\end{proof}
-
-\subsection{Continuity and connected implies disconnected smoothing}
-\label{sec:continuity_conn_disc_smoothing}
-
-In this subsection we show that if a curve functional is continuous and homogeneous, then one type of smoothing (connected/disconnected) implies the other. This can be seen as a weak converse of the main result in our previous paper~\cite{MGT21:Smoothings}.
+In this subsection we show that if a curve functional is symmetric, continuous and homogeneous, then one type of smoothing (connected/disconnected) implies the other. This can be seen as a weak converse of the main result in our previous paper~\cite{MGT21:Smoothings}.
 
 The following lemma is a straightforward fact of the weak$^*$-topology convergence of geodesic currents.
 
@@ -152,12 +141,12 @@ Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, the element $a^n b^n$ 
 \end{lemma}
 
 \begin{proposition}
-Suppose $f \colon \Curves(S) \to \mathbb{R}$ is a curve functional that extends continuously to geodesic currents and is homogeneous.
+Suppose $f$ is a symmetric curve functional that extends continuously to geodesic currents and is homogeneous.
 If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ satisfies connected smoothing (resp. disconnected smoothing).
 \label{prop:cont_conn_disc}
 \end{proposition}
 \begin{proof}
-Suppose first $f \colon \Curves(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
+Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ is satisfies disconnected smoothing and is homogeneous and continuous.
 Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented disconnected smoothing, i.e., $f(ab) \geq f(a) + f(b)$.
 We will start by showing the following claim, by induction on $n$:
 \[
@@ -214,10 +203,10 @@ Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go 
 \[
 f([ab]) \geq \frac{f([aB]\cup [Ab])}{2} = f([aB])
 \]
-where we used homogeneity in the last equality.
+where we used symmetry and homogeneity in the last equality.
 This finishes the proof of the first part.
 
-We now prove the second part, namely, if $f \colon \Curves(S) \to \mathbb{R}$ satisfies connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
+We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies symmetry, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
 \[
 f(a^{2n}b^{2n}) \geq 2nf(ab).
 \]
@@ -233,12 +222,81 @@ which proves oriented disconnected smoothing. The unoriented one is proved in th
 The statement can be strengthened by replacing ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing'', but we will not use it in this paper, so we didn't write it in that level of generality.
 \end{remark}
 
+Natural examples of curve functionals satisfying the properties above come from curve lengths of length metric structures on the surface, or word-lengths with respect to some generating sets, for example.
+See Appendix~\ref{sec:functionals} for examples and non-examples of curve functionals.
+
+We can now reestate Theorem~\ref{thm:intersect} from the perspective of curve functionals on oriented curves.
+
+\begin{mainthmprimeprime}
+    Suppose that a curve functional $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ satisfies the oriented smoothing property
+     \[
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
+   \]
+   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is symmetric, additive on connected components, stable and homogeneous.
+Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
+\[
+i(\mu_f,C)=f(C)
+\]
+for every curve $C$.
+\label{thm:intersect_oriented}
+\end{mainthmprimeprime}
+
+
+
+In fact, an immediate consequence of smoothing and convex union is positivity of $f$.
+
+\begin{proposition}
+  Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
+  \label{prop:curve-positive}
+\end{proposition}
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right, so
+$[a][x] \reducesto [ax]$.
+By Lemma~\ref{lem:rhs_prod}, we see that
+$(\ora{ax},\ora{a})$ L-cross, so
+(by unoriented smoothing) $[ax][a]
+\reducesto [x]$. We thus have
+\begin{align*}
+    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
+     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
+\end{align*}
+Adding the equations, we get $f(a) \geq 0$.
+\end{proof}
+
+Although we will not use it in this paper, we note that a similar
+argument with different assumptions also yields positivity.
+
+\begin{proposition}
+  Let $f$ be a curve functional satisfying convex union, quasi-smoothing,
+  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
+  \pi_1(S)$.
+  \label{prop:curve-positive2}
+\end{proposition}
+
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
+\begin{align*}
+[a^n][x] &\reducesto [a^nx]\\
+[a^nx][a^n]&\reducesto [x].
+\end{align*}
+Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
+\begin{align*}
+    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
+     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
+\end{align*}
+Adding the equations, we get $f(a^n) \geq -2R$. By stability and
+homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
+enough we see that $f(a) \geq 0$.
+\end{proof}
+
 \subsection{Right-handed boxes}
 \label{sec:boxes}
 
 We now turn to the outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
 
-Let $f\colon \mathbb{R}\Curves^+(S) \to \mathbb{R}$ be a
+Let $f\colon \Curves^+(S) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing, stability
 and homogeneity.
 % Recall that since $f$ satisfies the symmetry condition,
@@ -401,7 +459,7 @@ Fix once and for all a lift $\ora{x}$ of $[x]$. Every right handed lift system g
 B_{p_1,p_2,q_1,q_2} \coloneqq (\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+)
 \]
 
-By construction, a different choice of lift $\tilde{x}$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by translation by some element in $\pi_1(S)$.
+By construction, a different choice of lift $\ora{x}$ determines a different box $B_{p_1,p_2,q_1,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,p_2,q_1,q_2}$ by translation by some element in $\pi_1(S)$.
 On the other hand, the RH lift system $(a,b,c,d)$
 determines a $\pi_1(S)$-orbit of boxes that we will denote
 $[B_{p_1,p_2,q_1,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
@@ -527,12 +585,12 @@ These are still enough to approximate any box.
 
 \begin{lemma}
 Let $x \in \pi_1(S)$.
-Given any $z \in \partial_\infty \wt S$
+Given any $z \in \partial_\infty  S$
 % \DMGtodo[inline]{(Punctures) Uses
 %   closed surface, otherwise replace by limit set.}
 and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
 endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
-with respect to the $\partial_\infty \Sigma$ order.
+with respect to the $\partial_\infty S$ order.
 \label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
@@ -631,9 +689,9 @@ Let $a,b,x \in \pi_1(\Sigma)$, with $\ora{a}$, $\ora{b}$ crossing $\ora{x}$ to t
  \[
  f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
- By Eq.~\eqref{eq:cross-cancel}, and by
+ By Eq.~\eqref{eq:cross-cancel} with $m=0$, and by
 additivity and (unoriented)
-smoothing of $f$, there is $N>0$ so that, for $n > N$,
+smoothing of $f$, there is $N>0$ (depending on $a,x$) so that, for $n > N$,
   \[
     -f([a]) \le f([a x^n]) - f([x^n]).
   \]
@@ -649,7 +707,7 @@ This follows immediately from Lemma~\ref{lem:additivity-limit}.
 \begin{remark}
 The limit \eqref{eq:additivity-limit} need not exist if one only assumes $f$ satisfies quasi-smoothing.
 We give an example on the once-holed torus.
-Let $S$ be the once-punctured torus with generating set $\{a,b,a^2\}$,
+Let $S$ be the once-punctured torus with generating set $\{a,b,b^2\}$,
 where $a$ and $b$ are the standard generators of $\pi_1(S)$, chosen so
 $\ora{a}$ crosses $\ora{b}$ to the right.
 Let $f$ be the stable word-length with respect to this generating set. Note that $f$ satisfies quasi-smoothing instead of smoothing (see \cite[Example~4.10]{MGT21:Smoothings}) for details).

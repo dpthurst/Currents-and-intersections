@@ -3,7 +3,16 @@
 
 \subsection{New definition of geodesic currents, filling currents and measured laminations}
 \label{subsec:newdef}
-This result gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals. These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
+Theorem~\ref{thm:intersect} gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals.
+As mentioned in the introduction, one can view this theorem as a deep generalization of Poincaré duality for closed surfaces.  Given a 1-cohomology class $\alpha^*$ of an $n$-dimensional manifold (represented by homomorphisms from $\pi_1(S)$ to $\mathbb{R}$), Poincaré duality associates an $(n-1)$-dimensional homology class $\alpha$ (represented by real linear combinations of $(n-1)$-cycles). Since $n=2$, these cycles can be expressed as linear combinations of simple closed curves.  
+
+In our setting, the role of a 1-cohomology class is played by a curve functional that satisfies smoothing, additivity, and stability/homogeneity. Although it is not a homomorphism of $\pi_1(S)$, it preserves a certain combinatorial structure (see~Subsection\ref{sec:questions}). Likewise, the role of the homology class is taken by a geodesic current. This perspective, viewing geodesic currents as homology classes, aligns with the approach in geometric measure theory, where differential currents—seen as functionals on $k$-forms—naturally define homology~\cite[Chapter~10]{CC00:Foliations}. Geodesic currents are as examples of such differential forms~\cite[1.8.7]{MG20:Thesis}.
+
+In Poincaré duality, the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$ holds, where $\cap$ denotes the cap product in homology and $\cup$ the cup product in cohomology. This aligns with our theorem, which establishes a duality via the intersection number $i(\mu_f, C) = f(C)$, suggesting that the geometric intersection number plays the role of the cap product.  
+
+A natural question that arises is: what is the appropriate analog of the cup product? In other words, how can one define the intersection of two curve functionals?
+
+These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
 
 Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
 
@@ -19,13 +28,13 @@ We can also characterize filling geodesic currents.
   % \DMGtodo[inline]{(Punctures) For non- closed
   %   surfaces, one has to be more careful, see BIPP17 theorem.}
   $\mu$ a geodesic current and $f$ the functional on curves associated
-  to $\mu$, i.e., so that $\mu_f=\mu$. The following subsets in
+  to $\mu$, i.e., so that $\mu_f=\mu$. The following subsets are in
   bijection.
 
 \begin{enumerate}
     \item The set of filling currents, i.e., $ \GC_{\mbox{fill}}(S)$
-    \item The set of functionals $f \colon \Curves(S) \to \mathbb{R}$ which satisfy smoothing, additivity, stability and homogeneity properties, and so that their continuous extension to geodesic currents is positive.
-    \item The set of curve functionals $f \colon \Curves(S) \to \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \{ f(C) : C \in \Curves(S), C \mbox{ non-trivial} \}\] is positive and satisfy smoothing, additivity, stability and homogeneity properties.
+    \item The set of functionals $f \colon \Curves^+(S) \to \mathbb{R}$ which satisfy symmetry, smoothing, additivity, stability and homogeneity properties, and so that their continuous extension to geodesic currents is positive.
+    \item The set of curve functionals $f \colon \Curves(S) \to \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \{ f(C) : C \in \Curves(S), C \mbox{ non-trivial} \}\] is positive and satisfy symmetry, smoothing, additivity, stability and homogeneity properties.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
@@ -42,7 +51,7 @@ See also Subsection~\ref{subsubsec:convexity_charts} for a related discussion.
 We have the following characterization of curves that are one-half of an integral multi-curve.
 
 \begin{corollary}
-Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves(C)$. Then there exists an integral multi-curve $M$ so that
+Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves(S)$. Then there exists an integral multi-curve $M$ so that
 \[
 i(1/2 M,\cdot)=f(\cdot).
 \]
@@ -79,9 +88,34 @@ i(M, C) = \sum_{i=1}^n \lambda_i n_i
 \label{eq:weighted_multicurve}
 \end{equation}
 
-This does not seem to characterize weighted multi-curves (see~\cite{Agol25:Spectrum}).
+This property does not seem to characterize weighted multi-curves (see~\cite{Agol25:Spectrum}).
 
+\subsection{Embedded graphs}
 
+Related to multi-curves, we also obtain geodesic currents dual to stable lengths associated to embedded graphs in surfaces.
+
+ Let $\iota \colon \mathcal{G} \to S$ be an \emph{embedded graph}, i.e., an embedding of a finite graph in $S$ that is filling, in the sense that the complementary regions are disks, or equivalently $i_*$ is surjective on $\pi_1$.
+ Endow $\mathcal{G}$ with a length metric $g$. Then any closed multi-curve $C$ on $S$ can be homotoped so that it factors through $\mathcal{G}$, in many different ways. Let $\ell_{\mathcal{G}}(C)$ be the length of the smallest
+ multi-curve $D$ on $\mathcal{G} $ so that $\iota(D)$ is homotopic to $C$. It is easy to see that this length is realized and is positive. 
+
+\begin{theorem}
+Let $\iota \colon \mathcal{G} \to S$ be an embedded graph. Then $\ell_{\mathcal{G}}$ is dual to a geodesic current $\mu_{\mathcal{G} }$.
+\label{thm:dual_embeddedgraph}
+\end{theorem}
+\begin{proof}
+In~\cite[4.4]{MGT21:Smoothings} we show that such lengths are in $\AConvex(S)$, hence by Theorem~\ref{thm:intersect} they have a dual geodesic current. 
+\end{proof}
+
+If furthermore $\mathcal{G}$ is an embedded graph with the edge-metric on $\pi_1(S)$ (i.e., each edge has weight 1), $\mu_{\mathcal{G}}$ must be $1/2$ of an integral multi-curve. This generalizes the main result in~\cite{Erlandsson:WordLength}.
+
+\begin{corollary}
+Let $\mathcal{G}$ be an embedded graph with the edge-metric on $\pi_1(S)$ (i.e., each edge has weight 1). Then $\ell_{\mathcal{G}}$ is dual to a geodesic current $\mu_{\mathcal{G}}$ which is $1/2$ of an integral multi-curve.
+\label{cor:generalization_wordlength}
+\end{corollary}
+\begin{proof}
+Since $\mathcal{G}$ is equipped with the edge-metric, $\ell_{\mathcal{G}}(C) \in \mathbb{Z}$.
+Hence, Corollary~\ref{cor:int_multicurve} implies the result.
+\end{proof}
 \subsection{Measured laminations}
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
@@ -153,7 +187,7 @@ The other claim is similar.
 
 
 \begin{theorem}
-$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfied the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
+$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
     For any pair of multi-curves $C_1$ and $C_2$ with an essential
     crossing between $C_1,C_2$, we have
     \begin{equation}
@@ -166,7 +200,7 @@ Suppose first $f$ satisfies the hypotheses of the statement.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a measured lamination, using the disconnected max-smoothing property.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
-consider the hyperbolic parallelogram $H$ at the center of Figure~\ref{fig:smoothing_1}.
+consider the hyperbolic parallelogram $H$ (see Appendix~\ref{sec:hyp-par} for the definition) at the center of Figure~\ref{fig:smoothing_1}.
 Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$. 
 
 Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
@@ -267,9 +301,9 @@ e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} 
 \]
 On the other hand, when $n$ goes to infinity, we have $e^{A_n} \sim \lambda(a_n)$, $e^{B_n} \sim \lambda(b_n)$, $e^{C_n} \sim \lambda(c_n)$ and $e^{D_n} \sim \lambda(d_n)$ (where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity). Since the disconnected $\lambda$-smoothing relation for $a_n, b_n$ is given by
 \[
-\lambda(a_n)\lambda(b_n) = \lambda(c_n) + \lambda(d_n)
+\lambda(a_n)\lambda(b_n) = \lambda(c_n) + \lambda(d_n).
 \]
-we get
+A straightforward computation shows $\lambda(c_n) + \lambda(d_n) \sim e^{C_n}+e^{D_n}$, and hence, we get
 \[
 e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}.
 \]
@@ -290,7 +324,7 @@ Then, by lower and upper continuity of measures, respectively, we get $\lim_n \m
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
 Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
-On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the trace relation in $\SL(2,\mathbb{R})$ or, equivalently, the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Appendix~\ref{sec:hyp-par}).
+On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}).
 \end{proof}
 
 A scrutiny of the above proof shows that the following result also follows.
@@ -309,7 +343,7 @@ In the proof of Theorem~\ref{prop:char_liouville}, the $\lambda$-length hypothes
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1
 \]
-for any box of geodesics $B$, and hence, by Theorem~\ref{thm:bonahonliouville}, $\mu$ is a Liouville current. Hence, again, the disconnected $\lambda$-length smoothing relation is satisfied (see Appendix~see Appendix~\ref{sec:hyp-par}).
+for any box of geodesics $B$, and hence, by Theorem~\ref{thm:bonahonliouville}, $\mu$ is a Liouville current. Hence, again, the disconnected $\lambda$-length smoothing relation is satisfied (see Appendix~\ref{sec:hyp-par}).
 \end{proof}
 \begin{remark}
 The $\lambda$-length functional appears naturally in the study of the skein algebra of a surface (see, for example, \cite[3. Skein algebra]{Thurston14:PBI}). 
@@ -430,7 +464,7 @@ We give a new proof of Skora's theorem, as a consequence of our main result~Theo
 The main result of this section will be the following.
 
 \begin{theorem}
-Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axes intersection. Then follows that $\ell_T$ satisfies max-smoothing.
+Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axes intersection. Then follows that $\| \cdot \|$ satisfies max-smoothing.
 \label{prop:small}
 \end{theorem}
 
@@ -478,7 +512,7 @@ Take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
 WLOG, assume $\| a \|<\| x \|$.
 
 \begin{claim}
-Without lost of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
+Without loss of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
 \end{claim}
 \begin{proof}[Proof of Claim]
 If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. 
@@ -529,7 +563,7 @@ We assume $(\Gamma, T)$ is irreducible and preserves axes intersection, and will
 Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}$ and $\ora{h}$ cross, where $T_g$ denotes the axis of $g$ in the tree.
 We will verify that $\| \cdot \|$, the translation length on $T$, satisfies the max-smoothing condition, and thus it comes from a measured lamination.
 There are several cases to consider, depending on the relative position of the axes of the elements in the tree. For each case, different inequalities between $\| g\| + \| h \|$, $\| gh \|$ and $\| gh^{-1} \|$ are satisfied, and were analyzed by Paulin~\cite{Pa89:Paulin1989TheGT}. The strategy of the proof will be to compare the intersection of axes in the surface versus those in the tree, for each one of those cases.
-In some of them, max-smoothing will be satisfied, but it will not in all of them. In the latter case, we will find, using Lemma~\ref{lem:oppgoodpair}, pairs of elements whose axes do not intersect in the tree, but they do in the surface, which will allow us to rule that case out.
+In some of them, max-smoothing will be satisfied, but it will not in all of them. In the latter case, we will find, using Lemma~\ref{lem:oppgoodpair}, pairs of elements whose axes do not intersect in the tree, but they do in the surface, which will allow us to rule that case out, since that would contradict axes preservation.
 
 In order to prove Theorem~\ref{prop:small}, let's consider several cases.
 
@@ -551,7 +585,7 @@ Max-smoothing amounts to
 \| gh \| = \max \{ \| g \| +\| h \| , \| gh^{-1} \| \}.
 \]
 
- We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, by the axes intersection hypothesis, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
+ We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, by the axes preservation hypothesis, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
 There are three subcases to consider.
 \begin{enumerate}
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
@@ -561,7 +595,7 @@ There are three subcases to consider.
     \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations. Then, we would have
     $\|gh^{-1}\|=\|g\|+\|h\|>\|gh\|$, so the max-smoothing condition would be violated.
     We show this cannot happen. 
-    Within this subcase, are two subcases to consider. Let $\Delta$ denote the length of the overlap between $T_g$ and $T_h$.
+    Within this case, there are two subcases to consider. Let $\Delta$ denote the length of the overlap between $T_g$ and $T_h$.
     \begin{enumerate}
         \item If $\Delta<\min \{ \| g \|, \| h \| \}$, then $g, h^{-1}$ form a good pair, and thus by Lemma~\ref{lem:oppgoodpair} and then $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
         \item If $\Delta \geq \min \{ \| g \|, \| h \| \}$, we develop further the analysis of axes in~\cite[Lemma~3.4]{Chi01:LambdaTrees} for this setting in Figure~\ref{fig:oppositehyp} (assuming $\Delta> \|g \| > \| h \|$).
@@ -596,7 +630,6 @@ We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain th
         \end{enumerate}
 \item Case 2: $g$ or $h$ are elliptic.
 It follows from a similar analysis comparison of translation lengths in the tree. The different cases when, say, $g$ is elliptic and $h$ is hyperbolic, have been analyzed in~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. 
-We go over these cases and rule out the problematic ones using the assumption of preservation of axes.
 
 \begin{enumerate}
 \item Suppose $T_g \cap T_h = \emptyset$. In the disconnected smoothing case, we show that this case, in fact, never occurs. Indeed, if $T_g \cap T_h = \emptyset$, it follows by~\cite[Lemma~3.2]{Chi01:LambdaTrees} that $gh$ is hyperbolic, and in fact,
@@ -632,7 +665,7 @@ In the connected smoothing case, $\ora{gh}$ and $\ora{hg}$ intersect, and we hav
 Again, by ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that either $T_{g h g^{-1}}$ and $T_{h}$ intersect coherently, or $T_{g h g^{-1}}$ and $T_{h^{-1}}$ intersect coherently. 
 
 In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, so max-smoothing is satisfied. 
-In the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$, which would be a problem.
+In the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$, which would contradict max-smoothing.
 However, can rule this out. First, suppose that $\| h \| > \Delta$, where $\Delta$ is the overlap between $T_{h}$ and $T_{g h g^{-1}}$. Building from Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, it follows that $T_{gh}$ and $T_{hg}$ are disjoint, as Figure~\ref{fig:oppositehypell} illustrates. 
 It remains to justify that $g(x)=y$ and $x=g(y)$. We start by proving the following, which is implied by  Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} but not proven.
 
@@ -677,7 +710,8 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 \end{enumerate}
 \end{proof}
 
-Now we prove Theorem~\ref{mainthm:skora}.
+Now we prove Theorems~\ref{mainthm:skora} and~\ref{thm:skora_maxsmoothing}.
+
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
 If $\Gamma \acts T$ is irreducible and satisfies axis intersection, it follows by Theorem~\ref{prop:small} that it satisfies max-smoothing. 
 Hence, by~Theorem~\ref{prop:char_laminations_plus}, it follows $\ell_T$ is dual to a measured lamination $\lambda$. By~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$.
@@ -689,8 +723,8 @@ given a measured lamination $\lambda$, then $T_{\lambda}$ satisfies irreducibili
 \begin{proof}[Proof of Theorem~\ref{thm:skora_maxsmoothing}]
  If $\pi_1(S) \acts T$ is irreducible and satisfies preservation of axis intersection, then by Theorem~\ref{prop:small} it satisfies max-smoothing, and hence the hypotheses of the statement are in particular satisfied.
 
- If the hypotheses of the statement are satisfied, then by the same arguments as in Subsection~\ref{subsec:algebraic_vs_top}, max-smoothing follows. Hence, by Theorem~\ref{prop:char_laminations_plus}, we get $\ell_T(g)=i(\lambda, g)$ for some measured lamination $\lambda$. Again, by~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$ and thus by Morgan-Otal~\cite{MO93:RelativeGrowths}, 
- irreducibility and axis preservation are satisfied.
+ If the hypotheses of the statement are satisfied, then by the same arguments as in Subsection~\ref{subsec:algebraic_vs_top}, max-smoothing follows. Hence, by Theorem~\ref{prop:char_laminations_plus}, we get $\ell_T(g)=i(\lambda, g)$ for some measured lamination $\lambda$. Again, by~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$ and thus
+ irreducibility and axis preservation are satisfied, as in the previous proof.
 \end{proof}
 
 

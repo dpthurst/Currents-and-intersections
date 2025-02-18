@@ -5,7 +5,7 @@ In this section we discuss how our result fits into our previous work in~\cite{M
 
 \begin{definition}
 \begin{itemize}
-    \item \textbf{Quasi-smoothing:} There is a constant $R\ge 0$ with the
+    \item \textbf{Oriented Quasi-smoothing:} There is a constant $R\ge 0$ with the
       following property. Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
@@ -14,7 +14,7 @@ In this section we discuss how our result fits into our previous work in~\cite{M
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
     \end{equation}
     See Definition~\ref{def:essential-crossing} for ``essential
-    crossing''. If $R=0$, we recover the smoothing property (Definition~\ref{def:smoothing}).
+    crossing''. If $R=0$, we recover the oriented smoothing property.
   \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
     on~$S$. Then
     \begin{equation}\label{eq:union-convex}
@@ -29,6 +29,9 @@ In this section we discuss how our result fits into our previous work in~\cite{M
        Note that functionals satisfying additivity (Equation~\ref{eq:union-additive}) automatically satisfy homogeneity.
   \end{itemize}
 \end{definition}
+
+For a symmetric curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
+Following the same proof as in Lemma~\ref{lem:oriented_smoothing_unoriented}, if $f$ is symmetric, satisfies oriented quasi-smoothing and convex union, then it satisfies quasi-smoothing.
 
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
 Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals
@@ -60,7 +63,7 @@ In previous work, we proved the following result.
 
 \begin{theorem}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex(S)$. Then there is a unique continuous homogeneous function
-  $\bar{f} \colon \GC^+(S) \to \bbR_{\ge 0}$ that extends~$f$.
+  $\bar{f} \colon \Curr^+(S) \to \bbR_{\ge 0}$ that extends~$f$.
 \end{theorem}
 
 It is easy to see that the conditions of smoothing, additivity, stability and homogeneity, defining the space $\AConvex(S)$ are obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves(S) \to \mathbb{R}$, for $\mu$ a geodesic current. This was proven in~\cite[Examples]{MGT21:Smoothings}, and we give a different proof more in line of the types of argument in this paper in Section~\ref{sec:necessary}.
@@ -77,12 +80,14 @@ Many natural notions of length do satisfy all these four properties and they hav
 \item Non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
     \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ19:PositivelyRatioed}
+    \item Stable lengths associated to embedded graphs, as we showed in~\ref{thm:dual_embeddedgraph}. See also Theorem~\ref{cor:generalization_wordlength}
 \end{enumerate}
 
 On the other hand, not all functions on curves satisfy the $\AConvex$ properties, even some that extend continuously to geodesic currents.
 
 \begin{enumerate}
-    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}).
+    \item Asymmetric curve functionals, such as the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, Green metrics coming from asymmetric from generating sets (see Subsection~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+    \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}). All of these examples extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
     It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
     \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
@@ -145,8 +150,7 @@ $G(ab) < G(a) + G(b)$. This is indeed the case. For an example, consider the ext
 
 
 \begin{remark}
-Note that the functionals in $\AConvex(S)$ are exactly the ones satisfying the hypotheses of our Theorem~\ref{thm:intersect}.
-Furthermore, observe that we do not require in the hypotheses that the curve
+Observe that we do not require in the hypotheses that the curve
 functional $f \in \AConvex(S)$ is non-negative: in fact it follows
 from the other conditions (see Proposition~\ref{prop:curve-positive}).
 In general, curve functionals need not be positive. For example, the signed

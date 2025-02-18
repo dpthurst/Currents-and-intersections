@@ -54,18 +54,20 @@ If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that
 \label{subsubsec:convexity_charts}
 
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
-Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
+Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics},\cite[Theorem~2]{Thu16:Char},~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
 It is a consequence of our main Theorem~\ref{thm:intersect}, that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
 The sublevel set $\Lambda_{f_{\tau}} \coloneqq \{ \vec{x} \in V(\tau) : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of $\mathbb{R}^N$ (for some $N>0$ depending on the combinatorics of $\tau$).
 Let $f_i(\cdot) = i(\mu_i, \cdot)$ for some sequence of geodesic currents $\mu_i \to \mu$, and $f(\cdot) = i(\mu, \cdot)$.
 Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the subset of compact convex subsets of $\mathbb{R}^N$ is locally compact.
 The same convexity argument would work if we worked with $\Convex(S)$ as opposed to $\AConvex(S)$ (that is, we only required convex union).
-Hence, we conjecture the following, which we think can also be proved with ideas similar to~\cite[Theorem~4.2]{CM87:GroupActions}.
+Hence, we conjecture the following.
 
 \begin{conjecture}
 The set $\Convex(S)$ with the product topology is locally compact.
 \end{conjecture}
+
+The main examples of interest for us in $\Convex(S)$ would be extremal lengths associated to conformal structures on $X$ or to elastic graphs (see~\cite[Examples]{MGT21:Smoothings}).
 
 \subsubsection{Domination}
 
@@ -94,9 +96,9 @@ Suppose a curve functional $f$ satisfies homogeneity, stability and convex union
 
 
 \subsubsection{Green metrics}
-
+\label{subsec:green}
 Let $\Gamma=\pi_1(\Sigma) \subset \Isom^+(\mathbb{H})=\PSL_2(\mathbb{R})$ be a countable, discrete cocompact subgroup, for some hyperbolic metric $\Sigma$ on $S$.
-Let $\mu$ be a finitely supported probability measure on $\Gamma$ whose support generates $\Gamma$.
+Let $\mu$ be a finitely supported probability measure on $\Gamma$ whose support contains a symmetric generating set of $\Gamma$.
 Let $w_n \coloneqq g_1 \cdots g_n$ be the random walk with respect to $\mu$, where each $(g_i)$ is identically and independently distributed with distribution $\mu$. Let $(\Gamma^{\mathbb{N}}, \mu^{\mathbb{N}})$ be the step space, and the map $\pi \colon \Gamma^{\mathbb{N}} \to \Gamma^{\mathbb{N}}$ as $\pi((g_n)_{n \in \mathbb{N}}) \coloneqq (w_n)_{n \in \mathbb{N}}$. The image of $\pi$ is equipped with the measure $(\mathbb{P}_{\mu})_*(\mu^{\mathbb{N}})$.
 Define the metric \[ d_{\mu}(x,y) \coloneqq - \log \mathbb{P}_{\mu}(\exists n : w_n x =y).\]
 This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves(S) \to \mathbb{R}$.
@@ -119,8 +121,7 @@ Given $\Sigma$, is there a finitely-supported probability measure $\mu$ on $\Gam
 
 A negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ see~\cite[Conjecture, page~~259]{KLP11:Singularity}.
 Kosenko-Tiozzo~\cite{KT22:Inequality} have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with symmetric fundamental domains.
-It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer would be interesting, since then Theorem~\ref{thm:intersect} would give a dual geodesic current, and then the machinery of geodesic currents could be used to study Green metrics.
-
+It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer would be interesting, since then Theorem~\ref{thm:intersect} would give a dual geodesic current for the Green metric, and then one could study what types of geodesic currents can arise as such duals.
 
 \subsubsection{Questions about generalizations to hyperbolic groups}
 In recent work of Cantrell and Oreg\'on-Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$.

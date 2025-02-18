@@ -21,7 +21,7 @@ $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 \end{enumerate}
 \end{definition}
 
-There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Otal92:Symplectique}). 
+There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Otal92:Symplectique}, Martone-Zhang~\cite{MZ19:PositivelyRatioed}, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios}). 
 Typically the authors consider them to be continuous or even H\"older continuous, but we will not assume this here.
 In this section we show that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}, and thus induce geodesic currents.
 This recovers a result of~\cite{BIPP21:PositiveCrossratios}.
@@ -48,7 +48,7 @@ Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[]^{\p
 
 
 
-From the properties of a generalized cross-ratio, it is easy to see that 
+From the properties of a generalized cross-ratio, it is easy to see that $\ell$ is symmetric.
 
 \begin{lemma}
     For every $g \in \pi_1(S)$, we have
@@ -104,7 +104,7 @@ We will apply the inverse of the isometry $a$, denoted by $A$, to Box II, and co
 After a finite number of such steps we will end up having partitioned the fundamental domain of $ba$ into a union of disjoint boxes $(\mathfrak{a}_i)_{i=1}^k$, (resp. boxes $(\mathfrak{b}_j)_{j=1}^{\ell}$) contained without overlap in $\mathfrak{a}$, the fundamental domain of $a$, (resp. $\mathfrak{b}$, the fundamental domain of $b$) and whose total cross-ratio value is equal to $\ell(ab)$.
 Since we are assuming the cross ratio is positive, and $\cup_{i=1}^k \mathfrak{a}_i \subset \mathfrak{a}$, $\cup_{j=1}^{\ell} \mathfrak{b}_j \subset \mathfrak{b}$, we obtain the desired inequality.
 In what follows we illustrate the sequence of operations performed, at each step labeling the endpoints of the box of geodesics we are operating on, and highlighting it in bold purple.
-At most one isometry among $a$, $b$ or its inverses is applied to each partitioned box at the end of the process. Furthermore, we observe that in the figures below are represented assuming that $\ora{abA}$ and $\ora{Bab}$ do not intersect, but the cut and paste argument does not rely on this fact.
+At most one isometry among $a$, $b$ or its inverses is applied to each partitioned box at the end of the process. Furthermore, we observe that the figures below are represented assuming that $\ora{abA}$ and $\ora{Bab}$ do not intersect, but the cut and paste argument does not rely on this fact.
 
 \begin{figure}
      \centering
@@ -226,7 +226,7 @@ Figure \ref{fig:c7} shows these two fundamental domains, with the fundamental do
 Noting that $Ab^+ = Ba^-$ and $Ab^- = Ba^+$,
 this set of geodesics is translated by $b$ to $(aB^-, aB^+) \times (a^+, ba^-)$, represented in Figure \ref{fig:c721}, which is contained in the fundamental domain of $BA$.
 Region $II$ is already contained in the fundamental domain of $BA$, and it does not intersect the $b$ translate of region $I$ considered above.
-We focus on region $III$, to finish, singled out in Figure \ref{fig:c72}, given by $(Ba^-, Ba^+) \times (ab^+, a^+)$. Applying $B$ to it, we obtain $ (B \cdot Ba^-, B \cdot Ba^+) \times (B \cdot ab^+, B \cdot a^+)$. Since $ba^- < Ba^-$, we have $ab^- < B \cdot Ba^-$, and thus $(B \cdot ab^+, B \cdot a^+) \subset (ab^-, ab^+)$. Also, $(B \cdot ab^+, B \cdot a^+) \subset (a^+, B \cdot a^+)$. Thus, the $B$ translate of region $III$ is contained in the fundamental domain of $BA$. The last observation is that the $B$ translate of region $III$ does not intersect either the $b$ translate of region $I$ or region $II$. This concludes the proof.
+We focus on region $III$, to finish, singled out in Figure \ref{fig:c72}, given by $(Ba^-, Ba^+) \times (ab^+, a^+)$. Applying $B$ to it, we obtain $ (B \cdot Ba^-, B \cdot Ba^+) \times (B \cdot ab^+, B \cdot a^+)$. Since $ba^- < Ba^-$, we have $ab^- < B \cdot Ba^-$, and thus $(B \cdot ab^+, B \cdot a^+) \subset (ab^-, ab^+)$. Also, $(B \cdot ab^+, B \cdot a^+) \subset (a^+, B \cdot a^+)$. Thus, the $B$ translate of region $III$ is contained in the fundamental domain of $BA$. The last observation is that the $B$ translate of region $III$ does not intersect neither the $b$ translate of region $I$ nor region $II$. This concludes the proof.
 
 \begin{figure}[ht!]
      \centering
@@ -297,7 +297,7 @@ Note this computation works for both cases of connected smoothing, since we have
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{theorem}
 \begin{proof}
-By the above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and thus furnishes a geodesic current $\ell(C)=i(\mu,C)$, which is uniquely determined since geodesic currents are uniquely determined by its intersection numbers (\cite[Theoreme~2]{Otal90:SpectreMarqueNegative}).
+By the above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and thus furnishes a geodesic current $\mu$ such that $\ell(C)=i(\mu,C)$, which is uniquely determined since geodesic currents are uniquely determined by its intersection numbers (\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}).
 On the other hand, a geodesic current $\mu$ induces two cross-ratios $\pm$. Their periods $\ell^{\pm}$ satisfy $\ell^{\pm}(C)=i(\mu,C)$.
 \end{proof}
 

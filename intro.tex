@@ -23,11 +23,11 @@ hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
 
 
 
-Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length of curves or \emph{curve functionals} $f$ are intersection numbers with a dual geodesic current $\mu_{f}$, this is,
+Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length of curves or \emph{curve functionals} $f \colon\Curves(S) \to \mathbb{R}$ are intersection numbers with a dual geodesic current $\mu_{f}$, this is,
 \[
   i(\mu_{f},C)=f(C)
 \]
-for any closed curve $C$ in $S$. We will say that the current $\mu_{f}$ is \emph{dual} to the curve functional $f$, or that $f$ \emph{has a dual current} $\mu_{f}$. 
+for any $C$ in the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of non-negatively non-necessarily-simple closed curves on $S$). In this case, we say that the current $\mu_{f}$ is \emph{dual} to the curve functional $f$, or that $f$ \emph{has a dual current} $\mu_{f}$. 
 For example, the hyperbolic length of curves $\ell_{\Sigma}$ is dual to
 a distinguished geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising naturally from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP21:PositiveCrossratios}).
 
@@ -35,10 +35,9 @@ a distinguished geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), 
 of curves associated to a quasi-fuchsian (non-fuchsian) representation~\cite[Proposition~1.8]{BR24:Cubulations},\cite[Theorem A]{FF21:QF}.
 \end{comment}
 In this paper we give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
-Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$ (i.e. finite unions of non-negatively weighted non-necessarily-simple closed curves on $S$).
 
 \begin{mainthm}
-    Suppose that a curve functional $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
+    Suppose that a curve functional $f \colon\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
    \]
@@ -51,7 +50,7 @@ for every curve $C$.
 \label{thm:intersect}
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
-
+Even though the result is stated for unoriented curves, we will be working in the more general setting oriented curve functionals (see Appendix~\ref{subsec:examples_and_non} for many natural examples and non-examples).
 \begin{comment}
 The injectivity of the map from the space of metrics to the space of geodesic currents is known as the marked length rigidity property.
 Other examples of geometric structures embedding inside the space of geodesic currents are given by
@@ -147,35 +146,44 @@ for every multi-curve $C$.
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.\end{comment}
 
-This can be seen as a duality result giving a one-to-one correspondence between geodesic currents  $\GC(S)$ on surfaces $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfying extra conditions. See Section~\ref{subsec:newdef}. By \cite[Theorem~A]{MGT21:Smoothings} we obtain a continuous extension of arbitrary Riemannian length as an intersection number with a current. This also follows from the fact that $i(\mu_f, \cdot)$ extends continuously to geodesic currents by Bonahon's theorem of continuous bilinear extension of geometric intersection number (see \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}).
-    A continuous extension of an arbitrary Riemannian length was previously given by \cite[Theorem~1.5]{EPS:CountingCurves}. However, as a consequence of Theorem~\ref{thm:intersect} we obtain a stronger result: a continuous extension as an intersection number. In fact, this also works more generally for length w.r.t any length metric structure on $S$ (for example, for any Finsler metric). As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface.
+One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number, suggesting it plays the role of the cap product in this analogy. See Section~\ref{subsec:newdef}.
+
+
+
+As a consequence of Theorem~\ref{thm:intersect} we obtain a 
+many new dual geodesic currents, generalizing many previous constructions for Riemannian metrics of negative curvature on $S$, and certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone, Con18:MarkedNonpos}). In Appendix~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
+In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
+    Our result also obtains dual geodesic currents for stable lengths associated to embedded graphs and generalizes work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
+
+All the examples above extend continuously to geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings} or simply  Bonahon's theorem of continuous bilinear extension of geometric intersection number. 
+This strengthens a previous result in~\cite[Theorem~1.5]{EPS:CountingCurves} given for arbitrary Riemannian lengths as well as for a much more general class of metrics: by Theorem~\ref{thm:intersect} we obtain a continuous extension \emph{as an intersection number}, 
+
+Our result also obtains dual geodesic currents for stable lengths associated to embedded graphs and generalizes work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
+    
+    As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface. This, in particular, answers a question of Neumann-Coto~\cite{NC01:ShortestGeodesics}.
 
     The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
     For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases.
 
-  Let $a,b \in \pi_1(S)$ and let
-  $\ora{a}, \ora{b}$ be the oriented geodesics that are the corresponding hyperbolic axes (for some hyperbolic structure fixed once and for all).
- We say the pair $(\ora{a},\ora{b})$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
+  For $a,b \in \pi_1(S)$,
+  $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some hyperbolic structure fixed once and for all), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
       ccw order on the boundary at infinity. See
-      Figure~\ref{fig:cross}: we say the pair $(\ora{a},\ora{b})$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. One can similarly define a notion of $L$-crossing and $L$-parallel pair. Let a \emph{crossing} (resp. \emph{parallel}) pair mean $L$-crossing or $R$-crossing (resp. $L$-parallel or $R$-parallel). See Definition~\ref{def:crossing_parallel} for more details.
-    
+      Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing_parallel} for more details.
+      From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
+      Using this we can state an equivalent version of Theorem~\ref{thm:intersect} can be phrased as follows.
+
+      
 \begin{mainthmprime}
 Let $a,b \in \pi_1(S)$.
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
 \begin{enumerate}
 \item class invariant $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item inverse invariant: $f(a)=f(A)$, for $A$ the inverse of $a$. 
+\item symmetry: $f(a)=f(A)$, for $A$ the inverse of $a$. 
 \item stable: $f(a^n) = nf(a)$.
-\item disconnected smoothing: For any pair of $R$-crossing elements $(a,b)$, 
+\item oriented smoothing:
  \begin{align}
-    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)
-  \end{align}
-
-
-\item connected smoothing: For any pair of $R$-parallel elements $(a,b)$, 
- \begin{align}
-    \label{eq:conn_oriented} \mbox{oriented} \quad f(ab) &\geq  f(a) + f(b)\\
-    \label{eq:conn_unoriented} \mbox{unoriented} \quad f(ab) &\geq f(aB).
+    \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) & \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel} \\
+    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  & \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
   \end{align}
 \end{enumerate}
 Then, there exists a geodesic current $\mu_f$ on $S$ so that
@@ -186,31 +194,24 @@ for every $g \in \Gamma$.
 Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
 \label{thm:intersections_group}
 \end{mainthmprime}
-See subsection~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to conditions (4) \emph{and} (5) in Theorem~\ref{thm:intersections_group}.
-We emphasize that condition (4) alone is not enough to imply the smoothing condition: see Remark~\ref{rmk:reducible_action} and also Example~\ref{ex:linEL}.
 
-One should compare this result to previous work of Feng
-Luo~\cite{Luo98:IntersectionNumbers}, where he characterizes curve
+See subsection~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to equations~\ref{eq:conn_oriented} \emph{and} \ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
+The hypothesis of oriented smoothing might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing implies smoothing (Lemma~\ref{lem:oriented_smoothing_unoriented}).
+
+Furthermore, neither one of conditions~\ref{eq:conn_oriented} and ~\ref{eq:disconn_oriented} imply each other: see Subsection~\ref{subsec:mainhypotheses}, Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
+
+Our result can also be seen as a generalization of Feng
+Luo's criterion~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}, where he characterizes curve
 functionals on simple closed curves which can be realized as
-intersection numbers with measured laminations, i.e., geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). Luo obtained a 
-characterization of measured laminations in terms of simple curve
-functionals~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}. In Section~\ref{sec:appsintersection}, we use Theorem~\ref{thm:intersect} and an
-argument about fundamental domains of intersecting curves (for the
-$\pi_1(\Sigma)$-action on $G(\Sigma)$) to give a new characterization
-of measured laminations in terms of curve functionals~\ref{thm:char_laminations}. Feng Luo also
-characterized which functions on simple closed curves are dual to
-hyperbolic lengths~\cite{Luo98:GeodesicLength}. Our
-Theorem~\ref{prop:char_liouville} can be seen as an extension of that
-theorem for closed curves. We give a further characterization in Theorem~\ref{thm:char_liouville_strong}, in terms of a condition on the curve functional which is a priori easier to check.
- We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
+intersection numbers with measured laminations, i.e., geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). 
  
- In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties} for details). Recently, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}, following essentially on work of Fricker-Furman \cite[Theorem A]{FF21:QF}, show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
+ In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties}). Recently, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}, relying essentially on work of Fricker-Furman \cite[Theorem A]{FF21:QF}, show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
 In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current, and hence smoothing is satisfied.
-Our result implies that, in fact, the smoothing property is a \emph{necessary} condition for \emph{any} length dual to a geodesic current. More importantly, adding a few more mild assumptions, it shows that it is also a \emph{sufficient} condition.
+Theorem~\ref{thm:intersect} generalizes all of these results by showing that the smoothing property (plus additivity, stability/homogeneity) is \emph{sufficient and necessary} condition for \emph{any} curve functional to be dual to a geodesic current. 
 
 \subsection{Characterize measured laminations and hyperbolic metrics}
 
-As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents.
+As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents (see Theorems~\ref{thm:char_laminations} and~\ref{prop:char_liouville}).
 
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}. Then,
@@ -228,9 +229,11 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:inte
     \label{mainthm:apps}
 \end{mainthm} 
 
- In addition to assuming the disconnected max-smoothing hypothesis, one can further assume the \emph{connected max-smoothing} hypothesis, obtained by replacing the essential crossing between two closed curves by a self-crossing in the max-smoothing equation above. This property is also satisfied by curve functionals dual to measured laminations and, together with additivity, homogeneity and stability, characterizes curve functionals dual to measured laminations~(see Theorem~\ref{thm:char_laminations}).
+The result on hyperbolic lengths can be strengthened (see Theorem~\ref{thm:char_liouville_strong}) by replacing the equalities in the hypotheses by certain coarser inequalities. 
 
-Furthermore, the second family of equations characterizing Liouville currents can be replaced by a family of inequalities (which are, a priori, easier to check) providing an alternative characterization of Liouville currents (see Section~\ref{subsec:liouville}).
+These results generalize both of Luo's results on characterizing which functions on simple curves dual to measured laminations~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers} (alluded above) and which to hyperbolic length functions~\cite{Luo98:GeodesicLength}.  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
+
+ Our methods also recover the max-smoothing criterion in previous work of the second author~\cite{Thu00:GeometricIntersection}.
 
 \subsection{Characterizing small actions on real trees}
 
@@ -245,19 +248,11 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{mainthm:skora}
 \end{mainthm}
 
+Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is a finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 
+From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to \emph{small} $\Gamma$-invariant $\mathbb{R}$-trees (i.e. actions with cyclic edge stabilizers), or, equivalently, are dual to a measured lamination (i.e., a geodesic current satifying $i(\alpha, \alpha)=0$).
 
-
-
-Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths on $\mathbb{R}$-trees which relate to (but are weaker than) our smoothing condition. In fact, in Proposition~\ref{prop:small} we give an alternate characterization of measured laminations in terms of actions whose translation lengths satisfy some additional axioms obtained by rephrasing the smoothing condition in the context of translation length of $\mathbb{R}$-trees.
-Walter Parry~\cite{Par91:Translation} characterized functions on
-conjugacy classes in $\Gamma$ that are translation lengths of $\Gamma$-trees in
-terms of the Culler-Morgan axioms. One can see our result in terms of the
-smoothing condition as further characterizing which functions on
-conjugacy classes in $\Gamma$ are translation lengths of \emph{small} $\Gamma$-tree actions (i.e. actions with cyclic edge stabilizers), when
-$\Gamma=\pi_1(S)$. 
-
-We prove the following.
+Precisely, we prove the following.
 
 \begin{mainthm}
 Let $\pi_1(S)$ act on a real tree $T$ minimally, and let $\ell \colon \pi_1(S) \to \mathbb{R}$ be its associated translation length on the tree.
@@ -280,7 +275,7 @@ small actions of a non-elementary hyperbolic group $\Gamma$.
 
 \subsection{Generalized cross-ratios}
 
-Finally, we subsume previous work of Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every generalized cross-ratio. Every generalized cross-ratio induces a curve functional, its \emph{period}, giving a function
+Finally, we subsume previous work of Martone-Zhang and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every generalized cross-ratio. Every generalized cross-ratio induces a curve functional, its \emph{period}, giving a function
 \[
 \pi \colon \operatorname{CR}(S) \to \CurveFunct(S).
 \]
@@ -293,11 +288,6 @@ We show that period curve functionals (i.e., the image of the map $\pi$) satisfy
 \begin{mainthm}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{mainthm}
-
-Unlike the work in~\cite{BIPP21:PositiveCrossratios}, our construction relies solely on the period function to generate the geodesic current. Although a given geodesic current is associated with two distinct cross-ratios, they share the same period. Our proof demonstrates that the mapping from cross-ratios to geodesic currents is mediated by the period map.
-
-
-
 
 
 
