@@ -3,35 +3,7 @@
 
 In this section we discuss how our result fits into our previous work in~\cite{MGT21:Smoothings}, give examples of curve functionals and discuss if they satisfy the hypotheses of our results.
 
-\begin{definition}
-\begin{itemize}
-    \item \textbf{Oriented Quasi-smoothing:} There is a constant $R\ge 0$ with the
-      following property. Let $C$~be an oriented curve on~$S$, and
-    let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
-    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
-    have
-    \begin{equation}\label{eq:quasismoothing}
-      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
-    \end{equation}
-    See Definition~\ref{def:essential-crossing} for ``essential
-    crossing''. If $R=0$, we recover the oriented smoothing property.
-  \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
-    on~$S$. Then
-    \begin{equation}\label{eq:union-convex}
-      f(C_1 \cup C_2) \le f(C_1) + f(C_2).
-    \end{equation}
-    If the above inequalities are strengthened to equalities, we recover the additivity property (Equation~\ref{eq:union-additive}).
-     \item \textbf{Homogeneity:} For an arbitrary oriented multi-curve~$C$,
-       \begin{equation}
-         \label{eq:homogeneous}
-         f(nC) = nf(C).
-       \end{equation}
-       Note that functionals satisfying additivity (Equation~\ref{eq:union-additive}) automatically satisfy homogeneity.
-  \end{itemize}
-\end{definition}
 
-For a symmetric curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
-Following the same proof as in Lemma~\ref{lem:oriented_smoothing_unoriented}, if $f$ is symmetric, satisfies oriented quasi-smoothing and convex union, then it satisfies quasi-smoothing.
 
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
 Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals

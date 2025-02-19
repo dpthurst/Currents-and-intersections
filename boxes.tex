@@ -87,6 +87,40 @@ For example, the curve functional $f$ assigning to a multi-curve its number of c
        \end{equation}
 \end{definition}
 
+\begin{definition}\label{def:homogeneous} For an arbitrary oriented multi-curve~$C$,
+       \begin{equation}
+         \label{eq:homogeneous}
+         f(nC) = nf(C).
+       \end{equation}
+       Note that functionals satisfying additivity (Equation~\ref{eq:union-additive}) automatically satisfy homogeneity.
+\end{definition}
+
+There exist slight generalizations of both smothing as well as additivity that have been used in our previous work~\cite{MGT21:Smoothings}.
+
+\begin{definition}
+\begin{itemize}
+    \item \textbf{Oriented Quasi-smoothing:} There is a constant $R\ge 0$ with the
+      following property. Let $C$~be an oriented curve on~$S$, and
+    let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
+    have
+    \begin{equation}\label{eq:quasismoothing}
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
+    \end{equation}
+    See Definition~\ref{def:essential-crossing} for ``essential
+    crossing''. If $R=0$, we recover the oriented smoothing property.
+  \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
+    on~$S$. Then
+    \begin{equation}\label{eq:union-convex}
+      f(C_1 \cup C_2) \le f(C_1) + f(C_2).
+    \end{equation}
+    If the above inequalities are strengthened to equalities, we recover the additivity property (Equation~\ref{eq:union-additive}).
+\end{itemize}
+\end{definition}
+
+
+
+
 Theorem~\ref{thm:intersect} considered curve functions on unoriented curves.
 
 \begin{definition}
@@ -103,6 +137,8 @@ If $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ is symmetric, it induces a curve f
 We say $f$ satisfies \emph{smoothing} if its associated curve functional on unoriented curves $\bar{f}$ satisfies smoothing.
 \end{definition}
 
+For a symmetric curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
+
 A priori the hypothesis of oriented smoothing on $f$ is weaker than smoothing, since it does not seem to include unoriented smoothing. However, it follows from the other hypotheses, by our previous work in~\cite{MGT21:Smoothings}.
 
 \begin{lemma}
@@ -115,7 +151,7 @@ Since $f$ satisfies oriented smoothing, in particular it satisfies disconnected 
 \[
 f(B \cup a) \geq f(Ba)
 \]
-and since $f$ is symmetric, $f(b)=f(B)$, and thus unoriented smoothing follows.
+and since $f$ is symmetric, $f(b\cup a)=f(B\cup a)$, and thus unoriented smoothing follows.
 Hence, $f$ satisfies disconnected smoothing.
 Since $f$ satisfies oriented smoothing convex union, stability and homogeneity by hypothesis, $f$ extends continuously and homogeneously to oriented geodesic currents. Hence by Proposition~\ref{prop:cont_conn_disc} below, it satisfies connected smoothing. Hence, $f$ satisfies smoothing.
 \end{proof}
@@ -141,13 +177,13 @@ Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, the element $a^n b^n$ 
 \end{lemma}
 
 \begin{proposition}
-Suppose $f$ is a symmetric curve functional that extends continuously to geodesic currents and is homogeneous.
+Suppose $f$ is a symmetric curve functional satisfying convex union that extends continuously to geodesic currents and is homogeneous.
 If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ satisfies connected smoothing (resp. disconnected smoothing).
 \label{prop:cont_conn_disc}
 \end{proposition}
 \begin{proof}
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ is satisfies disconnected smoothing and is homogeneous and continuous.
-Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented disconnected smoothing, i.e., $f(ab) \geq f(a) + f(b)$.
+Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented disconnected smoothing, i.e., $f(ab) \geq f(a \cup b)$.
 We will start by showing the following claim, by induction on $n$:
 \[
 2nf(ab) \geq f(a^{2n}b^{2n}).
@@ -161,9 +197,10 @@ Now, we prove the induction step.
 \begin{align*}
 2nf(ab) = 2(n-1)f(ab) + 2f(ab) \geq \\
 &f(a^{2(n-1)}b^{2(n-1)}) + f(b^2a^2) \geq  \\
+&f(a^{2(n-1)}b^{2(n-1)} \cup b^2a^2) \geq \\
 & f(a^{2(n-1)}b^{2(n-1)} b^2a^2) = f(a^{2n}b^{2n}).
 \end{align*}
-In the first inequality we used induction step, then we used Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
+In the first inequality we used induction step, in the second convex union, then we used Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
 Thus, we have
 \[
 2nf(ab) \geq f(a^{2n}b^{2n})
@@ -171,7 +208,7 @@ Thus, we have
 as we wanted to show.
 Finally, we divide this expression by $2n$, let $n$ go to infinity and use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
 \[
-f(ab) \geq f(a) + f(b)
+f(ab) \geq f(a \cup b)
 \]
 which proves oriented disconnected smoothing.
 Second, we prove the unoriented disconnected smoothing.
@@ -198,7 +235,7 @@ Now, we prove the induction step.
 &f((aB)^{n-1} (Ab)^{n-1}) + f((Ab)(aB)) \geq  \\
 & f((aB)^{n-1} (Ab)^{n-1} (Ab)(aB)) = f((aB)^n (Ab)^n)
 \end{align*}
-In the first inequality we used the induction step, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
+In the first inequality we used the induction step, then convex union, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
 Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
 \[
 f([ab]) \geq \frac{f([aB]\cup [Ab])}{2} = f([aB])
@@ -219,7 +256,7 @@ which proves oriented disconnected smoothing. The unoriented one is proved in th
 \end{proof}
 
 \begin{remark}
-The statement can be strengthened by replacing ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing'', but we will not use it in this paper, so we didn't write it in that level of generality.
+The statement of both Lemma~\ref{lem:oriented_smoothing_unoriented} and Proposition~\ref{prop:cont_conn_disc} can be strengthened by replacing ``orinted smoothing'' by ``$C$-oriented quasi-smoothing'', ``smoothing'' by ``$C$-quasi-smoothing'', ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing''.
 \end{remark}
 
 Natural examples of curve functionals satisfying the properties above come from curve lengths of length metric structures on the surface, or word-lengths with respect to some generating sets, for example.
