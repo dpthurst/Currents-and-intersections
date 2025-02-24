@@ -42,11 +42,10 @@ In this paper we give an axiomatic characterization of curve functionals that ar
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
    \]
    for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components, \emph{stable} and \emph{homogeneous} (see~\ref{subsec:mainhypotheses} for definitions).
-Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
+Then, $f$ has a (unique) dual geodesic current $\mu_f$, i.e., for every curve $C$, we have
 \[
-i(\mu_f,C)=f(C)
+i(\mu_f,C)=f(C).
 \]
-for every curve $C$.
 \label{thm:intersect}
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
@@ -178,7 +177,6 @@ Let $a,b \in \pi_1(S)$.
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
 \begin{enumerate}
 \item class invariant $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item symmetry: $f(a)=f(A)$, for $A$ the inverse of $a$. 
 \item stable: $f(a^n) = nf(a)$.
 \item oriented smoothing:
  \begin{align}
@@ -186,9 +184,10 @@ Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following co
     \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  & \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
   \end{align}
 \end{enumerate}
-Then, there exists a geodesic current $\mu_f$ on $S$ so that
+Let $\overline{f} \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$.
+Then, there exists a (unique) geodesic current $\mu_{\overline{f}}$ on $S$ so that
 \[
-i(\mu_f, [g]) = f(g)
+i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
 \]
 for every $g \in \Gamma$.
 Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
@@ -196,7 +195,7 @@ Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$
 \end{mainthmprime}
 
 See subsection~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to equations~\ref{eq:conn_oriented} \emph{and} \ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
-The hypothesis of oriented smoothing might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing implies smoothing (Lemma~\ref{lem:oriented_smoothing_unoriented}).
+These hypotheses might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing of $f$ implies smoothing of $\overline{f}$ (Lemma~\ref{lem:oriented_smoothing_unoriented}).
 
 Furthermore, neither one of conditions~\ref{eq:conn_oriented} and ~\ref{eq:disconn_oriented} imply each other: see Subsection~\ref{subsec:mainhypotheses}, Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
 
@@ -211,7 +210,7 @@ Theorem~\ref{thm:intersect} generalizes all of these results by showing that the
 
 \subsection{Characterize measured laminations and hyperbolic metrics}
 
-As a corollary of the Theorem and further work, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents (see Theorems~\ref{thm:char_laminations} and~\ref{prop:char_liouville}).
+As a consequence of the Theorem, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents (see Theorems~\ref{thm:char_laminations} and~\ref{prop:char_liouville}).
 
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}. Then,
@@ -238,8 +237,7 @@ These results generalize both of Luo's results on characterizing which functions
 \subsection{Characterizing small actions on real trees}
 
 As an additional application, we reprove a result of Skora, giving a characterization of actions of surface groups on $\mathbb{R}$-trees that are dual to measured laminations.
- Let $\Gamma$ be a surface group, i.e. $\Gamma=\pi_1(\Sigma)$ for some closed hyperbolic surface $\Sigma$, and $T$ an $\mathbb{R}$-tree. Suppose $\Gamma$ acts on $T$ by isometries. It turns out that an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (hyperbolic), or it has fixed points (elliptic).
-The action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
+ If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. If $\Gamma=\pi_1(\Sigma)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axes intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
 An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
 We give a new proof of the following result, that was originally proven by Skora in~\cite{Sko90:GeometricAction}.
 

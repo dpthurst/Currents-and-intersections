@@ -301,14 +301,17 @@ spelled out in detail in the proof of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, 
 }
 \end{figure}
 
+We finish by proving Theorem~\ref{thm:intersect}], whose statement we repeat here for convenience.
 
-\begin{proposition}
+\begin{theorem}
+Let $f \colon \Curves(S) \to \mathbb{R}$ be a curve functional satisfying smoothing, additivity, stability and homogeneity.
 For $C$ a closed curve, we have
 \[
 i(\mu_f,C)=i(\overline{\mu_f},C)=f(C).
 \]
+In particular, $\overline{\mu_f}$ is unique.
 \label{prop:recoverintersection}
-\end{proposition}
+\end{theorem}
 \begin{proof}
 We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
 Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
@@ -441,6 +444,8 @@ Now, if we let $z=(p_1^{-1} \cdot \wt{x})^-$, and replace $y$ by $w=y^r$ in the 
        In the sixth equality, we use the symmetry property of~$f$ to obtain the result.
        \DMGtodo[inline]{here ends the proof that does not rely on double limits}
        \end{comment}
+
+       Finally, the uniqueness of the geodesic current $\overline{\mu_f}$ is guaranteed by the fact that geodesic currents are uniquely determined by their intersection numbers with all closed curves by~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 \end{proof}
 
 
@@ -456,50 +461,37 @@ We finish this section by proving its algebraic version, namely, Theorem~\ref{th
 
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
-
-First, extend $f$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves.
+Let $\overline{f}(a) \coloneqq \frac{1}{2}\left(f(a) + f(A) \right)$. Note that since $f$ is additive, $\overline{f}$ is also additive.
+First, extend $\overline{f}$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves, by the additivity of $\overline{f}$:
 \[
-f(s \cdot a + t \cdot b) = s\cdot f(a) + t \cdot f(b)
+\overline{f}(s \cdot a + t \cdot b) = s\cdot \overline{f}(a) + t \cdot \overline{f}(b)
 \]
 for every $s,t \geq 0$, and $a,b \in \Gamma$.
 
-To prove the theorem, we will show that (this extension of) $f$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that theorem to conclude.
+To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that theorem to conclude.
 
 The only condition that requires verification is smoothing.
 
 Start by assuming the essential crossing arises from an essential crossing between two curves $C_1$ and $C_2$ represented by elements $a,b$, and we will conclude disconnected smoothing.
-In this case, either $(\ora{a},\ora{b})$ are $R$-crossing, or $(\ora{a},\ora{b})$ are $L$-crossing. If $(\ora{a},\ora{b})$ is $R$-crossing, we have
+In this case, either $(\ora{a},\ora{b})$ are $R$-crossing, or $(\ora{a},\ora{b})$ are $L$-crossing. If $(\ora{a},\ora{b})$ is $R$-crossing, hence oriented disconnected smoothing is satisfied by the hypothesis.  If $(\ora{a},\ora{b})$ is $L$-crossing, $(\ora{b},\ora{a})$ and, similarly, the hypothesis tells us
 \[
-f(a)+f(b) = f(a + b) \geq f(ab).
+\overline{f}(a) + \overline{f}(b) = \overline{f}(b) + \overline{f}(a) \geq \overline{f}(ba)= \overline{f}(ab)
 \]
-Also, $(B,a)$ is $R$-crossing, and thus
-\[
-f(a) + f(b) = f(B)+f(a) \geq f(Ba) = f(aB),
-\]
-where we used symmetry in the first equality.
-On the other hand, if $(\ora{a},\ora{b})$ are $L$-crossing, then $(\ora{b},\ora{a})$ is $R$-crossing, hence
-\[
-f(b)+f(a) \geq f(ba) = f(ab).
-\]
-Also, if  $(\ora{a},\ora{b})$ are $L$-crossing, thus $(\ora{a},\ora{B})$ is $R$-crossing, hence
-\[
-f(a)+f(b) = f(b)+f(B) \geq f(aB),
-\]
-where we used symmetry in the first equality.
-All in all, if $a,b$ cross essentially, $f$ satisfies $f(a) + f(b) \geq \max \{ f(ab) , f(aB) \}$, so $f$ satisfies disconnected smoothing.
-
+where just used in the last equality that $\overline{f}$ is conjugacy invariant.
 Now, we assume an essential self-crossing of a multi-curve, and prove connected smoothing.
 
 Using Proposition~\ref{prop:crossings-triality}, assume the essential self-crossing is realized by the self-intersection of a curve $[\gamma]=[ab]$, where $\ora{a},\ora{b}$ are parallel (the anti-parallel case is similar).
-If $\ora{a},\ora{b}$ are $R$-parallel we have, by assumption,
+If $\ora{a},\ora{b}$ are $R$-parallel we have, by assumption, we have that oriented connected smoothing is satisfied.
+If $\ora{b},\ora{a}$ are $L$-parallel, then $\ora{a},\ora{b}$ are $R$-parallel. Hence
 \[
-f(ab)\geq \max \{ f(a) + f(b), f(aB)\}.
+\overline{f}(ab)=\overline{f}(ba) \geq \overline{f}(b) + \overline{f}(a) = \overline{f}(a) + \overline{f}(b).
 \]
 If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
 \[
-f(ab)=f(ba)\geq \max \{ f(b) + f(a), f(bA)\} = \max \{ f(a) + f(b), f(aB)\} 
+\overline{f}(ab)=\overline{f}(ba)\geq \overline{f}(b) + \overline{f}(a) = \overline{f}(a) + \overline{f}(b). 
 \]
-Hence, connected smoothing is satisfied.
+Hence, oriented connected smoothing is satisfied in this case, too.
+Finally, by Lemma~\ref{lem:oriented_smoothing_unoriented} $\overline{f}$ satisfies smoothing. We are thus under the hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 
 

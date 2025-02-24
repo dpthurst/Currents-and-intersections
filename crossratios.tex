@@ -1,7 +1,7 @@
 \section{Cross ratios}
 \label{sec:crossratios}
 
-In this section we will see that there is a one-to-one correspondence between geodesic currents and periods of cross-ratios. Precisely, we will prove that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}.
+In this section we will see that there is a one-to-one correspondence between geodesic currents and periods of cross-ratios. Precisely, we will prove that cross-ratios induce functions on $\pi_1(S)$ (periods) satisfying the hypotheses of Theorem~\ref{thm:intersections_group}.
 
 \begin{definition}
 A \emph{cross-ratio} on $S$ is a function of type
@@ -38,7 +38,7 @@ and
 It is easily checked that these satisfy the properties of generalized cross-ratios,
 and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP21:PositiveCrossratios}, when $\mu$ is a closed curve).
 
-Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the period function of a curve $C$ on $\Sigma$ represented by a group element $g$, be defined as
+Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the \emph{period} function of a curve $C$ on $\Sigma$ represented by a group element $g$, be defined as
 \[
 \ell(g) \coloneqq [g^+, x , g \cdot x, g^- ].
 \]
@@ -71,35 +71,52 @@ We then have
 The first and last terms have limit zero as $n \to \infty$, by $\pi_1(S)$-invariance, and the middle term is symmetric under
 switching $g$ and $g^{-1}$.
 \end{proof}
-There $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
-We note that this can be inferred a posteriori from \cite{BIPP21:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy smoothing. However, the proof we give here uses only the definition of generalized cross-ratio and thus subsumes the work in \cite{BIPP21:PositiveCrossratios} under the scope of our theorem. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries on the surface.
+%There $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
 
-We divide the proof into several cases, depending on the type of smoothing (connected vs disconnected) and the relative position of certain axes of the resolutions.
+It is similarly easy to check $\ell$ satisfies stability.
+
+\begin{lemma}
+For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
+\[
+\ell(g^n) = n\ell(g).
+\]
+\label{lem:crossratio_stability}
+\end{lemma}
+\begin{proof}
+    It follows readily by additivity and $\pi_1(S)$-invariance of the cross-ratio.
+\end{proof}
+
+Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
+We note that these properties can be inferred a posteriori from~\cite{BIPP21:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy the smoothing properties. However, the proof we give here does not rely on their work and thus subsumes the result in \cite{BIPP21:PositiveCrossratios} under the scope of our Theorem~\ref{thm:intersections_group}. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries of curves on the surface.
+
+We divide the proof into two cases, depending on the type of smoothing (connected vs disconnected).
+Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersections_group} are satisfied.
 
 \subsection{Disconnected smoothing}
 
-
+We will verify Equation~\ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
 
 \begin{lemma}
-Suppose we have curves $[a]$ and $[b]$ so that $b$ right crosses $a$, and therefore $[a] \cup [b] \searrow [ab]$ and  $[a] \cup [b] \searrow [aB]$.
+Let $a, b \in \pi_1(S)$ so that $(a,b)$ are $R$-crossing. %, and therefore $[a] \cup [b] \searrow [ab]$ %and  $[a] \cup [b] \searrow [aB]$.
 Then
 \[
-\ell(a) + \ell(b) \geq \ell(ab)
+\ell(a) + \ell(b) \geq \ell(ab).
 \]
-and
-\[
-\ell(a) + \ell(B) \geq \ell(aB).
-\]
+%and
+%\[
+%\ell(a) + \ell(B) \geq \ell(aB).
+%\]
+\label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 \begin{proof} 
-The second inequality follows from the first by noting that if $b$ right crosses $a$, then $a$ right crosses $B$, and thus the first inequality applied to this pair becomes
+\begin{comment}The second inequality follows from the first by noting that if $b$ right crosses $a$, then $a$ right crosses $B$, and thus the first inequality applied to this pair becomes
 \[
 \ell(a) + \ell(B) \geq \ell(Ba)
 \]
 which is the same as the second inequality noting that $\ell(B)=\ell(b)$, by Lemma~\ref{lem:crinv} and $\ell(Ba)=\ell(aB)$, by $\pi_1(S)$-invariance.
-
-The proof of the first inequality will start by considering the fundamental domain of $ab$ given by $(B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure\ref{fig:d1}. At each step, we will apply an isometry given by either $a$ or $b$ (say, for example, $a$) and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
-Box I will be contained in either the fundamental domain of $a$, depicted in blue in Figure\ref{fig:d1} or a fundamental domain for $b$ depicted in red in that same Figure.
+\end{comment}
+Consider the fundamental domain of $ab$ given by $(B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure~\ref{fig:d1}. At each step, we will apply an isometry given by either $a$ or $b$ (say, for example, $a$) and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
+Box I will be contained in either the fundamental domain of $a$, depicted in blue in Figure~\ref{fig:d1} or a fundamental domain for $b$ depicted in red in that same Figure.
 We will apply the inverse of the isometry $a$, denoted by $A$, to Box II, and continue the process: apply a different isometry, say $b$ or $B$, partition so that one box is in a fundamental domain of $a$ or $b$, and apply the inverse isometry to the next.
 After a finite number of such steps we will end up having partitioned the fundamental domain of $ba$ into a union of disjoint boxes $(\mathfrak{a}_i)_{i=1}^k$, (resp. boxes $(\mathfrak{b}_j)_{j=1}^{\ell}$) contained without overlap in $\mathfrak{a}$, the fundamental domain of $a$, (resp. $\mathfrak{b}$, the fundamental domain of $b$) and whose total cross-ratio value is equal to $\ell(ab)$.
 Since we are assuming the cross ratio is positive, and $\cup_{i=1}^k \mathfrak{a}_i \subset \mathfrak{a}$, $\cup_{j=1}^{\ell} \mathfrak{b}_j \subset \mathfrak{b}$, we obtain the desired inequality.
@@ -200,23 +217,26 @@ is in f.d. of $b$}}\label{fig:d10}}
 
 \subsection{Connected smoothing}
 
+Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
+
 
 \begin{lemma}
-Suppose $C$ represents a curve with a self-intersection decomposing as $ab$, so that one of its smoothings is the multi-curve $[a] \cup [b]$, and the other resolution in $[aB]$.
+Let $a,b \in \pi_1(S)$ with $(a,b)$ $R$-parallel..
 Then, we have
-\[
-\ell(ab) \geq \ell(aB)
-\]
-and
+%\[
+%\ell(ab) \geq \ell(aB)
+%\]
+%and
 \[
 \ell(ab) \geq \ell(a) + \ell(b).
 \]
+\label{lem:crossratio_connected_smoothing}
 \end{lemma}
 
 \begin{proof}
 
 
-
+\begin{comment}
 Now that we know which possible configurations of lifts can arise in the universal cover, we proceed to check both inequalities in the Lemma.
 
 The first inequality involves the relative position of $aB, Ba$ with respect to the other axes, so we must proceed case by case. We start by analyzing case 1 first.
@@ -282,23 +302,31 @@ Following that figure, note that $B \cdot a^- = BA \cdot a^-$, thus $(a^-, B \cd
     Also, $ab \cdot Ba^- = a \cdot aB^-$. Observe then that since $ba^+ > aB^-$ in ccw order, we have that $a \cdot aB^- > ab^+$ in ccw order.
     We thus have $(Ba^+, Ba^-) \subset (Ba^-, a \cdot aB)$, and therefore
     $\ell(Ba) \leq \ell(ab)$. 
+\end{comment}
 
-For the second inequality, we observe (compare Figure~\ref{fig:c5}) that the fundamental domain for $ba$ given by
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfig{c5}}
+    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c5}
+\end{figure} 
+
+We observe (compare Figure~\ref{fig:c5}) that the fundamental domain for $ba$ given by
 $[ba^+, ba^-) \times [A \cdot b^+, b^+)$ 
 contains the non-intersecting boxes $[a^+, a^-) \times [A \cdot b^+, b^+)$ and $[b^-, b^+) \times [ba^+, ab^+)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
-using positivity of cross-ratio and flip-invariance, we get
+using positivity of cross-ratio and symmetry, we get
 \[
-\ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b)
+\ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).
 \]
-Note this computation works for both cases of connected smoothing, since we have not used the position of the axes $aB$ and $Ba$.
+\begin{comment}Note this computation works for both cases of connected smoothing, since we have not used the position of the axes $aB$ and $Ba$.
+\end{comment}
 \end{proof}
 
 \begin{theorem}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{theorem}
 \begin{proof}
-By the above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and thus furnishes a geodesic current $\mu$ such that $\ell(C)=i(\mu,C)$, which is uniquely determined since geodesic currents are uniquely determined by its intersection numbers (\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}).
-On the other hand, a geodesic current $\mu$ induces two cross-ratios $\pm$. Their periods $\ell^{\pm}$ satisfy $\ell^{\pm}(C)=i(\mu,C)$.
+By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossratio_disconnected_smoothing}and ~\ref{lem:crossratio_connected_smoothing} above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+On the other hand, a geodesic current $\mu$ induces two cross-ratios $\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
 \end{proof}
 
 

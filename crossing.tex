@@ -15,8 +15,8 @@ In particular, we note that $[g a g^{-1}]=[a]$.
 \begin{definition}[Right action]
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
 $\ast \in S$, we have a \emph{right} action of $\pi_1(S,\ast)$ on
-the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
-$\bm{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
+the fiber $p^{-1}(\ast)$, defined by, for ${x} \in p^{-1}(\ast)$,
+${x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
 unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
 \end{definition}
 (The bold font denotes points in $\wt{S}$.)
@@ -29,7 +29,7 @@ the following.
     covering spaces is that coverings of $S$ are in bijection with
     sets with a right action of $\pi_1(S)$.}
 \item In the induced length metric on~$\wt S$, the distance between
-  $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
+  ${x}$ and ${x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
 \end{itemize}
 
 \begin{definition}[Left action]
@@ -37,24 +37,24 @@ When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. If you take
 the standard model of $\wt S$ where points
-$\bm{P}_{[\gamma]}$ correspond
+${P}_{[\gamma]}$ correspond
 to homotopy classes of paths~$\gamma$
 in~$S$ with $\gamma(0) = \ast$ (with homotopies fixing the endpoints), then this
 action is defined by
-$[\gamma_1] \cdot \bm{P}_{[\gamma_2]} \coloneqq
-\bm{P}_{[\gamma_1\cdot\gamma_2]}$.
+$[\gamma_1] \cdot {P}_{[\gamma_2]} \coloneqq
+{P}_{[\gamma_1\cdot\gamma_2]}$.
 
 \DPTtodo{Change this bold-face convention}
 We will also denote the point in the cover corresponding to a group
-element by bold-face: $\bm{P}_{[\gamma]} = \bm{[\gamma]}$.
+element by a curly-bracket: ${P}_{[\gamma]} = \left\{\gamma\right\}$.
 \end{definition}
 Here we make the following observations.
 \begin{itemize}
 \item This left action is by an isometry of all of~$\wt S$.
 \item The left action depends on a lift of
-  $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$, for instance
+  $\ast \in S$ to a basepoint  ${\wt \ast} \in \wt S$, for instance
   since the left and right actions are
-  related by $[\gamma] \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot [\gamma]$.
+  related by $[\gamma] \cdot {\wt \ast} = {\wt \ast} \cdot [\gamma]$.
 \item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
   may be unbounded, although the translation length of $[\gamma]$ on
   $\wt S$ is bounded by the length of $\gamma$ (by the first bullet
@@ -642,7 +642,7 @@ Observe that requiring the above condition for $R$-crossing (resp. $R$-parallel)
 
 \subsection{Position of axes \texorpdfstring{$\protect\ora{aB}$}{aB} and \texorpdfstring{$\protect\ora{Ba}$}{Ba} in parallel  case}
 \label{subsec:parallel_aB}
-In order to check the smoothing property in more algebraic settings, we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be useful in particular when curve functionals arise from periods of cross-ratios in Section~\ref{sec:crossratios}.
+In order to check the smoothing property in more algebraic settings, we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be useful in particular when curve functionals arise from translation lengths of actions on real trees, as in Section~\ref{sec:skora}.
 Observe that the relative of position of $\ora{aB}$ and $\ora{Ba}$ is completely determined  when $\ora{a}$ and $\ora{b}$ cross, by Lemma~\ref{lem:righthandedfoundation} (I). However, when $\ora{a}$ and $\ora{b}$ are parallel (or anti-parallel), several cases arise. In this section we study these cases.
 
 If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
@@ -760,7 +760,7 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
   %   [ax^n][ax^m] &\reducesto [x^{\abs{n-m}}].\label{eq:cross-cancel}
   % \end{align}
   \begin{align}
-    \label{eq:cross-cancel}[ax^n][ax^m] &\reducesto [x^{|n-m|}]
+    \label{eq:cross-cancel}[ax^n][ax^m] &\reducesto [x^{|n-m|}].
 %    \intertext{and for all $n+m > s'$,}
 %    \label{eq:cross-cancel-2}[a x^n b x^m][a] \reducesto [x^n b x^m].
   \end{align}
