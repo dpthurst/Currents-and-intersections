@@ -12,7 +12,9 @@ follow the convention that path composition works in the natural
 order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
 defined if $\gamma_1(1) = \gamma_2(0)$.
 If $a \in \pi_1(S,\ast)$, we let $[a]$ denote the free homotopy class of $a$.
-In particular, we note that $[g a g^{-1}]=[a]$.
+In particular, we note that $[g a g^{-1}]=[a]$. We will follow the
+group theory convention of denoting inverses by a capital letter, and will use
+boldface to distinguish points in $\wt S$.
 
 \begin{definition}[Right action]
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
@@ -21,7 +23,6 @@ the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
 $\bm{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
 unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
 \end{definition}
-(The bold font denotes points in $\wt{S}$.)
 We observe
 the following.
 \begin{itemize}
@@ -29,7 +30,10 @@ the following.
   on~$\wt S$, and works for any covering space.%
   \footnote{One succinct statement of the classification theorem for
     covering spaces is that coverings of $S$ are in bijection with
-    sets with a right action of $\pi_1(S)$.}
+    sets with a right action of $\pi_1(S)$. If we restrict to
+    connected covering spaces, they
+    correspond to transitive actions of $\pi_1(S)$, which
+    in turn correspond to conjugacy classes of subgroups.}
 \item In the induced length metric on~$\wt S$, the distance between
   $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
 \end{itemize}
@@ -46,21 +50,20 @@ action is defined by
 $[\gamma_1] \cdot \bm{P}_{[\gamma_2]} \coloneqq
 \bm{P}_{[\gamma_1\cdot\gamma_2]}$.
 
-\DPTtodo{Change this bold-face convention}
-We will also denote the point in the cover corresponding to a group
-element by bold-face: $\bm{P}_{[\gamma]} = \bm{[\gamma]}$.
 \end{definition}
 Here we make the following observations.
 \begin{itemize}
-\item This left action is by an isometry of all of~$\wt S$.
+\item This left action is an isometry of all of~$\wt S$.
 \item The left action depends on a lift of
   $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$, for instance
   since the left and right actions are
-  related by $[\gamma] \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot [\gamma]$.
+  \DPTtodo{Maybe drop $\bm{P}_{[\gamma]}$ notation in favor of
+    $[\gamma] \cdot \wt \ast$.}
+  related by $[\gamma] \cdot \bm{\wt \ast} = \bm{P}_{[\gamma]} = \bm{\wt \ast} \cdot [\gamma]$.
 \item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
-  may be unbounded, although the translation length of $[\gamma]$ on
-  $\wt S$ is bounded by the length of $\gamma$ (by the first bullet
-  point).
+  may be unbounded, although the translation length of the left action
+  of $[\gamma]$ on
+  $\wt S$ is bounded by the length of $\gamma$.
 \item This left action extends to an action on the circle at infinity $\partial_{\infty} S$.
 \end{itemize}
 
@@ -73,10 +76,10 @@ For any non-trivial $x \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[x]$ on $S$, corresponding to the conjugacy
 class of~$x$. We also need to specify different lifts of $[x]$ to
 $\wt S$. This is conveniently specified by $x$ itself: $x$ determines
-a sequence of points $\{\bm{x^k} \mid k \in \bbZ\}$, which is a
+a sequence of points $\{\bm{P}_{x^k} \mid k \in \bbZ\}$, which is a
 quasi-geodesic in $\wt S$, and thus determines an oriented geodesic
-denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} \bm{x^k}$
-and $x^- = \lim_{k \to -\infty} \bm{x^k}$. Note that $x$ acting on the
+denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} \bm{P}_{x^k}$
+and $x^- = \lim_{k \to -\infty} \bm{P}_{x^k}$. Note that $x$ acting on the
 left on $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ has north-south (NS) dynamics, with unique
 attracting point $x^+$ and repelling point $x^-$: for any point
 $\bm{p} \in \overline{\wt S}$ other
@@ -85,30 +88,31 @@ than $x^-$, we have $\lim _{k \to \infty} x^k \cdot \bm{p} = x^+$.
 The other lifts of $[x]$ to $\wt S$ are translates $q \cdot \ora{x}$
 of $\ora{x}$ by a
 group element~$q$; we can either think of this as the geodesic
-$\ora{qxQ}$ passing within a bounded distance of the points $\bm{qx^kQ}$;%
-\footnote{We follow the group theory convention of denoting inverses
-  by a capital letter.}
+$\ora{qxQ}$ passing within a bounded distance of the points $\bm{P}_{qx^kQ}$;
 or we can think of it as the geodesic corresponding to the coset
 $q\langle x\rangle$, i.e., passing within a bounded distance of the
-points $\bm{qx^k}$. (Note these two sequences of points are within a
+points $\bm{P}_{qx^k}$ in the coset. Note these two sequences of
+points are within a
 bounded distance of each other, since the right action of $\pi_1$
-moves points a bounded distance.)
+moves points a bounded distance.
 
-In this way, we can see that two different lifts
+With these preliminaries, we can see that two different lifts of
+$[x]$,
 \begin{align*}
-  \ell_1 &= q_1 \cdot \ora{x} & \ell_2 &= q_2 \cdot \ora{x}
+  \ora{\ell_1} &= q_1 \cdot \ora{x} & \ora{\ell_2} &= q_2 \cdot \ora{x},
 \end{align*}
 are related by the isometry $q_2 q_1^{-1}$,
 \begin{equation}\label{eq:line-translate}
-  \ell_2 = q_2 q_1^{-1} \cdot \ell_1,
+  \ora{\ell_2} = q_2 q_1^{-1} \cdot \ora{\ell_1},
 \end{equation}
-but the geometric relation between the two lifts (up to the left
-$\pi_1(S,*)$ action) is captured instead by the double coset
+while the geometric relation between the two lifts, meaning up to the left
+$\pi_1(S,*)$ action, is captured instead by the double coset
 \begin{equation}\label{eq:double_coset}
   \langle x \rangle q_1^{-1} q_2 \langle x \rangle.
 \end{equation}
-Note that the order of the product is, confusingly, reversed relative to
-\eqref{eq:line-translate}.
+Note that the order of the product is reversed relative to
+\eqref{eq:line-translate}. This double coset is what is relevant for,
+e.g., determining if $\ora{\ell_1}$ and $\ora{\ell_2}$ intersect.
 
 We can express many of our constructions as working with either
 elements of $\pi_1(S)$ (acting by isometries on the universal cover)
@@ -122,6 +126,10 @@ not need to assume the group elements generate a discrete subgroup).
 \subsection{Crossings}
 \label{subsec:crossings}
 
+\DPTtodo[inline]{Should this section be combined with the next? Eg, in the
+  next subsection we prove/recall that essential crossings don't
+  depend on minimal representative, which seems core to explain the
+  definition of ``essential''}
 Loosely speaking, an essential crossing is a crossing of a
 multi-curve that can't be homotoped away. We make this definition
 precise as follows.
@@ -179,7 +187,11 @@ which crossing we are considering.)
 \subsection{Smoothing}
 \label{subsec:smoothing}
 
-Given an essential crossing of a multi-curve, we can do an operation of ``smoothing'' in two different ways, each reducing the original multi-curve to a different one. We follow~\cite[2.2.~Crossings]{MGT21:Smoothings} closely.
+Given an essential crossing of a multi-curve, we can do an operation
+of ``smoothing'' in two different ways, each reducing the original
+multi-curve to a different one.
+\DPTtodo{I don't think this is true. At a minimum we should cite \cite{MGT25:SmoothingsErratum}}
+We follow~\cite[2.2.~Crossings]{MGT21:Smoothings} closely.
 
 
 \begin{definition}[smoothings]
@@ -214,7 +226,8 @@ more restrictive than checking at the beginning.)
 
 \begin{lemma}[{\cite[Lemma~2.6]{MGT21:Smoothings}}]\label{lem:essential-cross}
   If $\gamma$ and $\gamma'$ are homotopic concrete
-  multi-curves, with $\gamma$ minimal and $(p,q) \in X(\gamma)$ is an essential crossing of~$\gamma$,
+  multi-curves, with $\gamma$ minimal and $(p,q) \in X(\gamma)$ is an (essential)
+  crossing of~$\gamma$,
   then there is a crossing $(p',q') \in X(\gamma')$ so
   that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
@@ -622,17 +635,17 @@ Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ is right parallel (or left parallel) t
 Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
 
 \begin{definition}
-We will coin the following types of smoothing.
+We will give terms for the following types of smoothing.
 \begin{enumerate}
 \item disconnected smoothing: For any pair of crossing elements $(a,b)$, 
  \begin{align}
-    \label{eq:sm_disconn_oriented} \mbox{oriented} \quad [a] [b] &\searrow [ab]\\
-    \label{eq:sm_disconn_unoriented} \mbox{unoriented} \quad [a] [b] &\searrow [aB]
+    \label{eq:sm_disconn_oriented} \mbox{oriented:} \quad [a] [b] &\searrow [ab]\\
+    \label{eq:sm_disconn_unoriented} \mbox{unoriented:} \quad [a] [b] &\searrow [aB]
   \end{align}
 \item connected smoothing: For any pair of parallel elements $(a,b)$, 
  \begin{align}
-      \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] [b] \\
-    \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].\\
+      \label{eq:sm_conn_oriented} \mbox{oriented:} \quad [ab] &\searrow [a] [b] \\
+    \label{eq:sm_conn_unoriented} \mbox{unoriented:} \quad [ab] &\searrow [aB].
   \end{align}
 \end{enumerate}
 \label{def:smoothing_types}
@@ -644,7 +657,7 @@ Observe that requiring the above condition for $R$-crossing (resp. $R$-parallel)
 \subsection{Position of axes \texorpdfstring{$\protect\ora{aB}$}{aB} and \texorpdfstring{$\protect\ora{Ba}$}{Ba} in parallel  case}
 \label{subsec:parallel_aB}
 In order to check the smoothing property in more algebraic settings, we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be useful in particular when curve functionals arise from translation lengths of actions on real trees, as in Section~\ref{sec:skora}.
-Observe that the relative of position of $\ora{aB}$ and $\ora{Ba}$ is completely determined  when $\ora{a}$ and $\ora{b}$ cross, by Lemma~\ref{lem:righthandedfoundation} (I). However, when $\ora{a}$ and $\ora{b}$ are parallel (or anti-parallel), several cases arise. In this section we study these cases.
+Observe that the relative of position of $\ora{aB}$ and $\ora{Ba}$ is completely determined  when $\ora{a}$ and $\ora{b}$ cross, by Lemma~\ref{lem:righthandedfoundation}(I). However, when $\ora{a}$ and $\ora{b}$ are parallel (or anti-parallel), several cases arise. In this section we study these cases.
 
 If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
 
@@ -658,6 +671,8 @@ It then follows that
 $ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
 We have the following possible four configurations of non-intersecting reflection lines. 
 
+\DPTtodo{Label placement in Fig~\ref{fig:cases-conn-smoothing} is
+  off.}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
@@ -668,7 +683,7 @@ We have the following possible four configurations of non-intersecting reflectio
      \begin{subfigure}[b]{0.45\textwidth}
 \svgfignormal{r2}
     \caption{Case 2 (not possible)}\label{fig:r2}
-\end{subfigure}\\
+\end{subfigure}\\[8pt]
 \begin{subfigure}{0.45\textwidth}
    \svgfignormal{r1}
      \caption{Case 3, $\protect\ora{aB}$ and $\protect\ora{Ba}$  disjoint}\label{fig:r1}
@@ -678,7 +693,9 @@ We have the following possible four configurations of non-intersecting reflectio
     \caption{Case 3, $\protect\ora{aB}$ and $\protect\ora{Ba}$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
-     connected smoothing of $\protect\ora{ab}$ with $\protect\ora{ba}$.} 
+     connected smoothing of $\protect\ora{ab}$ with
+     $\protect\ora{ba}$.}
+   \label{fig:cases-conn-smoothing}
 \end{figure}
 
 
@@ -709,7 +726,9 @@ Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ 
 \DPTtodo[inline]{More text to be written here. It's awkward that I
   named the generators of $\pi_1(P)$ by $a$ and $b$. Maybe $g$ and $h$
   should be used above? I have not double-checked the cases}
-  \DMGtodo[inline]{Not sure about smoothing at $x_3$. Can you double check?}
+\DMGtodo[inline]{Not sure about smoothing at $x_3$. Can you double
+  check?}
+\DPTtodo[inline][On it]
 In the following example, smoothing at $x_1$
 gives $\ora{aB}$ anti-parallel to $\ora{Ba}$, smoothing at $x_2$ gives
 $\ora{aB}$ crossing $\ora{Ba}$, and smoothing at $x_3$ gives
