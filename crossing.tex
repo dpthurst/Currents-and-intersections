@@ -1,6 +1,8 @@
 \section{Crossings and Smoothings}
 \label{sec:smoothing}
 
+
+
 \subsection{Left vs right actions of \texorpdfstring{$\pi_1(S)$}{π1(S)}}
 \label{sec:actions}
 
@@ -15,8 +17,8 @@ In particular, we note that $[g a g^{-1}]=[a]$.
 \begin{definition}[Right action]
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
 $\ast \in S$, we have a \emph{right} action of $\pi_1(S,\ast)$ on
-the fiber $p^{-1}(\ast)$, defined by, for ${x} \in p^{-1}(\ast)$,
-${x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
+the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
+$\bm{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
 unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
 \end{definition}
 (The bold font denotes points in $\wt{S}$.)
@@ -29,7 +31,7 @@ the following.
     covering spaces is that coverings of $S$ are in bijection with
     sets with a right action of $\pi_1(S)$.}
 \item In the induced length metric on~$\wt S$, the distance between
-  ${x}$ and ${x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
+  $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
 \end{itemize}
 
 \begin{definition}[Left action]
@@ -37,24 +39,24 @@ When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. If you take
 the standard model of $\wt S$ where points
-${P}_{[\gamma]}$ correspond
+$\bm{P}_{[\gamma]}$ correspond
 to homotopy classes of paths~$\gamma$
 in~$S$ with $\gamma(0) = \ast$ (with homotopies fixing the endpoints), then this
 action is defined by
-$[\gamma_1] \cdot {P}_{[\gamma_2]} \coloneqq
-{P}_{[\gamma_1\cdot\gamma_2]}$.
+$[\gamma_1] \cdot \bm{P}_{[\gamma_2]} \coloneqq
+\bm{P}_{[\gamma_1\cdot\gamma_2]}$.
 
 \DPTtodo{Change this bold-face convention}
 We will also denote the point in the cover corresponding to a group
-element by a curly-bracket: ${P}_{[\gamma]} = \left\{\gamma\right\}$.
+element by bold-face: $\bm{P}_{[\gamma]} = \bm{[\gamma]}$.
 \end{definition}
 Here we make the following observations.
 \begin{itemize}
 \item This left action is by an isometry of all of~$\wt S$.
 \item The left action depends on a lift of
-  $\ast \in S$ to a basepoint  ${\wt \ast} \in \wt S$, for instance
+  $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$, for instance
   since the left and right actions are
-  related by $[\gamma] \cdot {\wt \ast} = {\wt \ast} \cdot [\gamma]$.
+  related by $[\gamma] \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot [\gamma]$.
 \item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
   may be unbounded, although the translation length of $[\gamma]$ on
   $\wt S$ is bounded by the length of $\gamma$ (by the first bullet
@@ -115,7 +117,6 @@ or with general hyperbolic elements of the group $\Isom^+(\bbH^2)$.
 $\wt S$.) When there is a choice, we prefer to state lemmas in terms
 of $\Isom^+(\bbH^2)$, since in principle it is more general (as we do
 not need to assume the group elements generate a discrete subgroup).
-
 
 
 \subsection{Crossings}
@@ -625,12 +626,12 @@ We will coin the following types of smoothing.
 \begin{enumerate}
 \item disconnected smoothing: For any pair of crossing elements $(a,b)$, 
  \begin{align}
-    \label{eq:sm_disconn_oriented} \mbox{oriented} \quad [a] \cup [b] &\searrow [ab]\\
-    \label{eq:sm_disconn_unoriented} \mbox{unoriented} \quad [a] \cup [b] &\searrow [aB]
+    \label{eq:sm_disconn_oriented} \mbox{oriented} \quad [a] [b] &\searrow [ab]\\
+    \label{eq:sm_disconn_unoriented} \mbox{unoriented} \quad [a] [b] &\searrow [aB]
   \end{align}
 \item connected smoothing: For any pair of parallel elements $(a,b)$, 
  \begin{align}
-      \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] \cup [b] \\
+      \label{eq:sm_conn_oriented} \mbox{oriented} \quad [ab] &\searrow [a] [b] \\
     \label{eq:sm_conn_unoriented} \mbox{unoriented} \quad [ab] &\searrow [aB].\\
   \end{align}
 \end{enumerate}
@@ -708,6 +709,7 @@ Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ 
 \DPTtodo[inline]{More text to be written here. It's awkward that I
   named the generators of $\pi_1(P)$ by $a$ and $b$. Maybe $g$ and $h$
   should be used above? I have not double-checked the cases}
+  \DMGtodo[inline]{Not sure about smoothing at $x_3$. Can you double check?}
 In the following example, smoothing at $x_1$
 gives $\ora{aB}$ anti-parallel to $\ora{Ba}$, smoothing at $x_2$ gives
 $\ora{aB}$ crossing $\ora{Ba}$, and smoothing at $x_3$ gives
