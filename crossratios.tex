@@ -71,7 +71,7 @@ We then have
 The first and last terms have limit zero as $n \to \infty$, by $\pi_1(S)$-invariance, and the middle term is symmetric under
 switching $g$ and $g^{-1}$.
 \end{proof}
-%There $\ell$ induces thus a function on curves that can be extended linearly to multi-curves. In this section we prove that this function satisfies the smoothing property.
+
 
 It is similarly easy to check $\ell$ satisfies stability.
 
@@ -97,24 +97,14 @@ Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersect
 We will verify Equation~\ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
 
 \begin{lemma}
-Let $a, b \in \pi_1(S)$ so that $(a,b)$ are $R$-crossing. %, and therefore $[a] \cup [b] \searrow [ab]$ %and  $[a] \cup [b] \searrow [aB]$.
+Let $a, b \in \pi_1(S)$ so that $(a,b)$ are $R$-crossing.
 Then
 \[
 \ell(a) + \ell(b) \geq \ell(ab).
 \]
-%and
-%\[
-%\ell(a) + \ell(B) \geq \ell(aB).
-%\]
 \label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 \begin{proof} 
-\begin{comment}The second inequality follows from the first by noting that if $b$ right crosses $a$, then $a$ right crosses $B$, and thus the first inequality applied to this pair becomes
-\[
-\ell(a) + \ell(B) \geq \ell(Ba)
-\]
-which is the same as the second inequality noting that $\ell(B)=\ell(b)$, by Lemma~\ref{lem:crinv} and $\ell(Ba)=\ell(aB)$, by $\pi_1(S)$-invariance.
-\end{comment}
 Consider the fundamental domain of $ab$ given by $(B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure~\ref{fig:d1}. At each step, we will apply an isometry given by either $a$ or $b$ (say, for example, $a$) and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
 Box I will be contained in either the fundamental domain of $a$, depicted in blue in Figure~\ref{fig:d1} or a fundamental domain for $b$ depicted in red in that same Figure.
 We will apply the inverse of the isometry $a$, denoted by $A$, to Box II, and continue the process: apply a different isometry, say $b$ or $B$, partition so that one box is in a fundamental domain of $a$ or $b$, and apply the inverse isometry to the next.
@@ -223,10 +213,6 @@ Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersec
 \begin{lemma}
 Let $a,b \in \pi_1(S)$ with $(a,b)$ $R$-parallel..
 Then, we have
-%\[
-%\ell(ab) \geq \ell(aB)
-%\]
-%and
 \[
 \ell(ab) \geq \ell(a) + \ell(b).
 \]
@@ -235,74 +221,6 @@ Then, we have
 
 \begin{proof}
 
-
-\begin{comment}
-Now that we know which possible configurations of lifts can arise in the universal cover, we proceed to check both inequalities in the Lemma.
-
-The first inequality involves the relative position of $aB, Ba$ with respect to the other axes, so we must proceed case by case. We start by analyzing case 1 first.
-
-We will compare a fundamental domain of $BA$ to that of $Ab$.
-Figure \ref{fig:c7} shows these two fundamental domains, with the fundamental domain of $Ab$ partitioned into three subsets $I$, $II$ and $III$. Figure \ref{fig:c71} singles out the first one of these regions, region $I$, corresponding to $(Ab^+, Ab^-) \times (B \cdot a^+, ab^-)$. 
-Noting that $Ab^+ = Ba^-$ and $Ab^- = Ba^+$,
-this set of geodesics is translated by $b$ to $(aB^-, aB^+) \times (a^+, ba^-)$, represented in Figure \ref{fig:c721}, which is contained in the fundamental domain of $BA$.
-Region $II$ is already contained in the fundamental domain of $BA$, and it does not intersect the $b$ translate of region $I$ considered above.
-We focus on region $III$, to finish, singled out in Figure \ref{fig:c72}, given by $(Ba^-, Ba^+) \times (ab^+, a^+)$. Applying $B$ to it, we obtain $ (B \cdot Ba^-, B \cdot Ba^+) \times (B \cdot ab^+, B \cdot a^+)$. Since $ba^- < Ba^-$, we have $ab^- < B \cdot Ba^-$, and thus $(B \cdot ab^+, B \cdot a^+) \subset (ab^-, ab^+)$. Also, $(B \cdot ab^+, B \cdot a^+) \subset (a^+, B \cdot a^+)$. Thus, the $B$ translate of region $III$ is contained in the fundamental domain of $BA$. The last observation is that the $B$ translate of region $III$ does not intersect neither the $b$ translate of region $I$ nor region $II$. This concludes the proof.
-
-\begin{figure}[ht!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{c7}}
-    \caption{Fundamental domain of $Ab$ partitioned into three subsets, $I$, $II$ and $III$.}\label{fig:c7}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{c71}}
-    \caption{Box I}\label{fig:c71}}
-     \end{subfigure}
-\end{figure}
-
-\newpage
-
-\begin{figure}[ht!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{c712}}
-    \caption{\textbf{$b$ applied to box $I$. }\label{fig:c712}}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{c72}}
-    \caption{Box $III$}\label{fig:c72}}
-     \end{subfigure}
-\end{figure}
-
-\begin{figure}[ht!]
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{80mm}{!}{\svgfig{c721}}
-    \caption{\textbf{$B$ applied to box $III$}}\label{fig:c721}}
-     \end{subfigure}
-\end{figure}
-
-
-
-    
-    For case 3, compare Figure \ref{fig:c5}. 
-    \begin{figure}[ht!]
-     \centering
-\resizebox{80mm}{!}{\svgfig{c5}}
-    \caption{Checking $\ell(ab) \geq \ell(aB)$ in case 3}\label{fig:c5}
-\end{figure} 
-
-Following that figure, note that $B \cdot a^- = BA \cdot a^-$, thus $(a^-, B \cdot a^-) \subset (ab^+, ab^-)$.
-    Also, $ab \cdot Ba^- = a \cdot aB^-$. Observe then that since $ba^+ > aB^-$ in ccw order, we have that $a \cdot aB^- > ab^+$ in ccw order.
-    We thus have $(Ba^+, Ba^-) \subset (Ba^-, a \cdot aB)$, and therefore
-    $\ell(Ba) \leq \ell(ab)$. 
-\end{comment}
 
     \begin{figure}[ht!]
      \centering
@@ -317,8 +235,6 @@ using positivity of cross-ratio and symmetry, we get
 \[
 \ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).
 \]
-\begin{comment}Note this computation works for both cases of connected smoothing, since we have not used the position of the axes $aB$ and $Ba$.
-\end{comment}
 \end{proof}
 
 \begin{theorem}

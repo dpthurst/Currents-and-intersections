@@ -7,7 +7,6 @@ In order to achieve this, we first introduce the basic properties we will assume
 
 \subsection{Curve functionals and their properties}
 \label{subsec:mainhypotheses}
-%\DMGtodo{Maybe change some minor things so that it doesn't look that similar to From curves to currents}
 
 In this Subsection, we describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 
@@ -303,7 +302,7 @@ $(\ora{ax},\ora{a})$ L-cross, so
     f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
      f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
 \end{align*}
-Adding the equations, we get $f(a) \geq 0$.
+Adding the equations, we get $f([a]) \geq 0$.
 \end{proof}
 
 Although we will not use it in this paper, we note that a similar
@@ -328,9 +327,9 @@ Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex 
     f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
      f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
 \end{align*}
-Adding the equations, we get $f(a^n) \geq -2R$. By stability and
-homogeneity, this yields $n f(a) \geq -2R$, and taking $n$ large
-enough we see that $f(a) \geq 0$.
+Adding the equations, we get $f([a^n]) \geq -2R$. By stability and
+homogeneity, this yields $n f([a]) \geq -2R$, and taking $n$ large
+enough we see that $f([a]) \geq 0$.
 \end{proof}
 
 \subsection{Right-handed boxes}
@@ -484,14 +483,6 @@ by condition \ref{item:box-edges-cross}.
 \begin{remark}
 Condition~\ref{item:box-diags-cross} is required to ensure translation invariance for boxes of Type 2 and Type 3: $[bx^n]$ and $[cx^n]$ might only cross for large enough $n$.
  For Type~1, Figure~\ref{fig:rhbox}, the crossing is essential without passing to large $n$.
-% 
- % \item Condition (3) in the definition of RH lift is equivalent to the following statement: there exists $n_0$ so that for all $n \geq n_0$, the lift of the path $ca^{-1}ax^n a c^{-1}$ and the path $dx^n$, both based at $*$, are not linked.
-%$$  \DPTtodo[inline]{This is nice. Probably worth spelling out some of the other
-%    implications about the order in which things appear on the
-%    boundary. But is the other direction correct? Could we end up
-%    with a left-handed crossing?}
- % To see this, note that, for any $n$, the startpoint $(dx^n)^-$ appears before $\lim_n (dx^n)^-$ in counter-clockwise order. By item (3), $\lim_n (ca^{-1}ax^n a c^{-1})^-$ appears before $\lim_n (dx^n)^-$, and so for large enough $n$, $(dx^n)^-$ appears before $(ca^{-1}ax^n a c^{-1})^-$. The other implication is similar.
-%     \end{enumerate}
 \label{rmk:largeenough}
 \end{remark}
 
@@ -618,18 +609,13 @@ i.e., for any $p \in \partial_{\infty} S$, the orbit
 $\pi_1(S)\cdot p$ is dense.
 \label{lem:minimal}
 \end{lemma}
-% \DMGtodo[inline]{(Punctures) Again, this uses surface is closed.}
+
 However, because of our interest in right-handed boxes, we are only considering a subset of the lifts of $[x]$ to construct our boxes.
 These are still enough to approximate any box.
-% \DMGtodo[inline]{(Punctures) This uses surface is closed (commented before, too)}
-
-
 
 \begin{lemma}
 Let $x \in \pi_1(S)$.
 Given any $z \in \partial_\infty  S$
-% \DMGtodo[inline]{(Punctures) Uses
-%   closed surface, otherwise replace by limit set.}
 and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
 endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and they are ordered counter-clockwise (or clockwise)
 with respect to the $\partial_\infty S$ order.
@@ -856,44 +842,6 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
   $\epsilon$ of their limiting value.) Conversely,
   Equation~\eqref{eq:cross-split} implies the opposite inequality.
 \end{proof}
-% \begin{proof}
-% We separate the proof in two cases, depending on the magnitude of $|m-n|$.
-% \begin{itemize}
-%     \item Case 1: $|n-m|$ is large.  By Proposition~\ref{prop:join-split-geom}, we have
-%   \[
-%     f([a x^n]) + f([b x^{m}]) \ge f([a x^{n+1} b x^{m-1}])
-%       \ge f([a x^{n+2}]) + f([b x^{m-2}]).
-%   \]
-%   for all $m,n$ so that $m-n -s >r > s$, or $m-n+s<r<-s$, i.e.
-%   For the first one, it suffices to have $m-n-s > s+1$, i.e., $m-n>2s+1$
-%   For the second, $m-n+s<-s-1$, i.e. $m-n<-2s-1$.
-%   In any case, $|m-n|>2s+1$
-%   Thus, by Lemma~\ref{lem:additivity-limit}, the claim follows in this case.
-%   \item Case 2: $|m-n|$ is small.  Let $p=m-n$ and suppose that $|p| \leq 2s+1$. By Lemma~\ref{lem:rhs_prod}  $ax^nb$ crosses $x$ to the right. Therefore, we have that for every $k$
-%   \[
-%   [ax^nbx^{n+p}] [x^k] \reducesto [ax^nbx^{n+p+k}].
-%   \]
-%   On the other hand, $bx^{n+p+k}a$ crosses $x$ to the right, also, and since
-%   \[
-%   [ax^{n+k}bx^{n+p+k}]=[x^{n+k}bx^{n+p+k}a]=[bx^{n+p+k}ax^{n+k}]
-%   \]
-%   we have
-%   \[
-%   [bx^{n+p}ax^{n}] [x^k] \reducesto [bx^{n+p}ax^{n+k}].
-%   \]  
-%   Therefore, by applying $f$ and using smoothing and additivity, we have that
-%   for all $k, n$
-%   \begin{align*}
-%   [ax^{n+p} bx^{n-k}] 2[x^k] & \reducesto  [ax^{n+p} bx^{n}] [x^k]  \\
-%   &\reducesto  [ax^{n+p} bx^{n+k}]
-%   \end{align*}
-%   Subtracting $[x^{p+2n+k}]$, applying $f$ using smoothing and additivity, and taking the limit when $n,k$ go to infinity we see, by Case 1, that
-%   \[
-%   \lim_{n \to \infty} f([ax^{n+p}bx^n])-f([x^n])=0
-%   \]  
-%   as we wanted to show.\qedhere
-% \end{itemize}
-%  \end{proof}
 
 \begin{proposition}
   \label{prop:box-positive}
@@ -916,14 +864,6 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
   \mu_f(B_{p,q,r,s}) \geq 0. \qedhere
   \]
 \end{proof}
-
-%  \begin{figure}
-% \centering{
-% \resizebox{100mm}{!}{\svgfig{nestedpositivity}}
-% \caption{$\mu_f$ is non-negative on right-handed boxes. By definition, the fact that $[bx^n]$ and $[cx^n]$ have a right-handed crossing for large $n$, gives non-negativity. Taking $n$ large might be necessary. Item a) shows one configuration of lifts where it is necessary, where for low values of $n$ there is no crossing. Item b) shows that for $n$ large we obtain a right-handed crossing. Item c) shows a figure of the bands model centered at one of the lifts of $x$, and showing how the crossing between the chosen lifts of $[bx^n]$ and $[cx^n]$ cross essentially.}
-% \label{fig:nestedpositivity}
-% }
-%   \end{figure}
 
 \subsubsection{$\mu_f$ is side-by-side additive and finitely additive}
 

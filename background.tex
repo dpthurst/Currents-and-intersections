@@ -340,43 +340,6 @@ The following result is straightforward.
 \end{remark}
 
 
-
-%  \begin{proposition}
-%  Let $a_{n,m}$ for $n,m \geq 0$ be a double sequence of real numbers,
-%  and define $b_{n,m} \coloneqq a_{n,m} - a_{n-1,m}$. Suppose the
-%  numbers satisfy the following conditions:
-%  \begin{enumerate}
-%  \item $a_{n,m}$ is weakly increasing in $n$ (i.e., $b_{n,m} \geq 0$).
-%  \item For every $n \geq 0$, $\lim_m b_{n,m}$ exists.
-%  \item There exists a sequence $c_n \geq 0$ so that for every $m \geq 0$,
-%    $b_{n,m} \leq c_n$, and $\sum_n c_n$ is finite.
-%  \end{enumerate}
-%  Then
-%  \[
-%  \lim_{m^+} \lim_{n^+} a_{n,m} =  \lim_{n^+} \lim_{m^+} a_{n,m}.
-%  \]
-%  \label{prop:exchange_limits}
-%  \end{proposition}
-% \begin{proof}
-% We will think of $b_{n,m}$ as a family of functions of $n$ indexed by $m$, i.e., $f_m(n) \coloneqq b_{n,m}$.
-% By the second assumption, $f_m$ converge pointwise. By the third assumption, $f_m(n) \leq c_n$.
-% By the dominated convergence theorem with respect to the counting measure on the natural numbers, we have
-% \[
-% \lim_{m \to \infty} \sum_{n=1}^{\infty} b_{n,m} = \sum_{n=1}^{\infty}  \lim_{m \to \infty} b_{n,m}.
-% \]
-% By writing the series as limits of partial sums, we have
-% \[
-% \lim_{m \to \infty} \lim_{N \to \infty} \sum_{n=1}^{N} b_{n,m} = \lim_{N \to \infty} \sum_{n=1}^{N} \lim_{m \to \infty} b_{n,m}.
-% \]
-% By the definition of $b_{n,m}$, we get
-% \[
-% \lim_{m \to \infty} \lim_{N \to \infty} a_{N,m} = \lim_{N \to \infty}
-% \lim_{m \to \infty} a_{N,m}. \qedhere
-% \]
-% \end{proof}
-
-
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "Intersections"

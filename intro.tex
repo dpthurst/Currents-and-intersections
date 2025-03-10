@@ -1,19 +1,5 @@
 \section{Introduction}
 
-\begin{comment}
-\textbf{Notation guidelines:}
-\begin{enumerate}
-\item  $S$ vs $\Sigma$: $S$ is a topological surface,
-  $\Sigma$ has some extra structure like hyperbolic. Usually we want
-  $S$ here
-\item $a^{-1}$ vs $A$ for inverse element of group: Both are
-  acceptable. Use $A$ if we're not specifically emphasizing the inverse
-\item Use $g$ and other latin letters for group elements, and $\gamma$
-  and other greek letters for geodesics of Poincare disk (or $\ora{g}$)
-\item Figure colors for lifts of $a, b, ab, aB$, and so on should be uniformized.
-\item Trees figures should be uniformized.
-\end{enumerate}
-\end{comment}
 Geodesic currents on a hyperbolic surface are measures realizing a suitable closure of the space of weighted closed geodesics. Many metric
 structures embed in the space of currents, such as
 hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
@@ -31,9 +17,6 @@ for any $C$ in the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of
 For example, the hyperbolic length of curves $\ell_{\Sigma}$ is dual to
 a distinguished geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising naturally from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP21:PositiveCrossratios}).
 
-\begin{comment}There are other natural notions of lengths associated to surface groups that are not dual to a geodesic current. For example, extremal length, or the hyperbolic length
-of curves associated to a quasi-fuchsian (non-fuchsian) representation~\cite[Proposition~1.8]{BR24:Cubulations},\cite[Theorem A]{FF21:QF}.
-\end{comment}
 In this paper we give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
 
 \begin{mainthm}
@@ -50,100 +33,6 @@ i(\mu_f,C)=f(C).
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
 Even though the result is stated for unoriented curves, we will be working in the more general setting oriented curve functionals (see Appendix~\ref{subsec:examples_and_non} for many natural examples and non-examples).
-\begin{comment}
-The injectivity of the map from the space of metrics to the space of geodesic currents is known as the marked length rigidity property.
-Other examples of geometric structures embedding inside the space of geodesic currents are given by
-Croke-Fathi-Feldman for non-positively curved Riemannian metrics
-\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem},
-Hersonsky-Paulin \cite[Theorem~A]{HP97:RigidityNegCurvedCone} for
-negatively curved metrics with conical singularities.
-Duchin-Leininger-Rafi subsequently gave, as a subcase of the last one, a more explicit embedding for singular Euclidean structures
-associated to quadratic differentials/half-translation structures
-\cite[Theorem~4]{DLR10:DegenerationFlatMetrics}. Later, Bankovic-Leininger have embedded non-positively curved Euclidean cone metrics in the space of geodesic currents \cite[Main Theorem]{BL17:RigidityFlat}. The latest work in this direction is \cite{ELS21:Hyperbolic}. 
-
-The way the embedding works in each of the above cases is by associating
-a canonical geodesic current $\mathcal{L}_{\rho}$ to a given metric
-structure $\rho$. This metric structure is usually defined up to a certain
-equivalence---as happens, for example, for Teichm\"uller space (see
-Theorem~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}).  Then one shows
-that this assignment is in fact an injection. This canonical geodesic
-current $\mathcal{L}_{\rho}$ was coined \emph{Liouville current} by
-Bonahon \cite[Section~2]{Bonahon88:GeodesicCurrent} for the case of
-hyperbolic structures, but the term has also been used more generally
-for the geodesic currents associated to other metric structures (see,
-for instance, \cite[Section~3.1]{EU18:LengthCurrents}).
-These Liouville currents are tied to the geometric structure as follows.
-By Theorem~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}, weighted multi-curves on a surface embed in the space of geodesic currents.
-Also, in the same paper Bonahon
-\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} that extends
-the notion of geometric intersection
-number as a continuous bilinear function the space of pairs of geodesic currents.
- This allowed him to extend hyperbolic length to geodesic currents by
-following the principle of realizing it as an intersection number with
-a distinguished geodesic current.
-Similarly, other notions of length of curves $\ell_{\rho}$ associated to the above mentioned metric structures $\rho$ can be realized as intersection numbers with the corresponding Liouville current $\mathcal{L}_{\rho}$, this is
-\[
-  i(\mathcal{L}_{\rho},C)=\ell_{\rho}(C)
-\]
-for any closed multi-curve $C$ in $S$. We will say that the current $\mu_{\rho}$ is \emph{dual} to $\ell_{\rho}$.
-
-There are many other lengths with an associated dual geodesic current.
-For example, Erlandsson shows that word-length with respect to simple generating sets of the fundamental group can also be realized as an intersection number with such a Liouville current \cite[Theorem~1.2]{Erlandsson:WordLength}, which, in this case, turns out to be a weighted multi-curve. 
-In the context of representations of surface groups into higher rank lie groups (specifically, certain Anosov representations), work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and, more recently, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} provides geodesic currents dual to length functions arising from logarithms of ratios of eigenvalues of the representation.
-
-There are other natural notions of lengths associated to surface groups that are not dual to a geodesic current. For example, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations} show, mostly using work of Fricker-Furman~ \cite[Theorem A]{FF21:QF}, that for a quasi-fuchsian representation $\rho$, that is, a deformation of a fuchsian representation of $\pi_1(S)$ inside of $\PSL(2,\mathbb{C})$ whose limit set is still homeomorphic to a circle, the natural notion of stable length $\ell_{\rho}$ associated to this representation is dual to a geodesic current if and only if the representation is fuchsian (i.e., the deformation is trivial).
-
-In fact, the usual first step in verifying marked length rigidity property for a family metric structures is to associate, to a metric structure $\rho$, a geodesic current $\mu_{\rho}$ dual to the length function $\ell_{\rho}$.
-In this paper, we give an answer to the following question.
-
-\begin{question}\label{q:intersection}
-Let $\mathbb{R}\mathcal{C}(S)$ denote the space of weighted multi-curves on $S$.
-What are sufficient and necessary conditions for $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ to have a dual geodesic current?
-\label{que:mainquestion}
-\end{question}
-
-\subsection{Main results}
-
-\begin{table}
-    \begin{tabular}{@{}ll@{}}
-      \toprule
-      Notation & Meaning \\
-      \midrule
-         $S$ &  topological surface \\
-         $\Sigma$ & Riemannian surface \\
-         $\Curves(S)$ & unoriented multi-curves \\
-         $\Curves^+(S)$ & oriented multi-curves \\
-         $\partial_{\infty} S$ & boundary at infinity of $\tilde{S}$ \\
-         $G(S)$ & oriented geodesics on $\tilde{S}$ \\
-         $\R\Curves(S)$ & weighted unoriented multi-curves \\
-         $\R\Curves^+(S)$ & weighted oriented multi-curves \\ 
-         $\GC(S)$ & unoriented geodesic currents \\
-         $\GC^+(S)$ & oriented geodesic currents \\
-         $\gamma$ & concrete multi-curve on $S$ \\
-         $C$ & multi-curve on $S$\\
-         $a, A \in \pi_1(S)$ & $A$ is the inverse of $a$, sometimes also $a^{-1}$\\
-         $\ora{g}$ for $g \in \pi_1(S)$ & the hyperbolic axis of $g$
-    \end{tabular}
-  \caption{Notation for the objects related to surfaces, curves, and
-    geodesic currents.}\label{tab:object-notation}
-\end{table}
-
-The main result of this paper can be succintly phrased as follows.
-
-\begin{mainthm}
-    Suppose that $f \colon\mathbb{R}\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
-     \[
-      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
-   \]
-   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components, \emph{stable} and \emph{homogeneous} (see~\ref{subsec:mainresult} for definitions).
-Then, $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
-\[
-i(\mu_f,C)=f(C)
-\]
-for every multi-curve $C$.
-\label{thm:intersect}
-\end{mainthm}
-See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.\end{comment}
 
 One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number, suggesting it plays the role of the cap product in this analogy. See Section~\ref{subsec:newdef}.
 
@@ -167,7 +56,7 @@ Our result also obtains dual geodesic currents for stable lengths associated to 
   For $a,b \in \pi_1(S)$,
   $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some hyperbolic structure fixed once and for all), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
       ccw order on the boundary at infinity. See
-      Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing_parallel} for more details.
+      Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:righthandedcrossing} for more details.
       From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
       Using this we can state an equivalent version of Theorem~\ref{thm:intersect} can be phrased as follows.
 
@@ -210,7 +99,7 @@ Theorem~\ref{thm:intersect} generalizes all of these results by showing that the
 
 \subsection{Characterize measured laminations and hyperbolic metrics}
 
-As a consequence of the Theorem, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic Liouville currents (see Theorems~\ref{thm:char_laminations} and~\ref{prop:char_liouville}).
+As a consequence of the Theorem, we can further characterize which curve functionals correspond to measured laminations or to hyperbolic metrics (see Theorems~\ref{thm:char_laminations} and~\ref{prop:char_liouville}).
 
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}. Then,
@@ -228,7 +117,9 @@ Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:inte
     \label{mainthm:apps}
 \end{mainthm} 
 
-The result on hyperbolic lengths can be strengthened (see Theorem~\ref{thm:char_liouville_strong}) by replacing the equalities in the hypotheses by certain coarser inequalities. 
+The result on hyperbolic lengths can be strengthened (see Theorem~\ref{thm:char_liouville_strong}) by replacing the equalities in the hypotheses by certain coarser inequalities.
+
+We emphasize that this result characterizes hyperbolic metrics among all curve functionals. In particular, it can be applied to stable lengths induced from Green metrics arising from admissible random walks on $\pi_1(X)$, yielding potential applications to investigate the singularity of hitting boundary measures (see Subsection~\ref{subsec:green}).
 
 These results generalize both of Luo's results on characterizing which functions on simple curves dual to measured laminations~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers} (alluded above) and which to hyperbolic length functions~\cite{Luo98:GeodesicLength}.  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
 
