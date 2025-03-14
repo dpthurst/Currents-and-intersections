@@ -125,8 +125,7 @@ not need to assume the group elements generate a discrete subgroup).
 \label{subsec:crossings}
 
 Loosely speaking, an essential crossing is a crossing of a
-multi-curve that can't be homotoped away. We make this definition
-precise as follows.
+multi-curve that can't be homotoped away.
 
 
 \begin{definition}\label{def:essential-crossing}
@@ -155,12 +154,8 @@ We follow~\cite{MGT25:SmoothingsErratum} closely.
   $X(\gamma')$. The map $\gamma'$ agrees with~$\gamma$; this is
   well-defined since $\gamma(p) = \gamma(q)$. In pictures we will
   homotop $\gamma'$ slightly to round out the resulting
-  corners, and we will write $\gamma \reducesto \gamma'$. If $\gamma$ is oriented, then the \emph{oriented smoothing}
-  is the smoothing that respects the orientation on $X(\gamma)$:
-  \begin{equation*}
-    \mfig{curves-3} \reducesto \mfig{curves-4}
-  \end{equation*}
-  The \emph{unoriented smoothing} is the one that does not respect the orientation.
+  corners, and we will write $\gamma \reducesto \gamma'$.
+
 \end{definition}
 
 ``Some'' in the definition of essential crossing can be replaced by ``every'':  if there is a crossing $x$ in some minimal representative
@@ -178,8 +173,35 @@ We follow~\cite{MGT25:SmoothingsErratum} closely.
   that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
 
-As a result of Lemma~\ref{lem:essential-cross}, we can speak of essential crossings also for concrete curves $\gamma$ that are not minimal.
+As a result of Lemma~\ref{lem:essential-cross}, we can speak of
+essential crossings for concrete curves $\gamma$ that are not minimal:
+a crossing is essential if its two smoothings also arise from a
+crossing in some minimal diagram.
 
+We will also distinguish between different types of smoothings.
+\begin{definition}\label{def:smoothing_types}
+  If $\gamma$ is oriented, then the \emph{oriented smoothing}
+  is the smoothing that respects the orientation on $X(\gamma)$:
+  \begin{equation*}
+    \mfig{curves-3} \reducesto \mfig{curves-4}
+  \end{equation*}
+  The \emph{unoriented smoothing} is the one that does not respect the
+  orientation.
+  In addition, we call a smoothing \emph{connected} or \emph{disconnected} if the
+  original curve is connected or disconnected. We thus have four types
+  of smoothings (using group notation that we will expand on
+  later):
+  \begin{itemize}
+  \item Oriented connected smoothing: $[ab] \reducesto [a][b]$ (result
+    disconnected)
+  \item Unoriented connected smoothing: $[ab] \reducesto [aB]$ (result
+    connected)
+  \item Oriented disconnected smoothing: $[a][b] \reducesto [ab]$
+    (result connected)
+  \item Oriented disconnected smoothing: $[a][b] \reducesto [aB]$
+    (result connected)
+  \end{itemize}
+\end{definition}
 
 \subsection{Triality of crossings: topological, geometric and algebraic}
 
@@ -205,7 +227,8 @@ Free homotopy means in particular invariance under simultaneous
 conjugation: $[a * b] = [caC * cbC]$. A \emph{minimal} representative of $[a * b]$
 is one with a minimum number of transverse crossings.
 
-Finally, if we fix a hyperbolic structure on~$S$, a non-trivial
+\DPTtodo{Next two \P{} a little repetitive of \S 3.1}
+Finally, if we fix a hyperbolic structure on~$S$, for a non-trivial
 element $a \in \pi_1(S,*)$ let $\ora{a}$ be the geodesic in
 $\wt{S}$, determined as the unique geodesic that stays a bounded distance from
 $a^k \cdot \wt{*}$, with endpoints $a^+$ and $a^-$ (see Section~\ref{sec:actions}).
@@ -221,15 +244,21 @@ In principle one should invoke a representation $\rho \colon \pi_1(S)
 \to \Isom^+(\bbH^2)$, but since nothing depends on this representation
 we will suppress it.
 
-Depending on the
-cyclic order of the endpoints up to orientation reversal, we say that
-$\ora{a}$ and $\ora{b}$ are
-\begin{itemize}
-\item \emph{parallel} if they appear in order $a^-,a^+,b^+,b^-$;
-\item \emph{anti-parallel} if they appear in order $a^-,a^+,b^-,b^+$;
-  and
-\item \emph{cross} if they appear in order $a^-,b^-,a^+,b^+$.
-\end{itemize}
+\begin{definition}\label{def:crossing}
+  Depending on the (counterclockwise) cyclic order of the endpoints,
+  we say that the pair $(\ora{a},\ora{b})$ are
+  \begin{itemize}
+  \item \emph{R-parallel} if they appear in order $a^+,a^-,b^-,b^+$;
+  \item \emph{R-anti-parallel} if they appear in order
+    $a^+,a^-,b^+,b^-$; and
+  \item \emph{R-cross} or \emph{cross to the right} if they appear in
+    order $a^+,b^-,a^-,b^+$.
+  \end{itemize}
+  (See Figure~\ref{fig:cases-a-b}.) In each case we say that they are
+  L-parallel/L-anti-parallel/L-cross if they appear in the reverse
+  cyclic order, and are parallel/anti-parallel/cross if they appear in
+  either the above order or its reverse.
+\end{definition}
 
 \begin{definition}
   Non-trivial group elements $a,b\in \pi_1$ are \emph{common powers}
@@ -240,9 +269,7 @@ $\ora{a}$ and $\ora{b}$ are
 \end{definition}
 
 
-The proof of the following result appears in~\cite[Proposition~3]{MGT25:SmoothingsErratum}.
-
-\begin{proposition}\label{prop:crossings-triality}
+\begin{proposition}[{\cite[Proposition~3]{MGT25:SmoothingsErratum}}]\label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
   common powers. Then in the following three trialities the same
   possibility holds in each case.
@@ -254,7 +281,8 @@ The proof of the following result appears in~\cite[Proposition~3]{MGT25:Smoothin
     \item $[aB]$; or
     \item $[a][b]$.
     \end{enumerate*}
-  \item (Geometric) For every taut embedding of $a * b$, around the
+  \item\label{item:triality-geom}
+    (Geometric) For every taut embedding of $a * b$, around the
     4-valent vertex we see in cyclic
     order, up to orientation reversal:\\
     \begin{enumerate*}[itemjoin=\qquad]
@@ -262,7 +290,7 @@ The proof of the following result appears in~\cite[Proposition~3]{MGT25:Smoothin
     \item $\mfig{curves-31}$; or
     \item $\mfig{curves-32}$.
     \end{enumerate*}
-  \item (Algebraic) The geodesics $\ora{a}$ and $\ora{b}$ are:\\
+  \item\label{item:triality-alg} (Algebraic) The geodesics $\ora{a}$ and $\ora{b}$ are:\\
     \begin{enumerate*}[itemjoin=\qquad]
     \item parallel;
     \item anti-parallel; or
@@ -270,6 +298,11 @@ The proof of the following result appears in~\cite[Proposition~3]{MGT25:Smoothin
     \end{enumerate*}
   \end{enumerate}
 \end{proposition}
+
+Note that triality~\eqref{item:triality-geom} is about the local
+behavior near the vertex, while triality~\eqref{item:triality-alg} is
+similar but
+about the asymptotic behavior near $\infty$.
 
 We extract the following two lemmas that follow immediately from
 Proposition~\ref{prop:crossings-triality}, and will use them
@@ -282,8 +315,6 @@ Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{b}$, then
 \]
 \end{lemma}
 
-We also have the following.
-
 \begin{lemma}
 Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ is parallel to $\ora{b}$, then
 \[
@@ -291,87 +322,8 @@ Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ is parallel to $\ora{b}$, then
 \]
 \end{lemma}
 
-Following this, we will distinguish between different types of smoothings. The nomenclature below is chosen with regards to  the connectedness of the multi-curve in the pre-smoothing, and, in turn, each corresponding case will have two subcases depending on orientation.
-
-\begin{definition}
-We will give terms for the following types of smoothing.
-\begin{enumerate}
-\item disconnected smoothing: For any pair of crossing elements $(a,b)$, 
- \begin{align}
-    \label{eq:sm_disconn_oriented} \mbox{oriented:} \quad [a] [b] &\searrow [ab]\\
-    \label{eq:sm_disconn_unoriented} \mbox{unoriented:} \quad [a] [b] &\searrow [aB]
-  \end{align}
-\item connected smoothing: For any pair of parallel elements $(a,b)$, 
- \begin{align}
-      \label{eq:sm_conn_oriented} \mbox{oriented:} \quad [ab] &\searrow [a] [b] \\
-    \label{eq:sm_conn_unoriented} \mbox{unoriented:} \quad [ab] &\searrow [aB].
-  \end{align}
-\end{enumerate}
-\label{def:smoothing_types}
-\end{definition}
-
-
-\subsection{Parallelism and crossing of hyperbolic axes}
-\label{subsec:parallel_crossing}
-We now turn to some elementary lemmas about crossing. For this
-purpose, we also distinguish the various other types of relations
-between two geodesics $\ora{a}, \ora{b}$, and we will also distinguish their orientations.
-
-\begin{convention}\label{conv:circle-intervals}
-  Intervals on the circle are always written with endpoints in counterclockwise
-  order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
-  $(x,y) \cup (y,x)$ is almost the entire circle).
-\end{convention}
-
-We will introduce some further distinctions depending on the orientation of the crossing, parallelism or anti-parallelism relations.
-
-\begin{definition}
-  Let $a,b$
-  be hyperbolic elements in $\Isom^+(\mathbb{H}^2)$ that do not share a common power, and let
-  $\ora{a}, \ora{b}$ be the oriented geodesics that are the
-  corresponding axes.
-\begin{itemize}
-    \item The pair $(\ora{a},\ora{b})$ \emph{cross to the
-        right} or \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
-      ccw order on the boundary at infinity. See
-      Figure~\ref{fig:cross}.
-    \item The pair $(\ora{a},\ora{b})$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}.
-   \item  The pair $(\ora{a},\ora{b})$ is \emph{R-anti-parallel} if $b^+,b^-, a^+, a^-$ appear in this counter-clockwise order on the boundary at infinity. See Figure~\ref{fig:anti}.
-   \end{itemize}
-   We can similarly define L-cross, L-parallel, and L-anti-parallel
-   (reversing the orientation on the circle).
-   We will also say a triple $(\ora{a},\ora{b},\ora{c})$ is R-parallel
-   if $(\ora{a},\ora{b})$ and $(\ora{b},\ora{c})$ are.
-    \label{def:righthandedcrossing}
-\end{definition}
-
-Note that the above notions are well-defined for the pair $(a,b)$: we say that the pair of elements of $\pi_1(S)$ given by $(a,b)$ is R/L-crossing, R/L-parallel, R/L-anti-parallel if the pair of corresponding geodesics $(\ora{a},\ora{b})$ is, since these notions only depend on the relative position of their endpoints at infinity.
-
-For free homotopy classes, the situation is as follows.
-Note that, if we draw the loops $[a]$ and $[b]$ as based at the
-basepoint $* \in S$, the loops intersect at $*$ by definition. If that
-intersection is essential (and $a$ and $b$ do not share a power),
-there are two possible cyclic orders for the endpoints, so either
-$\ora{a}$ crosses $\ora{b}$ to the right or $\ora{b}$ crosses
-$\ora{a}$ to the right. In the first case (as in the Definition) the picture looks
-intuitively like
-\[\mathcenter{\resizebox{20mm}{!}{\svgfig{rhres}}}.\]
-
-If we wish to talk about some essential crossing of $[a]$ and $[b]$
-that is \emph{not} at the basepoint, we can always conjugate by a
-suitable element~$c$, and ask about the crossing between $\ora{caC}$
-and $\ora{b}$. Concretely, to find $c$, homotop $[a]$ and $[b]$ so
-they pass through the basepoint~$*$, and take $c$ to be the homotopy
-class of the loop that runs along~$[b]$ from $*$ to the chosen
-intersection, and back along~$[a]$ from the chosen intersection
-to~$*$.
-Observe that whether a crossing is ``right-handed'' is invariant under
-simultaneous conjugation of $a$ and $b$, but does depend on
-more than the conjugacy classes of $a$ and~$b$. (We need to specify
-which crossing we are considering.)
-
 If we swap $\ora{a}$ and $\ora{b}$, the type of crossing/parallelism
-can change, as explained below.
+can change, as recorded below for future reference.
 
 \begin{lemma} Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements.
 \begin{enumerate}
@@ -390,9 +342,18 @@ can change, as explained below.
 \end{lemma}
 
 \begin{proof}
-  Immediate from the definitions (and this lemma can be taken to be a
-  definition of the ``L'' variants).
+  Immediate from the definitions.
 \end{proof}
+
+\subsection{Parallelism and crossing of hyperbolic axes}
+\label{subsec:parallel_crossing}
+We now turn to some elementary lemmas about crossing.
+
+\begin{convention}\label{conv:circle-intervals}
+  Intervals on the circle are always written with endpoints in counterclockwise
+  order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
+  $(x,y) \cup (y,x)$ is almost the entire circle).
+\end{convention}
 
 \begin{lemma}
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
@@ -411,11 +372,6 @@ can change, as explained below.
   $a^- \notin (x^-,x^+)$, which is turn is equivalent to
   $(\ora{a},\ora{x})$ R-crossing. The last claim follows similarly.
 \end{proof}
-
-
-
-We also have the
-following. 
 
 \begin{lemma}
   Let $a,b,x \in \pi_1(S)$ be group elements so that $(\ora{a},\ora{x})$ and $(\ora{b},\ora{x})$ R-cross. Then:
@@ -498,11 +454,13 @@ following.
 \begin{subfigure}[b]{0.3\textwidth}
 
     \svgfignormal{antiparallel}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are anti-parallel }
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-anti-parallel }
     \label{fig:anti}
    \end{subfigure}
    \caption{Cases for relative position 
-      of $\protect\ora{a}$ with $\protect\ora{b}$.} 
+     of $\protect\ora{a}$ with $\protect\ora{b}$, and corresponding
+     endpoints of products.}
+   \label{fig:cases-a-b}
 \end{figure}
     
     To see this, observe that, by the dynamics of $a$ and $b$ on the

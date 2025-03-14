@@ -2,7 +2,7 @@
 %%BoundingBox: -21 -21 21 21 
 %%HiResBoundingBox: -20.19246 -20.19246 20.19246 20.19246 
 %%Creator: MetaPost 2.10
-%%CreationDate: 2024.09.02:1719
+%%CreationDate: 2025.03.13:2130
 %%Pages: 1
 %%DocumentResources: procset mpost-minimal
 %%+ font CMMI7
@@ -40,25 +40,25 @@ newpath -14.03073 -14.03073 moveto
  0.7 0 0 setrgbcolor [] 0 setdash
 newpath -14.03073 -14.03073 moveto
 0 0 lineto
-14.03073 -14.03073 lineto stroke
+-14.03073 14.03073 lineto stroke
 newpath -11.02444 -7.01538 moveto
 -5.01105 -5.01105 lineto
 -7.01538 -11.02444 lineto stroke
 -4.91537 -12.11795 moveto
 (a) cmmi7 6.97385 fshow
-newpath 7.01535 -3.00629 moveto
-9.01968 -9.01968 lineto
-3.00629 -7.01535 lineto stroke
-9.11536 -4.91537 moveto
+newpath -7.01535 3.00629 moveto
+-9.01968 9.01968 lineto
+-3.00629 7.01535 lineto stroke
+-13.43675 1.91278 moveto
 (a) cmmi7 6.97385 fshow
  0 0 0.8 setrgbcolor
-newpath -14.03073 14.03073 moveto
+newpath 14.03073 -14.03073 moveto
 0 0 lineto
 14.03073 14.03073 lineto stroke
-newpath -7.01538 11.02444 moveto
--5.01105 5.01105 lineto
--11.02444 7.01538 lineto stroke
--12.61885 0.07248 moveto
+newpath 7.01538 -11.02444 moveto
+5.01105 -5.01105 lineto
+11.02444 -7.01538 lineto stroke
+9.11536 -4.91537 moveto
 (b) cmmi7 6.97385 fshow
 newpath 3.00629 7.01535 moveto
 9.01968 9.01968 lineto

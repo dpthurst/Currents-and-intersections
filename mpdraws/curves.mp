@@ -173,44 +173,47 @@ beginmulti;
   path p[];
   p0 = z0..z1..z2..z3..cycle;
   
-  p1 := z0--origin--z1; p2 := z3--origin--z2;
+  % Parallel
+  p1 := z0--origin--z3; p2 := z1--origin--z2;
   skein_circle(p0);
   drawoptions (withcolor darkred);
   draw p1;
   mark_dir(p1,0.5); texlabel.lrt("$\scriptstyle a$", point 0.5 of p1);
-  mark_dir(p1,1.5); texlabel.urt("$\scriptstyle a$", point 1.5 of p1);
+  mark_dir(p1,1.5); texlabel.llft("$\scriptstyle a$", point 1.5 of p1);
   drawoptions (withcolor darkblue);
   draw p2;
-  mark_dir(p2,0.5); texlabel.llft("$\scriptstyle b$", point 0.5 of p2);
+  mark_dir(p2,0.5); texlabel.urt("$\scriptstyle b$", point 0.5 of p2);
   mark_dir(p2,1.5); texlabel.ulft("$\scriptstyle b$", point 1.5 of p2);
   drawoptions();
   pickup vertexmarker; draw origin;
   shipmulti(30);
 
-  p1 := z0--origin--z1; p2 := z2--origin--z3;
+  % Anti-parallel
+  p1 := z0--origin--z3; p2 := z2--origin--z1;
   skein_circle(p0);
   drawoptions (withcolor darkred);
   draw p1;
   mark_dir(p1,0.5); texlabel.lrt("$\scriptstyle a$", point 0.5 of p1);
-  mark_dir(p1,1.5); texlabel.urt("$\scriptstyle a$", point 1.5 of p1);
+  mark_dir(p1,1.5); texlabel.llft("$\scriptstyle a$", point 1.5 of p1);
   drawoptions (withcolor darkblue);
   draw p2;
   mark_dir(p2,0.5); texlabel.ulft("$\scriptstyle b$", point 0.5 of p2);
-  mark_dir(p2,1.5); texlabel.llft("$\scriptstyle b$", point 1.5 of p2);
+  mark_dir(p2,1.5); texlabel.urt("$\scriptstyle b$", point 1.5 of p2);
   drawoptions();
   pickup vertexmarker; draw origin;
   shipmulti(31);
 
-  p1 := z0--origin--z2; p2 := z1--origin--z3;
+  % Cross
+  p1 := z1--origin--z3; p2 := z0--origin--z2;
   skein_circle(p0);
   drawoptions (withcolor darkred);
   draw p1;
-  mark_dir(p1,0.5); texlabel.lrt("$\scriptstyle a$", point 0.5 of p1);
-  mark_dir(p1,1.5); texlabel.ulft("$\scriptstyle a$", point 1.5 of p1);
+  mark_dir(p1,0.5); texlabel.urt("$\scriptstyle a$", point 0.5 of p1);
+  mark_dir(p1,1.5); texlabel.llft("$\scriptstyle a$", point 1.5 of p1);
   drawoptions (withcolor darkblue);
   draw p2;
-  mark_dir(p2,0.5); texlabel.urt("$\scriptstyle b$", point 0.5 of p2);
-  mark_dir(p2,1.5); texlabel.llft("$\scriptstyle b$", point 1.5 of p2);
+  mark_dir(p2,0.5); texlabel.lrt("$\scriptstyle b$", point 0.5 of p2);
+  mark_dir(p2,1.5); texlabel.ulft("$\scriptstyle b$", point 1.5 of p2);
   drawoptions();
   pickup vertexmarker; draw origin;
   shipmulti(32);
