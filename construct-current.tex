@@ -12,7 +12,7 @@ proving approximation results.
 
 
 \begin{definition}
-Let the right handed lift system $[p_1,q_1,p_2,q_2]$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
+Let the RH lift system $[p_1,q_1,p_2,q_2]$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
 We define a \emph{top vertical accordion} of boxes based at $B$ the sequence of boxes, indexed by $k$, given for each $k$, by
 \[
 p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
@@ -28,7 +28,7 @@ F_{p_1,p_2,\bar{q_1},q_2},
 \]
 giving a sequence of boxes whose vertical direction becomes narrower and the bottom endpoint fixed, i.e.,
 \[
-p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
+p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_2 x^k q_2^{-1}q_1,q_2^{(k)} \coloneqq q_2.
 \]
 
 On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
@@ -55,25 +55,29 @@ The following Proposition will be key to control how much $\mu_f$ when the right
 \end{figure}
 
 \begin{proposition}
- Given a RH system $[p_1,p_2,q_1,q_2]$ so that, moreover, $q_1^{-1}q_2$ cross $x$ to the right. let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},p_2,q_1,q_2}(k)$, $F_{p_1,p_2,q_1,\vec{q_2}}$, $F_{p_1,\vec{p_2},q_1,q_2}(k)$ and $F_{p_1,p_2,\vec{q_1},q_2}(k)$. We have
+ Given a RH lift system $[p_1,q_1,p_2,q_2]$, let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},q_1,p_2,q_2}(k)$, $F_{p_1,\vec{q_1},p_2,q_2}$, $F_{p_1,q_1,\vec{p_2},q_2}(k)$ and $F_{p_1,q_1,p_2,\vec{q_2}}(k)$. Furthermore, assume that in each of the respective cases, we have $p_2^{-1}q_1$ cross $x$ to the right,  (resp.
+  $q_2^{-1}q_1$ cross $x$ to the right, resp.
+  $p_1^{-1}p_2$ cross $x$ to the right, resp.
+  $q_1^{-1}q_2$ cross $x$ to the right).
+
+ We have
 
 \begin{itemize}
- \item For every $k \geq 0$, $F(k)$ is a right-handed box.
-\item For every $k$, $F(k+1) \subset F(k)$
-\item
+ \item For every $k \geq 0$, $F(k)$ is a right-handed box;
+\item for every $k$, $F(k+1) \subset F(k)$;
+\item and,
 \[
-\lim_{k \to \infty} \mu_f(F(k))= 0
+\lim_{k \to \infty} \mu_f(F(k))= 0.
 \]
 \end{itemize}
 \label{prop:finalfamily1}
 \end{proposition}
 \begin{proof}
-\begin{itemize}
-    \item We first prove that an accordion $F(k)$ is a right-handed box. Consider first a top vertical accordion $F_{\vec{p_1},p_2,q_1,q_2}(k)$ (the other types are similar).
-    We know that $[p_1,p_2,q_1,q_2]$ form a RH system, so 
+We first prove that an accordion $F(k)$ is a right-handed box. Consider first a top vertical accordion $F_{p_1,q_1,p_2,\vec{q_2}}(k)$ (the other types are similar).
+    We know that $[p_1,q_1,p_2,q_2]$ form a RH lift system, so 
     $p_i q_i$ cross $x$ to the right
         and $q_2 x^n p_1$ cross $q_1x^n p_2$ to the right (by Definition~\ref{def:crossing}). 
-        By north-south dynamics of $q_1 x q_1^{-1}$, the translates of $\tilde{x}$ look like in Figure~\ref{fig:finalfamily}.
+        By north-south dynamics of $q_1 x q_1^{-1}$, the translates of $\ora{x}$ look like in Figure~\ref{fig:finalfamily}.
         The following properties follow immediately.
     
     \begin{enumerate}
@@ -81,10 +85,12 @@ The following Proposition will be key to control how much $\mu_f$ when the right
         \item $p_2 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.   
         \item   $q_1 x^k q_1^{-1} q_2x^n p_1$ cross $q_1x^n p_2$ to the right.
     \end{enumerate} 
+    For property (2') of a right-handed lift system, we note that $p_1^{(k)} P_2^{(k)}=p_1 P_2$ is not a multiple of $x$ by hypotheses. On the other hand, $Q_1^{(k)}q_2 = x^k q_1^{-1}q_2$, which cannot be a power of $x^k$ since $q_1^{-1}q_2$ is assumed to cross $x$ to the right.
+    
     This proves that top vertical accordions are right handed boxes. The proof is similar for other types of accordions.
-    \item We prove that for a fixed RH sytem $[p_1,p_2,q_1,q_2]$ and a corresponding accordion $F(k)$, $\lim_{k \to \infty} \mu(F(k))=0$.
-    We give the argument for type $F_{p_1,p_2,q_1,\vec{q_2}}$, the other types are similar.
-    We will first go from the box notation to the orbit notation, since the latter is better suited for the definition of $\mu_f$.
+We now prove that for a fixed RH lift system $[p_1,q_1,p_2,q_2]$ and a corresponding accordion $F(k)$, $\lim_{k \to \infty} \mu(F(k))=0$.
+    We give the argument for type $F_{p_1,q_1,p_2,\vec{q_2}}$, the other types are similar.
+    We will first go from the RH lift system notation (boxes) to the RH system notation (orbits of boxes), since the latter is better suited for the definition of $\mu_f$.
     We have
  \begin{align*}
      a &= p_1 q_1 \\
@@ -134,7 +140,6 @@ So, we are left to evaluate the nested limit
         -\bigl(f([cx^{k+2}])-f([x^{k+2}])\bigr)-\bigl(f([ex^{n-2}])-f([x^{n-2}])\bigr).
     \end{align*}
     Finally, this iterated limit is 0 by  Lemma~\ref{lem:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
-    \end{itemize}
 \end{proof}
 
 We now use Proposition~\ref{prop:finalfamily1} to prove that $\mu_f$
@@ -187,7 +192,7 @@ edges of~$B$ with small mass.
 
 \begin{proof}
 Let $H(k)$ be a right horizontal accordion, and $F(k)$ a top vertical accordion.
-We tan take $k$ large enough so that $\mu_f(H(k)) < \epsilon/2$,  $\mu_f(F(k)) < \epsilon/2$, and then let $W(B,\epsilon) = B \cup H(k) \cup V(k)$.
+We can take $k$ large enough so that $\mu_f(H(k)) < \epsilon/2$,  $\mu_f(F(k)) < \epsilon/2$, and then let $W(B,\epsilon) \coloneqq B \cup H(k) \cup V(k)$.
 \end{proof}
   
 In the setting of Lemma~\ref{lem:extend2}, also set
@@ -245,7 +250,7 @@ additive and countably subbadditive pre-measure on $\mathcal{R}$. By covering by
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on $\mathcal{A}_{\mathcal{R}}$, the $\sigma$-algebra generated by the semi-ring $\mathcal{R}$.
 Let $\mathcal{B}$ be the Borel $\sigma$-algebra of $G(S)$.
 Since $\mathcal{A} \subset \mathcal{B}$, we have $\mathcal{A}_{\mathcal{R}} \subset \mathcal{B}$.
-On the other hand, given a half-open box of geodesics $B=[a,b) \times [c,d) \in \mathcal{B}$, it can be written as an intersection of two countable unions of boxes in $\mathcal{R}$, since, by Proposition~\ref{prop:density}, the set of elements in $\mathcal{R}$ are dense in the subset of half-open rectangles of $G(S)$ (this is the same as the standard argument one uses to prove the Borel $\sigma$-algebra generated by half-rectangles with rational endpoints is the usual Borel $\sigma$-algebra).
+On the other hand, given a half-open box of geodesics $B=[a,b) \times [c,d) \in \mathcal{B}$, it can be written as an intersection of two countable unions of boxes in $\mathcal{R}$, since, by Proposition~\ref{prop:density}, the set of elements in $\mathcal{R}$ is dense in the subspace of half-open rectangles of $G(S)$ (this is the same as the standard argument one uses to prove the Borel $\sigma$-algebra generated by half-rectangles with rational endpoints is the usual Borel $\sigma$-algebra).
 Note that $\mu_f$ is locally finite, since any compact subset of $G(S)$ can be covered by one of the boxes in $\mathcal{R}$, where the measure takes a finite value.
 Therefore, $\mu_f$ is a Borel and locally finite measure. 
 By definition of the pre-measure $\mu_f$, this measure $\mu_f$ is $\pi_1(S)$-invariant. Finally, $\mu_f$ is non-negative by Proposition~\ref{prop:box-positive}.
@@ -258,6 +263,7 @@ In order to obtain an unoriented geodesic current, we can take
 \[
 \overline{\mu_f} \coloneqq 1/2(\mu_f + \sigma_*(\mu_f)).
 \]
+where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$ the induced push-forward map on oriented geodesic currents.
 \end{remark}
 
 \subsection{
@@ -272,7 +278,7 @@ $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
 $y_-, z, y \cdot z, y_+$ are in cyclic order.
 Then
 $(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
-$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing geodesics).
+$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing geodesics, introduced before Equation~\ref{eq:intersection}).
 
 First we note that the following.
 
@@ -285,7 +291,7 @@ i(\mu, C) = \mu((y_+,y_-) \times [z,y \cdot z)).
 \begin{proof}
 The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the element representing the oriented curve $C$, then for any $q \in \ora{y}$,
 \[
-\mu[q, y \cdot q) = \mu((y_+,y_-) \times [z,y \cdot z))
+\mu(G[q, y \cdot q))= \mu((y_+,y_-) \times [z,y \cdot z))
 \]
 for every $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
 $y_-, z, y \cdot z, y_+$ are in cyclic order.
@@ -313,21 +319,23 @@ In particular, $\overline{\mu_f}$ is unique.
 \label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
-We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \tilde{y} \}$ in $\DG(\Sigma)$.
+We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \ora{y} \}$ in $\DG(\Sigma)$.
 Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
 
 
 Choose a conjugate $y$ in $[y]$, 
 and $p_1, q_1 \in \pi_1(S,*)$, so that $x$ crosses $p_1$ to the right, i.e., $p_1^{-1}$ crosses $x$ to the right, and $p_1$ crosses $y$ to the right.
 Furthermore, choose $q_1$ so that $q_1$ crosses $x$ and $y$ to the right. 
-Then, by Lemma~\ref{lem:rhs}, we have a configuration of lifts like the upper left and right lifts of $\wt{x}$ in Figure~\ref{fig:fundamental}.
-Moreover, this choice guarantees that $q_1 p_1$ crosses $y$ to the right and thus, by Lemma~\ref{lem:rhs}, $\wt{y}$ is parallel to $q_1 p_1 \cdot \wt{y}$.
+Then, by Lemma~\ref{lem:rhs}, we have a configuration of lifts like the upper left and right lifts of $\ora{x}$ in Figure~\ref{fig:fundamental}.
+Moreover, this choice guarantees that $q_1 p_1$ crosses $y$ to the right and thus, by Lemma~\ref{lem:rhs}, $\ora{y}$ is parallel to $q_1 p_1 \cdot \ora{y}$.
 
 For each $n$, define the following elements of $\pi_1$:
 \begin{align*}
-  p_1^n &\coloneqq p_1 & q_1^n &\coloneqq y^n q_1\\
-  p_2^n &\coloneqq p_1 y &q_2^n &\coloneqq y^{-(n+1)} q_1.
+  p_1^{(n)} &\coloneqq p_1 & q_1^{(n)}&\coloneqq y^n q_1\\
+  p_2^{(n)} &\coloneqq p_1 y &q_2^{(n)} &\coloneqq y^{-(n+1)} q_1.
 \end{align*}
+
+We furthermore need to make further assumptions on $p_1,q_1,p_2,q_2$ in order to guarantee assumption (2') in the definiton of RH lift system. Namely $p_1^{(n)} P_2^{(n)}=p_1 Y^n p_1^{-1}$ cannot be a power of $x$, for any $n$, and $Q_2^{(n)}q_1^{(n)} = Q_1 Y^{-2n-1}q_1$ cannot be a multiple of $x$ for any $n$. These conditions can be further guaranteed by slightly perturbing our previous choice of $p_1,q_1,p_2,q_2$, since all the conditions are open, and the set of lifts of closed geodesics is dense in the space of geodesics.
 \begin{claim}
 The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a RH system, i.e.,
 \begin{enumerate}
@@ -384,7 +392,7 @@ Therefore, $\overline{\mu_f}$ is a geodesic current with the same intersection n
 
 \begin{remark}
 The end of the proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. In fact, note that before that step, the proof shows the curve functional induced by the intersection number must be symmetric. 
-The symmetry condition has also been used in Proposition~\ref{prop:cont_conn_disc}, and will be used in proving the equivalent algebraic statement Theorem~\ref{thm:intersections_group}.
+The symmetry condition has also been used in Corollary~\ref{cor:cont_conn_disc}, and will be used in proving the equivalent algebraic statement Theorem~\ref{thm:intersections_group}.
 This condition is thus crucial to recover curve functionals as intersection numbers. In Section~\ref{sec:asymmetric} we show that the asymmetric intersection numbers do not satisfy an analogous duality result.
 \end{remark}
 
@@ -401,12 +409,12 @@ First, extend $\overline{f}$ linearly to $\mathbb{R}_{\geq 0}$-formal linear com
 \]
 for every $s,t \geq 0$, and $a,b \in \Gamma$.
 
-To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that theorem to conclude.
+To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
 The only condition that requires verification is smoothing.
 
-Start by assuming the essential crossing arises from an essential crossing between two curves $C_1$ and $C_2$ represented by elements $a,b$, and we will conclude disconnected smoothing.
-In this case, either $(\ora{a},\ora{b})$ are $R$-crossing, or $(\ora{a},\ora{b})$ are $L$-crossing. If $(\ora{a},\ora{b})$ is $R$-crossing, hence oriented disconnected smoothing is satisfied by the hypothesis.  If $(\ora{a},\ora{b})$ is $L$-crossing, $(\ora{b},\ora{a})$ and, similarly, the hypothesis tells us
+Start by assuming the essential crossing arises from an essential crossing between two curves $C_1$ and $C_2$ represented by elements $a,b$ (by Proposition~\ref{prop:crossings-triality}), and we will conclude disconnected smoothing.
+In this case, either $(\ora{a},\ora{b})$ are $R$-crossing, or $(\ora{a},\ora{b})$ are $L$-crossing. If $(\ora{a},\ora{b})$ is $R$-crossing, then oriented disconnected smoothing is satisfied by the hypothesis.  If $(\ora{a},\ora{b})$ is $L$-crossing, $(\ora{b},\ora{a})$ is $R$-crossing and, similarly, the hypothesis tells us
 \[
 \overline{f}(a) + \overline{f}(b) = \overline{f}(b) + \overline{f}(a) \geq \overline{f}(ba)= \overline{f}(ab)
 \]
@@ -414,7 +422,7 @@ where just used in the last equality that $\overline{f}$ is conjugacy invariant.
 Now, we assume an essential self-crossing of a multi-curve, and prove connected smoothing.
 
 Using Proposition~\ref{prop:crossings-triality}, assume the essential self-crossing is realized by the self-intersection of a curve $[\gamma]=[ab]$, where $\ora{a},\ora{b}$ are parallel (the anti-parallel case is similar).
-If $\ora{a},\ora{b}$ are $R$-parallel we have, by assumption, we have that oriented connected smoothing is satisfied.
+If $\ora{a},\ora{b}$ are $R$-parallel, by assumption, we have that oriented connected smoothing is satisfied.
 If $\ora{b},\ora{a}$ are $L$-parallel, then $\ora{a},\ora{b}$ are $R$-parallel. Hence
 \[
 \overline{f}(ab)=\overline{f}(ba) \geq \overline{f}(b) + \overline{f}(a) = \overline{f}(a) + \overline{f}(b).
@@ -424,7 +432,7 @@ If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
 \overline{f}(ab)=\overline{f}(ba)\geq \overline{f}(b) + \overline{f}(a) = \overline{f}(a) + \overline{f}(b). 
 \]
 Hence, oriented connected smoothing is satisfied in this case, too.
-Finally, by Lemma~\ref{lem:oriented_smoothing_unoriented} $\overline{f}$ satisfies smoothing. We are thus under the hypotheses of Theorem~\ref{thm:intersect}.
+Finally, by Corollary~\ref{cor:oriented_smoothing_unoriented} $\overline{f}$ satisfies smoothing. We are thus under the hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 
 

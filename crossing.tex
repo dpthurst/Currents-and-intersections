@@ -227,6 +227,7 @@ Free homotopy means in particular invariance under simultaneous
 conjugation: $[a * b] = [caC * cbC]$. A \emph{minimal} representative of $[a * b]$
 is one with a minimum number of transverse crossings.
 
+\begin{comment}
 \DPTtodo{Next two \P{} a little repetitive of \S 3.1}
 Finally, if we fix a hyperbolic structure on~$S$, for a non-trivial
 element $a \in \pi_1(S,*)$ let $\ora{a}$ be the geodesic in
@@ -243,6 +244,7 @@ the metric.
 In principle one should invoke a representation $\rho \colon \pi_1(S)
 \to \Isom^+(\bbH^2)$, but since nothing depends on this representation
 we will suppress it.
+\end{comment}
 
 \begin{definition}\label{def:crossing}
   Depending on the (counterclockwise) cyclic order of the endpoints,
@@ -505,12 +507,12 @@ We now turn to some elementary lemmas about crossing.
 
 \subsection{Position of axes \texorpdfstring{$\protect\ora{aB}$}{aB} and \texorpdfstring{$\protect\ora{Ba}$}{Ba} in parallel  case}
 \label{subsec:parallel_aB}
-In order to check the smoothing property in more algebraic settings, we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be useful in particular when curve functionals arise from translation lengths of actions on real trees, as in Section~\ref{sec:skora}.
+In order to better understand the relation between oriented and unoriented smoothings later on we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be crucially used in the proof of Theorem~\ref{thm:intersections_group}, which will rely on Corollary~\ref{cor:oriented_smoothing_unoriented} and Corollary~\ref{cor:cont_conn_disc}. 
 Observe that the relative of position of $\ora{aB}$ and $\ora{Ba}$ is completely determined  when $\ora{a}$ and $\ora{b}$ cross, by Lemma~\ref{lem:righthandedfoundation}(I). However, when $\ora{a}$ and $\ora{b}$ are parallel (or anti-parallel), several cases arise. In this section we study these cases.
 
-If $C$ represents a curve with a self-intersection decomposing as $ab$, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
+If $C$ represents a curve with a self-intersection decomposing as $ab$, by Proposition~\ref{prop:crossings-triality}, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
 
-One of the resolutions of $[ab]$ is the multi-curve $[a] \cup [b]$.
+One of the resolutions of $[ab]$ is the multi-curve $[a] [b]$.
 The lifts of $[a]$ and $[b]$ to the universal cover correspond to axes $\ora{a}$ and $\ora{b}$ which are parallel.
 It remains to determine the position of the lifts $\ora{aB}$ and $\ora{Ba}$.
 
@@ -569,20 +571,18 @@ If $\ora{a},\ora{b}$ are R-parallel, then $\ora{ba}$ and $\ora{bA}$ are parallel
 
 \begin{remark}
 Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are antiparallel). Let us show a concrete example where this situation arises.
+Namely, assuming $\ora{a}$ and $\ora{b}$ are parallel, we will show an example where $\ora{aB}$ and $\ora{Ba}$ cross.
+Consider a pair of disjoint simple closed curves $g$ and $h$, sitting as the cuffs of an embedded pair of pants, and oriented in such a way that $\ora{g}$ and $\ora{h}$ are parallel.  For the following, compare Figure~\ref{fig:crossing_aB}. Define $a \coloneqq HGH$ and $b \coloneqq HGHGH$.
+We claim that $a$ and $b$ are parallel. First note that since $g$ and $h$ are parallel, so are $H$ and $G$, and hence $HG$ and $GH$ cross and $H$ and $GH$ are parallel. It also follows that $HGH$ and $GH$ are parallel, which implies that $HGH$ and $HGHGH$ are parallel, as desired. Finally, we show that $\ora{aB}$ and $\ora{Ba}$ cross. Note that $aB=(HGH)(hghgh)=gh$ and $Ba=(hghgh)(HGH)=hg$. Since $g,h$ are parallel, it follows that $gh$ and $hg$ cross, concluding the example.
 
-\DPTtodo[inline]{More text to be written here. It's awkward that I
-  named the generators of $\pi_1(P)$ by $a$ and $b$. Maybe $g$ and $h$
-  should be used above? I have not double-checked the cases}
-\DMGtodo[inline]{Not sure about smoothing at $x_3$. Can you double
-  check?}
-\DPTtodo[inline]{On it}
-In the following example, smoothing at $x_1$
-gives $\ora{aB}$ anti-parallel to $\ora{Ba}$, smoothing at $x_2$ gives
-$\ora{aB}$ crossing $\ora{Ba}$, and smoothing at $x_3$ gives
-$\ora{aB}$ parallel to $\ora{Ba}$.
-\[
-  \mfigb{curves-42}
-\]
+\begin{figure}
+\centering{
+\svgfignormal{crossing_aB}
+\caption{This figure shows that $a \coloneqq HGH$ and $b \coloneqq HGHGH$ are parallel assuming that $g,h$ are parallel. It illustrates an example where $a,b$ are parallel and $aB,Ba$ cross. }
+\label{fig:crossing_aB}
+}
+\end{figure}
+
 \end{remark}
 
 

@@ -44,23 +44,23 @@ Many natural notions of length do satisfy all these four properties and they hav
 \begin{enumerate}
    \item Intersection number with a fixed geodesic current. See \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}.
     \item Hyperbolic lengths  \cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
-    \item More generally, length w.r.t. negatively curved Riemannian metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} 
+    \item More generally, length w.r.t. negatively curved Riemannian metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}.
     \item Even more generally, non-positively curved Riemannian metrics
-\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
-\item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}
-\item More generally, lengths with respect to negatively curved  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}
-\item Non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}
+\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}.
+\item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
+\item More generally, lengths with respect to negatively curved  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
+\item Non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}.
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
-    \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ19:PositivelyRatioed}
-    \item Stable lengths associated to embedded graphs, as we showed in~\ref{thm:dual_embeddedgraph}. See also Theorem~\ref{cor:generalization_wordlength}
+    \item Certain lengths associated to Anosov representations \cite[Proposition~2.24]{MZ19:PositivelyRatioed}.
+    \item Stable lengths associated to embedded graphs, as we showed in~\ref{thm:dual_embeddedgraph}. See also Theorem~\ref{cor:generalization_wordlength}.
 \end{enumerate}
 
-On the other hand, not all functions on curves satisfy the $\AConvex$ properties, even some that extend continuously to geodesic currents.
+On the other hand, not all functions on curves satisfy the $\AConvex$ properties, not even some that extend continuously to geodesic currents.
 
 \begin{enumerate}
-    \item Asymmetric curve functionals, such as the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, Green metrics coming from asymmetric from generating sets (see Subsection~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+    \item Asymmetric curve functionals, such as the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, stable lengths of Green metrics coming from asymmetric from generating sets (see Subsection~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Subsection~4.8]{MGT21:Smoothings}). All of these examples extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
-    It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S)\]
+    It's an example of curve functional illustrating the proper containtment \[\AConvex(S) \subsetneq \Convex(S).\]
     \item Although word length w.r.t. an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
     \item Stable lengths associated to quasi-fuchsian representations satisfy quasi-smoothing \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
     \begin{question}
@@ -75,7 +75,7 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
       This is an example of a curve functional which is not in
       $\QConvex(S)$, even though it does extend to geodesic currents
       by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
-\item Translation lengths associated to embedded graphs on a surface whose actions are not proper \cite[Proposition 11]{Bonahon91:CurrentsGroups} do not satisfy quasi-smoothing and, moreover, do not extend to geodesic currents. 
+\item Translation lengths associated to embedded graphs on a surface whose actions are not proper \cite[Proposition 11]{Bonahon91:CurrentsGroups} do not satisfy quasi-smoothing and, moreover, do not extend continuously to geodesic currents. 
 Suppose $G$ is acting on a space $X$, and let $\ell$ be the stable length of the action. Suppose $\ell$ is non-trivial. Let $N$ be an infinite normal subgroup of $G=\pi_1(S)$ so that $\ell(b)=0$ for all $b \in N$. Let $a \in G$, and fix $b\in N$. Then $\frac{1}{2n} a^n b a^{-n} b$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
 Hence, $\ell$ cannot extend continuously. In fact, $\ell$ does not satisfy smoothing. By the above argument,  the endpoints of elements axes of elements of $N$ are dense in the space of geodesics of $G$. Hence, for a given $a \in G$ with $\ell(a)>0$, we can find $b \in N$ so that $\ora{a}$ and $\ora{b}$ are R-parallel.
 This forces $ba^n$ and $ba^{-n}$ to be parallel, by Lemma~\ref{lem:ba_parallel_Ab}.
@@ -85,7 +85,7 @@ If smoothing was satisfied, we would have
 \]
 which is violated, since the left hand side is $0$.
 On the other hand, the right hand side is not zero.
-\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[6.1]{GML09:ProperAffine}. Strictly speaking, the paper deals with the case of surfaces with boundary, but the same arguments go through for closed surfaces, by~\cite{Lab01:Diffusion}
+\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[6.1]{GML09:ProperAffine}. Strictly speaking, the paper deals with the case of surfaces with boundary, but the same arguments go through for closed surfaces, by~\cite{Lab01:Diffusion}.
 \end{enumerate}
 
 For an example of a curve functional that does not extend continuously to geodesic currents (and thus does not satisfy smoothing, by~\cite[Theorem~A]{MGT21:Smoothings}), we have the following.

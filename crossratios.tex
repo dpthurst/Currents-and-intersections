@@ -22,11 +22,13 @@ $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 \end{definition}
 
 There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Otal92:Symplectique}, Martone-Zhang~\cite{MZ19:PositivelyRatioed}, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios}). 
-Typically the authors consider them to be continuous or even H\"older continuous, but we will not assume this here.
+Typically the authors consider them to be continuous or even H\"older continuous, but we will not assume this here (as in~\cite{BIPP21:PositiveCrossratios}). Furthermore, in all of the above definitions, flip-invariance is assumed.
+For an even more general definition of cross-ratio where flip-invariance is not assumed, see Labourie's~\cite[Definition~3.1]{L07:Crossratio}. We will always assume our cross-ratios are flip-invariant.
+
 In this section we show that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}, and thus induce geodesic currents.
 This recovers a result of~\cite{BIPP21:PositiveCrossratios}.
 
-Generalized cross-ratios were studied in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios}.
+Cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios}.
 In this setting, there are two natural cross-ratios associated to a geodesic current.
 \[
 [a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))
@@ -44,9 +46,9 @@ Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the \emph{
 \]
 The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is well-defined.
 
-Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[]^{\pm}$ it induces have the same period. Thus, in general, cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.a]{L95:BordDesVar}.
-
-
+Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.a]{L95:BordDesVar}.
+In fact, if $\mu$ has no atoms, the two cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are easily seen to be equal.
+Hence, it will follow that, for non-atomic geodesic currents, there is a one-to-one correspondence between cross-ratios and geodesic currents.
 
 From the properties of a generalized cross-ratio, it is easy to see that $\ell$ is symmetric.
 
@@ -239,10 +241,12 @@ using positivity of cross-ratio and symmetry, we get
 
 \begin{theorem}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
+Moreover, periods uniquely determine cross-ratios arising from non-atomic geodesic currents.
 \end{theorem}
 \begin{proof}
 By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossratio_disconnected_smoothing}and ~\ref{lem:crossratio_connected_smoothing} above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
-On the other hand, a geodesic current $\mu$ induces two cross-ratios $\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
+On the other hand, a geodesic current $\mu$ induces two cross-ratios $[]^\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
+Finally, if $\mu$ has no atoms, the two cross ratios are equal, and hence the claim follows.
 \end{proof}
 
 

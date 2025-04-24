@@ -41,31 +41,29 @@ One can view this theorem in analogy to Poincaré duality for closed surfaces, w
 As a consequence of Theorem~\ref{thm:intersect} we obtain a 
 many new dual geodesic currents, generalizing many previous constructions for Riemannian metrics of negative curvature on $S$, and certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone, Con18:MarkedNonpos}). In Appendix~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
 In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
-    Our result also obtains dual geodesic currents for stable lengths associated to embedded graphs and generalizes work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
+    Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs and generalizes work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
 
-All the examples above extend continuously to geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings} or simply  Bonahon's theorem of continuous bilinear extension of geometric intersection number. 
-This strengthens a previous result in~\cite[Theorem~1.5]{EPS:CountingCurves} given for arbitrary Riemannian lengths as well as for a much more general class of metrics: by Theorem~\ref{thm:intersect} we obtain a continuous extension \emph{as an intersection number}, 
-
-Our result also obtains dual geodesic currents for stable lengths associated to embedded graphs and generalizes work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
+All the examples above extend continuously to geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings} or simply by Bonahon's theorem of continuous bilinear extension of geometric intersection number. 
+This strengthens a previous result in~\cite[Theorem~1.5]{EPS:CountingCurves} given for arbitrary Riemannian lengths as well as for a much more general class of metrics: by Theorem~\ref{thm:intersect} we obtain a continuous extension \emph{as an intersection number}.
     
     As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface. This, in particular, answers a question of Neumann-Coto~\cite{NC01:ShortestGeodesics}.
 
     The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
-    For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases.
+    For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases, as follows.
 
   For $a,b \in \pi_1(S)$,
   $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some hyperbolic structure fixed once and for all), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
       ccw order on the boundary at infinity. See
       Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing} for more details.
       From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
-      Using this we can state an equivalent version of Theorem~\ref{thm:intersect} can be phrased as follows.
+      Using this we can state an equivalent version of Theorem~\ref{thm:intersect}.
 
       
 \begin{mainthmprime}
 Let $a,b \in \pi_1(S)$.
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
 \begin{enumerate}
-\item class invariant $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
+\item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
 \item stable: $f(a^n) = nf(a)$.
 \item oriented smoothing:
  \begin{align}
@@ -84,7 +82,7 @@ Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$
 \end{mainthmprime}
 
 See subsection~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to equations~\ref{eq:conn_oriented} \emph{and} \ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
-These hypotheses might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing of $f$ implies smoothing of $\overline{f}$ (Lemma~\ref{lem:oriented_smoothing_unoriented}).
+These hypotheses might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing of $f$ implies smoothing of $\overline{f}$ (Corollary~\ref{cor:oriented_smoothing_unoriented}).
 
 Furthermore, neither one of conditions~\ref{eq:conn_oriented} and ~\ref{eq:disconn_oriented} imply each other: see Subsection~\ref{subsec:mainhypotheses}, Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
 
@@ -104,16 +102,15 @@ As a consequence of the Theorem, we can further characterize which curve functio
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}. Then,
 \begin{itemize}
-\item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}:
+\item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}: for every \emph{crossing} pair $g,h \in \pi_1(S)$ 
 \begin{equation*}
-      f\left(\mfig{curves-10}\right) = \max \left\{ f\left(\mfig{curves-11}\right),f\left(\mfig{curves-12}\right) \right\}.
+      f\left(g\right) +  f\left(h\right)  = \max \left\{ f\left(gh\right),f\left(gh^{-1}\right) \right\}.
     \end{equation*}
-    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition:\[
-        \lambda \left(\mfig{curves-10}\right) = \lambda \left(\mfig{curves-11}\right) + \lambda \left(\mfig{curves-12}\right),
+    \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition: for every \emph{crossing} pair $g,h \in \pi_1(S)$ \[
+        \lambda \left(g\right) \lambda \left(h\right) = \lambda \left(gh\right) + \lambda \left(gh^{-1}\right),
   \]
   where $\lambda( \cdot ) \coloneqq 2\cosh(f(\cdot)/2)$.
 \end{itemize}
-    The left-hand-side of both equations depicts an essential crossing between any pair of curves $C_1$ and $C_2$, and the right-hand-side shows the two possible resolutions.
     \label{mainthm:apps}
 \end{mainthm} 
 
@@ -137,7 +134,7 @@ A minimal action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$ is dual to a measured
 \label{mainthm:skora}
 \end{mainthm}
 
-Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is a finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
+Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 
 From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to \emph{small} $\Gamma$-invariant $\mathbb{R}$-trees (i.e. actions with cyclic edge stabilizers), or, equivalently, are dual to a measured lamination (i.e., a geodesic current satifying $i(\alpha, \alpha)=0$).
 
@@ -164,18 +161,15 @@ small actions of a non-elementary hyperbolic group $\Gamma$.
 
 \subsection{Generalized cross-ratios}
 
-Finally, we subsume previous work of Martone-Zhang and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every generalized cross-ratio. Every generalized cross-ratio induces a curve functional, its \emph{period}, giving a function
+Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$. In fact, every generalized cross-ratio induces a curve functional, its \emph{period}, giving a function
 \[
-\pi \colon \operatorname{CR}(S) \to \CurveFunct(S).
+\ell \colon \pi_1(S) \to \mathbb{R}.
 \]
-On the other hand, \cite{BIPP21:PositiveCrossratios} associate, to every cross-ratio, a geodesic current,
-\[
-c \colon \operatorname{CR}(S) \to \GC(S).
-\]
-We show that period curve functionals (i.e., the image of the map $\pi$) satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce geodesic currents.
+On the other hand, \cite{BIPP21:PositiveCrossratios} associate, to every cross-ratio, a geodesic current.
+We show that any period curve functional satisfies the conditions of our main Theorem~\ref{thm:intersect} and thus induces a geodesic current.
 
 \begin{mainthm}
-There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
+There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents. Moreover, periods uniquely determine cross-ratios arising from non-atomic geodesic currents.
 \end{mainthm}
 
 
