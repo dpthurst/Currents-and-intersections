@@ -40,7 +40,7 @@ These equivalences follow from Theorem~\ref{thm:intersect} and \cite[Theorem~4.1
 \end{proof}
 
 \begin{remark}
-Since the space of geodesic currents is locally compact, this shows $\AConvex$ is locally compact in the product topology, which is not obvious.
+Since the space of geodesic currents is locally compact (see Proposition~\ref{prop:local_compactness}), this shows $\AConvex$ is locally compact in the product topology, which is not obvious.
 See also Subsection~\ref{subsubsec:convexity_charts} for a related discussion.
 \end{remark}
 
@@ -89,7 +89,7 @@ i(M, C) = \sum_{i=1}^n \lambda_i n_i.
 This property does not seem to characterize weighted multi-curves (see~\cite{Agol25:Spectrum}).
 
 \subsection{Embedded graphs}
-
+\label{subsec:embedded_graphs}
 Related to multi-curves, we also obtain geodesic currents dual to stable lengths associated to embedded graphs in surfaces.
 
  Let $\iota \colon \mathcal{G} \to S$ be an \emph{embedded graph}, i.e., an embedding of a finite graph in $S$ that is filling, in the sense that the complementary regions are disks, or equivalently $i_*$ is surjective on $\pi_1$.
@@ -187,6 +187,7 @@ The other claim is similar.
 \end{proof}
 
 The above lemma can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
+Using this result, we can prove the following characterization of measured laminations among curve functionals.
 
 \begin{theorem}
 $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
@@ -249,6 +250,8 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
 \begin{proof}
 Suppose $f$ is a curve functional satisfying max-smoothing, additivity, stability and homogeneity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous and homogeneous, and noting that if $f$ satisfies disconnected smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
 \end{proof}
+
+The fact that measured laminations satisfy max-smoothing was proven by the second author in~\cite{Thu00:GeometricIntersection} using different techniques. A related characterization of measured laminations in terms of valuations in the character variety has been proven recently in~\cite[Theorem~4]{MS24:Valuations}. \DMGtodo{added this reference}
 
 \subsection{Liouville currents}
 \label{subsec:liouville}
@@ -318,27 +321,6 @@ Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current
 On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}).
 \end{proof}
 
-\begin{remark} The $\lambda$-length smoothing relation in the above result can be seen as a geometric incarnation of the $\SL(2,\mathbb{R})$-trace relation in terms of hyperbolic length. There are examples of hyperbolic metrics with conical singularities of integral multiples of $2\pi$, or degenerate metrics which lie in the representation variety of $\pi_1(S)$ into $\PSL(2,\mathbb{R})$~\cite[7]{Tan94:CP1}, and yet do not satisfy the $\lambda$-length smoothing relation. For example, hyperbolic conical metrics induce geodesic currents by~\cite{HP97:RigidityNegCurvedCone} (and its marked length rigidity problem has been studied recently in~\cite{ELS21:Hyperbolic}), and the degenerate metrics can be seen to satisfy the hypotheses of our Theorem~\ref{thm:intersect}, and thus have dual geodesic currents. However, since they are not hyperbolic metrics, they cannot satisfy the $\lambda$-length relation by Theorem~\ref{prop:char_liouville} above. We expect all points in the representation variety to similarly induce dual geodesic currents.
-\end{remark}
-
-A scrutiny of the above proof shows that the following result also follows.
-
-\begin{theorem}
-Let $f \colon \Gamma \to \mathbb{R}$ be a function satisfying the hypothesis of Theorem~\ref{thm:intersections_group}. Suppose that, in addition, for every $R$-crossing pair $(a,b)$,
-\begin{equation}
-       \lim_n \exp \left[ \bigl( f\left(a^nb^n\right) -  f(a^n) - f(b^n)  \bigr)/2 \right] + \exp  \left[ \bigl( f(a^nB^n) -  f(a^n) - f(b^n)\bigr)/2 \right]=1, \label{thm:exponential_smoothing}
-\end{equation}
-where $B$ denotes the inverse of $b$. We will refer to this condition as the \emph{exponential disconnected smoothing (EDS)}.
-Then there exist a point $X \in \Teich(S)$ so that the geodesic current  $\mu_f$  in Theorem~\ref{thm:intersections_group} is the Liouville current $L_X$ of $X$, i.e., $f$ is dual to $L_X$. Moreover, any $i(L_X, \cdot)$, for any $X \in \Teich(S)$ satisfies EDS.
-\label{thm:liouville_char_EDS}
-\end{theorem}
-\begin{proof}
-In the proof of Theorem~\ref{prop:char_liouville}, the $\lambda$-length hypotheses was used in order to guarantee EDS. On the other hand, EDS implies 
-\[
-e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1
-\]
-for any box of geodesics $B$, and hence, by Theorem~\ref{thm:bonahonliouville}, $\mu$ is a Liouville current. Hence, again, the disconnected $\lambda$-length smoothing relation is satisfied (see Appendix~\ref{sec:hyp-par}).
-\end{proof}
 \begin{remark}
 The $\lambda$-length functional appears naturally in the study of the skein algebra of a surface (see, for example, \cite[3. Skein algebra]{Thurston14:PBI}). 
 \end{remark}
