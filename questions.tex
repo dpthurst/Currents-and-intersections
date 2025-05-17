@@ -1,4 +1,4 @@
-  \subsection{Further questions}
+\subsection{Further questions}
 \label{sec:questions}
 
 \subsubsection{Open surfaces}
@@ -108,21 +108,31 @@ This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \l
 
 \begin{question}
 Does $\ell_{\mu}$ satisfy the hypotheses of
-Theorem~\ref{thm:intersections_group}? If so, does it satisfy the
+Theorem~\ref{thm:intersections_group} (and thus come from a geodesic current)?
+\label{q:green-smoothing}
+\end{question}
+
+\begin{question}
+Does $\ell_\mu$ further satisfy the
 hypotheses in Theorem~\ref{thm:char_liouville_strong} (and thus come
 from a hyperbolic metric)?
 \label{q:Green}
 \end{question}
 
-If any of the answers to these questions is negative for every $\mu$,
-they would imply a negative answer to the following question.
+If answers to either of these questions is negative for every $\mu$,
+they would imply a negative answer to the following well-known question.
 
 \begin{question}
-Given $\Sigma$, is there a finitely-supported probability measure $\mu$ on $\Gamma=\pi_1(\Sigma)$ so that the induced translation length $\ell_{\mu}$ is dual to the Liouville current $\mathcal{L}_{\Sigma}$?
+Given $\Sigma$, is there a finitely-supported probability measure
+$\mu$ on $\Gamma=\pi_1(\Sigma)$ so that the induced translation length
+$\ell_{\mu}$ is dual to the Liouville current $\mathcal{L}_{\Sigma}$?
 \label{q:singularity}
 \end{question}
 
-By work of Cantrell-Tanaka~\cite[Theorem~1.2]{CT22:Manhattan} and \cite[Theorem~0.1]{GMM15:Entropy}, a negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ (see~\cite[Conjecture, page~~259]{KLP11:Singularity}). In short, by these results Question~\ref{q:singularity} is equivalent to asking if there is a probability measure $\mu$ on $\Gamma$ so that the induced 'hitting measure' $\nu_{\mu}$ on $\partial \Gamma$ is absolutely continuous to the Lebesgue measure (coming from the hyperbolic metric $X$) on $\partial \Gamma$.
+\DPTtodo{Verify GMM thm number}
+\DPTtodo{Maybe say expect an affirmative answer to
+  Question \ref{q:green-smoothing} in embedded case}
+By work of Cantrell-Tanaka~\cite[Theorem~1.2]{CT22:Manhattan} and \cite[Theorem~0.1]{GMM18:Entropy}, a negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ (see~\cite[Conjecture, page~~259]{KLP11:Singularity}). In short, by these results Question~\ref{q:singularity} is equivalent to asking if there is a probability measure $\mu$ on $\Gamma$ so that the induced 'hitting measure' $\nu_{\mu}$ on $\partial \Gamma$ is absolutely continuous to the Lebesgue measure (coming from the hyperbolic metric $X$) on $\partial \Gamma$.
 Kosenko-Tiozzo~\cite{KT22:Inequality} have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with highly symmetric fundamental domains.
 It would be interesting to see if their methods can be pushed further to answer Question~\ref{q:Green}. Even a positive answer to the first part of Question~\ref{q:Green} would be interesting, since then Theorem~\ref{thm:intersect} would give a dual geodesic current for the Green metric, and then one could study what types of geodesic currents can arise. Note that, for punctured surface, some admissible metrics coming from random walks can be realized as geodesic currents. For example, consider a simple generating set $F$ (in the sense of Erlandsson~\cite{Erlandsson:WordLength}, see also Subsection~\ref{subsec:embedded_graphs}), which is dual to a geodesic current $m_F$ (a multi-curve). If take the uniform probability measure on $F$, the stable length of the resulting Green metric is a constant multiple of the intersection number with $m_F$. However, by~\cite{GMM18:Entropy}, this family of examples does not arise in the closed surface setting.
 
@@ -152,5 +162,11 @@ Finally, it would be interesting to generalize the quasi-smoothing and smoothing
 
 \begin{question}
 What is a generalization of smoothing and quasi-smoothing for functionals on hyperbolic groups? (compare with~\cite{KMG:BBP}).
+\DPTtodo{sentence fragment here}
 \end{question}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Intersections"
+%%% End:
 
