@@ -55,7 +55,7 @@ The following Proposition will be key to control how much $\mu_f$ when the right
 \end{figure}
 
 \begin{proposition}
- Given a RH lift system $[p_1,q_1,p_2,q_2]$, let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},q_1,p_2,q_2}(k)$, $F_{p_1,\vec{q_1},p_2,q_2}$, $F_{p_1,q_1,\vec{p_2},q_2}(k)$ and $F_{p_1,q_1,p_2,\vec{q_2}}(k)$. Furthermore, assume that in each of the respective cases, we have $p_2^{-1}q_1$ cross $x$ to the right,  (resp.
+ Given a RH lift system $(p_1,q_1,p_2,q_2)$, let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},q_1,p_2,q_2}(k)$, $F_{p_1,\vec{q_1},p_2,q_2}$, $F_{p_1,q_1,\vec{p_2},q_2}(k)$ and $F_{p_1,q_1,p_2,\vec{q_2}}(k)$. Furthermore, assume that in each of the respective cases, we have $p_2^{-1}q_1$ cross $x$ to the right,  (resp.
   $q_2^{-1}q_1$ cross $x$ to the right, resp.
   $p_1^{-1}p_2$ cross $x$ to the right, resp.
   $q_1^{-1}q_2$ cross $x$ to the right).
@@ -88,7 +88,7 @@ We first prove that an accordion $F(k)$ is a right-handed box. Consider first a 
     For property (2') of a right-handed lift system, we note that $p_1^{(k)} P_2^{(k)}=p_1 P_2$ is not a multiple of $x$ by hypotheses. On the other hand, $Q_1^{(k)}q_2 = x^k q_1^{-1}q_2$, which cannot be a power of $x^k$ since $q_1^{-1}q_2$ is assumed to cross $x$ to the right.
     
     This proves that top vertical accordions are right handed boxes. The proof is similar for other types of accordions.
-We now prove that for a fixed RH lift system $[p_1,q_1,p_2,q_2]$ and a corresponding accordion $F(k)$, $\lim_{k \to \infty} \mu(F(k))=0$.
+We now prove that for a fixed RH lift system $(p_1,q_1,p_2,q_2)$ and a corresponding accordion $F(k)$, $\lim_{k \to \infty} \mu(F(k))=0$.
     We give the argument for type $F_{p_1,q_1,p_2,\vec{q_2}}$, the other types are similar.
     We will first go from the RH lift system notation (boxes) to the RH system notation (orbits of boxes), since the latter is better suited for the definition of $\mu_f$.
     We have
@@ -337,7 +337,7 @@ For each $n$, define the following elements of $\pi_1$:
 
 We furthermore need to make further assumptions on $p_1,q_1,p_2,q_2$ in order to guarantee assumption (2') in the definiton of RH lift system. Namely $p_1^{(n)} P_2^{(n)}=p_1 Y^n p_1^{-1}$ cannot be a power of $x$, for any $n$, and $Q_2^{(n)}q_1^{(n)} = Q_1 Y^{-2n-1}q_1$ cannot be a multiple of $x$ for any $n$. These conditions can be further guaranteed by slightly perturbing our previous choice of $p_1,q_1,p_2,q_2$, since all the conditions are open, and the set of lifts of closed geodesics is dense in the space of geodesics.
 \begin{claim}
-The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a RH system, i.e.,
+The datum $(p_1^n,p_2^n,q_1^n,q_2^n)$, as defined above, is a RH system, i.e.,
 \begin{enumerate}
     \item $p_i^nq_j^n$ cross $x$ to the right, for $i,j=1,2$.
     \item $q_2^n x^m p_1^n$ crosses $q_1^n x^m p_2^n$ to the right, for $m \geq 0$. 
@@ -347,8 +347,8 @@ The datum $[p_1^n,p_2^n,q_1^n,q_2^n]$, as defined above, is a RH system, i.e.,
 By NS dynamics of $y$, the translates of $\wt{x}$ by $(p_i^{(n)})^{-1}$ and $q_i^{(n)}$, for $i=1,2$, are like in Figure~\ref{fig:fundamental}.
 \end{proof}
 
-If we translate the RH system
-$[p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)}]$ into the orbit notation,
+If we translate the RH lift system
+$(p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)})$ into the orbit notation,
 and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
 \begin{align*}
   a^{(n)} &= p y^{n}   q &  b^{(n)} &= p y^{-(n+1)} q \\

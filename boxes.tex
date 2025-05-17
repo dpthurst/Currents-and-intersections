@@ -403,8 +403,8 @@ be invariant under
 \item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$; and
 \item translating all the lifts by $g \in \pi_1(S)$:
   \[
-    [p_1,q_1,p_2,q_2] \mapsto g \cdot [p_1,q_1,p_2,q_2] \coloneqq
-      [p_1 G, gq_1, p_2 G,  gq_2].
+    (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
+      (p_1 G, gq_1, p_2 G,  gq_2).
   \]
 \end{itemize}
 The first two conditions are clearly necessary since the endpoints of $\ell_i$ and $r_i$ are invariant under such transformations.
@@ -464,9 +464,9 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ so that:
   = \ora{cAbx^na C}$ crosses
   $\ora{cx^n}$ to the right.
 \end{enumerate}
-Then we call the datum $(a,b,c,d)$ a \emph{right-handed system}.
+Then we call the datum $[a,b,c,d]$ a \emph{right-handed system} (or RH system, for short).
 As explained above, this determines a $\pi_1(S)$-orbit of windows. In
-terms of the alternative data $[p_1,q_1,p_2,q_2]$, that we will refer to as \emph{right-handed lift system}, condition~(1) is automatic and the others
+terms of the alternative data $(p_1,q_1,p_2,q_2)$, that we will refer to as \emph{right-handed lift system}, condition~(1) is automatic and the others
 become
 \begin{enumerate}[label=(\arabic*$^\prime$),start=2]
 \item\label{item:box-nontriv-2} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
@@ -505,7 +505,7 @@ Condition~\ref{item:box-diags-cross} is required to ensure translation invarianc
 \end{remark}
 
 \begin{definition}\label{def:RH-box}
-Fix a lift $\ora{x}$ of $[x]$ once and for all. Every right handed lift system given by the datum $[p_1,q_1,p_2,q_2]$  determines a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
+Fix a lift $\ora{x}$ of $[x]$ once and for all. Every right handed lift system given by the datum $(p_1,q_1,p_2,q_2)$  determines a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by, following the notation above,
 \[
 B_{p_1,q_1,p_2,q_2} \coloneqq (\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+).
 \]
@@ -513,7 +513,7 @@ B_{p_1,q_1,p_2,q_2} \coloneqq (\ell_1^-,\ell_2^+] \times [r_2^+,r_1^+).
 Modifying the right-handed lift system by changing  $p_i$ preserving $\ell_i$, or $q_i$ preserving $r_i$ determines the same right-handed box.
 
 Furthermore, by construction, a different choice of lift $\ora{x}$ determines a different box $B_{p_1,q_1,p_2,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,q_1,p_2,q_2}$ by translation by some element in $\pi_1(S)$.
-On the other hand, the RH lift orbit $(a,b,c,d)$
+On the other hand, the RH system $[a,b,c,d]$
 determines a $\pi_1(S)$-orbit of boxes that we will denote
 $[B_{p_1,q_1,p_2,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
 draw attention to a concrete representative of the orbit or to the
@@ -522,7 +522,7 @@ orbit itself.
 We will denote by $\mathcal{B}$ the set of right-handed boxes.
 \end{definition}
 
-Given a right-handed lift orbit $(a,b,c,d)$ and a choice of lift $\ora{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
+Given a right-handed system $[a,b,c,d]$ and a choice of lift $\ora{x}$,  this yields configurations of lifts of Type 1, Type 2 and Type 3, where the lifts are placed as shown in Figure~\ref{fig:rhbox}. respectively.
 Note how the lifts are non-intersecting, since $[x]$ is simple, and these orientation of the lifts are always right-handed.
 \begin{example}
 The boxes in Figure~\ref{fig:box4} are \emph{not} right-handed boxes, since $c$ crosses a lift of $x$ left-handedly, and $d$ crosses a lift of $x$ left-handedly.
@@ -540,11 +540,11 @@ The boxes in Figure~\ref{fig:box4} are \emph{not} right-handed boxes, since $c$ 
 \end{example}
 
 \begin{proposition}\label{prop:rh-boxes}
-  Let $(p_1,q_1,p_2,q_2)$ be a RH box, with $\ora{\ell_i} =
+  Let $(p_1,q_1,p_2,q_2)$ be a RH lift system determining a RH box with $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular the boxes in $\cB$ avoid the
-  diagonal. (Something about orbits $(a,b,c,d)$.) \DMGtodo{why is this comment here?}
+  diagonal. Hence, all the elements of the associated RH system $(a,b,c,d)$ avoid the diagonal.  \DMGtodo{I added this last sentence, is it what we needed?}
 \end{proposition}
 
 \begin{proof}
