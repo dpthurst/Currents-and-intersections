@@ -66,7 +66,34 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
     \begin{question}
     If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
     \end{question}
-\item Higher rank lengths. Let $\rho \colon \pi_1(S) \to \PSL(n,\mathbb{R})$ be a representation so that for any generating set $S$, if $\| \cdot \|_S$ denotes the stable length of the word-metric w.r.t.\ $S$, there exists a positive constant $C>0$ so that $\log(\lambda_1(g)/\lambda_2(g)) \geq C \| g \|_S$ for every $g \in \pi_1(S)$, where $\lambda_i(g)$ denotes the absolute value of the $i$-th generalized eigenvalue (ordered from largest to smallest). By a result of Kassel-Potrie~\cite[Corollary~4.6]{KP22:eigenvalue}, this characterizes the so-called \emph{$P_1$-Anosov representations}. For example, quasi-fuchsian representations in the previous item are examples of $P_1$-Anosov representations. By~\cite[Lemma~7.1]{CT24:Invariant}, one can show the curve functional defined from $f(g) \coloneqq \log(\lambda_1(g)/\lambda_n(g))$ is well-defined and satisfies the quasi-smoothing property. \DMGtodo{discuss with Dylan}
+  \item Higher rank lengths. In the context of higher-rank
+    representations of surface groups like $\rho \colon \pi_1(S) \to
+    \PSL)n,\bbR)$, \dots
+\DPTtodo{Edit this into text}
+    \begin{itemize}
+    \item Positively ratioed gives smoothing (MZ18) and a current
+      (MZ18)
+    \item Wider class of \emph{$[P_1]$-Anosov} representations give a
+      curve functional satisfying only quasi-smoothing.
+    \item Follows from [CT24, Lemma 7.1], details to appear in future
+      work by the first author.
+    \end{itemize}
+    % Higher rank lengths. Let $\rho \colon \pi_1(S) \to
+    % \PSL(n,\mathbb{R})$ be a representation so that for any generating
+    % set $S$, if $\| \cdot \|_S$ denotes the stable length of the
+    % word-metric w.r.t.\ $S$, there exists a positive constant $C>0$ so
+    % that $\log(\lambda_1(g)/\lambda_2(g)) \geq C \| g \|_S$ for every
+    % $g \in \pi_1(S)$, where $\lambda_i(g)$ denotes the absolute value
+    % of the $i$-th generalized eigenvalue (ordered from largest to
+    % smallest). By a result of
+    % Kassel-Potrie~\cite[Corollary~4.6]{KP22:eigenvalue}, this
+    % characterizes the so-called \emph{$P_1$-Anosov representations}.
+    % For example, quasi-fuchsian representations in the previous item
+    % are examples of $P_1$-Anosov representations.
+    % By~\cite[Lemma~7.1]{CT24:Invariant}, one can show the curve
+    % functional defined from $f(g) \coloneqq
+    % \log(\lambda_1(g)/\lambda_n(g))$ is well-defined and satisfies the
+    % quasi-smoothing property.
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
@@ -85,7 +112,14 @@ If smoothing was satisfied, we would have
 \]
 which is violated, since the left hand side is $0$.
 On the other hand, the right hand side is not zero.
-\item Lorentzian length of an affine action of a Fuchsian group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing, since it satifies homogeneity, stability and additivity~\cite[p. 1053]{GML09:ProperAffine} but it takes both positive and negative values. Nevertheless, it extends continuously to geodesic currents, as shown in~\cite[6.1]{GML09:ProperAffine}. Strictly speaking, the paper deals with the case of surfaces with boundary, but the same arguments go through for closed surfaces, by~\cite{Lab01:Diffusion}.
+\item Lorentzian length of an affine action of a Fuchsian
+  group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing,
+  since it satisfies homogeneity, stability, and additivity~\cite[p.
+  1053]{GML09:ProperAffine} but it takes both positive and negative
+  values. Nevertheless, it extends continuously to geodesic currents,
+  as shown in~\cite[6.1]{GML09:ProperAffine}. Strictly speaking, the
+  paper deals with the case of surfaces with boundary, but the same
+  arguments go through for closed surfaces, by~\cite{Lab01:Diffusion}.
 \end{enumerate}
 
 For an example of a curve functional that does not extend continuously to geodesic currents (and thus does not satisfy smoothing, by~\cite[Theorem~A]{MGT21:Smoothings}), we have the following.

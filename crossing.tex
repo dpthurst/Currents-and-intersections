@@ -282,8 +282,8 @@ is one with a minimum number of transverse crossings.
   \end{enumerate}
 \end{proposition}
 
-Note that triality~\eqref{item:triality-geom} is about the local
-behavior near the vertex, while triality~\eqref{item:triality-alg} is
+Note that triality~\ref{item:triality-geom} is about the local
+behavior near the vertex, while triality~\ref{item:triality-alg} is
 similar but
 about the asymptotic behavior near $\infty$.
 
@@ -338,7 +338,6 @@ We now turn to some elementary lemmas about crossing.
   $(x,y) \cup (y,x)$ is almost the entire circle).
 \end{convention}
 
-\DPTtodo{HERE}
 \begin{lemma}
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
   Then $\ora{a}$ and~$\ora{x}$ R-cross (resp.\ L-cross) iff
@@ -352,8 +351,8 @@ We now turn to some elementary lemmas about crossing.
 \begin{proof}
   The statement that $(\ora{x},a\cdot\ora{x})$ are R-parallel is (by
   definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
-  which in turn is equivalent to $a^+ \in (x^-,x^+)$ and
-  $a^- \notin (x^-,x^+)$, which is turn is equivalent to
+  which is equivalent (by NS dynamics of~$a$) to $a^+ \in (x^-,x^+)$ and
+  $a^- \in (x^+,x^-)$, which is equivalent to
   $(\ora{a},\ora{x})$ R-crossing. The last claim follows similarly.
 \end{proof}
 
@@ -372,14 +371,14 @@ We now turn to some elementary lemmas about crossing.
   For the first claim, consider the action of the respective group
   element on the interval $(x^-,x^+)$: we have
   $x^{\pm1} \cdot (x^-,x^+) = (x^-,x^+)$ and
-  $a \cdot (x^-,x^+) \subsetneq (x^-,x^+)$, so four of $ax^{\pm1}$ and
+  $a \cdot (x^-,x^+) \subsetneq (x^-,x^+)$, so all four of $ax^{\pm1}$ and
   $x^{\pm1}a$ map this interval strictly inside itself. It follows
-  that all these elements are hyperbolic and R-cross $\ora{x}$.
+  that all these elements are hyperbolic and R-cross~$\ora{x}$.
 
-  For the second claim, we similarly have that both $a$ and $b$ map
+  For the second claim, $a$ and $b$ both map
   $(x^-,x^+)$ strictly inside itself, so their product does as well.
 
-  The last claim is an immediate consequence of the first two parts.
+  The last claim is an immediate consequence of the first two.
 \end{proof}
 
 
