@@ -87,6 +87,7 @@ ENTRY
     editor
     eprint
     arxiv
+    doi
     howpublished
     institution
     journal
@@ -405,6 +406,14 @@ FUNCTION {format.eprint}
     { "\arXiv{" arxiv * "}" * }
   if$
 }
+
+FUNCTION {format.doi}
+{ doi empty$
+  { "" }
+  { "\doi{" doi "}" * * }
+  if$
+}
+  
 
 FUNCTION {format.journal.vol.year}
 { journal empty$
@@ -748,6 +757,7 @@ FUNCTION {article}
   if$
   format.language *
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -776,6 +786,7 @@ FUNCTION {book}
   format.date "year" output.check
   format.language *
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -788,6 +799,7 @@ FUNCTION {booklet}
   address output
   format.date output
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -818,6 +830,7 @@ FUNCTION {inbook}
   format.date "year" output.check
   format.language *
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -840,6 +853,7 @@ FUNCTION {incollection}
   note output
   format.book.pages output
   format.eprint output
+  format.doi output
   format.language *
   fin.entry
 }
@@ -861,6 +875,7 @@ FUNCTION {inproceedings}
   note output
   format.book.pages output
   format.eprint output
+  format.doi output
   format.language *
   fin.entry
 }
@@ -893,6 +908,7 @@ FUNCTION {manual}
   format.edition output
   format.date output
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -907,6 +923,7 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   format.book.pages output
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -919,6 +936,7 @@ FUNCTION {misc}
   format.date output
   format.book.pages output
   format.eprint output
+  format.doi output
   note output
   fin.entry
   empty.misc.check
@@ -934,6 +952,7 @@ FUNCTION {phdthesis}
   format.date "year" output.check
   format.book.pages output
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -964,6 +983,7 @@ FUNCTION {proceedings}
     }
   if$
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -977,6 +997,7 @@ FUNCTION {techreport}
   address output
   format.date "year" output.check
   format.eprint output
+  format.doi output
   note output
   fin.entry
 }
@@ -988,6 +1009,7 @@ FUNCTION {unpublished}
   note "note" output.check
   format.date output
   format.eprint output
+  format.doi output
   fin.entry
 }
 
@@ -1374,6 +1396,7 @@ FUNCTION {begin.bib}
     write$ newline$
   "\providecommand{\arXiv}[1]{\eprint{arXiv:#1}}" write$ newline$
   "\providecommand{\eprint}{\begingroup \urlstyle{rm}\Url}" write$ newline$
+  "\providecommand{\doi}[1]{\begingroup \urlstyle{rm}\Url{doi:#1}}" write$ newline$
   "\begin{thebibliography}{"  longest.label  * "}" *
     write$ newline$
 }
