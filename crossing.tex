@@ -287,23 +287,15 @@ behavior near the vertex, while triality~\ref{item:triality-alg} is
 similar but
 about the asymptotic behavior near $\infty$.
 
-We extract the following two lemmas that follow immediately from
-Proposition~\ref{prop:crossings-triality}, and will use them
-extensively without explicit reference.
-
-\begin{lemma}
-Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ crosses $\ora{b}$, then
+We will use Proposition~\ref{prop:crossings-triality} without explicit
+reference, in particular that if $\ora{a}$ crosses $\ora{b}$, then
 \[
-  [a][b] \reducesto [ab]\qquad\text{and}\qquad[a][b] \reducesto [aB].
+  [a][b] \reducesto [ab]\qquad\text{and}\qquad[a][b] \reducesto [aB]
 \]
-\end{lemma}
-
-\begin{lemma}
-Let $a,b \in \pi_1(\Sigma)$. If $\ora{a}$ is parallel to $\ora{b}$, then
+and if $\ora{a}$ is parallel to $\ora{b}$, then
 \[
   [ab] \reducesto [a][b]\qquad\text{and}\qquad[ab] \reducesto [aB].
 \]
-\end{lemma}
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
 can change, as recorded below for future reference.
@@ -376,7 +368,7 @@ We now turn to some elementary lemmas about crossing.
   that all these elements are hyperbolic and R-cross~$\ora{x}$.
 
   For the second claim, $a$ and $b$ both map
-  $(x^-,x^+)$ strictly inside itself, so their product does as well.
+  $(x^-,x^+)$ strictly inside itself, so their product does too.
 
   The last claim is an immediate consequence of the first two.
 \end{proof}
@@ -446,51 +438,43 @@ We now turn to some elementary lemmas about crossing.
    \label{fig:cases-a-b}
 \end{figure}
     
-    To see this, observe that, by the dynamics of $a$ and $b$ on the
+    To see this, by the dynamics of $a$ and $b$ on the
     circle as shown, $ab$ maps the interval
-    $(a^+,b^+)$ strictly inside itself, which implies that it is
-    hyperbolic with attracting endpoint $(ab)^+$ in that interval;
-    similarly we see $(ab)^- \in (a^-,b^-)$. The actions of
+    $(a^+,b^+)$ strictly inside itself, so $ab$ is
+    hyperbolic with $(ab)^+\in(a^+,b^+)$;
+    similarly $(ab)^- \in (a^-,b^-)$. The actions of
     $a$ and $b$ interchange $(ab)^- \leftrightarrow (ba)^-$ and
     $(ab)^+ \leftrightarrow (ba)^+$, forcing the configuration shown.
-    (Note that all these endpoints $(ab)^\pm,(ba)^\pm$ are on the
+    (Note that all four endpoints $(ab)^\pm,(ba)^\pm$ are on the
     portions of the circle
     where $a$ and $b$ move in opposite directions.)
 
-    Since in this situation $(\ora{B},\ora{a})$ also R-cross, the
+    Since $(\ora{B},\ora{a})$ also R-cross, the
     other conclusion follows.
-  \item If $(\ora{a},\ora{b})$ are R-parallel, then again the dynamics
-    imply that $ab \cdot (b^+,a^+) \subsetneq (b^+,a^+)$, so $ab$ is
+  \item If $(\ora{a},\ora{b})$ are R-parallel, then $ab \cdot (b^+,a^+) \subsetneq (b^+,a^+)$, so $ab$ is
     hyperbolic and $(ab)^+ \in (b^+,a^+)$. The same interchange
     property then forces
     $(ab)^+, (ba)^+ \in (b^+,a^+)$  and
     $(ab)^-, (ba)^- \in (a^-,b^-)$. From this we see that
     $(\ora{ba},\ora{ab})$ R-cross, as in Figure~\ref{fig:parallel}.
- 
-   
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
     the parallel case by replacing $b$ with $B$, arranged as in
     Figure~\ref{fig:anti}.\qedhere
   \end{enumerate}
 \end{proof}
 
-\begin{remark}
-  In the R-parallel case we do not make claims about the
-  relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
-  determined by the hypotheses.  Similarly the R-anti-parallel case says nothing about the relation
-  of $\ora{ab}$ and $\ora{ba}$.
-  See Section~\ref{subsec:parallel_aB}, in particular Figure \ref{fig:r3} and Figure \ref{fig:r1} for the full analysis.
-\end{remark}
-
-
-
-
 \subsection{Position of axes 
 \texorpdfstring{$\protect\ora{aB}$}{aB} and \texorpdfstring{$\protect\ora{Ba}$}{Ba} in parallel  case}
-\label{subsec:parallel_aB}
-In order to better understand the relation between oriented and unoriented smoothings later on we will need to know the relative position of the axes $\ora{aB}$ and $\ora{Ba}$. This will be crucially used in the proof of Theorem~\ref{thm:intersections_group}, which will rely on Corollary~\ref{cor:oriented_smoothing_unoriented} and Corollary~\ref{cor:cont_conn_disc}. 
-Observe that the relative of position of $\ora{aB}$ and $\ora{Ba}$ is completely determined  when $\ora{a}$ and $\ora{b}$ cross, by Lemma~\ref{lem:righthandedfoundation}(I). However, when $\ora{a}$ and $\ora{b}$ are parallel (or anti-parallel), several cases arise. In this section we study these cases.
+If $\ora{a}$ and $\ora{b}$ are R-parallel,
+Lemma~\ref{lem:righthandedfoundation} makes no claim about the
+relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
+determined by the hypotheses, as we now analyze.
+This will be used in the proof of
+Theorem~\ref{thm:intersections_group}, which relies on
+Corollaries~\ref{cor:oriented_smoothing_unoriented}
+and~\ref{cor:cont_conn_disc}.
 
+\DPTtodo{HERE}
 If $C$ represents a curve with a self-intersection decomposing as $ab$, by Proposition~\ref{prop:crossings-triality}, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
 
 One of the resolutions of $[ab]$ is the multi-curve $[a] [b]$.
