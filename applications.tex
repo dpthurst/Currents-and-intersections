@@ -420,8 +420,8 @@ Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pai
 Given $\Gamma=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
 If two axes $\ora{g},\ora{h}$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
 It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
-It follows from the construction of $T(\lambda)$ that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
-Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T(\lambda) \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
+It follows from the construction of $T_\lambda$ that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
+Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
 
 Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
 \begin{enumerate}
@@ -688,24 +688,13 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 \end{enumerate}
 \end{proof}
 
-Now we prove Theorems~\ref{mainthm:skora} and~\ref{thm:skora_maxsmoothing}.
+Now we prove Theorem~\ref{mainthm:skora}.
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
-If $\Gamma \acts T$ is irreducible and satisfies axis intersection, it follows by Theorem~\ref{prop:small} that it satisfies max-smoothing. 
-Hence, by~Theorem~\ref{prop:char_laminations_plus}, it follows $\ell_T$ is dual to a measured lamination $\lambda$. By~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$.
-For the other implication, note that 
-given a measured lamination $\lambda$, then $T_{\lambda}$ satisfies irreducibility and axis intersection  by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
- If $T$ is equivariantly isometric to $T_{\lambda}$, it then follows $T$ satisfies these properties as well.
+(A) is equivalent to (C) is proven by the first part of Theorem~\ref{mainthm:apps}.
+(B) implies (C) is Theorem~\ref{prop:small}.
+(C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 \end{proof}
-
-\begin{proof}[Proof of Theorem~\ref{thm:skora_maxsmoothing}]
- If $\pi_1(S) \acts T$ is irreducible and satisfies preservation of axis intersection, then by Theorem~\ref{prop:small} it satisfies max-smoothing, and hence the hypotheses of the statement are in particular satisfied.
-
- If the hypotheses of the statement are satisfied, then by the same arguments as in Section~\ref{subsec:algebraic_vs_top}, max-smoothing follows. Hence, by Theorem~\ref{prop:char_laminations_plus}, we get $\ell_T(g)=i(\lambda, g)$ for some measured lamination $\lambda$. Again, by~\cite[Theorem~3.7]{CM87:GroupActions}, $T$ is equivariantly isometric to $T_{\lambda}$ and thus
- irreducibility and axis preservation are satisfied, as in the previous proof.
-\end{proof}
-
-
 
 \subsection{Inequalities between intersection numbers}
 \label{subsec:ineqintersection}
