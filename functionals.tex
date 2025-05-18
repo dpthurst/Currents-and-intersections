@@ -1,12 +1,155 @@
-\section{Curve functionals: general context and examples}
+\section{Curve functionals: properties, general context and examples}
 \label{sec:functionals}
 
-In this section we discuss how our result fits into our previous work
+
+
+
+In this section we state the main technical hypotheses that we require of our curve functionals.
+
+Then, we discuss how our result fits into our previous work
 in~\cite{MGT21:Smoothings}. In particular we give examples of curve
 functionals and whether they satisfy the hypotheses of our results.
 We then turn to further questions motivated by our results.
 
-This section is independent from the rest of the paper, and is not
+\subsection{Curve functionals and their properties}
+\label{subsec:mainhypotheses}
+
+We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
+
+In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
+Let $\mathcal{D}\mathcal{G}(S) \subset \{ (\gamma_1,\gamma_2) | \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented curves intersecting transversely.
+The map induces a continuous equivariant map $(\gamma_1,\gamma_2) \mapsto  \gamma_1 \cap \gamma_2$ from $\mathcal{D}\mathcal{G}(S)$ to $\wt{S}$, hence the action of $\pi_1(S)$ is properly discontinuous and free. Let $\mathcal{F}$ denote a fundamental domain of such action. Following Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented currents $\mu, \nu$ we define
+\begin{equation}
+i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
+\label{eq:intersection}
+\end{equation}
+Bonahon defined the same intersection number in the context of unoriented geodesic currents, but the definition is the same for oriented ones. Moreover, this intersection number remains unchanged upon flipping the orientation of any of its factors.
+It enjoys all the other properties of Bonahon's intersection: it is continuous, extends the geometric intersection of closed curves.
+Note that, however, two oriented currents are not uniquely determined by their intersections with all oriented curves, since for example $\sigma(\mu)$ and $\mu$ have the same intersection numbers. The result does hold for unoriented geodesic currents~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
+
+ In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
+As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
+intersection numbers for oriented curves which are asymmetric (i.e. they distinguish the
+orientations of the intersections). For those, the analog of the main duality
+result, Theorem~\ref{thm:intersect}, will not hold. This will also be reflected in the proof of the main theorem~\ref{thm:intersect}.
+However, in a lot of our examples the curve functionals will be assumed \emph{symmetric}, i.e., satisfying $f(C)=f(C^{-1})$.
+Equivalently, they can be seen as curve functionals on unoriented curves.
+
+\begin{definition}\label{def:properties}
+  For $S$ a compact topological surface without boundary,
+  let
+  $f \colon \Curves(S) \to \bbR$ be a
+  function defined on the space of oriented multi-curves,
+  not-necessarily-simple oriented curves, which is a natural 
+  We will also refer to $f$ as a \emph{curve functional} for short.
+  (\emph{Functional} means that it takes values in scalars; it is not
+  assumed to be linear, although the relevant examples to which our Theorem will apply will be additive).
+  We define several
+  properties that $f$ might satisfy.
+
+  \begin{itemize}
+    \item \textbf{Symmetry:} Let $C$ be an oriented multi-curve, and $C^{-1}$ the multi-curve with the opposite orientation. We have $f(C)=f(C^{-1})$.
+        \item \textbf{Orientation invariance:} Let $C$ be an oriented closed multi-curve, and $C'$ the same unoriented multi-curve with a different choice of orientation. We have $f(C)=f(C')$. This condition is stronger than symmetry, but if $f$ is additive, they are clearly equivalent.
+    \item \textbf{Oriented Smoothing:} Let $C$~be an oriented curve on~$S$, and
+    let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
+    have
+    \begin{equation}\label{eq:smoothing}
+      f\left(\mfig{curves-3}\right) \ge  f\left(\mfig{curves-4}\right),
+    \end{equation}
+    See Definition~\ref{def:essential-crossing} for ``essential
+    crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
+  \item \textbf{Additivity: } Let $C_1$ and~$C_2$ be two oriented curves
+    on~$S$. Then
+    \begin{equation}\label{eq:union-additive}
+      f(C_1 \cup C_2) = f(C_1) + f(C_2).
+    \end{equation}
+  \end{itemize}
+\end{definition}
+
+\begin{remark}
+The oriented smoothing condition can be further divided into two types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve, or if it is a sef-crossing of the one connected component. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
+We emphasize that oriented connected smoothing does not imply the oriented disconnected smoothing, or viceversa.
+For example, the curve functional $f$ assigning to a multi-curve its number of connected components is a natural function satisfying oriented disconnected smoothing but not oriented connected smoothing. Also, the curve functional $g$ assigning to a multi-curve the maximal hyperbolic length among its connected components satisfies connected smoothing but not disconnected smoothing (by a computation using Lemma~\ref{lem:hyp_parallelogram}). For more examples see Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
+\end{remark}
+
+\begin{definition}
+  For $C$ an oriented multi-curve, $nC$ is the oriented multi-curve
+  that consists of $n$~parallel
+  copies of~$C$ (so with $n$ times as many components or,
+  in the context of weighted oriented multi-curves,
+  with weights multiplied by~$n$), and
+  $C^n$ is the oriented multi-curve with as many components as~$C$, in which each
+  component of~$C$ is covered by an $n$-fold cover. That is, if
+  $g \in \pi_1(S,x)$ represents $C$, $g^n$ represents~$C^n$.
+\end{definition}
+
+\begin{definition}\label{def:stable}
+     Let $f$ be a curve
+     functional and let $n>0$ be an
+     integer. We say $f$ satisfies \emph{stability} if, for an arbitrary oriented multi-curve~$C$,
+       \begin{equation}
+         \label{eq:stable}
+         f(C^n) = f(nC).
+       \end{equation}
+\end{definition}
+
+\begin{definition}\label{def:homogeneous} For an arbitrary oriented multi-curve~$C$,
+       \begin{equation}
+         \label{eq:homogeneous}
+         f(nC) = nf(C).
+       \end{equation}
+       Note that functionals satisfying additivity (Equation~\ref{eq:union-additive}) automatically satisfy homogeneity.
+\end{definition}
+
+There exist slight generalizations of both smothing as well as additivity that have been used in our previous work~\cite{MGT21:Smoothings}.
+
+\begin{definition}
+\begin{itemize}
+    \item \textbf{Oriented Quasi-smoothing:} There is a constant $R\ge 0$ with the
+      following property. Let $C$~be an oriented curve on~$S$, and
+    let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
+    have
+    \begin{equation}\label{eq:quasismoothing}
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
+    \end{equation}
+    See Definition~\ref{def:essential-crossing} for ``essential
+    crossing''. If $R=0$, we recover the oriented smoothing property.
+  \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
+    on~$S$. Then
+    \begin{equation}\label{eq:union-convex}
+      f(C_1 \cup C_2) \le f(C_1) + f(C_2).
+    \end{equation}
+    If the above inequalities are strengthened to equalities, we recover the additivity property (Equation~\ref{eq:union-additive}).
+\end{itemize}
+\end{definition}
+
+
+
+
+Theorem~\ref{thm:intersect} considered curve functions on unoriented curves.
+
+\begin{definition}
+Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
+     \[
+      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
+   \]
+\end{definition}
+
+We can extend this definition for orientation invariant curve functionals on oriented multi-curves.
+If $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ is orientation invariant, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \mathcal{C}(S) \to \mathbb{R}$.
+
+\begin{definition}
+We say $f$ satisfies \emph{smoothing} if its associated curve functional on unoriented curves $\bar{f}$ satisfies smoothing.
+\end{definition}
+
+For an orientation invariant curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
+
+\subsection{General context and examples}
+
+Here we discuss how the results in this paper fit into a broader context initiated in~\cite{MGT21:Smoothings}, discuss how it relates to other recent results in the literature, and give exmaples of curve functionals that satisfy and do not satisfy the hypotheses of the main theorem.
+ This part is independent from the rest of the paper, and is not
 used in the proof in the main results.
 
 
