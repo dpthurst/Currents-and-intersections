@@ -3,10 +3,12 @@
 Our goal is to define a measure on the space of geodesics--in fact, a geodesic current-- associated to a curve functional $f$. 
 Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the $\sigma$-algebra of open sets of $G(\Sigma)$.
 
-In order to achieve this, we first explore some basic consequences of these properties~(Section~\ref{subsec:mainhypotheses}) such as positivity and their relation to the continuity of the functional (Proposition~\ref{prop:cont_conn_disc}). We then define the family of boxes of geodesics (Subsection~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
+In order to achieve this, we first explore some basic but crucial consequences of these properties~(Section~\ref{subsec:smoothing_consequences}) such as how do oriented smoothing and smoothing relate in the presence of the other hypotheses, the fact that connected and disconnected smoothing imply each other assuming continuity~(Proposition~\ref{prop:cont_conn_disc}), and  how positivity of the functional follows from the axioms.
 
-\subsection{Relations between versions of smoothings}
+We then define the family of boxes of geodesics (Subsection~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
 
+\subsection{Relations between types of smoothings}
+\label{subsec:smoothing_consequences}
 A priori the hypothesis of oriented smoothing on $f$ is weaker than smoothing, since it does not seem to include unoriented smoothing. However, it follows from the other hypotheses, by our previous work in~\cite{MGT21:Smoothings}.
 
 \begin{lemma}
@@ -63,8 +65,8 @@ If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ sat
 \label{prop:cont_conn_disc}
 \end{proposition}
 \begin{proof}
-Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ is satisfies disconnected smoothing and is homogeneous and continuous.
-Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented disconnected smoothing, i.e., $f([ab]) \geq f([a][b])$.
+Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
+Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented connected smoothing, i.e., $f([ab]) \geq f([a][b])$.
 We will start by showing the following claim, by induction on $n$:
 \[
 2nf([ab]) \geq f([a^{2n}b^{2n}]).
@@ -94,11 +96,11 @@ f([ab]) \geq f([a] [b])
 which proves oriented disconnected smoothing.
 Second, we prove the unoriented disconnected smoothing.
 We split it into two cases, depending on the relative position of $aB$ and $Ba$. Observe that, if $a$ and $b$ are parallel, by Lemma~\ref{lem:ab_parallel_aB}, $aB$ and $Ba$ are either anti-parallel or crossing. 
-If $aB$ and $Ba$ are crossing, we can proceed in a very similar fashion as above. Namely, we prove by induction, as above,
+If $aB$ and $Ba$ are crossing, we can proceed in a very similar fashion as above. Namely, we prove by induction, as above, that
 \[
 2nf([ab]) \geq f([a^{2n}B^{2n}]).
 \]
-divide by $2n$, take the limit when $n$ goes to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
+Then divide by $2n$, take the limit when $n$ goes to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
 If $aB$ and $Ba$ are anti-parallel, we will prove by induction that
 \begin{equation}
 2nf([ab]) \geq f([(aB)^n (Ab)^n]).
@@ -114,7 +116,7 @@ Now, we prove the induction step.
 \begin{align*}
 2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) \geq \\
 &f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \geq  \\
-& f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n])
+& f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
 \end{align*}
 In the first inequality we used the induction step, then convex union, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
 Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
@@ -149,7 +151,7 @@ If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ sat
 \end{corollary}
 
 Natural examples of curve functionals satisfying the properties above come from curve lengths of length metric structures on the surface, or word-lengths with respect to some generating sets, for example.
-See Section~\ref{sec:functionals} for examples and non-examples of curve functionals.
+See Section~\ref{sec:functionals} for many examples and non-examples of curve functionals.
 
 We can now reestate Theorem~\ref{thm:intersect} from the perspective of curve functionals on oriented curves.
 

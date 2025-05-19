@@ -28,7 +28,7 @@ length on the double of $\bar{\Sigma}$.
 We note that $\ell$ satisfies additivity, stability and homogeneity
 properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoothing is satisfied by the same argument as the proof of Corollary~\ref{cor:domination}. Since boundary parallel curves do not intersect each other or other non-boundary parallel curves, smoothing is vacuously satisfied.
 
-However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For a related example, see~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
+However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
 \subsubsection{Smoothing vs multi-smoothing}
 
@@ -104,6 +104,7 @@ Let $\Gamma=\pi_1(\Sigma) \subset \Isom^+(\mathbb{H})=\PSL_2(\mathbb{R})$ be a c
 Let $\mu$ be a finitely supported probability measure on $\Gamma$ whose support contains a symmetric generating set of $\Gamma$.
 Let $w_n \coloneqq g_1 \cdots g_n$ be the random walk with respect to $\mu$, where each $(g_i)$ is identically and independently distributed with distribution $\mu$. Let $(\Gamma^{\mathbb{N}}, \mu^{\mathbb{N}})$ be the step space, and the map $\pi \colon \Gamma^{\mathbb{N}} \to \Gamma^{\mathbb{N}}$ as $\pi((g_n)_{n \in \mathbb{N}}) \coloneqq (w_n)_{n \in \mathbb{N}}$. The image of $\pi$ is equipped with the measure $(\mathbb{P}_{\mu})_*(\mu^{\mathbb{N}})$.
 Define the metric \[ d_{\mu}(x,y) \coloneqq - \log \mathbb{P}_{\mu}(\exists n : w_n x =y).\]
+In words, we are considering the probability that a random walk departing from $x$ will reach $y$ after some number of steps.
 This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves(S) \to \mathbb{R}$.
 
 \begin{question}

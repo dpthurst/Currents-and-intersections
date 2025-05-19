@@ -41,7 +41,7 @@ One can view this theorem in analogy to Poincaré duality for closed surfaces, w
 As a consequence of Theorem~\ref{thm:intersect} we obtain a 
 many new dual geodesic currents, generalizing many previous constructions for Riemannian metrics of negative curvature on $S$, and certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone, Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
 In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
-    Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs and generalizes work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
+    Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs, thus generalizing the work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
 
 All the examples above extend continuously to geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings} or simply by Bonahon's theorem of continuous bilinear extension of geometric intersection number. 
 This strengthens a previous result in~\cite[Theorem~1.5]{EPS:CountingCurves} given for arbitrary Riemannian lengths as well as for a much more general class of metrics: by Theorem~\ref{thm:intersect} we obtain a continuous extension \emph{as an intersection number}.
@@ -152,7 +152,7 @@ The following are equivalent:
 \label{mainthm:skora}
 \end{mainthm}
 
-The equivalence between (A) and (C) follows by the firs part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}.
+The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 
@@ -163,14 +163,13 @@ small actions of a non-elementary hyperbolic group $\Gamma$.
 
 \subsection{Generalized cross-ratios}
 
-Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. Every generalized cross-ratio induces a curve functional, its \emph{period}, giving a function
-\[
-\ell \colon \pi_1(S) \to \mathbb{R}.
-\]
-We show that any period curve functional satisfies the conditions of our main Theorem~\ref{thm:intersect} and thus induces a geodesic current.
+Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP21:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. Every generalized cross-ratio induces a curve functional called the \emph{period}.
+We show that periods satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce a geodesic current.
 
 \begin{mainthm}
-There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents. Moreover, periods uniquely determine cross-ratios arising from non-atomic geodesic currents.
+Let $[\cdot, \cdot, \cdot, \cdot]$ be a generalized cross-ratio of period $\ell$. Then $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and hence induces a geodesic current $\mu_{\ell}$.
+Conversely, this geodesic current $\mu_{\ell}$ is uniquely determined by the period of the cross-ratio $\ell$.
+ Moreover, $\mu_\ell$ determines the cross-ratio uniquely if and only if it is non-atomic.
 \end{mainthm}
 
 Our result subsumes recent work in~\cite{BIPP21:PositiveCrossratios}, where the authors associate, to every cross-ratio, a geodesic current.
