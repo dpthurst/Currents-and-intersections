@@ -242,7 +242,9 @@ is one with a minimum number of transverse crossings.
   cyclic order, and are parallel/anti-parallel/cross if they appear in
   either the above order or its reverse.
 
-  We will furthermore say a triple $(\ora{a},\ora{b},\ora{c})$ is R-parallel (resp. L-parallel) if both $(\ora{a},\ora{b})$ and $(\ora{b},\ora{c})$ are R-parallel (resp. L-parallel).
+  We will furthermore say a triple $(\ora{a},\ora{b},\ora{c})$ is
+  R-parallel (resp.\ L-parallel) if both $(\ora{a},\ora{b})$ and
+  $(\ora{b},\ora{c})$ are R-parallel (resp.\ L-parallel).
 \end{definition}
 
 \begin{definition}
@@ -586,7 +588,7 @@ example where this situation arises.
 \end{figure}
 
 
-\subsection{Fundamental smoothing lemmas}
+\subsection{Fundamental smoothing results}
 \label{sec:fund-smoothing}
 
 
@@ -595,8 +597,7 @@ elements. We collect some propositions guaranteeing essential
 crossings in this context.
 
 \begin{proposition}\label{prop:join-split-geom}
-Let $a,b,c,d,x \in \pi_1(S)$ be curves with $\ora{a}$, $\ora{b}$,
-$\ora{c}$, $\ora{d}$
+Let $a,b,x \in \pi_1(S)$ be curves with $\ora{a}$, $\ora{b}$
 crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
   so that, for all
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
@@ -606,10 +607,8 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
     \label{eq:cross-split} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
 
-
   There exists $s' \ge 0$ (depending on $a,x$) so that for all
   $|n-m| > s'$,
-
   \begin{align}
     \label{eq:cross-cancel}[ax^n][ax^m] &\reducesto [x^{|n-m|}].
   \end{align}
@@ -620,7 +619,6 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
     [a x^{n+1}] [a x^{n-1}] &\reducesto 2[ax^{n}].\label{eq:cross-simple}
   \end{align}
 \end{proposition}
-
 
 Note that for the allowed values of $r$, Eqs.\ \eqref{eq:cross-join} and
 \eqref{eq:cross-split} move the exponents $n,m$ closer to the diagonal
@@ -654,7 +652,7 @@ examples.
 \begin{proof}
   For the first part, it suffices to show that $\ora{g_1}$ crosses
   $x^ka \cdot \ora{x}$ and $x^{-\ell A} \cdot \ora{x}$ to the right,
-  or (by translation) that $\ora{x^{\ell+k}a}$ and $\ora{ax^{k+\ell}}$
+  or equivalently (by translation) that $\ora{x^{\ell+k}a}$ and $\ora{ax^{k+\ell}}$
   cross $\ora{x}$ to the right. This follows from
   Lemma~\ref{lem:rhs_prod}.
 
@@ -686,7 +684,7 @@ examples.
   is to the left of (resp.\ to the right of) $w(a\cdot\ora{x})$ if $r < s_1$
   (resp.\ $r > s_2$). Similarly there
   is a range $[s_1',s_2']$ so that $w(A\cdot\ora{x})$ is disjoint from
-  $w(x^rB\cdot\ora{x})$ if $r \notin [s_1',s_2']$, and determining the
+  $w(x^rB\cdot\ora{x})$ if $r \notin [s_1',s_2']$, and the exponents determine the
   ordering of the windows. Set
   $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$.
 
@@ -751,8 +749,8 @@ examples.
 \end{proof}
 
 \begin{remark}
-  Note the main place we use unoriented smoothings in this paper is in the
-  proof of Eq.~\eqref{eq:cross-cancel}, but it is necessary. See
+  The main place we use unoriented smoothings in this paper is in the
+  proof of Eq.~\eqref{eq:cross-cancel}, but it is necessary there. See
   Sec.~\ref{sec:asymmetric}.
 \end{remark}
 
@@ -832,7 +830,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \ora{x})$, we have
   $g^+ \in w(a y^m \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
   Similarly $a^+ \in w(a \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
-  Consider the bands model centered on $a \cdot \ora{y}$ shows that,
+  Considering the bands model centered on $a \cdot \ora{y}$ shows that,
   for $m$ large enough, $g^+$ is to the right of $a^+$, and thus
   $\ora{g}$ crosses $\ora{a}$ to the right. We therefore have
   \[
@@ -876,7 +874,7 @@ four group elements, in a configuration that is easy to find.
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-  Immediate from Lemma~\ref{lem:diagonaldense}.
+  Immediate from Lemma~\ref{lem:diagonaldense} below.
 \end{proof}
 
 An alternate construction of such elements is to take $x=y$ and any

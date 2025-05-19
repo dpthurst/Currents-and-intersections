@@ -1,37 +1,68 @@
 \section{Boxes and their measures}
 
-Our goal is to define a measure on the space of geodesics--in fact, a geodesic current-- associated to a curve functional $f$. 
-Roughly speaking, this means associating a positive number, in a countably additive way, to a collection of boxes of geodesics sufficiently rich to generate the $\sigma$-algebra of open sets of $G(\Sigma)$.
+Our goal is to define a measure on the space of geodesics---in fact, a geodesic current---associated to a curve functional~$f$. 
+Roughly speaking, our strategy is to associate a positive number, in a
+countably additive way, to a collection of boxes of geodesics
+sufficiently rich to generate the $\sigma$-algebra of open sets of
+$G(\Sigma)$.
 
-In order to achieve this, we first explore some basic but crucial consequences of these properties~(Section~\ref{subsec:smoothing_consequences}) such as how do oriented smoothing and smoothing relate in the presence of the other hypotheses, the fact that connected and disconnected smoothing imply each other assuming continuity~(Proposition~\ref{prop:cont_conn_disc}), and  how positivity of the functional follows from the axioms.
+In order to achieve this, we first explore some basic but crucial
+consequences of properties of curve
+functionals~(Section~\ref{subsec:smoothing_consequences}) such as how
+do oriented smoothing and smoothing relate in the presence of the
+other hypotheses, the fact that connected and disconnected smoothing
+imply each other assuming
+continuity~(Proposition~\ref{prop:cont_conn_disc}), and  how
+positivity of the functional follows from the axioms.
 
-We then define the family of boxes of geodesics (Subsection~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
+We then define the family of boxes of geodesics (Section~\ref{sec:boxes}) and prove they are abundant enough to be able to approximate any rectangle of geodesics.
 
 \subsection{Relations between types of smoothings}
 \label{subsec:smoothing_consequences}
-A priori the hypothesis of oriented smoothing on $f$ is weaker than smoothing, since it does not seem to include unoriented smoothing. However, it follows from the other hypotheses, by our previous work in~\cite{MGT21:Smoothings}.
+\DPTtodo{Revised this section}
+A priori the hypothesis of oriented smoothing on $f$ is weaker than
+smoothing, since it does not seem to include unoriented smoothing.
+However, it follows from the other hypotheses; the key ingredient is
+our previous work in~\cite{MGT21:Smoothings}. We prove the following,
+which in particular will allow the simpler algebraic statement in
+Theorem~\ref{thm:intersections_group}; it is not necessary for the
+proof of Theorem~\ref{thm:intersect}.\DPTtodo{right?}
 
-\begin{lemma}
-If $f$ is orientation invariant and satisfies oriented smoothing, convex union,
+\begin{proposition}
+If $f$ is orientation invariant and satisfies oriented smoothing
+(connected and disconnected), convex union,
 stability, and homogeneity, then $f$ satisfies smoothing.
-\label{lem:oriented_smoothing_unoriented}
-\end{lemma}
-\begin{proof}
-First we will show that $f$ satisfies disconnected smoothing (both oriented and unoriented).
-Since $f$ satisfies oriented smoothing, in particular it satisfies disconnected oriented smoothing. Since $f$ is symmetric, it follows it also satisfies disconnected unoriented smoothing: indeed, let $(a,b)$ $R$-cross. Then $(B,a)$ $R$-cross. Hence, by disconnected oriented smoothing
+\label{prop:oriented_smoothing_unoriented}
+\end{proposition}
+
+The proof uses the following result, which can be seen as a weak
+converse of the main result in our previous paper.
+\begin{proposition}
+Suppose $f$ is an orientation invariant curve functional satisfying convex union that extends continuously to geodesic currents and is homogeneous.
+If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
+\label{prop:cont_conn_disc}
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop:oriented_smoothing_unoriented}]
+  Since $f$ disconnected oriented smoothing and is symmetric, it also
+  satisfies disconnected unoriented smoothing: indeed, let
+  $(\ora{a},\ora{b})$ cross. Then $(\ora{B},\ora{a})$ cross, so by
+  disconnected oriented smoothing
 \[
-f([B][a]) \geq f([Ba])
+f([B][a]) \geq f([Ba]).
 \]
-and since $f$ is orientation invariant, we have $f([b][a])=f([B][a])$, and thus unoriented smoothing follows.
-Hence, $f$ satisfies disconnected smoothing.
+Since $f$ is orientation invariant, we have $f([b][a])=f([B][a]) >
+f([Ba])$, as desired.
+
 Since $f$ satisfies oriented smoothing, convex union, stability and
-homogeneity by hypothesis, $f$ extends continuously and homogeneously
+homogeneity, it extends continuously and homogeneously
 to oriented geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Hence by
-Proposition~\ref{prop:cont_conn_disc} below, it satisfies connected
-smoothing. Hence, $f$ satisfies smoothing.
+Proposition~\ref{prop:cont_conn_disc}, it satisfies connected
+smoothing, and thus all cases of smoothing.
 \end{proof}
 
-As an immediate corollary, given that a symmetric and additive functional is orientation invariant, we have
+As an immediate corollary, given that a symmetric and additive
+functional is orientation invariant, we have the following.
 
 \begin{corollary}
 If $f$ is symmetric and satisfies oriented smoothing, additivity,
@@ -39,69 +70,76 @@ stability, and homogeneity, then $f$ satisfies smoothing.
 \label{cor:oriented_smoothing_unoriented}
 \end{corollary}
 
-We now show the result used above, namely, that if a curve functional is symmetric, satisfies convex union, and is continuous and homogeneous, then one type of smoothing (connected/disconnected) implies the other. This can be seen as a weak converse of the main result in our previous paper~\cite{MGT21:Smoothings}.
-
-The following lemma is a straightforward fact of the weak$^*$-topology convergence of geodesic currents and it follows from computations similar to~\cite[Proposition~5.1]{Sas22:Currents}.
-
+We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
+starting with some easy lemmas.
 \begin{lemma}
   Given any $g,h \in \pi_1(S)$, we have
 \[
-\lim_n \frac{\mu_{g^n h^n}}{n} = \mu_g + \mu_h
+\lim_{n\to\infty} \frac{\mu_{g^n h^n}}{n} = \mu_g + \mu_h
 \]
 in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geodesic current representing the curve $[g]$.
 \label{lem:gnhn_to_gsumh}
 \end{lemma}
 
-The next result immediately by Lemma~\ref{lem:righthandedfoundation}.
+\begin{proof}
+  This is a straightforward fact of the weak$^*$-topology convergence
+  of geodesic currents and follows from computations similar
+  to~\cite[Proposition~5.1]{Sas22:Currents}.
+\end{proof}
 
 \begin{lemma}
-Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, the element $a^n b^n$ $R$-crosses $b^k a^k$ for every $k,n \in \mathbb{N}$ 
+  Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
+  $k,n \ge 1$, $\ora{a^n
+  b^n}$ $R$-crosses $\ora{b^k a^k}$.
 \label{lem:anbn_vs_bkak}
 \end{lemma}
-
-\begin{proposition}
-Suppose $f$ is an orientation invariant curve functional satisfying convex union that extends continuously to geodesic currents and is homogeneous.
-If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ satisfies connected smoothing (resp. disconnected smoothing).
-\label{prop:cont_conn_disc}
-\end{proposition}
 \begin{proof}
+  Immediate from Lemma~\ref{lem:righthandedfoundation}.
+\end{proof}
+\begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
 Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented connected smoothing, i.e., $f([ab]) \geq f([a][b])$.
-We will start by showing the following claim, by induction on $n$:
-\[
+We will start by showing, by induction on $n$, that
+\begin{equation}\label{eq:power_ineq}
 2nf([ab]) \geq f([a^{2n}b^{2n}]).
-\]
-The base case $n=1$, follows from the fact that if $a,b$ are parallel, $ab$ and $ba$ cross, and hence,
+\end{equation}
+The base case $n=1$ follows from the fact that if $\ora{a},\ora{b}$
+are parallel, $\ora{ab}$ and $\ora{ba}$ cross, and hence
 \[
 2[ab]=[ab] + [ba] \reducesto [ab^2a]=[a^2b^2].
 \]
 Hence, by homogeneity, the base case follows.
 Now, we prove the induction step.
 \begin{align*}
-2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) \geq \\
-&f([a^{2(n-1)}b^{2(n-1)}) + f([b^2a^2]) \geq  \\
-&f([a^{2(n-1)}b^{2(n-1)}][b^2a^2]) \geq \\
-& f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}]).
+2nf([ab]) = 2(n-1)f([ab]) + 2f([ab])
+&\geq f([a^{2(n-1)}b^{2(n-1)}]) + f([b^2a^2])  \\
+&\geq f([a^{2(n-1)}b^{2(n-1)}][b^2a^2]) \\
+&\geq f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}]).
 \end{align*}
-In the first inequality we used induction step, in the second convex union, then we used Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
-Thus, we have
-\[
-2nf([ab]) \geq f([a^{2n}b^{2n}])
-\]
-as we wanted to show.
-Finally, we divide this expression by $2n$, let $n$ go to infinity and use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
+In the first inequality we used induction step, in the second convex union, then Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
+Divide Eq.~\eqref{eq:power_ineq} by $2n$, let $n$ go to infinity, and
+use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
 \[
 f([ab]) \geq f([a] [b])
 \]
 which proves oriented disconnected smoothing.
-Second, we prove the unoriented disconnected smoothing.
-We split it into two cases, depending on the relative position of $aB$ and $Ba$. Observe that, if $a$ and $b$ are parallel, by Lemma~\ref{lem:ab_parallel_aB}, $aB$ and $Ba$ are either anti-parallel or crossing. 
-If $aB$ and $Ba$ are crossing, we can proceed in a very similar fashion as above. Namely, we prove by induction, as above, that
+
+Second, we prove unoriented connected smoothing: if $\ora{a}$ is
+parallel to $\ora{b}$, then $f([ab]) \ge f([aB])$.
+We split into two cases, depending on the relative position of $\ora{aB}$
+and $\ora{Ba}$. By
+Lemma~\ref{lem:ab_parallel_aB}, $\ora{aB}$ and $\ora{Ba}$ are either anti-parallel
+or cross.
+If $\ora{aB}$ and $\ora{Ba}$ cross, we can proceed in a very similar
+fashion to above.
+\DPTtodo{Not following this case}
+Namely, we prove by induction that
 \[
 2nf([ab]) \geq f([a^{2n}B^{2n}]).
 \]
-Then divide by $2n$, take the limit when $n$ goes to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
-If $aB$ and $Ba$ are anti-parallel, we will prove by induction that
+Then divide by $2n$, let $n$ go to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
+
+If $\ora{aB}$ and $\ora{Ba}$ are anti-parallel, we will prove by induction that
 \begin{equation}
 2nf([ab]) \geq f([(aB)^n (Ab)^n]).
 \label{eq:antiparallel_induction}
@@ -114,9 +152,8 @@ where we used disconnected unoriented smoothing first, then we conjugated by $B$
 Evaluating the above equation by $f$, and using homogeneity and disconnected smoothing, we get the base case.
 Now, we prove the induction step.
 \begin{align*}
-2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) \geq \\
-&f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \geq  \\
-& f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
+2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \\
+  &\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
 \end{align*}
 In the first inequality we used the induction step, then convex union, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
 Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
@@ -139,14 +176,17 @@ which proves oriented disconnected smoothing. The unoriented one is proved in th
 \end{proof}
 
 \begin{remark}
-The statement of both Lemma~\ref{lem:oriented_smoothing_unoriented} and Proposition~\ref{prop:cont_conn_disc} can be strengthened by replacing ``oriented smoothing'' by ``$C$-oriented quasi-smoothing'', ``smoothing'' by ``$C$-quasi-smoothing'', ``disconnected smoothing'' by ``$C$-disconnected quasi-smoothing'' and ``connected smoothing'' by ``$C$-connected quasi-smoothing''.
+The statements of both
+Propositions~\ref{prop:oriented_smoothing_unoriented}
+and~\ref{prop:cont_conn_disc} can be strengthened by replacing each
+type of smoothing by the same type of $C$-quasi-smoothing.
 \end{remark}
 
 As an immediate corollary, we get the following.
 
 \begin{corollary}
 Suppose $f$ is a symmetric curve functional satisfying additivity that extends continuously to geodesic currents and is homogeneous.
-If $f$ satisfies disconnected smoothing (resp. connected smoothing) then $f$ satisfies connected smoothing (resp. disconnected smoothing).
+If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
 \label{cor:cont_conn_disc}
 \end{corollary}
 
