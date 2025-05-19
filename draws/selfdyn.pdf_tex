@@ -54,11 +54,11 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{selfdyn.pdf}}%
-    \put(0.82883376,0.90846252){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{gh}$\end{tabular}}}}%
-    \put(0.78495683,0.06646823){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{hg}$\end{tabular}}}}%
+    \put(0.79200531,0.90495505){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{gh}$\end{tabular}}}}%
+    \put(0.80249423,0.05594577){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{hg}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{selfdyn.pdf}}%
-    \put(0.41434787,0.15842356){\color[rgb]{0.42352941,0.08627451,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{(gh)^{-n} hg}$\end{tabular}}}}%
+    \put(0.47572865,0.17596095){\color[rgb]{0.42352941,0.08627451,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{(gh)^{-n} hg}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{selfdyn.pdf}}%
-    \put(0.22649607,0.05377269){\color[rgb]{0,0.57254902,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{(gh)^{-(n+1)} hg}$\end{tabular}}}}%
+    \put(0.1388092,0.0274667){\color[rgb]{0,0.57254902,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{(gh)^{-(n+1)} hg}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
