@@ -24,7 +24,7 @@ i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
 \label{eq:intersection}
 \end{equation}
 Bonahon defined the same intersection number in the context of unoriented geodesic currents, but the definition is the same for oriented ones. Moreover, this intersection number remains unchanged upon flipping the orientation of any of its factors.
-It enjoys all the other properties of Bonahon's intersection: it is continuous, extends the geometric intersection of closed curves.
+It enjoys all the other properties of Bonahon's intersection: it is continuous and extends the geometric intersection of closed curves.
 Note that, however, two oriented currents are not uniquely determined by their intersections with all oriented curves, since for example $\sigma(\mu)$ and $\mu$ have the same intersection numbers. The result does hold for unoriented geodesic currents~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 
  In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
@@ -49,7 +49,7 @@ Equivalently, they can be seen as curve functionals on unoriented curves.
 
   \begin{itemize}
     \item \textbf{Symmetry:} Let $C$ be an oriented multi-curve, and $C^{-1}$ the multi-curve with the opposite orientation. We have $f(C)=f(C^{-1})$.
-        \item \textbf{Orientation invariance:} Let $C$ be an oriented closed multi-curve, and $C'$ the same unoriented multi-curve with a different choice of orientation. We have $f(C)=f(C')$. This condition is stronger than symmetry, but if $f$ is additive, they are clearly equivalent.
+        \item \textbf{Orientation invariance:} Let $C$ be an oriented closed multi-curve, and $C'$ the same unoriented multi-curve with a different choice of orientation. We have $f(C)=f(C')$. This condition is stronger than symmetry, but if $f$ is additive, they are equivalent.
     \item \textbf{Oriented Smoothing:} Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
@@ -68,7 +68,7 @@ Equivalently, they can be seen as curve functionals on unoriented curves.
 \end{definition}
 
 \begin{remark}
-The oriented smoothing condition can be further divided into two types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve, or if it is a sef-crossing of the one connected component. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
+The oriented smoothing condition will be further divided into two types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve, or if it is a sef-crossing of the one connected component. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
 We emphasize that oriented connected smoothing does not imply the oriented disconnected smoothing, or viceversa.
 For example, the curve functional $f$ assigning to a multi-curve its number of connected components is a natural function satisfying oriented disconnected smoothing but not oriented connected smoothing. Also, the curve functional $g$ assigning to a multi-curve the maximal hyperbolic length among its connected components satisfies connected smoothing but not disconnected smoothing (by a computation using Lemma~\ref{lem:hyp_parallelogram}). For more examples see Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
 \end{remark}
@@ -133,7 +133,7 @@ Theorem~\ref{thm:intersect} considered curve functions on unoriented curves.
 \begin{definition}
 Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
-      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
+      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
 \end{definition}
 
@@ -210,16 +210,16 @@ Many natural notions of length do satisfy all these four properties and they hav
 On the other hand, not all functions on curves satisfy the $\AConvex$ properties, not even some that extend continuously to geodesic currents.
 
 \begin{enumerate}
-    \item Asymmetric curve functionals, such as the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, stable lengths of Green metrics coming from asymmetric from generating sets (see Section~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+    \item Asymmetric curve functionals, such as the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, stable lengths of Green metrics coming from asymmetric from generating sets (see Section~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}. 
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Section~4.8]{MGT21:Smoothings}). All of these examples extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
     It's an example of curve functional illustrating the proper containment \[\AConvex(S) \subsetneq \Convex(S).\]
+    \item  In future work the first author shows that if $\pi_1(S) \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property, then $\ell_X$, the stable length of the action, satisfies $\ell_X \in \QConvex(S)$. In general, these actions do not satisfy smoothing. We give three more examples in the next items.
     \item Although word length w.r.t.\ an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item  In future work the first author shows that if $\pi_1(S) \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property, then $\ell_X$, the stable length of the action, satisfies $\ell_X \in \QConvex(S)$. In general, these actions do not satisfy smoothing. We give two examples in the next two items.
-    \item A concrete example of the above are stable lengths associated to quasi-fuchsian representations. They satisfy quasi-smoothing by \cite[Lemma~4.3]{BridgemanTaylor08:ExtensionWP} or \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
+    \item Another example of the above are stable lengths associated to quasi-fuchsian representations. They satisfy quasi-smoothing by \cite[Lemma~4.3]{BridgemanTaylor08:ExtensionWP} or \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
     \begin{question}
     If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
     \end{question} 
-\item Another example are length functions coming from higher-rank representations $\rho \colon \pi_1(S) \to \PSL(n,\mathbb{R})$.
+\item The previous example falls in the more general framework of length functions coming from higher-rank representations $\rho \colon \pi_1(S) \to \PSL(n,\mathbb{R})$.
 Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy smoothing. A wider class of \emph{$[P_1]$-Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work, they also satisfy quasi-smoothing. In fact, they satisfy smoothing if and only if they are positively ratioed. 
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
@@ -230,15 +230,12 @@ Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such 
       $\QConvex(S)$, even though it does extend to geodesic currents
       by work of Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}.
 \item Translation lengths associated to embedded graphs on a surface whose actions are not proper \cite[Proposition 11]{Bonahon91:CurrentsGroups} do not satisfy quasi-smoothing in general and, moreover, do not extend continuously to geodesic currents. 
-Suppose $G$ is acting on a geodesic space $X$ by isometries, and let $\ell$ be the stable length of the action. Suppose $\ell$ is non-trivial. Let $N$ be an infinite normal subgroup of $G=\pi_1(S)$ so that $\ell(b)=0$ for all $b \in N$. Let $a \in G$, and fix $b\in N$. Then $\frac{1}{2n} a^n b a^{-n} b$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
-Hence, $\ell$ cannot extend continuously. In fact, $\ell$ does not satisfy smoothing. By the above argument,  the endpoints of elements axes of elements of $N$ are dense in the space of geodesics of $G$. Hence, for a given $a \in G$ with $\ell(a)>0$, we can find $b \in N$ so that $\ora{a}$ and $\ora{b}$ cross.
-
-If smoothing was satisfied, we would have, by Proposition~\ref{prop:join-split-geom}, Equation~\ref{eq:cross-cancel},
+Suppose $G$ is acting on a geodesic space $X$ by isometries, and let $\ell$ be the stable length of the action. Suppose $\ell$ is non-trivial. Let $N$ be an infinite normal subgroup of $G=\pi_1(S)$ so that $\ell(b)=0$ for all $b \in N$. Let $a \in G$, with $\ell(a)>0$ and fix $b\in N$. Then $\frac{1}{2n} a^n b a^{-n} b$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
+Hence, $\ell$ cannot extend continuously. In fact, $\ell$ does not satisfy smoothing. Indeed, we can find $b \in N$ so that $\ora{a}$ and $\ora{b}$ cross. If smoothing was satisfied, we would have, by Proposition~\ref{prop:join-split-geom}, Equation~\ref{eq:cross-cancel}, there exists $s'>0$ so that for all $n \geq s'$, we have
 \[
-\ell(ba^n ba^{-n}) \geq \ell(a^{2n})
+\ell(ba^n ba^{-n}) \geq \ell(a^{2n}).
 \]
-which is violated, since the left hand side is $0$.
-On the other hand, the right hand side is not zero.
+This inequality is violated, since on the one hand, the left hand side is $0$, and, on the other hand, the right hand side is non-zero.
 \item Lorentzian length of an affine action of a Fuchsian
   group~\cite{GM00:FlatLorentzian} doesn't satisfy quasi-smoothing,
   since it satisfies homogeneity, stability, and additivity~\cite[p.
