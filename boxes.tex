@@ -108,7 +108,7 @@ are parallel, $\ora{ab}$ and $\ora{ba}$ cross, and hence
 \[
 2[ab]=[ab] + [ba] \reducesto [ab^2a]=[a^2b^2].
 \]
-Hence, by homogeneity, the base case follows.
+Hence, by homogeneity and disconnected smoothing, the base case follows.
 Now, we prove the induction step.
 \begin{align*}
 2nf([ab]) = 2(n-1)f([ab]) + 2f([ab])
@@ -146,10 +146,9 @@ If $\ora{aB}$ and $\ora{Ba}$ are anti-parallel, we will prove by induction that
 \end{equation}
 The base case, $n=1$, follows since $ab$ and $(ba)^{-1}$ cross, hence
 \[
-[ab] + [ba] \reducesto [abAB] = [(Ba)(bA)]=[(aB)(Ab)]
+[ab] + [ba] \reducesto [baBA] = [(aB)(Ab)].
 \]
-where we used disconnected unoriented smoothing first, then we conjugated by $B$, and then we took inverses.
-Evaluating the above equation by $f$, and using homogeneity and disconnected smoothing, we get the base case.
+By homogeneity and disconnected smoothing, we get the base case.
 Now, we prove the induction step.
 \begin{align*}
 2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \\
