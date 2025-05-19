@@ -474,26 +474,39 @@ Theorem~\ref{thm:intersections_group}, which relies on
 Corollaries~\ref{cor:oriented_smoothing_unoriented}
 and~\ref{cor:cont_conn_disc}.
 
-If $C$ represents a curve with a self-intersection decomposing as $ab$, by Proposition~\ref{prop:crossings-triality}, we can consider intersecting axes $\ora{ab}$ and $\ora{ba}$ in the universal cover so that their intersection is a lift of the self-intersection of the curve $ab$.
+Fix $a,b \in \Isom^+(\bbH)$ so that $\ora{a}$ and $\ora{b}$ are
+R-parallel. We know that $ab$ and $ba$ are
+hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic.
 
-So suppose that $\ora{a}$ and $\ora{b}$ are R-parallel, and consider
-their common hyperbolic perpendicular of $\ora{a}$
-and $\ora{b}$. We will denote this line by~$R_1$, and will use the
-same notation for the reflection along~$R_1$.
-Let $R_2, R_3, R_4, R_5$ be lines and corresponding reflections so
+Consider the common hyperbolic perpendicular of $\ora{a}$
+and $\ora{b}$, which we will denote~$R_1$. We will also use the
+same notation for the reflection through~$R_1$.
+Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
 that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
 $R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
 are perpendicular to $\ora{b}$; see
 Figure~\ref{fig:cases-conn-smoothing}.
 
-\DPTtodo{HERE}
-The $R_i$ are reflections along pairwise non-intersecting reflection
-lines, since $aB$ and $ab$ are hyperbolic.
-\DPTtodo{We don't know that $aB$ is hyperbolic, need to add it as an assumption}
-It then follows that 
-$ab=R_4 R_3$ and $ba=R_5 R_2$. Furthermore, $Ba=R_3 R_2$ and $aB=R_4 R_5$.
-We have the following possible four configurations of non-intersecting reflection lines. 
+Since
+$ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
+these elements are hyperbolic, we see
+that the $R_i$ are reflections along pairwise non-intersecting reflection
+lines.
+\DPTtodo{Added this textual description of the cases}
+We have several potential configurations of the~$R_i$. As shown
+in Figure~\ref{fig:cases-conn-smoothing}, $R_2$ and~$R_3$ are on one
+side of~$R_1$, and $R_4$ and~$R_5$ are on the other. On each side
+of~$R_1$, the two $R_i$ can be either disjoint or nested with respect
+to~$R_1$:
+\begin{description}
+\item[Case 1] Disjoint on both sides;
+\item[Case 2] Disjoint on one side, nested on the other; or
+\item[Case 3] Nested on both sides.
+\end{description}
 
+\DPTtodo{In figure, missing axis on $Ba$ in Case 1. Some of the arrows
+stick outside of the circles slightly. Case 3(b) is missing the $R_i$
+labels, though it may be tight to fit them in.}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
@@ -507,11 +520,11 @@ We have the following possible four configurations of non-intersecting reflectio
 \end{subfigure}\\[8pt]
 \begin{subfigure}{0.45\textwidth}
    \svgfignormal{r1}
-     \caption{Case 3, $\protect\ora{aB}$ and $\protect\ora{Ba}$  disjoint}\label{fig:r1}
+     \caption{Case 3(a), $\protect\ora{aB}$ and $\protect\ora{Ba}$  disjoint}\label{fig:r1}
    \end{subfigure}\hfill
 \begin{subfigure}{0.45\textwidth}
   \svgfignormal{c2}
-    \caption{Case 3, $\protect\ora{aB}$ and $\protect\ora{Ba}$ crossing}\label{fig:c2}
+    \caption{Case 3(b), $\protect\ora{aB}$ and $\protect\ora{Ba}$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
    \caption{Topological cases for
      connected smoothing of $\protect\ora{ab}$ with
@@ -520,32 +533,36 @@ We have the following possible four configurations of non-intersecting reflectio
 \end{figure}
 
 
-In the figures, we also draw their corresponding translation axes for each isometry.
-We observe that case 2 can be ruled out, since the NS dynamics of $b$ should translate $\ora{Ba}$ to $\ora{aB}$, and thus these two axes should stay on the same side of $\ora{b}$, which does not happen in that configuration.
-We note there is another case, analogous to case 2, where the reflection lines below $R_1$ are exchanged by the ones above it, which can be similarly ruled out.
-
-We observe that in case 3, $\ora{aB}$ and $\ora{Ba}$ may cross
-(Figure~\ref{fig:c2}).
+The figure also has the corresponding translation axes for all six
+isometries, further dividing Case 3 according to whether $\ora{aB}$
+and $\ora{Ba}$ are disjoint (Figure~\ref{fig:r1}) or cross (Figure~\ref{fig:c2}).
+We observe that case 2 can be ruled out, since the NS dynamics of $b$
+translates $\ora{Ba}$ to $\ora{aB}$, and thus these two axes must be
+on the same side of $\ora{b}$, which does not happen in that
+configuration.
 
 From this discussion we can extract the following.
 
 \begin{lemma}
 Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-parallel or crossing.
+If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-parallel or cross.
 \label{lem:ab_parallel_aB}
 \end{lemma}
 
+\DPTtodo{This seems wrong: in both instances of Case 3 $\ora{ba}$ and
+  $\ora{bA}$ are anti-parallel}
 \begin{lemma}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are R-parallel, then $\ora{ba}$ and $\ora{bA}$ are parallel.
 \label{lem:ba_parallel_Ab}
 \end{lemma} 
 
-\begin{remark}
-Note that Case~3 (b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are antiparallel). Let us show a concrete example where this situation arises.
+\begin{example}
+Case~3(b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are anti-parallel). Let us show a concrete example where this situation arises.
 Namely, assuming $\ora{a}$ and $\ora{b}$ are parallel, we will show an example where $\ora{aB}$ and $\ora{Ba}$ cross.
 Consider a pair of disjoint simple closed curves $g$ and $h$, sitting as the cuffs of an embedded pair of pants, and oriented in such a way that $\ora{g}$ and $\ora{h}$ are parallel.  For the following, compare Figure~\ref{fig:crossing_aB}. Define $a \coloneqq HGH$ and $b \coloneqq HGHGH$.
 We claim that $a$ and $b$ are parallel. First note that since $g$ and $h$ are parallel, so are $H$ and $G$, and hence $HG$ and $GH$ cross and $H$ and $GH$ are parallel. It also follows that $HGH$ and $GH$ are parallel, which implies that $HGH$ and $HGHGH$ are parallel, as desired. Finally, we show that $\ora{aB}$ and $\ora{Ba}$ cross. Note that $aB=(HGH)(hghgh)=gh$ and $Ba=(hghgh)(HGH)=hg$. Since $g,h$ are parallel, it follows that $gh$ and $hg$ cross, concluding the example.
+\end{example}
 
 \begin{figure}
 \centering{
@@ -554,8 +571,6 @@ We claim that $a$ and $b$ are parallel. First note that since $g$ and $h$ are pa
 \label{fig:crossing_aB}
 }
 \end{figure}
-
-\end{remark}
 
 
 \subsection{Fundamental smoothing lemmas}
