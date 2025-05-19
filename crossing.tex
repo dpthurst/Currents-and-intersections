@@ -557,29 +557,28 @@ parallel (in fact, they are anti-parallel). Let us show a concrete
 example where this situation arises.
 
 \begin{example}
-  To see that Case~3(b) arises,
-consider a pair of disjoint simple closed curves $g$ and $h$, sitting
-as the cuffs of an embedded pair of pants, oriented so that
-that $\ora{g}$ and $\ora{h}$ are parallel. It is easy to see that the
-pair 
-
-as in
-Figure~\ref{fig:crossing_aB}.
-Define $a \coloneqq hgh$ and $b
-\coloneqq hghgh$.
-We claim that $\ora{a}$ and $\ora{b}$ are parallel. Since $\ora{g}$ and
-$\ora{h}$ are parallel, $\ora{hg}$ and $\ora{gh}$ cross and $\ora{h}$ and $\ora{gh}$ are
-parallel. It also follows that $\ora{hgh}$ and $\ora{gh}$ are parallel, which
-implies that $\ora{hgh}$ and $\ora{hghgh}$ are parallel, as desired. Finally, we
-show that $\ora{aB}$ and $\ora{Ba}$ cross. Note that
-$aB=(hgh)(HGHGH)=GH$ and $Ba=(HGHGH)(hgh)=HG$. Since $\ora{g},\ora{h}$ are
-parallel, it follows that $\ora{GH}$ and $\ora{HG}$ cross, concluding the example.
+  To see that Case~3(b) actually arises, consider any two parallel $\ora{g}$
+  and $\ora{h}$, for instance coming from an appropriately-oriented
+  pair of disjoint simple closed curves sitting
+  as the cuffs of an embedded pair of pants.
+  Define $a \coloneqq hghgh$ and $b
+  \coloneqq hgh$. We claim that $\ora{a}$ and $\ora{b}$ are
+  parallel. First, by
+  Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, $\ora{hg}$ and $\ora{gh}$ cross and $\ora{h}$ and $\ora{gh}$ are
+  parallel. Applying the lemma again to $(\ora{h},\ora{gh})$, we see
+  that $\ora{hgh}$ and $\ora{gh}$ are parallel, and applying the lemma
+  once more we see $\ora{b} = \ora{hgh}$ and $\ora{a} = \ora{hghgh}$
+  are parallel, as desired. See Figure~\ref{fig:crossing_aB}.
+  Finally, $aB=(hghgh)(HGH)=gh$ and $Ba=(HGH)(hghgh)=gh$, which cross,
+  as desired.
 \end{example}
 
 \begin{figure}
 \centering{
 \svgfignormal{crossing_aB}
-\caption{This figure shows that $a \coloneqq hgh$ and $b \coloneqq hghgh$ are parallel assuming that $g,h$ are parallel. It illustrates an example where $a,b$ are parallel and $aB,Ba$ cross. }
+\caption{This figure shows that $\ora{a} \coloneqq \ora{hghgh}$ and
+  $\ora{b} \coloneqq \ora{hgh}$ are parallel assuming that
+  $\ora{g},\ora{h}$ are parallel, giving an example where $\ora{a},\ora{b}$ are parallel and $\ora{aB},\ora{Ba}$ cross. }
 \label{fig:crossing_aB}
 }
 \end{figure}
