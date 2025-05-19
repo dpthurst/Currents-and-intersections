@@ -383,7 +383,10 @@ We now turn to some elementary lemmas about crossing.
     R-parallel, with endpoints as in Figure~\ref{fig:cross}.
   \item\label{item:ab-parallel} If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
     and $(\ora{ba},\ora{ab})$ R-cross, with endpoints as in
-    Figure~\ref{fig:parallel}. In particular, $(\ora{a},\ora{ab})$ are R-parallel.
+    Figure~\ref{fig:parallel}.
+    \DPTtodo{Make sure we've defined triples being parallel}
+    In particular, the triples
+    $(\ora{a},\ora{ab}, \ora{b})$ and $(\ora{a},\ora{ba},\ora{b})$ are R-parallel.
   \item If $(\ora{a},\ora{b})$ are R-anti-parallel, then $aB$ is
     hyperbolic and $(\ora{Ba},\ora{aB})$ R-cross, with endpoints as in Figure~\ref{fig:anti}.
   \end{enumerate}
@@ -548,24 +551,29 @@ If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-paral
 \label{lem:ab_parallel_aB}
 \end{lemma}
 
-
+From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
+$\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not
+parallel (in fact, they are anti-parallel). Let us show a concrete
+example where this situation arises.
 
 \begin{example}
-Case~3(b), swapping $b$ by $B$, shows that $\ora{ab}$ and $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not parallel (in fact, they are anti-parallel). Let us show a concrete example where this situation arises.
-Namely, assuming $\ora{a}$ and $\ora{b}$ are parallel, we will show an example where $\ora{aB}$ and $\ora{Ba}$ cross.
-Consider a pair of disjoint simple closed curves $g$ and $h$, sitting
-as the cuffs of an embedded pair of pants, and oriented in such a way
-that $\ora{g}$ and $\ora{h}$ are parallel.  For the following, compare
+  To see that Case~3(b) arises,
+consider a pair of disjoint simple closed curves $g$ and $h$, sitting
+as the cuffs of an embedded pair of pants, oriented so that
+that $\ora{g}$ and $\ora{h}$ are parallel. It is easy to see that the
+pair 
+
+as in
 Figure~\ref{fig:crossing_aB}.
 Define $a \coloneqq hgh$ and $b
 \coloneqq hghgh$.
 We claim that $\ora{a}$ and $\ora{b}$ are parallel. Since $\ora{g}$ and
-$\ora{h}$ are parallel, $\ora{hg}$ and $\ora{gh}$ cross and $h$ and $gh$ are
-parallel. It also follows that $hgh$ and $gh$ are parallel, which
-implies that $hgh$ and $hghgh$ are parallel, as desired. Finally, we
+$\ora{h}$ are parallel, $\ora{hg}$ and $\ora{gh}$ cross and $\ora{h}$ and $\ora{gh}$ are
+parallel. It also follows that $\ora{hgh}$ and $\ora{gh}$ are parallel, which
+implies that $\ora{hgh}$ and $\ora{hghgh}$ are parallel, as desired. Finally, we
 show that $\ora{aB}$ and $\ora{Ba}$ cross. Note that
-$aB=(hgh)(HGHGH)=GH$ and $Ba=(HGHGH)(hgh)=HG$. Since $g,h$ are
-parallel, it follows that $GH$ and $HG$ cross, concluding the example.
+$aB=(hgh)(HGHGH)=GH$ and $Ba=(HGHGH)(hgh)=HG$. Since $\ora{g},\ora{h}$ are
+parallel, it follows that $\ora{GH}$ and $\ora{HG}$ cross, concluding the example.
 \end{example}
 
 \begin{figure}
