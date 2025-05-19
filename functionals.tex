@@ -16,18 +16,12 @@ We then turn to further questions motivated by our results.
 
 We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 
-In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented, or else assigns the same value to $i(C,D)$ and $i(C,D^{-1})$. 
-Let $\mathcal{D}\mathcal{G}(S) \subset \{ (\gamma_1,\gamma_2) | \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented curves intersecting transversely.
-The map induces a continuous equivariant map $(\gamma_1,\gamma_2) \mapsto  \gamma_1 \cap \gamma_2$ from $\mathcal{D}\mathcal{G}(S)$ to $\wt{S}$, hence the action of $\pi_1(S)$ is properly discontinuous and free. Let $\mathcal{F}$ denote a fundamental domain of such action. Following Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented currents $\mu, \nu$ we define
-\begin{equation}
-i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
-\label{eq:intersection}
-\end{equation}
-Bonahon defined the same intersection number in the context of unoriented geodesic currents, but the definition is the same for oriented ones. Moreover, this intersection number remains unchanged upon flipping the orientation of any of its factors.
-It enjoys all the other properties of Bonahon's intersection: it is continuous and extends the geometric intersection of closed curves.
-Note that, however, two oriented currents are not uniquely determined by their intersections with all oriented curves, since for example $\sigma(\mu)$ and $\mu$ have the same intersection numbers. The result does hold for unoriented geodesic currents~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 
- In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
+
+In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
+
+In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented. If $C$ and $D$ are oriented, we can assign the same value to $i(C,D)$ and $i(C,D^{-1})$, in other words, define the intersection by forgetting the orientation. In this way, one can analogously define an intersection form for oriented geodesic currents (see~Definition~\ref{def:intersection_currents}).
+
 As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
 intersection numbers for oriented curves which are asymmetric (i.e. they distinguish the
 orientations of the intersections). For those, the analog of the main duality
@@ -39,8 +33,8 @@ Equivalently, they can be seen as curve functionals on unoriented curves.
   For $S$ a compact topological surface without boundary,
   let
   $f \colon \Curves(S) \to \bbR$ be a
-  function defined on the space of oriented multi-curves,
-  not-necessarily-simple oriented curves.
+  function defined on the space of oriented,
+  not-necessarily-simple multi-curves.
   We will also refer to $f$ as a \emph{curve functional} for short.
   (\emph{Functional} means that it takes values in scalars; it is not
   assumed to be linear, although the relevant examples to which our Theorem will apply will be additive).
@@ -48,14 +42,14 @@ Equivalently, they can be seen as curve functionals on unoriented curves.
   properties that $f$ might satisfy.
 
   \begin{itemize}
-    \item \textbf{Symmetry:} Let $C$ be an oriented multi-curve, and $C^{-1}$ the multi-curve with the opposite orientation. We have $f(C)=f(C^{-1})$.
-        \item \textbf{Orientation invariance:} Let $C$ be an oriented closed multi-curve, and $C'$ the same unoriented multi-curve with a different choice of orientation. We have $f(C)=f(C')$. This condition is stronger than symmetry, but if $f$ is additive, they are equivalent.
+    \item \textbf{Symmetry:} Let $C$ be an oriented multi-curve, and $C^{-1}$ the multi-curve where all the components have the opposite orientation. We have $f(C)=f(C^{-1})$.
+        \item \textbf{Orientation invariance:} Let $C$ be an oriented closed multi-curve, and $C'$ the same unoriented multi-curve with a different choice of orientation. We have $f(C)=f(C')$. This condition is stronger than symmetry, but if $f$ is additive (see below), they are equivalent.
     \item \textbf{Oriented Smoothing:} Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')$. Schematically, we
     have
     \begin{equation}\label{eq:smoothing}
-      f\left(\mfig{curves-3}\right) \ge  f\left(\mfig{curves-4}\right),
+      f\left(\mfig{curves-3}\right) \ge  f\left(\mfig{curves-4}\right).
     \end{equation}
     See Definition~\ref{def:essential-crossing} for ``essential
     crossing''. Loosely, it is a crossing that cannot be removed by homotopy. 
@@ -145,6 +139,10 @@ We say $f$ satisfies \emph{smoothing} if its associated curve functional on unor
 \end{definition}
 
 For an orientation invariant curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
+
+\begin{remark}
+Given a curve functional on unoriented multi-curves that satisfies smoothing, one can extend it to a functional on all oriented curves by just forgetting orientation. This extension satisfies oriented smoothing (see~\cite[Corollary~1.11]{MGT21:Smoothings} and its proof).
+\end{remark}
 
 \subsection{General context and examples}
 
