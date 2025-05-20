@@ -103,6 +103,17 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
 \begin{proof}
   Immediate from Lemma~\ref{lem:righthandedfoundation}.
 \end{proof}
+
+\begin{lemma}
+  Given elements $a,b \in \pi_1(S)$ which are $R$-crossing, then for all
+  $k,n \ge 1$, $\ora{a^n
+  b^n}$ is $R$-parallel to $\ora{b^k a^k}$.
+\label{lem:anbn_vs_bkak_parallel}
+\end{lemma}
+\begin{proof}
+  Immediate from Lemma~\ref{lem:righthandedfoundation}.
+\end{proof}
+
 \begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
 Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented connected smoothing, i.e., $f([ab]) \geq f([a][b])$.
@@ -173,6 +184,15 @@ We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ 
 \[
 f([a^{2n}b^{2n}]) \geq 2nf([ab]).
 \]
+The base case follows by noting that if $\ora{a}$, $\ora{b}$ R-cross, then $\ora{ab}$ and $\ora{ba}$ are R-parallel, and then by connected smoothing
+\[
+f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
+\]
+For the induction step, note that
+\begin{align*}
+f([a^{2n}b^{2n}]) = f([a^2(a^{2(n-1)}b^{2(n-1)})b^2]) = f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
+\geq 
+\end{align*}
 This computation follows by applying connected smoothing to the pair $ab$, $ba$ for the base case, and applying the induction step and homogeneity. We omit the details.
 Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
 \[
