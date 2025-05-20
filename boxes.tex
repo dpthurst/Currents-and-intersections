@@ -101,11 +101,15 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
 \label{lem:anbn_vs_bkak}
 \end{lemma}
 \begin{proof}
+  \DPTtodo{Worth spelling out in case $n \ne k$}
   Immediate from Lemma~\ref{lem:righthandedfoundation}.
 \end{proof}
 \begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
-Given a pair $a, b \in \pi_1(S)$ of parallel elements, we show first $f$ satisfies oriented connected smoothing, i.e., $f([ab]) \geq f([a][b])$.
+Given a pair $a, b \in \pi_1(S)$ of parallel elements (so
+$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
+satisfies oriented connected
+smoothing, i.e., $f([ab]) \geq f([a][b])$.
 We will start by showing, by induction on $n$, that
 \begin{equation}\label{eq:power_ineq}
 2nf([ab]) \geq f([a^{2n}b^{2n}]).
@@ -131,8 +135,8 @@ f([ab]) \geq f([a] [b])
 \]
 which proves oriented disconnected smoothing.
 
-Second, we prove unoriented connected smoothing: if $\ora{a}$ is
-parallel to $\ora{b}$, then $f([ab]) \ge f([aB])$.
+Second, we prove unoriented connected smoothing: with $a,b$ as above,
+$f([ab]) \ge f([aB])$.
 We split into two cases, depending on the relative position of $\ora{aB}$
 and $\ora{Ba}$. By
 Lemma~\ref{lem:ab_parallel_aB}, $\ora{aB}$ and $\ora{Ba}$ are either anti-parallel
@@ -151,24 +155,34 @@ If $\ora{aB}$ and $\ora{Ba}$ are anti-parallel, we will prove by induction that
 2nf([ab]) \geq f([(aB)^n (Ab)^n]).
 \label{eq:antiparallel_induction}
 \end{equation}
-The base case, $n=1$, follows since $ab$ and $(ba)^{-1}$ cross, hence
+The base case, $n=1$, follows since $\ora{ab}$ and $\ora{ba}$ cross, hence
 \[
-[ab] + [ba] \reducesto [baBA] = [(aB)(Ab)].
+[ba]+[ab] \reducesto [ba(ab)^{-1}] = [(aB)(Ab)].
 \]
 By homogeneity and disconnected smoothing, we get the base case.
-Now, we prove the induction step.
+Now, we prove the induction step:
 \begin{align*}
 2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \\
   &\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
 \end{align*}
-In the first inequality we used the induction step, then convex union, then we used that $aB$ and $Ba$ are anti-parallel, and hence $aB$ and $Ab$ are parallel. Hence, we applied Lemma~\ref{lem:anbn_vs_bkak} to the pair $aB, Ab$ to conclude that $(aB)^{n-1} (Ab)^{n-1}$ and $(Ab)(aB)$ cross. Therefore, since $f$ satisfies disconnected smoothing, the conclusion follows. This proves the claim by induction.
-Dividing the inequality~\ref{eq:antiparallel_induction} by $2n$, letting $n$ go to infinity, and using Lemma~\ref{lem:gnhn_to_gsumh} again, we get
+In the first inequality we used the induction step. The second inequality
+uses convex union and disconnected smoothing applied to
+$[(aB)^{n-1}(Ab)^{n-1}][(Ab)(aB)] \reducesto [(aB)^{n-1} (Ab)^{n-1}
+(Ab)(aB)]$. For this reduction, note that $\ora{aB}$ and $\ora{Ba}$ are
+anti-parallel, so $\ora{aB}$ and $\ora{Ab}$ are parallel. Hence, we
+can apply Lemma~\ref{lem:anbn_vs_bkak} to conclude that
+$\ora{(aB)^{n-1} (Ab)^{n-1}}$ and $\ora{(Ab)(aB)}$ cross.
+Divide~\ref{eq:antiparallel_induction} by $2n$, let $n$ go to
+infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to get
 \[
 f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 \]
 where we used orientation invariance and homogeneity in the last equality.
-This finishes the proof of the first part.
+This finishes the proof that disconnected smoothing implies
+connected smoothing.
 
+\DPTtodo{Put it more details here too: what's the key crossing used in
+  the inductive step?}
 We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies orientation invariance, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
 \[
 f([a^{2n}b^{2n}]) \geq 2nf([ab]).
