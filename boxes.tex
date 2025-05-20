@@ -102,17 +102,34 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
 \end{lemma}
 \begin{proof}
 We prove it by induction on $n$. The base case is clear by Lemma~\ref{lem:righthandedfoundation}.
-If 
+By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
+Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$. Hence, $a^n b^n$ R-crosses $ba$ (see Figure~\ref{fig:parallel_lemma}).
 \end{proof}
+\begin{figure}
+
+    \begin{subfigure}[b]{0.4\textwidth}
+ \svgfignormal{sketch_crossing}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
+    \label{fig:cross_lemma}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.4\textwidth}
+ \svgfignormal{sketch_parallel} 
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $\protect\ora{a^n b^n}$ R-crosses $\protect\ora{ba}$}
+    \label{fig:parallel_lemma}
+\end{subfigure} 
+\end{figure}
 
 \begin{lemma}
   Given elements $a,b \in \pi_1(S)$ which are $R$-crossing, then for all
-  $k,n \ge 1$, $\ora{a^n
-  b^n}$ is $R$-parallel to $\ora{b^k a^k}$.
+  $n \ge 1$, $\ora{a^n
+  b^n}$ is $R$-parallel to $\ora{ba}$.
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
-  Immediate from Lemma~\ref{lem:righthandedfoundation}.
+We prove it by induction on $n$. The base case is clear by Lemma~\ref{lem:righthandedfoundation}.
+By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ is R-parallel to $ba$.
+Conjugating by $a$, we get $a^n b^n$ is R-parallel to $ab$. Hence, $a^n b^n$ is R-parallel to $ba$ (see Figure~\ref{fig:cross_lemma}).
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
