@@ -169,16 +169,8 @@ We split into two cases, depending on the relative position of $\ora{aB}$
 and $\ora{Ba}$. By
 Lemma~\ref{lem:ab_parallel_aB}, $\ora{aB}$ and $\ora{Ba}$ are either anti-parallel
 or cross.
-If $\ora{aB}$ and $\ora{Ba}$ cross, we can proceed in a very similar
-fashion to above.
-\DPTtodo{Not following this case}
-Namely, we prove by induction that
-\[
-2nf([ab]) \geq f([a^{2n}B^{2n}]).
-\]
-Then divide by $2n$, let $n$ go to infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to conclude, as above.
 
-If $\ora{aB}$ and $\ora{Ba}$ are anti-parallel, we will prove by induction that
+We first consider the case when $\ora{aB}$ and $\ora{Ba}$ are anti-parallel. We will prove by induction that
 \begin{equation}
 2nf([ab]) \geq f([(aB)^n (Ab)^n]).
 \label{eq:antiparallel_induction}
@@ -206,6 +198,9 @@ infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to get
 f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 \]
 where we used orientation invariance and homogeneity in the last equality.
+Now suppose $\ora{aB}$ and $\ora{Ba}$ cross.
+By north-south dynamics of $b$, 
+
 This finishes the proof that disconnected smoothing implies
 connected smoothing.
 
