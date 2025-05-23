@@ -165,6 +165,7 @@ which proves oriented disconnected smoothing.
 
 Second, we prove unoriented connected smoothing: with $a,b$ as above,
 $f([ab]) \ge f([aB])$.
+
 We split into two cases, depending on the relative position of $\ora{aB}$
 and $\ora{Ba}$. By
 Lemma~\ref{lem:ab_parallel_aB}, $\ora{aB}$ and $\ora{Ba}$ are either anti-parallel
@@ -200,15 +201,19 @@ f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 where we used orientation invariance and homogeneity in the last equality.
 
 Now, still in the unoriented connected smoothing case, suppose
-$\ora{aB}$ and $\ora{Ba}$ cross. Then, $\ora{aB}$ and $\ora{Ab}$
-cross. The same computation proves the base case. Note that now, by
-Lemma~\ref{lem:anbn_vs_bkak_parallel}, $\ora{(aB)^{n-1}(Ab)^{n-1}}$
-and $\ora{(Ab)(aB)}$ are parallel. Then we have
-\begin{align*}
-2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \\
-  &\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
-\end{align*}
-In the inequality we used oriented connected smoothing, which we have already established.
+$\ora{aB}$ and $\ora{Ba}$ cross.
+If $\ora{a}$ and $\ora{b}$ are $R$-parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that $\ora{a}$ and $\ora{bA}$ are R-parallel.
+Hence, 
+\[
+f([ba]) = f([bA)(a^2)]) \geq f([bA]) + f(a^2) \geq f([bA])
+\]
+where in the first inequality we used oriented connected smoothing, and in the last inequality the fact that $f(a^2) \geq 0$, by Proposition~\ref{prop:curve-positive} below.
+Similarly, if $\ora{a}$ and $\ora{b}$ are $L$-parallel it follows that $\ora{b}$ and $\ora{a}$ are $R$-parallel, and so by Lemma~\ref{lem:a_parallel_Ba}, $\ora{b}$ and $\ora{aB}$ are $R$-parallel.
+Hence, 
+\[
+f([ab]) = f([aB)(b^2)]) \geq f([aB]) + f(b^2) \geq f([aB])
+\]
+as before.
 This finishes the proof that disconnected smoothing implies
 connected smoothing.
 
