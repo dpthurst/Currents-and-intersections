@@ -78,7 +78,8 @@ stability, and homogeneity, then $f$ satisfies smoothing.
 \end{corollary}
 
 We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
-starting with some easy lemmas.
+starting with some easy lemmas. The first lets us approximate
+disconnected curves by connected curves and vice versa.
 \begin{lemma}
   Given any $g,h \in \pi_1(S)$, we have
 \[
@@ -100,11 +101,20 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
   b^n}$ $R$-crosses $\ora{ba}$.
 \label{lem:anbn_vs_bkak}
 \end{lemma}
+\DPTtodo[inline]{I don't believe this proof. I can't decide whether I
+  believe the lemma or not.}
 \begin{proof}
-We prove it by induction on $n$. The base case is clear by Lemma~\ref{lem:righthandedfoundation}.
-By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
-Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$. Hence, $a^n b^n$ R-crosses $ba$ (see Figure~\ref{fig:parallel_lemma}).
+  We proceed by induction on~$n$.
+  \DPTtodo{The base case seems to switch R-cross and L-cross}
+  The base case is
+  Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
+  By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
+  Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$.
+  \DPTtodo{Last step does not follow, R-crossing is not transitive.
+    (R-parallel is transitive.)}
+  Hence, $a^n b^n$ R-crosses $ba$ (see Figure~\ref{fig:parallel_lemma}).
 \end{proof}
+\DPTtodo{Some typo in one of the figure labels in 5.1b}
 \begin{figure}
 
     \begin{subfigure}[b]{0.4\textwidth}
@@ -117,7 +127,8 @@ Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$. Hence, $a^n b^n$ R-crosses 
  \svgfignormal{sketch_parallel} 
     \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $\protect\ora{a^n b^n}$ R-crosses $\protect\ora{ba}$}
     \label{fig:parallel_lemma}
-\end{subfigure} 
+  \end{subfigure}
+  \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers}
 \end{figure}
 
 \begin{lemma}
@@ -127,7 +138,7 @@ Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$. Hence, $a^n b^n$ R-crosses 
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
-We prove it by induction on $n$. The base case is clear by Lemma~\ref{lem:righthandedfoundation}.
+We proceed by induction on $n$. The base case is Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}.
 By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ is R-parallel to $ba$.
 Conjugating by $a$, we get $a^n b^n$ is R-parallel to $ab$. Hence, $a^n b^n$ is R-parallel to $ba$ (see Figure~\ref{fig:cross_lemma}).
 \end{proof}
