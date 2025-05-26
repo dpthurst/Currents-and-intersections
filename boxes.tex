@@ -98,50 +98,73 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
 \begin{lemma}
   Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
   $n \ge 1$, $\ora{a^n
-  b^n}$ $R$-crosses $\ora{ba}$.
+  b^n}$ $R$-crosses $\ora{ba}$, and $(a^nb^n)^+ \in (b^+, a^+)$, $(a^nb^n)^- \in (b^-, a^-)$.
 \label{lem:anbn_vs_bkak}
 \end{lemma}
-\DPTtodo[inline]{I don't believe this proof. I can't decide whether I
-  believe the lemma or not.}
 \begin{proof}
   We proceed by induction on~$n$.
-  \DPTtodo{The base case seems to switch R-cross and L-cross}
   The base case is
   Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
-  By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
-  Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$.
-  \DPTtodo{Last step does not follow, R-crossing is not transitive.
-    (R-parallel is transitive.)}
-  Hence, $a^n b^n$ R-crosses $ba$ (see Figure~\ref{fig:parallel_lemma}).
+  By induction $a^{n-1}b^{n-1}$ R-crosses $ba$, and its endpoints satisfy the constraints in the statement. 
+  For the following argument, compare Figure~\ref{fig:anbn_ba_cross}.
+  Since $(\ora{a},\ora{a^{n-1}b^{n-1}})$ are R-parallel, by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, the triple $(\ora{a}, \ora{a^nb^{n-1}}, \ora{a^{n-1}b^{n-1}})$ is R-parallel. Moreover, $(a^nb^{n-1})^+ \in ((a^{n-1}b^{n-1})^+, a^+)$ and $(a^nb^{n-1})^- \in (a^-, (a^{n-1}b^{n-1})^-)$.
+  Hence, $(\ora{a^nb^{n-1}}, \ora{b})$ are R-parallel, and thus
+  by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, the triple
+  ($\ora{a^nb^{n-1}}, \ora{a^n b^n}, \ora{b})$ is R-parallel. Moreover, its endpoints must satisfy
+  $(a^n b^n)^+ \in (b^+, (a^nb^{n-1})^+)$ and $(a^n b^n)^- \in (b^+, (b^-,(a^nb^{n-1})^-)$, which in Figure~\ref{fig:anbn_ba_cross} is depicted in the darker yellow regions.
+  
+
+  
+  Similarly, $(\ora{a^{n-1}b^{n-1}}, \ora{b})$ are R-parallel, and then
+  by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, the triple $(\ora{a^{n-1}b^{n-1}}, \ora{a^{n-1}b^{n}}, \ora{b})$ is R-parallel. Moreover, $(a^{n-1}b^{n-1})^+ \in ((a^{n-1}b^{n})^+, b^+)$ and $(a^{n-1}b^{n})^- \in (b^-, (a^{n-1}b^{n-1})^-)$.
+  Hence,  $(\ora{a},\ora{a^{n-1}b^n})$ are R-parallel and hence, by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel},
+  the triple $(\ora{a},\ora{a^nb^n},\ora{a^{n-1}b^n})$ is R-parallel. Moreover, the endpoints of $\ora{a^nb^n}$ satisfy
+  $(a^nb^n)^+ \in ((a^{n-1}b^n)^+, a^+)$ and 
+   $(a^nb^n)^- \in (a^-, (a^{n-1}b^n)^-)$. These regions are depicted with a lighter yellow in Figure~\ref{fig:anbn_ba_cross}.
+
+   Considering the intersection of the two constraints above, it follows that $(a^nb^n)^+ \in (ba^+, ba^-)$ and $(a^nb^n)^- \in (ba^-, ba^+)$. Hence, $(\ora{a^nb^n},\ora{ba})$ R-cross. The induction is proven.
 \end{proof}
-\DPTtodo{Some typo in one of the figure labels in 5.1b}
+
 \begin{figure}
-
-    \begin{subfigure}[b]{0.4\textwidth}
- \svgfignormal{sketch_crossing}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
-    \label{fig:cross_lemma}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.4\textwidth}
- \svgfignormal{sketch_parallel} 
+\begin{subfigure}[b]{0.4\textwidth}
+ \svgfignormal{anbn_ba_cross} 
     \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $\protect\ora{a^n b^n}$ R-crosses $\protect\ora{ba}$}
-    \label{fig:parallel_lemma}
-  \end{subfigure}
-  \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers}
+    \label{fig:anbn_ba_cross}
+\end{subfigure} 
+\hfill
+\begin{subfigure}[b]{0.4\textwidth}
+ \svgfignormal{anbn_ba_parallel} 
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ and $\protect\ora{ba}$ are R-parallel}
+    \label{fig:anbn_ba_parallel}
+\end{subfigure}
+\label{fig:extension_crossparallel}
 \end{figure}
-
 \begin{lemma}
   Given elements $a,b \in \pi_1(S)$ which are $R$-crossing, then for all
   $n \ge 1$, $\ora{a^n
-  b^n}$ is $R$-parallel to $\ora{ba}$.
+  b^n}$ is $R$-parallel to $\ora{ba}$, and its endpoints satisfy $(a^nb^n)^+ \in (b^+,a^+)$, $(a^nb^n)^- \in (a^-, b^-)$.
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
 We proceed by induction on $n$. The base case is Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}.
-By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ is R-parallel to $ba$.
-Conjugating by $a$, we get $a^n b^n$ is R-parallel to $ab$. Hence, $a^n b^n$ is R-parallel to $ba$ (see Figure~\ref{fig:cross_lemma}).
+By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$ and its endpoints satisfy the constraints in the statement. 
+  For the following argument, compare Figure~\ref{fig:anbn_ba_parallel}.
+  Since $(\ora{a},\ora{a^{n-1}b^{n-1}})$ R-cross, by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}, the pair $(\ora{a}, \ora{a^{n-1}b^{n-1}})$ R-cross. Moreover, $(a^nb^{n-1})^+ \in ((a^{n-1}b^{n-1})^+, a^+)$ and $(a^nb^{n-1})^- \in (a^-, (a^{n-1}b^{n-1})^-)$.
+  Hence, $(\ora{a^nb^{n-1}}, \ora{b})$ R-cross, and thus
+  by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}, the pair
+  $(\ora{a^n b^n}, \ora{b})$ R-cross. Moreover, the endpoints of $\ora{a^nb^n}$ must satisfy
+  $(a^n b^n)^+ \in (b^+, (a^nb^{n-1})^+)$ and $(a^n b^n)^- \in (b^+, (b^-,(a^nb^{n-1})^-)$, which in Figure~\ref{fig:anbn_ba_cross} is depicted in the lighter yellow regions.
+  
+  Similarly, $(\ora{a^{n-1}b^{n-1}}, \ora{b})$ R-cross, and then
+  by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}, $(a^{n-1}b^{n-1})^+ \in ((a^{n-1}b^{n})^+, b^+)$ and $(a^{n-1}b^{n})^- \in (b^-, (a^{n-1}b^{n-1})^-)$.
+  Hence,  $(\ora{a},\ora{a^{n-1}b^n})$ R-cross and hence, by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross},
+  the endpoints of $\ora{a^nb^n}$ satisfy
+  $(a^nb^n)^+ \in ((a^{n-1}b^n)^+, a^+)$ and 
+   $(a^nb^n)^- \in (a^-, (a^{n-1}b^n)^-)$. These regions are depicted with a darker yellow in Figure~\ref{fig:anbn_ba_parallel}.
+
+   Considering the intersection of the two constraints above, it follows that the endpoints of $\ora{a^nb^n}$ and $\ora{ba}$ are ordered, in c.c.w. order, as $(a^nb^n)^+, (a^nb^n)^-, ba^-, ba^+)$ which means  $(\ora{a^nb^n},\ora{ba})$ are R-parallel. Moreover, it also follows that $(a^nb^n)^+ \in (b^+,a^+)$ and $(a^-,b^-)$, and hence the induction is proven.
 \end{proof}
+
 
 \begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies disconnected smoothing and is homogeneous and continuous.
