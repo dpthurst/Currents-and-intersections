@@ -98,7 +98,7 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
 \begin{lemma}
   Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
   $n \ge 1$, $\ora{a^n
-  b^n}$ $R$-crosses $\ora{ba}$, and $(a^nb^n)^+ \in (b^+, a^+)$, $(a^nb^n)^- \in (b^-, a^-)$.
+  b^n}$ $R$-crosses $\ora{ba}$, and $(a^nb^n)^+ \in (b^+, a^+)$, $(a^nb^n)^- \in (a^-, b^-)$.
 \label{lem:anbn_vs_bkak}
 \end{lemma}
 \begin{proof}
@@ -111,7 +111,7 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
   Hence, $(\ora{a^nb^{n-1}}, \ora{b})$ are R-parallel, and thus
   by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, the triple
   ($\ora{a^nb^{n-1}}, \ora{a^n b^n}, \ora{b})$ is R-parallel. Moreover, its endpoints must satisfy
-  $(a^n b^n)^+ \in (b^+, (a^nb^{n-1})^+)$ and $(a^n b^n)^- \in (b^+, (b^-,(a^nb^{n-1})^-)$, which in Figure~\ref{fig:anbn_ba_cross} is depicted in the darker yellow regions.
+  $(a^n b^n)^+ \in (b^+, (a^nb^{n-1})^+)$ and $(a^n b^n)^- \in  (b^-,(a^nb^{n-1})^-)$, which in Figure~\ref{fig:anbn_ba_cross} is depicted in the darker yellow regions.
   
 
   
@@ -122,7 +122,10 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
   $(a^nb^n)^+ \in ((a^{n-1}b^n)^+, a^+)$ and 
    $(a^nb^n)^- \in (a^-, (a^{n-1}b^n)^-)$. These regions are depicted with a lighter yellow in Figure~\ref{fig:anbn_ba_cross}.
 
-   Considering the intersection of the two constraints above, it follows that $(a^nb^n)^+ \in (ba^+, ba^-)$ and $(a^nb^n)^- \in (ba^-, ba^+)$. Hence, $(\ora{a^nb^n},\ora{ba})$ R-cross. The induction is proven.
+   Considering the intersection of the two constraints above, it follows that $(a^nb^n)^+ \in (ba^+, ba^-)$ and $(a^nb^n)^- \in (ba^-, ba^+)$. Hence, $(\ora{a^nb^n},\ora{ba})$ R-cross. Furthermore,
+   $(a^nb^n)^+ \in ((a^{n-1}b^n)^+, a^+) \subset (b^+, a^+)$ and $(a^nb^n)^- \in (a^-, (a^{n-1}b^n)^-) \subset (a^-, b^-)$.
+   
+   The induction is proven.
 \end{proof}
 
 \begin{figure}
@@ -142,7 +145,7 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
 \begin{lemma}
   Given elements $a,b \in \pi_1(S)$ which are $R$-crossing, then for all
   $n \ge 1$, $\ora{a^n
-  b^n}$ is $R$-parallel to $\ora{ba}$, and its endpoints satisfy $(a^nb^n)^+ \in (b^+,a^+)$, $(a^nb^n)^- \in (a^-, b^-)$.
+  b^n}$ is $R$-parallel to $\ora{ba}$, and its endpoints satisfy $(a^nb^n)^+ \in (b^+,a^+)$, $(a^nb^n)^- \in (b^-, a^-)$.
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
@@ -153,7 +156,7 @@ By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$ and its endpoints satisfy th
   Hence, $(\ora{a^nb^{n-1}}, \ora{b})$ R-cross, and thus
   by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}, the pair
   $(\ora{a^n b^n}, \ora{b})$ R-cross. Moreover, the endpoints of $\ora{a^nb^n}$ must satisfy
-  $(a^n b^n)^+ \in (b^+, (a^nb^{n-1})^+)$ and $(a^n b^n)^- \in (b^+, (b^-,(a^nb^{n-1})^-)$, which in Figure~\ref{fig:anbn_ba_cross} is depicted in the lighter yellow regions.
+  $(a^n b^n)^+ \in (b^+, (a^nb^{n-1})^+)$ and $(a^n b^n)^- \in (b^-,(a^nb^{n-1})^-)$, which in Figure~\ref{fig:anbn_ba_cross} is depicted in the lighter yellow regions.
   
   Similarly, $(\ora{a^{n-1}b^{n-1}}, \ora{b})$ R-cross, and then
   by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}, $(a^{n-1}b^{n-1})^+ \in ((a^{n-1}b^{n})^+, b^+)$ and $(a^{n-1}b^{n})^- \in (b^-, (a^{n-1}b^{n-1})^-)$.
@@ -162,7 +165,7 @@ By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$ and its endpoints satisfy th
   $(a^nb^n)^+ \in ((a^{n-1}b^n)^+, a^+)$ and 
    $(a^nb^n)^- \in (a^-, (a^{n-1}b^n)^-)$. These regions are depicted with a darker yellow in Figure~\ref{fig:anbn_ba_parallel}.
 
-   Considering the intersection of the two constraints above, it follows that the endpoints of $\ora{a^nb^n}$ and $\ora{ba}$ are ordered, in c.c.w. order, as $(a^nb^n)^+, (a^nb^n)^-, ba^-, ba^+)$ which means  $(\ora{a^nb^n},\ora{ba})$ are R-parallel. Moreover, it also follows that $(a^nb^n)^+ \in (b^+,a^+)$ and $(a^-,b^-)$, and hence the induction is proven.
+   Considering the intersection of the two regions above, it follows that the endpoints of $\ora{a^nb^n}$ and $\ora{ba}$ are ordered, in c.c.w. order, as $(a^nb^n)^+, (a^nb^n)^-, ba^-, ba^+)$ which means  $(\ora{a^nb^n},\ora{ba})$ are R-parallel. Moreover, it also follows that $(a^nb^n)^+ \in (b^+,a^+)$ and $(a^nb^n)^- \in \in (b^-,a^-)$, and hence the induction is proven.
 \end{proof}
 
 
