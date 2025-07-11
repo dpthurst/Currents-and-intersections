@@ -369,13 +369,7 @@ enough we see that $f([a]) \geq 0$.
 
 We now turn to the outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
 
-\DPTtodo[inline]{Refactor: State boxes wrt $p_i,q_j$ entirely first,
-  including defining $g_{i,j,n}$ and the density. Then go
-  back and introduce the $a,b,c,d$ notation, which is about the right
-  action rather than the left action}
-\DPTtodo[inline]{We end up using group elts called $\ell_i$, $r_j$,
-  which mean the geodesics should get arrows}
-\DPTtodo[inline]{After refactor, get square brackets vs parentheses straight}
+\DPTtodo[inline]{Did major refactoring as discussed}
 
 Let $f\colon \Curves^+(S) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing, stability
@@ -398,12 +392,14 @@ The main objects in our proof are certain boxes in the
 space of geodesics to which we will assign measures. The prototype for
 the kind of boxes we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$[x]$, with
-two lifts $\ell_1,\ell_2$ on the left and two $r_1,r_2$ on the right,
+two lifts $\ora{\ell_1},\ora{\ell_2}$ on the left and two $\ora{r_1},\ora{r_2}$ on the right,
 and consider the window
 $(\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+) \subset
 \partial_\infty S \times \partial_\infty  S$ as a basic domain
 for defining the measure.
-(Recall that we give the endpoints of intervals in counterclockwise order.)
+(Recall that we give the endpoints of intervals in counterclockwise
+order.)
+
 The lifts are defined by a 4-tuple of
 elements $[p_1,q_1,p_2,q_2]$ of $\pi_1(S)$ by
 $\ell_i = P_i \cdot \ora{x}$ and $r_i = q_i \cdot \ora{x}$, with
@@ -424,82 +420,42 @@ conditions explained below.
 The measure that we ultimately assign to the associated windows will
 be invariant under
 \begin{itemize}
-\item changing $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$;
-\item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$; and
-\item translating all the lifts by $g \in \pi_1(S)$:
-  \[
-    (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
-      (p_1 G, gq_1, p_2 G,  gq_2).
-  \]
+\item changing $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$ and
+\item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$.; and
 \end{itemize}
-The first two conditions are clearly necessary since the endpoints of $\ell_i$ and $r_i$ are invariant under such transformations.
-
-In fact, ultimately we will take a limit of applying the first
+These two conditions are clearly necessary since the endpoints of $\ell_i$ and $r_i$ are invariant under such transformations.
+In fact, ultimately we will take a limit of these
 transformations: we look at the limit as $n\to \infty$ of $p_i \mapsto x^np_i$
 and $q_i \mapsto q_i x^n$.
 
-  If we are only interested in the relative position of these lines
-  (for instance to construct $\pi_1(S)$-invariant functionals), we
-  can parameterize them instead by group elements $(a,b,c,d)$ related
-  to the $p_i$ and $q_i$ by
-\begin{equation}
-\begin{aligned}
-  a &= p_1 q_1 &\qquad\qquad\qquad\qquad\qquad b &= p_1 q_2\\[2pt]
-  c &= p_2 q_1 & d &= p_2 q_2.
-\end{aligned}
-  \label{eq:relationdatum}
-\end{equation}
-In this parameterization, we necessarily have $aCbD = 1$.
-Note that, by Equation~\eqref{eq:double_coset}, the relative position
-of (say) $\ell_1$ and $r_1$ is given by the double coset
-$\langle x \rangle a \langle x \rangle$.
-
-The action of translating all lifts by $\pi_1(S)$ has been baked in to
-this alternate parametrization,
-but the measure corresponding to the associated window should be
-invariant under the following four transformations:
+The measure $\mu$ will also be $\pi_1(S)$ invariant, which translates to
+invariance under
 \begin{itemize}
-\item translating on $\ell_1$: $a \mapsto xa$ and $b \mapsto xb$;
-\item translating on $\ell_2$: $c \mapsto xc$ and $d \mapsto xd$;
-\item translating on $r_1$: $a \mapsto ax$ and $c \mapsto cx$; and
-\item translating on $r_2$: $b \mapsto bx$ and $d \mapsto dx$.
+\item translating all the lifts by $g \in \pi_1(S)$:
+  \begin{equation}\label{eq:box-translate}
+    (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
+      (p_1 G, gq_1, p_2 G,  gq_2).
+  \end{equation}
 \end{itemize}
+We will put off imposing this last invariance for the moment.
 
-Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
-$aCdB = 1$, we can
-construct four lifts of $[x]$ with the above relations, for instance
-setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = ca^{-1}$.
-
-As mentioned above, we need some conditions on these lifts; for
-instance, we need the window
-$(\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)$ to avoid the
+We now turn to the conditions on the lifts; for
+instance, the window
+$(\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)$ must avoid the
 diagonal.
-% For the proofs to go through easily, we will impose more
-% conditions on the configurations of these lifts.
 
-\begin{definition}[RH system]
-\label{def:RH-lift-sys}
-Let $a,b,c,d \in \pi_1(S,\ast)$ be such that:
-\begin{enumerate}
-\item\label{item:box-close} $a C d B = 1$;
-\item\label{item:box-nontriv} $aC(=bD)$ and $Ab(=Cd)$ are not powers of~$x$;
-\item\label{item:box-edges-cross} $\ora{a},\ora{b},\ora{c},\ora{d}$ cross $\ora{x}$ to the right; and
-\item\label{item:box-diags-cross} for sufficiently large~$n$,
-  $\ora{dx^na C}
-  (= \ora{cAbx^na C})$ crosses
-  $\ora{cx^n}$ to the right.
-\end{enumerate}
-Then we call the datum $[a,b,c,d]$ a \emph{right-handed system} (or RH system, for short).
-As explained above, this determines a $\pi_1(S)$-orbit of windows. In
-terms of the alternative data $(p_1,q_1,p_2,q_2)$, that we will refer to as \emph{right-handed lift system}, condition~(1) is automatic and the others
-become
-\begin{enumerate}[label=(\arabic*$^\prime$),start=2]
-\item\label{item:box-nontriv-2} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
-\item\label{item:box-edges-cross-2} for $i,j \in \{1,2\}$, $\ora{p_iq_j}$ crosses $\ora{x}$ to the right; and
-\item\label{item:box-diags-cross-2} for sufficiently large~$n$, $\ora{q_2x^np_1}$ crosses $\ora{q_1x^np_2}$ to
-  the right.
-\end{enumerate}
+\begin{definition}
+  A \emph{right-handed lift system} is a collection of elements
+  $(p_1,q_1,p_2,q_2)$ in $\pi_1(S)$ so that
+  \begin{enumerate}
+  \item\label{item:box-nontriv-lift} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
+  \item\label{item:box-edges-cross-lift} for $i,j \in \{1,2\}$,
+    $\ora{p_iq_j}$ crosses $\ora{x}$ to the right; and
+  \item\label{item:box-diags-cross-lift} for sufficiently large~$n$,
+    $\ora{q_2x^np_1}$ crosses $\ora{q_1x^np_2}$ to the right.
+  \end{enumerate}
 \end{definition}
+
 See Figure~\ref{fig:rhbox} for examples of
 RH systems, and Figure~\ref{fig:box4} for non-examples.
  We
@@ -510,7 +466,8 @@ Note that since $[x]$ is simple, lifts
 cannot intersect each other, and nested lifts cannot be anti-parallel
 by condition \ref{item:box-edges-cross}.
 
-
+\DPTtodo{Edit figures to have concrete lifts rather than orbits. Not
+  sure if the red arrows should just be entirely suppressed.}
 \begin{figure}
      \centering
 \resizebox{40mm}{!}{\svgfig{box1}}
@@ -524,7 +481,7 @@ by condition \ref{item:box-edges-cross}.
 \end{figure}
 
 \begin{remark}
- The slightly complicated Condition~\ref{item:box-diags-cross} is
+ Condition~\ref{item:box-diags-cross-lift} is
  phrased as it is to ensure translation invariance for boxes of Type~2
  and Type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
  enough~$n$.
@@ -532,35 +489,34 @@ by condition \ref{item:box-edges-cross}.
 \label{rmk:largeenough}
 \end{remark}
 
-\begin{definition}\label{def:RH-box}
-Fix a lift $\ora{x}$ of $[x]$ once and for all. Every right handed lift system given by the datum $(p_1,q_1,p_2,q_2)$  determines a \emph{right-handed box}, a half-closed half-open box in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$ given by
-\[
-B_{p_1,q_1,p_2,q_2} \coloneqq (\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)
-\]
-where $\ell_i = P_i \cdot \ora{x}$ and $r_i = q_i \cdot \ora{x}$.
-
-Modifying the right-handed lift system by changing  $p_i$ preserving $\ell_i$, or $q_i$ preserving $r_i$ determines the same right-handed box.
-
-Furthermore, by construction, a different choice of lift of $[x]$ determines a different box $B_{p_1,q_1,p_2,q_2}'$, whose endpoints differ from the endpoints of $B_{p_1,q_1,p_2,q_2}$ by translation by some element in $\pi_1(S)$.
-On the other hand, the RH system $[a,b,c,d]$
-determines a $\pi_1(S)$-orbit of boxes that we will denote
-$[B_{p_1,q_1,p_2,q_2}]$ or $[B]_{a,b,c,d}$ depending on if we want to
-draw attention to a concrete representative of the orbit or to the
-orbit itself. 
-
-We will denote by $\mathcal{B}$ the set of right-handed boxes.
-\end{definition}
 \begin{figure}
   \centering{
 \resizebox{45mm}{!}{\svgfig{nonbox}}\qquad
 \resizebox{45mm}{!}{\svgfig{box3}}
 \caption{Two non-examples of right-handed boxes. The left is not
   right-handed because the diagonals cross in the wrong way, while the
-  right is a non-example because $\protect\ora{c}$ does not cross $\protect\ora{x}$
+  right is a non-example because $\protect\ora{p_2q_1}$ does not cross $\protect\ora{x}$
   essentially (to the right or to the left)}
 \label{fig:box4}
 }
 \end{figure}
+
+\begin{definition}\label{def:RH-box}
+  Every right handed lift system
+  $(p_1,q_1,p_2,q_2)$ determines a \emph{right-handed box}, a
+  half-closed half-open box in
+  $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$
+  given by
+\[
+B_{p_1,q_1,p_2,q_2} \coloneqq (\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)
+\]
+where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
+
+Modifying the right-handed lift system by changing $p_i$ preserving
+$\ora{\ell_i}$, or changing $q_i$ preserving $\ora{r_i}$, determines
+the same right-handed box.
+The set of right-handed boxes is denoted $\mathcal{B}$.
+\end{definition}
 
 \begin{proposition}\label{prop:rh-boxes}
   Let $(p_1,q_1,p_2,q_2)$ be a RH lift system determining a RH box with $\ora{\ell_i} =
@@ -571,12 +527,12 @@ We will denote by $\mathcal{B}$ the set of right-handed boxes.
 \end{proposition}
 
 \begin{proof}
-  We first note that condition \ref{item:box-edges-cross-2} implies
+  We first note that condition \ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
   are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
   $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel.
 
-  To exploit condition~\ref{item:box-diags-cross-2}, we prove a lemma.
+  To exploit condition~\ref{item:box-diags-cross-lift}, we prove a lemma.
 
   \begin{lemma}\label{lem:box-endpoints}
     In the setting above, fix $n \in \bbZ$ and $i,j \in \{1,2\}$, and
@@ -616,23 +572,12 @@ We will denote by $\mathcal{B}$ the set of right-handed boxes.
   $\lim_{n\to\infty} g_{i,j,n}^+ = r_j^+$ and
   $\lim_{n\to\infty} g_{i,j,n}^- = \ell_i^-$.
 
-  By condition~\ref{item:box-diags-cross-2}, for sufficiently large $n$
+  By condition~\ref{item:box-diags-cross-lift}, for sufficiently large $n$
   the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$
   appear in that ccw order, which by the limiting behavior implies
   that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as desired. (At
-  the last step we need condition~\ref{item:box-nontriv-2} to
+  the last step we need condition~\ref{item:box-nontriv-lift} to
   guarantee that $\ell_1 \ne \ell_2$ and $r_1 \ne r_2$.)
-
-  The statements for RH lift systems follow immediately, except we
-  should check that condition~\ref{item:box-diags-cross} corresponds
-  to condition~\ref{item:box-diags-cross-2}. We compute
-  \begin{align*}
-    cx^n &= p_2 q_1 x^n&
-    dx^naC &= p_2 q_2 x^n p_1 P_2\\
-    \intertext{which after conjugating by $P_2$ yields}
-    q_1 x^n p_2 &= g_{2,1,n} & q_2 x^n p_1 &= g_{1,2,n}.
-  \end{align*}
-  Thus the two crossing conditions are equivalent.
 \end{proof}
 
 \begin{remark}
@@ -647,45 +592,13 @@ We will denote by $\mathcal{B}$ the set of right-handed boxes.
   more convenient for the proofs.
 \end{remark}
 
-In constructing the measure, we want to use the following fact.
-
-\begin{lemma}
-The action of $\pi_1(S)$ on $\partial_{\infty} S$ is minimal,
-i.e., for any $p \in \partial_{\infty} S$, the orbit
-$\pi_1(S)\cdot p$ is dense.
-\label{lem:minimal}
-\end{lemma}
-
-However, because of our interest in right-handed boxes, we are only considering a subset of the lifts of $[x]$ to construct our boxes.
-These are still enough to approximate any box.
-
-\begin{lemma}
-Let $x \in \pi_1(S)$.
-Given any $z \in \partial_\infty  S$
-and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
-endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and are ordered counter-clockwise (or clockwise)
-with respect to the $\partial_\infty S$ order.
-\label{lem:diagonaldense}
-\end{lemma}
-\begin{proof}
-By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
-$\pi_1(S)$ are dense in $\partial_\infty S$; choose any $g$ so that
-$g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
-$\ora{h}$ crosses $\ora{g}$. Then for sufficiently large $k$, $h^{\pm k}\cdot
-\ora{x}$ will be in a neighborhood of $h^{\pm}$ and in particular will
-not cross $\ora{g}$.
-Finally, for large enough $n$, we have
-that $g^n h^{\pm k} \cdot x^{\pm} \in (z-\epsilon,z+\epsilon)$.
-Tracing through orientations shows that one of these translates will
-be clockwise and the other will be counterclockwise.
-\end{proof}
-
 \begin{proposition}
 The family of right handed boxes~$\mathcal{B}$ is dense in the space
 of rectangles in $G(S)$, in the following sense. For any
 $v_1,v_2,w_2,w_1\in \bdy_\infty S$ in that cyclic order,
-and any $\epsilon>0$, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
-Type~I RH box $B_{p_1,p_2,q_1,q_2}$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
+and any $\epsilon>0$ so the respective $\epsilon$-neighborhoods are
+disjoint, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
+Type~1 RH box $B_{p_1,p_2,q_1,q_2}$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 \label{prop:density}
 \end{proposition}
@@ -693,22 +606,23 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
   By Lemma~\ref{lem:diagonaldense}, we can find translates
   $p_i\cdot \ora{x}$ and $q_j \cdot \ora{x}$ with both endpoints in
   the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. To
-  make a RH box (which will be automatically of Type I, since both endpoints of the lifts of $\ora{x}$ are constrained in a small neighborhood), we must require that
+  make a RH box (which will be automatically of Type~1, since both endpoints of the lifts of $\ora{x}$ are constrained in a small neighborhood), we must require that
   $p_i \cdot \ora{x}$ be clockwise $B_\epsilon(v_i)$ and the endpoints
   of $q_i \cdot \ora{x}$ be counterclockwise within $B_\epsilon(w_i)$;
   again we can achieve this.
   See Figure~\ref{fig:approx2} (right).
-  This guarantees Condition~\ref{item:box-edges-cross-2}.
-  If Condition~\ref{item:box-nontriv-2} is not satisfied, we can slightly perturb the choice in Lemma~\ref{lem:diagonaldense} to ensure it.
+  This guarantees Condition~\ref{item:box-edges-cross-lift}.
+  Condition~\ref{item:box-nontriv-lift} will be satisfied, since the
+  lifts are disjoint.
   The cyclic order of the $v_i$ and $w_i$ guarantees
-  Condition~\ref{item:box-diags-cross-2}.
+  Condition~\ref{item:box-diags-cross-lift}.
 \end{proof}
 
 \begin{remark}
-A similar argument guarantees that boxes of Type II and Type III are also dense in the above sense.
+A similar argument guarantees that boxes of Type~2 and Type~3 are also dense in the above sense.
 \end{remark}
 
-\DPTtodo{Figure seems a little outdated, for instance with $p,q,r,s$
+\DPTtodo{Figure is a little outdated, for instance with $p,q,r,s$
   notation}
 \begin{figure}
 \centering{
@@ -718,6 +632,79 @@ A similar argument guarantees that boxes of Type II and Type III are also dense 
 \label{fig:approx2}
 }
 \end{figure}
+
+We now turn to invariance under translation by $\pi_1(S)$, as in
+Eq.~\eqref{eq:box-translate}. The $\pi_1(S)$-orbit of $(p_1,q_1,p_2,q_2)$
+can be parameterized by group elements $(a,b,c,d)$ related
+  to the $p_i$ and $q_i$ by
+\begin{equation}
+\begin{aligned}
+  a &= p_1 q_1 &\qquad\qquad\qquad\qquad\qquad b &= p_1 q_2\\[2pt]
+  c &= p_2 q_1 & d &= p_2 q_2.
+\end{aligned}
+  \label{eq:relationdatum}
+\end{equation}
+In this parameterization, we necessarily have $aCbD = 1$.
+Note that, by Eq.~\eqref{eq:double_coset}, the relative position
+of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
+$\langle x \rangle a \langle x \rangle$.
+
+The action of translating all lifts by $\pi_1(S)$ has been baked in to
+this alternate parametrization,
+but the measure corresponding to the associated window should be
+invariant under the following four transformations:
+\begin{itemize}
+\item translating on $\ell_1$: $a \mapsto xa$ and $b \mapsto xb$;
+\item translating on $\ell_2$: $c \mapsto xc$ and $d \mapsto xd$;
+\item translating on $r_1$: $a \mapsto ax$ and $c \mapsto cx$; and
+\item translating on $r_2$: $b \mapsto bx$ and $d \mapsto dx$.
+\end{itemize}
+
+Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
+$aCdB = 1$, we can
+construct four lifts of $[x]$ with the above relations, for instance
+setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = ca^{-1}$.
+
+
+\begin{definition}[RH orbit]
+\label{def:RH-lift-sys}
+Let $a,b,c,d \in \pi_1(S,\ast)$ be such that:
+\begin{enumerate}[label=(\arabic*${}'$),start=0]
+\item\label{item:box-close} $a C d B = 1$;
+\item\label{item:box-nontriv} $aC(=bD)$ and $Ab(=Cd)$ are not powers of~$x$;
+\item\label{item:box-edges-cross} $\ora{a},\ora{b},\ora{c},\ora{d}$ cross $\ora{x}$ to the right; and
+\item\label{item:box-diags-cross} for sufficiently large~$n$,
+  $\ora{dx^na C}
+  (= \ora{cAbx^na C})$ crosses
+  $\ora{cx^n}$ to the right.
+\end{enumerate}
+\DPTtodo{Trying some different terminology}
+Then we call the datum $[a,b,c,d]$ a \emph{right-handed lift orbit} (or RH orbit, for short).
+\end{definition}
+
+As explained above, this determines a $\pi_1(S)$-orbit of windows.
+The one non-obvious point to check is that
+condition~\ref{item:box-diags-cross} corresponds
+to condition~\ref{item:box-diags-cross-lift}:
+\begin{align*}
+  cx^n &= p_2 q_1 x^n& dx^naC &= p_2 q_2 x^n p_1 P_2\\
+  \intertext{which after conjugating by $P_2$ yields}
+  q_1 x^n p_2 &= g_{2,1,n} & q_2 x^n p_1 &= g_{1,2,n}.
+\end{align*}
+Thus the two crossing conditions are equivalent.
+
+\begin{definition}
+  We denote a $\pi_1(S)$-orbit of boxes by $[B_{p_1,q_1,p_2,q_2}]$ or
+  $[B]_{a,b,c,d}$ depending on whether we want to
+  draw attention to a concrete representative of the orbit or to the
+  orbit itself.
+\end{definition}
+
+% Furthermore, by construction, a different choice of lift of $[x]$
+% determines a different box $B_{p_1,q_1,p_2,q_2}'$, whose endpoints
+% differ from the endpoints of $B_{p_1,q_1,p_2,q_2}$ by translation by
+% some element in $\pi_1(S)$.
+
 
 \subsection{Measures of boxes}
 
@@ -791,7 +778,8 @@ This follows immediately from Lemma~\ref{lem:additivity-limit}.
 \end{proof}
 
 \begin{remark}
-The limit \eqref{eq:additivity-limit} need not exist if one only assumes $f$ satisfies quasi-smoothing.
+The limit in Lemma~\ref{lem:additivity-limit} need not exist if one
+only assumes $f$ satisfies quasi-smoothing.
 We give an example on the once-holed torus.
 Let $S$ be the once-punctured torus with generating set $\{a,b,b^2\}$,
 where $a$ and $b$ are the standard generators of $\pi_1(S)$, chosen so
@@ -962,10 +950,10 @@ constraints in Definition~\ref{def:RH-lift-sys}. Note that the boxes
 are bounded at positive or negative ends of translates of $\ora{x}$,
 i.e., at $P_i \cdot x^-$ (also referred to as $\ell_i^-$) or at
 $q_j \cdot x^+$ (also referred to as $r_j^+$).
-Conditions~\ref{item:box-nontriv-2} and \ref{item:box-diags-cross-2}
+Conditions~\ref{item:box-nontriv-lift} and \ref{item:box-diags-cross-lift}
 together say that $\ell_2^-,\ell_1^-,r_1^+,r_2^+$ are distinct points
-in that counterclockwise order. This is easy to understand once we
-have understood Condition~\ref{item:box-edges-cross-2}, which is a
+
+have understood Condition~\ref{item:box-edges-cross-lift}, which is a
 condition on relative positions of the $\ora{\ell_i}$ and $\ora{r_j}$
 for each pair separately.
 

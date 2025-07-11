@@ -758,7 +758,7 @@ examples.
 \begin{remark}
   The main place we use unoriented smoothings in this paper is in the
   proof of Eq.~\eqref{eq:cross-cancel}, but it is necessary there. See
-  Sec.~\ref{sec:asymmetric}.
+  Appendix~\ref{sec:asymmetric}.
 \end{remark}
 
 We also need some lemmas about smoothings where we have high powers of
@@ -850,7 +850,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
-four group elements, in a configuration that is easy to find.
+four group elements.
 \begin{corollary}\label{cor:fund-axby}
   Let $a,b,x,y \in \pi_1(S)$ be chosen so that $(B\cdot \ora{x},
   \ora{y}, a\cdot\ora{x})$ are R-parallel.
@@ -874,6 +874,39 @@ four group elements, in a configuration that is easy to find.
   $(\ora{y}, a \cdot \ora{x}, ba \cdot \ora{y})$ are R-parallel.)
 \end{proof}
 
+We now check this configuration is easy to find. The following result
+is standard.
+\DPTtodo{moved these lemmas here}
+
+\begin{lemma}
+The action of $\pi_1(S)$ on $\partial_{\infty} S$ is minimal,
+i.e., for any $p \in \partial_{\infty} S$, the orbit
+$\pi_1(S)\cdot p$ is dense.
+\label{lem:minimal}
+\end{lemma}
+
+We care about the orientations, so we need a slightly more precise result.
+
+\begin{lemma}
+Let $x \in \pi_1(S)$.
+Given any $z \in \partial_\infty  S$
+and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
+endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and are ordered counter-clockwise (or clockwise)
+with respect to the $\partial_\infty S$ order.
+\label{lem:diagonaldense}
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
+$\pi_1(S)$ are dense in $\partial_\infty S$; choose any $g$ so that
+$g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
+$\ora{h}$ crosses $\ora{g}$. Then for sufficiently large $k$, $h^{\pm k}\cdot
+\ora{x}$ will be in a neighborhood of $h^{\pm}$ and in particular will
+not cross $\ora{g}$.
+Finally, for large enough $n$, we have
+that $g^n h^{\pm k} \cdot x^{\pm} \in (z-\epsilon,z+\epsilon)$.
+Tracing through orientations shows that one of these translates will
+be clockwise and the other will be counterclockwise.
+\end{proof}
 
 \begin{lemma}
   Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
@@ -881,14 +914,11 @@ four group elements, in a configuration that is easy to find.
 \label{lem:initial}
 \end{lemma}
 \begin{proof}
-  \DPTtodo{Shouldn't Lemma \ref{lem:diagonaldense} be moved here, then?}
-  Immediate from Lemma~\ref{lem:diagonaldense} below.
+  Immediate from Lemma~\ref{lem:diagonaldense}.
 \end{proof}
 
 An alternate construction of such elements is to take $x=y$ and any
 $\ora{a},\ora{b}$ that cross $\ora{x}$ to the right.
-
-
 
 
 %%% Local Variables:
