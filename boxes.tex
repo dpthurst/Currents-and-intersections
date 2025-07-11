@@ -6,16 +6,15 @@ countably additive way, to a collection of boxes of geodesics
 sufficiently rich to generate the $\sigma$-algebra of open sets of
 $G(\Sigma)$.
 
-\DPTtodo{This motivation new, not yet polished}
+\DPTtodo{This motivation new, not yet polished} \DMGtodo{I tweaked this a bit.}
 To define the measure of our elementary boxes, we look at the
 functional~$f$ applied to longer and longer curves~$C_i$. We look at
 two different types of asymptotics of $f(C_i)$. First we look at the
 normalized growth rate and use this to relate different properties of
 curve functionals (Section~\ref{subsec:smoothing_consequences}), in
-particular showing that connected and disconnected smoothing
+particular showing that how oriented smoothing and smoothing related, and that connected and disconnected smoothing
 imply each other assuming
-continuity~(Proposition~\ref{prop:cont_conn_disc}). We also show that
-positivity of the functional follows from the axioms.
+continuity~(Proposition~\ref{prop:cont_conn_disc}). 
 
 We then turn to the family of boxes of geodesics central to our proof
 (Section~\ref{sec:boxes}). Here we look deeper in the asymptotics: the
@@ -24,16 +23,18 @@ the highest growth term vanishes, and the limit of interest picks out
 the next asymptotics. This is similar to the construction of Otal
 \cite{Otal90:SpectreMarqueNegative}.
 
+
 \subsection{Relations between types of smoothings}
 \label{subsec:smoothing_consequences}
-\DPTtodo{Revised this section}
+
+Now we turn to relations between different types of smoothing.
 A priori the hypothesis of oriented smoothing on $f$ is weaker than
 smoothing, since it does not seem to include unoriented smoothing.
 However, it follows from the other hypotheses; the key ingredient is
 our previous work in~\cite{MGT21:Smoothings}. We prove the following,
 which in particular will allow the simpler algebraic statement in
 Theorem~\ref{thm:intersections_group}; it is not necessary for the
-proof of Theorem~\ref{thm:intersect}.\DPTtodo{right?}
+proof of Theorem~\ref{thm:intersect}.
 
 \begin{proposition}
 If $f$ is orientation invariant and satisfies oriented smoothing
@@ -313,56 +314,7 @@ for every curve $C$.
 
 
 
-In fact, the positivity of $f$ is an immediate consequence of smoothing and convex union.
 
-\DPTtodo{This positivity doesn't use any of the more complicated stuff
-  above. Maybe move it
-  earlier, to Section~\ref{subsec:mainhypotheses}}
-\begin{proposition}
-  Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
-  \label{prop:curve-positive}
-\end{proposition}
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right, so
-$[a][x] \reducesto [ax]$.
-By Lemma~\ref{lem:rhs_prod}, we see that
-$(\ora{ax},\ora{a})$ L-cross, so
-(by unoriented smoothing) $[ax][a]
-\reducesto [x]$. We thus have
-\begin{align*}
-    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
-     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
-\end{align*}
-Adding the equations, we get $f([a]) \geq 0$.
-\end{proof}
-
-Although we will not use it in this paper, we note that a similar
-argument with different assumptions also yields positivity.
-
-\begin{proposition}
-  Let $f$ be a curve functional satisfying convex union, quasi-smoothing,
-  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
-  \pi_1(S)$.
-  \label{prop:curve-positive2}
-\end{proposition}
-
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
-\begin{align*}
-[a^n][x] &\reducesto [a^nx]\\
-[a^nx][a^n]&\reducesto [x].
-\end{align*}
-Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
-\begin{align*}
-    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
-     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
-\end{align*}
-Adding the equations, we get $f([a^n]) \geq -2R$. By stability and
-homogeneity, this yields $n f([a]) \geq -2R$, and taking $n$ large
-enough we see that $f([a]) \geq 0$.
-\end{proof}
 
 \subsection{Right-handed boxes}
 \label{sec:boxes}
@@ -457,7 +409,7 @@ diagonal.
 \end{definition}
 
 See Figure~\ref{fig:rhbox} for examples of
-RH systems, and Figure~\ref{fig:box4} for non-examples.
+RH systems, and Figure~\ref{fig:box4} for a non-example.
  We
 distinguish three types of RH systems: type 1 has
 no nested lifts of $[x]$; type 2 has one parallel pair of nested lifts; and
@@ -466,8 +418,7 @@ Note that since $[x]$ is simple, lifts
 cannot intersect each other, and nested lifts cannot be anti-parallel
 by condition \ref{item:box-edges-cross}.
 
-\DPTtodo{Edit figures to have concrete lifts rather than orbits. Not
-  sure if the red arrows should just be entirely suppressed.}
+
 \begin{figure}
      \centering
 \resizebox{40mm}{!}{\svgfig{box1}}
@@ -491,11 +442,8 @@ by condition \ref{item:box-edges-cross}.
 
 \begin{figure}
   \centering{
-\resizebox{45mm}{!}{\svgfig{nonbox}}\qquad
 \resizebox{45mm}{!}{\svgfig{box3}}
-\caption{Two non-examples of right-handed boxes. The left is not
-  right-handed because the diagonals cross in the wrong way, while the
-  right is a non-example because $\protect\ora{p_2q_1}$ does not cross $\protect\ora{x}$
+\caption{Non-example of right-handed box. It is a non-example because $\protect\ora{p_2q_1}$ does not cross $\protect\ora{x}$
   essentially (to the right or to the left)}
 \label{fig:box4}
 }
@@ -679,7 +627,7 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ be such that:
   $\ora{cx^n}$ to the right.
 \end{enumerate}
 \DPTtodo{Trying some different terminology}
-Then we call the datum $[a,b,c,d]$ a \emph{right-handed lift orbit} (or RH orbit, for short).
+Then we call the datum $[a,b,c,d]$ a \emph{right-handed lift orbit} (or \emph{RH orbit}, for short).
 \end{definition}
 
 As explained above, this determines a $\pi_1(S)$-orbit of windows.

@@ -175,6 +175,54 @@ Examples below show we have strict inclusions
 \AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S).
 \]
 
+We finish this subsection by relating the hypotheses on $f$ to non-negativity. In particular, we prove that smoothing and convex union on $f$, imply non-negativity.
+
+\begin{proposition}
+  Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
+  \label{prop:curve-positive}
+\end{proposition}
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right, so
+$[a][x] \reducesto [ax]$.
+By Lemma~\ref{lem:rhs_prod}, we see that
+$(\ora{ax},\ora{a})$ L-cross, so
+(by unoriented smoothing) $[ax][a]
+\reducesto [x]$. We thus have
+\begin{align*}
+    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
+     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
+\end{align*}
+Adding the equations, we get $f([a]) \geq 0$.
+\end{proof}
+
+Although we will not use it in this paper, we note that a similar
+argument with different assumptions also yields positivity.
+
+\begin{proposition}
+  Let $f$ be a curve functional satisfying convex union, quasi-smoothing,
+  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
+  \pi_1(S)$.
+  \label{prop:curve-positive2}
+\end{proposition}
+
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
+\begin{align*}
+[a^n][x] &\reducesto [a^nx]\\
+[a^nx][a^n]&\reducesto [x].
+\end{align*}
+Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
+\begin{align*}
+    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
+     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
+\end{align*}
+Adding the equations, we get $f([a^n]) \geq -2R$. By stability and
+homogeneity, this yields $n f([a]) \geq -2R$, and taking $n$ large
+enough we see that $f([a]) \geq 0$.
+\end{proof}
+
 \subsection{Examples and non-examples}
 \label{subsec:examples_and_non}
 In previous work, we proved the following result.
@@ -213,14 +261,14 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
     It's an example of curve functional illustrating the proper containment \[\AConvex(S) \subsetneq \Convex(S).\]
     \item  In future work the first author shows that if $\pi_1(S) \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property, then $\ell_X$, the stable length of the action, satisfies $\ell_X \in \QConvex(S)$. In general, these actions do not satisfy smoothing. We give three more examples in the next items.
     \item Although word length w.r.t.\ an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
-    \item Another example of the above are stable lengths associated to quasi-fuchsian representations. They satisfy quasi-smoothing by \cite[Lemma~4.3]{BridgemanTaylor08:ExtensionWP} or \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF21:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
+    \item Another example of the above are stable lengths associated to quasi-fuchsian representations. They satisfy quasi-smoothing by \cite[Lemma~4.3]{BridgemanTaylor08:ExtensionWP} or \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF22:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
     \begin{question}
     If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
     \end{question} 
 \item The previous example falls in the more general framework of length functions coming from higher-rank representations $\rho \colon \pi_1(S) \to \PSL(n,\mathbb{R})$.
 Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy smoothing. A wider class of \emph{$[P_1]$-Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work, they also satisfy quasi-smoothing. In fact, they satisfy smoothing if and only if they are positively ratioed. 
-        \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV22:Biautomaticity} for details.
-    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV22:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
+        \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV24:Biautomaticity} for details.
+    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV24:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
       homogeneity and smoothing, but does not satisfy additivity or
       even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
