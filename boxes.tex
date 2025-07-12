@@ -887,22 +887,21 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 }
 \end{figure}
 
-Now, we show that this in fact implies that $\mu_f$ is finitely
-additive.
-
-First, we examine exactly which boxes are allowed, making concrete the
+To show that this side-by-side additivity shows that $\mu_f$ is finitely
+additive, and furthermore that the allowable boxes form a semi-ring,
+we examine exactly which boxes are allowed, making concrete the
 constraints in Definition~\ref{def:RH-lift-sys}. Note that the boxes
 are bounded at positive or negative ends of translates of $\ora{x}$,
 i.e., at $P_i \cdot x^-$ (also referred to as $\ell_i^-$) or at
 $q_j \cdot x^+$ (also referred to as $r_j^+$).
 Conditions~\ref{item:box-nontriv-lift} and \ref{item:box-diags-cross-lift}
 together say that $\ell_2^-,\ell_1^-,r_1^+,r_2^+$ are distinct points
-
-have understood Condition~\ref{item:box-edges-cross-lift}, which is a
+in that cyclic order. It remains to understand
+Condition~\ref{item:box-edges-cross-lift}, which is a
 condition on relative positions of the $\ora{\ell_i}$ and $\ora{r_j}$
 for each pair separately.
 
-Now consider a single pair
+Consider a single pair
 $(\ora{\ell},\ora{r}) = (P \cdot \ora{x}, q \cdot \ora{x})$. We claim
 this pair is R-parallel iff $r^+ \in (\ell^-,\ell^+)$ and
 $\ell^- \in (r^+, r^-)$. Indeed, $\ora{\ell}$ and $\ora{r}$ can not
@@ -912,20 +911,24 @@ $(\ora{\ell},\ora{r})$ are R-parallel or R-anti-parallel, and
 $\ell^- \in (r^+,r^-)$ iff $(\ora{\ell},\ora{r})$ are R-parallel or
 L-anti-parallel.
 
-To visualize these conditions better, recall the space of oriented
+To visualize these conditions better, draw the space of oriented
 geodesics 
 $G(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (Definition~\ref{def:spacegeodesics}),
-drawn in the
+in the
 usual way as a square with opposite sides identified. We represent
-$(\ell^-,\ell^+)$ by drawing a ``whisker'', a horizontal segment at
-$y$-coordinate $\ell^-$ from $\ell^-$ (on the diagonal) to $\ell^+$.
-Similarly represent $(r^+,r^-)$ by a vertical segment at
-$x$-coordinate $r^+$ from $r^+$ to $r^-$. Then $(\ora{\ell}, \ora{r})$
-are R-parallel iff these two segments intersect. See
-Figures~\ref{fig:whiskers} and~\ref{fig:whiskers2}.
+$(r^+,r^-)$ by drawing a ``whisker'', a vertical segment at
+$x$-coordinate $r^+$ from $r^+$ (on the diagonal) to $r^-$, as in
+Figure~\ref{fig:whiskers}.
+Similarly represent $(\ell^-,\ell^+)$ by a
+horizontal segment at
+$y$-coordinate $\ell^-$ from $\ell^-$ to $\ell^+$.
+Then $(\ora{\ell}, \ora{r})$
+are R-parallel iff these two segments intersect, as in
+Figure~\ref{fig:whiskers2}.
 Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
-(horizontal or vertical) whiskers that extend from the diagonal almost
+horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
+\DPTtodo{Use notation $r^+$, etc in pictures rather than $q\cdot x^+$}
 
 \begin{figure}
 \centering{
@@ -942,11 +945,16 @@ all the way back to the diagonal.
 }
 \end{figure}
 
-Finally, we show that the set of RH boxes $\mathcal{B}$ forms a semi-ring, in the sense of Definition~\ref{def:semiring}.
+With this setup, we show that the set of RH boxes $\mathcal{B}$ forms a semi-ring, in the sense of Definition~\ref{def:semiring}.
 First, the intersection of boxes is obviously a box. Indeed, all sides of a box are necessarily in the
     respective whisker, and any new vertices of the intersection are thus intersections of whiskers.
 Second, we show that if $A,B$ are boxes, then $A \backslash B$ is a finite union of boxes. 
-By density of endpoints of translates of $\ora{x}$, we can take sufficiently many long horizontal and vertical whiskers that cut $A \backslash B$ into a collection of boxes to which we can apply Lemma~\ref{prop:sidebyside}, as illustrated in Figure~\ref{fig:breaking}. We have thus proven the following.
+\DPTtodo{Expand here. Working on it.}
+By density of endpoints of translates of $\ora{x}$, we can take
+sufficiently many long horizontal and vertical whiskers that cut
+$A\backslash B$ into a collection of boxes to which we can apply
+Lemma~\ref{prop:sidebyside}, as illustrated in
+Figure~\ref{fig:breaking}. We have thus proven the following.
 
 \begin{proposition}
 \label{prop:RHsemiring}
