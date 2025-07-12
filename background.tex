@@ -109,15 +109,15 @@ If $X$ is a separable metric space, and $\mu$ is a Borel measure, then every ato
 
 \begin{definition}
 Let $X$ be a locally compact and Hausdorff space. A Borel measure $\mu$ on $X$ is  is \emph{locally finite} if every point has a neighborhood $U$ with $\mu(U)< \infty$.
-The measure $\mu$ is \emph{inner regular} if one has, for every $U$ open,
+The measure $\mu$ is \emph{inner regular} if, for every open set $U$,
 \[
-\mu(U) = \sup \{ \mu(K) : K \subset U \mbox{ compact } \}.
+  \mu(U) = \sup \{ \mu(K) : K \subset U,\ \text{$K$ compact} \}.
 \]
 We say that $\mu$ is \emph{outer regular} if, for every Borel set $B$,
 \[
-   \mu(B) = \inf \{ \mu(U) : U \supset B \mbox{ open } \}.
+  \mu(B) = \inf \{ \mu(U) : B \subset U,\ \text{$U$ open} \}.
 \]
- The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular and outer regular.
+The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular, and outer regular.
 \label{def:radon}
 \end{definition}
 
