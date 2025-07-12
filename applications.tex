@@ -137,7 +137,7 @@ and
 \begin{align*}
 \mu(G(({x},{w}], ({y},{z}])) +   &\mu(G([{x},{w}), [{y},{z})))= \\
 &\mu(G({x},{z}]) + \mu(G({w},{y}]) \\
-&- \mu(G(({w},{z}]) - \mu(G(({x},{y}])
+&- \mu(G(({w},{z}]) - \mu(G(({x},{y}]).
 \end{align*}
 \label{lem:otalclaim}
 \end{lemma}
@@ -220,26 +220,28 @@ Hence, by continuity of measures from below, we have
 \[
 \lim_n \mu(R_n) \to \mu(B_{g,h}).
 \]
-If we let $a=g^n$ and $b=h^n$, we have, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
-\[\mu(R_n)=1/2(f(a) + f(b)-f(ab^{-1})).\]
-
-Similarly, let $R_n^{\perp}$ denote the set of geodesics intersecting the sides of $H_n$ contained in $\ora{ab}$ and $\ora{ba}$. Again, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}, we get
+If we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
+we get, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
+\[\mu(R_n)=A_n + B_n-C_n.\]
+and
 \[
-\mu(R_n^{\perp})=1/2(f(a) + f(b)-f(ab)).
+\mu(R_n^T)=A_n + B_n -D_n,
 \]
+where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$ and $D_n=f(a_nb_n)/2$, and $R_n^{\perp}$ denote the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n}$ and $\ora{b_na_n}$.
 We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
 Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
 By max-smoothing, for every $n$, we have $\mu(R_n^T)=0$ or $\mu(R_n)=0$.
 Since each sequence of sets $(R_n)$ and $(R_n^{\perp})$ is nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $n \geq 1$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
 Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-Therefore, by~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}, $\mu$ is a measured lamination.
+By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\cup_n B_n = B$, and $\cap_n B_n^{\perp} = B$.
+Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$.
 
 Now we prove the other implication.
 First, note that disconnected max-smoothing means that $\mu(R_{g,h})=0$ or $\mu(R_{g,h}^{\perp})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
 We proceed by proving the counter-positive.
 Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$.
-This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, so by~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}, $\mu$ is not a measured lamination.
+This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, and thus $\mu$ is not a measured lamination.
 \end{proof}
 
 The above result shows that if one knows $f$ is dual to a geodesic current, then it is only necessary to check disconnected max-smoothing to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-crossings. It is however true that intersection number with a measured lamination also satisfies connected max-smoothing.
@@ -290,7 +292,7 @@ The proof is similar to that of Theorem~\ref{thm:char_laminations}.
 By the assumptions on $f$, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a Liouville current.
 Given elements $g, h \in \pi_1(\Sigma)$ with $\ora{g}, \ora{h}$ crossing, we consider powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as in the proof of Theorem~\ref{thm:char_laminations}.
-By the same considerations as in that proof, if we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
+By the same considerations as in that proof, letting $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
 we get
 \[\mu(R_n)=A_n + B_n-C_n\]
 and
@@ -321,8 +323,7 @@ Therefore, we have the relation
 e^{-\mu(B_{g,h})} + e^{-\mu(B_{g,h}^{\perp})} =1
 \]
 for any intersecting pair $g,h \in \pi_1(\Sigma)$.
-By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\cup_n B_n = B$, and $\cap_n B_n^{\perp} = B$.
-Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$, and hence
+As in the previous proof, by density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$, and hence
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
@@ -364,11 +365,11 @@ A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and onl
 The assumption can be written as 
 
  \begin{equation}
-     1/C \leq  \frac{1- \exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C
+     1/C \leq  \frac{1- \exp \left[-f\left([gh]\right)/2 + f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C
     \end{equation}
     and
  \begin{equation}
-    1/C \leq \frac{1- \exp \left[-f\left([g][h]\right)/2 + f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
+    1/C \leq \frac{1- \exp \left[-f\left([gh^{-1}]\right)/2 + f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
     \end{equation}
 
     
@@ -382,16 +383,7 @@ The assumption can be written as
     1/C \leq \frac{1 - e^{-\mu(B^{\perp})}}{e^{-\mu(B)}} \leq C
     \end{equation}
 which, by Theorem~\ref{thm:ham}, implies $\mu$ is a hyperbolic Liouville current.
-On the other hand, if $\mu$ is a Liouville current, by Theorem~\ref{prop:char_liouville}, letting $x \coloneqq f\left([gh]\right)/2$, $y \coloneqq f\left([gh^{-1}]\right)/2$ and $z \coloneqq f\left([g][h]\right)/2$, we get
-\[
-e^{x} - e^{y}  = e^{-x} -e^{-y}  + e^{z} - e^{-z}.
-\]
-Thus, since $y \leq x$, we have $e^{-x} -e^{-y} >0$, and therefore
-\[
-e^{z} \leq e^{x} - e^{y} \leq 3 e^{z}
-\]
-which gives one pair of inequalities. The other follows by an
-analogous computation.
+On the other hand, if $\mu$ is a Liouville current, the condition is satisfied
 \end{proof}
 
 \section{Skora's theorem: \texorpdfstring{$\protect\mathbb{R}$-trees}{Rtrees} dual to measured laminations}
