@@ -34,7 +34,7 @@ i(\mu_f,C)=f(C).
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
 Even though the result is stated for unoriented curves, we will be working in the more general setting oriented curve functionals (see Section~\ref{subsec:examples_and_non} for many natural examples and non-examples).
 
-One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number, suggesting it plays the role of the cap product in this analogy. See Section~\ref{subsec:newdef}.
+One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number. See Section~\ref{subsec:newdef}.
 
 
 
@@ -52,7 +52,7 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
     For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases, as follows.
 
   For $a,b \in \pi_1(S)$,
-  $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some hyperbolic structure fixed once and for all), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
+  $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some/any hyperbolic structure), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
       ccw order on the boundary at infinity. See
       Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing} for more details.
       From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
@@ -120,11 +120,11 @@ We emphasize that this result characterizes hyperbolic metrics among all curve f
 
 These results generalize both of Luo's results on characterizing which functions on simple curves dual to measured laminations~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers} (alluded above) and which to hyperbolic length functions~\cite{Luo98:GeodesicLength}.  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
 
- Our methods also recover the max-smoothing criterion in previous work of the second author~\cite{Thu00:GeometricIntersection}.
+ Our methods also recover a previous result of the second author~\cite{Thu00:GeometricIntersection}.
 
 \subsection{Characterizing small actions on real trees}
 
-As an additional application, we give a new proof of a result by Skora, which characterizes actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new characterization of actions on real trees which are minimal, irreducible, and preserve axis intersection.
+As an additional application, we give a new characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
 
 If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. If $\Gamma=\pi_1(\Sigma)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axis intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
 An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
@@ -152,18 +152,18 @@ The following are equivalent:
 \label{mainthm:skora}
 \end{mainthm}
 
-The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}.
+The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. Skora also shows that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal, irreducible and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 
-From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to \emph{small} $\Gamma$-invariant $\mathbb{R}$-trees (i.e. actions with cyclic edge stabilizers), or, equivalently, are dual to a measured lamination (i.e., a geodesic current satifying $i(\alpha, \alpha)=0$).
+From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to small $\Gamma$-invariant $\mathbb{R}$-trees or, equivalently, are dual to a measured lamination (i.e., a geodesic current satifying $i(\alpha, \alpha)=0$).
 
 It would be interesting to give similar conditions for 
 small actions of a non-elementary hyperbolic group $\Gamma$. 
 
 \subsection{Generalized cross-ratios}
 
-Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. Every generalized cross-ratio induces a curve functional called the \emph{period}.
+Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. For example, if $X$ is a hyperbolic metric on $S$, the hyperbolic cross-ratio $[\cdot]_X$ coming from realizing the universal cover of $X$ as an isometric copy of the upper half-plane model is an example. Every generalized cross-ratio $[\cdot ]$ induces an additive curve functional called the \emph{period} $\ell_{[ \cdot ]}$. For the previous example of the hyperbolic cross-ratio, $\ell_{[\cdot]_X}$ is the hyperbolic length.
 We show that periods satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce a geodesic current.
 
 \begin{mainthm}

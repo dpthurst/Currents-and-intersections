@@ -20,14 +20,13 @@ We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 
 In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
 
-In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two curves $C$ and $D$, it is assumed that $C,D$ are unoriented. If $C$ and $D$ are oriented, we can assign the same value to $i(C,D)$ and $i(C,D^{-1})$, in other words, define the intersection by forgetting the orientation. In this way, one can analogously define an intersection form for oriented geodesic currents (see~Definition~\ref{def:intersection_currents}).
+In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two multi-curves $C$ and $D$, it is assumed that $C,D$ are unoriented. If $C$ and $D$ are oriented, and $C',D'$ are different oriented multi-curves with $C'$ resp. $D'$) equivalent to $C$ (resp. $D$)  unoriented multi-curves, we declare $i(C',D')=i(C,D)$, in other words, define the intersection by forgetting the orientation. In this way, one can analogously define an intersection form for oriented geodesic currents (see~Definition~\ref{def:intersection_currents}).
 
 As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
 intersection numbers for oriented curves which are asymmetric (i.e. they distinguish the
 orientations of the intersections). For those, the analog of the main duality
 result, Theorem~\ref{thm:intersect}, will not hold. This will also be reflected in the proof of the main theorem~\ref{thm:intersect}.
-However, in a lot of our examples the curve functionals will be assumed \emph{symmetric}, i.e., satisfying $f(C)=f(C^{-1})$.
-Equivalently, they can be seen as curve functionals on unoriented curves.
+However, in a lot of our examples the curve functionals will not distinguish orientation. Equivalently, they can be seen as curve functionals on unoriented multi-curves.
 
 \begin{definition}\label{def:properties}
   For $S$ a compact topological surface without boundary,
@@ -106,7 +105,7 @@ There exist slight generalizations of both smothing as well as additivity that h
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
     have
     \begin{equation}\label{eq:quasismoothing}
-      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R.
     \end{equation}
     See Definition~\ref{def:essential-crossing} for ``essential
     crossing''. If $R=0$, we recover the oriented smoothing property.
@@ -131,6 +130,8 @@ Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, orien
    \]
 \end{definition}
 
+This can be phrased more algebraically as follows. For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have $f([a] \cup [b]) \geq f([ab])$ and $f([a] \cup [b]) \geq f([aB])$, where $B$ denotes the inverse of $b$; and for any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel (i.e., do not intersect and are oriented coherently), we have $f([ab]) \geq f([aB])$ and $f([ab]) \geq f([aB])$. We refer the reader to Section~\ref{subsec:crossings} for precise definitions and proofs.
+
 We can extend this definition for orientation invariant curve functionals on oriented multi-curves.
 If $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ is orientation invariant, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \mathcal{C}(S) \to \mathbb{R}$.
 
@@ -141,21 +142,20 @@ We say $f$ satisfies \emph{smoothing} if its associated curve functional on unor
 For an orientation invariant curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
 
 \begin{remark}
-Given a curve functional on unoriented multi-curves that satisfies smoothing, one can extend it to a functional on all oriented curves by just forgetting orientation. This extension satisfies oriented smoothing (see~\cite[Corollary~1.11]{MGT21:Smoothings} and its proof).
+Given a curve functional on unoriented multi-curves that satisfies smoothing, one can always extend it to a functional on all oriented curves by just forgetting orientation. This extension satisfies oriented smoothing (see~\cite[Corollary~1.11]{MGT21:Smoothings} and its proof).
 \end{remark}
+
 
 \subsection{General context and examples}
 
-Here we discuss how the results in this paper fit into a broader context initiated in~\cite{MGT21:Smoothings}, discuss how it relates to other recent results in the literature, and give exmaples of curve functionals that satisfy and do not satisfy the hypotheses of the main theorem.
+Here we discuss how the results in this paper fit into a broader context initiated in~\cite{MGT21:Smoothings}, discuss how it relates to other recent results in the literature, and give examples of curve functionals that satisfy and do not satisfy the hypotheses of the main theorem.
  This part is independent from the rest of the paper, and is not
 used in the proof in the main results.
 
 
 \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
-Let $\CurveFunct(S)$ denote the set of all symmetric curve functionals
-on $S$ satisfying convex union, stability, and homogeneity.
 In decreasing order of generality, we consider the following subsets
-of $\CurveFunct(S)$.
+of curve functionals.
 \begin{enumerate}
     \item Given $R>0$, let $\QConvex_R(S)$ be the set of symmetric
       curve functionals satisfying $R$-quasi-smoothing, convex union,
@@ -172,56 +172,10 @@ For a motivation for the use of the adjective ``convex'' in this setting, see Su
 
 Examples below show we have strict inclusions
 \[
-\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S) \subsetneq \CurveFunct(S).
+\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S).
 \]
 
-We finish this subsection by relating the hypotheses on $f$ to non-negativity. In particular, we prove that smoothing and convex union on $f$, imply non-negativity.
 
-\begin{proposition}
-  Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
-  \label{prop:curve-positive}
-\end{proposition}
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right, so
-$[a][x] \reducesto [ax]$.
-By Lemma~\ref{lem:rhs_prod}, we see that
-$(\ora{ax},\ora{a})$ L-cross, so
-(by unoriented smoothing) $[ax][a]
-\reducesto [x]$. We thus have
-\begin{align*}
-    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
-     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
-\end{align*}
-Adding the equations, we get $f([a]) \geq 0$.
-\end{proof}
-
-Although we will not use it in this paper, we note that a similar
-argument with different assumptions also yields positivity.
-
-\begin{proposition}
-  Let $f$ be a curve functional satisfying convex union, quasi-smoothing,
-  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
-  \pi_1(S)$.
-  \label{prop:curve-positive2}
-\end{proposition}
-
-\begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
-\begin{align*}
-[a^n][x] &\reducesto [a^nx]\\
-[a^nx][a^n]&\reducesto [x].
-\end{align*}
-Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
-\begin{align*}
-    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
-     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
-\end{align*}
-Adding the equations, we get $f([a^n]) \geq -2R$. By stability and
-homogeneity, this yields $n f([a]) \geq -2R$, and taking $n$ large
-enough we see that $f([a]) \geq 0$.
-\end{proof}
 
 \subsection{Examples and non-examples}
 \label{subsec:examples_and_non}
@@ -266,9 +220,9 @@ On the other hand, not all functions on curves satisfy the $\AConvex$ properties
     If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
     \end{question} 
 \item The previous example falls in the more general framework of length functions coming from higher-rank representations $\rho \colon \pi_1(S) \to \PSL(n,\mathbb{R})$.
-Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy smoothing. A wider class of \emph{$[P_1]$-Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work, they also satisfy quasi-smoothing. In fact, they satisfy smoothing if and only if they are positively ratioed. 
+Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy smoothing. A wider class of \emph{$[P_1]$-Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work (item (3)), they also satisfy quasi-smoothing. In fact, they satisfy smoothing if and only if they are positively ratioed. 
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV24:Biautomaticity} for details.
-    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(\Sigma)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV24:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
+    Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(S)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV24:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
       homogeneity and smoothing, but does not satisfy additivity or
       even convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
@@ -322,17 +276,63 @@ $G(ab) < G(a) + G(b)$. This is indeed the case. For an example, consider the ext
 \end{example}
 
 
-
-\begin{remark}
 Observe that we do not require in the hypotheses that the curve
 functional $f \in \AConvex(S)$ is non-negative: in fact it follows
-from the other conditions (see Proposition~\ref{prop:curve-positive}).
+from the other conditions.
+
+We finish this subsection by relating the hypotheses on $f$ to non-negativity. In particular, we prove that smoothing and convex union on $f$, imply non-negativity.
+
+\begin{proposition}
+  Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
+  \label{prop:curve-positive}
+\end{proposition}
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right, so
+$[a][x] \reducesto [ax]$.
+By Lemma~\ref{lem:rhs_prod}, we see that
+$(\ora{ax},\ora{a})$ L-cross, so
+(by unoriented smoothing) $[ax][a]
+\reducesto [x]$. We thus have
+\begin{align*}
+    f([a]) + f([x]) &\geq f([a] [x]) \geq f([ax])\\
+     f([ax]) + f([a]) &\geq f([ax] [a]) \geq f([x]).
+\end{align*}
+Adding the equations, we get $f([a]) \geq 0$.
+\end{proof}
+
+Although we will not use it in this paper, we note that a similar
+argument with different assumptions also yields positivity.
+
+\begin{proposition}
+  Let $f$ be a curve functional satisfying convex union, quasi-smoothing,
+  stability, and homogeneity. Then $f([a]) \geq 0$ for any $a \in
+  \pi_1(S)$.
+  \label{prop:curve-positive2}
+\end{proposition}
+
+\begin{proof}
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
+right. As in the proof of Proposition~\ref{prop:curve-positive}, we have
+\begin{align*}
+[a^n][x] &\reducesto [a^nx]\\
+[a^nx][a^n]&\reducesto [x].
+\end{align*}
+Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
+\begin{align*}
+    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
+     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
+\end{align*}
+Adding the equations, we get $f([a^n]) \geq -2R$. By stability and
+homogeneity, this yields $n f([a]) \geq -2R$, and taking $n$ large
+enough we see that $f([a]) \geq 0$.
+\end{proof}
+
+
 In general, curve functionals need not be positive. For example, the signed
   Lorentzian length or Margulis invariant~\cite{GM00:FlatLorentzian})
-  can take either positive or negative values. However, more
-  generally, any curve functional
-  in $\QConvex(S)$ is positive (see Proposition~\ref{prop:curve-positive2}). 
-\end{remark}
+  can take either positive or negative values. 
+
 
 \input{questions}
 
