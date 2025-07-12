@@ -6,14 +6,13 @@ countably additive way, to a collection of boxes of geodesics
 sufficiently rich to generate the $\sigma$-algebra of open sets of
 $G(\Sigma)$.
 
-\DPTtodo{This motivation new, not yet polished} \DMGtodo{I tweaked this a bit.}
 To define the measure of our elementary boxes, we look at the
 functional~$f$ applied to longer and longer curves~$C_i$. We look at
 two different types of asymptotics of $f(C_i)$. First we look at the
 normalized growth rate and use this to relate different properties of
 curve functionals (Section~\ref{subsec:smoothing_consequences}), in
 particular showing that how oriented smoothing and smoothing related, and that connected and disconnected smoothing
-imply each other assuming
+imply each other under the assumption of
 continuity~(Proposition~\ref{prop:cont_conn_disc}). 
 
 We then turn to the family of boxes of geodesics central to our proof
@@ -320,8 +319,6 @@ for every curve $C$.
 \label{sec:boxes}
 
 We now turn to the outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
-
-\DPTtodo[inline]{Did major refactoring as discussed}
 
 Let $f\colon \Curves^+(S) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing, stability
@@ -799,7 +796,7 @@ Lemma~\ref{lem:additivity-limit}.
 
   To get a lower bound, applying $f$ to both sides of
   Eq.~\eqref{eq:cancel-axby} and using additivity and smoothing shows
-  that
+  that, for $n, m$ sufficiently large,
   \[
     g(n,m) \ge -f([ab]).
   \]
@@ -808,7 +805,6 @@ Lemma~\ref{lem:additivity-limit}.
    Lemma~\ref{lem:limexistrmidconvextwovar} the limit exists.
 \end{proof}
 
-\DPTtodo{HERE}
 Now we check the hypotheses to apply
  Theorem~\ref{thm:caratheodory} to construct a measure.
 \begin{proposition}\label{prop:join-split-alg}
@@ -845,6 +841,7 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$.
 \end{proposition}
 
 \begin{proof}
+  Set $[B] = [B]_{a,b,c,d}$.
   By condition~\ref{item:box-diags-cross}, for sufficiently large~$n$,
   \[
     [bx^n][cx^n] = [dx^naC][cx^n] \reducesto [dx^nax^n].
@@ -860,26 +857,26 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
   \]
 \end{proof}
 
-\subsubsection{$\mu_f$ is side-by-side additive and finitely additive}
+\subsubsection{Side-by-side and finite additivity}
 
 First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
 
 \begin{proposition}
   If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in
-  Figure~\ref{fig:finiteadditivity}, then $B_1 \cup B_2$ is a RH box
+  Figure~\ref{fig:finiteadditivity} (or the symmetric version changing
+  the $p_i$), then $B_1 \cup B_2$ is a RH box
   and $\mu_f(B_1 \cup B_2) = \mu_f(B_1) + \mu_f(B_2)$.
   \label{prop:sidebyside}
 \end{proposition}
 
 \begin{proof}
-  Define the boxes by elements $p_1,p_2,q_1,q_2,q_3 \in \pi_1(S)$.
-  Then we have, by Definition~\ref{def:RH-box}
-  \begin{align*}
-    [B_1] &= [B]_{q_1 p_1, q_2 p_1, q_1 p_2, q_2 p_2}\\
-    [B_2] &= [B]_{q_2 p_1, q_3 p_1, q_2 p_2, q_3 p_2}\\
-    [B_1] \cup [B_2] &= [B]_{q_1 p_1, q_3 p_1, q_1 p_2, q_3 p_2}.
-  \end{align*}
-  From this formula both items of the proposition follow immediately by the definition of $\mu_f$.
+  \DPTtodo{revised this proof}
+  Set WLOG $B_1 = B_{p_1,p_2,q_1,q_2}$ and $B_2 =
+  B_{p_1,p_2,q_2,q_3}$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and
+  $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that
+  $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order,
+  so in particular $B_1 \cup B_2 = B_{p_1,p_2,q_1,q_3}$ is also a
+  RH box. The definition of $\mu_f$ immediately yields the additivity.
 \end{proof}
 
   \begin{figure}
