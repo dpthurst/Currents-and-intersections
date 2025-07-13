@@ -222,12 +222,13 @@ Hence, by continuity of measures from below, we have
 \]
 If we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
 we get, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
-\[\mu(R_n)=A_n + B_n-C_n.\]
-and
+\[\mu(R_n)=A_n + B_n-C_n,\]
+where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$.
+If we further ldg $R_n^{\perp}$ the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n^{-1}}$ and $\ora{b_n^{-1}a_n}$, we have
 \[
 \mu(R_n^T)=A_n + B_n -D_n,
 \]
-where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$ and $D_n=f(a_nb_n)/2$, and $R_n^{\perp}$ denote the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n}$ and $\ora{b_na_n}$.
+where $D_n=f(a_nb_n)/2$.
 We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
 Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
 By max-smoothing, for every $n$, we have $\mu(R_n^T)=0$ or $\mu(R_n)=0$.
@@ -240,8 +241,7 @@ Then, by lower and upper continuity of measures, respectively, we get $\lim_n \m
 Now we prove the other implication.
 First, note that disconnected max-smoothing means that $\mu(R_{g,h})=0$ or $\mu(R_{g,h}^{\perp})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
 We proceed by proving the counter-positive.
-Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$.
-This implies that $\mu(B_{g,h}) >0$ and $\mu(B_{g,h}^{\perp}) >0$, and thus $\mu$ is not a measured lamination.
+Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$. Since for every $\gamma \in R_{g,h}$ and every $\gamma' \in R_{g,h}^T$, we have that $\gamma$ and $\gamma'$ cross, this implies that $i(\mu, \mu) >0$, and hence $\mu$ is not a measured lamination.
 \end{proof}
 
 The above result shows that if one knows $f$ is dual to a geodesic current, then it is only necessary to check disconnected max-smoothing to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-crossings. It is however true that intersection number with a measured lamination also satisfies connected max-smoothing.
@@ -365,25 +365,24 @@ A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and onl
 The assumption can be written as 
 
  \begin{equation}
-     1/C \leq  \frac{1- \exp \left[-f\left([gh]\right)/2 + f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C
+     1/C \leq  \frac{1- \exp \left[f\left([gh]\right)/2 - f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ -f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C
     \end{equation}
     and
  \begin{equation}
-    1/C \leq \frac{1- \exp \left[-f\left([gh^{-1}]\right)/2 + f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
+    1/C \leq \frac{1- \exp \left[f\left([gh^{-1}]\right)/2 - f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
     \end{equation}
-
     
     Now, as in the proof of Theorem~\ref{prop:char_liouville}, this gives us
 
      \begin{equation}
-    1/C \leq \frac{1 - e^{-\mu(B)}}{e^{-\mu(B^{\perp})}} \leq C
+    1/C \leq \frac{1 - e^{-\mu(B_{g,h})}}{e^{-\mu(B_{g,h}^{\perp})}} \leq C
     \end{equation}
     and
     \begin{equation}
-    1/C \leq \frac{1 - e^{-\mu(B^{\perp})}}{e^{-\mu(B)}} \leq C
+    1/C \leq \frac{1 - e^{-\mu(B_{g,h}^{\perp})}}{e^{-\mu(B_{g,h})}} \leq C
     \end{equation}
-which, by Theorem~\ref{thm:ham}, implies $\mu$ is a hyperbolic Liouville current.
-On the other hand, if $\mu$ is a Liouville current, the condition is satisfied
+    and, again, by the same density argument in that proof, one gets the same inequalities for a general box of geodesics $B$. Hence, by Theorem~\ref{thm:ham}, implies $\mu$ is a hyperbolic Liouville current.
+On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property is satisfied, and the condition of the statement then follows by the same argument as in the proof of Theorem~\ref{prop:char_liouville} (which shows it is satisfied with $C=1$).
 \end{proof}
 
 \section{Skora's theorem: \texorpdfstring{$\protect\mathbb{R}$-trees}{Rtrees} dual to measured laminations}
