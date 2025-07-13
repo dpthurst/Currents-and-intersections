@@ -995,16 +995,39 @@ all the way back to the diagonal.
   smaller boxes can be further refined into smaller boxes $B_j'$ so
   that $B_0$ and each $B_i$ can be written as a side-by-side union of
   the $B_j'$.
+
+  Consider the pattern of whiskers that appear as an edge of $B_0$ or
+  any of the $B_i$ (as on the left of
+  Figure~\ref{fig:finite-additivity}), and add to it sufficiently many
+  long vertical whiskers (guaranteed by Lemma~\ref{lem:diagonaldense})
+  for the following to hold. Divide the vertical whiskers into
+  ``short'' whiskers, with endpoint in the interior of $B_0$, and
+  ``long'' ones, extending the full height of $B_0$. The long vertical
+  whiskers divide $B_0$ into vertical strips. Make sure that in each
+  such strip there is the end of any short whisker (horizontal or
+  vertical), as on the right of Figure~\ref{fig:finite-additivity}.
+  Now define the $B_j'$ to be the minimal boxes you can make from this
+  new collection. Each individual vertical strip is now standard (in
+  one of two forms, depending on whether or not it contains an end of
+  a short vertical whisker), and can easily be assembled by
+  side-by-side additivity. Then all the vertical strips can be
+  assembled to form $B_0$, showing that $\mu_f(B_0)$ is the sum of all
+  $\mu_f(B_j')$.
+
+  If we restrict to the $B_j'$ contained in any individual $B_i$, the
+  whiskers we have added divide it satisfying the same restrictions,
+  so they can also be assembled by side-by-side additivity.
 \end{proof}
 
 \begin{figure}
   \[
     \mathcenter{\includegraphics[height=2in,angle=180]{finite-additive-1}}
     \qquad\leadsto\qquad
-    \mathcenter{\includegraphics[height=0.85in,angle=180]{finite-additive-2}}
+    \mathcenter{\includegraphics[height=1.25in,angle=180]{finite-additive-2}}
   \]
   \caption{Finite additivity of $\mu_f$. By refinement, we can turn an
-    arbitrary division into boxes into one that is side-by-side decomposable.}
+    arbitrary division of a large box into smaller boxes into one that
+    is side-by-side decomposable.}
   \label{fig:finite-additivity}
 \end{figure}
 
