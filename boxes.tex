@@ -343,6 +343,7 @@ the kind of boxes we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$[x]$, with
 two lifts $\ora{\ell_1},\ora{\ell_2}$ on the left and two $\ora{r_1},\ora{r_2}$ on the right,
 and consider the window
+\DPTtodo{Apparently we need to change how the box is half-open}
 $(\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+) \subset
 \partial_\infty S \times \partial_\infty  S$ as a basic domain
 for defining the measure.
@@ -534,7 +535,7 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
   zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box must be a single lift of~$[x]$, and by definition of
   right-handed box, this lift is not contained in box. The half-open
   choice we made is
-  more convenient for the proofs.
+  more convenient the proof of Proposition~\ref{prop:countablyadditive}.
 \end{remark}
 
 \begin{proposition}
@@ -974,14 +975,15 @@ all the way back to the diagonal.
   First, the intersection of boxes is obviously a box. Indeed, all
   sides of a box are necessarily in the respective whisker, and any
   new vertices of the intersection are thus intersections of whiskers.
+
   Second, we must show that if $A,B$ are boxes, then $A \backslash B$
   is a finite union of boxes. In the interesting case, $A\setminus B$
   is an L-shaped region, as on the left of
   Figure~\ref{fig:box-difference}. (This shows the hardest case of the
-  orientation of the region.) If necessary, add a vertical whisker
-  slightly to the right of the vertical inner edge of the L, making
-  sure that it intersects the horizontal whisker forming the
-  horizontal inner edge of the L. The resulting whiskers allow us to
+  orientation of the region.) If necessary, add a horizontal whisker
+  slightly above the horizontal inner edge of the L, making
+  sure that it intersects the vertical whisker forming the
+  other inner edge of the L. The resulting whiskers allow us to
   write the L as the union of three boxes, as shown on the right of
   Figure~\ref{fig:box-difference}.
 \end{proof}
@@ -995,7 +997,7 @@ all the way back to the diagonal.
     \mathcenter{\includegraphics[height=1.5in]{difference-2}}
   \]
   \caption{Decomposing a difference of boxes. Left: A possible shape
-    for $A \setminus B$. Right: Adding a vertical whisker allows us to
+    for $A \setminus B$. Right: Adding a horizontal whisker allows us to
     write the region as a union of boxes.
   }
   \label{fig:box-difference}
@@ -1016,18 +1018,18 @@ all the way back to the diagonal.
   Consider the pattern of whiskers that appear as an edge of $B_0$ or
   any of the $B_i$ (as on the left of
   Figure~\ref{fig:finite-additivity}), and add to it sufficiently many
-  long vertical whiskers (guaranteed by Lemma~\ref{lem:diagonaldense})
-  for the following to hold. Divide the vertical whiskers into
-  ``short'' whiskers, with endpoint in the interior of $B_0$, and
-  ``long'' ones, extending the full height of $B_0$. The long vertical
-  whiskers divide $B_0$ into vertical strips. Make sure that in each
-  such strip there is the end of any short whisker (horizontal or
+  long horizontal whiskers (guaranteed by Lemma~\ref{lem:diagonaldense})
+  for the following to hold. Divide the horizontal whiskers into
+  ``short'' whiskers, with one endpoint in the interior of $B_0$, and
+  ``long'' ones, extending the full width of $B_0$. The long horizontal
+  whiskers divide $B_0$ into horizontal strips. Make sure that in each
+  such strip there is the end of at most one short whisker (horizontal or
   vertical), as on the right of Figure~\ref{fig:finite-additivity}.
   Now define the $B_j'$ to be the minimal boxes you can make from this
-  new collection. Each individual vertical strip is now standard (in
-  one of two forms, depending on whether or not it contains an end of
-  a short vertical whisker), and can easily be assembled by
-  side-by-side additivity. Then all the vertical strips can be
+  new collection. Each individual horizontal strip is now standard, in
+  one of two general forms, depending on whether or not it contains an end of
+  a short horizontal whisker. In either case it can easily be assembled by
+  side-by-side additivity. Then all the horizontal strips can be
   assembled to form $B_0$, showing that $\mu_f(B_0)$ is the sum of all
   $\mu_f(B_j')$.
 
