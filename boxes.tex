@@ -588,10 +588,22 @@ can be parameterized by group elements $(a,b,c,d)$ related
 \end{aligned}
   \label{eq:relationdatum}
 \end{equation}
-In this parameterization, we necessarily have $aCbD = 1$.
+
+\begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{newmodel3_orbits}}
+\caption{Parameterizing an RH orbit via elements $a,b,c,d$. The original position of $\protect\ora{x}$ is arbitrary, but the particular lifts determining the box fall into a Type 1. Compare with Figure~\ref{fig:newmodel3}.}
+\label{fig:newmodel3_orbit}
+}
+\end{figure}
+
+Compare Figure~\ref{fig:newmodel3_orbit}. In this parameterization, we necessarily have $aCbD = 1$.
 Note that, by Eq.~\eqref{eq:double_coset}, the relative position
 of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
+
+Note that, for instance, the points $[p_1^{-1}]$ and $[q_1]$ are related via $a$ by the right action: $[p_1^{-1}] \cdot a = [q_1]$.
+On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action: $q_1 p_1 \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $\ora{q_1p_1}$ R-crossing $\ora{\ell_1}= p_1^{-1} \cdot \ora{x}$, which in turn is equivalent to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crossing $\ora{x}$. \DMGtodo{I added this discussion about the actions here}
 
 The action of translating all lifts by $\pi_1(S)$ has been baked in to
 this alternate parametrization,
@@ -993,7 +1005,7 @@ all the way back to the diagonal.
 \begin{proof}
   In order to apply Proposition~\ref{prop:sidebyside}, we must show
   show that any way of partitioning a box $B_0 = \bigsqcup_i B_i$ into
-  smaller boxes can be further refined into smaller boxes $B_j'$ so
+  finitely many smaller boxes can be further refined into smaller boxes $B_j'$ so
   that $B_0$ and each $B_i$ can be written as a side-by-side union of
   the $B_j'$.
 
