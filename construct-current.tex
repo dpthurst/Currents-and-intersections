@@ -3,7 +3,7 @@
 
 
 
-\subsection{\texorpdfstring{$\protect{\mu_{f}}$}{muf} is countably additive}
+\subsection{Countable additivity}
 \label{sec:countable-additivity}
 
 We prove countable additivity of the function $\mu_{f}$ by
@@ -11,9 +11,13 @@ proving approximation results.
 
 \begin{definition}
 Let the RH lift system $(p_1,q_1,p_2,q_2)$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
-We define a \emph{top vertical accordion} of boxes based at $B$ the sequence of boxes, indexed by $k$, given for each $k$, by
+We define the \emph{top vertical accordion} of boxes based at $B$ to be
+the following sequence of boxes, indexed by $k$:
 \[
-p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
+  p_1^{(k)}=p_1,\quad
+  p_2^{(k)}=p_2,\quad
+  q_1^{(k)}=q_1,\quad
+  q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
 \]
 Since the endpoint corresponding to $q_2$ is the one changing, we will denote these sequence of boxes by
 \[
@@ -26,7 +30,10 @@ F_{p_1,p_2,\bar{q_1},q_2},
 \]
 giving a sequence of boxes whose vertical direction becomes narrower and the bottom endpoint fixed, i.e.,
 \[
-p_1^{(k)}=p_1,p_2^{(k)}=p_2,q_1^{(k)}=q_2 x^k q_2^{-1}q_1,q_2^{(k)} \coloneqq q_2.
+  p_1^{(k)}=p_1,\quad
+  p_2^{(k)}=p_2,\quad
+  q_1^{(k)}=q_2 x^k q_2^{-1}q_1,\quad
+  q_2^{(k)} \coloneqq q_2.
 \]
 
 On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
@@ -42,7 +49,10 @@ Similarly, we can define a \emph{left horizontal accordion} (the left endpoint i
 \label{def:accordion}
 \end{definition}
 
-The following Proposition will be key to control how much $\mu_f$ when the right-handed boxes are varied in a control way. In particular, it will be crucial in proving countable addivitity of $\mu_f$.
+The following Proposition will be key to control how much $\mu_f$
+changes when the right-handed boxes are varied in a control way. In
+particular, it will be crucial in proving countable additivity
+of~$\mu_f$.
 
 \begin{figure}
 \centering{
@@ -53,7 +63,7 @@ The following Proposition will be key to control how much $\mu_f$ when the right
 \end{figure}
 
 \begin{proposition}
- Given a RH lift system $(p_1,q_1,p_2,q_2)$, let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},q_1,p_2,q_2}(k)$, $F_{p_1,\vec{q_1},p_2,q_2}$, $F_{p_1,q_1,\vec{p_2},q_2}(k)$ and $F_{p_1,q_1,p_2,\vec{q_2}}(k)$. Furthermore, assume that in each of the respective cases, we have $p_2^{-1}q_1$ cross $x$ to the right,  (resp.\
+ Given a RH lift system $(p_1,q_1,p_2,q_2)$, let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},q_1,p_2,q_2}(k)$, $F_{p_1,\vec{q_1},p_2,q_2}(k)$, $F_{p_1,q_1,\vec{p_2},q_2}(k)$ and $F_{p_1,q_1,p_2,\vec{q_2}}(k)$. Furthermore, assume that in each of the respective cases, we have $p_2^{-1}q_1$ cross $x$ to the right,  (resp.\
   $q_2^{-1}q_1$ cross $x$ to the right, resp.\
   $p_1^{-1}p_2$ cross $x$ to the right, resp.\
   $q_1^{-1}q_2$ cross $x$ to the right).
@@ -146,7 +156,8 @@ is countably additive.
 \begin{remark}
 We remark that at this point of the argument, we could also use a more indirect strategy, using Riesz representation, as done in \cite[Proposition~3.11]{BIPP24:PositiveCrossratios}.
 Indeed, the endpoints of RH boxes correspond to endpoints of lifts of $x$, and these are dense in $\partial_{\infty} S$ by Lemma~\ref{lem:minimal}. Moreover, if $R,R_1,R_2$ are RH boxes with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $\mu_f(R)=\mu_f(R_1)+\mu_f(R_2)$, by Proposition~\ref{prop:sidebyside}.
-Also, by the argument in Proposition~\ref{prop:RHsemiring}, for $R,R'$ RH boxes, if $R \subset R'$, we have $\mu_f(R) \leq \mu_f(R')$.
+Also, by the argument in Proposition~\ref{prop:finitely-additive}, for
+$R,R'$ RH boxes, if $R \subset R'$, we have $\mu_f(R) \leq \mu_f(R')$.
 Hence, our function $\mu_f$ satisfies the hypotheses of~\cite[Proposition~4.1]{BIPP24:PositiveCrossratios}, and hence by ~\cite[Proposition~4.3]{BIPP24:PositiveCrossratios} we obtain a geodesic current with desired properties.
 We choose to give an independent argument that showcases the fact that RH boxes enjoy the extra structure of a semi-ring.
 \end{remark}
@@ -241,9 +252,9 @@ Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfyin
 Then $\mu_f$ is an oriented geodesic current.
 \end{proposition}
 \begin{proof}
-By Proposition~\ref{prop:limitexists},
-Proposition~\ref{prop:RHsemiring}, and
-Proposition~\ref{prop:countablyadditive}, $\mu_f$ is a finitely
+By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
+\ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\mu_f$
+is a finitely
 additive and countably subbadditive pre-measure on $\mathcal{R}$. By covering by an exhaustion consisting of a union of nested boxes, we can see $\mu_f$ is also $\sigma$-finite.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory}, $\mu_f$ can be extend to a measure $\mu_f$ on $\mathcal{A}_{\mathcal{R}}$, the $\sigma$-algebra generated by the semi-ring $\mathcal{R}$.
 Let $\mathcal{B}$ be the Borel $\sigma$-algebra of $G(S)$.
@@ -265,7 +276,7 @@ where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$ the induced 
 \end{remark}
 
 \subsection{
-\texorpdfstring{$\protect\mu_{f}$}{muf} recovers \texorpdfstring{$\protect{f}$}{f} on curves}
+Recovering \texorpdfstring{$f$}{f} on curves}
 \label{sec:recovery}
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
