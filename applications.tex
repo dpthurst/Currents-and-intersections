@@ -34,8 +34,8 @@ We can also characterize filling geodesic currents.
 
 \begin{enumerate}
     \item The set of filling currents, i.e., $ \Curr_{\mbox{fill}}(S)$
-    \item The set of functionals $f \colon \Curves^+(S) \to \mathbb{R}$ which satisfy symmetry, oriented smoothing, additivity, stability and homogeneity properties, and so that their continuous extension to geodesic currents is positive.
-    \item The set of curve functionals $f \colon \Curves(S) \to \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{ f(C) : C \in \Curves(S),\ C \mbox{ non-trivial} \}\] is positive and satisfy symmetry, oriented smoothing, additivity, stability and homogeneity properties.
+    \item The set of functionals $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ which satisfy symmetry, oriented smoothing, additivity, stability and homogeneity properties, and so that their continuous extension to geodesic currents is positive.
+    \item The set of curve functionals $f \colon \mathcal{C}(S) \to \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{ f(C) : C \in \mathcal{C}(S),\ C \mbox{ non-trivial} \}\] is positive and satisfy symmetry, oriented smoothing, additivity, stability and homogeneity properties.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
@@ -52,7 +52,7 @@ See also Section~\ref{subsubsec:convexity_charts} for a related discussion.
 We have the following characterization of curves that are one-half of an integral multi-curve.
 
 \begin{corollary}
-Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves(S)$. Then there exists an integral multi-curve $M$ so that
+Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \mathcal{C}(S)$. Then there exists an integral multi-curve $M$ so that
 \[
 i(1/2 M,\cdot)=f(\cdot).
 \]
@@ -64,9 +64,9 @@ Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesi
 i(\mu, C) = f(C)
 \]
 for every closed curve $C$.
-It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $\alpha_n, \beta_n, \gamma_n, \eta_n \in \Curves(S)$ so that
+It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $A_n, B_n, C_n, D_n \in \mathcal{C}(S)$ so that
 \[
-\mu(R) = \frac{1}{2}\lim_n i(\mu, \alpha_n) + i(\mu, \beta_n) - i(\mu, \gamma_n) - i(\mu, \eta_n).
+\mu(R) = \frac{1}{2}\lim_n i(\mu, B_n) + i(\mu, C_n) - i(\mu, A_n) - i(\mu, D_n).
 \]
 Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$).
 Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$.
@@ -464,7 +464,7 @@ In what follows, when we say a pair $a, b \in \pi_1(S)$ \emph{overlaps coherentl
 
 \begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
-If $\| \cdot \| \colon \Curves(S) \to \mathbb{R}$ satisfies smoothing, then $(\Gamma, T)$ is irreducible.
+If $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies smoothing, then $(\Gamma, T)$ is irreducible.
 \end{lemma}
 \begin{proof}
 We start with a reducible action and show it cannot satisfy smoothing.

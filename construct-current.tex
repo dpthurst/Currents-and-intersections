@@ -153,14 +153,6 @@ So, we are left to evaluate the nested limit
 We now use Proposition~\ref{prop:finalfamily1} to prove that $\mu_f$
 is countably additive.
 
-\begin{remark}
-We remark that at this point of the argument, we could also use a more indirect strategy, using Riesz representation, as done in \cite[Proposition~3.11]{BIPP24:PositiveCrossratios}.
-Indeed, the endpoints of RH boxes correspond to endpoints of lifts of $x$, and these are dense in $\partial_{\infty} S$ by Lemma~\ref{lem:minimal}. Moreover, if $R,R_1,R_2$ are RH boxes with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $\mu_f(R)=\mu_f(R_1)+\mu_f(R_2)$, by Proposition~\ref{prop:sidebyside}.
-Also, by the argument in Proposition~\ref{prop:finitely-additive}, for
-$R,R'$ RH boxes, if $R \subset R'$, we have $\mu_f(R) \leq \mu_f(R')$.
-Hence, our function $\mu_f$ satisfies the hypotheses of~\cite[Proposition~4.1]{BIPP24:PositiveCrossratios}, and hence by ~\cite[Proposition~4.3]{BIPP24:PositiveCrossratios} we obtain a geodesic current with desired properties.
-We choose to give an independent argument that showcases the fact that RH boxes enjoy the extra structure of a semi-ring.
-\end{remark}
 We will need to consider more types of boxes
 than the half-open boxes we have been working with so far. For $B$ a right-handed box $[a_1,a_2) \times [b_1,b_2)$, let
 $\overline{B} \coloneqq [a_1,a_2] \times [b_1,b_2]$ and
@@ -397,6 +389,21 @@ Therefore, $\overline{\mu_f}$ is a geodesic current with the same intersection n
 
        Finally, the uniqueness of the geodesic current $\overline{\mu_f}$ is guaranteed by the fact that geodesic currents are uniquely determined by their intersection numbers with all closed curves by~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 \end{proof}
+
+\begin{remark}
+We remark that in \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} the authors construct a geodesic current induced from a cross-ratio.
+Given a dense subset $X \subset \partial_{\infty} S$, they consider the set of $\mathcal{R}(X)$ of all proper rectangles of geodesics with endpoints on $X$.
+They start from a finitely additive function $r \colon \mathcal{R}(X) \to \mathbb{R}$ (defined suitable from a cross-ratio)
+satisfying that (1) if $R,R_1,R_2 \in \mathcal{R}(X)$ with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $r(R)=r(R_1)+r(R_2)$, 
+and (2) so that if $R,R' \in \mathcal{R}(X)$ if $R \subset R'$, we have $r(R) \leq r(R')$.
+
+Our function $\mu_f$ satisfies properties (1) and (2) by Proposition~\ref{prop:sidebyside}
+and Proposition~\ref{prop:finitely-additive}, however, it is only defined in a proper subclass of $\mathcal{R}(X)$ (with $X$ the set of endpoints of translates of $x$, which is dense in $\partial_{\infty} S$  by Lemma~\ref{lem:minimal}).
+Therefore, we cannot directly apply their result.
+
+Moreover, we need the extra control on the family of right-handed boxes we consider in order to be able to recover the curve functional $f$ from the geodesic current we construct (see Theorem~\ref{prop:recoverintersection}).
+In Section~\ref{sec:crossratios}, we prove that every cross-ratio induces a curve functional (i.e., period) satisfying the hypotheses of our Theorem~\ref{thm:intersect}, and thus our result generalizes \cite[Proposition~4.3]{BIPP24:PositiveCrossratios}.
+\end{remark}
 
 
 \begin{remark}
