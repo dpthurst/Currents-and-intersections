@@ -285,7 +285,8 @@ $\pi_1(S)$-invariant. Finally, $\hat\mu_f$ is non-negative by
 Proposition~\ref{prop:box-positive}.
 \end{proof}
 
-\begin{remark}
+\DPTtodo[inline]{Upgraded this from a remark.}
+%\begin{remark}
 It is not \emph{a priori} clear from the definition of $\hat\mu_f$ that it is an
 \emph{unoriented} geodesic current (recall
 Definition~\ref{def:currents}).
@@ -295,7 +296,7 @@ In order to obtain an unoriented geodesic current, we can take
 \]
 where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$
 the induced push-forward map on oriented geodesic currents.
-\end{remark}
+%\end{remark}
 
 \subsection{
 Recovering \texorpdfstring{$f$}{f} on curves}
@@ -304,12 +305,13 @@ Recovering \texorpdfstring{$f$}{f} on curves}
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
 If $y$ is a hyperbolic element representing a closed curve
-$C$ in the surface $S$, let
-$z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
-$y_-, z, y \cdot z, y_+$ are in cyclic order.
+$C$ in the surface $S$, choose
+$z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
+$y_-,\, z,\, y \cdot z,\, y_+$ are in cyclic order.
 Then
 $(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
-$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing geodesics, introduced before Equation~\ref{eq:intersection}).
+$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing
+geodesics, from Definition~\ref{def:intersection_currents}).
 
 First we note that the following.
 
@@ -320,6 +322,8 @@ i(\mu, C) = \mu((y_+,y_-) \times [z,y \cdot z)).
 \]
 \end{lemma}
 \begin{proof}
+  \DPTtodo[inline]{Maybe edit: $G[q,y\cdot q)$ and $(y_+,y_-)
+    \times [z,y\cdot z)$ are just two different fundamental domains}
 The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the element representing the oriented curve $C$, then for any $q \in \ora{y}$,
 \[
 \mu(G[q, y \cdot q))= \mu((y_+,y_-) \times [z,y \cdot z))
@@ -327,7 +331,10 @@ The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the elemen
 for every $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
 $y_-, z, y \cdot z, y_+$ are in cyclic order.
 This is
-spelled out in detail in the proof of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, (cf. \cite[Page~153]{Otal90:SpectreMarqueNegative}), and the proof only uses the $\Gamma$-invariance of $\mu$, and no flip-invariance.
+spelled out in detail in the proof
+of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, (cf.
+\cite[Page~153]{Otal90:SpectreMarqueNegative}). The proof only uses
+the $\pi_1(S)$-invariance of $\mu$, and no flip-invariance.
 \end{proof}
 
 \begin{figure}
@@ -338,7 +345,8 @@ spelled out in detail in the proof of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, 
 }
 \end{figure}
 
-We finish by proving Theorem~\ref{thm:intersect}, whose statement we repeat here for convenience.
+We finish by proving Theorem~\ref{thm:intersect}, in the following
+form.
 
 \begin{theorem}
 Let $f \colon \Curves(S) \to \mathbb{R}$ be a curve functional satisfying smoothing, additivity, stability and homogeneity.
@@ -346,7 +354,7 @@ For $C$ a closed curve, we have
 \[
 i(\mu_f,C)=i(\overline{\mu_f},C)=f(C).
 \]
-In particular, $\overline{\mu_f}$ is unique.
+In particular, $\overline{\mu_f}$ is unique among unoriented geodesic currents.
 \label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
@@ -366,7 +374,7 @@ For each $n$, define the following elements of $\pi_1$:
   p_2^{(n)} &\coloneqq p_1 y &q_2^{(n)} &\coloneqq y^{-(n+1)} q_1.
 \end{align*}
 
-We furthermore need to make further assumptions on $p_1,q_1,p_2,q_2$ in order to guarantee assumption (2') in the definiton of RH lift system. Namely $p_1^{(n)} P_2^{(n)}=p_1 Y^n p_1^{-1}$ cannot be a power of $x$, for any $n$, and $Q_2^{(n)}q_1^{(n)} = Q_1 Y^{-2n-1}q_1$ cannot be a multiple of $x$ for any $n$. These conditions can be further guaranteed by slightly perturbing our previous choice of $p_1,q_1,p_2,q_2$, since all the conditions are open, and the set of lifts of closed geodesics is dense in the space of geodesics.
+We furthermore need to make further assumptions on $p_1,q_1,p_2,q_2$ in order to guarantee assumption~\ref{item:box-edges-cross-lift} in the definiton of RH lift system. Namely $p_1^{(n)} P_2^{(n)}=p_1 Y^n p_1^{-1}$ cannot be a power of $x$, for any $n$, and $Q_2^{(n)}q_1^{(n)} = Q_1 Y^{-2n-1}q_1$ cannot be a multiple of $x$ for any $n$. These conditions can be further guaranteed by slightly perturbing our previous choice of $p_1,q_1,p_2,q_2$, since all the conditions are open, and the set of lifts of closed geodesics is dense in the space of geodesics.
 \begin{claim}
 The datum $(p_1^n,p_2^n,q_1^n,q_2^n)$, as defined above, is a RH system, i.e.,
 \begin{enumerate}
@@ -417,11 +425,15 @@ i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
 The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
 Therefore, $\overline{\mu_f}$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\mu_f$.
 
-       Finally, the uniqueness of the geodesic current $\overline{\mu_f}$ is guaranteed by the fact that geodesic currents are uniquely determined by their intersection numbers with all closed curves by~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
+ Finally, the uniqueness of the geodesic current $\overline{\mu_f}$ is
+ guaranteed by the fact that geodesic currents are uniquely determined
+ by their intersection numbers with all closed curves by a result of
+ Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 \end{proof}
 
 \begin{remark}
-We remark that in \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} the authors construct a geodesic current induced from a cross-ratio.
+In \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} the authors
+construct a geodesic current induced from a cross-ratio.
 Given a dense subset $X \subset \partial_{\infty} S$, they consider the set of $\mathcal{R}(X)$ of all proper rectangles of geodesics with endpoints on $X$.
 They start from a finitely additive function $r \colon \mathcal{R}(X) \to \mathbb{R}$ (defined suitable from a cross-ratio)
 satisfying that (1) if $R,R_1,R_2 \in \mathcal{R}(X)$ with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $r(R)=r(R_1)+r(R_2)$, 
