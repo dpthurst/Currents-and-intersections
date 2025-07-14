@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% Creator: Inkscape 1.3 (0e150ed6c4, 2023-07-21), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'originwhiskers.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{766.74103023bp}%
+    \setlength{\unitlength}{746.5701318bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,22 +50,22 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.47058876)%
+  \begin{picture}(1,0.45923101)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{originwhiskers.pdf}}%
-    \put(0.1991066,0.20176671){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0.168136,0.44047959){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{+}$\end{tabular}}}}%
-    \put(0.1847032,0.01605756){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{-}$\end{tabular}}}}%
-    \put(0.27808434,0.4176402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$qx^{+}$\end{tabular}}}}%
-    \put(0.34323238,0.3644876){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$qx^{-}$\end{tabular}}}}%
-    \put(0.25391032,0.30675597){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.20448608,0.20682563){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.16335033,0.42830835){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{+}$\end{tabular}}}}%
+    \put(0.18969353,0.01609897){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{-}$\end{tabular}}}}%
+    \put(0.26478824,0.40628702){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r^+$\end{tabular}}}}%
+    \put(0.33743695,0.35098077){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r^-$\end{tabular}}}}%
+    \put(0.2607705,0.31465149){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{originwhiskers.pdf}}%
-    \put(0.22479714,0.27488588){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
+    \put(0.23087073,0.28192034){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$q$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{originwhiskers.pdf}}%
-    \put(0.7916812,0.00787119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$qx^{+}$\end{tabular}}}}%
-    \put(0.49905812,0.10821612){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$qx^{-}$\end{tabular}}}}%
-    \put(-0.0422725,0.55922927){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.53950087\unitlength}\raggedright \end{minipage}}}%
-    \put(0.49871908,0.2486337){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$qx^{+}$\end{tabular}}}}%
+    \put(0.81307091,0.00769142){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r^{+}$\end{tabular}}}}%
+    \put(0.55774845,0.11074748){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r^{-}$\end{tabular}}}}%
+    \put(-0.04341462,0.57394614){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.55407716\unitlength}\raggedright \end{minipage}}}%
+    \put(0.55668266,0.25352374){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r^{+}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
