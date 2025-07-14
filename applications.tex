@@ -423,7 +423,7 @@ Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a 
 \end{enumerate}
 An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
-\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$
+\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$.
 \item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$.
 \item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{enumerate}
@@ -548,7 +548,7 @@ The two possible smoothings are then represented by $gh$ and $gh^{-1}$, so max-s
 \|g \| + \| h \| = \max \{ \| gh \|, \| gh^{-1} \| \}.
 \]
 
-This relation is true by result~\cite[1.8]{CM87:GroupActions}, since $T_g \cap T_h \neq \emptyset$.
+This relation is true by~\cite[1.8]{CM87:GroupActions}, since $T_g \cap T_h \neq \emptyset$.
 \item Case 1b. Suppose that $\ora{g}$ and $\ora{h}$ are parallel.
 Max-smoothing amounts to
 
@@ -556,7 +556,7 @@ Max-smoothing amounts to
 \| gh \| = \max \{ \| g \| +\| h \| , \| gh^{-1} \| \}.
 \]
 
- We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, by the preservation of axis intersection hypothesis, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
+ We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, by the preservation of axis intersection, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
 There are three subcases to consider.
 \begin{enumerate}
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
@@ -603,7 +603,9 @@ We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain th
 It follows from a similar analysis comparison of translation lengths in the tree. The different cases when, say, $g$ is elliptic and $h$ is hyperbolic, have been analyzed in~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. 
 
 \begin{enumerate}
-\item Suppose $T_g \cap T_h = \emptyset$. In the disconnected smoothing case, we show that this case, in fact, never occurs. Indeed, if $T_g \cap T_h = \emptyset$, it follows by~\cite[Lemma~3.2]{Chi01:LambdaTrees} that $gh$ is hyperbolic, and in fact,
+\item Suppose $T_g \cap T_h = \emptyset$. 
+\begin{itemize}[wide, labelindent=0pt] 
+\item In the disconnected smoothing case, we show that this case, in fact, never occurs. Indeed, if $T_g \cap T_h = \emptyset$, it follows by~\cite[Lemma~3.2]{Chi01:LambdaTrees} that $gh$ is hyperbolic, and in fact,
  \[
  \| g h \| = \| gh^{-1} \| = \| g \| + \| h \| + 2d(T_g, T_h)
  \]
@@ -619,13 +621,14 @@ It follows from a similar analysis comparison of translation lengths in the tree
 
 We observe that $g h$ and $(h g)^{-1}$ overlap in $\Delta=d(z,y)$ so they form a good pair. Thus,  by Lemma~\ref{lem:oppgoodpair}, $T_{g h^2 g}$ and $T_{h g^2 h}$ do not intersect.
 On the other hand, since $\ora{g},\ora{h}$ cross, then $\ora{gh}$ and $\ora{hg}$ are parallel, by Lemma~\ref{lem:righthandedfoundation}, part 1, and thus $\ora{gh^2g}$ and $\ora{hg^2h}$ intersect by Lemma~\ref{lem:righthandedfoundation}, part 2, so we have a contradiction. This finishes the proof for the disconnected smoothing case.
-In the connected smoothing case, the formula above says $\| g h \| = \| gh^{-1} \|$, so max-smoothing is satisfied.
+\item  In the connected smoothing case, the formula above says $\| g h \| = \| gh^{-1} \|$, so max-smoothing is satisfied.
+\end{itemize}
 \item  Suppose $T_g \cap T_h \neq \emptyset$. 
 \begin{itemize}[wide, labelindent=0pt]
 \item Suppose $T_h$ and $T_{ghg^{-1}}$ are equal. Max smoothing would fail (both connected and disconnected) if $g$ acted as a reflection about the only fixed-point of $g$ on $T_h$, since then $\| gh \|=\| g^{-1}h \|=0$. 
 But in that case, $gh$ (and $hg$) are elliptic, and $gh^2g$ is hyperbolic (with hyperbolic axis equal to $\ora{h}$).
-In the connected smoothing case, we can apply Case 3 to $gh, hg$ in the \emph{disconnected} smoothing case, since $\ora{gh},\ora{hg}$ intersect, ruling this case out.
-In the disconnected smoothing case, we can apply Case 3 to $g, hg$ in the \emph{disconnected} smoothing case
+In the connected smoothing case, we can apply Case 3 (below) to $gh, hg$ in the \emph{disconnected} smoothing case, since $\ora{gh},\ora{hg}$ intersect, ruling this case out.
+In the disconnected smoothing case, we can similarly apply Case 3 (below) to $g, hg$ in the \emph{disconnected} smoothing case
 since $\ora{g},\ora{hg}$ intersect, and rule this case out.
 \item Suppose $T_h$ and $T_{ghg^{-1}}$ intersect in a compact segment.
 
@@ -637,7 +640,7 @@ Again, by ~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, we must have that eithe
 
 In the first case, $\| gh \| = \| h \|$, and $\| h \| = \| h^{-1} \|\geq \| gh^{-1} \|$, so max-smoothing is satisfied. 
 In the second case, $\| gh^{-1} \| = \| h^{-1} \|=\| h \|$, and $\| h \| \geq \| gh \|$, which would contradict max-smoothing.
-However, can rule this out. First, suppose that $\| h \| > \Delta$, where $\Delta$ is the overlap between $T_{h}$ and $T_{g h g^{-1}}$. Building from Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, it follows that $T_{gh}$ and $T_{hg}$ are disjoint, as Figure~\ref{fig:oppositehypell} illustrates. 
+However, we can rule this out. First, suppose that $\| h \| > \Delta$, where $\Delta$ is the overlap between $T_{h}$ and $T_{g h g^{-1}}$. Building from Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, it follows that $T_{gh}$ and $T_{hg}$ are disjoint, as Figure~\ref{fig:oppositehypell} illustrates. 
 It remains to justify that $g(x)=y$ and $x=g(y)$. We start by proving the following, which is implied by  Fig.7~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} but not proven.
 
 \begin{claim}Let $z$ be the unique fixed point of $h$ in the interval $[x,y]$. Then $z$ is the middle point between $x$ and $y$, and $g(x)=y$, $g(y)=x$.\end{claim}
@@ -653,7 +656,7 @@ contains $y$ (resp.\ $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{
 
 If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. 
 
-However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^k g}$ and $\ora{gh^k}$ intersect for all $k>0$.
+However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, an application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^k g}$ and $\ora{gh^k}$ intersect for all $k>0$.
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
@@ -691,6 +694,16 @@ Now we prove Theorem~\ref{mainthm:skora}.
 (B) implies (C) is Theorem~\ref{prop:small}.
 (C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 \end{proof}
+
+\begin{remark}
+A positive answer to the following question would significantly simplify the above proof, by allowing to reduce to Case 1.
+
+Is the set of actions $\pi_1(S) \acts T$ in which all elements act hyperbolically dense in the space of all irreducible, minimal $\pi_1(S) \acts T$ actions?
+
+This fails to hold if, for instance, the irreducibility assumption is dropped, as actions on lines are isolated in the relevant topology~\cite[Lemma~4.7]{Pa89:Paulin1989TheGT}.
+
+However, it is conceivable that the above is only true in the setting of small actions, where it holds since maximal measured laminations are dense in the space of all measured laminations.
+\end{remark}
 
 \subsection{Inequalities between intersection numbers}
 \label{subsec:ineqintersection}
