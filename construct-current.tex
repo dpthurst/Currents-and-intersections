@@ -7,150 +7,153 @@
 \label{sec:countable-additivity}
 
 We prove countable additivity of the function $\mu_{f}$ by
-proving approximation results.
+proving approximation results. We first find controlled sequences of
+decreasing nested RH boxes that we can show have measure going to zero.
 
 \begin{definition}
-Let the RH lift system $(p_1,q_1,p_2,q_2)$ determine a right-handed box $B = [a_1,a_2) \times [b_1,b_2)$.
-We define the \emph{top vertical accordion} of boxes based at $B$ to be
-the following sequence of boxes, indexed by $k$:
+Let the RH lift system $(p_1,p_2,q_1,q_2)$ determine a right-handed
+box
+\DPTtodo{Change box endpoints to $s_i$ and $t_i$. Also fix which end
+  they are open on}
+$B = (s_1,s_2] \times [t_1,t_2)$, where $s_i = \ell_i^-$ and $t_i =
+r_i^+$. Further assume that $\ora{r_2}$ is nested inside $\ora{r_1}$,
+so the box is of type~2 or~3.
+
+Define the \emph{vertical accordion} $F_{p_1,p_2,q_1,\vec{q_2}}$ of
+boxes based at $B$ to be
+the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
+and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
 \[
-  p_1^{(k)}=p_1,\quad
-  p_2^{(k)}=p_2,\quad
-  q_1^{(k)}=q_1,\quad
+  p_1^{(k)}\coloneqq p_1,\quad
+  p_2^{(k)}\coloneqq p_2,\quad
+  q_1^{(k)}\coloneqq q_1,\quad
   q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
 \]
-Since the endpoint corresponding to $q_2$ is the one changing, we will denote these sequence of boxes by
-\[
-F_{p_1,p_2,q_1,\vec{q_2}}.
-\]
-This defines boxes whose vertical direction becomes narrower as $k$ grows, with the top endpoint fixed. 
-Similarly, we define \emph{bottom vertical accordion}, and denote it by 
-\[
-F_{p_1,p_2,\bar{q_1},q_2},
-\]
-giving a sequence of boxes whose vertical direction becomes narrower and the bottom endpoint fixed, i.e.,
-\[
-  p_1^{(k)}=p_1,\quad
-  p_2^{(k)}=p_2,\quad
-  q_1^{(k)}=q_2 x^k q_2^{-1}q_1,\quad
-  q_2^{(k)} \coloneqq q_2.
-\]
+This defines boxes whose vertical height becomes narrower as $k$
+grows, with the top endpoint fixed. See
+Figure~\ref{fig:vertical-accordion}.
+\DPTtodo[inline]{In Fig.~\ref{fig:vertical-accordion}, the shading
+  distinctions between the nested boxes are too subtle. We'll redraw
+  it anyway.}
 
-On the other hand, if we fix $p_2,q_1,q_2$ and allow $p_1$ to vary, by choosing nested lifts of $x$ for $p_1$ and $p_2$, we obtain a datum given by the box notation $p_2^{(k)}=p_2,q_1^{(k)}=q_1,q_2^{(k)}=q_2$, and
+\begin{figure}
+  \[
+    \mathcenter{\includegraphics[height=2.5in]{v-accordion-disk}}
+    \qquad\qquad
+    \mathcenter{\includegraphics[height=2.5in]{v-accordion-whiskers}}
+  \]
+  \caption{A vertical accordion $F_{p_1,p_2,q_1,\vec{q_2}}$, shown in
+    the disk (left) and in the whiskers picture (right)}
+  \label{fig:vertical-accordion}
+\end{figure}
+
+Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$, or
+equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
+\emph{horizontal accordion} $F_{\vec{p_1},p_2,q_1,q_2}$ by
 \[
-p_1^{(k)} = p_2 x^k p_2^{-1} p_1.
+  p_1^{(k)}\coloneqq p_1 p_2^{-1}x^k p_2,\quad
+  p_2^{(k)}\coloneqq p_2,\quad
+  q_1^{(k)}\coloneqq q_1,\quad
+  q_2^{(k)} \coloneqq q_1.
 \]
-and we denote the corresponding family of boxes,
-\[
-F_{\vec{p_1},p_2,q_1,q_2}.
-\]
-We will call them a \emph{right horizontal accordion of boxes based at $B$} (the right endpoint is fixed).
-Similarly, we can define a \emph{left horizontal accordion} (the left endpoint is fixed).
 \label{def:accordion}
 \end{definition}
 
-The following Proposition will be key to control how much $\mu_f$
-changes when the right-handed boxes are varied in a control way. In
-particular, it will be crucial in proving countable additivity
-of~$\mu_f$.
-
-\begin{figure}
-\centering{
-\resizebox{80mm}{!}{\svgfig{final}}
-\caption{Sequence of boxes determining an accordion.}
-\label{fig:finalfamily}
-}
-\end{figure}
+% \begin{figure}
+% \centering{
+% \resizebox{80mm}{!}{\svgfig{final}}
+% \caption{Sequence of boxes determining an accordion.}
+% \label{fig:finalfamily}
+% }
+% \end{figure}
 
 \begin{proposition}
- Given a RH lift system $(p_1,q_1,p_2,q_2)$, let $F(k)$ be  a system of lifts in an accordion configuration, as in Definition~\ref{def:accordion}, in any of the four types $F_{\vec{p_1},q_1,p_2,q_2}(k)$, $F_{p_1,\vec{q_1},p_2,q_2}(k)$, $F_{p_1,q_1,\vec{p_2},q_2}(k)$ and $F_{p_1,q_1,p_2,\vec{q_2}}(k)$. Furthermore, assume that in each of the respective cases, we have $p_2^{-1}q_1$ cross $x$ to the right,  (resp.\
-  $q_2^{-1}q_1$ cross $x$ to the right, resp.\
-  $p_1^{-1}p_2$ cross $x$ to the right, resp.\
-  $q_1^{-1}q_2$ cross $x$ to the right).
-
- We have
-
-\begin{itemize}
- \item For every $k \geq 0$, $F(k)$ is a right-handed box;
-\item for every $k$, $F(k+1) \subset F(k)$;
-\item and,
-\[
-\lim_{k \to \infty} \mu_f(F(k))= 0.
-\]
-\end{itemize}
-\label{prop:finalfamily1}
+  Let $F(k) = F_{p_1,p_2,q_1,\vec{q_2}}(k)$ or $F_{\vec{p_1},p_2,q_1,q_2}(k)$ be a
+  vertical or horizontal accordion as above. Then
+  \begin{itemize}
+  \item each $F(k)$ is a RH box;
+  \item $F(k+1) \subset F(k)$; and
+  \item $\displaystyle \lim_{k \to \infty} \mu_f(F(k)) = 0$.
+  \end{itemize}
+\label{prop:finalfamily}
 \end{proposition}
+
 \begin{proof}
-We first prove that an accordion $F(k)$ is a right-handed box. Consider first a top vertical accordion $F_{p_1,q_1,p_2,\vec{q_2}}(k)$ (the other types are similar).
-    We know that $[p_1,q_1,p_2,q_2]$ form a RH lift system, so 
-    $p_i q_i$ cross $x$ to the right
-        and $q_2 x^n p_1$ cross $q_1x^n p_2$ to the right (by Definition~\ref{def:crossing}). 
-        By north-south dynamics of $q_1 x q_1^{-1}$, the translates of $\ora{x}$ look like in Figure~\ref{fig:finalfamily}.
-        The following properties follow immediately.
-    
-    \begin{enumerate}
-        \item $p_1 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.
-        \item $p_2 q_1 x^k q_1^{-1} q_2$ crosses $x$ to the right.   
-        \item   $q_1 x^k q_1^{-1} q_2x^n p_1$ cross $q_1x^n p_2$ to the right.
-    \end{enumerate} 
-    For property (2') of a right-handed lift system, we note that $p_1^{(k)} P_2^{(k)}=p_1 P_2$ is not a multiple of $x$ by hypotheses. On the other hand, $Q_1^{(k)}q_2 = x^k q_1^{-1}q_2$, which cannot be a power of $x^k$ since $q_1^{-1}q_2$ is assumed to cross $x$ to the right.
-    
-    This proves that top vertical accordions are right handed boxes. The proof is similar for other types of accordions.
-We now prove that for a fixed RH lift system $(p_1,q_1,p_2,q_2)$ and a corresponding accordion $F(k)$, $\lim_{k \to \infty} \mu(F(k))=0$.
-    We give the argument for type $F_{p_1,q_1,p_2,\vec{q_2}}$, the other types are similar.
-    We will first go from the RH lift system notation (boxes) to the RH system notation (orbits of boxes), since the latter is better suited for the definition of $\mu_f$.
-    We have
- \begin{align*}
-     a &= p_1 q_1 \\
-     b &= p_1 q_1 x^k q_1^{-1} q_2 \\     
-     c &= p_2 q_1  \\  
-     d &= p_2 q_1 x^k q_1^{-1} q_2 \\  
- \end{align*}
- Writing $e=q_1^{-1} q_2$, we have
- \begin{align*}
-     b &= a x^k e \\     
-     d &= c x^k e. \\  
- \end{align*}
-We thus get the family of box orbits given by
+  We first prove the results in the case of vertical accordions,
+  starting with checking that $F(k)$ is a box. Since $\ora{r_2}$ is
+  nested inside $\ora{r_1}$, the NS dynamics of the group element $r_1
+  = q_1 x q_1^{-1}$ translate $\ora{r_2}$ towards $r_1^+$, as depicted
+  in Figure~\ref{fig:vertical-accordion}. In particular the cyclic
+  order of the endpoints doesn't change, and we also automatically
+  have $F(k+1) \subset F(k)$.
+
+  To show the measures go to zero, we first reformulate the nesting
+  condition algebraically. Note that
+  $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Thus the $\ora{r_1}$ and
+  $\ora{r_2}$ are nested iff $\ora{q_2Q_1}$ R-crosses $\ora{r_1}$. This is
+  in turn equivalent to $Q_2 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
+  R-crossing $\ora{x}$; write $e = Q_1q_2$.
+
+  In the RH orbit notation, we then have
+  \begin{align*}
+    a^{(k)} &= p_1 q_1 = a &
+    b^{(k)} &= p_1 q_2^{(k)} = p_1 q_1 x^k q_1^{-1}q_2 = a x^k e\\
+    c^{(k)} &= p_2 q_1 = c &
+    d^{(k)} &= p_2 q_2^{(k)} = p_2 q_1 x^k q_1^{-1} q_2 = c x^k e.
+  \end{align*}
+
+We thus get the family of RH orbits given by
 \[
 \bigl([B]_{a,a x^k e,c,c x^k e}\bigr)_{k=0}^\infty.
 \]
-Figure~\ref{fig:finalfamily} related the box to the orbit notation.
-
-    We want to show
+%Figure~\ref{fig:finalfamily} related the box to the orbit notation.
+To show this family of orbits have measure going to zero,
+by definition of $\mu_f$, we need to see that the nested limit
 \[
-\lim_{k \to \infty} \mu_f([B]_{a,a x^k e,c,c x^k e})=0.
+\lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr) = \lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n])
 \]
-By definition of $\mu_f$,
+goes to zero. By Lemma~\ref{lem:additivity-limit-2}, the double limit
+exists, and by applying Proposition~\ref{prop:join-split-alg} we see
+that it is equal to zero.
+
+The case of the horizontal accordion is similar, but there are some
+confusing inverses so we spell it out briefly.
+Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
+the assumption that $\ora{\ell_1}$
+is nested inside $\ora{\ell_2}$ is equivalent to $\ora{P_2 p_1}$
+R-crossing $\ell_2$, which in turn is equivalent to $\ora{p_1 P_2}$
+R-crossing $\ora{x}$. In particular we have
+\[
+  \ora{\ell_1^{(k)}} = \bigl(p_1^{(k)}\bigr)^{-1} \cdot \ora{x}
+  = \bigl(p_2^{-1} x p_2)^{-k} \cdot \ora{\ell_1}
+  = \ell_2^{-k} \cdot \ora{\ell_1},
+\]
+which by NS dynamics of $\ell_2$ gives the picture on the left of
+Figure~\ref{fig:horizontal-accordion}. In particular all of the $F(k)$
+are boxes with $F(k+1) \subset F(k)$.
+
+For the limiting computation, we set $e = p_1 P_2$, so that
 \begin{align*}
-\mu_f([B]_{a,a x^k e,c,c x^k e})=\lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
+  a^{(k)} &= p_1^{(k)} q_1 = e x^k c &
+  b^{(k)} &= p_1^{(k)} q_2 = e x^k d\\
+  c^{(k)} &= p_2 q_1 = c &
+  d^{(k)} &= p_2 q_2 = d.
 \end{align*}
-So, we are left to evaluate the nested limit
-\begin{align*}
-\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n]).
-\end{align*}
-    We use Proposition~\ref{prop:join-split-geom},
-    equations~\ref{eq:cross-join} and
-    \ref{eq:cross-split}.
-    
-    Let $s>0$ be the constant (depending on $a,e$) furnished by Equation~\ref{eq:cross-join}, and let 
-    $s'$ be the constant (depending on $c,e$) from Equation~\ref{eq:cross-split}.
-    We assume $n$ is large enough so that $n-k-s>s$ and  $n-k-s'>s'$.
-    We can then take $r>0$ satisfying the hypotheses of both equations, namely, $n-k-s>r>s$ and $n-k-s'>r>s'$.
-    We then have the expression in the above iterated limit is upper bounded by
-    \[
-      f([ax^{k-r}]) + f([e x^{n+r}]) + f([cx^n])-f([ax^n])-f([cx^{k+r}]) - f([ex^{n-r}])
-    \]
-    by adding and subtracting a term $f([x^{k+n}])$, the iterated limit of the last expression is equivalent to the iterated limit
-    \begin{align*}
-       \lim_{k\to\infty} \lim_{n\to\infty}  \bigl( f([ax^{k+1}]) - f([x^{k+1}]\bigr) + \bigl( f([ex^{n-1}]) - f([x^{n-1}])\bigr) +  \\
-        \bigl( f([cx^n]) - f([x^n]) \bigr) - \bigl(f([cx^n]) - f([x^n])\bigr)\\
-        -\bigl(f([cx^{k+2}])-f([x^{k+2}])\bigr)-\bigl(f([ex^{n-2}])-f([x^{n-2}])\bigr).
-    \end{align*}
-    Finally, this iterated limit is 0 by  Lemma~\ref{lem:additivity-limit}, since $e=q_1^{-1} q_2$ crosses $x$ to the right, by assumption.\qedhere
+Lemma~\ref{lem:additivity-limit-2} and
+Proposition~\ref{prop:join-split-alg} apply as before.
 \end{proof}
 
-We now use Proposition~\ref{prop:finalfamily1} to prove that $\mu_f$
+\begin{figure}
+  \[
+    \mathcenter{\includegraphics[height=2.5in]{h-accordion-disk}}
+    \qquad\qquad
+    \mathcenter{\includegraphics[height=2.5in]{h-accordion-whiskers}}
+  \]
+  \caption{Horizontal accordion $F_{\vec{p_1},p_2,q_1,q_2}$}
+  \label{fig:horizontal-accordion}
+\end{figure}
+
+We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
 is countably additive.
 
 We will need to consider more types of boxes
@@ -174,7 +177,7 @@ without increasing the mass much.
   Let $B = [a_1,a_2) \times [b_1,b_2)$. By Proposition~\ref{prop:density} there is a right handed box $B'=[a_1'',a_1) \times [b_1'',b_1)$ in $\mathcal{R}$ so that
   $a_1'' < a_1$ and $b_1'' < b_1$.
   Let $H$ be a right horizontal accordion based at $B'$. 
-  By Proposition~\ref{prop:finalfamily1}, for $k$ large enough, we have $\mu_f(F(k))<\epsilon$. 
+  By Proposition~\ref{prop:finalfamily}, for $k$ large enough, we have $\mu_f(F(k))<\epsilon$. 
   Let $V'(B,\epsilon) \coloneqq B \cup F(k)$.
   We can now repeat the same procedure with $V'(B,\epsilon)$ in the vertical direction.
 \end{proof}

@@ -941,25 +941,27 @@ horizontal segment at
 $y$-coordinate $\ell^-$ from $\ell^-$ to $\ell^+$.
 Then $(\ora{\ell}, \ora{r})$
 are R-parallel iff these two segments intersect, as in
-Figure~\ref{fig:whiskers2}.
+Figure~\ref{fig:whiskers}.
 Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
 \DPTtodo{Use notation $r^+$, etc in pictures rather than $q\cdot x^+$}
 
+% \begin{figure}
+% \centering{
+% \resizebox{120mm}{!}{\svgfig{originwhiskers}}
+% \caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
+% \label{fig:whiskers}
+% }
+% \end{figure}
 \begin{figure}
-\centering{
-\resizebox{120mm}{!}{\svgfig{originwhiskers}}
-\caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
+\[
+  \includegraphics[height=2in]{box-whiskers-1}
+  \qquad\qquad
+  \includegraphics[height=2in]{box-whiskers-2}
+\]
+\caption{Example of the correspondence between right-handed boxes and collections of four whiskers.}
 \label{fig:whiskers}
-}
-\end{figure}
-\begin{figure}
-\centering{
-\resizebox{150mm}{!}{\svgfig{originwhiskers2}}
-\caption{Example of correspondence between right-handed boxes and collections of four whiskers}
-\label{fig:whiskers2}
-}
 \end{figure}
 
 \begin{proposition}
@@ -984,11 +986,13 @@ all the way back to the diagonal.
   Figure~\ref{fig:box-difference}.
 \end{proof}
 
+\DPTtodo{Figure has some crossing lifts of $[x]$ currently. Easy to
+  fix here}
 \begin{figure}
   \[
-    \mathcenter{\includegraphics[height=1.5in,angle=180]{difference-1}}
+    \mathcenter{\includegraphics[height=1.5in]{difference-1}}
     \qquad\leadsto\qquad
-    \mathcenter{\includegraphics[height=1.5in,angle=180]{difference-2}}
+    \mathcenter{\includegraphics[height=1.5in]{difference-2}}
   \]
   \caption{Decomposing a difference of boxes. Left: A possible shape
     for $A \setminus B$. Right: Adding a vertical whisker allows us to
@@ -1034,13 +1038,16 @@ all the way back to the diagonal.
 
 \begin{figure}
   \[
-    \mathcenter{\includegraphics[height=2in,angle=180]{finite-additive-1}}
+    \mathcenter{\includegraphics[height=2in]{finite-additive-1}}
     \qquad\leadsto\qquad
-    \mathcenter{\includegraphics[height=1.25in,angle=180]{finite-additive-2}}
+    \mathcenter{\includegraphics[height=1.25in]{finite-additive-2}}
   \]
   \caption{Finite additivity of $\mu_f$. By refinement, we can turn an
-    arbitrary division of a large box into smaller boxes into one that
-    is side-by-side decomposable.}
+    arbitrary division of a large box into smaller boxes (left) into
+    one that is side-by-side decomposable (right). On the right we
+    focus on the interesting region. The figure has crossing
+    lifts of $[x]$, which is impossible since $[x]$ is simple, but the
+    proof treats the general case equally well.}
   \label{fig:finite-additivity}
 \end{figure}
 
