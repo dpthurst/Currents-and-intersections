@@ -387,7 +387,13 @@ On the other hand, if $\mu$ is hyperbolic Liouville current then the disconnecte
 
 \section{Skora's theorem: \texorpdfstring{$\protect\mathbb{R}$-trees}{Rtrees} dual to measured laminations}
 \label{sec:skora}
+
+
 As an application of Theorem~\ref{thm:intersect}, in this section we give a new a characterization of small actions of surface groups on $\mathbb{R}$-trees, and in turn we reprove a classical theorem of Skora~\cite{Sko90:GeometricAction}.
+
+\subsection{Finitely generated groups acting on real trees}
+
+We start by recalling some basic notions of actions on real trees.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing both $x$ and $y$ isometric to the interval $[0, d(x, y)]$. This intersection is denoted
 $[x, y]$, and called an \emph{arc}. If $\Gamma$ is a finitely generated group, a $\Gamma$-tree is an $\mathbb{R}$-tree together with a group action $\Gamma \acts T$ by isometries.
@@ -397,8 +403,17 @@ If $g$ is elliptic, then $\| g \| =0$ (and the converse is also true, see~\cite[
 If $g$ is hyperbolic, then $\| g | >0$, and $g$ translates along $T_g$ by distance $\| g\|$, thus leaving $T_g$ invariant. We call $T_g$ the \emph{axis} of $g$.
 We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
 We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
+
+An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
+\begin{enumerate}
+\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$.
+\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$.
+\item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
+\end{enumerate}
+
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}. Otherwise, we say that they do not intersect.
+
 Let $\Delta \coloneqq T_g \cap T_h$. Suppose $\Delta$ is not a singleton, and $g$ and $h$ translate in the same direction along $\Delta$, we say that $g,h$ and \emph{overlap coherently}.
 If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite directions along $\Delta$, we say that $g,h$ and \emph{overlap incoherently}.
 Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
@@ -409,37 +424,7 @@ Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pai
 \item and $\Delta< \min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
-
-Given $\Gamma=\pi_1(S)$, and $\Sigma$ a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
-If two axes $\ora{g},\ora{h}$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. Thus, intersection of hyperbolic axes is a topological invariant of a pair $g,h$.
-It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
-It follows from the construction of $T_\lambda$ that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
-Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
-
-Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
-\begin{enumerate}
-    \item it is small,
-    \item it \emph{preserves axis intersection}: for any pair $g,h \in \Gamma$ acting as hyperbolic isometries on $T$, we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}, \ora{h}$ cross.
-\end{enumerate}
-An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
-\begin{enumerate}
-\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$.
-\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$.
-\item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
-\end{enumerate}
-Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
-Without further assumptions, the axis intersection being preserved alone does not imply in general the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
-However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\Gamma \acts T$ of a surface group $\Gamma$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
-In~\cite{Sk96:Splittings}, under the further assumption that if $S$ has cusps then parabolic elements in $\Gamma$ must be elliptic in $T$, Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. It follows from this that the action being small implies axis intersection being preserved. 
-We give a new proof of Skora's theorem, as a consequence of our main result~Theorem~\ref{thm:intersect} and Proposition~\ref{prop:char_laminations_plus}.
-The main result of this section will be the following.
-
-\begin{theorem}
-Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axis intersection. Then it follows that $\| \cdot \|$ satisfies max-smoothing.
-\label{prop:small}
-\end{theorem}
-
-Before we embark on the proof of the Theorem, we start with some elementary lemmas about irreducibility.
+Irreducibility is equivalent to the existence of at least one good pair of elements.
 
 \begin{lemma}
 Let $\Gamma$ be a finitely generated group. $\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
@@ -449,7 +434,19 @@ Let $\Gamma$ be a finitely generated group. $\Gamma$ on $T$ is irreducible if an
 By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and only if there exist a pair of hyperbolic elements whose axes have bounded non-empty intersection. By~\cite[Theorem~3.3]{CM87:GroupActions} this implies the existence of a good pair. On the other hand, one of the requirements of a good pair is that both elements are hyperbolic and their axes have bounded overlap.
 \end{proof}
 
-Another way to characterize irreducibility is in terms of non-intersection of axes.
+
+The following result will be useful in the proof of Theorem~\ref{prop:small}.
+
+\begin{lemma}
+  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
+    \label{lem:oppgoodpair}
+\end{lemma}
+\begin{proof}
+   This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
+\end{proof}
+
+
+Another way to characterize irreducibility is in terms of the existence of a non-intersecting pair of axes.
 \begin{lemma}
 A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h = \emptyset$.
 \label{lem:char_irred_noninter}
@@ -457,6 +454,46 @@ A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if
 \begin{proof}
 Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 \end{proof}
+
+
+
+In general, if the translation lengths of two $G \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is irreducible by~\cite[Theorem~3.7]{CM87:GroupActions}.
+In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows. we will always consider minimal actions.
+
+\subsection{Surface group actions on real trees}
+
+In this section, we assume $\Gamma = \pi_1(S)$.
+
+It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
+It follows from the construction of $T_\lambda$ that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
+Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
+
+If $\Sigma$ is a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
+If two axes $\ora{g},\ora{h}$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. 
+
+Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
+\begin{enumerate}
+    \item it is small,
+    \item it \emph{preserves axis intersection}: for any pair $g,h \in \Gamma$ acting as hyperbolic isometries on $T$, we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}, \ora{h}$ cross.
+\end{enumerate}
+
+Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
+Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
+However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\Gamma \acts T$ of a surface group $\Gamma$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
+In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. In fact, Skora showed this in the more general setting where $S$ has cusps provided that then parabolic elements in $\Gamma$ are elliptic in $T$.
+It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
+
+The main result of this section will be the following.
+
+\begin{theorem}
+Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axis intersection. Then it follows that $\| \cdot \|$ satisfies max-smoothing.
+\label{prop:small}
+\end{theorem}
+
+In particular, from Theorem~\ref{prop:small} we will get a new proof of Skora's theorem, as a consequence of our main result~Theorem~\ref{thm:intersect} and Proposition~\ref{prop:char_laminations_plus}.
+
+
+Given a curve functional satisfying max-smoothing, it satisfies in particular Parry's axioms~\cite{Par91:Translation}, and hence it is dual to an action of a real tree. 
 
 Even though we will not needed it, as a warm-up, it is worth noticing that a reducible action does not satisfy smoothing.
 
@@ -513,19 +550,8 @@ Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible a
 \label{rmk:reducible_action}
 \end{remark}
 
-Let's finally address the minimality assumption.
-The translation length does not determine the tree uniquely.
-Given a curve functional satisfying max-smoothing, it satisfies in particular Parry's axioms~\cite{Par91:Translation}, and hence it is dual to an action of a real tree. Since the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions}, there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is given by the same curve functional. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional.
 
-The following result will be useful in the proof of Theorem~\ref{prop:small}.
 
-\begin{lemma}
-  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
-    \label{lem:oppgoodpair}
-\end{lemma}
-\begin{proof}
-   This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
-\end{proof}
 
 Let us now address the proof of Theorem~\ref{prop:small}.
 
