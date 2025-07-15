@@ -306,7 +306,7 @@ where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$
 the induced push-forward map on oriented geodesic currents.
 % \end{remark}
 
-From now on, we will use drop the hat on $\hat \mu_f$.
+From now on, we will drop the hat on $\hat \mu_f$.
 
 \subsection{
 Recovering \texorpdfstring{$f$}{f} on curves}
@@ -314,35 +314,30 @@ Recovering \texorpdfstring{$f$}{f} on curves}
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
-\DPTtodo[inline]{We actually use $[z,y \cdot z) \times (y_-,y_+)$ in
-  the proof (factors switched)}
 If $y$ is a hyperbolic element representing a closed curve
 $C$ in the surface $S$, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
 $y_-,\, z,\, y \cdot z,\, y_+$ are in cyclic order.
 Then
 $(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
-$\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing
-geodesics, from Definition~\ref{def:intersection_currents}).
-\DPTtodo[inline]{More precisely, this is a fundamental domain for the
   action of $\langle y \rangle$ on the set of geodesics that intersect
-  $\ora{y}$ transversally. $\cD\cG(S)$ is a subset of (geodesics)
-  $\times$ (geodesics)}
+  $\ora{y}$ transversally.
 
 First we note that the following.
 
 \begin{lemma}The intersection
 of an oriented (or unoriented) closed curve $C$ with an oriented (or unoriented) geodesic current $\mu$ can be computed as
 \[
-i(\mu, C) = \mu((y_+,y_-) \times [z,y \cdot z)).
+i(\mu, C) = \mu([z,y \cdot z) \times (y_+,y_-)).
 \]
 \end{lemma}
 \begin{proof}
-  \DPTtodo[inline]{Maybe edit: $G[q,y\cdot q)$ and $(y_+,y_-)
-    \times [z,y\cdot z)$ are just two different fundamental domains}
-The claim follows from the fact that if $y \in \pi_1(\Sigma)$ denotes the element representing the oriented curve $C$, then for any $q \in \ora{y}$,
+The claim follows from the fact that $G[q,y\cdot q)$ and $[z,y \cdot z) \times (y_+,y_-)$ are just two different fundamental domains for the
+  action of $\langle y \rangle$ on the set of geodesics that intersect
+  $\ora{y}$ transversally.
+Specifically, if $y \in \pi_1(\Sigma)$ denotes the element representing the oriented curve $C$, then for any $q \in \ora{y}$,
 \[
-\mu(G[q, y \cdot q))= \mu((y_+,y_-) \times [z,y \cdot z))
+\mu(G[q, y \cdot q))= \mu([z,y \cdot z) \times (y_+,y_-))
 \]
 for every $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
 $y_-, z, y \cdot z, y_+$ are in cyclic order.
@@ -458,7 +453,7 @@ In Section~\ref{sec:crossratios}, we prove that every cross-ratio induces a curv
 \begin{remark}
 The end of the proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. In fact, note that before that step, the proof shows the curve functional induced by the intersection number must be symmetric. 
 We also use unoriented smoothing; see Remark~\ref{rem:unoriented},
-though see Corollary~\Ref{cor:oriented_smoothing_unoriented}.
+though see Corollary~\ref{cor:oriented_smoothing_unoriented}.
 The symmetry condition has also been used in Corollary~\ref{cor:cont_conn_disc}, and will be used in proving the equivalent algebraic statement Theorem~\ref{thm:intersections_group}.
 This condition is thus crucial to recover curve functionals as intersection numbers. In Appendix~\ref{sec:asymmetric} we show that the asymmetric intersection numbers do not satisfy an analogous duality result.
 \end{remark}
