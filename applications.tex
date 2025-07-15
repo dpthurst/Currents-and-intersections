@@ -55,7 +55,7 @@ We can also characterize filling geodesic currents.
       \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{
         f(C) : C \in \mathcal{C}(S),\ C \mbox{ non-trivial} \}\] is
       positive and satisfy symmetry, oriented smoothing, additivity,
-      and stability properties.
+      and stability.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
@@ -313,7 +313,7 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
     \label{prop:char_laminations_plus}
 \end{theorem}
 \begin{proof}
-Suppose $f$ is a curve functional satisfying max-smoothing, additivity, stability and homogeneity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous and homogeneous, and noting that if $f$ satisfies disconnected smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
+Suppose $f$ is a curve functional satisfying max-smoothing, additivity and stability. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, additive and stable, and noting that if $f$ satisfies disconnected smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by
@@ -406,7 +406,7 @@ In fact, an improvement of Theorem~\ref{thm:bonahonliouville} was given by Hamen
 Using this, we can prove the following.
 
 \begin{theorem}
-A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, homogeneity and the following inequalities.
+A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, and the following inequalities.
     There exists a constant $C \geq 1$ so that, for any pair of \emph{crossing} elements $g,h \in \pi_1(S)$, we have
     \begin{equation}
     1/C \leq \exp \left[ f\left([g][h]\right)/2-f\left([gh]\right)/2 \right] - \exp \left[ f\left([gh^{-1}]\right)/2-f\left([gh]\right)/2 \right] \leq C
@@ -550,8 +550,6 @@ Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserve
 
 Even though we will not needed it, as a warm-up, it is worth noticing that a reducible action does not satisfy smoothing.
 
-In what follows, when we say a pair $a, b \in \pi_1(S)$ \emph{overlaps coherently} (resp.\ \emph{incoherently}) we mean the axes $T_a$ and $T_b$ in the tree overlap coherently (resp.\ incoherently).
-
 \begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
 If $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies smoothing, then $(\Gamma, T)$ is irreducible.
@@ -635,7 +633,7 @@ Max-smoothing amounts to
 \| gh \| = \max \{ \| g \| +\| h \| , \| gh^{-1} \| \}.
 \]
 
- We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, by the preservation of axis intersection, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
+ We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, since the action preserves axis intersection, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
 There are three subcases to consider.
 \begin{enumerate}
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by the result~\cite[1.5]{CM87:GroupActions}, and the condition is satisfied.
@@ -652,7 +650,7 @@ There are three subcases to consider.
               \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehyp}}
-    \caption{Configuration of axes when $T_{g}$ and $T_{h}$ are intersecting their overlap $\Delta \geq  \min \{ \| g \|, \| h \| \}$}\label{fig:oppositehyp}}
+    \caption{Configuration of axes when $T_{g}$ and $T_{h}$ are intersecting and their overlap $\Delta \geq  \min \{ \| g \|, \| h \| \}$}\label{fig:oppositehyp}}
 \end{figure}
 
 \begin{lemma}
@@ -776,10 +774,10 @@ Now we prove Theorem~\ref{mainthm:skora}.
 
 \begin{remark}
 
-Cases 2 and 3 in the above proof seem necessary to analyze, and in principle cannot be simplified by just proving Case 1 and approximating by minimal and free actions.
+Cases 2 and 3 in the above proof seem necessary, in the sense that, in principle, the proof cannot be simplified by just proving Case 1 and approximating by minimal and free actions.
 Indeed, note that minimal free actions are small and Culler-Morgan~\cite{CM87:GroupActions} proved that the subspace of minimal small actions of any finitely generated group is closed in the space of all actions.
 It follows that the closure of minimal free actions is contained in the space of minimal small actions. To simplify the proof one would have to prove this closure is \emph{the same as} minimal small actions, a fact we know is true a posteriori, for example, because maximal measured laminations, (whose actions are dual to free minimal actions on real trees)~\cite{FLP79:ThurstonWorkSurfaces} are dense in the space of all measured laminations.
-On the other hand, note that the analogous result is not true in the setting of free groups: by a t of Bestvina-Feighn~\cite{BF11:OuterLimits}
+On the other hand, note that the analogous result is not true in the setting of free groups: by a result of Bestvina-Feighn~\cite{BF11:OuterLimits}
 the closure of the space of minimal, free, simplicial actions is the space of so-called ``very small'' actions, which is a proper subset of small actions.
 In the setting of surface groups, the space of very small and small actions coincide, so the density result of free minimal actions holds.
 \end{remark}
@@ -812,7 +810,7 @@ since $\ell_g$ is an infimum, we have
 \[
   \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
 \]
-as desired. $\ell_g$ satisfies homogeneity and stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
+as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
 It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
 Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
