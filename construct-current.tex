@@ -105,7 +105,7 @@ We thus get the family of RH orbits given by
 \bigl([B]_{a,a x^k e,c,c x^k e}\bigr)_{k=0}^\infty.
 \]
 %Figure~\ref{fig:finalfamily} related the box to the orbit notation.
-To show this family of orbits have measure going to zero,
+To show this family of RH orbits have measure going to zero,
 by definition of $\mu_f$, we need to evaluate the nested limit:
 \begin{align*}
   \lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr)
@@ -154,7 +154,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
     \qquad\qquad
     \mathcenter{\includegraphics[height=2.5in]{h-accordion-whiskers}}
   \]
-  \caption{Horizontal accordion $F_{\vec{p_1},p_2,q_1,q_2}$}
+  \caption{Horizontal accordion $F(\vec{p_1},q_1,p_2,q_2)$}
   \label{fig:horizontal-accordion}
 \end{figure}
 
@@ -182,7 +182,7 @@ without increasing the mass much.
   Let $B = B(p_1,q_1,p_2,q_2)$.
   By Proposition~\ref{prop:density}, there is some $q_3$ so that $q_3
   \cdot \ora{x}$ is nested inside $q_2 \cdot \ora{x}$; in particular
-  $F_1 = F_{p_1,p_2,q_2,\vec{q_3}}$ is a vertical accordion, and for
+  $F_1 = F(p_1,q_2,p_2,\vec{q_3})$ is a vertical accordion, and for
   each $k$, $B \cup F_1(k)$ is a RH box. 
   By Proposition~\ref{prop:finalfamily}, there is $k_1$ large enough
   so thatx
@@ -207,10 +207,10 @@ edges of~$B$ with small mass.
 
 \begin{proof}
   Find $q_3$ so that $q_3 \cdot \ora{x}$ nested inside
-  $q_1 \cdot \ora{x}$, so that $F_1 = F_{p_1,p_2,q_1,\vec{q_3}}$ is a
+  $q_1 \cdot \ora{x}$, so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a
   vertical accordion. Similarly find $p_3$ so that $P_3 \cdot \ora{x}$
   is nested inside $P_2 \cdot \ora{x}$ and
-  $F_2 = F_{\vec{p_3},p_2,q_1,q_2}$ is a horizontal accordion. Then
+  $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
   for sufficiently large $k$, we have $\mu_f(F_1(k)) < \epsilon/2$ and
   $\mu_f(F_2(k)) < \epsilon/2$. Take
   $W(B,\epsilon) = (F_1(k) \cup F_2(k)) \cap B$.
@@ -260,7 +260,7 @@ $\overline{B}$ in the subspace topology.
 We now put everything together to obtain a geodesic current.
 
 \begin{proposition}
-Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfying additivity, smoothing, stability and homogeneity.
+Let $f \colon \mathcal{C}(S) \to \mathbb{R}$ be a functional on curves satisfying additivity, smoothing and stability.
 Then $\mu_f$ is an oriented geodesic current.
 \end{proposition}
 \begin{proof}
@@ -352,7 +352,7 @@ We finish by proving Theorem~\ref{thm:intersect}, in the following
 form.
 
 \begin{theorem}
-Let $f \colon \Curves(S) \to \mathbb{R}$ be a curve functional satisfying smoothing, additivity, stability and homogeneity.
+Let $f \colon \Curves(S) \to \mathbb{R}$ be a curve functional satisfying smoothing, additivity and stability.
 For $C$ a closed curve, we have
 \[
 i(\mu_f,C)=i(\overline{\mu_f},C)=f(C).
