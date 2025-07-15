@@ -454,7 +454,7 @@ by condition \ref{item:box-edges-cross}.
   $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$
   given by
 \[
-B_{p_1,q_1,p_2,q_2} \coloneqq (\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)
+B(p_1,q_1,p_2,q_2) \coloneqq (\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)
 \]
 where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
 
@@ -544,7 +544,7 @@ of rectangles in $G(S)$, in the following sense. For any
 $v_1,v_2,w_2,w_1\in \bdy_\infty S$ in that cyclic order,
 and any $\epsilon>0$ so the respective $\epsilon$-neighborhoods are
 disjoint, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
-Type~1 RH box $B_{p_1,p_2,q_1,q_2}$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
+Type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 \label{prop:density}
 \end{proposition}
@@ -651,7 +651,7 @@ to condition~\ref{item:box-diags-cross-lift}:
 Thus the two crossing conditions are equivalent.
 
 \begin{definition}
-  We denote a $\pi_1(S)$-orbit of boxes by $[B_{p_1,q_1,p_2,q_2}]$ or
+  We denote a $\pi_1(S)$-orbit of boxes by $[B(p_1,q_1,p_2,q_2)]$ or
   $[B]_{a,b,c,d}$ depending on whether we want to
   draw attention to a concrete representative of the orbit or to the
   orbit itself.
@@ -681,10 +681,10 @@ $\mu_f$ is finitely additive.
   $B(p_1,q_1,p_2,q_2)$. The subscripts get harder to read later on}
 \begin{proposition}
 \label{prop:limitexists}
-Let $B_{p_1,q_1,p_2,q_2}$ be a right-handed box so that $[B_{p_1,q_1,p_2,q_2}]=[B]_{a,b,c,d}$.
+Let $B(p_1,q_1,p_2,q_2)$ be a right-handed box so that $[B(p_1,q_1,p_2,q_2)]=[B]_{a,b,c,d}$.
 Then following limit exists:
 \[
-\mu_{f}(B_{p_1,p_2,q_1,q_2})\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
+\mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \]
 \end{proposition}
 Note this function on boxes (which will eventually become a pre-measure and
@@ -890,12 +890,12 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 \end{proposition}
 
 \begin{proof}
-  \DPTtodo{revised this proof}
-  Set WLOG $B_1 = B_{p_1,p_2,q_1,q_2}$ and $B_2 =
-  B_{p_1,p_2,q_2,q_3}$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and
+  Set WLOG $B_1 = 
+  B(p_1,q_1,p_2,q_2)$ and $B_2 =
+  B(p_1,q_2,p_2,q_3)$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and
   $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that
   $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order,
-  so in particular $B_1 \cup B_2 = B_{p_1,p_2,q_1,q_3}$ is also a
+  so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also a
   RH box. The definition of $\mu_f$ immediately yields the additivity.
 \end{proof}
 

@@ -11,13 +11,13 @@ proving approximation results. We first find controlled sequences of
 decreasing nested RH boxes that we can show have measure going to zero.
 
 \begin{definition}
-Let the RH lift system $(p_1,p_2,q_1,q_2)$ determine a right-handed
+Let the RH lift system $(p_1,q_1,p_2,q_2)$ determine a right-handed
 box
 $B = [s_1,s_2) \times [t_2,t_1)$, where $s_i = \ell_i^-$ and $t_i =
 r_i^+$. Further assume that $\ora{r_2}$ is nested inside $\ora{r_1}$,
 so the box is of type~2 or~3.
 
-Define the \emph{vertical accordion} $F_{p_1,p_2,q_1,\vec{q_2}}$ of
+Define the \emph{vertical accordion} $F(p_1, q_1, p_2,\vec{q_2})$ of
 boxes based at $B$ to be
 the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
 and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
@@ -40,14 +40,14 @@ Figure~\ref{fig:vertical-accordion}.
     \qquad\qquad
     \mathcenter{\includegraphics[height=2.5in]{v-accordion-whiskers}}
   \]
-  \caption{A vertical accordion $F_{p_1,p_2,q_1,\vec{q_2}}$, shown in
+  \caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in
     the disk (left) and in the whiskers picture (right)}
   \label{fig:vertical-accordion}
 \end{figure}
 
 Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$, or
 equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
-\emph{horizontal accordion} $F_{\vec{p_1},p_2,q_1,q_2}$ by
+\emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
 \[
   p_1^{(k)}\coloneqq p_1 p_2^{-1}x^k p_2,\quad
   p_2^{(k)}\coloneqq p_2,\quad
@@ -66,7 +66,7 @@ equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
 % \end{figure}
 
 \begin{proposition}
-  Let $F(k) = F_{p_1,p_2,q_1,\vec{q_2}}(k)$ or $F_{\vec{p_1},p_2,q_1,q_2}(k)$ be a
+  Let $F = F(p_1,q_1,p_2,\vec{q_2}$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
   vertical or horizontal accordion as above. Then
   \begin{itemize}
   \item each $F(k)$ is a RH box;
@@ -179,7 +179,7 @@ That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
 without increasing the mass much.
 
 \begin{proof}
-  Let $B = B_{p_1,p_2,q_1,q_2}$.
+  Let $B = B(p_1,q_1,p_2,q_2)$.
   By Proposition~\ref{prop:density}, there is some $q_3$ so that $q_3
   \cdot \ora{x}$ is nested inside $q_2 \cdot \ora{x}$; in particular
   $F_1 = F_{p_1,p_2,q_2,\vec{q_3}}$ is a vertical accordion, and for
