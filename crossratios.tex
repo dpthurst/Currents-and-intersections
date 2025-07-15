@@ -1,4 +1,4 @@
-\section{Cross ratios}
+\section{Cross-ratios}
 \label{sec:crossratios}
 
 In this section we will see that there is a one-to-one correspondence between geodesic currents and periods of cross-ratios. Precisely, we will prove that cross-ratios induce functions on $\pi_1(S)$ (periods) satisfying the hypotheses of Theorem~\ref{thm:intersections_group}, hence subsuming work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} under our framework.
@@ -10,7 +10,7 @@ A \emph{cross-ratio} on $S$ is a function of type
 \]
 where $(\partial_{\infty} S)^{(4)}$ denotes the space of ccw oriented 4-tuples in $(\partial_{\infty} S)^{4}$ such that $\{ a,d\} \cap \{b,c\} = \emptyset$, satisfying the following four properties:
 \begin{enumerate}
-\item \emph{flip-invariance} $[a,b,c,d]=[c,d,a, b]$
+\item \emph{flip-invariance} $[a,b,c,d]=[c,d,a, b].$
 \item \emph{additivity} For any ccw oriented $a,b,c,d,e$, we have
 $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 \item \emph{$\pi_1(S)$-invariance} For any ccw oriented $a,b,c,d$ and every $g \in \pi_1(S)$, $[g \cdot a, g \cdot b, g \cdot c, g \cdot d] = [a,b,c,d]$.
@@ -23,20 +23,19 @@ $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 \end{definition}
 
 There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Otal92:Symplectique}, Martone-Zhang~\cite{MZ19:PositivelyRatioed}, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}). 
-Typically the authors consider them to be continuous or even H\"older continuous, but we will not assume this here (as in~\cite{BIPP24:PositiveCrossratios}). Furthermore, in all of the above definitions, flip-invariance is assumed.
+In all of these references (except the last one) the authors consider the cross-ratios to be continuous or even H\"older continuous, but we will not assume this here. Furthermore, in all of the above definitions, flip-invariance is assumed.
 For an even more general definition of cross-ratio where flip-invariance is not assumed, see Labourie's~\cite[Definition~3.1]{L07:Crossratio}. We will always assume our cross-ratios are flip-invariant.
 
 In this section we show that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}, and thus induce geodesic currents.
-This recovers a result of~\cite{BIPP24:PositiveCrossratios}.
 
-Cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
+As alluded above, cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
 In this setting, there are two natural cross-ratios associated to a geodesic current.
 \[
 [a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))
 \]
 and
 \[
-[a,b,c,d]^- \coloneqq \mu((d,a] \times (b,c])
+[a,b,c,d]^- \coloneqq \mu((d,a] \times (b,c]).
 \]
 It is easily checked that these satisfy the properties of generalized cross-ratios,
 and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios}, when $\mu$ is a closed curve).
@@ -90,7 +89,6 @@ For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
 \end{proof}
 
 Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
-We note that these properties can be inferred a posteriori from~\cite{BIPP24:PositiveCrossratios}, where they construct a geodesic current for every generalized cross-ratio. It follows from this that $\ell$ must satisfy the smoothing properties. However, the proof we give here does not rely on their work and thus subsumes the result in \cite{BIPP24:PositiveCrossratios} under the scope of our Theorem~\ref{thm:intersections_group}. Moreover, the proof also provides a framework on what cases to consider if one desires to check the smoothing property by working in the universal cover, as opposed to doing surgeries of curves on the surface.
 
 We divide the proof into two cases, depending on the type of smoothing (connected vs disconnected).
 Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersections_group} are satisfied.
@@ -108,35 +106,50 @@ Then
 \label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 \begin{proof} 
-Consider the fundamental domain of $ab$ given by $(B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure~\ref{fig:d1}. At each step, we will apply an isometry given by either $a$ or $b$ (say, for example, $a$) and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
-Box I will be contained in either the fundamental domain of $a$, depicted in blue in Figure~\ref{fig:d1} or a fundamental domain for $b$ depicted in red in that same Figure.
-We will apply the inverse of the isometry $a$, denoted by $A$, to Box II, and continue the process: apply a different isometry, say $b$ or $B$, partition so that one box is in a fundamental domain of $a$ or $b$, and apply the inverse isometry to the next.
-After a finite number of such steps we will end up having partitioned
+ The strategy of the proof will go as follows. Let $\mathfrak{a}\mathfrak{b}, \mathfrak{a}, \mathfrak{b}$ be fundamental domains of $ab$, $a$ and $b$ respectively, fixed once and for all.
+We will partition $\mathfrak{a}\mathfrak{b}$ into subboxes, and apply isometries $a$, $b$ or their inverses in order to fit each subbox in either  $\mathfrak{a}$ or $\mathfrak{b}$ without overlaps. Let us label them by $\mathfrak{a}_i$ and $\mathfrak{b}_j$ according to if we fit them in $\mathfrak{a}$ or in $\mathfrak{b}$.
+By additivity and invariance of the cross-ratio, since $\mathfrak{a}\mathfrak{b} = \cup_{i=1}^{\ell} \overline{\mathfrak{a}_i} \cup \cup_{j=1}^{k} \overline{\mathfrak{b}_j}$, where the overline notation denotes a (possible) translate of the subbox, we will have $\ell(ab)$ is the sum of the cross-ratios of the boxes $\mathfrak{a}_i$ and $\mathfrak{b}_j$.
+Furthermore, we have
+$\cup_{i=1}^k \mathfrak{a}_i \subset \mathfrak{a}$, $\cup_{j=1}^{\ell} \mathfrak{b}_j \subset \mathfrak{b}$.
+So, by positivity of the cross-ratio, it follows that
+\[
+\ell(ab) \leq \ell(a) + \ell(b),
+\]
+as desired.
+Let us now implement this strategy.
+Consider the fundamental domain of $ab$ given by $\mathfrak{a}\mathfrak{b} \coloneqq [B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure~\ref{fig:d1}.
+Start by applying $A$ to the fundamental domain of $ab$ and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
+Box I is highlighted in purple in step (3), Figure~\ref{fig:d3}, and it is contained in the fundamental domain of $b$, depicted in blue in Figure~\ref{fig:d1}.
+
+We will next apply $a$ to Box I. The result is depicted in step (4), Figure~\ref{fig:d4}, a purple box contained in the fundamental domain of $b$.
+We now turn to Box II, depicted in step (5), Figure~\ref{fig:d5}, in purple.
+We shall apply $a$ to it, with the result depicted in step (6), Figure~\ref{fig:d6}.
+Next, in step (7), Figure~\ref{fig:d7}, we apply $b$ to this resulting box.
+In step (8), Figure~\ref{fig:d8}, we further partition the result: we highlighted in bold a subbox that we will treat as a final result, contained in the fundamental domain of $a$.
+It remains to deal with the remaining portion of the purple box in step (8), Figure~\ref{fig:d8}, which is depicted by itself in purple in step (9), Figure~\ref{fig:d9}.
+We shall apply $B$ to that subbox, obtaining a subbox now contained in a fundamental domain of $b$, with final result showed as in step (10),  Figure~\ref{fig:d10}.
+
+We have thus partitioned
 the fundamental domain of $ba$ into a union of disjoint boxes
 $(\mathfrak{a}_i)_{i=1}^k$, (resp.\ boxes
 $(\mathfrak{b}_j)_{j=1}^{\ell}$) contained without overlap in
 $\mathfrak{a}$, the fundamental domain of $a$, (resp.\ $\mathfrak{b}$,
-the fundamental domain of $b$) and whose total cross-ratio value is
-equal to $\ell(ab)$.
-Since we are assuming the cross ratio is positive, and $\cup_{i=1}^k \mathfrak{a}_i \subset \mathfrak{a}$, $\cup_{j=1}^{\ell} \mathfrak{b}_j \subset \mathfrak{b}$, we obtain the desired inequality.
-In what follows we illustrate the sequence of operations performed, at each step labeling the endpoints of the box of geodesics we are operating on, and highlighting it in bold purple.
+the fundamental domain of $b$), as outlined in the strategy.
 At most one isometry among $a$, $b$ or its inverses is applied to each partitioned box at the end of the process. Furthermore, we observe that the figures below are represented assuming that $\ora{abA}$ and $\ora{Bab}$ do not intersect, but the cut and paste argument does not rely on this fact.
 
+\captionsetup[subfigure]{labelformat=empty}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d1}}
-    \caption{Initial configuration. Red is f.d. of $a$,
-blue is f.d. of $b$
-green is f.d. of $ab$}\label{fig:d1}}
+    \caption{Step (1): Initial configuration. Red is f.d. of $a$, blue is f.d. of $b$, green is f.d. of $ab$}\label{fig:d1}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d2}}
-    \caption{Result of
-applying $A$ to f.d. of $ab$}\label{fig:d2}}
+    \caption{Step (2): Result of applying $A$ to f.d. of $ab$}\label{fig:d2}}
      \end{subfigure}
 \end{figure}
 
@@ -145,16 +158,13 @@ applying $A$ to f.d. of $ab$}\label{fig:d2}}
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d3}}
-    \caption{Purple portion
-is in f.d. of $b$.}\label{fig:d3}}
+    \caption{Step (3): Purple portion is in f.d. of $b$}\label{fig:d3}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d4}}
-    \caption{\textbf{Result of applying $a$
-to purple box. This is
-in f.d. of $b$}}\label{fig:d4}}
+    \caption{Step (4): \textbf{Result of applying $a$ to purple box. This is in f.d. of $b$}}\label{fig:d4}}
      \end{subfigure}
 \end{figure}
 
@@ -163,16 +173,13 @@ in f.d. of $b$}}\label{fig:d4}}
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d5}}
-    \caption{Remaining
-portion from Figure \ref{fig:d3} highlighted in purple here}\label{fig:d5}}
+    \caption{Step (5): Remaining portion from Figure \ref{fig:d3} highlighted in purple here}\label{fig:d5}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d6}}
-    \caption{Purple box shows
-result of applying
-a to previous purple in Figure \ref{fig:d5}}\label{fig:d6}}
+    \caption{Step (6): Purple box shows result of applying $a$ to previous purple in Figure \ref{fig:d5}}\label{fig:d6}}
      \end{subfigure}
 \end{figure}
 
@@ -181,14 +188,13 @@ a to previous purple in Figure \ref{fig:d5}}\label{fig:d6}}
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d7}}
-    \caption{Result of
-applying $b$ to purple box}\label{fig:d7}}
+    \caption{Step (7): Result of applying $b$ to purple box}\label{fig:d7}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d8}}
-    \caption{\textbf{Highlighted purple box is in f.d. of $a$} }\label{fig:d8}}
+    \caption{Step (8): \textbf{Highlighted purple box is in f.d. of $a$}}\label{fig:d8}}
      \end{subfigure}
 \end{figure}
 
@@ -197,17 +203,16 @@ applying $b$ to purple box}\label{fig:d7}}
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d9}}
-    \caption{The remaining purple portion from Figure \ref{fig:d8}}\label{fig:d9}}
+    \caption{Step (9): The remaining purple portion from Figure \ref{fig:d8}}\label{fig:d9}}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d10}}
-    \caption{\textbf{Result of applying $B$
-to remaining purple box in Figure \ref{fig:d9}. This
-is in f.d. of $b$}}\label{fig:d10}}
+    \caption{Step (10): \textbf{Result of applying $B$ to remaining purple box in Figure \ref{fig:d9}. This is in f.d. of $b$}}\label{fig:d10}}
      \end{subfigure}
 \end{figure}
+
 
 \end{proof}
 
@@ -240,7 +245,7 @@ Then, we have
 We observe (compare Figure~\ref{fig:c5}) that the fundamental domain for $ba$ given by
 $[ba^+, ba^-) \times [A \cdot b^+, b^+)$ 
 contains the non-intersecting boxes $[a^+, a^-) \times [A \cdot b^+, b^+)$ and $[b^-, b^+) \times [ba^+, ab^+)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
-using positivity of cross-ratio and symmetry, we get
+using positivity of cross-ratio, additivity and flip-invariance, we get
 \[
 \ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).
 \]
@@ -251,7 +256,7 @@ There is a one-to-one correspondence between periods of generalized cross-ratios
 Moreover, periods uniquely determine cross-ratios arising from non-atomic geodesic currents.
 \end{theorem}
 \begin{proof}
-By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossratio_disconnected_smoothing}and ~\ref{lem:crossratio_connected_smoothing} above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossratio_disconnected_smoothing} and ~\ref{lem:crossratio_connected_smoothing} above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
 On the other hand, a geodesic current $\mu$ induces two cross-ratios $[\cdot]^\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
 Finally, if $\mu$ has no atoms, the two cross ratios are equal, and hence the claim follows.
 \end{proof}
