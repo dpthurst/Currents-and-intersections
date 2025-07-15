@@ -106,13 +106,20 @@ We thus get the family of RH orbits given by
 \]
 %Figure~\ref{fig:finalfamily} related the box to the orbit notation.
 To show this family of orbits have measure going to zero,
-by definition of $\mu_f$, we need to see that the nested limit
-\[
-\lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr) = \lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) + f([cx^n])-f([ax^n])-f([cx^kex^n])
-\]
-goes to zero. By Lemma~\ref{lem:additivity-limit-2}, the double limit
-exists, and by applying Proposition~\ref{prop:join-split-alg} we see
-that it is equal to zero.
+by definition of $\mu_f$, we need to evaluate the nested limit:
+\begin{align*}
+  \lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr)
+   &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) +
+     f([cx^n])-f([ax^n])-f([cx^kex^n]) \\
+  &= \frac{1}{2}\lim_{k,n \to \infty} \bigl(f([x^n a]) + f([x^ke])\bigr) + f([cx^n])\\
+  &\qquad\qquad-f([ax^n])-\bigl(f([x^nc]) + f([x^ke])\bigr)\\
+  &= 0.
+\end{align*}
+As shown above, we can apply Lemma~\ref{lem:additivity-limit-2}
+(adding and subtracting suitable copies of $f([x^n])$ and $f([x^k])$)
+to see the double limit
+exists, and then by applying Proposition~\ref{prop:join-split-alg} twice we
+can break up the limit into canceling terms as desired.
 
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
@@ -285,7 +292,8 @@ $\pi_1(S)$-invariant. Finally, $\hat\mu_f$ is non-negative by
 Proposition~\ref{prop:box-positive}.
 \end{proof}
 
-\DPTtodo[inline]{Upgraded this from a remark.}
+\DPTtodo[inline]{Upgraded this from a remark. But also, surely we can
+  prove the symmetry?}
 %\begin{remark}
 It is not \emph{a priori} clear from the definition of $\hat\mu_f$ that it is an
 \emph{unoriented} geodesic current (recall
@@ -296,7 +304,9 @@ In order to obtain an unoriented geodesic current, we can take
 \]
 where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$
 the induced push-forward map on oriented geodesic currents.
-%\end{remark}
+% \end{remark}
+
+From now on, we will use drop the hat on $\hat \mu_f$.
 
 \subsection{
 Recovering \texorpdfstring{$f$}{f} on curves}
@@ -304,6 +314,8 @@ Recovering \texorpdfstring{$f$}{f} on curves}
 
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 
+\DPTtodo[inline]{We actually use $[z,y \cdot z) \times (y_-,y_+)$ in
+  the proof (factors switched)}
 If $y$ is a hyperbolic element representing a closed curve
 $C$ in the surface $S$, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
@@ -312,6 +324,10 @@ Then
 $(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
 $\langle y \rangle$-action on $\DG(S)$ (the set of pairs of crossing
 geodesics, from Definition~\ref{def:intersection_currents}).
+\DPTtodo[inline]{More precisely, this is a fundamental domain for the
+  action of $\langle y \rangle$ on the set of geodesics that intersect
+  $\ora{y}$ transversally. $\cD\cG(S)$ is a subset of (geodesics)
+  $\times$ (geodesics)}
 
 First we note that the following.
 
@@ -337,14 +353,6 @@ of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, (cf.
 the $\pi_1(S)$-invariance of $\mu$, and no flip-invariance.
 \end{proof}
 
-\begin{figure}
-\centering{
-\resizebox{80mm}{!}{\svgfig{fundamental}}
-\caption{Fundamental domain}
-\label{fig:fundamental}
-}
-\end{figure}
-
 We finish by proving Theorem~\ref{thm:intersect}, in the following
 form.
 
@@ -358,37 +366,32 @@ In particular, $\overline{\mu_f}$ is unique among unoriented geodesic currents.
 \label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
-We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in \pi_1(S,*)$ of the conjugacy class~$C$, we will first show that we can use right handed boxes to approximate a fundamental domain for $\supp \mu \times \{ \ora{y} \}$ in $\DG(\Sigma)$.
-Second, we'll show that computing the measure of that fundamental domain yields $f([y])$.
+We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in
+\pi_1(S)$ of the conjugacy class~$C$, we will find a sequence of
+RH boxes to approximating the fundamental domain for $\langle
+y\rangle$ above, and then show that computing the measure of that
+fundamental domain yields $f([y])$.
 
-
-Choose a conjugate $y$ in $[y]$, 
-and $p_1, q_1 \in \pi_1(S,*)$, so that $x$ crosses $p_1$ to the right, i.e., $p_1^{-1}$ crosses $x$ to the right, and $p_1$ crosses $y$ to the right.
-Furthermore, choose $q_1$ so that $q_1$ crosses $x$ and $y$ to the right. 
-Then, by Lemma~\ref{lem:rhs}, we have a configuration of lifts like the upper left and right lifts of $\ora{x}$ in Figure~\ref{fig:fundamental}.
-Moreover, this choice guarantees that $q_1 p_1$ crosses $y$ to the right and thus, by Lemma~\ref{lem:rhs}, $\ora{y}$ is parallel to $q_1 p_1 \cdot \ora{y}$.
-
-For each $n$, define the following elements of $\pi_1$:
+Choose $p,q \in \pi_1(S)$ so that $(P\cdot \ora{x}, \ora{y},
+q\cdot\ora{x})$ are R-parallel, as in Figure~\ref{fig:recover-f}.
+The NS dynamics of the action of $y$ imply that, for $m_1
+> m_2$ and $n_1 > n_2$, the box
+$B(py^{-m_1},py^{-m_2},y^{n_1}q,y^{n_2}q)$ form a RH box. We will look
+at the following particular family for $n \ge 0$:
 \begin{align*}
-  p_1^{(n)} &\coloneqq p_1 & q_1^{(n)}&\coloneqq y^n q_1\\
-  p_2^{(n)} &\coloneqq p_1 y &q_2^{(n)} &\coloneqq y^{-(n+1)} q_1.
+  p_1^{(n)} &\coloneqq p & q_1^{(n)}&\coloneqq y^n q\\
+  p_2^{(n)} &\coloneqq p y &q_2^{(n)} &\coloneqq y^{-(n+1)} q.
 \end{align*}
 
-We furthermore need to make further assumptions on $p_1,q_1,p_2,q_2$ in order to guarantee assumption~\ref{item:box-edges-cross-lift} in the definiton of RH lift system. Namely $p_1^{(n)} P_2^{(n)}=p_1 Y^n p_1^{-1}$ cannot be a power of $x$, for any $n$, and $Q_2^{(n)}q_1^{(n)} = Q_1 Y^{-2n-1}q_1$ cannot be a multiple of $x$ for any $n$. These conditions can be further guaranteed by slightly perturbing our previous choice of $p_1,q_1,p_2,q_2$, since all the conditions are open, and the set of lifts of closed geodesics is dense in the space of geodesics.
-\begin{claim}
-The datum $(p_1^n,p_2^n,q_1^n,q_2^n)$, as defined above, is a RH system, i.e.,
-\begin{enumerate}
-    \item $p_i^nq_j^n$ cross $x$ to the right, for $i,j=1,2$.
-    \item $q_2^n x^m p_1^n$ crosses $q_1^n x^m p_2^n$ to the right, for $m \geq 0$. 
-\end{enumerate}
-\end{claim}
-\begin{proof}
-By NS dynamics of $y$, the translates of $\ora{x}$ by $(p_i^{(n)})^{-1}$ and $q_i^{(n)}$, for $i=1,2$, are like in Figure~\ref{fig:fundamental}.
-\end{proof}
+\begin{figure}
+\centering{
+\includegraphics[height=88mm]{recover-f}
+\caption{The boxes used in proving that $\mu_f$ recovers $f$.}
+\label{fig:recover-f}
+}
+\end{figure}
 
-If we translate the RH lift system
-$(p_1^{(n)},p_2^{(n)},q_1^{(n)},q_2^{(n)})$ into the orbit notation,
-and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
+In the RH orbit notation, we have
 \begin{align*}
   a^{(n)} &= p y^{n}   q &  b^{(n)} &= p y^{-(n+1)} q \\
   c^{(n)} &= p y^{n+1} q &  d^{(n)} &= p y^{-n} q.
@@ -396,27 +399,26 @@ and set $p \coloneqq p_1$ and $q \coloneqq q_1$, we have right-handed boxes
 
 If we let $z=(p_1^{-1} \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
     \begin{multline*}
-      \mu_f((\gamma_-,\gamma_+) \times [z,y \cdot z)) \\
+      \mu_f((\gamma_-,\gamma_+) \times [z,y \cdot z))\\
       \begin{aligned}
     &= \lim_{n\to\infty} \mu_f(B_n)  \\
-    &= \frac{1}{2}\lim_{n\to\infty} \lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
-    &=\frac{1}{2}\lim_{n,m\to\infty}(f([py^{n+1}qx^{m}]) - f([y^{n+1}]) - f([x^m])) \\
-    &\qquad+ (f([py^{-(n+1)}qx^{m}])-f([y^{-(n+1)}]) -f([x^m])) \\
-    &\qquad-(f([py^{n}qx^{m}])-f([y^n])-f([x^m]))\\
-    &\qquad- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
-    &\qquad+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}])\\
-    &= \frac{1}{2}(f([y]) + f([y^{-1}]))\\
-    &=f([y]).
+    &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
+    % &=\frac{1}{2}\lim_{n,m\to\infty}(f([py^{n+1}qx^{m}]) - f([y^{n+1}]) - f([x^m])) \\
+    % &\qquad+ (f([py^{-(n+1)}qx^{m}])-f([y^{-(n+1)}]) -f([x^m])) \\
+    % &\qquad-(f([py^{n}qx^{m}])-f([y^n])-f([x^m]))\\
+    % &\qquad- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
+    % &\qquad+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}])\\
+    &= \frac{1}{2}\bigl(f([y]) + f([y^{-1}])\bigr) =f([y]).
       \end{aligned}
-    \end{multline*}      The first equality follows by the fact that the boxes defined
-      above converge from below to $(\gamma_-,\gamma_+) \times [z,y
-      \cdot z)$ as $n \to \infty$, since $B_{n-1} \subset B_n$. The second equality is by
-      definition of the measure $\mu_f$ on boxes.
-      For the third, we pass from double limit to each one of the iterated limits by Lemma~\ref{lem:additivity-limit-2} and we add and subtract the necessary powers of~$y$,
-      $y^{-1}$ and $x$. The hypotheses of that Lemma are satisfied by the choice of $p_1$ and $q_1$.
-      In the fourth equality, we then apply that
-      Lemma to cancel out equivalent
-      terms. In the fifth equality, we use the symmetry property of~$f$ to obtain the result.
+    \end{multline*}
+    The first equality follows by the fact that the boxes defined
+    above converge from below to $(\gamma_-,\gamma_+) \times [z,y
+      \cdot z)$ as $n \to \infty$, since $B_{n-1} \subset B_n$.
+    At the second equality, we use definition of $\mu_f$ on boxes.
+    For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass
+    we pass from the iterated limit to a double limit, and gives a
+    number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
+    two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
       It remains then to check the property $i(\overline{\mu}_f, C)=f(C)$ for any closed curve $C$ persists. Indeed,
 \[
@@ -426,71 +428,92 @@ The first equality is by the fact that intersection number is invariant under th
 Therefore, $\overline{\mu_f}$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\mu_f$.
 
  Finally, the uniqueness of the geodesic current $\overline{\mu_f}$ is
- guaranteed by the fact that geodesic currents are uniquely determined
- by their intersection numbers with all closed curves by a result of
- Otal \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
+ a result of Otal, geodesic currents are determined by their marked
+ length spectrum \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 \end{proof}
 
 \begin{remark}
 In \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} the authors
-construct a geodesic current induced from a cross-ratio.
+give a different construction, producing a geodesic current induced
+from a cross-ratio.
 Given a dense subset $X \subset \partial_{\infty} S$, they consider the set of $\mathcal{R}(X)$ of all proper rectangles of geodesics with endpoints on $X$.
-They start from a finitely additive function $r \colon \mathcal{R}(X) \to \mathbb{R}$ (defined suitable from a cross-ratio)
-satisfying that (1) if $R,R_1,R_2 \in \mathcal{R}(X)$ with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $r(R)=r(R_1)+r(R_2)$, 
-and (2) so that if $R,R' \in \mathcal{R}(X)$ if $R \subset R'$, we have $r(R) \leq r(R')$.
+They start from a finitely additive function $r \colon \mathcal{R}(X) \to \mathbb{R}$ (defined suitably from a cross-ratio)
+that is (1) side-by-side additive: if $R,R_1,R_2 \in \mathcal{R}(X)$
+with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $r(R)=r(R_1)+r(R_2)$;
+and (2) monotonic: if $R,R' \in \mathcal{R}(X)$ with $R \subset R'$, we have $r(R) \leq r(R')$.
 
-Our function $\mu_f$ satisfies properties (1) and (2) by Proposition~\ref{prop:sidebyside}
-and Proposition~\ref{prop:finitely-additive}, however, it is only defined in a proper subclass of $\mathcal{R}(X)$ (with $X$ the set of endpoints of translates of $x$, which is dense in $\partial_{\infty} S$  by Lemma~\ref{lem:minimal}).
+Our function $\mu_f$ satisfies these properties by Proposition~\ref{prop:sidebyside}
+and Proposition~\ref{prop:finitely-additive}, however, it is only
+defined in a proper subset of $\mathcal{R}(X)$, with $X$ to
+be the set of
+endpoints of translates of~$x$.
 Therefore, we cannot directly apply their result.
 
-Moreover, we need the extra control on the family of right-handed boxes we consider in order to be able to recover the curve functional $f$ from the geodesic current we construct (see Theorem~\ref{prop:recoverintersection}).
+Moreover, we need the extra control on the family of RH
+boxes to recover the curve functional~$f$ from the geodesic current.
 In Section~\ref{sec:crossratios}, we prove that every cross-ratio induces a curve functional (i.e., period) satisfying the hypotheses of our Theorem~\ref{thm:intersect}, and thus our result generalizes \cite[Proposition~4.3]{BIPP24:PositiveCrossratios}.
 \end{remark}
 
 
 \begin{remark}
 The end of the proof of Proposition~\ref{prop:recoverintersection} is the only place where we have used the symmetry condition of $f$. In fact, note that before that step, the proof shows the curve functional induced by the intersection number must be symmetric. 
+\DPTtodo{Added pointer to unoriented smoothing}
+We also use unoriented smoothing; see Remark~\ref{rem:unoriented}.
 The symmetry condition has also been used in Corollary~\ref{cor:cont_conn_disc}, and will be used in proving the equivalent algebraic statement Theorem~\ref{thm:intersections_group}.
 This condition is thus crucial to recover curve functionals as intersection numbers. In Appendix~\ref{sec:asymmetric} we show that the asymmetric intersection numbers do not satisfy an analogous duality result.
 \end{remark}
 
-\subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{muf}}
+\subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{A'}}
 \label{subsec:algebraic_vs_top}
-We finish this section by proving its algebraic version, namely, Theorem~\ref{thm:intersections_group}.
+We finish this section by proving the algebraic version of the
+theorem, namely, Theorem~\ref{thm:intersections_group}.
 
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
-Let $\overline{f}(a) \coloneqq \frac{1}{2}\left(f(a) + f(A) \right)$. Note that since $f$ is additive, $\overline{f}$ is also additive.
-First, extend $\overline{f}$ linearly to $\mathbb{R}_{\geq 0}$-formal linear combinations of $\Gamma$, i.e., to weighted multi-curves, by the additivity of $\overline{f}$:
-\[
-\overline{f}(s \cdot a + t \cdot b) = s\cdot \overline{f}(a) + t \cdot \overline{f}(b)
-\]
-for every $s,t \geq 0$, and $a,b \in \Gamma$.
+As in the statement, let $\overline{f}(a) \coloneqq
+\frac{1}{2}\left(f(a) + f(A) \right)$, and extend it linearly to be an
+additive
+function on multi-curves.
+% \[
+% \overline{f}(s \cdot a + t \cdot b) = s\cdot \overline{f}(a) + t \cdot \overline{f}(b)
+% \]
+% for every $s,t \geq 0$, and $a,b \in \Gamma$.
 
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
-The only condition that requires verification is smoothing.
+The only condition that requires verification is smoothing. We start
+with disconnected smoothing, between crossing elements
+$(\ora{a},\ora{b})$, which we can assume R-cross by switching $a,b$ if
+necessary. We have
+\begin{align*}
+  \overline{f}(a) + \overline{f}(b)
+    &= \frac{1}{2}\bigl(f(a) + f(A) + f(b) + f(B)\bigr)\\[2pt]
+    &\ge \frac{1}{2}\bigl(f(ab) + f(AB)\bigr) = \overline{f}(ab).
+\end{align*}
+In the inequality, we used the assumption on $f$ and the fact that
+$(\ora{A},\ora{B})$ also
+R-cross, as well as conjugation invariance for $f(AB) = f((ba)^{-1})$.
+By grouping the four terms differently, and using the fact that
+$(\ora{b},\ora{A})$ R-cross, we also get $\overline{f}(a) +
+\overline{f}(b) \ge \overline{f}(bA)$.
 
-Start by assuming the essential crossing arises from an essential crossing between two curves $C_1$ and $C_2$ represented by elements $a,b$ (by Proposition~\ref{prop:crossings-triality}), and we will conclude disconnected smoothing.
-In this case, either $(\ora{a},\ora{b})$ are $R$-crossing, or $(\ora{a},\ora{b})$ are $L$-crossing. If $(\ora{a},\ora{b})$ is $R$-crossing, then oriented disconnected smoothing is satisfied by the hypothesis.  If $(\ora{a},\ora{b})$ is $L$-crossing, $(\ora{b},\ora{a})$ is $R$-crossing and, similarly, the hypothesis tells us
-\[
-\overline{f}(a) + \overline{f}(b) = \overline{f}(b) + \overline{f}(a) \geq \overline{f}(ba)= \overline{f}(ab)
-\]
-where just used in the last equality that $\overline{f}$ is conjugacy invariant.
-Now, we assume an essential self-crossing of a multi-curve, and prove connected smoothing.
+Next we turn to oriented connected smoothing of a curve at an
+essential self-crossing.
+Using Proposition~\ref{prop:crossings-triality}, assume the essential
+self-crossing is realized by the self-intersection of a curve
+$[\gamma]=[ab]$, where $(\ora{a},\ora{b})$ are parallel; by switching
+them if necessary, we can assume they are R-parallel, and thus so are
+$(\ora{B},\ora{A})$. Then
+\begin{align*}
+  \overline{f}(ab)
+    &= \frac{1}{2}\bigl(f(ab) + f(BA)\bigr) \\[2pt]
+    &\ge \frac12\bigl(f(a) + f(b) + f(B) + f(A)\bigr)
+     = \overline{f}(a) + \overline{f}(b).
+\end{align*}
 
-Using Proposition~\ref{prop:crossings-triality}, assume the essential self-crossing is realized by the self-intersection of a curve $[\gamma]=[ab]$, where $\ora{a},\ora{b}$ are parallel (the anti-parallel case is similar).
-If $\ora{a},\ora{b}$ are $R$-parallel, by assumption, we have that oriented connected smoothing is satisfied.
-If $\ora{b},\ora{a}$ are $L$-parallel, then $\ora{a},\ora{b}$ are $R$-parallel. Hence
-\[
-\overline{f}(ab)=\overline{f}(ba) \geq \overline{f}(b) + \overline{f}(a) = \overline{f}(a) + \overline{f}(b).
-\]
-If $(a,b)$ are $L$-parallel, then $(b,a)$ are $R$-parallel, thus
-\[
-\overline{f}(ab)=\overline{f}(ba)\geq \overline{f}(b) + \overline{f}(a) = \overline{f}(a) + \overline{f}(b). 
-\]
-Hence, oriented connected smoothing is satisfied in this case, too.
-Finally, by Corollary~\ref{cor:oriented_smoothing_unoriented} $\overline{f}$ satisfies smoothing. We are thus under the hypotheses of Theorem~\ref{thm:intersect}.
+Finally, by Corollary~\ref{cor:oriented_smoothing_unoriented},
+$\overline{f}$~satisfies unoriented smoothing as well. We are thus under the
+hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 
 

@@ -19,12 +19,14 @@ a distinguished geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), 
 
 In this paper we give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
 
+\DPTtodo[inline]{Dropped ``homogeneous'' since it is redundant with
+  ``additive''. Carry that throughout paper}
 \begin{mainthm}
     Suppose that a curve functional $f \colon\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
    \]
-   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components, \emph{stable} and \emph{homogeneous} (see~\ref{subsec:mainhypotheses} for definitions).
+   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components, \emph{stable} (see~\ref{subsec:mainhypotheses} for definitions).
 Then, $f$ has a (unique) dual geodesic current $\mu_f$, i.e., for every curve $C$, we have
 \[
 i(\mu_f,C)=f(C).
@@ -85,6 +87,8 @@ See Section~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the 
 These hypotheses might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing of $f$ implies smoothing of $\overline{f}$ (Corollary~\ref{cor:oriented_smoothing_unoriented}).
 
 Furthermore, neither one of conditions~\ref{eq:conn_oriented} and ~\ref{eq:disconn_oriented} imply each other: see Section~\ref{subsec:mainhypotheses}, Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
+The averaging of $f(a)$ and $f(A)$ is also necessary; see
+Appendix~\ref{sec:asymmetric}.
 
 Our result can also be seen as a generalization of Feng
 Luo's criterion~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}, where he characterizes curve
