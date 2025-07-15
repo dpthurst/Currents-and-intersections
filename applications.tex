@@ -1,18 +1,32 @@
-\section{Measured laminations and hyperbolic metrics as curve functionals}
+\section{Characterizing sub-classes of geodesic currents}
 \label{sec:appsintersection}
 
-\subsection{New definition of geodesic currents, filling currents and measured laminations}
+\DPTtodo[inline]{Retitled the section}
+\subsection{New definition of geodesic currents and filling currents}
 \label{subsec:newdef} 
 Theorem~\ref{thm:intersect} gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals.
 As mentioned in the introduction, one can view this theorem in analogy to Poincaré duality for closed surfaces.  Given a 1-cohomology class $\alpha^*$ of an $n$-dimensional manifold (represented by homomorphisms from $\pi_1(S)$ to $\mathbb{R}$), Poincaré duality associates an $(n-1)$-dimensional homology class $\alpha$ (represented by real linear combinations of $(n-1)$-cycles). Since $n=2$, these cycles can be expressed as linear combinations of simple closed curves.  
 
 In our setting, the role of a 1-cohomology class is played by a curve
 functional that satisfies smoothing, additivity, and
-stability/homogeneity. Although it is not a homomorphism of
-$\pi_1(S)$, it preserves a certain combinatorial structure (see Section~\ref{sec:questions}). Likewise, the role of the homology class is taken by a geodesic current. This perspective, viewing geodesic currents as homology classes, aligns with the approach in geometric measure theory, where differential currents—seen as functionals on $k$-forms—naturally define homology~\cite[Chapter~10]{CC00:Foliations}. Geodesic currents are examples of such differential forms~\cite[1.8.7]{MG20:Thesis}.
+stability. Although it is not a homomorphism from
+$\pi_1(S)$ to anything, it preserves a certain combinatorial structure
+\DPTtodo{Can this ref be made more precise? Is it specifically about
+  2.4.6, or something else?}
+(see Section~\ref{sec:questions}). Likewise, the role of the homology
+class is taken by a geodesic current. This perspective, viewing
+geodesic currents as homology classes, aligns with the approach in
+geometric measure theory, where differential currents—seen as
+functionals on $k$-forms—naturally define
+homology~\cite[Chapter~10]{CC00:Foliations}. Geodesic currents are
+examples of such differential forms~\cite[1.8.7]{MG20:Thesis}.
 
+\DPTtodo[inline]{Our theorem seems more analogous to $\alpha \cap \beta =
+  \alpha^*(\beta)$, relating cap product to the homology-cohomology pairing}
 In Poincaré duality, the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$ holds, where $\cap$ denotes the cap product in homology and $\cup$ the cup product in cohomology. This aligns with our theorem, which establishes a duality via the intersection number $i(\mu_f, C) = f(C)$, suggesting that the geometric intersection number plays the role of the cap product.  
 
+\DPTtodo[inline]{Would this (and much of discussion above) fit better
+  in the earlier ``questions'' section?}
 A natural question that arises is: what is the appropriate analog of the cup product? In other words, how can one define the intersection of two curve functionals?
 
 These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
@@ -34,8 +48,14 @@ We can also characterize filling geodesic currents.
 
 \begin{enumerate}
     \item The set of filling currents, i.e., $ \Curr_{\mbox{fill}}(S)$
-    \item The set of functionals $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ which satisfy symmetry, oriented smoothing, additivity, stability and homogeneity properties, and so that their continuous extension to geodesic currents is positive.
-    \item The set of curve functionals $f \colon \mathcal{C}(S) \to \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{ f(C) : C \in \mathcal{C}(S),\ C \mbox{ non-trivial} \}\] is positive and satisfy symmetry, oriented smoothing, additivity, stability and homogeneity properties.
+    \item The set of functionals $f \colon \mathcal{C}^+(S) \to
+      \mathbb{R}$ which satisfy symmetry, oriented smoothing,
+      additivity, and stability, and so that their continuous extension to geodesic currents is positive.
+    \item The set of curve functionals $f \colon \mathcal{C}(S) \to
+      \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{
+        f(C) : C \in \mathcal{C}(S),\ C \mbox{ non-trivial} \}\] is
+      positive and satisfy symmetry, oriented smoothing, additivity,
+      and stability properties.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
@@ -79,9 +99,13 @@ By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ m
   dual to one-half of an integral
   multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}. For another
   concrete example, let $\mu$ be the geodesic current supported on a
-  separating simple closed curve. Then $1/2 \mu$ has an integral
-  length spectrum but it is not an integral multi-curve.
+  separating simple closed curve. Then $\mu/2$ has an integral
+  length spectrum but is not an integral multi-curve.
 \end{remark}
+
+\DPTtodo[inline]{Has anyone characterized which half-integral
+  multi-curves have integral intersection number? Otherwise that's a
+  natural question.}
 
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
@@ -126,23 +150,23 @@ We will now characterize measured laminations as curve functionals in $\AConvex(
 
 We will need the following observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals}.
 
+\DPTtodo[inline]{There's an extra notation here, about geodesics
+  intersecting two segments, that may not have been introduced yet}
 \begin{lemma}
 For any points $x,y,z,w \in \wt{\Sigma}$, we have the following equalities:
-\begin{align*}
-\mu(G([{x},{w}), [{y},{z}))) +  &\mu(G(({x},{w}], ({y},{z}])) = \\
-&\mu(G[{x},{z})) + \mu(G[{w},{y})) \\
-&- \mu(G([{w},{z})) - \mu(G([{x},{y}))
-\end{align*}
+\begin{equation*}
+\mu(G([{x},{w}), [{y},{z}))) +  \mu(G(({x},{w}], ({y},{z}])) = 
+\mu(G[{x},{z})) + \mu(G[{w},{y})) - \mu(G([{w},{z})) - \mu(G([{x},{y}))
+\end{equation*}
 and
-\begin{align*}
-\mu(G(({x},{w}], ({y},{z}])) +   &\mu(G([{x},{w}), [{y},{z})))= \\
-&\mu(G({x},{z}]) + \mu(G({w},{y}]) \\
-&- \mu(G(({w},{z}]) - \mu(G(({x},{y}]).
-\end{align*}
+\begin{equation*}
+\mu(G(({x},{w}], ({y},{z}])) +   \mu(G([{x},{w}), [{y},{z})))= 
+\mu(G({x},{z}]) + \mu(G({w},{y}]) - \mu(G(({w},{z}]) - \mu(G(({x},{y}]).
+\end{equation*}
 \label{lem:otalclaim}
 \end{lemma}
 
-We need first the following hyperbolic geometry lemma.
+We also need the following hyperbolic geometry lemma.
 
 \begin{proposition}
 Consider two elements $a, b \in \pi_1(\Sigma)$ with hyperbolic axes $\ora{a}$ and $\ora{b}$ that intersect at a point $O$, and translation lengths $\ell(a),\ell(b)$.
@@ -155,14 +179,16 @@ We define the following four points:
 \end{itemize}
 We have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
-\item $\ora{ab}$ is the line containing the segment $(Q,P]$ of length $\ell(ba)/2$.
-\item $\ora{ba}$ is the line containing the segment $(P',Q']$ of length $\ell(ba)/2$.
-\item $\ora{ab^{-1}}$ is the line containing the segment $(Q',P]$ of length $\ell(ab^{-1})/2$.
-\item $\ora{b^{-1}a}$ is the line containing the segment $(P',Q]$ of length $\ell(b^{-1}a)/2$.
+\item The segment $(Q,P])$ is on the line $\ora{ab}$ and has length $\ell(ba)/2$.
+\item The segment $(P',Q']$ is on the line $\ora{ba}$ and has length $\ell(ba)/2$.
+\item The segment $(Q',P]$ is on the line $\ora{ab^{-1}}$ and has length $\ell(ab^{-1})/2$.
+\item The segment $(P',Q]$ is on the line $\ora{b^{-1}a}$ and has length $\ell(ab^{-1})/2$.
 \end{enumerate}
-Furthermore, the set $\{ \ora{ab} \} \times (G((Q,P])\cup a\cdot G((P',Q']))$ (resp.\ $\{ \ora{bA} \} \times (
- G((P,Q']) \cup b \cdot G((Q,P']))$) is a Borel fundamental domain for the
-$\langle ab \rangle$-action  (resp.\ $bA$) on $\DG(S)$.
+Furthermore, $G((Q,P])\cup a\cdot
+G((P',Q'])$ is a Borel fundamental domain for the
+$\langle ab \rangle$-action on $G(\ora{ab})$.
+Similarly, $G((P,Q']) \cup b \cdot G((Q,P'])$ is a Borel fundamental domain for
+ the action of $\langle bA\rangle$ on $G(\ora{bA})$.
 \label{prop:keygeometry}
 \end{proposition}
 
@@ -173,8 +199,25 @@ $\langle ab \rangle$-action  (resp.\ $bA$) on $\DG(S)$.
 \label{fig:smoothing_1}
 \end{figure}
 
+Figure~\ref{fig:smoothing_1} shows a \emph{hyperbolic parallelogram},
+described more in Appendix~\ref{sec:hyp-par}.
+
 \begin{proof}
-We prove the first case. Since $\ora{a}$ and $\ora{b}$ intersect at $O$, so do the curves $[a]$ and $[b]$ at some point $o \in \Sigma$.
+  We prove the first case.
+  For $z$ any of the five points in the statement, let $r_z$ be
+  the hyperbolic rotation by angle $\pi$ fixing~$z$. Then $a$, as
+  acting on the hyperbolic plane, is $r_P r_0$, while $b = r_O r_Q$.
+  (Recall that a composition $r_zr_w$ of two rotations by $\pi$ is a
+  translation on the line $\overleftrightarrow{zw}$ by twice the
+  distance between $z$ and~$w$.)
+  It follows that $ab = r_P (r_O)^2 r_Q =
+  r_Pr_Q$, from which the statement about $(Q,P]$
+  follows. The other cases are similar.
+
+  \DPTtodo[inline]{Gave the short argument above, which I think is
+    complete. Do we need anything more?}
+  \begin{comment}
+  Since $\ora{a}$ and $\ora{b}$ intersect at $O$, so do the curves $[a]$ and $[b]$ at some point $o \in \Sigma$.
 Perform a smoothing operation obtaining a new curve $\alpha$ of length $\ell(a) + \ell(b)$.
 A lift $\alpha$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $\ora{b}$ of length $\ell(b)$, then a segment of $\ora{b^{-1}ab}$ of length $\ell(a)$, etc.
 Let $\alpha_*$ be the geodesic representative in the homotopy class of $\alpha$.
@@ -187,46 +230,61 @@ and $r_{Q'}$ is the corresponding reflection at $Q'$.
 Similarly, we can write $a=r_{P'}r_O$, and thus $ab=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $\alpha'$ of translation length
 twice the distance between $P'$ and $Q'$.
 The other cases follow similarly.
-As for the assertion on fundamental domains, we note that the segment $(P',Q']$ on the axis of $\ora{ba}$, is sent by $a$ to a segment $(P,R]$, where $R=a(Q')$ appears forward of $P$ in according to the orientation of $\ora{ab}$, and the segment $(Q,R]$ is a fundamental domain for the action of $ab$ on its axis $\ora{ab}$, thus $\{ \ora{ab} \} \times G((Q,R])= \{ \ora{ab} \} \times  (G((Q,P]) \cup a \cdot G((P',Q']))$ is a fundamental domain for the action of $ab$ on $DG(\Sigma)$, thus the claim follows.
+\end{comment}
+
+For the assertion on fundamental domains, we note that the segment
+$(P',Q']$ on the axis of $\ora{ba}$, is sent by $a$ to a segment
+$(P,R]$, where $R=a(Q')$ appears forward of $P$ in according to the
+orientation of $\ora{ab}$, and the segment $(Q,R]$ is a fundamental
+domain for the action of $ab$ on its axis $\ora{ab}$. Thus $\{
+\ora{ab} \} \times G((Q,R])= \{ \ora{ab} \} \times  (G((Q,P]) \cup a
+\cdot G((P',Q']))$ is a fundamental domain for the action of $ab$ on
+$\DG(\Sigma)$, as desired.
 The other claim is similar.
 \end{proof}
 
 The above lemma can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
 Using this result, we can prove the following characterization of measured laminations among curve functionals.
 
+\DPTtodo[inline]{I think this thm should get a letter, not a number, and
+  version below should get a prime}
 \begin{theorem}
-$\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
-    For any pair crossing elements $g,h \in \pi_1(S)$, we have
-    \begin{equation}
+A geodesic current $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
+    For any pair of crossing elements $g,h \in \pi_1(S)$, we have
+    \begin{equation}\label{eq:disconn-max-smoothing}
       f\left([g][h]\right) = \max \left\{ f\left([gh]\right),f\left([gh^{-1}]\right) \right\}.
     \end{equation}
     \label{thm:char_laminations}
 \end{theorem}
 \begin{proof}
-Suppose first $f$ satisfies the hypotheses of the statement.
+Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing}.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
-It remains to show that $\mu_f$ is a measured lamination, using the disconnected max-smoothing property.
+It remains to show that $\mu_f$ is a measured lamination.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
-consider the hyperbolic parallelogram $H$ (see Appendix~\ref{sec:hyp-par} for the definition) at the center of Figure~\ref{fig:smoothing_1}.
-Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$. 
+consider the hyperbolic parallelogram~$H$ at the center of
+Figure~\ref{fig:smoothing_1}.
+\DPTtodo{Do we need to be precise about open/closed endpoints?}
+Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$,
+and
+$R_1^{\perp}$, the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
+\DPTtodo{Ambiguous: there are two natural boxes here.}
+Also let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
 
-Let $R_1^{\perp}$ be the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
-
-Given elements $g$ and $h$  with intersecting axes, let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
-
-Taking powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined analogously.
-Observe that $R_n \subset R_{n+1}$, and $\cup_{n \geq 1} R_n = B_{g,h}$.
-Hence, by continuity of measures from below, we have
+Taking powers $g^n$ and $h^n$, and we obtain corresponding hyperbolic
+parallelograms $H_n$ for $g^n,h^n$ and analogous sets $R_n \coloneqq
+R_{g^n,h^n}$.
+Observe that $R_n \subset R_{n+1}$, and $\bigcup_{n \geq 1} R_n = B_{g,h}$.
+Hence we have
 \[
-\lim_n \mu(R_n) \to \mu(B_{g,h}).
+\lim_{n\to\infty} \mu(R_n) \to \mu(B_{g,h}).
 \]
 If we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
 we get, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \[\mu(R_n)=A_n + B_n-C_n,\]
 where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$.
-If we further ldg $R_n^{\perp}$ the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n^{-1}}$ and $\ora{b_n^{-1}a_n}$, we have
+If we further let $R_n^{\perp}$ be the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n^{-1}}$ and $\ora{b_n^{-1}a_n}$, we have
 \[
-\mu(R_n^T)=A_n + B_n -D_n,
+\mu(R_n^\perp)=A_n + B_n -D_n,
 \]
 where $D_n=f(a_nb_n)/2$.
 We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
@@ -247,7 +305,7 @@ Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\m
 The above result shows that if one knows $f$ is dual to a geodesic current, then it is only necessary to check disconnected max-smoothing to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-crossings. It is however true that intersection number with a measured lamination also satisfies connected max-smoothing.
 
 \begin{theorem}
-A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity, homogeneity, stability and the \emph{max-smoothing property}:
+A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity, stability and the \emph{max-smoothing property}:
     For any essential crossing of a multi-curve $C$, we have
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
@@ -262,7 +320,7 @@ The fact that measured laminations satisfy max-smoothing was proven by
 the second author in~\cite{Thu00:GeometricIntersection} using
 different techniques. A related characterization of measured
 laminations in terms of valuations in the character variety has been
-proven recently in~\cite[Theorem~3.1]{MS21:Valuations}.
+proven recently by Marché and Simon~\cite[Theorem~3.1]{MS21:Valuations}.
 
 \subsection{Liouville currents}
 \label{subsec:liouville}
@@ -279,7 +337,7 @@ In \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, Bonahon gives an algebraic char
 We can prove the following characterization.
 
 \begin{theorem}
-$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, homogeneity and,
+$\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies additivity, stability, and,
     for any pair crossing elements $g, h \in \pi_1(S)$ we have the \emph{$\lambda$-smoothing relation}  \[
         \lambda \left(g\right)\lambda \left(h\right) = \lambda \left(gh\right) + \lambda \left(gh^{-1}\right),
   \]
