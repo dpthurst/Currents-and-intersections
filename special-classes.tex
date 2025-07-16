@@ -150,24 +150,52 @@ We note that our result says nothing explicit about the dual multi-curve, wherea
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
 
-We will need the following observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals}.
+We will need the following observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals} in the setting of unoriented geodesic currents. We will prove the analogous oriented version, which is quite similar.
 
-\DPTtodo[inline]{There's an extra notation here, about geodesics
-  intersecting two segments, that may not have been introduced yet.
-  DMG on it}
+We introduce the following notation. Given two geodesics segments $t$ and $t'$, let $G(t , t')$ be the set of geodesics intersecting from segment $t$ to segment $t'$ transversely. We will refer to sets of this type as \emph{double transversals}.
+Let $x,y,z,w \in \wt{X}$ appear counter-clockwise as vertices of an embedded geodesic quadrilateral on $\wt{X}$ with sides $[x,y)$, $[z,w)$, $[y,z)$$, and $[w,x)$.
+
 \begin{lemma}
-For any points $x,y,z,w \in \wt{\Sigma}$, we have the following equalities:
-\begin{equation*}
-\mu(G([{x},{w}), [{y},{z}))) +  \mu(G(({x},{w}], ({y},{z}])) = 
-\mu(G[{x},{z})) + \mu(G[{w},{y})) - \mu(G([{w},{z})) - \mu(G([{x},{y}))
-\end{equation*}
+Given the setup described above, we have 
+\begin{align*}
+\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &= \\
+&\mu(G[x,z)) + \mu(G[w,y)) \\
+&- \mu(G([w,z)) - \mu(G([x,y))
+\end{align*}
 and
-\begin{equation*}
-\mu(G(({x},{w}], ({y},{z}])) +   \mu(G([{x},{w}), [{y},{z})))= 
-\mu(G({x},{z}]) + \mu(G({w},{y}]) - \mu(G(({w},{z}]) - \mu(G(({x},{y}]).
-\end{equation*}
+\begin{align*}
+\mu(G((x,w], (y,z])) + \mu(G([x,w), [y,z))) &= \\
+&\mu(G(x,z]) + \mu(G(w,y]) \\
+&- \mu(G((w,z]) - \mu(G((x,y])
+\end{align*}
 \label{lem:otalclaim}
 \end{lemma}
+\begin{proof}
+
+We have the following partitions:
+\begin{subequations}
+\begin{align}
+\begin{split}
+G([x,z)) = G([x,z), [x,y)) \cup G([x,z), (z,y])
+\label{eq1}
+\end{split}\\
+\begin{split}
+G([w,y))=G([w,y), [w,z)) \cup G([w,y), (y,z])
+\label{eq2}
+\end{split}\\
+\begin{split}
+G([w,z))=G([w,z), [w,y)) \cup G([w,z), (z,y])
+\label{eq3}
+\end{split}\\
+\begin{split}
+G([x,y))=G([x,y), [x,z)) \cup G([x,y), (y,z])
+\label{eq4}
+\end{split}
+\end{align}
+\end{subequations}
+We now apply the measure $\mu$ to all the equations, add the equations resulting from Equation~\ref{eq1} and~\ref{eq2}, and subtract this from the equations resulting from Equation~\ref{eq3} and~\ref{eq4}, we get the result. The other equation follows in a similar way.
+\end{proof}
+
 
 We also need the following hyperbolic geometry lemma.
 
