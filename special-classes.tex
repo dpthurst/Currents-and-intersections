@@ -1,9 +1,7 @@
 \section{Characterizing special classes of geodesic currents}
 \label{sec:appsintersection}
 
-\DPTtodo[inline]{Retitled the section}
-\subsection{New definition of geodesic currents and filling currents}
-\label{subsec:newdef} 
+\DPTtodo[inline]{Move or trim stuff before the first subsection}
 Theorem~\ref{thm:intersect} gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals.
 As mentioned in the introduction, one can view this theorem in analogy to Poincaré duality for closed surfaces.  Given a 1-cohomology class $\alpha^*$ of an $n$-dimensional manifold (represented by homomorphisms from $\pi_1(S)$ to $\mathbb{R}$), Poincaré duality associates an $(n-1)$-dimensional homology class $\alpha$ (represented by real linear combinations of $(n-1)$-cycles). Since $n=2$, these cycles can be expressed as linear combinations of simple closed curves.  
 
@@ -38,7 +36,10 @@ Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
    The image is equal to the subset of additive convex functionals $\AConvex(S)$.
 \end{theorem}
 
-We can also characterize filling geodesic currents.
+\subsection{Filling currents}
+\label{subsec:filling}
+Using a result of Burger, Iozzi, Parreau, and Pozzetti, we can give a
+characterization of filling geodesic currents.
 
 \begin{corollary}
   Let $S$ a closed surface,
@@ -106,7 +107,7 @@ By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ m
 \DPTtodo[inline]{Characterize which half-integral
   multi-curves have integral intersection number using $\bbZ/2$
   homology. Also characterize intersection number with integral
-  curves.}
+  curves. DMG on it}
 
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
@@ -152,7 +153,8 @@ We will now characterize measured laminations as curve functionals in $\AConvex(
 We will need the following observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals}.
 
 \DPTtodo[inline]{There's an extra notation here, about geodesics
-  intersecting two segments, that may not have been introduced yet}
+  intersecting two segments, that may not have been introduced yet.
+  DMG on it}
 \begin{lemma}
 For any points $x,y,z,w \in \wt{\Sigma}$, we have the following equalities:
 \begin{equation*}
@@ -248,7 +250,7 @@ The above lemma can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
 Using this result, we can prove the following characterization of measured laminations among curve functionals.
 
 \DPTtodo[inline]{I think this thm should get a letter, not a number, and
-  version below should get a prime}
+  version below should get a prime. DPT on it}
 \begin{theorem}
 A geodesic current $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
     For any pair of crossing elements $g,h \in \pi_1(S)$, we have
@@ -264,11 +266,12 @@ It remains to show that $\mu_f$ is a measured lamination.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}.
-\DPTtodo{Do we need to be precise about open/closed endpoints?}
+\DPTtodo{Do we need to be precise about open/closed endpoints? We
+  don't care. DPT on it.}
 Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$,
 and
 $R_1^{\perp}$, the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
-\DPTtodo{Ambiguous: there are two natural boxes here.}
+\DPTtodo{Ambiguous: there are two natural boxes here. DPT on it.}
 Also let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
 
 Taking powers $g^n$ and $h^n$, and we obtain corresponding hyperbolic
