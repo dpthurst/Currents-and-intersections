@@ -1,40 +1,7 @@
 \section{Characterizing special classes of geodesic currents}
 \label{sec:appsintersection}
 
-\DPTtodo[inline]{Move or trim stuff before the first subsection}
-Theorem~\ref{thm:intersect} gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals.
-As mentioned in the introduction, one can view this theorem in analogy to Poincaré duality for closed surfaces.  Given a 1-cohomology class $\alpha^*$ of an $n$-dimensional manifold (represented by homomorphisms from $\pi_1(S)$ to $\mathbb{R}$), Poincaré duality associates an $(n-1)$-dimensional homology class $\alpha$ (represented by real linear combinations of $(n-1)$-cycles). Since $n=2$, these cycles can be expressed as linear combinations of simple closed curves.  
-
-In our setting, the role of a 1-cohomology class is played by a curve
-functional that satisfies smoothing, additivity, and
-stability. Although it is not a homomorphism from
-$\pi_1(S)$ to anything, it preserves a certain combinatorial structure
-\DPTtodo{Can this ref be made more precise? Is it specifically about
-  2.4.6, or something else?}
-(see Section~\ref{sec:questions}). Likewise, the role of the homology
-class is taken by a geodesic current. This perspective, viewing
-geodesic currents as homology classes, aligns with the approach in
-geometric measure theory, where differential currents—seen as
-functionals on $k$-forms—naturally define
-homology~\cite[Chapter~10]{CC00:Foliations}. Geodesic currents are
-examples of such differential forms~\cite[1.8.7]{MG20:Thesis}.
-
-\DPTtodo[inline]{Our theorem seems more analogous to $\alpha \cap \beta =
-  \alpha^*(\beta)$, relating cap product to the homology-cohomology pairing}
-In Poincaré duality, the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$ holds, where $\cap$ denotes the cap product in homology and $\cup$ the cup product in cohomology. This aligns with our theorem, which establishes a duality via the intersection number $i(\mu_f, C) = f(C)$, suggesting that the geometric intersection number plays the role of the cap product.  
-
-\DPTtodo[inline]{Would this (and much of discussion above) fit better
-  in the earlier ``questions'' section?}
-A natural question that arises is: what is the appropriate analog of the cup product? In other words, how can one define the intersection of two curve functionals?
-
-These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
-
-Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
-
-\begin{theorem}
-   Let $\Psi \colon \Curr(S) \to \mathbb{R}^{\mathcal{C}(S)}$ be the homeomorphism onto its image $\mu \mapsto i(\mu, \cdot)$.
-   The image is equal to the subset of additive convex functionals $\AConvex(S)$.
-\end{theorem}
+In this section we characterize special classes of geodesic currents as curve functionals, such as filling currents, hyperbolic metrics, measured laminations, integral multi-curves, or currents dual to embedded graphs.
 
 \subsection{Filling currents}
 \label{subsec:filling}

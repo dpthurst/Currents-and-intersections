@@ -59,7 +59,17 @@ If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
 Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics},\cite[Theorem~2]{Thu16:Research},~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
-It is a consequence of our main Theorem~\ref{thm:intersect} and the local compactness of the space of geodesic currents (see Proposition~\ref{prop:local_compactness} below), that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
+These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
+
+Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
+
+\begin{theorem}
+   Let $\Psi \colon \Curr(S) \to \mathbb{R}^{\mathcal{C}(S)}$ be the homeomorphism onto its image $\mu \mapsto i(\mu, \cdot)$.
+   The image is equal to the subset of additive convex functionals $\AConvex(S)$.
+\end{theorem}
+
+It is a consequence of this and the local compactness of the space of geodesic currents (see Proposition~\ref{prop:local_compactness} below), that the space $\AConvex(S)$ with the product topology is locally compact, which is not obvious a priori by looking directly at the functionals. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
+
 The sublevel set $\Lambda_{f_{\tau}} \coloneqq \{ \vec{x} \in V(\tau) : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of $\mathbb{R}^N$ (for some $N>0$ depending on the combinatorics of $\tau$).
 Let $f_i(\cdot) = i(\mu_i, \cdot)$ for some sequence of geodesic currents $\mu_i \to \mu$, and $f(\cdot) = i(\mu, \cdot)$.
 Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the subset of compact convex subsets of $\mathbb{R}^N$ is locally compact.
@@ -73,7 +83,7 @@ The set $\Convex(S)$ with the product topology is locally compact.
 The main examples of interest for us in $\Convex(S)$ would be extremal lengths associated to conformal structures on $S$ or to elastic graphs (see~\cite[Examples]{MGT21:Smoothings}).
 
 \subsubsection{Domination}
-
+\label{subsec:domination}
 Another property that intersection numbers satisfy is domination. 
 We say that a curve $C$ \emph{dominates} another curve $C'$ if $i(C,D) \geq i(C',D)$ for every curve $D$. We say $f$ satisfies \emph{domination} if for every pair of curves $(C,C')$ with $C$ dominating $C'$, we have $f(C) \geq f(C')$.
 It is easy to see that if $C'$ is obtained from $C$ by multi-smoothing, then $C$ dominates $C'$ - there are however other pairs $(C,C')$ with $C$ dominating $C'$ but $C'$ not obtainable from $C$ via multi-smoothing (see~\cite[Example]{NC01:ShortestGeodesics}).
@@ -167,6 +177,36 @@ Motivated by this, it would be interesting to generalize the quasi-smoothing and
 \begin{question}
 What is a generalization of the properties of smoothing and quasi-smoothing for functionals on hyperbolic groups that makes the answer to the above two questions work in the setting of a general non-elementary hyperbolic group $\Gamma$?
 \end{question}
+
+\subsection{Analogy to Poincar\'e duality}
+\label{subsec:poincare_duality}
+Theorem~\ref{thm:intersect} gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals.
+As mentioned in the introduction, one can view this theorem in analogy to Poincaré duality for closed surfaces.  Given a 1-cohomology class $\alpha^*$ of an $n$-dimensional manifold (represented by homomorphisms from $\pi_1(S)$ to $\mathbb{R}$), Poincaré duality associates an $(n-1)$-dimensional homology class $\alpha$ (represented by real linear combinations of $(n-1)$-cycles). Since $n=2$, these cycles can be expressed as linear combinations of simple closed curves.  
+
+In our setting, the role of a 1-cohomology class is played by a curve
+functional that satisfies smoothing, additivity, and
+stability. Although it is not a homomorphism from
+$\pi_1(S)$ to anything, it preserves a certain combinatorial structure
+(see Section~\ref{subsec:domination}). Likewise, the role of the homology
+class is taken by a geodesic current. This perspective, viewing
+geodesic currents as homology classes, aligns with the approach in
+geometric measure theory, where differential currents—seen as
+functionals on $k$-forms—naturally define
+homology~\cite[Chapter~10]{CC00:Foliations}. Geodesic currents are
+examples of such differential forms~\cite[1.8.7]{MG20:Thesis}.
+
+Our theorem can be thought of in analogy to $\alpha \cap \beta =
+  \alpha^*(\beta)$, where $\cap$ denotes the cap product in homology, and thus relating cap product to the homology-cohomology pairing.
+
+  This aligns with our theorem, which establishes a duality via the intersection number $i(\mu_f, C) = f(C)$, suggesting that the geometric intersection number plays the role of the cap product. 
+
+  
+In Poincaré duality, one also has the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$, where $\cup$ denotes the cup product in cohomology.  
+A natural question that arises then is the following.
+
+\begin{question} What is the appropriate analog of the cup product? In other words, how can one define the intersection of two curve functionals?
+\end{question}
+
 
 
 %%% Local Variables:
