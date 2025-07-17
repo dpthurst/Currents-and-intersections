@@ -37,6 +37,13 @@ Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pai
 \item and $\Delta< \min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
+\begin{remark}[{\cite[Remark~3.3]{CM87:GroupActions}}]
+If $g,h$ are hyperbolic and $T_g,T_h$ meets in an arc of positive but finite length, then there exist integers $m>0$ and $n$ so that $g^m$ and $h^n$
+for a good pair of isometries, where the sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
+to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
+\label{rmk:powers_goodpair}
+\end{remark}
+
 Irreducibility is equivalent to the existence of at least one good pair of elements.
 
 \begin{lemma}
@@ -72,6 +79,35 @@ Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 
 In general, if the translation lengths of two $G \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is irreducible by~\cite[Theorem~3.7]{CM87:GroupActions}.
 In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows. we will always consider minimal actions.
+
+We will consider the following two handy results about the relative position of axes in a real tree, which can be found in~\cite[1.5, 1.8]{CM87:GroupActions}.
+
+\begin{lemma}
+\begin{enumerate}
+\item (Intersecting axes)
+If $g,h \in \Gamma$ are hyperbolic, then
+$T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gh^{-1}\| \}$.
+Moreover, if $g,h$ overlap coherently, then 
+$\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$,
+and if $g,h$ overlap incoherently, then 
+$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$.
+\item (Parallel axes) If $g,h$ are any two isometries satisfying $T_g \cap T_h =\emptyset$ or $g,h$ are hyperbolic and $T_g \cap T_h = \{ * \}$, then
+\[
+\|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h).
+\]
+\label{lem:foundation_trees}
+\end{enumerate}
+\end{lemma}
+
+We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
+
+\begin{lemma}
+    If $g,h$ are hyperbolic and satisfy $\|g\| + \|h\| = \|gh\|$, then for every positive integers $m,n$, we have
+    \[
+    \|g^m h^n\| = m \| g \| + n \|h \|.
+    \]
+    \label{lem:powers_intersect}
+\end{lemma}
 
 \subsection{Surface group actions on real trees}
 
@@ -200,33 +236,13 @@ There are three subcases to consider.
     We show this cannot happen. 
     Within this case, there are two subcases to consider. Let $\Delta$ denote the length of the overlap between $T_g$ and $T_h$.
     \begin{enumerate}
-        \item If $\Delta<\min \{ \| g \|, \| h \| \}$, then $g, h^{-1}$ form a good pair, and thus by Lemma~\ref{lem:oppgoodpair} and then $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
-        \item If $\Delta \geq \min \{ \| g \|, \| h \| \}$, we develop further the analysis of axes in~\cite[Lemma~3.4]{Chi01:LambdaTrees} for this setting in Figure~\ref{fig:oppositehyp} (assuming $\Delta> \|g \| > \| h \|$).
-              \begin{figure}
-\centering{
-\resizebox{80mm}{!}{\svgfig{oppositehyp}}
-    \caption{Configuration of axes when $T_{g}$ and $T_{h}$ are intersecting and their overlap $\Delta \geq  \min \{ \| g \|, \| h \| \}$}\label{fig:oppositehyp}}
-\end{figure}
-
-\begin{lemma}
-    Let $g,h$ be two hyperbolic isometries of a tree overlapping coherently in a segment of length $\Delta$ so that $\Delta \geq \min \{ \| g \|, \|h \| \}$. Then there exists some $n>0$ so that $T_{ (gh^{-1})^{-n} (h^{-1}g)}$ and $T_{(gh^{-1})^{-(n+1)} (h^{-1}g)}$ do not intersect.
-    \label{lem:nonintersect1}
-\end{lemma}
-\begin{proof}[Proof of Lemma~\ref{lem:nonintersect1}]
-We note that the axes of $h^{-1}g=(g^{-1}h)^{-1}$ and $gh^{-1}$ overlap coherently. Let $\Delta'$ be the length of such overlap, and let $x$ denote the length of the segment $[g\ell, h^{-1}r]$.
-Observe that since $[g \ell, r]$ is contained in $T_{gh^{-1}}$, and the two backward and forward segments are of length $\|gh^{-1} \|$, the length of $[g \ell, r]$ must be equal to an integer multiple of $\| gh^{-1} \|$, say $n \| gh^{-1} \|$ for $n \geq 1$. Then, $x = n \| gh^{-1} \| - \|h \|$.
-Let $k \coloneqq (gh^{-1})^{-n} (h^{-1}g) (gh^{-1})^n$.
-Note that $T_k$ and $T_{(gh^{-1})^n}=T_{gh^{-1}}$ overlap in a segment of length $\| gh^{-1} \| - \|h \|$.
-Thus, $k$ and $(gh^{-1})^n$ form a good pair and, hence, by Lemma~\ref{lem:oppgoodpair} $T_{k(gh^{-1})^{-n}}$ and $T_{(gh^{-n})^{-1} k}$ do not intersect.
-Finally, note that $k(gh^{-1})^{-n} = (gh^{-1})^{-n} (h^{-1}g)$ and $(gh^{-n})^{-1} k = (gh^{-1})^{-(n+1)} (h^{-1}g)$, so the claim follows.
-\end{proof}
-We apply Lemma~\ref{lem:nonintersect1} to the pair $g$ and $h^{-1}$ to obtain that $T_{(gh)^{-n} (hg)}$ and $T_{(gh)^{-(n+1)} (hg)}$ do not intersect. On the other hand, by application of Lemma~\ref{lem:righthandedfoundation}, part 1, Figure~\ref{fig:selfdyn} shows the configuration of axes obtained on the surface, which shows that $\ora{(gh)^{-n} (hg)}$ and $\ora{(gh)^{-(n+1)} (hg)}$ do intersect.
-
-              \begin{figure}
-\centering{
-\svgfignormal{selfdyn}
-    \caption{Configuration of axes on the surface when $\protect\ora{gh}$ and $\protect\ora{hg}$ are intersecting.}\label{fig:selfdyn}}
-\end{figure}
+        \item If $\Delta<\min \{ \| g \|, \| h \| \}$, then $g, h^{-1}$ form a good pair, and thus by Lemma~\ref{lem:oppgoodpair} we have $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
+        \item If $\Delta \geq \min \{ \| g \|, \| h \| \}$,
+        then, according to Remark~\ref{rmk:powers_goodpair} we take $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. Since $\|g \| + \|h \| = \|gh\|$, by Lemma~\ref{lem:powers_intersect}, we have
+        \[
+          \|g^m h^n \| = m\|g\| + n\|h\|
+        \]
+        which, by Lemma~\ref{lem:foundation_trees} (i), implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
 \end{enumerate}
     
     \end{enumerate}
@@ -286,9 +302,8 @@ open half-line of $\ora{ghg^{-1}}$ with endpoint $z$, that does not contain $x$ 
 contains $y$ (resp.\ $x$). Since $g$ sends $[z, +\infty)_{h}$ to $(-\infty, z]_{ghg^{-1}}$ and sends $(-\infty, z]_{ghg^{-1}}$ to $[z, +\infty)_{ghg^{-1}}$, it follows that $[z,y]$ must be sent to $[z,x]$, and $[z,y]$ to $[z,x]$. Thus, the two segments must have equal length, half the length of the overlap $\Delta$, so $z$ must be the middle point of $[x,y]$ and $g(x)=y$, $g(y)=x$. 
 \end{proof}
 
-If $\| h \| \leq \Delta$, then $\| hg \| = 0$, as Paulin shows. 
-
-However, by~\cite[Lemma~1.3]{Gui05:CoreTrees} (see proof of Lemma, subcase 1a therein), there exists $k$ large enough so that $h^k g$ is hyperbolic. By an analysis similar to the previous case $\| h \| > \Delta$, it follows that $T_{h^kg}$ and $T_{gh^k}$ are disjoint. On the other hand, an application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^k g}$ and $\ora{gh^k}$ intersect for all $k>0$.
+If $\| h \| \leq \Delta$, then we take $n>0$ large enough so that $\| h^n \| > \Delta$.
+By the same analysis as before, it follows that $T_{h^ng}$ and $T_{gh^n}$ are disjoint. On the other hand, an application of Lemma~\ref{lem:righthandedfoundation}, shows that $\ora{h^n g}$ and $\ora{gh^n}$ intersect for all $n>0$, which is a contradiction.
       \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfig{oppositehypell}}
@@ -300,8 +315,8 @@ This is similar to the preceeding subcase.
 
 \end{itemize}
 \end{enumerate}
-\item Case 3. Suppose $g$ and $h$ are elliptic. We explore~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}.
-If $gh$ is elliptic, we are done in both connected and disconnected smoothing.
+\item Case 3. Suppose $g$ and $h$ are elliptic. We follow~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}.
+If $gh$ is elliptic, we are done in both connected and disconnected smoothing. \footnote{In fact, this case does not arise, since it would contradict irreducibility, by~\cite[Lemma~10.4]{Kap09:HyperbolicManifold}}
 If $gh$ is hyperbolic, then the diagram in the proof of~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT} shows that
 $T_{gh}$ and $T_{hg}$ overlap in $[z,z']$ incoherently. Indeed, the overlap can only be in $[z,z']$, since if $ w \in T_{hg} \cap [z',gz] \neq \emptyset$, then $hg(w)=w'$ in Figure~\ref{fig:ell}. But on the other hand we should have $hg(w) \in [hg z', hg z]$, since $w \in [\delta(z'), \delta(z)]$, because $\delta(z')=z'$.
 Given that $\| gh \| = 2d(z,z')$, this implies that $gh$ and $(hg)^{-1}$ form a good pair, and by Lemma~\ref{lem:oppgoodpair},
