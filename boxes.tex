@@ -969,13 +969,11 @@ all the way back to the diagonal.
   Figure~\ref{fig:box-difference}.
 \end{proof}
 
-\DPTtodo{Figure has some crossing lifts of $[x]$ currently. Easy to
-  fix here. DPT on it}
 \begin{figure}
   \[
-    \mathcenter{\includegraphics[height=1.5in]{difference-1}}
-    \qquad\leadsto\qquad
-    \mathcenter{\includegraphics[height=1.5in]{difference-2}}
+    \mathcenter{\includegraphics[height=2in]{difference-1}}
+    \quad\leadsto\quad
+    \mathcenter{\includegraphics[height=2in]{difference-2}}
   \]
   \caption{Decomposing a difference of boxes. Left: A possible shape
     for $A \setminus B$. Right: Adding a horizontal whisker allows us to
@@ -989,7 +987,38 @@ all the way back to the diagonal.
   The function $\mu_f$ is finitely additive on boxes.
 \end{proposition}
 
+\DPTtodo[inline]{While working on an example that didn't violate
+  simplicity of $[x]$, I noticed that we don't actually need to add
+  any additional whiskers. Old proof is still in comments in case
+  there's a hole. I have examples we could show if you think they are
+  necessary.}
 \begin{proof}
+  Given a division $B_0 = \bigsqcup_i B_i$, we will show that the
+  $B_i$ can be further divided so that the result can be joined by
+  side-by-side additivity to form $B_0$. We proceed by induction on
+  the number of whiskers involved in any side of any of the~$B_i$.
+
+  Suppose first that there is no (vertical or horizontal) ``long''
+  whisker, passing through the interior of the upper or right edge
+  of~$B_0$. (Such a whisker necessarily also passes through the bottom
+  or left edge as well.) Then the partition is in fact trivial, since
+  the only possible box with these whiskers as sides that contains a
+  point near the upper-right corner of~$B_0$ is $B_0$ itself.
+
+  Otherwise, there is at least one long whisker. Pick one such long
+  whisker and use it to write $B_0 = B_1' \sqcup B_2'$. Subdivide any
+  of the $B_i$ that intersect both $B_1'$ and $B_2'$, in a
+  side-by-side way, getting sets of boxes $B_{i,1}$ and $B_{i,2}$,
+  partitions of $B_1'$ and $B_2'$ respectively. These give
+  subdivisions of $B_1'$ and $B_2'$ that involve fewer
+  whiskers. Thus by induction,
+  \[
+    \mu_f(B_0) = \mu_f(B_1') + \mu_f(B_2') = \sum_j \mu_f(B_{j,1}) +
+    \sum_k \mu_f(B_{k,2}) = \sum_i \mu_f(B_i). \qedhere
+  \]
+\end{proof}
+
+\begin{comment}
   In order to apply Proposition~\ref{prop:sidebyside}, we must show
   show that any way of partitioning a box $B_0 = \bigsqcup_i B_i$ into
   finitely many smaller boxes can be further refined into smaller boxes $B_j'$ so
@@ -1017,22 +1046,18 @@ all the way back to the diagonal.
   If we restrict to the $B_j'$ contained in any individual $B_i$, the
   whiskers we have added divide it satisfying the same restrictions,
   so they can also be assembled by side-by-side additivity.
-\end{proof}
+\end{comment}
 
-\DPTtodo[inline]{DPT will try to fix the example in
-  Figure~\ref{fig:finite-additivity} so lifts don't cross}
 \begin{figure}
   \[
-    \mathcenter{\includegraphics[height=2in]{finite-additive-1}}
-    \qquad\leadsto\qquad
-    \mathcenter{\includegraphics[height=1.25in]{finite-additive-2}}
+    \mathcenter{\includegraphics[height=2.5in]{finite-additive-1}}
+    \quad\leadsto\quad
+    \mathcenter{\includegraphics[height=2.5in]{finite-additive-2}}
   \]
-  \caption{Finite additivity of $\mu_f$. By refinement, we can turn an
+  \caption{Finite additivity of $\mu_f$. We can turn an
     arbitrary division of a large box into smaller boxes (left) into
-    one that is side-by-side decomposable (right). On the right we
-    focus on the interesting region. The figure has crossing
-    lifts of $[x]$, which is impossible since $[x]$ is simple, but the
-    proof treats the general case equally well.}
+    one that is side-by-side decomposable (right). Note that we
+    subdivided the cyan box in the initial division to make this possible.}
   \label{fig:finite-additivity}
 \end{figure}
 

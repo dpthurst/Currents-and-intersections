@@ -117,47 +117,44 @@ We note that our result says nothing explicit about the dual multi-curve, wherea
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
 
-We will need the following observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals} in the setting of unoriented geodesic currents. We will prove the analogous oriented version, which is quite similar.
+|DPTtodo{Does Luca capitalize ``de'' in his last name? If not fix .bib}
+We will need an observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals} in the setting of unoriented geodesic currents. We will prove an analogous oriented version.
 
 We introduce the following notation. Given two geodesics segments $t$ and $t'$, let $G(t , t')$ be the set of geodesics intersecting from segment $t$ to segment $t'$ transversely. We will refer to sets of this type as \emph{double transversals}.
-Let $x,y,z,w \in \wt{X}$ appear counter-clockwise as vertices of an embedded geodesic quadrilateral on $\wt{X}$ with sides $[x,y)$, $[z,w)$, $[y,z)$, and $[w,x)$.
+\DPTtodo{Added ``convex'' since I'm not sure what the terms mean
+  without that, and that's the case we apply it}
+\DPTtodo{Switched letters to reflect figure}
+Let $x,y,z,w \in \wt{X}$ appear counter-clockwise as vertices of an
+embedded convex geodesic quadrilateral on $\wt{X}$.
 
 \begin{lemma}
 Given the setup described above, we have 
 \begin{align*}
-\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &= \\
-&\mu(G[x,z)) + \mu(G[w,y)) \\
-&- \mu(G([w,z)) - \mu(G([x,y))
-\end{align*}
-and
-\begin{align*}
-\mu(G((x,w], (y,z])) + \mu(G([x,w), [y,z))) &= \\
-&\mu(G(x,z]) + \mu(G(w,y]) \\
-&- \mu(G((w,z]) - \mu(G((x,y])
+\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &=
+\mu(G[x,z)) + \mu(G[w,y))
+- \mu(G([w,z)) - \mu(G([x,y))\\
+\mu(G((x,w], (y,z])) + \mu(G([x,w), [y,z))) &=
+\mu(G(x,z]) + \mu(G(w,y])
+- \mu(G((w,z]) - \mu(G((x,y])
 \end{align*}
 \label{lem:otalclaim}
 \end{lemma}
-\begin{proof}
 
+\begin{proof}
 We have the following partitions:
 \begin{subequations}
 \begin{align}
-\begin{split}
-G([x,z)) = G([x,z), [x,y)) \cup G([x,z), (z,y])
+G([x,z)) &= G([x,z), [x,y)) \cup G([x,z), (z,y])
 \label{eq1}
-\end{split}\\
-\begin{split}
-G([w,y))=G([w,y), [w,z)) \cup G([w,y), (y,z])
+\\
+G([w,y))&=G([w,y), [w,z)) \cup G([w,y), (y,z])
 \label{eq2}
-\end{split}\\
-\begin{split}
-G([w,z))=G([w,z), [w,y)) \cup G([w,z), (z,y])
+\\
+G([w,z))&=G([w,z), [w,y)) \cup G([w,z), (z,y])
 \label{eq3}
-\end{split}\\
-\begin{split}
-G([x,y))=G([x,y), [x,z)) \cup G([x,y), (y,z])
+\\
+G([x,y))&=G([x,y), [x,z)) \cup G([x,y), (y,z])
 \label{eq4}
-\end{split}
 \end{align}
 \end{subequations}
 We now apply the measure $\mu$ to all the equations, add the equations resulting from Equation~\ref{eq1} and~\ref{eq2}, and subtract this from the equations resulting from Equation~\ref{eq3} and~\ref{eq4}, we get the result. The other equation follows in a similar way.
@@ -184,7 +181,7 @@ We have the following (see Figure~\ref{fig:smoothing_1}):
 \end{enumerate}
 Furthermore, $G((Q,P])\cup a\cdot
 G((P',Q'])$ is a Borel fundamental domain for the
-$\langle ab \rangle$-action on $G(\ora{ab})$.
+action of $\langle ab \rangle$ on $G(\ora{ab})$.
 Similarly, $G((P,Q']) \cup b \cdot G((Q,P'])$ is a Borel fundamental domain for
  the action of $\langle bA\rangle$ on $G(\ora{bA})$.
 \label{prop:keygeometry}
@@ -242,10 +239,17 @@ The other claim is similar.
 \end{proof}
 
 The above lemma can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
-Using this result, we can prove the following characterization of measured laminations among curve functionals.
+Using it, we characterize measured laminations among curve
+functionals.
 
-\DPTtodo[inline]{I think this thm should get a letter, not a number, and
-  version below should get a prime. DPT on it}
+\DPTtodo[inline]{I believe we \emph{do} need to be careful about
+  endpoints, since we can have non-zero atoms there, and we use
+  max-smoothing for each $n$. This also applies to $B_{g,h}$, since
+  the $\overline{R_n}$ intersect the boundary of $\overline{B_{g,h}}$.
+  See eg the note about the backwards implication}
+\DPTtodo[inline]{There's also a lot of poorly defined notation, eg the
+  $\perp$ variations are introduced in a scattershot way. Waiting to
+  fix that until we do the futzing with endpoints}
 \begin{theorem}
 A geodesic current $\mu \in \GC(S)$ is a measured lamination if and only if the functional $f$ corresponding to $\mu$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the \emph{disconnected max-smoothing property}:
     For any pair of crossing elements $g,h \in \pi_1(S)$, we have
@@ -261,12 +265,10 @@ It remains to show that $\mu_f$ is a measured lamination.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}.
-\DPTtodo{Do we need to be precise about open/closed endpoints? We
-  don't care. DPT on it.}
 Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$,
 and
 $R_1^{\perp}$, the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
-\DPTtodo{Ambiguous: there are two natural boxes here. DPT on it.}
+\DPTtodo{Ambiguous: there are two natural boxes here.}
 Also let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
 
 Taking powers $g^n$ and $h^n$, and we obtain corresponding hyperbolic
@@ -279,26 +281,36 @@ Hence we have
 \]
 If we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
 we get, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
-\[\mu(R_n)=A_n + B_n-C_n,\]
+\begin{equation}\label{eq:Rn-meas}
+\mu(R_n)=A_n + B_n-C_n,
+\end{equation}
 where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$.
 If we further let $R_n^{\perp}$ be the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n^{-1}}$ and $\ora{b_n^{-1}a_n}$, we have
-\[
+\begin{equation}\label{eq:Rn-perp-meas}
 \mu(R_n^\perp)=A_n + B_n -D_n,
-\]
+\end{equation}
 where $D_n=f(a_nb_n)/2$.
-We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
+We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\bigcup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
 Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
-By max-smoothing, for every $n$, we have $\mu(R_n^T)=0$ or $\mu(R_n)=0$.
+By max-smoothing, for every $n$, we have $\mu(R_n^\perp)=0$ or $\mu(R_n)=0$.
 Since each sequence of sets $(R_n)$ and $(R_n^{\perp})$ is nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $n \geq 1$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
 Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\cup_n B_n = B$, and $\cap_n B_n^{\perp} = B$.
+By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\bigcup_n B_n = B$, and $\bigcap_n B_n^{\perp} = B$.
 Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$.
 
-Now we prove the other implication.
-First, note that disconnected max-smoothing means that $\mu(R_{g,h})=0$ or $\mu(R_{g,h}^{\perp})=0$ for any pair of intersecting $g,h \in \pi_1(\Sigma)$.
-We proceed by proving the counter-positive.
-Suppose max-smoothing is not satisfied, so that we have $g,h$ for which both $\mu(R_{g,h})>0$ and $\mu(R_{g,h}^T)>0$. Since for every $\gamma \in R_{g,h}$ and every $\gamma' \in R_{g,h}^T$, we have that $\gamma$ and $\gamma'$ cross, this implies that $i(\mu, \mu) >0$, and hence $\mu$ is not a measured lamination.
+Now we prove the other implication, by proving the contra-positive.
+If disconnected max-smoothing is \emph{not} satisfied for the elements
+$g,h$, then by Equations~\eqref{eq:Rn-meas}
+and~\eqref{eq:Rn-perp-meas}, both $\mu(R_{g,h})>0$ and
+$\mu(R_{g,h}^{\perp})>0$.
+\DPTtodo{I believe appropriately interpreted neither $R_{g,h}$ nor
+  $R_{g,h}^\perp$ contain the diagonals $\ora{g}$ and $\ora{h}$. We
+  use that here}
+Since for
+every $\gamma \in R_{g,h}$ and every $\gamma' \in R_{g,h}^\perp$, the geodesics
+that $\gamma$ and $\gamma'$ cross, this implies that $i(\mu, \mu) >0$,
+and hence $\mu$ is not a measured lamination.
 \end{proof}
 
 The above result shows that if one knows $f$ is dual to a geodesic current, then it is only necessary to check disconnected max-smoothing to conclude $f$ is a measured lamination, i.e., one does not have to check essential self-crossings. It is however true that intersection number with a measured lamination also satisfies connected max-smoothing.
@@ -373,7 +385,7 @@ Therefore, we have
 \[
 \lim_n e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})}=1.
 \]
-We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\cup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, and $B_{g,h}$ is the open box determined by the endpoints of $g$ and $h$.
+We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\bigcup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, and $B_{g,h}$ is the open box determined by the endpoints of $g$ and $h$.
 Thus, we have $\lim_n \mu(R_n)=\mu(B_{g,h})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
 Therefore, we have the relation
 \[
