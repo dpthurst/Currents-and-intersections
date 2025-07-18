@@ -2,17 +2,24 @@
 \label{sec:skora}
 
 
-As an application of Theorem~\ref{thm:intersect}, in this section we give a new a characterization of small actions of surface groups on $\mathbb{R}$-trees, and in turn we reprove a classical theorem of Skora~\cite{Sko90:GeometricAction}.
+As a final application of Theorem~\ref{thm:intersect}, we give a new
+characterization of small actions of surface groups on
+$\mathbb{R}$-trees, and in turn we reprove a classical theorem of
+Skora~\cite{Sko90:GeometricAction}.
 
 \subsection{Finitely generated groups acting on real trees}
 
 We start by recalling some basic notions of actions on real trees.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
-all $x,y \in T$, the intersection of all connected subsets containing both $x$ and $y$ isometric to the interval $[0, d(x, y)]$. This intersection is denoted
+all $x,y \in T$, the intersection of all connected subsets containing
+both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$. This
+intersection is denoted
 $[x, y]$, and called an \emph{arc}. If $\Gamma$ is a finitely generated group, a $\Gamma$-tree is an $\mathbb{R}$-tree together with a group action $\Gamma \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
 Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$.
-If $g$ is elliptic, then $\| g \| =0$ (and the converse is also true, see~\cite[1.3]{CM87:GroupActions}).
+If $g$ is elliptic, then $\| g \| =0$. The converse is also true;
+see~\cite[1.3]{CM87:GroupActions}.
+\DPTtodo{Can we state that $T_g \simeq \bbR$?}
 If $g$ is hyperbolic, then $\| g | >0$, and $g$ translates along $T_g$ by distance $\| g\|$, thus leaving $T_g$ invariant. We call $T_g$ the \emph{axis} of $g$.
 We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
 We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
@@ -25,16 +32,19 @@ An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with no
 \end{enumerate}
 
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
-If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}. Otherwise, we say that they do not intersect.
+If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
 
-Let $\Delta \coloneqq T_g \cap T_h$. Suppose $\Delta$ is not a singleton, and $g$ and $h$ translate in the same direction along $\Delta$, we say that $g,h$ and \emph{overlap coherently}.
-If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite directions along $\Delta$, we say that $g,h$ and \emph{overlap incoherently}.
+Let $\Delta \coloneqq T_g \cap T_h$. If $\Delta$ is not a singleton,
+and $g$ and $h$ translate in the same direction along $\Delta$, we say
+that $g$ and $h$ \emph{overlap coherently}.
+If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite
+directions along $\Delta$, we say that $g$ and $h$ \emph{overlap incoherently}.
 Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
 \begin{itemize} 
-\item they are both hyperbolic, 
-\item their axes in the tree intersect and their overlap is not a singleton,
-\item they overlap coherently 
-\item and $\Delta< \min \{ \| g \|, \| h \| \}$.
+\item they are both hyperbolic;
+\item their axes in the tree intersect and their overlap is not a singleton;
+\item they overlap coherently; and
+\item the length of $\Delta$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
 \begin{remark}[{\cite[Remark~3.3]{CM87:GroupActions}}]
@@ -44,18 +54,15 @@ to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \c
 \label{rmk:powers_goodpair}
 \end{remark}
 
-Irreducibility is equivalent to the existence of at least one good pair of elements.
-
 \begin{lemma}
-Let $\Gamma$ be a finitely generated group. $\Gamma$ on $T$ is irreducible if and only if there exist at least one good pair.
+Let $\Gamma$ be a finitely generated group. $\Gamma$ on $T$ is irreducible if and only if there exists at least one good pair.
 \label{lem:char_irred_good}
 \end{lemma}
 \begin{proof}
 By~\cite[Theorem~2.7]{CM87:GroupActions} $\Gamma$ on $T$ is irreducible if and only if there exist a pair of hyperbolic elements whose axes have bounded non-empty intersection. By~\cite[Theorem~3.3]{CM87:GroupActions} this implies the existence of a good pair. On the other hand, one of the requirements of a good pair is that both elements are hyperbolic and their axes have bounded overlap.
+\DPTtodo[inline]{Why does this imply $\norm{[g,h]} \ne 0$?}
 \end{proof}
 
-
-The following result will be useful in the proof of Theorem~\ref{prop:small}.
 
 \begin{lemma}
   For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.

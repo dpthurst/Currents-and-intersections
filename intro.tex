@@ -106,21 +106,26 @@ metrics.
 
 \begin{mainthm}
 Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}. Then,
-\begin{itemize}
+\begin{enumerate}
 \item $\mu \in \Curr(X)$ is a measured lamination if and only if $f$ satisfies the so-called \emph{disconnected max-smoothing property}: for every \emph{crossing} pair $g,h \in \pi_1(S)$ 
 \begin{equation*}
       f\left(g\right) +  f\left(h\right)  = \max \left\{ f\left(gh\right),f\left(gh^{-1}\right) \right\}.
     \end{equation*}
+    \label{item:lam-char}
     \item $\mu \in \Curr(X)$ is a hyperbolic Liouville current if and only if the functional $f$ satisfies the following condition: for every \emph{crossing} pair $g,h \in \pi_1(S)$ \[
         \lambda \left(g\right) \lambda \left(h\right) = \lambda \left(gh\right) + \lambda \left(gh^{-1}\right),
   \]
   where $\lambda( \cdot ) \coloneqq 2\cosh(f(\cdot)/2)$.
-\end{itemize}
+  \label{item:hyp-char}
+\end{enumerate}
     \label{mainthm:apps}
 \end{mainthm} 
 
 This is proved as Theorems~\ref{thm:char_laminations}
-and~\ref{prop:char_liouville}.
+and~\ref{thm:char_liouville}.
+(The $\lambda$-length functional appears naturally in the study of the
+skein algebra of a surface; see, for example, \cite[Sec.\
+3]{Thurston14:PBI}).)
 The result on hyperbolic lengths can be strengthened (Theorem~\ref{thm:char_liouville_strong}) by replacing the equalities in the hypotheses by certain coarser inequalities.
 
 We emphasize that this result characterizes hyperbolic metrics among all curve functionals. In particular, it can be applied to stable lengths induced from Green metrics arising from admissible random walks on $\pi_1(S)$, yielding potential applications to investigate the singularity of their hitting boundary measures (see Section~\ref{subsec:green}).
@@ -129,9 +134,22 @@ These results generalize both of Luo's results on characterizing which functions
 
  Our methods also recover a previous result of the second author~\cite{Thu00:GeometricIntersection}.
 
+\subsection{Generalized cross-ratios}
+
+We subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. For example, if $X$ is a hyperbolic metric on $S$, the hyperbolic cross-ratio $[\cdot]_X$ coming from realizing the universal cover of $X$ as an isometric copy of the upper half-plane model is an example. Every generalized cross-ratio $[\cdot ]$ induces an additive curve functional called the \emph{period} $\ell_{[ \cdot ]}$. For the previous example of the hyperbolic cross-ratio, $\ell_{[\cdot]_X}$ is the hyperbolic length.
+We show that periods satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce a geodesic current.
+
+\begin{mainthm}
+Let $[\cdot, \cdot, \cdot, \cdot]$ be a generalized cross-ratio of period $\ell$. Then $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and hence induces a geodesic current $\mu_{\ell}$.
+Conversely, this geodesic current $\mu_{\ell}$ is uniquely determined by the period of the cross-ratio $\ell$.
+ Moreover, $\mu_\ell$ determines the cross-ratio uniquely if and only if it is non-atomic.
+\end{mainthm}
+
+Our result subsumes recent work in~\cite{BIPP24:PositiveCrossratios}, where the authors associate, to every cross-ratio, a geodesic current.
+
 \subsection{Characterizing small actions on real trees}
 
-As an additional application, we give a new characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
+Finally, we give a new characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
 
 If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. If $\Gamma=\pi_1(\Sigma)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axis intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
 An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
@@ -167,22 +185,6 @@ From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result
 
 It would be interesting to give similar conditions for 
 small actions of a non-elementary hyperbolic group $\Gamma$. 
-
-\subsection{Generalized cross-ratios}
-
-Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. For example, if $X$ is a hyperbolic metric on $S$, the hyperbolic cross-ratio $[\cdot]_X$ coming from realizing the universal cover of $X$ as an isometric copy of the upper half-plane model is an example. Every generalized cross-ratio $[\cdot ]$ induces an additive curve functional called the \emph{period} $\ell_{[ \cdot ]}$. For the previous example of the hyperbolic cross-ratio, $\ell_{[\cdot]_X}$ is the hyperbolic length.
-We show that periods satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce a geodesic current.
-
-\begin{mainthm}
-Let $[\cdot, \cdot, \cdot, \cdot]$ be a generalized cross-ratio of period $\ell$. Then $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and hence induces a geodesic current $\mu_{\ell}$.
-Conversely, this geodesic current $\mu_{\ell}$ is uniquely determined by the period of the cross-ratio $\ell$.
- Moreover, $\mu_\ell$ determines the cross-ratio uniquely if and only if it is non-atomic.
-\end{mainthm}
-
-Our result subsumes recent work in~\cite{BIPP24:PositiveCrossratios}, where the authors associate, to every cross-ratio, a geodesic current.
-
-
-
 
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
