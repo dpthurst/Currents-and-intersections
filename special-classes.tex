@@ -117,13 +117,10 @@ We note that our result says nothing explicit about the dual multi-curve, wherea
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
 
-|DPTtodo{Does Luca capitalize ``de'' in his last name? If not fix .bib}
 We will need an observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals} in the setting of unoriented geodesic currents. We will prove an analogous oriented version.
 
 We introduce the following notation. Given two geodesics segments $t$ and $t'$, let $G(t , t')$ be the set of geodesics intersecting from segment $t$ to segment $t'$ transversely. We will refer to sets of this type as \emph{double transversals}.
-\DPTtodo{Added ``convex'' since I'm not sure what the terms mean
-  without that, and that's the case we apply it}
-\DPTtodo{Switched letters to reflect figure}
+
 Let $x,y,z,w \in \wt{X}$ appear counter-clockwise as vertices of an
 embedded convex geodesic quadrilateral on $\wt{X}$.
 
@@ -139,27 +136,6 @@ Given the setup described above, we have
 \end{align*}
 \label{lem:otalclaim}
 \end{lemma}
-
-\begin{proof}
-We have the following partitions:
-\begin{subequations}
-\begin{align}
-G([x,z)) &= G([x,z), [x,y)) \cup G([x,z), (z,y])
-\label{eq1}
-\\
-G([w,y))&=G([w,y), [w,z)) \cup G([w,y), (y,z])
-\label{eq2}
-\\
-G([w,z))&=G([w,z), [w,y)) \cup G([w,z), (z,y])
-\label{eq3}
-\\
-G([x,y))&=G([x,y), [x,z)) \cup G([x,y), (y,z])
-\label{eq4}
-\end{align}
-\end{subequations}
-We now apply the measure $\mu$ to all the equations, add the equations resulting from Equation~\ref{eq1} and~\ref{eq2}, and subtract this from the equations resulting from Equation~\ref{eq3} and~\ref{eq4}, we get the result. The other equation follows in a similar way.
-\end{proof}
-
 
 We also need the following hyperbolic geometry lemma.
 
@@ -201,7 +177,7 @@ described more in Appendix~\ref{sec:hyp-par}.
   We prove the first case.
   For $z$ any of the five points in the statement, let $r_z$ be
   the hyperbolic rotation by angle $\pi$ fixing~$z$. Then $a$, as
-  acting on the hyperbolic plane, is $r_P r_0$, while $b = r_O r_Q$.
+  acting on the hyperbolic plane, is $r_P r_O$, while $b = r_O r_Q$.
   (Recall that a composition $r_zr_w$ of two rotations by $\pi$ is a
   translation on the line $\overleftrightarrow{zw}$ by twice the
   distance between $z$ and~$w$.)
@@ -265,9 +241,11 @@ It remains to show that $\mu_f$ is a measured lamination.
 Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}.
-Consider the set $R_1 \coloneqq R_{g,h}$ consisting of the geodesics intersecting both sides of $H$ contained in $\ora{h^{-1}g}$ and $\ora{gh^{-1}}$,
-and
-$R_1^{\perp}$, the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
+Consider the set $R_{a,b}^+ \coloneqq G([Q,P) \times [P', Q'))$ and  $R_{a,b}^- \coloneqq G((Q,P] \times (P', Q'])$. Barrying endpoints, these two sets roughly consist of geodesics intersecting both sides of $H$ contained in $\ora{hg}$ and $\ora{gh}$.
+We will also define, analogously, the sets
+$R_1^{\perp}
+
+the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
 \DPTtodo{Ambiguous: there are two natural boxes here.}
 Also let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
 
