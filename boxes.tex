@@ -26,6 +26,8 @@ the next asymptotics. This is similar to the construction of Otal
 \subsection{Relations between types of smoothings}
 \label{subsec:smoothing_consequences}
 
+\DPTtodo[inline]{Maybe this should be upgraded from a subsection to
+  its own (short) section? The character of the result is rather different}
 Now we turn to relations between different types of smoothing.
 A priori the hypothesis of oriented smoothing on $f$ is weaker than
 smoothing, since it does not seem to include unoriented smoothing.
@@ -101,10 +103,25 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
   \label{lem:powers_parallel}
 \end{lemma}
 \begin{proof}
-The proof is by induction on $n$. For $n=1$, it follows by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
-Assuming it is true for $n-1$, applying ~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} to the R-parallel pair $(\ora{a},\ora{a^{n-1}b^{n-1}})$, we get $(\ora{a}, \ora{a^nb^{n-1}})$ are R-parallel, and $(\ora{a^nb^{n-1}},\ora{a^{n-1}b^{n-1}}))$ are R-parallel. Since $(\ora{a^{n-1}b^{n-1}},\ora{b})$ are R-parallel by induction hypothesis, it follows that 
-$(\ora{a^nb^{n-1}},\ora{b})$ are R-parallel, and hence by Lemma ~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, $(\ora{a^nb^{n}},\ora{b})$ are R-parallel, but also $(\ora{a^nb^{n-1}},\ora{a^nb^{n}})$ are R-parallel, and since $(\ora{a},\ora{a^nb^{n-1}})$ are R-parallel, it follows that $(\ora{a},\ora{a^nb^{n}})$ are R-parallel. Hence, the triple
-$(\ora{a},\ora{a^nb^{n}}, \ora{b})$ is R-parallel, as we wanted to show.
+The proof is by induction on~$n$, repeatedly applying
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. The case
+$n=1$ is directly that lemma.
+
+\DPTtodo{Rewrote and shortened using R-parallel notation}
+For the inductive step, we have the following series of implications:
+\begin{align*}
+  \bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
+  &\Rightarrow
+    \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}\\
+  &\Rightarrow
+    \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^n b^n},\ora{b}\bigr)\text{ R-parallel}
+\end{align*}
+where we start with the inductive hypothesis, used
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+$\bigl(\ora{a},\ora{a^{n-1}b^{n-1}}\bigr)$, and then forgot about
+$\ora{a^{n-1}b^{n-1}}$ and used 
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+$\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
 \end{proof}
 
 \begin{lemma}
@@ -118,6 +135,9 @@ $(\ora{a},\ora{a^nb^{n}}, \ora{b})$ is R-parallel, as we wanted to show.
   The base case is
  is clear by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
 
+ \DPTtodo[inline]{I don't think this is quite the argument you showed
+   me in Luxembourg. In particular, you're using the wrong action,
+   multiplying by $ba$ rather than conjugating by it.}
 By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
   Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$.
   Moreover, by Lemma~\ref{lem:powers_parallel}, $(\ora{a}, \ora{a^nb^n}, \ora{b})$ is R-parallel for every $n$.
