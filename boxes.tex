@@ -107,7 +107,6 @@ The proof is by induction on~$n$, repeatedly applying
 Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. The case
 $n=1$ is directly that lemma.
 
-\DPTtodo{Rewrote and shortened using R-parallel notation}
 For the inductive step, we have the following series of implications:
 \begin{align*}
   \bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
@@ -138,7 +137,7 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
  \DPTtodo[inline]{I don't think this is quite the argument you showed
    me in Luxembourg. In particular, you're using the wrong action,
    multiplying by $ba$ rather than conjugating by it.}
-By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
+By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, by Lemma~\ref{lem:rhs_prod} (I), we have $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
   Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$.
   Moreover, by Lemma~\ref{lem:powers_parallel}, $(\ora{a}, \ora{a^nb^n}, \ora{b})$ is R-parallel for every $n$.
   Hence, $a^n b^n$ R-crosses $ba$ (see Figure~\ref{fig:parallel_lemma}).
@@ -374,7 +373,7 @@ The measure that we ultimately assign to the associated windows will
 be invariant under
 \begin{itemize}
 \item changing $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$ and
-\item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$.; and
+\item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$.
 \end{itemize}
 These two conditions are clearly necessary since the endpoints of $\ell_i$ and $r_i$ are invariant under such transformations.
 In fact, ultimately we will take a limit of these
