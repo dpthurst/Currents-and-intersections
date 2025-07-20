@@ -229,14 +229,13 @@ beginmulti;
   p21 = reverse p12;
 
   skein_circle(p0);
-  % I think these are switched, but following the text
-  drawoptions (withcolor darkblue);
-  draw p02; mark_dir(p02, 0.75);
-  texlabel.lrt("$b$", point 0.75 of p02);
   drawoptions (withcolor darkred);
+  draw p02; mark_dir(p02, 0.75);
+  texlabel.lrt("$a$", point 0.75 of p02);
+  drawoptions (withcolor darkblue);
   draw p13;
   mark_dir(p13, 0.7);
-  texlabel.llft("$a$", point 0.75 of p13);
+  texlabel.llft("$b$", point 0.75 of p13);
   shipmulti(13);
 
   skein_circle(p0);
