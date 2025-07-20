@@ -231,20 +231,30 @@ is one with a minimum number of transverse crossings.
   Depending on the (counterclockwise) cyclic order of the endpoints,
   we say that the pair $(\ora{a},\ora{b})$ are
   \begin{itemize}
-  \item \emph{R-parallel} if they appear in order $a^+,a^-,b^-,b^+$;
+  \item \emph{R-parallel} if they appear in order $a^+,a^-,b^-,b^+$
+    (below left);
   \item \emph{R-anti-parallel} if they appear in order
-    $a^+,a^-,b^+,b^-$; and
-  \item \emph{R-cross} or \emph{cross to the right} if they appear in
-    order $a^+,b^-,a^-,b^+$.
+    $a^+,a^-,b^+,b^-$ (below middle) and
+  \item
+    \DPTtodo{Is this really what we mean by ``cross to the right''?}
+    \emph{R-cross} or \emph{$\ora{a}$ crosses $\ora{b}$ to the right} if they appear in
+    order $a^+,b^-,a^-,b^+$ (below right).
   \end{itemize}
-  (See Figure~\ref{fig:cases-a-b}.) In each case we say that they are
+  \[
+    \underset{\text{\normalsize R-parallel}}{\mfig{curves-14}}\qquad\qquad
+    \underset{\text{\normalsize R-anti-parallel}}{\mfig{curves-15}}\qquad\qquad
+    \underset{\text{\normalsize R-cross}}{\mfig{curves-13}}
+  \]
+  In each case we say that they are
   L-parallel/L-anti-parallel/L-cross if they appear in the reverse
   cyclic order, and are parallel/anti-parallel/cross if they appear in
   either the above order or its reverse.
 
   We will furthermore say a triple $(\ora{a},\ora{b},\ora{c})$ is
-  R-parallel (resp.\ L-parallel) if both $(\ora{a},\ora{b})$ and
-  $(\ora{b},\ora{c})$ are R-parallel (resp.\ L-parallel).
+  R-parallel if both $(\ora{a},\ora{b})$ and
+  $(\ora{b},\ora{c})$ are R-parallel, and
+  similarly for L-parallel and for larger tuples. The other relations
+  are not transitive so we will not use the extended notation.
 \end{definition}
 
 \begin{definition}
@@ -380,11 +390,14 @@ We now turn to some elementary lemmas about crossing.
 
 \begin{lemma} 
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements. Then:
-  \begin{enumerate}[label=(\Roman*)]
+  \begin{enumerate}[label=(I)]
   \item\label{item:ab-cross} If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
     hyperbolic, and the pairs
-    $(\ora{ba},\ora{ab})$ and $(\ora{aB},\ora{Ba})$ are both
+
+    $(\ora{ab},\ora{ba})$ and $(\ora{aB},\ora{Ba})$ are both
     R-parallel, with endpoints as in Figure~\ref{fig:cross}.
+    In particular, all four of $\ora{ab}$, $\ora{ba}$, $\ora{aB}$, and
+    $\ora{Ba}$ cross both $\ora{a}$ and $\ora{b}$.
   \item\label{item:ab-parallel} If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
     and $(\ora{ab},\ora{ba})$ R-cross, with endpoints as in
     Figure~\ref{fig:parallel}.
@@ -444,7 +457,8 @@ We now turn to some elementary lemmas about crossing.
      of $\protect\ora{a}$ with $\protect\ora{b}$, and corresponding
      endpoints of products.}
    \label{fig:cases-a-b}
-\end{figure}
+ \end{figure}
+ \DPTtodo{In Fig.\ 4.1(c), the arrow on $\ora{b}$ should be reversed.}
     
     To see this, by the dynamics of $a$ and $b$ on the
     circle as shown, $ab$ maps the interval

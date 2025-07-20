@@ -27,33 +27,37 @@ beginmulti;
 %  z0 = (0u, 0u); z1 = (1u, 0u); z2 = (1u, 1u); z3 = (0u, 1u);
   path p[];
   p0 = z0..z1..z2..z3..cycle;
+  p02 = z0--z2; p13 = z1--z3;
+  p01 = z0{dir 45}..{dir -45}z1; p32 = z3{dir -45}..{dir 45}z2;
+  p03 = z0{dir 45}..{dir 135}z3; p12 = z1{dir 135}..{dir 45}z2;
 
 %% Simple skein relation
   skein_circle(p0);
-  draw z0--z2; draw z1--z3;
+  draw p02; draw p13;
   shipmulti(0);
 
   skein_circle(p0);
-  draw z0{dir 45}..{dir -45}z1; draw z3{dir -45}..{dir 45}z2;
+  draw p01; draw p32;
   shipmulti(1);
 
   skein_circle(p0);
-  draw z0{dir 45}..{dir 135}z3; draw z1{dir 135}..{dir 45}z2;
+  draw p03; draw p12;
   shipmulti(2);
 
 %% Oriented
   skein_circle(p0);
-  draw z0--z2; draw z1--z3;
-  mark_dir(z0--z2, 0.8);
-  mark_dir(z1--z3, 0.8);
+  draw p02; draw p13;
+  mark_dir(p02, 0.8);
+  mark_dir(p13, 0.8);
   shipmulti(3);
 
   skein_circle(p0);
-  draw z0{dir 45}..{dir 135}z3;
-  draw z1{dir 135}..{dir 45}z2;
-  mark_dir(z0{dir 45}..{dir 135}z3,0.5);
-  mark_dir(z1{dir 135}..{dir 45}z2,0.5);
+  draw p03;
+  draw p12;
+  mark_dir(p03,0.5);
+  mark_dir(p12,0.5);
   shipmulti(4);
+
 endmulti;
 
 % Three crossings in a row
@@ -217,6 +221,41 @@ beginmulti;
   drawoptions();
   pickup vertexmarker; draw origin;
   shipmulti(32);
+
+%% R-cross, R-parallel, R-antiparallel
+  p02 := z0--z2; p13 = z1--z3;
+  p01 := z0{dir 45}..{dir -45}z1; p32 = z3{dir -45}..{dir 45}z2;
+  p03 := z0{dir 45}..{dir 135}z3; p12 = z1{dir 135}..{dir 45}z2;
+  p21 = reverse p12;
+
+  skein_circle(p0);
+  % I think these are switched, but following the text
+  drawoptions (withcolor darkblue);
+  draw p02; mark_dir(p02, 0.75);
+  texlabel.lrt("$b$", point 0.75 of p02);
+  drawoptions (withcolor darkred);
+  draw p13;
+  mark_dir(p13, 0.7);
+  texlabel.llft("$a$", point 0.75 of p13);
+  shipmulti(13);
+
+  skein_circle(p0);
+  drawoptions (withcolor darkred);
+  draw p03; mark_dir(p03,0.5);
+  texlabel.lft("$a$", point 0.5 of p03);
+  drawoptions (withcolor darkblue);
+  draw p12; mark_dir(p12,0.5);
+  texlabel.rt("$b$", point 0.5 of p12);
+  shipmulti(14);
+
+  skein_circle(p0);
+  drawoptions (withcolor darkred);
+  draw p03; mark_dir(p03,0.5);
+  texlabel.lft("$a$", point 0.5 of p03);
+  drawoptions (withcolor darkblue);
+  draw p21; mark_dir(p21,0.5);
+  texlabel.rt("$b$", point 0.5 of p21);
+  shipmulti(15);
 endmulti;
 
 end
