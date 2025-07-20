@@ -55,7 +55,7 @@ If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ sa
 \begin{proof}[Proof of Proposition~\ref{prop:oriented_smoothing_unoriented}]
   Since $f$ disconnected oriented smoothing and is orientation invariant, it also
   satisfies disconnected unoriented smoothing: indeed, let
-  $(\ora{a},\ora{b})$ cross. Then $(\ora{B},\ora{a})$ cross, so by
+  $(\ora{a},\ora{b})$ R-cross. Then $(\ora{B},\ora{a})$ R-cross, so by
   disconnected oriented smoothing
 \[
 f([B][a]) \geq f([Ba]).
@@ -137,10 +137,10 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
  \DPTtodo[inline]{I don't think this is quite the argument you showed
    me in Luxembourg. In particular, you're using the wrong action,
    multiplying by $ba$ rather than conjugating by it.}
-By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, by Lemma~\ref{lem:rhs_prod} (I), we have $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ R-crosses $ba$.
-  Conjugating by $a$, we get $a^n b^n$ R-crosses $ab$.
+By induction $(a^{n-1}b^{n-1},ba)$ R-cross. Since $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$, by Lemma~\ref{lem:rhs_prod} (I), we have $(a^{n-1}b^na, ba)$ R-cross.
+  Conjugating by $a$, we get $(a^n b^n,ab)$ R-cross.
   Moreover, by Lemma~\ref{lem:powers_parallel}, $(\ora{a}, \ora{a^nb^n}, \ora{b})$ is R-parallel for every $n$.
-  Hence, $a^n b^n$ R-crosses $ba$ (see Figure~\ref{fig:parallel_lemma}).
+  Hence, $(a^n b^n,ba)$ R-cross (see Figure~\ref{fig:parallel_lemma}).
 \end{proof}
 \begin{figure}
 
@@ -152,16 +152,16 @@ By induction $a^{n-1}b^{n-1}$ R-crosses $ba$. Hence, by Lemma~\ref{lem:rhs_prod}
      \hfill
      \begin{subfigure}[b]{0.4\textwidth}
  \svgfignormal{anbn_ba_c} 
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $\protect\ora{a^n b^n}$ R-crosses $\protect\ora{ba}$}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{a^n b^n},\protect\ora{ba})$ R-cross.}
     \label{fig:parallel_lemma}
   \end{subfigure}
   \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers} 
 \end{figure}
 
 \begin{lemma}
-  Given elements $a,b \in \pi_1(S)$ which are $R$-crossing, then for all
-  $n \ge 1$, $\ora{a^n
-  b^n}$ is $R$-parallel to $\ora{ba}$.
+  Let $a,b \in \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross, then for all
+  $n \ge 1$, $(\ora{a^n
+  b^n},\ora{ba})$ are $R$-parallel.
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
@@ -207,15 +207,15 @@ $f([ab]) \ge f([aB])$.
 
 We split into two cases, depending on the relative position of $\ora{aB}$
 and $\ora{Ba}$. By
-Lemma~\ref{lem:ab_parallel_aB}, $\ora{aB}$ and $\ora{Ba}$ are either anti-parallel
+Lemma~\ref{lem:ab_parallel_aB}, $(\ora{aB},\ora{Ba})$ are either anti-parallel
 or cross.
 
-We first consider the case when $\ora{aB}$ and $\ora{Ba}$ are anti-parallel. We will prove by induction that
+We first consider the case when $(\ora{aB},\ora{Ba})$ are anti-parallel. We will prove by induction that
 \begin{equation}
 2nf([ab]) \geq f([(aB)^n (Ab)^n]).
 \label{eq:antiparallel_induction}
 \end{equation}
-The base case, $n=1$, follows since $\ora{ab}$ and $\ora{ba}$ cross, hence
+The base case, $n=1$, follows since $(\ora{ab},\ora{ba})$ cross, hence
 \[
 [ba]+[ab] \reducesto [ba(ab)^{-1}] = [(aB)(Ab)].
 \]
@@ -240,14 +240,14 @@ f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 where we used orientation invariance and homogeneity in the last equality.
 
 Now, still in the unoriented connected smoothing case, suppose
-$\ora{aB}$ and $\ora{Ba}$ cross.
-If $\ora{a}$ and $\ora{b}$ are $R$-parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that $\ora{a}$ and $\ora{bA}$ are R-parallel.
+$(\ora{aB},\ora{Ba})$ cross.
+If $(\ora{a},\ora{b})$ are $R$-parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that $(\ora{a},\ora{bA})$ are R-parallel.
 Hence, 
 \[
 f([ba]) = f([bA)(a^2)]) \geq f([bA]) + f(a^2) \geq f([bA])
 \]
 where in the first inequality we used oriented connected smoothing, and in the last inequality the fact that $f(a^2) \geq 0$, by Proposition~\ref{prop:curve-positive} below.
-Similarly, if $\ora{a}$ and $\ora{b}$ are $L$-parallel it follows that $\ora{b}$ and $\ora{a}$ are $R$-parallel, and so by Lemma~\ref{lem:a_parallel_Ba}, $\ora{b}$ and $\ora{aB}$ are $R$-parallel.
+Similarly, if $(\ora{a},\ora{b})$ are $L$-parallel it follows that $(\ora{b},\ora{a})$ are $R$-parallel, and so by Lemma~\ref{lem:a_parallel_Ba}, $(\ora{b},\ora{aB})$ are $R$-parallel.
 Hence, 
 \[
 f([ab]) = f([aB)(b^2)]) \geq f([aB]) + f(b^2) \geq f([aB])
@@ -260,7 +260,7 @@ We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ 
 \[
 f([a^{2n}b^{2n}]) \geq 2nf([ab]).
 \]
-The base case follows by noting that if $\ora{a}$, $\ora{b}$ R-cross, then $\ora{ab}$ and $\ora{ba}$ are R-parallel, and then by connected smoothing
+The base case follows by noting that if $(\ora{a},\ora{b})$ R-cross, then $(\ora{ab},\ora{ba})$ are R-parallel, and then by connected smoothing
 \[
 f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
 \]
@@ -604,7 +604,7 @@ of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
 
 Note that, for instance, the points $[p_1^{-1}]$ and $[q_1]$ are related via $a$ by the right action: $[p_1^{-1}] \cdot a = [q_1]$.
-On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action: $q_1 p_1 \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $\ora{q_1p_1}$ R-crossing $\ora{\ell_1}= p_1^{-1} \cdot \ora{x}$, which in turn is equivalent to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crossing $\ora{x}$. \DMGtodo{I added this discussion about the actions here}
+On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action: $q_1 p_1 \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ crossing $\ora{x}$ to the right, i.e. $(\ora{x}, \ora{a})$ R-cross. 
 
 The action of translating all lifts by $\pi_1(S)$ has been baked in to
 this alternate parametrization,

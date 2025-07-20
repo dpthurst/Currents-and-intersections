@@ -236,8 +236,8 @@ is one with a minimum number of transverse crossings.
   \item \emph{R-anti-parallel} if they appear in order
     $a^+,a^-,b^+,b^-$ (below middle) and
   \item
-    \DPTtodo{Is this really what we mean by ``cross to the right''?}
-    \emph{R-cross} or \emph{$\ora{a}$ crosses $\ora{b}$ to the right} if they appear in
+    \DPTtodo{Is this really what we mean by ``cross to the right''?}\DMGtodo{I changed it to b crosses a to the right}
+    \emph{R-cross} or \emph{$\ora{b}$ crosses $\ora{a}$ to the right} if they appear in
     order $a^+,b^-,a^-,b^+$ (below right).
   \end{itemize}
   \[
@@ -346,8 +346,8 @@ We now turn to some elementary lemmas about crossing.
 
 \begin{lemma}
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
-  Then $\ora{a}$ and~$\ora{x}$ R-cross (resp.\ L-cross) iff
-  $(\ora{x},a \cdot \ora{x})$ are R-parallel (resp.\ L-parallel).
+  Then $(\ora{a},\ora{x})$ R-cross (resp.\ L-cross) iff
+  $(a \cdot \ora{x},\ora{x})$ are R-parallel (resp.\ L-parallel).
   More generally, if
   $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
   endpoint $a^+$ in an interval $(x,y)$ iff
@@ -355,18 +355,18 @@ We now turn to some elementary lemmas about crossing.
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
-  The statement that $(\ora{x},a\cdot\ora{x})$ are R-parallel is (by
-  definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
-  which is equivalent (by NS dynamics of~$a$) to $a^+ \in (x^-,x^+)$ and
-  $a^- \in (x^+,x^-)$, which is equivalent to
+  The statement that $(a\cdot\ora{x},\ora{x})$ are R-parallel is (by
+  definition) equivalent to $a\cdot(x^+,x^-) \subsetneq (x^+,x^-)$,
+  which is equivalent (by NS dynamics of~$a$) to $a^+ \in (x^+,x^-)$ and
+  $a^- \in (x^-,x^+)$, which is equivalent to
   $(\ora{a},\ora{x})$ R-crossing. The last claim follows similarly.
 \end{proof}
 
 \begin{lemma}
   Let $a,b,x \in \pi_1(S)$ be group elements so that $(\ora{a},\ora{x})$ and $(\ora{b},\ora{x})$ R-cross. Then:
   \begin{enumerate}[label=(\Roman*)]
-  \item All four geodesics $\ora{xa}$, $\ora{Xa}$, $\ora{ax}$, and
-    $\ora{aX}$ R-cross $\ora{x}$.
+  \item All four pairs $(\ora{xa},\ora{x})$, $(\ora{Xa},\ora{x})$, $(\ora{ax},\ora{x})$, and
+    $(\ora{aX},\ora{x})$ R-cross.
   \item $(\ora{ab},\ora{x})$ R-cross.
   \item More generally, for any $n,k \in \bbZ$, $(\ora{a x^n},\ora{x})$
     and $(\ora{ax^nbx^k},\ora{x})$ R-cross.
