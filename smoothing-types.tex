@@ -1,0 +1,297 @@
+\section{Relations between types of smoothings}
+\label{sec:smoothing-types}
+
+\DPTtodo[inline]{oUpgraded from a subsection to
+  its own (short) section. The character of the result is rather
+  different from the rest of \texttt{boxes.tex}. Maybe it needs
+  more intro}
+Before proceeding with the main proof,
+we turn to relations between different types of smoothing.
+A priori the hypothesis of oriented smoothing on $f$ is weaker than
+smoothing, since it does not seem to include unoriented smoothing.
+However, it follows from the other hypotheses; the key ingredient is
+our previous work in~\cite{MGT21:Smoothings}. We prove the following,
+which in particular will allow the simpler algebraic statement in
+Theorem~\ref{thm:intersections_group}; it is not necessary for the
+proof of Theorem~\ref{thm:intersect}.
+
+\begin{proposition}
+If $f$ is orientation invariant and satisfies oriented smoothing
+(connected and disconnected), convex union,
+stability, and homogeneity, then $f$ satisfies smoothing.
+\label{prop:oriented_smoothing_unoriented}
+\end{proposition}
+
+The proof uses the following result, which can be seen as a weak
+converse of the main result in our previous paper.
+\begin{proposition}
+Suppose $f$ is an orientation invariant curve functional satisfying convex union that extends continuously to geodesic currents and is homogeneous.
+If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
+\label{prop:cont_conn_disc}
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop:oriented_smoothing_unoriented}]
+  Since $f$ disconnected oriented smoothing and is orientation invariant, it also
+  satisfies disconnected unoriented smoothing: indeed, let
+  $(\ora{a},\ora{b})$ R-cross. Then $(\ora{B},\ora{a})$ R-cross, so by
+  disconnected oriented smoothing
+\[
+f([B][a]) \geq f([Ba]).
+\]
+Since $f$ is orientation invariant, we have $f([b][a])=f([B][a]) \geq
+f([Ba])$, as desired.
+
+Since $f$ satisfies oriented smoothing, convex union, stability and
+homogeneity, it extends continuously and homogeneously
+to oriented geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Hence by
+Proposition~\ref{prop:cont_conn_disc}, it satisfies connected
+smoothing, and thus all cases of smoothing.
+\end{proof}
+
+As an immediate corollary, given that a symmetric and additive
+functional is orientation invariant, we have the following.
+
+\begin{corollary}
+If $f$ is symmetric and satisfies oriented smoothing, additivity and
+stability, then $f$ satisfies smoothing.
+\label{cor:oriented_smoothing_unoriented}
+\end{corollary}
+
+We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
+starting with some easy lemmas. The first lets us approximate
+disconnected curves by connected curves and vice versa.
+\begin{lemma}
+  Given any $g,h \in \pi_1(S)$, we have
+\[
+\lim_{n\to\infty} \frac{\mu_{g^n h^n}}{n} = \mu_g + \mu_h
+\]
+in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geodesic current representing the curve $[g]$.
+\label{lem:gnhn_to_gsumh}
+\end{lemma}
+
+\begin{proof}
+  This is a straightforward fact of the weak$^*$-topology convergence
+  of geodesic currents and follows from computations similar
+  to~\cite[Proposition~5.1]{Sas22:Currents}.
+\end{proof}
+
+\begin{lemma}
+  Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
+  $n \ge 1$. Then the triple $(\ora{a},\ora{a^n b^n}, \ora{b})$ is R-parallel for every $n \in \mathbb{N}$
+  \label{lem:powers_parallel}
+\end{lemma}
+\begin{proof}
+The proof is by induction on~$n$, repeatedly applying
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. The case
+$n=1$ is directly that lemma.
+
+For the inductive step, we have the following series of implications:
+\begin{align*}
+  \bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
+  &\Rightarrow
+    \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}\\
+  &\Rightarrow
+    \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^n b^n},\ora{b}\bigr)\text{ R-parallel}
+\end{align*}
+where we start with the inductive hypothesis, used
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+$\bigl(\ora{a},\ora{a^{n-1}b^{n-1}}\bigr)$, and then forgot about
+$\ora{a^{n-1}b^{n-1}}$ and used 
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+$\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
+\end{proof}
+
+\begin{lemma}
+  Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
+  $n \ge 1$, the pair $(\ora{a^n
+  b^n},\ora{ba})$ R-cross. 
+\label{lem:anbn_vs_bkak}
+\end{lemma}
+\begin{proof}
+  We proceed it by induction on~ $n$.
+  The base case is
+ is clear by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
+
+ \DPTtodo[inline]{I don't think this is quite the argument you showed
+   me in Luxembourg. In particular, you're using the wrong action,
+   multiplying by $ba$ rather than conjugating by it.}
+By induction $(a^{n-1}b^{n-1},ba)$ R-cross. Since $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$, by Lemma~\ref{lem:rhs_prod} (I), we have $(a^{n-1}b^na, ba)$ R-cross.
+  Conjugating by $a$, we get $(a^n b^n,ab)$ R-cross.
+  Moreover, by Lemma~\ref{lem:powers_parallel}, $(\ora{a}, \ora{a^nb^n}, \ora{b})$ is R-parallel for every $n$.
+  Hence, $(a^n b^n,ba)$ R-cross (see Figure~\ref{fig:parallel_lemma}).
+\end{proof}
+\begin{figure}
+
+    \begin{subfigure}[b]{0.4\textwidth}
+ \svgfignormal{anbn_ba_p}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
+    \label{fig:cross_lemma}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.4\textwidth}
+ \svgfignormal{anbn_ba_c} 
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{a^n b^n},\protect\ora{ba})$ R-cross.}
+    \label{fig:parallel_lemma}
+  \end{subfigure}
+  \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers} 
+\end{figure}
+
+\begin{lemma}
+  Let $a,b \in \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross, then for all
+  $n \ge 1$, $(\ora{a^n
+  b^n},\ora{ba})$ are $R$-parallel.
+\label{lem:anbn_vs_bkak_parallel}
+\end{lemma}
+\begin{proof}
+We proceed it by induction on $n$. The base case is clear by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}.
+By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ is R-parallel to $ba$.
+Conjugating by $a$, we get $a^n b^n$ is R-parallel to $ab$. Hence, $a^n b^n$ is R-parallel to $ba$ (see Figure~\ref{fig:cross_lemma}).
+\end{proof}
+
+
+\begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
+Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, disconnected smoothing, homogeneity and is continuous.
+Given a pair $a, b \in \pi_1(S)$ of parallel elements (so
+$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
+satisfies oriented connected
+smoothing, i.e., $f([ab]) \geq f([a][b])$.
+We will start by showing, by induction on $n$, that
+\begin{equation}\label{eq:power_ineq}
+2nf([ab]) \geq f([a^{2n}b^{2n}]).
+\end{equation}
+The base case $n=1$ follows from the fact that if $\ora{a},\ora{b}$
+are parallel, $\ora{ab}$ and $\ora{ba}$ cross, and hence
+\[
+2[ab]=[ab] + [ba] \reducesto [ab^2a]=[a^2b^2].
+\]
+Hence, by homogeneity and disconnected smoothing, the base case follows.
+Now, we prove the induction step.
+\begin{align*}
+2nf([ab]) = 2(n-1)f([ab]) + 2f([ab])
+&\geq f([a^{2(n-1)}b^{2(n-1)}]) + f([b^2a^2])  \\
+&\geq f([a^{2(n-1)}b^{2(n-1)}][b^2a^2]) \\
+&\geq f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}]).
+\end{align*}
+In the first inequality we used induction step, in the second convex union, then Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
+Divide Eq.~\eqref{eq:power_ineq} by $2n$, let $n$ go to infinity, and
+use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
+\[
+f([ab]) \geq f([a] [b])
+\]
+which proves oriented disconnected smoothing.
+
+Second, we prove unoriented connected smoothing: with $a,b$ as above,
+$f([ab]) \ge f([aB])$.
+
+We split into two cases, depending on the relative position of $\ora{aB}$
+and $\ora{Ba}$. By
+Lemma~\ref{lem:ab_parallel_aB}, $(\ora{aB},\ora{Ba})$ are either anti-parallel
+or cross.
+
+We first consider the case when $(\ora{aB},\ora{Ba})$ are anti-parallel. We will prove by induction that
+\begin{equation}
+2nf([ab]) \geq f([(aB)^n (Ab)^n]).
+\label{eq:antiparallel_induction}
+\end{equation}
+The base case, $n=1$, follows since $(\ora{ab},\ora{ba})$ cross, hence
+\[
+[ba]+[ab] \reducesto [ba(ab)^{-1}] = [(aB)(Ab)].
+\]
+By homogeneity and disconnected smoothing, we get the base case.
+Now, we prove the induction step:
+\begin{align*}
+2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \\
+  &\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
+\end{align*}
+In the first inequality we used the induction step. The second inequality
+uses convex union and disconnected smoothing applied to
+$[(aB)^{n-1}(Ab)^{n-1}][(Ab)(aB)] \reducesto [(aB)^{n-1} (Ab)^{n-1}
+(Ab)(aB)]$. For this reduction, note that $\ora{aB}$ and $\ora{Ba}$ are
+anti-parallel, so $\ora{aB}$ and $\ora{Ab}$ are parallel. Hence, we
+can apply Lemma~\ref{lem:anbn_vs_bkak} to conclude that
+$\ora{(aB)^{n-1} (Ab)^{n-1}}$ and $\ora{(Ab)(aB)}$ cross.
+Divide~\ref{eq:antiparallel_induction} by $2n$, let $n$ go to
+infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to get
+\[
+f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
+\]
+where we used orientation invariance and homogeneity in the last equality.
+
+Now, still in the unoriented connected smoothing case, suppose
+$(\ora{aB},\ora{Ba})$ cross.
+If $(\ora{a},\ora{b})$ are $R$-parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that $(\ora{a},\ora{bA})$ are R-parallel.
+Hence, 
+\[
+f([ba]) = f([bA)(a^2)]) \geq f([bA]) + f(a^2) \geq f([bA])
+\]
+where in the first inequality we used oriented connected smoothing, and in the last inequality the fact that $f(a^2) \geq 0$, by Proposition~\ref{prop:curve-positive} below.
+Similarly, if $(\ora{a},\ora{b})$ are $L$-parallel it follows that $(\ora{b},\ora{a})$ are $R$-parallel, and so by Lemma~\ref{lem:a_parallel_Ba}, $(\ora{b},\ora{aB})$ are $R$-parallel.
+Hence, 
+\[
+f([ab]) = f([aB)(b^2)]) \geq f([aB]) + f(b^2) \geq f([aB])
+\]
+as before.
+This finishes the proof that disconnected smoothing implies
+connected smoothing.
+
+We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies orientation invariance, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
+\[
+f([a^{2n}b^{2n}]) \geq 2nf([ab]).
+\]
+The base case follows by noting that if $(\ora{a},\ora{b})$ R-cross, then $(\ora{ab},\ora{ba})$ are R-parallel, and then by connected smoothing
+\[
+f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
+\]
+For the induction step, note that
+\begin{align*}
+f([a^{2n}b^{2n}]) = f([a^2(a^{2(n-1)}b^{2(n-1)})b^2]) = f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
+\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) = 2f([ab]) + 2(n-1)f([ab]) = 2nf([ab]).
+\end{align*}
+To get the inequality we used that $b^2a^2$ and $a^{2(n-1)}b^{2(n-1)}$ are parallel, which follows from the fact that $a$ and $b$ are crossing, and Lemma~\ref{lem:anbn_vs_bkak_parallel}.
+Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
+\[
+f([a] [b]) \geq f([ab])
+\]
+which proves oriented disconnected smoothing. The unoriented one is proved in the same way, replacing $b$ by $B$.
+\end{proof}
+
+\begin{remark}
+The statements of
+Propositions~\ref{prop:oriented_smoothing_unoriented}
+and~\ref{prop:cont_conn_disc} can be strengthened by replacing each
+type of smoothing by the same type of $C$-quasi-smoothing.
+\end{remark}
+
+As an immediate corollary, we get the following.
+
+\begin{corollary}
+Suppose $f$ is a symmetric, additive curve functional that extends continuously to geodesic currents.
+If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
+\label{cor:cont_conn_disc}
+\end{corollary}
+
+For example, curve lengths from length metric structures on the surface
+or word-lengths with respect to some generating sets give natural such
+functionals.
+See Section~\ref{subsec:examples_and_non} for many examples and non-examples of curve functionals.
+
+We can now reestate Theorem~\ref{thm:intersect} from the perspective of curve functionals on oriented curves.
+
+\begin{mainthmprimeprime}
+    Suppose that a curve functional $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ satisfies the oriented smoothing property
+     \[
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
+   \]
+   for every essential crossing of a multi-curve on the surface and, moreover, $f$ additive, symmetric and stable.
+Then $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
+\[
+i(\mu_f,C)=f(C)
+\]
+for every curve $C$.
+\label{thm:intersect_oriented}
+\end{mainthmprimeprime}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "Intersections"
+%%% End:
