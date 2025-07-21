@@ -16,23 +16,26 @@ Theorem~\ref{thm:intersections_group}; it is not necessary for the
 proof of Theorem~\ref{thm:intersect}.
 
 \begin{proposition}
-If $f$ is orientation invariant and satisfies oriented smoothing
+If $f$ satisfies oriented smoothing
 (connected and disconnected), convex union,
-stability, and homogeneity, then $f$ satisfies smoothing.
+stability, homogeneity, and orientation invariance, then $f$ satisfies smoothing.
 \label{prop:oriented_smoothing_unoriented}
 \end{proposition}
 
 The proof uses the following result, which can be seen as a weak
 converse of the main result in our previous paper.
 \begin{proposition}
-Suppose $f$ is an orientation invariant curve functional satisfying convex union that extends continuously to geodesic currents and is homogeneous.
+Suppose $f$ is an orientation invariant curve functional satisfying
+convex union and homogeneity that extends continuously to geodesic currents.
 If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
 \label{prop:cont_conn_disc}
 \end{proposition}
 
-\begin{proof}[Proof of Proposition~\ref{prop:oriented_smoothing_unoriented}]
-  Since $f$ disconnected oriented smoothing and is orientation invariant, it also
-  satisfies disconnected unoriented smoothing: indeed, let
+\begin{proof}[Proof of
+  Proposition~\ref{prop:oriented_smoothing_unoriented}, assuming Proposition~\ref{prop:cont_conn_disc}]
+  Since $f$ satisfies disconnected oriented smoothing and is
+  orientation invariant, it also
+  satisfies disconnected unoriented smoothing. Indeed, let
   $(\ora{a},\ora{b})$ R-cross. Then $(\ora{B},\ora{a})$ R-cross, so by
   disconnected oriented smoothing
 \[
@@ -52,13 +55,13 @@ As an immediate corollary, given that a symmetric and additive
 functional is orientation invariant, we have the following.
 
 \begin{corollary}
-If $f$ is symmetric and satisfies oriented smoothing, additivity and
+If $f$ is symmetric and satisfies oriented smoothing, additivity, and
 stability, then $f$ satisfies smoothing.
 \label{cor:oriented_smoothing_unoriented}
 \end{corollary}
 
 We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
-starting with some easy lemmas. The first lets us approximate
+starting with some lemmas. The first lets us approximate
 disconnected curves by connected curves and vice versa.
 \begin{lemma}
   Given any $g,h \in \pi_1(S)$, we have
@@ -75,17 +78,19 @@ in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geode
   to~\cite[Proposition~5.1]{Sas22:Currents}.
 \end{proof}
 
+Next we give some extensions of Lemma~\ref{lem:righthandedfoundation}
+to powers.
 \begin{lemma}
-  Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
-  $n \ge 1$. Then the triple $(\ora{a},\ora{a^n b^n}, \ora{b})$ is R-parallel for every $n \in \mathbb{N}$
+  Let  $a,b \in \pi_1(S)$ so that $\bigl(\ora{a},\ora{b}\bigr)$ are
+  $R$-parallel. Then for all
+  $n \ge 1$, the triple $(\ora{a},\ora{a^n b^n}, \ora{b})$ is R-parallel.
   \label{lem:powers_parallel}
 \end{lemma}
 \begin{proof}
 The proof is by induction on~$n$, repeatedly applying
 Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. The case
 $n=1$ is directly that lemma.
-
-For the inductive step, we have the following series of implications:
+For the inductive step, we have:
 \begin{align*}
   \bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
   &\Rightarrow
@@ -102,7 +107,8 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
 \end{proof}
 
 \begin{lemma}
-  Given elements $a,b \in \pi_1(S)$ which are $R$-parallel, for all
+  Let  $a,b \in \pi_1(S)$ so that $\bigl(\ora{a},\ora{b}\bigr)$ are
+  $R$-parallel. Then for all
   $n \ge 1$, the pair $(\ora{a^n
   b^n},\ora{ba})$ R-cross. 
 \label{lem:anbn_vs_bkak}
@@ -110,42 +116,65 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
 \begin{proof}
   We proceed it by induction on~ $n$.
   The base case is
- is clear by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
-
- \DPTtodo[inline]{I don't think this is quite the argument you showed
-   me in Luxembourg. In particular, you're using the wrong action,
-   multiplying by $ba$ rather than conjugating by it.}
-By induction $(a^{n-1}b^{n-1},ba)$ R-cross. Since $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$, by Lemma~\ref{lem:rhs_prod} (I), we have $(a^{n-1}b^na, ba)$ R-cross.
-  Conjugating by $a$, we get $(a^n b^n,ab)$ R-cross.
-  Moreover, by Lemma~\ref{lem:powers_parallel}, $(\ora{a}, \ora{a^nb^n}, \ora{b})$ is R-parallel for every $n$.
-  Hence, $(a^n b^n,ba)$ R-cross (see Figure~\ref{fig:parallel_lemma}).
+ is clear by
+ Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. In
+ general we have
+ \begin{align*}
+   \bigl(\ora{a^{n-1}b^{n-1}},\ora{ba}\bigr)\text{ R-cross}
+   &\Rightarrow
+     \bigl(\ora{a^{n-1}b^n a}, \ora{ba}\bigr)\text{ R-cross}\\
+   &\Rightarrow
+     \bigl(\ora{a^nb^n}, \ora{ab}\bigr)\text{ R-cross}\\
+   &\Rightarrow
+     \bigl(\ora{a^nb^n}, \ora{ba}\bigr)\text{ R-cross}
+ \end{align*}
+where in the first three steps we start with the inductive hypothesis, use
+Lemma~\ref{lem:rhs_prod}, and
+conjugate by~$a$. For the last step,
+Lemma~\ref{lem:powers_parallel} and the crossing of 
+$\bigl(\ora{a^nb^n}, \ora{ab}\bigr)$ restrict the
+endpoints of $\ora{a^n b^n}$ to the indicated intervals in
+Figure~\ref{fig:parallel_lemma}, which implies the desired crossing
+with $\ora{ba}$.
 \end{proof}
 \begin{figure}
-
-    \begin{subfigure}[b]{0.4\textwidth}
- \svgfignormal{anbn_ba_p}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
-    \label{fig:cross_lemma}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.4\textwidth}
- \svgfignormal{anbn_ba_c} 
+     \begin{subfigure}[b]{0.45\textwidth}
+\centerline{\svgfignormal{anbn_ba_c}}
     \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{a^n b^n},\protect\ora{ba})$ R-cross.}
     \label{fig:parallel_lemma}
   \end{subfigure}
+  \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+ \centerline{\svgfignormal{anbn_ba_p}}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
+    \label{fig:cross_lemma}
+     \end{subfigure}
   \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers} 
 \end{figure}
 
 \begin{lemma}
-  Let $a,b \in \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross, then for all
+  Let $a,b \in \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross. Then for all
   $n \ge 1$, $(\ora{a^n
   b^n},\ora{ba})$ are $R$-parallel.
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
-We proceed it by induction on $n$. The base case is clear by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}.
-By induction $a^{n-1}b^{n-1}$ is R-parallel to $ba$. Hence, $a^{n-1}b^na = (a^{n-1}b^{n-1})(ba)$ is R-parallel to $ba$.
-Conjugating by $a$, we get $a^n b^n$ is R-parallel to $ab$. Hence, $a^n b^n$ is R-parallel to $ba$ (see Figure~\ref{fig:cross_lemma}).
+We proceed it by induction on $n$. The base case is clear by
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}.
+In general we have
+\begin{align*}
+  \bigl(\ora{a^{n-1}b^{n-1}},\ora{ba}\bigr)\text{ R-parallel}
+  &\Rightarrow
+    \bigl(\ora{a^{n-1}b^n a}, \ora{ba}\bigr)\text{ R-parallel}\\
+  &\Rightarrow
+    \bigl(\ora{a^nb^n}, \ora{ab}\bigr)\text{ R-parallel}\\
+  &\Rightarrow
+    \bigl(\ora{a^nb^n}, \ora{ba}\bigr)\text{ R-parallel}
+\end{align*}
+where we use the inductive hypothesis,
+Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel},
+conjugation, and transitivity of R\hyp parallelism. See
+Figure~\ref{fig:cross_lemma}.
 \end{proof}
 
 
