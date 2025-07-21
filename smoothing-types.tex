@@ -5,8 +5,8 @@
   its own (short) section. The character of the result is rather
   different from the rest of \texttt{boxes.tex}. Maybe it needs
   more intro}
-Before proceeding with the main proof,
-we turn to relations between different types of smoothing.
+Before proceeding with the main proof, we first examine the relationships between different types of smoothing. In particular, we will consider the distinctions between oriented and unoriented smoothing, as well as between connected and disconnected smoothing, and explore how these two attributes interact.
+
 A priori the hypothesis of oriented smoothing on $f$ is weaker than
 smoothing, since it does not seem to include unoriented smoothing.
 However, it follows from the other hypotheses; the key ingredient is
@@ -109,8 +109,8 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
 \begin{lemma}
   Let  $a,b \in \pi_1(S)$ so that $\bigl(\ora{a},\ora{b}\bigr)$ are
   $R$-parallel. Then for all
-  $n \ge 1$, the pair $(\ora{a^n
-  b^n},\ora{ba})$ R-cross. 
+  $n \ge 1$, the pair $(\ora{ba},\ora{a^n
+  b^n})$ R-cross. 
 \label{lem:anbn_vs_bkak}
 \end{lemma}
 \begin{proof}
@@ -120,19 +120,19 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
  Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. In
  general we have
  \begin{align*}
-   \bigl(\ora{a^{n-1}b^{n-1}},\ora{ba}\bigr)\text{ R-cross}
+   \bigl(\ora{ba},\ora{a^{n-1}b^{n-1}}\bigr)\text{ R-cross}
    &\Rightarrow
-     \bigl(\ora{a^{n-1}b^n a}, \ora{ba}\bigr)\text{ R-cross}\\
+     \bigl(\ora{ba},\ora{a^{n-1}b^n a}\bigr)\text{ R-cross}\\
    &\Rightarrow
-     \bigl(\ora{a^nb^n}, \ora{ab}\bigr)\text{ R-cross}\\
+     \bigl(\ora{ab}, \ora{a^nb^n}\bigr)\text{ R-cross}\\
    &\Rightarrow
-     \bigl(\ora{a^nb^n}, \ora{ba}\bigr)\text{ R-cross}
+     \bigl(\ora{ba}, \ora{a^nb^n}\bigr)\text{ R-cross}
  \end{align*}
 where in the first three steps we start with the inductive hypothesis, use
 Lemma~\ref{lem:rhs_prod}, and
 conjugate by~$a$. For the last step,
-Lemma~\ref{lem:powers_parallel} and the crossing of 
-$\bigl(\ora{a^nb^n}, \ora{ab}\bigr)$ restrict the
+Lemma~\ref{lem:powers_parallel} and the R-crossing of 
+$\bigl(\ora{ab}, \ora{a^nb^n}\bigr)$ restrict the
 endpoints of $\ora{a^n b^n}$ to the indicated intervals in
 Figure~\ref{fig:parallel_lemma}, which implies the desired crossing
 with $\ora{ba}$.
@@ -140,20 +140,20 @@ with $\ora{ba}$.
 \begin{figure}
      \begin{subfigure}[b]{0.45\textwidth}
 \centerline{\svgfignormal{anbn_ba_c}}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{a^n b^n},\protect\ora{ba})$ R-cross.}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{ba}, \protect\ora{a^n b^n})$ R-cross.}
     \label{fig:parallel_lemma}
   \end{subfigure}
   \hfill
     \begin{subfigure}[b]{0.45\textwidth}
  \centerline{\svgfignormal{anbn_ba_p}}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
+    \caption{$\protect\ora{b}$ and $\protect\ora{a}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
     \label{fig:cross_lemma}
      \end{subfigure}
   \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers} 
 \end{figure}
 
 \begin{lemma}
-  Let $a,b \in \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross. Then for all
+  Let $a,b \in \pi_1(S)$ so that $(\ora{b},\ora{a})$ R-cross. Then for all
   $n \ge 1$, $(\ora{a^n
   b^n},\ora{ba})$ are $R$-parallel.
 \label{lem:anbn_vs_bkak_parallel}
@@ -267,7 +267,7 @@ We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ 
 \[
 f([a^{2n}b^{2n}]) \geq 2nf([ab]).
 \]
-The base case follows by noting that if $(\ora{a},\ora{b})$ R-cross, then $(\ora{ab},\ora{ba})$ are R-parallel, and then by connected smoothing
+The base case follows by noting that if $(\ora{a},\ora{b})$ R-cross, then $(\ora{ba},\ora{ab})$ are R-parallel, and then by connected smoothing
 \[
 f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
 \]

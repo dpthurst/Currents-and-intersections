@@ -99,9 +99,9 @@ diagonal.
   \begin{enumerate}
   \item\label{item:box-nontriv-lift} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
   \item\label{item:box-edges-cross-lift} for $i,j \in \{1,2\}$,
-    $\ora{p_iq_j}$ crosses $\ora{x}$ to the right; and
+    $(\ora{p_iq_j},\ora{x})$ R-cross; and
   \item\label{item:box-diags-cross-lift} for sufficiently large~$n$,
-    $\ora{q_2x^np_1}$ crosses $\ora{q_1x^np_2}$ to the right.
+    $(\ora{q_2x^np_1},\ora{q_1x^np_2})$ R-cross.
   \end{enumerate}
 \end{definition}
 
@@ -301,7 +301,7 @@ of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
 
 Note that, for instance, the points $[p_1^{-1}]$ and $[q_1]$ are related via $a$ by the right action: $[p_1^{-1}] \cdot a = [q_1]$.
-On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action: $q_1 p_1 \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ crossing $\ora{x}$ to the right, i.e. $(\ora{x}, \ora{a})$ R-cross. 
+On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action: $q_1 p_1 \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crosses $\ora{x}$.
 
 The action of translating all lifts by $\pi_1(S)$ has been baked in to
 this alternate parametrization,
@@ -708,6 +708,7 @@ all the way back to the diagonal.
   any additional whiskers. Old proof is still in comments in case
   there's a hole. I have examples we could show if you think they are
   necessary.}
+  \DMGtodo{it would be nice to show examples}
 \begin{proof}
   Given a division $B_0 = \bigsqcup_i B_i$, we will show that the
   $B_i$ can be further divided so that the result can be joined by

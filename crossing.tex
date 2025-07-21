@@ -188,7 +188,12 @@ We will also distinguish between different types of smoothings.
   The \emph{unoriented smoothing} is the one that does not respect the
   orientation.
   In addition, we call a smoothing \emph{connected} or \emph{disconnected} if the
-  original curve is connected or disconnected. We thus have four types
+  original curve is connected or disconnected.
+
+  \begin{notation*}
+  From now on, we write $[a][b]$ to denote the multi-curve $[a] \cup [b]$.
+  \end{notation*}
+  We thus have four types
   of smoothings (using group notation that we will expand on
   later):
   \begin{itemize}
@@ -205,12 +210,9 @@ We will also distinguish between different types of smoothings.
 
 \subsection{Triality of crossings: topological, geometric and algebraic}
 
-To give a more workable and algebraic criterion for essential
-crossings, we
-adopt a group-theoretic point of view. For $a,b \in \pi_1(S,*)$, write
-$[a]$ for the free homotopy class of curves represented by $a$;
-algebraically this is the union of the conjugacy classes of~$a$ and
-of~$A$. Write $[a][b]$ for the multi-curve $[a] \cup [b]$. Say that a
+We now present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, let \DMGtodo{changed this discussion a bit to talk only about oriented curves. Does this still make sense?}
+$[a]$ denote the free homotopy class of oriented curves represented by $a$;
+algebraically this is equivalent to the conjugacy classes of~$a$.. Say that a
 factorization $[ab]$ \emph{reduces} if some (equiv.\ every) taut
 representative of $[ab]$ has a crossing so that one smoothing gives
 $[a][b]$ and the other smoothing gives $[aB]$. Similarly say that
@@ -346,7 +348,7 @@ We now turn to some elementary lemmas about crossing.
 \begin{lemma}
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
   Then $(\ora{a},\ora{x})$ R-cross (resp.\ L-cross) iff
-  $(a \cdot \ora{x},\ora{x})$ are R-parallel (resp.\ L-parallel).
+  $(\ora{x}, a \cdot \ora{x})$ are R-parallel (resp.\ L-parallel).
   More generally, if
   $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
   endpoint $a^+$ in an interval $(x,y)$ iff
@@ -354,10 +356,10 @@ We now turn to some elementary lemmas about crossing.
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
-  The statement that $(a\cdot\ora{x},\ora{x})$ are R-parallel is (by
-  definition) equivalent to $a\cdot(x^+,x^-) \subsetneq (x^+,x^-)$,
-  which is equivalent (by NS dynamics of~$a$) to $a^+ \in (x^+,x^-)$ and
-  $a^- \in (x^-,x^+)$, which is equivalent to
+  The statement that $(\ora{x}, a\cdot\ora{x})$ are R-parallel is (by
+  definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
+  which is equivalent (by NS dynamics of~$a$) to $a^+ \in (x^-,x^+)$ and
+  $a^- \in (x^+,x^-)$, which is equivalent to
   $(\ora{a},\ora{x})$ R-crossing. The last claim follows similarly.
 \end{proof}
 
@@ -390,13 +392,13 @@ We now turn to some elementary lemmas about crossing.
 \begin{lemma} 
   Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements. Then:
   \begin{enumerate}[label=(\Roman*)]
-  \item\label{item:ab-cross} If $(\ora{a}, \ora{b})$ R-cross, then $ab$ and $aB$ are also
+  \item\label{item:ab-cross} If $(\ora{a}, \ora{b})$ R-cross, then $ba$ and $bA$ are also
     hyperbolic, and the pairs
 
-    $(\ora{ab},\ora{ba})$ and $(\ora{aB},\ora{Ba})$ are both
+    $(\ora{ba},\ora{ab})$ and $(\ora{aB},\ora{Ba})$ are both
     R-parallel, with endpoints as in Figure~\ref{fig:cross}.
   \item\label{item:ab-parallel} If $(\ora{a},\ora{b})$ are R-parallel, then $ab$ is hyperbolic
-    and $(\ora{ab},\ora{ba})$ R-cross, with endpoints as in
+    and $(\ora{ba},\ora{ab})$ R-cross, with endpoints as in
     Figure~\ref{fig:parallel}.
     In particular, the triples
     $(\ora{a},\ora{ab}, \ora{b})$ and $(\ora{a},\ora{ba},\ora{b})$ are R-parallel.
@@ -434,7 +436,7 @@ We now turn to some elementary lemmas about crossing.
 \begin{figure}
     \begin{subfigure}[b]{0.3\textwidth}
  \svgfignormal{rcrossing}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ R-cross}
+    \caption{$\protect\ora{b}$ and $\protect\ora{a}$ R-cross}
     \label{fig:cross}
      \end{subfigure}
      \hfill
@@ -456,17 +458,17 @@ We now turn to some elementary lemmas about crossing.
    \label{fig:cases-a-b}
  \end{figure}
  \DPTtodo{In Fig.\ 4.1(c), the arrow on $\ora{b}$ should be reversed.}
-    
+    \DMGtodo{In Fig\ 4.1(a), roles of a and b should switch to adapt to new R-cross convention, and label changed to a and b R-cross}
     To see this, by the dynamics of $a$ and $b$ on the
-    circle as shown, $ab$ maps the interval
-    $(a^+,b^+)$ strictly inside itself, so $ab$ is
-    hyperbolic with $(ab)^+\in(a^+,b^+)$;
-    similarly $(ab)^- \in (a^-,b^-)$. The actions of
-    $a$ and $b$ interchange $(ab)^- \leftrightarrow (ba)^-$ and
-    $(ab)^+ \leftrightarrow (ba)^+$, forcing the configuration shown.
-    (Note that all four endpoints $(ab)^\pm,(ba)^\pm$ are on the
+    circle as shown, $ba$ maps the interval
+    $(b^+,a^+)$ strictly inside itself, so $ba$ is
+    hyperbolic with $(ba)^+\in(b^+,a^+)$;
+    similarly $(ba)^- \in (b^-,a^-)$. The actions of
+    $b$ and $a$ interchange $(ba)^- \leftrightarrow (ab)^-$ and
+    $(ba)^+ \leftrightarrow (ab)^+$, forcing the configuration shown.
+    (Note that all four endpoints $(ba)^\pm,(ab)^\pm$ are on the
     portions of the circle
-    where $a$ and $b$ move in opposite directions.)
+    where $b$ and $a$ move in opposite directions.)
 
     Since $(\ora{B},\ora{a})$ also R-cross, the
     other conclusion follows.
@@ -475,7 +477,7 @@ We now turn to some elementary lemmas about crossing.
     property then forces
     $(ab)^+, (ba)^+ \in (b^+,a^+)$  and
     $(ab)^-, (ba)^- \in (a^-,b^-)$. From this we see that
-    $(\ora{ab},\ora{ba})$ R-cross, as in Figure~\ref{fig:parallel}.
+    $(\ora{ba},\ora{ab})$ R-cross, as in Figure~\ref{fig:parallel}.
   \item If $\ora{a}$ and $\ora{b}$ are anti-parallel, we can reduce to
     the parallel case by replacing $b$ with $B$, arranged as in
     Figure~\ref{fig:anti}.\qedhere
@@ -928,7 +930,7 @@ be clockwise and the other will be counterclockwise.
 \end{proof}
 
 An alternate construction of such elements is to take $x=y$ and any
-$\ora{a},\ora{b}$ that cross $\ora{x}$ to the right.
+$\ora{a},\ora{b}$ that cross $\ora{x}$ to the right. \DMGtodo{Note that we don't want to do this, since in our construction, $x$ will be fixed once and for all, and $y$ will be arbitrary (independent of $x$)}
 
 
 %%% Local Variables:
