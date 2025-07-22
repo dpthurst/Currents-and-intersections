@@ -1,11 +1,10 @@
 \section{Cross-ratios}
 \label{sec:crossratios}
 
-\DPTtodo{``One-to-one'' is misleading/wrong in the presence of atoms}
-In this section we will see that there is a one-to-one correspondence between geodesic currents and periods of cross-ratios. Precisely, we will prove that cross-ratios induce functions on $\pi_1(S)$ (periods) satisfying the hypotheses of Theorem~\ref{thm:intersections_group}, hence subsuming work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} under our framework.
+In this section we will see that every generalized cross-ratio induces a geodesic current. Precisely, we will prove that generalized cross-ratios induce functions on $\pi_1(S)$ (periods) satisfying the hypotheses of Theorem~\ref{thm:intersections_group}, and therefore induce a geodesic current $\mu$ dual to the period. This subsumes work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} under our framework.
 
 \begin{definition}
-A \emph{cross-ratio} on $S$ is a function of type
+A \emph{generalized cross-ratio} on $S$ is a function of type
 \[
 [\cdot, \cdot, \cdot, \cdot] \colon (\partial_{\infty} S)^{(4)} \to \mathbb{R}
 \]
@@ -27,10 +26,8 @@ There are many definitions of cross ratios in the literature (Ledrappier~\cite{L
 In all of these references (except the last one) the authors consider the cross-ratios to be continuous or even H\"older continuous, but we will not assume this here. Furthermore, in all of the above definitions, flip-invariance is assumed.
 For an even more general definition of cross-ratio where flip-invariance is not assumed, see Labourie's~\cite[Definition~3.1]{L07:Crossratio}. We will always assume our cross-ratios are flip-invariant.
 
-In this section we show that cross-ratios induce curve functionals (periods) satisfying the hypotheses of Theorem~\ref{thm:intersect}, and thus induce geodesic currents.
-
-As alluded above, cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
-In this setting, there are two natural cross-ratios associated to a geodesic current.
+As alluded above, generalized cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
+In this setting, there are two natural generalized cross-ratios associated to a geodesic current.
 \[
 [a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))
 \]
@@ -38,9 +35,9 @@ and
 \[
 [a,b,c,d]^- \coloneqq \mu((d,a] \times (b,c]).
 \]
-\DPTtodo{What's a ``generalized'' cross-ratio?}
 It is easily checked that these satisfy the properties of generalized cross-ratios,
 and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios}, when $\mu$ is a closed curve).
+If $\mu$ has no atoms, the two generalized cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are equal, since the measure of the boundary of any box of geodesics is zero.
 
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the \emph{period} function of a curve $C=[g]$ be
 \[
@@ -49,10 +46,9 @@ Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the \emph{
 where $x$ is an arbitrary point in $(g^-,g^+)$.
 The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is well-defined.
 
-Given a geodesic current $\mu$, the two (possibly distinct) cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.a]{L95:BordDesVar}.
-In fact, if $\mu$ has no atoms, the two cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are easily seen to be equal.
-\DPTtodo{This discussion seems misplaced}
-Hence, it will follow that, for non-atomic geodesic currents, there is a one-to-one correspondence between cross-ratios and geodesic currents.
+Given a geodesic current $\mu$, the two (possibly distinct) generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, generalizd cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.a]{L95:BordDesVar}.
+
+Since the two generalized cross-ratios are equal for non-atomic geodesic current, it follows there is a one-to-one correspondence between generalized cross-ratios and geodesic currents in this case.
 
 \begin{lemma}
 For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
@@ -75,8 +71,8 @@ For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
 \begin{proof}
 The geodesic $\ora{g}$ with endpoints $g^-, g^+$ divides $\partial_{\infty}S$ into two open intervals:
 one on the left in the forward direction of $\gamma$, the other on the right.
-\DPTtodo{Are left/right swapped?}
-Let $x \in  \partial_{\infty}S$ be on the left interval, and $y \in  \partial_{\infty}S$ on the right interval.
+
+Let $y \in  \partial_{\infty}S$ be on the left interval, and $x \in  \partial_{\infty}S$ on the right interval.
 We then have
 \begin{align*}
 \ell(g^{-1}) &= \lim_{n \to \infty} \frac{[g^{-n}y, g^-, g^+, g^{n} y]}{2n} \\
@@ -114,7 +110,6 @@ Then
 \label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 \begin{proof}
-  \DPTtodo[inline]{Can you double-check the proof before I read it carefully?}
  The strategy of the proof will go as follows. Let $\mathfrak{a}\mathfrak{b}, \mathfrak{a}, \mathfrak{b}$ be fundamental domains of $ab$, $a$ and $b$ respectively, fixed once and for all.
 We will partition $\mathfrak{a}\mathfrak{b}$ into subboxes, and apply isometries $a$, $b$ or their inverses in order to fit each subbox in either  $\mathfrak{a}$ or $\mathfrak{b}$ without overlaps. Let us label them by $\mathfrak{a}_i$ and $\mathfrak{b}_j$ according to if we fit them in $\mathfrak{a}$ or in $\mathfrak{b}$.
 By additivity and invariance of the cross-ratio, since $\mathfrak{a}\mathfrak{b} = \bigcup_{i=1}^{\ell} \overline{\mathfrak{a}_i} \cup \bigcup_{j=1}^{k} \overline{\mathfrak{b}_j}$, where the overline notation denotes a (possible) translate of the subbox, we will have $\ell(ab)$ is the sum of the cross-ratios of the boxes $\mathfrak{a}_i$ and $\mathfrak{b}_j$.
@@ -127,17 +122,25 @@ So, by positivity of the cross-ratio, it follows that
 as desired.
 Let us now implement this strategy.
 Consider the fundamental domain of $ab$ given by $\mathfrak{a}\mathfrak{b} \coloneqq [B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure~\ref{fig:d1}.
-Start by applying $A$ to the fundamental domain of $ab$ and then partition the resulting box of geodesics into two subboxes, let's call them I and II.
-Box I is highlighted in purple in step (3), Figure~\ref{fig:d3}, and it is contained in the fundamental domain of $b$, depicted in blue in Figure~\ref{fig:d1}.
+Start by applying $A$ to the fundamental domain of $ab$ and then partition the resulting box of geodesics into two subboxes.
+Box I is $R_1=(ba^+, b^-] \times [AB \cdot Ab^+, A \cdot Ab^+)$, and Box II is $R_2=(b^-, ba^-) \times [AB \cdot Ab^+, A \cdot Ab^+)$.
+Box I is highlighted in purple in step (3), Figure~\ref{fig:d3}, and it is contained in the fundamental domain of $b$, depicted in blue in Figure~\ref{fig:d1}. 
 
-We will next apply $a$ to Box I. The result is depicted in step (4), Figure~\ref{fig:d4}, a purple box contained in the fundamental domain of $b$.
-We now turn to Box II, depicted in step (5), Figure~\ref{fig:d5}, in purple.
-We shall apply $a$ to it, with the result depicted in step (6), Figure~\ref{fig:d6}.
-Next, in step (7), Figure~\ref{fig:d7}, we apply $b$ to this resulting box.
-In step (8), Figure~\ref{fig:d8}, we further partition the result: we highlighted in bold a subbox that we will treat as a final result, contained in the fundamental domain of $a$.
-It remains to deal with the remaining portion of the purple box in step (8), Figure~\ref{fig:d8}, which is depicted by itself in purple in step (9), Figure~\ref{fig:d9}.
-We shall apply $B$ to that subbox, obtaining a subbox now contained in a fundamental domain of $b$, with final result showed as in step (10),  Figure~\ref{fig:d10}.
+We will next apply $a$ to $R_1$. The result, $R_1'=[ab^+, a \cdot b^-) \times [B \cdot Ab^+, Ab^+)$, depicted in step (4), Figure~\ref{fig:d4} as a purple box, is contained in the fundamental domain of $b$. We will consider this as a final result.
+We now turn to Box II, $R_2$, depicted in step (5), Figure~\ref{fig:d5}, in purple.
+We shall apply $a$ to it, with the result, $R_2'=[a \cdot b^-) \times [B \cdot Ab^+, Ab^+)$, depicted in step (6), Figure~\ref{fig:d6}.
+Next, in step (7), Figure~\ref{fig:d7}, we apply $b$ to this resulting box $R_2'$, obtaining $R_2''=[ba \cdot b^-, ba^-) \times [Ab^+, bA^+)$.
 
+In step (8), Figure~\ref{fig:d8}, we further partition the result $R_2''$: we highlighted in bold a subbox, which we will call $R_3 \coloneqq [a^+, ba^-) \times [Ab^+, bA^+)$ that we will treat as a final result, contained in the fundamental domain of $a$.
+It remains to deal with the remaining portion of the purple box in step (8), Figure~\ref{fig:d8}, given by $R_4 \coloneqq [ba \cdot b^-, a^+) \times [Ab^+, bA^+)$,  which is depicted by itself in purple in step (9), Figure~\ref{fig:d9}.
+We shall apply $B$ to $R_4$, obtaining a subbox $R_4'=[a \cdot b^-,B \cdot a^+) \times [B \cdot Ab^+, Ab^+)$ now contained in a fundamental domain of $b$, with final result showed as in step (10),  Figure~\ref{fig:d10}. Note that, at the end, we have partitioned $\mathfrak{ab}$ into three boxes: 
+
+\begin{enumerate}
+\item $R_3=[a^+, ba^-) \times [Ab^+, bA^+)$, contained in $\mthfrak{a}$.
+\item $R_1'=[ab^+, a \cdot b^-) \times [B \cdot Ab^+, Ab^+)$, contained in $\mathfrak{b}$.
+\item $R_4'=[a \cdot b^-,B \cdot a^+) \times [B \cdot Ab^+, Ab^+)$, contained in $\mathfrak{b}$.
+\end{enumerate}
+Moreover, $R_1' \cap R_4' = \emptyset$.
 We have thus partitioned
 the fundamental domain of $ba$ into a union of disjoint boxes
 $(\mathfrak{a}_i)_{i=1}^k$, (resp.\ boxes
@@ -173,7 +176,7 @@ At most one isometry among $a$, $b$ or its inverses is applied to each partition
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d4}}
-    \caption{Step (4): \textbf{Result of applying $a$ to purple box. This is in f.d. of $b$}}\label{fig:d4}}
+    \caption{Step (4): \textcolor{blue}{\textbf{Result of applying $a$ to purple box. This is in f.d. of $b$}}}\label{fig:d4}}
      \end{subfigure}
 \end{figure}
 
@@ -203,7 +206,7 @@ At most one isometry among $a$, $b$ or its inverses is applied to each partition
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d8}}
-    \caption{Step (8): \textbf{Highlighted purple box is in f.d. of $a$}}\label{fig:d8}}
+    \caption{Step (8): \textcolor{red}{\textbf{Highlighted purple box is in f.d. of $a$}}}\label{fig:d8}}
      \end{subfigure}
 \end{figure}
 
@@ -218,7 +221,7 @@ At most one isometry among $a$, $b$ or its inverses is applied to each partition
      \begin{subfigure}[b]{0.45\textwidth}
 \centering{
 \resizebox{60mm}{!}{\svgfig{d10}}
-    \caption{Step (10): \textbf{Result of applying $B$ to remaining purple box in Figure \ref{fig:d9}. This is in f.d. of $b$}}\label{fig:d10}}
+    \caption{Step (10): \textcolor{blue}{ \textbf{Result of applying $B$ to remaining purple box in Figure \ref{fig:d9}. This is in f.d. of $b$}}}\label{fig:d10}}
      \end{subfigure}
 \end{figure}
 
@@ -244,16 +247,17 @@ Then, we have
 
 \begin{proof}
 
-\DPTtodo[inline]{Does the figure correspond to the proof?}
+
     \begin{figure}[ht!]
      \centering
-\resizebox{80mm}{!}{\svgfig{c5}}
-    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c5}
+\resizebox{80mm}{!}{\svgfignormal{c8}}
+    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
 \end{figure} 
-
-We observe (compare Figure~\ref{fig:c5}) that the fundamental domain for $ba$ given by
-$[ba^+, ba^-) \times [A \cdot b^+, b^+)$ 
-contains the non-intersecting boxes $[a^+, a^-) \times [A \cdot b^+, b^+)$ and $[b^-, b^+) \times [ba^+, ab^+)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
+First, note that $A \cdot b^-$ is in the interval $(b^-, ab^+)$. Indeed, $a \cdot b^-$ is forward of $b^-$ in the ccw order by NS dynamics of $a$, but also since $ba^+$ is forward of $b^-$, it follows, by conjugating by $a$, that $ab^+$ is forward of $a \cdot b^-$.
+The precise location of $a \cdot b^-$ within $(b^-, ab^+)$ will be immaterial in the following argument.
+We observe (compare Figure~\ref{fig:c8}) that the fundamental domain for $ab$ given by
+$[ab^+, ab^-) \times [b^-, A \cdot b^-)$ 
+contains the non-intersecting boxes $[a^+, a^-) \times [ b^-, a \cdot b^-)$ and $[b^-, b^+) \times [ba^-, ab^-)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
 using positivity of cross-ratio, additivity and flip-invariance, we get
 \[
 \ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).\qedhere
@@ -268,10 +272,11 @@ Moreover, periods uniquely determine cross-ratios arising from non-atomic geodes
   precise statement also seems fishy. Do we assume nothing about
   $[a,b,c,d]$, not even measurability? How do we know there's not more
   ambiguity, eg other ways to assign atoms?}
+  \DMGtodo{I don't think measurability of the cross-ratio is being used in any of the proofs. We don't assume it.}
 \begin{proof}
-By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossratio_disconnected_smoothing} and ~\ref{lem:crossratio_connected_smoothing} above, every cross-ratio period $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossratio_disconnected_smoothing} and ~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
 On the other hand, a geodesic current $\mu$ induces two cross-ratios $[\cdot]^\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
-Finally, if $\mu$ has no atoms, the two cross ratios are equal, and hence the claim follows.
+Finally, if $\mu$ has no atoms, the two generalized cross ratios are equal, and hence the claim follows.
 \end{proof}
 
 
