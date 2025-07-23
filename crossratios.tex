@@ -97,140 +97,6 @@ Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref
 We divide the proof into two cases, depending on the type of smoothing (connected vs disconnected).
 Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersections_group} are satisfied.
 
-\subsection{Disconnected smoothing}
-
-We will verify Equation~\ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
-
-\begin{lemma}
-Let $a, b \in \pi_1(S)$ so that $(a,b)$ are $R$-crossing.
-Then
-\[
-\ell(a) + \ell(b) \geq \ell(ab).
-\]
-\label{lem:crossratio_disconnected_smoothing}
-\end{lemma}
-\begin{proof}
- The strategy of the proof will go as follows. Let $\mathfrak{a}\mathfrak{b}, \mathfrak{a}, \mathfrak{b}$ be fundamental domains of $ab$, $a$ and $b$ respectively, fixed once and for all.
-We will partition $\mathfrak{a}\mathfrak{b}$ into subboxes, and apply isometries $a$, $b$ or their inverses in order to fit each subbox in either  $\mathfrak{a}$ or $\mathfrak{b}$ without overlaps. Let us label them by $\mathfrak{a}_i$ and $\mathfrak{b}_j$ according to if we fit them in $\mathfrak{a}$ or in $\mathfrak{b}$.
-By additivity and invariance of the cross-ratio, since $\mathfrak{a}\mathfrak{b} = \bigcup_{i=1}^{\ell} \overline{\mathfrak{a}_i} \cup \bigcup_{j=1}^{k} \overline{\mathfrak{b}_j}$, where the overline notation denotes a (possible) translate of the subbox, we will have $\ell(ab)$ is the sum of the cross-ratios of the boxes $\mathfrak{a}_i$ and $\mathfrak{b}_j$.
-Furthermore, we have
-$\bigcup_{i=1}^k \mathfrak{a}_i \subset \mathfrak{a}$, $\bigcup_{j=1}^{\ell} \mathfrak{b}_j \subset \mathfrak{b}$.
-So, by positivity of the cross-ratio, it follows that
-\[
-\ell(ab) \leq \ell(a) + \ell(b),
-\]
-as desired.
-Let us now implement this strategy.
-Consider the fundamental domain of $ab$ given by $\mathfrak{a}\mathfrak{b} \coloneqq [B \cdot Ab^+, bA^+) \times (ab^+, ab^-)$, depicted in green in Figure~\ref{fig:d1}.
-Start by applying $A$ to the fundamental domain of $ab$ and then partition the resulting box of geodesics into two subboxes.
-Box I is $R_1=(ba^+, b^-] \times [AB \cdot Ab^+, A \cdot Ab^+)$, and Box II is $R_2=(b^-, ba^-) \times [AB \cdot Ab^+, A \cdot Ab^+)$.
-Box I is highlighted in purple in step (3), Figure~\ref{fig:d3}, and it is contained in the fundamental domain of $b$, depicted in blue in Figure~\ref{fig:d1}. 
-
-We will next apply $a$ to $R_1$. The result, $R_1'=[ab^+, a \cdot b^-) \times [B \cdot Ab^+, Ab^+)$, depicted in step (4), Figure~\ref{fig:d4} as a purple box, is contained in the fundamental domain of $b$. We will consider this as a final result.
-We now turn to Box II, $R_2$, depicted in step (5), Figure~\ref{fig:d5}, in purple.
-We shall apply $a$ to it, with the result, $R_2'=[a \cdot b^-) \times [B \cdot Ab^+, Ab^+)$, depicted in step (6), Figure~\ref{fig:d6}.
-Next, in step (7), Figure~\ref{fig:d7}, we apply $b$ to this resulting box $R_2'$, obtaining $R_2''=[ba \cdot b^-, ba^-) \times [Ab^+, bA^+)$.
-
-In step (8), Figure~\ref{fig:d8}, we further partition the result $R_2''$: we highlighted in bold a subbox, which we will call $R_3 \coloneqq [a^+, ba^-) \times [Ab^+, bA^+)$ that we will treat as a final result, contained in the fundamental domain of $a$.
-It remains to deal with the remaining portion of the purple box in step (8), Figure~\ref{fig:d8}, given by $R_4 \coloneqq [ba \cdot b^-, a^+) \times [Ab^+, bA^+)$,  which is depicted by itself in purple in step (9), Figure~\ref{fig:d9}.
-We shall apply $B$ to $R_4$, obtaining a subbox $R_4'=[a \cdot b^-,B \cdot a^+) \times [B \cdot Ab^+, Ab^+)$ now contained in a fundamental domain of $b$, with final result showed as in step (10),  Figure~\ref{fig:d10}. Note that, at the end, we have partitioned $\mathfrak{ab}$ into three boxes: 
-
-\begin{enumerate}
-\item $R_3=[a^+, ba^-) \times [Ab^+, bA^+)$, contained in $\mthfrak{a}$.
-\item $R_1'=[ab^+, a \cdot b^-) \times [B \cdot Ab^+, Ab^+)$, contained in $\mathfrak{b}$.
-\item $R_4'=[a \cdot b^-,B \cdot a^+) \times [B \cdot Ab^+, Ab^+)$, contained in $\mathfrak{b}$.
-\end{enumerate}
-Moreover, $R_1' \cap R_4' = \emptyset$.
-We have thus partitioned
-the fundamental domain of $ba$ into a union of disjoint boxes
-$(\mathfrak{a}_i)_{i=1}^k$, (resp.\ boxes
-$(\mathfrak{b}_j)_{j=1}^{\ell}$) contained without overlap in
-$\mathfrak{a}$, the fundamental domain of $a$, (resp.\ $\mathfrak{b}$,
-the fundamental domain of $b$), as outlined in the strategy.
-At most one isometry among $a$, $b$ or its inverses is applied to each partitioned box at the end of the process. Furthermore, we observe that the figures below are represented assuming that $\ora{abA}$ and $\ora{Bab}$ do not intersect, but the cut and paste argument does not rely on this fact.
-
-\captionsetup[subfigure]{labelformat=empty}
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d1}}
-    \caption{Step (1): Initial configuration. Red is f.d. of $a$, blue is f.d. of $b$, green is f.d. of $ab$}\label{fig:d1}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d2}}
-    \caption{Step (2): Result of applying $A$ to f.d. of $ab$}\label{fig:d2}}
-     \end{subfigure}
-\end{figure}
-
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d3}}
-    \caption{Step (3): Purple portion is in f.d. of $b$}\label{fig:d3}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d4}}
-    \caption{Step (4): \textcolor{blue}{\textbf{Result of applying $a$ to purple box. This is in f.d. of $b$}}}\label{fig:d4}}
-     \end{subfigure}
-\end{figure}
-
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d5}}
-    \caption{Step (5): Remaining portion from Figure \ref{fig:d3} highlighted in purple here}\label{fig:d5}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d6}}
-    \caption{Step (6): Purple box shows result of applying $a$ to previous purple in Figure \ref{fig:d5}}\label{fig:d6}}
-     \end{subfigure}
-\end{figure}
-
-\begin{figure}[ht!]
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d7}}
-    \caption{Step (7): Result of applying $b$ to purple box}\label{fig:d7}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d8}}
-    \caption{Step (8): \textcolor{red}{\textbf{Highlighted purple box is in f.d. of $a$}}}\label{fig:d8}}
-     \end{subfigure}
-\end{figure}
-
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d9}}
-    \caption{Step (9): The remaining purple portion from Figure \ref{fig:d8}}\label{fig:d9}}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
-\centering{
-\resizebox{60mm}{!}{\svgfig{d10}}
-    \caption{Step (10): \textcolor{blue}{ \textbf{Result of applying $B$ to remaining purple box in Figure \ref{fig:d9}. This is in f.d. of $b$}}}\label{fig:d10}}
-     \end{subfigure}
-\end{figure}
-
-
-\end{proof}
-
-\newpage
-
-
 \subsection{Connected smoothing}
 
 Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
@@ -264,6 +130,96 @@ using positivity of cross-ratio, additivity and flip-invariance, we get
 \]
 \end{proof}
 
+
+
+\subsection{Disconnected smoothing}
+
+We will verify Equation~\ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
+In order to prove this, we will show that connected smoothing of $\ell$, together with the extra control given by the cross-ratio, imply disconnected smoothing.
+
+\begin{lemma}
+Let $a, b \in \pi_1(S)$ so that $(b,a)$ are $R$-crossing.
+Then
+\[
+\ell(a) + \ell(b) \geq \ell(ab).
+\]
+\label{lem:crossratio_disconnected_smoothing}
+\end{lemma}
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr}}
+    \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr}
+\end{figure} 
+
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr3}}
+    \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr3}
+\end{figure} 
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr_powers}}
+    \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr_powers}
+\end{figure} 
+
+\begin{proof}
+The strategy of the proof will be to show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
+In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bounded above and below by constants independent of $n$.
+This will involves breaking each fundamental domain of $a^nb^n, a^n, b^n$ into boxes, cancelling matching ones and showing that the non-cancelling ones are contained in bigger but bounded boxes which
+are independent of $n$.
+
+Consider the fundamental domain $F(ab)$ of $ab$ given by $F(ab)=(ab^+, ab^-) \times [Ab^+, b \cdot bA^+)$.
+We will partition $F(ab)$ into four subboxes, $F(ab)=R_1 \cup R_2 \cup R_3 \cup R_4$, given by:
+\begin{enumerate}
+\item $R_1(a,b) = (a^+, ab^-) \times [bA^+, a \cdot bA^+)$,
+\item $R_2(a,b) = (ab^+, b^-) \times [Ab^+, bA^+)$,
+\item $R_3(a,b) = (ab^+, a^+] \times [bA^+, a \cdot bA^+)$,
+\item $R_4(a,b)=[b^-, ab^-) \times [Ab^+, bA^+)$.
+\end{enumerate}
+Note that $R_1$ is contained in the fundamental domain of $a$, $F(a)$, given by $(a^+, a^-) \times [bA^+, a \cdot bA^+)$, and $R_2$ is contained in the fundamental domain of $b$, $F(b)$, given by $(b^+, b^-) \times [Ab^+, bA^+)$.
+In fact, $F(a) = R_5 \cup R_1$, where $R_5(a,b) \coloneqq [ab^-,a^-) \times [bA^+, a \cdot bA^+)$.
+Similarly, $F(b) = R_2 \cup R_6$, where $R_6 \coloneqq [b^+,ab^+) \times [Ab^+,bA^+)$.
+
+
+Now we will take powers of $a$ and $b$. Given a box $R \subset G(\Sigma)$, with vertices $(x,y,z,w)$ oriented ccw, whenever we write $[R]$ we mean the cross ratio $[x,y,z,w]$. By additivity of the cross-ratio, we have the following
+\begin{equation}
+[F(a^nb^n)] = [R_1] + [R_2]+[R_3] + [R_4] = [F(a^n)]-[R_5] + [F(b^n)] - [R_6] + [R_3] + [R_4].
+\label{eq:difference}
+\end{equation}
+
+We claim that there exist a positive constant $C=C(a,b)$ independent of $n \in \mathbb{N}$ so that
+$-C < [R_6(a^n, b^n)]-[R_3(a^n,b^n)] < C, [R_4(a^n,b^n)]<C, [R_5(a^n,b^n)]<C$.
+The second two boxes can each one be contained in a bigger bounded box independent of $n$.
+Indeed, $R_4(a^n,b^n) \subset (b^-, ab^-) \times (a^-, b^+)$. This is because, by Lemma~\ref{lem:anbn_vs_bkak_parallel}, $(a^nb^n, ab)$ are R-parallel for $n>1$, and hence $(a^nb^n)^- \in (b^-, ab^-)$.
+By the same Lemma, $(Ab, A^nb^n)$ are R-parallel, and $(b^nA^n, bA)$ are R-parallel, and thus $((A^nb^n)^-, (b^nA^n)) \subset (a^-, b^+)$.
+Therefore, the axes are disposed as shown in Figure~\ref{fig:rcross_cr_powers}.
+
+By a similar argument, we also have $R_5(a^n, b^n) \subset (b^-, a^-) \times (aB^+, a^+)$.
+We now deal with the term $[R_6(a^n, b^n)]-[R_3(a^n,b^n)]$, by decomposing the boxes one step further.
+First, we define $R_3'(a,b) = A \cdot R_3 = [a^+, ba^+) \times [Ab^+, bA^+)$.
+Note that we can partition $R_3'(a,b)= R_7(a,b) \cup R_8(a,b)$, where:
+\begin{enumerate}
+\item $R_7(a,b) = (ab^+, a^+) \times [Ab^+, bA^+)$
+\item $R_8(a,b) = (ba^+,a^+] \times [Ab^+, bA^+)$
+\end{enumerate}
+Similarly, we can partition $R_6(a,b) = R_9(a,b)\cup R_8(a,b)$, where $R_9(a,b)=(b^+, ba^+]\times [Ab^+, bA^+)$ and $R_8(a,b)$ the same as above.
+Now, a similar argument as for $R_4(a^n,b^n)$, shows that $R_7(a^n,b^n) \subset (ab^+, a^-) \times (a^-, b^+)$. 
+Finally, define $R_9'(a,b)=B \cdot R_9(a,b) = (b^+, ab^+) \times [B \cdot Ab^+, Ab^+)$, and note
+$R_9'(a^n, b^n) \subset (b^+, a^+) \times (b^-, Ab^+)$, by a similar argument as for $R_4(a^n,b^n)$.
+This shows that all the terms are bounded.
+
+As a consequence, dividing Equation~\ref{eq:difference} by $n$ and letting $n$ go to infinity, we get
+\[
+\lim_n \frac{\ell(a^n b^n)}{n} = \ell(a) + \ell(b)
+\]
+Now, by the same argument as in the second part of Proposition~\ref{prop:cont_conn_disc},
+disconnected smoothing follows.
+\DMGtodo{this may warrant updating Proposition 5.2 to something more general where the assumption is that the limit exists, and then extract a corollary there assuming continuity. Then we could cite the general proposition here.}
+\end{proof}
+
 \begin{theorem}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 Moreover, periods uniquely determine cross-ratios arising from non-atomic geodesic currents.
@@ -278,6 +234,11 @@ By the Lemmas~\ref{lem:crinv},~\ref{lem:crossratio_stability}, ~\ref{lem:crossra
 On the other hand, a geodesic current $\mu$ induces two cross-ratios $[\cdot]^\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
 Finally, if $\mu$ has no atoms, the two generalized cross ratios are equal, and hence the claim follows.
 \end{proof}
+
+\newpage
+
+
+
 
 
 
