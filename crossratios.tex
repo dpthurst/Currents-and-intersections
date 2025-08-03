@@ -171,7 +171,7 @@ In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bound
 This will involves breaking each fundamental domain of $a^nb^n, a^n, b^n$ into boxes, cancelling matching ones and showing that the non-cancelling ones are contained in bigger but bounded boxes which
 are independent of $n$.
 
-Consider the fundamental domain $F(ab)$ of $ab$ given by $F(ab)=(ab^+, ab^-) \times [Ab^+, b \cdot bA^+)$.
+For the following, compare Fig~\ref{fig:rcross_cr}. Consider the fundamental domain $F(ab)$ of $ab$ given by $F(ab)=(ab^+, ab^-) \times [Ab^+, a \cdot bA^+)$.
 We will partition $F(ab)$ into four subboxes, $F(ab)=R_1 \cup R_2 \cup R_3 \cup R_4$, given by:
 \begin{enumerate}
 \item $R_1(a,b) = (a^+, ab^-) \times [bA^+, a \cdot bA^+)$,
@@ -190,6 +190,7 @@ Now we will take powers of $a$ and $b$. Given a box $R \subset G(\Sigma)$, with 
 \label{eq:difference}
 \end{equation}
 
+
 We claim that there exist a positive constant $C=C(a,b)$ independent of $n \in \mathbb{N}$ so that
 $-C < [R_6(a^n, b^n)]-[R_3(a^n,b^n)] < C, [R_4(a^n,b^n)]<C, [R_5(a^n,b^n)]<C$.
 The second two boxes can each one be contained in a bigger bounded box independent of $n$.
@@ -199,6 +200,7 @@ Therefore, the axes are disposed as shown in Figure~\ref{fig:rcross_cr_powers}.
 
 By a similar argument, we also have $R_5(a^n, b^n) \subset (b^-, a^-) \times (aB^+, a^+)$.
 We now deal with the term $[R_6(a^n, b^n)]-[R_3(a^n,b^n)]$, by decomposing the boxes one step further.
+For the following, compare Fig~\ref{fig:rcross_cr3}.
 First, we define $R_3'(a,b) = A \cdot R_3 = [a^+, ba^+) \times [Ab^+, bA^+)$.
 Note that we can partition $R_3'(a,b)= R_7(a,b) \cup R_8(a,b)$, where:
 \begin{enumerate}

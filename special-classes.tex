@@ -44,7 +44,10 @@ Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \mathca
 \[
 i(1/2 M,\cdot)=f(\cdot).
 \]
-
+Moreover, \[
+i(1/2 M,\cdot) \in \mathbb{Z}
+\]
+if and only if the $\mathbb{Z}_2$ homology class $[M]=0$.
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
@@ -60,6 +63,7 @@ It suffices to show $\mu$ is an integral multi-curve. By the same argument in th
 Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$).
 Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$.
 By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve.
+Finally, $i(1/2 M,\cdot) \in \mathbb{Z}$ iff $i(M, \cdot ) \in 2\mathbb{Z}$ iff the homology class $[M]=0$ mod 2.
 \end{proof}
 
 \begin{remark}
@@ -69,7 +73,7 @@ By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ m
   multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}. For another
   concrete example, let $\mu$ be the geodesic current supported on a
   separating simple closed curve. Then $\mu/2$ has an integral
-  length spectrum but is not an integral multi-curve.
+  length spectrum but is not an integral multi-curve. 
 \end{remark}
 
 \DPTtodo[inline]{Characterize which half-integral
@@ -128,15 +132,37 @@ embedded convex geodesic quadrilateral on $\wt{X}$.
 \begin{lemma}
 Given the setup described above, we have 
 \begin{align*}
-\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &=
-\mu(G[x,z)) + \mu(G[w,y))
-- \mu(G([w,z)) - \mu(G([x,y))\\
-\mu(G((x,w], (y,z])) + \mu(G([x,w), [y,z))) &=
-\mu(G(x,z]) + \mu(G(w,y])
-- \mu(G((w,z]) - \mu(G((x,y])
+2 \mu(G((x,w), (y,z))) &=
+\mu(G(({x},{z}]))) + \mu(G([{y},{w}))
+- \mu(G([{z},{w}))) - \mu(G(({x},{y}])
 \end{align*}
 \label{lem:otalclaim}
 \end{lemma}
+\begin{proof}
+
+We have the following partitions:
+\begin{subequations}
+\begin{align}
+\begin{split}
+G(({x},{z}]) = G(({x},{z}], ({x},{y}]) \cup G(({x},{z}], [{y},{z}))
+\label{eq1}
+\end{split}\\
+\begin{split}
+G([{y},{w}))=G([{y},{w}), [{z},{w})) \cup G([{y},{w}), [{y},{z}))
+\label{eq2}
+\end{split}\\
+\begin{split}
+G([{z},{w}))=G([{z},{w}), [{y},{w})) \cup G([{z},{w}), ({y},{z}])
+\label{eq3}
+\end{split}\\
+\begin{split}
+G(({x},{y}])=G(({x},{y}], [{x},{z})) \cup G(({x},{y}], ({y},{z}])
+\label{eq4}
+\end{split}
+\end{align}
+\end{subequations}
+We now applying the measure $\mu$ to all the equations, add the equations resulting from Equation~\ref{eq1} and~\ref{eq2}, and subtract this from the equations resulting from Equation~\ref{eq3} and~\ref{eq4}, we get the result. The choice of endpoints to be included on the right-hand-side ensures that the endpoints included with positive sign cancel the endpoints included with negative sign.
+\end{proof}
 
 We also need the following hyperbolic geometry lemma.
 
@@ -216,15 +242,39 @@ The other claim is similar.
 The above lemma can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
 Using it, we characterize measured laminations among curve
 functionals.
+We start with a technical lemma that defines some sets of interest. We will resort to this setup several times in the proofs below. 
 
-\DPTtodo[inline]{I believe we \emph{do} need to be careful about
-  endpoints, since we can have non-zero atoms there, and we use
-  max-smoothing for each $n$. This also applies to $B_{g,h}$, since
-  the $\overline{R_n}$ intersect the boundary of $\overline{B_{g,h}}$.
-  See eg the note about the backwards implication}
-\DPTtodo[inline]{There's also a lot of poorly defined notation, eg the
-  $\perp$ variations are introduced in a scattershot way. Waiting to
-  fix that until we do the futzing with endpoints}
+\begin{lemma}
+Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
+consider the hyperbolic parallelogram~$H$ at the center of
+Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
+Consider the sets $R_{a,b} \coloneqq G((Q,P), (P', Q'))$ (resp. $R_1^{\perp} \coloneqq G((P',Q) \times (Q', P))$), consisting of geodesics crossing from the open segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
+Let $B_{a,b} = (a^+, b^-) \times (a^-, b^+)$ (resp.  $B_{g,h}^{\perp} = (b^-, a^-) \times (b^+, a^+)$) be the box with vertices the endpoints of $a$ and $b$, so that $R_{a,b} \subset B_{a,b}$ (resp. $R_{a,b}^{\perp} \subset B_{a,b}^{\perp}$).
+For every $n \in \mathbb{N}$, let $R_n \coloneqq R_{a^n,b^n}$ and $R_n^{\perp} \coloneqq R_{a^n,b^n}^{\perp}$.
+Then:
+\begin{enumerate} 
+\item $R_n \subset R_{n+1}$, and $\bigcup_{n \geq 1} R_n = B_{a,b}$ and $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\bigcup_{n \geq 1} R_n^{\perp} = B_{a,b}^{\perp}$.
+\item We have $\lim_{n} \mu(R_n) \to \mu(B_{a,b})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
+\item  If we let $a_n=a^n$, $b_n=b^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
+and $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$, $D_n=f(a_nb_n)/2$, we have
+\begin{equation}\label{eq:Rn-meas}
+\mu(R_n)=A_n + B_n-C_n,
+\end{equation}
+and
+\begin{equation}\label{eq:Rn-perp-meas}
+\mu(R_n^\perp)=A_n + B_n -D_n,
+\end{equation}
+\end{enumerate}
+\label{lem:measures_parallelogram}
+\end{lemma}
+\begin{proof}
+Item (1) is by construction of $R_n$.
+Item (2) follows by Item (1) and lower semi-continuity of measures.
+Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
+\end{proof}
+
+Now we characterize measured laminations in terms of the disconnected max-smoothing property; this is Theorem~\ref{mainthm:apps}\ref{item:lam-char}.
+
 \begin{theorem}
   A curve function $f$ is dual to a measured lamination if and only if
   $f$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the
@@ -239,58 +289,28 @@ functionals.
 Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing}.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
 It remains to show that $\mu_f$ is a measured lamination.
-Given elements $g, h \in \pi_1(\Sigma)$ with intersecting axes,
+Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
-Figure~\ref{fig:smoothing_1}.
-Consider the set $R_{a,b}^+ \coloneqq G([Q,P) \times [P', Q'))$ and  $R_{a,b}^- \coloneqq G((Q,P] \times (P', Q'])$. Barrying endpoints, these two sets roughly consist of geodesics intersecting both sides of $H$ contained in $\ora{hg}$ and $\ora{gh}$.
-We will also define, analogously, the sets
-$R_1^{\perp}$
-
-the set of geodesics intersecting the sides of $H$ on the axes $\ora{gh}$ and $\ora{hg}$.
-\DPTtodo{Ambiguous: there are two natural boxes here.}
-Also let $B_{g,h}$ be the box with vertices the endpoints of $g$ and $h$.
-
-Taking powers $g^n$ and $h^n$, and we obtain corresponding hyperbolic
-parallelograms $H_n$ for $g^n,h^n$ and analogous sets $R_n \coloneqq
-R_{g^n,h^n}$.
-Observe that $R_n \subset R_{n+1}$, and $\bigcup_{n \geq 1} R_n = B_{g,h}$.
-Hence we have
-\[
-\lim_{n\to\infty} \mu(R_n) \to \mu(B_{g,h}).
-\]
-If we let $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
-we get, by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
-\DPTtodo{I think $C_n$ and $D_n$ might be switched in these equations.
-  Also it seems this is an independent lemma, also used in
-  Theorem~\ref{thm:char_liouville}}
-\begin{equation}\label{eq:Rn-meas}
-\mu(R_n)=A_n + B_n-C_n,
-\end{equation}
-where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$.
-If we further let $R_n^{\perp}$ be the set of geodesics intersecting the sides of $H_n$ contained in $\ora{a_nb_n^{-1}}$ and $\ora{b_n^{-1}a_n}$, we have
-\begin{equation}\label{eq:Rn-perp-meas}
-\mu(R_n^\perp)=A_n + B_n -D_n,
-\end{equation}
-where $D_n=f(a_nb_n)/2$.
-We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\bigcup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$.
-Thus, as above, we have $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
+Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 By max-smoothing, for every $n$, we have $\mu(R_n^\perp)=0$ or $\mu(R_n)=0$.
 Since each sequence of sets $(R_n)$ and $(R_n^{\perp})$ is nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $n \geq 1$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
-Hence, $\mu(B_{g,h})=0$ or $\mu(B_{g,h}^{\perp})=0$.
+Hence, $\mu(B_{a,b})=0$ or $\mu(B_{a,b}^{\perp})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-By density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\bigcup_n B_n = B$, and $\bigcap_n B_n^{\perp} = B$.
+By density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\bigcup_n B_n = B$, and $\bigcap_n B_n^{\perp} = B$.
 Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$.
 
 Now we prove the other implication, by proving the contra-positive.
 If disconnected max-smoothing is \emph{not} satisfied for the elements
-$g,h$, then by Equations~\eqref{eq:Rn-meas}
-and~\eqref{eq:Rn-perp-meas}, both $\mu(R_{g,h})>0$ and
-$\mu(R_{g,h}^{\perp})>0$.
-\DPTtodo{I believe appropriately interpreted neither $R_{g,h}$ nor
-  $R_{g,h}^\perp$ contain the diagonals $\ora{g}$ and $\ora{h}$. We
+$a,b$, then by Equations~\eqref{eq:Rn-meas}
+and~\eqref{eq:Rn-perp-meas}, both $\mu(R_{a,b})>0$ and
+$\mu(R_{a,b}^{\perp})>0$.
+\DPTtodo{I believe appropriately interpreted neither $R_{a,b}$ nor
+  $R_{g,h}^\perp$ contain the diagonals $\ora{a}$ and $\ora{b}$. We
   use that here}
+  \DMGtodo{as defined now,neither $R_{a,b}$ nor
+  $R_{g,h}^\perp$ contain the diagonals $\ora{a}$ and $\ora{b}$. }
 Since for
-every $\gamma \in R_{g,h}$ and every $\gamma' \in R_{g,h}^\perp$, the geodesics
+every $\gamma \in R_{a,b}$ and every $\gamma' \in R_{a,b}^\perp$, the geodesics
 that $\gamma$ and $\gamma'$ cross, this implies that $i(\mu, \mu) >0$,
 and hence $\mu$ is not a measured lamination.
 \end{proof}
@@ -300,7 +320,7 @@ current, then it is only necessary to check disconnected max-smoothing
 to conclude $f$ is a measured lamination, i.e., one does not have to
 check essential self-crossings. It is however true that intersection
 number with a measured lamination also satisfies connected
-max-smoothing; this is Theorem~\ref{mainthm:apps}\ref{item:lam-char}.
+max-smoothing.
 
 \begin{theorem}
 A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity, stability and the \emph{max-smoothing property}:
@@ -332,12 +352,13 @@ Bonahon gives an algebraic characterization for a geodesic current to be a Liouv
    \label{thm:bonahonliouville}
 \end{theorem}
 \DPTtodo[inline]{Do we need to worry about atoms in above statement?}
+\DMGtodo{apparently not, it follows from this condition that the current has no atoms. That's how Bonahon states it.}
 
 We use this to prove the following characterization (Theorem~\ref{mainthm:apps}\ref{item:hyp-char}).
 
 \begin{theorem}
   A functional $f$ is dual to a hyperbolic Liouville current if and only
-  if it satisfies additivity, stability, and,
+  if it satisfies smoothing, additivity, stability, and,
     for any pair of crossing elements $g, h \in \pi_1(S)$ we have the \emph{$\lambda$-smoothing relation}  \[
         \lambda \left(g\right)\lambda \left(h\right) = \lambda \left(gh\right) + \lambda \left(gh^{-1}\right),
   \]
@@ -346,30 +367,13 @@ We use this to prove the following characterization (Theorem~\ref{mainthm:apps}\
   \end{theorem}
 \begin{proof}
 The proof is similar to that of Theorem~\ref{thm:char_laminations}.
-
-\DPTtodo[inline]{Moved the easy direction first}
-If $\mu$ is hyperbolic Liouville current then the disconnected $\lambda$-smoothing property follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}).
-
-
-\DPTtodo[inline]{This seems to be missing the short argument that
-  the eqn above implies smoothing. (In
-  Theorem~\ref{thm:char_liouville_strong} a more precise version is
-  invoked.) Also, we invoke disconnected
-  $\Rightarrow$ connected smoothing
-  here, right?}
+If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The disconnected $\lambda$-smoothing property follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}).
 For the other direction, by the assumptions on $f$, there exists a
-geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed
+geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
-It remains to show that $\mu_f$ is a Liouville current.
-Given elements $g, h \in \pi_1(\Sigma)$ with $\ora{g}, \ora{h}$ crossing, we consider powers $g^n$ and $h^n$, and obtaining a corresponding hyperbolic parallelogram $H_n$ for $g^n,h^n$, we obtain the set $R_n \coloneqq R_{g^n,h^n}$ defined as in the proof of Theorem~\ref{thm:char_laminations}.
-By the same considerations as in that proof, letting $a_n=g^n$, $b_n=h^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
-we get
-\[\mu(R_n)=A_n + B_n-C_n\]
-and
-\[
-\mu(R_n^\perp)=A_n + B_n -D_n,
-\]
-where $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$ and $D_n=f(a_nb_n)/2$.
+It remains to show that $\mu_f$ is a Liouville current, which is where the disconnected $\lambda$-smoothing will play a role.
+Given elements $a, b \in \pi_1(\Sigma)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
+Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 Now, we compute
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
@@ -386,14 +390,12 @@ Therefore, we have
 \[
 \lim_{n\to\infty} e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})}=1.
 \]
-We also have $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\bigcup_{n \geq 1} R_n^{\perp} = B_{g,h}^{\perp}$, where $B_{g,h}^{\perp}$ denotes the box complementary to $B_{g,h}$, and $B_{g,h}$ is the open box determined by the endpoints of $g$ and $h$.
-Thus, we have $\lim_n \mu(R_n)=\mu(B_{g,h})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
-Therefore, we have the relation
+Since, by Lemma~\ref{lem:measures_parallelogram} (2) we also have $\lim_n \mu(R_n)=\mu(B_{a,b})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{a,b}^{\perp})$, we obtain the relation
 \[
-e^{-\mu(B_{g,h})} + e^{-\mu(B_{g,h}^{\perp})} =1
+e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
-for any intersecting pair $g,h \in \pi_1(\Sigma)$.
-As in the previous proof, by density of $B_{g,h}$ in the space of boxes of geodesics as $g,h$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $g_n, h_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{g_n, h_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$, and hence
+for any intersecting pair $a,b \in \pi_1(\Sigma)$.
+As in the proof of Theorem~\ref{thm:char_laminations},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(\Sigma)$. Hence, given any box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$. Hence,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
@@ -413,7 +415,7 @@ Hamenst\"adt
 
 Using this, we can prove the following.
 
-\begin{theorem}
+\begin{theorem} \DMGtodo{I'm thinking about this. I think the conditions are too strong, I think one can find points satisfying the lambda-length condition but not this condition}
 A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, and the following inequalities.
     There exists a constant $C \geq 1$ so that, for any pair of \emph{crossing} elements $g,h \in \pi_1(S)$, we have
     \begin{gather}
@@ -426,26 +428,38 @@ A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and onl
 \begin{proof}
 The assumptions can be written as 
  \begin{gather}
-     1/C \leq  \frac{1- \exp \left[f\left([gh]\right)/2 - f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ -f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C\\
-    1/C \leq \frac{1- \exp \left[f\left([gh^{-1}]\right)/2 - f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
+     1/C \leq  \frac{1- \exp \left[f\left([g][h]\right)/2 - f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ -f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C\\
+    1/C \leq \frac{1- \exp \left[f\left([g][h]\right)/2 - f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
 \end{gather}
 \DPTtodo{I feel like there are some steps missing. Does this use the
   $A_n,B_n,\dots$?}
-    Now, as in the proof of Theorem~\ref{thm:char_liouville}, this gives us
+    Following the setup of Lemma~\ref{lem:measures_parallelogram}, the above equations imply, for $n \in \mathbb{N}$,
+         \begin{gather}
+    1/C \leq \frac{1 - e^{-\mu(R_n)}}{e^{-\mu(R_n^{\perp})}} \leq C\\
+    1/C \leq \frac{1 - e^{-\mu(R_n^{\perp})}}{e^{-\mu(R_n)}} \leq C
+    \end{gather}
+    By Lemma~\ref{lem:measures_parallelogram} (2), the above inequalities imply
      \begin{gather}
     1/C \leq \frac{1 - e^{-\mu(B_{g,h})}}{e^{-\mu(B_{g,h}^{\perp})}} \leq C\\
     1/C \leq \frac{1 - e^{-\mu(B_{g,h}^{\perp})}}{e^{-\mu(B_{g,h})}} \leq C
     \end{gather}
-    and, again, by the same density argument in that proof, one gets
-    the same inequalities for a general box of geodesics $B$. Hence,
+    
+    The same inequalities follow for a general box of geodesics $B$ by a density argument identical to the proof of Theorem~\ref{thm:char_liouville}. Hence,
     by Theorem~\ref{thm:ham}, we see that $\mu$ is a hyperbolic Liouville current.
 On the other hand, if $\mu$ is hyperbolic Liouville current then the
-disconnected $\lambda$-smoothing property is satisfied, and the
-condition of the statement then follows by the same argument as in the
-proof of Theorem~\ref{thm:char_liouville}
-\DPTtodo{Did the $C=1$ argument get edited out?}
-(which shows it is satisfied
-with $C=1$).
+disconnected $\lambda$-smoothing property is satisfied. Since
+\[
+e^{f(g)/2}\leq \lambda(a) = 2\cosh(f(g)/2) \leq 2 e^{f(g)/2}
+\]
+for every $g \in \pi_1(S)$,
+from the $\lambda$-disconnected smoothing property for a crossing pair $(g,h)$ we obtain
+\[
+e^{f(g)/2}e^{f(h)/2} \leq \lambda(g)\lambda(h) = \lambda(gh) + \lambda(gh^{-1}) \leq 2\left(e^{f(gh)/2} + e^{f(gh^{-1})/2} \right)
+\]
+and
+\[
+4e^{f(g)/2}e^{f(h)/2} \geq \lambda(g)\lambda(h) = \lambda(gh) + \lambda(gh^{-1}) \geq e^{f(gh)/2} + e^{f(gh^{-1})/2}.
+\]
 \end{proof}
 
 %%% Local Variables:
