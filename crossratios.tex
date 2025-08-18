@@ -97,45 +97,32 @@ Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref
 We divide the proof into two cases, depending on the type of smoothing (connected vs disconnected).
 Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersections_group} are satisfied.
 
-\subsection{Connected smoothing}
-
-Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
-
-
-\begin{lemma}
-Let $a,b \in \pi_1(S)$ with $(a,b)$ $R$-parallel..
-Then, we have
-\[
-\ell(ab) \geq \ell(a) + \ell(b).
-\]
-\label{lem:crossratio_connected_smoothing}
-\end{lemma}
-
-\begin{proof}
-
-
-    \begin{figure}[ht!]
-     \centering
-\resizebox{80mm}{!}{\svgfignormal{c8}}
-    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
-\end{figure} 
-First, note that $A \cdot b^-$ is in the interval $(b^-, ab^+)$. Indeed, $a \cdot b^-$ is forward of $b^-$ in the ccw order by NS dynamics of $a$, but also since $ba^+$ is forward of $b^-$, it follows, by conjugating by $a$, that $ab^+$ is forward of $a \cdot b^-$.
-The precise location of $a \cdot b^-$ within $(b^-, ab^+)$ will be immaterial in the following argument.
-We observe (compare Figure~\ref{fig:c8}) that the fundamental domain for $ab$ given by
-$[ab^+, ab^-) \times [b^-, A \cdot b^-)$ 
-contains the non-intersecting boxes $[a^+, a^-) \times [ b^-, a \cdot b^-)$ and $[b^-, b^+) \times [ba^-, ab^-)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
-using positivity of cross-ratio, additivity and flip-invariance, we get
-\[
-\ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).\qedhere
-\]
-\end{proof}
-
-
 
 \subsection{Disconnected smoothing}
 
 We will verify Equation~\ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
 In order to prove this, we will show that connected smoothing of $\ell$, together with the extra control given by the cross-ratio, imply disconnected smoothing.
+
+We will use the following intermediate classical lemma.
+\begin{lemma}
+Given any sequence of real numbers $a_{n}$ satisfying that there exist a uniform constant $K>0$ so that for all integers $m,n \geq 0$
+\[
+a_{m+n} \leq a_m + a_n + K
+\]
+(respectively,
+\[
+a_{m+n} \geq a_m + a_n + K),
+\]
+we have
+\[
+\lim_n \frac{a_n}{n} = \inf_n \frac{a_n}{n} \leq a_1
+\]
+(respectively,
+\[
+\lim_n \frac{a_n}{n} = \sup_n \frac{a_n}{n} \geq a_1
+\]
+\label{lem:fekete}
+\end{lemma}
 
 \begin{lemma}
 Let $a, b \in \pi_1(S)$ so that $(b,a)$ are $R$-crossing.
@@ -166,12 +153,19 @@ Then
 \end{figure} 
 
 \begin{proof}
-The strategy of the proof will be to show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
+The strategy of the proof will be in two steps. First, we will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
 In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bounded above and below by constants independent of $n$.
 This will involves breaking each fundamental domain of $a^nb^n, a^n, b^n$ into boxes, cancelling matching ones and showing that the non-cancelling ones are contained in bigger but bounded boxes which
 are independent of $n$.
 
-For the following, compare Fig~\ref{fig:rcross_cr}. Consider the fundamental domain $F(ab)$ of $ab$ given by $F(ab)=(ab^+, ab^-) \times [Ab^+, a \cdot bA^+)$.
+Secondly, we will show that the sequence $a_n \coloneqq \ell(a^n b^n)$ is quasi-super-additive, which will imply
+\[
+\lim_n \frac{\ell(a^nb^n)}{n} \geq \ell(ab)
+\]
+by Fekete's lemma~\ref{lem:fekete}. Combining both, the result will follow.
+
+Let's proceed with Step 1.
+In the following, compare Fig~\ref{fig:rcross_cr}. Consider the fundamental domain $F(ab)$ of $ab$ given by $F(ab)=(ab^+, ab^-) \times [Ab^+, a \cdot bA^+)$.
 We will partition $F(ab)$ into four subboxes, $F(ab)=R_1 \cup R_2 \cup R_3 \cup R_4$, given by:
 \begin{enumerate}
 \item $R_1(a,b) = (a^+, ab^-) \times [bA^+, a \cdot bA^+)$,
@@ -214,12 +208,121 @@ $R_9'(a^n, b^n) \subset (b^+, a^+) \times (b^-, Ab^+)$, by a similar argument as
 This shows that all the terms are bounded.
 
 As a consequence, dividing Equation~\ref{eq:difference} by $n$ and letting $n$ go to infinity, we get
+\begin{equation}
+\lim_n \frac{\ell(a^n b^n)}{n} = \ell(a) + \ell(b).
+\label{eq:limit_anbn}
+\end{equation}
+
+
+
+Now, as Step 2, we will show that there exists $K=K(a,b)>0$ so that for all $m,n>0$,
 \[
-\lim_n \frac{\ell(a^n b^n)}{n} = \ell(a) + \ell(b)
+\ell(a^m b^m) + \ell(a^nb^n) \leq \ell(a^{m+n}b^{m+n}) + K.
 \]
-Now, by the same argument as in the second part of Proposition~\ref{prop:cont_conn_disc},
-disconnected smoothing follows.
-\DMGtodo{this may warrant updating Proposition 5.2 to something more general where the assumption is that the limit exists, and then extract a corollary there assuming continuity. Then we could cite the general proposition here.}
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr_sa}}
+    \caption{Checking $\ell(a^m b^m) + \ell(a^nb^n) \leq \ell(a^{m+n}b^{m+n}) + K$}\label{fig:rcross_cr_sa}
+\end{figure}
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr_sa3}}
+    \caption{Checking $\ell(a^m b^m) + \ell(a^nb^n) \leq \ell(a^{m+n}b^{m+n}) + K$}\label{fig:rcross_cr_sa3}
+\end{figure}
+
+Consider the fundamental domains for $a^{m+n} b^{m+n}$, $a^m b^m$, $a^n b^n$ given, respectively, by
+\begin{align*}
+    F(a^{m+n} b^{m+n})=((a^{m+n} b^{m+n})^+,(a^{m+n} b^{m+n})^-) \times [b^+, a^{m+n} \cdot b^+) \\
+    F(a^{m} b^{m})=((a^{m} b^{m})^+, (a^{m} b^{m})^-) \times [b^+, a^m \cdot b^+) \\  
+    F(a^{n} b^{n})=((a^{n} b^{n})^+, (a^{n} b^{n})^-) \times [b^+, a^n \cdot b^+) \\ 
+\end{align*}
+depicted in Figure~\ref{fig:rcross_cr_sa}, where we consider $m \geq n$.
+Applying $A^n$ to the fundamental domain of $a^{m+n} b^{m+n}$ we get the new fundamental domain for $A^n \cdot a^{m+n} b^{m+n}$ given by
+\[
+F'(a^{m+n} b^{m+n})=(A^n \cdot (a^{m+n} b^{m+n})^+,A^n \cdot (a^{m+n} b^{m+n})^-) \times [A^n \cdot b^+, a^m \cdot b^+).
+\]
+We have
+\[
+F(a^{m} b^{m}) \subset F'(a^{m+n} b^{m+n}).
+\]
+On the other hand, consider the new fundamental domain for $A^n \cdot a^nb^n$ given by
+\[
+F'(a^nb^n) = A^n \cdot F(a^nb^n) = ((b^n a^n)^+, (b^n a^n)^-) \times [A^n \cdot b^+, b^+).
+\]
+\end{proof}
+This can be partitioned into
+\begin{align*}
+    B_1=[(b^n a^n)^+, A^n \cdot(a^{m+n} b^{m+n})^+]\times [A^n \cdot b^+, b^+) \\
+    B_2=(A^n \cdot(a^{m+n} b^{m+n})^+, A^n \cdot (a^{m+n} b^{m+n})^-) \times [A^n \cdot b^+, b^+) \\  
+    B_3=[A^n \cdot (a^{m+n} b^{m+n})^-, (b^n a^n)^-] \times [A^n \cdot b^+, b^+). \\ 
+\end{align*}
+Observe that $B_2 \subset F'(a^{m+n} b^{m+n})$, and $B_2 \cap F(a^m b^m) =\emptyset$.
+Finally, we show that $B_1$ and $B_3$ have bounded cross-ratio independently of $n,m$.
+\begin{align*}
+    B^n \cdot B_1 = ((a^n b^n)^+, B^n A^n \cdot (a^{m+n} b^{m+n})) \times [B^n A^n \cdot b^+, b^+) \\
+    \subset ((a^n b^n)^+, B^n A^n \cdot a^+) \times [B^n A^n \cdot b^+, b^+) \\
+    \subset (ab^+, b^-) \times [a^-, b^+).
+\end{align*}
+To conclude, we show that $B_3$ also has bounded cross-ratio independently of $n,m$.
+\begin{align*}
+    a^n \cdot B_3 = [(a^{m+n} b^{m+n})^-, (a^n b^n)^-] \times [b^+, a^n b^+) \subset (a^-, ab^-) \times [b^+, a^+).
+\end{align*}
+All in all, there exist a constant $K=K(a,b)>0$ so that
+\begin{equation}
+[B_2] \leq [F'(a^n b^n)] = [B_1] + [B_2] + [B_3] \leq K + [B_2].
+\label{eq:quasi_superadditive}
+\end{equation}
+By additivity of cross-ratio, we have 
+\[
+[B_2] + [F(a^m b^m)] \leq [F'(a^{m+n}b^{m+n})]
+\]
+Then, combining this with Equation~\ref{eq:quasi_superadditive}, the $\Gamma$-invariance of cross-ratio, and the definition of period, we get
+\[
+\ell(a^n b^n) + \ell(a^m b^m) \leq \ell(a^{m+n}b^{m+n}) + K
+\]
+i.e., the sequence $a_{n} \coloneqq \ell(a^{n}b^{n})$ is $K$-super-additive, and so by Fekete's lemma~\ref{lem:fekete}, we get
+\[
+\lim_n \frac{\ell(a^n b^n)}{n} = \lim_n \frac{a_n}{n} \geq a_1 = \ell(ab).
+\]
+Combining this with Equation~\ref{eq:limit_anbn}, we get
+\[
+\ell(a) + \ell(b) \geq \ell(ab),
+\]
+as desired.
+\end{proof}
+
+\subsection{Connected smoothing}
+
+Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
+
+\begin{lemma}
+Let $a,b \in \pi_1(S)$ with $(a,b)$ $R$-parallel..
+Then, we have
+\[
+\ell(ab) \geq \ell(a) + \ell(b).
+\]
+\label{lem:crossratio_connected_smoothing}
+\end{lemma}
+
+\begin{proof}
+
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{c8}}
+    \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
+\end{figure} 
+First, note that $A \cdot b^-$ is in the interval $(b^-, ab^+)$. Indeed, $a \cdot b^-$ is forward of $b^-$ in the ccw order by NS dynamics of $a$, but also since $ba^+$ is forward of $b^-$, it follows, by conjugating by $a$, that $ab^+$ is forward of $a \cdot b^-$.
+The precise location of $a \cdot b^-$ within $(b^-, ab^+)$ will be immaterial in the following argument.
+We observe (compare Figure~\ref{fig:c8}) that the fundamental domain for $ab$ given by
+$[ab^+, ab^-) \times [b^-, A \cdot b^-)$ 
+contains the non-intersecting boxes $[a^+, a^-) \times [ b^-, a \cdot b^-)$ and $[b^-, b^+) \times [ba^-, ab^-)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
+using positivity of cross-ratio, additivity and flip-invariance, we get
+\[
+\ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).\qedhere
+\]
 \end{proof}
 
 \begin{theorem}
