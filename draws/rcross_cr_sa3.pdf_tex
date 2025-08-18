@@ -1,0 +1,72 @@
+%% Creator: Inkscape 1.3 (0e150ed6c4, 2023-07-21), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'rcross_cr_sa3.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{220.53599739bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.99216457)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{rcross_cr_sa3.pdf}}%
+    \put(0.47588515,0.74253059){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^nb^n$\end{tabular}}}}%
+    \put(0.64366508,0.7041235){\color[rgb]{0,0.72156863,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^na^n$\end{tabular}}}}%
+    \put(0.55447062,0.95416288){\color[rgb]{0.63529412,0.43137255,0.74117647}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^{m} \cdot b^+$\end{tabular}}}}%
+    \put(1.0075848,0.71890814){\color[rgb]{0.63529412,0.43137255,0.74117647}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$A^{n} \cdot b^+$\end{tabular}}}}%
+    \put(0.31287831,0.81088181){\color[rgb]{0,0.43137255,0.80392157}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^mb^m$\end{tabular}}}}%
+    \put(0.26003222,0.52278099){\color[rgb]{0.63529412,0.43137255,0.74117647}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^{m+n}b^{m+n}$\end{tabular}}}}%
+    \put(0.23751855,0.17929901){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(a^nb^n)^-$\end{tabular}}}}%
+    \put(0.19378358,0.22990236){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^-$\end{tabular}}}}%
+    \put(0.84985655,0.8261796){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^+$\end{tabular}}}}%
+    \put(0.25191285,0.78024029){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^+$\end{tabular}}}}%
+    \put(0.78166219,0.15538206){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^-$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{rcross_cr_sa3.pdf}}%
+    \put(0.23485323,0.91852333){\color[rgb]{0.63529412,0.43137255,0.74117647}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$A^n \cdot (a^{m+n}b^{m+n})^+$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{rcross_cr_sa3.pdf}}%
+  \end{picture}%
+\endgroup%
