@@ -54,16 +54,17 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{c8.pdf}}%
-    \put(0.81485602,0.70719213){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ba^+$\end{tabular}}}}%
-    \put(0.11346752,0.1643031){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ba^-$\end{tabular}}}}%
-    \put(0.1434886,0.8307626){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ab^+$\end{tabular}}}}%
-    \put(0.91553742,0.12930112){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$ab^-$\end{tabular}}}}%
+    \put(0.81485602,0.70719213){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(b^na^n)^+$\end{tabular}}}}%
+    \put(0.11346752,0.1643031){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(b^na^n)^-$\end{tabular}}}}%
+    \put(0.1434886,0.8307626){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(a^nb^n)^+$\end{tabular}}}}%
+    \put(0.91553743,0.12930112){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(a^nb^n)^-$\end{tabular}}}}%
     \put(0.96763431,0.17556223){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^-$\end{tabular}}}}%
     \put(0.98839301,0.70143783){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{c8.pdf}}%
     \put(0.04555627,0.71734955){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^+$\end{tabular}}}}%
     \put(0.03300101,0.24071906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^-$\end{tabular}}}}%
-    \put(0.50944546,0.84239277){\color[rgb]{0,0.43137255,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a \cdot b^-$\end{tabular}}}}%
+    \put(0.43132043,0.69482333){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a^n \cdot \ora{b}$\end{tabular}}}}%
+    \put(0.32685858,0.28109191){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B^n \cdot \ora{a}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{c8.pdf}}%
   \end{picture}%
 \endgroup%

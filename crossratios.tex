@@ -153,17 +153,17 @@ Then
 \end{figure} 
 
 \begin{proof}
-The strategy of the proof will be in two steps. First, we will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
+The strategy of the proof will be in two steps. 
+\begin{itemize} \item Step 1. We will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
 In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bounded above and below by constants independent of $n$.
-This will involves breaking each fundamental domain of $a^nb^n, a^n, b^n$ into boxes, cancelling matching ones and showing that the non-cancelling ones are contained in bigger but bounded boxes which
+This will involve breaking each fundamental domain of $a^nb^n, a^n, b^n$ into boxes, cancelling matching ones and showing that the non-cancelling ones are contained in bigger but bounded boxes which
 are independent of $n$.
-
-Secondly, we will show that the sequence $a_n \coloneqq \ell(a^n b^n)$ is quasi-super-additive, which will imply
+\item Step 2. We will show that the sequence $a_n \coloneqq \ell(a^n b^n)$ is quasi-super-additive, which will imply
 \[
 \lim_n \frac{\ell(a^nb^n)}{n} \geq \ell(ab)
 \]
 by Fekete's lemma~\ref{lem:fekete}. Combining both, the result will follow.
-
+\end{itemize}
 Let's proceed with Step 1.
 In the following, compare Fig~\ref{fig:rcross_cr}. Consider the fundamental domain $F(ab)$ of $ab$ given by $F(ab)=(ab^+, ab^-) \times [Ab^+, a \cdot bA^+)$.
 We will partition $F(ab)$ into four subboxes, $F(ab)=R_1 \cup R_2 \cup R_3 \cup R_4$, given by:
@@ -239,7 +239,7 @@ Consider the fundamental domains for $a^{m+n} b^{m+n}$, $a^m b^m$, $a^n b^n$ giv
     F(a^{n} b^{n})=((a^{n} b^{n})^+, (a^{n} b^{n})^-) \times [b^+, a^n \cdot b^+) \\ 
 \end{align*}
 depicted in Figure~\ref{fig:rcross_cr_sa}, where we consider $m \geq n$.
-Applying $A^n$ to the fundamental domain of $a^{m+n} b^{m+n}$ we get the new fundamental domain for $A^n \cdot a^{m+n} b^{m+n}$ given by
+Applying $A^n$ to the fundamental domain of $a^{m+n} b^{m+n}$ we get a fundamental domain for $A^n \cdot a^{m+n} b^{m+n}$ given by
 \[
 F'(a^{m+n} b^{m+n})=(A^n \cdot (a^{m+n} b^{m+n})^+,A^n \cdot (a^{m+n} b^{m+n})^-) \times [A^n \cdot b^+, a^m \cdot b^+).
 \]
@@ -251,7 +251,7 @@ On the other hand, consider the new fundamental domain for $A^n \cdot a^nb^n$ gi
 \[
 F'(a^nb^n) = A^n \cdot F(a^nb^n) = ((b^n a^n)^+, (b^n a^n)^-) \times [A^n \cdot b^+, b^+).
 \]
-\end{proof}
+
 This can be partitioned into
 \begin{align*}
     B_1=[(b^n a^n)^+, A^n \cdot(a^{m+n} b^{m+n})^+]\times [A^n \cdot b^+, b^+) \\
@@ -259,26 +259,45 @@ This can be partitioned into
     B_3=[A^n \cdot (a^{m+n} b^{m+n})^-, (b^n a^n)^-] \times [A^n \cdot b^+, b^+). \\ 
 \end{align*}
 Observe that $B_2 \subset F'(a^{m+n} b^{m+n})$, and $B_2 \cap F(a^m b^m) =\emptyset$.
-Finally, we show that $B_1$ and $B_3$ have bounded cross-ratio independently of $n,m$.
+Furthermore, $B_1$ can in turn be partitioned into two subboxes,
 \begin{align*}
-    B^n \cdot B_1 = ((a^n b^n)^+, B^n A^n \cdot (a^{m+n} b^{m+n})) \times [B^n A^n \cdot b^+, b^+) \\
-    \subset ((a^n b^n)^+, B^n A^n \cdot a^+) \times [B^n A^n \cdot b^+, b^+) \\
-    \subset (ab^+, b^-) \times [a^-, b^+).
+    B_1'&=[(b^n a^n)^+, A^n \cdot(a^{m} b^{m})^+)\times [A^n \cdot b^+, b^+) \\
+    B_1''&=(A^n \cdot(a^{m} b^{m})^+, A^n \cdot(a^{m+n} b^{m+n})^+]\times [A^n \cdot b^+, b^+).
 \end{align*}
+First, note that
+\[
+a^n \cdot  B_1'=[(a^n b^n)^+, (a^{m} b^{m})^+]\times [b^+, a^n \cdot b^+) \\
+\]
+and so 
+$a^n \cdot  B_1' \subset F'(a^{m+n} b^{m+n})$, with $a^n \cdot  B_1' \cap B_2 = \emptyset$ and  $a^n \cdot  B_1' \cap F(a^m b^m) =\emptyset$, that is, $a^n \cdot  B_1'$ can also be contained in the fundamental domain of $A^n \cdot a^{m+n} b^{m+n}$ without intersecting the previous boxes we had already translated to it.
+Thus, by additivity and positivity of cross-ratio, we have 
+\begin{equation}
+[a^n \cdot B_1'] + [B_2] + [F(a^m b^m)] = [B_1'] + [B_2] + [F(a^m b^m)] \leq [F'(a^{m+n}b^{m+n})].
+\label{eq:first_inequality}
+\end{equation}
+
+Second, we claim that
+$B_1''$ and $B_3$ have bounded cross-ratio independently of $n,m$.
+Indeed, note that
+\begin{align*}
+    B_1'' = [(a^{m-n} b^{m}a^n)^+, (a^{m} b^{m}a^n)^+]\times [ b^+, a^n \cdot b^+) \\
+    \subset (ba^+, a^+) \times [B^n A^n \cdot [a^-, b^+),
+\end{align*}
+where the last inclusion is justified since $((a^{m-n} b^{m}a^n)^+, (a^{m} b^{m}a^n)^+) \subset (ba^+, a^+)$ because $m-n>0$.
 To conclude, we show that $B_3$ also has bounded cross-ratio independently of $n,m$.
 \begin{align*}
     a^n \cdot B_3 = [(a^{m+n} b^{m+n})^-, (a^n b^n)^-] \times [b^+, a^n b^+) \subset (a^-, ab^-) \times [b^+, a^+).
 \end{align*}
 All in all, there exist a constant $K=K(a,b)>0$ so that
 \begin{equation}
-[B_2] \leq [F'(a^n b^n)] = [B_1] + [B_2] + [B_3] \leq K + [B_2].
+[F'(a^n b^n)] = [B_1] + [B_2] + [B_3] = [B_1'] + [B_1''] + [B_2] + [B_3]\leq K + [B_2] + [B_1'].
 \label{eq:quasi_superadditive}
 \end{equation}
-By additivity of cross-ratio, we have 
+Then, combining Equation~\ref{eq:first_inequality} with Equation~\ref{eq:quasi_superadditive}, we get
 \[
-[B_2] + [F(a^m b^m)] \leq [F'(a^{m+n}b^{m+n})]
+[F'(a^n b^n)] + [F(a^m b^m)] \leq [F'(a^{m+n}b^{m+n})] + K.
 \]
-Then, combining this with Equation~\ref{eq:quasi_superadditive}, the $\Gamma$-invariance of cross-ratio, and the definition of period, we get
+ Finally, the $\Gamma$-invariance of cross-ratio, and the definition of period yield
 \[
 \ell(a^n b^n) + \ell(a^m b^m) \leq \ell(a^{m+n}b^{m+n}) + K
 \]
@@ -314,15 +333,42 @@ Then, we have
 \resizebox{80mm}{!}{\svgfignormal{c8}}
     \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
 \end{figure} 
-First, note that $A \cdot b^-$ is in the interval $(b^-, ab^+)$. Indeed, $a \cdot b^-$ is forward of $b^-$ in the ccw order by NS dynamics of $a$, but also since $ba^+$ is forward of $b^-$, it follows, by conjugating by $a$, that $ab^+$ is forward of $a \cdot b^-$.
-The precise location of $a \cdot b^-$ within $(b^-, ab^+)$ will be immaterial in the following argument.
-We observe (compare Figure~\ref{fig:c8}) that the fundamental domain for $ab$ given by
-$[ab^+, ab^-) \times [b^-, A \cdot b^-)$ 
-contains the non-intersecting boxes $[a^+, a^-) \times [ b^-, a \cdot b^-)$ and $[b^-, b^+) \times [ba^-, ab^-)$, which are a fundamental domains for $a$ and $B$, respectively. Thus,
-using positivity of cross-ratio, additivity and flip-invariance, we get
+Suppose $(a,b)$ are R-parallel. We first claim that $(b^m a^m, a^nb^n)$ R-cross for every $m,n \geq 1$.
+This follows from induction on $m$ with base case $m=1$ given by Lemma~\ref{lem:anbn_vs_bkak}.
+\DMGtodo{prove this, perhaps add it in the fundamental lemmas, also add the right endpoints}.
+Since by Lemma~\ref{lem:crossratio_disconnected_smoothing} we already know disconnected smoothing for $\ell$, it follows that for every $n,m \geq 1$, we have
 \[
-\ell(ba) \geq \ell(a) + \ell(B) = \ell(a) + \ell(b).\qedhere
+\ell(a^n b^n) + \ell(b^m a^m) \geq \ell((b^m a^m)(a^n b^n)) = \ell(a^{n+m}b^{n+m}),
 \]
+i.e. the sequence $a_n \coloneqq \ell(a^n b^n)$ is sub-additive. By Fekete's lemma~\ref{lem:fekete}, 
+we have
+\[
+\ell(ab) \geq \lim_n \frac{\ell(a^nb^n)}{n}.
+\]
+We will now prove that, for sufficiently large $n$, we have
+\[
+\ell(a^nb^n) \geq \ell(a^n) + \ell(b^n).
+\]
+Indeed, take $n_0$ large enough so that for all $n \geq n_0$, we have $\ora{a}$ and $B^n \cdot \ora{a}$ do not cross, and so that $\ora{b}$ and $a^n \cdot \ora{b}$ do not cross, as sketched in Figure~\ref{fig:c8}.
+This can be achieved by NS dynamics of $a$ and $B$.
+Then 
+\[
+(a^+, a^-) \times [b^-, a^n \cdot b^-) \subset ((a^n b^n)^+, a^n (b^n)^-) \times [b^-, a^n \cdot b^-) 
+\]
+and
+\[
+(b^-, b^+) \times [a^+, B^n \cdot a^+) \subset ((a^n b^n)^+, (a^n b^n)^-) \times [b^-, a^n \cdot b^-) 
+\]
+and they both included without overlap, proving the claim.
+Hence, 
+\[
+\lim_n \frac{\ell(a^nb^n)}{n} \geq \ell(a) + \ell(b),
+\]
+and thus
+\[
+\ell(ab) \geq \ell(a) + \ell(b),
+\]
+as desired.
 \end{proof}
 
 \begin{theorem}
