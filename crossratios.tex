@@ -39,6 +39,11 @@ It is easily checked that these satisfy the properties of generalized cross-rati
 and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios}, when $\mu$ is a closed curve).
 If $\mu$ has no atoms, the two generalized cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are equal, since the measure of the boundary of any box of geodesics is zero.
 
+\DPTtodo[inline]{Somewhere around here, put in some discussion about
+  how a cross-ratio gives a finitely additive function on the ring of
+  half-open boxes. This gives the language we implicitly use in the
+  proof of Lemma~\ref{lem:crossratio_disconnected_smoothing}}
+
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the \emph{period} function of a curve $C=[g]$ be
 \[
 \ell(g) \coloneqq [g^+, x , g \cdot x, g^- ],
@@ -125,7 +130,7 @@ we have
 \end{lemma}
 
 \begin{lemma}
-Let $a, b \in \pi_1(S)$ so that $(b,a)$ are $R$-crossing.
+Let $a, b \in \pi_1(S)$ so that $(\ora{b},\ora{a})$ are $R$-crossing.
 Then
 \[
 \ell(a) + \ell(b) \geq \ell(ab).
@@ -133,12 +138,100 @@ Then
 \label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 
-    \begin{figure}[ht!]
+\begin{proof}[New proof of Step 1]
+The strategy of the proof will be in two steps. 
+\begin{itemize} \item Step 1. We will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
+In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bounded above and below by constants independent of $n$.
+This will involve breaking each fundamental domain of $a^nb^n, a^n, b^n$ into boxes, cancelling matching ones and showing that the non-cancelling ones are contained in bigger but bounded boxes which
+are independent of $n$.
+\item Step 2. We will show that the sequence $a_n \coloneqq \ell(a^n b^n)$ is quasi-super-additive, which will imply
+\[
+\lim_n \frac{\ell(a^nb^n)}{n} \geq \ell(ab)
+\]
+by Fekete's lemma~\ref{lem:fekete}.
+\end{itemize}
+Combining these two, the result follows.
+
+We proceed with Step~1. We start by giving a decomposition of
+fundamental domains $F(ab)$, $F(a)$, $F(b)$ for $\ora{ab}$, $\ora{a}$,
+$\ora{b}$; this will naturally generalize to powers.
+\DPTtodo{Make figures for revised proof. Change the $F(x)$ so they are
+half-open in both factors}
+Start with the fundamental domain $F(ab) = (ab^+,ab^-) \times [Ab^+, a
+\cdot bA^+)$ for $\langle ab \rangle$, and write it as the union
+$F(ab) = F_1 \cup F_2$ where
+\begin{align*}
+  F_1 &= (ab^+,ab^-) \times [Ab^+, bA^+) \\
+  F_2 &= (ab^+,ab^-) \times [bA^+, a \cdot bA^+).
+  \\\intertext{Translate $F_2$ by $A$ to get}
+  F_2 \equiv F_2' &= (ba^+,ba^-) \times [Ab^+, bA^+)
+  \\\intertext{so that}
+  F(ab) \equiv F_1 + F_2' &= \bigl((ab^+,ab^-) + (ba^+,ba^-)\bigr)
+                            \times [Ab^+, bA^+)
+\end{align*}
+where in the last step we switch to multiset notation. (Later we will
+further generalize to virtual multisets.)
+
+We can similarly find fundamental domains $F(a)$, $F(b)$:
+\begin{align*}
+  F(a) &= (a^+, a^-) \times [Ab^+, bA^+)\\
+  F(b) &= (b^+, b^-) \times [Ab^+, bA^+).
+\end{align*}
+Then we have
+\DPTtodo{The $R_i$ are currently not quite right wrt endpoints. This
+  is irrelevant and fixed by switching consistently to half-open intervals}
+\begin{align*}
+  F(a) + F(b) - F(ab)
+    &\equiv \bigl((a^+,a^-) + (b^+, b^-) - (ab^+,ab^-) - (ba^+,ba^-)\bigr)
+      \times [Ab^+, bA^+)\\
+    &= \bigl((ba^-,a^-) - (b^-,ab^-) - (ab^+,a^+) + (b^+,ba^+)\bigr)
+      \times [Ab^+, bA^+)\\
+    &= R_1 - R_2 - R_3 + R_4
+\end{align*}
+where the $R_i$ are the terms appearing in the previous equation in
+order.
+
+We now repeat the same decomposition for the $R$-crossing pair
+$\bigl(\ora{a^n},\ora{b^n}\bigr)$, getting regions $R_i(n)$ as above.
+We claim that the cross-ratio of each $R_i(n)$ is uniformly bounded,
+independent of $n$. Specifically, we have
+\begin{align*}
+  R_1(n) \equiv ((a^nb^n)^-,a^-) \times [(b^nA^n)^+, a^n \cdot (b^nA^n)^+)
+    &\subset (b^-,a^-) \times [bA^+, a^+)\\
+  R_2(n) = (b^-,(a^nb^n)^-) \times [(A^nb^n)^+,(b^nA^n)^+)
+    &\subset (b^-,ab^-) \times (a^-,b^+)\\
+  R_3(n) = ((a^nb^n)^+,a^+) \times [(A^nb^n)^+,(b^nA^n)^+)
+    &\subset (a^+,ab^+) \times (a^-,b^+)\\
+  R_4(n) \equiv ((a^nb^n)^+,b^+) \times [B^n\cdot(A^nb^n)^+, (A^nb^n)^+)
+    &\subset (b^+,a^+) \times (b^-, Ab^+)
+\end{align*}
+where in the first and last equations we translate $R_1(n)$ and
+$R_4(n)$ by $a^n$ and $B^n$,
+respectively.
+\DPTtodo[inline]{Insert proof giving $(a^nb^n)^+ \in [ab^+,a^+)$, etc}
+It follows that
+\[
+  \lim_{n \to \infty} \frac{\ell(a^n b^n)}{n} = \ell(a) + \ell(b).
+\]
+\end{proof}
+
+\DPTtodo[inline]{(1) When labeling windows in diagrams, shouldn't both
+  intervals involved get a label (so each label involved appears
+  twice? (2) Would it be easier to read if there were radial lines
+  marking (eg) $ab^+$, to better connect the label with the point on
+  the circle? (Note $a\cdot bA^+$ is currently treated differently
+  from any of the others.) (3) These figures are currently not paying
+  attention to endpoints. Of course that's much less important, but it
+  is also easy to represent graphically once the proof is nailed
+  down.}
+\begin{figure}[ht!]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{rcross_cr}}
-    \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr}
-\end{figure} 
-
+    \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$, part 1.
+      Green: The fundamental domain $F(ab)$ for determining
+      $\ell(ab)$. This decomposes into $R_1$ (red) + $R_2$ (blue) +
+      $R_3$ (purple) + $R_4$ (cyan).}\label{fig:rcross_cr}
+\end{figure}
 
     \begin{figure}[ht!]
      \centering
@@ -152,7 +245,7 @@ Then
     \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr_powers}
 \end{figure} 
 
-\begin{proof}
+\begin{proof}[Old proof]
 The strategy of the proof will be in two steps. 
 \begin{itemize} \item Step 1. We will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
 In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bounded above and below by constants independent of $n$.
