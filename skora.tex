@@ -147,64 +147,6 @@ Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserve
 \label{prop:small}
 \end{theorem}
 
-Even though we will not needed it, as a warm-up, it is worth noticing that a reducible action does not satisfy smoothing.
-
-\begin{lemma}
-Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
-If $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies smoothing, then $(\Gamma, T)$ is irreducible.
-\end{lemma}
-\begin{proof}
-We start with a reducible action and show it cannot satisfy smoothing.
-If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlapping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap coherently, in which case
-\begin{equation}
-\|gh \|=\| g \| + \| h \| \mbox{ and } \|gh^{-1} \| = |\|g \|- \| h \| |,
-\label{eq:reducible1}
-\end{equation}
-or $g,h$ overlap incoherently, in which case
-\begin{equation}
-\|gh^{-1} \| =\| g\| + \| h \| \mbox{ and } \| gh \| = | \| g \| - \| h \||.
-\label{eq:reducible2}
-\end{equation}
-
-Take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
-WLOG, assume $\| a \|<\| x \|$.
-
-\begin{claim}
-Without loss of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
-\end{claim}
-\begin{proof}[Proof of Claim]
-If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. 
-Then $\| ax \| =\| x\|- \|a \|$ and $\| xa^{-1} \| =\| a \| + \| x \|$. Since $\| (xa^{-1})(ax) \| =\| x^2 \|$ is equal to $\| ax \| + \| xa^{-1} \|= 2\| x \|$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
-\end{proof}
-If $(a,x)$ R-cross, we use Equation~\ref{eq:cross-split} in Proposition~\ref{prop:join-split-geom}, with $m=-n$, $a=b$, and $n$ large enough, and choosing some admissible $r$ for the inequalities there, by smoothing,
-\begin{equation}
- \| ax^nax^{-n} \| \geq \| ax^{n+r} \| + \| ax^{-n-r} \|.
- \label{eq:unoriented1}
-\end{equation}
-On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, we have that the left hand side is
-\begin{equation}
-\|ax^nax^{-n} \| = \| ax^n \| - \|ax^{-n} \| = \| a \| + n\| x \| - (n\| x \|-\|a\|) = 2\|a\|
-\label{eq:lhs1}
-\end{equation}
-where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax^n,ax^{-n}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x^n)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-n})$ in the second equality.
-A similar computation, yields the following result for the right hand side:
-\begin{equation}
-\|ax^{n+r}\|=\|a\|+(n+r)\|x\| + (n+r)\|x\|-\|a\| = 2(n+r)\|x\|.
-\label{eq:rhs1}
-\end{equation}
-Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\|a \| \geq (n+r)\|x\|$, which contradicts our assumption.
-\end{proof}
-
-\begin{remark}
-Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows once again that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing. Another example in the setting of the linear extension of extremal length can be seen in Example~\ref{ex:linEL}.
-\label{rmk:reducible_action}
-\end{remark}
-
-
-
-
-Let us now address the proof of Theorem~\ref{prop:small}.
-
 \begin{proof}[Proof of Theorem~\ref{prop:small}]
 We assume $(\Gamma, T)$ is irreducible and preserves axis intersection, and will prove $\| \cdot \|$ satisfies max-smoothing. 
 Assume that for any hyperbolic pair $g,h \in \pi_1(S)$ on $T$ we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}$ and $\ora{h}$ cross, where $T_g$ denotes the axis of $g$ in the tree.
@@ -241,17 +183,11 @@ There are three subcases to consider.
     $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, and the condition is satisfied by the result~\cite[1.8]{CM87:GroupActions}
     \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations. Then, we would have
     $\|gh^{-1}\|=\|g\|+\|h\|>\|gh\|$, so the max-smoothing condition would be violated.
-    We show this cannot happen. 
-    Within this case, there are two subcases to consider. Let $\Delta$ denote the length of the overlap between $T_g$ and $T_h$.
-    \begin{enumerate}
-        \item If $\Delta<\min \{ \| g \|, \| h \| \}$, then $g, h^{-1}$ form a good pair, and thus by Lemma~\ref{lem:oppgoodpair} we have $T_{gh} \cap T_{hg} = \emptyset$, a contradiction.
-        \item If $\Delta \geq \min \{ \| g \|, \| h \| \}$,
-        then, according to Remark~\ref{rmk:powers_goodpair} we take $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. Since $\|g \| + \|h \| = \|gh\|$, by Lemma~\ref{lem:powers_intersect}, we have
+    We show this cannot happen. According to Remark~\ref{rmk:powers_goodpair} there exist $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. Since $\|g \| + \|h \| = \|gh\|$, by Lemma~\ref{lem:powers_intersect}, we have
         \[
           \|g^m h^n \| = m\|g\| + n\|h\|
         \]
         which, by Lemma~\ref{lem:foundation_trees} (i), implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
-\end{enumerate}
     
     \end{enumerate}
         \end{enumerate}
@@ -342,6 +278,7 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 \end{enumerate}
 \end{proof}
 
+
 Now we prove Theorem~\ref{mainthm:skora}.
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
@@ -392,6 +329,61 @@ as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. 
 It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
 Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
+
+A reducible action does not satisfy smoothing: in fact, it satisfies disconnected smoothing, but does not satisfy connected smoothing.
+
+\begin{lemma}
+Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
+If  $(\Gamma, T)$ is reducible, then $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
+\end{lemma}
+\begin{proof}
+We start with a reducible action and show it cannot satisfy smoothing.
+If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlapping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap coherently, in which case
+\begin{equation}
+\|gh \|=\| g \| + \| h \| \mbox{ and } \|gh^{-1} \| = |\|g \|- \| h \| |,
+\label{eq:reducible1}
+\end{equation}
+or $g,h$ overlap incoherently, in which case
+\begin{equation}
+\|gh^{-1} \| =\| g\| + \| h \| \mbox{ and } \| gh \| = | \| g \| - \| h \||.
+\label{eq:reducible2}
+\end{equation}
+Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing.
+
+Now, take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
+WLOG, assume $\| a \|<\| x \|$.
+
+\begin{claim}
+Without loss of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
+\end{claim}
+\begin{proof}[Proof of Claim]
+If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. 
+Then $\| ax \| =\| x\|- \|a \|$ and $\| xa^{-1} \| =\| a \| + \| x \|$. Since $\| (xa^{-1})(ax) \| =\| x^2 \|$ is equal to $\| ax \| + \| xa^{-1} \|= 2\| x \|$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
+\end{proof}
+If $(a,x)$ R-cross, we use Equation~\ref{eq:cross-split} in Proposition~\ref{prop:join-split-geom}, with $m=-n$, $a=b$, and $n$ large enough, and choosing some admissible $r$ for the inequalities there, by smoothing,
+\begin{equation}
+ \| ax^nax^{-n} \| \geq \| ax^{n+r} \| + \| ax^{-n-r} \|.
+ \label{eq:unoriented1}
+\end{equation}
+On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, we have that the left hand side is
+\begin{equation}
+\|ax^nax^{-n} \| = \| ax^n \| - \|ax^{-n} \| = \| a \| + n\| x \| - (n\| x \|-\|a\|) = 2\|a\|
+\label{eq:lhs1}
+\end{equation}
+where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax^n,ax^{-n}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x^n)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-n})$ in the second equality.
+A similar computation, yields the following result for the right hand side:
+\begin{equation}
+\|ax^{n+r}\|=\|a\|+(n+r)\|x\| + (n+r)\|x\|-\|a\| = 2(n+r)\|x\|.
+\label{eq:rhs1}
+\end{equation}
+Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\|a \| \geq (n+r)\|x\|$, which contradicts $\|a\| < \|x\|$.
+Hence, $\| \cdot \|$ cannot satisfy smoothing. Since it satisfies disconnected smoothing, it follows it cannot satisfy connected smoothing.
+\end{proof}
+
+\begin{remark}
+Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows once again that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing. Another example in the setting of the linear extension of extremal length can be seen in Example~\ref{ex:linEL}.
+\label{rmk:reducible_action}
+\end{remark}
 
 
 %%% Local Variables:

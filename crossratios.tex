@@ -106,28 +106,6 @@ Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersect
 \subsection{Disconnected smoothing}
 
 We will verify Equation~\ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
-In order to prove this, we will show that connected smoothing of $\ell$, together with the extra control given by the cross-ratio, imply disconnected smoothing.
-
-We will use the following intermediate classical lemma.
-\begin{lemma}
-Given any sequence of real numbers $a_{n}$ satisfying that there exist a uniform constant $K>0$ so that for all integers $m,n \geq 0$
-\[
-a_{m+n} \leq a_m + a_n + K
-\]
-(respectively,
-\[
-a_{m+n} \geq a_m + a_n + K),
-\]
-we have
-\[
-\lim_n \frac{a_n}{n} = \inf_n \frac{a_n}{n} \leq a_1
-\]
-(respectively,
-\[
-\lim_n \frac{a_n}{n} = \sup_n \frac{a_n}{n} \geq a_1
-\]
-\label{lem:fekete}
-\end{lemma}
 
 \begin{lemma}
 Let $a, b \in \pi_1(S)$ so that $(\ora{b},\ora{a})$ are $R$-crossing.
@@ -138,7 +116,8 @@ Then
 \label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 
-\begin{proof}[New proof of Step 1]
+\begin{proof}
+\begin{comment}
 The strategy of the proof will be in two steps. 
 \begin{itemize} \item Step 1. We will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
 In order to prove this, we will show $\ell(a^nb^n)-\ell(a^n)-\ell(b^n)$ is bounded above and below by constants independent of $n$.
@@ -152,7 +131,11 @@ by Fekete's lemma~\ref{lem:fekete}.
 \end{itemize}
 Combining these two, the result follows.
 
-We proceed with Step~1. We start by giving a decomposition of
+We proceed with Step~1. 
+\end{comment}
+
+
+We start by giving a decomposition of
 fundamental domains $F(ab)$, $F(a)$, $F(b)$ for $\ora{ab}$, $\ora{a}$,
 $\ora{b}$; this will naturally generalize to powers.
 \DPTtodo{Make figures for revised proof. Change the $F(x)$ so they are
@@ -191,6 +174,7 @@ Then we have
 where the $R_i$ are the terms appearing in the previous equation in
 order.
 
+\begin{comment}
 We now repeat the same decomposition for the $R$-crossing pair
 $\bigl(\ora{a^n},\ora{b^n}\bigr)$, getting regions $R_i(n)$ as above.
 We claim that the cross-ratio of each $R_i(n)$ is uniformly bounded,
@@ -214,7 +198,7 @@ It follows that
   \lim_{n \to \infty} \frac{\ell(a^n b^n)}{n} = \ell(a) + \ell(b).
 \]
 \end{proof}
-
+\end{comment}
 \DPTtodo[inline]{(1) When labeling windows in diagrams, shouldn't both
   intervals involved get a label (so each label involved appears
   twice? (2) Would it be easier to read if there were radial lines
@@ -233,18 +217,106 @@ It follows that
       $R_3$ (purple) + $R_4$ (cyan).}\label{fig:rcross_cr}
 \end{figure}
 
-    \begin{figure}[ht!]
-     \centering
-\resizebox{80mm}{!}{\svgfignormal{rcross_cr3}}
-    \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr3}
-\end{figure} 
 
+%The following commented picture is still true
+\begin{comment}
     \begin{figure}[ht!]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{rcross_cr_powers}}
     \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr_powers}
 \end{figure} 
+\end{comment}
 
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr2}}
+    \caption{Sub-boxes $S_1^{(n)}$}\label{fig:rcross_cr2}
+\end{figure} 
+
+    \begin{figure}[ht!]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{rcross_cr2b}}
+    \caption{Sub-boxes $S_2^{(n)}$}\label{fig:rcross_cr2b}
+\end{figure} 
+
+We will show that $[R_3] \leq [R_4]$.
+The proof will go as follows: first, we conjugate $R_3$ by $bA$, and split the resulting first factor at $ba^+$ obtaining two subboxes $S_1^{(1)}$ (first factor ending at $ba^+$) and $S_2^{(1)}$ (first factor starting at $ba^+$). 
+Having defined $S_2^{(n)}$ for $n \geq 1$, we will then define $S_1^{(n+1)}$ and $S_2^{(n+1)}$ recursively by conjugating $S_2^{(n)}$ by $bAB$ and splitting the first interval at $ba^+$. This will build two infinite sequences of boxes: at each stage, $S_1^{(n)}$ has first interval $(bbaB^+, ba^+)$ and second interval $J_n \coloneqq [z_n, z_{n+1}]$ (for some word $z_n$ explicitly determined below) shrinking in $n$, with $J_n \cap J_{n+1} \neq \emptyset$; $S_2^{(n)}$ has first interval $(ba^+, baB^+)$ and inherits the same shrinking second interval. The sum of the cross-ratios of the $S_1^{(n)}$ boxes will converge to the cross-ratio of $R_3$, and the tail $[S_2^{(n)}]$ goes to zero, showing the inequality.
+Now we implement this strategy.
+First, consider
+\[
+bA \cdot R_3 = (bbaB^+, baB^+) \times [bAAbaB^+, bA^+).
+\]
+We split $(bbaB^+, baB^+)$ at $ba^+$, obtaining a partition
+\[
+bA \cdot R_3 = S_1^{(1)} \cup S_2^{(1)}
+\]
+where
+\[
+ S_1^{(1)} \coloneqq (bbaB^+, ba^+) \times [bAAbaB^+, bA^+)
+\]
+and
+\[
+ S_2^{(1)} \coloneqq (ba^+, baB^+) \times [bAAbaB^+, bA^+).
+\]
+Next, we apply $bAB$ to $S_2^{(1)}$, obtaining
+\[
+bAB \cdot S_2^{(1)} = (bbaB^+, baB^+) \times [bAAbaB^+, bA^+).
+\]
+We further split the first factor at $ba^+$, obtaining
+\[
+bAB \cdot S_2^{(1)} = S_1^{(2)} \cup S_2^{(2)}
+\]
+where
+\[
+ S_1^{(2)} \coloneqq (bbaB^+, ba^+) \times [bAAAbaaB^+, bAAbaB^+)
+\]
+and
+\[
+ S_2^{(2)} \coloneqq (ba^+, baB^+) \times [bAAAbaaB^+, bAAbaB^+).
+\]
+In general, we apply $bAB$ to $S_2^{(n)}$, obtaining
+\[
+bAB \cdot S_2^{(n)} = (bbaB^+, baB^+) \times [z_{n+1},z_n)
+\]
+where $z_n \coloneqq b A^{n+1} b a^n B^+$.
+We split the second factor at $ba^+$, obtaining
+\[
+ S_1^{(n+1)} \coloneqq (bbaB^+, ba^+) \times [z_{n+1},z_n)
+\]
+and
+\[
+ S_2^{(n+1)} \coloneqq (ba^+, baB^+) \times [z_{n+1},z_n).
+\]
+First, we claim that $\lim_n [S_2^{(n)}] \to 0$. Note that the open boxes $\{ S_2^{(n)}\}_{n \in \mathbb{N}}$ are disjoint. Thus, if we let $U_N \coloneqq \cup_{n=1}^N S_2^{(n)} \subset (ba^+, baB^+) \times [Ab^+, bA^+)$, it follows that $[U_N]$ is bounded (independently of $N$).
+By finite additivity of generalized cross-ratios, we have $[U_N] = \sum_{n=1}^N [S_2^{(n)}]$. Since $\limsup_N [U_N]$ is finite, it follows that $\limsup_n [S_2^{(n)}] =0$, and the claim follows.
+
+Finally, we claim that $[R_3] \leq [R_4]$.
+Indeed, by construction of $S_1^{(n)}$, we have the boxes  $\{ S_1^{(n)} \}_{n \in \mathbb{N}}$ are disjoint and $S_1^{(n)} \subset R_4$, in fact, $S_1^{(n)} \subset (bbaB^+, ba^+) \times [baB^-, bA^+) \subset R_4$ (compare Figure~\ref{fig:rcross_cr2}). The second assertion can be deduced as follows. First, we have $S_1^{(1)} \subset (bbaB^+, ba^+) \times [baB^-, bA^+)$. Indeed, note that $A \cdot Ab^+ = AAba^+ \in (a^-, Ab^+)$, and thus $bA \dot Ab^+ = bAAbaB^+ \in (baB^-, bA^+)$. The claim for $S_1^{(n)}$ with $n \geq 2$ follows by north-south dynamics of the element $bAB$: the right endpoint of the first factor of $S_1^{(n)}$ is obtained by translating by $bAB$ the right endpoint of the second factor of $S_1^{(n-1)}$. By north-south dynamics of $bAB$, it moves closer to $baB^-$ staying within $[baB^-, bA^+)$. This finishes the proof of the claim.
+
+By additivity and invariance of cross-ratio, we have
+\[
+[R_3] = [S_1^{(1)}] + [S_1^{(2)}]
+\]
+Since for $n \geq 1$, we have
+\[
+bAB \cdot S_2^{(n)} = S_1^{(n+1)} \cup S_2^{(n+1)} 
+\]
+it follows that
+\[
+[S_2^{(n)}] = [S_1^{(n+1)}] + [S_2^{(n+1)}].
+\]
+Thus, for every $N \geq 1$, it follows that
+\[
+[R_3] = \left( \sum_{n=1}^N [S_1^{(n)}] \right) + [S_2^{(N)}] \leq [R_4] + [S_2^{(N)}].
+\]
+Taking $\lim_N$ both sides we get
+\[
+[R_3] \leq [R_4].
+\]
+The argument for $[R_1] \leq [R_2]$ is symmetric.
+
+\begin{comment}
 \begin{proof}[Old proof]
 The strategy of the proof will be in two steps. 
 \begin{itemize} \item Step 1. We will show that $\lim_n \frac{\ell(a^nb^n)}{n} = \ell(a)+\ell(b)$.
@@ -404,10 +476,33 @@ Combining this with Equation~\ref{eq:limit_anbn}, we get
 \]
 as desired.
 \end{proof}
-
+\end{comment}
 \subsection{Connected smoothing}
 
 Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
+
+We will use the following intermediate classical lemma.
+\begin{lemma}
+Given any sequence of real numbers $a_{n}$ satisfying that for all integers $m,n \geq 0$
+\[
+a_{m+n} \leq a_m + a_n
+\]
+(respectively,
+\[
+a_{m+n} \geq a_m + a_n),
+\]
+we have
+\[
+\lim_n \frac{a_n}{n} = \inf_n \frac{a_n}{n} \leq a_1
+\]
+(respectively,
+\[
+\lim_n \frac{a_n}{n} = \sup_n \frac{a_n}{n} \geq a_1
+\]
+\label{lem:fekete}
+\end{lemma}
+
+Now we prove connected smoothing.
 
 \begin{lemma}
 Let $a,b \in \pi_1(S)$ with $(a,b)$ $R$-parallel..
