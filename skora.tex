@@ -88,18 +88,27 @@ Follows by combining Lemmas~\ref{lem:char_irred_good} and \ref{lem:oppgoodpair}.
 In general, if the translation lengths of two $G \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is irreducible by~\cite[Theorem~3.7]{CM87:GroupActions}.
 In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows. we will always consider minimal actions.
 
-We will consider the following two handy results about the relative position of axes in a real tree, which can be found in~\cite[1.5, 1.8]{CM87:GroupActions}.
+We will consider the following two handy results about the relative position of axes in a real tree, which can be found originally in~\cite[1.5, 1.8]{CM87:GroupActions}, but we cite the more precise version in~\cite[Proposition~1.6]{Pa89:Paulin1989TheGT}.
 
 \begin{lemma}
+Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
+We have the following cases.
 \begin{enumerate}
 \item (Intersecting axes)
-If $g,h \in \Gamma$ are hyperbolic, then
 $T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gh^{-1}\| \}$.
-Moreover, if $g,h$ overlap coherently, then 
+Moreover,
+\begin{itemize}
+\item if $g,h$ overlap coherently, then 
 $\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$,
-and if $g,h$ overlap incoherently, then 
-$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$.
-\item (Parallel axes) If $g,h$ are any two isometries satisfying $T_g \cap T_h =\emptyset$ or $g,h$ are hyperbolic and $T_g \cap T_h = \{ * \}$, then
+\item and if $g,h$ overlap incoherently, then 
+$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$. 
+In this case,
+\begin{itemize}
+\item if the overlap is bounded, we have: $\|gh\|=\|g\| + \|h\|-2\Delta$ if $\|g\|,\|h\|>\Delta$, and $\|gh\|=|\|g\|-\|h\||$ otherwise;
+\item  if the overlap is unbounded (i.e. axes are equal or the overlap is a ray), we have $\|gh\|=\| \|g\| - \|h\||$.
+\end{itemize}
+\end{itemize}
+\item (Parallel axes) $T_g \cap T_h =\emptyset, \{*\}$ if and only if
 \[
 \|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h).
 \]
@@ -115,6 +124,27 @@ We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
     \|g^m h^n\| = m \| g \| + n \|h \|.
     \]
     \label{lem:powers_intersect}
+\end{lemma}
+
+Finally, we will need analogous statements for pairs $g,h \in \pi_1(S)$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}, we state them here in the form that will be most convenient for us.
+
+\begin{lemma}[{\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}}]
+Suppose $g$ is elliptic and $h$ is hyperbolic. Let $T_g$ denote the set of fixed points of $g$, and $T_h$ the axis of $h$.
+\begin{enumerate}
+\item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}} \neq \emptyset$ and $I$ contains all the fixed points of $g$ in $A_h$.
+Moreover:
+\begin{itemize}
+\item $T_{h}$, $T_{ghg^{-1}}$ overlap in a point or coherently if and only if $\|gh\|=\|h\|$.
+\item $T_{h}$, $T_{ghg^{-1}}$ overlap incoherently  if and only if $\|h\|>\|gh\|$.
+\end{itemize}
+\item $T_g \cap T_h = \emptyset$, if and only if $\|gh\|>\|h\|$.
+\end{enumerate}
+\label{lem:pau_ell_hyp}
+\end{lemma}
+
+\begin{lemma}[{\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}}]
+If $g,h$ are both elliptic, and $T_g, T_h$ denote their sets of fixed points, we have $\|gh\|>0$ if and only if $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$, the shortest connecting arc $[x,y]$ between $x \in T_g$ and $y \in T_h$ is contained in the axis of $gh$.
+\label{lem:pau_two_ell}
 \end{lemma}
 
 \subsection{Surface group actions on real trees}
@@ -183,14 +213,18 @@ There are three subcases to consider.
     $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, and the condition is satisfied by the result~\cite[1.8]{CM87:GroupActions}
     \item  $T_g$ and $T_h$ intersect in a non-degenerate interval with opposite orientations. Then, we would have
     $\|gh^{-1}\|=\|g\|+\|h\|>\|gh\|$, so the max-smoothing condition would be violated.
-    We show this cannot happen. According to Remark~\ref{rmk:powers_goodpair} there exist $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. Since $\|g \| + \|h \| = \|gh\|$, by Lemma~\ref{lem:powers_intersect}, we have
+    We show this cannot happen.
+    If the overlap is bounded, according to Remark~\ref{rmk:powers_goodpair} there exist $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. Since $\|g \| + \|h \| = \|gh\|$, by Lemma~\ref{lem:powers_intersect}, we have
         \[
           \|g^m h^n \| = m\|g\| + n\|h\|
         \]
         which, by Lemma~\ref{lem:foundation_trees} (i), implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
-    
+    \DMGtodo{what to do if overlap is unbounded? here is probably where irreducibility should be invoked, to reduce to bounded case.}
     \end{enumerate}
         \end{enumerate}
+
+
+\begin{comment}
 \item Case 2: $g$ or $h$ are elliptic.
 It follows from a similar analysis comparison of translation lengths in the tree. The different cases when, say, $g$ is elliptic and $h$ is hyperbolic, have been analyzed in~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. 
 
@@ -255,7 +289,7 @@ By the same analysis as before, it follows that $T_{h^ng}$ and $T_{gh^n}$ are di
 \end{figure}
 \item Suppose $T_h$ and $T_{ghg^{-1}}$ intersect in a ray $R_{\infty}$ with endpoint $x$.
 This is similar to the preceeding subcase.
-\begin{comment} If both $h$ and $ghg^{-1}$ translate in the same direction along the ray $R_{\infty}$, then $\| gh \| = \| h \|$ and max-smoothing is satisfied in (both connected and disconnected). If they translate in opposite directions, and $\gamma x \notin R_{\infty}$ \end{comment}
+\begin{comment} If both $h$ and $ghg^{-1}$ translate in the same direction along the ray $R_{\infty}$, then $\| gh \| = \| h \|$ and max-smoothing is satisfied in (both connected and disconnected). If they translate in opposite directions, and $\gamma x \notin R_{\infty}$ 
 
 \end{itemize}
 \end{enumerate}
@@ -273,8 +307,23 @@ In the connected smoothing case, we get $\| gh \| = \| gh^{-1} \|$, so max-smoot
 \resizebox{60mm}{!}{\svgfig{ell}}
     \caption{Configuration of axes when $g$ and $h$ are elliptic}\label{fig:ell}}
 \end{figure}
+\end{comment}
+\item Case 2: suppose $g$ is elliptic and $h$ is hyperbolic.
+If $\ora{g},\ora{h}$ cross, then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
+By Case 1b.(iii), $T_{ghg^{-1}}$ and $T_{h}$ cannot intersect incoherently, and hence, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| \geq \|h\|$. We claim that $\| gh \|= \|h\|$. Indeed,  
 
-
+\item Case 3: suppose both $g$ and $h$ are elliptic.
+If $\ora{g},\ora{h}$ cross, we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h= \emptyset$. Suppose $\|gh\|>0$
+Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel.
+On the other hand, by~Lemma~\ref{lem:pau_two_ell}, $gh$ and $hg$ overlap on the interval $[x,y]$, the shortest arc connecting $x \in T_g$ to $y \in T_h$, in opposite orientations.
+This contradicts Case 1b.(iii).
+If $\ora{g}, \ora{h}$ are parallel, it suffices to show that $\| gh\| = \| gh^{-1}\|$. Let $S=[x,y]$ denote the segment connecting $T_g$ and $T_h$.
+Let $[x,z]=g S \cap S$, which is a segment fixed by $g$.
+We have
+\[
+\|hg\| = d(z, hg z) = d(z,h(z)) = d(z,hg^{-1}(z))=\|hg^{-1}\|,
+\]
+where the last inequality is because $T_g=T_{g^{-1}}$.
 \end{enumerate}
 \end{proof}
 
