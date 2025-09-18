@@ -39,20 +39,43 @@ It is easily checked that these satisfy the properties of generalized cross-rati
 and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios}, when $\mu$ is a closed curve).
 If $\mu$ has no atoms, the two generalized cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are equal, since the measure of the boundary of any box of geodesics is zero.
 
-\DPTtodo[inline]{Somewhere around here, put in some discussion about
-  how a cross-ratio gives a finitely additive function on the ring of
-  half-open boxes. This gives the language we implicitly use in the
-  proof of Lemma~\ref{lem:crossratio_disconnected_smoothing}}
-
-Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let the \emph{period} function of a curve $C=[g]$ be
+Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let
+the \emph{period} function of a curve $C=[g]$ be, for $x$ an arbitrary
+point in $(g^-,g^+)$,
+\DPTtodo{Switched $g^-$ and $g^+$ in this def. It wasn't ccw the other
+way}
 \[
-\ell(g) \coloneqq [g^+, x , g \cdot x, g^- ],
+  \ell(g) \coloneqq [g^-, x , g \cdot x, g^+].
 \]
-where $x$ is an arbitrary point in $(g^-,g^+)$.
 The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is well-defined.
 
 Given a geodesic current $\mu$, the two (possibly distinct) generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, generalizd cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.a]{L95:BordDesVar}.
 
+\DPTtodo[inline]{I'm not entirely happy with the terminology here. Should it
+  be $\mu_{[\cdot]}$? Should we write the intervals where we really
+  don't care about the endpoint inclusion as something like
+  $\rlap{[}(a,b)\llap{]}$?}
+Going the other direction, it is immediate that a cross-ratio gives a
+finitely additive function $\mu^+_{[]}$ on the semiring of boxes of
+the form $[d,a) \times [b,c)$ in $G(S)$, where $a,b,c,d$ appear in ccw
+order; however, this function need not be countably additive and will
+not in general agree with the geodesic current~$\mu$ we construct. For
+instance, if we start with a geodesic current $\mu$ with atoms,
+construct the cross-ration $[a,b,c,d]^-$ as above, and look at the
+associated function $\mu^+_{[]^-}$, we get a function on boxes that
+does not agree with $\mu$ and so cannot be countably additive (since
+the period of $\mu^+_{[]}$ with lengths of $\mu$ $\mu$ and geodesic
+currents are determined by their length functions). Nevertheless, for
+convenience in the proofs, we will use the function
+$\mu_{[]} \coloneqq \mu^+_{[]}$ and its finite additivity, and write,
+e.g., $\ell(g) = \mu_{[]}\bigl([g^+,g^-)\times [x,g \cdot x)\bigr)$.
+
+\DPTtodo[inline]{Alternate version for consideration:
+  $\mu_{[\cdot]}\bigl(\rlap{[}(g^+,g^-)\llap{]} \times \rlap{[}(x, g \cdot x)\llap{]}\bigr)$}
+
+
+\DPTtodo{This statement is probably true, but we haven't proved it and
+  the statement is not clear}
 Since the two generalized cross-ratios are equal for non-atomic geodesic current, it follows there is a one-to-one correspondence between generalized cross-ratios and geodesic currents in this case.
 
 \begin{lemma}
@@ -75,7 +98,8 @@ For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
 \end{lemma}
 \begin{proof}
 The geodesic $\ora{g}$ with endpoints $g^-, g^+$ divides $\partial_{\infty}S$ into two open intervals:
-one on the left in the forward direction of $\gamma$, the other on the right.
+one on the left in the forward direction of $\gamma$ (i.e.,
+$(g^+,g^-)$), the other on the right.
 
 Let $y \in  \partial_{\infty}S$ be on the left interval, and $x \in  \partial_{\infty}S$ on the right interval.
 We then have
@@ -88,14 +112,27 @@ We then have
   &= \ell(g).
 \end{align*}
 To see the last equality, note that by $\pi_1(S)$-invariance, the
-numerator of the first term is $[y,g^-,x,g^{2n}y]$ which tends to
+numerator of the first term is $[y,g^-,x,g^{2n}y]$ which is bounded by
 $[y,g^-,x,g^+]$, and thus the entire first term has limit zero
 as $n \to \infty$. Similarly for the last term, and the middle term is
 symmetric under switching $g$ and $g^{-1}$.
 \end{proof}
 
+We will need another lemma on equality of cross-ratios.
+\begin{lemma}
+  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$ so that $g^=,y,x,g^+$
+  appear in ccw order. Then
+  \[
+    \mu_{[]}\bigl([x,g^+)\times[y,g \cdot y)\bigr)
+      = \mu_{[]}\bigl([G \cdot x,x)\times[g^-,y)\bigr).
+  \]
+  (Maybe add other variations too.)  
+\end{lemma}
 
-It is similarly easy to check $\ell$ satisfies stability.
+\begin{proof}
+  Let $L_0 = [x,g^+)\times[y,g \cdot y)$ be the
+  \DPTtodo{HERE}
+\end{proof}
 
 Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
 
