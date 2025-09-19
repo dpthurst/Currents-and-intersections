@@ -170,9 +170,7 @@ First, suppose that $\ora{g}$ and $\ora{h}$ cross.
 Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees} (1).
 \end{subcase}
 \begin{subcase}
-Suppose that $\ora{g}$ and $\ora{h}$ are parallel.
- We have that $\ora{gh}$ and $\ora{hg}$ cross. Thus, since the action preserves axis intersection, we know that $T_{gh} \cap T_{hg} \neq \emptyset$.
-There are three subcases to consider.
+Suppose that $\ora{g}$ and $\ora{h}$ are parallel. There are three subcases to consider.
 \begin{enumerate}[leftmargin=20pt]
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by~Lemma~\ref{lem:foundation_trees} (2).
     \item $g,h$ overlap coherently.
@@ -181,7 +179,21 @@ There are three subcases to consider.
     We show this case cannot occur.
     If the overlap is bounded, according to Remark~\ref{rmk:powers_goodpair} there exist $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
     Suppose now the overlap is unbounded.
-    We claim there exists a pair $(a,b)$ with $a,b \in \pi_1(S)$ hyperbolic in $T$, $\ora{a},\ora{b}$ parallel, and such that $a,b$ have incoherent and unbounded overlap. Suppose not: then, for any anti-parallel pair $(a,b)$, we have $(a^{-1}, b)$ are parallel, and by hypothesis $T_{a^{-1}}=T_a$ and $T_b$ also have unbounded overlap. Furthermore, if $a,b$ are crossing, $ab,ba$ are parallel, and since $T_a \cap T_b = T_{ab} \cap T_{ba}$ the pair $a,b$ also has unbounded overlap. Hence, all pairs $(a,b)$ (regardless of their relative position) have unbounded overlap, which by Lemma~\ref{lem:foundation_trees} (1), means the action is reducible, a contradiction. 
+    Consider the subset \DMGtodo{still editing this part...} 
+\[
+A \coloneqq 
+\Bigl\{ (a,b) \;\Big|\;
+a,b \in \pi_1(S),\;
+(\overrightarrow{a},\overrightarrow{b}) \text{ are parallel},\;
+a,b \text{ are hyperbolic in } T,\;
+a,b \text{ overlap incoherently}
+\Bigr\}.
+\]
+    We claim there exists a pair $(a,b) \in A$ so that the overlap is bounded. Suppose not, that is, suppose all pairs in $A$ have unbounded overlap.
+    Suppose $(a,b)$ is parallel. \DMGtodo{here...} by hypotheses.
+    Then, for any anti-parallel pair $(a,b)$, we have $(a^{-1}, b)$ are parallel, and by hypothesis $T_{a^{-1}}=T_a$ and $T_b$ also have unbounded overlap. Furthermore, if $a,b$ are crossing, then $T_a \cap T_b \neq \emptyset$. 
+    If $a,b$ overlap coherently, by Lemma~\ref{lem:foundation_trees} (1),
+    we have $T_a \cap T_b = T_{ab} \cap T_{ba}$. This intersection is unbounded by hypothesis, since  $\ora{ab}, \ora{ba}$ are parallel. If $a,b$ overlap incoherently, run the same argument with the pair $a,B$ instead of $a,b$. Hence, all pairs $(a,b)$ (regardless of their relative position) have unbounded overlap, which by Lemma~\ref{lem:foundation_trees} (1), means the action is reducible, a contradiction. 
     \label{subcase:bad_case}
     \end{enumerate}
     \end{subcase}
