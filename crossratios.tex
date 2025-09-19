@@ -77,8 +77,14 @@ e.g., $\ell(g) = \mu_{[]}\bigl([g^+,g^-)\times [x,g \cdot x)\bigr)$.
 
 
 \DPTtodo{This next statement is probably true, but we haven't proved it and
-  the statement is not clear}
+  the statement is not clear. I added a question instead}
 Since the two generalized cross-ratios are equal for non-atomic geodesic current, it follows there is a one-to-one correspondence between generalized cross-ratios and geodesic currents in this case.
+
+\begin{question}
+  For a given geodesic current $\mu$, what are all the cross-ratios
+  $[a,b,c,d]$ so that the period function with respect to the
+  cross-ratio agrees with the length function from $\mu$?
+\end{question}
 
 \begin{lemma}
 For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
@@ -122,20 +128,59 @@ symmetric under switching $g$ and $g^{-1}$.
 
 We will need another lemma on equality of cross-ratios.
 \begin{lemma}
-  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$ so that $g^=,y,x,g^+$
+  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$ so that $g^=,y,g\cdot y, nx,g^+$
   appear in ccw order. Then
   \[
     \mu_{[]}\bigl([x,g^+)\times[y,g \cdot y)\bigr)
       = \mu_{[]}\bigl([G \cdot x,x)\times[g^-,y)\bigr).
   \]
-  (Maybe add other variations too.)  
 \end{lemma}
 
+Other variations of this lemma hold too. The geometric significance of
+the common value is unclear to us.
+
+\DPTtodo{Switching to $[X]$ for cross-ratio pseudo-measure of $X$. No
+  pictures yet}
 \begin{proof}
-  \begin{itemize}
-  \item Set $L_0 = [x,g^+)\times[y,g \cdot y)$
-  \item Consider $G \cdot L_0 = [G\cdot x,g^+)\times[G \cdot y, y)$
-  \end{itemize}
+  Set $L = [x,g^+)\times[y,g \cdot y)$ and
+  $R = [G \cdot x,x)\times[g^-,y)$. To show $[L] = [R]$, we will
+  translate $R$ by~$g$ and cut off a piece that is a subset of $L$.
+  The remaining piece after this excision is of the same general form
+  as $R$, so we can repeat.
+
+  To that end, define, for $i \ge 0$,
+  \begin{align*}
+    R_i &\coloneqq [g^{i-1}\cdot x, g^i \cdot x) \times [g^-, y)\\
+    L_i &\coloneqq [g^i \cdot x,g^+) \times [y, g \cdot y)\\
+    \intertext{and for $i \ge 1$,}
+    V_i &\coloneqq [g^{i-1} \cdot x, g^i \cdot x) \times [y, g \cdot y).
+  \end{align*}
+  Then $L_0 = L$, $R_0 = R$, and
+  $g \cdot R_i = [g^i \cdot x, g^{i+1} \cdot x) \times [g^-, g \cdot
+  y) = R_{i+1} \sqcup V_{i+1}$.
+  Furthermore, the $V_i$ are all contained in~$L$. More precisely, for
+  $n\ge 0$, we have $L = L_n \sqcup \bigsqcup_{i=1}^n V_i$.
+  We thus have
+  \[
+    [R] = [R_n] + \sum_{i=1}^n [V_n] = [R_n] - [L_n] + [L].
+  \]
+
+  To complete the proof, we must show
+  $\lim_{n^+} [R_n] = \lim_{n^+}[L_n] = 0$. To that end, note that the
+  $R_i$ are disjoint, with bounded union:
+  \[
+    \bigsqcup_{i=0}^n R_i \subset [g^-,y) \times [G \cdot x, g^+).
+  \]
+  It follows that $\sum_{i=0}^n [R_i]$ is uniformly bounded and thus
+  that $\lim_{i^+} [R_i] = 0$.
+
+  The $L_i$ are not disjoint, but become disjoint after translation by
+  $G^i$:
+  \[
+    L_i' \coloneqq G^i \cdot L_i = [x, g^+) \times [G^i \cdot y, G^{i-1} \cdot y).
+  \]
+  The $L_i'$ are disjoint, with union contained in the same set
+  $[g^-,y) \times [G \cdot x, g^+)$, so as before $\lim_{i^+} [L_i'] = 0$.
 \end{proof}
 
 Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
