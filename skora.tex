@@ -178,8 +178,8 @@ Suppose that $\ora{g}$ and $\ora{h}$ are parallel. There are three subcases to c
     \item  $g,h$ overlap incoherently. 
     We show this case cannot occur.
     If the overlap is bounded, according to Remark~\ref{rmk:powers_goodpair} there exist $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
-    Suppose now the overlap is unbounded.
-    Consider the subset \DMGtodo{still editing this part...} 
+    Suppose now the overlap is unbounded. Here is where the assumption of irreducibility will be invoked.
+    Consider the subset 
 \[
 A \coloneqq 
 \Bigl\{ (a,b) \;\Big|\;
@@ -189,7 +189,15 @@ a,b \text{ are hyperbolic in } T,\;
 a,b \text{ overlap incoherently}
 \Bigr\}.
 \]
-    We claim there exists a pair $(a,b) \in A$ so that the overlap is bounded. Suppose not, that is, suppose all pairs in $A$ have unbounded overlap.
+    We claim there exists a pair $(a,b) \in A$ so that the overlap is bounded. Suppose not, that is, suppose all pairs in $A$ have unbounded overlap. First, we show this implies that:
+    
+    \begin{claim} All pair $(a,b)$ so that $T_a, T_b$ overlap have unbounded overlap.
+    \end{claim}
+    We prove the assumption implies the claim first.
+    If $(a,b)$ are parallel, the statement follows by definition of $A$. If $(a,b)$ are anti-parallel, then $(a,B)$ are parallel, and the statement follows again by definition of $A$. Finally, if $(a,b)$ cross, then $T_a, T_b$ intersect. If their overlap is incoherent, then $T_a \cap T_b = T_{aB} \cap T_{Ba}$, and since $(aB, Ba)$ are parallel, it follows that $T_a \cap T_b$ is unbounded by definition of $A$. If their overlap is coherent, then $T_a \cap T_b = T_{ab} \cap T_{ba}$, and since $(ab,ba)$ are parallel it follows by definition of $A$.
+    Finally we prove the claim implies reducibility. Say $(g,h)$ overlap in a ray $e$. Let $G \cdot e$ denote the orbit of such ray. If $G \cdot e =\{e \}$, then the whole group fixes and end, so the action is reducible. If $|G \cdot e| =2$, the group fixes the line connecting the two ends, so the action is reducible.
+    Suppose $|G \cdot e| \geq 3$.
+    
     Suppose $(a,b)$ is parallel. \DMGtodo{here...} by hypotheses.
     Then, for any anti-parallel pair $(a,b)$, we have $(a^{-1}, b)$ are parallel, and by hypothesis $T_{a^{-1}}=T_a$ and $T_b$ also have unbounded overlap. Furthermore, if $a,b$ are crossing, then $T_a \cap T_b \neq \emptyset$. 
     If $a,b$ overlap coherently, by Lemma~\ref{lem:foundation_trees} (1),
