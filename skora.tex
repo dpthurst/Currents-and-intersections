@@ -7,14 +7,24 @@ characterization of small actions of surface groups on
 $\mathbb{R}$-trees, and in turn we reprove a classical theorem of
 Skora~\cite{Sko90:GeometricAction}.
 
-\subsection{Finitely generated groups acting on real trees}
-
-We start by recalling some basic notions of actions on real trees.
+\subsection{Finitely generated groups acting on real trees} \hspace{1cm} \\
+\textbf{Real trees} We start by recalling some basic notions of real trees.
 An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing
 both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$. This
 intersection is denoted
-$[x, y]$, and called an \emph{arc}. If $\Gamma$ is a finitely generated group, a $\Gamma$-tree is an $\mathbb{R}$-tree together with a group action $\Gamma \acts T$ by isometries.
+$[x, y]$, and called an \emph{arc}. A ray in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
+the ray \emph{emanates} from $p$. The \emph{space of ends} of a real tree $T$ is the limit of the inverse system $\pi_0(T-B)$ where
+$B$ ranges over the closed and bounded subsets of $T$. Let $p$ a be a fixed point of $T$. For every point of the limit there is a ray emanating from $p$,
+and a cofinal sequence of components of the complement of closed and bounded sets that represent the limit point, such that every
+point in the sequence meets the ray, and this ray is uniquely determined. Hence, there is a one-to-one correspondence with rays of $T$ emanating from $p$ and ends
+of $T$. Given two distinct ends of $T$, the corresponding rays meet in an interval with $p$ as endpoint. The union of these two rays minus
+the interior of their intersection is a line in $T$. Conversely, given any line in $T$, the two oppositely oriented rays emanating from any point
+in the line determine two distinct ends of the tree, and these ends do not depend on the choice of point. We will say this line \emph{joins} the two ends.
+By the definition of tree, there is only one line connecting any pair of ends.
+
+
+\textbf{Actions on real trees} If $\Gamma$ is a finitely generated group, a $\Gamma$-tree is an $\mathbb{R}$-tree together with a group action $\Gamma \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
 Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$ be the \emph{characteristic set} of $g$ which is a closed, non-empty subtree of $T$ invariant under the action of $g$.
 If $g$ is elliptic, then $\| g \| =0$. The converse is also true;
@@ -26,8 +36,8 @@ We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial
 
 An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
-\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$.
-\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$.
+\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$ (equivalently $G$ fixes an end of $T$ ~\cite[Theorem~2.2,Corollary~2.3]{CM87:GroupActions}).
+\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$ (equivalently $G$ fixes a line of $T$ inverting orientation~\cite[Theorem~2.4]{CM87:GroupActions}).
 \item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{enumerate}
 
@@ -60,7 +70,14 @@ A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if
 \label{lem:char_irred_noninter}
 \end{lemma}
 
-Finally, good pairs provide pairs of non-intersecting elements.
+A useful criterion for irreducibility in terms of pairs of hyperbolic elements is as follows (see~\cite[Lemma~2.1]{CM87:GroupActions}).
+
+\begin{lemma}
+    If every pair of hyperbolic elements $(a,b)$ satisfies $T_a \cap T_b \neq \emptyset$, then the action is reducible.
+    \label{lem:CM_red_criterion}
+\end{lemma}
+
+Finally, good pairs provide pairs of non-intersecting hyperbolic elements.
 
 \begin{lemma}
   For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
@@ -71,9 +88,9 @@ Finally, good pairs provide pairs of non-intersecting elements.
 \end{proof}
 
 In general, if the translation lengths of two $G \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is irreducible by~\cite[Theorem~3.7]{CM87:GroupActions}.
-In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows. we will always consider minimal actions.
+In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
 
-We will consider the following two results about the relative position of axes in a real tree, which can be found in~\cite[1.5, 1.8]{CM87:GroupActions}. The equality $T_g \cap T_h = T_{gh} \cap T_{hg}$ in case (1) is not stated but it follows from their proof.
+We will consider the following classical results about the relative position of axes in a real tree.
 
 \begin{lemma}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
@@ -86,17 +103,22 @@ Moreover,
 \item if $g,h$ overlap coherently, then 
 $\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$, and $T_g \cap T_h = T_{gh} \cap T_{hg}$;
 \item and if $g,h$ overlap incoherently, then 
-$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$. 
+$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$, and $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{itemize}
 \item (Parallel axes) $T_g \cap T_h =\emptyset, \{*\}$ if and only if
 \[
 \|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h).
 \]
+Then, $T_{ab}, T_b$ overlap in a segment of positive length and, if $T_g \cap T_h =\emptyset$, then  $T_{gh}$ and $T_{hg}$ overlap incoherently on a segment of length $d(T_g, T_h)$.
 \end{enumerate}
 \label{lem:foundation_trees}
 \end{lemma}
-
+\begin{proof}
+The proof of (1) and (2) is~\cite[1.5, 1.8]{CM87:GroupActions}. The equality $T_g \cap T_h = T_{gh} \cap T_{hg}$ in case (1) is stated in their proof. 
+The remark of part (2) about $T_{ab}, T_b$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
+The statement about the axes $T_{gh},T_{hg}$ in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
+\end{proof}
 
 \begin{lemma}
     If $g,h$ are hyperbolic and satisfy $\|g\| + \|h\| = \|gh\|$, then for every positive integers $m,n$, we have
@@ -122,7 +144,7 @@ Moreover:
 \label{lem:pau_ell_hyp}
 \end{lemma}
 \begin{proof}
-The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality in part (2) is stated explicitly in~\cite[1.5]{CM87:GroupActions}. 
+The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[1.5]{CM87:GroupActions}. 
 \end{proof}
 \begin{lemma}[{\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}}]
 If $g,h$ are both elliptic, and $T_g, T_h$ denote their sets of fixed points, we have $\|gh\|>0$ if and only if $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$, the shortest connecting arc $[x,y]$ between $x \in T_g$ and $y \in T_h$ is contained in the axis of $gh$.
@@ -181,27 +203,24 @@ Suppose that $\ora{g}$ and $\ora{h}$ are parallel. There are three subcases to c
     Suppose now the overlap is unbounded. Here is where the assumption of irreducibility will be invoked.
     Consider the subset 
 \[
-A \coloneqq 
+\mathcal{I} \coloneqq 
 \Bigl\{ (a,b) \;\Big|\;
-a,b \in \pi_1(S),\;
-(\overrightarrow{a},\overrightarrow{b}) \text{ are parallel},\;
-a,b \text{ are hyperbolic in } T,\;
-a,b \text{ overlap incoherently}
+a,b \in \pi_1(S),
+\text{ parallel},
+\text{ hyperbolic in } T,
+\text{ overlap incoherently}
 \Bigr\}.
 \]
-    We claim there exists a pair $(a,b) \in A$ so that the overlap is bounded. Suppose not, that is, suppose all pairs in $A$ have unbounded overlap. First, we show this implies that:
+    We claim there exists a pair $(a,b) \in \mathcal{I}$ so that the overlap is bounded. Suppose not, that is, suppose all pairs in $\mathcal{I}$ have unbounded overlap. 
+    First, we claim that since the action is irreducible there exist a crossing hyperbolic pair $(a,b)$ so that $T_a \cap T_b$ is bounded. Suppose not, i.e., say that for every crossing hyperbolic pair $(a,b)$, $T_a \cap T_b$ is unbounded.
+    We show that for \emph{all} hyperbolic pairs $(a,b)$, $T_a \cap T_b \neq \emptyset$, which implies the action is reducible by Lemma~\ref{lem:CM_red_criterion}. Since the action preserves axis, a crossing hyperbolic pair $(a,b)$ always satisfies $T_a \cap T_b \neq \emptyset$.
+    Suppose $(a,b)$ is parallel and assume, for the sake of contradiction, that $T_a \cap T_b =\emptyset$. Then $(ab,ba)$ are a crossing pair with incoherent overlap length given by $d(T_a, T_b)$, by Lemma~\ref{lem:foundation_trees} (2), a contradiction.
+    If $(a,b)$ is antiparallel and $T_a \cap T_b = T_a \cap T_B = \emptyset$, repeat the same argument with the parallel pair $(a,B)$. 
     
-    \begin{claim} All pair $(a,b)$ so that $T_a, T_b$ overlap have unbounded overlap.
-    \end{claim}
-    We prove the assumption implies the claim first.
-    If $(a,b)$ are parallel, the statement follows by definition of $A$. If $(a,b)$ are anti-parallel, then $(a,B)$ are parallel, and the statement follows again by definition of $A$. Finally, if $(a,b)$ cross, then $T_a, T_b$ intersect. If their overlap is incoherent, then $T_a \cap T_b = T_{aB} \cap T_{Ba}$, and since $(aB, Ba)$ are parallel, it follows that $T_a \cap T_b$ is unbounded by definition of $A$. If their overlap is coherent, then $T_a \cap T_b = T_{ab} \cap T_{ba}$, and since $(ab,ba)$ are parallel it follows by definition of $A$.
-    Finally we prove the claim implies reducibility. Say $(g,h)$ overlap in a ray $e$. Let $G \cdot e$ denote the orbit of such ray. If $G \cdot e =\{e \}$, then the whole group fixes and end, so the action is reducible. If $|G \cdot e| =2$, the group fixes the line connecting the two ends, so the action is reducible.
-    Suppose $|G \cdot e| \geq 3$.
-    
-    Suppose $(a,b)$ is parallel. \DMGtodo{here...} by hypotheses.
-    Then, for any anti-parallel pair $(a,b)$, we have $(a^{-1}, b)$ are parallel, and by hypothesis $T_{a^{-1}}=T_a$ and $T_b$ also have unbounded overlap. Furthermore, if $a,b$ are crossing, then $T_a \cap T_b \neq \emptyset$. 
-    If $a,b$ overlap coherently, by Lemma~\ref{lem:foundation_trees} (1),
-    we have $T_a \cap T_b = T_{ab} \cap T_{ba}$. This intersection is unbounded by hypothesis, since  $\ora{ab}, \ora{ba}$ are parallel. If $a,b$ overlap incoherently, run the same argument with the pair $a,B$ instead of $a,b$. Hence, all pairs $(a,b)$ (regardless of their relative position) have unbounded overlap, which by Lemma~\ref{lem:foundation_trees} (1), means the action is reducible, a contradiction. 
+    We have thus shown there exists a crossing hyperbolic pair $(a,b)$ with $T_a \cap T_b$ bounded. Since the action preserves axis, $T_a \cap T_b \neq \emptyset$. If $T_a \cap T_b=\{ * \}$, we replace $a$ by $ab$, to get the pair of crossing $(ab,b)$, with non-degenerate overlap.
+    We can further assume that the overlap is coherent up to exchanging the orientation of $b$, and take powers, by Remark~\ref{rmk:powers_goodpair}, to ensure it is a good pair.
+     Hence, without loss of generality, we can assume that $(a,b)$ is crossing and a good pair. Thus, by Lemma~\ref{lem:oppgoodpair}, we have that $aB$ is hyperbolic and $(aB,Ba)$ are parallel.
+     Hence, by Lemma~\ref{lem:foundation_trees} (2), $aB^2a, Ba^2B$ are hyperbolic and overlap incoherently with bounded overlap, a contradiction.
     \label{subcase:bad_case}
     \end{enumerate}
     \end{subcase}
@@ -250,7 +269,6 @@ where the last inequality is because $T_g=T_{g^{-1}}$.
 \end{case}
 \end{proof}
 
-
 Now we prove Theorem~\ref{mainthm:skora}.
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
@@ -269,40 +287,7 @@ the closure of the space of minimal, free, simplicial actions is the space of so
 In the setting of surface groups, the space of very small and small actions coincide, so the density result of free minimal actions holds.
 \end{remark}
 
-\subsection{Inequalities between intersection numbers}
-\label{subsec:ineqintersection}
-
-Finally, we give an application of our main result to domination of spectra of metric lengths on a surface. Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \mathcal{C}(\Sigma)$.
-We can use these extension results to study what intersection numbers dominating one curve over another imply about Liouville currents.
-
-For example, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
-In fact, we have something much stronger
-
-\begin{corollary}
-If $C_2$ dominates $C_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
-    \label{cor:domination}
-\end{corollary}
-
-\begin{proof}
-First note that any length metric satisfies smoothing.
-This argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here.
- Take a
-curve~$C$ with an
-essential self-intersection~$x$, and a representative~$\gamma$. Then $\gamma$ has
-a self-intersection point~$x'$ of the homotopy type of~$x$. If we
-consider the
-curve representative~$\gamma' \in C'$ obtained by smoothing at~$x'$, then,
-since $\ell_g$ is an infimum, we have
-\[
-  \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
-\]
-as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
-It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
-Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
-\end{proof}
-
-A reducible action does not satisfy smoothing: in fact, it satisfies disconnected smoothing, but does not satisfy connected smoothing.
+We conclude this section showing that reducible action satisfy disconnected smoothing but never satisfy connected smoothing.
 
 \begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
@@ -352,10 +337,43 @@ Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq
 Hence, $\| \cdot \|$ cannot satisfy smoothing. Since it satisfies disconnected smoothing, it follows it cannot satisfy connected smoothing.
 \end{proof}
 
-\begin{remark}
-Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing, but it never satisfies connected smoothing. Since a reducible action cannot be dual to a measured lamination, this shows once again that one cannot strengthen Theorem~\ref{thm:intersect} by assuming only disconnected smoothing. Another example in the setting of the linear extension of extremal length can be seen in Example~\ref{ex:linEL}.
-\label{rmk:reducible_action}
-\end{remark}
+Hence, by Theorem~\ref{thm:intersections_group} a reducible action cannot be dual to a geodesic current, since smoothing (both connected and disconnected) is a necessary condition. Another example of curve functional satisfying disconnected smoothing but not connected smoothing in the setting of the linear extension of extremal length can be seen in Example~\ref{ex:linEL}.
+
+\subsection{Inequalities between intersection numbers}
+\label{subsec:ineqintersection}
+
+Finally, we give an application of our main result to domination of spectra of metric lengths on a surface. Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \mathcal{C}(\Sigma)$.
+We can use these extension results to study what intersection numbers dominating one curve over another imply about Liouville currents.
+
+For example, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
+In fact, we have something much stronger
+
+\begin{corollary}
+If $C_2$ dominates $C_1$, then
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
+    \label{cor:domination}
+\end{corollary}
+
+\begin{proof}
+First note that any length metric satisfies smoothing.
+This argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here.
+ Take a
+curve~$C$ with an
+essential self-intersection~$x$, and a representative~$\gamma$. Then $\gamma$ has
+a self-intersection point~$x'$ of the homotopy type of~$x$. If we
+consider the
+curve representative~$\gamma' \in C'$ obtained by smoothing at~$x'$, then,
+since $\ell_g$ is an infimum, we have
+\[
+  \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
+\]
+as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
+It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
+Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+\end{proof}
+
+
+
 
 
 %%% Local Variables:
