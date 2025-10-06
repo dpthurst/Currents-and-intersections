@@ -126,7 +126,7 @@ symmetric under switching $g$ and $g^{-1}$.
 
 We will need another lemma on equality of cross-ratios.
 \begin{lemma}\label{lem:cr-switcheroo}
-  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$ so that $g^-,y,g\cdot y, x,g^+$
+  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$ so that $g^-,y,g\cdot y, g^{-1} \cdot x, x,g^+$
   appear in ccw order. Then
   \[
     \bigl[[x,g^+)\times[y,g \cdot y)\bigr]
@@ -135,6 +135,7 @@ We will need another lemma on equality of cross-ratios.
 \end{lemma}
 
 \DPTtodo{We use the variation with $x,y$ on opposite sides of $\protect\ora{g}$}
+\DMGtodo{I don't think so, we use the exact one considered in the lemma. I added another condition to the lemma, which I believe is also assumed (the position of $g^{-1}\cdot x$ appears after $g\cdot y$).}
 Other variations of this lemma, with different position of $x,y$, hold
 too. The geometric significance of
 the common value is unclear to us.
@@ -227,7 +228,7 @@ $\ora{a}$, and~$\ora{b}$, respectively, with the property that all
 boxes share the same right-hand factor.
 \DPTtodo{Make figures for revised proof. Change the $F(x)$ so they are
 half-open in both factors}
-Start with the fundamental domain $F_0(ab) = (ab^+,ab^-) \times [Ab^+, a
+Start with the fundamental domain $F_0(ab) = [ab^+,ab^-) \times [Ab^+, a
 \cdot bA^+)$ for $\langle ab \rangle$, and write it as the union
 $F(ab) = F_1 \cup F_2$ where
 \begin{align*}
@@ -258,13 +259,13 @@ Then we have
 where the $R_i$ are the terms appearing in the previous equation in
 order, and we have switched to virtual multi-sets. See
 Figure~\ref{fig:rcross_cr}.
-\DPTtodo{Figure has $R_1$ and $R_2$ switched}
+
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{rcross_cr}}
     \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$, part 1.
-      The difference $F(a) + F(b) - F(ab)$  decomposes into $R_1$
-      (red) + $R_2$ (blue) +
+      The difference $F(a) + F(b) - F(ab)$  decomposes into $R_1$ (blue) + $R_2$
+      (red) + 
       $R_3$ (purple) + $R_4$ (cyan).}\label{fig:rcross_cr}
 \end{figure}
 
@@ -386,7 +387,7 @@ The argument for $[R_1] \leq [R_2]$ is symmetric.
   The argument above shows that
   \[
     \ell(a) + \ell(b) - \ell(ab) = [R_1] - [R_2] - [R_3] + [R_4]
-    = \bigl[[ba^+ \times ab^+) \times [b^-,a^-)\bigr]
+    = \bigl[[ba^+, ab^+) \times [b^-,a^-)\bigr]
       + \bigl[[ab^-,ba^-) \times [b^+,a^+)\bigr].
   \]
   \DPTtodo[inline]{Compare this to something. Is it related to a lemma

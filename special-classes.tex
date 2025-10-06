@@ -37,17 +37,13 @@ See also Section~\ref{subsubsec:convexity_charts} for a related discussion.
 
 \subsection{Multi-curves}
 
-We have the following characterization of curves that are one-half of an integral multi-curve.
+We say $M$ is an \emph{integral} weighted multi-curve if its a weighted multi-curve whose weights are integer numbers. We say that $M$ is a \emph{half-integral} multi-curve if its weights are $\lambda_i = \frac{\lambda_i'}{2}$ for some $\lambda_i' \in \mathbb{Z}$. Note that, by definition, all integral multi-curves are also half-integral.
+
+We have the following criterion for half-integral multi-curves.
 
 \begin{corollary}
-Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \mathcal{C}(S)$. Then there exists an integral multi-curve $M$ so that
-\[
-i(1/2 M,\cdot)=f(\cdot).
-\]
-Moreover, \[
-i(1/2 M,\cdot) \in \mathbb{Z}
-\]
-if and only if the $\mathbb{Z}_2$ homology class $[M]=0$.
+Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \mathcal{C}(S)$. Then there $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
+Moreover, either $\mu$ is an integral multi-curve, or $\mu$ is non-integral and $[M] = 0$ in $\mathbb{Z}_2$-homology.
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
@@ -60,30 +56,27 @@ It suffices to show $\mu$ is an integral multi-curve. By the same argument in th
 \[
 \mu(R) = \frac{1}{2}\lim_n i(\mu, B_n) + i(\mu, C_n) - i(\mu, A_n) - i(\mu, D_n).
 \]
-Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$).
-Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$.
-By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve, and hence $\mu=\frac{1}{2}$ is a half-integral multi-curve, for some integral multi-curve $M$.
-Note that any integral multi-curve $M$ is also a half-integral multi-curve.
-We can be more precise.
-Let $[M]$ be the $\mathbb{Z}_2$-homology class of $M$. Note that $[M] \neq 0$ iff there exist a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
-$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\hat{i}([M],[C]=1 \mod 2$, where $\hat{i}$ is the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
-Finally, $i(1/2 M,\cdot) \in \mathbb{Z}$ iff $i(M, \cdot ) \in 2\mathbb{Z}$ iff  $\mathbb{Z}_2$-homology class $[M]=0$.
+Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$). 
+Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. For more details about this last argument, see~\cite{JMG:StrongDuals}.
+By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
+We can be more precise. One option is that $\mu$ is an integral multi-curve. If $\mu$ is a half-integral non-integral multi-curve, we claim that $[M]=0$ in $\mathbb{Z}_2$-homology. Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
+$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\hat{i}([M],[C])=1 \mod 2$, where $\hat{i}$ is the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
 \end{proof}
 
 \begin{remark}
-  The factor of $1/2$ is necessary, since there are examples of
-  word-lengths (whose marked length spectrum is integral) that are
-  dual to one-half of an integral
-  multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}. For another
-  concrete example, let $\mu$ be the geodesic current supported on a
+  The factor of $1/2$ is necessary, since there are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
+For example, let $\mu$ be the geodesic current supported on a
   separating simple closed curve. Then $\mu/2$ has an integral
   length spectrum but is not an integral multi-curve. 
+  More more involved examples, word-lengths (whose marked length spectrum is integral) that are
+  dual to a half-integral multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}.
 \end{remark}
 
 \DPTtodo[inline]{Characterize which half-integral
   multi-curves have integral intersection number using $\bbZ/2$
   homology. Also characterize intersection number with integral
   curves. DMG on it}
+  \DMGtodo{I wrote a bit more precisely the criterion. Is this logic the best exposition?}
 
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
@@ -137,17 +130,18 @@ We note that our result says nothing explicit about the dual multi-curve, wherea
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
 
-We will need an observation about the measure of sets intersecting pairs of geodesic segments, proven in \cite[Lemma~6.2]{dRMG22:Duals}.
+We will need a relation about the measure of sets intersecting pairs of geodesic segments.
 
 We introduce the following notation. Given two geodesics segments $t$ and $t'$, let $G(t , t')$ be the set of geodesics intersecting from segment $t$ to segment $t'$ transversely. We will refer to sets of this type as \emph{double transversals}.
 
 Let $x,y,z,w \in \wt{X}$ appear counter-clockwise as vertices of an
 embedded convex geodesic quadrilateral on $\wt{X}$.
+The following is a variation of~\cite[Lemma~6.2]{dRMG22:Duals} which is proven in the same way.
 
 \begin{lemma}
 Given the setup described above, we have 
 \begin{align*}
-\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &= \\
+\mu(G([x,w), (y,z])) + \mu(G((x,w], [y,z))) &= \\
 &\mu(G[x,z)) + \mu(G[w,y)) \\
 &- \mu(G([w,z)) - \mu(G([x,y))
 \end{align*}
@@ -239,13 +233,14 @@ We start with a technical lemma that defines some sets of interest. We will reso
 Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
-Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), [P', Q'))$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times [Q', P))$), and $R_{a,b}^- \coloneqq G((Q,P], (P', Q'])$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times (Q', P])$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
-Let $B_{a,b}^+ = (a^+, b^-) \times (a^-, b^+)$ (resp.  $B_{g,h}^{\perp} = (b^-, a^-) \times (b^+, a^+)$) be the box with vertices the endpoints of $a$ and $b$, so that $R_{a,b} \subset B_{a,b}$ (resp. $R_{a,b}^{\perp} \subset B_{a,b}^{\perp}$).
-For every $n \in \mathbb{N}$, let $R_n \coloneqq R_{a^n,b^n}$ and $R_n^{\perp} \coloneqq R_{a^n,b^n}^{\perp}$.
+Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), (P', Q'])$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times (Q', P])$), and $R_{a,b}^- \coloneqq G((Q,P], [P', Q'))$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times [Q', P))$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
+Let $B_{a,b}^+ = (a^+, b^-] \times (a^-, b^+]$ (resp.  $(B_{g,h}^{\perp})^+ = (b^-, a^-] \times (b^+, a^+]$), 
+and $B_{a,b}^- = [a^+, b^-) \times [a^-, b^+)$ (resp.  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times [b^+, a^+)$). We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ (resp. $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $).
+For every $n \in \mathbb{N}$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
 \begin{enumerate} 
-\item $R_n \subset R_{n+1}$, and $\bigcup_{n \geq 1} R_n = B_{a,b}$ and $R_n^{\perp} \subset R_{n+1}^{\perp}$ and $\bigcup_{n \geq 1} R_n^{\perp} = B_{a,b}^{\perp}$.
-\item We have $\lim_{n} \mu(R_n) \to \mu(B_{a,b})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{g,h}^{\perp})$.
+\item $R_n^{\pm}  \subset R_{n+1}^{\pm}$, and $\bigcup_{n \geq 1} R_n^{\pm}  = B_{a,b}^{\pm}$ and $(R_n^{\perp})^{\pm}  \subset (R_{n+1}^{\perp})^{\pm}$ and $\bigcup_{n \geq 1} (R_n^{\perp})^{\pm} = (B_{a,b}^{\perp})^{\pm}$.
+\item We have $\lim_{n} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{g,h}^{\perp})^{\pm})$.
 \item  If we let $a_n=a^n$, $b_n=b^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
 and $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$, $D_n=f(a_nb_n)/2$, we have
 \begin{equation}\label{eq:Rn-meas}
@@ -253,13 +248,13 @@ and $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$, $D_n=f(a_nb_n)/2$, w
 \end{equation}
 and
 \begin{equation}\label{eq:Rn-perp-meas}
-\mu(R_n^\perp)=A_n + B_n -D_n,
+\mu((R_n^\perp)^{\pm})=A_n + B_n -D_n,
 \end{equation}
 \end{enumerate}
 \label{lem:measures_parallelogram}
 \end{lemma}
 \begin{proof}
-Item (1) is by construction of $R_n$.
+Item (1) is by construction of $R_n^{\pm}$.
 Item (2) follows by Item (1) and lower semi-continuity of measures.
 Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \end{proof}
@@ -283,24 +278,25 @@ It remains to show that $\mu_f$ is a measured lamination.
 Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
-By max-smoothing, for every $n$, we have $\mu(R_n^\perp)=0$ or $\mu(R_n)=0$.
-Since each sequence of sets $(R_n)$ and $(R_n^{\perp})$ is nested, if $\mu(R_1) \neq 0$, then $\mu(R_n) \neq 0$ for all $n \geq 1$ and thus $\mu(R_n^{\perp})=0$ for all $n \geq 1$.
-Hence, $\mu(B_{a,b})=0$ or $\mu(B_{a,b}^{\perp})=0$.
+By max-smoothing, for every $n$, we have $\mu((R_n^\perp)^{\pm})=0$ or $\mu(R_n^{\pm})=0$.
+Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq 1$.
+Hence, $\mu(B_{a,b}^{\pm})=0$ or $\mu((B_{a,b}^{\perp})^{\pm})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-By density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $B_n \subset B_{n+1}$, $B_{n+1}^{\perp} \subset B_{n}^{\perp}$, $\bigcup_n B_n = B$, and $\bigcap_n B_n^{\perp} = B$.
-Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$.
-
+By density of $B_{a,b}^{\pm}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B$.
+Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n^{\pm}) =\mu(B)$ and $\lim_n \mu((B_n^{\perp})^{\pm}) = \mu(B^{\perp})$.
 Now we prove the other implication, by proving the contra-positive.
 If disconnected max-smoothing is \emph{not} satisfied for the elements
 $a,b$, then by Equations~\eqref{eq:Rn-meas}
-and~\eqref{eq:Rn-perp-meas}, both $\mu(R_{a,b})>0$ and
-$\mu(R_{a,b}^{\perp})>0$.
+and~\eqref{eq:Rn-perp-meas}, both:
+
+\begin{itemize}
+    \item $\mu(R_{a,b}^{+})>0$ or $\mu(R_{a,b}^{-})>0$;
+    \item and
+$\mu((R_{a,b}^{\perp})^{+})>0$ or $\mu((R_{a,b}^{\perp})^{-})>0$
+\end{itemize} 
 \DPTtodo{I believe appropriately interpreted neither $\protect{R_{a,b}}$ nor $\protect{R_{g,h}^\perp}$ contain the diagonals $\protect\ora{a}$ and $\protect\ora{b}$. We  use that here}
-  \DMGtodo{as defined now,neither $R_{a,b}$ nor
-  $R_{g,h}^\perp$ contain the diagonals $\protect\ora{a}$ and $\protect\ora{b}$. }
-Since for
-every $\gamma \in R_{a,b}$ and every $\gamma' \in R_{a,b}^\perp$, the geodesics
-that $\gamma$ and $\gamma'$ cross, this implies that $i(\mu, \mu) >0$,
+  \DMGtodo{I introduced two versions of $R_{a,b}$ and $R_{a,b}^{\perp}$ depending on which endpoints are included. }
+For every $\gamma \in R_{a,b}^+ \cup R_{a,b}^-$ and every $\gamma' \in (R_{a,b}^\perp)^+\cup (R_{a,b}^\perp)^-$, $\gamma$ and $\gamma'$ cross. Consequenty, we have $i(\mu, \mu) >0$,
 and hence $\mu$ is not a measured lamination.
 \end{proof}
 
@@ -341,7 +337,7 @@ Bonahon gives an algebraic characterization for a geodesic current to be a Liouv
    \label{thm:bonahonliouville}
 \end{theorem}
 
-The choice inclusion/exclusion of endpoints of the intervals in the above statement is irrelevant, since it follows from the hypothesis that the current is non-atomic.
+The choice inclusion/exclusion of endpoints of the intervals in the above statement is irrelevant, since it follows from the hypothesis that the current is non-atomic. \DMGtodo{added this clarifying sentence}
 
 We use this to prove the following characterization (Theorem~\ref{mainthm:apps}\ref{item:hyp-char}).
 
@@ -362,7 +358,7 @@ geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
 It remains to show that $\mu_f$ is a Liouville current, which is where the disconnected $\lambda$-smoothing will play a role.
 Given elements $a, b \in \pi_1(\Sigma)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
-Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
+Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}, where we ease notation writing $R_n$ in place of $R_n^{\pm}$.
 Now, we compute
 \[
 e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
