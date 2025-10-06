@@ -30,10 +30,20 @@ and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
 This defines boxes whose vertical height becomes narrower as $k$
 grows, with the top endpoint fixed. See
 Figure~\ref{fig:vertical-accordion}.
-\DPTtodo[inline]{In Fig.~\ref{fig:vertical-accordion}, the shading
-  distinctions between the nested boxes are too subtle. We'll redraw
-  it anyway.}
 
+
+
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{v-accordion}}
+\caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in
+    the disk (left) and in the whiskers picture (right)}
+  \label{fig:vertical-accordion}
+}
+\end{figure}
+
+\begin{comment}
+    %Hand drawn figure
 \begin{figure}
   \[
     \mathcenter{\includegraphics[height=2.5in]{v-accordion-disk}}
@@ -44,6 +54,9 @@ Figure~\ref{fig:vertical-accordion}.
     the disk (left) and in the whiskers picture (right)}
   \label{fig:vertical-accordion}
 \end{figure}
+\end{comment}
+
+
 
 Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$, or
 equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
@@ -147,6 +160,9 @@ Lemma~\ref{lem:additivity-limit-2} and
 Proposition~\ref{prop:join-split-alg} apply as before.
 \end{proof}
 
+\begin{comment}
+%Hand drawn figure
+%I disabled it since it is very similar to the vertical one, so maybe we don't need to include it?
 \begin{figure}
   \[
     \mathcenter{\includegraphics[height=2.5in]{h-accordion-disk}}
@@ -156,7 +172,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
   \caption{Horizontal accordion $F(\vec{p_1},q_1,p_2,q_2)$}
   \label{fig:horizontal-accordion}
 \end{figure}
-
+\end{comment}
 We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
 is countably additive.
 We will need to consider more types of boxes
@@ -375,12 +391,21 @@ at the following particular family for $n \ge 0$:
 
 \begin{figure}
 \centering{
+\svgfignormal{recover-f}}
+\caption{The boxes used in proving that $\mu_f$ recovers $f$.}
+  \label{fig:recover-f}
+\end{figure}
+
+\begin{comment}
+%Hand drawn figure
+\begin{figure}
+\centering{
 \includegraphics[height=88mm]{recover-f}
 \caption{The boxes used in proving that $\mu_f$ recovers $f$.}
 \label{fig:recover-f}
 }
 \end{figure}
-
+\end{comment}
 In the RH orbit notation, we have
 \begin{align*}
   a^{(n)} &= p y^{n}   q &  b^{(n)} &= p y^{-(n+1)} q \\

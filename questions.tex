@@ -47,7 +47,7 @@ If a curve functional satisfies homogeneity, stability, convex union and smoothi
 In this context, in recent work, Arenas--Neumann-Coto \cite{ANC24:TautSmoothings} consider smoothing for closed multi-curves (as well as arcs), and prove, under certain hypotheses for multi-curves, that given a closed multi-curve in minimal position there is always an essential crossing such that once smoothed decreases intersection number by at most 1. They call such a smoothing a \emph{taut smoothing}.
 Can this be used to give a more efficient criterion for checking the smoothing property of a curve functional? That is,
 
-\begin{question}
+\begin{question} \DMGtodo{does this question make sense?}
 Let $f$ be a curve functional. For every multi-curve $C$, let $C'_{\mbox{taut}}$ be a multi-curve obtained by a taut smoothing of $C$.
 If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that $f$ satisfies smoothing?
 \end{question}
@@ -115,7 +115,7 @@ Let $\mu$ be a finitely supported probability measure on $\Gamma$ whose support 
 Let $w_n \coloneqq g_1 \cdots g_n$ be the random walk with respect to $\mu$, where each $(g_i)$ is identically and independently distributed with distribution $\mu$. Let $(\Gamma^{\mathbb{N}}, \mu^{\mathbb{N}})$ be the step space, and the map $\pi \colon \Gamma^{\mathbb{N}} \to \Gamma^{\mathbb{N}}$ as $\pi((g_n)_{n \in \mathbb{N}}) \coloneqq (w_n)_{n \in \mathbb{N}}$. The image of $\pi$ is equipped with the measure $(\mathbb{P}_{\mu})_*(\mu^{\mathbb{N}})$.
 Define the metric \[ d_{\mu}(x,y) \coloneqq - \log \mathbb{P}_{\mu}(\exists n : w_n x =y).\]
 In words, we are considering the probability that a random walk departing from $x$ will reach $y$ after some number of steps.
-This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves(S) \to \mathbb{R}$.
+This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves(S) \to \mathbb{R}$. The following question emerged from conversations of the first author with Eduardo Reyes.
 
 \begin{question}
 Does $\ell_{\mu}$ satisfy the hypotheses of

@@ -643,7 +643,6 @@ Figure~\ref{fig:whiskers}.
 Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
-\DPTtodo{Use notation $r^+$, etc in pictures rather than $q\cdot x^+$}
 
 % \begin{figure}
 % \centering{
@@ -652,6 +651,16 @@ all the way back to the diagonal.
 % \label{fig:whiskers}
 % }
 % \end{figure}
+
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{rhs_whiskers}}
+\caption{Example of the correspondence between right-handed boxes and collections of four whiskers.}
+\label{fig:whiskers}
+}
+\end{figure}
+
+\begin{comment}%Hand-drawn figure
 \begin{figure}
 \[
   \includegraphics[height=2in]{box-whiskers-disk}
@@ -661,7 +670,7 @@ all the way back to the diagonal.
 \caption{Example of the correspondence between right-handed boxes and collections of four whiskers.}
 \label{fig:whiskers}
 \end{figure}
-
+\end{comment}
 \begin{proposition}
   \label{prop:RHsemiring}
   The set of RH boxes $\mathcal{B}$ is a semi-ring, in the sense of
@@ -685,6 +694,8 @@ all the way back to the diagonal.
   Figure~\ref{fig:box-difference}.
 \end{proof}
 
+\begin{comment}
+%Hand-drawn figure
 \begin{figure}
   \[
     \mathcenter{\includegraphics[height=2in]{difference-1}}
@@ -697,18 +708,26 @@ all the way back to the diagonal.
   }
   \label{fig:box-difference}
 \end{figure}
+\end{comment}
 
 \begin{proposition}
   \label{prop:finitely-additive}
   The function $\mu_f$ is finitely additive on boxes.
 \end{proposition}
 
-\DPTtodo[inline]{While working on an example that didn't violate
-  simplicity of $[x]$, I noticed that we don't actually need to add
-  any additional whiskers. Old proof is still in comments in case
-  there's a hole. I have examples we could show if you think they are
-  necessary.}
-  \DMGtodo{it would be nice to show examples}
+
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{box_difference}}
+\caption{Decomposing a difference of boxes. Left: A possible shape
+    for $A \setminus B$. Right: Adding a horizontal whisker allows us to
+    write the region as a union of boxes.
+  }
+\label{fig:box-difference}
+}
+\end{figure}
+
+
 \begin{proof}
   Given a division $B_0 = \bigsqcup_i B_i$, we will show that the
   $B_i$ can be further divided so that the result can be joined by
@@ -736,6 +755,7 @@ all the way back to the diagonal.
 \end{proof}
 
 \begin{comment}
+%Old proof.
   In order to apply Proposition~\ref{prop:sidebyside}, we must show
   show that any way of partitioning a box $B_0 = \bigsqcup_i B_i$ into
   finitely many smaller boxes can be further refined into smaller boxes $B_j'$ so
@@ -765,6 +785,8 @@ all the way back to the diagonal.
   so they can also be assembled by side-by-side additivity.
 \end{comment}
 
+\begin{comment}
+%Hand-drawn figure
 \begin{figure}
   \[
     \mathcenter{\includegraphics[height=2.5in]{finite-additive-1}}
@@ -776,6 +798,17 @@ all the way back to the diagonal.
     one that is side-by-side decomposable (right). Note that we
     subdivided the cyan box in the initial division to make this possible.}
   \label{fig:finite-additivity}
+\end{figure}
+\end{comment}
+ \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{finite-additive}}
+\caption{Finite additivity of $\mu_f$. We can turn an
+    arbitrary division of a large box into smaller boxes (left) into
+    one that is side-by-side decomposable (right). Note that we
+    subdivided the cyan box in the initial division to make this possible. }
+\label{fig:finite-additivity}
+}
 \end{figure}
 
 From now on, we denote the semiring of boxes by $\mathcal{S}$.

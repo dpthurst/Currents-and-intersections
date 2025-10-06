@@ -199,7 +199,7 @@ Suppose that $\ora{g}$ and $\ora{h}$ are parallel. There are three subcases to c
     Then, $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, by~Lemma~\ref{lem:foundation_trees} (1).
     \item  $g,h$ overlap incoherently. 
     We show this case cannot occur.
-    If the overlap is bounded, according to Remark~\ref{rmk:powers_goodpair} there exist $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
+    If the overlap is bounded, according to Remark~\ref{rmk:powers_goodpair} there exists $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
     Suppose now the overlap is unbounded. Here is where the assumption of irreducibility will be invoked.
     Consider the subset 
 \[
@@ -277,21 +277,34 @@ Now we prove Theorem~\ref{mainthm:skora}.
 (C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 \end{proof}
 
-\begin{remark}
+We follow-up with some remarks about the proof.
 
-Cases 2 and 3 in the above proof seem necessary, in the sense that, in principle, the proof cannot be simplified by just proving Case 1 and approximating by minimal and free actions.
-Indeed, note that minimal free actions are small and Culler-Morgan~\cite{CM87:GroupActions} proved that the subspace of minimal small actions of any finitely generated group is closed in the space of all actions.
-It follows that the closure of minimal free actions is contained in the space of minimal small actions. To simplify the proof one would have to prove this closure is \emph{the same as} minimal small actions, a fact we know is true a posteriori, for example, because maximal measured laminations, (whose actions are dual to free minimal actions on real trees)~\cite{FLP79:ThurstonWorkSurfaces} are dense in the space of all measured laminations.
-On the other hand, note that the analogous result is not true in the setting of free groups: by a result of Bestvina-Feighn~\cite{BF11:OuterLimits}
-the closure of the space of minimal, free, simplicial actions is the space of so-called ``very small'' actions, which is a proper subset of small actions.
-In the setting of surface groups, the space of very small and small actions coincide, so the density result of free minimal actions holds.
+\begin{remark}
+One could hope to bypass cases 2 and 3 by approximating by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
+Indeed, note that if an action $\Gamma \acts T$ satisfies that all elements
+act hyperbolically, it follows the action is free.
+Observe that, in particular, 
+minimal free actions $\operatorname{Free}(\Gamma, T)$ are small and, in fact, ``very small'', in the sense of Cohen-Lustig~\cite{CL95:Verysmall}, which roughly means that the stabilizers of tripods must be trivial.
+Culler-Morgan~\cite{CM87:GroupActions} proved that the subspace of minimal small actions of any finitely generated group is closed in the space of all actions, and Cohen-Lustig~\cite{CL95:Verysmall} proved that the space of very small actions $\operatorname{VS}(\Gamma,T)$ is a closed subspace of small actions $\operatorname{S}(\Gamma, T)$, and the closure of free actions is contained in the space of very small actions:
+\[
+\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) \subset \operatorname{VS}(\Gamma,T) \subset \operatorname{S}(\Gamma, T).
+\]
+For free groups, by a result of Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that $\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) = \operatorname{VS}(\Gamma,T)$, and it is also known that $\operatorname{VS}(\Gamma,T) \subsetneq \operatorname{S}(\Gamma, T)$.
+For surface groups, both inclusions above are equalities, a fact that follows \emph{a posteriori} once one knows all small actions are dual to measured laminations: filling measured laminations (those intersecting all simple closed curves) are dense in the space of measured laminations, and their dual tree actions are free.
+It then follows that very small actions are equal to small actions in this case. This can also be seen directly by definition, since stabilizers of tripods correspond to stabilizers of ideal triangle complementary regions of the lamination, which are the trivial isometry.
 \end{remark}
 
-We conclude this section showing that reducible action satisfy disconnected smoothing but never satisfy connected smoothing.
+\begin{remark}
+We observe that the proof shows that if $\pi_1(S) \acts T$ preserves axis, then any pair of hyperbolic elements $(g,h)$ satisfies that $T_g \cap T_h$ never have bounded incoherent overlap.
+In fact, the converse is also true: if $\pi_1(S) \acts T$ does not preserve axes, it means there exist a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$.
+\end{remark}
+
+We conclude this section showing that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing.
 
 \begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
 If  $(\Gamma, T)$ is reducible, then $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
+\label{lem:red_not_smoothing}
 \end{lemma}
 \begin{proof}
 We start with a reducible action and show it cannot satisfy smoothing.

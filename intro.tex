@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Geodesic currents on a hyperbolic surface are measures on the space of unoriented geodesics that complete the set of weighted closed geodesics in the weak topology.
+Geodesic currents on a hyperbolic surface are measures on the space of unoriented geodesics that complete the set of weighted closed geodesics in the weak$^*$-topology. Equivalently, they are geodesic-flow–invariant measures on the unit tangent bundle of the surface, invariant under orientation reversal.
  Many metric structures embed in the space of currents---e.g.
 hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
  negatively curved Riemannian metrics
@@ -9,20 +9,19 @@ hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
 
 
 
-Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length functions on curves or \emph{curve functionals} $f \colon\mathcal{C}(S) \to \mathbb{R}$ are intersection numbers with a dual geodesic current $\mu_{f}$, this is,
+Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length functions on curves or \emph{curve functionals} $f \colon\mathcal{C}(S) \to \mathbb{R}$ are intersection numbers with a \emph{dual} geodesic current $\mu_{f}$, this is,
 \[
   i(\mu_{f},C)=f(C)
 \]
-for any $C$ in the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of non-negatively non-necessarily-simple closed curves on $S$). In this case, we say that the current $\mu_{f}$ is \emph{dual} to the curve functional $f$, or that $f$ \emph{has a dual current} $\mu_{f}$. 
-For example, the hyperbolic length of curves $\ell_{\Sigma}$ is dual to
-a distinguished geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising naturally from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP24:PositiveCrossratios}).
+for any $C$ in the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of non-negatively non-necessarily-simple closed curves on $S$).  
+For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising naturally from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP24:PositiveCrossratios}).
 
-In this paper we give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
+We give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
 
 \begin{mainthm}
     Suppose that a curve functional $f \colon\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
      \[
-      f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\},
+      f\left(\mfig{curves-10}\right) \ge \max \left\{ f\left(\mfig{curves-11}\right), f\left(\mfig{curves-12}\right)\right\},
    \]
    for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components and \emph{stable} (see~\ref{subsec:mainhypotheses} for definitions).
 Then, $f$ has a (unique) dual geodesic current $\mu_f$, i.e., for every curve $C$, we have
@@ -37,8 +36,7 @@ working in the more general setting oriented curve functionals. (See
 Section~\ref{subsec:examples_and_non} for many natural examples and
 non-examples.)
 
-\DMGtodo{Edit here}
-One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number. See Section~\ref{subsec:newdef}.
+One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number. See Section~\ref{sec:special-classes}.
 
 
 
@@ -88,7 +86,7 @@ Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$
 See Section~\ref{subsec:algebraic_vs_top} for a proof of the equivalence of the smoothing condition in Theorem~\ref{thm:intersect} to equations~\ref{eq:conn_oriented} \emph{and} \ref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
 These hypotheses might seem a priori weaker than smoothing. However, with the rest of the assumptions, oriented smoothing of $f$ implies smoothing of $\overline{f}$ (Corollary~\ref{cor:oriented_smoothing_unoriented}).
 
-Furthermore, neither one of conditions~\ref{eq:conn_oriented} and ~\ref{eq:disconn_oriented} imply each other: see Section~\ref{subsec:mainhypotheses}, Remark~\ref{rmk:reducible_action} or Example~\ref{ex:linEL}.
+Furthermore, neither one of conditions~\ref{eq:conn_oriented} and ~\ref{eq:disconn_oriented} imply each other: see Section~\ref{subsec:mainhypotheses}, Lemma~\ref{lem:red_not_smoothing} or Example~\ref{ex:linEL}.
 The averaging of $f(a)$ and $f(A)$ is also necessary; see
 Appendix~\ref{sec:asymmetric}.
 
@@ -147,8 +145,6 @@ Let $[\cdot, \cdot, \cdot, \cdot]$ be a generalized cross-ratio of period $\ell$
 Conversely, this geodesic current $\mu_{\ell}$ is uniquely determined by the period of the cross-ratio $\ell$.
  Moreover, $\mu_\ell$ determines the cross-ratio uniquely if and only if it is non-atomic.
 \end{mainthm}
-
-Our result subsumes recent work in~\cite{BIPP24:PositiveCrossratios}, where the authors associate, to every cross-ratio, a geodesic current.
 
 \subsection{Characterizing small actions on real trees}
 

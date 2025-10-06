@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="4.3000002in"
+   height="2in"
+   viewBox="0 0 109.22002 50.799999"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="finite-additive_backup.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2"
+     inkscape:cx="527"
+     inkscape:cy="111.5"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath52">
+      <path
+         id="path52"
+         style="stroke-width:0.1;stroke-linecap:square;paint-order:markers fill stroke;stop-color:#000000"
+         d="m -880.82767,-187.29769 h 1640.84 v 73.28155 h -1640.84 z" />
+    </clipPath>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20" />
+    </marker>
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-5" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-5-6" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-5-6-1" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-5-6-1-0" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-9" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-5-6-9" />
+    <rect
+       x="644.47736"
+       y="100.0051"
+       width="63.63961"
+       height="68.690376"
+       id="rect4-5-6-1-0-8" />
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-1"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-65" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-84"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-71" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-7-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-7-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-1-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-6-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-8-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-0-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-84"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-7-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-2-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-8-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-0-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-84-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-7-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-7-7-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-2-8-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-1-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-65-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-84-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-71-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-7-6-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-7-2-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-1-7-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-6-7-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-64" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-1-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-65-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-84-06"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-71-6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-1-4-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-65-9-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-84-0-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-71-8-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-7-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-7-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-1-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-6-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-7-6-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-7-2-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-1-7-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-6-7-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-9-7-6-9-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-6-7-2-6-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-77-1-7-3-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-9-6-7-2-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-7"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-7-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-2-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-84-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-7-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-7-7-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-2-8-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-84-9-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-7-4-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ColoredDot-6-7-7-7-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Colored dot"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.45)"
+         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
+         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         sodipodi:nodetypes="sssss"
+         id="path20-7-2-8-6-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-8-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-8-5-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-0-7-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4-6-8-6-6-8-2-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path4-9-0-3-2-0-5-1" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-12.109395,6.0485079)">
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8);marker-end:url(#ColoredDot)"
+       d="m 15.653967,0.24051781 c 5.18459,-0.13120507 31.052616,0.048826 39.224026,-0.0110739"
+       id="path3-6-2-6"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9);marker-end:url(#ColoredDot-77)"
+       d="m 62.890123,0.24287406 c -2.98931,0.0154788 -4.01781,0.0146682 -4.97507,0.0607489"
+       id="path3-6-2-6-9"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8"
+       width="47.153774"
+       height="45.511604"
+       x="15.759868"
+       y="-4.2753711" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1"
+       d="M 15.818517,41.177585 62.796343,-4.2753708"
+       id="path8" />
+    <path
+       d="m 16.003193,5.4821328 c 1.687166,-0.22625 10.105115,0.084195 12.764248,-0.019096"
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8);marker-end:url(#ColoredDot)"
+       id="path1" />
+    <path
+       d="m 15.949612,10.871765 c 3.212462,-0.152766 19.240737,0.05685 24.303882,-0.01289"
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-1);marker-end:url(#ColoredDot-84)"
+       id="path1-7" />
+    <path
+       d="m 15.958673,16.175036 c 2.477997,-0.174237 14.841732,0.06484 18.747291,-0.0147"
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-1-4);marker-end:url(#ColoredDot-84-0)"
+       id="path1-7-4" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-7);marker-end:url(#ColoredDot-77-1)"
+       d="m 62.753021,5.453943 c -5.935624,0.010603 -7.977823,0.010048 -9.878557,0.04161"
+       id="path3-6-2-6-9-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-7-6);marker-end:url(#ColoredDot-77-1-7)"
+       d="m 62.917766,10.893468 c -9.622964,0.008 -12.93382,0.0076 -16.015332,0.03155"
+       id="path3-6-2-6-9-9-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-7-6-9);marker-end:url(#ColoredDot-77-1-7-3)"
+       d="m 63.006952,16.067856 c -12.765958,0.0067 -17.158188,0.0063 -21.246164,0.02633"
+       id="path3-6-2-6-9-9-7-5"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 22.490828,34.665209 c -0.0088,-5.666061 0.03679,-21.28229 0.01655,-29.8286506"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6);marker-end:url(#ColoredDot-6)"
+       id="path3"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 30.771909,41.027257 c -0.01327,-2.307317 0.05548,-8.666512 0.02496,-12.146736"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6);marker-end:url(#ColoredDot-6-7)"
+       id="path3-4"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 26.480581,41.459955 c -0.01724,-1.376885 0.07212,-5.171713 0.03244,-7.248525"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-84);marker-end:url(#ColoredDot-6-7-7)"
+       id="path3-4-0"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 18.467222,41.115439 c -0.02978,-0.322798 0.124542,-1.212461 0.05602,-1.699351"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-84-9);marker-end:url(#ColoredDot-6-7-7-7)"
+       id="path3-4-0-5"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 30.807651,26.800884 c -0.0073,-6.000191 0.05392,-22.1865214 0.03713,-31.2368632"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-8)"
+       id="path3-4-3"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 18.447602,38.570959 c -0.0073,-8.136503 0.03035,-30.5615109 0.01366,-42.8341423"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-8-5)"
+       id="path3-4-3-3"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 26.451214,31.162044 c -0.0073,-6.754174 0.03046,-25.369349 0.01371,-35.5569563"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-8-2)"
+       id="path3-4-3-4"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#008100;fill-opacity:0.2827;stroke:none;stroke-width:0.223833;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9"
+       width="8.0256777"
+       height="5.4241629"
+       x="18.655703"
+       y="0.12330218" />
+    <rect
+       style="fill:#000000;fill-opacity:0.2827;stroke:none;stroke-width:0.190703;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4"
+       width="4.0569282"
+       height="5.1595798"
+       x="22.494293"
+       y="5.6593041" />
+    <rect
+       style="fill:#00969e;fill-opacity:0.2827;stroke:none;stroke-width:0.276;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-6"
+       width="8.488699"
+       height="5.1595798"
+       x="22.428144"
+       y="10.950972" />
+    <rect
+       style="fill:#f38c00;fill-opacity:0.2827;stroke:none;stroke-width:0.275676;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-16"
+       width="4.0569282"
+       height="10.781976"
+       x="18.591686"
+       y="5.4608669"
+       inkscape:transform-center-x="-4.2333339"
+       inkscape:transform-center-y="-5.3907746" />
+    <rect
+       style="fill:#939800;fill-opacity:0.2827;stroke:none;stroke-width:0.281367;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-19"
+       width="4.3876572"
+       height="10.3851"
+       x="26.33075"
+       y="0.30149204" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-3);marker-end:url(#ColoredDot-2)"
+       d="m 68.479244,0.41414817 c 5.18459,-0.131205 31.052619,0.04883 39.224026,-0.01107"
+       id="path3-6-2-6-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-9);marker-end:url(#ColoredDot-77-9)"
+       d="m 115.7154,0.41650417 c -2.98931,0.01548 -4.01781,0.01467 -4.97507,0.06075"
+       id="path3-6-2-6-9-1"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-7"
+       width="47.153774"
+       height="45.511604"
+       x="68.585144"
+       y="-4.1017413" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1"
+       d="M 68.643794,41.351215 115.62162,-4.1017408"
+       id="path8-1" />
+    <path
+       d="m 68.82847,5.6557632 c 1.687166,-0.22625 10.105115,0.08419 12.764248,-0.0191"
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-3);marker-end:url(#ColoredDot-2)"
+       id="path3-5" />
+    <path
+       d="m 68.774889,11.045395 c 3.212462,-0.152766 19.240737,0.05685 24.303882,-0.01289"
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-1-7);marker-end:url(#ColoredDot-84-06)"
+       id="path1-7-9" />
+    <path
+       d="m 68.78395,16.348666 c 2.477997,-0.174237 14.841732,0.06484 18.747291,-0.0147"
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-1-4-8);marker-end:url(#ColoredDot-84-0-3)"
+       id="path1-7-4-3" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-7-7);marker-end:url(#ColoredDot-77-1-5)"
+       d="m 115.57829,5.6275732 c -5.93562,0.0106 -7.97782,0.01005 -9.87855,0.04161"
+       id="path3-6-2-6-9-9-70"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-7-6-8);marker-end:url(#ColoredDot-77-1-7-6)"
+       d="m 115.74304,11.067098 c -9.62296,0.008 -12.93382,0.0076 -16.015327,0.03155"
+       id="path3-6-2-6-9-9-7-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-9-7-6-9-7);marker-end:url(#ColoredDot-77-1-7-3-3)"
+       d="m 115.83223,16.241486 c -12.76596,0.0067 -17.158187,0.0063 -21.246165,0.02633"
+       id="path3-6-2-6-9-9-7-5-0"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 75.316105,34.838839 c -0.0088,-5.666061 0.03679,-21.28229 0.01655,-29.8286508"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-4);marker-end:url(#ColoredDot-6-5)"
+       id="path4"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 83.597186,41.200887 c -0.01327,-2.307317 0.05548,-8.666512 0.02496,-12.146736"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-7);marker-end:url(#ColoredDot-6-7-2)"
+       id="path3-4-30"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 79.305858,41.633585 c -0.01724,-1.376885 0.07212,-5.171713 0.03244,-7.248525"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-84-5);marker-end:url(#ColoredDot-6-7-7-5)"
+       id="path3-4-0-1"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 71.292499,41.289069 c -0.02978,-0.322798 0.124542,-1.212461 0.05602,-1.699351"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-84-9-8);marker-end:url(#ColoredDot-6-7-7-7-5)"
+       id="path3-4-0-5-2"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 83.632928,26.974514 c -0.0073,-6.000191 0.05392,-22.1865208 0.03713,-31.2368628"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-8-3)"
+       id="path3-4-3-46"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 71.272879,38.744589 c -0.0073,-8.136503 0.03035,-30.5615108 0.01366,-42.8341418"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-8-5-1)"
+       id="path3-4-3-3-2"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 79.276491,31.335674 c -0.0073,-6.754174 0.03046,-25.3693488 0.01371,-35.5569558"
+       style="fill:none;fill-opacity:1;stroke:#006e00;stroke-width:0.239;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker4-6-8-6-6-8-2-8)"
+       id="path3-4-3-4-5"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#008100;fill-opacity:0.2827;stroke:none;stroke-width:0.223833;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-8"
+       width="8.0256777"
+       height="5.4241629"
+       x="71.48098"
+       y="0.29693249" />
+    <rect
+       style="fill:#000000;fill-opacity:0.2827;stroke:none;stroke-width:0.190703;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-63"
+       width="4.0569282"
+       height="5.1595798"
+       x="75.319572"
+       y="5.8329349" />
+    <rect
+       style="fill:#00969e;fill-opacity:0.2827;stroke:none;stroke-width:0.275854;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-6-2"
+       width="8.488699"
+       height="5.1595798"
+       x="75.253418"
+       y="11.124601" />
+    <rect
+       style="fill:#c42f9e;fill-opacity:0.2827;stroke:none;stroke-width:0.191;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-6-2-8"
+       width="4.0569282"
+       height="5.1595798"
+       x="75.14637"
+       y="11.083263" />
+    <rect
+       style="fill:#f38c00;fill-opacity:0.2827;stroke:none;stroke-width:0.275676;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-16-4"
+       width="4.0569282"
+       height="10.781976"
+       x="71.416962"
+       y="5.6344972"
+       inkscape:transform-center-x="-4.2333339"
+       inkscape:transform-center-y="-5.3907746" />
+    <rect
+       style="fill:#939800;fill-opacity:0.2827;stroke:none;stroke-width:0.281367;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9-4-19-2"
+       width="4.3876572"
+       height="10.3851"
+       x="79.156029"
+       y="0.47512272" />
+  </g>
+</svg>
