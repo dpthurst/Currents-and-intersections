@@ -1,6 +1,6 @@
 \section{Introduction}
 
-Geodesic currents on a hyperbolic surface are measures on the space of unoriented geodesics that complete the set of weighted closed geodesics in the weak$^*$-topology. Equivalently, they are geodesic-flow–invariant measures on the unit tangent bundle of the surface, invariant under orientation reversal.
+Geodesic currents on a hyperbolic surface are measures on the space of unoriented geodesics that complete the set of weighted closed geodesics in the weak$^*$-topology. From a dynamical viewpoint, they are orientation and geodesic-flow invariant measures on the unit tangent bundle.
  Many metric structures embed in the space of currents---e.g.
 hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
  negatively curved Riemannian metrics
@@ -14,17 +14,16 @@ Geometric intersection number of multi-curves extends continuously to a bilinear
   i(\mu_{f},C)=f(C)
 \]
 for any $C$ in the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of non-negatively non-necessarily-simple closed curves on $S$).  
-For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising naturally from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP24:PositiveCrossratios}).
+For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP24:PositiveCrossratios}).
 
-We give an axiomatic characterization of curve functionals that are dual to geodesic currents. 
+We give an axiomatic characterization of curve functionals dual to geodesic currents. 
 
-\begin{mainthm}
-    Suppose that a curve functional $f \colon\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
+\begin{mainthm} 
+    A curve functional $f \colon\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
      \[
       f\left(\mfig{curves-10}\right) \ge \max \left\{ f\left(\mfig{curves-11}\right), f\left(\mfig{curves-12}\right)\right\},
    \]
-   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is \emph{additive} on connected components and \emph{stable} (see~\ref{subsec:mainhypotheses} for definitions).
-Then, $f$ has a (unique) dual geodesic current $\mu_f$, i.e., for every curve $C$, we have
+   for every essential crossing of a multi-curve on the surface, is \emph{additive} on connected components (see~\ref{subsec:mainhypotheses} for definitions) if and only if $f$ has a (unique) dual geodesic current $\mu_f$, i.e., for every curve $C$, we have
 \[
 i(\mu_f,C)=f(C).
 \]
@@ -32,16 +31,15 @@ i(\mu_f,C)=f(C).
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
 Even though the result is stated for unoriented curves, we will be
-working in the more general setting oriented curve functionals. (See
-Section~\ref{subsec:examples_and_non} for many natural examples and
-non-examples.)
+working in the more general setting of oriented curve functionals.
+\DMGtodo{added this minimality statement}
+The hypotheses of the theorem are minimal: neither axiom implies the other (see Section~\ref{subsec:examples_and_non} for many natural examples and
+non-examples). 
 
-One can view this theorem in analogy to Poincaré duality for closed surfaces, where certain curve functionals satisfying smoothing correspond to cohomology classes and geodesic currents to homology classes. This duality is mediated via the geometric intersection number. See Section~\ref{sec:special-classes}.
+One can view this theorem in analogy to Poincaré duality for closed surfaces, where curve functionals satisfying smoothing correspond to cohomology classes, geodesic currents to homology classes and  geometric intersection number to the cap product. See Section~\ref{subsec:poincare_duality}.
 
-
-
-As a consequence of Theorem~\ref{thm:intersect} we obtain a 
-many new dual geodesic currents, generalizing many previous constructions for Riemannian metrics of negative curvature on $S$, and certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone, Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
+As a consequence of Theorem~\ref{thm:intersect} we obtain 
+many new dual geodesic currents, generalizing many previous constructions for Riemannian metrics of negative curvature on $S$, and certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
 In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
     Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs, thus generalizing the work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
 
@@ -58,7 +56,7 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
       ccw order on the boundary at infinity. See
       Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing} for more details.
       From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
-      Using this we can state an equivalent version of Theorem~\ref{thm:intersect}.
+      Using this we can state an equivalent version of Theorem~\ref{thm:intersect} but with weaker hypotheses. \DMGtodo{added this}
 
       
 \begin{mainthmprime}
@@ -66,7 +64,8 @@ Let $a,b \in \pi_1(S)$.
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
 \begin{enumerate}
 \item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item stable: $f(a^n) = nf(a)$.
+\item power smoothing: \DMGtodo{what do you think about this name?}
+$f(a^{n+m}) \geq f(a^n) + f(a^m)$ for all $n,m \geq 1$.
 \item oriented smoothing:
  \begin{align}
     \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
@@ -95,14 +94,14 @@ Luo's criterion~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}, where
 functionals on simple closed curves which can be realized as
 intersection numbers with measured laminations, i.e., geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). 
  
- In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties}). Recently, Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}, relying essentially on work of Fricker-Furman \cite[Theorem A]{FF22:QF}, show that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
+ In a previous paper, \cite[Proposition 4.11]{MGT21:Smoothings}, we have proven that the stable length associated to a quasi-fuchsian representation satisfies \emph{quasi-smoothing}, i.e., smoothing up to uniform additive error (see Definition \ref{def:properties}). Recent work of Fricker-Furman \cite[Theorem A]{FF22:QF} (see also Brody-Reyes~\cite[Proposition~1.8]{BR24:Cubulations}), shows that this additive error in the quasi-smoothing cannot be removed unless the representation is fuchsian. 
 In the case the representation is fuchsian, by \cite[Proposition 14]{Bonahon88:GeodesicCurrent}, it is dual to a geodesic current, and hence smoothing is satisfied.
-Theorem~\ref{thm:intersect} generalizes all of these results by showing that the smoothing property (plus additivity and stability) is \emph{sufficient and necessary} condition for \emph{any} curve functional to be dual to a geodesic current. 
+Theorem~\ref{thm:intersect} generalizes all of these results by showing that the smoothing property and additivity are \emph{sufficient and necessary} conditions for a curve functional to be dual to a geodesic current. 
 
 \subsection{Characterize measured laminations and hyperbolic metrics}
 
-As a consequence of the Theorem, we can further characterize which
-curve functionals correspond to measured laminations or to hyperbolic
+As a consequence of the Theorem~\ref{thm:intersect}, we can further characterize which
+curve functionals correspond to \emph{measured laminations} (i.e., geodesic currents satisfying $i(\alpha,\alpha)=0)$ by~\cite[Proposition~17]{Bonahon88:GeodesicCurrent}), or to hyperbolic
 metrics.
 
 \begin{mainthm}
@@ -127,7 +126,8 @@ and~\ref{thm:char_liouville}.
 (The $\lambda$-length functional appears naturally in the study of the
 skein algebra of a surface; see, for example, \cite[Sec.\
 3]{Thurston14:PBI}).)
-The result on hyperbolic lengths can be strengthened (Theorem~\ref{thm:char_liouville_strong}) by replacing the equalities in the hypotheses by certain coarser inequalities.
+%Stroke this for now
+\begin{comment}The result on hyperbolic lengths can be strengthened (Theorem~\ref{thm:char_liouville_strong}) by replacing the equalities in the hypotheses by certain coarser inequalities.\end{comment}
 
 We emphasize that this result characterizes hyperbolic metrics among all curve functionals. In particular, it can be applied to stable lengths induced from Green metrics arising from admissible random walks on $\pi_1(S)$, yielding potential applications to investigate the singularity of their hitting boundary measures (see Section~\ref{subsec:green}).
 
@@ -135,24 +135,16 @@ These results generalize both of Luo's results on characterizing which functions
 
  Our methods also recover a previous result of the second author~\cite{Thu00:GeometricIntersection}.
 
-\subsection{Generalized cross-ratios}
 
-We subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. For example, if $X$ is a hyperbolic metric on $S$, the hyperbolic cross-ratio $[\cdot]_X$ coming from realizing the universal cover of $X$ as an isometric copy of the upper half-plane model is an example. Every generalized cross-ratio $[\cdot ]$ induces an additive curve functional called the \emph{period} $\ell_{[ \cdot ]}$. For the previous example of the hyperbolic cross-ratio, $\ell_{[\cdot]_X}$ is the hyperbolic length.
-We show that periods satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce a geodesic current.
 
-\begin{mainthm}
-Let $[\cdot, \cdot, \cdot, \cdot]$ be a generalized cross-ratio of period $\ell$. Then $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and hence induces a geodesic current $\mu_{\ell}$.
-Conversely, this geodesic current $\mu_{\ell}$ is uniquely determined by the period of the cross-ratio $\ell$.
- Moreover, $\mu_\ell$ determines the cross-ratio uniquely if and only if it is non-atomic.
-\end{mainthm}
+\subsection{Characterizing small actions on real trees} 
 
-\subsection{Characterizing small actions on real trees}
+We give a new and concise characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
 
-Finally, we give a new characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
-
-If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. If $\Gamma=\pi_1(\Sigma)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axis intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
+If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. Such an action is \emph{irreducible} if the subset of ends of $T$ fixed by all of $\Gamma$ is empty (see Section~\ref{sec:skora} for definitions).
+If $\Gamma=\pi_1(S)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axis intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
 An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
-Recall that an action of $\Gamma$ on a real tree is \emph{minimal} if the only invariant non-degenerate subtree is $T$ itself. 
+Recall that an action of $\Gamma$ on a real tree is \emph{minimal} if the only invariant non-degenerate subtree is $T$ itself. Finally, if two hyperbolic isometries have axes intersecting in a non-degenerate arc, we say they \emph{overlap incoherently} if the isometries translate in opposite directions on the overlap.
 We prove the following equivalences.
 
 \begin{mainthm}
@@ -172,28 +164,61 @@ The following are equivalent:
     \label{eq:small_conn}  \quad \ell(ab) &= \max \{ \ell(a) + \ell(b), \ell(aB)\}.
   \end{align}
 \end{enumerate}
+\item $\pi_1(S) \acts T$ does not have any parallel pair $(a,b)$ of hyperbolic isometries that overlap incoherently.\DMGtodo{added this characterization}
 \end{enumerate}
 \label{mainthm:skora}
 \end{mainthm}
 
-The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. Skora also shows that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal, irreducible and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
+The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. Skora also shows that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 
-From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to small $\Gamma$-invariant $\mathbb{R}$-trees or, equivalently, are dual to a measured lamination (i.e., a geodesic current satifying $i(\alpha, \alpha)=0$).
+From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to small $\Gamma$-invariant $\mathbb{R}$-trees or, equivalently, are dual to a measured lamination.
 
-It would be interesting to give similar conditions for 
+It would be interesting to give similar conditions characterizing 
 small actions of a non-elementary hyperbolic group $\Gamma$. 
+
+\subsection{Generalized cross-ratios}
+
+Finally, we subsume previous work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} on associating a geodesic current to every \emph{generalized cross-ratio} $[\cdot, \cdot, \cdot, \cdot] \colon \partial_{\infty}{S} \to \mathbb{R}$ (see~Definition~\ref{def:general_crossratio}). A generalized cross-ratio is a function on oriented 4-tuples of the boundary at infinity satisfying certain invariance, symmetry, finite additivity and non-negativity properties. For example, if $X$ is a hyperbolic metric on $S$, the hyperbolic cross-ratio $[\cdot]_X$ coming from realizing the universal cover of $X$ as an isometric copy of the upper half-plane model is an example. Every generalized cross-ratio $[\cdot ]$ induces an additive curve functional called the \emph{period} $\ell_{[ \cdot ]}$. For the previous example of the hyperbolic cross-ratio, $\ell_{[\cdot]_X}$ is the hyperbolic length.
+We show that periods satisfy the conditions of our main Theorem~\ref{thm:intersect} and thus induce a geodesic current.
+
+\begin{mainthm}
+Let $[\cdot, \cdot, \cdot, \cdot]$ be a generalized cross-ratio of period $\ell$. Then $\ell$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, and hence induces a geodesic current $\mu_{\ell}$.
+\end{mainthm}
 
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-We would like to thank Giuseppe Martone, Beatrice Pozzetti, Eduardo Reyes, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
+We would like to thank Viveka Erlandsson, Maxime Fortier Bourque, Giuseppe Martone, Beatrice Pozzetti, Eduardo Reyes, Noelle Sawyer, Juan Souto and Ivan Telpukhovskiy for useful conversations.
 
 The first author was supported by the Hazel King Thompson fellowship of the Mathematics Department of the Indiana University Bloomington, for the initial part of this work, and by the Luxembourg National research Fund AFR/Bilateral-ReSurface 22/17145118 and the Marie Skłodowska-Curie Action CurrGeo grant (101154865) for the later part.
 The second author was supported by the National Science
 Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
 
+\begin{table}[ht!]
+    \begin{tabular}{@{}ll@{}}
+      \toprule
+      Notation & Meaning \\
+      \midrule
+         $S$ &  topological surface \\
+         $\Curves(S)$ & unoriented multi-curves \\
+         $\Curves^+(S)$ & oriented multi-curves \\
+         $\Curr(S)$ & unoriented geodesic currents \\
+         $\Curr^+(S)$ & oriented geodesic currents \\
+         $C,D$ & multi-curves on $S$\\
+         $g,h,a,b,x$ & elements of $\pi_1(S)$ \\   
+         $[g]$ & conjugacy class of $g \in \pi_1(S)$ \\ 
+         $\ora{g}$ & axis of hyperbolic isometry of $g$ \\   
+         $T$ & real tree \\ 
+         $T_g$ & axis/fixed point set of isometry $g \in \pi_1(S)$ acting on $T$ \\ 
+        $(\partial S)^{(4)}$ & 4-tuples of ccw ordered points in $\partial S$ \\
+        $[\cdot,\cdot,\cdot, \cdot ]$ & generalized cross-ratio \\
+         $\bigl[\cdot \bigr]_{[]}$ & function on boxes induced by generalized cross-ratio. \\          
+      \bottomrule\addlinespace
+    \end{tabular}
+  \caption{Notation for the main objects in the paper.}\label{tab:object-notation}
+\end{table} \DMGtodo{think of what else to add to this table}
 
 
 

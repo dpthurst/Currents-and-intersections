@@ -79,7 +79,7 @@ equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
 % \end{figure}
 
 \begin{proposition}
-  Let $F = F(p_1,q_1,p_2,\vec{q_2}$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
+  Let $F = F(p_1,q_1,p_2,\vec{q_2})$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
   vertical or horizontal accordion as above. Then
   \begin{itemize}
   \item each $F(k)$ is a RH box;
@@ -162,7 +162,6 @@ Proposition~\ref{prop:join-split-alg} apply as before.
 
 \begin{comment}
 %Hand drawn figure
-%I disabled it since it is very similar to the vertical one, so maybe we don't need to include it?
 \begin{figure}
   \[
     \mathcenter{\includegraphics[height=2.5in]{h-accordion-disk}}
@@ -173,6 +172,14 @@ Proposition~\ref{prop:join-split-alg} apply as before.
   \label{fig:horizontal-accordion}
 \end{figure}
 \end{comment}
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{h-accordion}}
+\caption{Horizontal accordion $F(\vec{p_1},q_1,p_2,q_2)$}
+  \label{fig:horizontal-accordion}
+}
+\end{figure}
+
 We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
 is countably additive.
 We will need to consider more types of boxes
@@ -183,7 +190,7 @@ $B^\circ \coloneqq (s_1,s_2) \times (t_2,t_1)$ be the corresponding
 closed and open boxes.
 
 \begin{lemma}\label{lem:extend1}
-  For $B = [s_1,s_2) \times [t_2,t_1) \in \cB$ a right-handed box and
+  For $B = [s_1,s_2)\times [t_2,t_1) \in \cB$ a right-handed box and
   any $\epsilon > 0$, there is a right-handed box $V(B,\epsilon) =
   [s_1',s_2) \times [t_2',t_1) \in \cB$ so that
   $s_1' < s_1$ and $t_2' < t_2$ and
@@ -212,7 +219,7 @@ without increasing the mass much.
   For $B = [s_1,s_2) \times [t_2,t_1) \in \cB$ a right-handed box and
   any $\epsilon > 0$, there is some $s_2',t_1'$ with
   $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region
-  $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',b_1)\bigr) \cup
+  $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup
   \bigl([s_2',s_2) \times [t_1,t_2)\bigr)$ is in $\mathcal{R}$ and satisfies
   $\mu_f(W(B,\epsilon)) < \epsilon$.
 \end{lemma}
@@ -222,7 +229,7 @@ edges of~$B$ with small mass.
 
 \begin{proof}
   Find $q_3$ so that $q_3 \cdot \ora{x}$ nested inside
-  $q_1 \cdot \ora{x}$, so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a
+  $q_1 \cdot \ora{x}$ and so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a
   vertical accordion. Similarly find $p_3$ so that $P_3 \cdot \ora{x}$
   is nested inside $P_2 \cdot \ora{x}$ and
   $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
@@ -478,6 +485,7 @@ We also use unoriented smoothing; see Remark~\ref{rem:unoriented},
 though see Corollary~\ref{cor:oriented_smoothing_unoriented}.
 The symmetry condition has also been used in Corollary~\ref{cor:cont_conn_disc}, and will be used in proving the equivalent algebraic statement Theorem~\ref{thm:intersections_group}.
 This condition is thus crucial to recover curve functionals as intersection numbers. In Appendix~\ref{sec:asymmetric} we show that the asymmetric intersection numbers do not satisfy an analogous duality result.
+\label{rmk:use_symmetry}
 \end{remark}
 
 \subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{A'}}
@@ -498,7 +506,41 @@ function on multi-curves.
 
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
-The only condition that requires verification is smoothing. We start
+
+\DMGtodo{added this part, to deduce stability from primitive smoothing and oriented disconnected smoothing}
+First we prove that primitive smoothing plus oriented disconnected smoothing imply stability of $f$, which immediately implies stability of $\overline{f}$.
+Let $a \in \pi_1(S)$ be an arbitary element. Suppose first that $b \in \pi_1(S)$ so that $(a,b)$ R-cross.
+Then, applying disconnected smoothing to the crossing pair $(a^n, b)$, we get
+\begin{equation}
+f(a^n) + f(b) \geq f(a^nb).
+\label{eq:cross1_eq}
+\end{equation}
+An induction on $n$ on the crossing pair $(a,b)$ shows
+\begin{equation}
+nf(a) + f(b) \geq f(a^nb)
+\label{eq:cross2_eq}
+\end{equation}
+for $n\geq 1$.
+Indeed, note that the base case is true by oriented connected smoothing, and the induction follows from
+\[
+nf(a) + f(b) \geq f(a^{n-1}b) + f(a) \geq f(a^nb)
+\]
+where in the first step we used the induction step and in the second we used the fact that the pair $(a,a^{n-1}b)$ is R-crossing by Lemma~\ref{lem:rhs_prod}.
+Finally, we note that by ~Lemma~\ref{lem:rhs} and induction, the pair $(B,a^nb)$ is R-crossing for all $n \geq 1$, and hence,
+\begin{equation}
+f(B) + f(a^nb) \geq f(a^n).
+\label{eq:cross3_eq}
+\end{equation}
+By the hypotheses (2) (sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$, it follows in particular that $f(a^n) \geq nf(a)$ and the limit 
+\[
+F(a)\coloneqq\lim_n \frac{f(a^n)}{n}
+\]
+exists by Fekete's lemma~\ref{lem:fekete}.
+Hence, $F(a) \geq f(a)$.
+Combining Equation~\ref{eq:cross1_eq}, and~\ref{eq:cross3_eq}, dividing by $n$ and taking the limit when $n$ goes to infinity, we get $F(a)=\lim_n \frac{f(a^nb)}{n}$. Using equation~\ref{eq:cross2_eq}
+we get $f(a) \geq F(a)$. Thus, $F(a)=f(a)$, and hence $f$ satisfies stability since $F$ clearly does.
+
+Now we verify smoothing. We start
 with disconnected smoothing, between crossing elements
 $(\ora{a},\ora{b})$, which we can assume R-cross by switching $a,b$ if
 necessary. We have
@@ -529,7 +571,10 @@ $(\ora{B},\ora{A})$. Then
 \end{align*}
 
 Finally, by Corollary~\ref{cor:oriented_smoothing_unoriented},
-$\overline{f}$~satisfies unoriented smoothing as well. We are thus under the
+$\overline{f}$~satisfies unoriented smoothing as well. 
+Finally, by Proposition~\ref{prop:self_crossing_primitive}), we have $[a^{n+m}] \searrow [a^n] + [a^m]$, and the primitive smoothing hypothesis implies $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$, as desired. \DMGtodo{added this last sentence, since we also had to verify primitive self-crossing.}
+Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
+We are thus under the
 hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 

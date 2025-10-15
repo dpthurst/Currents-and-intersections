@@ -105,11 +105,12 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
 \begin{lemma}
   Let  $a,b \in \pi_1(S)$ so that $\bigl(\ora{a},\ora{b}\bigr)$ are
   $R$-parallel. Then for all
-  $n \ge 1$, the pair $(\ora{ba},\ora{a^n
-  b^n})$ R-cross. 
+  $n \ge 1$, $m \geq 1$ the pair $(\ora{b^ma^m},\ora{a^n
+  b^n})$ R-cross. \DMGtodo{edited this statement to extend it to generic $m$. Also added a few details about the proof.} 
 \label{lem:anbn_vs_bkak}
 \end{lemma}
 \begin{proof}
+  Assume first $m=1$.
   We proceed it by induction on~ $n$.
   The base case is
  is clear by
@@ -131,12 +132,13 @@ Lemma~\ref{lem:powers_parallel} and the R-crossing of
 $\bigl(\ora{ab}, \ora{a^nb^n}\bigr)$ restrict the
 endpoints of $\ora{a^n b^n}$ to the indicated intervals in
 Figure~\ref{fig:parallel_lemma}, which implies the desired crossing
-with $\ora{ba}$.
+with $\ora{ba}$. This proves the statement for $m=1$. For $m \geq 1$, we apply the symmetric argument to show that 
+$\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}$ restricted to the intervals in Figure~\ref{fig:parallel_lemma}.
 \end{proof}
 \begin{figure}
      \begin{subfigure}[b]{0.45\textwidth}
 \centerline{\svgfignormal{anbn_ba_c}}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{ba}, \protect\ora{a^n b^n})$ R-cross.}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{b^ma^m}, \protect\ora{a^n b^n})$ R-cross.}
     \label{fig:parallel_lemma}
   \end{subfigure}
   \hfill
@@ -147,6 +149,8 @@ with $\ora{ba}$.
      \end{subfigure}
   \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers} 
 \end{figure}
+
+
 
 \begin{lemma}
   Let $a,b \in \pi_1(S)$ so that $(\ora{b},\ora{a})$ R-cross. Then for all

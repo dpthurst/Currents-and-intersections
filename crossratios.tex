@@ -22,7 +22,7 @@ $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 \label{def:general_crossratio}
 \end{definition}
 
-There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Otal92:Symplectique}, Martone-Zhang~\cite{MZ19:PositivelyRatioed}, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}). 
+There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Ot92:Symplectique}, Martone-Zhang~\cite{MZ19:PositivelyRatioed}, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}). 
 In all of these references (except the last one) the authors consider the cross-ratios to be continuous or even H\"older continuous, but we will not assume this here. Furthermore, in all of the above definitions, flip-invariance is assumed.
 For an even more general definition of cross-ratio where flip-invariance is not assumed, see Labourie's~\cite[Definition~3.1]{L07:Crossratio}. We will always assume our cross-ratios are flip-invariant.
 
@@ -47,26 +47,26 @@ point in $(g^-,g^+)$,
 \]
 The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is well-defined.
 
-Given a geodesic current $\mu$, the two (possibly distinct) generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, generalizd cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.a]{L95:BordDesVar}.
+Given a geodesic current $\mu$, the two (possibly distinct) generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, generalized cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.f]{L95:BordDesVar} (c.f. \cite{Ot92:Symplectique}).
 
 \DPTtodo[inline]{I'm not entirely happy with the terminology here. Should it
   be $\mu_{[\cdot]}$? Should we write the intervals where we really
   don't care about the endpoint inclusion as something like
   $\rlap{[}(a,b)\llap{]}$?}
 Going the other direction, it is immediate that a cross-ratio gives a
-finitely additive function $\mu^+_{[]}$ on the semiring of boxes of
-the form $[d,a) \times [b,c)$ in $G(S)$, where $a,b,c,d$ appear in ccw
+finitely additive function $\bigl[\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]} \bigr]_{[]} \coloneqq [a,b,c,d]$, on the semiring of boxes $\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]}$ in $G(S)$, where $a,b,c,d$ appear in ccw
 order; however, this function need not be countably additive and will
 not in general agree with the geodesic current~$\mu$ we construct. For
 instance, if we start with a geodesic current $\mu$ with atoms,
 construct the cross-ratio $[a,b,c,d]^-$ as above, and look at the
-associated function $\mu^+_{[]^-}$, we get a function on boxes that
-does not agree with $\mu$ and so cannot be countably additive (since
-the period of $\mu^+_{[]}$ with lengths of $\mu$ $\mu$ and geodesic
-currents are determined by their length functions). Nevertheless, for
-convenience in the proofs, we will use the function
-$\mu_{[]} \coloneqq \mu^+_{[]}$ and its finite additivity, and write,
-e.g., $\ell(g) = \mu_{[]}\bigl([g^+,g^-)\times [x,g \cdot x)\bigr)$.
+associated function $\bigl[ \bigr]_{[]^-}$, we get a function on boxes that
+does not agree with $\mu$ and so cannot be countably additive. Indeed,
+ $\bigl[[g^+,g^-)\times [x,g \cdot x)\bigr]_{[]^-}=\ell(g)$, which is equal to $i(\mu,g)$ and geodesic
+currents are determined by their length functions~\cite{Otal90:SpectreMarqueNegative}. Nevertheless, for
+convenience in the proofs, we will use the function on boxes
+$\bigl[ \bigr] \coloneqq \bigl[\bigr]_{[]}$ and its finite additivity.
+
+\DMGtodo{I chose the notation $\bigl[\bigr]_{[]}$ for the function on boxes induced by the cross-ratio $[]$. In most cases, referring to the cross-ratio will not be needed, so we will simply write $\bigl[\bigr]$. I was not happy with the explicit use of $\mu$ in the other alternative.}
 
 \DPTtodo[inline]{Alternate version for consideration:
   $\mu_{[\cdot]}\bigl(\mathrlap{[}(g^+,g^-)\llap{]} \times \rlap{[}(x, g \cdot x)\llap{]}\bigr)$}
@@ -126,23 +126,42 @@ symmetric under switching $g$ and $g^{-1}$.
 
 We will need another lemma on equality of cross-ratios.
 \begin{lemma}\label{lem:cr-switcheroo}
-  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$ so that $g^-,y,g\cdot y, g^{-1} \cdot x, x,g^+$
-  appear in ccw order. Then
+  Fix $g \in \pi_1(S)$ and $x,y \in \bdy S$.
+  
+  \begin{enumerate} 
+      \item If $g^-,y,g\cdot y, G \cdot x, x,g^+$
+  appear in ccw order, then
   \[
     \bigl[[x,g^+)\times[y,g \cdot y)\bigr]
       = \bigl[[G \cdot x,x)\times[g^-,y)\bigr].
   \]
+  \item If $g^-,y,g\cdot y, g^+, x, G \cdot x$
+  appear in ccw order, then
+  \[
+    \bigl[[g^+,x)\times[y,g \cdot y)\bigr]
+      = \bigl[[x,G \cdot x)\times[g^-,y)\bigr].
+  \]
+  \end{enumerate}
 \end{lemma}
 
+
+  \begin{figure}
+\centering{
+\resizebox{80mm}{!}{\svgfignormal{cr_geo}}
+\caption{This illustrates the objects in the proof of Lemma~\ref{lem:cr-switcheroo} (1)}
+  \label{fig:cr-geo}
+}
+\end{figure}
+
 \DPTtodo{We use the variation with $x,y$ on opposite sides of $\protect\ora{g}$}
-\DMGtodo{I don't think so, we use the exact one considered in the lemma. I added another condition to the lemma, which I believe is also assumed (the position of $g^{-1}\cdot x$ appears after $g\cdot y$).}
+\DMGtodo{I agree, in fact, we use two variations. I added them to the statement. I also added another condition to the lemma part 1, which I believe is also assumed (the position of $g^{-1}\cdot x$ appears after $g\cdot y$).}
 Other variations of this lemma, with different position of $x,y$, hold
 too. The geometric significance of
 the common value is unclear to us.
 
-\DPTtodo{Switching to $[X]$ for cross-ratio pseudo-measure of $X$. No
-  pictures yet}
 \begin{proof}
+  We will prove the first part, the second part is similar.
+  In what follows, compare Figure~\ref{fig:cr-geo}.
   Set $L = [x,g^+)\times[y,g \cdot y)$ and
   $R = [G \cdot x,x)\times[g^-,y)$. To show $[L] = [R]$, we will
   translate $R$ by~$g$ and cut off a piece that is a subset of $L$.
@@ -226,8 +245,7 @@ We start by giving finding
 fundamental domains $F(ab)$, $F(a)$, and $F(b)$ for $\ora{ab}$,
 $\ora{a}$, and~$\ora{b}$, respectively, with the property that all
 boxes share the same right-hand factor.
-\DPTtodo{Make figures for revised proof. Change the $F(x)$ so they are
-half-open in both factors}
+
 Start with the fundamental domain $F_0(ab) = [ab^+,ab^-) \times [Ab^+, a
 \cdot bA^+)$ for $\langle ab \rangle$, and write it as the union
 $F(ab) = F_1 \cup F_2$ where
@@ -277,7 +295,7 @@ Figure~\ref{fig:rcross_cr}.
 \resizebox{80mm}{!}{\svgfignormal{rcross_cr_powers}}
     \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$}\label{fig:rcross_cr_powers}
 \end{figure} 
-\end{comment}
+
 
 \begin{figure}[ht!]
      \centering
@@ -290,13 +308,14 @@ Figure~\ref{fig:rcross_cr}.
 \resizebox{80mm}{!}{\svgfignormal{rcross_cr2b}}
     \caption{Sub-boxes $S_2^{(n)}$}\label{fig:rcross_cr2b}
 \end{figure} 
+\end{comment}
 
-We next show that $[R_3] \le [R_4]$. By Lemma~\ref{lem:cr-switcheroo}
+We next show that $[R_3] \le [R_4]$. By Lemma~\ref{lem:cr-switcheroo} (1)
 with $g=a$, $y=Ab^+$, and $x=ab^+$, we have
 \[
   [R_3] = \bigl[[ba^+,ab^+) \times [a^-,Ab^+)\bigr] = [R_3'].
 \]
-By the same lemma,
+By the Lemma~\ref{lem:cr-switcheroo} (2), with $g=b$, $y=Ab^+$, and $x=ba^+$, we have
 \[
   [R_4] = \bigl[[ba^+,ab^+) \times [b^-,Ab^+)\bigr] = [R_4'].
 \]
@@ -392,6 +411,8 @@ The argument for $[R_1] \leq [R_2]$ is symmetric.
   \]
   \DPTtodo[inline]{Compare this to something. Is it related to a lemma
     in your paper with Luca?}
+    \DMGtodo{it is reminiscent to Lemma 6.2 in my paper with Luca (the one we cite earlier in this paper, too). But I don't think it is directly related (or I don't see how)}
+    Observe this gives another way to prove that currents satisfying disconnected max-smoothing are measured laminations (see    Theorem~\ref{thm:char_laminations}).
 \end{remark}
 
 \subsection{Connected smoothing}
@@ -438,9 +459,7 @@ Then, we have
 \resizebox{80mm}{!}{\svgfignormal{c8}}
     \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
 \end{figure} 
-Suppose $(a,b)$ are R-parallel. We first claim that $(b^m a^m, a^nb^n)$ R-cross for every $m,n \geq 1$.
-This follows from induction on $m$ with base case $m=1$ given by Lemma~\ref{lem:anbn_vs_bkak}.
-\DMGtodo{prove this, perhaps add it in the fundamental lemmas, also add the right endpoints}.
+Suppose $(a,b)$ are R-parallel. By Lemma~\ref{lem:anbn_vs_bkak}, $(b^m a^m, a^nb^n)$ R-cross for every $m,n \geq 1$.
 Since by Lemma~\ref{lem:crossratio_disconnected_smoothing} we already know disconnected smoothing for $\ell$, it follows that for every $n,m \geq 1$, we have
 \[
 \ell(a^n b^n) + \ell(b^m a^m) \geq \ell((b^m a^m)(a^n b^n)) = \ell(a^{n+m}b^{n+m}),
@@ -454,17 +473,18 @@ We will now prove that, for sufficiently large $n$, we have
 \[
 \ell(a^nb^n) \geq \ell(a^n) + \ell(b^n).
 \]
-Indeed, take $n_0$ large enough so that for all $n \geq n_0$, we have $\ora{a}$ and $B^n \cdot \ora{a}$ do not cross, and so that $\ora{b}$ and $a^n \cdot \ora{b}$ do not cross, as sketched in Figure~\ref{fig:c8}.
-This can be achieved by NS dynamics of $a$ and $B$.
-Then 
+Indeed, take $n_0$ large enough so that for all $n \geq n_0$, we have $\ora{a}$ and $B^n \cdot \ora{a}$ do not cross, and so that $\ora{b}$ and $a^n \cdot \ora{b}$ do not cross.
+This can be achieved by NS dynamics of $a$ and $B$. To clear notation, we will let $g \coloneqq a^n$ and $h \coloneqq b^n$. Compare Figure~\ref{fig:c8}, where we consider the fundamental domain $F(gh) = (gh^+, gh^-) \times [h^-, g\cdot h^-)$ (dark green).
+This contains the fundamental domain of $F(H)$ given by $(h^-, h^+) \times [g^+, H \cdot g^+)$ (dark blue). $F(ab)$ also contains the box $R=(H \cdot g^+, gh^-) \times [h^-, g \cdot h^-)$. Note that
 \[
-(a^+, a^-) \times [b^-, a^n \cdot b^-) \subset ((a^n b^n)^+, a^n (b^n)^-) \times [b^-, a^n \cdot b^-) 
+h \cdot R = (g^+, hg^-) \times [h^- \cdot hg \cdot h^-)
 \]
-and
+(cyan), which contains $F(g)$ given by $(g^+, g^-) \times [h^-, g \cdot h^-)$.
+Hence, by invariance and finite additivity, we get
 \[
-(b^-, b^+) \times [a^+, B^n \cdot a^+) \subset ((a^n b^n)^+, (a^n b^n)^-) \times [b^-, a^n \cdot b^-) 
+[F(g)] + [F(h)] \leq [F(gh)],
 \]
-and they both included without overlap, proving the claim.
+which proves the claim.
 Hence, 
 \[
 \lim_n \frac{\ell(a^nb^n)}{n} \geq \ell(a) + \ell(b),
@@ -478,17 +498,9 @@ as desired.
 
 \begin{theorem}
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
-Moreover, periods uniquely determine cross-ratios arising from non-atomic geodesic currents.
 \end{theorem}
-\DPTtodo[inline]{``one-to-one'' still seems wrong to me. The more
-  precise statement also seems fishy. Do we assume nothing about
-  $[a,b,c,d]$, not even measurability? How do we know there's not more
-  ambiguity, eg other ways to assign atoms?}
-  \DMGtodo{I don't think measurability of the cross-ratio is being used in any of the proofs. We don't assume it.}
 \begin{proof}
 By the Lemmas~\ref{lem:crinv}, \ref{lem:crossratio_stability}, \ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
-On the other hand, a geodesic current $\mu$ induces two cross-ratios $[\cdot]^\pm$ with the same periods $\ell^{\pm}$ satisfying $\ell^{\pm}(C)=i(\mu,C)$.
-Finally, if $\mu$ has no atoms, the two generalized cross ratios are equal, and hence the claim follows.
 \end{proof}
 
 \newpage

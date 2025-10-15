@@ -4,22 +4,22 @@
 \subsubsection{Open surfaces}
 
 A natural question is if our results can be extended to the setting of open surfaces (i.e., compact surfaces with boundary, or finite type surfaces with punctures).
-  Recall that geodesic currents can also be defined more generally for finite type hyperbolic surfaces. Depending on if we consider ends as cusps or funnels, we get two different spaces, that we will call $\GC_{\mathrm{cusp}}(S)$ and $\GC_{\mathrm{open}}(S)$, respectively.
+  Recall that geodesic currents can also be defined more generally for finite type hyperbolic surfaces. Depending on if we consider ends as cusps or funnels, we get two different spaces, that we will call $\Curr_{\mathrm{cusp}}(S)$ and $\Curr_{\mathrm{open}}(S)$, respectively.
 In the first case, we define the space of geodesic currents analogously to Definition~\ref{def:currents} for closed surfaces, i.e., as invariant measures supported on the space of geodesics of the universal cover, noting that now the space of geodesics contains arcs going from cusp to cusp. 
 In the second case, we consider geodesic currents supported on geodesics projecting to the convex core of the surface.
 
-In the case of $\GC_{\mathrm{cusp}}(S)$, 
+In the case of $\Curr_{\mathrm{cusp}}(S)$, 
 we gave an example in~\cite[Remark~2.26]{MGT21:Smoothings} showing that intersection number is not continuous on currents. See also the recent works by Sasaki~\cite{Sas22:Currents} and Trin~\cite{T22:ThurstonCompactification}.
 
 Let $\AConvex(S)$ denote the space of curve functionals satisfying symmetry, additivity, smoothing and stability.
 (Here the ``A'' is for additivity, and the ``Convex'' is because such functions induce convex functions on train track charts; see Section~\ref{subsubsec:convexity_charts} below.)
 
-We think there should be an analog of our result for $\GC_{\mathrm{cusp}}(S)$,
-but it is not clear that the conditions defining $\AConvex(S)$ would be enough or if one should also add conditions with regards to smoothings between arcs and arcs, and arcs and curves.
-More importantly, most of our arguments rely on the fact that the is a natural cyclic order at the boundary at infinity $\partial_{\infty}\Sigma$, which we lose when $\Sigma$ has punctures, since the fundamental group will be free.
+We think there should be an analog of our result for $\Curr_{\mathrm{cusp}}(S)$,
+but presumably one would have to add conditions with regards to smoothings between arcs and arcs, and arcs and curves.
+More importantly, most of our arguments rely on the fact that there is a natural cyclic order at the boundary at infinity $\partial_{\infty}\Sigma$, which we lose when $\Sigma$ has punctures, since the fundamental group will be free. Moreover, in the cusped case, one could have geodesic currents supported on arcs going from cusp to cusp, and more than one such arc can end at the same puncture. This breaks some of the arguments about lack of atoms in the boundary used throughout the paper (see Remark~\ref{rmk:no_atom_boundary_box} or proof of Theorem~\ref{thm:char_liouville}).
 
-The case of $\GC_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
-The key issue is that the intersection number is degenerate in this case: any geodesic current $\mu$ supported on boundary curves will have zero intersection number with all geodesic currents $\nu \in \GC(S)$.
+The case of $\Curr_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
+The key issue is that the intersection number is degenerate in this case: any geodesic current $\mu$ supported on boundary curves will have zero intersection number with all geodesic currents $\nu \in \Curr(S)$.
 We can give a concrete example on how our theorem fails in this setting, similar to the second example in~\cite[Remark~2.26]{MGT21:Smoothings}.
 
 Let $\bar{\Sigma}$ denote the (compact) convex core of $\Sigma$.
@@ -29,6 +29,37 @@ We note that $\ell$ satisfies additivity, stability and homogeneity
 properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoothing is satisfied by the same argument as the proof of Corollary~\ref{cor:domination}. Since boundary parallel curves do not intersect each other or other non-boundary parallel curves, smoothing is vacuously satisfied.
 
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
+
+\subsubsection{Functionals valued on ordered abelian groups} \DMGtodo{added this question}
+
+Most of the results in this paper extend, with only minor modifications, to the setting of $\Lambda$-valued functionals and $\Lambda$-valued geodesic currents, where $(\Lambda, <)$ denotes an ordered abelian group—that is, an abelian group equipped with a total order satisfying $a < b$ and $c \le d$ imply $a + c < b + d$.
+This generalization is natural in the context of the theory of $\Lambda$-trees~\cite{Sko90:GeometricAction} and has already proved fruitful in the study of compactifications of character varieties of surface-group representations into higher-rank Lie groups~\cite{BIPP24:PositiveCrossratios}.
+We plan to explore these extensions and their applications in future work.
+
+\subsubsection{Relation to quasi-morphisms} \DMGtodo{added this question (might remove it)}
+
+The hypotheses of \emph{oriented quasi-smoothing} are reminiscent of, but weaker than, the conditions for a map 
+$f \colon \pi_1(S) \to \mathbb{R}$ to be a \emph{quasi-morphism}, that is, there exists $D > 0$ such that 
+\[
+|f(ab) - f(a) - f(b)| < D \quad \text{for all } a,b \in \pi_1(S).
+\]
+A quasi-morphism is called \emph{homogeneous} if $f(a^n) = n f(a)$ for every $a \in \pi_1(S)$ and $n \ge 1$.
+
+Quasi-morphisms have played a prominent role in the study of stable commutator length and bounded cohomology of groups~\cite{Cal09:scl,Pic97:BoundedCohomology_currents}.
+
+It would be interesting to understand whether one can obtain homogeneous quasi-morphisms from curve functionals satisfying oriented quasi-smoothing and stability.
+
+\begin{question}
+Let $f \colon \pi_1(S) \to \mathbb{R}$ satisfy oriented quasi-smoothing and stability.  
+Are there additional conditions on $f$ ensuring that the function
+\[
+g(a) \coloneqq f(a) - f(a^{-1})
+\]
+is a homogeneous quasi-morphism?
+\end{question}
+
+A positive answer would establish a direct link between the geometric conditions of quasi-smoothing and the algebraic structure of bounded cohomology.
+
 
 \subsubsection{Smoothing vs multi-smoothing}
 
@@ -47,7 +78,7 @@ If a curve functional satisfies homogeneity, stability, convex union and smoothi
 In this context, in recent work, Arenas--Neumann-Coto \cite{ANC24:TautSmoothings} consider smoothing for closed multi-curves (as well as arcs), and prove, under certain hypotheses for multi-curves, that given a closed multi-curve in minimal position there is always an essential crossing such that once smoothed decreases intersection number by at most 1. They call such a smoothing a \emph{taut smoothing}.
 Can this be used to give a more efficient criterion for checking the smoothing property of a curve functional? That is,
 
-\begin{question} \DMGtodo{does this question make sense?}
+\begin{question} \DMGtodo{does this question make sense? I put it here to justify citing Arenas--Neumann-Coto, but in retrospect it feels a bit forced, and I'm not so sure this is an interesting question}
 Let $f$ be a curve functional. For every multi-curve $C$, let $C'_{\mbox{taut}}$ be a multi-curve obtained by a taut smoothing of $C$.
 If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that $f$ satisfies smoothing?
 \end{question}
@@ -125,7 +156,7 @@ Theorem~\ref{thm:intersections_group} for some admissible probability measure $\
 
 \begin{question}
 Does $\ell_\mu$ further satisfy the
-hypotheses in Theorem~\ref{thm:char_liouville_strong} for some admissible probability measure $\mu$ (and thus come
+hypotheses in Theorem~\ref{thm:char_liouville} for some admissible probability measure $\mu$ (and thus come
 from a hyperbolic metric)?
 \label{q:Green}
 \end{question}
@@ -140,7 +171,7 @@ $\ell_{\mu}$ is dual to the Liouville current $\mathcal{L}_{\Sigma}$?
 \label{q:singularity}
 \end{question}
 
-By work of Cantrell-Tanaka~\cite[Theorem~1.2]{CT25} and \cite[Theorem~1.2]{GMM18:Entropy}, a negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ (see~\cite[Conjecture, page~~259]{KLP11:Singularity}). In short, by these results Question~\ref{q:singularity} is equivalent to asking if there is a probability measure $\mu$ on $\Gamma$ so that the induced `hitting measure' $\nu_{\mu}$ on $\partial \Gamma$ is absolutely continuous to the Lebesgue measure (coming from the hyperbolic metric $\Sigma$) on $\partial \Gamma$.
+By work of Cantrell-Tanaka~\cite[Theorem~1.2]{CT25} and \cite[Theorem~1.2]{GMM18:Entropy}, a negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ (see~\cite[Conjecture, page~~259]{KLP11:Singularity}). In short, by these results Question~\ref{q:singularity} is equivalent to asking if there is a probability measure $\mu$ on $\Gamma$ so that the induced `hitting measure' $\nu_{\mu}$ on $\partial \Gamma$ is absolutely continuous with respect to the Lebesgue measure (coming from the hyperbolic metric $\Sigma$) on $\partial \Gamma$.
 Kosenko-Tiozzo~\cite{KT22:Inequality} have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with centrally symmetric fundamental domains.
 Even a positive answer to Question~\ref{q:Green} would be interesting, since then
 Theorem~\ref{thm:intersect} would give a dual geodesic current for the
@@ -149,30 +180,30 @@ can arise. Note that, for punctured surfaces, some admissible metrics
 coming from random walks can be realized as geodesic currents. For
 example, consider a simple generating set $F$ (in the sense of
 Erlandsson~\cite{Erlandsson:WordLength}, see also
-Section~\ref{subsec:embedded_graphs}), which is dual to a geodesic
-current $m_F$ (a multi-curve). If we take the uniform probability
-measure on $F$, the stable length of the resulting Green metric is a multiple of the standard word-metric \DMGtodo{double check this: there is a passage from a metric on $F$ and a metric on the convex core of $S'$.} on $F \cong \pi_1(S')$ (by~\cite{GMM18:Entropy}), which by~\cite{Erlandsson:WordLength}, is a multiple of the intersection number with $m_F$, and hence, a geodesic current. The situation
-is different if $S$ is closed: again, by~\cite{GMM18:Entropy}, the stable length of the Green metric on the standard generating set cannot be a multiple of the word-metric in the case of a
+Section~\ref{subsec:embedded_graphs}) on a punctured surface $S'$.
+By Erlandsson's result, the word-length with respect to $F$ is dual to a geodesic
+current $m_F$ which is a multi-curve plus a finite collection of weighted arcs going from cusp to cusp. If we take the uniform probability
+measure on $F$, the stable length of the resulting Green metric is a multiple of the standard word-metric on $F \cong \pi_1(S')$ (by~\cite{GMM18:Entropy}), and hence by~\cite{Erlandsson:WordLength}, is a multiple of the intersection number with $m_F$, and hence, a geodesic current. The situation
+is different if $S$ is closed (the setting on which our Theorem~\ref{thm:intersect} applies): again, by the results in~\cite{GMM18:Entropy}, the stable length of the Green metric induced by the uniform probability measure on the standard generating set cannot be a multiple of the word-metric in the case of a
 closed surface.
 
 \subsubsection{Questions about generalizations to hyperbolic groups}
-In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$.
+In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan}.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
 A metric space $X$ is uniformy quasi-geodesic if there exists constants $\lambda_1,\lambda_2 >0$ and $\epsilon \geq 0$, so that every two points $x, y \in X$ are connected by a $(\lambda_1,\lambda_2,\epsilon)$-quasi-geodesic.
 We say that $\Gamma \acts X$ of a non-elementary hyperbolic group on a uniformly quasi-geodesic hyperbolic metric space $X$ has the \emph{bounded backtracking property} if given an orbit map $f \colon \Cay(\Gamma) \to X$, there exist a constant $C>0$ so that for every two points $x,y \in \Cay(\Gamma)$, and geodesic $[x,y]$, there exists some quasi-geodesic $[f(x),f(y)]$ in $X$ so that $f([x,y]) \subset N_C([f(x),f(y)])$, where $N_C([f(x),f(y)])$ denotes the $C$-neighborhood of $[f(x),f(y)])$ with respect to the Hausdorff metric.
-In~\cite{KMG:BBP}, Kapovich and the first author show that actions with bounded backtracking property extend continuously to geodesic currents (see also~\cite{CR25:Manhattan}). 
 
 We know that actions of $\pi_1(S)$ with bounded backtracking on hyperbolic spaces induce stable lengths satisfying quasi-smoothing (see Section~\ref{subsec:examples_and_non}). One can ask if all such actions arise in this way.
 
 \begin{question}
 Let $\Gamma$ be a surface group, and let $f \colon \Gamma \to \mathbb{R}$ be a symmetric and stable functional satisfying quasi-smoothing.
-Then there exists a uniformly quasi-geodesic Gromov hyperbolic space $X$ on which $\Gamma$ acts with the bounded backtracking property and so that $\ell_X = f$, where $\ell_X$ denotes the stable length of the action $\Gamma \acts X$.
+Does there exists a uniformly quasi-geodesic Gromov hyperbolic space $X$ on which $\Gamma$ acts with the bounded backtracking property and so that $\ell_X = f$, where $\ell_X$ denotes the stable length of the action $\Gamma \acts X$?
 \end{question}
 
 Motivated by this, it would be interesting to generalize the quasi-smoothing and smoothing condition to the general setting of hyperbolic groups.
 
 \begin{question}
-What is a generalization of the properties of smoothing and quasi-smoothing for functionals on hyperbolic groups that makes the answer to the above two questions work in the setting of a general non-elementary hyperbolic group $\Gamma$?
+What is a generalization of the properties of smoothing and quasi-smoothing for functionals on non-elementary hyperbolic groups that makes the answer to the above two questions work in that setting?
 \end{question}
 
 \subsection{Analogy to Poincar\'e duality}
@@ -201,7 +232,7 @@ Our theorem can be thought of in analogy to $\alpha \cap \beta =
 In Poincaré duality, one also has the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$, where $\cup$ denotes the cup product in cohomology.  
 A natural question that arises then is the following.
 
-\begin{question} What is the appropriate analog of the cup product? In other words, how can one define the intersection of two curve functionals?
+\begin{question} What is the appropriate analog of the cup product? In other words, how can one define the intersection of two geodesic currents via their dual curve functionals?
 \end{question}
 
 

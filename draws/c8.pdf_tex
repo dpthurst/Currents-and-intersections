@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{216bp}%
+    \setlength{\unitlength}{266.40000343bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,21 +50,23 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1)%
+  \begin{picture}(1,0.86486487)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{c8.pdf}}%
-    \put(0.81485602,0.70719213){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(b^na^n)^+$\end{tabular}}}}%
-    \put(0.11346752,0.1643031){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(b^na^n)^-$\end{tabular}}}}%
-    \put(0.1434886,0.8307626){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(a^nb^n)^+$\end{tabular}}}}%
-    \put(0.91553743,0.12930112){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(a^nb^n)^-$\end{tabular}}}}%
-    \put(0.96763431,0.17556223){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^-$\end{tabular}}}}%
-    \put(0.98839301,0.70143783){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$b^+$\end{tabular}}}}%
+    \put(0.77330681,0.72096176){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(hg)^+$\end{tabular}}}}%
+    \put(0.11512649,0.15911967){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(hg)^-$\end{tabular}}}}%
+    \put(0.2088453,0.74674926){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(gh)^+$\end{tabular}}}}%
+    \put(0.88812085,0.12973421){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(gh)^-$\end{tabular}}}}%
+    \put(0.99169507,0.15618313){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^-$\end{tabular}}}}%
+    \put(0.893903,0.64189142){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^+$\end{tabular}}}}%
+    \put(1.0086116,0.71119121){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$hg \cdot h^-$\end{tabular}}}}%
+    \put(0.93023359,0.75000233){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g \cdot h^-$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{c8.pdf}}%
-    \put(0.04555627,0.71734955){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^+$\end{tabular}}}}%
-    \put(0.03300101,0.24071906){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$a^-$\end{tabular}}}}%
-    \put(0.43132043,0.69482333){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a^n \cdot \ora{b}$\end{tabular}}}}%
-    \put(0.32685858,0.28109191){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B^n \cdot \ora{a}$\end{tabular}}}}%
+    \put(0.12944071,0.65479274){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^+$\end{tabular}}}}%
+    \put(0.12227716,0.25425907){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^-$\end{tabular}}}}%
+    \put(0.4422225,0.6365283){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g \cdot \ora{h}$\end{tabular}}}}%
+    \put(0.35752366,0.30107039){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$H \cdot \ora{g}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{c8.pdf}}%
   \end{picture}%
 \endgroup%

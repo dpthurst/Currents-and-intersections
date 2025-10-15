@@ -193,8 +193,8 @@ We will also distinguish between different types of smoothings.
   \begin{notation*}
   From now on, we write $[a][b]$ to denote the multi-curve $[a] \cup [b]$.
   \end{notation*}
-  We thus have four types
-  of smoothings (using group notation that we will expand on
+  We thus have four types \DMGtodo{tweaked this to add the primitive smoothing}
+  of smoothings between non-trivial pairs of elements which are not common powers (using group notation that we will expand on
   later):
   \begin{itemize}
   \item Oriented connected smoothing: $[ab] \reducesto [a][b]$ (result
@@ -205,6 +205,10 @@ We will also distinguish between different types of smoothings.
     (result connected)
   \item Unoriented disconnected smoothing: $[a][b] \reducesto [aB]$
     (result connected)
+  \end{itemize}
+  Finally, we have a smoothing for self-crossings of non-primitive elements:
+  \begin{itemize}
+  \item Non-primitive smoothing: $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$, and every $m,n \geq 1$. \DMGtodo{added this, not sure if best name for it}
   \end{itemize}
 \end{definition}
 
@@ -266,8 +270,17 @@ is one with a minimum number of transverse crossings.
   $a = c^\ell$ and $b = c^k$.
 \end{definition}
 
+We have the following result.
 
-\begin{proposition}[{\cite[Proposition~3]{MGT25:SmoothingsErratum}}]\label{prop:crossings-triality}
+\begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]\label{prop:crossings-powers}
+  If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
+  element~$c$ with $k,\ell \ge 1$, then the factorization $[ab]$
+  reduces.
+  \label{prop:self_crossing_primitive}
+\end{proposition}
+
+
+\begin{proposition}[{\cite[Proposition~2.9b]{MGT25:SmoothingsErratum}}]\label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
   common powers. Then in the following three trialities the same
   possibility holds in each case.

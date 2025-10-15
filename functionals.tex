@@ -20,23 +20,25 @@ We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 
 In the sequel, whenever we say curves, we mean oriented curves, unless stated explicitly otherwise. In terms of geodesic currents, this means we will work with oriented geodesic currents.
 
-In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two multi-curves $C$ and $D$, it is assumed that $C,D$ are unoriented. If $C$ and $D$ are oriented, and $C',D'$ are different oriented multi-curves with $C'$ resp. $D'$) equivalent to $C$ (resp. $D$)  unoriented multi-curves, we declare $i(C',D')=i(C,D)$, in other words, define the intersection by forgetting the orientation. In this way, one can analogously define an intersection form for oriented geodesic currents (see~Definition~\ref{def:intersection_currents}).
+In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two multi-curves $C$ and $D$, it is assumed that $C,D$ are unoriented. If $C$ and $D$ are oriented, and $C',D'$ are different oriented multi-curves with $C'$ (resp. $D'$) equivalent to $C$ (resp. $D$)  as unoriented multi-curves, we declare $i(C',D')=i(C,D)$, in other words, define the intersection for oriented curves by forgetting the orientation (see~Definition~\ref{def:intersection_currents}).
 
 As we shall see in the Appendix~\ref{sec:asymmetric}, there are versions of
 intersection numbers for oriented curves which are asymmetric (i.e. they distinguish the
 orientations of the intersections). For those, the analog of the main duality
-result, Theorem~\ref{thm:intersect}, will not hold. This will also be reflected in the proof of the main theorem~\ref{thm:intersect}.
+result, Theorem~\ref{thm:intersect}, will not hold. This will also be reflected in the proof (see Proposition~\ref{prop:recoverintersection} and the related Remark~\ref{rmk:use_symmetry}).
 However, in a lot of our examples the curve functionals will not distinguish orientation. Equivalently, they can be seen as curve functionals on unoriented multi-curves.
+This is a natural perspective since many currents, such as most measured laminations, are unoriented.
+
 
 \begin{definition}\label{def:properties}
-  For $S$ a compact topological surface without boundary,
-  let
-  $f \colon \Curves(S) \to \bbR$ be a
+  Let $S$ be a \emph{closed} surface, i.e., a compact topological surface without boundary,
+  and
+  $f \colon \Curves^+(S) \to \bbR$ be a
   function defined on the space of oriented,
   not-necessarily-simple multi-curves.
   We will also refer to $f$ as a \emph{curve functional} for short.
   (\emph{Functional} means that it takes values in scalars; it is not
-  assumed to be linear, although the relevant examples to which our Theorem will apply will be additive).
+  assumed to be linear, although the relevant examples to which our Theorem~\ref{thm:intersect} will apply will be additive).
   We define several
   properties that $f$ might satisfy.
 
@@ -61,20 +63,25 @@ However, in a lot of our examples the curve functionals will not distinguish ori
 \end{definition}
 
 \begin{remark}
-The oriented smoothing condition will be further divided into two types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve, or if it is a sef-crossing of the one connected component. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
-We emphasize that oriented connected smoothing does not imply the oriented disconnected smoothing, or viceversa.
-For example, the curve functional $f$ assigning to a multi-curve its number of connected components is a natural function satisfying oriented disconnected smoothing but not oriented connected smoothing. Also, the curve functional $g$ assigning to a multi-curve the maximal hyperbolic length among its connected components satisfies connected smoothing but not disconnected smoothing (by a computation using Lemma~\ref{lem:hyp_parallelogram}). For more examples see Remark~\ref{lem:red_not_smoothing} or Example~\ref{ex:linEL}.
+The oriented smoothing condition will be further divided into three \DMGtodo{added power smoothing here} types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve (\emph{oriented disconnected smoothing}); if it is a sef-crossing of the one connected component (\emph{oriented connected smoothing}) not coming from a power of a single element, or (\emph{power smoothing}) if it is a self-crossing arising from a power. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
+\DMGtodo{maybe this second discussion below should we moved to later, in section 4?}
+We emphasize that oriented connected smoothing does not imply the oriented disconnected smoothing, or viceversa. 
+For example, the curve functional $f$ assigning to a curve its number of connected components is a natural function satisfying oriented disconnected smoothing but not oriented connected smoothing. Similarly, the negative of this functional satisfies connected smoothing but not disconnected smoothing. This example is not a stable function, but with a bit more digging one can find examples satisfying additivity and stability and only one of the smoothings. For example, in Lemma~\ref{lem:red_not_smoothing} we give examples of lengths coming from reducible actions of surface groups on real trees, which satisfy disconnected smoothing but not connected smoothing and viceversa. Similarly, in Example~\ref{ex:linEL} we show an additive variation of extremal length that satisfies stability, disconnected smoothing but not connected smoothing. 
+\DMGtodo{this paragraph has been edited and expanded, and added a bit more detail about optimality of conditions}
+One can also find examples of functions satisfying stability, and smoothing but not additivity (such as extremal length, as we will discuss below).
+Finally, the proof of Theorem~\ref{thm:intersections_group} shows, in particular, that smoothing  implies stability. 
 \end{remark}
 
 \begin{definition}
-  For $C$ an oriented multi-curve, $nC$ is the oriented multi-curve
-  that consists of $n$~parallel
-  copies of~$C$ (so with $n$ times as many components or,
-  in the context of weighted oriented multi-curves,
-  with weights multiplied by~$n$), and
-  $C^n$ is the oriented multi-curve with as many components as~$C$, in which each
+  For $C$ an oriented multi-curve,  $C^n$ is the oriented multi-curve with as many components as~$C$, in which each
   component of~$C$ is covered by an $n$-fold cover. That is, if
-  $g \in \pi_1(S,x)$ represents $C$, $g^n$ represents~$C^n$.
+  $g \in \pi_1(S,x)$ represents $C$, $g^n$
+  represents~$C^n$.
+  On the other hand, $nC$ is the oriented multi-curve
+  that consists of $n$~parallel
+  copies of~$C$ (so with $n$ times as many components) or,
+  in the context of weighted oriented multi-curves,
+  with weights multiplied by~$n$),
 \end{definition}
 
 \begin{definition}\label{def:stable}
@@ -85,9 +92,10 @@ For example, the curve functional $f$ assigning to a multi-curve its number of c
          \label{eq:stable}
          f(C^n) = f(nC).
        \end{equation}
+       Note that stability implies $f$ satisfies power smoothing.
 \end{definition}
 
-\begin{definition}\label{def:homogeneous} For an arbitrary oriented multi-curve~$C$,
+\begin{definition}\label{def:homogeneous} For an arbitrary oriented multi-curve~$C$, we say $f$ satisfies \emph{homogeneity}
        \begin{equation}
          \label{eq:homogeneous}
          f(nC) = nf(C).
@@ -130,7 +138,7 @@ Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, orien
    \]
 \end{definition}
 
-This can be phrased more algebraically as follows. For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have $f([a] \cup [b]) \geq f([ab])$ and $f([a] \cup [b]) \geq f([aB])$, where $B$ denotes the inverse of $b$; and for any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel (i.e., do not intersect and are oriented coherently), we have $f([ab]) \geq f([aB])$ and $f([ab]) \geq f([aB])$. We refer the reader to Section~\ref{subsec:crossings} for precise definitions and proofs.
+This can be phrased more algebraically as follows. For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have $f([a] \cup [b]) \geq f([ab])$ and $f([a] \cup [b]) \geq f([aB])$, where $B$ denotes the inverse of $b$; and for any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel (i.e., do not intersect and are oriented coherently), we have $f([ab]) \geq f([aB])$ and $f([ab]) \geq f([aB])$; and for any element $a \in \pi_1(S)$, and any $n,m\geq 1$, we have $f([a^{n+m}]) \geq f([a^m]) + f([a^n])$. \DMGtodo{added this additional hypothesis} We refer the reader to Section~\ref{subsec:crossings} for precise definitions and proofs.
 
 We can extend this definition for orientation invariant curve functionals on oriented multi-curves.
 If $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ is orientation invariant, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \mathcal{C}(S) \to \mathbb{R}$.
@@ -172,7 +180,7 @@ For a motivation for the use of the adjective ``convex'' in this setting, see Su
 
 Examples below show we have strict inclusions
 \[
-\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex_R(S) \subsetneq \QConvex(S).
+\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex(S).
 \]
 
 
@@ -216,14 +224,14 @@ we now show examples of many natural functions on curves that do \emph{not} sati
     \item Asymmetric curve functionals, such as the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, stable lengths of Green metrics coming from asymmetric from generating sets (see Section~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}. 
     \item Square root of extremal length, although it satisfies smoothing, stability and homogeneity, does not satisfy additive union (see \cite[Section~4.8]{MGT21:Smoothings}). All of these examples extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
     It's an example of curve functional illustrating the proper containment \[\AConvex(S) \subsetneq \Convex(S).\]
-    \item  In future work the first author shows that if $\pi_1(S) \acts X$ an action on a hyperbolic quasi-geodesic metric space $X$ with bounded backtracking property, then $\ell_X$, the stable length of the action, satisfies $\ell_X \in \QConvex(S)$. In general, these actions do not satisfy smoothing. We give three more examples in the next items.
-    \item Although word length w.r.t.\ an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
+    \item  In future work the first author shows that if $\pi_1(S) \acts X$ an action on a hyperbolic uniformly quasi-geodesic metric space $X$ with bounded backtracking property, then $\ell_X$, the stable length of the action, satisfies $\ell_X \in \QConvex(S)$. In general, these actions do not satisfy smoothing. We give three more examples in the next items.
+    \item Although word length w.r.t.\ an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings},~\cite[Theorem~1.5]{EPS20:CountingCurves},~\cite{Erlandsson:WordLength}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
     \item Another example of the above are stable lengths associated to quasi-fuchsian representations. They satisfy quasi-smoothing by \cite[Lemma~4.3]{BridgemanTaylor08:ExtensionWP} or \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF22:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
     \begin{question}
     If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
     \end{question} 
 \item The previous example falls in the more general framework of length functions coming from higher-rank representations $\rho \colon \pi_1(S) \to \PSL(n,\mathbb{R})$.
-Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy some of the inequalities in smoothing. A wider class of \emph{$[P_1]$-Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work (item (3)), they also satisfy quasi-smoothing. In fact, they satisfy smoothing if and only if they are positively ratioed. 
+Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy some of the inequalities in smoothing. A wider class of \emph{$[P_1]$-Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work (item (3)), they also satisfy quasi-smoothing. In fact, by Theorem~\ref{thm:intersect}, they satisfy smoothing if and only if they are positively ratioed. 
         \item  Translation lengths associated to biautomatic structures. Roughly speaking, an automatic structure is a combinatorial structure associated to a group that furnishes it with typical features enjoyed by hyperbolic groups, such as solvable conjugacy or word problems. A biautomatic structure is an automatic structure plus further astringent conditions that describe how the automatic structure interacts with the geometry of its Cayley graph. We commend the reader to~\cite[Section~2.2]{HV24:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(S)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV24:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,
@@ -268,7 +276,7 @@ G(a+b)=G(a) + G(b)=F(a) + F(b) \geq F(a+b) \geq F(ab)=G(ab)
 where we used the fact that $F$ and $G$ take the same values on closed curves; hence,
 $G$ satisfies disconnected smoothing.
 This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair of $(a,b)$ parallel so that
-$G(ab) < G(a) + G(b)$. This is indeed the case. For an example, consider the extremal length of a figure-eight curve in a genus two surface $S$. Consider the pair of pants $P$ bounding $ab$, and let us think of it as obtained by gluing adjacent sides in a Swiss cross. The extremal metric has been computed numerically in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of the Swiss cross. If the width is chosen to be a fourth of the total size of the Swiss cross, and the normalization $w=1$ is chosen, the extremal length of the figure-eight can be computed to be 2.4251
+$G(ab) < G(a) + G(b)$. This is indeed the case. The following example was suggested by Maxime Fortier Bourque. For an example, consider the extremal length of a figure-eight curve in a genus two surface $S$. Consider the pair of pants $P$ bounding $ab$, and let us think of it as obtained by gluing adjacent sides in a Swiss cross. The extremal metric has been computed numerically in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of the Swiss cross. If the width is chosen to be a fourth of the total size of the Swiss cross, and the normalization $w=1$ is chosen, the extremal length of the figure-eight can be computed to be 2.4251
  (see Table in \cite[Page~36]{HZ20:SwissCross}, row $t=4$), hence its square root is $G_P(ab) \simeq 1.557273$. On the other hand, the length of each one of the resulting smoothings is $3$, while the area of the surface with the extremal metric associated to $ab$ is computed as $A=6.5977$. 
  
  Hence, $G_{S}(a) + G_S(b) =2G_S(a)=\sqrt{2}G_P(a)$ is lower bounded by $\simeq 1.6517335$, showing the inequality

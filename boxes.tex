@@ -41,10 +41,8 @@ the kind of boxes we consider is shown in
 Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$[x]$, with
 two lifts $\ora{\ell_1},\ora{\ell_2}$ on the left and two $\ora{r_1},\ora{r_2}$ on the right,
 and consider the window
-\DPTtodo{We need to change how the box is half-open consistently.
-  Below is correct. DPT on it}
 $[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+) \subset
-\partial_\infty S \times \partial_\infty  S$ as a basic domain
+\partial_\infty S \times \partial_\infty  S$ as a basic domain \DMGtodo{I think this is the correct half-open/half-closed choice, since in the countable additivity section (accordions and such) we use this one}
 for defining the measure.
 (Recall that we give the endpoints of intervals in counterclockwise
 order.)
@@ -90,7 +88,7 @@ We will put off imposing this last invariance for the moment.
 
 We now turn to the conditions on the lifts; for
 instance, the window
-$(\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)$ must avoid the
+$[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$ must avoid the
 diagonal.
 
 \begin{definition}
@@ -153,7 +151,7 @@ by condition \ref{item:box-edges-cross}.
   $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$
   given by
 \[
-B(p_1,q_1,p_2,q_2) \coloneqq (\ell_1^-,\ell_2^-] \times [r_2^+,r_1^+)
+B(p_1,q_1,p_2,q_2) \coloneqq [\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)
 \]
 where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
 
@@ -235,6 +233,7 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
   right-handed box, this lift is not contained in box. The half-open
   choice we made is
   more convenient the proof of Proposition~\ref{prop:countablyadditive}.
+  \label{rmk:no_atom_boundary_box}
 \end{remark}
 
 \begin{proposition}
@@ -461,7 +460,7 @@ numbers in terms of an infinite family of polynomial equations
 involving the $f$-value of triples of simple curves in the $(\max,+)$
 semi-ring structure on the real numbers.
 One of the tools in the proof of this characterization is the fact
-that, for $a,b$ simple curves, the function $h(n) \coloneqq f([a^n
+that, for $a,b$ simple crossing curves, the function $h(n) \coloneqq f([a^n
 b])$ is convex.
 In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-convexity of~$g$.
 See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ imply Luo's conditions for the restriction of $f$ to simple curves.

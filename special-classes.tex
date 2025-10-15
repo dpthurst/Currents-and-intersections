@@ -43,7 +43,7 @@ We have the following criterion for half-integral multi-curves.
 
 \begin{corollary}
 Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \mathcal{C}(S)$. Then there $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
-Moreover, either $\mu$ is an integral multi-curve, or $\mu$ is non-integral and $[M] = 0$ in $\mathbb{Z}_2$-homology.
+Moreover, either $\mu$ is an integral multi-curve, or $\mu$ is non-integral and $\vec{M} = 0$ in $\mathbb{Z}_2$-homology. \DMGtodo{added the secondary statement here, and corresponding proof}
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
@@ -59,17 +59,17 @@ It suffices to show $\mu$ is an integral multi-curve. By the same argument in th
 Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$). 
 Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. For more details about this last argument, see~\cite{JMG:StrongDuals}.
 By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
-We can be more precise. One option is that $\mu$ is an integral multi-curve. If $\mu$ is a half-integral non-integral multi-curve, we claim that $[M]=0$ in $\mathbb{Z}_2$-homology. Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
-$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\hat{i}([M],[C])=1 \mod 2$, where $\hat{i}$ is the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
+We can be more precise. One option is that $\mu$ is an integral multi-curve. If $\mu$ is a half-integral non-integral multi-curve, we claim that $\vec{M}=0$ in $\mathbb{Z}_2$-homology. Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
+$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \vec \cdot,\vec \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
 \end{proof}
 
 \begin{remark}
-  The factor of $1/2$ is necessary, since there are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
+  The factor of $1/2$ is necessary, since, as shown above, there are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
 For example, let $\mu$ be the geodesic current supported on a
   separating simple closed curve. Then $\mu/2$ has an integral
   length spectrum but is not an integral multi-curve. 
-  More more involved examples, word-lengths (whose marked length spectrum is integral) that are
-  dual to a half-integral multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}.
+  For more involved examples, there are certain word-lengths (whose marked length spectrum is integral) that are
+  dual to a half-integral multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}. See also Section~\ref{subsec:embedded_graphs}.
 \end{remark}
 
 \DPTtodo[inline]{Characterize which half-integral
@@ -126,6 +126,44 @@ Hence, Corollary~\ref{cor:int_multicurve} implies the result.
 
 We note that our result says nothing explicit about the dual multi-curve, whereas Erlandsson's result explicitly constructs it in the specific case of simple generating sets. It would be interesting to describe these multi-curves in general.
 
+\subsection{Inequalities between intersection numbers}
+\label{subsec:ineqintersection}
+
+ Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \mathcal{C}(\Sigma)$.
+
+ As an immediate application of Theorem~\ref{thm:intersect}, we can study what intersection numbers dominating one curve over another imply about dual currents associated to metrics on the surface.
+
+For example, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
+
+\begin{question}[Neumann-Coto, 2001]
+Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows that $\ell_g(C_1) \leq \ell_g(C_2)$ for all Riemannian metrics $g$ on $S$?
+\end{question}
+
+We answer this question affirmatively and, in fact, give a much stronger result.
+
+\begin{corollary}
+If $\mu_2$ dominates $\mu_1$, then
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
+    \label{cor:domination}
+\end{corollary}
+
+\begin{proof}
+First note that any length metric satisfies smoothing.
+This argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here.
+ Take a multi-curve~$C$ with an
+essential crossing~$x$, and a representative~$\gamma$. Then $\gamma$ has
+an essential crossing~$x'$ of the homotopy type of~$x$. If we
+consider the
+multi-curve representative~$\gamma' \in C'$ obtained by smoothing at~$x'$, then,
+since $\ell_g$ is an infimum, we have
+\[
+  \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
+\]
+as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
+It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
+Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+\end{proof}
+
 \subsection{Measured laminations}
 
 We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
@@ -136,12 +174,12 @@ We introduce the following notation. Given two geodesics segments $t$ and $t'$, 
 
 Let $x,y,z,w \in \wt{X}$ appear counter-clockwise as vertices of an
 embedded convex geodesic quadrilateral on $\wt{X}$.
-The following is a variation of~\cite[Lemma~6.2]{dRMG22:Duals} which is proven in the same way.
+The following result is~\cite[Lemma~6.2]{dRMG22:Duals}.
 
 \begin{lemma}
 Given the setup described above, we have 
 \begin{align*}
-\mu(G([x,w), (y,z])) + \mu(G((x,w], [y,z))) &= \\
+\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &= \\
 &\mu(G[x,z)) + \mu(G[w,y)) \\
 &- \mu(G([w,z)) - \mu(G([x,y))
 \end{align*}
@@ -233,22 +271,22 @@ We start with a technical lemma that defines some sets of interest. We will reso
 Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
-Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), (P', Q'])$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times (Q', P])$), and $R_{a,b}^- \coloneqq G((Q,P], [P', Q'))$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times [Q', P))$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
-Let $B_{a,b}^+ = (a^+, b^-] \times (a^-, b^+]$ (resp.  $(B_{g,h}^{\perp})^+ = (b^-, a^-] \times (b^+, a^+]$), 
-and $B_{a,b}^- = [a^+, b^-) \times [a^-, b^+)$ (resp.  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times [b^+, a^+)$). We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ (resp. $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $).
+Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), [P', Q'))$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times [Q', P))$), and $R_{a,b}^- \coloneqq G((Q,P], (P', Q'])$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times (Q', P])$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
+Let $B_{a,b}^+ = (a^+, b^-] \times [a^-, b^+)$ (resp.  $(B_{g,h}^{\perp})^+ = (b^-, a^-] \times [b^+, a^+)$), 
+and $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ (resp.  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$). We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ (resp. $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $).
 For every $n \in \mathbb{N}$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
 \begin{enumerate} 
 \item $R_n^{\pm}  \subset R_{n+1}^{\pm}$, and $\bigcup_{n \geq 1} R_n^{\pm}  = B_{a,b}^{\pm}$ and $(R_n^{\perp})^{\pm}  \subset (R_{n+1}^{\perp})^{\pm}$ and $\bigcup_{n \geq 1} (R_n^{\perp})^{\pm} = (B_{a,b}^{\perp})^{\pm}$.
 \item We have $\lim_{n} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{g,h}^{\perp})^{\pm})$.
 \item  If we let $a_n=a^n$, $b_n=b^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
-and $A_n=f(a_n)/2$, $B_n=f(b_n)/2$, $C_n=f(a_nb_n^{-1})/2$, $D_n=f(a_nb_n)/2$, we have
+and $A_n=f(a_n)$, $B_n=f(b_n)$, $C_n=f(a_nb_n^{-1})$, $D_n=f(a_nb_n)$, we have 
 \begin{equation}\label{eq:Rn-meas}
-\mu(R_n)=A_n + B_n-C_n,
+\mu(R_n^+)+\mu(R_n^-)=A_n + B_n-C_n,
 \end{equation}
 and
 \begin{equation}\label{eq:Rn-perp-meas}
-\mu((R_n^\perp)^{\pm})=A_n + B_n -D_n,
+\mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=A_n + B_n -D_n,
 \end{equation}
 \end{enumerate}
 \label{lem:measures_parallelogram}
@@ -330,7 +368,7 @@ proven recently by Marché and Simon~\cite[Theorem~3.1]{MS21:Valuations}.
 Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $X$.
 
 \begin{theorem} [{\cite[Theorem~13]{Bonahon88:GeodesicCurrent}}]
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} S$, we have
+   A geodesic current $\mu \in \Curr(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} S$, we have
    \[
       e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
    \]
@@ -358,24 +396,26 @@ geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
 It remains to show that $\mu_f$ is a Liouville current, which is where the disconnected $\lambda$-smoothing will play a role.
 Given elements $a, b \in \pi_1(\Sigma)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
-Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}, where we ease notation writing $R_n$ in place of $R_n^{\pm}$.
+Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
+
 Now, we compute
 \[
-e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})} = e^{-(A_n+B_n)+C_n} + e^{-(A_n+B_n)+D_n} = e^{-(A_n+B_n)} (e^{C_n} + e^{D_n}).
+e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}} = e^{\frac{-(A_n+B_n)+C_n}{2}} + e^{\frac{-(A_n+B_n)+D_n}{2}} = e^{\frac{-(A_n+B_n)}{2}} (e^{\frac{C_n}{2}} + e^{\frac{D_n}{2}}).
 \]
-On the other hand, when $n$ goes to infinity, we have $e^{A_n} \sim \lambda(a_n)$, $e^{B_n} \sim \lambda(b_n)$, $e^{C_n} \sim \lambda(c_n)$ and $e^{D_n} \sim \lambda(d_n)$ (where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity). Since the disconnected $\lambda$-smoothing relation for $a_n, b_n$ is given by
+On the other hand, when $n$ goes to infinity, we have $e^{\frac{A_n}{2}} \sim \lambda(a_n)$, $e^{\frac{B_n}{2}} \sim \lambda(b_n)$, $e^{\frac{C_n}{2}} \sim \lambda(c_n)$ and $e^{\frac{D_n}{2}} \sim \lambda(d_n)$ (where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity). Since the disconnected $\lambda$-smoothing relation for $a_n, b_n$ is given by
 \[
 \lambda(a_n)\lambda(b_n) = \lambda(c_n) + \lambda(d_n),
 \]
-and a straightforward computation shows $\lambda(c_n) + \lambda(d_n) \sim e^{C_n}+e^{D_n}$, and we get
+and a straightforward computation shows $\lambda(c_n) + \lambda(d_n) \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}$, and we get
 \[
-e^{A_n}e^{B_n} \sim e^{C_n}+e^{D_n}.
+e^{\frac{A_n}{2}}e^{\frac{B_n}{2}} \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}.
 \]
 Therefore, we have
 \[
-\lim_{n\to\infty} e^{-\mu(R_n)} + e^{-\mu(R_n^{\perp})}=1.
+\lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}=1.
 \]
-Since, by Lemma~\ref{lem:measures_parallelogram} (2) we also have $\lim_n \mu(R_n)=\mu(B_{a,b})$ and $\lim_n \mu(R_n^{\perp})=\mu(B_{a,b}^{\perp})$, we obtain the relation
+By Lemma~\ref{lem:measures_parallelogram} (2) we also have $\lim_n \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
+Finally, note that $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$ by Lemma~\ref{prop:spikes}, since the vertices of these boxes are the endpoints of the elements $a,b$, and the geodesics $\ora{a},\ora{b}$ are not contained in either of these boxes. Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
@@ -391,17 +431,22 @@ Bonahon's Theorem~\ref{thm:bonahonliouville} was strengthened by
 Hamenst\"adt
 
 \begin{theorem}[{\cite[Corollary~2.12]{Ham99:Cocycles}}]
-   A geodesic current $\mu \in \GC(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} S$, we have
+   A geodesic current $\mu \in \Curr(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} S$, we have
     \[
       \frac{1}{\rho} \cdot  e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho \cdot e^{-\mu([x,y]\times[z,w])} 
    \]
    \label{thm:ham}
 \end{theorem}
 
+\begin{question}\DMGtodo{decided to make this into a question, since the stated condition was too strong and I was not able to come up with a reasonable inequality.}
+Can we give a weaker inequality in terms of marked length spectrum, using~\ref{thm:ham}, that still characterizes Liouville currents among all geodesic currents?
+\end{question}
+
+\begin{comment}
 Using this, we can prove the following.
 
 \begin{theorem} \DMGtodo{I'm thinking about this. I think the conditions are too strong, I think one can find points satisfying the lambda-length condition but not this condition}
-A geodesic current $\mu \in \GC(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, and the following inequalities.
+A geodesic current $\mu \in \Curr(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, and the following inequalities.
     There exists a constant $C \geq 1$ so that, for any pair of \emph{crossing} elements $g,h \in \pi_1(S)$, we have
     \begin{gather}
     1/C \leq \exp \Bigl( f\left([g][h]\right)/2-f\left([gh]\right)/2 \Bigr) - \exp \Bigl( f\left([gh^{-1}]\right)/2-f\left([gh]\right)/2 \Bigr) \leq C\\
@@ -446,7 +491,7 @@ and
 4e^{f(g)/2}e^{f(h)/2} \geq \lambda(g)\lambda(h) = \lambda(gh) + \lambda(gh^{-1}) \geq e^{f(gh)/2} + e^{f(gh^{-1})/2}.
 \]
 \end{proof}
-
+\end{comment}
 %%% Local Variables:
 %%% mode: LaTeX
 %%% TeX-master: "Intersections"

@@ -24,16 +24,160 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="4.5113036"
-     inkscape:cx="167.80072"
-     inkscape:cy="224.6579"
-     inkscape:window-width="2560"
-     inkscape:window-height="1494"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
+     inkscape:cx="126.46012"
+     inkscape:cy="100.52527"
+     inkscape:window-width="1595"
+     inkscape:window-height="1144"
+     inkscape:window-x="205"
+     inkscape:window-y="136"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker16"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path16" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker15"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path15" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker14"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path14" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker13"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path13" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker12"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path12" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker8"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker6"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="SemiCircleEmpty"
+       refX="2"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Empty semicircle"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1.08"
+         d="m -0.7647042,-3.0274156 c 1.656,0 3,1.344 3,3 0,1.656 -1.344,3 -3,3"
+         id="path26" />
+    </marker>
     <marker
        style="overflow:visible"
        id="marker5"
@@ -198,24 +342,6 @@
        id="rect4-5-6-1-0-8" />
     <marker
        style="overflow:visible"
-       id="marker2-0"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path2-0" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="marker3-1"
        refX="0"
        refY="0"
@@ -231,24 +357,6 @@
          style="fill:none;stroke:context-stroke;stroke-width:1"
          d="M 0,4 V -4"
          id="path3-64" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker11"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path11" />
     </marker>
     <marker
        style="overflow:visible"
@@ -270,24 +378,6 @@
     </marker>
     <marker
        style="overflow:visible"
-       id="marker9"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path9" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="marker7"
        refX="0"
        refY="0"
@@ -303,24 +393,6 @@
          style="fill:none;stroke:context-stroke;stroke-width:1"
          d="M 0,4 V -4"
          id="path7-9" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker11-1"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path11-1" />
     </marker>
     <marker
        style="overflow:visible"
@@ -342,24 +414,6 @@
     </marker>
     <marker
        style="overflow:visible"
-       id="marker11-1-2"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path11-1-3" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="marker10-3-8"
        refX="0"
        refY="0"
@@ -375,24 +429,6 @@
          style="fill:none;stroke:context-stroke;stroke-width:1"
          d="M 0,4 V -4"
          id="path10-4-1" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Stop"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path23" />
     </marker>
     <marker
        style="overflow:visible"
@@ -414,24 +450,6 @@
     </marker>
     <marker
        style="overflow:visible"
-       id="marker11-1-2-9"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path11-1-3-1" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="marker10-3-8-6"
        refX="0"
        refY="0"
@@ -447,24 +465,6 @@
          style="fill:none;stroke:context-stroke;stroke-width:1"
          d="M 0,4 V -4"
          id="path10-4-1-0" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker11-1-2-9-9"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Stop"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         style="fill:none;stroke:context-stroke;stroke-width:1"
-         d="M 0,4 V -4"
-         id="path11-1-3-1-5" />
     </marker>
     <marker
        style="overflow:visible"
@@ -726,7 +726,7 @@
          y="51.726223"
          style="font-size:2.95274px;text-align:center;text-anchor:middle;stroke-width:0.0933995">$Ab^+$</tspan></text>
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.451504;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11);marker-end:url(#marker10)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.451504;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker13);marker-end:url(#marker10)"
        id="path833-9-6-8-5"
        sodipodi:type="arc"
        sodipodi:cx="49.586231"
@@ -739,7 +739,7 @@
        d="m 80.117191,17.959708 a 35.313881,36.242962 0 0 1 0.04368,36.349007"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.398616;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11-1);marker-end:url(#marker10-3)"
+       style="fill:none;stroke:#0000ff;stroke-width:0.398616;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6);marker-end:url(#marker10-3)"
        id="path833-9-6-8-5-8"
        sodipodi:type="arc"
        sodipodi:cx="51.101845"
@@ -752,7 +752,7 @@
        d="M 77.193261,19.547264 A 29.799309,33.477238 0 0 1 77.020862,52.238407"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.394018;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11-1-2);marker-end:url(#marker10-3-8)"
+       style="fill:none;stroke:#0000ff;stroke-width:0.394;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#SemiCircleEmpty);marker-end:url(#marker10-3-8)"
        id="path833-9-6-8-5-8-4"
        sodipodi:type="arc"
        sodipodi:cx="49.312157"
@@ -765,7 +765,7 @@
        d="m 68.932731,59.818617 a 31.160856,31.280273 0 0 1 -8.296237,4.840682"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#00a1ff;stroke-width:0.474195;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11-1-2-9);marker-end:url(#marker10-3-8-6)"
+       style="fill:none;stroke:#00a1ff;stroke-width:0.474195;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker16);marker-end:url(#marker10-3-8-6)"
        id="path833-9-6-8-5-8-4-4"
        sodipodi:type="arc"
        sodipodi:cx="49.859039"
@@ -778,7 +778,7 @@
        d="M 67.869242,2.7779948 A 37.077427,38.076168 0 0 1 75.188113,8.253832"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#00a1ff;stroke-width:0.474195;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11-1-2-9-9);marker-end:url(#marker10-3-8-6-6)"
+       style="fill:none;stroke:#00a1ff;stroke-width:0.474195;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker14);marker-end:url(#marker10-3-8-6-6)"
        id="path833-9-6-8-5-8-4-4-4"
        sodipodi:type="arc"
        sodipodi:cx="49.725586"
@@ -791,7 +791,7 @@
        d="M 81.878218,16.98706 A 37.077427,38.076168 0 0 1 81.538106,55.506763"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.456502;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker9);marker-end:url(#marker7)"
+       style="fill:none;stroke:#ff0000;stroke-width:0.456502;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker15);marker-end:url(#marker7)"
        id="path833-9-6"
        sodipodi:type="arc"
        sodipodi:cx="50.305035"
@@ -804,7 +804,7 @@
        sodipodi:arc-type="arc"
        d="M 26.524583,63.46254 A 35.385292,36.912212 0 0 1 21.322026,57.304945" />
     <path
-       style="fill:none;stroke:#b500ff;stroke-width:0.42568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Stop);marker-end:url(#marker1-8)"
+       style="fill:none;stroke:#b500ff;stroke-width:0.42568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker8);marker-end:url(#marker1-8)"
        id="path833-9"
        sodipodi:type="arc"
        sodipodi:cx="49.78056"
@@ -817,7 +817,7 @@
        d="M 28.061549,10.141149 A 33.174885,34.186928 0 0 1 34.126554,5.8415383"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#b500ff;stroke-width:0.42568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2-0);marker-end:url(#marker3-1)"
+       style="fill:none;stroke:#b500ff;stroke-width:0.42568;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker12);marker-end:url(#marker3-1)"
        id="path833-9-6-8"
        sodipodi:type="arc"
        sodipodi:cx="49.429806"

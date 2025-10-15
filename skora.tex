@@ -90,7 +90,7 @@ Finally, good pairs provide pairs of non-intersecting hyperbolic elements.
 In general, if the translation lengths of two $G \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is irreducible by~\cite[Theorem~3.7]{CM87:GroupActions}.
 In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
 
-We will consider the following classical results about the relative position of axes in a real tree.
+We will consider the following classical results about the relative position of axes in a real tree. Figure~\ref{fig:trees_disjoint} and Figure~\ref{fig:trees_intersection} correspond to Fig.~2 and Fig.~3, respectively, in~\cite{Pa89:Paulin1989TheGT}. Similar less detailed diagrams appear in~\cite{CM87:GroupActions}.
 
 \begin{lemma}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
@@ -113,6 +113,21 @@ Then, $T_{ab}, T_b$ overlap in a segment of positive length and, if $T_g \cap T_
 \end{enumerate}
 \label{lem:foundation_trees}
 \end{lemma}
+
+
+
+\begin{figure}[ht]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{trees_disjoint}}
+    \caption{Relative position of disjoint axes in a tree}\label{fig:trees_disjoint}
+\end{figure}
+
+\begin{figure}[ht]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{trees_intersection}}
+    \caption{Relative position of intersecting axes in a tree}\label{fig:trees_intersection}
+\end{figure}
+
 \begin{proof}
 The proof of (1) and (2) is~\cite[1.5, 1.8]{CM87:GroupActions}. The equality $T_g \cap T_h = T_{gh} \cap T_{hg}$ in case (1) is stated in their proof. 
 The remark of part (2) about $T_{ab}, T_b$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
@@ -174,7 +189,7 @@ However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\G
 In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. In fact, Skora showed this in the more general setting where $S$ has cusps provided that then parabolic elements in $\Gamma$ are elliptic in $T$.
 It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
-The main result of this section will be the following.
+The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorem~\ref{thm:intersect} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}. 
 
 \begin{theorem}
 Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axis intersection. Then it follows that $\| \cdot \|$ satisfies max-smoothing.
@@ -269,15 +284,7 @@ where the last inequality is because $T_g=T_{g^{-1}}$.
 \end{case}
 \end{proof}
 
-Now we prove Theorem~\ref{mainthm:skora}.
-
-\begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
-(A) is equivalent to (C) is proven by the first part of Theorem~\ref{mainthm:apps}.
-(B) implies (C) is Theorem~\ref{prop:small}.
-(C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
-\end{proof}
-
-We follow-up with some remarks about the proof.
+We follow-up with some remarks and consequences of this proof.
 
 \begin{remark}
 One could hope to bypass cases 2 and 3 by approximating by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
@@ -291,19 +298,49 @@ Culler-Morgan~\cite{CM87:GroupActions} proved that the subspace of minimal small
 \]
 For free groups, by a result of Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that $\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) = \operatorname{VS}(\Gamma,T)$, and it is also known that $\operatorname{VS}(\Gamma,T) \subsetneq \operatorname{S}(\Gamma, T)$.
 For surface groups, both inclusions above are equalities, a fact that follows \emph{a posteriori} once one knows all small actions are dual to measured laminations: filling measured laminations (those intersecting all simple closed curves) are dense in the space of measured laminations, and their dual tree actions are free.
-It then follows that very small actions are equal to small actions in this case. This can also be seen directly by definition, since stabilizers of tripods correspond to stabilizers of ideal triangle complementary regions of the lamination, which are the trivial isometry.
+It then follows that very small actions are equal to small actions in this case. This can also be seen directly by definition, since stabilizers of tripods correspond to stabilizers of ideal triangle complementary regions of the lamination, which are the M\"obius transformation corresponding to the identity.
 \end{remark}
 
-\begin{remark}
-We observe that the proof shows that if $\pi_1(S) \acts T$ preserves axis, then any pair of hyperbolic elements $(g,h)$ satisfies that $T_g \cap T_h$ never have bounded incoherent overlap.
-In fact, the converse is also true: if $\pi_1(S) \acts T$ does not preserve axes, it means there exist a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$.
-\end{remark}
+\begin{proposition}
+  Let $\mathcal{I}$ denote the set of parallel hyperbolic pairs of isometries with incoherent overlap.
+ $\pi_1(S) \acts T$ preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
+ \label{prop:preserves_axis}
+\end{proposition}
+\begin{proof}
+The proof of Theorem~\ref{prop:small} shows that if $\pi_1(S) \acts T$ preserves axis intersection, or all $(g,h) \in \mathcal{I}$ have unbounded incoherent overlap.
+The converse is also true: if $\pi_1(S) \acts T$ does not preserve axis intersection, it means there exist a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
+\end{proof}
+
+This allows us to give another characterization of small surface actions on real trees.
+
+\begin{theorem}
+$\pi_1(S) \acts T$ is irreducible and preserves axis intersection if and only if no pair of parallel hyperbolic elements $(g,h)$ have incoherent overlap.
+\label{thm:axis_incoherent_characterization}
+\end{theorem}
+\begin{proof}
+One implication follows from the proof of Theorem~\ref{prop:small}.
+In the other direction, it follows by Proposition~\ref{prop:preserves_axis} that $\pi_1(S) \acts T$ preserves axis intersection. Finally, it cannot be reducible since otherwise it would have hyperbolic pairs with unbounded incoherent overlap.
+\end{proof}
+
+Now we prove Theorem~\ref{mainthm:skora}.
+
+\begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
+(A) is equivalent to (C) is proven by the first part of Theorem~\ref{mainthm:apps}.
+(B) implies (C) is Theorem~\ref{prop:small}.
+(C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+Finally, Theorem~\ref{thm:axis_incoherent_characterization} implies (C) is equivalent to (D).
+\end{proof}
 
 We conclude this section showing that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing.
 
 \begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
-If  $(\Gamma, T)$ is reducible, then $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
+If  $(\Gamma, T)$ is reducible, then:
+
+\begin{itemize}
+    \item $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
+    \item $-\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy disconnected smoothing but it satisfies connected smoothing.
+\end{itemize}
 \label{lem:red_not_smoothing}
 \end{lemma}
 \begin{proof}
@@ -318,7 +355,8 @@ or $g,h$ overlap incoherently, in which case
 \|gh^{-1} \| =\| g\| + \| h \| \mbox{ and } \| gh \| = | \| g \| - \| h \||.
 \label{eq:reducible2}
 \end{equation}
-Note that by Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} a reducible action always satisfies disconnected smoothing.
+Note that Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} hold for any pair of hyperbolic isometries $(g,h)$. In particular, they hold if $(\ora{g},\ora{h})$ cross.
+Hence, $\| \cdot \|$ always satisfies disconnected smoothing. Similarly, they also hold if $(\ora{g},\ora{h})$ are parallel. Thus, $-\| \cdot \|$ always satisfies connected smoothing.
 
 Now, take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
 WLOG, assume $\| a \|<\| x \|$.
@@ -347,43 +385,12 @@ A similar computation, yields the following result for the right hand side:
 \label{eq:rhs1}
 \end{equation}
 Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\|a \| \geq (n+r)\|x\|$, which contradicts $\|a\| < \|x\|$.
-Hence, $\| \cdot \|$ cannot satisfy smoothing. Since it satisfies disconnected smoothing, it follows it cannot satisfy connected smoothing.
+Hence, $\| \cdot \|$ (and, similarly, $-\| \cdot \|$) cannot satisfy smoothing. The claims then follow in each case.
 \end{proof}
 
 Hence, by Theorem~\ref{thm:intersections_group} a reducible action cannot be dual to a geodesic current, since smoothing (both connected and disconnected) is a necessary condition. Another example of curve functional satisfying disconnected smoothing but not connected smoothing in the setting of the linear extension of extremal length can be seen in Example~\ref{ex:linEL}.
 
-\subsection{Inequalities between intersection numbers}
-\label{subsec:ineqintersection}
 
-Finally, we give an application of our main result to domination of spectra of metric lengths on a surface. Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \mathcal{C}(\Sigma)$.
-We can use these extension results to study what intersection numbers dominating one curve over another imply about Liouville currents.
-
-For example, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
-In fact, we have something much stronger
-
-\begin{corollary}
-If $C_2$ dominates $C_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
-    \label{cor:domination}
-\end{corollary}
-
-\begin{proof}
-First note that any length metric satisfies smoothing.
-This argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here.
- Take a
-curve~$C$ with an
-essential self-intersection~$x$, and a representative~$\gamma$. Then $\gamma$ has
-a self-intersection point~$x'$ of the homotopy type of~$x$. If we
-consider the
-curve representative~$\gamma' \in C'$ obtained by smoothing at~$x'$, then,
-since $\ell_g$ is an infimum, we have
-\[
-  \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
-\]
-as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
-It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
-Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
-\end{proof}
 
 
 
