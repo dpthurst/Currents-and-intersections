@@ -11,8 +11,7 @@ In the second case, we consider geodesic currents supported on geodesics project
 In the case of $\Curr_{\mathrm{cusp}}(S)$, 
 we gave an example in~\cite[Remark~2.26]{MGT21:Smoothings} showing that intersection number is not continuous on currents. See also the recent works by Sasaki~\cite{Sas22:Currents} and Trin~\cite{T22:ThurstonCompactification}.
 
-Let $\AConvex(S)$ denote the space of curve functionals satisfying symmetry, additivity, smoothing and stability.
-(Here the ``A'' is for additivity, and the ``Convex'' is because such functions induce convex functions on train track charts; see Section~\ref{subsubsec:convexity_charts} below.)
+Recall that $\AConvex(S)$ denotes the space of curve functionals satisfying symmetry, additivity, smoothing and stability.
 
 We think there should be an analog of our result for $\Curr_{\mathrm{cusp}}(S)$,
 but presumably one would have to add conditions with regards to smoothings between arcs and arcs, and arcs and curves.
@@ -32,11 +31,12 @@ However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geo
 
 \subsubsection{Functionals valued on ordered abelian groups} \DMGtodo{added this question}
 
-Most of the results in this paper extend, with only minor modifications, to the setting of $\Lambda$-valued functionals and $\Lambda$-valued geodesic currents, where $(\Lambda, <)$ denotes an ordered abelian group—that is, an abelian group equipped with a total order satisfying $a < b$ and $c \le d$ imply $a + c < b + d$.
+We expect most of the results in this paper to extend, with only minor modifications, to the setting of $\Lambda$-valued functionals and $\Lambda$-valued geodesic currents, where $(\Lambda, <)$ denotes an ordered abelian group—that is, an abelian group equipped with a total order satisfying $a < b$ and $c \le d$ imply $a + c < b + d$.
 This generalization is natural in the context of the theory of $\Lambda$-trees~\cite{Sko90:GeometricAction} and has already proved fruitful in the study of compactifications of character varieties of surface-group representations into higher-rank Lie groups~\cite{BIPP24:PositiveCrossratios}.
 We plan to explore these extensions and their applications in future work.
 
-\subsubsection{Relation to quasi-morphisms} \DMGtodo{added this question (might remove it)}
+\subsubsection{Relation to quasi-morphisms} 
+\label{sub:quasimorphism} \DMGtodo{added this question (might remove it)}
 
 The hypotheses of \emph{oriented quasi-smoothing} are reminiscent of, but weaker than, the conditions for a map 
 $f \colon \pi_1(S) \to \mathbb{R}$ to be a \emph{quasi-morphism}, that is, there exists $D > 0$ such that 
@@ -56,10 +56,8 @@ Are there additional conditions on $f$ ensuring that the function
 g(a) \coloneqq f(a) - f(a^{-1})
 \]
 is a homogeneous quasi-morphism?
-\end{question}
 
-A positive answer would establish a direct link between the geometric conditions of quasi-smoothing and the algebraic structure of bounded cohomology.
-
+\end{question} 
 
 \subsubsection{Smoothing vs multi-smoothing}
 
@@ -125,7 +123,7 @@ All in all, $f$ satisfying domination implies $f$ satisfying multi-smoothing whi
 From Theorem~\ref{thm:intersect} we obtain the following weaker theorem (which, nevertheless, seems interesting from a conceptual viewpoint).
 
 \begin{theorem}
-A curve functional satisfies additivity, domination, stability and homogeneity if and only if it is dual to a geodesic current
+A curve functional satisfies domination and additivity if and only if it is dual to a geodesic current.
 \end{theorem}
 
 This can be interpreted as saying that linear maps that preserve the poset structure of the space of curves correspond to intersection numbers.
@@ -183,7 +181,7 @@ Erlandsson~\cite{Erlandsson:WordLength}, see also
 Section~\ref{subsec:embedded_graphs}) on a punctured surface $S'$.
 By Erlandsson's result, the word-length with respect to $F$ is dual to a geodesic
 current $m_F$ which is a multi-curve plus a finite collection of weighted arcs going from cusp to cusp. If we take the uniform probability
-measure on $F$, the stable length of the resulting Green metric is a multiple of the standard word-metric on $F \cong \pi_1(S')$ (by~\cite{GMM18:Entropy}), and hence by~\cite{Erlandsson:WordLength}, is a multiple of the intersection number with $m_F$, and hence, a geodesic current. The situation
+measure on $F$, the stable length of the resulting Green metric is a multiple of the standard word-metric on $F \cong \pi_1(S')$ (by~\cite{GMM18:Entropy}), and hence by~\cite{Erlandsson:WordLength}, is a multiple of the intersection number with $m_F$, and consequently, a geodesic current. The situation
 is different if $S$ is closed (the setting on which our Theorem~\ref{thm:intersect} applies): again, by the results in~\cite{GMM18:Entropy}, the stable length of the Green metric induced by the uniform probability measure on the standard generating set cannot be a multiple of the word-metric in the case of a
 closed surface.
 

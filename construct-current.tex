@@ -493,7 +493,6 @@ This condition is thus crucial to recover curve functionals as intersection numb
 We finish this section by proving the algebraic version of the
 theorem, namely, Theorem~\ref{thm:intersections_group}.
 
-
 \begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
 As in the statement, let $\overline{f}(a) \coloneqq
 \frac{1}{2}\left(f(a) + f(A) \right)$, and extend it linearly to be an
@@ -506,41 +505,7 @@ function on multi-curves.
 
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
-
-\DMGtodo{added this part, to deduce stability from primitive smoothing and oriented disconnected smoothing}
-First we prove that primitive smoothing plus oriented disconnected smoothing imply stability of $f$, which immediately implies stability of $\overline{f}$.
-Let $a \in \pi_1(S)$ be an arbitary element. Suppose first that $b \in \pi_1(S)$ so that $(a,b)$ R-cross.
-Then, applying disconnected smoothing to the crossing pair $(a^n, b)$, we get
-\begin{equation}
-f(a^n) + f(b) \geq f(a^nb).
-\label{eq:cross1_eq}
-\end{equation}
-An induction on $n$ on the crossing pair $(a,b)$ shows
-\begin{equation}
-nf(a) + f(b) \geq f(a^nb)
-\label{eq:cross2_eq}
-\end{equation}
-for $n\geq 1$.
-Indeed, note that the base case is true by oriented connected smoothing, and the induction follows from
-\[
-nf(a) + f(b) \geq f(a^{n-1}b) + f(a) \geq f(a^nb)
-\]
-where in the first step we used the induction step and in the second we used the fact that the pair $(a,a^{n-1}b)$ is R-crossing by Lemma~\ref{lem:rhs_prod}.
-Finally, we note that by ~Lemma~\ref{lem:rhs} and induction, the pair $(B,a^nb)$ is R-crossing for all $n \geq 1$, and hence,
-\begin{equation}
-f(B) + f(a^nb) \geq f(a^n).
-\label{eq:cross3_eq}
-\end{equation}
-By the hypotheses (2) (sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$, it follows in particular that $f(a^n) \geq nf(a)$ and the limit 
-\[
-F(a)\coloneqq\lim_n \frac{f(a^n)}{n}
-\]
-exists by Fekete's lemma~\ref{lem:fekete}.
-Hence, $F(a) \geq f(a)$.
-Combining Equation~\ref{eq:cross1_eq}, and~\ref{eq:cross3_eq}, dividing by $n$ and taking the limit when $n$ goes to infinity, we get $F(a)=\lim_n \frac{f(a^nb)}{n}$. Using equation~\ref{eq:cross2_eq}
-we get $f(a) \geq F(a)$. Thus, $F(a)=f(a)$, and hence $f$ satisfies stability since $F$ clearly does.
-
-Now we verify smoothing. We start
+We first verify smoothing. We start
 with disconnected smoothing, between crossing elements
 $(\ora{a},\ora{b})$, which we can assume R-cross by switching $a,b$ if
 necessary. We have
@@ -572,11 +537,41 @@ $(\ora{B},\ora{A})$. Then
 
 Finally, by Corollary~\ref{cor:oriented_smoothing_unoriented},
 $\overline{f}$~satisfies unoriented smoothing as well. 
-Finally, by Proposition~\ref{prop:self_crossing_primitive}), we have $[a^{n+m}] \searrow [a^n] + [a^m]$, and the primitive smoothing hypothesis implies $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$, as desired. \DMGtodo{added this last sentence, since we also had to verify primitive self-crossing.}
+Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing. \DMGtodo{added this last sentence, since we also had to verify power smoothing.}
 Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
 We are thus under the
 hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
+
+In fact, we can prove the following variation with a slighly weaker hypothesis
+(replacing stability by oriented power smoothing).
+
+The following theorem follows from Proposition~\ref{prop:power_disconnected_imply_stable} and~Theorem~\ref{thm:intersections_group}.
+
+\begin{theorem}
+Let $a,b \in \pi_1(S)$.
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
+\begin{enumerate}
+\item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
+\item oriented power smoothing: 
+$f(a^{n+m}) \geq f(a^n) + f(a^m) \mbox{ for all } n,m \geq 1$.
+\item oriented smoothing:
+ \begin{align}
+    \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
+    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
+  \end{align}
+\end{enumerate}
+Let $\overline{f} \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$.
+Then, there exists a (unique) geodesic current $\mu_{\overline{f}}$ on $S$ so that
+\[
+i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
+\]
+for every $g \in \Gamma$.
+Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
+\label{thm:intersections_group2}
+\end{theorem}
+
+
 
 
 %%% Local Variables:

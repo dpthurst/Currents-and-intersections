@@ -206,7 +206,7 @@ the common value is unclear to us.
 Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
 
 We divide the proof into two cases, depending on the type of smoothing (connected vs disconnected).
-Our goal is to check that the smoothing conditions in Theorem~\ref{thm:intersections_group} are satisfied.
+
 
 
 \subsection{Disconnected smoothing}
@@ -419,27 +419,6 @@ The argument for $[R_1] \leq [R_2]$ is symmetric.
 
 Here we verify that Equation~\ref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
 
-We will use the following intermediate classical lemma.
-\begin{lemma}
-Given any sequence of real numbers $a_{n}$ satisfying that for all integers $m,n \geq 0$
-\[
-a_{m+n} \leq a_m + a_n
-\]
-(respectively,
-\[
-a_{m+n} \geq a_m + a_n),
-\]
-we have
-\[
-\lim_n \frac{a_n}{n} = \inf_n \frac{a_n}{n} \leq a_1
-\]
-(respectively,
-\[
-\lim_n \frac{a_n}{n} = \sup_n \frac{a_n}{n} \geq a_1
-\]
-\label{lem:fekete}
-\end{lemma}
-
 Now we prove connected smoothing.
 
 \begin{lemma}
@@ -500,7 +479,7 @@ as desired.
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{theorem}
 \begin{proof}
-By the Lemmas~\ref{lem:crinv}, \ref{lem:crossratio_stability}, \ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group}, and thus there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+By the Lemmas~\ref{lem:crinv}, \ref{lem:crossratio_stability}, \ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
 \end{proof}
 
 \newpage

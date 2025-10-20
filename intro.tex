@@ -36,10 +36,11 @@ working in the more general setting of oriented curve functionals.
 The hypotheses of the theorem are minimal: neither axiom implies the other (see Section~\ref{subsec:examples_and_non} for many natural examples and
 non-examples). 
 
+\begin{comment}%silenced this comment: I am not sure how central it is, and I would like Theorem
 One can view this theorem in analogy to Poincaré duality for closed surfaces, where curve functionals satisfying smoothing correspond to cohomology classes, geodesic currents to homology classes and  geometric intersection number to the cap product. See Section~\ref{subsec:poincare_duality}.
-
+\end{comment}
 As a consequence of Theorem~\ref{thm:intersect} we obtain 
-many new dual geodesic currents, generalizing many previous constructions for Riemannian metrics of negative curvature on $S$, and certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
+many new dual geodesic currents, extending several previous constructions for Riemannian metrics of negative curvature on $S$, as well as certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
 In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
     Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs, thus generalizing the work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
 
@@ -49,36 +50,34 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
     As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface. This, in particular, answers a question of Neumann-Coto~\cite{NC01:ShortestGeodesics}.
 
     The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
-    For curve functionals arising from algebraic settings, such as the stable length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases, as follows.
+    For curve functionals arising from algebraic settings, such as the translation length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases, as follows.
 
   For $a,b \in \pi_1(S)$,
   $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some/any hyperbolic structure), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
       ccw order on the boundary at infinity. See
       Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing} for more details.
       From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
-      Using this we can state an equivalent version of Theorem~\ref{thm:intersect} but with weaker hypotheses. \DMGtodo{added this}
+      Using this we can state an equivalent version of Theorem~\ref{thm:intersect} but with weaker hypotheses. 
 
-      
 \begin{mainthmprime}
-Let $a,b \in \pi_1(S)$.
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function satisfying the following conditions:
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f} \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$. 
+There exists a (unique) geodesic current $\mu_{\overline{f}}$ on $S$ so that
+\setlength{\abovedisplayskip}{6pt}
+  \setlength{\belowdisplayskip}{6pt}
+\[
+i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
+\]
+for every $g \in \pi_1(S)$ if and only if $f$ satisfies the following conditions (for $a,b \in \pi_1(S)$):
 \begin{enumerate}
 \item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item power smoothing: \DMGtodo{what do you think about this name?}
-$f(a^{n+m}) \geq f(a^n) + f(a^m)$ for all $n,m \geq 1$.
+\item stability: 
+$f(a^n)=nf(a) \mbox{ for all } n \geq 1$.
 \item oriented smoothing:
  \begin{align}
     \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
     \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
   \end{align}
 \end{enumerate}
-Let $\overline{f} \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$.
-Then, there exists a (unique) geodesic current $\mu_{\overline{f}}$ on $S$ so that
-\[
-i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
-\]
-for every $g \in \Gamma$.
-Moreover, any function of the type $i(\mu, \cdot)$, for a geodesic current $\mu$, satisfies the above assumptions.
 \label{thm:intersections_group}
 \end{mainthmprime}
 
@@ -142,9 +141,13 @@ These results generalize both of Luo's results on characterizing which functions
 We give a new and concise characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
 
 If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. Such an action is \emph{irreducible} if the subset of ends of $T$ fixed by all of $\Gamma$ is empty (see Section~\ref{sec:skora} for definitions).
+We say that the action is \emph{minimal} if the only invariant non-degenerate subtree is $T$ itself. 
+Finally, if two hyperbolic isometries have axes intersecting in a non-degenerate arc, we say they \emph{overlap incoherently} if the isometries translate in opposite directions on the overlap.
+
+
 If $\Gamma=\pi_1(S)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axis intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
 An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
-Recall that an action of $\Gamma$ on a real tree is \emph{minimal} if the only invariant non-degenerate subtree is $T$ itself. Finally, if two hyperbolic isometries have axes intersecting in a non-degenerate arc, we say they \emph{overlap incoherently} if the isometries translate in opposite directions on the overlap.
+
 We prove the following equivalences.
 
 \begin{mainthm}

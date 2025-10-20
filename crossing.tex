@@ -206,15 +206,17 @@ We will also distinguish between different types of smoothings.
   \item Unoriented disconnected smoothing: $[a][b] \reducesto [aB]$
     (result connected)
   \end{itemize}
-  Finally, we have a smoothing for self-crossings of non-primitive elements:
+  Finally, we have a smoothing for self-crossings of a non-primitive element:
   \begin{itemize}
-  \item Non-primitive smoothing: $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$, and every $m,n \geq 1$. \DMGtodo{added this, not sure if best name for it}
+  \item Oriented power smoothing: $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$, and every $m,n \geq 1$. \DMGtodo{added this, not sure if best name for it}
   \end{itemize}
 \end{definition}
 
+In the next section we justify the equivalence between the smoothing condition hypothesis and these different sub-types.
+
 \subsection{Triality of crossings: topological, geometric and algebraic}
 
-We now present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, let 
+Following~\cite{MGT25:SmoothingsErratum}, we present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, let 
 $[a]$ denote the free homotopy class of oriented curves represented by $a$;
 algebraically this is equivalent to the conjugacy class of~$a$. Say that a
 factorization $[ab]$ \emph{reduces} if some (equiv.\ every) taut
@@ -270,15 +272,16 @@ is one with a minimum number of transverse crossings.
   $a = c^\ell$ and $b = c^k$.
 \end{definition}
 
-We have the following result.
+We following justifies the oriented power smoothing hypothesis.
 
 \begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]\label{prop:crossings-powers}
   If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
   element~$c$ with $k,\ell \ge 1$, then the factorization $[ab]$
-  reduces.
+  reduces to $[a][b]$.
   \label{prop:self_crossing_primitive}
 \end{proposition}
 
+The following result justifies the oriented/unoriented connected/disconnected smoothing variations of smoothing.
 
 \begin{proposition}[{\cite[Proposition~2.9b]{MGT25:SmoothingsErratum}}]\label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
@@ -509,7 +512,7 @@ and~\ref{cor:cont_conn_disc}.
 
 Fix $a,b \in \Isom^+(\bbH)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
-hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic (this will be the case, for example, if $a,b \in \pi_1(S)$).
+hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic (this will be the case, for example, if $a,b \in \pi_1(S)$). \DMGtodo{is this true: what if $aB$ is the commutator relation in the surface group?}
 
 Consider the common hyperbolic perpendicular of $\ora{a}$
 and $\ora{b}$, which we will denote~$R_1$. We will also use the

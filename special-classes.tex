@@ -60,11 +60,11 @@ Since the expression in the limit is one-half of an integer number for every $n$
 Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. For more details about this last argument, see~\cite{JMG:StrongDuals}.
 By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
 We can be more precise. One option is that $\mu$ is an integral multi-curve. If $\mu$ is a half-integral non-integral multi-curve, we claim that $\vec{M}=0$ in $\mathbb{Z}_2$-homology. Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
-$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \vec \cdot,\vec \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
+$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \cdot, \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
 \end{proof}
 
 \begin{remark}
-  The factor of $1/2$ is necessary, since, as shown above, there are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
+  As shown above, there are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
 For example, let $\mu$ be the geodesic current supported on a
   separating simple closed curve. Then $\mu/2$ has an integral
   length spectrum but is not an integral multi-curve. 
@@ -142,7 +142,7 @@ Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows tha
 We answer this question affirmatively and, in fact, give a much stronger result.
 
 \begin{corollary}
-If $\mu_2$ dominates $\mu_1$, then
+Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
     $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
     \label{cor:domination}
 \end{corollary}
@@ -272,7 +272,7 @@ Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
 Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), [P', Q'))$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times [Q', P))$), and $R_{a,b}^- \coloneqq G((Q,P], (P', Q'])$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times (Q', P])$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
-Let $B_{a,b}^+ = (a^+, b^-] \times [a^-, b^+)$ (resp.  $(B_{g,h}^{\perp})^+ = (b^-, a^-] \times [b^+, a^+)$), 
+Let $B_{a,b}^+ = (a^+, b^-] \times [a^-, b^+)$ (resp.  $(B_{a,b}^{\perp})^+ = (b^-, a^-] \times [b^+, a^+)$), 
 and $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ (resp.  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$). We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ (resp. $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $).
 For every $n \in \mathbb{N}$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
@@ -311,7 +311,7 @@ Now we characterize measured laminations in terms of the disconnected max-smooth
 \end{theorem}
 \begin{proof}
 Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing}.
-By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curve $C$.
+By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
 It remains to show that $\mu_f$ is a measured lamination.
 Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
@@ -354,7 +354,7 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
     \label{prop:char_laminations_plus}
 \end{theorem}
 \begin{proof}
-Suppose $f$ is a curve functional satisfying max-smoothing, additivity and stability. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, additive and stable, and noting that if $f$ satisfies disconnected smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
+Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, additive and stable, and noting that if $f$ satisfies disconnected smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by

@@ -250,9 +250,12 @@ Let $\mu \in \Curr(S)$. We say $\mu$ is \emph{filling}, and thus $\mu \in \Curr_
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}
 
+We will need some results guaranteeing the existence of limits of sequences.
+
  We recall some basic results on convexity and existence of limits of
  functions on the integers. We start with an old result and then
- generalize to two variables and to less-standard notions of convexity.
+ generalize to two variables and to less-standard notions of convexity. We also recall a standard result on the existence of limits for sub/super-additive sequences.
+ 
  Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$.
 
  We say $g \colon \mathbb{\mathbb{N}} \to \mathbb{R}$ is \emph{convex} if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \geq 2$.
@@ -372,6 +375,26 @@ The following result is straightforward.
   $g(n+1,m+1) + g(n-1,m-1) - 2g(n,m) = -2 < 0$.
 \end{remark}
 
+Finally, we will use the following classical lemma.
+\begin{lemma}
+Given any sequence of real numbers $a_{n}$ satisfying that for all integers $m,n \geq 0$
+\[
+a_{m+n} \leq a_m + a_n
+\]
+(respectively,
+\[
+a_{m+n} \geq a_m + a_n),
+\]
+we have
+\[
+\lim_n \frac{a_n}{n} = \inf_n \frac{a_n}{n} \leq a_1
+\]
+(respectively,
+\[
+\lim_n \frac{a_n}{n} = \sup_n \frac{a_n}{n} \geq a_1
+\]
+\label{lem:fekete}
+\end{lemma}
 
 %%% Local Variables:
 %%% mode: latex

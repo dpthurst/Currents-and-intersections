@@ -36,7 +36,7 @@ We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial
 
 An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
-\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$ (equivalently $G$ fixes an end of $T$ ~\cite[Theorem~2.2,Corollary~2.3]{CM87:GroupActions}).
+\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$ (equivalently $G$ fixes an end of $T$ ~\cite[Theorem~2.2, Corollary~2.3]{CM87:GroupActions}).
 \item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$ (equivalently $G$ fixes a line of $T$ inverting orientation~\cite[Theorem~2.4]{CM87:GroupActions}).
 \item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{enumerate}
@@ -44,11 +44,13 @@ An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with no
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
 
-Let $\Delta \coloneqq T_g \cap T_h$. If $\Delta$ is not a singleton,
-and $g$ and $h$ translate in the same direction along $\Delta$, we say
-that $g$ and $h$ \emph{overlap coherently}.
-If $\Delta$ is not a singleton, and $g$ and $h$ translate in opposite
+Let $\Delta \coloneqq T_g \cap T_h$. If $\Delta$ is a non-degenerate interval (i.e., non-empty and not a singleton) we distinguish two types of overlap:
+\begin{itemize}
+\item if $g$ and $h$ translate in the same direction along $\Delta$, we say
+that $g$ and $h$ \emph{overlap coherently};
+\item if $g$ and $h$ translate in opposite
 directions along $\Delta$, we say that $g$ and $h$ \emph{overlap incoherently}.
+\end{itemize}
 Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
 \begin{itemize} 
 \item they are both hyperbolic;

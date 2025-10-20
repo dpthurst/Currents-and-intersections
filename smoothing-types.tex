@@ -181,7 +181,7 @@ Figure~\ref{fig:cross_lemma}.
 
 
 \begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
-Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, disconnected smoothing, homogeneity and is continuous.
+Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, disconnected smoothing, homogeneity and is extends continuously to geodesic currents.
 Given a pair $a, b \in \pi_1(S)$ of parallel elements (so
 $[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
 satisfies oriented connected
@@ -306,6 +306,57 @@ or word-lengths with respect to some generating sets give natural such
 functionals.
 See Section~\ref{subsec:examples_and_non} for many examples and non-examples of curve functionals.
 
+Finally, we show that oriented power smoothing and oriented disconnected smoothing imply stability.
+\DMGtodo{think about what is the best way to present the theorems.}
+\begin{proposition}
+Let $f \colon \pi_1(S) \to \mathbb{R}$ satisfy:
+\begin{enumerate}
+\item class invariance: $f(a)=f(b)$ whenever $a$ and $b$ are conjugate.
+\item oriented power smoothing: for every $a \in \pi_1(S)$ and integers $n,m \geq 1$
+\[
+f(a^{n+m}) \geq f(a^n) + f(a^m).
+\]
+\item oriented disconnected smoothing:
+\begin{align*}
+ f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
+\end{align*}
+Then $f$ satisfies stability.
+\end{enumerate}
+\label{prop:power_disconnected_imply_stable}
+\end{proposition}
+\begin{proof}
+Let $a \in \pi_1(S)$ be an arbitary element. Suppose first that $b \in \pi_1(S)$ so that $(a,b)$ R-cross, which we can find by density of endpoints of axes of hyperbolic elements in $G(S)$.
+Then, applying disconnected smoothing to the crossing pair $(a^n, b)$, we get
+\begin{equation}
+f(a^n) + f(b) \geq f(a^nb).
+\label{eq:cross1_eq}
+\end{equation}
+An induction on $n$ on the crossing pair $(a,b)$ shows
+\begin{equation}
+nf(a) + f(b) \geq f(a^nb)
+\label{eq:cross2_eq}
+\end{equation}
+for $n\geq 1$.
+Indeed, note that the base case is true by oriented connected smoothing, and the induction follows from
+\[
+nf(a) + f(b) \geq f(a^{n-1}b) + f(a) \geq f(a^nb)
+\]
+where in the first step we used the induction step and in the second we used the fact that the pair $(a,a^{n-1}b)$ is R-crossing by Lemma~\ref{lem:rhs_prod}.
+Finally, we note that by ~Lemma~\ref{lem:rhs} and induction, the pair $(B,a^nb)$ is R-crossing for all $n \geq 1$, and hence,
+\begin{equation}
+f(B) + f(a^nb) \geq f(a^n).
+\label{eq:cross3_eq}
+\end{equation}
+By the hypotheses (2) (sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$, it follows in particular that $f(a^n) \geq nf(a)$ and the limit 
+\[
+F(a)\coloneqq\lim_n \frac{f(a^n)}{n}
+\]
+exists by Fekete's lemma~\ref{lem:fekete}.
+Hence, $F(a) \geq f(a)$.
+Combining Equation~\ref{eq:cross1_eq}, and~\ref{eq:cross3_eq}, dividing by $n$ and taking the limit when $n$ goes to infinity, we get $F(a)=\lim_n \frac{f(a^nb)}{n}$. Using equation~\ref{eq:cross2_eq}
+we get $f(a) \geq F(a)$. Thus, $F(a)=f(a)$, and hence $f$ satisfies stability since $F$ clearly does.
+\end{proof}
+
 We can now reestate Theorem~\ref{thm:intersect} from the perspective of curve functionals on oriented curves.
 
 \begin{mainthmprimeprime}
@@ -313,10 +364,10 @@ We can now reestate Theorem~\ref{thm:intersect} from the perspective of curve fu
      \[
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right)
    \]
-   for every essential crossing of a multi-curve on the surface and, moreover, $f$ additive, symmetric and stable.
-Then $f$ has a dual geodesic current, i.e., there exists $\mu_f$ so that
+   for every essential crossing of a multi-curve on the surface and, moreover, $f$ is additive.
+Then $\bar{f}(C) = \frac{1}{2} \left(f(C)+f(C^{-1})\right)$ has a dual geodesic current, i.e., there exists $\mu_{\bar{f}}$ so that
 \[
-i(\mu_f,C)=f(C)
+i(\mu_{\bar{f}},C)={\bar{f}}(C)
 \]
 for every curve $C$.
 \label{thm:intersect_oriented}
