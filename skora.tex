@@ -8,13 +8,15 @@ $\mathbb{R}$-trees, and in turn we reprove a classical theorem of
 Skora~\cite{Sko90:GeometricAction}.
 
 \subsection{Finitely generated groups acting on real trees} \hspace{1cm} \\
+
 \textbf{Real trees} We start by recalling some basic notions of real trees.
-An \emph{$\mathbb{R}$-tree} is a metric space $T$ such that for
+An \emph{$\mathbb{R}$-tree} is a non-empty metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing
-both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$. This
+both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$-  This
 intersection is denoted
-$[x, y]$, and called an \emph{arc}. A ray in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
-the ray \emph{emanates} from $p$. The \emph{space of ends} of a real tree $T$ is the limit of the inverse system $\pi_0(T-B)$ where
+$[x, y]$, and called an \emph{arc} connecting $x$ and $y$. In particular, note that arcs are non-empty, any two points are connected by a unique arc. When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
+A \emph{ray} in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
+the ray \emph{emanates} from $p$. The \emph{space of ends} of a metric space $T$ is the limit of the inverse system $\pi_0(T-B)$ where
 $B$ ranges over the closed and bounded subsets of $T$. Let $p$ a be a fixed point of $T$. For every point of the limit there is a ray emanating from $p$,
 and a cofinal sequence of components of the complement of closed and bounded sets that represent the limit point, such that every
 point in the sequence meets the ray, and this ray is uniquely determined. Hence, there is a one-to-one correspondence with rays of $T$ emanating from $p$ and ends
@@ -28,20 +30,20 @@ By the definition of tree, there is only one line connecting any pair of ends.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
 Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$ be the \emph{characteristic set} of $g$ which is a closed, non-empty subtree of $T$ invariant under the action of $g$.
 If $g$ is elliptic, then $\| g \| =0$. The converse is also true;
-see~\cite[1.3]{CM87:GroupActions}.
+see~\cite[Section~1.3]{CM87:GroupActions}.
 If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the real line and $g$ translates along $T_g$ by distance $\| g\|$. If $g$ is hyperbolic, we will call $T_g$ the \emph{axis} of $g$.
 
 We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
 We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
 
-An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is of three types~\cite[Page~583]{CM87:GroupActions}:
+An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
 \item Fixed end: $\| \cdot \|$ trivial on $[G,G]$ (equivalently $G$ fixes an end of $T$ ~\cite[Theorem~2.2, Corollary~2.3]{CM87:GroupActions}).
 \item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$ (equivalently $G$ fixes a line of $T$ inverting orientation~\cite[Theorem~2.4]{CM87:GroupActions}).
 \item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{enumerate}
 
-Consider two hyperbolic elements $g, h \in \Gamma$ with axes in $\mathbb{R}$-tree given respectively by $T_g,T_h$.
+Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
 
 Let $\Delta \coloneqq T_g \cap T_h$. If $\Delta$ is a non-degenerate interval (i.e., non-empty and not a singleton) we distinguish two types of overlap:
@@ -51,24 +53,24 @@ that $g$ and $h$ \emph{overlap coherently};
 \item if $g$ and $h$ translate in opposite
 directions along $\Delta$, we say that $g$ and $h$ \emph{overlap incoherently}.
 \end{itemize}
-Following~\cite[3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
+Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
 \begin{itemize} 
 \item they are both hyperbolic;
 \item their axes in the tree intersect and their overlap is not a singleton;
 \item they overlap coherently; and
-\item the length of $\Delta$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
+\item the length of $T_g \cap T_h$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
 \begin{remark}[{\cite[Remark~3.3]{CM87:GroupActions}}]
 If $g,h$ are hyperbolic and $T_g,T_h$ meets in an arc of positive but finite length, then there exist integers $m>0$ and $n$ so that $g^m$ and $h^n$
-for a good pair of isometries, where the sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
+form a good pair of isometries. Here the sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
 to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
 \label{rmk:powers_goodpair}
 \end{remark}
 
 Another way to characterize irreducibility is in terms of the existence of a pair of hyperbolic elements with bounded overlap, as shown in~\cite[Theorem~2.7]{CM87:GroupActions}
 \begin{lemma}
-A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ bounded.
+A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ is bounded.
 \label{lem:char_irred_noninter}
 \end{lemma}
 
@@ -89,9 +91,6 @@ Finally, good pairs provide pairs of non-intersecting hyperbolic elements.
    This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
 \end{proof}
 
-In general, if the translation lengths of two $G \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is irreducible by~\cite[Theorem~3.7]{CM87:GroupActions}.
-In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $G  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
-
 We will consider the following classical results about the relative position of axes in a real tree. Figure~\ref{fig:trees_disjoint} and Figure~\ref{fig:trees_intersection} correspond to Fig.~2 and Fig.~3, respectively, in~\cite{Pa89:Paulin1989TheGT}. Similar less detailed diagrams appear in~\cite{CM87:GroupActions}.
 
 \begin{lemma}
@@ -99,19 +98,21 @@ Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
 We have the following cases.
 \begin{enumerate}
 \item (Intersecting axes)
-$T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gh^{-1}\| \}$.
+$T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gh^{-1}\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
 Moreover,
 \begin{itemize}
-\item if $g,h$ overlap coherently, then 
-$\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$, and $T_g \cap T_h = T_{gh} \cap T_{hg}$;
-\item and if $g,h$ overlap incoherently, then 
-$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$, and $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
+\item $T_g \cap T_h = \{ p \}$ iff $\|gh\| = \| gh^{-1}\| = \|  g \| + \|h \|$;
+\item $g,h$ overlap coherently iff 
+$\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$. In this case, $T_g \cap T_h = T_{gh} \cap T_{hg}$;
+\item $g,h$ overlap incoherently iff 
+$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$, and in this case $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{itemize}
-\item (Parallel axes) $T_g \cap T_h =\emptyset, \{*\}$ if and only if
+\item (Parallel axes) $T_g \cap T_h =\emptyset$ if and only if
 \[
-\|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h).
+\|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h),
 \]
-Then, $T_{ab}, T_b$ overlap in a segment of positive length and, if $T_g \cap T_h =\emptyset$, then  $T_{gh}$ and $T_{hg}$ overlap incoherently on a segment of length $d(T_g, T_h)$.
+as shown in Figure~\ref{fig:trees_disjoint}.
+Then, $T_{gh}, T_h$ overlap in a segment of positive length and, if $T_g \cap T_h =\emptyset$, then  $T_{gh}$ and $T_{hg}$ overlap incoherently on a segment of length $d(T_g, T_h)$.
 \end{enumerate}
 \label{lem:foundation_trees}
 \end{lemma}
@@ -131,11 +132,12 @@ Then, $T_{ab}, T_b$ overlap in a segment of positive length and, if $T_g \cap T_
 \end{figure}
 
 \begin{proof}
-The proof of (1) and (2) is~\cite[1.5, 1.8]{CM87:GroupActions}. The equality $T_g \cap T_h = T_{gh} \cap T_{hg}$ in case (1) is stated in their proof. 
-The remark of part (2) about $T_{ab}, T_b$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
-The statement about the axes $T_{gh},T_{hg}$ in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
-We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
+The proof of the translation length equalities and inequalities of (1) and (2), as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$ in case (1) is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions}.   
+The remark of part (2) about $T_{gh}, T_h$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
+The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
+
+We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
 
 \begin{lemma}
     If $g,h$ are hyperbolic and satisfy $\|g\| + \|h\| = \|gh\|$, then for every positive integers $m,n$, we have
@@ -145,39 +147,41 @@ We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
     \label{lem:powers_intersect}
 \end{lemma}
 
-Finally, we will need analogous statements for pairs $g,h \in \pi_1(S)$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}, we state them here in the form that will be most convenient for us.
+Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}, we state them here in the form that will be most convenient for us.
 
 \begin{lemma}
-Suppose $g$ is elliptic and $h$ is hyperbolic. Let $T_g$ denote the set of fixed points of $g$, and $T_h$ the axis of $h$.
+Suppose $g$ is elliptic and $h$ is hyperbolic. Let $T_g$ denote the set of fixed points of $g$ and $T_h$ the axis of $h$.
 \begin{enumerate}
-\item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}} \neq \emptyset$ and $I$ contains all the fixed points of $g$ in $A_h$.
+\item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
 Moreover:
 \begin{itemize}
 \item $T_{h}$, $T_{ghg^{-1}}$ overlap in a point or coherently if and only if $\|gh\|=\|h\|$.
 \item $T_{h}$, $T_{ghg^{-1}}$ overlap incoherently  if and only if $\|h\|>\|gh\|$.
 \end{itemize}
-\item $T_g \cap T_h = \emptyset$, if and only if $\|gh\|>\|h\|$. In this case $\|gh\| = \|gh^{-1}\|= \|h \| + 2d(T_g, T_h)$.
+\item $T_g \cap T_h = \emptyset$ if and only if $\|gh\|>\|h\|$. In this case $\|gh\| = \|gh^{-1}\|= \|h \| + 2d(T_g, T_h)$.
 \end{enumerate}
 \label{lem:pau_ell_hyp}
 \end{lemma}
 \begin{proof}
-The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[1.5]{CM87:GroupActions}. 
+The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. 
 \end{proof}
 \begin{lemma}[{\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}}]
-If $g,h$ are both elliptic, and $T_g, T_h$ denote their sets of fixed points, we have $\|gh\|>0$ if and only if $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$, the shortest connecting arc $[x,y]$ between $x \in T_g$ and $y \in T_h$ is contained in the axis of $gh$.
+If $g,h$ are both elliptic, and $T_g, T_h$ denote their sets of fixed points, we have $\|gh\|>0$ if and only if $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$, the shortest connecting arc between $T_g$ and $T_h$ is contained in the axis of $gh$.
 \label{lem:pau_two_ell}
 \end{lemma}
+
+In general, if the translation lengths of two $\Gamma \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is minimal irreducible or dihedral by~\cite[Theorem~3.7]{CM87:GroupActions}.
+In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $\Gamma  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
 
 \subsection{Surface group actions on real trees}
 
 In this section, we assume $\Gamma = \pi_1(S)$.
 
-It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see, for example, \cite[Chapter~11]{Kap09:HyperbolicManifold}).
-It follows from the construction of $T_\lambda$ that the translation length on $T$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
-Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to the measured lamination} $\lambda$.
+It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see~\cite{MO84:Valuations}).
+It follows from the construction that the translation length on $T_\lambda$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
+Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree $T$, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to} $\lambda$.
 
-If $\Sigma$ is a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements.
-If two axes $\ora{g},\ora{h}$ with respect to $\Sigma$ intersect transversely in $\tilde{\Sigma}$, the axes with respect to any other hyperbolic structure also intersect. 
+If $\Sigma$ is a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements. 
 
 Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
 \begin{enumerate}
@@ -188,28 +192,31 @@ Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a 
 Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
 Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
 However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\Gamma \acts T$ of a surface group $\Gamma$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
-In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. In fact, Skora showed this in the more general setting where $S$ has cusps provided that then parabolic elements in $\Gamma$ are elliptic in $T$.
-It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
-The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorem~\ref{thm:intersect} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}. 
+The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorems~\ref{thm:intersect} and~\ref{item:lam-char} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}.
+
+In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. In fact, Skora showed this in the more general setting where $S$ has cusps provided that then parabolic elements in $\Gamma$ are elliptic in $T$.
+It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection. 
 
 \begin{theorem}
-Let $\pi_1(S) \acts T$ on a $\mathbb{R}$-tree $T$, irreducible and that preserves axis intersection. Then it follows that $\| \cdot \|$ satisfies max-smoothing.
+Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis intersection. Then it follows that $\| \cdot \|$ satisfies max-smoothing.
 \label{prop:small}
 \end{theorem}
 
 \begin{proof}[Proof of Theorem~\ref{prop:small}]
-We consider several cases, depending on if $g,h$ acts hyperbolically or elliptically, and also depending on the relative position of $\ora{g},\ora{h}$. We first deal with the case where $g,h$ are both hyperbolic, and then reduce the cases where one of the elements can be elliptic to this case.
+We consider several cases of the max-smoothing equality, depending on if $g,h$ acts hyperbolically or elliptically, and also depending on the relative position of $\ora{g},\ora{h}$. We first deal with the case where $g,h$ are both hyperbolic, and then reduce the other cases to this one.
 
 \begin{case}
 \label{case:hyperbolic}
 Suppose $g,h$ act hyperbolically on $T$.
 \begin{subcase}
-First, suppose that $\ora{g}$ and $\ora{h}$ cross.
-Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees} (1).
+Suppose that $\ora{g}$ and $\ora{h}$ cross.
 \end{subcase}
+Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees} (1).
 \begin{subcase}
-Suppose that $\ora{g}$ and $\ora{h}$ are parallel. There are three subcases to consider.
+Suppose that $\ora{g}$ and $\ora{h}$ are parallel. 
+\end{subcase}
+There are three subcases to consider.
 \begin{enumerate}[leftmargin=20pt]
     \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by~Lemma~\ref{lem:foundation_trees} (2).
     \item $g,h$ overlap coherently.
@@ -240,13 +247,13 @@ a,b \in \pi_1(S),
      Hence, by Lemma~\ref{lem:foundation_trees} (2), $aB^2a, Ba^2B$ are hyperbolic and overlap incoherently with bounded overlap, a contradiction.
     \label{subcase:bad_case}
     \end{enumerate}
-    \end{subcase}
         \end{case}
 
 
 \begin{case} Suppose $g$ is elliptic and $h$ hyperbolic.
 \begin{subcase}
-If $\ora{g},\ora{h}$ cross, then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
+Suppose $\ora{g},\ora{h}$ cross.
+\end{subcase} Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
 By Subcase~\ref{subcase:bad_case}, $T_{ghg^{-1}}$ and $T_{h}$ cannot intersect incoherently, and hence, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| \geq \|h\|$. We claim that $\| gh \|= \|h\|$. Indeed,  if $\| gh \| > \| h \|$, by Lemma~\ref{lem:pau_ell_hyp} (2) this is equivalent to $T_g \cap T_h = \emptyset$, with 
 \[
   \|gh\| = \| gh^{-1}\|=\|h\| + 2d(T_g,T_h).
@@ -262,31 +269,27 @@ On the other hand, since $T_g \cap T_h=\emptyset$, it follows that $T_h \cap T_{
   \|(ghg^{-1})h)\|=\|(ghg^{-1})h^{-1})\| = \| (gh)(hg)^{-1}\|.
 \]
 Hence, combining this with Equation~\ref{eq:intermediate}, we get $\| (gh)(hg)^{-1}\|=2\|gh\|$, and thus $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}.
-\end{subcase}
-\begin{subcase} Finally, suppose $g,h$ are parallel. Then $gh, h$ are parallel by Lemma~\ref{lem:righthandedfoundation}. Since $\|(gh)h^{-1}\| = \|g\|=0$, it follows $gh$, $h$ overlap incoherently, by Lemma~\ref{lem:foundation_trees}, and thus, again, by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}, it is a contradiction.
-\end{subcase}
+\begin{subcase} Suppose $\ora{g},\ora{h}$ are parallel. \end{subcase} Then $gh, h$ are parallel by Lemma~\ref{lem:righthandedfoundation}. Since $\|(gh)h^{-1}\| = \|g\|=0$, it follows $gh$, $h$ overlap incoherently, by Lemma~\ref{lem:foundation_trees}, and thus, again, by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}, it is a contradiction.
 \end{case}
 \begin{case}
 Suppose both $g,h$ act elliptically.
 \begin{subcase}
-If $\ora{g},\ora{h}$ cross, we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h= \emptyset$. Suppose $\|gh\|>0$
+Suppose $\ora{g},\ora{h}$ cross.
+\end{subcase}
+Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h= \emptyset$. Suppose $\|gh\|>0$
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel.
 On the other hand, by~Lemma~\ref{lem:pau_two_ell}, $gh$ and $hg$ overlap on the interval $[x,y]$, the shortest arc connecting $x \in T_g$ to $y \in T_h$, in opposite orientations.
 This is a contradiction by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}.
-\end{subcase}
 \begin{subcase}
-If $\ora{g}, \ora{h}$ are parallel, it suffices to show that $\| gh\| = \| gh^{-1}\|$. Let $S=[x,y]$ denote the segment connecting $T_g$ and $T_h$.
+Suppose $\ora{g}, \ora{h}$ are parallel. \end{subcase} Then it suffices to show that $\| gh\| = \| gh^{-1}\|$. Let $S=[x,y]$ denote the segment connecting $T_g$ and $T_h$.
 Let $[x,z]=g S \cap S$, which is a segment fixed by $g$.
 We have
 \[
 \|hg\| = d(z, hg z) = d(z,h(z)) = d(z,hg^{-1}(z))=\|hg^{-1}\|,
 \]
 where the last inequality is because $T_g=T_{g^{-1}}$.
-\end{subcase}
 \end{case}
 \end{proof}
-
-We follow-up with some remarks and consequences of this proof.
 
 \begin{remark}
 One could hope to bypass cases 2 and 3 by approximating by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
@@ -303,6 +306,8 @@ For surface groups, both inclusions above are equalities, a fact that follows \e
 It then follows that very small actions are equal to small actions in this case. This can also be seen directly by definition, since stabilizers of tripods correspond to stabilizers of ideal triangle complementary regions of the lamination, which are the M\"obius transformation corresponding to the identity.
 \end{remark}
 
+We follow-up with some consequences of this proof.
+
 \begin{proposition}
   Let $\mathcal{I}$ denote the set of parallel hyperbolic pairs of isometries with incoherent overlap.
  $\pi_1(S) \acts T$ preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
@@ -310,7 +315,7 @@ It then follows that very small actions are equal to small actions in this case.
 \end{proposition}
 \begin{proof}
 The proof of Theorem~\ref{prop:small} shows that if $\pi_1(S) \acts T$ preserves axis intersection, or all $(g,h) \in \mathcal{I}$ have unbounded incoherent overlap.
-The converse is also true: if $\pi_1(S) \acts T$ does not preserve axis intersection, it means there exist a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
+The converse is also true: if $\pi_1(S) \acts T$ does not preserve axis intersection, it means there exists a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
 \end{proof}
 
 This allows us to give another characterization of small surface actions on real trees.

@@ -30,11 +30,11 @@ i(\mu_f,C)=f(C).
 \label{thm:intersect}
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
-Even though the result is stated for unoriented curves, we will be
-working in the more general setting of oriented curve functionals.
 \DMGtodo{added this minimality statement}
 The hypotheses of the theorem are minimal: neither axiom implies the other (see Section~\ref{subsec:examples_and_non} for many natural examples and
 non-examples). 
+Even though the result is stated for unoriented curves, we will be
+working in the more general setting of oriented curve functionals (see Theorem~\ref{thm:intersections_group} below).
 
 \begin{comment}%silenced this comment: I am not sure how central it is, and I would like Theorem
 One can view this theorem in analogy to Poincaré duality for closed surfaces, where curve functionals satisfying smoothing correspond to cohomology classes, geodesic currents to homology classes and  geometric intersection number to the cap product. See Section~\ref{subsec:poincare_duality}.
@@ -45,7 +45,7 @@ In fact, we obtain dual geodesic currents for any general Riemannian metric on $
     Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs, thus generalizing the work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
 
 All the examples above extend continuously to geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings} or simply by Bonahon's theorem of continuous bilinear extension of geometric intersection number. 
-A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuous extensions for arbitrary Riemannian lengths on surfaces as well as for a much more general class of metrics.  Theorem~\ref{thm:intersect} strengthens this result: we obtain a continuous extension for many of those metrics \emph{as an intersection number}.
+A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuous extensions for arbitrary Riemannian lengths on surfaces as well as for a much more general class of lengths on surfaces. Theorem~\ref{thm:intersect} strengthens this result: we obtain a continuous extension for many of those metrics \emph{as an intersection number}.
     
     As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface. This, in particular, answers a question of Neumann-Coto~\cite{NC01:ShortestGeodesics}.
 
@@ -205,6 +205,14 @@ Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
       Notation & Meaning \\
       \midrule
          $S$ &  topological surface \\
+         $\Gamma$ &  hyperbolic surface \\
+         $\pi_1(S)$
+         &  fundamental group of $S$ \\
+         $\Gamma$
+         & general group \\
+         $G(S)$
+         &  oriented geodesics of $\wt{S}$ \\   $\partial_{\infty}S$ &  boundary at infinity of $\wt{S}$ \\
+ $\mathcal{B}$ & family of right-handed boxes \\         
          $\Curves(S)$ & unoriented multi-curves \\
          $\Curves^+(S)$ & oriented multi-curves \\
          $\Curr(S)$ & unoriented geodesic currents \\
@@ -215,12 +223,12 @@ Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
          $\ora{g}$ & axis of hyperbolic isometry of $g$ \\   
          $T$ & real tree \\ 
          $T_g$ & axis/fixed point set of isometry $g \in \pi_1(S)$ acting on $T$ \\ 
-        $(\partial S)^{(4)}$ & 4-tuples of ccw ordered points in $\partial S$ \\
+        $(\partial _\infty S)^{(4)}$ & 4-tuples of ccw ordered points in $\partial_\infty S$ \\
         $[\cdot,\cdot,\cdot, \cdot ]$ & generalized cross-ratio \\
          $\bigl[\cdot \bigr]_{[]}$ & function on boxes induced by generalized cross-ratio. \\          
       \bottomrule\addlinespace
     \end{tabular}
-  \caption{Notation for the main objects in the paper.}\label{tab:object-notation}
+  \caption{Notation for the most common objects in the paper.}\label{tab:object-notation}
 \end{table} \DMGtodo{think of what else to add to this table}
 
 
