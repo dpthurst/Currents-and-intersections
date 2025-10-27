@@ -209,6 +209,7 @@ We consider several cases of the max-smoothing equality, depending on if $g,h$ a
 \begin{case}
 \label{case:hyperbolic}
 Suppose $g,h$ act hyperbolically on $T$.
+\end{case}
 \begin{subcase}
 Suppose that $\ora{g}$ and $\ora{h}$ cross.
 \end{subcase}
@@ -247,10 +248,9 @@ a,b \in \pi_1(S),
      Hence, by Lemma~\ref{lem:foundation_trees} (2), $aB^2a, Ba^2B$ are hyperbolic and overlap incoherently with bounded overlap, a contradiction.
     \label{subcase:bad_case}
     \end{enumerate}
-        \end{case}
 
 
-\begin{case} Suppose $g$ is elliptic and $h$ hyperbolic.
+    \begin{case} Suppose $g$ is elliptic and $h$ hyperbolic.\end{case}
 \begin{subcase}
 Suppose $\ora{g},\ora{h}$ cross.
 \end{subcase} Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
@@ -270,9 +270,7 @@ On the other hand, since $T_g \cap T_h=\emptyset$, it follows that $T_h \cap T_{
 \]
 Hence, combining this with Equation~\ref{eq:intermediate}, we get $\| (gh)(hg)^{-1}\|=2\|gh\|$, and thus $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}.
 \begin{subcase} Suppose $\ora{g},\ora{h}$ are parallel. \end{subcase} Then $gh, h$ are parallel by Lemma~\ref{lem:righthandedfoundation}. Since $\|(gh)h^{-1}\| = \|g\|=0$, it follows $gh$, $h$ overlap incoherently, by Lemma~\ref{lem:foundation_trees}, and thus, again, by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}, it is a contradiction.
-\end{case}
-\begin{case}
-Suppose both $g,h$ act elliptically.
+\begin{case}Suppose both $g,h$ act elliptically.\end{case}
 \begin{subcase}
 Suppose $\ora{g},\ora{h}$ cross.
 \end{subcase}
@@ -288,7 +286,6 @@ We have
 \|hg\| = d(z, hg z) = d(z,h(z)) = d(z,hg^{-1}(z))=\|hg^{-1}\|,
 \]
 where the last inequality is because $T_g=T_{g^{-1}}$.
-\end{case}
 \end{proof}
 
 \begin{remark}
