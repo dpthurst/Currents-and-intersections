@@ -74,10 +74,10 @@ A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if
 \label{lem:char_irred_noninter}
 \end{lemma}
 
-A useful criterion for irreducibility in terms of pairs of hyperbolic elements is as follows (see~\cite[Lemma~2.1]{CM87:GroupActions}).
-
+A useful criterion for irreducibility in terms of the existence of a hyperbolic element with non-empty intersection with all other hyperbolic elements is the following (see~\cite[Lemma~2.1]{CM87:GroupActions}).
+\DMGtodo{I realized their statement is actually stronger, here is their statement}
 \begin{lemma}
-    If every pair of hyperbolic elements $(a,b)$ satisfies $T_a \cap T_b \neq \emptyset$, then the action is reducible.
+    If there exists a hyperbolic element $a \in \Gamma$ so that for all hyperbolic $b \in \Gamma$ we have  $T_a \cap T_b \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
 \end{lemma}
 
@@ -170,6 +170,16 @@ If $g,h$ are both elliptic, and $T_g, T_h$ denote their sets of fixed points, we
 \label{lem:pau_two_ell}
 \end{lemma}
 
+Finally, the following result, proven in~\cite[Fait, page 854]{Gui05:Coeur} will be useful.
+
+\begin{lemma}
+Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
+$T_{ghg^{-1}}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
+in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
+and its axis contains $I$, translating along the same direction as $h$.
+\label{lem:make_coherent}
+\end{lemma}
+
 In general, if the translation lengths of two $\Gamma \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is minimal irreducible or dihedral by~\cite[Theorem~3.7]{CM87:GroupActions}.
 In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $\Gamma  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
 
@@ -196,12 +206,64 @@ However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\G
 The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorems~\ref{thm:intersect} and~\ref{item:lam-char} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}.
 
 In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. In fact, Skora showed this in the more general setting where $S$ has cusps provided that then parabolic elements in $\Gamma$ are elliptic in $T$.
-It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection. 
+It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
+
+
+\begin{lemma}
+Suppose $\pi_1(S) \acts T$ is an action that preserves axis intersection.
+If there exist a hyperbolic element $g$ so that for every other hyperbolic element $h$ with $\ora{h}$ R-crossing $\ora{g}$, we have $T_g \cap T_h$ is unbounded, then the action is reducible.
+\label{lem:if_unbounded_then_reducible}
+\end{lemma}
+\begin{proof}
+    By Lemma~\ref{lem:CM_red_criterion}, it suffices to show that for any hyperbolic element $h$ so that $(g,h)$ are parallel (or anti-parallel), $T_g \cap T_h \neq \emptyset$.
+
+    For the sake of contradiction, suppose $\ora{g} \cap \ora{h}$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since $\pi_1(S) \acts T$ preserves axis, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
+      
+    By Lemma~\ref{lem:anbn_vs_bkak_parallel}, for $n$ large enough, $\ora{h^nk^n}$ R-crosses $\ora{g}$. See Figure~\ref{fig:tree_k_crossing} for an illustration. In particular, since the action preserves axis, $T_{h^nk^n}$ and $T_g$ must intersect. But this forces $T_g \cap T_h$ to intersect, a contradiction. If $(g,h)$ were anti-parallel, we could proceed similarly with the parallel pair $(g,H)$.
+\end{proof}
+
+%we do not need this net lemma anymore
+\begin{comment}
+    
+
+\begin{lemma}
+Suppose $\pi_1(S) \acts T$ is an irreducible action that preserves axis intersection.
+Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
+\label{lem:irredaxis_crossing_goodpair}
+\end{lemma}
+\begin{proof}
+ First, we claim that since the action is irreducible there exist a crossing hyperbolic pair $(a,b)$ so that $T_a \cap T_b$ is bounded. Suppose not, i.e., say that for every crossing hyperbolic pair $(a,b)$, $T_a \cap T_b$ is unbounded.
+    We show that for \emph{all} hyperbolic pairs $(a,b)$, $T_a \cap T_b \neq \emptyset$, which implies the action is reducible by Lemma~\ref{lem:CM_red_criterion}. Since the action preserves axis, a crossing hyperbolic pair $(a,b)$ always satisfies $T_a \cap T_b \neq \emptyset$.
+    Suppose $(a,b)$ is parallel and assume, for the sake of contradiction, that $T_a \cap T_b =\emptyset$. Then $(ab,ba)$ are a crossing pair with incoherent overlap length given by $d(T_a, T_b)$, by Lemma~\ref{lem:foundation_trees} (2), a contradiction.
+    If $(a,b)$ is antiparallel and $T_a \cap T_b = T_a \cap T_B = \emptyset$, repeat the same argument with the parallel pair $(a,B)$. 
+    
+    We have thus shown there exists a crossing hyperbolic pair $(a,b)$ with $T_a \cap T_b$ bounded. We now improve this to $(a,b)$ being a good pair. Since the action preserves axis, $T_a \cap T_b \neq \emptyset$. If $T_a \cap T_b=\{ * \}$, we replace $a$ by $ab$, to get the pair of crossing $(ab,b)$, with non-degenerate overlap.
+    We can further assume that the overlap is coherent up to exchanging the orientation of $b$, and take powers, by Remark~\ref{rmk:powers_goodpair}, to ensure it is a good pair.
+\end{proof}
+\end{comment}
 
 \begin{theorem}
 Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis intersection. Then it follows that $\| \cdot \|$ satisfies max-smoothing.
 \label{prop:small}
 \end{theorem}
+
+\begin{figure}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \svgfignormal{k_crossing}
+    \caption{Configuration of axes on $\wt{S}$}
+    \label{fig:k_crossing}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \svgfignormal{tree_k_crossing}
+    \caption{Configuration of axes on $T$}
+    \label{fig:tree_k_crossing}
+  \end{subfigure}
+  \caption{This figure illustrates how to prove that there exists a pair in $\mathcal{I}$ with bounded overlap.}
+  \label{fig:main_k_crossing}
+\end{figure}
 
 \begin{proof}[Proof of Theorem~\ref{prop:small}]
 We consider several cases of the max-smoothing equality, depending on if $g,h$ acts hyperbolically or elliptically, and also depending on the relative position of $\ora{g},\ora{h}$. We first deal with the case where $g,h$ are both hyperbolic, and then reduce the other cases to this one.
@@ -236,17 +298,29 @@ a,b \in \pi_1(S),
 \text{ overlap incoherently}
 \Bigr\}.
 \]
-    We claim there exists a pair $(a,b) \in \mathcal{I}$ so that the overlap is bounded. Suppose not, that is, suppose all pairs in $\mathcal{I}$ have unbounded overlap. 
-    First, we claim that since the action is irreducible there exist a crossing hyperbolic pair $(a,b)$ so that $T_a \cap T_b$ is bounded. Suppose not, i.e., say that for every crossing hyperbolic pair $(a,b)$, $T_a \cap T_b$ is unbounded.
-    We show that for \emph{all} hyperbolic pairs $(a,b)$, $T_a \cap T_b \neq \emptyset$, which implies the action is reducible by Lemma~\ref{lem:CM_red_criterion}. Since the action preserves axis, a crossing hyperbolic pair $(a,b)$ always satisfies $T_a \cap T_b \neq \emptyset$.
-    Suppose $(a,b)$ is parallel and assume, for the sake of contradiction, that $T_a \cap T_b =\emptyset$. Then $(ab,ba)$ are a crossing pair with incoherent overlap length given by $d(T_a, T_b)$, by Lemma~\ref{lem:foundation_trees} (2), a contradiction.
-    If $(a,b)$ is antiparallel and $T_a \cap T_b = T_a \cap T_B = \emptyset$, repeat the same argument with the parallel pair $(a,B)$. 
+
     
-    We have thus shown there exists a crossing hyperbolic pair $(a,b)$ with $T_a \cap T_b$ bounded. Since the action preserves axis, $T_a \cap T_b \neq \emptyset$. If $T_a \cap T_b=\{ * \}$, we replace $a$ by $ab$, to get the pair of crossing $(ab,b)$, with non-degenerate overlap.
-    We can further assume that the overlap is coherent up to exchanging the orientation of $b$, and take powers, by Remark~\ref{rmk:powers_goodpair}, to ensure it is a good pair.
-     Hence, without loss of generality, we can assume that $(a,b)$ is crossing and a good pair. Thus, by Lemma~\ref{lem:oppgoodpair}, we have that $aB$ is hyperbolic and $(aB,Ba)$ are parallel.
-     Hence, by Lemma~\ref{lem:foundation_trees} (2), $aB^2a, Ba^2B$ are hyperbolic and overlap incoherently with bounded overlap, a contradiction.
-    \label{subcase:bad_case}
+    
+    
+
+    
+    Suppose $(a,b) \in \mathcal{I}$ with unbounded overlap and we will construct a pair in $\mathcal{I}$ with bounded overlap. 
+
+   By Lemma~\ref{lem:if_unbounded_then_reducible}, there exists $c_0 \in \pi_1(S)$ hyperbolic so that $\ora{c_0}$ R-crosses $\ora{a}$ and $T_{c_0} \cap T_a$ is bounded. 
+   If the overlap is a point, we can replace $c_0$ by $c_0a$ to get non-degenerate overlap, by Lemma~\ref{lem:foundation_trees} (1), while $\ora{c_0a}$ still R-crosses $\ora{a}$, by Lemma~\ref{lem:righthandedfoundation}. 
+   Further, by Lemma~\ref{lem:make_coherent}, replacing $c_0$ by $c=a^kca^k$, for $k \geq 0$ large enough, we can ensure the overlap between $T_c$ and $T_a$ is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c}$ still R-crosses $\ora{a}$.
+   By assumption, $T_g$ and $T_h$ overlap in a ray which, without loss of generality, we can assume it is in the attractive end of $a$. Letting $c'=a^n c a^{-n}$, for $n$ large enough, we can ensure $T_{c'}$ intersects both $a$ and $b$, while overlapping with $T_a$ coherently with bounded overlap.
+   Thus, $T_{c'}$ must overlap $T_b$ incoherently with bounded overlap, as desired.
+   See Figure~\ref{fig:tree_bounded_incoherent} for a diagram of the configuration.
+
+   \begin{figure}[ht]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{tree_bounded_incoherent}}
+    \caption{Obtaining a pair in $\mathcal{I}$ with bounded overlap from a pair with unbounded overlap}\label{fig:tree_bounded_incoherent}
+\end{figure}
+  
+    
+\label{subcase:bad_case}
     \end{enumerate}
 
 
