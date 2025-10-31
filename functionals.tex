@@ -136,12 +136,14 @@ Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, orien
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
 \end{definition}
-
-This can be phrased more algebraically as follows:
-\begin{itemize} \item (disconnected smoothing) For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have $f([a] \cup [b]) \geq f([ab])$ and $f([a] \cup [b]) \geq f([aB])$, where $B$ denotes the inverse of $b$; 
-\item (connected smoothing) for any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel (i.e., do not intersect and are oriented coherently), we have $f([ab]) \geq f([aB])$ and $f([ab]) \geq f([aB])$;
+If all these inequalities are strengthened to equalities, we will refer to the property as \emph{max-smoothing}.
+\DMGtodo{max-smoothing added}
+ Smoothing and max-smoothing can be phrased more algebraically as follows:
+\begin{itemize} \item (disconnected smoothing) For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have $f([a] \cup [b]) \geq f([ab])$ and $f([a] \cup [b]) \geq f([aB])$, where $B$ denotes the inverse of $b$; \DMGtodo{added this} if the inequalities are strenghtened to equalities we get \emph{disconnected max-smoothing}.
+\item (connected smoothing) for any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel (i.e., do not intersect and are oriented coherently), we have $f([ab]) \geq f([aB])$ and $f([ab]) \geq f([aB])$; \DMGtodo{added this} similarly, if the ineequalities are strenghtened to equalities we get \emph{connected max-smoothing}.
 \item (power smoothing) and for any element $a \in \pi_1(S)$, and any integers $n,m\geq 1$, we have $f([a^{n+m}]) \geq f([a^{ m}]) + f([a^{ n}])$. \DMGtodo{added this additional hypothesis}
 \end{itemize} 
+
 We refer the reader to Section~\ref{subsec:crossings} for precise definitions and proofs.
 
 We can extend this definition for orientation invariant curve functionals on oriented multi-curves.

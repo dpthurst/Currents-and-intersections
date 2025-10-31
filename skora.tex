@@ -61,12 +61,14 @@ Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{
 \item the length of $T_g \cap T_h$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
-\begin{remark}[{\cite[Remark~3.3]{CM87:GroupActions}}]
+\DMGtodo{upgraded to lemma} The following appears in~\cite[Remark~3.3]{CM87:GroupActions}.
+
+\begin{lemma}
 If $g,h$ are hyperbolic and $T_g,T_h$ meets in an arc of positive but finite length, then there exist integers $m>0$ and $n$ so that $g^m$ and $h^n$
 form a good pair of isometries. Here the sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
 to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
 \label{rmk:powers_goodpair}
-\end{remark}
+\end{lemma}
 
 Another way to characterize irreducibility is in terms of the existence of a pair of hyperbolic elements with bounded overlap, as shown in~\cite[Theorem~2.7]{CM87:GroupActions}
 \begin{lemma}
@@ -75,7 +77,7 @@ A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if
 \end{lemma}
 
 A useful criterion for irreducibility in terms of the existence of a hyperbolic element with non-empty intersection with all other hyperbolic elements is the following (see~\cite[Lemma~2.1]{CM87:GroupActions}).
-\DMGtodo{I realized their statement is actually stronger, here is their statement}
+
 \begin{lemma}
     If there exists a hyperbolic element $a \in \Gamma$ so that for all hyperbolic $b \in \Gamma$ we have  $T_a \cap T_b \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
@@ -105,7 +107,7 @@ Moreover,
 \item $g,h$ overlap coherently iff 
 $\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$. In this case, $T_g \cap T_h = T_{gh} \cap T_{hg}$;
 \item $g,h$ overlap incoherently iff 
-$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$, and in this case $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
+$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$. In this case $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{itemize}
 \item (Parallel axes) $T_g \cap T_h =\emptyset$ if and only if
 \[
@@ -210,16 +212,18 @@ It follows from this that the action being small is equivalent to it being irred
 
 
 \begin{lemma}
-Suppose $\pi_1(S) \acts T$ is an action that preserves axis intersection.
-If there exist a hyperbolic element $g$ so that for every other hyperbolic element $h$ with $\ora{h}$ R-crossing $\ora{g}$, we have $T_g \cap T_h$ is unbounded, then the action is reducible.
+Suppose $\pi_1(S) \acts T$ is an irreducible action that preserves axis intersection.
+Then for all hyperbolic elements $g \in \pi_1(S)$, there exist a hyperbolic element $h \in \pi_1(S)$ R-crossing $g$ so that $T_g \cap T_h$ is empty or bounded.
 \label{lem:if_unbounded_then_reducible}
 \end{lemma}
 \begin{proof}
-    By Lemma~\ref{lem:CM_red_criterion}, it suffices to show that for any hyperbolic element $h$ so that $(g,h)$ are parallel (or anti-parallel), $T_g \cap T_h \neq \emptyset$.
+    By Lemma~\ref{lem:CM_red_criterion}, it suffices to show that for any hyperbolic element $h$ so that $(\ora{g},\ora{h})$ are parallel (or anti-parallel), $T_g \cap T_h \neq \emptyset$.
 
-    For the sake of contradiction, suppose $\ora{g} \cap \ora{h}$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since $\pi_1(S) \acts T$ preserves axis, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
+    For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since $\pi_1(S) \acts T$ preserves axis, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
       
-    By Lemma~\ref{lem:anbn_vs_bkak_parallel}, for $n$ large enough, $\ora{h^nk^n}$ R-crosses $\ora{g}$. See Figure~\ref{fig:tree_k_crossing} for an illustration. In particular, since the action preserves axis, $T_{h^nk^n}$ and $T_g$ must intersect. But this forces $T_g \cap T_h$ to intersect, a contradiction. If $(g,h)$ were anti-parallel, we could proceed similarly with the parallel pair $(g,H)$.
+    By Lemma~\ref{lem:anbn_vs_bkak_parallel}, for $n$ large enough, $\ora{h^nk^n}$ R-crosses $\ora{g}$. See Figure~\ref{fig:tree_k_crossing} for an illustration. In particular, since the action preserves axis, $T_{h^nk^n}$ and $T_g$ must intersect. But this forces $T_g \cap T_h$ to intersect, a contradiction. 
+    
+    If $(\ora{g},\ora{h})$ were anti-parallel, we could proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
 
 %we do not need this net lemma anymore
@@ -266,7 +270,7 @@ Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis intersection
 \end{figure}
 
 \begin{proof}[Proof of Theorem~\ref{prop:small}]
-We consider several cases of the max-smoothing equality, depending on if $g,h$ acts hyperbolically or elliptically, and also depending on the relative position of $\ora{g},\ora{h}$. We first deal with the case where $g,h$ are both hyperbolic, and then reduce the other cases to this one.
+We consider several cases of the max-smoothing equality, depending on if $g,h$ acts hyperbolically or elliptically on the tree, and also depending on the relative position of $\ora{g},\ora{h}$ in the disk. We first deal with the case where $g,h$ are both hyperbolic, and then reduce the other cases to this one.
 
 \begin{case}
 \label{case:hyperbolic}
@@ -286,7 +290,7 @@ There are three subcases to consider.
     Then, $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, by~Lemma~\ref{lem:foundation_trees} (1).
     \item  $g,h$ overlap incoherently. 
     We show this case cannot occur.
-    If the overlap is bounded, according to Remark~\ref{rmk:powers_goodpair} there exists $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
+    If the overlap is bounded, according to Lemma~\ref{rmk:powers_goodpair} there exists $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
     Suppose now the overlap is unbounded. Here is where the assumption of irreducibility will be invoked.
     Consider the subset 
 \[
@@ -306,8 +310,8 @@ a,b \in \pi_1(S),
     
     Suppose $(a,b) \in \mathcal{I}$ with unbounded overlap and we will construct a pair in $\mathcal{I}$ with bounded overlap. 
 
-   By Lemma~\ref{lem:if_unbounded_then_reducible}, there exists $c_0 \in \pi_1(S)$ hyperbolic so that $\ora{c_0}$ R-crosses $\ora{a}$ and $T_{c_0} \cap T_a$ is bounded. 
-   If the overlap is a point, we can replace $c_0$ by $c_0a$ to get non-degenerate overlap, by Lemma~\ref{lem:foundation_trees} (1), while $\ora{c_0a}$ still R-crosses $\ora{a}$, by Lemma~\ref{lem:righthandedfoundation}. 
+   By Lemma~\ref{lem:if_unbounded_then_reducible}, there exists $c_0 \in \pi_1(S)$ hyperbolic so that $\ora{c_0}$ R-crosses $\ora{a}$ and $T_{c_0} \cap T_a$ is empty or bounded. 
+   \DMGtodo{fixed this logical point} If the overlap is empty or a point, we can replace $c_0$ by $c_0a$ to get non-degenerate overlap, by Lemma~\ref{lem:foundation_trees} (1) and (2), while $\ora{c_0a}$ still R-crosses $\ora{a}$, by Lemma~\ref{lem:righthandedfoundation}. 
    Further, by Lemma~\ref{lem:make_coherent}, replacing $c_0$ by $c=a^kca^k$, for $k \geq 0$ large enough, we can ensure the overlap between $T_c$ and $T_a$ is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c}$ still R-crosses $\ora{a}$.
    By assumption, $T_g$ and $T_h$ overlap in a ray which, without loss of generality, we can assume it is in the attractive end of $a$. Letting $c'=a^n c a^{-n}$, for $n$ large enough, we can ensure $T_{c'}$ intersects both $a$ and $b$, while overlapping with $T_a$ coherently with bounded overlap.
    Thus, $T_{c'}$ must overlap $T_b$ incoherently with bounded overlap, as desired.
