@@ -212,11 +212,12 @@ It follows from this that the action being small is equivalent to it being irred
 
 
 \begin{lemma}
-Suppose $\pi_1(S) \acts T$ is an irreducible action that preserves axis intersection.
-Then for all hyperbolic elements $g \in \pi_1(S)$, there exist a hyperbolic element $h \in \pi_1(S)$ R-crossing $g$ so that $T_g \cap T_h$ is empty or bounded.
+Suppose $\pi_1(S) \acts T$ preserves axis intersection. If $\pi_1(S) \acts T$ is irreducible, then for all hyperbolic elements $g \in \pi_1(S)$, there exist a hyperbolic element $h \in \pi_1(S)$ R-crossing $g$ so that $T_g \cap T_h$ is empty or bounded.
 \label{lem:if_unbounded_then_reducible}
 \end{lemma}
 \begin{proof}
+    We will prove the counter-positive: assuming that there exists a hyperbolic element $g$ so that for every hyperbolic element $h$ R-crossing $g$, the intersection $T_g \cap T_h$ is unbounded, we will deduce that the action must be reducible.
+    
     By Lemma~\ref{lem:CM_red_criterion}, it suffices to show that for any hyperbolic element $h$ so that $(\ora{g},\ora{h})$ are parallel (or anti-parallel), $T_g \cap T_h \neq \emptyset$.
 
     For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since $\pi_1(S) \acts T$ preserves axis, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
