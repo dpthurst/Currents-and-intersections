@@ -61,13 +61,13 @@ Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{
 \item the length of $T_g \cap T_h$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
-\DMGtodo{upgraded to lemma} The following appears in~\cite[Remark~3.3]{CM87:GroupActions}.
+The following appears in~\cite[Remark~3.3]{CM87:GroupActions}.
 
 \begin{lemma}
 If $g,h$ are hyperbolic and $T_g,T_h$ meets in an arc of positive but finite length, then there exist integers $m>0$ and $n$ so that $g^m$ and $h^n$
 form a good pair of isometries. Here the sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
 to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
-\label{rmk:powers_goodpair}
+\label{lem:powers_goodpair}
 \end{lemma}
 
 Another way to characterize irreducibility is in terms of the existence of a pair of hyperbolic elements with bounded overlap, as shown in~\cite[Theorem~2.7]{CM87:GroupActions}
@@ -98,8 +98,8 @@ We will consider the following classical results about the relative position of 
 \begin{lemma}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
 We have the following cases.
-\begin{enumerate}
-\item (Intersecting axes)
+\begin{enumerate}[(\arabic*)]
+\item \label{item:tree-intersect}(Intersecting axes)
 $T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gh^{-1}\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
 Moreover,
 \begin{itemize}
@@ -109,7 +109,7 @@ $\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$. In this case, $T_g \cap T_h = T_{gh
 \item $g,h$ overlap incoherently iff 
 $\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$. In this case $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{itemize}
-\item (Parallel axes) $T_g \cap T_h =\emptyset$ if and only if
+\item \label{item:tree-parallel}(Parallel axes) $T_g \cap T_h =\emptyset$ if and only if
 \[
 \|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h),
 \]
@@ -252,7 +252,7 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
     If $(a,b)$ is antiparallel and $T_a \cap T_b = T_a \cap T_B = \emptyset$, repeat the same argument with the parallel pair $(a,B)$. 
     
     We have thus shown there exists a crossing hyperbolic pair $(a,b)$ with $T_a \cap T_b$ bounded. We now improve this to $(a,b)$ being a good pair. Since the action preserves axis, $T_a \cap T_b \neq \emptyset$. If $T_a \cap T_b=\{ * \}$, we replace $a$ by $ab$, to get the pair of crossing $(ab,b)$, with non-degenerate overlap.
-    We can further assume that the overlap is coherent up to exchanging the orientation of $b$, and take powers, by Remark~\ref{rmk:powers_goodpair}, to ensure it is a good pair.
+    We can further assume that the overlap is coherent up to exchanging the orientation of $b$, and take powers, by Lemma~\ref{lem:powers_goodpair}, to ensure it is a good pair.
 \end{proof}
 \end{comment}
 
@@ -284,23 +284,36 @@ We consider several cases of the max-smoothing equality, depending on if $g,h$ a
 
 \begin{case}
 \label{case:hyperbolic}
-Suppose $g,h$ act hyperbolically on $T$.
+In the action on~$T$, $g,h$ are hyperbolic.
 \end{case}
 \begin{subcase}
-Suppose that $\ora{g}$ and $\ora{h}$ cross.
+$\ora{g}, \ora{h}$ cross.
 \end{subcase}
-Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees} (1).
+Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
 \begin{subcase}
-Suppose that $\ora{g}$ and $\ora{h}$ are parallel. 
+$\ora{g},\ora{h}$ are parallel and $T_g \cap T_h$ is empty or a single point.
 \end{subcase}
-There are three subcases to consider.
-\begin{enumerate}[leftmargin=20pt]
-    \item $T_g \cap T_h = \emptyset, \{ p \}$. Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$ by~Lemma~\ref{lem:foundation_trees} (2).
-    \item $g,h$ overlap coherently.
-    Then, $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, by~Lemma~\ref{lem:foundation_trees} (1).
-    \item  $g,h$ overlap incoherently. 
+Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$
+by~Lemma~\ref{lem:foundation_trees}\ref{item:tree-parallel}.
+\begin{subcase}
+$\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
+\end{subcase}
+    Then $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, by
+    Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
+    \begin{subcase}\label{subcase:bad_case}
+      $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap incoherently.
+    \end{subcase}
     We show this case cannot occur.
-    If the overlap is bounded, according to Lemma~\ref{rmk:powers_goodpair} there exists $m>0,n>0$ so that $g^m$ and $h^{-n}$ form a good pair, and hence, Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$ do not intersect. On the other hand, since $\ora{g},\ora{h}$ are parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a contradiction.
+    If the overlap is bounded, according to
+    Lemma~\ref{lem:powers_goodpair} there exists $m>0,n>0$ so that
+    $g^m$ and $h^{-n}$ form a good pair, and hence,
+    Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$
+    do not intersect. On the other hand, since $\ora{g},\ora{h}$ are
+    parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that
+    $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of
+    axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a
+    contradiction.
+%
     Suppose now the overlap is unbounded. Here is where the assumption of irreducibility will be invoked.
     Consider the subset 
 \[
@@ -312,16 +325,11 @@ a,b \in \pi_1(S),
 \text{ overlap incoherently}
 \Bigr\}.
 \]
-
-    
-    
-    
-
     
     Suppose $(a,b) \in \mathcal{I}$ with unbounded overlap and we will construct a pair in $\mathcal{I}$ with bounded overlap. 
 
    By Lemma~\ref{lem:if_unbounded_then_reducible}, there exists $c_0 \in \pi_1(S)$ hyperbolic so that $\ora{c_0}$ R-crosses $\ora{a}$ and $T_{c_0} \cap T_a$ is empty or bounded. 
-   \DMGtodo{fixed this logical point} If the overlap is empty or a point, we can replace $c_0$ by $c_0a$ to get non-degenerate overlap, by Lemma~\ref{lem:foundation_trees} (1) and (2), while $\ora{c_0a}$ still R-crosses $\ora{a}$, by Lemma~\ref{lem:righthandedfoundation}. 
+   If the overlap is empty or a point, we can replace $c_0$ by $c_0a$ to get non-degenerate overlap, by Lemma~\ref{lem:foundation_trees} (1) and (2), while $\ora{c_0a}$ still R-crosses $\ora{a}$, by Lemma~\ref{lem:righthandedfoundation}. 
    Further, by Lemma~\ref{lem:make_coherent}, replacing $c_0$ by $c=a^kca^k$, for $k \geq 0$ large enough, we can ensure the overlap between $T_c$ and $T_a$ is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c}$ still R-crosses $\ora{a}$.
    By assumption, $T_g$ and $T_h$ overlap in a ray which, without loss of generality, we can assume it is in the attractive end of $a$. Letting $c'=a^n c a^{-n}$, for $n$ large enough, we can ensure $T_{c'}$ intersects both $a$ and $b$, while overlapping with $T_a$ coherently with bounded overlap.
    Thus, $T_{c'}$ must overlap $T_b$ incoherently with bounded overlap, as desired.
@@ -332,15 +340,12 @@ a,b \in \pi_1(S),
 \resizebox{80mm}{!}{\svgfignormal{tree_bounded_incoherent}}
     \caption{Obtaining a pair in $\mathcal{I}$ with bounded overlap from a pair with unbounded overlap}\label{fig:tree_bounded_incoherent}
 \end{figure}
-  
-    
-\label{subcase:bad_case}
-    \end{enumerate}
 
-
-    \begin{case} Suppose $g$ is elliptic and $h$ hyperbolic.\end{case}
+\begin{case}
+  In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
+\end{case}
 \begin{subcase}
-Suppose $\ora{g},\ora{h}$ cross.
+$\ora{g},\ora{h}$ cross.
 \end{subcase} Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
 By Subcase~\ref{subcase:bad_case}, $T_{ghg^{-1}}$ and $T_{h}$ cannot intersect incoherently, and hence, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| \geq \|h\|$. We claim that $\| gh \|= \|h\|$. Indeed,  if $\| gh \| > \| h \|$, by Lemma~\ref{lem:pau_ell_hyp} (2) this is equivalent to $T_g \cap T_h = \emptyset$, with 
 \[
@@ -356,18 +361,25 @@ On the other hand, since $T_g \cap T_h=\emptyset$, it follows that $T_h \cap T_{
 \[
   \|(ghg^{-1})h)\|=\|(ghg^{-1})h^{-1})\| = \| (gh)(hg)^{-1}\|.
 \]
-Hence, combining this with Equation~\ref{eq:intermediate}, we get $\| (gh)(hg)^{-1}\|=2\|gh\|$, and thus $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}.
-\begin{subcase} Suppose $\ora{g},\ora{h}$ are parallel. \end{subcase} Then $gh, h$ are parallel by Lemma~\ref{lem:righthandedfoundation}. Since $\|(gh)h^{-1}\| = \|g\|=0$, it follows $gh$, $h$ overlap incoherently, by Lemma~\ref{lem:foundation_trees}, and thus, again, by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}, it is a contradiction.
-\begin{case}Suppose both $g,h$ act elliptically.\end{case}
+Hence, combining this with Equation~\ref{eq:intermediate}, we get $\| (gh)(hg)^{-1}\|=2\|gh\|$, and thus $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Subcase~\ref{subcase:bad_case}.
+\begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
+Then $(\ora{gh}, \ora{h})$ are parallel by
+Lemma~\ref{lem:righthandedfoundation}. Since $\|(gh)h^{-1}\| =
+\|g\|=0$, it follows $gh$, $h$ overlap incoherently, by
+Lemma~\ref{lem:foundation_trees}, and thus, again, by
+Subcase~\ref{subcase:bad_case}, it is a contradiction.
+\begin{case}
+  In the action on~$T$, $g,h$ are elliptic.
+\end{case}
 \begin{subcase}
-Suppose $\ora{g},\ora{h}$ cross.
+$\ora{g},\ora{h}$ cross.
 \end{subcase}
 Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h= \emptyset$. Suppose $\|gh\|>0$
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel.
 On the other hand, by~Lemma~\ref{lem:pau_two_ell}, $gh$ and $hg$ overlap on the interval $[x,y]$, the shortest arc connecting $x \in T_g$ to $y \in T_h$, in opposite orientations.
-This is a contradiction by Subcase~\ref{case:hyperbolic}~\ref{subcase:bad_case}.
+This is a contradiction by Subcase~\ref{subcase:bad_case}.
 \begin{subcase}
-Suppose $\ora{g}, \ora{h}$ are parallel. \end{subcase} Then it suffices to show that $\| gh\| = \| gh^{-1}\|$. Let $S=[x,y]$ denote the segment connecting $T_g$ and $T_h$.
+$\ora{g}, \ora{h}$ are parallel. \end{subcase} Then it suffices to show that $\| gh\| = \| gh^{-1}\|$. Let $S=[x,y]$ denote the segment connecting $T_g$ and $T_h$.
 Let $[x,z]=g S \cap S$, which is a segment fixed by $g$.
 We have
 \[
