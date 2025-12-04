@@ -28,38 +28,38 @@ where in the second inequality we used finite additivity of $\mu$, and in the th
 
 
 
-\begin{proposition}
-Suppose $a,b \in \pi_1(S)$ are non-trivial elements with distinct fixed points on the boundary circle $\partial_{\infty} S$.
-Let $\mu$ be any geodesic current.
-Then,
+\begin{proposition}\label{prop:smoothing_nec}
+Suppose $a,b \in \pi_1(S)$ are non-trivial elements with distinct fixed points on 
+$\partial_{\infty} S$, and let $\mu$ be any geodesic current. Then:
 \begin{enumerate}
-\item If $b$ and $a$ R-cross, then
+
+\item If $a$ and $b$ $R$-cross, then
 \[
-i(\mu, a) + i(\mu, b) \geq i(\mu, ab)
+\begin{aligned}
+i(\mu,a)+i(\mu,b) &\ge i(\mu,ab),\\
+i(\mu,a)+i(\mu,b) &\ge i(\mu,ab^{-1}).
+\end{aligned}
 \]
-and
-\[
-i(\mu, a) + i(\mu, b) \geq i(\mu, ab^{-1})
-\]
+
 \item If $a$ and $b$ are $R$-parallel, then
 \[
- i(\mu, ab) \geq i(\mu, a) + i(\mu, b)
+\begin{aligned}
+i(\mu,ab) &\ge i(\mu,a)+i(\mu,b),\\
+i(\mu,ab) &\ge i(\mu,ab^{-1}).
+\end{aligned}
 \]
-and
-\[
- i(\mu, ab) \geq i(\mu, ab^{-1})
-\]
+
 \item If $a$ and $b$ are $R$-anti-parallel, then
 \[
- i(\mu, ab^{-1}) \geq i(\mu, a) + i(\mu, b)
+\begin{aligned}
+i(\mu,ab^{-1}) &\ge i(\mu,a)+i(\mu,b),\\
+i(\mu,ab^{-1}) &\ge i(\mu,ab).
+\end{aligned}
 \]
-and
-\[
- i(\mu, ab^{-1}) \geq i(\mu, ab)
-\]
+
 \end{enumerate}
-\label{prop:smoothing_nec}
 \end{proposition}
+
 
 
 \begin{proof}

@@ -31,14 +31,13 @@ i(\mu_f,C)=f(C).
 \end{mainthm}
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
 \DMGtodo{added this minimality statement}
-The hypotheses of the theorem are minimal: neither axiom implies the other (see Section~\ref{subsec:examples_and_non} for many natural examples and
+The hypotheses of the theorem are minimal: neither one implies the other (see Section~\ref{subsec:examples_and_non} for many natural examples and
 non-examples). 
 Even though the result is stated for unoriented curves, we will be
 working in the more general setting of oriented curve functionals (see Theorem~\ref{thm:intersections_group} below).
 
-\begin{comment}%silenced this comment: I am not sure how central it is, and I would like Theorem
-One can view this theorem in analogy to Poincaré duality for closed surfaces, where curve functionals satisfying smoothing correspond to cohomology classes, geodesic currents to homology classes and  geometric intersection number to the cap product. See Section~\ref{subsec:poincare_duality}.
-\end{comment}
+One can view this theorem in analogy to Poincaré duality (see Section~\ref{subsec:poincare_duality}).
+
 As a consequence of Theorem~\ref{thm:intersect} we obtain 
 many new dual geodesic currents, extending several previous constructions for Riemannian metrics of negative curvature on $S$, as well as certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
 In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
@@ -49,7 +48,6 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
     
     As a further application of this fact, we show in Section~\ref{subsec:ineqintersection} that domination of intersection numbers with all closed curves implies domination of length spectra for any metric length on a closed surface. This, in particular, answers a question of Neumann-Coto~\cite{NC01:ShortestGeodesics}.
 
-    The smoothing condition as stated is easier to check for curve functionals arising from length or geodesic structures on the surface.
     For curve functionals arising from algebraic settings, such as the translation length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases, as follows.
 
   For $a,b \in \pi_1(S)$,
@@ -57,7 +55,7 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
       ccw order on the boundary at infinity. See
       Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing} for more details.
       From this viewpoint it is more natural to consider curve functionals on oriented curves. This is a more general approach that we shall take in the rest of the paper.
-      Using this we can state an equivalent version of Theorem~\ref{thm:intersect} but with weaker hypotheses. 
+      Using this we can state a version of Theorem~\ref{thm:intersect} with weaker hypotheses. 
 
 \begin{mainthmprime}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f} \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$. 
@@ -89,7 +87,7 @@ The averaging of $f(a)$ and $f(A)$ is also necessary; see
 Appendix~\ref{sec:asymmetric}.
 
 Our result can also be seen as a generalization of Feng
-Luo's criterion~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers}, where he characterizes curve
+Luo's criterion~\cite[Theorem~1.1, Theorem~1.2]{Luo98:IntersectionNumbers}, where he characterizes curve
 functionals on simple closed curves which can be realized as
 intersection numbers with measured laminations, i.e., geodesic currents $\alpha$ for which $i(\alpha,\alpha)=0$ (see \cite[Proposition~17]{Bonahon88:GeodesicCurrent}). 
  
@@ -130,7 +128,7 @@ skein algebra of a surface; see, for example, \cite[Sec.\
 
 We emphasize that this result characterizes hyperbolic metrics among all curve functionals. In particular, it can be applied to stable lengths induced from Green metrics arising from admissible random walks on $\pi_1(S)$, yielding potential applications to investigate the singularity of their hitting boundary measures (see Section~\ref{subsec:green}).
 
-These results generalize both of Luo's results on characterizing which functions on simple curves dual to measured laminations~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers} (alluded above) and which to hyperbolic length functions~\cite{Luo98:GeodesicLength}.  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
+These results generalize both of Luo's results on characterizing which functions on simple curves dual to measured laminations~\cite[Theorem~1.1,Theorem~1.2]{Luo98:IntersectionNumbers} (alluded above) and to hyperbolic length functions~\cite{Luo98:GeodesicLength}.  We outline the relation between our conditions and Feng Luo's conditions in the Appendix, Proposition~\ref{prop:feng}.
 
  Our methods also recover a previous result of the second author~\cite{Thu00:GeometricIntersection}.
 
@@ -172,7 +170,9 @@ The following are equivalent:
 \label{mainthm:skora}
 \end{mainthm}
 
-The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. Skora also shows that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
+The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (D), and that (D) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. We show that (D) implies (C) in Theorem~\ref{thm:axis_incoherent_characterization}.
+
+Skora also shows that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 

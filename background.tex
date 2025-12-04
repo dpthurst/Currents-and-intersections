@@ -376,25 +376,22 @@ The following result is straightforward.
 \end{remark}
 
 Finally, we will use the following classical lemma.
-\begin{lemma}
-Given any sequence of real numbers $a_{n}$ satisfying that for all integers $m,n \geq 0$
+\begin{lemma}\label{lem:fekete}
+Let $(a_n)$ be a sequence of real numbers such that, for all $m,n\ge 0$,
 \[
-a_{m+n} \leq a_m + a_n
+a_{m+n} \le a_m + a_n 
+\qquad \text{(respectively, } a_{m+n} \ge a_m + a_n\text{).}
 \]
-(respectively,
+Then
 \[
-a_{m+n} \geq a_m + a_n),
+\lim_{n\to\infty} \frac{a_n}{n}
+= \inf_{n} \frac{a_n}{n} \le a_1
+\qquad \text{(respectively, } 
+\lim_{n\to\infty} \frac{a_n}{n}
+= \sup_{n} \frac{a_n}{n} \ge a_1\text{).}
 \]
-we have
-\[
-\lim_n \frac{a_n}{n} = \inf_n \frac{a_n}{n} \leq a_1
-\]
-(respectively,
-\[
-\lim_n \frac{a_n}{n} = \sup_n \frac{a_n}{n} \geq a_1
-\]
-\label{lem:fekete}
 \end{lemma}
+
 
 %%% Local Variables:
 %%% mode: latex
