@@ -85,6 +85,7 @@ A useful criterion for irreducibility in terms of the existence of a hyperbolic 
 
 Finally, good pairs provide pairs of non-intersecting hyperbolic elements.
 
+\DPTtodo{We stopped using the capital letter notation for some reason here}
 \begin{lemma}
   For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
     \label{lem:oppgoodpair}
@@ -306,36 +307,43 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
     We show this case cannot occur.
     If the overlap is bounded, according to
     Lemma~\ref{lem:powers_goodpair} there exists $m>0,n>0$ so that
-    $g^m$ and $h^{-n}$ form a good pair, and hence,
+    $g^m$ and $h^{-n}$ form a good pair, and hence, by
     Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$
     do not intersect. On the other hand, since $\ora{g},\ora{h}$ are
     parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that
     $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of
     axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a
     contradiction.
-%
-    Suppose now the overlap is unbounded. Here is where the assumption of irreducibility will be invoked.
-    Consider the subset 
-\[
-\mathcal{I} \coloneqq 
-\Bigl\{ (a,b) \;\Big|\;
-a,b \in \pi_1(S),
-\text{ parallel},
-\text{ hyperbolic in } T,
-\text{ overlap incoherently}
-\Bigr\}.
-\]
-    
-    Suppose $(a,b) \in \mathcal{I}$ with unbounded overlap and we will construct a pair in $\mathcal{I}$ with bounded overlap. 
 
-   By Lemma~\ref{lem:if_unbounded_then_reducible}, there exists $c_0 \in \pi_1(S)$ hyperbolic so that $\ora{c_0}$ R-crosses $\ora{a}$ and $T_{c_0} \cap T_a$ is empty or bounded. 
-   If the overlap is empty or a point, we can replace $c_0$ by $c_0a$ to get non-degenerate overlap, by Lemma~\ref{lem:foundation_trees} (1) and (2), while $\ora{c_0a}$ still R-crosses $\ora{a}$, by Lemma~\ref{lem:righthandedfoundation}. 
-   Further, by Lemma~\ref{lem:make_coherent}, replacing $c_0$ by $c=a^kca^k$, for $k \geq 0$ large enough, we can ensure the overlap between $T_c$ and $T_a$ is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c}$ still R-crosses $\ora{a}$.
-   By assumption, $T_g$ and $T_h$ overlap in a ray which, without loss of generality, we can assume it is in the attractive end of $a$. Letting $c'=a^n c a^{-n}$, for $n$ large enough, we can ensure $T_{c'}$ intersects both $a$ and $b$, while overlapping with $T_a$ coherently with bounded overlap.
-   Thus, $T_{c'}$ must overlap $T_b$ incoherently with bounded overlap, as desired.
-   See Figure~\ref{fig:tree_bounded_incoherent} for a diagram of the configuration.
+    Suppose now the overlap is unbounded and incoherent. We will use
+    the assumption of irreducibility to construct another pair with
+    bounded overlap. Suppose that $(\ora{g},\ora{h})$ are R-parallel,
+    and that $T_g \cap T_h$ includes the attracting end of $T_g$. By
+    Lemma~\ref{lem:if_unbounded_then_reducible}, there exists
+    $c_0 \in \pi_1(S)$ acting hyperbolically on~$T$ so that
+    $T_{c_0} \cap T_g$ is empty or bounded, and so that
+    $(\ora{c_0},\ora{g})$ R-cross. (For other configurations of
+    $(\ora{g},\ora{h})$ and $T_g,T_h$, we may want
+    $(\ora{c_0},\ora{g})$ to L-cross instead. By
+    Lemma~\ref{lem:make_coherent}, if we set $c_1=g^kc_0 g^k$ for
+    $k \geq 0$ large enough, the overlap between $T_{c_1}$ and $T_g$
+    is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c}$ still
+    R-crosses $\ora{g}$. Letting $c_2=g^n c_1 g^{-n}$ for $n$ large
+    enough, we can ensure, on the one hand, that the endpoints of
+    $\ora{c_2}$ are near $g^+$ and thus $(\ora{c_2},\ora{h})$ are
+    parallel. On the other hand, the same conjugation also insures
+    that the (still bounded and coherent) intersection between
+    $T_{c_2}$ and $T_g$ is near the attracting end of $T_g$ and thus
+    $T_{c_2}$ has bounded, incoherent intersection with $T_h$. Thus
+    $c_2$ and $h$ form a pair that is parallel in the disk and
+    intersect incoherently on the tree, a contradiction.
+   See Figure~\ref{fig:tree_bounded_incoherent} for a diagram of the
+   configuration.
 
-   \begin{figure}[ht]
+   \DPTtodo{Label $T_{c'}$ is a little too far from the line it
+     labels. I think there also needs to be a diagram in the
+     hyperbolic disk. I also changed notation a bit, feel free to tweak}
+   \begin{figure}
      \centering
 \resizebox{80mm}{!}{\svgfignormal{tree_bounded_incoherent}}
     \caption{Obtaining a pair in $\mathcal{I}$ with bounded overlap from a pair with unbounded overlap}\label{fig:tree_bounded_incoherent}
