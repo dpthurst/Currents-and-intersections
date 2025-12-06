@@ -88,12 +88,12 @@ If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
 Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics},\cite[Theorem~2]{Thu16:Research},~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
-These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\mathcal{C}(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
+These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\Curves(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
 
 Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
 
 \begin{theorem}
-   Let $\Psi \colon \Curr(S) \to \mathbb{R}^{\mathcal{C}(S)}$ be the homeomorphism onto its image $\mu \mapsto i(\mu, \cdot)$.
+   Let $\Psi \colon \Curr(S) \to \mathbb{R}^{\Curves(S)}$ be the homeomorphism onto its image $\mu \mapsto i(\mu, \cdot)$.
    The image is equal to the subset of additive convex functionals $\AConvex(S)$.
 \end{theorem}
 
@@ -144,7 +144,7 @@ Let $\mu$ be a finitely supported probability measure on $\Gamma$ whose support 
 Let $w_n \coloneqq g_1 \cdots g_n$ be the random walk with respect to $\mu$, where each $(g_i)$ is identically and independently distributed with distribution $\mu$. Let $(\Gamma^{\mathbb{N}}, \mu^{\mathbb{N}})$ be the step space, and the map $\pi \colon \Gamma^{\mathbb{N}} \to \Gamma^{\mathbb{N}}$ as $\pi((g_n)_{n \in \mathbb{N}}) \coloneqq (w_n)_{n \in \mathbb{N}}$. The image of $\pi$ is equipped with the measure $(\mathbb{P}_{\mu})_*(\mu^{\mathbb{N}})$.
 Define the metric \[ d_{\mu}(x,y) \coloneqq - \log \mathbb{P}_{\mu}(\exists n : w_n x =y).\]
 In words, we are considering the probability that a random walk departing from $x$ will reach $y$ after some number of steps.
-This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves(S) \to \mathbb{R}$. The following question emerged from conversations of the first author with Eduardo Reyes.
+This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \lim_n d_{\mu}(x, g^n x)/n$, for any hyperbolic element $g \in \Gamma$, which can then be thought as a curve functional $\ell_{\mu} \colon \Curves^+(S) \to \mathbb{R}$. The following question emerged from conversations of the first author with Eduardo Reyes.
 
 \begin{question}
 Does $\ell_{\mu}$ satisfy the hypotheses of

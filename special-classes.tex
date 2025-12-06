@@ -16,12 +16,12 @@ characterization of filling geodesic currents.
 
 \begin{enumerate}
     \item The set of filling currents, i.e., $ \Curr_{\mbox{fill}}(S)$
-    \item The set of functionals $f \colon \mathcal{C}^+(S) \to
+    \item The set of functionals $f \colon \Curves^+(S) \to
       \mathbb{R}$ which satisfy symmetry, oriented smoothing,
       additivity, and stability, and so that their continuous extension to geodesic currents is positive.
-    \item The set of curve functionals $f \colon \mathcal{C}^+(S) \to
+    \item The set of curve functionals $f \colon \Curves^+(S) \to
       \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{
-        f(C) : C \in \mathcal{C}(S),\ C \mbox{ non-trivial} \}\] is
+        f(C) : C \in \Curves^+(S),\ C \mbox{ non-trivial} \}\] is
       positive and satisfy symmetry, oriented smoothing, additivity,
       and stability.
 \end{enumerate}
@@ -42,7 +42,7 @@ We say $M$ is an \emph{integral} weighted multi-curve if its a weighted multi-cu
 We have the following criterion for half-integral multi-curves.
 
 \begin{corollary}
-Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \mathcal{C}(S)$. Then there $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
+Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves^+(S)$. Then $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
 Moreover, either $\mu$ is an integral multi-curve, or $\mu$ is non-integral and $\vec{M} = 0$ in $\mathbb{Z}_2$-homology. \DMGtodo{added the secondary statement here, and corresponding proof}
 \label{cor:int_multicurve}
 \end{corollary}
@@ -52,7 +52,7 @@ Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesi
 i(\mu, C) = f(C)
 \]
 for every closed curve $C$.
-It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $A_n, B_n, C_n, D_n \in \mathcal{C}(S)$ so that
+It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $A_n, B_n, C_n, D_n \in \Curves^+(S)$ so that
 \[
 \mu(R) = \frac{1}{2}\lim_n i(\mu, B_n) + i(\mu, C_n) - i(\mu, A_n) - i(\mu, D_n).
 \]
@@ -129,7 +129,7 @@ We note that our result says nothing explicit about the dual multi-curve, wherea
 \subsection{Inequalities between intersection numbers}
 \label{subsec:ineqintersection}
 
- Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \mathcal{C}(\Sigma)$.
+ Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves(\Sigma)$.
 
  As an immediate application of Theorem~\ref{thm:intersect}, we can study what intersection numbers dominating one curve over another imply about dual currents associated to metrics on the surface.
 

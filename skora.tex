@@ -330,7 +330,7 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
     By
     Lemma~\ref{lem:make_coherent}, if we set $c_1=g^kc_0 g^k$ for
     $k \geq 0$ large enough, the overlap between $T_{c_1}$ and $T_g$
-    is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c}$ still
+    is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c_1}$ still
     R-crosses $\ora{g}$. Letting $c_2=g^n c_1 g^{-n}$ for $n$ large
     enough, we can ensure two things. On the one hand, the endpoints of
     $\ora{c_2}$ are near $g^+$ on the boundary of the disk and thus
@@ -344,13 +344,22 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
    See Figure~\ref{fig:tree_bounded_incoherent} for a diagram of the
    configuration.
 
-   \DPTtodo{Label $T_{c'}$ is a little too far from the line it
-     labels. I think there also needs to be a diagram in the
-     hyperbolic disk. I also changed notation a bit, feel free to tweak}
-   \begin{figure}
-     \centering
-\resizebox{80mm}{!}{\svgfignormal{tree_bounded_incoherent}}
-    \caption{Obtaining a pair in $\mathcal{I}$ with bounded overlap from a pair with unbounded overlap}\label{fig:tree_bounded_incoherent}
+\begin{figure}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \svgfignormal{k_crossing_14}
+    \caption{Configuration of axes on $\wt{S}$}
+    \label{fig:k_crossing_14}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \svgfignormal{tree_bounded_incoherent}
+    \caption{Configuration of axes on $T$}
+    \label{fig:tree_k_crossing_14}
+  \end{subfigure}
+  \caption{This figure illustrates the construction of a parallel pair in the disk with bounded incoherent overlap in $T$.}
+  \label{fig:tree_bounded_incoherent}
 \end{figure}
 
 \begin{case}
@@ -454,8 +463,8 @@ Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdo
 If  $(\Gamma, T)$ is reducible, then:
 
 \begin{itemize}
-    \item $\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
-    \item $-\| \cdot \| \colon \mathcal{C}(S) \to \mathbb{R}$ does not satisfy disconnected smoothing but it satisfies connected smoothing.
+    \item $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
+    \item $-\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy disconnected smoothing but it satisfies connected smoothing.
 \end{itemize}
 \label{lem:red_not_smoothing}
 \end{lemma}

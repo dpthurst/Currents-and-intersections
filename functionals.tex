@@ -18,7 +18,7 @@ We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 
 
 
-In the sequel, whenever we say multi-curves, we mean oriented multi-curves, unless stated explicitly otherwise, and denote the space by $\mathcal{C}^+(S)$. In terms of geodesic currents, this means we will work with oriented geodesic currents (see Section~\ref{sec:currents} for definitions).
+In the sequel, whenever we say multi-curves, we mean oriented multi-curves, unless stated explicitly otherwise, and denote the space by $\Curves^+(S)$. In terms of geodesic currents, this means we will work with oriented geodesic currents (see Section~\ref{sec:currents} for definitions).
 
 In this paper, the geometric intersection number between curves will play a prominent role. In general, when one considers geometric intersection number $i(C, D)$ between two multi-curves $C$ and $D$, it is assumed that $C,D$ are unoriented. If $C$ and $D$ are oriented, and $C',D'$ are different oriented multi-curves with $C'$ (resp. $D'$) equivalent to $C$ (resp. $D$)  as unoriented multi-curves, we declare $i(C',D')=i(C,D)$, in other words, define the intersection for oriented curves by forgetting the orientation (see~Definition~\ref{def:intersection_currents}).
 
@@ -128,10 +128,10 @@ There exist slight generalizations of both smothing as well as additivity that h
 
 
 
-Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\mathcal{C}(S)$.
+Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
 \begin{definition}
-Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \mathcal{C}(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
+Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
@@ -144,10 +144,10 @@ If all these inequalities are strengthened to equalities, we will refer to the p
 \item (power smoothing) and for any element $a \in \pi_1(S)$, and any integers $n,m\geq 1$, we have $f([a^{n+m}]) \geq f([a^{ m}]) + f([a^{ n}])$. \DMGtodo{added this additional hypothesis}
 \end{itemize} 
 
-We refer the reader to Section~\ref{subsec:crossings} for precise definitions and proofs.
+We refer the reader to Section~\ref{subsec:crossings} for precise definitions and proofs of equivalence.
 
 We can extend this definition for orientation invariant curve functionals on oriented multi-curves.
-If $f \colon \mathcal{C}^+(S) \to \mathbb{R}$ is orientation invariant, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \mathcal{C}(S) \to \mathbb{R}$.
+If $f \colon \Curves^+(S) \to \mathbb{R}$ is orientation invariant, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \Curves(S) \to \mathbb{R}$.
 
 \begin{definition}
 We say $f$ satisfies \emph{smoothing} if its associated curve functional on unoriented curves $\bar{f}$ satisfies smoothing.
@@ -207,7 +207,7 @@ In previous work, we proved the following result.
 
 It is easy to see that the conditions of symmetry, smoothing, additivity and
 stability, defining the space $\AConvex(S)$ are
-obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves(S)
+obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves^+(S)
 \to \mathbb{R}$, for $\mu$ a geodesic current. This was proven
 in \cite[Section~4]{MGT21:Smoothings}, and we give a different proof more in line of the types of argument in this paper in Section~\ref{sec:necessary}.
 Many natural notions of length do satisfy all these properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We list them here, along with the appropriate references.

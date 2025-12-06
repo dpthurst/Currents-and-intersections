@@ -9,7 +9,7 @@ hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
 
 
 
-Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length functions on curves or \emph{curve functionals} $f \colon\mathcal{C}(S) \to \mathbb{R}$ are intersection numbers with a \emph{dual} geodesic current $\mu_{f}$, this is,
+Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length functions on curves or \emph{curve functionals} $f \colon\Curves(S) \to \mathbb{R}$ are intersection numbers with a \emph{dual} geodesic current $\mu_{f}$, this is,
 \[
   i(\mu_{f},C)=f(C)
 \]
@@ -19,7 +19,7 @@ For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic
 We give an axiomatic characterization of curve functionals dual to geodesic currents. 
 
 \begin{mainthm} 
-    A curve functional $f \colon\mathcal{C}(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
+    A curve functional $f \colon\Curves(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
      \[
       f\left(\mfig{curves-10}\right) \ge \max \left\{ f\left(\mfig{curves-11}\right), f\left(\mfig{curves-12}\right)\right\},
    \]
@@ -50,7 +50,7 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
 
     For curve functionals arising from algebraic settings, such as the translation length of group actions on real trees (Section~\ref{sec:skora}), or cross-ratios (Section~\ref{sec:crossratios}), it is more convenient to decompose the smoothing condition into cases, as follows.
 
-  For $a,b \in \pi_1(S)$,
+  For $a,b \in \pi_1(S)$ non-trivial elements that are not common powers, let
   $\ora{a}, \ora{b}$ be their corresponding hyperbolic axes (for some/any hyperbolic structure), and let $a^-, a^+$ and $b^-,b^+$ their respective repelling and attractive fixed points. We say the pair $(a,b)$  \emph{R-cross} if $a^-, b^-, a^+,b^+$ appear in this
       ccw order on the boundary at infinity. See
       Figure~\ref{fig:cross}: we say the pair $(a,b)$ is \emph{R-parallel} if $b^-,b^+, a^+, a^-$ appear in this ccw order on the boundary at infinity. See Figure~\ref{fig:parallel}. See Definition~\ref{def:crossing} for more details.
@@ -165,14 +165,14 @@ The following are equivalent:
     \label{eq:small_conn}  \quad \ell(ab) &= \max \{ \ell(a) + \ell(b), \ell(aB)\}.
   \end{align}
 \end{enumerate}
-\item $\pi_1(S) \acts T$ does not have any parallel pair $(a,b)$ of hyperbolic isometries that overlap incoherently.\DMGtodo{added this characterization}
+\item $\pi_1(S) \acts T$ does not have any parallel pair $(a,b)$ of hyperbolic isometries in the disk that overlap incoherently in $T$.\DMGtodo{added this characterization}
 \end{enumerate}
 \label{mainthm:skora}
 \end{mainthm}
 
 The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{prop:small}, we prove that (B) implies (D), and that (D) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. We show that (D) implies (C) in Theorem~\ref{thm:axis_incoherent_characterization}.
 
-Skora also shows that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
+Skora also showed~\cite{Sk96:Splittings} that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
 
 Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
 
@@ -218,7 +218,7 @@ Foundation under Grant Numbers DMS-1507244 and DMS-2110143.
          $\Curr(S)$ & unoriented geodesic currents \\
          $\Curr^+(S)$ & oriented geodesic currents \\
          $C,D$ & multi-curves on $S$\\
-         $g,h,a,b,x$ & elements of $\pi_1(S)$ \\   
+         $g,h,a,b,x$ & elements of $\pi_1(S)$ \\         $g^{-1}, G$ & both denote the inverse of $g \in \pi_1(S)$ \\   
          $[g]$ & conjugacy class of $g \in \pi_1(S)$ \\ 
          $\ora{g}$ & axis of hyperbolic isometry of $g$ \\   
          $T$ & real tree \\ 
