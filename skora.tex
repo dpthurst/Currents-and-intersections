@@ -151,20 +151,39 @@ We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
 \end{lemma}
 
 Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}, we state them here in the form that will be most convenient for us.
-
 \begin{lemma}
 Suppose $g$ is elliptic and $h$ is hyperbolic. Let $T_g$ denote the set of fixed points of $g$ and $T_h$ the axis of $h$.
 \begin{enumerate}
 \item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
 Moreover:
 \begin{itemize}
-\item $T_{h}$, $T_{ghg^{-1}}$ overlap in a point or coherently if and only if $\|gh\|=\|h\|$.
-\item $T_{h}$, $T_{ghg^{-1}}$ overlap incoherently  if and only if $\|h\|>\|gh\|$.
+
+\item $T_h$ and $T_{ghg^{-1}}$ overlap in a point or coherently iff
+\[
+\begin{aligned}
+\|h\| \;>\; \|gh^{-1}\|  \;\;&\iff\;\; \|gh\| = \|h\|.
+\end{aligned}
+\]
+
+\item $T_h$ and $T_{ghg^{-1}}$ overlap incoherently iff
+\[
+\begin{aligned}
+\|h\| \;>\; \|gh\|  \;\;&\iff\;\; \|gh^{-1}\| = \|h\|.
+\end{aligned}
+\]
+
 \end{itemize}
-\item $T_g \cap T_h = \emptyset$ if and only if $\|gh\|>\|h\|$. In this case $\|gh\| = \|gh^{-1}\|= \|h \| + 2d(T_g, T_h)$.
+
+\item $T_g \cap T_h = \emptyset$ iff $\|gh\|>\|h\|$.  
+In this case
+\[
+\|gh\| = \|gh^{-1}\| = \|h\| + 2\,d(T_g, T_h).
+\]
+
 \end{enumerate}
 \label{lem:pau_ell_hyp}
 \end{lemma}
+
 \begin{proof}
 The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. 
 \end{proof}
