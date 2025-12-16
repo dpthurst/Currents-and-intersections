@@ -4,7 +4,7 @@
 \subsection{General measure theory}
 \label{subsec:backround}
 
-To be able to ultimately construct the geodesic current, we review some measure theory.
+To be able to ultimately construct the geodesic current in Theorem~\ref{thm:intersect}, we review some measure theory.
 Let $X$ be a set.
 
 \begin{definition}[Semi-ring, ring, $\sigma$-algebra]
@@ -73,7 +73,7 @@ Then $\mu$ extends as a measure on the $\sigma$-algebra $\sigma(\mathcal{R})$ ge
 
 For any non-negative set function $\mu$ defined on a certain class $\mathcal{A}$ of subsets of $X$ containing $X$, the formula
 \[
-\mu^*(A) = \inf \left\{ \sum_{n=1} \mu(A_n) | A_n \in \mathcal{A}, A \subset \bigcup_{n=1}^{\infty} A_n \right\}
+\mu^*(A) = \inf \left\{ \sum_{n=1} \mu(A_n) \mid A_n \in \mathcal{A}, A \subset \bigcup_{n=1}^{\infty} A_n \right\}
 \]
 defines a new set function on \emph{every} $A \subset X$, called the \emph{outer measure} of $\mu$.
 
@@ -218,7 +218,7 @@ For the if and only if, see~\cite[Lemma~2.6]{dRMG22:Duals}. For the last stateme
 This says that the only $0$-dimensional and $1$-dimensional subsets with atoms are those containing lifts of closed geodesics.
 
 \begin{definition}[Intersection form of geodesic currents]
-Let $\mathcal{D}\mathcal{G}(S) \subset \{ (\gamma_1,\gamma_2) | \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented curves intersecting transversely.
+Let $\mathcal{D}\mathcal{G}(S) \subset \{ (\gamma_1,\gamma_2) \mid \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented curves intersecting transversely.
 The map induces a continuous equivariant map $(\gamma_1,\gamma_2) \mapsto  \gamma_1 \cap \gamma_2$ from $\mathcal{D}\mathcal{G}(S)$ to $\wt{S}$, hence the action of $\pi_1(S)$ is properly discontinuous and free. Let $\mathcal{F}$ denote a fundamental domain of such action. Following Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented currents $\mu, \nu$ we define
 \begin{equation}
 i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
@@ -232,7 +232,7 @@ In this case, we have
 \[
 i(\mu, \delta_C)=\mu(G[q,y \cdot q))
 \]
-where $y \in \pi_1(S)$ is an element representing the curve $C$, $q \in \ora{y}$, and, in general, the set $G[p,q)$ denotes the set of geodesics intersecting the geodesic segment $[p,q)$ transversely.
+where $y \in \pi_1(S)$ is an element representing the curve $C$, $q \in \ora{y}$, and, in general, the set $G[p,q)$ denotes the set of geodesics intersecting the geodesic segment $[p,q)$ transversely. From now on, we will abuse notation and write $i(\mu, C)$ for $i(\mu, \delta_C)$.
 
 In the setting of unoriented geodesic currents~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative} shows that two geodesic currents are completely determined by their intersection numbers with closed curves.
 This is no longer true for oriented geodesic currents; for example,

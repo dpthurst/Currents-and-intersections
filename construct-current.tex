@@ -366,7 +366,7 @@ of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, (cf.
 the $\pi_1(S)$-invariance of $\mu$, and no flip-invariance.
 \end{proof}
 
-We finish by proving Theorem~\ref{thm:intersect}, in the following
+We finish by proving Theorem~\ref{thm:intersect}, first in the following
 form.
 
 \begin{theorem}
@@ -488,6 +488,15 @@ This condition is thus crucial to recover curve functionals as intersection numb
 \label{rmk:use_symmetry}
 \end{remark}
 
+\subsection{Proof of  Theorem~\texorpdfstring{\ref{thm:intersect}}{A}}
+
+Now we prove the theorem as stated in the introduction: in terms of functionals on unoriented multi-curves.
+
+\begin{proof}[Proof of Theorem~\ref{thm:intersect}]
+
+By Definition~\ref{def:smoothing} and by Proposition~\ref{prop:power_disconnected_imply_stable}, the induced additive and symmetric functional on oriented multi-curves satisfies stability. Hence, by Theorem~\ref{prop:recoverintersection}, the result follows.
+\end{proof}
+
 \subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{A'}}
 \label{subsec:algebraic_vs_top}
 We finish this section by proving the algebraic version of the
@@ -506,7 +515,7 @@ function on multi-curves.
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
 We first verify smoothing. We start
-with disconnected smoothing, between crossing elements
+with oriented disconnected smoothing, between crossing elements
 $(\ora{a},\ora{b})$, which we can assume R-cross by switching $a,b$ if
 necessary. We have
 \begin{align*}
@@ -535,8 +544,8 @@ $(\ora{B},\ora{A})$. Then
      = \overline{f}(a) + \overline{f}(b).
 \end{align*}
 
-Finally, by Corollary~\ref{cor:oriented_smoothing_unoriented},
-$\overline{f}$~satisfies unoriented smoothing as well. 
+We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Corollary~\ref{cor:oriented_smoothing_unoriented},
+$\overline{f}$~satisfies unoriented connected and disconnected smoothing as well. 
 Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing. \DMGtodo{added this last sentence, since we also had to verify power smoothing.}
 Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
 We are thus under the

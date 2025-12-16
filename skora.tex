@@ -12,7 +12,7 @@ Skora~\cite{Sko90:GeometricAction}.
 \textbf{Real trees} We start by recalling some basic notions of real trees.
 An \emph{$\mathbb{R}$-tree} is a non-empty metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing
-both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$-  This
+both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$.  This
 intersection is denoted
 $[x, y]$, and called an \emph{arc} connecting $x$ and $y$. In particular, note that arcs are non-empty, any two points are connected by a unique arc. When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
 A \emph{ray} in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
@@ -56,7 +56,7 @@ directions along $\Delta$, we say that $g$ and $h$ \emph{overlap incoherently}.
 Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
 \begin{itemize} 
 \item they are both hyperbolic;
-\item their axes in the tree intersect and their overlap is not a singleton;
+\item their axes in the tree intersect and their overlap is a non-degenerate arc;
 \item they overlap coherently; and
 \item the length of $T_g \cap T_h$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
 \end{itemize}
@@ -79,7 +79,7 @@ A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if
 A useful criterion for irreducibility in terms of the existence of a hyperbolic element with non-empty intersection with all other hyperbolic elements is the following (see~\cite[Lemma~2.1]{CM87:GroupActions}).
 
 \begin{lemma}
-    If there exists a hyperbolic element $a \in \Gamma$ so that for all hyperbolic $b \in \Gamma$ we have  $T_a \cap T_b \neq \emptyset$, then the action is reducible.
+    If there exists a hyperbolic element $g \in \Gamma$ so that for all hyperbolic $h \in \Gamma$ we have  $T_g \cap T_h \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
 \end{lemma}
 
@@ -202,8 +202,8 @@ and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
-In general, if the translation lengths of two $\Gamma \acts T$ actions are equal, tha does not necessarily imply the trees are equivariantly isometric, but it is true if the action is minimal irreducible or dihedral by~\cite[Theorem~3.7]{CM87:GroupActions}.
-In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree (i.e., a subtree invariant under $\Gamma$ that does not contain any proper non-degenerate invariant subtree). The length function for the restriction to this minimal invariant subtree is equal to the length function of $\Gamma  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
+In general, if the translation lengths of two $\Gamma \acts T$ actions are equal, that does not necessarily imply the trees are equivariantly isometric, but it is true if the action is minimal irreducible or dihedral by~\cite[Theorem~3.7]{CM87:GroupActions}.
+In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree. The length function for the restriction to this minimal invariant subtree is equal to the length function of $\Gamma  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
 
 \subsection{Surface group actions on real trees}
 
@@ -225,7 +225,7 @@ Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves 
 Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
 However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\Gamma \acts T$ of a surface group $\Gamma$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
 
-The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorems~\ref{thm:intersect} and~\ref{item:lam-char} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}.
+The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorems~\ref{thm:intersect} and \ref{mainthm:apps}~\ref{item:lam-char} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}.
 
 In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. In fact, Skora showed this in the more general setting where $S$ has cusps provided that then parabolic elements in $\Gamma$ are elliptic in $T$.
 It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
@@ -246,7 +246,7 @@ Suppose $\pi_1(S) \acts T$ preserves axis intersection. If $\pi_1(S) \acts T$ is
 
     For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since $\pi_1(S) \acts T$ preserves axis, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
       
-    By Lemma~\ref{lem:anbn_vs_bkak_parallel}, for $n$ large enough,
+    By Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
     $\ora{h^nk^n}$ R-crosses $\ora{g}$. See
     Figure~\ref{fig:tree_k_crossing} for an illustration. In
     particular, since the action preserves axis, $T_{h^nk^n}$ and
@@ -390,21 +390,18 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
 \begin{subcase}
 $\ora{g},\ora{h}$ cross.
 \end{subcase} Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
-By Subcase~\ref{subcase:bad_case}, $T_{ghg^{-1}}$ and $T_{h}$ cannot intersect incoherently, and hence, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| \geq \|h\|$. We claim that $\| gh \|= \|h\|$. Indeed,  if $\| gh \| > \| h \|$, by Lemma~\ref{lem:pau_ell_hyp} (2) this is equivalent to $T_g \cap T_h = \emptyset$, with 
-\[
-  \|gh\| = \| gh^{-1}\|=\|h\| + 2d(T_g,T_h).
-\]
-By Lemma~\ref{lem:foundation_trees}, it follows that $gh, h^{-1}g$ overlap, and since $\|(gh)(h^{-1}g)\| = \|g^2\| =0$, it follows the overlap is incoherent. 
+By Subcase~\ref{subcase:bad_case}, $T_{ghg^{-1}}$ and $T_{h}$ cannot intersect incoherently. If they intersect coherently or in a point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|$, and we are done. Suppose $T_{ghg^{-1}}$ and $T_{h}$ do not intersect. Then by Lemma~\ref{lem:foundation_trees} (2), we get \begin{equation}
+\| (gh)(hg)^{-1}\| = \| (ghg^{-1})h^{-1} \| = \| (ghg^{-1})h \| >2\|h\|>0
+\label{eq:intermediate0}
+\end{equation}
+Also, since $\| (gh)(g^{-1}h)^{-1}\| = \|(gh)(h^{-1}g)\| = \|g^2\| =0$, it follows $gh, g^{-1}h$ overlap coherently.
 Hence, by Lemma~\ref{lem:foundation_trees}
 \begin{equation}
-  \|(gh)(g^{-1}h)\|=\|(gh)(h^{-1}g)^{-1}\| = \| gh\| +\| h^{-1}g\|=2\|gh\|.
+  \|(gh)(g^{-1}h)\| = \| gh\| +\| gh^{-1}\|=2\|gh\|.
 \label{eq:intermediate}
 \end{equation}
-On the other hand, since $T_g \cap T_h=\emptyset$, it follows that $T_h \cap T_{ghg^{-1}}=\emptyset$, thus
-\[
-  \|(ghg^{-1})h)\|=\|(ghg^{-1})h^{-1})\| = \| (gh)(hg)^{-1}\|.
-\]
-Hence, combining this with Equation~\ref{eq:intermediate}, we get $\| (gh)(hg)^{-1}\|=2\|gh\|$, and thus $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Subcase~\ref{subcase:bad_case}.
+where we used $\|gh\| = \| gh^{-1}\|$ by Lemma~\ref{lem:pau_ell_hyp} (2) since $T_g \cap T_h = \emptyset$, in the last equality.
+Combining  Equation~\ref{eq:intermediate0} and Equation~\ref{eq:intermediate}, it follows that $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Subcase~\ref{subcase:bad_case}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 Then $(\ora{gh}, \ora{h})$ are parallel by
 Lemma~\ref{lem:righthandedfoundation}. Since $\|(gh)h^{-1}\| =
@@ -458,41 +455,22 @@ The proof of Theorem~\ref{prop:small} shows that if $\pi_1(S) \acts T$ preserves
 The converse is also true: if $\pi_1(S) \acts T$ does not preserve axis intersection, it means there exists a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
 \end{proof}
 
-This allows us to give another characterization of small surface actions on real trees.
+We now show that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
 
-\begin{theorem}
-$\pi_1(S) \acts T$ is irreducible and preserves axis intersection if and only if no pair of parallel hyperbolic elements $(g,h)$ have incoherent overlap.
-\label{thm:axis_incoherent_characterization}
-\end{theorem}
-\begin{proof}
-One implication follows from the proof of Theorem~\ref{prop:small}.
-In the other direction, it follows by Proposition~\ref{prop:preserves_axis} that $\pi_1(S) \acts T$ preserves axis intersection. Finally, it cannot be reducible since otherwise it would have hyperbolic pairs with unbounded incoherent overlap.
-\end{proof}
+\begin{lemma}\DMGtodo{this lemma has been moved up, and combined with another argument. The current argument consolidates the two arguments.}
 
-Now we prove Theorem~\ref{mainthm:skora}.
-
-\begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
-(A) is equivalent to (C) is proven by the first part of Theorem~\ref{mainthm:apps}.
-(B) implies (C) is Theorem~\ref{prop:small}.
-(C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
-Finally, Theorem~\ref{thm:axis_incoherent_characterization} implies (C) is equivalent to (D).
-\end{proof}
-
-We conclude this section showing that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing.
-
-\begin{lemma}
-Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$. Let $\| \cdot \|$ denote the translation length of this action.
+Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$ with translation length $\| \cdot \|$.
 If  $(\Gamma, T)$ is reducible, then:
 
 \begin{itemize}
     \item $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
     \item $-\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy disconnected smoothing but it satisfies connected smoothing.
+    \item There exist a pair of hyperbolic parallel elements $(g,h)$ with incoherent overlap.
 \end{itemize}
 \label{lem:red_not_smoothing}
 \end{lemma}
 \begin{proof}
-We start with a reducible action and show it cannot satisfy smoothing.
-If the action is reducible, every pair $(g,h)$ of elements acting hyperbolically on $T$ has axes overlapping in a ray. By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap coherently, in which case
+By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap coherently, in which case
 \begin{equation}
 \|gh \|=\| g \| + \| h \| \mbox{ and } \|gh^{-1} \| = |\|g \|- \| h \| |,
 \label{eq:reducible1}
@@ -505,35 +483,55 @@ or $g,h$ overlap incoherently, in which case
 Note that Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} hold for any pair of hyperbolic isometries $(g,h)$. In particular, they hold if $(\ora{g},\ora{h})$ cross.
 Hence, $\| \cdot \|$ always satisfies disconnected smoothing. Similarly, they also hold if $(\ora{g},\ora{h})$ are parallel. Thus, $-\| \cdot \|$ always satisfies connected smoothing.
 
-Now, take a pair $a,x \in \Gamma$, so that $(a,x)$ $R$-cross.
-WLOG, assume $\| a \|<\| x \|$.
-
-\begin{claim}
-Without loss of generality, we can furthermore assume that $a$ and $x$ overlap coherently.
+\begin{claim} Suppose $a,x \in \Gamma$ are hyperbolic elements so that $\| a \|>\| x \|$ and $(a,x)$ overlap coherently. We claim that the pair $(ax,xa^{-1})$ has incoherent overlap.
 \end{claim}
-\begin{proof}[Proof of Claim]
-If $a,x$ overlap incoherently, then note $(xa^{-1}, ax)$ also $R$-cross, by Lemma~\ref{lem:righthandedfoundation}. 
-Then $\| ax \| =\| x\|- \|a \|$ and $\| xa^{-1} \| =\| a \| + \| x \|$. Since $\| (xa^{-1})(ax) \| =\| x^2 \|$ is equal to $\| ax \| + \| xa^{-1} \|= 2\| x \|$, $ax$ and $xa^{-1}$ overlap coherently, and they do it in a subray of the overlap between $a$ and $x$.
+\begin{proof}
+Indeed, on the one hand, by Equations~\ref{eq:reducible1} and \ref{eq:reducible2} 
+\begin{align*}
+\|ax\|&=\|a\|+\|x\| \\
+\|xa^{-1}\| &= \|a\|-\|x\|
+\end{align*}
+so adding these equations, we get
+\[
+\|ax\| + \|xa^{-1}\| = 2\|a\|.
+\]
+On the other hand,
+\[
+\|(xa^{-1})(ax)\| = 2\|x\|.
+\]
+Thus
+\[
+\|(xa^{-1})(ax)\| <  \|xa^{-1}\| + \| ax\|
+\]
+which means that $(ax,xa^{-1})$ overlap incoherently, by Equation~\ref{eq:reducible2}.
 \end{proof}
-If $(a,x)$ R-cross, we use Equation~\ref{eq:cross-split} in Proposition~\ref{prop:join-split-geom}, with $m=-n$, $a=b$, and $n$ large enough, and choosing some admissible $r$ for the inequalities there, by smoothing,
-\begin{equation}
- \| ax^nax^{-n} \| \geq \| ax^{n+r} \| + \| ax^{-n-r} \|.
- \label{eq:unoriented1}
-\end{equation}
-On the other hand, by a similar argument as in the proof of the above Claim, $ax^n, ax^{-n}$ overlap incoherently, so, we have that the left hand side is
-\begin{equation}
-\|ax^nax^{-n} \| = \| ax^n \| - \|ax^{-n} \| = \| a \| + n\| x \| - (n\| x \|-\|a\|) = 2\|a\|
-\label{eq:lhs1}
-\end{equation}
-where we used that Equation~\ref{eq:reducible2} applies to the pair ($ax^n,ax^{-n}$) overlapping incoherently in the first equality, and Equation~\ref{eq:reducible1} for the coherent pair $(a,x^n)$ and Equation~\ref{eq:reducible2} for the incoherent pair $(a,x^{-n})$ in the second equality.
-A similar computation, yields the following result for the right hand side:
-\begin{equation}
-\|ax^{n+r}\|=\|a\|+(n+r)\|x\| + (n+r)\|x\|-\|a\| = 2(n+r)\|x\|.
-\label{eq:rhs1}
-\end{equation}
-Combining Equation~\ref{eq:unoriented1} with Equations~\ref{eq:lhs1} and~\ref{eq:rhs1} we get $\|a \| \geq (n+r)\|x\|$, which contradicts $\|a\| < \|x\|$.
-Hence, $\| \cdot \|$ (and, similarly, $-\| \cdot \|$) cannot satisfy smoothing. The claims then follow in each case.
+Let $\Gamma'$ denote the (normal) subgroup of $\Gamma$ generated by elements acting hyperbolically on $T$.
+If $\| \cdot \|$ is non-trivial, $\Gamma'$ is infinite, and we can find a pair $(g,h) \in \Gamma'$ of R-parallel elements. Indeed, take an arbitrary pair $(g,h)$ in $\Gamma'$. If it is R-parallel, we are done. If it is R-crossing, consider $(gh,hg)$, which is R-parallel by Lemma~\ref{lem:righthandedfoundation}. If it is R-anti-parallel, consider $(gH,Hg)$ which is R-crossing, and proceed in the same way. From the hyperbolic R-parallel pair $(g,h)$, use Example~\ref{ex:ab_parallel_aB_crossing}, gives us a hyperbolic an R-parallel pair $(a,x)$, with $\|a\|>\|x\|$ so that $(ax^{-1},x^{-1}a)$ is R-crossing. By Lemma~\ref{lem:a_parallel_Ba}, it follows that $(ax,x^{-1}a)$ is R-parallel.
+Applying the Claim above, we have found a pair $(g,h)$, with $g\coloneqq ax, h\coloneqq x^{-1}a$, of parallel hyperbolic elements with incoherent overlap.
+This tells us $\| gh \| < \|gh^{-1}\|=\|g\| + \|h\|$ which violates (both oriented and unoriented) connected smoothing.
 \end{proof}
+
+Putting this all together we can give another characterization of small surface actions on real trees.
+
+\begin{theorem}
+$\pi_1(S) \acts T$ is irreducible and preserves axis intersection if and only if no pair of parallel hyperbolic elements $(g,h)$ have incoherent overlap.
+\label{thm:axis_incoherent_characterization}
+\end{theorem}
+\begin{proof}
+One implication follows from the proof of Theorem~\ref{prop:small}.
+In the other direction, it follows by Proposition~\ref{prop:preserves_axis} that $\pi_1(S) \acts T$ preserves axis intersection. Finally, it cannot be reducible since otherwise it would have hyperbolic pairs with (unbounded) incoherent overlap, by Lemma~\ref{lem:red_not_smoothing}. \DMGtodo{the lemma that has been edited justifies the last sentence}
+\end{proof}
+
+Now we prove Theorem~\ref{mainthm:skora}.
+
+\begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
+(A) is equivalent to (C) is proven by the first part of Theorem~\ref{mainthm:apps}.
+(B) implies (C) is Theorem~\ref{prop:small}.
+(C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+Finally, Theorem~\ref{thm:axis_incoherent_characterization} implies (C) is equivalent to (D).
+\end{proof}
+
+
 
 Hence, by Theorem~\ref{thm:intersections_group} a reducible action cannot be dual to a geodesic current, since smoothing (both connected and disconnected) is a necessary condition. Another example of curve functional satisfying disconnected smoothing but not connected smoothing in the setting of the linear extension of extremal length can be seen in Example~\ref{ex:linEL}.
 

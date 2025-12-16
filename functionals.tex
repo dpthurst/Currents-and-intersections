@@ -65,7 +65,7 @@ This is a natural perspective since many currents, such as most measured laminat
 The oriented smoothing condition will be further divided into three \DMGtodo{added power smoothing here} types, following the convention in Definition~\ref{def:smoothing_types}, depending on if the essential crossing is between two connected components of the multi-curve (\emph{oriented disconnected smoothing}); if it is a sef-crossing of the one connected component (\emph{oriented connected smoothing}) not coming from a power of a single element, or (\emph{power smoothing}) if it is a self-crossing arising from a power. Accordingly, we will say $f$ satisfies a particular type of smoothing property if $f$ is non-increasing under such type.
 
 We emphasize that oriented connected smoothing does not imply oriented disconnected smoothing, or viceversa. 
-For example, the curve functional $f$ assigning to a curve its number of connected components is a curve functional satisfying oriented disconnected smoothing but not oriented connected smoothing. Similarly, the negative of this functional satisfies oriented connected smoothing but not oriented disconnected smoothing. This example is not a stable function, but with a bit more work produces examples satisfying additivity and stability while exhibiting exactly one of the smoothing properties. For example, in Lemma~\ref{lem:red_not_smoothing} we give examples of lengths coming from reducible actions of surface groups on real trees, which satisfy disconnected smoothing but not connected smoothing and viceversa. Similarly, in Example~\ref{ex:linEL} we show an additive variation of extremal length that satisfies stability, disconnected smoothing but not connected smoothing. 
+For example, the curve functional $f$ assigning to a curve its number of connected components is a curve functional satisfying oriented disconnected smoothing but not oriented connected smoothing. Similarly, the negative of this functional satisfies oriented connected smoothing but not oriented disconnected smoothing. This example is not a stable function, but a bit more work produces examples satisfying additivity and stability while exhibiting exactly one of the smoothing properties. For example, in Lemma~\ref{lem:red_not_smoothing} we give examples of lengths coming from reducible actions of surface groups on real trees, which satisfy disconnected smoothing but not connected smoothing and viceversa. Similarly, in Example~\ref{ex:linEL} we present an additive variation of extremal length that satisfies stability, disconnected smoothing but not connected smoothing. 
 \DMGtodo{this paragraph has been edited and expanded, and added a bit more detail about optimality of conditions}
 One can also find examples of functions satisfying stability, and smoothing but not additivity (such as extremal length, as we will discuss in Example~\ref{ex:linEL}).
 Finally, the proof of Theorem~\ref{thm:intersections_group} shows, in particular, that smoothing  implies stability. 
@@ -115,7 +115,7 @@ There exist slight generalizations of both smothing as well as additivity that h
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R.
     \end{equation}
     See Definition~\ref{def:essential-crossing} for ``essential
-    crossing''. If $R=0$, we recover the oriented smoothing property.
+    crossing''. If $R=0$, we recover the oriented smoothing property. We note that the above properties are what in~\cite[Equations~(1.2),(1.3)]{MGT21:Smoothings} we called \emph{quasi-smoothing} and \emph{smoothing}. In this paper we distinguish them from their unoriented counterparts (see below). \DMGtodo{added this remark about the relation to the other paper}
   \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
     on~$S$. Then
     \begin{equation}\label{eq:union-convex}
@@ -131,7 +131,7 @@ There exist slight generalizations of both smothing as well as additivity that h
 Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
 \begin{definition}
-Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
+Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
@@ -220,10 +220,9 @@ In previous work, we proved the following result.
 \end{theorem}
 
 It is easy to see that the conditions of symmetry, smoothing, additivity and
-stability, defining the space $\AConvex(S)$ are
-obviously satisfied for any functional $i(\mu,\cdot) \colon \Curves^+(S)
+stability, defining the space $\AConvex(S)$ are satisfied for any functional $i(\mu,\cdot) \colon \Curves^+(S)
 \to \mathbb{R}$, for $\mu$ a geodesic current. This was proven
-in \cite[Section~4]{MGT21:Smoothings}, and we give a different proof more in line of the types of argument in this paper in Section~\ref{sec:necessary}.
+in \cite[Section~4]{MGT21:Smoothings}: verifying them when $\mu$ is a multi-curve and then extending to any $\mu$ using density of weighted curves, and continuity and linearity of intersection number. \DMGtodo{added this reminder about how the proof goes} We also give a different proof more in line of the types of argument in this paper in Section~\ref{sec:necessary}.
 Many natural notions of length do satisfy all these properties and they have been shown to extend continuously to geodesic currents as intersection numbers. We list them here, along with the appropriate references.
 
 \begin{enumerate}
@@ -240,7 +239,7 @@ Many natural notions of length do satisfy all these properties and they have bee
 \end{enumerate}
 
 We emphasize that our main result Theorem~\ref{thm:intersect} subsumes all these previous results, as we will elucidate in Section~\ref{sec:special-classes} for items (1) - (8) and Section~\ref{sec:crossratios} for item (9).
-In particular, we will show that item (8) can be further generalized to stable lengths associated to embedded graphs on the surface (see  Theorem~\ref{thm:dual_embeddedgraph} and Theorem~\ref{cor:generalization_wordlength}). 
+In particular, we will show that item (8) can be further generalized to stable lengths associated to embedded graphs on the surface (see  Theorem~\ref{thm:dual_embeddedgraph} and Theorem~\ref{cor:generalization_wordlength}). \DMGtodo{it would be nice to include an example of an embedded graph which is not a simple gen set in that section (section 8)}
 In order to illustrate the complexity of the problem,
 we now show examples of many natural functions on curves that do \emph{not} satisfy the $\AConvex$ properties (even though many of them still extend continuously to geodesic currents).
 
@@ -300,7 +299,7 @@ G(a+b)=G(a) + G(b)=F(a) + F(b) \geq F(a+b) \geq F(ab)=G(ab)
 where we used the fact that $F$ and $G$ take the same values on closed curves; hence,
 $G$ satisfies disconnected smoothing.
 This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair of $(a,b)$ parallel so that
-$G(ab) < G(a) + G(b)$. This is indeed the case. The following example was suggested to us by Maxime Fortier Bourque. Consider the extremal length of a figure-eight curve in a genus two surface $S$. Consider the pair of pants $P$ bounding $ab$, and let us think of it as obtained by gluing adjacent sides in a Swiss cross. The extremal metric has been computed numerically in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of the Swiss cross. If the width is chosen to be a fourth of the total size of the Swiss cross, and the normalization $w=1$ is chosen, the extremal length of the figure-eight can be computed to be 2.4251
+$G(ab) < G(a) + G(b)$. This is indeed the case. Maxime Fortier Bourque pointed the first author to~\cite{HZ20:SwissCross} for a strategy to compute the extremal length of a figure-eight curve in a pair of pants.  Consider the extremal length of a figure-eight curve in a genus two surface $S$. Consider the pair of pants $P$ bounding $ab$, and let us think of it as obtained by gluing adjacent sides in a Swiss cross. The extremal metric has been computed numerically in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of the Swiss cross. If the width is chosen to be a fourth of the total size of the Swiss cross, and the normalization $w=1$ is chosen, the extremal length of the figure-eight can be computed to be 2.4251
  (see Table in \cite[Page~36]{HZ20:SwissCross}, row $t=4$), hence its square root is $G_P(ab) \simeq 1.557273$. On the other hand, the length of each one of the resulting smoothings is $3$, while the area of the surface with the extremal metric associated to $ab$ is computed as $A=6.5977$. 
  
  Hence, $G_{S}(a) + G_S(b) =2G_S(a)=\sqrt{2}G_P(a)$ is lower bounded by $\simeq 1.6517335$, showing the inequality

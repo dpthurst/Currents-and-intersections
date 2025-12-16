@@ -12,7 +12,7 @@ follow the convention that path composition works in the natural
 order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
 defined if $\gamma_1(1) = \gamma_2(0)$.
 If $a \in \pi_1(S,\ast)$, we let $[a]$ denote the free homotopy class of $a$.
-In particular, we note that $[g a g^{-1}]=[a]$. We will follow the
+In particular, we note that $[g a g^{-1}]=[a]$. We will sometimes follow the
 group theory convention of denoting inverses by a capital letter, and will use
 boldface to distinguish points in $\wt S$.
 
@@ -68,7 +68,7 @@ Here we make the following observations.
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, the arrows will be paths that
 are lifts of~$g$, and thus correspond to the \emph{right} action on the
-fiber.
+fiber. \DMGtodo{this is not a faithful description, currently: many pictures have arrows which depict axis of the left action. Then there are arrow paths which correspond to the right action.}
 
 For any non-trivial $x \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[x]$ on $S$, corresponding to the conjugacy
@@ -586,8 +586,11 @@ In the following lemma, the orientation will be important.
 
 \begin{lemma}
 Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are R-parallel, and $\ora{aB}, \ora{Ba}$ cross,  then $\ora{a}$ and $\ora{bA}$ are R-parallel.
+If $\ora{a},\ora{b}$ are R-parallel, and $\ora{aB}, \ora{Ba}$ cross,  then:
+\begin{itemize} \item $\ora{a}$ and $\ora{bA}$ are R-parallel.
+\item $\ora{ab}$ and $\ora{bA}$ are R-parallel.
 \label{lem:a_parallel_Ba}
+\end{itemize}
 \end{lemma}
 
 From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
@@ -610,6 +613,7 @@ example where this situation arises.
   are parallel, as desired. See Figure~\ref{fig:crossing_aB}.
   Finally, $aB=(hghgh)(HGH)=gh$ and $Ba=(HGH)(hghgh)=gh$, which cross,
   as desired.
+  \label{ex:ab_parallel_aB_crossing}
 \end{example}
 
 \begin{figure}
@@ -625,7 +629,6 @@ example where this situation arises.
 
 \subsection{Fundamental smoothing results}
 \label{sec:fund-smoothing}
-
 
 As part of our construction, we will use large powers of some fixed
 elements. We collect some propositions guaranteeing essential
@@ -814,8 +817,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \end{proof}
 
 \begin{proposition}\label{prop:fundamental-ayx}
-  Let $a,x,y\in\pi_1(S)$ be chosen so that
-  $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel. Then there exists
+  Let $a,x,y\in\pi_1(S)$ be chosen so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel. Then there exists
   $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
   \begin{align}
     \label{eq:crossuniform_n}
@@ -871,10 +873,10 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \[
     [a x^n y^m][a] = [g][a] \reducesto [x^n y^m]
   \]
-  by oriented disconnected smoothing.
+  by unoriented disconnected smoothing.
   Finally, by Lemma~\ref{lem:righthandedfoundation}, since $\ora{x^n}$
   and $\ora{y^m}$ are R-parallel, the geodesics $\ora{y^m x^n}$ and
-  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$, by oriented connected smoothing.
+  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$, by oriented connected smoothing. 
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
@@ -898,8 +900,8 @@ four group elements.
 
 \begin{proof}
   Apply Proposition~\ref{prop:fundamental-ayx} with $y' = y$,
-  $x' = axA$, and $a' = ba$. (Observe that the conditions imply that
-  $(\ora{y}, a \cdot \ora{x}, ba \cdot \ora{y})$ are R-parallel.)
+  $x' = axA$, and $a' = ab$. (Observe that the conditions imply that
+  $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.)
 \end{proof}
 
 We now check this configuration is easy to find. The following result

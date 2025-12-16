@@ -18,17 +18,27 @@ For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic
 
 We give an axiomatic characterization of curve functionals dual to geodesic currents. 
 
-\begin{mainthm} 
-    A curve functional $f \colon\Curves(S) \to \mathbb{R}$ satisfies the \emph{smoothing property}
-     \[
-      f\left(\mfig{curves-10}\right) \ge \max \left\{ f\left(\mfig{curves-11}\right), f\left(\mfig{curves-12}\right)\right\},
-   \]
-   for every essential crossing of a multi-curve on the surface, is \emph{additive} on connected components (see~\ref{subsec:mainhypotheses} for definitions) if and only if $f$ has a (unique) dual geodesic current $\mu_f$, i.e., for every curve $C$, we have
+\begin{mainthm}
+A curve functional $f \colon \Curves(S)\to\mathbb{R}$ satisfies the
+\emph{smoothing property}
 \[
-i(\mu_f,C)=f(C).
+f\!\left(\mfig{curves-10}\right)
+\ge
+\max\!\left\{
+f\!\left(\mfig{curves-11}\right),
+f\!\left(\mfig{curves-12}\right)
+\right\},
+\]
+at every essential crossing, and is \emph{additive} on connected components
+(see~\ref{subsec:mainhypotheses}),
+if and only if there exists a unique dual geodesic current $\mu_f$ such that
+\[
+i(\mu_f,C)=f(C)
+\quad\text{for all curves } C.
 \]
 \label{thm:intersect}
 \end{mainthm}
+
 See~Definition~\ref{def:essential-crossing} for essential crossing, which can be roughly defined as a crossing that cannot be removed by homotopy.
 \DMGtodo{added this minimality statement}
 The hypotheses of the theorem are minimal: neither one implies the other (see Section~\ref{subsec:examples_and_non} for many natural examples and
@@ -58,7 +68,7 @@ A previous result in~\cite[Theorem~1.5]{EPS20:CountingCurves} provides continuou
       Using this we can state a version of Theorem~\ref{thm:intersect} with weaker hypotheses. 
 
 \begin{mainthmprime}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f} \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$. 
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(a) \coloneqq \frac{1}{2} \left(f(a) + f(A) \right)$ for every $a \in \pi_1(S)$.
 There exists a (unique) geodesic current $\mu_{\overline{f}}$ on $S$ so that
 \setlength{\abovedisplayskip}{6pt}
   \setlength{\belowdisplayskip}{6pt}
