@@ -14,7 +14,12 @@ An \emph{$\mathbb{R}$-tree} is a non-empty metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing
 both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$.  This
 intersection is denoted
-$[x, y]$, and called an \emph{arc} connecting $x$ and $y$. In particular, note that arcs are non-empty, any two points are connected by a unique arc. When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
+$[x, y]$, and called an \emph{arc} connecting $x$ and $y$.
+In particular, note that arcs are non-empty, any two points are connected by a unique arc. When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
+An equivalent way to characterize them is as a geodesic metric space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}: for any four tuple of points $x,y,z,w \in X$, we have
+\[
+d(x,z) + d(y,w) = \max \{ d(x,y) + d(z,w), d(x,z) + d(y,w) \}.
+\] \DMGtodo{added this to motivate the max condition}
 A \emph{ray} in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
 the ray \emph{emanates} from $p$. The \emph{space of ends} of a metric space $T$ is the limit of the inverse system $\pi_0(T-B)$ where
 $B$ ranges over the closed and bounded subsets of $T$. Let $p$ a be a fixed point of $T$. For every point of the limit there is a ray emanating from $p$,
@@ -35,6 +40,20 @@ set of fixed points of~$g$.
 If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the
 real line and $g$ translates along $T_g$ by distance $\| g\|$; in this
 case we call $T_g$ the \emph{axis} of $g$.
+
+The translation lengths of any action $\Gamma \acts T$ satisfies the following relation, reminiscent of the $0$-hyperbolic condition. 
+
+\begin{lemma} Let $\Gamma \acts T$ be an action of a finitely generated group on a real tree. Then, for any pair $g,h \in \Gamma$, we have that the maximum among the following three quantities appears (at least) twice:
+\[
+\|g\|+\|h\|, \quad \|gh\|, \quad \|gH\|.
+\]
+\label{fact:max_twice}
+\end{lemma}
+\begin{proof}
+This follows from more precise relations developed in~\cite{CM87:GroupActions,Pa89:Paulin1989TheGT}, which we will write as a sequence of lemmata below. Specifically, for hyperbolic pairs $(g,h)$, it follows from~Lemma~\ref{lem:foundation_trees}; if $g$ is elliptic and $h$ hyperbolic, by Lemma~\ref{lem:pau_ell_hyp}; and, if both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
+\end{proof}
+This fact can be inferred from the more precise relations developed in sources such as, which we outline later below.
+In fact, Parry~\cite{Par91:Translation} showed that these relations characterize translation lengths of actions on real trees among all class invariant symmetric functionals.
 
 \DPTtodo[inline]{Somewhere in this section, explain that for any
   action on an $\bbR$-tree and any $g,h$, among the three numbers
@@ -161,7 +180,7 @@ We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
     \label{lem:powers_intersect}
 \end{lemma}
 
-Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us.
+Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Fact~\ref{fact:max_twice}--- that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice--- more apparent. \DMGtodo{added this last sentence}
 \begin{lemma}
 Suppose $g$ is elliptic and $h$ is hyperbolic.
 \begin{enumerate}
@@ -307,6 +326,11 @@ Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis intersection
   \caption{The proof of Lemma~\ref{lem:if_unbounded_then_reducible} }
 \label{fig:main_k_crossing}
 \end{figure}
+
+Note that, in light of Fact~\ref{fact:max_twice}, it suffices to prove smoothing, i.e., that the multicurve with the crossing to be smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises in---realizes one of
+the translation lengths appearing in the maximum of the three.
+In practice, in the proof below we will verify max-smoothing directly.
+\DMGtodo{added this}
 
 \DPTtodo[inline]{Cite fact of max occurring twice. In light of that
   fact, we need to prove smoothing, i.e., that whichever of $[gh]$,
