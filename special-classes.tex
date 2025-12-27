@@ -190,7 +190,7 @@ Given the setup described above, we have
 We also need the following hyperbolic geometry lemma.
 
 \begin{proposition}
-Consider two elements $a, b \in \pi_1(\Sigma)$ with hyperbolic axes $\ora{a}$ and $\ora{b}$ that intersect at a point $O$, and translation lengths $\ell(a),\ell(b)$.
+Consider two elements $a, b \in \pi_1(S)$ with hyperbolic axes $\ora{a}$ and $\ora{b}$ that intersect at a point $O$, and translation lengths $\ell(a),\ell(b)$.
 We define the following four points:
 
 \begin{itemize} \item $P$ is the point on $\ora{a}$ obtained by moving forward from $O$ by distance $\ell(a)/2$;
@@ -268,7 +268,7 @@ functionals.
 We start with a technical lemma that defines some sets of interest. We will resort to this setup several times in the proofs below. 
 
 \begin{lemma}
-Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
+Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
 Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), [P', Q'))$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times [Q', P))$), and $R_{a,b}^- \coloneqq G((Q,P], (P', Q'])$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times (Q', P])$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
@@ -313,14 +313,14 @@ Now we characterize measured laminations in terms of the disconnected max-smooth
 Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing}.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
 It remains to show that $\mu_f$ is a measured lamination.
-Given elements $a, b \in \pi_1(\Sigma)$ which R-cross,
+Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 By max-smoothing, for every $n$, we have $\mu((R_n^\perp)^{\pm})=0$ or $\mu(R_n^{\pm})=0$.
 Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq 1$.
 Hence, $\mu(B_{a,b}^{\pm})=0$ or $\mu((B_{a,b}^{\perp})^{\pm})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-By density of $B_{a,b}^{\pm}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(\Sigma)$, given any box $B$, we can find a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B$.
+By density of $B_{a,b}^{\pm}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(S)$, given any box $B$, we can find a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B$.
 Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n^{\pm}) =\mu(B)$ and $\lim_n \mu((B_n^{\perp})^{\pm}) = \mu(B^{\perp})$.
 Now we prove the other implication, by proving the contra-positive.
 If disconnected max-smoothing is \emph{not} satisfied for the elements
@@ -395,7 +395,7 @@ For the other direction, by the assumptions on $f$, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
 It remains to show that $\mu_f$ is a Liouville current, which is where the disconnected $\lambda$-smoothing will play a role.
-Given elements $a, b \in \pi_1(\Sigma)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
+Given elements $a, b \in \pi_1(S)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 
 Now, we compute
@@ -419,8 +419,8 @@ Finally, note that $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
-for any intersecting pair $a,b \in \pi_1(\Sigma)$.
-As in the proof of Theorem~\ref{thm:char_laminations},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(\Sigma)$. Hence, given any box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$. Hence,
+for any intersecting pair $a,b \in \pi_1(S)$.
+As in the proof of Theorem~\ref{thm:char_laminations},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(S)$. Hence, given any box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$. Hence,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]

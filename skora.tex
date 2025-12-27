@@ -16,7 +16,7 @@ both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$.  This
 intersection is denoted
 $[x, y]$, and called an \emph{arc} connecting $x$ and $y$.
 In particular, note that arcs are non-empty, any two points are connected by a unique arc. When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
-An equivalent way to characterize them is as a geodesic metric space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}: for any four tuple of points $x,y,z,w \in X$, we have
+An equivalent way to characterize real trees is as geodesic metric space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}: for any four-tuple of points $x,y,z,w \in X$, we have
 \[
 d(x,z) + d(y,w) = \max \{ d(x,y) + d(z,w), d(x,z) + d(y,w) \}.
 \] \DMGtodo{added this to motivate the max condition}
@@ -41,19 +41,24 @@ If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the
 real line and $g$ translates along $T_g$ by distance $\| g\|$; in this
 case we call $T_g$ the \emph{axis} of $g$.
 
-The translation lengths of any action $\Gamma \acts T$ satisfies the following relation, reminiscent of the $0$-hyperbolic condition. 
+The translation lengths of any action $\Gamma \acts T$ can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition. 
+Even though we will not use it in the proofs, it is helpful to keep it in mind.
 
-\begin{lemma} Let $\Gamma \acts T$ be an action of a finitely generated group on a real tree. Then, for any pair $g,h \in \Gamma$, we have that the maximum among the following three quantities appears (at least) twice:
-\[
+\begin{lemma} \DMGtodo{this is the max appears twice condition, phrased as a characterization}
+Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ be a conjugacy class invariant function.
+Then $f$ is the translation length function of
+an action $\Gamma \acts T$ on a real tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
+\begin{equation}
 \|g\|+\|h\|, \quad \|gh\|, \quad \|gH\|.
-\]
+\label{eq:maxcondition_tree}
+\end{equation}
 \label{fact:max_twice}
 \end{lemma}
 \begin{proof}
-This follows from more precise relations developed in~\cite{CM87:GroupActions,Pa89:Paulin1989TheGT}, which we will write as a sequence of lemmata below. Specifically, for hyperbolic pairs $(g,h)$, it follows from~Lemma~\ref{lem:foundation_trees}; if $g$ is elliptic and $h$ hyperbolic, by Lemma~\ref{lem:pau_ell_hyp}; and, if both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
+The fact that the translation length of an action $\Gamma \acts T$ satisfies the condition in Equation~\ref{eq:maxcondition_tree} follows from more precise relations developed in~\cite{CM87:GroupActions,Pa89:Paulin1989TheGT}, which we will write as a sequence of lemmata below. Specifically, for hyperbolic pairs $(g,h)$, it follows from~Lemma~\ref{lem:foundation_trees}; if $g$ is elliptic and $h$ hyperbolic, by Lemma~\ref{lem:pau_ell_hyp}; and, if both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
+The other implication follows by a deep result of Parry~\cite{Par91:Translation}. It is straightforward to show that the condition in Equation~\ref{eq:maxcondition_tree} implies the Culler-Morgan axioms assumed in the main characterization theorem of Parry, and, hence, it also
+characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
-
-In fact, using a result by Parry~\cite{Par91:Translation}, it is straightforward to show that these relations characterize translation lengths of actions on real trees among all class invariant symmetric functionals.
 
 \DPTtodo[inline]{Somewhere in this section, explain that for any
   action on an $\bbR$-tree and any $g,h$, among the three numbers
@@ -68,8 +73,8 @@ We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial
 
 An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{enumerate}
-\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$ (equivalently $G$ fixes an end of $T$ ~\cite[Theorem~2.2, Corollary~2.3]{CM87:GroupActions}).
-\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$ (equivalently $G$ fixes a line of $T$ inverting orientation~\cite[Theorem~2.4]{CM87:GroupActions}).
+\item Fixed end: $\| \cdot \|$ trivial on $[G,G]$ (equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2, Corollary~2.3]{CM87:GroupActions}).
+\item Dihedral: $\| \cdot \|$ non-trivial on $[G,G]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$ (equivalently $\Gamma$ fixes a line of $T$ inverting orientation~\cite[Theorem~2.4]{CM87:GroupActions}).
 \item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{enumerate}
 
@@ -447,16 +452,16 @@ Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyp
 By Lemma~\ref{lem:parallel-incoherent}, $T_{ghg^{-1}}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|$, and we
-are done. Suppose $T_{ghg^{-1}}$ and $T_{h}$ do not intersect. Then by
+are done. The only remaining option is that $T_{ghg^{-1}}$ and $T_{h}$ do not intersect. Then by
 Lemma~\ref{lem:foundation_trees} (2), we get
 \begin{equation}
-\| (gh)(hg)^{-1}\| = \| (ghg^{-1})h^{-1} \| = \| (ghg^{-1})h \| >2\|h\|>0
+\| (gh)(hg)^{-1}\| = \| (ghg^{-1})h^{-1} \| = \| (ghg^{-1})h \| >2\|h\|>0.
 \label{eq:intermediate0}
 \end{equation}
 Also, since $\| (gh)(g^{-1}h)^{-1}\| = \|(gh)(h^{-1}g)\| = \|g^2\| =0$, it follows $gh, g^{-1}h$ overlap coherently.
 Hence, by Lemma~\ref{lem:foundation_trees}
 \begin{equation}
-  \|(gh)(g^{-1}h)\| = \| gh\| +\| gh^{-1}\|=2\|gh\|.
+  \|(gh)(g^{-1}h)\| = \| gh\| +\| gh^{-1}\|=2\|gh\|,
 \label{eq:intermediate}
 \end{equation}
 where we used $\|gh\| = \| gh^{-1}\|$ by Lemma~\ref{lem:pau_ell_hyp}\ref{item:ell-hyp-disjoint} since $T_g \cap T_h = \emptyset$, in the last equality.
