@@ -19,7 +19,7 @@ In particular, note that arcs are non-empty, any two points are connected by a u
 An equivalent way to characterize real trees is as geodesic metric space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}: for any four-tuple of points $x,y,z,w \in X$, we have
 \[
 d(x,z) + d(y,w) = \max \{ d(x,y) + d(z,w), d(x,z) + d(y,w) \}.
-\] \DMGtodo{added this to motivate the max condition}
+\]
 A \emph{ray} in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
 the ray \emph{emanates} from $p$. The \emph{space of ends} of a metric space $T$ is the limit of the inverse system $\pi_0(T-B)$ where
 $B$ ranges over the closed and bounded subsets of $T$. Let $p$ a be a fixed point of $T$. For every point of the limit there is a ray emanating from $p$,
@@ -44,7 +44,7 @@ case we call $T_g$ the \emph{axis} of $g$.
 The translation lengths of any action $\Gamma \acts T$ can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition. 
 Even though we will not use it in the proofs, it is helpful to keep it in mind.
 
-\begin{lemma} \DMGtodo{this is the max appears twice condition, phrased as a characterization}
+\begin{lemma}
 Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ be a conjugacy class invariant function.
 Then $f$ is the translation length function of
 an action $\Gamma \acts T$ on a real tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
@@ -55,18 +55,18 @@ an action $\Gamma \acts T$ on a real tree if and only if for any pair $g,h \in \
 \label{fact:max_twice}
 \end{lemma}
 \begin{proof}
-The fact that the translation length of an action $\Gamma \acts T$ satisfies the condition in Equation~\ref{eq:maxcondition_tree} follows from more precise relations developed in~\cite{CM87:GroupActions,Pa89:Paulin1989TheGT}, which we will write as a sequence of lemmata below. Specifically, for hyperbolic pairs $(g,h)$, it follows from~Lemma~\ref{lem:foundation_trees}; if $g$ is elliptic and $h$ hyperbolic, by Lemma~\ref{lem:pau_ell_hyp}; and, if both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
+The fact that the translation length of an action $\Gamma \acts T$
+satisfies the condition in \eqref{eq:maxcondition_tree} follows from
+more precise relations developed
+in~\cite{CM87:GroupActions,Pa89:Paulin1989TheGT}, which we will write
+as a sequence of lemmas below. Specifically, for hyperbolic pairs
+$(g,h)$, it follows from~Lemma~\ref{lem:foundation_trees}; if $g$ is
+elliptic and $h$ hyperbolic, by Lemma~\ref{lem:pau_ell_hyp}; and, if
+both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
+
 The other implication follows by a deep result of Parry~\cite{Par91:Translation}. It is straightforward to show that the condition in Equation~\ref{eq:maxcondition_tree} implies the Culler-Morgan axioms assumed in the main characterization theorem of Parry, and, hence, it also
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
-
-\DPTtodo[inline]{Somewhere in this section, explain that for any
-  action on an $\bbR$-tree and any $g,h$, among the three numbers
-  $\norm{gh}$, $\norm{gH}$, and $\norm{g} + \norm{h}$, the maximum
-  occurs twice. (I think this characterizes $\bbR$-tree actions?) We
-  don't use it directly, instead using the more precise versions in
-  Lemmas 10.5, 10.7, and 10.8, but it's helpful background of what we
-  need to prove}
 
 We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
 We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
@@ -185,14 +185,12 @@ We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
     \label{lem:powers_intersect}
 \end{lemma}
 
-Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Fact~\ref{fact:max_twice}--- that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice--- more apparent. \DMGtodo{added this last sentence}
+Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Fact~\ref{fact:max_twice}---that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---more apparent.
 \begin{lemma}
 Suppose $g$ is elliptic and $h$ is hyperbolic.
 \begin{enumerate}
 \item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
   Moreover:
-  \DPTtodo{The logic here isn't quite clear without a reminder that we
-    have the max-occurs-twice property. Reformatted a little}
 \begin{itemize}
 \item $T_h$ and $T_{ghg^{-1}}$ overlap in a point or coherently iff
 \[
@@ -335,18 +333,11 @@ Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis intersection
 Note that, in light of Fact~\ref{fact:max_twice}, it suffices to prove smoothing, i.e., that the multicurve with the crossing to be smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises in---realizes one of
 the translation lengths appearing in the maximum of the three.
 In practice, in the proof below we will verify max-smoothing directly.
-\DMGtodo{added this}
-
-\DPTtodo[inline]{Cite fact of max occurring twice. In light of that
-  fact, we need to prove smoothing, i.e., that whichever of $[gh]$,
-  $[gH]$, and $[g][h]$ has a crossing is one of the two appearing in
-  the maximum. Maybe also ref discussion of max-smoothing in the intro}
 
 There is one particular fact that we will use multiple times in
 different cases, so we pull it out as a lemma in advance. This lemma
 is the key place where we invoke irreducibility.
 
-\DPTtodo{Pulled out this lemma as discussed}
 \begin{lemma}\label{lem:parallel-incoherent}
   Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis
   intersection. Then, for $g,h \in \pi_1(S)$, it cannot happen that
@@ -524,8 +515,7 @@ The converse is also true: if $\pi_1(S) \acts T$ does not preserve axis intersec
 
 We now show that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
 
-\begin{lemma}\DMGtodo{this lemma has been moved up, and combined with another argument. The current argument consolidates the two arguments.}
-
+\begin{lemma}
 Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$ with translation length $\| \cdot \|$.
 If  $(\Gamma, T)$ is reducible, then:
 
@@ -586,7 +576,11 @@ $\pi_1(S) \acts T$ is irreducible and preserves axis intersection if and only if
 \end{theorem}
 \begin{proof}
 One implication follows from the proof of Theorem~\ref{thm:small}.
-In the other direction, it follows by Proposition~\ref{prop:preserves_axis} that $\pi_1(S) \acts T$ preserves axis intersection. Finally, it cannot be reducible since otherwise it would have hyperbolic pairs with (unbounded) incoherent overlap, by Lemma~\ref{lem:red_not_smoothing}. \DMGtodo{the lemma that has been edited justifies the last sentence}
+In the other direction, it follows by
+Proposition~\ref{prop:preserves_axis} that $\pi_1(S) \acts T$
+preserves axis intersection. Finally, it cannot be reducible since
+otherwise it would have hyperbolic pairs with (unbounded) incoherent
+overlap, by Lemma~\ref{lem:red_not_smoothing}.
 \end{proof}
 
 Now we prove Theorem~\ref{mainthm:skora}.
