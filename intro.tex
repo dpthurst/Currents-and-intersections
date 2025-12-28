@@ -152,15 +152,37 @@ These results generalize both of Luo's results on characterizing which functions
 
 We give a new characterization of actions of surface groups on $\mathbb{R}$-trees dual to measured laminations. In turn, we give a new and concise proof of a classical result by Skora~\cite{Sko90:GeometricAction}.
 
-If $\Gamma$ is a finitely generated group acting on $T$ by isometries, an isometry $g$ of $T$ either has no fixed points and an invariant axis in $T_g \subset T$ (\emph{hyperbolic}), or it has fixed points (\emph{elliptic})--see,~\cite[1.3]{CM87:GroupActions}. Such an action is \emph{irreducible} if the subset of ends of $T$ fixed by all of $\Gamma$ is empty (see Section~\ref{sec:skora} for definitions).
-We say that the action is \emph{minimal} if the only invariant non-degenerate subtree is $T$ itself. 
-Finally, if two hyperbolic isometries have axes intersecting in a non-degenerate arc, we say they \emph{overlap incoherently} if the isometries translate in opposite directions on the overlap.
+\DPTtodo{Rewordings throughout this section}
+If $\Gamma$ is a finitely-generated group acting on $T$ by isometries,
+an isometry $g$ of $T$ either has fixed points (\emph{elliptic}) or
+has no fixed points and translates an invariant
+axis in $T_g \subset T$ by a definite length $\ell(g)$
+(\emph{hyperbolic})---see,~\cite[1.3]{CM87:GroupActions}. Such an
+action
+is \emph{irreducible} if the $T$ has no ends fixed by all of
+$\Gamma$ (see Section~\ref{sec:skora}).
+We say that the action is \emph{minimal} if the only invariant
+\DPTtodo{Have not defined ``degenerate'', but would you really call
+ the action minimal if there is a global fixed point?}
+non-degenerate subtree is $T$ itself.
 
-
-If $\Gamma=\pi_1(S)$ for a closed orientable hyperbolic surface $\Sigma$, we say the action \emph{preserves axis intersection} if every pair of isometries of the surface $g, h \in \Gamma$ with transversely intersecting axes in $\wt{\Sigma}$, and acting hyperbolically on $T$, have intersecting axes in the tree.
-An example of such an action is an $\mathbb{R}$-tree $T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which, roughly speaking, is obtained by taking the Hausdorff quotient of $\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by considering the measure of all geodesic transverse to the hyperbolic segment between the points $x, y \in \wt{\Sigma}$.
+If $\Gamma=\pi_1(S)$ for a closed orientable hyperbolic surface
+$\Sigma$, we say the action \emph{preserves axis intersection} if, for
+every $g, h \in \Gamma$ that act hyperbolically on $T$ and have
+hyperbolic axes $\ora{g},\ora{h}$ crossing in $\wt{\Sigma}$, then their axes
+$T_g,T_h$ in $T$ also intersect.
+An example of such an action is the action on an $\mathbb{R}$-tree
+$T_{\lambda}$ \emph{dual to a measured lamination} $\lambda$, which,
+roughly speaking, is obtained by taking the Hausdorff quotient of
+$\wt{\Sigma}$ with the pseudo-metric $d_{\lambda}(x,y)$ obtained by
+considering the $\lambda$-measure of the geodesics transverse to the hyperbolic
+segment between $x, y \in \wt{\Sigma}$.
 
 We prove the following equivalences.
+\DPTtodo{moved this def}
+Here, if two hyperbolic isometries of $T$ have axes intersecting in a
+non-degenerate arc, we say they \emph{overlap incoherently} if the
+isometries translate in opposite directions on the overlap.
 
 \begin{mainthm}
 Let $\pi_1(S) \acts T$ be a minimal action on an $\mathbb{R}$-tree.
@@ -179,18 +201,43 @@ The following are equivalent:
     \label{eq:small_conn}  \quad \ell(ab) &= \max \{ \ell(a) + \ell(b), \ell(aB)\}.
   \end{align}
 \end{enumerate}
-\item $\pi_1(S) \acts T$ does not have any parallel pair $(a,b)$ of hyperbolic isometries in the disk that overlap incoherently in $T$.\DMGtodo{added this characterization}
+\item $\pi_1(S) \acts T$ does not have any parallel pair $(a,b)$ of hyperbolic isometries in the disk that overlap incoherently in $T$.
 \end{enumerate}
 \label{mainthm:skora}
 \end{mainthm}
 
-The equivalence between (A) and (C) follows by the first part of Theorem~\ref{mainthm:apps}. In Theorem~\ref{thm:small}, we prove that (B) implies (D), and that (D) implies (C). The fact that (C) implies (B) follows from previous work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our arguments give a new proof of the equivalence between (A) an (B), which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. We show that (D) implies (C) in Theorem~\ref{thm:axis_incoherent_characterization}.
+\DPTtodo{Where is (D) implies (C) proved? The statement of Thm
+  \ref{thm:small} just says (A) implies (B), no mention of (D)}
+The equivalence between (A) and (C) follows by the first part of
+Theorem~\ref{mainthm:apps}. In Theorem~\ref{thm:small}, we prove that
+(B) implies (D), and that (D) implies (C). The fact that (C) implies
+(B) follows from previous work of
+Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our
+arguments give a new proof of the equivalence between (A) and (B),
+which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. We
+show that (D) implies (C) in
+Theorem~\ref{thm:axis_incoherent_characterization}.
 
-Skora also showed~\cite{Sk96:Splittings} that this condition is equivalent to the action of $\Gamma$ on $T$ being minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs are cyclic.
+Skora later showed~\cite{Sk96:Splittings} that
+\DPTtodo{Which of these 4 conditions?}
+this condition is equivalent to the action of $\pi_1(S)$ on $T$ being
+minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs
+are cyclic.
 
-Culler-Morgan~\cite{CM87:GroupActions} give axioms for translation lengths $\Gamma$-acted $\mathbb{R}$-trees which, by a result of Walter Parry~\cite{Par91:Translation}, characterize conjugacy class invariant functions $f \colon \Gamma \to \mathbb{R}$ (where $\Gamma$ is any finitely generated group) arising as translation lengths of $\Gamma$-invariant $\mathbb{R}$-trees.
+\DPTtodo[inline]{Edited, but not sure the expositional role of this paragraph
+  or from what's written what CM did vs Parry}
+In the more general case of finitely-generated groups,
+Culler-Morgan~\cite{CM87:GroupActions} give axioms for the translation
+lengths of the action of $\Gamma$ on an $\mathbb{R}$-tree which, by a result of
+Parry~\cite{Par91:Translation}, characterize conjugacy class invariant
+functions $f \colon \Gamma \to \mathbb{R}$ arising as translation lengths of
+$\Gamma$-invariant $\mathbb{R}$-trees.
 
-From this perspective, Theorem~\ref{thm:intersect} pushes further Parry's result when $\Gamma=\pi_1(S)$ by giving a set of axioms fully characterizing which  of those translation lengths correspond to \emph{small} $\Gamma$-invariant $\mathbb{R}$-trees or, equivalently, are dual to a measured lamination.
+From this perspective, Theorem~\ref{thm:intersect} pushes further
+Parry's characterization when $\Gamma=\pi_1(S)$ by giving a set of
+axioms fully characterizing which of those translation lengths
+correspond to \emph{small} $\Gamma$-invariant $\mathbb{R}$-trees or,
+equivalently, are dual to a measured lamination.
 
 It would be interesting to give similar conditions characterizing 
 small actions of a non-elementary hyperbolic group $\Gamma$. 
