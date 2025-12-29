@@ -164,8 +164,8 @@ $\Gamma$ (see Section~\ref{sec:skora}).
 We say that the action is \emph{minimal} if the only invariant
 \DPTtodo{Have not defined ``degenerate'', but would you really call
  the action minimal if there is a global fixed point?}
-non-degenerate subtree is $T$ itself.
-
+non-empty subtree is $T$ itself.
+\DMGtodo{the way I wrote the definition of minimal was wrong, you're right: instead of non-degenerate it should say non-empty}
 If $\Gamma=\pi_1(S)$ for a closed orientable hyperbolic surface
 $\Sigma$, we say the action \emph{preserves axis intersection} if, for
 every $g, h \in \Gamma$ that act hyperbolically on $T$ and have
@@ -208,9 +208,10 @@ The following are equivalent:
 
 \DPTtodo{Where is (D) implies (C) proved? The statement of Thm
   \ref{thm:small} just says (A) implies (B), no mention of (D)}
+  \DMGtodo{you're right, (D) implies (C) is proved in another result, as mentioned a few lines below, so I removed that.}
 The equivalence between (A) and (C) follows by the first part of
 Theorem~\ref{mainthm:apps}. In Theorem~\ref{thm:small}, we prove that
-(B) implies (D), and that (D) implies (C). The fact that (C) implies
+(B) implies (D). The fact that (C) implies
 (B) follows from previous work of
 Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our
 arguments give a new proof of the equivalence between (A) and (B),
@@ -220,28 +221,29 @@ Theorem~\ref{thm:axis_incoherent_characterization}.
 
 Skora later showed~\cite{Sk96:Splittings} that
 \DPTtodo{Which of these 4 conditions?}
-this condition is equivalent to the action of $\pi_1(S)$ on $T$ being
+\DMGtodo{I was now explicit about what condition}
+an action $\pi_1(S)\acts T$ being dual to a measured lamination is equivalent to the action of $\pi_1(S)$ on $T$ being
 minimal and \emph{small}, i.e. the stabilizers of non-degenerate arcs
 are cyclic.
 
 \DPTtodo[inline]{Edited, but not sure the expositional role of this paragraph
   or from what's written what CM did vs Parry}
+  \DMGtodo[inline]{CM came up with the conjectural axioms characterizing translation lengths of real trees (among conjugacy class invariant functions on $\Gamma$), and showed they were necessary conditions. Parry proved those conjectural axioms were indeed sufficient. My goal in this paragraph was to say: Parry gave a list of axioms characterizing which curve functionals are dual to actions on real trees. We give a list of axioms characterizing which curve functionals are dual to those actions on real trees corresponding to measured laminations: that is, we pin down the necessary refinement of the axioms by Parry to obtain measured laminations. Edited it a bit, but does it make sense?  }
 In the more general case of finitely-generated groups,
-Culler-Morgan~\cite{CM87:GroupActions} give axioms for the translation
-lengths of the action of $\Gamma$ on an $\mathbb{R}$-tree which, by a result of
-Parry~\cite{Par91:Translation}, characterize conjugacy class invariant
+Culler-Morgan~\cite{CM87:GroupActions} stated a list of axioms satisfied by the translation
+lengths of actions of $\Gamma$ on an $\mathbb{R}$-tree. 
+Parry~\cite{Par91:Translation} showed those axioms, in fact, characterize conjugacy class invariant
 functions $f \colon \Gamma \to \mathbb{R}$ arising as translation lengths of
-$\Gamma$-invariant $\mathbb{R}$-trees.
+$\Gamma$-actions on $\mathbb{R}$-trees.
 
-From this perspective, Theorem~\ref{thm:intersect} pushes further
+From this perspective, our Theorem~\ref{thm:intersect} pushes further
 Parry's characterization when $\Gamma=\pi_1(S)$ by giving a set of
 axioms fully characterizing which of those translation lengths
-correspond to \emph{small} $\Gamma$-invariant $\mathbb{R}$-trees or,
+correspond to \emph{small} $\Gamma$-actions on $\mathbb{R}$-trees or,
 equivalently, are dual to a measured lamination.
 
 \DPTtodo{Make this a formal Question or Problem?}
-It would be interesting to give similar conditions characterizing 
-small actions of a non-elementary hyperbolic group $\Gamma$. 
+\DMGtodo{moved the question to further questions, generalizations, Question~\ref{qu:generalize_intersections}} 
 
 \subsection{Generalized cross-ratios}
 
