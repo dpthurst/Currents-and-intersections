@@ -1,13 +1,13 @@
 \section{Asymmetric intersection number and non-examples}
 \label{sec:asymmetric}
 One might wonder whether Theorem~\ref{thm:intersect} applies to
-\emph{asymmetric} currents and an asymmetric notion of intersection.
+\emph{oriented} currents with an appropriate asymmetric notion of intersection.
 Indeed, up to Proposition~\ref{prop:recoverintersection}, we managed
 to construct a geodesic current~$\mu_f$ associated to a
 not-necessarily-symmetric curve functional~$f$. One could hope that
 (asymmetric) intersections with $\mu_f$ recover $f$ in the more
 general context. In this section, we dash this hope: there are
-asymmetric curve functionals satisfying smoothing and additivity that
+asymmetric curve functionals satisfying oriented \DMGtodo{added oriented here, I think we need it?} smoothing and additivity that
 are not realized as asymmetric intersection numbers with any oriented
 geodesic currents.
 
@@ -58,7 +58,7 @@ from intersection numbers. First consider the flat unpunctured torus,
 and, consider the functional $f$ on given by word-length with respect
 to a monoid generating set corresponding to an oriented triangle. With
 respect to standard generators $a,b$ with $[a,b] = e$, we consider the
-three (monoid) generators $a$, $b$, and $c = a^{-1}b^{-1}$. Word length with
+three (monoid) generators $a$, $b$, and $c = a^{-1}b^{-1}$. Word length with \DMGtodo{why is it clear that this satisfies oriented smoothing?}
 respect to this generating set behaves like this:
 \[
   \resizebox{50mm}{!}{\svgfig{length_asymmetric}}
@@ -96,10 +96,9 @@ can see by example in Figure~\ref{fig:shortcurves}.
 
  The corresponding lifts of geodesics intersect the edges of the triangulations, which we orient. If we note the asymmetric intersection number of these geodesics as we develop the torus further and further, which corresponds to taking more powers of the curve, and keep track of the right-handed intersections, we obtain the diagrams of asymmetric intersections for each curve, color coded in Figure~\ref{fig:shortcurves}. We observe that counting right-handed crossings corresponds to taking the maximum of the algebraic intersection number, a linear function on simple curves, with 0. 
 
-It is easy to upgrade this example to one living on a genus~$2$
+It is easy to upgrade this example to one living on a genus~$2$ \DMGtodo{if we upgrade to genus 2 surface, we then need to check oriented smoothing for all closed curves: even if we checked smoothing for simple closed curves of the tori that is not enough.}
 surface (so hyperbolic and in the context of this paper.) For
-instance, you can divide the genus~$2$ surface into two perforated
-tori, consider monoid generators $a,b,c$ on the right-hand torus as
+instance, one can divide the genus~$2$ surface into two holed-tori, consider monoid generators $a,b,c$ on the right-hand torus as
 above, considered as edges with very long length in an embedded
 directed graph, and supplement them with (short) monoid generators on
 the left-hand torus.
