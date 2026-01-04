@@ -192,7 +192,7 @@ $\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \ca
 \item \label{item:tree-parallel}(Parallel axes) $T_g \cap T_h =\emptyset$ iff
 $\|gh\| = \| gH\| = \|  g \| + \|h \| + 2d(T_g,T_h),$
 as shown in Figure~\ref{fig:trees_disjoint}.
-In this case, $T_{gh}, T_h$ overlap in a segment of positive length and
+In this case, $T_{gh}, T_g$ overlap in a segment of positive length and
 $T_{gh},T_{hg}$ overlap incoherently on a segment of length
 $d(T_g, T_h)$.
 \end{enumerate}
@@ -224,7 +224,7 @@ The proof of the translation length equalities and inequalities of (1)
 and~(2),
 as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$
 in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions}.
-The remark of part (2) about $T_{gh}, T_h$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
+The remark of part (2) about $T_{gh}, T_g$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
 
@@ -268,16 +268,25 @@ In this case
 \begin{proof}
 The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. 
 \end{proof}
-\begin{lemma}[{\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}}]
+\begin{lemma}
   If $g,h$ are both elliptic, we have $\|gh\|>0$ if and only if
   $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$,
   the shortest connecting arc between $T_g$ and $T_h$ is contained in
   $T_{gh}$.
 \label{lem:pau_two_ell}
 \end{lemma}
+\begin{proof}
+The statement is contained in~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}, except the equality $\|gh\|=\|gH\|$, which we outline here. If $T_g \cap T_h \neq \emptyset$, then $\|gh\|=\|gH\|=0$. Otherwise, let $S=[x,y]$ denote the minimal segment connecting $T_g$ and $T_h$.
+Let $[x,z]=g S \cap S$, which is a segment fixed by $g$.
+We have
+\[
+\|hg\| = d(z, hg z) = d(z,h(z)) = d(z,hg^{-1}(z))=\|hg^{-1}\|,
+\]
+where the last inequality is because $T_g=T_{g^{-1}}$.
+\end{proof}
 \DPTtodo[inline]{In this two-elliptic case, we need $\|gH\|=\|gh\|$ as well for
   the max-twice statement. Surely this is easy}
-
+\DMGtodo{yes, it is easy, in fact, it was proved below in one of the subcases of the main theorem. Moved the proof here, since it doesn't use anything about the axis in the disk.}
 Finally, the following result will be useful.
 
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
@@ -545,13 +554,7 @@ $T_g$ to $T_h$, and are incoherent on that arc.
 This is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-Then it suffices to show that $\| gh\| = \| gh^{-1}\|$. Let $S=[x,y]$ denote the segment connecting $T_g$ and $T_h$.
-Let $[x,z]=g S \cap S$, which is a segment fixed by $g$.
-We have
-\[
-\|hg\| = d(z, hg z) = d(z,h(z)) = d(z,hg^{-1}(z))=\|hg^{-1}\|,
-\]
-where the last inequality is because $T_g=T_{g^{-1}}$.
+It follows from the fact that, by Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gh^{-1}\|$.
 \end{proof}
 
 \begin{remark}
