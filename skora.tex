@@ -2,49 +2,75 @@
 \label{sec:skora}
 
 
-As a final application of Theorem~\ref{thm:intersect}, we give a new
+As a final application of Theorem~\ref{thm:intersect}, we prove
+Theorem~\ref{mainthm:skora},
+giving a new
 characterization of small actions of surface groups on
-$\mathbb{R}$-trees, and in turn we reprove a classical theorem of
-Skora~\cite{Sko90:GeometricAction}.
+$\mathbb{R}$-trees and reproving a classical theorem of
+ Skora~\cite{Sko90:GeometricAction}.
 
 \subsection{Finitely generated groups acting on real trees} \hspace{1cm} \\
 
-\textbf{Real trees} We start by recalling some basic notions of real trees.
-An \emph{$\mathbb{R}$-tree} is a non-empty metric space $T$ such that for
+\textbf{Real trees.}
+A \emph{real tree} or \emph{$\mathbb{R}$-tree} is a non-empty metric space $T$ such that for
 all $x,y \in T$, the intersection of all connected subsets containing
 both $x$ and $y$ is isometric to the interval $[0, d(x, y)]$.  This
 intersection is denoted
-$[x, y]$, and called an \emph{arc} connecting $x$ and $y$.
-In particular, note that arcs are non-empty, any two points are connected by a unique arc. When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
-An equivalent way to characterize real trees is as geodesic metric space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}: for any four-tuple of points $x,y,z,w \in X$, we have
+$[x, y]$, and called the \emph{arc} connecting $x$ and $y$.
+When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it is \emph{non-degenerate}.
+An equivalent way to characterize real trees is as geodesic metric
+space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}:
+for any four-tuple of points $x,y,z,w \in X$,
+\DPTtodo{Corrected this condition}
+the maximum among the following three quantities appears (at least) twice:
 \[
-d(x,z) + d(y,w) = \max \{ d(x,y) + d(z,w), d(x,z) + d(y,w) \}.
+d(x,z) + d(y,w), \quad d(x,y) + d(z,w), \quad d(x,z) + d(y,w).
 \]
-A \emph{ray} in a real tree is the image of an isometric embedding of the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
-the ray \emph{emanates} from $p$. The \emph{space of ends} of a metric space $T$ is the limit of the inverse system $\pi_0(T-B)$ where
-$B$ ranges over the closed and bounded subsets of $T$. Let $p$ a be a fixed point of $T$. For every point of the limit there is a ray emanating from $p$,
-and a cofinal sequence of components of the complement of closed and bounded sets that represent the limit point, such that every
-point in the sequence meets the ray, and this ray is uniquely determined. Hence, there is a one-to-one correspondence with rays of $T$ emanating from $p$ and ends
-of $T$. Given two distinct ends of $T$, the corresponding rays meet in an interval with $p$ as endpoint. The union of these two rays minus
-the interior of their intersection is a line in $T$. Conversely, given any line in $T$, the two oppositely oriented rays emanating from any point
-in the line determine two distinct ends of the tree, and these ends do not depend on the choice of point. We will say this line \emph{joins} the two ends.
-By the definition of tree, there is only one line connecting any pair of ends.
+A \emph{ray} in a real tree is the image of an isometric embedding of
+the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
+the ray \emph{emanates} from $p$. The \emph{space of ends} of a metric
+space $T$ is the limit of the inverse system $\pi_0(T-B)$ where $B$
+ranges over the closed and bounded subsets of $T$. Fix a point $p$ in
+an $\bbR$-tree $T$. For every end of~$T$, there is a unique
+ray
+emanating from $p$ that meets every component of the inverse system
+corresponding to the end.
+Hence, there is a one-to-one correspondence between
+rays emanating from $p$ and ends of $T$. Given two distinct
+ends of $T$, the corresponding rays meet in an interval with $p$ as
+endpoint. The union of these two rays minus the interior of their
+intersection is a \emph{line} in $T$. Conversely, given any line in $T$, the
+two oppositely oriented rays emanating from any point in the line
+determine two distinct ends of the tree, and these ends do not depend
+on the choice of point. We will say this line \emph{joins} the two
+ends. By the definition of tree, there is exactly one line connecting
+any two distinct ends.
 
 
-\textbf{Actions on real trees} If $\Gamma$ is a finitely generated group, a $\Gamma$-tree is an $\mathbb{R}$-tree together with a group action $\Gamma \acts T$ by isometries.
+\textbf{Actions on real trees.} If $\Gamma$ is a finitely generated
+group, a
+\DPTtodo{``$\Gamma$-tree'' seems like a good term, perhaps we should
+  use it more. On the other hand, it conflicts slightly with $\Lambda$-trees}
+\emph{$\Gamma$-tree} is an $\mathbb{R}$-tree~$T$ together with a group
+action $\Gamma \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
-Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$ be the \emph{characteristic set} of $g$ which is a closed, non-empty subtree of $T$ invariant under the action of $g$.
-If $g$ is elliptic, then $\| g \| =0$. The converse is also true;
-see~\cite[Section~1.3]{CM87:GroupActions}. In this case, $T_g$ is the
-set of fixed points of~$g$.
+Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and
+let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$ be the
+\emph{characteristic set} of~$g$; this is a closed, non-empty subtree
+of $T$ invariant under the action of $g$.
+If $g$ is elliptic, then $\| g \| =0$, and $T_g$ is the
+set of fixed points of~$g$. The converse is also true: if $\norm{g} =
+0$, then $g$ has fixed points \cite[Section~1.3]{CM87:GroupActions}.
+
 If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the
-real line and $g$ translates along $T_g$ by distance $\| g\|$; in this
+real line, and $g$ translates along $T_g$ by distance $\| g\|$; in this
 case we call $T_g$ the \emph{axis} of $g$.
 
 The translation lengths of any action $\Gamma \acts T$ can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition. 
 Even though we will not use it in the proofs, it is helpful to keep it in mind.
 
-\begin{lemma}
+\begin{proposition}
+\label{prop:max_twice}
 Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ be a conjugacy class invariant function.
 Then $f$ is the translation length function of
 an action $\Gamma \acts T$ on a real tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
@@ -52,8 +78,7 @@ an action $\Gamma \acts T$ on a real tree if and only if for any pair $g,h \in \
 \|g\|+\|h\|, \quad \|gh\|, \quad \|gH\|.
 \label{eq:maxcondition_tree}
 \end{equation}
-\label{fact:max_twice}
-\end{lemma}
+\end{proposition}
 \begin{proof}
 The fact that the translation length of an action $\Gamma \acts T$
 satisfies the condition in \eqref{eq:maxcondition_tree} follows from
@@ -64,6 +89,10 @@ $(g,h)$, it follows from~Lemma~\ref{lem:foundation_trees}; if $g$ is
 elliptic and $h$ hyperbolic, by Lemma~\ref{lem:pau_ell_hyp}; and, if
 both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
 
+\DPTtodo[inline]{Edit this to make it clear that Culler-Morgan asked if their
+  conditions were sufficient, which was then proved by Parry. Maybe
+  also editorialize that our conditions are simpler. Some of this is
+  in intro}
 The other implication follows by a deep result of Parry~\cite{Par91:Translation}. It is straightforward to show that the condition in Equation~\ref{eq:maxcondition_tree} implies the Culler-Morgan axioms assumed in the main characterization theorem of Parry, and, hence, it also
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
@@ -72,11 +101,16 @@ We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degen
 We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
 
 An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
-\begin{enumerate}
-\item Fixed end: $\| \cdot \|$ trivial on $[\Gamma,\Gamma]$ (equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2, Corollary~2.3]{CM87:GroupActions}).
-\item Dihedral: $\| \cdot \|$ non-trivial on $[\Gamma,\Gamma]$, but $\| [g,h] \|=0$ for all $g,h$ hyperbolic in $T$ (equivalently $\Gamma$ fixes a line of $T$ inverting orientation~\cite[Theorem~2.4]{CM87:GroupActions}).
-\item Irreducible:  $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
-\end{enumerate}
+\begin{itemize}
+\item \textit{Fixed end:} $\| \cdot \|$ is trivial on $[\Gamma,\Gamma]$;
+  equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2,
+  Corollary~2.3]{CM87:GroupActions}.
+\item \textit{Dihedral:} $\| \cdot \|$ is non-trivial on $[\Gamma,\Gamma]$, but
+  $\| [g,h] \|=0$ for all $g,h$ hyperbolic in~$T$; equivalently
+  $\Gamma$ fixes a line of $T$ inverting
+  orientation~\cite[Theorem~2.4]{CM87:GroupActions}.
+\item \textit{Irreducible:} $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
+\end{itemize}
 
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
@@ -99,30 +133,39 @@ Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{
 The following appears in~\cite[Remark~3.3]{CM87:GroupActions}.
 
 \begin{lemma}
-If $g,h$ are hyperbolic and $T_g,T_h$ meets in an arc of positive but finite length, then there exist integers $m>0$ and $n$ so that $g^m$ and $h^n$
-form a good pair of isometries. Here the sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
-to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
+If $g,h$ are hyperbolic and $T_g,T_h$ meet in an arc of positive but
+finite length, then there exist integers $m>0$ and $n$ so that $g^m$
+and~$h^n$
+form a good pair of isometries.
 \label{lem:powers_goodpair}
 \end{lemma}
 
-Another way to characterize irreducibility is in terms of the existence of a pair of hyperbolic elements with bounded overlap, as shown in~\cite[Theorem~2.7]{CM87:GroupActions}
-\begin{lemma}
+\begin{proof}[Proof sketch]
+   The sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
+to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
+\end{proof}
+
+\DPTtodo{Edited, made this next statement a Theorem following
+  Culler-Morgan. But it doesn't seem we cite this?}
+We next give some conditions for (ir)reducibility. First we have a
+characterization in terms of hyperbolic elements with bounded overlap.
+\begin{theorem}[{\cite[Theorem~2.7]{CM87:GroupActions}}]
 A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ is bounded.
-\label{lem:char_irred_noninter}
-\end{lemma}
+\label{thm:char_irred_noninter}
+\end{theorem}
 
-A useful criterion for irreducibility in terms of the existence of a hyperbolic element with non-empty intersection with all other hyperbolic elements is the following (see~\cite[Lemma~2.1]{CM87:GroupActions}).
-
-\begin{lemma}
+We also have a useful one-sided criterion.
+\begin{lemma}[{\cite[Lemma~2.1]{CM87:GroupActions}}]
     If there exists a hyperbolic element $g \in \Gamma$ so that for all hyperbolic $h \in \Gamma$ we have  $T_g \cap T_h \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
 \end{lemma}
 
-Finally, good pairs provide pairs of non-intersecting hyperbolic elements.
+To get started here, good pairs provide pairs of non-intersecting
+hyperbolic elements.
 
-\DPTtodo{We stopped using the capital letter notation for some reason here}
+\DPTtodo{Switching to using the capital letter notation more}
 \begin{lemma}
-  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gh^{-1}$ and $h^{-1}g$ are hyperbolic isometries of $T$ and $T_{gh^{-1}}, T_{h^{-1}g}$ do not intersect.
+  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gH$ and $Hg$ are hyperbolic isometries of $T$ and $T_{gH}, T_{Hg}$ do not intersect.
     \label{lem:oppgoodpair}
 \end{lemma}
 \begin{proof}
@@ -136,56 +179,66 @@ Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
 We have the following cases.
 \begin{enumerate}[(\arabic*)]
 \item \label{item:tree-intersect}(Intersecting axes)
-$T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gh^{-1}\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
+$T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gH\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
 Moreover,
-\begin{itemize}
-\item $T_g \cap T_h = \{ p \}$ iff $\|gh\| = \| gh^{-1}\| = \|  g \| + \|h \|$;
+\begin{enumerate}
+\item $T_g \cap T_h$ is a single point iff $\|gh\| = \| gH\| = \|  g \| + \|h \|$;
 \item $g,h$ overlap coherently iff 
-$\| g \| + \| h \| = \| gh \| >\|gh^{-1}\|$. In this case, $T_g \cap T_h = T_{gh} \cap T_{hg}$;
+$\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case, $T_g \cap
+T_h = T_{gh} \cap T_{hg}$; and
 \item $g,h$ overlap incoherently iff 
-$\| g \| + \| h \| = \| gh^{-1} \| >\|gh\|$. In this case $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
-\end{itemize}
-\item \label{item:tree-parallel}(Parallel axes) $T_g \cap T_h =\emptyset$ if and only if
-\[
-\|gh\| = \| gh^{-1}\| = \|  g \| + \|h \| + 2d(T_g,T_h),
-\]
+$\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
+\end{enumerate}
+\item \label{item:tree-parallel}(Parallel axes) $T_g \cap T_h =\emptyset$ iff
+$\|gh\| = \| gH\| = \|  g \| + \|h \| + 2d(T_g,T_h),$
 as shown in Figure~\ref{fig:trees_disjoint}.
-Then, $T_{gh}, T_h$ overlap in a segment of positive length and, if $T_g \cap T_h =\emptyset$, then  $T_{gh}$ and $T_{hg}$ overlap incoherently on a segment of length $d(T_g, T_h)$.
+In this case, $T_{gh}, T_h$ overlap in a segment of positive length and
+$T_{gh},T_{hg}$ overlap incoherently on a segment of length
+$d(T_g, T_h)$.
 \end{enumerate}
 \label{lem:foundation_trees}
 \end{lemma}
-
-
-
-\begin{figure}[ht]
-     \centering
-\resizebox{80mm}{!}{\svgfignormal{trees_disjoint}}
-    \caption{Relative position of disjoint axes in a tree}\label{fig:trees_disjoint}
-\end{figure}
+\DPTtodo[inline]{Swapped the figures to match order in text. Fig.
+  \ref{fig:trees_intersection}: maybe show $T_{gH}$ and $T_{Hg}$ to
+  illustrate Lemma~\ref{lem:oppgoodpair} as well, though that also
+  assumes the good pair property.
+  Fig.~\ref{fig:trees_disjoint}: \textbullet\ The figure
+  doesn't actually show $T_{gh}$ and $T_h$ intersecting. (Maybe the
+  text should be edited instead?) \textbullet\ Put $T_{gh}$ in color.
+  \textbullet\ Use the capital letter notation}
 
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{trees_intersection}}
     \caption{Relative position of intersecting axes in a tree}\label{fig:trees_intersection}
 \end{figure}
+\begin{figure}[ht]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{trees_disjoint}}
+    \caption{Relative position of disjoint axes in a tree}\label{fig:trees_disjoint}
+\end{figure}
+
 
 \begin{proof}
-The proof of the translation length equalities and inequalities of (1) and (2), as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$ in case (1) is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions}.   
+The proof of the translation length equalities and inequalities of (1)
+and~(2),
+as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$
+in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions}.
 The remark of part (2) about $T_{gh}, T_h$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
 
 We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
 
-\begin{lemma}
-    If $g,h$ are hyperbolic and satisfy $\|g\| + \|h\| = \|gh\|$, then for every positive integers $m,n$, we have
+\begin{lemma}    \label{lem:powers_intersect}
+    If $g,h$ are hyperbolic and satisfy $\|g\| + \|h\| = \|gh\|$ (or
+    equivalently, overlap coherently), then for every positive integers $m,n$, we have
     \[
     \|g^m h^n\| = m \| g \| + n \|h \|.
     \]
-    \label{lem:powers_intersect}
 \end{lemma}
 
-Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Fact~\ref{fact:max_twice}---that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---more apparent.
+Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Proposition~\ref{prop:max_twice}---that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---more apparent.
 \begin{lemma}
 Suppose $g$ is elliptic and $h$ is hyperbolic.
 \begin{enumerate}
@@ -205,7 +258,7 @@ Suppose $g$ is elliptic and $h$ is hyperbolic.
 \item\label{item:ell-hyp-disjoint} $T_g \cap T_h = \emptyset$ iff $\|gh\|>\|h\|$.  
 In this case
 \[
-\|gh\| = \|gh^{-1}\| = \|h\| + 2\,d(T_g, T_h).
+\|gh\| = \|gH\| = \|h\| + 2\,d(T_g, T_h).
 \]
 
 \end{enumerate}
@@ -222,10 +275,12 @@ The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989Th
   $T_{gh}$.
 \label{lem:pau_two_ell}
 \end{lemma}
+\DPTtodo[inline]{In this two-elliptic case, we need $\|gH\|=\|gh\|$ as well for
+  the max-twice statement. Surely this is easy}
 
-Finally, the following result, proven in~\cite[Fait, page 854]{Gui05:Coeur} will be useful.
+Finally, the following result will be useful.
 
-\begin{lemma}
+\begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
 Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
 $T_{ghg^{-1}}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
 in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
@@ -233,8 +288,19 @@ and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
-In general, if the translation lengths of two $\Gamma \acts T$ actions are equal, that does not necessarily imply the trees are equivariantly isometric, but it is true if the action is minimal irreducible or dihedral by~\cite[Theorem~3.7]{CM87:GroupActions}.
-In fact, if the length is non-zero, and the action is assumed irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a unique minimal invariant subtree. The length function for the restriction to this minimal invariant subtree is equal to the length function of $\Gamma  \acts T$. Hence, without loss of generality, one can always restrict to the action on the minimal invariant subtree without changing the length functional. In what follows, we will always consider minimal actions.
+In general, if the translation lengths of two $\Gamma$-trees are
+equal, that does not necessarily imply the trees are equivariantly
+isometric, but it is true if the action is minimal and either
+irreducible or dihedral \cite[Theorem~3.7]{CM87:GroupActions}.
+\DPTtodo{Clarified the logic}
+In fact, if the length is non-zero, and the action is assumed
+irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a
+unique minimal invariant subtree. The length function for the
+restriction to this minimal invariant subtree is equal to the length
+function of the original tree. Hence, without loss of generality, one
+can always restrict to the action on the minimal invariant subtree
+without changing the length functional. In what follows, we will
+always consider minimal actions.
 
 \subsection{Surface group actions on real trees}
 
@@ -332,7 +398,7 @@ intersection. Then $\| \cdot \|$ satisfies max-smoothing.
 \label{fig:main_k_crossing}
 \end{figure}
 
-Note that, in light of Fact~\ref{fact:max_twice}, it suffices to prove smoothing, i.e., that the multicurve with the crossing to be smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises in---realizes one of
+Note that, in light of Proposition~\ref{prop:max_twice}, it suffices to prove smoothing, i.e., that the multicurve with the crossing to be smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises in---realizes one of
 the translation lengths appearing in the maximum of the three.
 In practice, in the proof below we will verify max-smoothing directly.
 
