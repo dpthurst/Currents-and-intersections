@@ -51,6 +51,7 @@ any two distinct ends.
 group, a
 \DPTtodo{``$\Gamma$-tree'' seems like a good term, perhaps we should
   use it more. On the other hand, it conflicts slightly with $\Lambda$-trees}
+ 
 \emph{$\Gamma$-tree} is an $\mathbb{R}$-tree~$T$ together with a group
 action $\Gamma \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
@@ -66,21 +67,21 @@ If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the
 real line, and $g$ translates along $T_g$ by distance $\| g\|$; in this
 case we call $T_g$ the \emph{axis} of $g$.
 
-The translation lengths of any action $\Gamma \acts T$ can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition. 
+The translation lengths of any $\Gamma$-tree can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition. 
 Even though we will not use it in the proofs, it is helpful to keep it in mind.
 
 \begin{proposition}
 \label{prop:max_twice}
 Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ be a conjugacy class invariant function.
 Then $f$ is the translation length function of
-an action $\Gamma \acts T$ on a real tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
+a $\Gamma$-tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
 \begin{equation}
 \|g\|+\|h\|, \quad \|gh\|, \quad \|gH\|.
 \label{eq:maxcondition_tree}
 \end{equation}
 \end{proposition}
 \begin{proof}
-The fact that the translation length of an action $\Gamma \acts T$
+The fact that the translation length of a $\Gamma$-tree
 satisfies the condition in \eqref{eq:maxcondition_tree} follows from
 more precise relations developed
 in~\cite{CM87:GroupActions,Pa89:Paulin1989TheGT}, which we will write
@@ -97,10 +98,10 @@ The other implication follows by a deep result of Parry~\cite{Par91:Translation}
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
 
-We say that $\Gamma \acts T$ is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
-We say that $\Gamma \acts T$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
+We say that a $\Gamma$-tree is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
+We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
 
-An action of a finitely generated group $\Gamma$ on an $\mathbb{R}$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
+A $\Gamma$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{itemize}
 \item \textit{Fixed end:} $\| \cdot \|$ is trivial on $[\Gamma,\Gamma]$;
   equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2,
@@ -147,14 +148,17 @@ to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \c
 
 \DPTtodo{Edited, made this next statement a Theorem following
   Culler-Morgan. But it doesn't seem we cite this?}
-We next give some conditions for (ir)reducibility. First we have a
+  \DMGtodo{we don't cite it, so I commented it out, and edited it accordingly}
+We next give a useful one-sided criterion for reducibility in terms of the existence of a hyperbolic element intersecting all other hyperbolic elements.
+
+\begin{comment} First we have a
 characterization in terms of hyperbolic elements with bounded overlap.
 \begin{theorem}[{\cite[Theorem~2.7]{CM87:GroupActions}}]
-A finitely generated group $\Gamma$  acting on a real tree $T$ is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ is bounded.
+A $\Gamma$-tree is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ is bounded.
 \label{thm:char_irred_noninter}
 \end{theorem}
+\end{comment}
 
-We also have a useful one-sided criterion.
 \begin{lemma}[{\cite[Lemma~2.1]{CM87:GroupActions}}]
     If there exists a hyperbolic element $g \in \Gamma$ so that for all hyperbolic $h \in \Gamma$ we have  $T_g \cap T_h \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
@@ -165,12 +169,18 @@ hyperbolic elements.
 
 \DPTtodo{Switching to using the capital letter notation more}
 \begin{lemma}
-  For any action of a finitely-generated group on an $\bbR$-tree, if $g,h$ form a good pair, then $gH$ and $Hg$ are hyperbolic isometries of $T$ and $T_{gH}, T_{Hg}$ do not intersect.
+  For any $\Gamma$-tree, if $g,h$ form a good pair, then $gH$ and $Hg$ are hyperbolic isometries of $T$ and $T_{gH}, T_{Hg}$ do not intersect.
     \label{lem:oppgoodpair}
 \end{lemma}
 \begin{proof}
    This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
 \end{proof}
+
+\begin{figure}[ht]
+     \centering
+\resizebox{80mm}{!}{\svgfignormal{trees_goodpair}}
+    \caption{Axes of $gH, Hg$ in $T$ are disjoint when $g,h$ form a good pair}\label{fig:trees_goodpair}
+\end{figure}
 
 We will consider the following classical results about the relative position of axes in a real tree. Figure~\ref{fig:trees_disjoint} and Figure~\ref{fig:trees_intersection} correspond to Fig.~2 and Fig.~3, respectively, in~\cite{Pa89:Paulin1989TheGT}. Similar less detailed diagrams appear in~\cite{CM87:GroupActions}.
 
@@ -207,6 +217,9 @@ $d(T_g, T_h)$.
   text should be edited instead?) \textbullet\ Put $T_{gh}$ in color.
   \textbullet\ Use the capital letter notation}
 
+  \DMGtodo[inline]{I made a separate figure to illustrate the axes $T_{gH}$ and $T_{Hg}$ in a good pair for Lemma~\ref{lem:oppgoodpair} \textbullet\ For the figure of $T_{gh}$ and $T_h$ intersecting, I edited the text changing $T_h$ by $T_g$ \textbullet\ I put $T_{gh}$ in color.
+  \textbullet\ I changed the inverses to capital notation}
+
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{trees_intersection}}
@@ -231,7 +244,8 @@ The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the par
 We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
 
 \begin{lemma}    \label{lem:powers_intersect}
-    If $g,h$ are hyperbolic and satisfy $\|g\| + \|h\| = \|gh\|$ (or
+    Let $T$ be an arbitrary $\Gamma$-tree.
+    If $g,h$ are hyperbolic isometries of $T$ and satisfy $\|g\| + \|h\| = \|gh\|$ (or
     equivalently, overlap coherently), then for every positive integers $m,n$, we have
     \[
     \|g^m h^n\| = m \| g \| + n \|h \|.
@@ -239,8 +253,7 @@ We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
 \end{lemma}
 
 Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Proposition~\ref{prop:max_twice}---that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---more apparent.
-\begin{lemma}
-Suppose $g$ is elliptic and $h$ is hyperbolic.
+\begin{lemma} Let $T$ be an arbitrary $\Gamma$-tree. Suppose $g$ is an elliptic isometry and $h$ is hyperbolic.
 \begin{enumerate}
 \item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
   Moreover:
@@ -269,7 +282,7 @@ In this case
 The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. 
 \end{proof}
 \begin{lemma}
-  If $g,h$ are both elliptic, we have $\|gh\|>0$ if and only if
+  Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic isometries, we have $\|gh\|>0$ if and only if
   $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$,
   the shortest connecting arc between $T_g$ and $T_h$ is contained in
   $T_{gh}$.
@@ -290,6 +303,7 @@ where the last inequality is because $T_g=T_{g^{-1}}$.
 Finally, the following result will be useful.
 
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
+Let $T$ be an arbitrary $\Gamma$-tree.
 Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
 $T_{ghg^{-1}}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
 in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
@@ -313,11 +327,10 @@ always consider minimal actions.
 
 \subsection{Surface group actions on real trees}
 
-In this section, we assume $\Gamma = \pi_1(S)$.
-
-It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $\Gamma$-action on $\mathbb{R}$-tree (see~\cite{MO84:Valuations}).
+In this section, we assume $\Gamma = \pi_1(S)$, and let an \emph{$S$-tree} $(S,T)$ denote a $\pi_1(S)$-tree $T$.
+It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $S$-tree (see~\cite{MO84:Valuations}).
 It follows from the construction that the translation length on $T_\lambda$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
-Given a minimal action of a surface group $\Gamma$ on an $\mathbb{R}$-tree $T$, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to} $\lambda$.
+Given a minimal $S$-tree $(S,T)$, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $(S,T)$ is \emph{dual to} $\lambda$.
 
 If $\Sigma$ is a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements. 
 
@@ -329,17 +342,17 @@ Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a 
 
 Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
 Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
-However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal action $\Gamma \acts T$ of a surface group $\Gamma$ is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
+However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal $S$-tree is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
 
 The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorems~\ref{thm:intersect} and \ref{mainthm:apps}~\ref{item:lam-char} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}.
 
-In~\cite{Sk96:Splittings},  Skora showed that $\Gamma \acts T$ is dual to a measured lamination if and only if the action is small. 
+In~\cite{Sk96:Splittings},  Skora showed that an $S$-tree is dual to a measured lamination if and only if the action is small. 
 It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
 We start by proving a geometric criterion of reducibility for axis preserving actions.
 
 \begin{lemma}
-Suppose $\pi_1(S) \acts T$ preserves axis intersection. If $\pi_1(S) \acts T$ is irreducible, then for all hyperbolic elements $g \in \pi_1(S)$, there exist a hyperbolic element $h \in \pi_1(S)$ R-crossing $g$ so that $T_g \cap T_h$ is bounded.
+Suppose that an $S$-tree preserves axis intersection. If the $S$-tree is irreducible, then for all hyperbolic elements $g \in \pi_1(S)$, there exist a hyperbolic element $h \in \pi_1(S)$ R-crossing $g$ so that $T_g \cap T_h$ is bounded.
 \label{lem:if_unbounded_then_reducible}
 \end{lemma}
 \begin{proof}
@@ -351,7 +364,7 @@ Suppose $\pi_1(S) \acts T$ preserves axis intersection. If $\pi_1(S) \acts T$ is
     
     By Lemma~\ref{lem:CM_red_criterion}, it suffices to show that for any hyperbolic element $h$ so that $(\ora{g},\ora{h})$ are parallel (or anti-parallel), $T_g \cap T_h \neq \emptyset$.
 
-    For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since $\pi_1(S) \acts T$ preserves axis, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
+    For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. Since the $S$-tree preserves axis intersection, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
       
     By Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
     $\ora{h^nk^n}$ R-crosses $\ora{g}$. See
@@ -384,7 +397,7 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
 \end{comment}
 
 \begin{theorem}
-Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis
+Consider an irreducible $S$-tree that preserves axis
 intersection. Then $\| \cdot \|$ satisfies max-smoothing.
 \label{thm:small}
 \end{theorem}
@@ -416,7 +429,7 @@ different cases, so we pull it out as a lemma in advance. This lemma
 is the key place where we invoke irreducibility.
 
 \begin{lemma}\label{lem:parallel-incoherent}
-  Let $\pi_1(S) \acts T$ be an irreducible action that preserves axis
+  Let $T$ be an irreducible $S$-tree that preserves axis
   intersection. Then, for $g,h \in \pi_1(S)$, it cannot happen that
   $(\ora{g},\ora{h})$ are parallel, and $T_g,T_h$ intersect incoherently.
 \end{lemma}
@@ -559,7 +572,7 @@ It follows from the fact that, by Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gh^
 
 \begin{remark}
 One could hope to bypass cases 2 and 3 by approximating by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
-Indeed, note that if an action $\Gamma \acts T$ satisfies that all elements
+Indeed, note that if a $\Gamma$-tree satisfies that all elements
 act hyperbolically, it follows the action is free.
 Observe that, in particular, 
 minimal free actions $\operatorname{Free}(\Gamma, T)$ are small and, in fact, ``very small'', in the sense of Cohen-Lustig~\cite{CL95:Verysmall}, which roughly means that the stabilizers of tripods must be trivial.
@@ -575,13 +588,13 @@ It then follows that very small actions are equal to small actions in this case.
 We follow-up with some consequences of this proof.
 
 \begin{proposition}
-  Let $\mathcal{I}$ denote the set of parallel hyperbolic pairs of isometries with incoherent overlap.
- $\pi_1(S) \acts T$ preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
+  Let $\mathcal{I}$ denote the set of parallel hyperbolic pairs of isometries with incoherent overlap in an $S$-tree.
+ The $S$-tree preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
  \label{prop:preserves_axis}
 \end{proposition}
 \begin{proof}
-The proof of Theorem~\ref{thm:small} shows that if $\pi_1(S) \acts T$ preserves axis intersection, then either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded incoherent overlap.
-The converse is also true: if $\pi_1(S) \acts T$ does not preserve axis intersection, it means there exists a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
+The proof of Theorem~\ref{thm:small} shows that if an $S$-tree preserves axis intersection, then either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded incoherent overlap.
+The converse is also true: if an $S$-tree does not preserve axis intersection, it means there exists a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
 \end{proof}
 
 We now show that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
@@ -642,13 +655,13 @@ this tells us $\| gh \| < \|gh^{-1}\|=\|g\| + \|h\|$, which violates (both orien
 Putting this all together we can give another characterization of small surface actions on real trees.
 
 \begin{theorem}
-$\pi_1(S) \acts T$ is irreducible and preserves axis intersection if and only if no pair of parallel hyperbolic elements $(g,h)$ have incoherent overlap.
+An $S$-tree is irreducible and preserves axis intersection if and only if no pair of parallel hyperbolic elements $(g,h)$ have incoherent overlap.
 \label{thm:axis_incoherent_characterization}
 \end{theorem}
 \begin{proof}
 One implication follows from the proof of Theorem~\ref{thm:small}.
 In the other direction, it follows by
-Proposition~\ref{prop:preserves_axis} that $\pi_1(S) \acts T$
+Proposition~\ref{prop:preserves_axis} that the $S$-tree
 preserves axis intersection. Finally, it cannot be reducible since
 otherwise it would have hyperbolic pairs with (unbounded) incoherent
 overlap, by Lemma~\ref{lem:red_not_smoothing}.

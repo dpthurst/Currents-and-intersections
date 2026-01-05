@@ -54,12 +54,12 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0.92429289,0.43660885){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_g$\end{tabular}}}}%
-    \put(0.89777728,0.26731135){\color[rgb]{0.72941176,0.11764706,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{ghg^{-1}}$\end{tabular}}}}%
-    \put(0.98758274,0.16967401){\color[rgb]{0,0.46666667,0.70980392}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{hgh^{-1}}$\end{tabular}}}}%
-    \put(0.31971119,0.43906421){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{gh}$\end{tabular}}}}%
+    \put(0.89777728,0.26731135){\color[rgb]{0.72941176,0.11764706,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{ghG}$\end{tabular}}}}%
+    \put(0.98758274,0.16967401){\color[rgb]{0,0.46666667,0.70980392}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{hgH}$\end{tabular}}}}%
+    \put(0.31971119,0.43906421){\color[rgb]{0.75294118,0.12156863,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{gh}$\end{tabular}}}}%
     \put(0.33305435,0.11957359){\color[rgb]{0.2627451,0.74901961,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{hg}$\end{tabular}}}}%
     \put(0.90194447,0.02247177){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_h$\end{tabular}}}}%
-    \put(0.06663661,0.31237107){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$d(T_g, T_h)$\end{tabular}}}}%
+    \put(0.08007294,0.30341352){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$d(T_g, T_h)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{trees_disjoint.pdf}}%
     \put(0.2045013,0.53275314){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
     \put(0.40604597,0.53424601){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g(x)$\end{tabular}}}}%

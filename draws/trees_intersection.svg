@@ -18,6 +18,44 @@
      id="defs2">
     <marker
        style="overflow:visible"
+       id="marker5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path4" />
+    </marker>
+    <marker
+       style="overflow:visible"
        id="Triangle"
        refX="0"
        refY="0"
@@ -188,8 +226,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="139.64286"
-     inkscape:cy="111.96429"
+     inkscape:cx="139.46429"
+     inkscape:cy="112.32143"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -339,12 +377,12 @@
        d="M 91.202733,82.481134 79.957945,66.889617 51.32625,66.795117 c 0,0 -13.512647,17.008929 -12.662207,16.630953"
        id="path1-2" />
     <path
-       style="fill:none;stroke:#43bf9f;stroke-width:0.499999;stroke-dasharray:none;stroke-opacity:1"
-       d="m 43.421442,75.200371 7.370535,-9.449403 28.820686,-10e-7 6.425594,-9.071428 c 3.402616,2.551341 9.355741,6.898068 9.355741,6.898068"
+       style="fill:none;stroke:#43bf9f;stroke-width:0.499999;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5)"
+       d="m 43.421442,75.200371 7.370535,-9.449403 28.820686,-10e-7 6.425594,-9.071428 c 3.402616,2.551341 7.843836,6.047622 7.843836,6.047622"
        id="path2"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#c01f9f;stroke-width:0.499999;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#c01f9f;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4)"
        d="m 43.127198,58.156214 7.370535,9.449403 28.820686,1e-6 5.953124,8.693452"
        id="path2-2"
        sodipodi:nodetypes="cccc" />
