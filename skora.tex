@@ -21,7 +21,6 @@ When an arc is a singleton, we say it is \emph{degenerate}, otherwise we say it 
 An equivalent way to characterize real trees is as geodesic metric
 space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}:
 for any four-tuple of points $x,y,z,w \in X$,
-\DPTtodo{Corrected this condition}
 the maximum among the following three quantities appears (at least) twice:
 \[
 d(x,z) + d(y,w), \quad d(x,y) + d(z,w), \quad d(x,z) + d(y,w).
@@ -49,9 +48,6 @@ any two distinct ends.
 
 \textbf{Actions on real trees.} If $\Gamma$ is a finitely generated
 group, a
-\DPTtodo{``$\Gamma$-tree'' seems like a good term, perhaps we should
-  use it more. On the other hand, it conflicts slightly with $\Lambda$-trees}
- 
 \emph{$\Gamma$-tree} is an $\mathbb{R}$-tree~$T$ together with a group
 action $\Gamma \acts T$ by isometries.
 There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
@@ -146,12 +142,8 @@ form a good pair of isometries.
 to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
 \end{proof}
 
-\DPTtodo{Edited, made this next statement a Theorem following
-  Culler-Morgan. But it doesn't seem we cite this?}
-  \DMGtodo{we don't cite it, so I commented it out, and edited it accordingly}
-We next give a useful one-sided criterion for reducibility in terms of the existence of a hyperbolic element intersecting all other hyperbolic elements.
-
-\begin{comment} First we have a
+\begin{comment}
+  First we have a
 characterization in terms of hyperbolic elements with bounded overlap.
 \begin{theorem}[{\cite[Theorem~2.7]{CM87:GroupActions}}]
 A $\Gamma$-tree is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ is bounded.
@@ -159,6 +151,7 @@ A $\Gamma$-tree is irreducible if and only if there exist hyperbolic elements $g
 \end{theorem}
 \end{comment}
 
+We next give a useful one-sided criterion for reducibility.
 \begin{lemma}[{\cite[Lemma~2.1]{CM87:GroupActions}}]
     If there exists a hyperbolic element $g \in \Gamma$ so that for all hyperbolic $h \in \Gamma$ we have  $T_g \cap T_h \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
@@ -167,7 +160,6 @@ A $\Gamma$-tree is irreducible if and only if there exist hyperbolic elements $g
 To get started here, good pairs provide pairs of non-intersecting
 hyperbolic elements.
 
-\DPTtodo{Switching to using the capital letter notation more}
 \begin{lemma}
   For any $\Gamma$-tree, if $g,h$ form a good pair, then $gH$ and $Hg$ are hyperbolic isometries of $T$ and $T_{gH}, T_{Hg}$ do not intersect.
     \label{lem:oppgoodpair}
@@ -208,17 +200,6 @@ $d(T_g, T_h)$.
 \end{enumerate}
 \label{lem:foundation_trees}
 \end{lemma}
-\DPTtodo[inline]{Swapped the figures to match order in text. Fig.
-  \ref{fig:trees_intersection}: maybe show $T_{gH}$ and $T_{Hg}$ to
-  illustrate Lemma~\ref{lem:oppgoodpair} as well, though that also
-  assumes the good pair property.
-  Fig.~\ref{fig:trees_disjoint}: \textbullet\ The figure
-  doesn't actually show $T_{gh}$ and $T_h$ intersecting. (Maybe the
-  text should be edited instead?) \textbullet\ Put $T_{gh}$ in color.
-  \textbullet\ Use the capital letter notation}
-
-  \DMGtodo[inline]{I made a separate figure to illustrate the axes $T_{gH}$ and $T_{Hg}$ in a good pair for Lemma~\ref{lem:oppgoodpair} \textbullet\ For the figure of $T_{gh}$ and $T_h$ intersecting, I edited the text changing $T_h$ by $T_g$ \textbullet\ I put $T_{gh}$ in color.
-  \textbullet\ I changed the inverses to capital notation}
 
 \begin{figure}[ht]
      \centering
@@ -282,24 +263,34 @@ In this case
 The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. 
 \end{proof}
 \begin{lemma}
-  Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic isometries, we have $\|gh\|>0$ if and only if
+  Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic
+  isometries, we have $\norm{gh} = \norm{gH}$ and $\|gh\|>0$ if and only if
   $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$,
   the shortest connecting arc between $T_g$ and $T_h$ is contained in
   $T_{gh}$.
 \label{lem:pau_two_ell}
 \end{lemma}
 \begin{proof}
-The statement is contained in~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}, except the equality $\|gh\|=\|gH\|$, which we outline here. If $T_g \cap T_h \neq \emptyset$, then $\|gh\|=\|gH\|=0$. Otherwise, let $S=[x,y]$ denote the minimal segment connecting $T_g$ and $T_h$.
-Let $[x,z]=g S \cap S$, which is a segment fixed by $g$.
-We have
+The statement is contained
+in~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}, except the equality
+$\|gh\|=\|gH\|$, which we outline here. If $T_g \cap T_h \neq
+\emptyset$, then $\|gh\|=\|gH\|=0$. Otherwise, let $S=[x,y]$ denote
+the minimal segment connecting $T_g$ and $T_h$; we already know $S
+\subset T_{gh}$ by Paulin's result. Since $T_h = T_H$, we also have $S
+\subset T_{gH}$. We therefore have
 \[
-\|hg\| = d(z, hg z) = d(z,h(z)) = d(z,hg^{-1}(z))=\|hg^{-1}\|,
+  \norm{gh} = d(y,gh(y)) = d(y, g(y)) = d(y, gH(y)) = \norm{gH}.
+  \qedhere
 \]
-where the last inequality is because $T_g=T_{g^{-1}}$.
 \end{proof}
 \DPTtodo[inline]{In this two-elliptic case, we need $\|gH\|=\|gh\|$ as well for
   the max-twice statement. Surely this is easy}
-\DMGtodo{yes, it is easy, in fact, it was proved below in one of the subcases of the main theorem. Moved the proof here, since it doesn't use anything about the axis in the disk.}
+\DMGtodo[inline]{yes, it is easy, in fact, it was proved below in one
+  of the subcases of the main theorem. Moved the proof here, since it
+  doesn't use anything about the axis in the disk.}
+\DPTtodo[inline]{Fixed the logic, I think there were some typos or thinkos, and
+  invoked the known fact that $S \subset T_{gh}$. It
+  remains easy}
 Finally, the following result will be useful.
 
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
