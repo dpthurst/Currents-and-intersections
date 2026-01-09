@@ -94,7 +94,6 @@ The other implication follows by a deep result of Parry~\cite{Par91:Translation}
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
 
-We say that a $\Gamma$-tree is \emph{small} if the stabilizer of any (non-degenerate) arc is (virtually) cyclic.
 We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
 
 A $\Gamma$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
@@ -165,7 +164,8 @@ hyperbolic elements.
     \label{lem:oppgoodpair}
 \end{lemma}
 \begin{proof}
-   This is contained in the proof of~\cite[Lemma~3.4]{CM87:GroupActions}.
+   This is contained in the proof
+   of~\cite[Lemma~3.4]{CM87:GroupActions}. See Figure~\ref{fig:trees_goodpair}.
 \end{proof}
 
 \begin{figure}[ht]
@@ -174,7 +174,8 @@ hyperbolic elements.
     \caption{Axes of $gH, Hg$ in $T$ are disjoint when $g,h$ form a good pair}\label{fig:trees_goodpair}
 \end{figure}
 
-We will consider the following classical results about the relative position of axes in a real tree. Figure~\ref{fig:trees_disjoint} and Figure~\ref{fig:trees_intersection} correspond to Fig.~2 and Fig.~3, respectively, in~\cite{Pa89:Paulin1989TheGT}. Similar less detailed diagrams appear in~\cite{CM87:GroupActions}.
+We have the following classical results about the relative
+position of axes of two hyperbolic elements in a real tree.
 
 \begin{lemma}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
@@ -191,10 +192,11 @@ T_h = T_{gh} \cap T_{hg}$; and
 \item $g,h$ overlap incoherently iff 
 $\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{enumerate}
-\item \label{item:tree-parallel}(Parallel axes) $T_g \cap T_h =\emptyset$ iff
+\item \label{item:tree-disjoint}(Disjoint axes) $T_g \cap T_h =\emptyset$ iff
 $\|gh\| = \| gH\| = \|  g \| + \|h \| + 2d(T_g,T_h),$
 as shown in Figure~\ref{fig:trees_disjoint}.
-In this case, $T_{gh}, T_g$ overlap in a segment of positive length and
+In this case, $T_{gh}, T_g$ overlap \DPTtodo{Added ``coherent'' assertion}coherently
+in a segment of positive length and
 $T_{gh},T_{hg}$ overlap incoherently on a segment of length
 $d(T_g, T_h)$.
 \end{enumerate}
@@ -204,12 +206,15 @@ $d(T_g, T_h)$.
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{trees_intersection}}
-    \caption{Relative position of intersecting axes in a tree}\label{fig:trees_intersection}
+    \caption{Relative position of intersecting axes in a tree, from
+      \cite[Fig.\ 3]{Pa89:Paulin1989TheGT}. See also \cite{CM87:GroupActions}.}
+    \label{fig:trees_intersection}
 \end{figure}
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{trees_disjoint}}
-    \caption{Relative position of disjoint axes in a tree}\label{fig:trees_disjoint}
+    \caption{Relative position of disjoint axes in a tree, , from
+      \cite[Fig.\ 2]{Pa89:Paulin1989TheGT}. See also \cite{CM87:GroupActions}.}\label{fig:trees_disjoint}
 \end{figure}
 
 
@@ -217,14 +222,15 @@ $d(T_g, T_h)$.
 The proof of the translation length equalities and inequalities of (1)
 and~(2),
 as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$
-in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions}.
+in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions};
+case~(1c) is parallel.
 The remark of part (2) about $T_{gh}, T_g$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
 
-We will also use the following, found in~\cite[Lemma~6.2]{CM87:GroupActions}
+We will also use the following.
 
-\begin{lemma}    \label{lem:powers_intersect}
+\begin{lemma}[{\cite[Lemma~6.2]{CM87:GroupActions}}]\label{lem:powers_intersect}
     Let $T$ be an arbitrary $\Gamma$-tree.
     If $g,h$ are hyperbolic isometries of $T$ and satisfy $\|g\| + \|h\| = \|gh\|$ (or
     equivalently, overlap coherently), then for every positive integers $m,n$, we have
@@ -318,27 +324,57 @@ always consider minimal actions.
 
 \subsection{Surface group actions on real trees}
 
-In this section, we assume $\Gamma = \pi_1(S)$, and let an \emph{$S$-tree} $(S,T)$ denote a $\pi_1(S)$-tree $T$.
+In this section, we assume $\Gamma = \pi_1(S)$. An \emph{$S$-tree} is
+a $\bbR$-tree $T$ with an action of $\pi_1(S)$.
 It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $S$-tree (see~\cite{MO84:Valuations}).
-It follows from the construction that the translation length on $T_\lambda$ of $g \in \pi_1(S)$, $\| g \|$, is equal to $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a closed curve associated to $g$.
-Given a minimal $S$-tree $(S,T)$, if there is a measured lamination $\lambda$ and $\Gamma$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $(S,T)$ is \emph{dual to} $\lambda$.
+It follows from the construction that the translation length of
+$g \in\pi_1(S)$  on
+$T_\lambda$ is equal to
+$i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a
+closed curve associated to $g$.
+Given a minimal $S$-tree $T$, if there is a measured lamination $\lambda$ and $\pi_1(S)$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to}~$\lambda$.
 
-If $\Sigma$ is a hyperbolic structure on $S$, let $\ora{g}, \ora{h}$ be the hyperbolic axes corresponding to these elements. 
+Recall that for $\Sigma$ a fixed hyperbolic structure on $S$, the
+corresponding hyperbolic axis in $\wt{\Sigma}$ is denoted $\ora{g}$.
 
-Morgan-Otal~\cite{MO93:RelativeGrowths} first showed that a minimal action of a surface group is dual to a measured lamination if and only if 
-\begin{enumerate}
-    \item it is small,
-    \item it \emph{preserves axis intersection}: for any pair $g,h \in \Gamma$ acting as hyperbolic isometries on $T$, we have $T_g \cap T_h \neq \emptyset$ whenever $\ora{g}, \ora{h}$ cross.
-\end{enumerate}
+\DPTtodo{Stated all the conditions first. Moved the def of ``small''
+  here, even though it's not about surface groups}
+In checking whether a minimal $S$-tree is dual to a measured
+lamination, there are several relevant conditions on the action:
+\begin{itemize}
+\item The action is irreducible, not dihedral or fixed end.
+\item The action is \emph{small}: the stabilizer of any
+  (non-degenerate) arc is virtually cyclic.
+\item The action  \emph{preserves axis intersection}: for any pair
+  $g,h \in \pi_1(S)$ acting hyperbolically on $T$, if
+  $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$.
+\end{itemize}
+Culler-Morgan showed that actions dual to measured laminations
+satisfy all of these\DPTtodo{right?}~\cite{CM87:GroupActions}.
+Morgan-Otal~\cite{MO93:RelativeGrowths} showed that if an action
+is small and preserves axis intersection, it is dual to a measured
+lamination, and asked if the ``small'' condition could be dropped.
 
-Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
-Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
-However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal $S$-tree is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
+In a followup, Skora noted that dihedral
+actions give counter examples (preserving axis intersection while not
+being dual to a measured lamination), but showed that irreducible
+actions that preserve axis intersection are dual to measured
+laminations~\cite{Sko90:GeometricAction}.
 
-The main result of this section will be showing that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from our main Theorems~\ref{thm:intersect} and \ref{mainthm:apps}~\ref{item:lam-char} and classical considerations from actions on real trees in~\cite{CM87:GroupActions} and~\cite{Pa89:Paulin1989TheGT}.
+% Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
+% Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
+% However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal $S$-tree is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
 
-In~\cite{Sk96:Splittings},  Skora showed that an $S$-tree is dual to a measured lamination if and only if the action is small. 
-It follows from this that the action being small is equivalent to it being irreducible and preserving axis intersection.
+In this section, we prove Theorem~\ref{mainthm:skora}, in particular showing
+that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from
+our Theorems~\ref{thm:intersect} and
+\ref{mainthm:apps}\ref{item:lam-char} and classical considerations
+from actions on real trees.
+
+We note that in a later followup,  Skora showed that an $S$-tree with
+a small action is also
+dual to a measured lamination~\cite{Sk96:Splittings}.
+It follows that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
 We start by proving a geometric criterion of reducibility for axis preserving actions.
 
@@ -502,7 +538,7 @@ Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~
 $\ora{g},\ora{h}$ are parallel and $T_g \cap T_h$ is empty or a single point.
 \end{subcase}
 Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$
-by~Lemma~\ref{lem:foundation_trees}\ref{item:tree-parallel}.
+by~Lemma~\ref{lem:foundation_trees}\ref{item:tree-disjoint}.
 \begin{subcase}
 $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
 \end{subcase}

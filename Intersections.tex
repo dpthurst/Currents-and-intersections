@@ -247,6 +247,8 @@
 % This suppresses warnings when multiple PDFS are included on a single page
 \pdfsuppresswarningpagegroup=1
 
+\includeonly{skora}
+
 \begin{document}
 \title{The intersection dual of geodesic currents}
 \author[Martínez-Granado]{Dídac Martínez-Granado}
@@ -269,23 +271,23 @@ smoothing property and is additive under disjoint union of curves, where the dua
 \maketitle
 
 
-\input{intro}
-\input{functionals}
-\input{background}
-\input{crossing}
-\input{smoothing-types}
-\input{boxes}
-\input{construct-current}
-\input{special-classes}
-\input{crossratios}
-\input{skora}
+\include{intro}
+\include{functionals}
+\include{background}
+\include{crossing}
+\include{smoothing-types}
+\include{boxes}
+\include{construct-current}
+\include{special-classes}
+\include{crossratios}
+\include{skora}
 % \nocite{*}
 \appendix
-\input{luo}
-\input{hyppar}
-\input{asymmetric}
-\input{necessary}
-%\input{maxsmoothing}
+\include{luo}
+\include{hyppar}
+\include{asymmetric}
+\include{necessary}
+%\include{maxsmoothing}
 \DPTtodo{arXiv references are futzed}
 \DMGtodo{fixed arxiv links by inserting a doi entry pointing to the arxiv paper}
 \bibliographystyle{hamsalpha}
