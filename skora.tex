@@ -550,7 +550,7 @@ In the action on~$T$, $g,h$ are hyperbolic.
 \begin{subcase}
 $\ora{g}, \ora{h}$ cross.
 \end{subcase}
-Then $T_g \cap T_h \neq \emptyset$, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
+Then $T_g \cap T_h \neq \emptyset$ by axis intersection preservation, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
 \begin{subcase}
 $\ora{g},\ora{h}$ are parallel and $T_g \cap T_h$ is empty or a single point.
 \end{subcase}
@@ -565,6 +565,11 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
       $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap incoherently.
     \end{subcase}
     This cannot happen by Lemma~\ref{lem:parallel-incoherent}.
+
+\begin{subcase}
+  $\ora{g},\ora{h}$ are anti-parallel.
+\end{subcase}
+Replace $h$ by $H$ to reduce to the above parallel cases.
 
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
