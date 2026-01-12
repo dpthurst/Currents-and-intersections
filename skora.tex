@@ -348,10 +348,12 @@ lamination, there are several relevant conditions on the action:
 \item The action  \emph{preserves axis intersection}: for any pair
   $g,h \in \pi_1(S)$ acting hyperbolically on $T$, if
   $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$.
+\item The action  \emph{preserves characteristic intersection}: for any pair
+  $g,h \in \pi_1(S)$, if
+  $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$.
 \end{itemize}
-Culler-Morgan showed that actions dual to measured laminations
-satisfy all of these\DPTtodo{right?}~\cite{CM87:GroupActions}.
-Morgan-Otal~\cite{MO93:RelativeGrowths} showed that if an action
+Morgan-Otal~\cite{MO93:RelativeGrowths} showed that actions dual to measured laminations
+satisfy the first three. They also showed that if an action
 is small and preserves axis intersection, it is dual to a measured
 lamination, and asked if the ``small'' condition could be dropped.
 
@@ -375,6 +377,12 @@ We note that in a later followup,  Skora showed that an $S$-tree with
 a small action is also
 dual to a measured lamination~\cite{Sk96:Splittings}.
 It follows that the action being small is equivalent to it being irreducible and preserving axis intersection.
+
+In turn, we will also give two new characterizations of $S$-trees with small actions: \DMGtodo{added this}
+\begin{itemize}
+\item Irreducible $S$-trees that preserve characteristic intersection
+\item $S$-trees where no parallel pair $(\ora{a},\ora{b})$ has incoherent overlap in the tree.
+\end{itemize}
 
 We start by proving a geometric criterion of reducibility for axis preserving actions.
 
@@ -425,7 +433,11 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
 
 \begin{theorem}
 Consider an irreducible $S$-tree that preserves axis
-intersection. Then $\| \cdot \|$ satisfies max-smoothing.
+intersection. Then:
+\begin{itemize}
+\item it preserves characteristic intersection; \DMGtodo{extracted this conclusion}
+\item and $\| \cdot \|$ satisfies max-smoothing. 
+\end{itemize}
 \label{thm:small}
 \end{theorem}
 
@@ -551,12 +563,13 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
 
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
+  In particular, $ghg^{-1}$ and $h$ act hyperbolically on $T$. \DMGtodo{moved this up, since it will be used in both subcases}
 \end{case}
 \begin{subcase}
 $\ora{g},\ora{h}$ cross.
 \end{subcase}
 \DPTtodo{Read this case again}
-Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel, and $ghg^{-1}$ and $h$ act hyperbolically on $T$.
+Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel.
 By Lemma~\ref{lem:parallel-incoherent}, $T_{ghg^{-1}}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|$, and we
@@ -575,11 +588,12 @@ Hence, by Lemma~\ref{lem:foundation_trees}
 where we used $\|gh\| = \| gh^{-1}\|$ by Lemma~\ref{lem:pau_ell_hyp}\ref{item:ell-hyp-disjoint} since $T_g \cap T_h = \emptyset$, in the last equality.
 Combining  Equation~\ref{eq:intermediate0} and Equation~\ref{eq:intermediate}, it follows that $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
-Then $(\ora{gh}, \ora{h})$ are parallel by
-Lemma~\ref{lem:righthandedfoundation}. Since
-$\|(gh)h^{-1}\| = \|g\|=0$, it follows $gh$, $h$ overlap incoherently, by
-Lemma~\ref{lem:foundation_trees}, and thus, again, by
-Lemma~\ref{lem:parallel-incoherent}, it is a contradiction.
+
+Note that either $(h, \ora{ghG})$ cross or they are anti-pa
+ If $T_{g^nhG^{n}}$ and $T_{h}$ intersect coherently or in a
+point then, by Lemma~\ref{lem:pau_ell_hyp} (1, first item), $\| gh \| = \|h\|$, and max-smoothing follows. If $T_{g^nhG^{n}}$ and $T_{h}$ do not intersect, then $\|g^nh\|=\|g^nH\| > \|h\|$, and we are done.
+Finally, if $T_{g^nhG^{n}}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (1, second item), this is a contradiction by Lemma~\ref{lem:parallel-incoherent} \DMGtodo{had to edit this case}
+
 \begin{case}
   In the action on~$T$, $g,h$ are both elliptic.
 \end{case}
@@ -595,6 +609,9 @@ This is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
 It follows from the fact that, by Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gh^{-1}\|$.
+
+Finally, note that in all the subcases where we assumed $(\ora{g},\ora{h})$ crosses, we concluded that $T_g \cap T_h \neq \emptyset$.
+Hence, we have also shown that an irreducible $S$-tree preserves axis intersection implies it preserves characteristic intersection. \DMGtodo{added this final sentence} 
 \end{proof}
 
 \begin{remark}
@@ -697,10 +714,11 @@ overlap, by Lemma~\ref{lem:red_not_smoothing}.
 Now we prove Theorem~\ref{mainthm:skora}.
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
-(A) is equivalent to (C) is proven by the first part of Theorem~\ref{mainthm:apps}.
-(B) implies (C) is Theorem~\ref{thm:small}.
-(C) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
-Finally, Theorem~\ref{thm:axis_incoherent_characterization} implies (C) is equivalent to (D).
+(A) is equivalent to (D) is proven by the first part of Theorem~\ref{mainthm:apps}.
+(B) implies (D).
+(A) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Thus, we have (B) is equivalent to (D).
+Theorem~\ref{thm:axis_incoherent_characterization} implies (C) is equivalent to (E).
+(C) implies (B) is trivial, and (B) implies (C) is Theorem~\ref{thm:small}. Hence, (C) is equivalent to (B). All the equivalences follow.
 \end{proof}
 
 
