@@ -248,7 +248,7 @@ Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one 
 \item $T_h$ and $T_{ghg^{-1}}$ overlap in a point or coherently iff
   \DPTtodo{Suspicious of strict inequality in intersect in pt case}
 \[
-\norm{gh} = \norm{h} > \norm{gH}.
+\norm{gh} = \norm{h} \geq \norm{gH}.
 \]
 \item $T_h$ and $T_{ghg^{-1}}$ overlap incoherently iff
 \[
@@ -256,7 +256,7 @@ Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one 
 \]
 \end{enumerate}
 
-\item\label{item:ell-hyp-disjoint} $T_g \cap T_h = \emptyset$ iff $\|gh\|>\|h\|$.  
+\item\label{item:ell-hyp-disjoint} $T_g \cap T_h = \emptyset$ iff $\|gh\|>\|h\|$. Then, $T_{ghG} \cap T_h = \emptyset$.
 In this case
 \[
 \|gh\| = \|gH\| = \|h\| + 2\,d(T_g, T_h).
@@ -267,7 +267,7 @@ In this case
 \end{lemma}
 
 \begin{proof}
-The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. 
+The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. The fact that $T_{ghG} \cap T_h = \emptyset$ in item (2), follows from~\cite[Fact~1.7]{CM87:GroupActions}.
 \end{proof}
 \begin{lemma}
   Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic
@@ -580,7 +580,7 @@ $\ora{g},\ora{h}$ cross.
 Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel.
 By Lemma~\ref{lem:parallel-incoherent}, $T_{ghg^{-1}}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|$, and we
+point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|\geq \|gH\|$, and we
 are done. The only remaining option is that $T_{ghg^{-1}}$ and $T_{h}$ do not intersect. Then by
 Lemma~\ref{lem:foundation_trees} (2), we get
 \begin{equation}
@@ -597,10 +597,16 @@ where we used $\|gh\| = \| gh^{-1}\|$ by Lemma~\ref{lem:pau_ell_hyp}\ref{item:el
 Combining  Equation~\ref{eq:intermediate0} and Equation~\ref{eq:intermediate}, it follows that $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 
-Note that either $(h, \ora{ghG})$ cross or they are anti-pa
- If $T_{g^nhG^{n}}$ and $T_{h}$ intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp} (1, first item), $\| gh \| = \|h\|$, and max-smoothing follows. If $T_{g^nhG^{n}}$ and $T_{h}$ do not intersect, then $\|g^nh\|=\|g^nH\| > \|h\|$, and we are done.
-Finally, if $T_{g^nhG^{n}}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (1, second item), this is a contradiction by Lemma~\ref{lem:parallel-incoherent} \DMGtodo{had to edit this case}
+If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
+point then, by Lemma~\ref{lem:pau_ell_hyp} (1, first item), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
+If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
+Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (1, second item), $\|gH\| = \|h\| > \|gh\|$ and
+\[
+\|(ghG)h\|>2\|h\| = \|h\| + \|gH\| > \|gh\| + \|gH\|.
+\]
+where the first inequality is because $T_{ghG}$ and $T_{h}$ overlap incoherently.
+Hence, $T_{gh},T_{Gh}$ overlap incoherently.
+However, if $(\ora{g},\ora{h})$ are parallel, $(\ora{gh},\ora{Gh})$ are parallel (by Lemma~\ref{lem:bA_parallel_ba}), hence this is a contradiction by Lemma~\ref{lem:parallel-incoherent}. \DMGtodo{had to edit this case}
 
 \begin{case}
   In the action on~$T$, $g,h$ are both elliptic.
