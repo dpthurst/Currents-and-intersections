@@ -244,8 +244,9 @@ Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one 
 \begin{enumerate}
 \item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
   Moreover:
-\begin{itemize}
+\begin{enumerate}
 \item $T_h$ and $T_{ghg^{-1}}$ overlap in a point or coherently iff
+  \DPTtodo{Suspicious of strict inequality in intersect in pt case}
 \[
 \norm{gh} = \norm{h} > \norm{gH}.
 \]
@@ -253,7 +254,7 @@ Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one 
 \[
 \norm{gH} = \|h\| > \|gh\|
 \]
-\end{itemize}
+\end{enumerate}
 
 \item\label{item:ell-hyp-disjoint} $T_g \cap T_h = \emptyset$ iff $\|gh\|>\|h\|$.  
 In this case
@@ -350,7 +351,8 @@ lamination, there are several relevant conditions on the action:
   $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$.
 \item The action  \emph{preserves characteristic intersection}: for any pair
   $g,h \in \pi_1(S)$, if
-  $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$.
+  $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$. (Note
+  that $g$ and/or $h$ may be elliptic in oction on $T$.)
 \end{itemize}
 Morgan-Otal~\cite{MO93:RelativeGrowths} showed that actions dual to measured laminations
 satisfy the first three. They also showed that if an action
@@ -431,12 +433,14 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
 \end{proof}
 \end{comment}
 
+\DPTtodo{I dislike the proliferation of Theorems; Theorem C seems like
+  it's still the main result of this section.}
 \begin{theorem}
 Consider an irreducible $S$-tree that preserves axis
 intersection. Then:
 \begin{itemize}
-\item it preserves characteristic intersection; \DMGtodo{extracted this conclusion}
-\item and $\| \cdot \|$ satisfies max-smoothing. 
+\item it preserves characteristic intersection; and
+\item $\| \cdot \|$ satisfies max-smoothing. 
 \end{itemize}
 \label{thm:small}
 \end{theorem}
@@ -459,7 +463,11 @@ intersection. Then:
 \label{fig:main_k_crossing}
 \end{figure}
 
-Note that, in light of Proposition~\ref{prop:max_twice}, it suffices to prove smoothing, i.e., that the multicurve with the crossing to be smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises in---realizes one of
+Note that, in light of Proposition~\ref{prop:max_twice}, to prove
+Theorem~\ref{thm:small} it suffices
+to prove smoothing, i.e., that the multicurve with the crossing to be
+smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises
+in---realizes one of
 the translation lengths appearing in the maximum of the three.
 In practice, in the proof below we will verify max-smoothing directly.
 
@@ -470,7 +478,7 @@ is the key place where we invoke irreducibility.
 \begin{lemma}\label{lem:parallel-incoherent}
   Let $T$ be an irreducible $S$-tree that preserves axis
   intersection. Then, for $g,h \in \pi_1(S)$, it cannot happen that
-  $(\ora{g},\ora{h})$ are parallel, and $T_g,T_h$ intersect incoherently.
+  $(\ora{g},\ora{h})$ are parallel while $T_g,T_h$ intersect incoherently.
 \end{lemma}
 
 \begin{proof}
@@ -481,7 +489,7 @@ is the key place where we invoke irreducibility.
     do not intersect. On the other hand, since $\ora{g},\ora{h}$ are
     parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that
     $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of
-    axis implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a
+    axis intersection implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a
     contradiction.
 
     Suppose now the overlap is unbounded and incoherent. We will use
@@ -563,7 +571,7 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
 
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
-  In particular, $ghg^{-1}$ and $h$ act hyperbolically on $T$. \DMGtodo{moved this up, since it will be used in both subcases}
+  In particular, $ghg^{-1}$ and $h$ act hyperbolically on $T$.
 \end{case}
 \begin{subcase}
 $\ora{g},\ora{h}$ cross.
