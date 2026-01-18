@@ -4,11 +4,11 @@
 
 
 
-In this section we state the main technical hypotheses that we require of our curve functionals.
+In this section we state the main technical hypotheses that we require of our curve functionals. 
 
 Then, we discuss how our result fits into our previous work
-in~\cite{MGT21:Smoothings}. In particular we give examples of curve
-functionals and discuss whether they satisfy the hypotheses of our results.
+in~\cite{MGT21:Smoothings}. In particular we give examples and non-examples of curve
+functionals satisfying the hypotheses of Theorem~\ref{thm:intersect}.
 We then turn to further questions motivated by our results.
 
 \subsection{Curve functionals and their properties}
@@ -75,9 +75,11 @@ if it is a self-crossing arising from a power (\emph{power
 say $f$ satisfies a particular type of smoothing property if $f$ is
 non-increasing under such type.
 
-Oriented smoothing and max-smoothing can be phrased more algebraically as
- follows:
-\DMGtodo{added this oriented algebraic version before the unoriented one}
+Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. For $a, b\in \pi_1(S)$, let $[a][b]$ denote the multi-curve $[a] \cup [b]$. 
+
+\begin{lemma} Oriented smoothing and oriented max-smoothing can be phrased equivalently as
+follows. 
+\DMGtodo{added this oriented algebraic version before the unoriented one, and made it into a lemma, so that it is clear that we are claiming an equivalence and not just stating another definition}
 \begin{itemize} \item (oriented disconnected smoothing) For any pair of
   elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have
   \[ f([a] \cup [b]) \geq f([ab]), \]
@@ -93,12 +95,8 @@ Oriented smoothing and max-smoothing can be phrased more algebraically as
   integers $n,m\geq 1$, we have \begin{equation} f([a^{n+m}]) \geq f([a^{ m}]) +
   f([a^{ n}]).\label{eq:power_smoothing}\end{equation}
 \end{itemize}
-
-We emphasize that oriented connected smoothing does not imply oriented disconnected smoothing, or viceversa. 
-For example, the curve functional $f$ assigning to a curve its number of connected components is a curve functional satisfying oriented disconnected smoothing but not oriented connected smoothing. Similarly, the negative of this functional satisfies oriented connected smoothing but not oriented disconnected smoothing. This example is not a stable function, but a bit more work produces examples satisfying additivity and stability while exhibiting exactly one of the smoothing properties. For example, in Lemma~\ref{lem:red_not_smoothing} we give examples of lengths coming from reducible actions of surface groups on real trees, which satisfy disconnected smoothing but not connected smoothing and viceversa. Similarly, in Example~\ref{ex:linEL} we present an additive variation of extremal length that satisfies stability, disconnected smoothing but not connected smoothing. 
-\DMGtodo{this paragraph has been edited and expanded, and added a bit more detail about optimality of conditions}
-One can also find examples of functions satisfying stability, and smoothing but not additivity (such as extremal length, as we will discuss in Example~\ref{ex:linEL}).
-Finally, the proof of Theorem~\ref{thm:intersections_group} shows, in particular, that smoothing  implies stability. 
+\label{lem:oriented_smoothing_lemma_top_alg}
+\end{lemma}
 
 
 \begin{definition}
@@ -132,6 +130,12 @@ Finally, the proof of Theorem~\ref{thm:intersections_group} shows, in particular
        Note that functionals satisfying additivity (Equation~\ref{eq:union-additive}) automatically satisfy homogeneity.
 \end{definition}
 
+We emphasize that oriented connected smoothing does not imply oriented disconnected smoothing, or viceversa. 
+For example, the curve functional $f$ assigning to a curve its number of connected components is a curve functional satisfying oriented disconnected smoothing but not oriented connected smoothing. Similarly, the negative of this functional satisfies oriented connected smoothing but not oriented disconnected smoothing. This example is not a stable function, but a bit more work produces examples satisfying additivity and stability while exhibiting exactly one of the smoothing properties. For example, in Lemma~\ref{lem:red_not_smoothing} we give examples of lengths coming from reducible actions of surface groups on real trees, which satisfy disconnected smoothing but not connected smoothing and viceversa. Similarly, in Example~\ref{ex:linEL} we present an additive variation of extremal length that satisfies stability, disconnected smoothing but not connected smoothing. 
+\DMGtodo{this paragraph has been edited and expanded, and added a bit more detail about optimality of conditions}
+One can also find examples of functions satisfying stability, and smoothing but not additivity (such as extremal length, as we will discuss in Example~\ref{ex:linEL}).
+Finally, the proof of Theorem~\ref{thm:intersections_group} shows, in particular, that smoothing  implies stability. 
+
 There exist slight generalizations of both smothing as well as additivity that have been used in our previous work~\cite{MGT21:Smoothings}.
 
 \begin{definition}
@@ -162,44 +166,54 @@ There exist slight generalizations of both smothing as well as additivity that h
 
 Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
-\begin{definition}
+\begin{definition}[smoothing and max-smoothing]
 Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
-\end{definition}
 If all these inequalities are strengthened to equalities, we will refer to the property as \emph{max-smoothing}.
- Similarly as before, smoothing and max-smoothing can be phrased more algebraically:
+\label{def:smoothing_and_max}
+\end{definition}
 
+ Similarly as before, smoothing and max-smoothing can be phrased more algebraically. 
+ \begin{definition}[smoothing for oriented curve functionals] \DMGtodo{note: this is NOT the same as oriented smoothing}
+ Given an \emph{oriented} curve functional $f \colon \Curves^+(S) \to \mathbb{R}$, we will say it satisfies \emph{smoothing} if it satisfies the following hypotheses:
 \begin{itemize} \item (disconnected smoothing) For any pair of
-  elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have
-  \[ f([a] \cup [b]) \geq \max\{\,f([ab]), f([aB])\,\}; \] if the inequality is
+  elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have 
+  \[ f([a] [b]) \geq \max\{\,f([ab]), f([aB])\,\}; \] if the inequality is
   strengthened to an equality we obtain \emph{disconnected max-smoothing}.
 \item (connected smoothing) for any pair of elements $a,b \in
   \pi_1(S)$ whose hyperbolic axes are parallel, we have
-  \[ f([ab]) \geq \max\{\,f([aB]), f([a] \cup [b])\,\}; \]
+  \[ f([ab]) \geq \max\{\,f([aB]), f([a] [b])\,\}; \]
   if the inequality is
   strengthened to an equality we get \emph{connected max-smoothing}.
-\item (power smoothing) same relation as Equation~\ref{eq:power_smoothing}.
-\end{itemize} \DMGtodo{edited this, since I added the algebraic oriented version before}
+ \item (power smoothing) and for any element $a \in \pi_1(S)$, and any
+  integers $n,m\geq 1$, we have \begin{equation} f([a^{n+m}]) \geq f([a^{ m}]) +
+  f([a^{ n}]).\label{eq:power_smoothing_unoriented}\end{equation}
+\end{itemize}
+\label{def:smoothing_for_oriented}
+\end{definition}\DMGtodo{edited this, since I added the algebraic oriented version before}
+
+Given a curve functional on unoriented multi-curves $f \colon \Curves(S) \to \mathbb{R}$ one can always extend it to a functional on oriented multi-curves by forgetting orientation:
+\[
+f^+(C) \coloneqq f(\overline{C})
+\]
+where $\overline{C}$ denotes the unoriented multi-curve represented by $C$.
+Also, if $f \colon \Curves^+(S) \to \mathbb{R}$ is an orientation invariant oriented curve functional, then it induces a curve functional on unoriented multi-curves $\overline{f} \colon \Curves(S) \to \mathbb{R}$ given by $\bar{f}(\overline{C}) \coloneqq f(C)$--- where $\overline{C}$ denotes the unoriented curve represented by $C$.
+
+\DMGtodo{stated the explicit equivalence}
+\begin{lemma} We have the following equivalences.
+\begin{itemize} \item An unoriented curve functional $f \colon \Curves(S) \to \mathbb{R}$ satisfies smoothing (resp. max-smoothing) according to Def.~\ref{def:smoothing_and_max} if and only if $f^{+}$ satisfies smoothing (resp. max-smoothing) according to Def.~\ref{def:smoothing_for_oriented}.
+\item An oriented curve functional $f \colon \Curves^+(S)\to \mathbb{R}$ which is orientation invariant satisfies smoothing (resp. max-smoothing) according to Def.~\ref{def:smoothing_for_oriented}. if and only if $\overline{f}$ satisfies smoothing (resp. max-smoothing) according to Def.~\ref{def:smoothing_and_max}.
+\end{itemize}
+\label{lem:smoothing_lemma_top_alg}
+\end{lemma}
+
+Similarly, the above equivalences can be stated for quasi-smoothing.
 
 We refer the reader to Section~\ref{subsec:crossings} for precise
-definitions and proofs of equivalence of the algebraic characterization of smoothing. See in particular
+definitions and proofs of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} and~\ref{lem:smoothing_lemma_top_alg}. See in particular
 Proposition~\ref{prop:crossings-triality}.
-
-We can extend this definition for orientation invariant curve functionals on oriented multi-curves.
-If $f \colon \Curves^+(S) \to \mathbb{R}$ is orientation invariant, it induces a curve functional on unoriented multi-curves $\overline{f} \colon \Curves(S) \to \mathbb{R}$.
-
-\begin{definition}
-We say that an orientation invariant curve functional $f$ satisfies \emph{smoothing} if its associated curve functional on unoriented curves $\bar{f}(\overline{C}) \coloneqq f(C)$--- where $\overline{C}$ denotes the unoriented curve represented by $C$--- satisfies smoothing.
-\end{definition}
-
-For an orientation invariant curve functional $f$, we can similarly say $f$ satisfies \emph{quasi-smoothing} if the induced function on unoriented curves satisfies quasi-smoothing with respect to both smoothings (both oriented and unoriented).
-
-\begin{remark}
-Given a curve functional on unoriented multi-curves that satisfies smoothing, one can always extend it to a functional on all oriented curves by just forgetting orientation. This extension satisfies oriented smoothing (see~\cite[Corollary~1.11]{MGT21:Smoothings} and its proof).
-\end{remark}
-
 
 \subsection{General context and examples}
 
@@ -268,8 +282,8 @@ Many natural notions of length do satisfy all these properties and they have bee
 \end{enumerate}
 
 We emphasize that our main result Theorem~\ref{thm:intersect} subsumes all these previous results, as we will elucidate in Section~\ref{sec:special-classes} for items (1) - (8) and Section~\ref{sec:crossratios} for item (9).
-In particular, we will show that item (8) can be further generalized to stable lengths associated to embedded graphs on the surface (see Section~
-\ref{subsec:embedded_graphs}). \DMGtodo{it would be nice to include an example of an embedded graph which is not a simple gen set in that section (section 8)} Furthermore, in Section~\ref{subsec:ineqintersection}, we will discuss how any curve length arising from a length metric structure on $S$ induces a dual geodesic current.
+In particular, in Section~
+\ref{subsec:embedded_graphs} we will show that item (8) can be further generalized to stable lengths associated to embedded graphs on the surface;  \DMGtodo{it would be nice to include an example of an embedded graph which is not a simple gen set in that section (section 8)} and in Section~\ref{subsec:ineqintersection}, we discuss how any curve length arising from a length metric structure on $S$ induces a dual geodesic current.
 
 \textbf{Non-examples}
 

@@ -11,7 +11,7 @@ cover~$\wt S$ of a surface (or indeed any connected length space). We
 follow the convention that path composition works in the natural
 order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
 defined if $\gamma_1(1) = \gamma_2(0)$.
-If $a \in \pi_1(S,\ast)$, we let $[a]$ denote the free homotopy class of $a$.
+If $a \in \pi_1(S,\ast)$, we let $[a]$ denote the free homotopy class of the oriented curve represented by $a$ (equivalently, the conjugacy class of $a$).
 In particular, we note that $[g a g^{-1}]=[a]$. We will sometimes follow the
 group theory convention of denoting inverses by a capital letter, and will use
 boldface to distinguish points in $\wt S$.
@@ -67,7 +67,7 @@ Here we make the following observations.
 
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, there will be two types of arrows (e.g., see Figure~\ref{fig:newmodel3_orbit}): arrows connecting two endpoints of $\partial_{\infty}\Sigma$, which correspond to axes hyperbolic axes $\ora{g}$ of an element $g \in \pi_1(S)$, the axis of the \emph{left} action; and arrows representing paths connecting points on these axes and correspond to the \emph{right} action on the
-fiber. \DMGtodo{edited this paragraph so it is faithful to figures}
+fiber. \DMGtodo{edited this paragraph so it is more faithful to figures}
 
 For any non-trivial $x \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[x]$ on $S$, corresponding to the conjugacy
@@ -216,7 +216,7 @@ In the next section we justify the equivalence between the smoothing condition h
 \subsection{Triality of crossings: topological, geometric and algebraic}
 \label{subsec:triality}
 Following~\cite{MGT25:SmoothingsErratum}, we present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, let 
-$[a]$ denote the free homotopy class of oriented curves represented by $a$;
+$[a]$ denote the free homotopy class of oriented curves \DMGtodo{this section has been adapted for oriented curves} represented by $a$;
 algebraically this is equivalent to the conjugacy class of~$a$. Say that a
 factorization $[ab]$ \emph{reduces} if some (equiv.\ every) taut
 representative of $[ab]$ has a crossing so that one smoothing gives
@@ -281,18 +281,18 @@ We following justifies the power smoothing hypothesis.
 \end{proposition}
 
 The following result justifies the oriented/unoriented connected/disconnected smoothing variations of smoothing.
+It is an oriented version of the result for smoothing in~\cite[Proposition~2.9b]{MGT25:SmoothingsErratum}, and its proof goes through verbatim. Note that~\cite[Proposition~2.9b]{MGT25:SmoothingsErratum} follows by replacing each oriented free homotopy class $[a]$ in the statement by the unoriented free homotopy class, since in that case $[b]$ and $[B]$ get identified. \DMGtodo{added this discussion here, should we state the non-oriented proposition in the Erratum, too, instead of just citing?}
 
-\begin{proposition}[{\cite[Proposition~2.9b]{MGT25:SmoothingsErratum}}]\label{prop:crossings-triality}
+\begin{proposition} \DMGtodo{this is not exactly the same as the cited one, since I phrased it in the oriented way. Note that the middle reduction gives a $[a][B]$ instead of $[a][b]$.}\label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
   common powers. Then in the following three trialities the same
   possibility holds in each case.
   \begin{enumerate}
-  \item (Reduction) One of the following factorizations reduces
-    to the other two:\\
+  \item (Reduction) One of the following reduction happens:\\
     \begin{enumerate*}[itemjoin=\qquad]
-    \item $[ab]$;
-    \item $[aB]$; or
-    \item $[a][b]$.
+    \item $[ab] \searrow [aB],[a][b]$;
+    \item $[aB] \searrow [ab],[a][B]$; or
+    \item $[a][b] \searrow [ab], [aB]$.
     \end{enumerate*}
   \item\label{item:triality-geom}
     (Geometric) For every taut embedding of $a * b$, around the
@@ -325,7 +325,9 @@ reference, in particular that if $\ora{a}$ crosses $\ora{b}$, then
 and if $\ora{a}$ is parallel to $\ora{b}$, then
 \[
   [ab] \reducesto [a][b]\qquad\text{and}\qquad[ab] \reducesto [aB].
-\]
+\] 
+Note that the reduction for the case $\ora{a}$ being antiparallel to $\ora{b}$ follows by considering the above reduction for the parallel pair $(\ora{a},\ora{B})$.
+Hence, in order to check oriented smoothing, it suffices to check only these two reductions. \DMGtodo{added this note}
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
 can change, as recorded below for future reference.

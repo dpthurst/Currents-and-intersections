@@ -316,7 +316,7 @@ Let $f \colon \pi_1(S) \to \mathbb{R}$ satisfy:
 \[
 f(a^{n+m}) \geq f(a^n) + f(a^m).
 \]
-\item oriented disconnected smoothing:
+\item R-oriented disconnected smoothing:
 \begin{align*}
  f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
 \end{align*}
@@ -326,23 +326,23 @@ Then $f$ satisfies stability.
 \end{proposition}
 \begin{proof}
 Let $a \in \pi_1(S)$ be an arbitary element. Suppose first that $b \in \pi_1(S)$ so that $(a,b)$ R-cross, which we can find by density of endpoints of axes of hyperbolic elements in $G(S)$.
-Then, applying disconnected smoothing to the crossing pair $(a^n, b)$, we get
+Then, applying R-oriented disconnected smoothing to the R-crossing pair $(a^n, b)$, we get
 \begin{equation}
 f(a^n) + f(b) \geq f(a^nb).
 \label{eq:cross1_eq}
 \end{equation}
-An induction on $n$ on the crossing pair $(a,b)$ shows
+An induction on $n$ on the R-crossing pair $(a,b)$ shows
 \begin{equation}
 nf(a) + f(b) \geq f(a^nb)
 \label{eq:cross2_eq}
 \end{equation}
 for $n\geq 1$.
-Indeed, note that the base case is true by oriented connected smoothing, and the induction follows from
+Indeed, note that the base case is true by R-oriented connected smoothing, and the induction follows from
 \[
 nf(a) + f(b) \geq f(a^{n-1}b) + f(a) \geq f(a^nb)
 \]
 where in the first step we used the induction step and in the second we used the fact that the pair $(a,a^{n-1}b)$ is R-crossing by Lemma~\ref{lem:rhs_prod}.
-Finally, we note that by ~Lemma~\ref{lem:rhs} and induction, the pair $(B,a^nb)$ is R-crossing for all $n \geq 1$, and hence,
+Finally, we note that by ~Lemma~\ref{lem:rhs} and induction, the pair $(B,a^nb)$ is R-crossing for all $n \geq 1$, and hence, by R-oriented disconnected smoothing
 \begin{equation}
 f(B) + f(a^nb) \geq f(a^n).
 \label{eq:cross3_eq}

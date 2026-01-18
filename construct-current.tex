@@ -514,7 +514,18 @@ function on multi-curves.
 
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
-We first verify smoothing. We start
+Note first that R-oriented smoothing of $f$ is equivalent to oriented smoothing of $f$: indeed, if $(\ora{a},\ora{b})$ are L-parallel, then $(\ora{b},\ora{a})$ are R-parallel, and hence by R-oriented connected smoothing
+\[
+f(ba) \geq f(b) + f(a).
+\]
+Using the fact that $f$ is conjugacy invariant shows that this is equivalent to
+\[
+f(ba) \geq f(b) + f(a).
+\]
+The case of oriented disconnected smoothing is similar.
+
+We will first verify smoothing of $\overline{f}$.
+We start
 with oriented disconnected smoothing, between crossing elements
 $(\ora{a},\ora{b})$, which we can assume R-cross by switching $a,b$ if
 necessary. We have
@@ -546,7 +557,7 @@ $(\ora{B},\ora{A})$. Then
 
 We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Corollary~\ref{cor:oriented_smoothing_unoriented},
 $\overline{f}$~satisfies unoriented connected and disconnected smoothing as well. 
-Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing. \DMGtodo{added this last sentence, since we also had to verify power smoothing.}
+Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing of $\overline{f}$. \DMGtodo{added this last sentence, since we also had to verify power smoothing.}
 Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
 We are thus under the
 hypotheses of Theorem~\ref{thm:intersect}.
@@ -568,9 +579,7 @@ for every $g \in \pi_1(S)$ if and only if $f$ satisfies the following conditions
 \item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
 \item power smoothing: 
 $f(a^{n+m}) \geq f(a^n) + f(a^m) \mbox{ for all } n,m \geq 1$.
-\item oriented smoothing:
-  \DPTtodo{Removed the labels here since they were duplicates and
-    apparently not referenced}
+\item R-oriented smoothing:
  \begin{align}
     f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
     f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.

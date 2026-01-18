@@ -244,34 +244,31 @@ We will also use the following.
 Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Proposition~\ref{prop:max_twice}---that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---more apparent.
 \DPTtodo{Reword this lemma to have a triality depending on relative
   position of $T_{h}$ and $T_{ghG}$}
-\begin{lemma} Let $T$ be an arbitrary $\Gamma$-tree. Suppose $g$ is an elliptic isometry and $h$ is hyperbolic.
-\begin{enumerate}
-\item If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
-  Moreover:
-\begin{enumerate}
-\item $T_h$ and $T_{ghg^{-1}}$ overlap in a point or coherently iff
+  \DMGtodo{edited the statement to reflect the clean triality, and moved some of the details of the statement to the proof, to connect it better to the version of Paulin}
+\begin{lemma}\label{lem:pau_ell_hyp}
+Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is hyperbolic. Then exactly one of the following holds depending on the relative position of $T_h$ and $T_{ghG}$:
 \[
-\norm{gh} = \norm{h} \geq \norm{gH}.
+\begin{array}{c@{\qquad}c@{\qquad}c}
+\text{\emph{(1) coherent overlap or point}} 
+& \text{\emph{(2) incoherent overlap}} 
+& \text{\emph{(3) disjoint}} 
+\\[1.2ex]
+\|gh\|=\|h\|\ \ge\ \|gH\|, 
+& \|gH\|=\|h\|\ >\ \|gh\|, 
+& \|gh\|=\|gH\|\ >\ \|h\|.
+\end{array}
 \]
-\item $T_h$ and $T_{ghg^{-1}}$ overlap incoherently iff
-\[
-\norm{gH} = \|h\| > \|gh\|
-\]
-\end{enumerate}
-
-\item\label{item:ell-hyp-disjoint} $T_g \cap T_h = \emptyset$ iff $\|gh\|>\|h\|$. Then, $T_{ghG} \cap T_h = \emptyset$.
-In this case
-\[
-\|gh\| = \|gH\| = \|h\| + 2\,d(T_g, T_h).
-\]
-
-\end{enumerate}
-\label{lem:pau_ell_hyp}
 \end{lemma}
 
+
 \begin{proof}
-The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. The fact that $T_{ghG} \cap T_h = \emptyset$ in item (2), follows from~\cite[Fact~1.7]{CM87:GroupActions}.
+The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The statement of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT} is divided into two cases depending on the relative position of $T_g, T_h$.  
+If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
+Then, the inequalities follow depending on the overlap between $T_h$ and $T_{ghg^{-1}}$.
+If $T_g \cap T_h = \emptyset$, then the equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. The fact that $T_{ghG} \cap T_h = \emptyset$ in item (2), follows from~\cite[Fact~1.7]{CM87:GroupActions}.
+Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
 \end{proof}
+
 \begin{lemma}
   Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic
   isometries, we have $\norm{gh} = \norm{gH}$ and $\|gh\|>0$ if and only if
@@ -353,7 +350,7 @@ lamination, there are several relevant conditions on the action:
 \item The action  \emph{preserves characteristic intersection}: for any pair
   $g,h \in \pi_1(S)$, if
   $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$. (Note
-  that $g$ and/or $h$ may be elliptic in oction on $T$.)
+  that $g$ and/or $h$ may be elliptic in action on $T$.)
 \end{itemize}
 Morgan-Otal~\cite{MO93:RelativeGrowths} showed that actions dual to measured laminations
 satisfy the first three. They also showed that if an action
@@ -374,7 +371,7 @@ In this section, we prove Theorem~\ref{mainthm:skora}, in particular showing
 that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from
 our Theorems~\ref{thm:intersect} and
 \ref{mainthm:apps}\ref{item:lam-char} and classical considerations
-from actions on real trees. \DMGtodo{edit so that it is clear we invoke Theorem A' instead of Theorem A.}
+from actions on real trees.
 
 We note that in a later followup,  Skora showed that an $S$-tree with
 a small action is also
@@ -570,11 +567,6 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
     \end{subcase}
     This cannot happen by Lemma~\ref{lem:parallel-incoherent}.
 
-\begin{subcase}
-  $\ora{g},\ora{h}$ are anti-parallel.
-\end{subcase}
-Replace $h$ by $H$ to reduce to the above parallel cases.
-
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
   In particular, $ghg^{-1}$ and $h$ act hyperbolically on $T$.
@@ -604,9 +596,9 @@ Combining  Equation~\ref{eq:intermediate0} and Equation~\ref{eq:intermediate}, i
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp} (1, first item), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
+point then, by Lemma~\ref{lem:pau_ell_hyp} (1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
-Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (1, second item), $\|gH\| = \|h\| > \|gh\|$ and
+Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (2), $\|gH\| = \|h\| > \|gh\|$ and
 \[
 \|(ghG)h\|>2\|h\| = \|h\| + \|gH\| > \|gh\| + \|gH\|.
 \]
