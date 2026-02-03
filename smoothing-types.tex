@@ -265,10 +265,12 @@ as before.
 This finishes the proof that disconnected smoothing implies
 connected smoothing.
 
-We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies orientation invariance, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality.
-\[
+We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies orientation invariance, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality
+\begin{equation}
 f([a^{2n}b^{2n}]) \geq 2nf([ab]).
-\]
+\label{eq:inequality_smoothing}
+\end{equation}
+
 The base case follows by noting that if $(\ora{a},\ora{b})$ R-cross, then $(\ora{ba},\ora{ab})$ are R-parallel, and then by connected smoothing
 \[
 f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
@@ -276,9 +278,9 @@ f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
 For the induction step, note that
 \begin{align*}
 f([a^{2n}b^{2n}]) = f([a^2(a^{2(n-1)}b^{2(n-1)})b^2]) = f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
-\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) = 2f([ab]) + 2(n-1)f([ab]) = 2nf([ab]).
+\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) \geq 2f([ab]) + 2(n-1)f([ab]) = 2nf([ab]).
 \end{align*}
-To get the inequality we used that $b^2a^2$ and $a^{2(n-1)}b^{2(n-1)}$ are parallel, which follows from the fact that $a$ and $b$ are crossing, and Lemma~\ref{lem:anbn_vs_bkak_parallel}.
+To get the first inequality we used oriented connected smoothing and that $b^2a^2$ and $a^{2(n-1)}b^{2(n-1)}$ are parallel, which follows from the fact that $a$ and $b$ are crossing, and Lemma~\ref{lem:anbn_vs_bkak_parallel}. For the second inequality we used the induction step twice.
 Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
 \[
 f([a] [b]) \geq f([ab])
@@ -287,10 +289,14 @@ which proves oriented disconnected smoothing. The unoriented one is proved in th
 \end{proof}
 
 \begin{remark}
-The statements of
+The proofs of
 Propositions~\ref{prop:oriented_smoothing_unoriented}
-and~\ref{prop:cont_conn_disc} can be strengthened by replacing each
-type of smoothing by the same type of $C$-quasi-smoothing.
+and~\ref{prop:cont_conn_disc} \emph{do not} go through by replacing each
+type of smoothing by the same type of $C$-quasi-smoothing: for example, in the induction from connected to disconnected oriented smoothing, inequality~\ref{eq:inequality_smoothing} would have to be replaced by
+\[
+f([a^{2n}b^{2n}]) \geq 2nf([ab]) - C n.
+\]
+Following the same chain of inequalities that prove the induction does not yield the desired inequality, since one accumulates one extra $-C$ factor.
 \end{remark}
 
 As an immediate corollary, we get the following.

@@ -6,9 +6,10 @@
 
 In this section we state the main technical hypotheses that we require of our curve functionals. 
 
-Then, we discuss how our result fits into our previous work
-in~\cite{MGT21:Smoothings}. In particular we give examples and non-examples of curve
+Then, we give examples and non-examples of curve
 functionals satisfying the hypotheses of Theorem~\ref{thm:intersect}.
+In particular, we discuss how our result fits into our previous work
+in~\cite{MGT21:Smoothings}.
 We then turn to further questions motivated by our results.
 
 \subsection{Curve functionals and their properties}
@@ -175,6 +176,9 @@ If all these inequalities are strengthened to equalities, we will refer to the p
 \label{def:smoothing_and_max}
 \end{definition}
 
+Smoothing is satisfied by many natural functions, including the intersection number $i(\mu, \cdot)$ with any geodesic current $\mu$ (see~\cite[Section~4.1]{MGT21:Smoothings} cf. Appendix~\ref{sec:necessary}),
+or curve lengths coming from a length metric structure on $S$~~\cite[Section~4.3]{MGT21:Smoothings}, cf. Section~\ref{subsec:domination}). We will see many more examples in Section~\ref{subsec:examples_and_non} below.
+
  Similarly as before, smoothing and max-smoothing can be phrased more algebraically. 
  \begin{definition}[smoothing for oriented curve functionals] \DMGtodo{note: this is NOT the same as oriented smoothing}
  Given an \emph{oriented} curve functional $f \colon \Curves^+(S) \to \mathbb{R}$, we will say it satisfies \emph{smoothing} if it satisfies the following hypotheses:
@@ -192,7 +196,9 @@ If all these inequalities are strengthened to equalities, we will refer to the p
   f([a^{ n}]).\label{eq:power_smoothing_unoriented}\end{equation}
 \end{itemize}
 \label{def:smoothing_for_oriented}
-\end{definition}\DMGtodo{edited this, since I added the algebraic oriented version before}
+\end{definition}
+
+\DMGtodo{edited this, since I added the algebraic oriented version before}
 
 Given a curve functional on unoriented multi-curves $f \colon \Curves(S) \to \mathbb{R}$ one can always extend it to a functional on oriented multi-curves by forgetting orientation:
 \[
@@ -283,7 +289,7 @@ Many natural notions of length do satisfy all these properties and they have bee
 
 We emphasize that our main result Theorem~\ref{thm:intersect} subsumes all these previous results, as we will elucidate in Section~\ref{sec:special-classes} for items (1) - (8) and Section~\ref{sec:crossratios} for item (9).
 In particular, in Section~
-\ref{subsec:embedded_graphs} we will show that item (8) can be further generalized to stable lengths associated to embedded graphs on the surface;  \DMGtodo{it would be nice to include an example of an embedded graph which is not a simple gen set in that section (section 8)} and in Section~\ref{subsec:ineqintersection}, we discuss how any curve length arising from a length metric structure on $S$ induces a dual geodesic current.
+\ref{subsec:embedded_graphs} we will show that item (8) can be further generalized to stable lengths associated to embedded graphs on the surface;  \DMGtodo{it would be nice to mention an example of an embedded graph which is not a simple gen set in that section (section 8)} and in Section~\ref{subsec:ineqintersection}, we discuss how any curve length arising from a length metric structure on $S$ induces a dual geodesic current.
 
 \textbf{Non-examples}
 
@@ -294,14 +300,13 @@ we now show examples of many natural functions on curves that do \emph{not} sati
     \item Some curve functionals are not symmetric, but satisfy oriented quasi-smoothing, giving examples in $\QConvex^+(S)$ (see also item (3)). For instance, the examples discussed in~\cite[Section~4.6]{MGT21:Smoothings}, stable lengths of Green metrics coming from asymmetric from generating sets (see Section~\ref{subsec:green}), or natural oriented length functions coming from Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.  
     \item Square root of extremal length, although it satisfies symmetry, smoothing, stability, convex union and homogeneity (giving an example in $\Convex(S)$), does not satisfy additive union (see \cite[Section~4.8]{MGT21:Smoothings}). Functionals of such class extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
     It's an example of curve functional illustrating the proper containment \[\AConvex(S) \subsetneq \Convex(S).\]
-    \item  In future work the first author shows that if $\pi_1(S) \acts X$ an action on a hyperbolic uniformly quasi-geodesic metric space $X$ with bounded backtracking property, then $\ell_X$, the stable length of the action, satisfies $\ell_X \in \QConvex(S)$. In general, these actions do not satisfy smoothing. We give three more examples in the next items.
     \item Although word length w.r.t.\ an arbitrary generating set of $\pi_1$ satisfies additivity (just by linear extension), it does not always satisfy smoothing nor stability (see~\cite[Example~4.10]{MGT21:Smoothings},~\cite[Theorem~1.5]{EPS20:CountingCurves},~\cite{Erlandsson:WordLength}). The stabilized version does not always satisfy smoothing, either (see the same example and also \cite[Theorem~B]{MGT21:Smoothings}). This illustrates the proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.
     \item Another example of the above are stable lengths associated to quasi-fuchsian representations. They satisfy quasi-smoothing by \cite[Lemma~4.3]{BridgemanTaylor08:ExtensionWP} or \cite[Proposition 4.11]{MGT21:Smoothings}, and they satisfy strict smoothing if only if they are fuchsian \cite[Theorem A]{FF22:QF}, illustrating another example of the  proper inclusion $\Convex(S) \subsetneq  \QConvex_R(S)$ for $R>0$.  
     \begin{question}
     If $K$ is the quasi-fuchsian constant of the limit set of a quasi-fuchsian representation $\rho$, and $R>0$ is the minimal constant so that $\ell_{\rho} \in \QConvex_R(S)$, do we have that $R \to \infty$ as $K \to \infty$? 
     \end{question} 
 \item The previous example falls in the more general framework of length functions coming from higher-rank representations of $\pi_1(S)$ into connected real semisimple algebraic group of non-compact type $G$, such as $\SL(n,\mathbb{R})$.
-Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy some of the inequalities in smoothing. A wider class of \emph{Anosov} representations~\cite[Corollary~4.6]{KP22:eigenvalue}, encompassing those which are positively ratioed, induce curve length functionals arising from actions of $\pi_1(S)$ on a Gromov hyperbolic space with bounded backtracking~\cite[Lemma~7.1]{CT24:Invariant}. Hence, by the above forthcoming work (item (3)), they also satisfy quasi-smoothing. In fact, by Theorem~\ref{thm:intersect}, they satisfy smoothing if and only if they are positively ratioed. 
+Martone-Zhang~\cite{MZ19:PositivelyRatioed} proved that a certain class of such representations, called \emph{positively ratioed}, induce curve functionals dual to geodesic currents, and furthermore showed they satisfy some of the inequalities in smoothing. In fact, by Theorem~\ref{thm:intersect}, they satisfy smoothing if and only if they are positively ratioed. 
         \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for elements of a group, yielding in efficient solutions to the word problem. Many groups of geometric origin—such as hyperbolic groups—admit automatic structures. A biautomatic structure is an automatic structure satisfying additional fellow–travelling properties ensuring good compatibility with both left and right multiplication. These stronger conditions encode deeper geometric control on the Cayley graph and imply, for instance, solvability of the conjugacy problem. We commend the reader to~\cite[Section~2.2]{HV24:Biautomaticity} for details.
     Given a biautomatic structure $\mathcal{L}$ on a surface group $\pi_1(S)$, there is a notion of translation length $\| \cdot \|_{\mathcal{L}}$ coming from its defining regular language. Hughes-Valiunas~\cite[Proposition~4.2]{HV24:Biautomaticity} have shown these translation lengths satisfy quasi-smoothing and used this to construct a new example of hierarchically hyperbolic group that is not biautomatic. These structures encompass examples of word length in the previous item, so they do not satisfy smoothing in general.
     \item Square root of self-intersection number satisfies stability,

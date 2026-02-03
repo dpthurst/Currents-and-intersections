@@ -96,8 +96,6 @@ characterizes translation lengths of actions on real trees among all conjugacy c
 
 The conditions above are a simpler repackaging of Culler-Morgan's axioms. \DMGtodo{is this editorializing okay?}
 
-We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
-
 A $\Gamma$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
 \begin{itemize}
 \item \textit{Fixed end:} $\| \cdot \|$ is trivial on $[\Gamma,\Gamma]$;
@@ -309,13 +307,8 @@ and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
-In general, if the translation lengths of two $\Gamma$-trees are
-equal, that does not necessarily imply the trees are equivariantly
-isometric, but it is true if the action is minimal and either
-irreducible or dihedral \cite[Theorem~3.7]{CM87:GroupActions}.
-\DPTtodo{Clarified the logic}
-In fact, if the length is non-zero, and the action is assumed
-irreducible, by \cite[Proposition~3.1]{CM87:GroupActions} there is a
+We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant. \DMGtodo{moved the definition of minimal here, since we did not invoke it until the next paragraph. Also, the logic was not clear yet. The main point here is minimality. The marked length spectrum rigidity is a secondary point, which I demoted to the end.}
+If the length is non-zero by \cite[Proposition~3.1]{CM87:GroupActions} there is a
 unique minimal invariant subtree. The length function for the
 restriction to this minimal invariant subtree is equal to the length
 function of the original tree. Hence, without loss of generality, one
@@ -323,22 +316,27 @@ can always restrict to the action on the minimal invariant subtree
 without changing the length functional. In what follows, we will
 always consider minimal actions.
 
+Note, however, that if the translation lengths of two $\Gamma$-trees are
+equal, that does not necessarily imply the trees are equivariantly
+isometric, but it is true if the action is minimal and either
+irreducible or dihedral (that is, unless the action has a fixed end) \cite[Theorem~3.7]{CM87:GroupActions}.
+
 \subsection{Surface group actions on real trees}
 
 In this section, we assume $\Gamma = \pi_1(S)$. An \emph{$S$-tree} is
-a $\bbR$-tree $T$ with an action of $\pi_1(S)$.
-It is standard that a measured lamination $\lambda$ defines a (dual) minimal irreducible $S$-tree (see~\cite{MO84:Valuations}).
+a $\bbR$-tree $T$ with a minimal action of $\pi_1(S)$. \DMGtodo{made $S$-trees minimal, and removed the minimal in subsequent mentions of $S$-trees}
+It is standard that a measured lamination $\lambda$ defines a (dual) irreducible $S$-tree (see~\cite{MO84:Valuations}).
 It follows from the construction that the translation length of
 $g \in\pi_1(S)$  on
 $T_\lambda$ is equal to
 $i(\lambda,[g])$, where $[g]$ denotes the free homotopy class of a
 closed curve associated to $g$.
-Given a minimal $S$-tree $T$, if there is a measured lamination $\lambda$ and $\pi_1(S)$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to}~$\lambda$.
+Given a $S$-tree $T$, if there is a measured lamination $\lambda$ and $\pi_1(S)$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to}~$\lambda$.
 
 Recall that for $\Sigma$ a fixed hyperbolic structure on $S$, the
 corresponding hyperbolic axis in $\wt{\Sigma}$ is denoted $\ora{g}$.
 
-In checking whether a minimal $S$-tree is dual to a measured
+In checking whether an $S$-tree is dual to a measured
 lamination, there are several relevant conditions on the action:
 \begin{itemize}
 \item The action is irreducible, not dihedral or fixed end.
@@ -352,15 +350,15 @@ lamination, there are several relevant conditions on the action:
   $\ora{g},\ora{h}$ cross then $T_g \cap T_h \neq \emptyset$. (Note
   that $g$ and/or $h$ may be elliptic in action on $T$.)
 \end{itemize}
-Morgan-Otal~\cite{MO93:RelativeGrowths} showed that actions dual to measured laminations
-satisfy the first three. They also showed that if an action
+Morgan-Otal~\cite{MO93:RelativeGrowths} showed that $S$-trees dual to measured laminations
+satisfy the first three. They also showed that if an $S$-tree
 is small and preserves axis intersection, it is dual to a measured
 lamination, and asked if the ``small'' condition could be dropped.
 
 In a followup, Skora noted that dihedral
-actions give counter examples (preserving axis intersection while not
+$S$-trees give counter examples (preserving axis intersection while not
 being dual to a measured lamination), but showed that irreducible
-actions that preserve axis intersection are dual to measured
+$S$-trees that preserve axis intersection are dual to measured
 laminations~\cite{Sko90:GeometricAction}.
 
 % Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
@@ -378,9 +376,14 @@ a small action is also
 dual to a measured lamination~\cite{Sk96:Splittings}.
 It follows that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
-In turn, we will also give two new characterizations of $S$-trees with small actions: \DMGtodo{added this}
+In turn, we will also give three new characterizations of $S$-trees with small actions: \DMGtodo{added this}
 \begin{itemize}
-\item Irreducible $S$-trees that preserve characteristic intersection
+\item Irreducible $S$-trees that preserve characteristic intersection.
+\item $S$-trees satisfying R-oriented smoothing:
+ \begin{align}
+\|ab\| &\geq  \|a \| + \|b\| && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
+\|a\| + \|b\| &\geq \|ab\|  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
+  \end{align}
 \item $S$-trees where no parallel pair $(\ora{a},\ora{b})$ has incoherent overlap in the tree.
 \end{itemize}
 
@@ -433,6 +436,7 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
 
 \DPTtodo{I dislike the proliferation of Theorems; Theorem C seems like
   it's still the main result of this section.}
+  \DMGtodo{It is the main result, but I think each of the other characterizations deserve to be theorems}
 \begin{theorem}
 Consider an irreducible $S$-tree that preserves axis
 intersection. Then:

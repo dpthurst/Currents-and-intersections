@@ -6,13 +6,13 @@
 \subsection{Left vs right actions of \texorpdfstring{$\pi_1(S)$}{π1(S)}}
 \label{sec:actions}
 
-To fix conventions, we briefly recall elementary facts about actions of $\pi_1(S,\ast)$ on the universal
+To fix conventions, we briefly recall elementary facts about actions of $\pi_1(S,\ast)$ on the universal \DMGtodo{there was a problem with notation here, where sometimes $[a]$ meant homotopy relative to $*$, and sometimes later free homotopy... so I decided to call the pointed homotopy class by $(a)$}
 cover~$\wt S$ of a surface (or indeed any connected length space). We
 follow the convention that path composition works in the natural
 order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
 defined if $\gamma_1(1) = \gamma_2(0)$.
-If $a \in \pi_1(S,\ast)$, we let $[a]$ denote the free homotopy class of the oriented curve represented by $a$ (equivalently, the conjugacy class of $a$).
-In particular, we note that $[g a g^{-1}]=[a]$. We will sometimes follow the
+If $a \in \pi_1(S,\ast)$, let $(a)$ denote the homotopy class of the oriented curve relative to the basepoint $*$.
+ We will sometimes follow the
 group theory convention of denoting inverses by a capital letter, and will use
 boldface to distinguish points in $\wt S$.
 
@@ -20,7 +20,7 @@ boldface to distinguish points in $\wt S$.
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
 $\ast \in S$, we have a \emph{right} action of $\pi_1(S,\ast)$ on
 the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
-$\bm{x}\cdot[\gamma] = \wt \gamma(1)$, where $\wt\gamma$ is the
+$\bm{x}\cdot (\gamma) = \wt \gamma(1)$, where $\wt\gamma$ is the
 unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
 \end{definition}
 We observe
@@ -35,7 +35,7 @@ the following.
     correspond to transitive actions of $\pi_1(S)$, which
     in turn correspond to conjugacy classes of subgroups.}
 \item In the induced length metric on~$\wt S$, the distance between
-  $\bm{x}$ and $\bm{x}\cdot [\gamma]$ is bounded by the length of~$\gamma$.
+  $\bm{x}$ and $\bm{x}\cdot (\gamma)$ is bounded by the length of~$\gamma$.
 \end{itemize}
 
 \begin{definition}[Left action]
@@ -43,12 +43,12 @@ When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. If you take
 the standard model of $\wt S$, where one lifts $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$, and points
-$[\gamma] \cdot \bm{\wt \ast}$ correspond
+$(\gamma) \cdot \bm{\wt \ast}$ correspond
 to homotopy classes of paths~$\gamma$
 in~$S$ with $\gamma(0) = \ast$ (with homotopies fixing the endpoints), then this
 action is defined by
-$[\gamma_1] \cdot ([\gamma] \cdot \bm{\wt \ast}) \coloneqq
-[\gamma_1 \cdot \gamma_2] \cdot \bm{\wt \ast}$.
+$(\gamma_1) \cdot ((\gamma) \cdot \bm{\wt \ast}) \coloneqq
+(\gamma_1 \cdot \gamma) \cdot \bm{\wt \ast}$.
 
 \end{definition}
 Here we make the following observations.
@@ -57,10 +57,10 @@ Here we make the following observations.
 \item The left action depends on a lift of
   $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$, for instance
   since the left and right actions are
-  related by $[\gamma] \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot [\gamma]$.
-\item The distance between $\bm{x}$ and $[\gamma] \cdot \bm{x}$
+  related by $(\gamma) \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot (\gamma)$.
+\item The distance between $\bm{x}$ and $(\gamma) \cdot \bm{x}$
   may be unbounded, although the translation length of the left action
-  of $[\gamma]$ on
+  of $(\gamma)$ on
   $\wt S$ is bounded by the length of $\gamma$.
 \item This left action extends to an action on the circle at infinity $\partial_{\infty} S$.
 \end{itemize}
@@ -73,10 +73,10 @@ For any non-trivial $x \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[x]$ on $S$, corresponding to the conjugacy
 class of~$x$. We also need to specify different lifts of $[x]$ to
 $\wt S$. This is conveniently specified by $x$ itself: $x$ determines
-a sequence of points $\{[x^k] \cdot \bm{\wt \ast} \mid k \in \bbZ\}$, which is a
+a sequence of points $\{(x^k) \cdot \bm{\wt \ast} \mid k \in \bbZ\}$, which is a
 quasi-geodesic in $\wt S$. Choosing a hyperbolic structure $\Sigma$ on $S$, which is equivalent to choosing a discrete faithful representation $\rho \colon \pi_1(S) \to \Isom^+(\mathbb{H}^2)$, this quasi-geodesic determines an oriented hyperbolic geodesic
-denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} [x^k] \cdot \bm{\wt \ast}$ 
-and $x^- = \lim_{k \to -\infty} [x^k] \cdot \bm{\wt \ast}$. Note that $x$ acts on $\wt S$ on the left isometrically as a hyperbolic isometry fixing $\ora{x}$ set-wise. This action
+denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} (x^k) \cdot \bm{\wt \ast}$ 
+and $x^- = \lim_{k \to -\infty} (x^k) \cdot \bm{\wt \ast}$. Note that $x$ acts on $\wt S$ on the left isometrically as a hyperbolic isometry fixing $\ora{x}$ set-wise. This action
 extends continuously to $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ and has north-south (NS) dynamics, with unique
 attracting point $x^+$ and repelling point $x^-$: for any point
 $\bm{p} \in \overline{\wt S}$ other
@@ -85,10 +85,10 @@ than $x^-$, we have $\lim _{k \to \infty} x^k \cdot \bm{p} = x^+$.
 The other lifts of $[x]$ to $\wt S$ are translates $q \cdot \ora{x}$
 of $\ora{x}$ by a
 group element~$q$; we can either think of this as the geodesic
-$\ora{qxQ}$ passing within a bounded distance of the points $[qx^kQ] \cdot \bm{\wt \ast}$; 
+$\ora{qxQ}$ passing within a bounded distance of the points $(qx^kQ) \cdot \bm{\wt \ast}$; 
 or we can think of it as the geodesic corresponding to the coset
 $q\langle x\rangle$, i.e., passing within a bounded distance of the
-points $[qx^k] \cdot \bm{\wt \ast}$ in the coset. Note these two sequences of
+points $(qx^k) \cdot \bm{\wt \ast}$ in the coset. Note these two sequences of
 points are within a
 bounded distance of each other, since the right action of $\pi_1$
 moves points a bounded distance.

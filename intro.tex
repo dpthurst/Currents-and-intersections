@@ -1,21 +1,16 @@
 \section{Introduction}
 
-Geodesic currents on a hyperbolic surface are measures on the space of unoriented geodesics that complete the set of weighted closed geodesics in the weak$^*$-topology. From a dynamical viewpoint, they are orientation and geodesic-flow invariant measures on the unit tangent bundle~\cite{Bonahon86:EndsHyperbolicManifolds}.
- Many metric structures embed in the space of currents---e.g.
-hyperbolic metrics \cite[Theorem~12]{Bonahon88:GeodesicCurrent},
- negatively curved Riemannian metrics
-\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative} or, more generally, non-positively curved Riemannian metrics
-\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}.
+\DMGtodo{edited the first paragrahs of the intro considerably. Added an initial paragraph about connections to currents to other fields. Also, removed the claim that many geometric structures embed into currents, since this is already embedded in the study of compactifications of geometric structures. It's also not very illuminating if we don't say how they embed (geometric structures embed into currents in many ways (length-intersection, measure of maximal entropy, etc.). But if mention length-intersection, then we are emphasizing the marked length spectrum rigidity aspect, which is not central.}
+Geodesic currents on a hyperbolic surface are measures on the space of unoriented geodesics that complete the set of weighted closed geodesics in the weak$^*$-topology. They have played a key role in the study of compactifications of spaces of geometric structures~\cite{Bonahon88:GeodesicCurrent, DLR10:DegenerationFlatMetrics, MZ19:PositivelyRatioed, BIPP21:Systoles, MOT24:Ball, OT23:SO23, OT24:Blaschke, BIPP24:PositiveCrossratios}, curve counting on surfaces~\cite{RS19:CountingProblems, EPS20:CountingCurves, MGT21:Smoothings, ES22:GeodesicCount}, marked length spectrum rigidity problems~\cite{Otal90:SpectreMarqueNegative,CFF92:RigidityNonPosCurvedRiem, HP97:RigidityNegCurvedCone, DLR10:DegenerationFlatMetrics, Con18:MarkedNonpos,ELS21:Hyperbolic,DELS21:FlatRigidity} or even the construction of exotic groups in geometric group theory~\cite{HV24:Biautomaticity}.
 
+The geometric intersection number of multi-curves extends continuously to a bilinear function of currents $i(\cdot, \cdot)$ by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. By~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, any geodesic current $\mu$ is determined by its intersection number functional $i(\mu,\cdot) \colon \mathcal{C}(S) \to \mathbb{R}$, where $\mathcal{C}(S)$ denotes the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of \emph{non-necessarily-simple} closed curves on $S$).  
 
-
-Geometric intersection number of multi-curves extends continuously to a bilinear function of currents by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Many length functions on curves or \emph{curve functionals} $f \colon\Curves(S) \to \mathbb{R}$ are intersection numbers with a \emph{dual} geodesic current $\mu_{f}$, this is,
+Many length functions on curves or \emph{curve functionals} $f \colon\Curves(S) \to \mathbb{R}$ are intersection numbers with a \emph{dual} geodesic current $\mu_{f}$, this is,
 \[
   i(\mu_{f},C)=f(C)
 \]
-for any $C$ in the space of multi-curves $\mathcal{C}(S)$ (i.e. finite unions of non-negatively non-necessarily-simple closed curves on $S$).  
-For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite{MZ19:PositivelyRatioed} and, more recently~\cite{BIPP24:PositiveCrossratios}).
-
+for any $C$ in the space of multi-curves $\mathcal{C}(S)$.  
+For example, the hyperbolic length of curves $\ell_{\Sigma}$ has a dual geodesic current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}), the \emph{Liouville current} $\mathcal{L}_{\Sigma}$; similarly for the negatively curved and non-positively curved Riemannian metrics mentioned above. Other examples do not come from metrics on the surface. For example, word-length with respect to simple generating sets have a dual current \cite[Theorem~1.2]{Erlandsson:WordLength}; or length functions arising from certain representations of surface groups into higher rank Lie groups have corresponding dual currents (see~\cite[Theorem~1.1]{MZ19:PositivelyRatioed} and, more recently~\cite[Theorem~1.2]{BIPP24:PositiveCrossratios}).
 We give an axiomatic characterization of curve functionals dual to geodesic currents. 
 
 \begin{mainthm}
@@ -46,8 +41,8 @@ non-examples).  See Theorem~\ref{thm:intersections_group} below for an algebraic
 One can view this theorem in analogy to Poincaré duality (see Section~\ref{subsec:poincare_duality}).
 
 As a consequence of Theorem~\ref{thm:intersect} we obtain 
-many new dual geodesic currents, extending several previous constructions for Riemannian metrics of negative curvature on $S$, as well as certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}). In Section~\ref{subsec:examples_and_non} we discuss these examples and many more in detail.
-In fact, we obtain dual geodesic currents for any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric).
+many new dual geodesic currents, extending several previous constructions for Riemannian metrics of negative and non-positive curvature on $S$, as well as certain locally $\CAT(-1)$ and $\CAT(0)$ metrics on $S$ (see among others~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}). 
+In fact, we obtain dual geodesic currents for curve lengths w.r.t. any general Riemannian metric on $S$ or, even more generally, any length w.r.t any length metric structure on $S$ (in particular, for any Finsler metric). These currents provide the first stepping stone toward \emph{marked length spectrum rigidity}---that is, determining a metric on $S$ from its length functional, up to a homeomorphism isotopic to the identity---as shown in the aforementioned references.
     Our result also obtains dual geodesic currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs, thus generalizing the work of Erlandsson~\cite{Erlandsson:WordLength} (see Corollary~\ref{cor:generalization_wordlength}).
 
 All the examples above extend continuously to geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings} or simply by Bonahon's theorem of continuous bilinear extension of geometric intersection number. 
@@ -202,22 +197,17 @@ The following are equivalent:
 \label{mainthm:skora}
 \end{mainthm}
 
-The equivalence between (A) and (D) follows by the first part of
-Theorem~\ref{mainthm:apps}. In Theorem~\ref{thm:small}, we prove that
-(B) implies (D). The fact that (A) implies
-(B) follows from previous work of
-Morgan-Otal~\cite{MO93:RelativeGrowths}. Hence, in particular, our
+In particular, our
 arguments give a new proof of the equivalence between (A) and (B),
-which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. We
-show that (B) is equivalent to (D) in
-Theorem~\ref{thm:axis_incoherent_characterization}. Theorem~\ref{thm:small} also shows (B) implies (C), and (C) clearly implies (B).
+which is a classical Theorem of Skora~\cite{Sko90:GeometricAction}. 
+All the other equivalences in the list are new.
 
 Skora later showed~\cite{Sk96:Splittings} that there is another condition equivalent to an $S$-tree being dual to a measured lamination.
 
 \begin{enumerate} [label=(\Alph*), start=6] 
   \item The $S$-tree is \emph{small}, i.e., the stabilizers of non-degenerate arcs
 are cyclic.
-\end{enumerate} \DMGtodo{added this}
+\end{enumerate} 
 
 In the more general case of finitely-generated groups,
 Culler-Morgan~\cite{CM87:GroupActions} stated a list of necessary axioms satisfied by the translation
@@ -290,7 +280,7 @@ $\Gamma$
       \bottomrule\addlinespace
     \end{tabular}
   \caption{Notation for the most common objects in the paper.}\label{tab:object-notation}
-\end{table} \DMGtodo{think of what else to add to this table}
+\end{table} 
 
 In Section~\ref{sec:functionals}, we describe the hypotheses of Theorem~\ref{thm:intersect} and Theorem~\ref{thm:intersections_group}, and place them in the broader setting of curve functionals. We give examples that satisfy these hypotheses, as well as natural ones that do not.
 
