@@ -174,7 +174,7 @@ position of axes of two hyperbolic elements in a real tree.
 
 \begin{lemma}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
-We have the following cases.
+We have the following cases, depending on the relative position of $g,h$.
 \begin{enumerate}[(\arabic*)]
 \item \label{item:tree-intersect}(Intersecting axes)
 $T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gH\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
@@ -239,19 +239,8 @@ Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one 
 Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
-\[
-\begin{array}{c@{\qquad}c@{\qquad}c}
-\text{\emph{(1) coherent overlap or point;}} 
-& \text{\emph{(2) incoherent overlap;}} 
-& \text{\emph{(3) disjoint}} 
-\\[1.2ex]
-\|gh\|=\|h\|\ge\|gH\|;
-& \|gH\|=\|h\|>\|gh\|; 
-& \|gh\|=\|gH\|>\|h\|.
-\end{array}
-\]
+\[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \|gh\|=\|h\|\ge\|gH\|; & \|gH\|=\|h\|>\|gh\|; & \|gh\|=\|gH\|>\|h\|. \end{array} \]
 \end{lemma}
-
 
 \begin{proof}
 The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The statement of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT} is divided into two cases depending on the relative position of $T_g, T_h$.  
@@ -573,16 +562,16 @@ point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|\geq \|gH\|$, and w
 are done. The only remaining option to rule out is that $T_{ghg^{-1}}$ and $T_{h}$ do not intersect. Then by
 Lemma~\ref{lem:foundation_trees} (2), we get
 \begin{equation}
-\| (gh)(hg)^{-1}\| = \| (ghg^{-1})h^{-1} \| = \| (ghg^{-1})h \| >2\|h\|>0.
+\| (gh)(hg)^{-1}\| = \| (ghG)H \| = \| (ghG)h \| >2\|h\|>0.
 \label{eq:intermediate0}
 \end{equation}
-Also, since $\| (gh)(g^{-1}h)^{-1}\| = \|(gh)(h^{-1}g)\| = \|g^2\| =0$, it follows $gh, g^{-1}h$ overlap coherently.
+Also, since $\| (gh)(Gh)^{-1}\| = \|(gh)(Hg)\| = \|g^2\| =0$, it follows $gh, Gh$ overlap coherently.
 Hence, by Lemma~\ref{lem:foundation_trees}
 \begin{equation}
-  \|(gh)(g^{-1}h)\| = \| gh\| +\| gh^{-1}\|=2\|gh\|,
+  \|(gh)(Gh)\| = \| gh\| +\| gH\|=2\|gh\|,
 \label{eq:intermediate}
 \end{equation}
-where we used $\|gh\| = \| gh^{-1}\|$ by Lemma~\ref{lem:pau_ell_hyp}\ref{item:ell-hyp-disjoint} since $T_g \cap T_h = \emptyset$, in the last equality.
+where we used $\|gh\| = \| gH\|$ by Lemma~\ref{lem:pau_ell_hyp} (3) since $T_g \cap T_h = \emptyset$, in the last equality.
 Combining  Equation~\ref{eq:intermediate0} and Equation~\ref{eq:intermediate}, it follows that $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 
@@ -611,7 +600,7 @@ $T_g$ to $T_h$, and are incoherent on that arc.
 This is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-It follows from the fact that, by Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gh^{-1}\|$.
+It follows from the fact that, by Lemma~\ref{lem:pau_ell_hyp}, item \ref{case:pau_ell_hyp_disjoint}, we have $\| gh\| = \| gH\|$.
 
 Finally, note that in all the subcases where we assumed $(\ora{g},\ora{h})$ crosses, we concluded that $T_g \cap T_h \neq \emptyset$.
 Hence, we have also shown that if an irreducible $S$-tree preserves
