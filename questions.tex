@@ -2,7 +2,6 @@
 \label{sec:questions}
 
 \subsubsection{Open surfaces}
-\DMGtodo{added more detail on this section}
 A natural question is whether our results extend to open surfaces, i.e.\ compact surfaces with boundary or finite-type surfaces with punctures.
 
 For such surfaces, geodesic currents admit at least two natural definitions, depending on how one treats the ends. 
@@ -42,15 +41,15 @@ properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoo
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see also~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
 \subsubsection{Questions about generalizations to hyperbolic groups}
-In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan}.
+In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan, CMGR26:GreenMetrics}.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
 A metric space $X$ is uniformy quasi-geodesic if there exists constants $\lambda_1,\lambda_2 >0$ and $\epsilon \geq 0$, so that every two points $x, y \in X$ are connected by a $(\lambda_1,\lambda_2,\epsilon)$-quasi-geodesic.
 We say that $\Gamma \acts X$ of a non-elementary hyperbolic group on a uniformly quasi-geodesic hyperbolic metric space $X$ has the \emph{bounded backtracking property} if given an orbit map $f \colon \Cay(\Gamma) \to X$, there exist a constant $C>0$ so that for every two points $x,y \in \Cay(\Gamma)$, and geodesic $[x,y]$, there exists some quasi-geodesic $[f(x),f(y)]$ in $X$ so that $f([x,y]) \subset N_C([f(x),f(y)])$, where $N_C([f(x),f(y)])$ denotes the $C$-neighborhood of $[f(x),f(y)])$ with respect to the Hausdorff metric.
 
- One can ask if all functions of $\pi_1(S)$ satisfying quasi-smoothing arise as the stable length of some action of $\pi_1(S)$ satisfying bounded-bactracking. 
+There are examples of stable lengths satisfying bounded backtracking which do not satisfy quasi-smoothing (see~\cite[Section~9]{CMGR26:GreenMetrics}). On the other hand, one can ask if all functions of $\pi_1(S)$ satisfying quasi-smoothing arise as the stable length of some action of $\pi_1(S)$ satisfying bounded-bactracking. 
 
 \begin{question}
-Let $\Gamma$ be a surface group, and let $f \colon \Gamma \to \mathbb{R}$ be a symmetric and stable functional satisfying quasi-smoothing.
+Let $\Gamma$ be a surface group, and let $f \colon \Gamma \to \mathbb{R}$ be a symmetric and stable functional satisfying quasi-smoothing (and hence, extending continuously to geodesic currents).
 Does there exists a uniformly quasi-geodesic Gromov hyperbolic space $X$ on which $\Gamma$ acts with the bounded backtracking property and so that $\ell_X = f$, where $\ell_X$ denotes the stable length of the action $\Gamma \acts X$?
 \end{question}
 
@@ -70,7 +69,7 @@ Give axioms in terms of certain pairs $a,b \in \Gamma$ characterizing when the a
 \end{question}
 
 \subsubsection{Relation to quasi-morphisms} 
-\label{sub:quasimorphism} \DMGtodo{added this question (might remove it)}
+\label{sub:quasimorphism} 
 
 The hypotheses of \emph{oriented quasi-smoothing} are reminiscent of, but weaker than, the conditions for a map 
 $f \colon \pi_1(S) \to \mathbb{R}$ to be a \emph{quasi-morphism}, that is, there exists $D > 0$ such that 
@@ -93,7 +92,7 @@ is a homogeneous quasi-morphism?
 
 \end{question} 
 
-\subsubsection{Functionals valued on ordered abelian groups} \DMGtodo{added this question}
+\subsubsection{Functionals valued on ordered abelian groups}
 
 We expect most of the results in this paper to extend, with only minor modifications, to the setting of $\Lambda$-valued functionals and $\Lambda$-valued geodesic currents, where $(\Lambda, <)$ denotes an ordered abelian group—that is, an abelian group equipped with a total order satisfying $a < b$ and $c \le d$ imply $a + c < b + d$.
 This generalization is natural in the context of the theory of $\Lambda$-trees~\cite{Sko90:GeometricAction} and has already proved fruitful in the study of compactifications of character varieties of surface-group representations into higher-rank Lie groups~\cite{BIPP24:PositiveCrossratios}.
@@ -176,7 +175,7 @@ If $f(C) \geq f(C'_{\mbox{taut}})$ for all multi-curves $C$, does it follow that
 \label{subsubsec:convexity_charts}
 
 One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
-Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics},\cite[Theorem~2]{Thu16:Research},~\cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
+Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics}, \cite[Theorem~2]{Thu16:Research}, \cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
 These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\Curves(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
 

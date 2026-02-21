@@ -119,6 +119,42 @@ Since $\mathcal{G}$ is equipped with the edge-metric, $\ell_{\mathcal{G}}(C) \in
 Hence, Corollary~\ref{cor:int_multicurve} implies the result.
 \end{proof}
 
+\begin{figure}
+\centering{
+\svgfignormal{embedded}}
+\caption{Example of embedded graph which does not arise as a simple generating set.}
+  \label{fig:embedded-graph}
+\end{figure}
+
+\begin{example}[Embedded graph but not simple generating set]
+As an example of an embedded graph which does not arise as a simple generating set, consider a square punctured torus with an embedded two-vertex graph with four edges, $r, g, c, b$ (for red, green, cyan, blue), see Figure~\ref{fig:embedded-graph}. Since it has more than one vertex, it does not arise from a simple generating set in the sense of Erlandsson. 
+Indeed, we have
+\[
+[x]=[rB]=[gC] , \qquad , [y]=[rG]=[bC]
+\]
+and thus
+\[
+\ell([x])=2, \qquad 
+\ell([y])=2.
+\]
+Moreover,
+\[
+\ell([xy])=\ell([(rB)(bC)])=\ell([rC])=2,
+\qquad
+\ell([xY])=\ell([(gC)(cB)])=\ell([gB])=2.
+\]
+
+This phenomenon does not occur for any of the simple generating sets of $F_2$, namely
+\[
+\{ x^{\pm1},y^{\pm1} \}, \quad
+\{ x^{\pm1},(xy)^{\pm1} \}, \quad
+\{ x^{\pm1},(xY)^{\pm1} \},
+\]
+nor for the analogous generating sets obtained by replacing the single element $x$ by $y$ in the last two sets. 
+Indeed, each of these generating sets assigns length strictly greater than $2$ 
+to at least one of the elements $x$, $y$, $xy$, or $xY$.
+\end{example}
+
 We note that our result says nothing concrete about the dual multi-curve, whereas Erlandsson's result explicitly constructs it in the specific case of simple generating sets. It would be interesting to describe these multi-curves in general.
 
 \subsection{Inequalities between intersection numbers}
@@ -370,7 +406,8 @@ Bonahon gives an algebraic characterization for a geodesic current to be a Liouv
    \label{thm:bonahonliouville}
 \end{theorem}
 
-The choice inclusion/exclusion of endpoints of the intervals in the above statement is irrelevant, since it follows from the hypothesis that the current is non-atomic. \DMGtodo{added this clarifying sentence}
+Whether the endpoints of the intervals are included or excluded in the
+above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
 
 We use this to prove the following characterization (Theorem~\ref{mainthm:apps}\ref{item:hyp-char}).
 
@@ -433,8 +470,10 @@ Hamenst\"adt
    \label{thm:ham}
 \end{theorem}
 
-\begin{question}\DMGtodo{decided to make this into a question, since the stated condition was too strong and I was not able to come up with a reasonable inequality.}
-Can we give a weaker inequality in terms of marked length spectrum, using Theorem~\ref{thm:ham}, that still characterizes Liouville currents among all geodesic currents?
+\begin{question}
+Can one formulate a weaker inequality in terms of the marked length
+spectrum, using Theorem~\ref{thm:ham}, that still characterizes
+Liouville currents among all geodesic currents?
 \end{question}
 
 \begin{comment}

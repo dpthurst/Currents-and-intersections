@@ -412,7 +412,6 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
 
 \DPTtodo{I dislike the proliferation of Theorems; Theorem C seems like
   it's still the main result of this section.}
-  \DMGtodo{It is the main result, but I think each of the other characterizations deserve to be theorems}
 \begin{theorem}
 Consider an irreducible $S$-tree that preserves axis
 intersection. Then:
@@ -600,7 +599,7 @@ $T_g$ to $T_h$, and are incoherent on that arc.
 This is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-It follows from the fact that, by Lemma~\ref{lem:pau_ell_hyp}, item \ref{case:pau_ell_hyp_disjoint}, we have $\| gh\| = \| gH\|$.
+It follows from the fact that, by Lemma~\ref{lem:pau_ell_hyp}, item (3), we have $\| gh\| = \| gH\|$.
 
 Finally, note that in all the subcases where we assumed $(\ora{g},\ora{h})$ crosses, we concluded that $T_g \cap T_h \neq \emptyset$.
 Hence, we have also shown that if an irreducible $S$-tree preserves
@@ -661,7 +660,7 @@ or $g,h$ overlap incoherently, in which case
 Note that Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} hold for any pair of hyperbolic isometries $(g,h)$. In particular, they hold if $(\ora{g},\ora{h})$ cross.
 Hence, $\| \cdot \|$ always satisfies disconnected smoothing. Similarly, they also hold if $(\ora{g},\ora{h})$ are parallel. Thus, $-\| \cdot \|$ always satisfies connected smoothing.
 
-\begin{claim} Suppose $a,x \in \Gamma$ are hyperbolic elements so that $\| a \|>\| x \|$ and $(a,x)$ overlap coherently. We claim that the pair $(ax,xa^{-1})$ has incoherent overlap.
+\begin{claim} Suppose $a,x \in \Gamma$ are hyperbolic elements of a reducible action so that $\| a \|>\| x \|$ and $(a,x)$ overlap coherently. We claim that the pair $(ax,xa^{-1})$ has incoherent overlap.
 \end{claim}
 \begin{proof}
 Indeed, on the one hand, by Equations~\ref{eq:reducible1} and \ref{eq:reducible2} 
@@ -706,14 +705,16 @@ otherwise it would have hyperbolic pairs with (unbounded) incoherent
 overlap, by Lemma~\ref{lem:red_not_smoothing}.
 \end{proof}
 
+
 Now we prove Theorem~\ref{mainthm:skora}.
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
 (A) is equivalent to (D) is proven by the first part of Theorem~\ref{mainthm:apps}.
-(B) implies (D).
-(A) implies (B) follows by work of Morgan-Otal~\cite{MO93:RelativeGrowths}. Thus, we have (B) is equivalent to (D).
-Theorem~\ref{thm:axis_incoherent_characterization} implies (C) is equivalent to (E).
-(C) implies (B) is trivial, and (B) implies (C) is Theorem~\ref{thm:small}. Hence, (C) is equivalent to (B). All the equivalences follow.
+(A) implies (B) follows work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
+(B) implies (D) follows by Theorem~\ref{thm:small}.
+Thus, we have (B) is equivalent to (D).
+Theorem~\ref{thm:axis_incoherent_characterization} shows (C) is equivalent to (E).
+All the equivalences follow.
 \end{proof}
 
 
