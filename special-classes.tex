@@ -38,10 +38,11 @@ We have the following criterion for half-integral multi-curves.
 
 \begin{corollary}
 Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves^+(S)$. Then $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
-Moreover, either $\mu$ is an integral multi-curve, or $\mu$ is non-integral and $\vec{M} = 0$ in $\mathbb{Z}_2$-homology. \DMGtodo{added the secondary statement here, and corresponding proof}
+Moreover, $\vec{M} = 0$ in $\mathbb{Z}_2$-homology.
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
+  \DPTtodo{Edit proof to reflect simplified statement}
 Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesic current $\mu$ so that
 \[
 i(\mu, C) = f(C)
@@ -66,12 +67,6 @@ For example, let $\mu$ be the geodesic current supported on a
   For more involved examples, there are certain word-lengths (whose marked length spectrum is integral) that are
   dual to a half-integral multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}. See also Section~\ref{subsec:embedded_graphs}.
 \end{remark}
-
-\DPTtodo[inline]{Characterize which half-integral
-  multi-curves have integral intersection number using $\bbZ/2$
-  homology. Also characterize intersection number with integral
-  curves. DMG on it}
-  \DMGtodo{I wrote a bit more precisely the criterion. Is this logic the best exposition?}
 
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
@@ -122,10 +117,11 @@ Hence, Corollary~\ref{cor:int_multicurve} implies the result.
 \begin{figure}
 \centering{
 \svgfignormal{embedded}}
-\caption{Example of embedded graph which does not arise as a simple generating set.}
+\caption{Example of embedded graph on the torus which does not arise as a simple generating set.}
   \label{fig:embedded-graph}
 \end{figure}
 
+\DPTtodo{Puncture corner rather than center. Permute labels to match}
 \begin{example}[Embedded graph but not simple generating set]
 As an example of an embedded graph which does not arise as a simple generating set, consider a square punctured torus with an embedded two-vertex graph with four edges, $r, g, c, b$ (for red, green, cyan, blue), see Figure~\ref{fig:embedded-graph}. Since it has more than one vertex, it does not arise from a simple generating set in the sense of Erlandsson. 
 Indeed, we have
@@ -208,14 +204,12 @@ embedded convex geodesic quadrilateral on $\wt{\Sigma}$.
 The following result is~\cite[Lemma~6.2]{dRMG22:Duals}.
 
 \begin{lemma}
-Given the setup described above, we have 
-\begin{align*}
-\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) &= \\
-&\mu(G[x,z)) + \mu(G[w,y)) \\
-&- \mu(G([w,z)) - \mu(G([x,y))
-\end{align*}
-
 \label{lem:otalclaim}
+Given the setup described above, we have 
+\begin{multline*}
+\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) = \\
+\mu(G[x,z)) + \mu(G[w,y))- \mu(G([w,z)) - \mu(G([x,y))
+\end{multline*}
 \end{lemma}
 
 We also need the following hyperbolic geometry lemma.
@@ -363,8 +357,6 @@ and~\eqref{eq:Rn-perp-meas}, both:
     \item and
 $\mu((R_{a,b}^{\perp})^{+})>0$ or $\mu((R_{a,b}^{\perp})^{-})>0$
 \end{itemize} 
-\DPTtodo{I believe appropriately interpreted neither $\protect{R_{a,b}}$ nor $\protect{R_{g,h}^\perp}$ contain the diagonals $\protect\ora{a}$ and $\protect\ora{b}$. We  use that here}
-  \DMGtodo{I introduced two versions of $R_{a,b}$ and $R_{a,b}^{\perp}$ depending on which endpoints are included. }
 For every $\gamma \in R_{a,b}^+ \cup R_{a,b}^-$ and every $\gamma' \in (R_{a,b}^\perp)^+\cup (R_{a,b}^\perp)^-$, $\gamma$ and $\gamma'$ cross. Consequenty, we have $i(\mu, \mu) >0$,
 and hence $\mu$ is not a measured lamination.
 \end{proof}
