@@ -43,6 +43,7 @@ Moreover, $\vec{M} = 0$ in $\mathbb{Z}_2$-homology.
 \end{corollary}
 \begin{proof}
   \DPTtodo{Edit proof to reflect simplified statement}
+  \DMGtodo{did some simplification to the proof}
 Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesic current $\mu$ so that
 \[
 i(\mu, C) = f(C)
@@ -55,8 +56,9 @@ It suffices to show $\mu$ is an integral multi-curve. By the same argument in th
 Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$). 
 Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. For more details about this last argument, see~\cite{JMG:StrongDuals}.
 By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
-We can be more precise. One option is that $\mu$ is an integral multi-curve. If $\mu$ is a half-integral non-integral multi-curve, we claim that $\vec{M}=0$ in $\mathbb{Z}_2$-homology. Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
-$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \cdot, \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(M/2,C) \notin \mathbb{Z}$, a contradiction.
+We furthermore claim that $\vec{M}=0$ in $\mathbb{Z}_2$-homology. 
+Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
+$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \cdot, \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(\mu, C) \notin \mathbb{Z}$, a contradiction.
 \end{proof}
 
 \begin{remark}
@@ -451,73 +453,7 @@ e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 Therefore, Theorem~\ref{thm:bonahonliouville} shows $\mu$ is a Liouville current.
 \end{proof}
 
-Bonahon's Theorem~\ref{thm:bonahonliouville} was strengthened by
-Hamenst\"adt
 
-\begin{theorem}[{\cite[Corollary~2.12]{Ham99:Cocycles}}]
-   A geodesic current $\mu \in \Curr(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, there exist a number $\rho>1$ so that for any four ordered points $x,y,z,w \in \partial_{\infty} S$, we have
-    \[
-      \frac{1}{\rho} \cdot  e^{-\mu([x,y]\times[z,w])} \leq 1- e^{-\mu([y,z]\times [w,x])} \leq \rho \cdot e^{-\mu([x,y]\times[z,w])} 
-   \]
-   \label{thm:ham}
-\end{theorem}
-
-\begin{question}
-Can one formulate a weaker inequality in terms of the marked length
-spectrum, using Theorem~\ref{thm:ham}, that still characterizes
-Liouville currents among all geodesic currents?
-\end{question}
-
-\begin{comment}
-Using this, we can prove the following.
-
-\begin{theorem} \DMGtodo{I'm thinking about this. I think the conditions are too strong, I think one can find points satisfying the lambda-length condition but not this condition}
-A geodesic current $\mu \in \Curr(S)$ is a hyperbolic Liouville current if and only if the functional $f$ corresponding to $\mu$ satisfies smoothing, additivity, stability, and the following inequalities.
-    There exists a constant $C \geq 1$ so that, for any pair of \emph{crossing} elements $g,h \in \pi_1(S)$, we have
-    \begin{gather}
-    1/C \leq \exp \Bigl( f\left([g][h]\right)/2-f\left([gh]\right)/2 \Bigr) - \exp \Bigl( f\left([gh^{-1}]\right)/2-f\left([gh]\right)/2 \Bigr) \leq C\\
-     1/C \leq  \exp \Bigl( f\left([g][h]\right)/2-f\left([gh^{-1}]\right)/2 \Bigr) - \exp \Bigl( f\left([gh]\right)/2-f\left([gh^{-1}]\right)/2 \Bigr) \leq C.
-    \end{gather}
-    \label{thm:char_liouville_strong}
-  \end{theorem}
-
-\begin{proof}
-The assumptions can be written as 
- \begin{gather}
-     1/C \leq  \frac{1- \exp \left[f\left([g][h]\right)/2 - f\left([gh^{-1}]\right)/2 \right]}{\exp \left[ -f\left([g][h]\right)/2 + f\left([gh]\right)/2 \right]} \leq C\\
-    1/C \leq \frac{1- \exp \left[f\left([g][h]\right)/2 - f\left([gh]\right)/2\right]}{\exp \left[-f\left([g][h]\right)/2 + f\left([gh^{-1}]\right)/2\right]} \leq C.
-\end{gather}
-\DPTtodo{I feel like there are some steps missing. Does this use the
-  $A_n,B_n,\dots$?}
-    Following the setup of Lemma~\ref{lem:measures_parallelogram}, the above equations imply, for $n \in \mathbb{N}$,
-         \begin{gather}
-    1/C \leq \frac{1 - e^{-\mu(R_n)}}{e^{-\mu(R_n^{\perp})}} \leq C\\
-    1/C \leq \frac{1 - e^{-\mu(R_n^{\perp})}}{e^{-\mu(R_n)}} \leq C
-    \end{gather}
-    By Lemma~\ref{lem:measures_parallelogram} (2), the above inequalities imply
-     \begin{gather}
-    1/C \leq \frac{1 - e^{-\mu(B_{g,h})}}{e^{-\mu(B_{g,h}^{\perp})}} \leq C\\
-    1/C \leq \frac{1 - e^{-\mu(B_{g,h}^{\perp})}}{e^{-\mu(B_{g,h})}} \leq C
-    \end{gather}
-    
-    The same inequalities follow for a general box of geodesics $B$ by a density argument identical to the proof of Theorem~\ref{thm:char_liouville}. Hence,
-    by Theorem~\ref{thm:ham}, we see that $\mu$ is a hyperbolic Liouville current.
-On the other hand, if $\mu$ is hyperbolic Liouville current then the
-disconnected $\lambda$-smoothing property is satisfied. Since
-\[
-e^{f(g)/2}\leq \lambda(a) = 2\cosh(f(g)/2) \leq 2 e^{f(g)/2}
-\]
-for every $g \in \pi_1(S)$,
-from the $\lambda$-disconnected smoothing property for a crossing pair $(g,h)$ we obtain
-\[
-e^{f(g)/2}e^{f(h)/2} \leq \lambda(g)\lambda(h) = \lambda(gh) + \lambda(gh^{-1}) \leq 2\left(e^{f(gh)/2} + e^{f(gh^{-1})/2} \right)
-\]
-and
-\[
-4e^{f(g)/2}e^{f(h)/2} \geq \lambda(g)\lambda(h) = \lambda(gh) + \lambda(gh^{-1}) \geq e^{f(gh)/2} + e^{f(gh^{-1})/2}.
-\]
-\end{proof}
-\end{comment}
 %%% Local Variables:
 %%% mode: LaTeX
 %%% TeX-master: "Intersections"
