@@ -42,15 +42,20 @@ intersection is a \emph{line} in $T$. Conversely, given any line in $T$, the
 two oppositely oriented rays emanating from any point in the line
 determine two distinct ends of the tree, and these ends do not depend
 on the choice of point. We will say this line \emph{joins} the two
-ends. By the definition of tree, there is exactly one line connecting
+ends. It follows from the definition of real trees that there is exactly
+one line connecting
 any two distinct ends.
+\DPTtodo{Lines are alternately the isometric images of $\bbR$, is that
+helpful? Eg the axis of a hyperbolic element is a line}
 
 
 \textbf{Actions on real trees.} If $\Gamma$ is a finitely generated
 group, a
 \emph{$\Gamma$-tree} is an $\mathbb{R}$-tree~$T$ together with a group
 action $\Gamma \acts T$ by isometries.
-There are two types of isometries: those with fixed points, called \emph{elliptic}, and those without fixed points, called \emph{hyperbolic}.
+There are two types of isometries of real trees: those with fixed
+points, called \emph{elliptic}, and those without fixed points, called
+\emph{hyperbolic}.
 Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and
 let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$ be the
 \emph{characteristic set} of~$g$; this is a closed, non-empty subtree
@@ -65,7 +70,9 @@ case we call $T_g$ the \emph{axis} of $g$.
 
 The translation lengths of any $\Gamma$-tree can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition.
 Even though we will not use it in the proofs, it is helpful to keep it in mind;
-it can be viewed as a simpler repackaging of Culler-Morgan's axioms.
+it can be viewed as a simpler repackaging of axioms due to Culler,
+Morgan, Paulin, and Parry.
+\DPTtodo{Added Paulin and Parry to this list, is that fair?}
 
 \begin{proposition}
 \label{prop:max_twice}
@@ -91,7 +98,9 @@ The other implication follows by a deep result of Parry~\cite{Par91:Translation}
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
 
-A $\Gamma$-tree with non-trivial translation length $\| \cdot \|$ is one of three types~\cite[Page~583]{CM87:GroupActions}:
+A $\Gamma$-tree with non-trivial translation length function
+$\| \cdot \|$ is of one of three
+types~\cite[Page~583]{CM87:GroupActions}:
 \begin{itemize}
 \item \textit{Fixed end:} $\| \cdot \|$ is trivial on $[\Gamma,\Gamma]$;
   equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2,
@@ -121,9 +130,7 @@ Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{
 \item the length of $T_g \cap T_h$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
 \end{itemize}
 
-The following appears in~\cite[Remark~3.3]{CM87:GroupActions}.
-
-\begin{lemma}
+\begin{lemma}[{\cite[Remark~3.3]{CM87:GroupActions}}]
 If $g,h$ are hyperbolic and $T_g,T_h$ meet in an arc of positive but
 finite length, then there exist integers $m>0$ and $n$ so that $g^m$
 and~$h^n$
@@ -145,7 +152,7 @@ A $\Gamma$-tree is irreducible if and only if there exist hyperbolic elements $g
 \end{theorem}
 \end{comment}
 
-We next give a useful one-sided criterion for reducibility.
+We next give a useful criterion that implies reducibility.
 \begin{lemma}[{\cite[Lemma~2.1]{CM87:GroupActions}}]
     If there exists a hyperbolic element $g \in \Gamma$ so that for all hyperbolic $h \in \Gamma$ we have  $T_g \cap T_h \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
@@ -228,13 +235,21 @@ We will also use the following.
 \begin{lemma}[{\cite[Lemma~6.2]{CM87:GroupActions}}]\label{lem:powers_intersect}
     Let $T$ be an arbitrary $\Gamma$-tree.
     If $g,h$ are hyperbolic isometries of $T$ and satisfy $\|g\| + \|h\| = \|gh\|$ (or
-    equivalently, overlap coherently), then for every positive integers $m,n$, we have
+    equivalently, overlap coherently), then for all positive integers $m,n$, we have
     \[
     \|g^m h^n\| = m \| g \| + n \|h \|.
     \]
 \end{lemma}
 
-Finally, we will need analogous statements for pairs $g,h \in \Gamma$ where one or both of the elements are allowed to be elliptic. These have been analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the form that will be most convenient for us. This makes Proposition~\ref{prop:max_twice}---that the maximum among $\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---more apparent.
+We will need analogous statements for pairs $g,h \in \Gamma$ where one
+or both group elements are allowed to be elliptic. These have been
+analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the
+form that will be most convenient for us, making
+Proposition~\ref{prop:max_twice}
+%---that the maximum among
+%$\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---
+more
+apparent.
 \begin{lemma}\label{lem:pau_ell_hyp}
 Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
@@ -276,14 +291,15 @@ Finally, the following result will be useful.
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
 Let $T$ be an arbitrary $\Gamma$-tree.
 Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
-$T_{ghg^{-1}}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
+$T_{ghG}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
 in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
 and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
 We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
-If the length is non-zero by \cite[Proposition~3.1]{CM87:GroupActions} there is a
+If $\norm{\cdot}$ is non-zero then by
+\cite[Proposition~3.1]{CM87:GroupActions} there is a
 unique minimal invariant subtree. The length function for the
 restriction to this minimal invariant subtree is equal to the length
 function of the original tree. Hence, without loss of generality, one
@@ -293,8 +309,7 @@ always consider minimal actions.
 
 Note, however, that if the translation lengths of two $\Gamma$-trees are
 equal, that does not necessarily imply the trees are equivariantly
-isometric, but it is true if the action is minimal and either
-irreducible or dihedral (that is, unless the action has a fixed end) \cite[Theorem~3.7]{CM87:GroupActions}.
+isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupActions}.
 
 \subsection{Surface group actions on real trees}
 
