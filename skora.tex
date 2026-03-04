@@ -259,8 +259,8 @@ relative position of the axes $T_h$ and $T_{ghG}$:
 
 \begin{proof}
 The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The statement of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT} is divided into two cases depending on the relative position of $T_g, T_h$.  
-If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghg^{-1}}$ is a non-empty interval and contains $T_g \cap T_h$.
-Then, the inequalities follow depending on the overlap between $T_h$ and $T_{ghg^{-1}}$.
+If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghG}$ is a non-empty interval and contains $T_g \cap T_h$.
+Then, the inequalities follow depending on the overlap between $T_h$ and $T_{ghG}$.
 If $T_g \cap T_h = \emptyset$, then the equality of lengths in part (2) is stated explicitly in~\cite[Section~1.5]{CM87:GroupActions}. The fact that $T_{ghG} \cap T_h = \emptyset$ in item (2), follows from~\cite[Fact~1.7]{CM87:GroupActions}.
 Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
 \end{proof}
@@ -324,7 +324,9 @@ closed curve associated to $g$.
 Given a $S$-tree $T$, if there is a measured lamination $\lambda$ and $\pi_1(S)$-equivariant isometry $\phi \colon T_\lambda \to T$, we say that $T$ is \emph{dual to}~$\lambda$.
 
 Recall that for $\Sigma$ a fixed hyperbolic structure on $S$, the
-corresponding hyperbolic axis in $\wt{\Sigma}$ is denoted $\ora{g}$.
+corresponding hyperbolic axis in $\wt{\Sigma}$ is denoted $\ora{g}$;
+be careful to distinguish this from the characteristic set $T_g$ in
+the action on~$T$.
 
 In checking whether an $S$-tree is dual to a measured
 lamination, there are several relevant conditions on the action:
@@ -366,8 +368,8 @@ a small action is also
 dual to a measured lamination~\cite{Sk96:Splittings}.
 It follows that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
-In turn, we will also give three new characterizations of $S$-trees
-with small actions (from Theorem~\ref{mainthm:skora}):
+In turn, we also give three new characterizations of $S$-trees
+dual to measured laminations (from Theorem~\ref{mainthm:skora}):
 \begin{itemize}
 \item Irreducible $S$-trees that preserve characteristic intersection.
 \item $S$-trees satisfying R-oriented smoothing:
@@ -381,13 +383,16 @@ with small actions (from Theorem~\ref{mainthm:skora}):
 We start by proving a geometric criterion of reducibility for axis preserving actions.
 
 \begin{lemma}
-Suppose that an $S$-tree preserves axis intersection. If the $S$-tree is irreducible, then for all hyperbolic elements $g \in \pi_1(S)$, there exist a hyperbolic element $h \in \pi_1(S)$ R-crossing $g$ so that $T_g \cap T_h$ is bounded.
+Suppose that an $S$-tree preserves axis intersection. If the $S$-tree
+is irreducible, then for all hyperbolic elements $g \in \pi_1(S)$,
+there exist a hyperbolic element $h \in \pi_1(S)$ so that $\ora{h}$
+R-crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
 \label{lem:if_unbounded_then_reducible}
 \end{lemma}
 \begin{proof}
-    We will prove the contra-positive: if there exists a hyperbolic
-    element $g$ so that for every hyperbolic element $h$ R-crossing
-    $g$, the intersection $T_g \cap T_h$ is unbounded, we will deduce
+    We will prove the contra-positive. Namely, if there exists a hyperbolic
+    element $g$ so that for every hyperbolic element $h$ with $\ora{h}$ R-crossing
+    $\ora{g}$, the intersection $T_g \cap T_h$ is unbounded, we will deduce
     that the action must be reducible. (Note $T_g \cap T_h$ cannot be
     empty since the action on $T$ is axis-preserving.)
     
@@ -397,12 +402,16 @@ Suppose that an $S$-tree preserves axis intersection. If the $S$-tree is irreduc
       
     By Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
     $\ora{h^nk^n}$ R-crosses $\ora{g}$. See
-    Figure~\ref{fig:tree_k_crossing} for an illustration. In
+    Figure~\ref{fig:tree_k_crossing} for an illustration of the
+    situation in~$T$. In
     particular, since the action preserves axis, $T_{h^nk^n}$ and
-    $T_g$ must intersect. But this forces $T_g \cap T_h$ to intersect,
+    $T_g$ must intersect.
+    \DPTtodo{The logic of this last sentence currently escapes me. I
+      know I understood it before.}
+    But this forces $T_g \cap T_h$ to intersect,
     as desired. 
     
-    If $(\ora{g},\ora{h})$ were anti-parallel, we could proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
+    If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
 
 %we do not need this net lemma anymore
@@ -426,10 +435,10 @@ Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
 \end{comment}
 
 \begin{theorem}
-Consider an irreducible $S$-tree that preserves axis
+Let $T$ be an irreducible $S$-tree that preserves axis
 intersection. Then:
 \begin{itemize}
-\item it preserves characteristic intersection; and
+\item $T$ preserves characteristic intersection; and
 \item $\| \cdot \|$ satisfies max-smoothing. 
 \end{itemize}
 \label{thm:small}
@@ -475,14 +484,14 @@ is the key place where we invoke irreducibility.
     If the overlap is bounded, according to
     Lemma~\ref{lem:powers_goodpair} there exists $m>0,n>0$ so that
     $g^m$ and $h^{-n}$ form a good pair, and hence, by
-    Lemma~\ref{lem:oppgoodpair}, we have $T_{g^mh^n}$ and $T_{h^ng^m}$
+    Lemma~\ref{lem:oppgoodpair}, $T_{g^mh^n}$ and $T_{h^ng^m}$
     do not intersect. On the other hand, since $\ora{g},\ora{h}$ are
     parallel, it follows by~Lemma~\ref{lem:righthandedfoundation} that
     $\ora{g^mh^n}$ and $\ora{h^ng^m}$ cross, which by preservation of
     axis intersection implies $T_{g^mh^n}$ and $T_{h^ng^m}$  intersect, a
     contradiction.
 
-    Suppose now the overlap is unbounded and incoherent. We will use
+    Suppose now $T_g,T_h$ have unbounded and incoherent overlap. We will use
     the assumption of irreducibility to construct another pair with
     bounded overlap. Suppose, without essential loss of generality,
     that $(\ora{g},\ora{h})$ are R-parallel,
@@ -502,7 +511,7 @@ is the key place where we invoke irreducibility.
     enough, we can ensure two things. On the one hand, the endpoints of
     $\ora{c_2}$ are near $g^+$ on the boundary of the disk and thus
     $(\ora{c_2},\ora{h})$ are
-    parallel. On the other hand, the same conjugation also insures
+    parallel. On the other hand, the same conjugation also ensures
     that the (still bounded and coherent) intersection between
     $T_{c_2}$ and $T_g$ is near the attracting end of $T_g$ and thus
     $T_{c_2}$ has bounded, incoherent intersection with $T_h$. Thus
@@ -534,11 +543,18 @@ is the key place where we invoke irreducibility.
 \end{figure}
 
 \begin{proof}[Proof of Theorem~\ref{thm:small}]
-We consider several cases of the max-smoothing equality, depending on if $g,h$ acts hyperbolically or elliptically on the tree, and also depending on the relative position of $\ora{g},\ora{h}$ in the disk. We first deal with the case where $g,h$ are both hyperbolic, and then reduce the other cases to this one.
-
+  We consider several cases of the max-smoothing equality, depending
+  on whether $g,h$ act hyperbolically or elliptically on the tree,
+  and also on the relative position of $\ora{g},\ora{h}$ in
+  the disk. We first deal with the case where $g,h$ are both
+  hyperbolic, and then reduce the other cases to this one.
+  The cases where $\ora{g},\ora{h}$ are anti-parallel immediately
+  reduce to the case where they are parallel so we only deal with the
+  latter.
+  
 \begin{case}
 \label{case:hyperbolic}
-In the action on~$T$, $g,h$ are hyperbolic.
+In the action on~$T$, $g,h$ are both hyperbolic.
 \end{case}
 \begin{subcase}
 $\ora{g}, \ora{h}$ cross.
@@ -561,34 +577,40 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
 
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
-  In particular, $ghg^{-1}$ and $h$ act hyperbolically on $T$.
+  In particular, $ghG$ and $h$ act hyperbolically on $T$.
 \end{case}
 \begin{subcase}
 $\ora{g},\ora{h}$ cross.
 \end{subcase}
-\DPTtodo{Read this case again}
-Then $\ora{ghg^{-1}}$ and $\ora{h}$ are parallel.
-By Lemma~\ref{lem:parallel-incoherent}, $T_{ghg^{-1}}$ and $T_{h}$
+Then $\ora{ghG}$ and $\ora{h}$ are parallel.
+By Lemma~\ref{lem:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|\geq \|gH\|$, and we
-are done. The only remaining option to rule out is that $T_{ghg^{-1}}$ and $T_{h}$ do not intersect. Then by
-Lemma~\ref{lem:foundation_trees} (2), we get
+are done. The only remaining option to rule out is that $T_{ghG}$ and
+$T_{h}$ do not intersect.
+\DPTtodo{Case still needs work}
+% Then by Lemma 10.7 $gh$ and $gH$ act hyperbolically (and thus so
+% do conjugates $hg$ and $Gh$)
+In this case, by
+Lemma~\ref{lem:foundation_trees}\ref{item:tree-disjoint}, we get
 \begin{equation}
 \| (gh)(hg)^{-1}\| = \| (ghG)H \| = \| (ghG)h \| >2\|h\|>0.
 \label{eq:intermediate0}
 \end{equation}
+\DPTtodo[inline]{Are we invoking Lemma~\ref{lem:pau_ell_hyp} to say
+  $gh$ and $Gh$ act hyperbolically?}
 Also, since $\| (gh)(Gh)^{-1}\| = \|(gh)(Hg)\| = \|g^2\| =0$, it follows $gh, Gh$ overlap coherently.
-Hence, by Lemma~\ref{lem:foundation_trees}
+Hence, by Lemma~\ref{lem:foundation_trees},
 \begin{equation}
   \|(gh)(Gh)\| = \| gh\| +\| gH\|=2\|gh\|,
 \label{eq:intermediate}
 \end{equation}
-where we used $\|gh\| = \| gH\|$ by Lemma~\ref{lem:pau_ell_hyp} (3) since $T_g \cap T_h = \emptyset$, in the last equality.
-Combining  Equation~\ref{eq:intermediate0} and Equation~\ref{eq:intermediate}, it follows that $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
+where we used $\|gh\| = \| gH\|$ by Lemma~\ref{lem:pau_ell_hyp}(3) since $T_g \cap T_h = \emptyset$, in the last equality.
+Combining  Eqs.~\eqref{eq:intermediate0} and~\eqref{eq:intermediate}, it follows that $gh,hg$ overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp} (1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
+point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
 Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (2), $\|gH\| = \|h\| > \|gh\|$ and
 \[
