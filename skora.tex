@@ -111,6 +111,8 @@ types~\cite[Page~583]{CM87:GroupActions}:
 \item \textit{Irreducible:} $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{itemize}
 
+\DPTtodo{Probably should define ``reducible'' as ``fixed end or
+  dihedral''. But what about cases where $\norm{\cdot}$ is trivial?}
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
 
@@ -275,6 +277,7 @@ Since each case is exclusive, the triality depending on the relative position of
   $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$,
   the shortest connecting arc between $T_g$ and $T_h$ is contained in
   $T_{gh}$.
+  \DPTtodo{Missing coherence statement, which we use}
 \label{lem:pau_two_ell}
 \end{lemma}
 \begin{proof}
@@ -319,6 +322,7 @@ isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupA
 
 In this section, we assume $\Gamma = \pi_1(S)$. An \emph{$S$-tree} is
 a $\bbR$-tree $T$ with a minimal action of $\pi_1(S)$.
+\DPTtodo{Do we allow actions with trivial $\norm{\cdot}$ among $S$-trees?}
 It is standard that a measured lamination $\lambda$ defines a (dual) irreducible $S$-tree (see~\cite{MO84:Valuations}).
 It follows from the construction that the translation length of
 $g \in\pi_1(S)$  on
@@ -589,7 +593,7 @@ $\ora{g},\ora{h}$ cross.
 Then $\ora{ghG}$ and $\ora{h}$ are parallel.
 By Lemma~\ref{lem:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}, $\| gh \| = \|h\|\geq \|gH\|$, and we
+point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq \|gH\|$, and we
 are done. The only remaining option to rule out is that $T_{ghG}$ and
 $T_{h}$ do not intersect.
 
@@ -617,16 +621,17 @@ it follows that $T_{gh},T_{hg}$ \DPTtodo{Why? With $a = gh$, $b = hg$,
   we have $\|a\| + \|b\| = \|aB\|$. But why is this greater than $\|ab\|$?}
 overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
-
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
-Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp} (2), $\|gH\| = \|h\| > \|gh\|$ and
+
+Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and
 \[
 \|(ghG)h\|>2\|h\| = \|h\| + \|gH\| > \|gh\| + \|gH\|.
 \]
-where the first inequality is because $T_{ghG}$ and $T_{h}$ overlap incoherently.
-Hence, $T_{gh},T_{Gh}$ overlap incoherently.
+where the first inequality is from
+Lemma~\ref{lem:foundation_trees}(1c).
+Hence, $T_{gh},T_{Gh}$ overlap incoherently, again by Lemma~\ref{lem:foundation_trees}(1c).
 However, if $(\ora{g},\ora{h})$ are parallel, $(\ora{gh},\ora{Gh})$ are parallel (by Lemma~\ref{lem:bA_parallel_ba}), hence this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 
 \begin{case}
@@ -635,25 +640,37 @@ However, if $(\ora{g},\ora{h})$ are parallel, $(\ora{gh},\ora{Gh})$ are parallel
 \begin{subcase}
 $\ora{g},\ora{h}$ cross.
 \end{subcase}
+\DPTtodo{To get characteristic intersection preserving, we need to
+  rule out the case $\norm{gh} = 0$ and thus this whole subcase
+  entirely, no?}
 Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h= \emptyset$. Suppose $\|gh\|>0$.
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
 On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
 $T_{hg}$ overlap on the shortest arc connecting
 $T_g$ to $T_h$, and are incoherent on that arc.
 This is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
+
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-It follows from the fact that, by Lemma~\ref{lem:pau_ell_hyp}, item (3), we have $\| gh\| = \| gH\|$.
+\DPTtodo{Changed which lemma we cite here}
+By Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gH\|$ and
+thus we have max\hyp smoothing.
 
-Finally, note that in all the subcases where we assumed $(\ora{g},\ora{h})$ crosses, we concluded that $T_g \cap T_h \neq \emptyset$.
+Finally, note that in all the subcases where
+$(\ora{g},\ora{h})$ cross,
+\DPTtodo{Not in Subcase 3.1}
+we concluded that $T_g \cap T_h \neq \emptyset$.
 Hence, we have also shown that if an irreducible $S$-tree preserves
 axis intersection, it also preserves characteristic intersection.
 \end{proof}
 
 \begin{remark}
-One could hope to bypass cases 2 and 3 by approximating by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
-Indeed, note that if a $\Gamma$-tree satisfies that all elements
-act hyperbolically, it follows the action is free.
+One could hope to bypass Cases 2 and 3 by approximating action on $T$ by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
+\DPTtodo{This is pretty comprehensive, but maybe longer than is needed
+to make the point that the relevant approximation result is harder
+than what we actually go through}
+Indeed, note that if all elements of~$\Gamma$
+act hyperbolically on a tree, it follows the action is free.
 Observe that, in particular, 
 minimal free actions $\operatorname{Free}(\Gamma, T)$ are small and, in fact, ``very small'', in the sense of Cohen-Lustig~\cite{CL95:Verysmall}, which roughly means that the stabilizers of tripods must be trivial.
 Culler-Morgan~\cite{CM87:GroupActions} proved that the subspace of minimal small actions of any finitely generated group is closed in the space of all actions, and Cohen-Lustig~\cite{CL95:Verysmall} proved that the space of very small actions $\operatorname{VS}(\Gamma,T)$ is a closed subspace of small actions $\operatorname{S}(\Gamma, T)$, and the closure of free actions is contained in the space of very small actions:
@@ -665,16 +682,46 @@ For surface groups, both inclusions above are equalities, a fact that follows \e
 It then follows that very small actions are equal to small actions in this case. This can also be seen directly by definition, since stabilizers of tripods correspond to stabilizers of ideal triangle complementary regions of the lamination, which are the M\"obius transformations corresponding to the identity.
 \end{remark}
 
-We follow-up with some consequences of this proof.
+We follow up with some consequences of this proof.
 
 \begin{proposition}
-  Let $\mathcal{I}$ denote the set of parallel hyperbolic pairs of isometries with incoherent overlap in an $S$-tree.
- The $S$-tree preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
+  \DPTtodo{Reworded to better distinguish between parallel in $\wt S$
+    and incoherent overlap. Would it be better to restrict
+    $\mathcal{I}$ to bound overlaps?}
+  For an $S$-tree~$T$,
+  let $\mathcal{I}$ denote the set of $(g,h)$ so that
+  $(\ora{g},\ora{h})$ are parallel and $T_g,T_h$ overlap incoherently.
+ Then the $S$-tree preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
  \label{prop:preserves_axis}
 \end{proposition}
 \begin{proof}
+  \DPTtodo[inline]{Reworded to hopefully clarify. Preserved the old text.}
+If $T$ preserves axis intersection, either
+the action is irreducible and by Lemma~\ref{lem:parallel-incoherent}
+$\mathcal{I}$ is
+empty, or it is dihedral or fixed end and all intersections, including those in
+$\mathcal{I}$, have unbounded overlap.
+
+Conversely, if $T$ does not preserve axis intersection, by assumption
+there exists a pair of hyperbolic elements
+$(g,h)$ so that $(\ora{g},\ora{h})$ cross and $T_g \cap T_h =
+\emptyset$. Then by Lemma~\ref{lem:foundation_trees}(2)
+$T_{gh},T_{hg}$ overlap incoherently with overlap of length
+$d(T_g,T_h)$. Since $(gh,hg)$ are parallel and hyperbolic, we
+found a pair of parallel hyperbolic isometries with bounded incoherent
+overlap.
+
+\medskip\hrule\medskip
+  
 The proof of Theorem~\ref{thm:small} shows that if an $S$-tree preserves axis intersection, then either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded incoherent overlap.
-The converse is also true: if an $S$-tree does not preserve axis intersection, it means there exists a pair of hyperbolic elements $(g,h)$ so that $T_g \cap T_h = \emptyset$. This implies, by Lemma~\ref{lem:foundation_trees} (2) that $T_{gh},T_{hg}$ overlap incoherently with overlap of length $d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we found a pair of parallel hyperbolic isometries with bounded incoherent overlap, which proves the other implication.
+The converse is also true: if an $S$-tree does not preserve axis
+intersection, there exists a pair of hyperbolic elements
+$(g,h)$ so that $(\ora{g},\ora{h})$ cross and $T_g \cap T_h =
+\emptyset$. This implies, by Lemma~\ref{lem:foundation_trees}(2) that
+$T_{gh},T_{hg}$ overlap incoherently with overlap of length
+$d(T_g,T_h)$, and since $(gh,hg)$ are parallel and hyperbolic, we
+found a pair of parallel hyperbolic isometries with bounded incoherent
+overlap, which proves the other implication.
 \end{proof}
 
 We now show that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
@@ -684,26 +731,29 @@ Let $\Gamma=\pi_1(S)$ be a surface group acting on a real tree $T$ with translat
 If  $(\Gamma, T)$ is reducible, then:
 
 \begin{itemize}
-    \item $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy connected smoothing but it satisfies disconnected smoothing.
-    \item $-\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy disconnected smoothing but it satisfies connected smoothing.
-    \item There exist a pair of hyperbolic parallel elements $(g,h)$ with incoherent overlap.
+    \item $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy connected smoothing but does satisfy disconnected smoothing.
+    \item $-\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not
+      satisfy disconnected smoothing but does satisfy connected smoothing.
+    \item There exist a pair of hyperbolic elements $(g,h)$ with
+      incoherent overlap so that $(\ora{g},\ora{h})$ are parallel.
 \end{itemize}
 \label{lem:red_not_smoothing}
 \end{lemma}
 \begin{proof}
 By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap coherently, in which case
 \begin{equation}
-\|gh \|=\| g \| + \| h \| \mbox{ and } \|gh^{-1} \| = |\|g \|- \| h \| |,
+\|gh \|=\| g \| + \| h \| \mbox{ and } \|gH \| = |\,\|g \|- \| h \|\, |,
 \label{eq:reducible1}
 \end{equation}
 or $g,h$ overlap incoherently, in which case
 \begin{equation}
-\|gh^{-1} \| =\| g\| + \| h \| \mbox{ and } \| gh \| = | \| g \| - \| h \||.
+\|gH \| =\| g\| + \| h \| \mbox{ and } \| gh \| = |\, \| g \| - \| h \|\,|.
 \label{eq:reducible2}
 \end{equation}
 Note that Equations~\ref{eq:reducible1}~and~\ref{eq:reducible2} hold for any pair of hyperbolic isometries $(g,h)$. In particular, they hold if $(\ora{g},\ora{h})$ cross.
 Hence, $\| \cdot \|$ always satisfies disconnected smoothing. Similarly, they also hold if $(\ora{g},\ora{h})$ are parallel. Thus, $-\| \cdot \|$ always satisfies connected smoothing.
 
+\DPTtodo{HERE}
 \begin{claim} Suppose $a,x \in \Gamma$ are hyperbolic elements of a reducible action so that $\| a \|>\| x \|$ and $(a,x)$ overlap coherently. We claim that the pair $(ax,xa^{-1})$ has incoherent overlap.
 \end{claim}
 \begin{proof}
@@ -726,6 +776,7 @@ Thus
 \]
 which means that $(ax,xa^{-1})$ overlap incoherently, by Equation~\ref{eq:reducible2}.
 \end{proof}
+We return to the proof of Lemma~\ref{lem:red_not_smoothing}.
 Let $\Gamma'$ denote the (normal) subgroup of $\Gamma$ generated by elements acting hyperbolically on $T$.
 If $\| \cdot \|$ is non-trivial, $\Gamma'$ is infinite, and we can find a pair $(g,h) \in \Gamma'$ of R-parallel elements. Indeed, take an arbitrary pair $(g,h)$ in $\Gamma'$. If it is R-parallel, we are done. If it is R-crossing, consider $(gh,hg)$, which is R-parallel by Lemma~\ref{lem:righthandedfoundation}. If it is R-anti-parallel, consider $(gH,Hg)$ which is R-crossing, and proceed in the same way. From the hyperbolic R-parallel pair $(g,h)$, use Example~\ref{ex:ab_parallel_aB_crossing} to obtain a hyperbolic an R-parallel pair $(a,x)$, with $\|a\|>\|x\|$ so that $(ax^{-1},x^{-1}a)$ is R-crossing. By Lemma~\ref{lem:a_parallel_Ba}, it follows that $(ax,x^{-1}a)$ is R-parallel.
 Applying the Claim above, we have found a pair $(g,h)$, with $g\coloneqq ax, h\coloneqq x^{-1}a$, of parallel hyperbolic elements with incoherent overlap. This proves the third item. To finish the proof of the first and second items, note 

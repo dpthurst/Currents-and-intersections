@@ -84,11 +84,9 @@
 \newtheorem{mainthm}{Theorem}
 \renewcommand*{\themainthm}{\Alph{mainthm}}
 \newtheorem{mainthmprime}{Theorem}
-\renewcommand*{\themainthmprime}
-{\Alph{mainthmprime}$'$}
+\renewcommand*{\themainthmprime}{\Alph{mainthmprime}$'$}
 \newtheorem{mainthmprimeprime}{Theorem}
-\renewcommand*{\themainthmprimeprime}
-{\Alph{mainthmprimeprime}$''$}
+\renewcommand*{\themainthmprimeprime}{\Alph{mainthmprimeprime}$''$}
 \newtheorem*{theorem*}{Theorem}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -100,7 +98,10 @@
 
 %dealing with cases and subcases in proofs
 \newtheorem{case}{Case}
-\newtheorem{subcase}{Subcase}[case]
+\newcounter{subcase}[case]
+\newenvironment{subcase}%
+  {\smallskip\par\refstepcounter{subcase}\noindent\textbf{Subcase \thecase.\thesubcase.}\ \begingroup\itshape}%
+  {\endgroup}
 
 
 \theoremstyle{definition}
@@ -248,7 +249,7 @@
 % This suppresses warnings when multiple PDFS are included on a single page
 %\pdfsuppresswarningpagegroup=1
 
-%\includeonly{skora}
+\includeonly{skora}
 
 \begin{document}
 \title{The intersection dual of geodesic currents} 
