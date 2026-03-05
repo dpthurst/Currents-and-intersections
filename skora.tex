@@ -304,7 +304,7 @@ and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
-We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper non-trivial subtree of $T$ that is $\Gamma$-invariant.
+We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper subtree of $T$ that is $\Gamma$-invariant. \DMGtodo{removed the ``non-trivial'' from the definition of minimal.}
 If $\norm{\cdot}$ is non-zero then by
 \cite[Proposition~3.1]{CM87:GroupActions} there is a
 unique minimal invariant subtree. The length function for the
@@ -323,6 +323,7 @@ isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupA
 In this section, we assume $\Gamma = \pi_1(S)$. An \emph{$S$-tree} is
 a $\bbR$-tree $T$ with a minimal action of $\pi_1(S)$.
 \DPTtodo{Do we allow actions with trivial $\norm{\cdot}$ among $S$-trees?}
+\DMGtodo{I don't think so, because they are not minimal, no? Any subtree is $\Gamma$-invariant for those? So I guess we should be assuming $\lambda$ is non-zero?}
 It is standard that a measured lamination $\lambda$ defines a (dual) irreducible $S$-tree (see~\cite{MO84:Valuations}).
 It follows from the construction that the translation length of
 $g \in\pi_1(S)$  on
@@ -643,12 +644,13 @@ $\ora{g},\ora{h}$ cross.
 \DPTtodo{To get characteristic intersection preserving, we need to
   rule out the case $\norm{gh} = 0$ and thus this whole subcase
   entirely, no?}
-Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h= \emptyset$. Suppose $\|gh\|>0$.
+  \DMGtodo{no, we need to rule out $\norm{gh} = >0$, because want to verify that $\|g\|+\|h\| \geq \|gh\|$ and since $\|g\|=\|h\|=0$, we must have $\|gh\|=0$.}
+Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h \neq \emptyset$. \DMGtodo{this should have been $T_g \cap T_h \neq$} Suppose $\|gh\|>0$ or, equivalently by Lemma~\ref{lem:pau_ell_hyp}, $T_g \cap T_h = \emptyset$.
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
 On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
 $T_{hg}$ overlap on the shortest arc connecting
 $T_g$ to $T_h$, and are incoherent on that arc.
-This is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
+This is a contradiction by Lemma~\ref{lem:parallel-incoherent}. Hence, $\norm{gh}=0$ and, equivalently by Lemma~\ref{lem:pau_two_ell}, $T_g \cap T_h \neq \emptyset$.
 
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
@@ -665,21 +667,11 @@ axis intersection, it also preserves characteristic intersection.
 \end{proof}
 
 \begin{remark}
-One could hope to bypass Cases 2 and 3 by approximating action on $T$ by actions consisting solely of hyperbolic isometries (case 1), but this is would require some extra work.
-\DPTtodo{This is pretty comprehensive, but maybe longer than is needed
+One could hope to bypass Cases 2 and 3 by approximating action on $T$ by actions consisting solely of hyperbolic isometries (case 1), i.e., free actions, but this is would require some extra work.
+Indeed, it is not true for a general finitely generated group $\Gamma$ that free $(\Gamma,T)$ actions are dense in the space of small minimal $(\Gamma,T)$ actions. For free groups, by a result of Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that $\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) = \operatorname{VS}(\Gamma,T)$, the space of ``very small'' actions, a strictly proper subset of the subset of small actions. \DPTtodo{This is pretty comprehensive, but maybe longer than is needed
 to make the point that the relevant approximation result is harder
 than what we actually go through}
-Indeed, note that if all elements of~$\Gamma$
-act hyperbolically on a tree, it follows the action is free.
-Observe that, in particular, 
-minimal free actions $\operatorname{Free}(\Gamma, T)$ are small and, in fact, ``very small'', in the sense of Cohen-Lustig~\cite{CL95:Verysmall}, which roughly means that the stabilizers of tripods must be trivial.
-Culler-Morgan~\cite{CM87:GroupActions} proved that the subspace of minimal small actions of any finitely generated group is closed in the space of all actions, and Cohen-Lustig~\cite{CL95:Verysmall} proved that the space of very small actions $\operatorname{VS}(\Gamma,T)$ is a closed subspace of small actions $\operatorname{S}(\Gamma, T)$, and the closure of free actions is contained in the space of very small actions:
-\[
-\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) \subset \operatorname{VS}(\Gamma,T) \subset \operatorname{S}(\Gamma, T).
-\]
-For free groups, by a result of Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that $\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) = \operatorname{VS}(\Gamma,T)$, and it is also known that $\operatorname{VS}(\Gamma,T) \subsetneq \operatorname{S}(\Gamma, T)$.
-For surface groups, both inclusions above are equalities, a fact that follows \emph{a posteriori} once one knows all small actions are dual to measured laminations: filling measured laminations (those intersecting all simple closed curves) are dense in the space of measured laminations, and their dual tree actions are free.
-It then follows that very small actions are equal to small actions in this case. This can also be seen directly by definition, since stabilizers of tripods correspond to stabilizers of ideal triangle complementary regions of the lamination, which are the M\"obius transformations corresponding to the identity.
+\DMGtodo{I tried to make this a bit more compact}For surface groups, one can see that free actions are dense in the space of small actions \emph{a posteriori} once one knows all small actions are dual to measured laminations: filling measured laminations (those intersecting all simple closed curves) are dense in the space of measured laminations, and their dual tree actions are free.
 \end{remark}
 
 We follow up with some consequences of this proof.
@@ -688,6 +680,7 @@ We follow up with some consequences of this proof.
   \DPTtodo{Reworded to better distinguish between parallel in $\wt S$
     and incoherent overlap. Would it be better to restrict
     $\mathcal{I}$ to bound overlaps?}
+    \DMGtodo{I like the way we define $\mathcal{I}$ currently, because later we show that when there are unbounded overlaps is when the action is reducible.}
   For an $S$-tree~$T$,
   let $\mathcal{I}$ denote the set of $(g,h)$ so that
   $(\ora{g},\ora{h})$ are parallel and $T_g,T_h$ overlap incoherently.
