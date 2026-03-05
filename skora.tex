@@ -417,8 +417,8 @@ R-crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
     \DPTtodo{The logic of this last sentence currently escapes me. I
       know I understood it before. Dídac will think on it.}
-    But this forces $T_g$ and $T_h$ to intersect,
-    as desired. 
+      \DMGtodo{added a few more details about the several cases that can arise}
+      We claim this forces $T_g$ and $T_h$ to intersect. Indeed,  the length of the overlap of $T_{h^nk^n}$ cannot be strictly larger or smaller than that of the overlap of $T_k$ and $T_h$ (see Figure~\ref{fig:tree_k_crossing} for an illustration of a ``strictly larger overlap''), since otherwise, from the fact that $T_{h^nk^n}$ and $T_g$ intersect, this would create a loop. This implies that as soon as $T_k$ and $T_{h^nk^n}$ intersect, they do so in a ray. If $T_k$ and $T_h$ also overlap in a ray, then $T_g, T_h$ must overlap in the same ray, and hence $T_g \cap T_h \neq \emptyset$, a contradiction. Otherwise, the intersection of $T_k$ and $T_h$ is bounded. But then this forces the intersection of $T_{h^nk^n}$ and $T_g$ to be bounded, which is a contradiction.
     
     If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
@@ -470,6 +470,8 @@ intersection. Then:
   \caption{The proof of Lemma~\ref{lem:if_unbounded_then_reducible} }
 \label{fig:main_k_crossing}
 \end{figure}
+
+
 
 Note that, in light of Proposition~\ref{prop:max_twice}, to prove
 Theorem~\ref{thm:small} it suffices
@@ -668,7 +670,7 @@ axis intersection, it also preserves characteristic intersection.
 
 \begin{remark}
 One could hope to bypass Cases 2 and 3 by approximating action on $T$ by actions consisting solely of hyperbolic isometries (case 1), i.e., free actions, but this is would require some extra work.
-Indeed, it is not true for a general finitely generated group $\Gamma$ that free $(\Gamma,T)$ actions are dense in the space of small minimal $(\Gamma,T)$ actions. For free groups, by a result of Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that $\operatorname{Cl}(\operatorname{Free}(\Gamma, T)) = \operatorname{VS}(\Gamma,T)$, the space of ``very small'' actions, a strictly proper subset of the subset of small actions. \DPTtodo{This is pretty comprehensive, but maybe longer than is needed
+Indeed, it is not true for a general finitely generated group $\Gamma$ that free $(\Gamma,T)$ actions are dense in the space of small minimal $(\Gamma,T)$ actions. For free groups, by a result of Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that the closure of the space of free actions, i.e., $\operatorname{Cl}(\operatorname{Free}(\Gamma, T))$ is equal to $\operatorname{VS}(\Gamma,T)$, the space of ``very small'' actions, a strictly proper subset of the subset of small actions. \DPTtodo{This is pretty comprehensive, but maybe longer than is needed
 to make the point that the relevant approximation result is harder
 than what we actually go through}
 \DMGtodo{I tried to make this a bit more compact}For surface groups, one can see that free actions are dense in the space of small actions \emph{a posteriori} once one knows all small actions are dual to measured laminations: filling measured laminations (those intersecting all simple closed curves) are dense in the space of measured laminations, and their dual tree actions are free.
