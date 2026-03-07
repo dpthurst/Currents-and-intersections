@@ -47,6 +47,7 @@ one line connecting
 any two distinct ends.
 \DPTtodo{Lines are alternately the isometric images of $\bbR$, is that
 helpful? Eg the axis of a hyperbolic element is a line}
+\DMGtodo{I think it is useful}
 
 
 \textbf{Actions on real trees.} If $\Gamma$ is a finitely generated
@@ -113,6 +114,9 @@ types~\cite[Page~583]{CM87:GroupActions}:
 
 \DPTtodo{Probably should define ``reducible'' as ``fixed end or
   dihedral''. But what about cases where $\norm{\cdot}$ is trivial?}
+  \DMGtodo{Culler-Morgan include $\norm{\cdot}$ trivial in the definition of reducible. They define reducible as: (i) every element of G fixes a point of T; or
+(ii) there is a line in T which is invariant under the action of G; or
+(iii) there is an end of T which is fixed by G. }
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
 
@@ -256,7 +260,10 @@ Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
 \[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \|gh\|=\|h\|\ge\|gH\|; & \|gH\|=\|h\|>\|gh\|; & \|gh\|=\|gH\|>\|h\|. \end{array} \]
-Furthermore, case~(3) happens exactly when $T_g$ and $T_h$ are disjoint.
+Furthermore, case~(3):
+\begin{itemize} \item happens exactly when $T_g$ and $T_h$ are disjoint;
+\item implies that $gh,hg$ overlap incoherently.
+\end{itemize}
 \end{lemma}
 
 \begin{proof}
@@ -268,7 +275,9 @@ case~(3) is stated explicitly
 in~\cite[Section~1.5]{CM87:GroupActions}. The fact that
 $T_{ghG} \cap T_h = \emptyset$ in this same case follows
 from~\cite[Fact~1.7]{CM87:GroupActions}.
-Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
+\DMGtodo{added this proof}
+The last claim about case (3) follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $I_1 \coloneqq [z,h(z)]$. Since $T_{g}=T_{G}$ for any element $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $I_2 \coloneqq [z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $I_1$ and $I_2$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
+Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows. 
 \end{proof}
 
 \begin{lemma}
@@ -601,8 +610,8 @@ By Lemma~\ref{lem:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq \|gH\|$, and we
 are done. The only remaining option to rule out is that $T_{ghG}$ and
-$T_{h}$ do not intersect.
-
+$T_{h}$ do not intersect. In that case, by Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $hg$ overlap incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.\DMGtodo{edited here}
+\begin{comment}
 Recall that $\ora{gh}$ and $\ora{hg}$ are parallel. We will show in
 this case that
 $T_{gh}$ and $T_{hg}$ intersect incoherently, a contradiction.
@@ -626,6 +635,7 @@ Combining  Eqs.~\eqref{eq:intermediate0} and~\eqref{eq:intermediate},
 it follows that $T_{gh},T_{hg}$ \DPTtodo{Why? With $a = gh$, $b = hg$,
   we have $\|a\| + \|b\| = \|aB\|$. But why is this greater than $\|ab\|$?}
 overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
+\end{comment}
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
@@ -649,7 +659,7 @@ $\ora{g},\ora{h}$ cross.
 \DPTtodo{To get characteristic intersection preserving, we need to
   rule out the case $\norm{gh} = 0$ and thus this whole subcase
   entirely, no?}
-  \DMGtodo{no, we need to rule out $\norm{gh} = >0$, because want to verify that $\|g\|+\|h\| \geq \|gh\|$ and since $\|g\|=\|h\|=0$, we must have $\|gh\|=0$.}
+  \DMGtodo{no, we need to rule out $\norm{gh} >0$, because want to verify that $\|g\|+\|h\| \geq \|gh\|$ and since $\|g\|=\|h\|=0$, we must have $\|gh\|=0$.}
 Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h \neq \emptyset$. \DMGtodo{this should have been $T_g \cap T_h \neq$} Suppose $\|gh\|>0$ or, equivalently by Lemma~\ref{lem:pau_ell_hyp}, $T_g \cap T_h = \emptyset$.
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
 On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
@@ -659,7 +669,6 @@ This is a contradiction by Lemma~\ref{lem:parallel-incoherent}. Hence, $\norm{gh
 
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-\DPTtodo{Changed which lemma we cite here}
 By Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gH\|$ and
 thus we have max\hyp smoothing.
 
@@ -693,7 +702,6 @@ We follow up with some consequences of this proof.
  \label{prop:preserves_axis}
 \end{proposition}
 \begin{proof}
-  \DPTtodo[inline]{Reworded to hopefully clarify. Preserved the old text.}
 If $T$ preserves axis intersection, either
 the action is irreducible and by Lemma~\ref{lem:parallel-incoherent}
 $\mathcal{I}$ is
@@ -775,19 +783,20 @@ which means that $(ax,xA)$ overlap incoherently, by Eq.~\eqref{eq:reducible2}.
 \end{proof}
 We return to the proof of Lemma~\ref{lem:red_not_smoothing}.
 Let $\Gamma'$ denote the (normal) subgroup of $\Gamma$ generated by elements acting hyperbolically on $T$.
-If $\| \cdot \|$ is non-trivial, $\Gamma'$ is infinite, and we can
-find a pair $(g,h) \in \Gamma'$ of elements so $(\ora{g},\ora{h})$ are
-R-parallel.
+If $\| \cdot \|$ is non-trivial, $\Gamma'$ is infinite and non-cyclic since $\Gamma'$ is a finite-index subgroup of $\Gamma$, a surface group (by~\cite[Lemma~6.11]{CM87:GroupActions}(ii)), and we claim we can
+find a hyperbolic pair $(g,h) \in \Gamma'$ of elements so $(\ora{g},\ora{h})$ are
+R-parallel. To guarantee hyperbolicity, we take a pair of distinct generators of $\Gamma'$.
 \DPTtodo{Next arguments are pretty trivial, but should argue
   $\Gamma'$ is not cyclic. Also, why do we know $g,h$ are hyperbolic?
   They are in a subgroup gen by hyp elements}
-Indeed, take
-an arbitrary pair $(g,h)\in\Gamma'$. If it is R-parallel, we are
+\DMGtodo{For arbitrary $(g,h)$ you're right that we do not know: in a reducible action, if you multiply two hyperbolic elements with opposite orientations and same translation lengths you'll get an elliptic. But we can just pick two of the generators. I edited that.
+I cited a lemma in Culler-Morgan that says $\Gamma'$ is at most index 2 (for reducible actions), which is enough. Maybe there is an easier way, their argument seems to use basic things, but it's not immediate.}
+ If the pair is R-parallel, we are
 done. If it is R-crossing, consider $(gh,hg)$, which is R-parallel by
 Lemma~\ref{lem:righthandedfoundation}. If it is R-anti-parallel,
-consider
+consider the pair $(g,H)$ instead.
 \DPTtodo{Why not just $(g,H)$?}
-$(gH,Hg)$ which is R-crossing, and proceed in the same way.
+\DMGtodo{That's easier, yes, I edited it}
 From the hyperbolic R-parallel pair $(g,h)$, use
 Example~\ref{ex:ab_parallel_aB_crossing} to obtain a hyperbolic an
 R-parallel pair $(a,x)$, with $\|a\|>\|x\|$ so that
@@ -829,12 +838,14 @@ The equivalence of (A) and~(D) is the first part of Theorem~\ref{mainthm:apps}.
 (A) implies (B) follows work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
 (B) implies (D) follows by Theorem~\ref{thm:small}.
 Thus, we have (B) is equivalent to (D).
-Theorem~\ref{thm:axis_incoherent_characterization} shows (C) is equivalent to (E).
+Theorem~\ref{thm:axis_incoherent_characterization} shows (C) is equivalent to (E). The implication (C) $\Rightarrow$ (B) is immediate and (B) $\Rightarrow$ (C) is part
+of Theorem~\ref{thm:small}.
 All the equivalences follow.
 \DPTtodo[inline]{Formally missing equivalences between A/B/D set and
   C/E set. It seems
   (C) $\Rightarrow$ (B) is immediate and (B) $\Rightarrow$ (C) is part
 of Theorem~\ref{thm:small}}
+\DMGtodo{yes, I added that}
 \end{proof}
 
 
