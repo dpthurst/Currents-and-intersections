@@ -45,10 +45,9 @@ on the choice of point. We will say this line \emph{joins} the two
 ends. It follows from the definition of real trees that there is exactly
 one line connecting
 any two distinct ends.
-\DPTtodo{Lines are alternately the isometric images of $\bbR$, is that
-helpful? Eg the axis of a hyperbolic element is a line}
-\DMGtodo{I think it is useful}
 
+\DPTtodo{Added this}
+We can alternately define a line directly as the image of an isometric map from $\bbR$.
 
 \textbf{Actions on real trees.} If $\Gamma$ is a finitely generated
 group, a
@@ -111,12 +110,18 @@ types~\cite[Page~583]{CM87:GroupActions}:
   orientation~\cite[Theorem~2.4]{CM87:GroupActions}.
 \item \textit{Irreducible:} $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{itemize}
-
-\DPTtodo{Probably should define ``reducible'' as ``fixed end or
-  dihedral''. But what about cases where $\norm{\cdot}$ is trivial?}
-  \DMGtodo{Culler-Morgan include $\norm{\cdot}$ trivial in the definition of reducible. They define reducible as: (i) every element of G fixes a point of T; or
+\DPTtodo[inline]{Probably should define ``reducible'' as ``fixed end or
+  dihedral''. But what about cases where $\norm{\cdot}$ is trivial?}%
+\DMGtodo[inline]{Culler-Morgan include $\norm{\cdot}$ trivial in the definition of reducible. They define reducible as: (i) every element of G fixes a point of T; or
 (ii) there is a line in T which is invariant under the action of G; or
-(iii) there is an end of T which is fixed by G. }
+(iii) there is an end of T which is fixed by G.}%
+\DPTtodo[inline]{Added def of reducible. Did not put in the refs about the
+  existence of the global fixed point, that's getting a bit far from
+  what we're most interested in.}
+A \emph{reducible} action of $\Gamma$ is one that is not irreducible,
+i.e., fixed end, dihedral, or with trivial translation length $\|\cdot\|$. In the
+latter case there is necessarily a global fixed point.
+
 Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$.
 If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
 
@@ -260,10 +265,8 @@ Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
 \[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \|gh\|=\|h\|\ge\|gH\|; & \|gH\|=\|h\|>\|gh\|; & \|gh\|=\|gH\|>\|h\|. \end{array} \]
-Furthermore, case~(3):
-\begin{itemize} \item happens exactly when $T_g$ and $T_h$ are disjoint;
-\item implies that $gh,hg$ overlap incoherently.
-\end{itemize}
+Furthermore, case~(3) happens exactly when $T_g$ and $T_h$ are
+disjoint, and implies $T_{gh}$ and $T_{hg}$ overlap incoherently.
 \end{lemma}
 
 \begin{proof}
@@ -275,7 +278,6 @@ case~(3) is stated explicitly
 in~\cite[Section~1.5]{CM87:GroupActions}. The fact that
 $T_{ghG} \cap T_h = \emptyset$ in this same case follows
 from~\cite[Fact~1.7]{CM87:GroupActions}.
-\DMGtodo{added this proof}
 The last claim about case (3) follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $I_1 \coloneqq [z,h(z)]$. Since $T_{g}=T_{G}$ for any element $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $I_2 \coloneqq [z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $I_1$ and $I_2$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
 
 Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows. 
@@ -314,10 +316,15 @@ and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
-We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if there is no proper subtree of $T$ that is $\Gamma$-invariant. \DMGtodo{removed the ``non-trivial'' from the definition of minimal.}
+We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if $T$ is
+non-trivial and there is no proper subtree of $T$ that is $\Gamma$-invariant.
 If $\norm{\cdot}$ is non-zero then by
 \cite[Proposition~3.1]{CM87:GroupActions} there is a
-unique minimal invariant subtree. The length function for the
+unique minimal invariant subtree.
+\DPTtodo{Added note and tweaked defs to rule out trivial examples}
+(If $\norm{\cdot}$ is zero then there
+is a global fixed point and so the action is never minimal.)
+The length function for the
 restriction to this minimal invariant subtree is equal to the length
 function of the original tree. Hence, without loss of generality, one
 can always restrict to the action on the minimal invariant subtree
@@ -332,9 +339,9 @@ isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupA
 
 In this section, we assume $\Gamma = \pi_1(S)$. An \emph{$S$-tree} is
 a $\bbR$-tree $T$ with a minimal action of $\pi_1(S)$.
-\DPTtodo{Do we allow actions with trivial $\norm{\cdot}$ among $S$-trees?}
-\DMGtodo{I don't think so, because they are not minimal, no? Any subtree is $\Gamma$-invariant for those? So I guess we should be assuming $\lambda$ is non-zero?}
-It is standard that a measured lamination $\lambda$ defines a (dual) irreducible $S$-tree (see~\cite{MO84:Valuations}).
+\DPTtodo{Added assumption $\lambda \ne 0$.}
+It is standard that a non-zero measured lamination $\lambda$ defines a
+(dual) irreducible $S$-tree (see~\cite{MO84:Valuations}).
 It follows from the construction that the translation length of
 $g \in\pi_1(S)$  on
 $T_\lambda$ is equal to
@@ -425,9 +432,6 @@ R-crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     purported situation in~$T$. In
     particular, since the action preserves axis intersection, $T_{h^nk^n}$ and
     $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
-    \DPTtodo{The logic of this last sentence currently escapes me. I
-      know I understood it before. Dídac will think on it.}
-      \DMGtodo{added a few more details about the several cases that can arise}
       We claim this forces $T_g$ and $T_h$ to intersect. Indeed,  the length of the overlap of $T_{h^nk^n}$ cannot be strictly larger or smaller than that of the overlap of $T_k$ and $T_h$ (see Figure~\ref{fig:tree_k_crossing} for an illustration of a ``strictly larger overlap''), since otherwise, from the fact that $T_{h^nk^n}$ and $T_g$ intersect, this would create a loop. This implies that as soon as $T_k$ and $T_{h^nk^n}$ intersect, they do so in a ray. If $T_k$ and $T_h$ also overlap in a ray, then $T_g, T_h$ must overlap in the same ray, and hence $T_g \cap T_h \neq \emptyset$, a contradiction. Otherwise, the intersection of $T_k$ and $T_h$ is bounded. But then this forces the intersection of $T_{h^nk^n}$ and $T_g$ to be bounded, which is a contradiction.
     
     If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
@@ -611,32 +615,7 @@ By Lemma~\ref{lem:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq \|gH\|$, and we
 are done. The only remaining option to rule out is that $T_{ghG}$ and
-$T_{h}$ do not intersect. In that case, by Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $hg$ overlap incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.\DMGtodo{edited here}
-\begin{comment}
-Recall that $\ora{gh}$ and $\ora{hg}$ are parallel. We will show in
-this case that
-$T_{gh}$ and $T_{hg}$ intersect incoherently, a contradiction.
-By Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $gH$ act
-hyperbolically with $\norm{gh} = \norm{gH}$, and thus so their
-do conjugates $hg$ and $Gh$.
-By
-Lemma~\ref{lem:foundation_trees}\ref{item:tree-disjoint}, we get
-\begin{equation}
-\| (gh)(hg)^{-1}\| = \| (ghG)H \| = \| (ghG)h \| >2\|h\|>0.
-\label{eq:intermediate0}
-\end{equation}
-Also, since $\| (gh)(Gh)^{-1}\| = \|(gh)(Hg)\| = \|g^2\| =0$, it
-follows by Lemma~\ref{lem:foundation_trees}(1b) that $T_{gh}, T_{Gh}$ overlap
-coherently and
-\begin{equation}
-  \|(gh)(Gh)\| = \| gh\| +\| gH\|=2\|gh\|.
-\label{eq:intermediate}
-\end{equation}
-Combining  Eqs.~\eqref{eq:intermediate0} and~\eqref{eq:intermediate},
-it follows that $T_{gh},T_{hg}$ \DPTtodo{Why? With $a = gh$, $b = hg$,
-  we have $\|a\| + \|b\| = \|aB\|$. But why is this greater than $\|ab\|$?}
-overlap incoherently. But since $gh,hg$ are hyperbolic and parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
-\end{comment}
+$T_{h}$ do not intersect. In that case, by Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $hg$ overlap incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
@@ -661,7 +640,7 @@ $\ora{g},\ora{h}$ cross.
   rule out the case $\norm{gh} = 0$ and thus this whole subcase
   entirely, no?}
   \DMGtodo{no, we need to rule out $\norm{gh} >0$, because want to verify that $\|g\|+\|h\| \geq \|gh\|$ and since $\|g\|=\|h\|=0$, we must have $\|gh\|=0$.}
-Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h \neq \emptyset$. \DMGtodo{this should have been $T_g \cap T_h \neq$} Suppose $\|gh\|>0$ or, equivalently by Lemma~\ref{lem:pau_ell_hyp}, $T_g \cap T_h = \emptyset$.
+Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h \neq \emptyset$.  Suppose $\|gh\|>0$ or, equivalently by Lemma~\ref{lem:pau_ell_hyp}, $T_g \cap T_h = \emptyset$.
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
 On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
 $T_{hg}$ overlap on the shortest arc connecting
