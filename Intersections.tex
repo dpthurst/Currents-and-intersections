@@ -225,6 +225,9 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\systole}{systole}
 \DeclareMathOperator{\vol}{vol}
+\newcommand{\lpbrack}{\mathrlap{[}(}
+\newcommand{\rpbrack}{)\llap{]}}
+
 \hyphenation{Teich-müller}
 
 %smoothing lemma appendix
@@ -249,8 +252,6 @@
 % This suppresses warnings when multiple PDFS are included on a single page
 %\pdfsuppresswarningpagegroup=1
 
-%\includeonly{skora}
-
 \begin{document}
 \title{The intersection dual of geodesic currents} 
 \author[Martínez-Granado]{Dídac Martínez-Granado}
@@ -274,23 +275,23 @@ As applications, we obtain new axiomatic characterizations of measured laminatio
 \maketitle
 
 
-\include{intro}
-\include{functionals}
-\include{background}
-\include{crossing}
-\include{smoothing-types}
-\include{boxes}
-\include{construct-current}
-\include{special-classes}
-\include{crossratios}
-\include{skora}
+\input{intro}
+\input{functionals}
+\input{background}
+\input{crossing}
+\input{smoothing-types}
+\input{boxes}
+\input{construct-current}
+\input{special-classes}
+\input{crossratios}
+\input{skora}
 % \nocite{*}
 \appendix
-\include{luo}
-\include{hyppar}
-\include{asymmetric}
-\include{necessary}
-%\include{maxsmoothing}
+\input{luo}
+\input{hyppar}
+\input{asymmetric}
+\input{necessary}
+%\input{maxsmoothing}
 \DPTtodo{arXiv references are futzed}
 \DMGtodo{fixed arxiv links by inserting a doi entry pointing to the arxiv paper}
 \bibliographystyle{hamsalpha}

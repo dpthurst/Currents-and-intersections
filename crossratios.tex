@@ -47,12 +47,17 @@ point in $(g^-,g^+)$,
 \]
 The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is well-defined.
 
-Given a geodesic current $\mu$, the two (possibly distinct) generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce the same period. Thus, in general, generalized cross-ratios are not uniquely determined by their periods. However, if the cross-ratios are assumed to be H\"older continuous, this is indeed the case~\cite[Theorem 1.f]{L95:BordDesVar} (c.f. \cite{Ot92:Symplectique}).
+Given a geodesic current $\mu$, the two (possibly distinct)
+generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce
+the same period. Thus, in general, generalized cross-ratios are not
+uniquely determined by their periods. However, if the cross-ratios are
+assumed to be H\"older continuous, cross-ratios are indeed determined
+by their periods \cite[Theorem 1.f]{L95:BordDesVar} (c.f.\
+\cite{Ot92:Symplectique}).
 
-\DPTtodo[inline]{I'm not entirely happy with the terminology here. Should it
-  be $\mu_{[\cdot]}$? Should we write the intervals where we really
-  don't care about the endpoint inclusion as something like
-  $\rlap{[}(a,b)\llap{]}$?}
+\DPTtodo[inline]{Finitely additive function on boxes is written
+  $\bigl[\lpbrack d,a \rpbrack \times \lpbrack b,c \rpbrack\bigr]$. No
+subscript. Dídac will implement, include explaining those weird brackets}
 Going the other direction, it is immediate that a cross-ratio gives a
 finitely additive function $\bigl[\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]} \bigr]_{[]} \coloneqq [a,b,c,d]$, on the semiring of boxes $\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]}$ in $G(S)$, where $a,b,c,d$ appear in ccw
 order; however, this function need not be countably additive and will
@@ -66,22 +71,10 @@ currents are determined by their length functions~\cite{Otal90:SpectreMarqueNega
 convenience in the proofs, we will use the function on boxes
 $\bigl[ \bigr] \coloneqq \bigl[\bigr]_{[]}$ and its finite additivity.
 
-\DMGtodo{I chose the notation $\bigl[\bigr]_{[]}$ for the function on boxes induced by the cross-ratio $[]$. In most cases, referring to the cross-ratio will not be needed, so we will simply write $\bigl[\bigr]$. I was not happy with the explicit use of $\mu$ in the other alternative.}
-
-\DPTtodo[inline]{Alternate version for consideration:
-  $\mu_{[\cdot]}\bigl(\mathrlap{[}(g^+,g^-)\llap{]} \times \rlap{[}(x, g \cdot x)\llap{]}\bigr)$}
-\DPTtodo[inline]{Another alternate version: Don't use $\mu$, use
-  brackets:   $\bigl[\mathrlap{[}(g^+,g^-)\llap{]} \times \rlap{[}(x, g \cdot x)\llap{]}\bigr]$}
-
-
-\DPTtodo[inline]{This next statement is probably true, but we haven't proved it and
-  the statement is not clear. I added a question instead}
-Since the two generalized cross-ratios are equal for non-atomic geodesic current, it follows there is a one-to-one correspondence between generalized cross-ratios and geodesic currents in this case.
-
 \begin{question}
   For a given geodesic current $\mu$, what are all the cross-ratios
   $[a,b,c,d]$ so that the period function with respect to the
-  cross-ratio agrees with the length function from $\mu$?
+  cross-ratio agrees with the length function from~$\mu$?
   \label{que:howmany_crossratios}
 \end{question}
 
