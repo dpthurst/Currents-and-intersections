@@ -290,12 +290,13 @@ Since each case is exclusive, the triality depending on the relative position of
   the shortest connecting arc between $T_g$ and $T_h$ is contained in
   $T_{gh}$, and $gh, hg$ overlap incoherently along it.
   \DPTtodo{Missing coherence statement, which we use}
+  \DMGtodo{added reasoning by referencing Paulin and a few details.}
 \label{lem:pau_two_ell}
 \end{lemma}
 \begin{proof}
 The statement is contained
 in~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}, except the equality
-$\|gh\|=\|gH\|$, which we outline here. If $T_g \cap T_h \neq
+$\|gh\|=\|gH\|$, and the statement about incoherent overlap, which we outline here. If $T_g \cap T_h \neq
 \emptyset$, then $\|gh\|=\|gH\|=0$. Otherwise, let $S=[x,y]$ denote
 the minimal segment connecting $T_g$ and $T_h$; we already know $S
 \subset T_{gh}$ by Paulin's result. Since $T_h = T_H$, we also have $S
@@ -304,6 +305,7 @@ the minimal segment connecting $T_g$ and $T_h$; we already know $S
   \norm{gh} = d(y,gh(y)) = d(y, g(y)) = d(y, gH(y)) = \norm{gH}.
   \qedhere
 \]
+Finally, we prove the statement about incoherent overlap. Let $h(S) \cap S$ be the subsegment $[x,z] \subset S$ fixed by $h$, and $g(S) \cap S$ the subsegment $[z',y]\subset S$ fixed by $g$. By~\cite[Figure~9]{Pa89:Paulin1989TheGT}, the subarc $[z,g(z)]=[z,gh(z)] \subset T_{gh}$ and the subarc $[z',h(z')]=[z',hg(z')] \subset T_{hg}$ overlap incoherently along the non-degenerate subsegment $[z,z']$.
 \end{proof}
 Finally, the following result will be useful.
 
@@ -502,11 +504,12 @@ is the key place where we invoke irreducibility.
 \DPTtodo[inline]{We cite this enough that it should maybe be upgraded
   to a Proposition. We also have two different closely related
   statements later}
-\begin{lemma}\label{lem:parallel-incoherent}
+  \DMGtodo{changed it to proposition, as well as references to it. Later there are similar things related, but we don't use them like this one.}
+\begin{proposition}\label{prop:parallel-incoherent}
   Let $T$ be an irreducible $S$-tree that preserves axis
   intersection. Then, for $g,h \in \pi_1(S)$, it cannot happen that
   $(\ora{g},\ora{h})$ are parallel while $T_g,T_h$ intersect incoherently.
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
     If the overlap is bounded, according to
@@ -601,7 +604,7 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
     \begin{subcase}
       $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap incoherently.
     \end{subcase}
-    This cannot happen by Lemma~\ref{lem:parallel-incoherent}.
+    This cannot happen by Proposition~\ref{prop:parallel-incoherent}.
 
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
@@ -611,11 +614,11 @@ $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
 $\ora{g},\ora{h}$ cross.
 \end{subcase}
 Then $\ora{ghG}$ and $\ora{h}$ are parallel.
-By Lemma~\ref{lem:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
+By Proposition~\ref{prop:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq \|gH\|$, and we
 are done. The only remaining option to rule out is that $T_{ghG}$ and
-$T_{h}$ do not intersect. In that case, by Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $hg$ overlap incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
+$T_{h}$ do not intersect. In that case, by Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $hg$ overlap incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this is a contradiction by Proposition~\ref{prop:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
@@ -628,7 +631,7 @@ Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_el
 where the first inequality is from
 Lemma~\ref{lem:foundation_trees}(1c).
 Hence, $T_{gh},T_{Gh}$ overlap incoherently, again by Lemma~\ref{lem:foundation_trees}(1c).
-However, if $(\ora{g},\ora{h})$ are parallel, $(\ora{gh},\ora{Gh})$ are parallel (by Lemma~\ref{lem:bA_parallel_ba}), hence this is a contradiction by Lemma~\ref{lem:parallel-incoherent}.
+However, if $(\ora{g},\ora{h})$ are parallel, $(\ora{gh},\ora{Gh})$ are parallel (by Lemma~\ref{lem:bA_parallel_ba}), hence this is a contradiction by Proposition~\ref{prop:parallel-incoherent}.
 
 \begin{case}
   In the action on~$T$, $g,h$ are both elliptic.
@@ -645,7 +648,7 @@ Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{le
 On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
 $T_{hg}$ overlap on the shortest arc connecting
 $T_g$ to $T_h$, and are incoherent on that arc.
-This is a contradiction by Lemma~\ref{lem:parallel-incoherent}. Hence, $\norm{gh}=0$ and, equivalently by Lemma~\ref{lem:pau_two_ell}, $T_g \cap T_h \neq \emptyset$.
+This is a contradiction by Proposition~\ref{prop:parallel-incoherent}. Hence, $\norm{gh}=0$ and, equivalently by Lemma~\ref{lem:pau_two_ell}, $T_g \cap T_h \neq \emptyset$.
 
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
@@ -683,7 +686,7 @@ We follow up with some consequences of this proof.
 \end{proposition}
 \begin{proof}
 If $T$ preserves axis intersection, either
-the action is irreducible and by Lemma~\ref{lem:parallel-incoherent}
+the action is irreducible and by Proposition~\ref{prop:parallel-incoherent}
 $\mathcal{I}$ is
 empty, or it is reducible, i.e., trivial, dihedral or fixed end, and hence all intersections, including those in
 $\mathcal{I}$, have unbounded overlap.
@@ -802,7 +805,7 @@ overlap.
 \label{thm:axis_incoherent_characterization}
 \end{theorem}
 \begin{proof}
-One implication is Lemma~\ref{lem:parallel-incoherent}.
+One implication is Proposition~\ref{prop:parallel-incoherent}.
 In the other direction, it follows by
 Proposition~\ref{prop:preserves_axis} that the $S$-tree
 preserves axis intersection. Finally, it cannot be reducible since
