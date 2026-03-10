@@ -24,8 +24,10 @@ The geometric intersection number of multi-curves extends continuously to a bili
 Many natural curve functionals arise in this way. Hyperbolic length
 $\ell_\Sigma$ is given by intersection with the Liouville
 current~\cite[Theorem~10]{Bonahon88:GeodesicCurrent}; the same holds
-for negatively curved\DPTtodo{Add citations?} and non-positively
-curved Riemannian metrics. Beyond examples arising from metrics on the
+for negatively curved~\cite{Otal90:SpectreMarqueNegative}
+and non-positively
+curved Riemannian metrics~\cite{CFF92:RigidityNonPosCurvedRiem}.
+Beyond examples arising from metrics on the
 surface, word length with respect to simple generating sets admits a
 dual current~\cite[Theorem~1.2]{Erlandsson:WordLength}, and length
 functions associated to certain higher-rank representations of surface
@@ -44,6 +46,7 @@ i(\mu_f,C)=f(C)
 \]
  if and only if it satisfies the
 \emph{smoothing property}
+\DPTtodo{Use shaded background here and consistently}
 \begin{equation}\label{eq:smoothing}
 f\!\left(\mfig{curves-10}\right)
 \ge
@@ -87,8 +90,8 @@ many such extensions arise canonically as intersection with a current.
     Section~\ref{subsec:ineqintersection} that domination of
     intersection numbers with all closed curves implies domination of
     length spectra for any metric length on a closed surface. In
-    particular, this answers a question of \DPTtodo{More precise ref
-      to [NC01]?}Neumann-Coto~\cite{NC01:ShortestGeodesics}.
+    particular, this answers a question of
+    Neumann-Coto~\cite[p.\ 368]{NC01:ShortestGeodesics}.
 
     For curve functionals arising in algebraic contexts---such as
     cross-ratios (Section~\ref{sec:crossratios}) or translation
@@ -142,10 +145,7 @@ sense of Theorem~\ref{thm:intersect}
 
 The two oriented inequalities are logically independent:
 neither~\eqref{eq:conn_oriented} nor~\eqref{eq:disconn_oriented}
-implies the other
-\DPTtodo{Do we really need all three refs?}
-(Section~\ref{subsec:mainhypotheses},
-Lemma~\ref{lem:red_not_smoothing}, Example~\ref{ex:linEL}). Moreover,
+implies the other. Moreover,
 the symmetrization $\overline f(g)=\tfrac12(f(g)+f(G))$ is
 essential; without it, the conclusion fails
 (Appendix~\ref{sec:asymmetric}).
@@ -460,7 +460,6 @@ these results to deduce Theorem~\ref{thm:intersections_group} from
 Theorem~\ref{thm:intersect}; the proof of Theorem~\ref{thm:intersect}
 does not rely on this section.
 
-\DPTtodo{Use term ``dual measure'' more before this}
 In Section~\ref{sec:define_measure}, we define the dual measure associated to a curve functional by specifying its values on a dense family of right-handed boxes, which we show form a semi-ring in the measure theoretic sense. The measure is $\pi_1(S)$-invariant on this family. We prove that it is non-negative and finitely additive on the semi-ring.
 
 In Section~\ref{sec:construct}, we finish the construction of the dual geodesic current. In particular, we show that the dual measure is countably additive and defines an oriented geodesic current. By averaging, we obtain a geodesic current. Finally, we show that this current is dual to the original curve functional. This completes the proof of Theorem~\ref{thm:intersect}. We then prove Theorem~\ref{thm:intersections_group} and several variants as corollaries.
