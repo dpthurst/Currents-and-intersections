@@ -1,51 +1,45 @@
 \section{Curve functionals: properties, general context and examples}
 \label{sec:functionals}
 
-
-
-
-In this section we state the main technical hypotheses that we require of our curve functionals. 
-
-Then, we give examples and non-examples of curve
-functionals satisfying the hypotheses of Theorem~\ref{thm:intersect}.
-In particular, we discuss how our result fits into our previous work
-in~\cite{MGT21:Smoothings}.
-We then turn to further questions motivated by our results.
+In this section we state the main technical hypotheses that we require
+of our curve functionals, including examples and non-examples for the
+hypotheses of Theorem~\ref{thm:intersect}.
+In particular, we relate the results of this paper to our previous
+work~\cite{MGT21:Smoothings}.
+We then turn to further questions motivated by these results.
 
 \subsection{Curve functionals and their properties}
 \label{subsec:mainhypotheses}
 
-We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
-
-
-
-In the sequel, the term \emph{multi-curve} will always mean an
-\emph{oriented multi-curve}, that is, a finite union of oriented, not-necessarily-simple and not-necessarily-disjoint curves, unless explicitly stated otherwise; we
+% We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
+\DPTtodo{This section seems slightly off-focus. Maybe say a bit more
+  about why we're caring so much about orientations? But also how much
+is it duplicating the later section?}
+In this paper, the term \emph{multi-curve} will mean an
+\emph{oriented multi-curve}, that is, a finite union of oriented, not-necessarily-simple and not-necessarily-disjoint curves; we
 denote the corresponding space by $\Curves^+(S)$. Accordingly, we will
 work with oriented geodesic currents (see
 Section~\ref{sec:currents}).
 
 The geometric intersection number will play a central role throughout.
 By default, the intersection number $i(C,D)$ of two multi-curves is
-defined for unoriented curves. If $C$ and $D$ are oriented, and
-$C',D'$ are oriented multi-curves whose underlying unoriented
-multi-curves coincide with those of $C$ and $D$, respectively, we
-define
-\[
-i(C',D')=i(C,D),
-\]
-that is, we compute intersection by forgetting orientations (see
-Definition~\ref{def:intersection_currents}).
+defined for unoriented curves. If $C$ and $D$ are oriented,
+\DPTtodo{Shortened this}
+the
+intersection number is defined by forgetting orientations. See also
+Definition~\ref{def:intersection_currents}.
 
 As explained in Appendix~\ref{sec:asymmetric}, there are asymmetric
 variants of intersection number for oriented curves which only record crossings of a given orientation. For such notions, the analogue of the main
 duality theorem (Theorem~\ref{thm:intersect}) fails. This phenomenon
 also appears in the proof (see Proposition~\ref{prop:recoverintersection}
-and Remark~\ref{rmk:use_symmetry}). 
+and Remark~\ref{rmk:use_symmetry}).
+\DPTtodo{Maybe add comment about the embedding of oriented currents
+  into functionals here?}
 
-In many of our examples, however, the curve functionals do not depend
-on orientation; equivalently, they may be viewed as functionals on
-unoriented multi-curves.
+A curve functional that does not depend
+on orientation may equivalently be viewed as a functional on
+unoriented multi-curves. Many of our examples will be of this form.
 
 
 \begin{definition}\label{def:properties}
@@ -53,7 +47,6 @@ Let $S$ be a \emph{closed} surface, i.e.\ a compact topological surface without 
 $f \colon \Curves^+(S) \to \bbR$ be a function on the space of oriented multi-curves.
 We will refer to such an $f$ as a \emph{curve functional}.
 (The term ``functional'' indicates that $f$ takes scalar values; it is not assumed to be linear, although in the applications of Theorem~\ref{thm:intersect} it will be additive.)
-
 We introduce several properties that $f$ may satisfy.
 
 \begin{itemize}
@@ -81,7 +74,9 @@ f\!\left(\mfig{curves-3}\right)
 \;\ge\;
 f\!\left(\mfig{curves-4}\right).
 \end{equation}
-(See Definition~\ref{def:essential-crossing} for the notion of essential crossing; informally, it is a crossing that cannot be removed by homotopy.)
+(See Definition~\ref{def:essential-crossing} for the notion of
+essential crossing; it is a crossing that cannot be removed by
+homotopy.)
 
 \item \textbf{Additivity.}
 For oriented curves $C_1$ and $C_2$ on $S$,
@@ -93,21 +88,27 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \end{definition}
 
 The oriented smoothing condition will be further divided into three
-types, following the convention in
-Definition~\ref{def:smoothing_types}, depending on if the essential
+types, depending on if the essential
 crossing is between two connected components of the multi-curve
 (\emph{oriented disconnected smoothing}); if it is a self-crossing of
 the one connected component not
 coming from a power of a single element (\emph{oriented connected
   smoothing}); or
 if it is a self-crossing arising from a power (\emph{power
-  smoothing}). Accordingly, we will
+  smoothing}).
+\DPTtodo{Edited, but where do we write more about power smoothing? I'm
+  sure we do somewhere}
+(See also
+Definition~\ref{def:smoothing_types}.) Accordingly, we will
 say $f$ satisfies a particular type of smoothing property if $f$ is
 non-increasing under such type.
 
 Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. For $a, b\in \pi_1(S)$, let $[a][b]$ denote the multi-curve $[a] \cup [b]$. 
 
 \begin{lemma}
+  \DPTtodo{``max-smoothing'' seems like a non-sequitur? We haven't
+    defined it before this lemma. Also, seems
+    duplicative of paragraph a bit above}
 Oriented smoothing and oriented max-smoothing admit the following equivalent formulations.
 \begin{itemize}
 
@@ -120,7 +121,7 @@ If the inequality is replaced by equality, we obtain \emph{oriented disconnected
 
 \item \textbf{Oriented connected smoothing.}
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel
-(i.e.\ disjoint and coherently oriented),
+(i.e., disjoint and coherently oriented),
 \[
 f([ab]) \ge f([a]\cup[b]).
 \]
@@ -147,7 +148,7 @@ f([a^{n+m}]) \ge f([a^m]) + f([a^n]).
   that consists of $n$~parallel
   copies of~$C$ (so with $n$ times as many components) or,
   in the context of weighted oriented multi-curves,
-  with weights multiplied by~$n$),
+  with weights multiplied by~$n$.
 \end{definition}
 
 \begin{definition}\label{def:stable}
@@ -161,12 +162,13 @@ f([a^{n+m}]) \ge f([a^m]) + f([a^n]).
        Note that stability implies $f$ satisfies power smoothing.
 \end{definition}
 
-\begin{definition}\label{def:homogeneous} For an arbitrary oriented multi-curve~$C$, we say $f$ satisfies \emph{homogeneity}
+\begin{definition}\label{def:homogeneous} For an arbitrary oriented
+  multi-curve~$C$, we say $f$ satisfies \emph{homogeneity} if
        \begin{equation}
          \label{eq:homogeneous}
          f(nC) = nf(C).
        \end{equation}
-       Note that functionals satisfying additivity (Equation~\ref{eq:union-additive}) automatically satisfy homogeneity.
+       Note that functionals satisfying additivity (Eq.~\eqref{eq:union-additive}) automatically satisfy homogeneity.
 \end{definition}
 
 We emphasize that oriented connected smoothing does not imply oriented
@@ -179,18 +181,21 @@ connected smoothing but not oriented disconnected smoothing.
 
 Although this example is not stable, one can construct additive and
 stable functionals exhibiting exactly one of the two smoothing
-properties. In Lemma~\ref{lem:red_not_smoothing} we give examples
-arising from reducible actions of surface groups on real trees that
-satisfy disconnected smoothing but not connected smoothing, and vice
-versa. In Example~\ref{ex:linEL} we present an additive variation of
-extremal length that satisfies stability and disconnected smoothing but
-not connected smoothing.
-
+properties;
+\DPTtodo{Shortened this}
+see Example~\ref{ex:linEL} and
+Lemma~\ref{lem:red_not_smoothing}.
+% In Lemma~\ref{lem:red_not_smoothing} we give examples
+% arising from reducible actions of surface groups on real trees that
+% satisfy disconnected smoothing but not connected smoothing, and vice
+% versa. In Example~\ref{ex:linEL} we present an additive variation of
+% extremal length that satisfies stability and disconnected smoothing but
+% not connected smoothing.
 There also exist functionals that satisfy stability and smoothing but
-fail additivity; extremal length provides such an example (see
-Example~\ref{ex:linEL}).
+fail additivity; see
+Example~\ref{ex:linEL}.
 
-Finally, the proof of Theorem~\ref{thm:intersections_group} shows that
+On the other hand, Theorem~\ref{thm:intersections_group} shows that
 smoothing implies stability.
 
 Slight generalizations of both smoothing and additivity were
@@ -203,15 +208,15 @@ introduced in our earlier work~\cite{MGT21:Smoothings}.
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
     have
+    \DPTtodo{Be consistent about whether to have shaded background or not}
     \begin{equation}\label{eq:quasismoothing}
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R.
     \end{equation}
-    See Definition~\ref{def:essential-crossing} for ``essential
-    crossing''. If $R=0$, we recover the oriented smoothing property. 
+    If $R=0$, we recover the oriented smoothing property. 
     
 We note that the above properties correspond to what we termed
 \emph{quasi-smoothing} and \emph{smoothing} in
-\cite[Equations~(1.2), (1.3)]{MGT21:Smoothings}. In the present paper,
+\cite[Eqs.~(1.2), (1.3)]{MGT21:Smoothings}. In the present paper,
 we distinguish these notions from their unoriented counterparts (see
 below).
   \item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
@@ -219,7 +224,7 @@ below).
     \begin{equation}\label{eq:union-convex}
       f(C_1 \cup C_2) \le f(C_1) + f(C_2).
     \end{equation}
-    If the above inequalities are strengthened to equalities, we recover the additivity property (Equation~\ref{eq:union-additive}).
+    If this inequality is strengthened to an equality, we recover additivity (Eq.~\ref{eq:union-additive}).
 \end{itemize}
 \end{definition}
 
@@ -228,12 +233,15 @@ below).
 
 Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
+\DPTtodo{Have not defined the unoriented smoothing of oriented curves.
+Would ``disoriented'' be a better term?}
 \begin{definition}[smoothing and max-smoothing]
-Let $C$ be an unoriented closed curve, and $C'$ any of the two smoothings, oriented or unoriented. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
+Let $C$ be an unoriented closed curve, and $C'$ either of the two smoothings, oriented or unoriented. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
-If all these inequalities are strengthened to equalities, we will refer to the property as \emph{max-smoothing}.
+If this inequality is strengthened to an equality, we get
+the property called \emph{max-smoothing}.
 \label{def:smoothing_and_max}
 \end{definition}
 
@@ -255,11 +263,11 @@ As before, smoothing and max-smoothing admit algebraic reformulations.
 \item orientation invariance;
 \item (disconnected smoothing) For any pair of
   elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have 
-  \[ f([a] [b]) \geq \max\{\,f([ab]), f([aB])\,\}; \] if the inequality is
+  \[ f([a] [b]) \geq \max\,\{\,f([ab]), f([aB])\,\}; \] if the inequality is
   strengthened to an equality we obtain \emph{disconnected max-smoothing}.
 \item (connected smoothing) for any pair of elements $a,b \in
   \pi_1(S)$ whose hyperbolic axes are parallel, we have
-  \[ f([ab]) \geq \max\{\,f([aB]), f([a] [b])\,\}; \]
+  \[ f([ab]) \geq \max\,\{\,f([aB]), f([a] [b])\,\}; \]
   if the inequality is
   strengthened to an equality we get \emph{connected max-smoothing}.
  \item (power smoothing) and for any element $a \in \pi_1(S)$, and any
@@ -310,6 +318,7 @@ in the sense of Definition~\ref{def:smoothing_and_max}.
 
 Similarly, the above equivalences can be stated for quasi-smoothing.
 
+\DPTtodo{HERE}
 We refer the reader to Section~\ref{subsec:crossings} for precise
 definitions and proofs of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} and~\ref{lem:smoothing_lemma_top_alg}. See in particular
 Proposition~\ref{prop:crossings-triality}.
