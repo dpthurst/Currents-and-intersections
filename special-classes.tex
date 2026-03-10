@@ -321,20 +321,22 @@ Item (2) follows by Item (1) and lower semi-continuity of measures.
 Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \end{proof}
 
-Now we characterize measured laminations in terms of the disconnected max-smoothing property; this is Theorem~\ref{mainthm:apps}\ref{item:lam-char}.
+We now prove Theorem~\ref{thm:lam-char}, whose statement we recall.
 
-\begin{theorem}
-  A curve function $f$ is dual to a measured lamination if and only if
-  $f$ satisfies the hypotheses of Theorem~\ref{thm:intersect} and the
-  \emph{disconnected max-smoothing property}:
-    For any pair of crossing elements $g,h \in \pi_1(S)$, we have
-    \begin{equation}\label{eq:disconn-max-smoothing}
-      f\left([g][h]\right) = \max \left\{ f\left([gh]\right),f\left([gh^{-1}]\right) \right\}.
-    \end{equation}
-    \label{thm:char_laminations}
-\end{theorem}
+\begin{taggedthm}{\ref{thm:lam-char}}
+Let $f$ be a curve functional satisfying the hypotheses of
+Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
+$\mu_f$ is a measured lamination if and only if
+$f$ satisfies the \emph{disconnected max-smoothing property}: for every
+crossing pair $a,b\in\pi_1(S)$,
+\begin{equation}\label{eq:disconn-max-smoothing-a}
+f(a)+f(b)
+=
+\max\{f(ab),\,f(aB)\}.
+\end{equation}
+\end{taggedthm}
 \begin{proof}
-Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing}.
+Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing-a}.
 By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
 It remains to show that $\mu_f$ is a measured lamination.
 Given elements $a, b \in \pi_1(S)$ which R-cross,
@@ -376,7 +378,7 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
     \label{prop:char_laminations_plus}
 \end{theorem}
 \begin{proof}
-Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:char_laminations}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:char_laminations} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, additive and stable, and noting that if $f$ satisfies disconnected max-smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
+Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:lam-char}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:lam-char} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, additive and stable, and noting that if $f$ satisfies disconnected max-smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by
@@ -400,19 +402,25 @@ Bonahon gives an algebraic characterization for a geodesic current to be a Liouv
 Whether the endpoints of the intervals are included or excluded in the
 above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
 
-We use this to prove the following characterization (Theorem~\ref{mainthm:apps}\ref{item:hyp-char}).
+We use this to prove Theorem~\ref{thm:hyp-char}.
 
-\begin{theorem}
-  A functional $f$ is dual to a hyperbolic Liouville current if and only
-  if it satisfies smoothing, additivity, stability, and,
-    for any pair of crossing elements $g, h \in \pi_1(S)$ we have the \emph{$\lambda$-smoothing relation}  \[
-        \lambda \left(g\right)\lambda \left(h\right) = \lambda \left(gh\right) + \lambda \left(gh^{-1}\right),
-  \]
-  where $\lambda( \cdot ) \coloneqq 2\cosh(f(\cdot)/2)$.
-    \label{thm:char_liouville}
-  \end{theorem}
+\begin{taggedthm}{\ref{thm:hyp-char}}
+Let $f$ be a curve functional satisfying the hypotheses of
+Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
+$\mu_f$ is the Liouville current of a hyperbolic
+metric if and only if for every crossing pair $a,b\in\pi_1(S)$, $f$ satisfies
+\[
+\lambda(a)\lambda(b)
+=
+\lambda(ab)+\lambda(aB),
+\]
+where
+\[
+\lambda(g)\coloneqq 2\cosh\!\big(f(g)/2\big).
+\]
+  \end{taggedthm}
 \begin{proof}
-The proof is similar to that of Theorem~\ref{thm:char_laminations}.
+The proof is similar to that of Theorem~\ref{thm:lam-char}.
 If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The disconnected $\lambda$-smoothing property follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}).
 For the other direction, by the assumptions on $f$, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
@@ -443,7 +451,7 @@ Finally, note that $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
 for any intersecting pair $a,b \in \pi_1(S)$.
-As in the proof of Theorem~\ref{thm:char_laminations},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(S)$. Hence, given any box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$. Hence,
+As in the proof of Theorem~\ref{thm:lam-char},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(S)$. Hence, given any box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$. Hence,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
