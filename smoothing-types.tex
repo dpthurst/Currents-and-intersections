@@ -14,14 +14,14 @@ proof of Theorem~\ref{thm:intersect}.
 \begin{proposition}
 If $f$ satisfies oriented smoothing
 (connected and disconnected), convex union,
-stability, homogeneity, and orientation invariance, then $f$ satisfies smoothing.
+stability, homogeneity, and symmetry, then $f$ satisfies smoothing.
 \label{prop:oriented_smoothing_unoriented}
 \end{proposition}
 
 The proof uses the following result, which can be seen as a weak
 converse of the main result in our previous paper.
 \begin{proposition}
-Suppose $f$ is an orientation invariant curve functional satisfying
+Suppose $f$ is an symmetric curve functional satisfying
 convex union and homogeneity that extends continuously to geodesic currents.
 If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
 \label{prop:cont_conn_disc}
@@ -30,14 +30,14 @@ If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ sa
 \begin{proof}[Proof of
   Proposition~\ref{prop:oriented_smoothing_unoriented}, assuming Proposition~\ref{prop:cont_conn_disc}]
   Since $f$ satisfies disconnected oriented smoothing and is
-  orientation invariant, it also
+  symmetric, it also
   satisfies disconnected unoriented smoothing. Indeed, let
   $(\ora{a},\ora{b})$ R-cross. Then $(\ora{B},\ora{a})$ R-cross, so by
   disconnected oriented smoothing
 \[
 f([B][a]) \geq f([Ba]).
 \]
-Since $f$ is orientation invariant, we have $f([b][a])=f([B][a]) \geq
+Since $f$ is symmetric, we have $f([b][a])=f([B][a]) \geq
 f([Ba])$, as desired.
 
 Since $f$ satisfies oriented smoothing, convex union, stability and
@@ -47,9 +47,9 @@ Proposition~\ref{prop:cont_conn_disc}, it satisfies connected
 smoothing, and thus all cases of smoothing.
 \end{proof}
 
-As an immediate corollary, given that a symmetric and additive
-functional is orientation invariant, we have the following.
+As an immediate corollary, we have the following.
 
+\DPTtodo{Does this corollary disappear?}
 \begin{corollary}
 If $f$ is symmetric and satisfies oriented smoothing, additivity, and
 stability, then $f$ satisfies smoothing.
@@ -246,7 +246,7 @@ infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to get
 \[
 f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 \]
-where we used orientation invariance and homogeneity in the last equality.
+where we used symmetry and homogeneity in the last equality.
 
 Now, still in the unoriented connected smoothing case, suppose
 $(\ora{aB},\ora{Ba})$ cross.
@@ -265,7 +265,7 @@ as before.
 This finishes the proof that disconnected smoothing implies
 connected smoothing.
 
-We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies orientation invariance, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality
+We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies symmetry, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part. Namely, given $a$ and $b$ crossing, we prove, by induction on $n$, the following inequality
 \begin{equation}
 f([a^{2n}b^{2n}]) \geq 2nf([ab]).
 \label{eq:inequality_smoothing}

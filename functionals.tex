@@ -49,18 +49,10 @@ We introduce several properties that $f$ may satisfy.
 \begin{itemize}
 
 \item \textbf{Symmetry.}
-For an oriented multi-curve $C$, let $C^{-1}$ denote the multi-curve obtained by reversing the orientation of each component.
-We require
-\[
-f(C)=f(C^{-1}).
-\]
-
-\item \textbf{Orientation invariance.}
 If $C$ and $C'$ are oriented multi-curves with the same underlying unoriented multi-curve, then
 \[
 f(C)=f(C').
 \]
-This condition is stronger than symmetry; however, if $f$ is additive (see below), the two notions coincide.
 
 \item \textbf{Oriented smoothing.}
 Let $C$ be an oriented curve on $S$, and let $x$ be an essential crossing of $C$.
@@ -249,7 +241,7 @@ As before, smoothing and max-smoothing admit algebraic reformulations.
 \begin{definition}[smoothing for oriented curve functionals]
  Given an \emph{oriented} curve functional $f \colon \Curves^+(S) \to \mathbb{R}$, we will say it satisfies \emph{smoothing} if it satisfies the following hypotheses:
 \begin{itemize}
-\item orientation invariance;
+\item symmetry;
 \item (disconnected smoothing) For any pair of
   elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have 
   \[ f([a] [b]) \geq \max\,\{\,f([ab]), f([aB])\,\}; \] if the inequality is
@@ -274,8 +266,7 @@ f^+(C) \coloneqq f(\overline{C}),
 \]
 where $\overline{C}$ denotes the underlying unoriented multi-curve.
 
-Conversely, if $f \colon \Curves^+(S) \to \mathbb{R}$ is orientation
-invariant, then it induces a functional on unoriented multi-curves
+Conversely, if $f \colon \Curves^+(S) \to \mathbb{R}$ is symmetric, then it induces a functional on unoriented multi-curves
 \[
 \overline{f} \colon \Curves(S) \to \mathbb{R}, 
 \qquad
@@ -307,7 +298,6 @@ in the sense of Definition~\ref{def:smoothing_and_max}.
 
 Similarly, the above equivalences can be stated for quasi-smoothing.
 
-\DPTtodo{HERE}
 We refer the reader to Section~\ref{subsec:crossings} for precise
 definitions and proofs of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} and~\ref{lem:smoothing_lemma_top_alg}. See in particular
 Proposition~\ref{prop:crossings-triality}.
@@ -327,8 +317,8 @@ curve functionals.
 
 \begin{enumerate}
 
-\item For $R>0$, let $\QConvex_R^+(S)$ denote the set of curve
-functionals satisfying $R$-oriented quasi-smoothing, convex union,
+\item For fixed $R>0$, let $\QConvex_R^+(S)$ denote the set of curve
+functionals satisfying oriented $R$-quasi-smoothing, convex union,
 stability, and homogeneity. We refer to this as the space of
 \emph{oriented $R$-quasi-convex functionals}. Define
 \[
