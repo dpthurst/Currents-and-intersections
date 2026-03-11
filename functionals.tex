@@ -14,7 +14,10 @@ We then turn to further questions motivated by these results.
 % We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 \DPTtodo{This section seems slightly off-focus. Maybe say a bit more
   about why we're caring so much about orientations? But also how much
-is it duplicating the later section?}
+  is it duplicating the later section?}
+\DPTtodo{In the $\sqrt{\EL}$ example, we use the
+  criterion that if $(\ora{a},\ora{b})$ are parallel then $[ab]$ has a
+  self-crossing. So maybe we should at least mention that fact here.}
 In this paper, the term \emph{multi-curve} will mean an
 \emph{oriented multi-curve}, that is, a finite union of oriented, not-necessarily-simple and not-necessarily-disjoint curves; we
 denote the corresponding space by $\Curves^+(S)$. Accordingly, we will
@@ -231,7 +234,7 @@ the property called \emph{max-smoothing}.
 
 Smoothing is satisfied by many natural functionals, including
 intersection functionals $i(\mu,\cdot)$ for any geodesic current $\mu$
-(see~\cite[Section~4.1]{MGT21:Smoothings}; cf.~Appendix~\ref{sec:necessary}),
+(see~\cite[Section~4.1]{MGT21:Smoothings}; cf.~Appendix~\ref{app:necessary}),
 as well as curve lengths arising from a length metric structure on $S$
 (see~\cite[Section~4.3]{MGT21:Smoothings}; cf.~Section~\ref{subsec:domination}).
 Further examples are discussed in Section~\ref{subsec:examples_and_non}.
@@ -341,6 +344,7 @@ the space of \emph{quasi-convex curve functionals}.
 \Convex(S) \coloneqq \QConvex_{0}(S)
 \]
 be the space of \emph{convex curve functionals}.
+\DPTtodo{Surely we should make those ``stronger assumptions'' precise?}
 Under stronger smoothing assumptions, such functionals induce convex
 functions in train-track coordinates (see
 Section~\ref{subsubsec:convexity_charts}).
@@ -354,6 +358,8 @@ functionals that additionally satisfy additivity.
 \end{definition}
 
 Examples below show we have strict inclusions
+\DPTtodo{Could add a larger class of functionals extending to
+  currents, but I don't have a name}
 \[
 \AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex(S) \subsetneq \QConvex^+(S)
 \]
@@ -381,7 +387,7 @@ properties for multi-curves and then extending to arbitrary currents
 using the density of weighted curves together with the continuity and
 bilinearity of the intersection pairing.
 For completeness, we provide an alternative proof in
-Section~\ref{sec:necessary}, more closely aligned with the arguments
+Appendix~\ref{app:necessary}, more closely aligned with the arguments
 involving lifts to the universal cover.
 
 Many natural notions of length satisfy these properties and are known
@@ -397,14 +403,14 @@ appropriate references.
     \item More generally, length w.r.t.\ negatively curved Riemannian metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}.
     \item Even more generally, non-positively curved Riemannian metrics
 \cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}.
+\item Lengths with respect to negatively curved Riemannian  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
 \item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
-\item More generally, lengths with respect to negatively curved Riemannian  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
-\item Non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}.
+\item More generally, non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}.
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
     \item Lengths associated to Anosov representations induced by positive generalized cross-ratios \cite[Proposition~2.24]{MZ19:PositivelyRatioed}, \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}.
 \end{enumerate}
 
-We emphasize that Theorem~\ref{thm:intersect} subsumes all of the
+Theorem~\ref{thm:intersect} subsumes all of the
 preceding results. This is explained in
 Section~\ref{sec:special-classes} for items~(1)--(8) and in
 Section~\ref{sec:crossratios} for item~(9).
@@ -424,7 +430,7 @@ we now show examples of many natural functions on curves that do \emph{not} sati
 \begin{enumerate}
     \item Some curve functionals are not symmetric but nevertheless satisfy
 oriented quasi-smoothing, thus providing examples in
-$\QConvex^+(S)$ (see also item~(3)). For instance, the stable
+$\QConvex^+(S)$ (see also item~(3) below). For instance, the stable
 lengths of word metrics arising from asymmetric generating sets,
 as discussed in~\cite[Section~4.6]{MGT21:Smoothings}, furnish such
 examples.
@@ -452,7 +458,9 @@ smoothing if and only if the representation is Fuchsian
 proper inclusion $\Convex(S) \subsetneq \QConvex_R(S)$ for $R>0$.
 
 \begin{question}
-Let $K$ denote the quasi-Fuchsian constant of a
+  Let $K$ denote the
+  \DPTtodo{Give some ref for quasi-Fuchsian const}
+  quasi-Fuchsian constant of a
 quasi-Fuchsian representation $\rho$, and let $R>0$ be the minimal quasi-smoothing
 constant, i.e., the minimal $R>0$ so that $\ell_{\rho} \in \QConvex_R(S)$. 
 Does $R \to \infty$ as $K \to \infty$?
@@ -468,7 +476,8 @@ cross-ratios and termed \emph{positively ratioed}, induce curve
 functionals dual to geodesic currents. They further established that
 these functionals satisfy certain connected smoothing inequalities.
 In fact, Theorem~\ref{thm:intersect} shows that such representations
-satisfy full smoothing if and only if they are positively ratioed. 
+satisfy full smoothing if and only if they are positively ratioed.
+\DPTtodo{Mention that cross-ratios automatically give smoothing here?}
         \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
 geometrically defined groups, including hyperbolic groups, admit such
@@ -494,6 +503,7 @@ Thus it provides an example of a curve functional lying outside
 $\QConvex(S)$, despite extending to geodesic currents by
 Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}.
 \item Translation lengths associated to embedded graphs on a surface whose
+\DPTtodo{I don't know what non-proper actions are}
 actions are not proper~\cite[Proposition~11]{Bonahon91:CurrentsGroups}
 do not extend continuously to geodesic currents. In particular, they
 do not satisfy quasi-smoothing in general. We give a direct proof of this fact below.
@@ -525,12 +535,17 @@ continuously to geodesic currents---and hence does not satisfy
 smoothing by~\cite[Theorem~A]{MGT21:Smoothings}---we present the following.
 \begin{example}\label{ex:linEL}
 Let $\sqrt{EL}$ denote the (square root of) extremal length.
-In \cite[Examples]{MGT21:Smoothings} the authors proved that $\sqrt{EL}$ satisfies stability, homogeneity, smoothing, and convex union. By  \cite[Theorem~A]{MGT21:Smoothings}, $\sqrt{EL}$ extends continuously to a continuous on geodesic currents.
-$\sqrt{EL}$ does not satisfy additivity, so it is not dual to a geodesic current. However, $\sqrt{EL}$, as a function on connected curves can be linearly extended to a function $G$ on (weighted) multi-curves, 
-(which is thus not equal to $\sqrt{EL}$ on multi-curves). $G$ cannot extend continuously to currents, since we know $G=\sqrt{EL}$ on (weighted) connected curves, which are dense in the space of geodesic currents.
+In \cite[Section 4.8]{MGT21:Smoothings} the authors proved that $\sqrt{EL}$ satisfies stability, homogeneity, smoothing, and convex union. By  \cite[Theorem~A]{MGT21:Smoothings}, $\sqrt{EL}$ extends continuously to a continuous on geodesic currents.
+$\sqrt{EL}$ does not satisfy additivity, so it is not dual to a
+geodesic current. However, we can consider $\sqrt{EL}$ as a function
+on \emph{connected} curves and extended it additively to a function
+$G$ on (weighted)
+multi-curves,
+which is thus not equal to $\sqrt{EL}$ on multi-curves. $G$ cannot extend continuously to currents, since we know $G=\sqrt{EL}$ on (weighted) connected curves, which are dense in the space of geodesic currents.
 Thus, the purported continuous extension $\overline{G}$ would have to satisfy $\overline{G}=\sqrt{EL}$ on all geodesic currents, hence on all multi-curves, a contradiction.
-It follows from this that $G$ cannot satisfy smoothing, since it trivially satisfies convex union (in fact, additivity) and stability.  One can also see that, specifically, it does not satisfy connected smoothing.
-Indeed, let $F=\sqrt{EL}$. For a crossing pair $(a,b)$, we have
+It follows from this that $G$ cannot satisfy smoothing, since it trivially satisfies convex union (in fact, additivity) and stability.
+Specifically, $G$ does not satisfy connected smoothing.
+Indeed, let $F=\sqrt{EL}$. For a crossing pair $(\ora{a},\ora{b})$, we have
 \[
 F(a + b) \geq F(ab).
 \] 
@@ -540,23 +555,37 @@ G(a+b)=G(a) + G(b)=F(a) + F(b) \geq F(a+b) \geq F(ab)=G(ab)
 \]
 where we used the fact that $F$ and $G$ take the same values on closed curves; hence,
 $G$ satisfies disconnected smoothing.
-This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair $(a,b)$ parallel so that
-$G(ab) < G(a) + G(b)$. This is indeed the case. Maxime Fortier Bourque pointed the first author to~\cite{HZ20:SwissCross} for a strategy to compute the extremal length of a figure-eight curve in a pair of pants.  Consider the extremal length of a figure-eight curve in a genus two surface $S$. Consider the pair of pants $P$ bounding $ab$, and let us think of it as obtained by gluing adjacent sides in a Swiss cross. The extremal metric has been computed numerically in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of the Swiss cross. If the width is chosen to be a fourth of the total size of the Swiss cross, and the normalization $w=1$ is chosen, the extremal length of the figure-eight can be computed to be 2.4251
+This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair $(\ora{a},\ora{b})$ parallel so that
+$G(ab) < G(a) + G(b)$. For a concrete example, communicated to us by
+Maxime Fortier Bourque, consider the paper \cite{HZ20:SwissCross} on
+extremal length in the Swiss cross.  Consider the
+extremal length of a figure-eight curve in a genus two surface $S$.
+\DPTtodo{Not positive I'm convinced by the relevance of the [HZ20] paper}
+Consider the pair of pants $P$ bounding $ab$, and let us think of it
+as obtained by gluing adjacent sides in a Swiss cross. The extremal
+metric has been computed numerically
+in~\cite[Page~35]{HZ20:SwissCross} as a function of the width $w$ of
+the Swiss cross. If the width is chosen to be a fourth of the total
+size of the Swiss cross, and the normalization $w=1$ is chosen, the
+extremal length of the figure-eight can be computed to be 2.4251
  (see Table in \cite[Page~36]{HZ20:SwissCross}, row $t=4$), hence its square root is $G_P(ab) \simeq 1.557273$. On the other hand, the length of each one of the resulting smoothings is $3$, while the area of the surface with the extremal metric associated to $ab$ is computed as $A=6.5977$. 
  
  Hence, $G_{S}(a) + G_S(b) =2G_S(a)=\sqrt{2}G_P(a)$ is lower bounded by $\simeq 1.6517335$, showing the inequality
  \[
  G_S(ab) < G_P(ab) < G_S(a) + G_S(b) = 2G_S(a)=\sqrt{2} G_P(a).
  \]
+\DPTtodo{Comment that this is an example satisfying disconn but not
+  conn smoothing}
 \end{example}
 
 
 \textbf{Non-negativity}
 
-Observe that we do not require in the hypotheses that the curve
+Observe that we do not require in the hypotheses of
+Theorem~\ref{thm:intersect} that the curve
 functional $f \in \AConvex(S)$ is non-negative: in fact it follows
 from the other conditions.
-We finish this subsection by relating the hypotheses on $f$ to non-negativity. In particular, we prove that smoothing and convex union on $f$, imply non-negativity.
+We finish this subsection by relating the hypotheses on $f$ to non-negativity. In particular, we prove that smoothing and convex union on~$f$ imply non-negativity.
 
 \begin{proposition}
   Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
