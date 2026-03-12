@@ -60,12 +60,88 @@ properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoo
 
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see also~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
+For the following discussion, compare Figure~\ref{fig:open_surfaces}, where we depict a genus one surface with two ends, where in one figure they are treated as cusp, and in the other, as funnels, and we depict the convex core totally geodesic subsurface.
 
+In the cusped surface, let $A$ be the simple arc going from cusp to cusp, which is in $\Curr_{\mathrm{cusp}}(S)$.
+Let $C_n$ be a sequence of closed geodesics obtained by following $A$ on both ends deep into the cusp, wrapping around the cusp $n$ times, and going back to close up. In the weak$^*$-topology of $\Curr_{\mathrm{cusp}}(S)$, we have $C_n \to 2A$ (see, for example, Sasaki~\cite[Section~6]{Sas22:Currents}).
+
+In the boundary case, let $B_1$ and $B_2$ be the boundary parallel curves homotopic to each respective boundary component. The sequence of curves $C_n$ can also be considered in $\Curr_{\mathrm{open}}(S)$. Without scaling, $C_n$ does not converge to any current, but it does projectively. In fact, $\frac{1}{n} C_n \to B_1 + B_2$.
+Consider the geometric intersection number between arcs/curves in the cusped surface and curves in the open surface, i.e., $i \colon \Curves_{\mathrm{cusp}}(S) \times \Curves_{\mathrm{open}}(S)$.
+We claim
+\[
+i(C_n, \frac{1}{n}C_n) \to i(2A, B_1 + B_2).
+\]
+Indeed, $i(C_n, C_n) = 4n$, and $i(2A, B_1+B_2)=4$, from which the result follows.
+
+In fact, we conjecture there is a well-defined and continuous geometric intersection number between $\Curr_{\mathrm{open}}(S)$ and $\Curr_{\mathrm{cusp}}(S)$.
+
+\begin{conjecture}
+There exist a continuous function 
+\[
+I \colon \Curr_{\mathrm{cusp}}(S) \times \Curr_{\mathrm{open}}(S) \to \mathbb{R}
+\]
+extending the natural geometric intersection pairing between $\Curves_{\mathrm{cusp}}(S)$ and $\Curves_{\mathrm{open}}$.
+\end{conjecture}
+
+For continuity, it is known that if one restricts the right-hand-side factor to currents supported on a preimage of a compact subset on the surface, the intersection number is continuous~\cite[Theorem~2.4]{BIPP21:Systoles} and~\cite[Section~6]{Sas22:Currents}.
+We can use this intersection number to propose a duality. Say that a function $f \colon \Curves_{\mathrm{cusp}}(S) \to \mathbb{R}$ satisfies \emph{smoothing} if it satisfies smoothing between any closed multi-curves, as well as smoothing between arcs and curves and between arcs, in the sense that after resolving any essential crossing (i.e. an intersection that cannot be homotoped away), the function does not increase.  Say that a function $f \colon \Curves_{\mathrm{open}}(S) \to \mathbb{R}$ satisfies smoothing if it satisfies smoothing between any two (non-boundary parallel) curves.
+
+
+
+For a cusped surface $S'$, consider an embedded graph $\mathcal{G} \subset S'$.
+Equipping this graph with a metric, we get a notion of length of $\ell_\Sigma$ curves in $\Curves_{\mathrm{open}}(S)$ with respect to this embedded metric graph (see Section~\ref{subsec:embedded_graphs} for further details). When $\mathcal{G}$ is a rose-graph (embedded and with one vertex), Erlandsson~\cite{Erlandsson:WordLength} has constructed examples of geodesic currents $\mu_{\mathcal{G}}$ in $\Curr_{\mathrm{open}}(S)$ (in fact, half-integer weighted arcs and multi-curves) so that
+\[
+\ell_{\Sigma}(C)=I(\mu_{\mathcal{G}}, C).
+\]
+This motivates the following question.
+
+\begin{question}
+Given a function $f \colon \Curves_{\mathrm{open}}(S) \to \mathbb{R}$ which is additive and satisfies smoothing, are there additional assumption guaranteeing that there exists a unique geodesic current $\mu \in f \colon \Curr_{\mathrm{cusp}}(S)$ so that
+\[
+f(C)=i(C, \mu)
+\]
+for every $C \in \Curves_{\mathrm{open}}$.
+\end{question}
+
+We emphasize that additivity and smoothing alone are not enough. For example, take function $f \colon \Curves_{\mathrm{open}}(S) \to \mathbb{R}$ assigning the hyperbolic length to non-boundary parallel curves and $0$ to boundary parallel curves. This functional does not have a dual geodesic current in open, since by continuity of $I$ it would have to assign positive length to limits of curves wrapping around the boundary (see~\cite[Remark~2.26]{MGT21:Smoothings} for details).
+
+We have a parallel conjecture.
+
+\begin{conjecture}
+Given a function $f \colon \Curves_{\mathrm{cusp}}(S) \to \mathbb{R}$ which is additive and satisfies smoothing, there exists a unique geodesic current $\mu \in f \colon \Curr_{\mathrm{open}}(S)$ so that
+\[
+f(C)=i(C, \mu)
+\]
+for every $C \in \Curves_{\mathrm{cusp}}$.
+\end{conjecture}
+
+We have two motivating examples.
+
+The first one is related to the example on graphs above.
+Take again an embedded metric graph $\mathcal{G} \subset S$, and define the intersection $i(\mathcal{G},C)$ to be the minimal transversal intersection between homotopy classes of embedded representatives of $\mathcal{G}$ into $S$ and a homotopic representative of $C$, for every closed curve in $\Curves(S)_{\mathrm{cusp}}$.
+This defines a function $f \colon \Curves(S)_{\mathrm{cusp}} \to \mathbb{R}$. We claim there exists a geodesic current $\mu \in \Curr_{\mathrm{open}}(S)$. \DMGtodo{which one?}
+
+As a second example, consider a flat metric on the completion of $S'$ so that the missing points become conical singular points. Now the length of an arc between cusps is the length of the arc from cone point to cone point, which is a finite number.
+This gives a well-defined notion of length $\ell \colon \Curves_{\mathrm{cusp}}(S) \to \mathbb{R}$.
+On the other hand,  $\Curr_{\mathrm{open}}(S)$ are geodesic currents whose support is contained in the closure of the subspace of geodesics that do not go through cone points, and the natural Liouville metric for singular flat metrics is an example~\cite[Section~3.2]{BL17:RigidityFlat}
 
 \begin{figure}
-\resizebox{80mm}{!}{
+\centering
+\begin{subfigure}{0.48\textwidth}
+\centering
+\resizebox{60mm}{!}{
 \svgfigbig{cusp}}
-\caption{Cusped surface with an arc $A$ and a closed geodesic $C_n$ wrapping around the arc so that $C_n$ converges to $2A$. }
+\caption{Cusped surface with an arc $A$ and a closed geodesic $C_n$ wrapping around the arc so that $C_n$ converges to $2A$.}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+\centering
+\resizebox{60mm}{!}{
+\svgfigbig{open}}
+\caption{Open surface with two boundary parallel curves $B_1$ and $B_2$. The sequence of curves $C_n$ also sits in this surface, and we have $\frac{1}{n}C_n \to B_1 + B_2$.}
+\end{subfigure}
+\caption{Examples of cusped an open surfaces.}
+\label{fig:open_surfaces}
 \end{figure}
 
 \subsubsection{Generalizations to hyperbolic groups}
