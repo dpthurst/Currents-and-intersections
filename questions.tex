@@ -8,13 +8,16 @@ For such surfaces, geodesic currents admit at least three natural definitions, d
 If the ends are realized as cusps, one obtains a space $\Curr_{\mathrm{cusp}}(S)$, defined analogously to Definition~\ref{def:currents} as the space of $\pi_1(S)$-invariant 
 Radon measures on the space of geodesics in the universal cover. In this setting, the space of geodesics includes geodesic arcs connecting cusps. 
 If instead one restricts to geodesics projecting to the convex core, one obtains a space denoted $\Curr_{\mathrm{open}}(S)$.
-
+\begin{comment}
 A third option is the algebraic space of currents $\Curr(\pi_1(S))$,
 defined as the space of $\pi_1(S')$-invariant Radon measures on
 $\partial \pi_1(S)^{2}$ minus the diagonal,
 using the fact that $\pi_1(S)$ is hyperbolic when $S$ is open.
+\end{comment}
 
 In $\Curr_{\mathrm{cusp}}(S)$, the intersection pairing fails to be continuous; see~\cite[Remark~2.26]{MGT21:Smoothings} and also~\cite{Sas22:Currents, T22:ThurstonCompactification}. 
+
+\begin{comment}
 Thus we might want to look at $\Curr(\pi_1(S))$, which is different
 since the action of $\pi_1(S)$ on $\bbH^2$ is not cocompact.
 These spaces are
@@ -24,28 +27,27 @@ related by a continuous map
 \]
 given by push-forward under the map $\phi \colon \partial \pi_1(S) \to \partial \mathbb{H}^2$ associated to a discrete and faithful representation $\rho$ defining the cusped hyperbolic structure (cf.~\cite[Section~4]{Sas22:Currents}). The map $\phi_*$ is surjective but not injective, and $\phi$ is non-surjective.
 
-It is therefore natural to ask whether analogues of our main results hold on the algebraic space $\Curr(\pi_1(S))$. Two features of the closed-surface case used essentially in our arguments fail in the cusped setting:
+
+It is therefore natural to ask whether analogues of our main results hold on the algebraic space $\Curr(\pi_1(S))$. 
+\end{comment}
+
+Two features of the closed-surface case used essentially in our arguments fail in the cusped setting:
 \begin{itemize}
 \item For closed surfaces, the boundary at infinity carries a natural
-  cyclic order, which is lost when $\pi_1(S)$ is free. A possible
-  substitute is to transfer the cyclic order from
-  $\partial \mathbb{H}^2$ to $\partial \pi_1(S)$ via the map $\phi$,
-  and to define crossing and parallelism of hyperbolic elements
-  accordingly.
+  cyclic order, which is lost when $\pi_1(S)$ is free. 
 \item In $\Curr_{\mathrm{cusp}}(S)$, one may have currents supported
   on cusp-to-cusp arcs, and several such arcs may limit to the same
   puncture. This obstructs the non-atomicity properties of boundary
   measures used in this paper in the closed case (see
   Remark~\ref{rmk:no_atom_boundary_box} and the proof of
-  Theorem~\ref{thm:hyp-char}). These phenomena do not occur for
-  currents in the image of $\Curr(\pi_1(S))$.
+  Theorem~\ref{thm:hyp-char}). 
 \end{itemize}
 
+\begin{comment}
 This suggests that $\Curr(\pi_1(S))$ provides a more natural setting in which to seek extensions of the duality and characterization results of the present paper.
-
+\end{comment}
 The case of $\Curr_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
 The key issue is that the intersection number is degenerate in this case: any geodesic current $\mu$ supported on boundary curves will have zero intersection number with all geodesic currents $\nu \in \Curr(S)$.
-\DPTtodo{Relate to non-embedding in the asymmetric case}
 We can give a concrete example on how our theorem fails in this
 setting, similar to the second example
 in~\cite[Remark~2.26]{MGT21:Smoothings} as follows.
@@ -58,11 +60,15 @@ properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoo
 
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see also~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
-\DPTtodo[inline]{Think about whether we want to make a conjecture
-  setting up a duality between $\Curr_{\mathrm{open}}(S)$ and
-  $\Curr_{\mathrm{cusp}}(S)$. That is, does a functional on one type
-  of curves/arcs induce a current of the other type?}
 
+
+\begin{figure}
+\centering{
+\svgfignormal{cusp}
+\caption{Cusped surface with an arc $A$ and a ge }
+\label{fig:cusp}
+}
+\end{figure}
 \subsubsection{Generalizations to hyperbolic groups}
 In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan, CMGR26:GreenMetrics}.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
