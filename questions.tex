@@ -11,8 +11,7 @@ If instead one restricts to geodesics projecting to the convex core, one obtains
 \DPTtodo{Rewrote to give three options. Deleted the primes}
 A third option is the algebraic space of current $\Curr(\pi_1(S))$,
 defined as the space of $\pi_1(S')$-invariant Radon measures on
-\DPTtodo{Why the parentheses in $\partial \pi_1(S)^{(2)}$?}
-$\partial \pi_1(S)^{(2)}$,
+$\partial \pi_1(S)^{2}$ minus the diagonal,
 using the fact that $\pi_1(S)$ is hyperbolic when $S$ is open.
 
 In $\Curr_{\mathrm{cusp}}(S)$, the intersection pairing fails to be continuous; see~\cite[Remark~2.26]{MGT21:Smoothings} and also~\cite{Sas22:Currents, T22:ThurstonCompactification}. 
@@ -236,31 +235,62 @@ recently studied the related concept of \emph{taut smoothing}.
 \subsubsection{Convexity on train-track charts and local compactness}
 \label{subsubsec:convexity_charts}
 
-One of the reasons multi-smoothing is a useful property is that, coupled with convex union, as well as homogeneity and stability, it yields convex functions when restricted to train-track coordinates. Precisely, let $f$ be a curve functional satisfying the aforementioned properties, and let $\tau$ be a maximal train-track (i.e., a train-track all of whose complementary components are trigons), let $V(\tau)$ the set of admissible weights, $\ML(\tau)$ the subspace of measured laminations carried by $\tau$, and $\phi_{\tau} \colon V(\tau)  \to \ML(\tau)$ the induced homeomorphism chart on measured laminations.
-Since $f$ extends continuously to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics}, \cite[Theorem~2]{Thu16:Research}, \cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
+One of the reasons multi-smoothing is a useful property is that,
+coupled with convex union, homogeneity, and stability, it
+yields convex functions when restricted to train-track coordinates.
+Precisely, let $f$ be a curve functional satisfying the aforementioned
+properties, including multi-smoothing. Let $\tau$ be a maximal train-track (i.e., a
+train-track all of whose complementary components are trigons), let
+$V(\tau)$ be the set of admissible weights on~$\tau$, $\ML(\tau)$ be the subspace of
+measured laminations carried by $\tau$, and
+$\phi_{\tau} \colon V(\tau) \to \ML(\tau)$ be the induced
+chart on measured laminations.
+Since $f$ extends continuously to geodesic currents \cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics}, \cite[Theorem~2]{Thu16:Research}, \cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
 
-These curve functionals form a subset of the functionals that extend continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Moreover, the bijection is a homeomorphism onto its image when the space of curve functionals is equipped with the subspace topology coming from the product topology on $\mathbb{R}^{\Curves(S)}$ (by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}).
-
+\DPTtodo{reworded here}
+These curve functionals form a subset of the functionals that extend
+continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}.
+Moreover, the map $\Psi \colon \Curr(S) \to \mathbb{R}^{\Curves(S)}$
+defined by $\Psi(\mu) = i(\mu, \cdot)$ is a homeomorphism onto its
+image when $\mathbb{R}^{\Curves(S)}$ is equipped with the product
+topology,
+by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}.
 Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
 
 \begin{theorem}
-   Let $\Psi \colon \Curr(S) \to \mathbb{R}^{\Curves(S)}$ be the homeomorphism onto its image $\mu \mapsto i(\mu, \cdot)$.
-   The image is equal to the subset of additive convex functionals $\AConvex(S)$.
+   The image of~$\Psi$ is homeomorphically $\AConvex(S) \subset \bbR^{\Curves(S)}$.
 \end{theorem}
 
-It is a consequence of this last result and the local compactness of the space of geodesic currents (see Proposition~\ref{prop:local_compactness} below), that the space $\AConvex(S)$ with the pointwise topology is locally compact, which is not obvious a priori by looking directly at the functionals. Connecting with the discussion in the above paragraph, a shadow of this fact can be seen as follows.
+It is a consequence of this last result and the local compactness of
+the space of geodesic currents (recalled as
+Proposition~\ref{prop:local_compactness} below) that the space
+$\AConvex(S)$ with the product topology is locally compact, which is
+not obvious \textit{a priori} by looking directly at the functionals.
+Connecting with the discussion in the above paragraph, a shadow of
+this fact can be seen as follows.
 
-The sublevel set $\Lambda_{f_{\tau}} \coloneqq \{ \vec{x} \in V(\tau) : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of $\mathbb{R}^N$ (for some $N>0$ depending on the combinatorics of $\tau$).
-Let $f_i(\cdot) = i(\mu_i, \cdot)$ for some sequence of geodesic currents $\mu_i \to \mu$, and $f(\cdot) = i(\mu, \cdot)$.
-Then $\Lambda_{(f_i)_{\tau}} \to \Lambda_{f_{\tau}}$ in the topology induced by the Hausdorff metric. With respect to this topology, the subset of compact convex subsets of $\mathbb{R}^N$ is locally compact.
-The same convexity argument would work if we considered $\Convex(S)$ as opposed to $\AConvex(S)$ (that is, we only required convex union).
-Hence, we conjecture the following.
+The sublevel set $\Lambda_f \coloneqq \{ \vec{x} \in V(\tau)
+: f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of
+$\mathbb{R}^N$, for some $N>0$ depending on the combinatorics of~$\tau$.
+For any sequence of geodesic currents $\mu_i$ limiting to~$\mu$,
+let $f_i(\cdot) = i(\mu_i, \cdot)$ for $f(\cdot) = i(\mu, \cdot)$.
+Then $\Lambda_{f_i} \to \Lambda_f$ in the Hausdorff topology. With
+respect to this topology,
+\DPTtodo{Add a citation. Edit to make clear this is what is suggesting
+  Conjecture below is true}
+the subset of compact convex subsets of $\mathbb{R}^N$ is locally
+compact; this is a shadow of the local compactness of $\AConvex(S)$.
+The same convexity argument would work if we only require convex sets,
+$\Convex(S)$ as opposed to $\AConvex(S)$.
+We therefore conjecture the following.
 
 \begin{conjecture}
 The set $\Convex(S)$ with the product topology is locally compact.
 \end{conjecture}
 
-The main examples of interest for us in $\Convex(S)$ would be extremal lengths associated to conformal structures on $S$ or to elastic graphs (see~\cite[Examples]{MGT21:Smoothings}).
+Some examples of interest in $\Convex(S)$ would be extremal
+lengths associated to conformal structures or to elastic graphs on~$S$
+\cite[Examples]{MGT21:Smoothings}.
 
 \subsubsection{Domination}
 \label{subsec:domination}
