@@ -16,7 +16,7 @@ We then turn to further questions motivated by these results.
   about why we're caring so much about orientations? But also how much
   is it duplicating the later section?}
 \DPTtodo{In the $\sqrt{\EL}$ example, we use the
-  criterion that if $(\ora{a},\ora{b})$ are parallel then $[ab]$ has a
+  criterion that if $(\protect\ora{a},\protect\ora{b})$ are parallel then $[ab]$ has a
   self-crossing. So maybe we should at least mention that fact here.}
 In this paper, the term \emph{multi-curve} will mean an
 \emph{oriented multi-curve}, that is, a finite union of oriented, not-necessarily-simple and not-necessarily-disjoint curves; we
@@ -319,7 +319,7 @@ In decreasing order of generality, we consider the following classes of
 curve functionals.
 
 \begin{enumerate}
-
+\item Let $\operatorname{Cont}^+(S)$ denote the space of continuous functions on $\Curr^+(S)$, the space of oriented geodesic currents. \DMGtodo{added this definition} 
 \item For fixed $R>0$, let $\QConvex_R^+(S)$ denote the set of curve
 functionals satisfying oriented $R$-quasi-smoothing, convex union,
 stability, and homogeneity. We refer to this as the space of
@@ -345,7 +345,8 @@ the space of \emph{quasi-convex curve functionals}.
 \]
 be the space of \emph{convex curve functionals}.
 \DPTtodo{Surely we should make those ``stronger assumptions'' precise?}
-Under stronger smoothing assumptions, such functionals induce convex
+\DMGtodo{it's multi-smoothing, but maybe adding that name here just makes it confusing}
+Under the stronger smoothing assumption of multi-smoothing, such functionals induce convex
 functions in train-track coordinates (see
 Section~\ref{subsubsec:convexity_charts}).
 
@@ -357,14 +358,14 @@ functionals that additionally satisfy additivity.
 \end{enumerate}
 \end{definition}
 
-Examples below show we have strict inclusions
+The examples and discussion below show we have strict inclusions
 \DPTtodo{Could add a larger class of functionals extending to
   currents, but I don't have a name}
-  \DMGtodo{$\operatorname{Cont}(S)$}
+  \DMGtodo{added $\operatorname{Cont}(S)$}
+  \DMGtodo{$\operatorname{Cont}^+(S)$}
 \[
-\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex(S) \subsetneq \QConvex^+(S)
+\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex(S) \subsetneq \QConvex^+(S) \subsetneq \operatorname{Cont}^+(S)
 \]
-
 
 
 \subsection{Examples and non-examples}
@@ -408,13 +409,17 @@ appropriate references.
 \item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
 \item More generally, non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}.
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
-    \item Lengths associated to Anosov representations induced by positive generalized cross-ratios \cite[Proposition~2.24]{MZ19:PositivelyRatioed}, \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}.
+    \item Lengths associated to Anosov representations induced by positive generalized cross-ratios \cite[Proposition~2.24]{MZ19:PositivelyRatioed}, \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}. Specifically, Martone-Zhang~\cite{MZ19:PositivelyRatioed}  \DMGtodo{moved the stuff from non-example to here} showed that a family of representations equipped with positive H\"older generalized
+cross-ratios and termed \emph{positively ratioed}, induce curve
+functionals, via their \emph{periods}, dual to geodesic currents. They further established that
+these functionals satisfy certain connected smoothing inequalities.
+Burger-Iozzi-Parreau-Pozzetti later extended their construction to generalized cross-ratios that need not be H\"older.
 \end{enumerate}
 
 Theorem~\ref{thm:intersect} subsumes all of the
 preceding results. This is explained in
 Section~\ref{sec:special-classes} for items~(1)--(8) and in
-Section~\ref{sec:crossratios} for item~(9).
+Section~\ref{sec:crossratios} for item~(9). \DMGtodo{added this comment:} In fact, by Theorem~\ref{mainthm:crossratio}, the period of any generalized cross-ratio satisfies smoothing.
 
 In particular, Section~\ref{subsec:embedded_graphs} shows that
 item~(8) admits a further generalization to stable lengths associated
@@ -457,14 +462,13 @@ quasi-Fuchsian representations. These satisfy quasi-smoothing by
 smoothing if and only if the representation is Fuchsian
 \cite[Theorem~A]{FF22:QF}. This furnishes another instance of the
 proper inclusion $\Convex(S) \subsetneq \QConvex_R(S)$ for $R>0$.
-A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to \PSL(2,\mathbb{C})$~\cite[Definition~6.12.2]{Hub06:Vol1} is defined as a conjugate of $PSL(2,\mathbb{R})$ by a (properly normalized) quasi-conformal homeomorphism of the 2-sphere.
+\DMGtodo{added definition and ref to Hubbard}
+A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to \PSL(2,\mathbb{C})$~\cite[Definition~6.12.2]{Hub06:Vol1} as a conjugate of Fuchsian group by a (properly normalized) quasi-conformal self-homeomorphism of the 2-sphere $f_{\rho}$. We call the \emph{quasi-Fuchsian} constant $K$ of $\rho$ smallest quasi-conformal constant for $f_{\rho}$.
 
 \begin{question}
-  Let $K$ denote the
-  \DPTtodo{Give some ref for quasi-Fuchsian const}
-  quasi-Fuchsian constant of a
-quasi-Fuchsian representation $\rho$, and let $R>0$ be the minimal quasi-smoothing
-constant, i.e., the minimal $R>0$ so that $\ell_{\rho} \in \QConvex_R(S)$. 
+  Let $K$ denote the quasi-Fuchsian constant of a
+quasi-Fuchsian representation $\rho$, and let $R>0$ be the \emph{quasi-smoothing
+constant}, i.e., the minimal $R>0$ so that $\ell_{\rho} \in \QConvex_R(S)$. 
 Does $R \to \infty$ as $K \to \infty$?
 \end{question}
 
@@ -474,14 +478,11 @@ Does $R \to \infty$ as $K \to \infty$?
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
 non-compact type $G$, such as $\SL(n,\mathbb{R})$.
-Martone-Zhang~\cite{MZ19:PositivelyRatioed} showed that a distinguished
-class of such representations, equipped with positive generalized
-cross-ratios and termed \emph{positively ratioed}, induce curve
-functionals dual to geodesic currents. They further established that
-these functionals satisfy certain connected smoothing inequalities.
 In fact, Theorem~\ref{thm:intersect} shows that such representations
-satisfy full smoothing if and only if they are positively ratioed.
+satisfy full smoothing if and only if they are positively ratioed (see item (9) in Examples). Hence, for non-positively ratioed ones (such as quasi-Fuchsian but non-fuchsian) we get non-examples. \DMGtodo{added this}
+
 \DPTtodo{Mention that cross-ratios automatically give smoothing here?}
+\DMGtodo{mentioned this}
         \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
 geometrically defined groups, including hyperbolic groups, admit such
@@ -504,10 +505,11 @@ item), such translation lengths do not satisfy smoothing in general.
 homogeneity, and smoothing, but fails to satisfy additivity and even
 convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). 
 Thus it provides an example of a curve functional lying outside
-$\QConvex(S)$, despite extending to geodesic currents by
-Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}.
+$\QConvex_R^+(S)$, despite extending to geodesic currents by
+Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_R^+(S) \subsetneq \operatorname{Cont}(S)$.
 \item Translation lengths associated to embedded graphs on a surface whose
 \DPTtodo{I don't know what non-proper actions are}
+\DMGtodo{in this particular example, it's an action with a big kernel: start with a filling graph and quotient a part of the graph. Now the group acts on the universal cover of this grah with a big subgroup acting trivially.}
 actions are not proper~\cite[Proposition~11]{Bonahon91:CurrentsGroups}
 do not extend continuously to geodesic currents. In particular, they
 do not satisfy quasi-smoothing in general. We give a direct proof of this fact below.
@@ -566,6 +568,7 @@ Maxime Fortier Bourque, consider the paper \cite{HZ20:SwissCross} on
 extremal length in the Swiss cross.  Consider the
 extremal length of a figure-eight curve in a genus two surface $S$.
 \DPTtodo{Not positive I'm convinced by the relevance of the [HZ20] paper}
+\DMGtodo{they do numerical computations for that extremal length, which we need to check specific values and contradict connected smoothing}
 Consider the pair of pants $P$ bounding $ab$, and let us think of it
 as obtained by gluing adjacent sides in a Swiss cross. The extremal
 metric has been computed numerically
