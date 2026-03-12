@@ -191,7 +191,9 @@ Kosenko-Tiozzo~\cite{KT22:Inequality} have studied the metric $d_{\mu}$ in some 
 Even a positive answer to Question~\ref{q:Green} would be interesting, since then
 Theorem~\ref{thm:intersect} would give a dual geodesic current for the
 Green metric, and then one could study what types of geodesic currents
-can arise. \begin{comment} Note that, for punctured surfaces, some admissible metrics
+can arise.
+\begin{comment}
+  Note that, for punctured surfaces, some admissible metrics
 coming from random walks can be realized as geodesic currents. For
 example, consider a simple generating set $F$ (in the sense of
 Erlandsson~\cite{Erlandsson:WordLength}, see also
@@ -204,7 +206,7 @@ closed surface.
 \end{comment}
 
 \subsubsection{Smoothing vs multi-smoothing}
-
+\label{subsec:multismoothing}
 The hypotheses of smoothing in Equation~\eqref{eq:smoothing} of Theorem~\ref{thm:intersect} apply to one essential crossing at a time. There is a stronger condition than smoothing, where multiple smoothings at essential crossings are performed at once, and the function is required to be non-increasing under such operation.
 We will refer to this condition as \emph{multi-smoothing}.
 It is clear multi-smoothing implies smoothing.
@@ -216,8 +218,9 @@ that extremal length satisfies
 multi-smoothing \cite{AH21:EffectiveCounting3}.
 This prompts the following question.
 
-\begin{question}
-If a curve functional satisfies homogeneity, stability, convex union and smoothing, does it satisfy multi-smoothing?
+\begin{question}\label{quest:multi-smoothing}
+If a curve functional satisfies homogeneity, stability, convex union,
+and smoothing, does it necessarily satisfy multi-smoothing?
 \end{question}
 
 In this context, Arenas--Neumann-Coto \cite{ANC24:TautSmoothings}
@@ -267,8 +270,7 @@ For any sequence of geodesic currents $\mu_i$ limiting to~$\mu$,
 let $f_i(\cdot) = i(\mu_i, \cdot)$ for $f(\cdot) = i(\mu, \cdot)$.
 Then $\Lambda_{f_i} \to \Lambda_f$ in the Hausdorff topology. With
 respect to this topology,
-\DPTtodo{Add a citation. Edit to make clear this is what is suggesting
-  Conjecture below is true}
+\DPTtodo{Add a citation. Edited to make logic clearer}
 the subset of compact convex subsets of $\mathbb{R}^N$ is locally
 compact; this is a shadow of the local compactness of $\AConvex(S)$.
 The same convexity argument would work if we only require convex sets,
@@ -279,20 +281,32 @@ We therefore conjecture the following.
 The set $\Convex(S)$ with the product topology is locally compact.
 \end{conjecture}
 
-Some examples of interest in $\Convex(S)$ would be extremal
-lengths associated to conformal structures or to elastic graphs on~$S$
-\cite[Examples]{MGT21:Smoothings}.
+Some examples of interest for this conjecture would be extremal
+lengths associated to conformal structures or to elastic graphs
+\cite[Sections 4.8 and 4.9]{MGT21:Smoothings}.
 
 \subsubsection{Domination}
 \label{subsec:domination}
-Another property that intersection numbers satisfy is domination. 
-We say that a curve $C$ \emph{dominates} another curve $C'$ if $i(C,D) \geq i(C',D)$ for every curve $D$. We say $f$ satisfies \emph{domination} if for every pair of curves $(C,C')$ with $C$ dominating $C'$, we have $f(C) \geq f(C')$.
-It is easy to see that if $C'$ is obtained from $C$ by multi-smoothing, then $C$ dominates $C'$ - there are however other pairs $(C,C')$ with $C$ dominating $C'$ but $C'$ not obtainable from $C$ via multi-smoothing (see~\cite[Example]{NC01:ShortestGeodesics}).
+For another direction from Section~\ref{subsec:multismoothing},
+another property that intersection numbers satisfy is \emph{domination}.
+We say that a curve $C$ dominates another curve $C'$ if $i(C,D) \geq
+i(C',D)$ for every curve $D$. We say $f$ satisfies domination if for
+every pair of curves $(C,C')$ with $C$ dominating $C'$, we have
+$f(C) \geq f(C')$.
+It is easy to see that if $C'$ is obtained from $C$ by
+multi-smoothing, then $C$ dominates $C'$. There are however other
+pairs $(C,C')$ with $C$ dominating $C'$ but $C'$ not obtainable from
+$C$ via multi-smoothing
+\DPTtodo{Be more specific in citation}
+(see~\cite[Example]{NC01:ShortestGeodesics}).
 It is clear, by definition, that intersection numbers satisfy domination.
+All in all, we have the following implications on a functional~$f$:
+\[
+  \text{Domination} \Rightarrow \text{Multi-smoothing} \Rightarrow \text{Smoothing}.
+\]
 
-All in all, $f$ satisfying domination implies $f$ satisfying multi-smoothing which in turn implies $f$ satisfying smoothing.
-
-From Theorem~\ref{thm:intersect} we obtain the following weaker theorem which, nevertheless, is interesting from a conceptual viewpoint.
+From Theorem~\ref{thm:intersect} we obtain the following weaker
+theorem which is nevertheless conceptually interesting.
 
 \begin{theorem}
 A curve functional satisfies domination and additivity if and only if it is dual to a geodesic current.
@@ -302,10 +316,12 @@ This can be interpreted as saying that linear maps that preserve the poset struc
 
 For similar reasons as for the smoothing (or multi-smoothing) condition, the additivity hypothesis is necessary, since extremal length can be easily seen to satisfy domination, homogeneity and stability, but not additivity, and it is not dual to an intersection number.
 
-The above prompts the following question.
+The above prompts the following strengthening of
+Question~\ref{quest:multi-smoothing}.
 
 \begin{question}
-Suppose a curve functional $f$ satisfies homogeneity, stability and convex union. Does it follow $f$ satisfies domination if and only if it satisfies smoothing?
+If a curve functional satisfies homogeneity, stability,
+convex union, and smoothing, does it necessarily satisfy domination?
 \end{question}
 
 
@@ -334,7 +350,9 @@ Our theorem can be thought of in analogy to $\alpha \cap \beta =
 In Poincaré duality, one also has the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$, where $\cup$ denotes the cup product in cohomology.  
 A natural question that arises then is the following.
 
-\begin{question} What is the appropriate analog of the cup product? In other words, how can one define the intersection of two geodesic currents via their dual curve functionals?
+\begin{question} What is the appropriate analog of the cup product?
+  More precisely, can one define the intersection of two geodesic
+  currents directly via their dual curve functionals?
 \end{question}
 
 
