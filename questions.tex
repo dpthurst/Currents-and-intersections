@@ -59,13 +59,36 @@ properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoo
 
 However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see also~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
 
-\subsubsection{Questions about generalizations to hyperbolic groups}
+\DPTtodo[inline]{Think about whether we want to make a conjecture
+  setting up a duality between $\Curr_{\mathrm{open}}(S)$ and
+  $\Curr_{\mathrm{cusp}}(S)$. That is, does a functional on one type
+  of curves/arcs induce a current of the other type?}
+
+\subsubsection{Generalizations to hyperbolic groups}
 In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan, CMGR26:GreenMetrics}.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
-A metric space $X$ is uniformy quasi-geodesic if there exists constants $\lambda_1,\lambda_2 >0$ and $\epsilon \geq 0$, so that every two points $x, y \in X$ are connected by a $(\lambda_1,\lambda_2,\epsilon)$-quasi-geodesic.
-We say that $\Gamma \acts X$ of a non-elementary hyperbolic group on a uniformly quasi-geodesic hyperbolic metric space $X$ has the \emph{bounded backtracking property} if given an orbit map $f \colon \Cay(\Gamma) \to X$, there exist a constant $C>0$ so that for every two points $x,y \in \Cay(\Gamma)$, and geodesic $[x,y]$, there exists some quasi-geodesic $[f(x),f(y)]$ in $X$ so that $f([x,y]) \subset N_C([f(x),f(y)])$, where $N_C([f(x),f(y)])$ denotes the $C$-neighborhood of $[f(x),f(y)])$ with respect to the Hausdorff metric.
+\DPTtodo{Can we drop one of the $\lambda$s?}
+A metric space $X$ is uniformy quasi-geodesic if there exists
+constants $\lambda_1,\lambda_2 >0$ and $\epsilon \geq 0$, so that
+every two points $x, y \in X$ are connected by a
+$(\lambda_1,\lambda_2,\epsilon)$-quasi-geodesic. We say that an action
+$\Gamma \acts X$ of a non-elementary hyperbolic group~$\Gamma$ on a uniformly
+quasi-geodesic hyperbolic metric space~$X$ has the \emph{bounded
+  backtracking property} if given an orbit map
+\DPTtodo{Can we pick a different letter than $f$?}
+$f \colon \Cay(\Gamma) \to X$, there exists a constant $C>0$ so that
+for every two points $x,y \in \Cay(\Gamma)$, and geodesic $[x,y]$,
+there exists some quasi-geodesic $[f(x),f(y)]$ in $X$ so that
+$f([x,y]) \subset N_C([f(x),f(y)])$, where $N_C([f(x),f(y)])$ denotes
+the $C$-neighborhood of $[f(x),f(y)])$ with respect to the
+\DPTtodo{Do we really mean Hausdorff metric?} Hausdorff metric.
 
-There are examples of stable lengths satisfying bounded backtracking which do not satisfy quasi-smoothing (see~\cite[Section~9]{CMGR26:GreenMetrics}). On the other hand, one can ask if all functions of $\pi_1(S)$ satisfying quasi-smoothing arise as the stable length of some action of $\pi_1(S)$ satisfying bounded-bactracking. 
+There are examples of stable lengths satisfying bounded backtracking
+which do not satisfy quasi-smoothing
+(see~\cite[Section~9]{CMGR26:GreenMetrics}). On the other hand, one
+can ask if all functions on $\pi_1(S)$ satisfying quasi-smoothing
+arise as the stable length of some action of $\pi_1(S)$ satisfying
+bounded backtracking. 
 
 \begin{question}
 Let $\Gamma$ be a surface group, and let $f \colon \Gamma \to \mathbb{R}$ be a symmetric and stable functional satisfying quasi-smoothing (and hence, extending continuously to geodesic currents).
@@ -75,16 +98,27 @@ Does there exists a uniformly quasi-geodesic Gromov hyperbolic space $X$ on whic
 Motivated by this, it would be interesting to generalize the quasi-smoothing and smoothing condition to the general setting of hyperbolic groups.
 
 \begin{question}
-What is a generalization of the properties of smoothing and quasi-smoothing for functionals on non-elementary hyperbolic groups that makes the answer to the above two questions work in that setting?
+What is a generalization of the properties of smoothing and
+quasi-smoothing for functionals on non-elementary hyperbolic groups
+that makes the answer to the
+\DPTtodo{There's just one question above?}
+above two questions work in that setting?
 \end{question}
 
-Related to our main result Theorem~\ref{thm:intersections_group}, it would be interesting to give a list of axioms, in the spirit of oriented smoothing, characterizing 
+Related to Theorems~\ref{thm:intersections_group}
+and~\ref{mainthm:skora}, it would be interesting to give a list of
+axioms, in the spirit of oriented smoothing, characterizing
 small actions of a non-elementary hyperbolic group $\Gamma$.
 
 \begin{question}
 \label{qu:generalize_intersections}
-Let $\Gamma$ be a non-elementary Gromov hyperbolic group action on an $\mathbb{R}$-tree $T$.
-Give axioms in terms of certain pairs $a,b \in \Gamma$ characterizing when the action is small, i.e., has virtually cyclic edge stabilizers.
+Let $\Gamma$ be a non-elementary Gromov hyperbolic group action on an
+$\mathbb{R}$-tree $T$. Give axioms in terms of
+\DPTtodo{``Pairs'' seems too restrictive. Eg, there might be a
+  condition on triples}
+certain pairs
+$a,b \in \Gamma$ characterizing when the action is small, i.e., has
+virtually cyclic edge stabilizers.
 \end{question}
 
 \subsubsection{Relation to quasi-morphisms} 
@@ -108,16 +142,17 @@ Are there additional conditions on $f$ ensuring that the function
 g(a) \coloneqq f(a) - f(a^{-1})
 \]
 is a homogeneous quasi-morphism?
-
 \end{question} 
 
-\subsubsection{Functionals valued on ordered abelian groups}
+\DPTtodo{Added this}
+To get a non-trivial function~$g$, the functional~$f$ must be
+asymmetric. See Appendix~\ref{sec:asymmetric} for examples.
 
-We expect most of the results in this paper to extend, with only minor modifications, to the setting of $\Lambda$-valued functionals and $\Lambda$-valued geodesic currents, where $(\Lambda, <)$ denotes an ordered abelian group---that is, an abelian group equipped with a total order satisfying $a < b$ and $c \le d$ imply $a + c < b + d$.
-This generalization is natural in the context of the theory of $\Lambda$-trees~\cite{Sko90:GeometricAction} and has already proved fruitful in the study of compactifications of character varieties of surface-group representations into higher-rank Lie groups~\cite{BIPP24:PositiveCrossratios}.
-We plan to explore these extensions and their applications in future work.
+% \subsubsection{Functionals valued on ordered abelian groups}
 
-
+% We expect most of the results in this paper to extend, with only minor modifications, to the setting of $\Lambda$-valued functionals and $\Lambda$-valued geodesic currents, where $(\Lambda, <)$ denotes an ordered abelian group---that is, an abelian group equipped with a total order satisfying $a < b$ and $c \le d$ imply $a + c < b + d$.
+% This generalization is natural in the context of the theory of $\Lambda$-trees~\cite{Sko90:GeometricAction} and has already proved fruitful in the study of compactifications of character varieties of surface-group representations into higher-rank Lie groups~\cite{BIPP24:PositiveCrossratios}.
+% We plan to explore these extensions and their applications in future work.
 
 \subsubsection{Green metrics}
 \label{subsec:green}
@@ -130,7 +165,7 @@ This metric has an associated stable length function $\ell_{\mu}(g) \coloneqq \l
 
 \begin{question}
 Does $\ell_{\mu}$ satisfy the hypotheses of
-Theorem~\ref{thm:intersections_group} for some admissible probability measure $\mu$ (and thus come from a geodesic current)?
+Theorem~\ref{thm:intersect} for some admissible probability measure $\mu$ (and thus come from a geodesic current)?
 \label{q:green-smoothing}
 \end{question}
 
@@ -152,7 +187,17 @@ $\ell_{\mu}$ is dual to the Liouville current $\mathcal{L}_{\Sigma}$?
 \label{q:singularity}
 \end{question}
 
-By work of Cantrell-Tanaka~\cite[Theorem~1.2]{CT25} and \cite[Theorem~1.2]{GMM18:Entropy}, a negative answer to this question would settle the so-called \emph{singularity conjecture} for $\SL_2(\mathbb{R})$ (see~\cite[Conjecture, page~~259]{KLP11:Singularity}). In short, by these results Question~\ref{q:singularity} is equivalent to asking if there is a probability measure $\mu$ on $\Gamma$ so that the induced `hitting measure' $\nu_{\mu}$ on $\partial \Gamma$ is absolutely continuous with respect to the Lebesgue measure (coming from the hyperbolic metric $\Sigma$) on $\partial \Gamma$.
+\DPTtodo{Dídac will shorten}
+By work of Cantrell-Tanaka~\cite[Theorem~1.2]{CT25} and
+Gouëzel-Mathéus-Maucourant \cite[Theorem~1.2]{GMM18:Entropy}, a
+negative answer to this question would settle the so-called
+\emph{singularity conjecture} for $\SL_2(\mathbb{R})$
+(see~\cite[Conjecture, page~~259]{KLP11:Singularity}). In short, by
+these results Question~\ref{q:singularity} is equivalent to asking if
+there is a probability measure $\mu$ on $\Gamma$ so that the induced
+`hitting measure' $\nu_{\mu}$ on $\partial \Gamma$ is absolutely
+continuous with respect to the Lebesgue measure (coming from the
+hyperbolic metric $\Sigma$) on $\partial \Gamma$.
 Kosenko-Tiozzo~\cite{KT22:Inequality} have studied the metric $d_{\mu}$ in some cases of Fuchsian groups $\Gamma$ with centrally symmetric fundamental domains.
 Even a positive answer to Question~\ref{q:Green} would be interesting, since then
 Theorem~\ref{thm:intersect} would give a dual geodesic current for the
@@ -175,15 +220,18 @@ We will refer to this condition as \emph{multi-smoothing}.
 It is clear multi-smoothing implies smoothing.
 It is easily checked that intersection numbers satisfy the multi-smoothing property (see, for example, \cite{AH21:EffectiveCounting3}).
 What is not so clear is that functionals of $\AConvex(S)$ (that is, satisfying stability, homogeneity, smoothing and additivity) must satisfy multi-smoothing. This is, of course, a consequence Theorem~\ref{thm:intersect}.
-Other curve functionals that are not in $\AConvex(S)$ also satisfy multi-smoothing. For example, the same proof as  \cite{AH21:EffectiveCounting3}) shows that extremal length satisfies multi-smoothing.
+Other curve functionals that are not in $\AConvex(S)$ also satisfy
+multi-smoothing. For example, Arana-Herrera also shows
+that extremal length satisfies
+multi-smoothing \cite{AH21:EffectiveCounting3}.
 This prompts the following question.
 
 \begin{question}
 If a curve functional satisfies homogeneity, stability, convex union and smoothing, does it satisfy multi-smoothing?
 \end{question}
 
-In this context, in recent work, Arenas--Neumann-Coto \cite{ANC24:TautSmoothings} consider smoothing for closed multi-curves (as well as arcs), and prove, under certain hypotheses for multi-curves, that given a closed multi-curve in minimal position there is always an essential crossing such that once smoothed decreases intersection number by at most 1. They call such a smoothing a \emph{taut smoothing}.
-Can this be used to give a more efficient criterion for checking the smoothing property of a curve functional? That is,
+In this context, Arenas--Neumann-Coto \cite{ANC24:TautSmoothings}
+recently studied the related concept of \emph{taut smoothing}.
 
 \subsubsection{Convexity on train-track charts and local compactness}
 \label{subsubsec:convexity_charts}
@@ -244,7 +292,7 @@ Suppose a curve functional $f$ satisfies homogeneity, stability and convex union
 
 
 
-\subsection{Analogy to Poincar\'e duality}
+\subsubsection{Analogy to Poincar\'e duality}
 \label{subsec:poincare_duality}
 Theorem~\ref{thm:intersect} gives a new definition of geodesic currents in terms of functionals on curves, by giving a bijection between geodesic currents and a subset of the space of curve functionals.
 As mentioned in the introduction, one can view this theorem in analogy to Poincaré duality for closed surfaces.  Given a 1-cohomology class $\alpha^*$ of an $n$-dimensional manifold (represented by homomorphisms from $\pi_1(S)$ to $\mathbb{R}$), Poincaré duality associates an $(n-1)$-dimensional homology class $\alpha$ (represented by real linear combinations of $(n-1)$-cycles). Since $n=2$, these cycles can be expressed as linear combinations of simple closed curves.  
