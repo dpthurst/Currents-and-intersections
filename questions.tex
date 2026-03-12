@@ -4,33 +4,52 @@
 \subsubsection{Open surfaces}
 A natural question is whether our results extend to open surfaces, i.e.\ compact surfaces with boundary or finite-type surfaces with punctures.
 
-For such surfaces, geodesic currents admit at least two natural definitions, depending on how one treats the ends. 
+For such surfaces, geodesic currents admit at least three natural definitions, depending on how one treats the ends. 
 If the ends are realized as cusps, one obtains a space $\Curr_{\mathrm{cusp}}(S)$, defined analogously to Definition~\ref{def:currents} as the space of $\pi_1(S)$-invariant 
 Radon measures on the space of geodesics in the universal cover. In this setting, the space of geodesics includes geodesic arcs connecting cusps. 
 If instead one restricts to geodesics projecting to the convex core, one obtains a space denoted $\Curr_{\mathrm{open}}(S)$.
+\DPTtodo{Rewrote to give three options. Deleted the primes}
+A third option is the algebraic space of current $\Curr(\pi_1(S))$,
+defined as the space of $\pi_1(S')$-invariant Radon measures on
+\DPTtodo{Why the parentheses in $\partial \pi_1(S)^{(2)}$?}
+$\partial \pi_1(S)^{(2)}$,
+using the fact that $\pi_1(S)$ is hyperbolic when $S$ is open.
 
 In $\Curr_{\mathrm{cusp}}(S)$, the intersection pairing fails to be continuous; see~\cite[Remark~2.26]{MGT21:Smoothings} and also~\cite{Sas22:Currents, T22:ThurstonCompactification}. 
-When $S'$ is cusped, $\pi_1(S')$ is a free group and its action on $\mathbb{H}^2$ is not cocompact. Accordingly, the algebraic space of currents $\Curr(\pi_1(S'))$, 
-defined as the space of $\pi_1(S')$-invariant Radon measures on $\partial \pi_1(S')^{(2)}$, differs from $\Curr_{\mathrm{cusp}}(S')$.
-
-These spaces are related by a continuous map
+Thus we might want to look at $\Curr(\pi_1(S))$, which is different
+since the action of $\pi_1(S)$ on $\bbH^2$ is not cocompact.
+These spaces are
+related by a continuous map
 \[
-\phi_* \colon \Curr(\pi_1(S')) \to \Curr_{\mathrm{cusp}}(S'),
+\phi_* \colon \Curr(\pi_1(S)) \to \Curr_{\mathrm{cusp}}(S),
 \]
-given by push-forward under the map $\phi \colon \partial \pi_1(S') \to \partial \mathbb{H}^2$ associated to a discrete and faithful representation $\rho$ defining the cusped hyperbolic structure (cf.~\cite[Section~4]{Sas22:Currents}). The map $\phi_*$ is surjective but not injective, and $\phi$ is non-surjective.
+given by push-forward under the map $\phi \colon \partial \pi_1(S) \to \partial \mathbb{H}^2$ associated to a discrete and faithful representation $\rho$ defining the cusped hyperbolic structure (cf.~\cite[Section~4]{Sas22:Currents}). The map $\phi_*$ is surjective but not injective, and $\phi$ is non-surjective.
 
-It is therefore natural to ask whether analogues of our main results hold on the algebraic space $\Curr(\pi_1(S'))$. Two features of the closed-surface case used essentially in our arguments fail in the cusped setting:
+It is therefore natural to ask whether analogues of our main results hold on the algebraic space $\Curr(\pi_1(S))$. Two features of the closed-surface case used essentially in our arguments fail in the cusped setting:
 \begin{itemize}
-\item The boundary $\partial_\infty \Sigma$ carries a natural cyclic order, which is lost when $\pi_1(\Sigma)$ is free. A possible substitute is to transfer the cyclic order from $\partial \mathbb{H}^2$ to $\partial \pi_1(S')$ via the map $\phi$, and to define crossing and parallelism of hyperbolic elements accordingly.
-
-\item In $\Curr_{\mathrm{cusp}}(S')$, one may have currents supported on cusp-to-cusp arcs, and several such arcs may limit to the same puncture. This obstructs the non-atomicity properties of boundary measures used in the closed case (see Remark~\ref{rmk:no_atom_boundary_box} and the proof of Theorem~\ref{thm:hyp-char}). These phenomena do not occur for currents in the image of $\Curr(\pi_1(S'))$.
+\item For closed surfaces, the boundary at infinity carries a natural
+  cyclic order, which is lost when $\pi_1(S)$ is free. A possible
+  substitute is to transfer the cyclic order from
+  $\partial \mathbb{H}^2$ to $\partial \pi_1(S)$ via the map $\phi$,
+  and to define crossing and parallelism of hyperbolic elements
+  accordingly.
+\item In $\Curr_{\mathrm{cusp}}(S)$, one may have currents supported
+  on cusp-to-cusp arcs, and several such arcs may limit to the same
+  puncture. This obstructs the non-atomicity properties of boundary
+  measures used in this paper in the closed case (see
+  Remark~\ref{rmk:no_atom_boundary_box} and the proof of
+  Theorem~\ref{thm:hyp-char}). These phenomena do not occur for
+  currents in the image of $\Curr(\pi_1(S))$.
 \end{itemize}
 
-This suggests that $\Curr(\pi_1(S'))$ provides a more natural setting in which to seek extensions of the duality and characterization results of the present paper.
+This suggests that $\Curr(\pi_1(S))$ provides a more natural setting in which to seek extensions of the duality and characterization results of the present paper.
 
 The case of $\Curr_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
 The key issue is that the intersection number is degenerate in this case: any geodesic current $\mu$ supported on boundary curves will have zero intersection number with all geodesic currents $\nu \in \Curr(S)$.
-We can give a concrete example on how our theorem fails in this setting, similar to the second example in~\cite[Remark~2.26]{MGT21:Smoothings}.
+\DPTtodo{Relate to non-embedding in the asymmetric case}
+We can give a concrete example on how our theorem fails in this
+setting, similar to the second example
+in~\cite[Remark~2.26]{MGT21:Smoothings} as follows.
 
 Let $\bar{\Sigma}$ denote the (compact) convex core of $\Sigma$.
 Let $\ell$ be the restriction to $\Sigma$ of the hyperbolic
