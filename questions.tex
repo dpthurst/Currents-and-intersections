@@ -7,13 +7,38 @@ A natural question is whether our results extend to open surfaces, i.e.\ compact
 For such surfaces, geodesic currents admit at least two natural definitions, depending on how one treats the ends. 
 If the ends are realized as cusps, one obtains a space $\Curr_{\mathrm{cusp}}(S)$, defined analogously to Definition~\ref{def:currents} as the space of $\pi_1(S)$-invariant 
 Radon measures on the space of geodesics in the universal cover. In this setting, the space of geodesics includes geodesic arcs connecting cusps. 
-If instead one restricts to geodesics projecting to the convex core, one obtains a space denoted $\Curr_{\mathrm{open}}(S)$.
-\begin{comment}
-A third option is the algebraic space of currents $\Curr(\pi_1(S))$,
-defined as the space of $\pi_1(S')$-invariant Radon measures on
-$\partial \pi_1(S)^{2}$ minus the diagonal,
-using the fact that $\pi_1(S)$ is hyperbolic when $S$ is open.
-\end{comment}
+If instead one restricts to geodesics projecting to the convex core,
+one obtains a space denoted $\Curr_{\mathrm{open}}(S)$. See
+Figure~\ref{fig:open_surfaces}.
+\DPTtodo{Can we give a ref to someone making more precise definitions?}
+
+\DPTtodo{Nice figure! Can the wrapping be moved a little bit further
+  away from the cusps for better visibility? Can the boundaries of the
+  open surface be made smooth rather than pointed? Also labels in the
+  cusped case are a bit far from what they refer to. It may be better
+  to add arrows, since $A$ is necessarily close
+  to $C_n$}
+\DPTtodo{There's an extra geodesic in both cases, which is not
+  referred to in the text}
+\begin{figure}
+\centering
+\begin{subfigure}{0.48\textwidth}
+\centering
+\resizebox{60mm}{!}{
+\svgfigbig{cusp}}
+\caption{Cusped surface with an arc $A$ and a closed geodesic $C_n$
+  wrapping around the arc. We have $C_n \to 2A$.}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+\centering
+\resizebox{60mm}{!}{
+\svgfigbig{open}}
+\caption{Open surface with two boundary parallel curves $B_1$ and $B_2$. The sequence of curves $C_n$ also sits in this surface, and we have $\frac{1}{n}C_n \to B_1 + B_2$.}
+\end{subfigure}
+\caption{Examples of cusped and open surfaces, and currents on them.}
+\label{fig:open_surfaces}
+\end{figure}
 
 In $\Curr_{\mathrm{cusp}}(S)$, the intersection pairing fails to be continuous; see~\cite[Remark~2.26]{MGT21:Smoothings} and also~\cite{Sas22:Currents, T22:ThurstonCompactification}. 
 
@@ -125,24 +150,6 @@ As a second example, consider a flat metric on the completion of $S'$ so that th
 This gives a well-defined notion of length $\ell \colon \Curves_{\mathrm{cusp}}(S) \to \mathbb{R}$.
 On the other hand,  $\Curr_{\mathrm{open}}(S)$ are geodesic currents whose support is contained in the closure of the subspace of geodesics that do not go through cone points, and the natural Liouville metric for singular flat metrics is an example~\cite[Section~3.2]{BL17:RigidityFlat}
 
-\begin{figure}
-\centering
-\begin{subfigure}{0.48\textwidth}
-\centering
-\resizebox{60mm}{!}{
-\svgfigbig{cusp}}
-\caption{Cusped surface with an arc $A$ and a closed geodesic $C_n$ wrapping around the arc so that $C_n$ converges to $2A$.}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.48\textwidth}
-\centering
-\resizebox{60mm}{!}{
-\svgfigbig{open}}
-\caption{Open surface with two boundary parallel curves $B_1$ and $B_2$. The sequence of curves $C_n$ also sits in this surface, and we have $\frac{1}{n}C_n \to B_1 + B_2$.}
-\end{subfigure}
-\caption{Examples of cusped an open surfaces.}
-\label{fig:open_surfaces}
-\end{figure}
 
 \subsubsection{Generalizations to hyperbolic groups}
 In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan, CMGR26:GreenMetrics}.
