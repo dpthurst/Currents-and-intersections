@@ -138,7 +138,10 @@ The measure $\mu$ is \emph{Radon} if it is locally finite, inner regular, and ou
   space~$X$ is the set of all Radon measures on~$X$.
 \end{definition}
 
-In a general topological space $X$, not all locally finite Borel measures are Radon. However, in a locally compact Hausdorff space with a countable basis, locally finite Borel measures and Radon measures are the same~\cite[Theorem~29.12]{Bau01:Measure}.
+In a general topological space $X$, not all locally-finite Borel
+measures are Radon. However, in a locally compact Hausdorff space with
+a countable basis, locally-finite Borel measures and Radon measures
+are the same~\cite[Theorem~29.12]{Bau01:Measure}.
 
 We define the following topology in the space of measures.
 
@@ -193,51 +196,67 @@ There is a natural involution map $\sigma \colon G(S) \to G(S)$, defined by $(a,
 We define $\Curr^+(S)$, the space of \emph{oriented geodesic currents} on $S$,
 to be the
 space of $\pi_1(S)$-invariant, Radon measures on
-$G(S)$.%
+$G(S)$.
+We define the space of \emph{unoriented geodesic currents} or, simply,
+\emph{geodesic currents} as the space of flip-invariant oriented
+geodesic currents on $S$, and denote it by $\Curr(S)$. We endow both
+spaces with their natural subspace topologies induced as subsets of
+$\mathcal{M}(G(S))$.%
 \footnote{Although the choice of terms \emph{oriented/unoriented
     current} has appeared before in the
   literature~\cite{EPS20:CountingCurves}, there does not seem to be a
   standard choice. For example, in some sources, such
   as~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}, unoriented
-  geodesic currents are also referred to as \emph{symmetric} geodesic
-  currents, and another source refers to them as \emph{balanced}
-  geodesic currents~\cite{DS21:InfiniteTypeCurrents}.}
-We define the space of \emph{unoriented geodesic currents} or, simply, \emph{geodesic currents} as the space of flip-invariant oriented geodesic currents on $S$, and denote it by $\Curr(S)$. We endow both spaces with their natural subspace topologies induced as subsets of $\mathcal{M}(G(S))$.
+  geodesic currents are referred to as \emph{symmetric} geodesic
+  currents, and other sources, such
+  as~\cite{DS21:InfiniteTypeCurrents}, refer to them as \emph{balanced}
+  geodesic currents.}
 \end{definition}
 
-As a consequence of the discussion in Section~\ref{subsec:RadonvsBorel}, we can redefine (oriented) geodesic currents as the $\pi_1(S)$-invariant (and flip-invariant) locally finite Borel measures on $G(S)$.
-
+\DPTtodo{reworded}
+As a consequence of the discussion in
+Section~\ref{subsec:RadonvsBorel}, we can replace ``Radon'' with
+``locally-finite Borel'' in the above definitions.
 The space of geodesic currents enjoys the following nice topological properties.
 
 \begin{proposition}[{\cite[Theorem~3.3]{ES22:GeodesicCount}}]
-$\Curr^+(S)$ and $\Curr(S)$  are locally compact, metrizable, second countable and Hausdorff spaces.
+$\Curr^+(S)$ and $\Curr(S)$  are locally compact, metrizable, second-countable, and Hausdorff spaces.
 \label{prop:local_compactness}
 \end{proposition}
 
-The above result is also valid for surfaces of finite type that are not necessarily compact (see~\cite[Proposition~3.4]{Sas22:Currents}).
+The above result is also valid for surfaces of finite type that are
+not necessarily compact (see~\cite[Proposition~3.4]{Sas22:Currents}).
+\DPTtodo[inline]{Is this for $\Curr_{\mathrm{open}}$ or
+  $\Curr_{\mathrm{closed}}$ or both? Do we need it?}
 
-The $\pi_1(S)$-invariance of geodesic currents highly constrains the atoms (see Definition~\ref{def:atommeasure}) they can have.
-
+The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
 \begin{proposition}[{\cite[Lemma~8.2.8]{Martelli16:IntroGeoTop}}]
-Let $p \colon \wt{\Sigma} \to \Sigma$ be the universal covering map.
-The orbit $\pi_1(S)\ora{\gamma}$ for $\ora{\gamma} \in
-G(S)$ is discrete if and only if $p(\ora{\gamma})$ is a closed
-geodesic.
+  For $\ora{\gamma} \in G(S)$, the orbit $\pi_1(S)\cdot\ora{\gamma}$ is
+  discrete if and only if its projection $p(\ora{\gamma})$ to~$S$ is a closed
+  geodesic.
 \end{proposition}
 
+\DPTtodo{since $G(S)$ is oriented geodesics, we need to specify
+  whether this is the positive or negative pencil, unless you really
+  mean the union of the two}
+For $x \in \partial_{\infty}\Sigma$, its
+\emph{pencil} $P(x)$ is the subset of $G(S)$ of geodesics with one
+endpoint at~$x$.
 
-Let a \emph{pencil} $P(x)$ be the subset of $G(S)$ of geodesics with one endpoint at $x \in \partial_{\infty}\Sigma$.
-
+\DPTtodo{This proposition seems to be missing some assumption. Don't
+  you want some assertion about atoms?}
 \begin{proposition}
 \label{prop:spikes}
 Let $\mu$ be a geodesic current. A pencil $P(x)$ contains a element $\ora{\gamma}$ with a discrete orbit if and only if $\mu(P(x))\neq0$. 
 Furthermore, in that case $P(x)$ contains only \emph{one} lift of a discrete orbit.
 \end{proposition}
 \begin{proof}
-For the if and only if, see~\cite[Lemma~2.6]{dRMG22:Duals}. For the last statement, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
+For the first statement, see~\cite[Lemma~2.6]{dRMG22:Duals}. For the last statement, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
 \end{proof}
 
-This says that the only $0$-dimensional and $1$-dimensional subsets with atoms are those containing lifts of closed geodesics.
+\DPTtodo{edited here}
+This says that the only $0$-dimensional and $1$-dimensional subsets
+with potentially non-zero measure are those containing lifts of closed geodesics.
 
 \begin{definition}[Intersection form of geodesic currents]
 Let $\mathcal{D}\mathcal{G}(S) \subset \{ (\gamma_1,\gamma_2) \mid \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented geodesics of $\wt{S}$ intersecting transversely.
