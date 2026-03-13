@@ -21,11 +21,6 @@ If $\cF$ is a family of subsets of $X$, let $\sigma(\cF)$, the \emph{$\sigma$-al
   \label{def:semiring}
 \end{definition}
 
-\DPTtodo[inline]{There used to be another claim, that $\sigma(\cR)$ is
-  obtained from unions of elements of $\cR$. I believe that if the union
-  of all elements of $\cR$ is $X$. Do we want to assert that?}
-  \DMGtodo{I think it is true, but I cannot find a reference, and I don't think we use it, so maybe let's not write it}
-
 \begin{lemma}
   For any semiring $\mathcal{S}$, the collections of all finite unions
   of sets in $\mathcal{S}$ forms a ring $\mathcal{R}_{\mathcal{S}}$,
@@ -38,7 +33,7 @@ See \cite[1.2.14~Lemma]{Bo07:MeasureTheory}.
 \end{proof}
 
 \begin{definition}
-A real-valued set function $\mu$ defined on an algebra or a ring $\mathcal{A}$ is called \emph{finitely additive}, resp.\ \emph{countably sub-additive}, if 
+A real-valued set function $\mu$ defined on a ring $\mathcal{R}$ is called \emph{finitely additive}, resp.\ \emph{countably sub-additive}, if 
 \[
 \mu\Bigl(\bigcup\nolimits_{i=1}^n A_i \Bigr) = \sum_{i=1}^n \mu(A_i),
 \]
@@ -47,38 +42,25 @@ resp.\
 \mu\Bigl(\bigcup\nolimits_{i=1}^{\infty} A_i \Bigr) \leq \sum_{i=1}^{\infty} \mu(A_i),
 \]
  for all pairwise
-disjoint sets $A_i \in \mathcal{A}$
+disjoint sets $A_i \in \mathcal{R}$
 such that $\bigcup_{i=1}^{n}
-A_i \in \mathcal{A}$ (resp.\ $\bigcup_{i=1}^{\infty}
-A_i \in \mathcal{A}$).
+A_i \in \mathcal{R}$ (resp.\ $\bigcup_{i=1}^{\infty}
+A_i \in \mathcal{R}$).
 
 
 We say $\mu$ is \emph{countably additive} if the inequality in countable sub-additivity is
 replaced by an equality. 
 \end{definition}
 
-A finitely additive function $\mu$ is countably additive if and only
-if is countably sub-additive
-\DPTtodo{No assumption at all on $\cA$?}
-\DMGtodo{added algebra or ring to the statement}
-\DPTtodo{Can you add a clear Proposition for the sub-additive
-  $\Rightarrow$ additive statement?}
-\DMGtodo{did that}
-
-
 \begin{proposition}[{\cite[1.3.9~Proposition]{Bo07:MeasureTheory}}]
-Let $\mu$ be a nonnegative additive set function on an algebra or a ring $\cA$.
-If $\mu$ is countably subadditive then $\mu$ is countably additive.
+Let $\mu$ be a non-negative additive set function on a ring $\cR$.
+If $\mu$ is countably sub-additive then $\mu$ is countably additive.
 \label{prop:subadd_to_add}
 \end{proposition}
 
-
-
-A finitely and countably additive function on a semiring can be uniquely extended to the ring.
-
 \begin{proposition}[{\cite[1.3.10~Proposition]{Bo07:MeasureTheory}}]
 A finitely additive function $\mu$ on a semiring $\mathcal{S}$ extends
-uniquely to a finitely additive function on $\mathcal{R}_{S}$. Moreover, this extension is countably additive provided $\mu$ is countably additive on $\mathcal{S}$.
+uniquely to a finitely additive function on $\mathcal{R}_{S}$. Moreover, this extension is countably additive provided $\mu$ is countably sub-additive on $\mathcal{S}$.
 \label{prop:addsemitoring}
 \end{proposition}
 
@@ -233,11 +215,6 @@ $\Curr^+(S)$ and $\Curr(S)$  are locally compact, metrizable, second-countable, 
 \label{prop:local_compactness}
 \end{proposition}
 
-The above result is also valid for surfaces of finite type that are
-not necessarily compact (see~\cite[Proposition~3.4]{Sas22:Currents}).
-\DPTtodo[inline]{Is this for $\Curr_{\mathrm{open}}$ or
-  $\Curr_{\mathrm{closed}}$ or both? Do we need it?}
-\DMGtodo{it is true for both and we don't need it, it'd be okay to remove it}
 The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
 \begin{proposition}[{\cite[Lemma~8.2.8]{Martelli16:IntroGeoTop}}]
   For $l \in G(S)$, the orbit $\pi_1(S)\cdot l$ is
@@ -265,30 +242,25 @@ where $\operatorname{Stab}(l)$ denotes the stabilizer of the oriented geodesic $
 
 It is easy to see that a geodesic $l \in G(S)$ can only be an atom of a geodesic current whenever it is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
 
-One can also look at 1-dimensional sets.\DPTtodo{since $G(S)$ is oriented geodesics, we need to specify
-  whether this is the positive or negative pencil, unless you really
-  mean the union of the two}
-  \DMGtodo{I think I mean the union of the two}
- For $x \in \partial_{\infty}\Sigma$, its
-\emph{pencil} $P(x)$ is the subset of $G(S)$ of geodesics with one
+One can also look at 1-dimensional sets.
+For $x \in \partial_{\infty}\Sigma$, its
+\emph{pencil} $P(x)$ is the subset of $G(S)$ of geodesics with either
 endpoint at~$x$.
 
-\DPTtodo{This proposition seems to be missing some assumption. Don't
-  you want some assertion about atoms?}
-  \DMGtodo{I was explicit about it now }
 \begin{proposition}
-\label{prop:spikes}
-Let $\mu$ be a geodesic current. A pencil $P(x)$ contains an atom (i.e., a lift $\ora{\gamma}$ of a closed geodesic) if and only if $\mu(P(x))\neq0$. 
-Furthermore, in that case $P(x)$ contains only \emph{one} lift of a discrete orbit.
+  \label{prop:spikes}
+  Let $\mu$ be a geodesic current. If, for some~$x$, $\mu(P(x)) \ne
+  0$, then $P(x)$ contains a unique lift $\ora{\gamma}$ of a closed
+  geodesic and $\mu$ has an atom at $\ora{\gamma}$.
 \end{proposition}
 \begin{proof}
-For the first statement, see~\cite[Lemma~2.6]{dRMG22:Duals}. For the last statement, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
+For existence of $\ora{\gamma}$, see~\cite[Lemma~2.6]{dRMG22:Duals}.
+For uniqueness, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
 \end{proof}
 
 This says that the only $0$-dimensional and $1$-dimensional subsets
-with potentially non-zero measure are those containing lifts of closed geodesics.
-\DPTtodo{Move this def up}
-\DMGtodo{I moved this here}
+that may have non-zero measure are those containing lifts of closed
+geodesics.
 
 In what follows, we will write  $G[p,q)\subset G(S)$ for the set of
 geodesics intersecting the geodesic segment $[p,q)$ transversally.
