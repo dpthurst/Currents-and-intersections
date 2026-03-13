@@ -24,6 +24,7 @@ If $\cF$ is a family of subsets of $X$, let $\sigma(\cF)$, the \emph{$\sigma$-al
 \DPTtodo[inline]{There used to be another claim, that $\sigma(\cR)$ is
   obtained from unions of elements of $\cR$. I believe that if the union
   of all elements of $\cR$ is $X$. Do we want to assert that?}
+  \DMGtodo{I think it is true, but I cannot find a reference, and I don't think we use it, so maybe let's not write it}
 
 \begin{lemma}
   For any semiring $\mathcal{S}$, the collections of all finite unions
@@ -62,8 +63,17 @@ if is countably sub-additive
 \DMGtodo{added algebra or ring to the statement}
 \DPTtodo{Can you add a clear Proposition for the sub-additive
   $\Rightarrow$ additive statement?}
-(see
-\cite[1.3.9~Proposition]{Bo07:MeasureTheory}).
+\DMGtodo{did that}
+
+
+\begin{proposition}[{\cite[1.3.9~Proposition]{Bo07:MeasureTheory}}]
+Let $\mu$ be a nonnegative additive set function on an algebra or a ring $\cA$.
+If $\mu$ is countably subadditive then $\mu$ is countably additive.
+\label{prop:subadd_to_add}
+\end{proposition}
+
+
+
 A finitely and countably additive function on a semiring can be uniquely extended to the ring.
 
 \begin{proposition}[{\cite[1.3.10~Proposition]{Bo07:MeasureTheory}}]
