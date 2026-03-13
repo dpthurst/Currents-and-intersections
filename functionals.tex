@@ -501,20 +501,30 @@ convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
 Thus it provides an example of a curve functional lying outside
 $\QConvex_R^+(S)$, despite extending to geodesic currents by
 Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_R^+(S) \subsetneq \operatorname{Cont}(S)$.
-\item Translation lengths associated to embedded graphs on a surface whose
-\DPTtodo{I don't know what non-proper actions are}
-\DMGtodo{in this particular example, it's an action with a big kernel: start with a filling graph and quotient a part of the graph. Now the group acts on the universal cover of this grah with a big subgroup acting trivially.}
-\DPTtodo{But that's not an embedded graph after you've done that quotient}
-actions are not properly discontinuous~\cite[Proposition~11]{Bonahon91:CurrentsGroups}
-do not extend continuously to geodesic currents. In particular, they
-do not satisfy quasi-smoothing in general. We give a direct proof of this fact below.
+\item
+  \DPTtodo{Lead with the graph example somehow?}
+  Translation lengths associated to non-properly-discuntinuous
+  action of a surface
+  group on a metric space do not necessarily extend continuously to geodesic
+  currents. For
+  instance, you can construct such examples by taking an embedded
+  graph on the surface and quotient out a large subgraph \cite[Proposition~11]{Bonahon91:CurrentsGroups}.
+In particular, they
+do not satisfy quasi-smoothing in general. We now give a direct proof of this fact.
 \begin{proposition}
-Suppose $\Gamma$ is acting on a geodesic space $X$ by isometries, and let $\ell$ be the stable length of the action. Suppose $\ell$ is non-trivial. Let $N$ be an infinite normal subgroup of $\Gamma=\pi_1(S)$ so that $\ell(b)=0$ for all $b \in N$. Then $\ell$ does not satisfy quasi-smoothing.
+Suppose $\Gamma$ acts on a geodesic space $X$ by isometries, and
+let $\ell$ be the stable length of the action. Suppose $\ell$ is
+non-trivial and there is an infinite normal subgroup~$N$ of $\Gamma=\pi_1(S)$ so that $\ell(b)=0$ for all $b \in N$. Then $\ell$ does not satisfy quasi-smoothing.
 \end{proposition}
-\begin{proof} Let $a \in \Gamma$, with $\ell(a)>0$ and fix $b\in N$. Then $\frac{1}{2n} b a^n b a^{-n}$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
-Hence, $\ell$ cannot extend continuously. In fact, $\ell$ does not satisfy smoothing. Indeed, we can find $b \in N$ so that $\ora{a}$ and $\ora{b}$ cross. If quasi-smoothing was satisfied, by Proposition~\ref{prop:join-split-geom}, Equation~\ref{eq:cross-cancel}, there would exist a constants $R>0$ and $s'>0$ so that for all $n \geq s'$, we would have
+\begin{proof} Let $a \in \Gamma$, with $\ell(a)>0$, and fix $b\in N$. Then $\frac{1}{2n} b a^n b a^{-n}$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
+Hence, $\ell$ cannot extend continuously. To see explicitly that
+$\ell$ does not satisfy quasi-smoothing, find crossing
+$\ora{a}$ and $\ora{b}$ as above. If quasi-smoothing were satisfied, by
+Proposition~\ref{prop:join-split-geom},
+Equation~\ref{eq:cross-cancel}, there would exist a constants $R>0$
+and $s'>0$ so that for all $n \geq s'$, we would have
 \[
-\ell(ba^n ba^{-n}) \geq \ell(a^{2n})-C.
+\ell(ba^n ba^{-n}) \geq \ell(a^{2n})-R.
 \]
 But this inequality is violated, since on the one hand, the left hand side is $0$, and, on the other hand, the right hand side is positive for large enough $n$.
 \end{proof}
