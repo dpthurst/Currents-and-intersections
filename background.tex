@@ -223,7 +223,6 @@ $\mathcal{M}(G(S))$.%
   geodesic currents.}
 \end{definition}
 
-\DPTtodo{reworded}
 As a consequence of the discussion in
 Section~\ref{subsec:RadonvsBorel}, we can replace ``Radon'' with
 ``locally-finite Borel'' in the above definitions.
@@ -238,7 +237,7 @@ The above result is also valid for surfaces of finite type that are
 not necessarily compact (see~\cite[Proposition~3.4]{Sas22:Currents}).
 \DPTtodo[inline]{Is this for $\Curr_{\mathrm{open}}$ or
   $\Curr_{\mathrm{closed}}$ or both? Do we need it?}
-
+\DMGtodo{it is true for both and we don't need it, it'd be okay to remove it}
 The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
 \begin{proposition}[{\cite[Lemma~8.2.8]{Martelli16:IntroGeoTop}}]
   For $\ora{\gamma} \in G(S)$, the orbit $\pi_1(S)\cdot\ora{\gamma}$ is
@@ -246,9 +245,12 @@ The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
   geodesic.
 \end{proposition}
 
+It is easy to see that a geodesic $\ora{\gamma} \in G(S)$ can only be an atom of a geodesic current whenever $\ora{\gamma}$ is the lift of a closed geodesic~\cite[]
+
 \DPTtodo{since $G(S)$ is oriented geodesics, we need to specify
   whether this is the positive or negative pencil, unless you really
   mean the union of the two}
+  \DMGtodo{I think I mean the union of the two}
 For $x \in \partial_{\infty}\Sigma$, its
 \emph{pencil} $P(x)$ is the subset of $G(S)$ of geodesics with one
 endpoint at~$x$.
@@ -257,7 +259,7 @@ endpoint at~$x$.
   you want some assertion about atoms?}
 \begin{proposition}
 \label{prop:spikes}
-Let $\mu$ be a geodesic current. A pencil $P(x)$ contains a element $\ora{\gamma}$ with a discrete orbit if and only if $\mu(P(x))\neq0$. 
+Let $\mu$ be a geodesic current. A pencil $P(x)$ contains an atom of $\mu$ $\ora{\gamma}$ with a discrete orbit if and only if $\mu(P(x))\neq0$. 
 Furthermore, in that case $P(x)$ contains only \emph{one} lift of a discrete orbit.
 \end{proposition}
 \begin{proof}
