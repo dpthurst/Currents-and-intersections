@@ -1,16 +1,18 @@
 \section{Intersection numbers satisfy smoothing}
 \label{app:necessary}
 \DPTtodo{We end up following [MZ19], acknowledge that}
+\DMGtodo{added a comment about it}
 In this section we give a detailed proof that intersection numbers
-satisfy the hypotheses of our theorem. The only non-trivial condition
+satisfy the hypotheses of our theorem using hyperbolic geometry. In~\cite[Example~4.2]{MGT21:Smoothings} we gave a different proof of this fact. The current proof will use results in~\cite{MZ19:PositivelyRatioed}. The only non-trivial condition
 to check is smoothing. In \cite[Section 4.1]{MGT21:Smoothings} we gave
 a topological proof of this fact for curves, and then extend the
 result for any geodesic current by invoking density of weighted closed
 curves in the space of currents.
 Here we give a different proof for an arbitrary current that works in
-the universal cover, since it will be useful to
+the universal cover, since it useful in the proof of Theorem~\ref{prop:char_laminations_plus}.
 \DPTtodo{``prove later'' is no longer accurate}
-prove later that measured laminations satisfy max-smoothing.
+\DMGtodo{added comment and got rid of prove later}
+
 
 \begin{proposition}
 Given a geodesic current $\mu$, the curve functional $i(\mu, \cdot)$ satisfies the hypotheses of Theorem~\ref{thm:intersect}.
@@ -20,23 +22,24 @@ Given a geodesic current $\mu$, the curve functional $i(\mu, \cdot)$ satisfies t
 We will check each hypothesis:
 \DPTtodo{Which def are we using to get a curve functional?}
 \DPTtodo{Took this out of itemized list}
- By definition (see \cite{Bonahon86:EndsHyperbolicManifolds}, intersection number is bilinear in both factors. In particular, additivity holds.
+ By definition (see \cite{Bonahon86:EndsHyperbolicManifolds}), intersection number is bilinear in both factors. In particular, additivity holds.
 
- For stability, observe that given a curve $C$ with hyperbolic lift
+ Observe that given a curve $C$ with hyperbolic lift
  $\gamma$, and $x \in \gamma$, the set of geodesics $G(x, \gamma^n x]$
  can be partitioned into $\bigcup_{i=1}^{n-1} G(x, \gamma^{i} \cdot
- x]$.  Thus, by
+ x]$.  Thus, by definition of intersection number
  \DPTtodo{Added an ``eg'', since MZ were certainly not the first
    people to notice this.}
- (e.g.)\ \cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed}, 
+   \DMGtodo{that's right, in fact this is just using the definition of intersection number}
 \[
-i(\mu, \gamma^n) = \mu(G(x, \gamma^n x]) = \sum_{i=1}^{n-1} \mu(G(x, \gamma^{i} \cdot x]) = n\mu(G(x, \gamma x]) = n i(\mu, \gamma).
+i(\mu, \gamma^n) = \mu(G(x, \gamma^n x]) = \sum_{i=1}^{n-1} \mu(G(x, \gamma^{i} \cdot x]) = n\mu(G(x, \gamma x]) = n i(\mu, \gamma),
 \]
-where in the second inequality we used finite additivity of $\mu$, and in the third one, $\Gamma$-invariance.
+where in the second inequality we used finite additivity of $\mu$, and in the third one, $\Gamma$-invariance. This proves stability and, in particular, power smoothing.
 
  Smoothing is Proposition \ref{prop:smoothing_nec} below.
   \DPTtodo{Make some power smoothing comment, Prop only covers other
     smoothing cases}
+    \DMGtodo{added a comment about power smoothing}
 \end{proof}
 
 
