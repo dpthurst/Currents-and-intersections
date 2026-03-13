@@ -240,18 +240,32 @@ not necessarily compact (see~\cite[Proposition~3.4]{Sas22:Currents}).
 \DMGtodo{it is true for both and we don't need it, it'd be okay to remove it}
 The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
 \begin{proposition}[{\cite[Lemma~8.2.8]{Martelli16:IntroGeoTop}}]
-  For $\ora{\gamma} \in G(S)$, the orbit $\pi_1(S)\cdot\ora{\gamma}$ is
-  discrete if and only if its projection $p(\ora{\gamma})$ to~$S$ is a closed
+  For $l \in G(S)$, the orbit $\pi_1(S)\cdot l$ is
+  discrete if and only if its projection $p(l)$ to~$S$ is a closed
   geodesic.
 \end{proposition}
 
-In fact, since $\pi_1(S) \colon \ora{\gamma}$ is discrete and countable, one can define a natural geodesic current associated to $C=[\gamma]$ as
-\[
-\delta_C = \sum_{g \in \pi_1(S)/\operatorname{stab}(\ora{\gamma})} \delta_{g \cdot \ora{\gamma}}
-\]
-where $\operatorname{stab}(\ora{\gamma})}$ denotes the stabilizer subgroup of the geodesic $\ora{\ora{\gamma}}$ and $\delta_{\ora{\eta}}$ denotes the Dirac measure on the oriented geodesic $\ora{\eta} \in G(S)$, defined as  $\delta_{\ora{\eta}}(\ora{\eta})=1$ and as $$\delta_{\ora{\eta}}(\ora{\delta})=0$ whenever $\delta \neq \eta$.
 
-It is easy to see that a geodesic $\ora{\gamma} \in G(S)$ can only be an atom of a geodesic current whenever $\ora{\gamma}$ is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
+For $g \in \pi_1(S)$, let $\ora{g}$ denote the \emph{hyperbolic axis} ofdenote the oriented geodesic axis of the \emph{left} action;
+
+Given $g \in \pi_1(S)$, let $\ora{g}$
+
+Since the orbit $\pi_1(S)\cdot \ora{\gamma}$ is discrete and countable, one can define a natural geodesic current associated to the closed curve $C=[\gamma]$ by
+\[
+\delta_C
+  = \sum_{g \in \pi_1(S)/\operatorname{Stab}(\ora{\gamma})}
+    \delta_{g\cdot \ora{\gamma}},
+\]
+where $\operatorname{Stab}(l)$ denotes the stabilizer of the oriented geodesic $l$, and $\delta_{l}$ denotes the Dirac measure supported at the oriented geodesic $l\in G(S)$; that is,
+\[
+\delta_{l}(m) =
+\begin{cases}
+1 & \text{if } l = m,\\
+0 & \text{otherwise}.
+\end{cases}
+\]
+
+It is easy to see that a geodesic $l \in G(S)$ can only be an atom of a geodesic current whenever it is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
 
 One can also look at 1-dimensional sets.\DPTtodo{since $G(S)$ is oriented geodesics, we need to specify
   whether this is the positive or negative pencil, unless you really
@@ -299,6 +313,7 @@ It enjoys all the other properties of Bonahon's intersection: it is continuous a
 \end{definition}
 
 \DPTtodo{Maybe introduce $\delta_C$ in discussion of atoms?}
+\DMGtodo{yes, introduced it after the claim that the orbit of lifts of closed geodesic is discrete. }
 If $\nu=\delta_C$, i.e., the geodesic current induced by a closed curve $C$, then we will write $i(\mu, C)$ for $i(\mu, \delta_C)$.
 In this case, we have
 \[
