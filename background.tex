@@ -262,8 +262,8 @@ This says that the only $0$-dimensional and $1$-dimensional subsets
 that may have non-zero measure are those containing lifts of closed
 geodesics.
 
-In what follows, we will write  $G[p,q)\subset G(S)$ for the set of
-geodesics intersecting the geodesic segment $[p,q)$ transversally.
+In what follows, given $p,q \in \wt{S}$ we will write  $G[p,q)\subset G(S)$ for the set of
+geodesics intersecting the geodesic segment $[p,q) \subset \wt{S}$ transversally.
 
 \begin{definition}[Intersection form of geodesic currents]
 Let $\mathcal{D}\mathcal{G}(S) \subset \{ (\gamma_1,\gamma_2) \mid \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented geodesics of $\wt{S}$ intersecting transversely.
@@ -286,9 +286,10 @@ It enjoys all the other properties of Bonahon's intersection: it is continuous a
 \DMGtodo{yes, introduced it after the claim that the orbit of lifts of closed geodesic is discrete. }
 If $\nu=\delta_C$, i.e., the geodesic current induced by a closed curve $C$, then we will write $i(\mu, C)$ for $i(\mu, \delta_C)$.
 In this case, we have
-\[
+\begin{equation}
 i(\mu, \delta_C)=\mu(G[q,y \cdot q))
-\]
+\label{eq:intersection_curve}
+\end{equation}
 where $y \in \pi_1(S)$ is an element representing~$C$ and
 \DPTtodo{Have we defined $\protect\ora{y}$ yet?}
 $q \in \ora{y}$ is arbitrary.

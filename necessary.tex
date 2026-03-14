@@ -27,7 +27,7 @@ We will check each hypothesis:
  Observe that given a curve $C$ with hyperbolic lift
  $\gamma$, and $x \in \gamma$, the set of geodesics $G(x, \gamma^n x]$
  can be partitioned into $\bigcup_{i=1}^{n-1} G(x, \gamma^{i} \cdot
- x]$.  Thus, by definition of intersection number
+ x]$.  Thus, by Equation~\ref{eq:intersection_curve},
  \DPTtodo{Added an ``eg'', since MZ were certainly not the first
    people to notice this.}
    \DMGtodo{that's right, in fact this is just using the definition of intersection number}
@@ -54,7 +54,7 @@ $\partial_{\infty} S$, and let $\mu$ be any geodesic current. Then:
 \[
 \begin{aligned}
 i(\mu,a)+i(\mu,b) &\ge i(\mu,ab),\\
-i(\mu,a)+i(\mu,b) &\ge i(\mu,ab^{-1}).
+i(\mu,a)+i(\mu,b) &\ge i(\mu,aB).
 \end{aligned}
 \]
 
@@ -62,15 +62,15 @@ i(\mu,a)+i(\mu,b) &\ge i(\mu,ab^{-1}).
 \[
 \begin{aligned}
 i(\mu,ab) &\ge i(\mu,a)+i(\mu,b),\\
-i(\mu,ab) &\ge i(\mu,ab^{-1}).
+i(\mu,ab) &\ge i(\mu,aB).
 \end{aligned}
 \]
 
 \item If $\ora{a}$ and $\ora{b}$ are R-anti-parallel, then
 \[
 \begin{aligned}
-i(\mu,ab^{-1}) &\ge i(\mu,a)+i(\mu,b),\\
-i(\mu,ab^{-1}) &\ge i(\mu,ab).
+i(\mu,aB) &\ge i(\mu,a)+i(\mu,b),\\
+i(\mu,aB) &\ge i(\mu,ab).
 \end{aligned}
 \]
 
@@ -82,19 +82,19 @@ i(\mu,ab^{-1}) &\ge i(\mu,ab).
 \begin{proof}
 \begin{enumerate}
 \item Let $p$ be the intersection point between the hyperbolic axis $\ora{a}$ of $a$ and $\ora{b}$ of $b$.
-Since $p \in \ora{a}$, we have $x=b^{-1} \cdot p \in \ora{b}$.
+Since $p \in \ora{a}$, we have $x=B \cdot p \in \ora{b}$.
 We have $p$ and $y= a \cdot p$ are in $\ora{a}$. Thus
 \begin{align*}
 i(\mu, ab) \leq & \mu(G(x, ab x]) \leq \mu(G(x, b x]) + \mu(G(bx, ab x]) = \\
-&  = \mu(G(b^{-1} p, p]) + \mu(G(p, ap]) = i(\mu, b) + i(\mu, a).
+&  = \mu(G(B p, p]) + \mu(G(p, ap]) = i(\mu, b) + i(\mu, a).
 \end{align*}
 In the first inequality we used~\cite[Proposition 3.14(i)]{MZ19:PositivelyRatioed} , in the second, we used that 
 $G(x, b x] \subset G(x, b x] \cup G(bx, ab x]$, and in the last equality we used the fact that $p$ is in the
 axis of $a$ and of $b$, and~\cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed}.
-A similar argument with $ab^{-1}$ gives the other inequality.
+A similar argument with $aB$ gives the other inequality.
 \item The inequalities can be checked directly using a similar analysis as in the previous part (see~\cite[Proposition~4.5]{MZ19:PositivelyRatioed}).
 However, we can give a much more direct prove, as follows. Since $i(\mu, \dot)$ is continuous by~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} and homogeneous, it follows from Proposition~\ref{prop:cont_conn_disc} that $i(\mu, \cdot)$ satisfies connected smoothing, as we wanted to show.
-\item This case is the same as the second case, by changing $b$ to $b^{-1}$.\qedhere
+\item This case is the same as the second case, by changing $b$ to $B$.\qedhere
 \end{enumerate}
 \end{proof}
 

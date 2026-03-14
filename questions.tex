@@ -11,8 +11,6 @@ If instead one restricts to geodesics projecting to the convex core,
 one obtains a space denoted $\Curr_{\mathrm{open}}(S)$ (\cite[Section~2.6]{DLR10:DegenerationFlatMetrics}). See
 Figure~\ref{fig:open_surfaces}.
 
-\DPTtodo{There's an extra geodesic in both cases, which is not
-  referred to in the text}
 \begin{figure}
 \centering
 \begin{subfigure}{0.48\textwidth}
@@ -38,7 +36,6 @@ continuous; see~\cite[Remark~2.26]{MGT21:Smoothings} and
 also~\cite{Sas22:Currents, T22:ThurstonCompactification}. It is thus
 hard to get started working entirely in this setting.
 
-\DPTtodo{Deleted more old text, wrote one more summary sentence}
 \begin{comment}
 Thus we might want to look at $\Curr(\pi_1(S))$, which is different
 since the action of $\pi_1(S)$ on $\bbH^2$ is not cocompact.
@@ -70,7 +67,7 @@ The case of $\Curr_{\mathrm{open}}(S)$ is different. Even though intersection nu
 The key issue is that the intersection number is degenerate: any
 geodesic current $\mu$ supported on boundary curves will have zero
 intersection number with all geodesic currents $\nu \in \Curr(S)$.
-\DPTtodo{Dropped the example}
+
 \begin{comment}
 We can give a concrete example of how our theorem fails in this
 setting, related to the second example
@@ -140,18 +137,18 @@ $f \colon \Curves_{\mathrm{open}}(S) \to \mathbb{R}$ satisfies
 smoothing if it does not increase after resolving any essential
 crossing.
 
-For examples of such functionals, consider an embedded graph $G \subset S'$.
-Equipping $G$ with a metric, we get a notion of length of
+For examples of such functionals, consider an embedded graph $\mathcal{G} \subset S'$.
+Equipping $\mathcal{G}$ with a metric, we get a notion of length of
 $\ell_\Sigma$ curves in $\Curves_{\mathrm{open}}(S)$ with respect to
 this embedded metric graph. (See also
-Section~\ref{subsec:embedded_graphs}.) When $G$ is a rose-graph
+Section~\ref{subsec:embedded_graphs}.) When $\mathcal{G}$ is a rose-graph
 (embedded and
 with one vertex), Erlandsson~\cite{Erlandsson:WordLength} has
-constructed examples of geodesic currents $\mu_{G}$ in
+constructed examples of geodesic currents $\mu_{\mathcal{G}}$ in
 $\Curr_{\mathrm{open}}(S)$ (in fact, half-integer weighted arcs and
 multi-curves) so that
 \[
-\ell_{\Sigma}(C)=I(\mu_{G}, C).
+\ell_{\Sigma}(C)=I(\mu_{\mathcal{G}}, C).
 \]
 This motivates the following question.
 
@@ -200,8 +197,6 @@ our conjecture would assert the existence of a geodesic current
 $\mu \in \Curr_{\mathrm{open}}(S)$. Presumably, as in Erlandsson's
 result, $\mu$ in this case consists of half-integral combination of
 curves.
-\DMGtodo{which one?}\DPTtodo{We'd
-  have to prove the conjecture to answer that. Edited with a bit more precision.}
 
 As a second example, consider a flat metric on the completion of $S'$ so that the missing points become conical singular points. Now the length of an arc between cusps is the length of the arc from cone point to cone point, which is a finite number.
 This gives a well-defined notion of length $\ell \colon \Curves_{\mathrm{cusp}}(S) \to \mathbb{R}$.
@@ -210,7 +205,6 @@ whose support is contained in the closure of the subspace of geodesics
 that do not go through cone points. The natural Liouville metric for
 singular flat metrics is an example of such a
 current~\cite[Section~3.2]{BL17:RigidityFlat},
-\DPTtodo{added this last clause}
 and seems to be dual
 to~$\ell$.
 
