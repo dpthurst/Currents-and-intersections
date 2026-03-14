@@ -15,6 +15,7 @@ We then turn to further questions motivated by these results.
 \DPTtodo{This section seems slightly off-focus. Maybe say a bit more
   about why we're caring so much about orientations? But also how much
   is it duplicating the later section?}
+  \DMGtodo{I added a bit of motivation of why we work with oriented currents, and why we restrict to the flip-invariant ones.}
 \DPTtodo{In the $\sqrt{\EL}$ example, we use the
   criterion that if $(\protect\ora{a},\protect\ora{b})$ are parallel then $[ab]$ has a
   self-crossing. So maybe we should at least mention that fact here.}
@@ -22,14 +23,20 @@ In this paper, the term \emph{multi-curve} will mean an
 \emph{oriented multi-curve}, that is, a finite union of oriented, not-necessarily-simple and not-necessarily-disjoint curves; we
 denote the corresponding space by $\Curves^+(S)$. Accordingly, we will
 work with oriented geodesic currents (see
-Section~\ref{sec:currents}).
-
+Section~\ref{sec:currents}). Some authors prefer to work with unoriented geodesic currents, but oriented currents are more general, and appear naturally algebraic contexts, such as lengths arising from cross-ratios, real actions on real trees, or higher Teichm\"uller theory and Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+In practice, the oriented geodesic currents we will be interested on in our applications (Section~\ref{sec:special-classes},~\ref{sec:crossratios},~\ref{sec:skora}) will also be flip invariant, and in this case there is a bijection~\cite[Exercise~3.1]{ES22:GeodesicCount}
+\[
+\{\text{unoriented geodesic currents}\}
+\leftrightarrow
+\{\text{flip-invariant oriented geodesic currents}\}.
+\]
+The reason we care about this subclass of oriented geodesic currents is that any flip-invariant oriented geodesic current is determined by its geometric intersection number with all closed curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, a fact which fails to be true for general oriented geodesic currents.
 The geometric intersection number will play a central role throughout.
 By default, the intersection number $i(C,D)$ of two multi-curves is
 defined for unoriented curves. If $C$ and $D$ are oriented,
 the
 intersection number is defined by forgetting orientations. See also
-Definition~\ref{def:intersection_currents}.
+Definition~\ref{def:intersection_currents}. The reader should in mind the example of the curve functional $i(\mu, \cdot) \colon \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or, more generally, oriented geodesic current.
 
 As explained in Appendix~\ref{sec:asymmetric}, there are asymmetric
 variants of intersection number for oriented curves which only record crossings of a given orientation. For such notions, the analogue of the main
@@ -68,7 +75,7 @@ f\!\left(\mfig{curves-4}\right).
 \end{equation}
 (See Definition~\ref{def:essential-crossing} for the notion of
 essential crossing; it is a crossing that cannot be removed by
-homotopy.)
+homotopy.) If the inequality is replaced by equality, we obtain \emph{oriented max-smoothing.}
 
 \item \textbf{Additivity.}
 For oriented curves $C_1$ and $C_2$ on $S$,
