@@ -20,9 +20,48 @@ We then turn to further questions motivated by these results.
   criterion that if $(\protect\ora{a},\protect\ora{b})$ are parallel then $[ab]$ has a
   self-crossing. So maybe we should at least mention that fact here.}
   \DMGtodo{was more detailed in the oriented smoothing paragraph below, and specified this among other things}
-In this paper, the term \emph{multi-curve} will mean an
-\emph{oriented multi-curve}, that is, a finite union of oriented, not-necessarily-simple and not-necessarily-disjoint curves; we
-denote the corresponding space by $\Curves^+(S)$. Accordingly, we will
+
+
+\begin{definition}[multi-curve]\label{def:multi-curve} \DMGtodo{ported this definition from our previous paper, since in section 3 we refer to 'concrete multi-curves' in the definition of essential crossing.}
+A \emph{concrete multi-curve} $\gamma$ on a surface $S$ is a smooth
+1-manifold without boundary $X(\gamma)$ together with a map
+(also called $\gamma$) from $X(\gamma)$
+into~$S$. $X(\gamma)$ is not necessarily connected.
+We say that $\gamma$ is \emph{trivial} if it is
+homotopic to a point.
+Two concrete multi-curves $\gamma$ and~$\gamma'$ are \emph{equivalent} if
+they are related by a sequence of the following moves:
+\begin{itemize}
+    \item \emph{homotopy} within the space of all maps from $X(\gamma)$ to~$S$;
+    \item \emph{reparametrization} of the 1-manifold;
+      and
+    \item \emph{dropping} trivial components.
+\end{itemize}
+The equivalence class of $\gamma$ is denoted by~$[\gamma]$, and we will
+call it a \emph{multi-curve}.
+If $X(\gamma)$ is connected, we will call $[\gamma]$ a \emph{curve}; a
+curve is equivalent to a conjugacy class in $\pi_1(S)$.
+When we just want to refer to the equivalence class of a
+(multi-)curve, without
+distinguishing a representative, we will use capital letters such
+as~$C$.
+A concrete multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
+injective, and a multi-curve is simple if it has a concrete representative
+that is simple.
+We write $\Simples(S)$ for the space of simple multi-curves on~$S$
+and $\Curves(S)$ for the space of all multi-curves.
+
+We will mostly consider \emph{oriented multi-curves}, which we will still
+denote by~$\gamma$, in which $X(\gamma)$ is
+oriented. We add the further condition in the equivalence
+relation that the reparametrizations must be orientation-preserving.
+In this paper, unless stated otherwise, we will be working with
+oriented multi-curves. The spaces of oriented simple and general
+multi-curves are denoted $\Simples^+(S)$ and $\Curves^+(S)$,
+respectively.
+\end{definition}
+
+Accordingly, we will
 work with oriented geodesic currents (see
 Section~\ref{sec:currents}). Some authors prefer to work with unoriented geodesic currents, but oriented currents are more general, and appear naturally algebraic contexts, such as lengths arising from cross-ratios, real actions on real trees, or higher Teichm\"uller theory and Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
 In practice, the oriented geodesic currents we will be interested on in our applications (Section~\ref{sec:special-classes},~\ref{sec:crossratios},~\ref{sec:skora}) will also be flip invariant, and in this case there is a bijection~\cite[Exercise~3.1]{ES22:GeodesicCount}
@@ -114,20 +153,21 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \label{fig:cases-oriented-sm}
 \end{figure}
 
+Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. For $a, b\in \pi_1(S)$, let $[a][b]$ denote the multi-curve $[a] \cup [b]$. 
 The oriented smoothing condition will be further divided into three
 types, depending on if the essential
 crossing is between two connected components of the multi-curve $[a][b]$
 (\emph{oriented disconnected smoothing}, Figure~\ref{fig:sm_oriented_disconnected}) in which case it smooths to an oriented multi-curve $[ab]$; if it is a self-crossing of $[ab]$ smoothing to two parallel oriented curves $[a][b]$, where, in particular $[ab]$ is a connected component not
 coming from a power of a single element (\emph{oriented connected
   smoothing}, Figure~\ref{fig:sm_oriented_connected}); or
-if it is a self-crossing arising from a power $[a^{n+m}$ (\emph{power
+if it is a self-crossing arising from a power $[a^{n+m}]$ for $n,m \geq 1$ (\emph{power
   smoothing}, Figure~\ref{fig:sm_power}), smoothing to a multi-curve $[a^n][a^m]$.
 (See
 Definition~\ref{def:smoothing_types}.) Accordingly, we will
 say $f$ satisfies a particular type of smoothing property if $f$ is
 non-increasing under such type.
 
-Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. For $a, b\in \pi_1(S)$, let $[a][b]$ denote the multi-curve $[a] \cup [b]$. 
+
 
 \begin{lemma}
   \DPTtodo{``max-smoothing'' seems like a non-sequitur? We haven't
@@ -140,7 +180,7 @@ Oriented smoothing and oriented max-smoothing admit the following equivalent for
 \item \textbf{Oriented disconnected smoothing.}
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect,
 \[
-f([a]\cup[b]) \ge f([ab]).
+f([a][b]) \ge f([ab]).
 \]
 If the inequality is replaced by equality, we obtain \emph{oriented disconnected max-smoothing}.
 
@@ -148,7 +188,7 @@ If the inequality is replaced by equality, we obtain \emph{oriented disconnected
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel
 (i.e., disjoint and coherently oriented),
 \[
-f([ab]) \ge f([a]\cup[b]).
+f([ab]) \ge f([a][b]).
 \]
 If the inequality is replaced by equality, we obtain \emph{oriented connected max-smoothing}.
 
@@ -560,15 +600,11 @@ $\QConvex_R^+(S)$, despite extending to geodesic currents by
 Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_R^+(S) \subsetneq \operatorname{Cont}(S)$.
 \item
   \DPTtodo{Lead with the graph example somehow?}
-  \DMGtodo{Maybe: Lengths of quotients of embedded graphs on the surface.}
-  Translation lengths associated to non-properly-discuntinuous
-  action of a surface
-  group on a metric space do not necessarily extend continuously to geodesic
-  currents. For
-  instance, you can construct such examples by taking an embedded
-  graph on the surface and quotient out a large subgraph \cite[Proposition~11]{Bonahon91:CurrentsGroups}.
-In particular, they
-do not satisfy quasi-smoothing in general. We now give a direct proof of this fact.
+  \DMGtodo{I lead with: Lengths of quotients of embedded graphs on the surface. I also edited the rest of the paragraph to motivate the Proposition}
+  Lengths of quotients of embedded graphs $\mathcal{G}$ by large subgraphs do not necessarily extend continuously to geodesic
+  currents~\cite[Proposition~11]{Bonahon91:CurrentsGroups}. In particular, they
+do not satisfy quasi-smoothing in general. By considering the universal cover of such quotients, we obtain an isometric action of $\Gamma$ on a geodesic space $X$ with a large normal subgroup acting trivially. Its stable length then does not satisfy quasi-smoothing.
+We now give a direct proof of this more general fact.
 \begin{proposition}
 Suppose $\Gamma$ acts on a geodesic space $X$ by isometries, and
 let $\ell$ be the stable length of the action. Suppose $\ell$ is

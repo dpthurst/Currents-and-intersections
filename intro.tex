@@ -17,7 +17,7 @@ problems~\cite{RS19:CountingProblems, EPS20:CountingCurves,
 ES22:GeodesicCount}, in marked length spectrum
 rigidity~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem,
 HP97:RigidityNegCurvedCone, Con18:MarkedNonpos}, and more recently in
-geometric group theory~\cite{HV24:Biautomaticity}.
+geometric group theory~\cite{HV24:Biautomaticity, CR25:Manhattan, CMGR26:GreenMetrics}.
 
 The geometric intersection number of multi-curves extends continuously to a bilinear function of geodesic currents $i(\cdot, \cdot)$ by a result of Bonahon~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}. Moreover, by Otal's work~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, a geodesic current $\mu$ is uniquely determined by the functional $i(\mu,\cdot) \colon \mathcal{C}(S) \to \mathbb{R}$, where $\mathcal C(S)$ denotes the space of multi-curves (finite unions of closed curves on $S$). Thus geodesic currents embed into the space of real-valued functionals on curves via intersection.  
 
@@ -46,13 +46,13 @@ i(\mu_f,C)=f(C)
 \]
  if and only if it satisfies the
 \emph{smoothing property}
-\DPTtodo{Use shaded background here and consistently}
+
 \begin{equation}\label{eq:smoothing}
-f\!\left(\mfig{curves-10}\right)
+f\!\left(\mfig{curves-0}\right)
 \ge
 \max\!\left\{
-f\!\left(\mfig{curves-11}\right),
-f\!\left(\mfig{curves-12}\right)
+f\!\left(\mfig{curves-1}\right),
+f\!\left(\mfig{curves-2}\right)
 \right\},
 \end{equation}
 at every essential crossing and is \emph{additive} on connected components
@@ -240,8 +240,9 @@ functions on simple closed curves that arise as intersection with
 measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Luo98:IntersectionNumbers}
 and Theorem~\ref{thm:hyp-char} does the same for hyperbolic length
 functions~\cite{Luo98:GeodesicLength}.
-We discuss the precise relationship between our conditions and Luo’s
-in Appendix~\ref{sec:luo}.
+
+\begin{comment} We discuss the precise relationship between our conditions and Luo’s
+in Appendix~\ref{sec:luo}.\end{comment}
 
 Our methods also recover the result of the second author~\cite{Thu00:GeometricIntersection}
 that measured laminations satisfy Eq.~\eqref{eq:disconn-max-smoothing}
@@ -442,6 +443,7 @@ $\Gamma$
          $T$ & real tree \\ 
          $T_g$ & axis/fixed point set of isometry $g \in \Gamma$ acting on $T$ \\ 
         $[\cdot,\cdot,\cdot, \cdot ]$ & generalized cross-ratio \\
+        $\mathcal{G}$ & graph\\
 %         $\bigl[\cdot \bigr]$ & function on boxes induced by generalized cross-ratio. \\          
       \bottomrule\addlinespace
     \end{tabular}
@@ -479,10 +481,9 @@ currents; this proves Theorem~\ref{mainthm:crossratio}.
 
 In Section~\ref{sec:skora}, we prove Theorem~\ref{mainthm:skora}. We recall the necessary background on real trees and group actions.
 
-The Appendices address topics not central to the main proofs.
-Appendix~\ref{sec:luo} relates Theorems~\ref{thm:lam-char}
+The Appendices address topics not central to the main proofs.\begin{comment}Appendix~\ref{sec:luo} relates Theorems~\ref{thm:lam-char}
 and~\ref{thm:hyp-char} to work of
-Feng Luo. Appendix~\ref{sec:hyp-par} gives a hyperbolic
+Feng Luo.\end{comment} Appendix~\ref{sec:hyp-par} gives a hyperbolic
 parallelogram identity used to characterize hyperbolic lengths.
 Appendix~\ref{sec:asymmetric} explains why asymmetric word metrics are
 not dual to right-handed intersection numbers, highlighting the role
