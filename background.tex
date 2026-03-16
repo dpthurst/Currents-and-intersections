@@ -185,16 +185,7 @@ write $G(S)$.
 There is a natural involution map $\sigma \colon G(S) \to G(S)$, defined by $(a,b) \mapsto (b,a)$, i.e., reversing the orientation of the geodesic.
 
 \begin{definition}\label{def:currents}
-We define $\Curr^+(S)$, the space of \emph{oriented geodesic currents} on $S$,
-to be the
-space of $\pi_1(S)$-invariant, Radon measures on
-$G(S)$.
-We define the space of \emph{unoriented geodesic currents} or, simply,
-\emph{geodesic currents} as the space of flip-invariant oriented
-geodesic currents on $S$, and denote it by $\Curr(S)$. We endow both
-spaces with their natural subspace topologies induced as subsets of
-$\mathcal{M}(G(S))$.%
-\footnote{Although the choice of terms \emph{oriented/unoriented
+We define $\Curr^+(S)$, the space of \emph{oriented geodesic currents}\footnote{Although the choice of terms \emph{oriented/unoriented
     current} has appeared before in the
   literature~\cite{EPS20:CountingCurves}, there does not seem to be a
   standard choice. For example, in some sources, such
@@ -202,7 +193,28 @@ $\mathcal{M}(G(S))$.%
   geodesic currents are referred to as \emph{symmetric} geodesic
   currents, and other sources, such
   as~\cite{DS21:InfiniteTypeCurrents}, refer to them as \emph{balanced}
-  geodesic currents.}
+  geodesic currents.} on $S$,
+to be the
+space of $\pi_1(S)$-invariant, Radon measures on
+$G(S)$.
+We define the space of 
+\emph{geodesic currents} as the space of flip-invariant oriented
+geodesic currents on $S$, and denote it by $\Curr(S)$. We endow both
+spaces with their natural subspace topologies induced as subsets of
+$\mathcal{M}(G(S))$.%
+
+\begin{remark}
+\label{rmk:unoriented_currents}
+Some authors define the space of geodesic currents $\Curr^u(S)$ as invariant Radon measures on the space of \emph{unoriented geodesics of $\wt{\Sigma}$}, i.e., 
+\[
+G^u(\Sigma) \coloneqq G(\Sigma)/\mathbb{Z}_2
+\]
+where the action of $\mathbb{Z}_2$ is by the orientation reversal involution $\sigma$.
+There is a natural homeomorphism (see~\cite[Exercise~3.1]{ES22:GeodesicCount})
+\[
+\Curr^u(S) \leftrightarrow \Curr(S).
+\]
+\end{remark}
 \end{definition}
 
 As a consequence of the discussion in
@@ -236,9 +248,10 @@ where $\operatorname{Stab}(l)$ denotes the stabilizer of the oriented geodesic $
 \delta_{l}(m) =
 \begin{cases}
 1 & \text{if } l = m,\\
-0 & \text{otherwise}.
+0 & \text{otherwise},
 \end{cases}
 \]
+for every $m\in G(S)$.
 
 It is easy to see that a geodesic $l \in G(S)$ can only be an atom of a geodesic current whenever it is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
 

@@ -23,7 +23,7 @@ We then turn to further questions motivated by these results.
 
 
 \begin{definition}[multi-curve]\label{def:multi-curve} \DMGtodo{ported this definition from our previous paper, since in section 3 we refer to 'concrete multi-curves' in the definition of essential crossing.}
-A \emph{concrete multi-curve} $\gamma$ on a surface $S$ is a smooth
+A \emph{concrete unoriented multi-curve} $\gamma$ on a surface $S$ is a smooth
 1-manifold without boundary $X(\gamma)$ together with a map
 (also called $\gamma$) from $X(\gamma)$
 into~$S$. $X(\gamma)$ is not necessarily connected.
@@ -38,33 +38,24 @@ they are related by a sequence of the following moves:
     \item \emph{dropping} trivial components.
 \end{itemize}
 The equivalence class of $\gamma$ is denoted by~$[\gamma]$, and we will
-call it a \emph{multi-curve}.
-If $X(\gamma)$ is connected, we will call $[\gamma]$ a \emph{curve}; a
-curve is equivalent to a conjugacy class in $\pi_1(S)$.
-When we just want to refer to the equivalence class of a
-(multi-)curve, without
-distinguishing a representative, we will use capital letters such
-as~$C$.
-A concrete multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
+call it an \emph{(unoriented) multi-curve}.
+If $X(\gamma)$ is connected, we will call $[\gamma]$ an \emph{(unoriented) curve}; 
+A concrete unoriented multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
 injective, and a multi-curve is simple if it has a concrete representative
 that is simple.
-We write $\Simples(S)$ for the space of simple multi-curves on~$S$
-and $\Curves(S)$ for the space of all multi-curves.
+We write $\Curves(S)$ for the space of all (unoriented) multi-curves.
 
-We will mostly consider \emph{oriented multi-curves}, which we will still
+We will in fact be working mostly with \emph{oriented concrete multi-curves}, which we will still
 denote by~$\gamma$, in which $X(\gamma)$ is
 oriented. We add the further condition in the equivalence
-relation that the reparametrizations must be orientation-preserving.
-In this paper, unless stated otherwise, we will be working with
-oriented multi-curves. The spaces of oriented simple and general
-multi-curves are denoted $\Simples^+(S)$ and $\Curves^+(S)$,
-respectively.
+relation that the reparametrizations must be orientation-preserving, and refer to the equivalence class, $[\gamma]$, as an \emph{oriented multi-curve}. 
+In fact, unless stated otherwise, \emph{multi-curve} will mean oriented multi-curve. When we do not want to specify the concrete curve representative, we will use capital letters such as $C$ to denote a multi-curve. The space of multi-curves is denoted by $\Curves^+(S)$. A curve is equivalent to a conjugacy class of an element in $\pi_1(S)$.
 \end{definition}
 
 Accordingly, we will
-work with oriented geodesic currents (see
-Section~\ref{sec:currents}). Some authors prefer to work with unoriented geodesic currents, but oriented currents are more general, and appear naturally algebraic contexts, such as lengths arising from cross-ratios, real actions on real trees, or higher Teichm\"uller theory and Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
-In practice, the oriented geodesic currents we will be interested on in our applications (Section~\ref{sec:special-classes},~\ref{sec:crossratios},~\ref{sec:skora}) will also be flip invariant, and in this case there is a bijection~\cite[Exercise~3.1]{ES22:GeodesicCount}
+work with oriented geodesic currents, i.e., invariant measures on oriented geodesics of $\wt{\Sigma}$ (see
+Section~\ref{sec:currents} for details). Some authors prefer to work with \emph{unoriented geodesic currents} (see Remark~\ref{rmk:unoriented_currents}), but oriented currents are more general, and appear naturally algebraic contexts, such as lengths arising from cross-ratios, real actions on real trees, or higher Teichm\"uller theory and Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+In practice, the oriented geodesic currents we will be interested in in our applications (Section~\ref{sec:special-classes},~\ref{sec:crossratios},~\ref{sec:skora}) will also be flip invariant, and in this case there is a bijection~\cite[Exercise~3.1]{ES22:GeodesicCount}
 \[
 \{\text{unoriented geodesic currents}\}
 \leftrightarrow
@@ -126,6 +117,7 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \end{itemize}
 \end{definition}
 
+
 \begin{figure}[ht]
 \centering
 \begin{subfigure}{0.3\textwidth}
@@ -149,6 +141,23 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \label{fig:sm_power}
 \end{subfigure}
 
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{0.35\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_disconnected}}
+\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to an oriented curve $[aB]$.}
+\label{fig:sm_unoriented_disconnected}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.35\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_connected}}
+\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[aB]$.}
+\label{fig:sm_unoriented_connected}
+\end{subfigure}
+\end{figure}
+
 \caption{Cases of oriented smoothing.}
 \label{fig:cases-oriented-sm}
 \end{figure}
@@ -166,7 +175,6 @@ if it is a self-crossing arising from a power $[a^{n+m}]$ for $n,m \geq 1$ (\emp
 Definition~\ref{def:smoothing_types}.) Accordingly, we will
 say $f$ satisfies a particular type of smoothing property if $f$ is
 non-increasing under such type.
-
 
 
 \begin{lemma}
@@ -259,8 +267,8 @@ There also exist functionals that satisfy stability and smoothing but
 fail additivity; see
 Example~\ref{ex:linEL}.
 
-On the other hand, Theorem~\ref{thm:intersections_group} shows that
-smoothing implies stability.
+On the other hand, Proposition~\label{prop:power_disconnected_imply_stable} shows that
+smoothing implies stability. 
 
 Slight generalizations of both smoothing and additivity were
 introduced in our earlier work~\cite{MGT21:Smoothings}.
@@ -299,22 +307,7 @@ Theorem~\ref{thm:intersect} considered curve functions on the space of unoriente
 When performing an smoothing for an oriented multi-curve, one could also choose to reglue in the incoherent orientation. This gives rise to \emph{unoriented smoothing}.
 Accordingly, one can separate it into \emph{unoriented disconnected smoothing}, Figure~\ref{fig:sm_unoriented_disconnected}), if the smoothing is between two components of a multi-curve, and \emph{unoriented connected smoothing}, Figure~\ref{fig:sm_unoriented_connected}), if the smoothing is for a self-crossing of a component.
 
-\begin{figure}[ht]
-\centering
-\begin{subfigure}{0.35\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to an oriented curve $[aB]$.}
-\label{fig:sm_unoriented_disconnected}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.35\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_connected}}
-\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[aB]$.}
-\label{fig:sm_unoriented_connected}
-\end{subfigure}
-\end{figure}
+
 
 
 \DPTtodo{Have not defined the unoriented smoothing of oriented curves.}
@@ -557,7 +550,7 @@ A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
 \PSL(2,\mathbb{C})$ is a
 conjugate of Fuchsian group by a (properly normalized) quasi-conformal
 self-homeomorphism of the 2-sphere $f_{\rho}$
-\cite[Definition~6.12.2]{Hub06:Vol1} . The
+\cite[Definition~6.12.2]{Hub06:Vol1}. The
 \emph{quasi-Fuchsian} constant $K$ of $\rho$ is the smallest quasi-conformal
 constant for $f_{\rho}$.
 
