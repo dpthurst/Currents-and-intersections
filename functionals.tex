@@ -120,51 +120,50 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 
 \begin{figure}[ht]
 \centering
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}{0.18\textwidth}
 \centering
 \resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to an oriented curve $[ab]$.}
+\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[ab]$.}
 \label{fig:sm_oriented_disconnected}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}{0.18\textwidth}
 \centering
 \resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_connected}}
 \caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[a][b]$.}
 \label{fig:sm_oriented_connected}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}{0.18\textwidth}
 \centering
 \resizebox{\linewidth}{!}{\svgfignormal{sm_power}}
-\caption{A non-primitive oriented closed curve $[a^3]$ with self-crossings (blue) smooths to oriented curves $[a]$ and $[a^2]$.}
+\caption{A non-primitive oriented closed curve $[a^3]$ (blue) smooths to $[a][a^2]$.}
 \label{fig:sm_power}
 \end{subfigure}
-
-\caption{Cases of oriented smoothing.}
-\label{fig:cases-oriented-sm}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\begin{subfigure}{0.35\textwidth}
+\hfill
+\begin{subfigure}{0.18\textwidth}
 \centering
 \resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to an oriented curve $[aB]$.}
+\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[aB]$.}
 \label{fig:sm_unoriented_disconnected}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.35\textwidth}
+\begin{subfigure}{0.18\textwidth}
 \centering
 \resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_connected}}
 \caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[aB]$.}
 \label{fig:sm_unoriented_connected}
 \end{subfigure}
+\caption{Cases of smoothing.}
+\label{fig:cases--sm}
 \end{figure}
 
-\DPTtodo{The TeX didn't compile. I fixed it so it compiled, but check
-  it reflects your intentions}
-Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. For $a, b\in \pi_1(S)$, let $[a][b]$ denote the multi-curve $[a] \cup [b]$. 
+Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. 
+
+
+  \begin{notation*}
+  From now on, for $a, b\in \pi_1(S)$, we write $[a][b]$ to denote the multi-curve $[a] \cup [b]$.
+  \end{notation*} 
 The oriented smoothing condition will be further divided into three
 types, depending on if the essential
 crossing is between two connected components of the multi-curve $[a][b]$
@@ -255,7 +254,7 @@ not oriented connected smoothing. Its negative satisfies oriented
 connected smoothing but not oriented disconnected smoothing.
 
 Although this example is not stable, one can construct additive and
-stable functionals exhibiting exactly one of the two smoothing
+stable functionals exhibiting exactly one of these two smoothing
 properties;
 see Example~\ref{ex:linEL} and
 Lemma~\ref{lem:red_not_smoothing}.
