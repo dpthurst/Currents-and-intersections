@@ -49,6 +49,7 @@ the following.
   $(\gamma_1) \cdot \bm{\wt \ast} \cdot (\gamma) = \bm{\wt \ast} \cdot
 (\gamma_1 \cdot \gamma_2)$, basically that single point does nothing
 (like composition with a constant path.)}
+\DMGtodo{I like this convention}
 \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
@@ -209,19 +210,59 @@ We will also distinguish between different types of smoothings.
   later):
   \begin{itemize}
   \item Oriented connected smoothing: $[ab] \reducesto [a][b]$ (result
-    disconnected)
+    disconnected) Figure~\ref{fig:sm_oriented_connected}
   \item Unoriented connected smoothing: $[ab] \reducesto [aB]$ (result
-    connected)
+    connected) Figure~\ref{fig:sm_unoriented_connected}
   \item Oriented disconnected smoothing: $[a][b] \reducesto [ab]$
-    (result connected)
+    (result connected) Figure~\ref{fig:sm_oriented_disconnected}
   \item Unoriented disconnected smoothing: $[a][b] \reducesto [aB]$
-    (result connected)
+    (result connected) Figure~\ref{fig:sm_unoriented_disconnected}
   \end{itemize}
   Finally, we have a smoothing for self-crossings of a non-primitive element:
   \begin{itemize}
-  \item Power smoothing: $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$, and every $m,n \geq 1$. 
+  \item Power smoothing: $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$, and every $m,n \geq 1$. Figure~\ref{fig:sm_power}
   \end{itemize}
 \end{definition}
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{0.18\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_connected}}
+\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[a][b]$.}
+\label{fig:sm_oriented_connected}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.18\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_connected}}
+\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[aB]$.}
+\label{fig:sm_unoriented_connected}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.18\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_disconnected}}
+\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[ab]$.}
+\label{fig:sm_oriented_disconnected}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.18\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_disconnected}}
+\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[aB]$.}
+\label{fig:sm_unoriented_disconnected}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.18\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{sm_power}}
+\caption{A non-primitive oriented closed curve $[a^3]$ (blue) smooths to $[a][a^2]$.}
+\label{fig:sm_power}
+\end{subfigure}
+\caption{Cases of smoothing.}
+\label{fig:cases--sm}
+\end{figure}
 
 In the next section we justify the equivalence between the smoothing condition hypothesis and these different sub-types.
 

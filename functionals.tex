@@ -67,7 +67,7 @@ By default, the intersection number $i(C,D)$ of two multi-curves is
 defined for unoriented curves. If $C$ and $D$ are oriented,
 the
 intersection number is defined by forgetting orientations. See also
-Definition~\ref{def:intersection_currents}. The reader should in mind the example of the curve functional $i(\mu, \cdot) \colon \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or, more generally, oriented geodesic current.
+Definition~\ref{def:intersection_currents}. The reader should keep in mind the example of the curve functional $i(\mu, \cdot) \colon \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or, more generally, oriented geodesic current.
 
 As explained in Appendix~\ref{sec:asymmetric}, there are asymmetric
 variants of intersection number for oriented curves which only record crossings of a given orientation. For such notions, the analogue of the main
@@ -118,46 +118,6 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \end{definition}
 
 
-\begin{figure}[ht]
-\centering
-\begin{subfigure}{0.18\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[ab]$.}
-\label{fig:sm_oriented_disconnected}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.18\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_connected}}
-\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[a][b]$.}
-\label{fig:sm_oriented_connected}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.18\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_power}}
-\caption{A non-primitive oriented closed curve $[a^3]$ (blue) smooths to $[a][a^2]$.}
-\label{fig:sm_power}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.18\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[aB]$.}
-\label{fig:sm_unoriented_disconnected}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.18\textwidth}
-\centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_connected}}
-\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[aB]$.}
-\label{fig:sm_unoriented_connected}
-\end{subfigure}
-\caption{Cases of smoothing.}
-\label{fig:cases--sm}
-\end{figure}
-
 Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, can be thought of as the free homotopy class of the oriented curve represented by $a$. 
 
 
@@ -165,25 +125,17 @@ Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, c
   From now on, for $a, b\in \pi_1(S)$, we write $[a][b]$ to denote the multi-curve $[a] \cup [b]$.
   \end{notation*} 
 The oriented smoothing condition will be further divided into three
-types, depending on if the essential
-crossing is between two connected components of the multi-curve $[a][b]$
-(\emph{oriented disconnected smoothing}, Figure~\ref{fig:sm_oriented_disconnected}) in which case it smooths to an oriented multi-curve $[ab]$; if it is a self-crossing of $[ab]$ smoothing to two parallel oriented curves $[a][b]$, where, in particular $[ab]$ is a connected component not
-coming from a power of a single element (\emph{oriented connected
-  smoothing}, Figure~\ref{fig:sm_oriented_connected}); or
-if it is a self-crossing arising from a power $[a^{n+m}]$ for $n,m \geq 1$ (\emph{power
-  smoothing}, Figure~\ref{fig:sm_power}), smoothing to a multi-curve $[a^n][a^m]$.
-(See
-Definition~\ref{def:smoothing_types}.) Accordingly, we will
+types (See
+Definition~\ref{def:smoothing_types}.) \DMGtodo{edited this, moved figure and detail on types of smoothing to section on crossings and smoothings later to avoid duplicity} Accordingly, we will
 say $f$ satisfies a particular type of smoothing property if $f$ is
 non-increasing under such type.
-
 
 \begin{lemma}
   \DPTtodo{``max-smoothing'' seems like a non-sequitur? We haven't
     defined it before this lemma. Also, seems
     duplicative of paragraph a bit above}
     \DMGtodo{I added oriented max-smoothing in the definition of oriented smoothing. The Lemma is stating the functional satisfies smoothing. Also, added figure to illustrate the cases.}
-Oriented smoothing and oriented max-smoothing admit the following equivalent formulations.
+A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies oriented smoothing (resp. oriented max-smoothing) if the following three families of inequalities (resp. equalities) are satisfied.
 \begin{itemize}
 
 \item \textbf{Oriented disconnected smoothing.}
@@ -268,7 +220,7 @@ There also exist functionals that satisfy stability and smoothing but
 fail additivity; see
 Example~\ref{ex:linEL}.
 
-On the other hand, Proposition~\label{prop:power_disconnected_imply_stable} shows that
+On the other hand, Proposition~\ref{prop:power_disconnected_imply_stable} shows that
 smoothing implies stability. 
 
 Slight generalizations of both smoothing and additivity were
@@ -305,11 +257,7 @@ below).
 
 Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
-When performing an smoothing for an oriented multi-curve, one could also choose to reglue in the incoherent orientation. This gives rise to \emph{unoriented smoothing}.
-Accordingly, one can separate it into \emph{unoriented disconnected smoothing}, Figure~\ref{fig:sm_unoriented_disconnected}), if the smoothing is between two components of a multi-curve, and \emph{unoriented connected smoothing}, Figure~\ref{fig:sm_unoriented_connected}), if the smoothing is for a self-crossing of a component.
-
-
-
+When performing an smoothing for an oriented multi-curve, one could also choose to reglue in the incoherent orientation. 
 
 \DPTtodo{Have not defined the unoriented smoothing of oriented curves.}
 \DMGtodo{defined and illustrated unoriented smoothing above}
