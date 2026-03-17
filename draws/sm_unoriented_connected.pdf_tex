@@ -54,5 +54,8 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{sm_unoriented_connected.pdf}}%
+    \put(0.50251992,0.20557551){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[aB]$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{sm_unoriented_connected.pdf}}%
+    \put(0.51717522,0.59687245){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[ab]$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

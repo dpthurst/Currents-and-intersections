@@ -27,7 +27,7 @@ unique lift of~$\gamma$ with $\wt\gamma(0) = x$.
 We observe
 the following.
 \begin{itemize}
-\item \DPTtodo{Added last sentence of footnote}
+\item 
   This right action does not depend on a choice of basepoint
   on~$\wt S$, and works for any covering space.%
   \footnote{One succinct statement of the classification theorem for
@@ -44,6 +44,7 @@ the following.
 \DPTtodo{Implemented the notation convention as discussed. I also
   dropped the bold-face convention, which no longer seemed necessary.
   There may be some further simplifications to do}
+  \DMGtodo{do we need to implement the new convention in the next paragraph?}
 \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
@@ -76,7 +77,7 @@ For any non-trivial $g \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[g]$ on $S$, corresponding to the conjugacy
 class of~$g$. We also need to specify different lifts of $[g]$ to
 $\wt S$. This is conveniently specified by $g$ itself: $g$ determines
-a sequence of points $\{(g^k) \cdot \wt \ast \mid k \in \bbZ\}$, which is a
+a sequence of points $\{(g^k) \cdot \wt \ast \mid k \in \bbZ\}$\DMGtodo{for example, should this be $\ast\cdot\wt(g^k)$?}, which is a
 quasi-geodesic in $\wt S$. After choosing a hyperbolic structure
 $\Sigma$ on $S$, this quasi-geodesic determines an oriented hyperbolic
 geodesic
@@ -100,8 +101,6 @@ points are within a
 bounded distance of each other, since the right action of $\pi_1$
 moves points a bounded distance.
 
-\DPTtodo{Moved this paragraph later so I could mention quasi-geodesics
-in the new last sentence}
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, there will be two types of
 arrows (see, e.g., Figure~\ref{fig:newmodel3_orbit}): arrows
@@ -116,6 +115,7 @@ the basepoints are actually on the axis.
 
 \DPTtodo{Does this discussion of two lifts deserve a picture? What
   would that look like?}
+  \DMGtodo{we could also refer to the figure of a box that appears much later: Figure~\ref{fig:newmodel3}}
 With these preliminaries, we can see that two different lifts of
 $[g]$,
 \begin{align*}
@@ -212,13 +212,14 @@ We will also distinguish between different types of smoothings.
   of smoothings between non-trivial pairs of elements which are not common powers (using group notation that we will expand on
   later):
   \begin{itemize}
-  \item Oriented connected smoothing: $[ab] \reducesto [a][b]$ (result
+  \item Oriented connected smoothing: R-parallel oriented curves $[a]$ and $[b]$ give a self-crossing oriented curve $[ab]$, with $[ab] \reducesto [a][b]$ (result
     disconnected) Figure~\ref{fig:sm_oriented_connected}
-  \item Unoriented connected smoothing: $[ab] \reducesto [aB]$ (result
+  \item Unoriented connected smoothing: R-parallel oriented curves $[a]$ and $[b]$ give a self-crossing oriented curve $[ab]$ with $[ab] \reducesto [aB]$ (result
     connected) Figure~\ref{fig:sm_unoriented_connected}
-  \item Oriented disconnected smoothing: $[a][b] \reducesto [ab]$
+  \item Oriented disconnected smoothing: 
+ R-crossing oriented curves $[a]$ and $[b]$ give a crossing oriented curve multi-curve $[a][b]$, with $[a][b] \reducesto [ab]$
     (result connected) Figure~\ref{fig:sm_oriented_disconnected}
-  \item Unoriented disconnected smoothing: $[a][b] \reducesto [aB]$
+  \item Unoriented disconnected smoothing:   R-crossing oriented curves $[a]$ and $[b]$ give a crossing oriented curve multi-curve $[a][b]$, with $[a][b] \reducesto [aB]$
     (result connected) Figure~\ref{fig:sm_unoriented_disconnected}
   \end{itemize}
   Finally, we have a smoothing for self-crossings of a non-primitive element:
@@ -231,36 +232,36 @@ We will also distinguish between different types of smoothings.
 \centering
 \begin{subfigure}{0.18\textwidth}
 \centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_connected}}
-\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[a][b]$.}
+\resizebox{\linewidth}{!}{\svgfighuge{sm_oriented_connected}}
+\caption{Oriented connected smoothing: $[ab] \reducesto [a][b]$}
 \label{fig:sm_oriented_connected}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.18\textwidth}
 \centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_connected}}
-\caption{R-parallel oriented curves $[a]$ and $[b]$ (red) give self-crossing $[ab]$ smoothing to $[aB]$.}
+\resizebox{\linewidth}{!}{\svgfighuge{sm_unoriented_connected}}
+\caption{Unoriented connected smoothing: $[ab]\reducesto[aB]$.}
 \label{fig:sm_unoriented_connected}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.18\textwidth}
 \centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_oriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[ab]$.}
+\resizebox{\linewidth}{!}{\svgfighuge{sm_oriented_disconnected}}
+\caption{Oriented disconnected smoothing: $[a][b]\reducesto [ab]$}
 \label{fig:sm_oriented_disconnected}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.18\textwidth}
 \centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_unoriented_disconnected}}
-\caption{A pair of oriented curves $[a]$ (red) and $[b]$ (blue) R-cross and smooth to $[aB]$.}
+\resizebox{\linewidth}{!}{\svgfighuge{sm_unoriented_disconnected}}
+\caption{Unoriented disconnected smoothing: $[a][b]\reducesto [aB]$}
 \label{fig:sm_unoriented_disconnected}
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.18\textwidth}
 \centering
-\resizebox{\linewidth}{!}{\svgfignormal{sm_power}}
-\caption{A non-primitive oriented closed curve $[a^3]$ (blue) smooths to $[a][a^2]$.}
+\resizebox{\linewidth}{!}{\svgfighuge{sm_power}}
+\caption{Power smoothing: $[a^{m+n}]\reducesto[a^m][a^n]$.}
 \label{fig:sm_power}
 \end{subfigure}
 \caption{Cases of smoothing.}

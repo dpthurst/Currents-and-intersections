@@ -54,5 +54,9 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{sm_oriented_disconnected.pdf}}%
+    \put(0.51593594,0.58235469){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[b]$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{sm_oriented_disconnected.pdf}}%
+    \put(0.23186059,0.49238222){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[a]$\end{tabular}}}}%
+    \put(0.51890888,0.03662029){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[ab]$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

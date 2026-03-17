@@ -54,5 +54,8 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{sm_oriented_connected.pdf}}%
+    \put(0.52508517,0.59877903){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[ab]$\end{tabular}}}}%
+    \put(0.22211968,0.06759421){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[a]$\end{tabular}}}}%
+    \put(0.78997858,0.06906935){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[b]$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

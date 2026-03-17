@@ -54,5 +54,8 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{sm_power.pdf}}%
+    \put(0.69450304,0.68766594){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[a^3]$\end{tabular}}}}%
+    \put(0.7255798,0.13322098){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[a^2]$\end{tabular}}}}%
+    \put(0.35475661,0.13329516){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$[a]$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
