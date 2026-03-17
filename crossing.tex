@@ -13,17 +13,16 @@ defined if $\gamma_1(1) = \gamma_2(0)$.
 Recall that $a \in \pi_1(S,\ast)$ is the homotopy class of the
 oriented curve relative to the basepoint $*$, which we will write $a = (\gamma)$.
  We will sometimes follow the
-group theory convention of denoting inverses by a capital letter, and will use
-boldface to distinguish points in $\wt S$.
-\DPTtodo{Did we decide against this?}
-\DMGtodo{we seem to only use it in this section (the bold basepoint)}
+ group theory convention of denoting inverses by a capital letter.
+% , and will use
+% boldface to distinguish points in $\wt S$.
 
 \begin{definition}[Right action]
 For a covering map $p \colon \wt S \to S$ of~$S$ and base-point
 $\ast \in S$, we have a \emph{right} action of $\pi_1(S,\ast)$ on
-the fiber $p^{-1}(\ast)$, defined by, for $\bm{x} \in p^{-1}(\ast)$,
-$\bm{x}\cdot (\gamma) = \wt \gamma(1)$, where $\wt\gamma$ is the
-unique lift of~$\gamma$ with $\wt\gamma(0) = \bm{x}$.
+the fiber $p^{-1}(\ast)$, defined by, for $x \in p^{-1}(\ast)$, setting
+$x\cdot (\gamma) = \wt \gamma(1)$, where $\wt\gamma$ is the
+unique lift of~$\gamma$ with $\wt\gamma(0) = x$.
 \end{definition}
 We observe
 the following.
@@ -37,49 +36,70 @@ the following.
     correspond to transitive actions of $\pi_1(S)$, which
     in turn correspond to conjugacy classes of subgroups.}
 \item In the induced length metric on~$\wt S$, the distance between
-  $\bm{x}$ and $\bm{x}\cdot (\gamma)$ is bounded by the length of~$\gamma$.
+  $x$ and $x\cdot (\gamma)$ is bounded by the length of~$\gamma$.
 \end{itemize}
 
-\DPTtodo[inline]{Here's my notation proposal following the previous
-  discussion in comments. \textbullet\ A point in the universal cover
-  is denoted $\bm{\wt \ast} \cdot (\gamma)$, where $\gamma(0) = \ast$
-  but $\gamma(1)$ is unconstrained. \textbullet\ This is entirely
-  compatible with the right action, for cases where $\gamma(1) =
-  \ast$ as well. \textbullet\ For the left action, we write it as
-  $(\gamma_1) \cdot \bm{\wt \ast} \cdot (\gamma) = \bm{\wt \ast} \cdot
-(\gamma_1 \cdot \gamma_2)$, basically that single point does nothing
-(like composition with a constant path.)}
-\DMGtodo{I like this convention}
+\DPTtodo{Implemented the notation convention as discussed. I also
+  dropped the bold-face convention, which no longer seemed necessary.
+  There may be some further simplifications to do}
 \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
-on all of $\wt S$ by deck transformations. If you take
-the standard model of $\wt S$, where one lifts $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$, and points
-$(\gamma) \cdot \bm{\wt \ast}$ correspond
-to homotopy classes of paths~$\gamma$
-in~$S$ with $\gamma(0) = \ast$ (with homotopies fixing the endpoints), then this
-action is defined by
-$(\gamma_1) \cdot ((\gamma) \cdot \bm{\wt \ast}) \coloneqq
-(\gamma_1 \cdot \gamma) \cdot \bm{\wt \ast}$.
+on all of $\wt S$ by deck transformations. Take
+the standard model of $\wt S$, and lift $\ast \in S$ to a basepoint
+$\wt \ast \in \wt S$, which we think about as the constant path. We
+write other
+points in $\wt S$ as $\wt{\ast} \cdot (\gamma)$, where $\gamma$ is a
+path in~$S$ with $\gamma(0) = \ast$, considered up to homotopy fixing
+the endpoint. The left action is then
+defined by
+$(\gamma_1) \cdot (\wt \ast \cdot (\gamma)) \coloneqq
+\wt \ast \cdot (\gamma_1 \cdot \gamma)$.
 
 \end{definition}
 Here we make the following observations.
 \begin{itemize}
 \item This left action is an isometry of all of~$\wt S$.
 \item The left action depends on a lift of
-  $\ast \in S$ to a basepoint  $\bm{\wt \ast} \in \wt S$,
-  \DPTtodo{I no longer know what this ``for instance'' clause means}
-  \DMGtodo{it makes sense according to the previous comment. Also in general we seem to develop some notation here that we completely drop afterwards. I guess we do make the distinction between actions clear in the figures later on, though}
-  for instance
-  since the left and right actions are
-  related by $(\gamma) \cdot \bm{\wt \ast} = \bm{\wt \ast} \cdot (\gamma)$.
-\item The distance between $\bm{x}$ and $(\gamma) \cdot \bm{x}$
-  may be unbounded, although the translation length of the left action
-  of $(\gamma)$ on
-  $\wt S$ is bounded by the length of $\gamma$.
+  $\ast \in S$ to a basepoint  $\wt \ast \in \wt S$.
+\item The distance between $x \in \wt S$ and $(\gamma) \cdot x$
+  is unbounded, although since the basement $\wt \ast$ is moved by the
+  length of~$\gamma$ we do have a bound on
+  the translation length.
 \item This left action extends to an action on the circle at infinity $\partial_{\infty} S$.
 \end{itemize}
 
+\DPTtodo{Switched $x$ to $g$, reserving $x$ for points in $\wt S$ locally}
+For any non-trivial $g \in \pi_1(S,*)$, there is a corresponding
+oriented closed curve $[g]$ on $S$, corresponding to the conjugacy
+class of~$g$. We also need to specify different lifts of $[g]$ to
+$\wt S$. This is conveniently specified by $g$ itself: $g$ determines
+a sequence of points $\{(g^k) \cdot \wt \ast \mid k \in \bbZ\}$, which is a
+quasi-geodesic in $\wt S$. After choosing a hyperbolic structure
+$\Sigma$ on $S$, this quasi-geodesic determines an oriented hyperbolic
+geodesic
+denoted $\ora{g}$ with endpoints $g^+ = \lim_{k \to \infty} (g^k) \cdot \wt \ast$ 
+and $g^- = \lim_{k \to -\infty} (g^k) \cdot \wt \ast$. Note that $g$
+acts on the left on $\wt S$ as a hyperbolic isometry
+fixing $\ora{g}$ set-wise. This action
+extends continuously to $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ and has north-south (NS) dynamics, with unique
+attracting point $g^+$ and repelling point $g^-$: for any point
+$x \in \overline{\wt S}$ other
+than $g^-$, we have $\lim _{k \to \infty} g^k \cdot x = g^+$.
+
+The other lifts of $[g]$ to $\wt S$ are translates $q \cdot \ora{g}$
+of $\ora{g}$ by a
+group element~$q$; we can either think of this as the geodesic
+$\ora{qgQ}$ passing within a bounded distance of the points $(qg^kQ) \cdot \wt \ast$; 
+or we can think of it as the geodesic corresponding to the coset
+$q\langle g\rangle$, i.e., passing within a bounded distance of the
+points $(qg^k) \cdot \wt \ast$ in the coset. Note these two sequences of
+points are within a
+bounded distance of each other, since the right action of $\pi_1$
+moves points a bounded distance.
+
+\DPTtodo{Moved this paragraph later so I could mention quasi-geodesics
+in the new last sentence}
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, there will be two types of
 arrows (see, e.g., Figure~\ref{fig:newmodel3_orbit}): arrows
@@ -87,36 +107,17 @@ connecting two endpoints of $\partial_{\infty}\Sigma$, which
 correspond to axes hyperbolic axes $\ora{g}$ of an element
 $g \in \pi_1(S)$, the axis of the \emph{left} action; and arrows
 representing paths connecting points on these axes that correspond to
-the \emph{right} action on the fiber.
+the \emph{right} action on the fiber. As explained above, the
+relevant lifts of the basepoints are a quasi-geodesic that are a
+bounded distance from the axis; the pictures are clearer if we imagine
+the basepoints are actually on the axis.
 
-For any non-trivial $x \in \pi_1(S,*)$, there is a corresponding
-oriented closed curve $[x]$ on $S$, corresponding to the conjugacy
-class of~$x$. We also need to specify different lifts of $[x]$ to
-$\wt S$. This is conveniently specified by $x$ itself: $x$ determines
-a sequence of points $\{(x^k) \cdot \bm{\wt \ast} \mid k \in \bbZ\}$, which is a
-quasi-geodesic in $\wt S$. Choosing a hyperbolic structure $\Sigma$ on $S$, which is equivalent to choosing a discrete faithful representation $\rho \colon \pi_1(S) \to \Isom^+(\mathbb{H}^2)$, this quasi-geodesic determines an oriented hyperbolic geodesic
-denoted $\ora{x}$ with endpoints $x^+ = \lim_{k \to \infty} (x^k) \cdot \bm{\wt \ast}$ 
-and $x^- = \lim_{k \to -\infty} (x^k) \cdot \bm{\wt \ast}$. Note that $x$ acts on $\wt S$ on the left isometrically as a hyperbolic isometry fixing $\ora{x}$ set-wise. This action
-extends continuously to $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ and has north-south (NS) dynamics, with unique
-attracting point $x^+$ and repelling point $x^-$: for any point
-$\bm{p} \in \overline{\wt S}$ other
-than $x^-$, we have $\lim _{k \to \infty} x^k \cdot \bm{p} = x^+$.
-
-The other lifts of $[x]$ to $\wt S$ are translates $q \cdot \ora{x}$
-of $\ora{x}$ by a
-group element~$q$; we can either think of this as the geodesic
-$\ora{qxQ}$ passing within a bounded distance of the points $(qx^kQ) \cdot \bm{\wt \ast}$; 
-or we can think of it as the geodesic corresponding to the coset
-$q\langle x\rangle$, i.e., passing within a bounded distance of the
-points $(qx^k) \cdot \bm{\wt \ast}$ in the coset. Note these two sequences of
-points are within a
-bounded distance of each other, since the right action of $\pi_1$
-moves points a bounded distance.
-
+\DPTtodo{Does this discussion of two lifts deserve a picture? What
+  would that look like?}
 With these preliminaries, we can see that two different lifts of
-$[x]$,
+$[g]$,
 \begin{align*}
-  \ora{\ell_1} &= q_1 \cdot \ora{x} & \ora{\ell_2} &= q_2 \cdot \ora{x},
+  \ora{\ell_1} &= q_1 \cdot \ora{g} & \ora{\ell_2} &= q_2 \cdot \ora{g},
 \end{align*}
 are related by the isometry $q_2 q_1^{-1}$,
 \begin{equation}\label{eq:line-translate}
@@ -125,7 +126,7 @@ are related by the isometry $q_2 q_1^{-1}$,
 while the geometric relation between the two lifts, meaning up to the left
 $\pi_1(S,*)$ action, is captured instead by the double coset
 \begin{equation}\label{eq:double_coset}
-  \langle x \rangle q_1^{-1} q_2 \langle x \rangle.
+  \langle g \rangle q_1^{-1} q_2 \langle g \rangle.
 \end{equation}
 Note that the order of the product is reversed relative to
 \eqref{eq:line-translate}. This double coset is what is relevant for,
@@ -136,8 +137,8 @@ elements of $\pi_1(S)$ (acting by isometries on the universal cover)
 or with general hyperbolic elements of the group $\Isom^+(\bbH^2)$.
 (Every element of $\pi_1(S)$ necessarily acts hyperbolically on
 $\wt S$.) When there is a choice, we prefer to state lemmas in terms
-of $\Isom^+(\bbH^2)$, since in principle it is more general (as we do
-not need to assume the group elements generate a discrete subgroup).
+of $\Isom^+(\bbH^2)$, since in principle it is more general, as we do
+not need to assume the group elements generate a discrete subgroup.
 
 
 \subsection{Crossings and smoothings}
