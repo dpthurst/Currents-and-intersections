@@ -75,7 +75,25 @@ Section~\ref{subsec:examples_and_non}).
 % terms of $\pi_1(S)$ is given in
 % Theorem~\ref{thm:intersections_group}.
 
-Theorem~\ref{thm:intersect} produces numerous new dual currents and unifies several constructions. In particular, it applies to curve lengths arising from arbitrary Riemannian metrics on $S$, and more generally from any length metric structure, including Finsler metrics. This extends earlier constructions for negatively curved, non-positively curved, and locally $\CAT(0)$ or $\CAT(-1)$ metrics~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}. It also yields dual currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs, generalizing the work of Erlandsson~\cite{Erlandsson:WordLength} (Corollary~\ref{cor:generalization_wordlength}).
+Theorem~\ref{thm:intersect} produces numerous new dual currents and unifies several constructions. In particular, it applies to curve lengths arising from arbitrary Riemannian metrics on $S$, and more generally from any length metric structure, including Finsler metrics (see Corollary~\ref{cor:length_dual}).
+
+\begin{maincor}
+    Let $g$ be a length metric on $S$, with induced length on curves $\ell_g$. Then there exist a geodesic current $\mu_g$ dual to $\ell_g$.
+    \label{maincor:length_dual}
+\end{maincor}
+
+This extends earlier constructions for negatively curved, non-positively curved, and locally $\CAT(0)$ or $\CAT(-1)$ metrics~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}. 
+
+It also yields dual currents (in fact, dual multi-curves) for stable lengths associated to embedded graphs. Let $\iota \colon \mathcal{G} \to S$ be an \emph{embedded graph}, i.e., an embedding of a finite graph in $S$ that is filling, in the sense that the complementary regions are disks. 
+Endow $\mathcal{G}$ with the edge-metric $g$ (i.e., each edge has weight 1). Then any closed multi-curve $C$ on $S$ can be homotoped so that it factors through $\mathcal{G}$.
+ Let $\ell_{\mathcal{G}}(C)$ be the length of the smallest multi-curve $D$ on $\mathcal{G}$ so that $\iota(D)$ is homotopic to $C$.
+
+\begin{maincor}
+Let $\mathcal{G}$ be an embedded graph with the edge-metric on $\pi_1(S)$. Then $\ell_{\mathcal{G}}$ is dual to a geodesic current $\mu_{\mathcal{G}}$ which is $1/2$ of an integral multi-curve.
+\label{maincor:embedded}
+\end{maincor}
+
+This generalizes the work of Erlandsson~\cite{Erlandsson:WordLength} (Corollary~\ref{cor:generalization_wordlength}). \DMGtodo{added the two corollaries}
 
 All of these examples give lengths extending continuously to $\Curr(S)$
 by Bonahon’s bilinear extension of intersection. A result
@@ -363,11 +381,7 @@ actions dual to measured laminations.
 
 \subsection{Generalized cross-ratios}
 
-We next apply Theorem~\ref{thm:intersect} to generalized cross-ratios,
-thereby placing the constructions of
-Martone-Zhang~\cite{MZ19:PositivelyRatioed} and
-Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}
-into a unified framework.
+We next apply Theorem~\ref{thm:intersect} to generalized cross-ratios, thereby placing the constructions of Martone--Zhang~\cite{MZ19:PositivelyRatioed} and Burger--Iozzi--Parreau--Pozzetti~\cite{BIPP24:PositiveCrossratios}, which associate geodesic currents to generalized cross-ratios arising from certain Anosov representations, into a unified framework.
 
 A \emph{generalized cross-ratio} is a function
 \[
@@ -483,17 +497,14 @@ currents; this proves Theorem~\ref{mainthm:crossratio}.
 
 In Section~\ref{sec:skora}, we prove Theorem~\ref{mainthm:skora}. We recall the necessary background on real trees and group actions.
 
-The Appendices address topics not central to the main proofs.\begin{comment}Appendix~\ref{sec:luo} relates Theorems~\ref{thm:lam-char}
-and~\ref{thm:hyp-char} to work of
-Feng Luo.\end{comment} Appendix~\ref{sec:hyp-par} gives a hyperbolic
+The Appendices address topics not central to the main proofs. Appendix~\ref{sec:hyp-par} gives a hyperbolic
 parallelogram identity used to characterize hyperbolic lengths.
 Appendix~\ref{sec:asymmetric} explains why asymmetric word metrics are
 not dual to right-handed intersection numbers, highlighting the role
 of symmetry in Theorem~\ref{thm:intersect}.
 Appendix~\ref{app:necessary} gives an alternative proof of the
 necessity of the hypotheses in Theorem~\ref{thm:intersect} and
-Theorem~\ref{thm:intersections_group}, using hyperbolic geometry and
-analysis on $\wt{S}$.
+Theorem~\ref{thm:intersections_group}, using hyperbolic geometry on $\wt{S}$.
 
 \begin{comment}
 Figure~\ref{fig:dependencies} summarizes the logical dependencies among the main sections and the main theorems.

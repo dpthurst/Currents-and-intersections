@@ -167,15 +167,16 @@ Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows tha
 
 We answer this question affirmatively and, in fact, give a much stronger result.
 
-\begin{corollary}
-Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
-    \label{cor:domination}
-\end{corollary}
+First, we show that any length metric on $S$ is has a dual geodesic current.
+The following argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here for completeness.
 
+\begin{corollary}
+    Let $g$ be a length metric on $S$, with induced length on curves $\ell_g$. Then there exist a geodesic current $\mu_g$ dual to $\ell_g$.
+    \label{cor:length_dual}
+\end{corollary}
 \begin{proof}
 First note that any length metric satisfies smoothing.
-This argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here.
+
  Take a multi-curve~$C$ with an
 essential crossing~$x$, and a representative~$\gamma$. Then $\gamma$ has
 an essential crossing~$x'$ of the homotopy type of~$x$. If we
@@ -185,9 +186,20 @@ since $\ell_g$ is an infimum, we have
 \[
   \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
 \]
-as desired. $\ell_g$ satisfies stability by \cite[Lemma~4.2]{MGT21:Smoothings}. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
+as desired. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
 It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
-Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. 
+\end{proof}
+
+\begin{corollary}
+Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
+    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
+    \label{cor:domination}
+\end{corollary}
+
+\begin{proof}
+By Corollary~\ref{cor:length_dual}, for every length metric $g$ on $S$, there exist a dual geodesic current $\mu_g$ for the induced curve functional $\ell_g$.
+Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
 
 \subsection{Measured laminations}

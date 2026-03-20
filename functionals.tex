@@ -40,16 +40,34 @@ they are related by a sequence of the following moves:
 The equivalence class of $\gamma$ is denoted by~$[\gamma]$, and we will
 call it an \emph{(unoriented) multi-curve}.
 If $X(\gamma)$ is connected, we will call $[\gamma]$ an \emph{(unoriented) curve}; 
-A concrete unoriented multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
+a concrete unoriented multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
 injective, and a multi-curve is simple if it has a concrete representative
 that is simple.
 We write $\Curves(S)$ for the space of all (unoriented) multi-curves.
 
 We will in fact be working mostly with \emph{oriented concrete multi-curves}, which we will still
 denote by~$\gamma$, in which $X(\gamma)$ is
-oriented. We add the further condition in the equivalence
+oriented. For these, we add the further condition in the equivalence
 relation that the reparametrizations must be orientation-preserving, and refer to the equivalence class, $[\gamma]$, as an \emph{oriented multi-curve}. 
 In fact, unless stated otherwise, \emph{multi-curve} will mean oriented multi-curve. When we do not want to specify the concrete curve representative, we will use capital letters such as $C$ to denote a multi-curve. The space of multi-curves is denoted by $\Curves^+(S)$. A curve is equivalent to a conjugacy class of an element in $\pi_1(S)$.
+\end{definition}
+
+A few times throught the paper we will allow multi-curves to have weights.
+
+\begin{definition}[weighted multi-curve]\label{def:weighted-multi-curve}
+  A \emph{weighted multi-curve} $C=\bigcup_i a_i C_i$ is a multi-curve in
+  which each connected component is given a non-negative real
+  coefficient~$a_i$. If coefficients are not specified, they are~$1$.
+  We add further moves to the equivalence
+  relation:
+  \begin{itemize}
+  \item \emph{merging} two parallel components and
+    adding their weights; and
+  \item \emph{nullifying}, deleting a
+    component with weight~$0$.
+  \end{itemize}
+  For
+  instance, $C \cup C$ is equivalent to $2C$.
 \end{definition}
 
 Accordingly, we will
