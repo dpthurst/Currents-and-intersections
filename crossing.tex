@@ -44,7 +44,8 @@ the following.
 \DPTtodo{Implemented the notation convention as discussed. I also
   dropped the bold-face convention, which no longer seemed necessary.
   There may be some further simplifications to do}
-  \DMGtodo{do we need to implement the new convention in the next paragraph?}
+  \DMGtodo{do we need to implement the new convention in the next
+    paragraph?}
 \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
@@ -72,17 +73,22 @@ Here we make the following observations.
 \item This left action extends to an action on the circle at infinity $\partial_{\infty} S$.
 \end{itemize}
 
-\DPTtodo{Switched $x$ to $g$, reserving $x$ for points in $\wt S$ locally}
 For any non-trivial $g \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[g]$ on $S$, corresponding to the conjugacy
 class of~$g$. We also need to specify different lifts of $[g]$ to
 $\wt S$. This is conveniently specified by $g$ itself: $g$ determines
-a sequence of points $\{(g^k) \cdot \wt \ast \mid k \in \bbZ\}$\DMGtodo{for example, should this be $\ast\cdot\wt(g^k)$?}, which is a
+a sequence of points
+\DMGtodo{for example, should this be $\ast\cdot\wt(g^k)$?}
+\DPTtodo{The two expressions are the same, since $\wt \ast$ is a
+  constant path, but your version is cleaner, switched. Also dropped
+  the spurious parentheses}
+$\{\wt \ast \cdot g^k \mid k \in \bbZ\}$,
+which is a
 quasi-geodesic in $\wt S$. After choosing a hyperbolic structure
 $\Sigma$ on $S$, this quasi-geodesic determines an oriented hyperbolic
 geodesic
-denoted $\ora{g}$ with endpoints $g^+ = \lim_{k^+} (g^k) \cdot \wt \ast$ 
-and $g^- = \lim_{k^-} (g^k) \cdot \wt \ast$. Note that $g$
+denoted $\ora{g}$ with endpoints $g^+ = \lim_{k^+} \wt \ast \cdot g^k$ 
+and $g^- = \lim_{k^-} \wt \ast \cdot g^k$. Note that $g$
 acts on the left on $\wt S$ as a hyperbolic isometry
 fixing $\ora{g}$ set-wise. This action
 extends continuously to $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ and has north-south (NS) dynamics, with unique
@@ -103,7 +109,7 @@ moves points a bounded distance.
 
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, there will be two types of
-arrows (see, e.g., Figure~\ref{fig:newmodel3_orbit}): arrows
+arrows (see, e.g., Figure~\ref{fig:newmodel3}): arrows
 connecting two endpoints of $\partial_{\infty}\Sigma$, which
 correspond to axes hyperbolic axes $\ora{g}$ of an element
 $g \in \pi_1(S)$, the axis of the \emph{left} action; and arrows
@@ -115,7 +121,10 @@ the basepoints are actually on the axis.
 
 \DPTtodo{Does this discussion of two lifts deserve a picture? What
   would that look like?}
-  \DMGtodo{we could also refer to the figure of a box that appears much later: Figure~\ref{fig:newmodel3}}
+\DMGtodo{we could also refer to the figure of a box that appears much later: Figure~\ref{fig:newmodel3}}
+\DPTtodo{Switched to point to that simpler figure (from
+  Figure \ref{fig:newmodel3_orbit}). But I was thinking of a picture really
+  showing just two lifts to capture the double-coset thing}
 With these preliminaries, we can see that two different lifts of
 $[g]$,
 \begin{align*}
