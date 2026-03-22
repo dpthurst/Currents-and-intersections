@@ -156,16 +156,15 @@ not need to assume the group elements generate a discrete subgroup.
 \label{subsec:crossings}
 
 Loosely speaking, an essential crossing is a crossing of a
-multi-curve that can't be homotoped away.
-
+multi-curve that can't be homotoped away. Recall that a multi-curve is
+considered up to homotopy (Definition~\ref{def:multi-curve}).
 
 \begin{definition}\label{def:essential-crossing}
-  A representative~$\gamma$ of a multi-curve~$C$ is \emph{minimal} if
-  it has only transverse self-intersections and a minimum number of
-  them.
-    Let $\gamma$ be a concrete multi-curve on~$S$ representing a multi-curve $C$. A \emph{crossing} of $\gamma$ is a pair $(p,q)$ of
-  points $p,q \in X(\gamma)$ so that
-  $x \coloneqq \gamma(p) = \gamma(q) \in S$.
+  A \emph{crossing} of a concrete multi-curve~$\gamma$ is a pair
+  $(p,q) \in X(\gamma)^2$ so that
+  $\gamma(p) = \gamma(q) \in S$. We say~$\gamma$ is \emph{minimal} if
+  it has only transverse crossings and a minimum number of
+  them among all representatives of $C = [\gamma]$.
   A crossing that appears in some minimal representative is said
   to be an \emph{essential crossing}.
 \end{definition}
@@ -178,25 +177,24 @@ We follow~\cite{MGT25:SmoothingsErratum} closely.
 
 \begin{definition}[smoothings]
   \label{def:smoothing}
-  Let $(p,q) \in X(\gamma)$ be an essential crossing of~$\gamma$
+  Let $(p,q) \in X(\gamma)^2$ be an essential crossing of~$\gamma$
   on~$S$. To make a \emph{smoothing}~$\gamma'$ of $(p,q)$, cut
   $X(\gamma)$ at $p$ and~$q$ and reglue the resulting four endpoints
   in one of the two other possible ways, getting a new $1$-manifold
   $X(\gamma')$. The map $\gamma'$ agrees with~$\gamma$; this is
   well-defined since $\gamma(p) = \gamma(q)$. In pictures we will
   homotop $\gamma'$ slightly to round out the resulting
-  corners, and we will write $\gamma \reducesto \gamma'$.
-
+  corners, and write $\gamma \reducesto \gamma'$.
 \end{definition}
 
-``Some'' in the definition of essential crossing can be replaced by ``every'': if there is a crossing $x$ in some minimal representative $\gamma$ of~$C$, then for any other minimal representative $\gamma'$ there is a corresponding crossing $x'$ yielding the same smoothings.
+It turns out that ``some'' in the definition of essential crossing can be replaced by ``every'': if there is a crossing $x$ in some minimal representative $\gamma$ of~$C$, then for any other minimal representative $\gamma'$ there is a corresponding crossing $x'$ yielding the same smoothings.
 
 
 \begin{lemma}[{\cite[Lemma~2]{MGT25:SmoothingsErratum}}]\label{lem:essential-cross}
   If $\gamma$ and $\gamma'$ are homotopic concrete
-  multi-curves, with $\gamma$ minimal and $(p,q) \in X(\gamma)$ is an (essential)
+  multi-curves, with $\gamma$ minimal and $(p,q) \in X(\gamma)^2$ an (essential)
   crossing of~$\gamma$,
-  then there is a crossing $(p',q') \in X(\gamma')$ so
+  then there is a crossing $(p',q') \in X(\gamma')^2$ so
   that the smoothings of $(p,q)$ and of $(p',q')$ are homotopic.
 \end{lemma}
 
@@ -218,22 +216,44 @@ We will also distinguish between different types of smoothings.
   original curve is connected or disconnected.
 
   We thus have four types 
-  of smoothings between non-trivial pairs of elements which are not common powers (using group notation that we will expand on
-  later):
+  of smoothings between non-trivial pairs of elements which are not
+  common powers. We use group notation that we will expand on and justify
+  in the next section.
+  \DPTtodo{We refer to parallel/crossing \emph{curves}, while the
+    more complete statement refers to \emph{geodesics}. Not sure what
+    makes sense to say here; I switched to geodesics for now. I also used more
+  complete sentences}
   \begin{itemize}
-  \item Oriented connected smoothing: R-parallel oriented curves $[a]$ and $[b]$ give a self-crossing oriented curve $[ab]$, with $[ab] \reducesto [a][b]$ (result
-    disconnected) Figure~\ref{fig:sm_oriented_connected}
-  \item Unoriented connected smoothing: R-parallel oriented curves $[a]$ and $[b]$ give a self-crossing oriented curve $[ab]$ with $[ab] \reducesto [aB]$ (result
-    connected) Figure~\ref{fig:sm_unoriented_connected}
-  \item Oriented disconnected smoothing: 
- R-crossing oriented curves $[a]$ and $[b]$ give a crossing oriented curve multi-curve $[a][b]$, with $[a][b] \reducesto [ab]$
-    (result connected) Figure~\ref{fig:sm_oriented_disconnected}
-  \item Unoriented disconnected smoothing:   R-crossing oriented curves $[a]$ and $[b]$ give a crossing oriented curve multi-curve $[a][b]$, with $[a][b] \reducesto [aB]$
-    (result connected) Figure~\ref{fig:sm_unoriented_disconnected}
+  \item \emph{Oriented connected smoothing:} As shown in
+    Figure~\ref{fig:sm_oriented_connected}, parallel oriented geodesics
+    $\ora{a}$ and $\ora{b}$ (on the bottom) give a self-crossing oriented
+    curve $[ab]$, with $[ab] \reducesto [a][b]$. (The result is
+    disconnected.)
+  \item \emph{Unoriented connected smoothing:}
+    \DPTtodo{In 4.1(c) and (d), the arrow on $[a]$ is not very
+      visible, and homotop the smoothing farther apart}
+    As shown in
+    Figure~\ref{fig:sm_unoriented_connected}, parallel oriented geodesics
+    $\ora{a}$ and $\ora{b}$ (from the previous case) give a
+    self-crossing oriented curve $[ab]$ with
+    $[ab] \reducesto [aB]$ (The result is
+    connected.)
+  \item \emph{Oriented disconnected smoothing:} As shown in
+    Figure~\ref{fig:sm_oriented_disconnected}
+ crossing geodesics $\ora{a}$ and $\ora{b}$ give a crossing
+ multi-curve $[a][b]$, with $[a][b] \reducesto [ab]$. (The result is connected.)
+  \item \emph{Unoriented disconnected smoothing:} As shown in
+    Figure~\ref{fig:sm_unoriented_disconnected}, crossing geodesics
+    $\ora{a}$ and $\ora{b}$ give a crossing multi-curve
+    $[a][b]$, with $[a][b] \reducesto [aB]$. (The result is again connected.)
   \end{itemize}
-  Finally, we have a smoothing for self-crossings of a non-primitive element:
+  Finally, there is a special case of oriented connected smoothing,
+  self-crossings of a non-primitive element, that will need to be treated
+  specially:
   \begin{itemize}
-  \item Power smoothing: $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$, and every $m,n \geq 1$. Figure~\ref{fig:sm_power}
+  \item \emph{Power smoothing:}
+    $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$ and every
+    $m,n \geq 1$, as shown in Figure~\ref{fig:sm_power} for $m=1,n=2$.
   \end{itemize}
 \end{definition}
 
@@ -277,13 +297,9 @@ We will also distinguish between different types of smoothings.
 \label{fig:cases--sm}
 \end{figure}
 
-In the next section we justify the equivalence between the smoothing condition hypothesis and these different sub-types.
-
 \subsection{Triality of crossings: topological, geometric and algebraic}
 \label{subsec:triality}
-Following~\cite{MGT25:SmoothingsErratum}, we present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, let 
-$[a]$ denote the free homotopy class of oriented curves represented by $a$;
-algebraically this is equivalent to the conjugacy class of~$a$. Say that a
+Following~\cite{MGT25:SmoothingsErratum}, we present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, say that a
 factorization $[ab]$ \emph{reduces} if some (equiv.\ every) minimal
 representative of $[ab]$ has a crossing so that one smoothing gives
 $[a][b]$ and the other smoothing gives $[aB]$. Similarly say that
@@ -302,7 +318,7 @@ is one with a minimum number of transverse crossings.
 
 \begin{definition}\label{def:crossing}
   Depending on the (counterclockwise) cyclic order of the endpoints,
-  we say that the pair $(\ora{a},\ora{b})$ are
+  we say that a pair $(\ora{a},\ora{b})$ of geodesics are
   \begin{itemize}
   \item \emph{R-parallel} if they appear in order $a^+,a^-,b^-,b^+$
     (below left);
@@ -337,7 +353,8 @@ is one with a minimum number of transverse crossings.
   $a = c^\ell$ and $b = c^k$.
 \end{definition}
 
-We following justifies the power smoothing hypothesis.
+The following justifies the power smoothing hypothesis.\DPTtodo{Give
+  some refs?}
 
 \begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]\label{prop:crossings-powers}
   If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
@@ -388,7 +405,8 @@ and if $\ora{a}$ is parallel to $\ora{b}$, then
   [ab] \reducesto [a][b]\qquad\text{and}\qquad[ab] \reducesto [aB].
 \] 
 Note that the reduction for the case $\ora{a}$ being antiparallel to $\ora{b}$ follows by considering the above reduction for the parallel pair $(\ora{a},\ora{B})$.
-Hence, in order to check oriented smoothing, it suffices to check only these two reductions.
+\DPTtodo{Is this the proof of some lemma?}
+Hence, in order to check smoothing, it suffices to check only these two reductions.
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
 can change, as recorded below for future reference.
@@ -420,29 +438,44 @@ We now turn to some elementary lemmas about crossing.
 \begin{convention}\label{conv:circle-intervals}
   Intervals on the circle are always written with endpoints in counterclockwise
   order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
-  $(x,y) \cup (y,x)$ is almost the entire circle).
+  $(x,y) \cup (y,x)$ is almost the entire circle.)
 \end{convention}
+
+\DPTtodo{Made this its own lemma. Formatted to make clearer the iff,
+  which I think was off behove}
+\begin{lemma}\label{lem:NS-dynamics}
+  Let $a \in \Isom(\bbH^2)$ and $(x,y) \subset \partial\bbH^2$. Then
+  the following are equivalent:
+  \begin{itemize}
+  \item $a$ is hyperbolic with attracting and repelling
+    endpoint $a^+ \in(x,y)$ and $a^- \notin (x,y)$; and
+  \item  $a \cdot (x,y) \subsetneq (x,y)$.
+  \end{itemize}
+\end{lemma}
+
+\begin{proof}
+  This is a statement of NS dynamics of hyperbolic elements.
+\end{proof}
 
 \begin{lemma}
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
   Then $(\ora{a},\ora{x})$ R-cross (resp.\ L-cross) iff
   $(\ora{x}, a \cdot \ora{x})$ are R-parallel (resp.\ L-parallel).
-  More generally, if
-  $a \in \Isom(\bbH^2)$ is a hyperbolic element with attracting
-  endpoint $a^+$ in an interval $(x,y)$ iff
-  $a \cdot (x,y) \subsetneq (x,y)$.
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
   The statement that $(\ora{x}, a\cdot\ora{x})$ are R-parallel is (by
   definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
-  which is equivalent (by NS dynamics of~$a$) to $a^+ \in (x^-,x^+)$ and
+  which is equivalent, by Lemma~\ref{lem:NS-dynamics}, to $a^+ \in (x^-,x^+)$ and
   $a^- \in (x^+,x^-)$, which is equivalent to
-  $(\ora{a},\ora{x})$ R-crossing. The last claim follows similarly.
+  $(\ora{a},\ora{x})$ R-crossing.
 \end{proof}
 
 \begin{lemma}
-  Let $a,b,x \in \pi_1(S)$ be group elements so that $(\ora{a},\ora{x})$ and $(\ora{b},\ora{x})$ R-cross. Then:
+  \DPTtodo{Switched from $\pi_1$ to $\Isom^+$}
+  Fix $a,b,x \in \Isom^+(\bbH^2)$ hyperbolic elements with distinct
+  endpoints so that $(\ora{a},\ora{x})$ and $(\ora{b},\ora{x})$
+  R-cross. Then:
   \begin{enumerate}[label=(\Roman*)]
   \item All four pairs $(\ora{xa},\ora{x})$, $(\ora{Xa},\ora{x})$, $(\ora{ax},\ora{x})$, and
     $(\ora{aX},\ora{x})$ R-cross.
@@ -453,12 +486,12 @@ We now turn to some elementary lemmas about crossing.
     \label{lem:rhs_prod}
 \end{lemma}
 \begin{proof}
-  For the first claim, consider the action of the respective group
-  element on the interval $(x^-,x^+)$: we have
+  For the first claim, consider the action of the group
+  elements on $(x^-,x^+)$: we have
   $x^{\pm1} \cdot (x^-,x^+) = (x^-,x^+)$ and
   $a \cdot (x^-,x^+) \subsetneq (x^-,x^+)$, so all four of $ax^{\pm1}$ and
-  $x^{\pm1}a$ map this interval strictly inside itself. It follows
-  that all these elements are hyperbolic and R-cross~$\ora{x}$.
+  $x^{\pm1}a$ map this interval strictly inside itself. By Lemma~\ref{lem:NS-dynamics},
+  all these elements are hyperbolic and R-cross~$\ora{x}$.
 
   For the second claim, $a$ and $b$ both map
   $(x^-,x^+)$ strictly inside itself, so their product does too.
@@ -504,7 +537,7 @@ We now turn to some elementary lemmas about crossing.
   \]
   The hyperbolic elements $a$ and~$b$ have north-south dynamics. Using
   this in the three cases depending on the relation of $\ora{a}$ and
-  $\ora{b}$ (crossing, parallel, or anti-parallel), we have the
+  $\ora{b}$, we have the
   following.
   \begin{enumerate}[label=(\Roman*)]
   \item If $(\ora{a},\ora{b})$ R-cross, then we claim that the
@@ -569,39 +602,17 @@ relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
 determined by the hypotheses, as we now analyze.
 This will be used in the proof of
 Theorem~\ref{thm:intersections_group}, which relies on
+\DPTtodo{We should justify this section by referring to something here}
 Corollaries~\ref{cor:oriented_smoothing_unoriented}
-and~\ref{cor:cont_conn_disc}.
+and~\ref{cor:cont_conn_disc} below.
 
 Fix $a,b \in \Isom^+(\bbH)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
-hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic (this will be the case, for example, if $a,b \in \pi_1(S)$). 
+hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
-Consider the common hyperbolic perpendicular of $\ora{a}$
-and $\ora{b}$, which we will denote~$R_1$. We will also use the
-same notation for the reflection through~$R_1$.
-Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
-that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
-$R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
-are perpendicular to $\ora{b}$; see
-Figure~\ref{fig:cases-conn-smoothing}.
-
-Since
-$ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
-these elements are hyperbolic, we see
-that the $R_i$ are reflections along pairwise non-intersecting reflection
-lines.
-We have several potential configurations of the~$R_i$. As shown
-in Figure~\ref{fig:cases-conn-smoothing}, $R_2$ and~$R_3$ are on one
-side of~$R_1$ (since $\ora{a}$ and $\ora{b}$ are parallel), and $R_4$
-and~$R_5$ are on the other. On each side
-of~$R_1$, the two $R_i$ can be either disjoint or nested with respect
-to~$R_1$:
-\begin{description}
-\item[Case 1] Disjoint on both sides;
-\item[Case 2] Disjoint on one side, nested on the other; or
-\item[Case 3] Nested on both sides.
-\end{description}
-
+\DPTtodo{Moved the figure earlier in text to avoid potential bad
+  placement. It's large enough we need to pay special attention. I
+  don't think it can be shrunk, unfortunately.}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
@@ -627,12 +638,38 @@ to~$R_1$:
    \label{fig:cases-conn-smoothing}
 \end{figure}
 
+Consider the common hyperbolic perpendicular of $\ora{a}$
+and $\ora{b}$, which we will denote~$R_1$. We will also use the
+same notation for the reflection through~$R_1$.
+Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
+that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
+$R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
+are perpendicular to $\ora{b}$; see
+Figure~\ref{fig:cases-conn-smoothing}.
+
+Since
+$ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
+these elements are hyperbolic, we see
+that the $R_i$ are reflections along pairwise non-intersecting reflection
+lines.
+We have several potential configurations of the~$R_i$. As shown
+in Figure~\ref{fig:cases-conn-smoothing}, $R_2$ and~$R_3$ are on one
+side of~$R_1$ (since $\ora{a}$ and $\ora{b}$ are parallel), and $R_4$
+and~$R_5$ are on the other. On each side
+of~$R_1$, the two $R_i$ can be either disjoint or nested with respect
+to~$R_1$:
+\begin{description}
+\item[Case 1] Disjoint on both sides (Figure~\ref{fig:r3});
+\item[Case 2] Disjoint on one side, nested on the other (Figure~\ref{fig:r2}); or
+\item[Case 3] Nested on both sides (Figure~\ref{fig:r1} or~\ref{fig:c2}).
+\end{description}
+
 
 The figure also has the corresponding translation axes for all six
 isometries, further dividing Case 3 according to whether $\ora{aB}$
 and $\ora{Ba}$ are disjoint (Figure~\ref{fig:r1}) or cross (Figure~\ref{fig:c2}).
-We observe that case 2 can be ruled out, since the NS dynamics of $b$
-translates $\ora{Ba}$ to $\ora{aB}$, and thus these two axes must be
+Case 2 can be ruled out, since $b\cdot \ora{Ba} = \ora{aB}$, and thus
+$\ora{Ba}$ and $\ora{aB}$ must be
 on the same side of $\ora{b}$, which does not happen in that
 configuration.
 
@@ -689,9 +726,9 @@ example where this situation arises.
 \begin{figure}
 \centering{
 \svgfignormal{crossing_aB}
-\caption{This figure shows that $\protect\ora{a} \coloneqq \protect\ora{hghgh}$ and
-  $\protect\ora{b} \coloneqq \protect\ora{hgh}$ are parallel assuming that
-  $\protect\ora{g},\protect\ora{h}$ are parallel, giving an example where $\protect\ora{a},\protect\ora{b}$ are parallel and $\protect\ora{aB},\protect\ora{Ba}$ cross. }
+\caption{The proof that $\protect\ora{a} \coloneqq \protect\ora{hghgh}$ and
+  $\protect\ora{b} \coloneqq \protect\ora{hgh}$ are parallel if
+  $\protect\ora{g},\protect\ora{h}$ are parallel.}
 \label{fig:crossing_aB}
 }
 \end{figure}
@@ -706,7 +743,7 @@ crossings in this context.
 
 \begin{proposition}\label{prop:join-split-geom}
 Let $a,b,x \in \pi_1(S)$ be curves with $\ora{a}$, $\ora{b}$
-crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b$)
+crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b,x$)
   so that, for all
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
  -s$, we have
@@ -743,7 +780,7 @@ For any geodesic $\ora{y}$ that is parallel to
 $\ora{x}$, there is a \emph{window} $w(\ora{y})$ cut out by the
 endpoints on the band model, the interval between $y^\pm$ that
 misses~$x^\pm$. Observe that $w(x^k\cdot\ora{y})$ is the horizontal
-translate by $k$ of $w(\ora{y})$. See Figure~\ref{fig:abcrossings} for
+translate of $w(\ora{y})$ by $k$. See Figure~\ref{fig:abcrossings} for
 examples.
 
 \begin{lemma}
@@ -769,15 +806,17 @@ examples.
   \ora{x}$ to the right.
 \end{proof}
 
+\DPTtodo[inline]{In Figure \ref{fig:abcrossings}: Centering of label
+  placements is not great. Some of the window names are unfortunately
+  large. I shortened the caption to duplicate the text less}
 \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfigbig{abliftsbands}}
 \caption{The band model centered on $\protect\ora{x}$ used in
   Proposition~\ref{prop:join-split-geom}, in a case where $\protect [x]$ is simple.
-  Lifts of $\protect x$ are depicted in blue. The central blue lift relates to
-  the lower and upper lifts by translates of the type $ \protect x^k a$, $\protect x^l
-  A$, $\protect x^m b$ and $\protect x^n B$, as labelled. Each translate
-  determines a window $\protect w( \cdot )$, which is an interval on $\protect\partial_{\infty} \Sigma$ determined by its endpoints at infinity.
+  Some lifts of $\protect [x]$ are depicted in blue. The central blue lift
+  is $\ora{x}$, and we also show translates by $ \protect x^k a$, $\protect x^l
+  A$, $\protect x^m b$ and $\protect x^n B$, together with their windows.
   If $\protect [x]$ is not simple, the blue lifts can intersect each other.}
 \label{fig:abcrossings}
 }
@@ -790,7 +829,11 @@ examples.
   Since each window is a
   finite size, there is a finite range $[s_1,s_2]$ so that $w(x^rb\cdot\ora{x})$
   is to the left of (resp.\ to the right of) $w(a\cdot\ora{x})$ if $r < s_1$
-  (resp.\ $r > s_2$). Similarly there
+  (resp.\ $r > s_2$).
+  \DPTtodo{Added this recollection}
+  (Recall that $a \cdot \ora{x}$ is parallel to~$\ora{x}$.)
+  \DPTtodo{I will think about: Are these the same numbers?}
+  Similarly there
   is a range $[s_1',s_2']$ so that $w(A\cdot\ora{x})$ is disjoint from
   $w(x^rB\cdot\ora{x})$ if $r \notin [s_1',s_2']$, and the exponents determine the
   ordering of the windows. Set
@@ -801,13 +844,13 @@ examples.
   \[
     r-m < -n-s \le -n+s_1',
   \]
-  so $g_1^- \in w(x^{r-m}B\cdot\ora{x})$ is to the left of $g_2^- \in
-  w(x^{-n}A\cdot\ora{x})$, and
+  so, by Lemma~\ref{lem:windows}, $g_1^- \in w(x^{r-m}B\cdot\ora{x})$
+  is to the left of $g_2^- \in w(x^{-n}A\cdot\ora{x})$, and
   \[
     s_2 \le s < r,
   \]
   so $g_1^+ \in w(x^rb\cdot\ora{x})$ is to the right of $g_2^+ \in
-  w(a\cdot\ora{x})$ (using Lemma~\ref{lem:windows}). Thus
+  w(a\cdot\ora{x})$. Thus
   $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the left. Similarly if
   $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the
   right. In either case,
@@ -833,7 +876,8 @@ examples.
   $s_0 \le r \le m-n-s_0$. By the above argument, $\ora{ax^n}$ and
   $\ora{x^rax^{m-r}}$ R-cross (since, e.g., $(ax^n)^+ \in w(a\cdot\ora{x})$ and
   $(x^rax^{m-r})^+ \in w(x^r a\cdot\ora{x})$, which are disjoint), so we get the
-  desired smoothing in Eq.~\eqref{eq:cross-cancel} by using unoriented smoothing.
+  desired smoothing in Eq.~\eqref{eq:cross-cancel} by using unoriented
+  disconnected smoothing.
 
   In the cases when $x$ is simple, two windows are disjoint, nested,
   or identical; this implies that $s_1 = s_2$ and $s_1' = s_2'$.
@@ -856,13 +900,7 @@ examples.
   desired.
 \end{proof}
 
-\begin{remark}\label{rem:unoriented}
-  The main place we use unoriented smoothings in this paper is in the
-  proof of Eq.~\eqref{eq:cross-cancel}, but it is necessary there. See
-  Appendix~\ref{sec:asymmetric}.
-\end{remark}
-
-We also need some lemmas about smoothings where we have high powers of
+We also need some results about smoothings where we have high powers of
 two different elements. We work with three elements $a,x,y\in\pi_1(S)$
 so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel; this
 implies, for instance, that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
@@ -879,15 +917,16 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \end{lemma}
 
 \begin{proof}
-  Consider $g$ acting on $x^{-\ell} \cdot (y^-,y^+)$, the \emph{complement}
-  of $w(x^{-\ell} \cdot \ora{y})$. We have
-  $x^k ay^n \cdot(y^-,y^+) = x^k a\cdot (y^-,y^+) = w(x^k a \cdot
-  \ora{y}) \subset (x^-,x^+) \subset x^{-\ell} \cdot (y^-,y^+)$,
-  showing the claims about~$g^\pm$.
+  Let $v = x^{-\ell} \cdot (y^-,y^+)$, the \emph{complement}
+  of $w(x^{-\ell} \cdot \ora{y})$.
+  We have
+  $g \cdot v = x^k ay^n \cdot(y^-,y^+) = x^k a\cdot (y^-,y^+) = w(x^k a \cdot
+  \ora{y}) \subset (x^-,x^+) \subsetneq v$,
+  proving the result by Lemma~\ref{lem:NS-dynamics}.
 \end{proof}
 
 \begin{proposition}\label{prop:fundamental-ayx}
-  Let $a,x,y\in\pi_1(S)$ be chosen so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel. Then there exists
+  For any triple $a,x,y\in\pi_1(S)$ so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel, there exists
   $s \ge 0$ so that for all $r > s$ and $m,n \in \bbZ$,
   \begin{align}
     \label{eq:crossuniform_n}
@@ -921,8 +960,10 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\partial_\infty S$. In
   particular $[g_1][g_2] \reducesto [g_1 g_2]$ by oriented disconnected smoothing, as desired.
   
-  To see Eq.~\eqref{eq:crossuniform_n}, apply
-  Eq.~\eqref{eq:crossuniform_m} with the change of variables
+  \DPTtodo{Equation numbers were switched. Haven't double-checked
+    current statement}
+  To see Eq.~\eqref{eq:crossuniform_m}, apply
+  Eq.~\eqref{eq:crossuniform_n} with the change of variables
   $a' = a$, $y' = x$, and $x' = ayA$.
   This gives the desired result for some $s_1 \ge 0$. For the full
   statement, take $s \coloneqq\max(s_0,s_1)$.
@@ -941,12 +982,12 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   for $m$ large enough, $g^+$ is to the right of $a^+$, and thus
   $\ora{g}$ crosses $\ora{a}$ to the right. We therefore have
   \[
-    [a x^n y^m][a] = [g][a] \reducesto [x^n y^m]
+    [a x^n y^m][a] = [g][a] \reducesto [x^n y^m] \reducesto [x^n][y^m]
   \]
-  by unoriented disconnected smoothing.
-  Finally, by Lemma~\ref{lem:righthandedfoundation}, since $\ora{x^n}$
-  and $\ora{y^m}$ are R-parallel, the geodesics $\ora{y^m x^n}$ and
-  $\ora{x^n y^m}$ cross so $[x^n y^m] \reducesto [x^n][y^m]$, by oriented connected smoothing. 
+  \DPTtodo{Shortened this argument}
+  by unoriented disconnected smoothing and then (by
+  Lemma~\ref{lem:righthandedfoundation}) oriented connected
+  smoothing.
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
@@ -969,9 +1010,10 @@ four group elements.
 \end{corollary}
 
 \begin{proof}
+  The conditions imply that
+  $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.
   Apply Proposition~\ref{prop:fundamental-ayx} with $y' = y$,
-  $x' = axA$, and $a' = ab$. (Observe that the conditions imply that
-  $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.)
+  $x' = axA$, and $a' = ab$. 
 \end{proof}
 
 We now check this configuration is easy to find. The following result
@@ -1007,17 +1049,21 @@ Tracing through orientations shows that one of these translates will
 be clockwise and the other will be counterclockwise.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:initial}
   Given $x, y \in \pi_1(S)$, there exist $a,b \in \pi_1(S)$ so that
   $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel.
-\label{lem:initial}
 \end{lemma}
 \begin{proof}
   Immediate from Lemma~\ref{lem:diagonaldense}.
 \end{proof}
 
-
-
+\begin{remark}\label{rem:unoriented}
+  \DPTtodo{Moved this remark and added ref to \eqref{eq:cancel-ayx}}
+  The main place we use unoriented smoothings in this paper is in the
+  proof of Eqs.~\eqref{eq:cross-cancel} and~\eqref{eq:cancel-ayx},
+  but it is necessary there. See
+  Appendix~\ref{sec:asymmetric}.
+\end{remark}
 
 %%% Local Variables:
 %%% mode: latex
