@@ -41,11 +41,6 @@ the following.
   $x$ and $x\cdot (\gamma)$ is bounded by the length of~$\gamma$.
 \end{itemize}
 
-\DPTtodo{Implemented the notation convention as discussed. I also
-  dropped the bold-face convention, which no longer seemed necessary.
-  There may be some further simplifications to do}
-  \DMGtodo{do we need to implement the new convention in the next
-    paragraph?}
 \begin{definition}[Left action]
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
@@ -77,12 +72,7 @@ For any non-trivial $g \in \pi_1(S,*)$, there is a corresponding
 oriented closed curve $[g]$ on $S$, corresponding to the conjugacy
 class of~$g$. We also need to specify different lifts of $[g]$ to
 $\wt S$. This is conveniently specified by $g$ itself: $g$ determines
-a sequence of points
-\DMGtodo{for example, should this be $\ast\cdot\wt(g^k)$?}
-\DPTtodo{The two expressions are the same, since $\wt \ast$ is a
-  constant path, but your version is cleaner, switched. Also dropped
-  the spurious parentheses}
-$\{\wt \ast \cdot g^k \mid k \in \bbZ\}$,
+a sequence of points $\{\wt \ast \cdot g^k \mid k \in \bbZ\}$,
 which is a
 quasi-geodesic in $\wt S$. After choosing a hyperbolic structure
 $\Sigma$ on $S$, this quasi-geodesic determines an oriented hyperbolic
@@ -119,14 +109,16 @@ relevant lifts of the basepoints are a quasi-geodesic that are a
 bounded distance from the axis; the pictures are clearer if we imagine
 the basepoints are actually on the axis.
 
-\DPTtodo{Does this discussion of two lifts deserve a picture? What
-  would that look like?}
-\DMGtodo{we could also refer to the figure of a box that appears much later: Figure~\ref{fig:newmodel3}}
-\DPTtodo{Switched to point to that simpler figure (from
-  Figure \ref{fig:newmodel3_orbit}). But I was thinking of a picture really
-  showing just two lifts to capture the double-coset thing}
+\begin{figure}
+\centering{
+\resizebox{60mm}{!}{\svgfig{doublecoset}}
+\caption{Two different translates of $\protect\ora{g}$ captured by the double coset $\protect\langle g \protect\rangle q_1^{-1} q_2 \protect\langle g \protect\rangle.$}.
+\label{fig:doublecoset}
+}
+\end{figure}
+
 With these preliminaries, we can see that two different lifts of
-$[g]$,
+$[g]$ (see Figure~\ref{fig:doublecoset}) \DMGtodo{added this figure for the double coset discussion}
 \begin{align*}
   \ora{\ell_1} &= q_1 \cdot \ora{g} & \ora{\ell_2} &= q_2 \cdot \ora{g},
 \end{align*}
@@ -223,6 +215,7 @@ We will also distinguish between different types of smoothings.
     more complete statement refers to \emph{geodesics}. Not sure what
     makes sense to say here; I switched to geodesics for now. I also used more
   complete sentences}
+  \DMGtodo{This looks good to me.}
   \begin{itemize}
   \item \emph{Oriented connected smoothing:} As shown in
     Figure~\ref{fig:sm_oriented_connected}, parallel oriented geodesics
@@ -230,8 +223,6 @@ We will also distinguish between different types of smoothings.
     curve $[ab]$, with $[ab] \reducesto [a][b]$. (The result is
     disconnected.)
   \item \emph{Unoriented connected smoothing:}
-    \DPTtodo{In 4.1(c) and (d), the arrow on $[a]$ is not very
-      visible, and homotop the smoothing farther apart}
     As shown in
     Figure~\ref{fig:sm_unoriented_connected}, parallel oriented geodesics
     $\ora{a}$ and $\ora{b}$ (from the previous case) give a
@@ -297,6 +288,8 @@ We will also distinguish between different types of smoothings.
 \label{fig:cases--sm}
 \end{figure}
 
+\DMGtodo{edited the figures (c) and (d) so that the smoothing and the arrow is more clear}
+
 \subsection{Triality of crossings: topological, geometric and algebraic}
 \label{subsec:triality}
 Following~\cite{MGT25:SmoothingsErratum}, we present a group-theoretic point of view for essential crossings. For $a,b \in \pi_1(S,*)$, say that a
@@ -353,14 +346,13 @@ is one with a minimum number of transverse crossings.
   $a = c^\ell$ and $b = c^k$.
 \end{definition}
 
-The following justifies the power smoothing hypothesis.\DPTtodo{Give
-  some refs?}
+The following justifies the power smoothing hypothesis (Equation~\ref{eq:power_smoothing_unoriented}).\DPTtodo{Give
+  some refs?} \DMGtodo{added a reference to the equation of power smoothing}
 
-\begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]\label{prop:crossings-powers}
+\begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]
   If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
   element~$c$ with $k,\ell \ge 1$, then the factorization $[ab]$
-  reduces to $[a][b]$.
-  \label{prop:self_crossing_primitive}
+  reduces to $[a][b]$.\label{prop:crossings-powers}
 \end{proposition}
 
 The following result justifies the oriented/unoriented connected/disconnected smoothing variations of smoothing.
@@ -404,9 +396,21 @@ and if $\ora{a}$ is parallel to $\ora{b}$, then
 \[
   [ab] \reducesto [a][b]\qquad\text{and}\qquad[ab] \reducesto [aB].
 \] 
-Note that the reduction for the case $\ora{a}$ being antiparallel to $\ora{b}$ follows by considering the above reduction for the parallel pair $(\ora{a},\ora{B})$.
-\DPTtodo{Is this the proof of some lemma?}
-Hence, in order to check smoothing, it suffices to check only these two reductions.
+
+Now we give the proofs of the algebraic rephrasings of oriented smoothing, oriented max-smoothing, and smoothing we gave in Section~\ref{sec:functionals}.
+
+\DMGtodo{added the short proofs of the lemmas in section 2}
+
+\begin{proof}[Proofs of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} and of Lemma~\ref{lem:orientedmax_smoothing_lemma_top_alg}]
+
+The first two items of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} (resp. of Lemma~\ref{lem:orientedmax_smoothing_lemma_top_alg}) follow by using Equation~\ref{eq:or-smoothing} (resp. Equation~\ref{eq:or-smoothing} with equality) at the desired essential crossing, and applying each case of Proposition~\ref{prop:crossings-triality}.
+The last item follows by Proposition~\ref{prop:crossings-powers}\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:smoothing_lemma_top_alg}]
+
+The first two items of the result follow by using Equation~\ref{eq:smoothing} at the desired essential crossing, applying each case of Proposition~\ref{prop:crossings-triality}, and using symmetry of $f$.
+The last item follows by Proposition~\ref{prop:crossings-powers}
+\end{proof}
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
 can change, as recorded below for future reference.
@@ -441,8 +445,6 @@ We now turn to some elementary lemmas about crossing.
   $(x,y) \cup (y,x)$ is almost the entire circle.)
 \end{convention}
 
-\DPTtodo{Made this its own lemma. Formatted to make clearer the iff,
-  which I think was off behove}
 \begin{lemma}\label{lem:NS-dynamics}
   Let $a \in \Isom(\bbH^2)$ and $(x,y) \subset \partial\bbH^2$. Then
   the following are equivalent:
@@ -472,7 +474,6 @@ We now turn to some elementary lemmas about crossing.
 \end{proof}
 
 \begin{lemma}
-  \DPTtodo{Switched from $\pi_1$ to $\Isom^+$}
   Fix $a,b,x \in \Isom^+(\bbH^2)$ hyperbolic elements with distinct
   endpoints so that $(\ora{a},\ora{x})$ and $(\ora{b},\ora{x})$
   R-cross. Then:
@@ -600,9 +601,12 @@ If $\ora{a}$ and $\ora{b}$ are R-parallel,
 Lemma~\ref{lem:righthandedfoundation} makes no claim about the
 relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
 determined by the hypotheses, as we now analyze.
-This will be used in the proof of
+This relative position can be crossing or anti-parallel (Lemma~\ref{lem:bA_parallel_ba}).
+ Furthermore, $\ora{a},\ora{b}$ being parallel guarantees that composite pairs such as $\ora{ab},\ora{Ab}$ or $\ora{ba}, \ora{Ba}$ are also parallel whenever they are hyperbolic (Lemmas~\ref{lem:bA_parallel_ba} and~\ref{lem:a_parallel_Ba}).
+These facts will be used in the proof of
 Theorem~\ref{thm:intersections_group}, which relies on
 \DPTtodo{We should justify this section by referring to something here}
+\DMGtodo{added more precise justification}
 Corollaries~\ref{cor:oriented_smoothing_unoriented}
 and~\ref{cor:cont_conn_disc} below.
 
@@ -610,9 +614,6 @@ Fix $a,b \in \Isom^+(\bbH)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
-\DPTtodo{Moved the figure earlier in text to avoid potential bad
-  placement. It's large enough we need to pay special attention. I
-  don't think it can be shrunk, unfortunately.}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.45\textwidth}
@@ -697,8 +698,6 @@ If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross, and let $\mat
 \label{lem:a_parallel_Ba}
 \end{itemize}
 \end{lemma}
-
-
 
 From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
 $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not
@@ -809,15 +808,16 @@ examples.
 \DPTtodo[inline]{In Figure \ref{fig:abcrossings}: Centering of label
   placements is not great. Some of the window names are unfortunately
   large. I shortened the caption to duplicate the text less}
+  \DMGtodo{caption looks good, I centered the labels a bit better}
 \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfigbig{abliftsbands}}
 \caption{The band model centered on $\protect\ora{x}$ used in
   Proposition~\ref{prop:join-split-geom}, in a case where $\protect [x]$ is simple.
   Some lifts of $\protect [x]$ are depicted in blue. The central blue lift
-  is $\ora{x}$, and we also show translates by $ \protect x^k a$, $\protect x^l
+  is $\protect\ora{x}$, and we also show translates by $ \protect x^k a$, $\protect x^l
   A$, $\protect x^m b$ and $\protect x^n B$, together with their windows.
-  If $\protect [x]$ is not simple, the blue lifts can intersect each other.}
+  If $\protect[x]$ is not simple, the blue lifts can intersect each other.}
 \label{fig:abcrossings}
 }
 \end{figure}
@@ -959,8 +959,8 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\partial_\infty S$. In
   particular $[g_1][g_2] \reducesto [g_1 g_2]$ by oriented disconnected smoothing, as desired.
   
-  \DPTtodo{Equation numbers were switched. Haven't double-checked
-    current statement}
+  \DPTtodo{Equation numbers were switched. Haven't double-checked,    current statement}
+    \DMGtodo{yes, I just checked and the change of variables works: $\protect\ora{y},a \protect\cdot \protect\ora{y}$ being R-parallel means $\protect\ora{a}$ and $\protect\ora{y}$ R-cross, and $\protect\ora{a}$ and $a \protect\cdot \protect\ora{y}$ R-cross, hence $\protect\ora{a}$ R-crosses $\protect\ora{x}$. So the triple $(\protect\ora{y'},\protect\ora{x'},a' \protect\cdot \protect\ora{y'})$ is R-parallel, satisfying the hypotheses.}
   To see Eq.~\eqref{eq:crossuniform_m}, apply
   Eq.~\eqref{eq:crossuniform_n} with the change of variables
   $a' = a$, $y' = x$, and $x' = ayA$.
@@ -983,7 +983,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \[
     [a x^n y^m][a] = [g][a] \reducesto [x^n y^m] \reducesto [x^n][y^m]
   \]
-  \DPTtodo{Shortened this argument}
   by unoriented disconnected smoothing and then (by
   Lemma~\ref{lem:righthandedfoundation}) oriented connected
   smoothing.
@@ -1057,7 +1056,6 @@ be clockwise and the other will be counterclockwise.
 \end{proof}
 
 \begin{remark}\label{rem:unoriented}
-  \DPTtodo{Moved this remark and added ref to \eqref{eq:cancel-ayx}}
   The main place we use unoriented smoothings in this paper is in the
   proof of Eqs.~\eqref{eq:cross-cancel} and~\eqref{eq:cancel-ayx},
   but it is necessary there. See
