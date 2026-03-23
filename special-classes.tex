@@ -168,38 +168,56 @@ Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows tha
 We answer this question affirmatively and, in fact, give a much stronger result.
 
 First, we show that any length metric on $S$ is has a dual geodesic current.
-The following argument is outlined essentially in \cite[Section~4.1]{MGT21:Smoothings}, but we reproduce it here for completeness.
+
+We first recall the definition of a length metric (see~\cite[Chapter~I.3, Definition~3.1]{BH11:NonPosCurvature}). Let $X$ be a metric space. A \emph{path} in $X$ is a continuous map $c \colon [a,b] \to X$.
+We say $c$ joins the point $c(a)$ to $c(b)$. The length $\ell(c)$ of a path $c \colon [a,b] \to X$
+is defined as
+\[
+\ell(c) \coloneqq \sup_{a=t_0 \leq t_1 \leq \cdots \leq t_n=b} \sum_{i=0}^{n-1} d(c(t_i),c(t_{i+1})),
+\]
+where the supremum is taken over all possible partitions of $[a,b]$ (no bound on $n$), with
+$a=t_0 \leq t_1 \leq \cdots t_n = b$.
+The length of a path $c$ is either a non-negative number or it is infinite. We say
+a path $c$ is rectifiable if its length is finite.
+Consider a metric space $(X,d)$. We say $d$ is a \emph{length metric} if the distance between every pair of points $x,y \in X$ is equal to the
+ infimum of the length of rectifiable curves joining them. If $d$ is a length metric we say $(X,d)$ is a \emph{length space}. 
+For a curve $C$, we define the \emph{$\rho$-length} of $C$ as
+\[
+\ell_\rho(C) \coloneqq \inf_{\gamma \in C} \ell_\rho(\gamma)
+\]
+where $\gamma$ runs over all the concrete curves in the equivalence class of $C$.
+The key point is to check that $\ell_\rho$ satisfies smoothing, an argument in \cite[Section~4.1]{MGT21:Smoothings}, which we also reproduce here for completeness.
 
 \begin{corollary}
-    Let $g$ be a length metric on $S$, with induced length on curves $\ell_g$. Then there exist a geodesic current $\mu_g$ dual to $\ell_g$.
+    Let $\rho$ be a length metric on $S$, with induced length on curves $\ell_\rho$. Then there exist a geodesic current $\mu_\rho$ dual to $\ell_\rho$.
     \label{cor:length_dual}
 \end{corollary}
 \begin{proof}
-First note that any length metric satisfies smoothing.
+First note that any curve length arising from a length metric satisfies smoothing.
 
  Take a multi-curve~$C$ with an
 essential crossing~$x$, and a representative~$\gamma$. Then $\gamma$ has
 an essential crossing~$x'$ of the homotopy type of~$x$. If we
-consider the
+consider the concrete
 multi-curve representative~$\gamma' \in C'$ obtained by smoothing at~$x'$, then,
-since $\ell_g$ is an infimum, we have
+since $\ell_\rho$ is an infimum, we have
 \[
-  \ell_g(C')\le \ell_g(C') = \ell_g(\gamma) = \ell_g(C),
+  \ell_\rho(C')\le \ell_\rho(\gamma') = \ell_\rho(\gamma) = \ell_\rho(C),
 \]
-as desired. Additivity is satisfied by definition of $\ell_g$ on weighted multi-curves by extending linearly.
-It is clear that $\ell_g$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
-Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_g$ so that $\ell_g(C)=i(\mu_g,C)$ for all closed curves $C$. 
+as desired. Additivity is satisfied by definition of $\ell_\rho$ on weighted multi-curves by extending linearly.
+It is clear that $\ell_\rho$ is a symmetric curve functional, since it is naturally defined on unoriented curves.
+Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_\rho$ so that $\ell_\rho(C)=i(\mu_\rho,C)$ for all closed curves $C$. 
 \end{proof}
 
 \begin{corollary}
 Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
-    $\ell_g(C_1) \leq \ell_g(C_2)$ for all length metrics $g$ on $S$.
+    $\ell_\rho(C_1) \leq \ell_\rho(C_2)$ for all length metrics $\rho$ on $S$.
     \label{cor:domination}
 \end{corollary}
 
 \begin{proof}
-By Corollary~\ref{cor:length_dual}, for every length metric $g$ on $S$, there exist a dual geodesic current $\mu_g$ for the induced curve functional $\ell_g$.
-Approximating the current $\mu_g$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+By Corollary~\ref{cor:length_dual}, for every length metric $g$ on $S$, there exist a dual geodesic current $\mu_\rho$ for the induced curve functional $\ell_\rho$.
+Approximating the current $\mu_\rho$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
 
 \subsection{Measured laminations}
