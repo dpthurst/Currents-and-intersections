@@ -12,17 +12,8 @@ We then turn to further questions motivated by these results.
 \label{subsec:mainhypotheses}
 
 % We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
-\DPTtodo{This section seems slightly off-focus. Maybe say a bit more
-  about why we're caring so much about orientations? But also how much
-  is it duplicating the later section?}
-  \DMGtodo{I added a bit of motivation of why we work with oriented currents, and why we restrict to the flip-invariant ones.}
-\DPTtodo{In the $\sqrt{\EL}$ example, we use the
-  criterion that if $(\protect\ora{a},\protect\ora{b})$ are parallel then $[ab]$ has a
-  self-crossing. So maybe we should at least mention that fact here.}
-  \DMGtodo{was more detailed in the oriented smoothing paragraph below, and specified this among other things}
-
-
-\begin{definition}[multi-curve]\label{def:multi-curve} \DMGtodo{ported this definition from our previous paper, since in section 3 we refer to 'concrete multi-curves' in the definition of essential crossing.}
+\begin{definition}[multi-curve]\label{def:multi-curve} \DMGtodo{Define
+  oriented multi-curves first}
 A \emph{concrete unoriented multi-curve} $\gamma$ on a surface $S$ is a smooth
 1-manifold without boundary $X(\gamma)$ together with a map
 (also called $\gamma$) from $X(\gamma)$
@@ -49,7 +40,13 @@ We will in fact be working mostly with \emph{oriented concrete multi-curves}, wh
 denote by~$\gamma$, in which $X(\gamma)$ is
 oriented. For these, we add the further condition in the equivalence
 relation that the reparametrizations must be orientation-preserving, and refer to the equivalence class, $[\gamma]$, as an \emph{oriented multi-curve}. 
-In fact, unless stated otherwise, \emph{multi-curve} will mean oriented multi-curve. When we do not want to specify the concrete curve representative, we will use capital letters such as $C$ to denote a multi-curve. The space of multi-curves is denoted by $\Curves^+(S)$. A curve is equivalent to a conjugacy class of an element in $\pi_1(S)$.
+In fact, unless stated otherwise, \emph{multi-curve} will mean
+oriented multi-curve. When we do not want to specify the concrete
+curve representative, we will use capital letters such as $C$ to
+denote a multi-curve. The space of multi-curves is denoted by
+$\Curves^+(S)$. A oriented curve is equivalent to a conjugacy class of an
+element in $a \in \pi_1(S)$, which we can write $[a]$. We can
+similarly write oriented multi-curves as $[a][b]$ where $a,b \in \pi_1(S)$.
 \end{definition}
 
 A few times throught the paper we will allow multi-curves to have weights.
@@ -70,6 +67,10 @@ A few times throught the paper we will allow multi-curves to have weights.
   instance, $C \cup C$ is equivalent to $2C$.
 \end{definition}
 
+\DPTtodo[inline]{Review this motivation for oriented currents.
+  Oriented multi-curves are more natural from the group-theoretic
+  point of view, and there are some subtleties in reducing to lemmas
+  only referring to oriented case. Thm A vs Thm A$'$}
 Accordingly, we will
 work with oriented geodesic currents, i.e., invariant measures on oriented geodesics of $\wt{\Sigma}$ (see
 Section~\ref{sec:currents} for details). Some authors prefer to work with \emph{unoriented geodesic currents} (see Remark~\ref{rmk:unoriented_currents}), but oriented currents are more general, and appear naturally in algebraic contexts, such as lengths arising from cross-ratios, actions on real trees, or higher Teichm\"uller theory and Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
@@ -144,27 +145,27 @@ Let $[a]$ denote the conjugacy class of $a \in \pi_1(S)$, which, equivalently, c
   \end{notation*} 
 The oriented smoothing condition will be further divided into three
 types (See
-Definition~\ref{def:smoothing_types}.) \DMGtodo{edited this, moved figure and detail on types of smoothing to section on crossings and smoothings later to avoid duplicity} Accordingly, we will
+Definition~\ref{def:smoothing_types}.)  Accordingly, we will
 say $f$ satisfies a particular type of smoothing property if $f$ is
 non-increasing under such type.
 
 \begin{lemma}
-  A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies oriented smoothing if the following three families of inequalities  are satisfied.
+  A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies
+  oriented smoothing iff the following three families of
+  inequalities  are satisfied.
 \begin{itemize}
 
 \item \textbf{Oriented disconnected smoothing.}
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect,
-\[
+\begin{equation}\label{eq:or-disconn-smoothing}
 f([a][b]) \ge f([ab]).
-\]
-
+\end{equation}
 \item \textbf{Oriented connected smoothing.}
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel
 (i.e., disjoint and coherently oriented),
-\[
+\begin{equation}\label{eq:or-conn-smoothing}
 f([ab]) \ge f([a][b]).
-\]
-
+\end{equation}
 \item \textbf{Power smoothing.}
 For any element $a \in \pi_1(S)$ and integers $n,m \ge 1$,
 \begin{equation}
@@ -176,34 +177,13 @@ f([a^{n+m}]) \ge f([a^m]) + f([a^n]).
 \label{lem:oriented_smoothing_lemma_top_alg}
 \end{lemma}
 
-\DMGtodo{I split it into two lemmas, one for smoothing and the other for max-smoothing. Also gave a short proof of these lemmas in section 4}
 If the inequalities are replaced by equalities in all the items of the previous Lemma, we get \emph{oriented max-smoothing}.
 
 \begin{lemma}
-  A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies oriented max-smoothing if the following are satisfied.
-\begin{itemize}
-
-\item \textbf{Oriented disconnected max-smoothing.}
-For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect,
-\[
-f([a][b]) = f([ab]).
-\]
-
-\item \textbf{Oriented connected max-smoothing.}
-For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel
-(i.e., disjoint and coherently oriented),
-\[
-f([ab]) = f([a][b]).
-\]
-
-\item \textbf{Power max-smoothing.}
-For any element $a \in \pi_1(S)$ and integers $n,m \ge 1$,
-\begin{equation}
-f([a^{n+m}]) = f([a^m]) + f([a^n]).
-\label{eq:maxpower_smoothing}
-\end{equation}
-
-\end{itemize}
+  A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies
+  oriented max-smoothing iff it satisfies
+  Eqs.~\eqref{eq:or-disconn-smoothing}, \eqref{eq:or-conn-smoothing},
+  and~\eqref{eq:power_smoothing} with equality replacing the equalities.
 \label{lem:orientedmax_smoothing_lemma_top_alg}
 \end{lemma}
 
@@ -269,7 +249,8 @@ smoothing implies stability.
 Slight generalizations of both smoothing and additivity were
 introduced in our earlier work~\cite{MGT21:Smoothings}.
 
-\begin{definition}
+\begin{definition} Let $f$ be a curve functional. We define the
+  following properties.
 \begin{itemize}
     \item \textbf{Oriented Quasi-smoothing:} There is a constant $R\ge 0$ with the
       following property. Let $C$~be an oriented curve on~$S$, and
@@ -291,7 +272,7 @@ below).
     \begin{equation}\label{eq:union-convex}
       f(C_1 \cup C_2) \le f(C_1) + f(C_2).
     \end{equation}
-    If this inequality is strengthened to an equality, we recover additivity (Eq.~\ref{eq:union-additive}).
+    If this inequality is strengthened to an equality, we recover additivity (Eq.~\eqref{eq:union-additive}).
 \end{itemize}
 \end{definition}
 
@@ -300,10 +281,11 @@ below).
 
 Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
-When performing an smoothing for an oriented multi-curve, one could also choose to reglue in the incoherent orientation. In this case, there two possible (incoherent) orientations to equip the resulting curve with.
+When performing an smoothing for an oriented multi-curve, one could
+also choose to reglue in the incoherent orientation. In this case,
+there two possible (incoherent) orientations to equip the resulting
+curve with. See also Section~\ref{subsec:crossings}.
 
-\DPTtodo{Have not defined the unoriented smoothing of oriented curves.}
-\DMGtodo{defined and illustrated unoriented smoothing above}
 \begin{definition}[smoothing and max-smoothing]
 Let $C$ be an unoriented closed curve, and $C'$ either of the two smoothings, oriented or unoriented. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
@@ -634,7 +616,7 @@ $G$ on (weighted)
 multi-curves,
 which is thus not equal to $\sqrt{EL}$ on multi-curves. $G$ cannot extend continuously to currents, since we know $G=\sqrt{EL}$ on (weighted) connected curves, which are dense in the space of geodesic currents.
 Thus, the purported continuous extension $\overline{G}$ would have to satisfy $\overline{G}=\sqrt{EL}$ on all geodesic currents, hence on all multi-curves, a contradiction.
-It follows from~\cite[Theorem~A]{MGT21:Smoothings} that $G$ cannot satisfy smoothing (in fact, it cannot satisfy quasi-smoothing\DMGtodo{added this}), since it trivially satisfies convex union (in fact, additivity) and stability.
+It follows from~\cite[Theorem~A]{MGT21:Smoothings} that $G$ cannot satisfy smoothing (in fact, it cannot satisfy quasi-smoothing), since it trivially satisfies convex union (in fact, additivity) and stability.
 Specifically, $G$ does not satisfy connected smoothing.
 Indeed, let $F=\sqrt{EL}$. For a crossing pair $(\ora{a},\ora{b})$, we have
 \[
@@ -648,7 +630,7 @@ where we used the fact that $F$ and $G$ take the same values on closed curves; h
 $G$ satisfies disconnected smoothing.
 This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. there must be some pair $(\ora{a},\ora{b})$ parallel (and this so that $[ab]$ has a
   self-crossing, by Proposition~\ref{prop:crossings-triality}), so that
-  $G(ab) < G(a) + G(b)$. In fact, it follows from~\cite[Theorem~A]{MGT21:Smoothings} that it cannot satisfy connected quasi-smoothing, i.e., this inequality does not hold either even up to additive error. \DMGtodo{added this last sentence}
+  $G(ab) < G(a) + G(b)$. In fact, it follows from~\cite[Theorem~A]{MGT21:Smoothings} that it cannot satisfy connected quasi-smoothing, i.e., this inequality does not hold either even up to additive error.
 \end{example}
 
 \begin{comment}  

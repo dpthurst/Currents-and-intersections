@@ -211,11 +211,6 @@ We will also distinguish between different types of smoothings.
   of smoothings between non-trivial pairs of elements which are not
   common powers. We use group notation that we will expand on and justify
   in the next section.
-  \DPTtodo{We refer to parallel/crossing \emph{curves}, while the
-    more complete statement refers to \emph{geodesics}. Not sure what
-    makes sense to say here; I switched to geodesics for now. I also used more
-  complete sentences}
-  \DMGtodo{This looks good to me.}
   \begin{itemize}
   \item \emph{Oriented connected smoothing:} As shown in
     Figure~\ref{fig:sm_oriented_connected}, parallel oriented geodesics
@@ -346,8 +341,8 @@ is one with a minimum number of transverse crossings.
   $a = c^\ell$ and $b = c^k$.
 \end{definition}
 
-The following justifies the power smoothing hypothesis (Equation~\ref{eq:power_smoothing_unoriented}).\DPTtodo{Give
-  some refs?} \DMGtodo{added a reference to the equation of power smoothing}
+The following justifies the power smoothing
+hypothesis~\eqref{eq:power_smoothing_unoriented}.
 
 \begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]
   If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
@@ -404,12 +399,13 @@ Now we give the proofs of the algebraic rephrasings of oriented smoothing, orien
 \begin{proof}[Proofs of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} and of Lemma~\ref{lem:orientedmax_smoothing_lemma_top_alg}]
 
 The first two items of Lemma~\ref{lem:oriented_smoothing_lemma_top_alg} (resp. of Lemma~\ref{lem:orientedmax_smoothing_lemma_top_alg}) follow by using Equation~\ref{eq:or-smoothing} (resp. Equation~\ref{eq:or-smoothing} with equality) at the desired essential crossing, and applying each case of Proposition~\ref{prop:crossings-triality}.
-The last item follows by Proposition~\ref{prop:crossings-powers}\end{proof}
+The last item follows by Proposition~\ref{prop:crossings-powers}.
+\end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{lem:smoothing_lemma_top_alg}]
 
 The first two items of the result follow by using Equation~\ref{eq:smoothing} at the desired essential crossing, applying each case of Proposition~\ref{prop:crossings-triality}, and using symmetry of $f$.
-The last item follows by Proposition~\ref{prop:crossings-powers}
+The last item follows by Proposition~\ref{prop:crossings-powers}.
 \end{proof}
 
 If we swap $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
@@ -602,13 +598,12 @@ Lemma~\ref{lem:righthandedfoundation} makes no claim about the
 relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
 determined by the hypotheses, as we now analyze.
 This relative position can be crossing or anti-parallel (Lemma~\ref{lem:bA_parallel_ba}).
- Furthermore, $\ora{a},\ora{b}$ being parallel guarantees that composite pairs such as $\ora{ab},\ora{Ab}$ or $\ora{ba}, \ora{Ba}$ are also parallel whenever they are hyperbolic (Lemmas~\ref{lem:bA_parallel_ba} and~\ref{lem:a_parallel_Ba}).
-These facts will be used in the proof of
-Theorem~\ref{thm:intersections_group}, which relies on
-\DPTtodo{We should justify this section by referring to something here}
-\DMGtodo{added more precise justification}
-Corollaries~\ref{cor:oriented_smoothing_unoriented}
-and~\ref{cor:cont_conn_disc} below.
+Nevertheless, we can extract information about composite pairs such as
+$\ora{ab},\ora{Ab}$ (Lemmas~\ref{lem:bA_parallel_ba}
+and~\ref{lem:a_parallel_Ba}),
+which is used in Corollaries~\ref{cor:oriented_smoothing_unoriented}
+and~\ref{cor:cont_conn_disc}, needed for the algebraic characterization
+Theorem~\ref{thm:intersections_group}.
 
 Fix $a,b \in \Isom^+(\bbH)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
@@ -690,12 +685,14 @@ If $\ora{a},\ora{b}$ are parallel, then $(\ora{ab},\ora{Ab})$ is parallel or $(\
 \label{lem:bA_parallel_ba}
 \end{lemma}
 If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise.
-\begin{lemma}
+\begin{lemma}\label{lem:a_parallel_Ba}
 Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross, and let $\mathcal{A} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$ and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then
-\begin{itemize} \item either $(\ora{g},\ora{h})$ is parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$; 
-\item or $(\ora{g},\ora{h})$ is anti-parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$.
-\label{lem:a_parallel_Ba}
+If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross, and
+let $\mathcal{A} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$
+and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
+\begin{itemize}
+\item $(\ora{g},\ora{h})$ is parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$; or
+\item $(\ora{g},\ora{h})$ is anti-parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$.
 \end{itemize}
 \end{lemma}
 
@@ -805,10 +802,6 @@ examples.
   \ora{x}$ to the right.
 \end{proof}
 
-\DPTtodo[inline]{In Figure \ref{fig:abcrossings}: Centering of label
-  placements is not great. Some of the window names are unfortunately
-  large. I shortened the caption to duplicate the text less}
-  \DMGtodo{caption looks good, I centered the labels a bit better}
 \begin{figure}
 \centering{
 \resizebox{150mm}{!}{\svgfigbig{abliftsbands}}
@@ -959,8 +952,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\partial_\infty S$. In
   particular $[g_1][g_2] \reducesto [g_1 g_2]$ by oriented disconnected smoothing, as desired.
   
-  \DPTtodo{Equation numbers were switched. Haven't double-checked,    current statement}
-    \DMGtodo{yes, I just checked and the change of variables works: $\protect\ora{y},a \protect\cdot \protect\ora{y}$ being R-parallel means $\protect\ora{a}$ and $\protect\ora{y}$ R-cross, and $\protect\ora{a}$ and $a \protect\cdot \protect\ora{y}$ R-cross, hence $\protect\ora{a}$ R-crosses $\protect\ora{x}$. So the triple $(\protect\ora{y'},\protect\ora{x'},a' \protect\cdot \protect\ora{y'})$ is R-parallel, satisfying the hypotheses.}
   To see Eq.~\eqref{eq:crossuniform_m}, apply
   Eq.~\eqref{eq:crossuniform_n} with the change of variables
   $a' = a$, $y' = x$, and $x' = ayA$.
