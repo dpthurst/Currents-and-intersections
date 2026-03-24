@@ -111,14 +111,14 @@ the basepoints are actually on the axis.
 
 \begin{figure}
 \centering{
-\resizebox{60mm}{!}{\svgfig{doublecoset}}
+\resizebox{45mm}{!}{\svgfig{doublecoset}}
 \caption{Two different translates of $\protect\ora{g}$ captured by the double coset $\protect\langle g \protect\rangle q_1^{-1} q_2 \protect\langle g \protect\rangle.$}.
 \label{fig:doublecoset}
 }
 \end{figure}
 
 With these preliminaries, we can see that two different lifts of
-$[g]$ (see Figure~\ref{fig:doublecoset}) \DMGtodo{added this figure for the double coset discussion}
+$[g]$ (see Figure~\ref{fig:doublecoset}) 
 \begin{align*}
   \ora{\ell_1} &= q_1 \cdot \ora{g} & \ora{\ell_2} &= q_2 \cdot \ora{g},
 \end{align*}
@@ -282,8 +282,6 @@ We will also distinguish between different types of smoothings.
 \caption{Cases of smoothing.}
 \label{fig:cases--sm}
 \end{figure}
-
-\DMGtodo{edited the figures (c) and (d) so that the smoothing and the arrow is more clear}
 
 \subsection{Triality of crossings: topological, geometric and algebraic}
 \label{subsec:triality}
@@ -677,14 +675,20 @@ Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-parallel or cross.
 \label{lem:ab_parallel_aB}
 \end{lemma}
-
+\begin{proof}
+The figures cover the case $(\ora{a}, \ora{b})$ being R-parallel. For the L-parallel case, note that $(\ora{a},\ora{b})$ being L-parallel, implies $(\ora{b},\ora{a})$ is R-parallel. Applying the statement, we obtain that $\ora{bA},\ora{Ab}$ cross (resp. are anti-parallel), which is equivalent, by taking inverses, to $\ora{aB}, \ora{Ba}$ crossing (resp. are anti-parallel.
+\end{proof}
 It also follows that, when $(\ora{a},\ora{b})$ are parallel, many composite pairs do not cross. We can extract the following two results.
 \begin{lemma}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel, then $(\ora{ab},\ora{Ab})$ is parallel or $(\ora{ba},\ora{Ba})$ is parallel.
 \label{lem:bA_parallel_ba}
 \end{lemma}
-If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise.
+\begin{proof}
+The figures above discuss the case $(\ora{a},\ora{b})$ being R-parallel. If $(\ora{a},\ora{b})$ is L-parallel, then $(\ora{b}, \ora{a})$ is R-parallel, then the statement implies $(\ora{ba}, \ora{Ba})$ is parallel or $(\ora{ab}, \ora{Ab})$ is parallel which proves the claim in this case. 
+\end{proof}
+
+If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise (the proof is similar as the previous lemma).
 \begin{lemma}\label{lem:a_parallel_Ba}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross, and
