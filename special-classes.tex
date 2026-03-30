@@ -252,14 +252,14 @@ See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudo-metri
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
 Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudo-metric $d$ on $\wt{\Sigma}$, there exists a straight invariant pseudo-metric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
-\item Suppose $(X,d)$ is a length space structure on $S$. 
-Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  $\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x)$, which is the \emph{translation length} of $d$.
-From the fact that $\ell_d$ satisfies smoothing, it follows that $\ell_d(C^n)=n\ell_d(C)$ Proposition~\ref{prop:power_disconnected_imply_stable}, and hence,
+\item Suppose $(X,d)$ is a \emph{length space} structure on $S$, i.e., a distance given by the infimum of lengths of paths. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
+where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of $g$.
+From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
 \[
-\ell_d(C)=\lim \frac{1}{n} \wt{d}(x,g^n x)
+\ell_d(C)=\lim \frac{1}{n} \ell_d(C^n) = \lim \frac{1}{n} \inf_{x \in \wt{X}} \wt{d}(x, g^n x) = \lim \frac{1}{n} \wt{d}(x,g^n x) \eqqcolon L_{\wt{d}}(g)
 \]
 for every $x \in \wt{X}$, and every $g \in \pi_1(S)$ so that $[g]=C$.
-The quantity on the right is the \emph{stable length} of $d$.
+The quantity $L_{\wt{d}}(g)$ is the \emph{$\wt{d}$-stable length} of $g$.
 The equality between translation length and stable length does not hold in general even in the setting of geodesic Gromov hyperbolic spaces~\cite[Proposition~6.4]{CDP90:Lectures}.
 \end{enumerate}
 
@@ -310,8 +310,8 @@ We have the following (see Figure~\ref{fig:smoothing_1}):
 \begin{enumerate}
 \item The segment $(Q,P]$ is on the line $\ora{ab}$ and has length $\ell(ba)/2$.
 \item The segment $(P',Q']$ is on the line $\ora{ba}$ and has length $\ell(ba)/2$.
-\item The segment $(Q',P]$ is on the line $\ora{ab^{-1}}$ and has length $\ell(ab^{-1})/2$.
-\item The segment $(P',Q]$ is on the line $\ora{b^{-1}a}$ and has length $\ell(ab^{-1})/2$.
+\item The segment $(Q',P]$ is on the line $\ora{bA}$ and has length $\ell(bA)/2$.
+\item The segment $(P',Q]$ is on the line $\ora{Ab}$ and has length $\ell(Ab)/2$.
 \end{enumerate}
 Furthermore, $G((Q,P])\cup a\cdot
 G((P',Q'])$ is a Borel fundamental domain for the
@@ -375,7 +375,7 @@ Using it, we characterize measured laminations among curve
 functionals.
 We start with a technical lemma that defines some sets of interest. We will resort to this setup several times in the proofs below. 
 
-\begin{lemma}
+\begin{lemma} \DMGtodo{in this lemma we do want to use the inverse $a^{-1}$ notation, since we are already using capitals for something else (just noting)}
 Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
