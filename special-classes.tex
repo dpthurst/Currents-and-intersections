@@ -167,15 +167,17 @@ Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows tha
 
 We answer this question affirmatively and, in fact, give a much stronger result.
 
-First, we show that any length induced by a metric (in fact, by a pseudo-metric) on $S$ is has a dual geodesic current.
+First, we show that any length induced by a metric (in fact, by a pseudo-metric) on $S$ has a dual geodesic current.
 
 \DMGtodo{edited this part, added definition of pseudo-metric, and more detail to the proof of smoothing}
 We first recall the definition of a length induced by a pseudo-metric (see~\cite[Chapter~I.1]{BH11:NonPosCurvature} for a definition in the context of metrics). A \emph{pseudo-metric space} is a pair $(X,d)$, where $X$ is a set and $d \colon X \times X \to \mathbb{R}_{\ge 0}$ is a function satisfying, for all $x,y,z \in X$,
 \[
 d(x,x)=0,\quad d(x,y)=d(y,x),\quad d(x,z)\le d(x,y)+d(y,z).
 \]
-Equip $X$ with the topology induced by $d$. A \emph{path} in $X$ is a continuous map $c \colon [a,b] \to X$.
-We say $c$ joins the point $c(a)$ to $c(b)$. The length $\ell(c)$ of a path $c \colon [a,b] \to X$
+Suppose now $X$ is a topological space. We will not assume any compatibility of the topology induced by $d$ and the underlying topology of $X$: for many examples it will be compatible, but there are some important examples where it won't, such as pseudo-metrics induced from geodesic currents with atoms (Remark~\ref{rmk:pseudo_metrics}).
+\DMGtodo{added this}
+A \emph{path} in $X$ is a continuous map $c \colon [a,b] \to X$.
+We say $c$ joins the point $c(a)$ to $c(b)$. The \emph{$d$-length} $\ell(c)$ of a path $c \colon [a,b] \to X$
 is defined as
 \begin{equation}
 \ell(c) \coloneqq \sup_{a=t_0 \leq t_1 \leq \cdots \leq t_n=b} \sum_{i=0}^{n-1} d(c(t_i),c(t_{i+1})),
@@ -184,32 +186,39 @@ is defined as
 where the supremum is taken over all possible partitions of $[a,b]$ (no bound on $n$), with
 $a=t_0 \leq t_1 \leq \cdots t_n = b$.
 The length of a path $c$ is either a non-negative number or it is infinite. We say
-a path $c$ is rectifiable if its length is finite.
-Consider a pseudo-metric space $(X,d)$. 
-For a curve $C$, we define the \emph{$d$-length} of $C$ as
+a path $c$ is \emph{$d$-rectifiable} if its $d$-length is finite.
+Consider now a pseudo-metric $(X,d)$ on $S$.
+For a curve $C$ on $S$, we define the \emph{$d$-length} of $C$ as
 \[
 \ell_d(C) \coloneqq \inf_{\gamma \in C} \ell_d(\gamma)
 \]
 where $\gamma$ runs over all the concrete curves in the equivalence class of $C$.
 We call this the \emph{length induced by $d$}.
-The key point is to check that $\ell_d$ satisfies smoothing. 
+If there exists at least a $d$-rectifiable path in every class $C$, then $\ell_d$ induces a curve functional. This is the case, for example, when  $(X,d)$ is a \emph{length pseudo-metric} on $S$, i.e., 
+$d$ is given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.1]{BH11:NonPosCurvature}. Precisely
+\[
+d(x,y) = \inf_{\gamma} \{ \ell_d(\gamma) : \gamma(0)=x, \gamma(1)=y, \gamma : [0,1] \to X \}.
+\]
+After these preliminaries, we can state and prove the following corollary of Theorem~\ref{thm:intersect}.
 \begin{corollary}
-    Let $d$ be a pseudo-metric on $S$, with induced length on curves $\ell_d$. Then there exists a geodesic current $\mu_d$ dual to $\ell_d$.
+    Let $d$ be a pseudo-metric on $S$, with induced length on curves $\ell_d$ inducing a curve functional. Then there exists a geodesic current $\mu_d$ dual to $\ell_d$.
     \label{cor:length_dual}
 \end{corollary}
 \begin{proof}
+Additivity is satisfied by definition of $\ell_d$ on multi-curves by extending linearly. It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
+The key point is to check that $\ell_d$ satisfies smoothing. 
 Let $C$ be a multicurve with an essential crossing $x$, and let $C'$ be obtained by smoothing $C$ at $x$.
 
-Fix $\epsilon>0$. By definition of $\ell_d(C)$, there exists a concrete representative $\gamma$ of $C$ with an essential crossing $x'$ of the same homotopy type as $x$ such that
+Fix $\epsilon>0$. Since $\ell_d$ is a curve functional, $\ell_d(C)<\infty$ for every multi-curve $C$. By definition of $\ell_d(C)$, there exists a concrete representative $\gamma$ of $C$ with an essential crossing $x'$ of the same homotopy type as $x$ such that
 \[
 \ell_d(\gamma) \le \ell_d(C) + \epsilon.
 \]
-
+In particular, $\gamma$ is $d$-rectifiable.
 Let $\gamma' \in C'$ be the concrete multi-curve obtained by smoothing $\gamma$ at $x'$.
 
-By abuse of notation, let $\gamma \colon I \to X$ be a continuous path parameterizing the concrete multi-curve $\gamma$ (rectifiable) where $I$ is a finite union of intervals. Let $t' < t''$ be points in $I$ such that $\gamma(t') = \gamma(t'') = x'$ correspond to the essential crossing. Let $\gamma' \colon I \to X$ be a continuous parametrization of the rectifiable path $\gamma'$ such that
+By abuse of notation, let $\gamma \colon I \to X$ be a continuous $d$-rectifiable path parameterizing the concrete multi-curve $\gamma$ where $I$ is a finite union of intervals. Let $t' < t''$ be points in $I$ such that $\gamma(t') = \gamma(t'') = x'$ correspond to the essential crossing. Let $\gamma' \colon I \to X$ be a continuous parametrization of the $d$-rectifiable path $\gamma'$ such that
 \[
-\gamma(I) \setminus \{x'\} = \gamma'(I) \setminus \{x'\}.
+\gamma(I) = \gamma'(I).
 \]
 
 Let $\mathcal{P} = (t_0, \dots, t_n)$ with $t_0 \leq \cdots \leq t_n$ be an arbitrary partition of $I$, and let $\mathcal{P}' = (t_0', \dots, t_m')$ be the refinement obtained by inserting $t'$ and $t''$ into $\mathcal{P}$. By the triangle inequality, for every such partition we have
@@ -236,20 +245,14 @@ Since $\epsilon>0$ was arbitrary, it follows that
 \[
 \ell_d(C') \le \ell_d(C),
 \]
-as claimed. Additivity is satisfied by definition of $\ell_d$ on weighted multi-curves by extending linearly.
-It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
+so $\ell_d$ satisfies smoothing.
 Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_d$ dual to $\ell_d$.
 \end{proof}
 
-We finish with some remarks.
+We continue with some remarks.
 
+\begin{remark}\label{rmk:pseudo_metrics}
 \begin{enumerate}
-\item Even though it is not used, in practice we will assume  $(X,d)$ is a \emph{length pseudo-metric} structure on $S$, i.e., 
-$d$ given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.1]{BH11:NonPosCurvature}. Precisely
-\[
-d(x,y) = \inf_{\gamma} \{ \ell_d(\gamma) : \gamma(0)=x, \gamma(1)=y, \gamma : [0,1] \to X \}.
-\]
-This guarantees, among other things, that the induced length on curves is finite.
 \item Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudo-metric on $\wt{\Sigma}$ defined via
 \[
 d_\mu^\Sigma(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right).
@@ -258,8 +261,8 @@ See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudo-metri
 \[
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
-Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudo-metric $d$ on $\wt{\Sigma}$, there exists a straight invariant pseudo-metric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
-\item \DMGtodo{this observation might not be surprising, but it did surprise me initially} Suppose $(X,d)$ is a \emph{length space} structure on $S$, i.e., a distance given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.1]{BH11:NonPosCurvature}. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
+Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudo-metric $d$ on $\wt{\Sigma}$ inducing a curve functional, there exists a straight invariant pseudo-metric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
+\item \DMGtodo{this observation might not be surprising, but it did surprise me initially} Suppose $(X,d)$ is a length pseudo-metric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
 where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of $g$.
 From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
 \[
@@ -269,7 +272,7 @@ for every $x \in \wt{X}$, and every $g \in \pi_1(S)$ so that $[g]=C$.
 The quantity $L_{\wt{d}}(g)$ is the \emph{$\wt{d}$-stable length} of $g$.
 The equality between translation length and stable length does not hold in general even in the setting of geodesic Gromov hyperbolic spaces~\cite[Proposition~6.4]{CDP90:Lectures}.
 \end{enumerate}
-
+\end{remark}
 \begin{corollary}
 Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
     $\ell_d(C_1) \leq \ell_d(C_2)$ for all pseudo-metrics $d$ on $S$.
