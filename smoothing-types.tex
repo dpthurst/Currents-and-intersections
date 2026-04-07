@@ -58,14 +58,20 @@ stability, then $f$ satisfies smoothing.
 We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
 starting with some lemmas. The first lets us approximate
 disconnected curves by connected curves and vice versa.
+\DPTtodo{Earlier (Eq. \eqref{eq:delta-curve}) we used the notation
+  $\delta_{[g]}$ for this same current. Holding off on switching it
+  in this section till we decide which one we prefer. I did move the def out of
+  the statement of the lemma}
 \begin{lemma}
   Given any $g,h \in \pi_1(S)$, we have
 \[
 \lim_{n\to\infty} \frac{\mu_{g^n h^n}}{n} = \mu_g + \mu_h
 \]
-in the weak$^*$-topology of geodesic currents, where $\mu_{g}$ denotes the geodesic current representing the curve $[g]$.
+in the weak$^*$-topology of geodesic currents.
 \label{lem:gnhn_to_gsumh}
 \end{lemma}
+
+Here $\mu_{g}$ denotes the geodesic current representing the curve $[g]$.
 
 \begin{proof}
   This is a straightforward fact of the weak$^*$-topology convergence
@@ -86,19 +92,27 @@ The proof is by induction on~$n$, repeatedly applying
 Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. The case
 $n=1$ is directly that lemma.
 For the inductive step, we have:
+\DPTtodo{I started moving the reasons next to the equations. Only did
+  a few to see if we like it}
 \begin{align*}
-  \bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
-  &\Rightarrow
-    \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}\\
-  &\Rightarrow
+  &\bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
+    &&\text{(Induction)}\\
+  &\quad\Rightarrow
+    \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
+    &&\text{(Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+$\bigl(\ora{a},\ora{a^{n-1}b^{n-1}}\bigr)$)}\\
+  &\quad\Rightarrow
     \bigl(\ora{a},\ora{a^n b^{n-1}},\ora{a^n b^n},\ora{b}\bigr)\text{ R-parallel}
+    &&\text{(Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+$\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$)}.
+\qedhere
 \end{align*}
-where we start with the inductive hypothesis, used
-Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
-$\bigl(\ora{a},\ora{a^{n-1}b^{n-1}}\bigr)$, and then forgot about
-$\ora{a^{n-1}b^{n-1}}$ and used 
-Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
-$\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
+% where we start with the inductive hypothesis, used
+% Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+% $\bigl(\ora{a},\ora{a^{n-1}b^{n-1}}\bigr)$, and then forgot about
+% $\ora{a^{n-1}b^{n-1}}$ and used 
+% Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel} on
+% $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
 \end{proof}
 
 \begin{lemma}
@@ -116,28 +130,39 @@ $\bigl(\ora{a^n b^{n-1}},\ora{b}\bigr)$.
  Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. In
  general we have
  \begin{align*}
-   \bigl(\ora{ba},\ora{a^{n-1}b^{n-1}}\bigr)\text{ R-cross}
-   &\Rightarrow
-     \bigl(\ora{ba},\ora{a^{n-1}b^n a}\bigr)\text{ R-cross}\\
-   &\Rightarrow
-     \bigl(\ora{ab}, \ora{a^nb^n}\bigr)\text{ R-cross}\\
-   &\Rightarrow
-     \bigl(\ora{ba}, \ora{a^nb^n}\bigr)\text{ R-cross}
+   &\bigl(\ora{ba},\ora{a^{n-1}b^{n-1}}\bigr)\text{ R-cross}
+     &&\text{(Induction)}\\
+   &\quad\Rightarrow
+     \bigl(\ora{ba},\ora{a^{n-1}b^n a}\bigr)\text{ R-cross}
+     &&\text{(Lemma~\ref{lem:rhs_prod})}\\
+   &\quad\Rightarrow
+     \bigl(\ora{ab}, \ora{a^nb^n}\bigr)\text{ R-cross}
+     &&\text{(Conjugate by~$a$)}.
  \end{align*}
-where in the first three steps we start with the inductive hypothesis, use
-Lemma~\ref{lem:rhs_prod}, and
-conjugate by~$a$. For the last step,
+% where in the first three steps we start with the inductive hypothesis, use
+% Lemma~\ref{lem:rhs_prod}, and
+% conjugate by~$a$.
+Finally,
 Lemma~\ref{lem:powers_parallel} and the R-crossing of 
 $\bigl(\ora{ab}, \ora{a^nb^n}\bigr)$ restrict the
 endpoints of $\ora{a^n b^n}$ to the indicated intervals in
-Figure~\ref{fig:parallel_lemma}, which implies the desired crossing
-with $\ora{ba}$. This proves the statement for $m=1$. For $m \geq 1$, we apply the symmetric argument to show that 
+Figure~\ref{fig:parallel_lemma}, which implies that $\ora{a^n b^n}$ crosses
+$\ora{ba}$.
+
+For $m \geq 1$, we apply the symmetric argument to show that 
 $\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}$ restricted to the intervals in Figure~\ref{fig:parallel_lemma}.
 \end{proof}
+\DPTtodo{In figure, labelings of the intervals could be clearer; maybe
+  refer to color? $\ora{ab}$ is not labeled. The TeX labels seem to be
+  switched. I edited the
+  caption to include
+  Lemma~\ref{lem:powers_parallel}.}
 \begin{figure}
      \begin{subfigure}[b]{0.45\textwidth}
 \centerline{\svgfignormal{anbn_ba_c}}
-    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel implies $(\protect\ora{b^ma^m}, \protect\ora{a^n b^n})$ R-cross.}
+    \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel
+      implies $(\protect\ora{b^ma^m}, \protect\ora{a^n b^n})$ R-cross
+      and $(\ora{a},\ora{a^n b^n}, \ora{b})$ are R-parallel}
     \label{fig:parallel_lemma}
   \end{subfigure}
   \hfill
@@ -146,7 +171,7 @@ $\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}
     \caption{$\protect\ora{b}$ and $\protect\ora{a}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
     \label{fig:cross_lemma}
      \end{subfigure}
-  \caption{Extensions of Lemma~\ref{lem:righthandedfoundation} to powers} 
+  \caption{Crossings of powers}
 \end{figure}
 
 
@@ -154,7 +179,7 @@ $\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}
 \begin{lemma} 
   Let $a,b \in \pi_1(S)$ so that $(\ora{b},\ora{a})$ R-cross. Then for all
   $n \ge 1$, $(\ora{a^n
-  b^n},\ora{ba})$ are R-parallel, and for every $m \geq 2$, the pair $(\ora{a^n
+  b^n},\ora{ba})$ are R-parallel, and for every $n \geq 2$, the pair $(\ora{a^n
   b^n},\ora{ab})$ are R-parallel.
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
@@ -178,7 +203,25 @@ Figure~\ref{fig:cross_lemma}.
 \end{proof}
 
 
-
+\DPTtodo[inline]{This proof has a slightly complicated structure,
+  shown below (out TODO environment to allow a list). I'm wondering if
+  there are ways to make this clearer. For instance, maybe have two
+  Proof environments.}
+\begin{itemize}
+\item \textbf{Direction 1:} Disconnected smoothing + cont extension
+  $\Rightarrow$ connected smoothing
+  \begin{itemize}
+  \item Part one: Oriented connected smoothing $[ab] \reducesto
+    [a][b]$
+  \item Part two: Unoriented connected smoothing $[ab] \reducesto
+    [aB]$
+    \begin{itemize}
+    \item Case A: $\ora{aB}, \ora{Ba}$ anti-parallel
+    \item Case B: $\ora{aB}, \ora{Ba}$ cross 
+    \end{itemize}
+  \end{itemize}
+\item \textbf{Direction 2:} Conn smoothing $\Rightarrow$ disconn
+\end{itemize}
 \begin{proof}[Proof of Proposition~\ref{prop:cont_conn_disc}]
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, disconnected smoothing, homogeneity and is extends continuously to geodesic currents.
 Given a pair $a, b \in \pi_1(S)$ of parallel elements (so
@@ -192,17 +235,22 @@ We will start by showing, by induction on $n$, that
 The base case $n=1$ follows from the fact that if $\ora{a},\ora{b}$
 are parallel, $\ora{ab}$ and $\ora{ba}$ cross, and hence
 \[
-2[ab]=[ab] + [ba] \reducesto [ab^2a]=[a^2b^2].
+2[ab]=[ab][ba] \reducesto [ab^2a]=[a^2b^2].
 \]
 Hence, by homogeneity and disconnected smoothing, the base case follows.
 Now, we prove the induction step.
 \begin{align*}
-2nf([ab]) = 2(n-1)f([ab]) + 2f([ab])
-&\geq f([a^{2(n-1)}b^{2(n-1)}]) + f([b^2a^2])  \\
-&\geq f([a^{2(n-1)}b^{2(n-1)}][b^2a^2]) \\
-&\geq f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}]).
+2nf([ab]) &= 2(n-1)f([ab]) + 2f([ab])\\
+&\geq f([a^{2(n-1)}b^{2(n-1)}]) + f([b^2a^2])
+  &&\text{(Induction)}\\
+&\geq f([a^{2(n-1)}b^{2(n-1)}][b^2a^2])
+  &&\text{(Convex union)}\\
+&\geq f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}])
+  &&\text{(Lemma~\ref{lem:anbn_vs_bkak} and disconnected smoothing)}
 \end{align*}
-In the first inequality we used induction step, in the second convex union, then Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$ satisfies disconnected smoothing.
+% In the first inequality we used induction step, in the second convex
+% union, then Lemma~\ref{lem:anbn_vs_bkak} and the assumption that $f$
+% satisfies disconnected smoothing.
 Divide Eq.~\eqref{eq:power_ineq} by $2n$, let $n$ go to infinity, and
 use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
 \[
@@ -225,7 +273,7 @@ We first consider the case when $(\ora{aB},\ora{Ba})$ are anti-parallel. We will
 \end{equation}
 The base case, $n=1$, follows since $(\ora{ab},\ora{ba})$ cross, hence
 \[
-[ba]+[ab] \reducesto [ba(ab)^{-1}] = [(aB)(Ab)].
+[ba][ab] \reducesto [ba(ab)^{-1}] = [(aB)(Ab)].
 \]
 By homogeneity and disconnected smoothing, we get the base case.
 Now, we prove the induction step:
@@ -240,7 +288,8 @@ $[(aB)^{n-1}(Ab)^{n-1}][(Ab)(aB)] \reducesto [(aB)^{n-1} (Ab)^{n-1}
 anti-parallel, so $\ora{aB}$ and $\ora{Ab}$ are parallel. Hence, we
 can apply Lemma~\ref{lem:anbn_vs_bkak} to conclude that
 $\ora{(aB)^{n-1} (Ab)^{n-1}}$ and $\ora{(Ab)(aB)}$ cross.
-Divide~\ref{eq:antiparallel_induction} by $2n$, let $n$ go to
+
+Divide Eq.~\eqref{eq:antiparallel_induction} by $2n$, let $n$ go to
 infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to get
 \[
 f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
@@ -275,44 +324,45 @@ f([a^2b^2])=f([ab^2a]) \geq 2f([ab]).
 \]
 For the induction step, note that
 \begin{align*}
-f([a^{2n}b^{2n}]) = f([a^2(a^{2(n-1)}b^{2(n-1)})b^2]) = f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
-\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) \geq 2f([ab]) + 2(n-1)f([ab]) = 2nf([ab]).
+  f([a^{2n}b^{2n}]) &= f([a^2(a^{2(n-1)}b^{2(n-1)})b^2])\\
+    &= f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
+    &\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) \\
+    &\geq 2f([ab]) + 2(n-1)f([ab]) = 2nf([ab]).
 \end{align*}
 To get the first inequality we used oriented connected smoothing and that $b^2a^2$ and $a^{2(n-1)}b^{2(n-1)}$ are parallel, which follows from the fact that $a$ and $b$ are crossing, and Lemma~\ref{lem:anbn_vs_bkak_parallel}. For the second inequality we used the induction step twice.
 Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
 \[
 f([a] [b]) \geq f([ab])
 \]
-which proves oriented disconnected smoothing. The unoriented one is proved in the same way, replacing $b$ by $B$.
+which proves oriented disconnected smoothing.
+
+Unoriented disconnected smoothing is proved in the same way, replacing
+$b$ by~$B$.
 \end{proof}
 
-\begin{remark}
-The proofs of
-Propositions~\ref{prop:oriented_smoothing_unoriented}
-and~\ref{prop:cont_conn_disc} \emph{do not} go through by replacing each
-type of smoothing by the same type of $C$-quasi-smoothing (for $C>0$): for example, in the induction from connected to disconnected oriented smoothing, inequality~\ref{eq:inequality_smoothing} would have to be replaced by
-\[
-f([a^{2n}b^{2n}]) \geq 2nf([ab]) - C n.
-\]
-Following the same chain of inequalities that prove the induction does not yield the desired inequality, since one accumulates one extra $-C$ factor. We suspect corresponding statement for strict quasi-smoothing is not true.
-\end{remark}
-
 As an immediate corollary, we get the following.
-
+\DPTtodo{Do we really need two corollaries that are basically
+  replacing ``convex union'' to ``additive''? Why are they separated
+  so far in the text?}
 \begin{corollary}
 Suppose $f$ is a symmetric, additive curve functional that extends continuously to geodesic currents.
 If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
 \label{cor:cont_conn_disc}
 \end{corollary}
 
-For example, curve lengths from length metric structures on the surface
-or word-lengths with respect to some generating sets give natural such
-functionals.
-See Section~\ref{subsec:examples_and_non} for many examples and non-examples of curve functionals.
+\DPTtodo[inline]{Commented out the length metric example, which we do
+  more fully elsewhere and are easy to check all versions of
+  smoothing.}
+% For example, curve lengths from length metric structures on the surface
+% or word-lengths with respect to some generating sets give natural such
+% functionals.
+% See Section~\ref{subsec:examples_and_non} for many examples and non-examples of curve functionals.
 
 Finally, we show that power smoothing and oriented disconnected smoothing imply stability.
 
 \begin{proposition}
+  \DPTtodo{Why are we spelling out the conditions here and not in
+    other statements in this section?}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ satisfy:
 \begin{enumerate}
 \item class invariance: $f(a)=f(b)$ whenever $a$ and $b$ are conjugate.
@@ -320,49 +370,70 @@ Let $f \colon \pi_1(S) \to \mathbb{R}$ satisfy:
 \[
 f(a^{n+m}) \geq f(a^n) + f(a^m).
 \]
-\item R-oriented disconnected smoothing:
-\begin{align*}
- f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
-\end{align*}
-Then $f$ satisfies stability.
+\item oriented disconnected smoothing: if $(\ora{a},\ora{b})$ cross,
+\[
+ f(a) + f(b) \geq f(ab).
+\]
 \end{enumerate}
+\DPTtodo{Note ``stability'' as previously defined applies to curve
+  functionals, not functions on $\pi_1$}
+Then $f$ satisfies stability: $f(a^n) = nf(a)$.
 \label{prop:power_disconnected_imply_stable}
 \end{proposition}
 \begin{proof}
-Let $a \in \pi_1(S)$ be an arbitary element. Suppose first that $b \in \pi_1(S)$ so that $(a,b)$ R-cross, which we can find by density of endpoints of axes of hyperbolic elements in $G(S)$.
-Then, applying R-oriented disconnected smoothing to the R-crossing pair $(a^n, b)$, we get
+  Let $a \in \pi_1(S)$ be an arbitary element.
+\DPTtodo{Reorganized the proof to put the roadmap first}
+By hypothesis~(2)
+\DPTtodo{We have not used ``sub-stable'' before. It's a fine term that
+  maybe we should introduce earlier}
+(sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$.
+By Fekete's Lemma~\ref{lem:fekete}, the limit
+\[
+F(a)\coloneqq\lim_{n^+} \frac{f(a^n)}{n}
+\]
+exists, and $f(a) \leq F(a)$. We must show $F(a) \leq f(a)$.
+  
+  Find $b \in
+\pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross, which we can find by
+\DPTtodo{We already showed we could find $b$ like this explicitly and
+  more precisely, cite that}
+density of endpoints of axes of hyperbolic elements in $G(S)$.
+Then, applying oriented disconnected smoothing to the R-crossing pair $(\ora{a^n}, \ora{b})$, we get
 \begin{equation}
 f(a^n) + f(b) \geq f(a^nb).
 \label{eq:cross1_eq}
 \end{equation}
-An induction on $n$ on the R-crossing pair $(a,b)$ shows
+
+We next show that
 \begin{equation}
 nf(a) + f(b) \geq f(a^nb)
 \label{eq:cross2_eq}
 \end{equation}
-for $n\geq 1$.
-Indeed, note that the base case is true by R-oriented connected smoothing, and the induction follows from
+for $n\geq 1$, by induction on $n$.
+Indeed, the base case is true by oriented connected smoothing, and the
+induction follows from
 \[
 nf(a) + f(b) \geq f(a^{n-1}b) + f(a) \geq f(a^nb)
 \]
-where in the first step we used the induction step and in the second we used the fact that the pair $(a,a^{n-1}b)$ is R-crossing by Lemma~\ref{lem:rhs_prod}.
-Finally, we note that by ~Lemma~\ref{lem:rhs} and induction, the pair $(B,a^nb)$ is R-crossing for all $n \geq 1$, and hence, by R-oriented disconnected smoothing
+where in the first step we used the induction step and in the second we used the fact that the pair $(\ora{a},\ora{a^{n-1}b})$ is R-crossing by Lemma~\ref{lem:rhs_prod}.
+
+Finally, by Lemma~\ref{lem:rhs_prod}, the pair $(\ora{B},\ora{a^nb})$
+is R-crossing for all $n \geq 1$, and hence, by oriented disconnected
+smoothing,
 \begin{equation}
 f(B) + f(a^nb) \geq f(a^n).
 \label{eq:cross3_eq}
 \end{equation}
-By the hypotheses (2) (sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$, it follows in particular that $f(a^n) \geq nf(a)$ and the limit 
-\[
-F(a)\coloneqq\lim_n \frac{f(a^n)}{n}
-\]
-exists by Fekete's lemma~\ref{lem:fekete}.
-Hence, $F(a) \geq f(a)$.
-Combining Equation~\ref{eq:cross1_eq}, and~\ref{eq:cross3_eq}, dividing by $n$ and taking the limit when $n$ goes to infinity, we get $F(a)=\lim_n \frac{f(a^nb)}{n}$. Using equation~\ref{eq:cross2_eq}
+
+Combining Eqs.~\eqref{eq:cross1_eq}, and~\eqref{eq:cross3_eq},
+dividing by $n$ and taking the limit when $n$ goes to infinity, we get
+$F(a)=\lim_{n^+} \frac{f(a^nb)}{n}$. Using Eq.~\eqref{eq:cross2_eq}
 we get $f(a) \geq F(a)$. Thus, $F(a)=f(a)$, and hence $f$ satisfies stability since $F$ clearly does.
 \end{proof}
 
 We can now restate Theorem~\ref{thm:intersect} from the perspective of curve functionals on oriented curves.
 
+\DPTtodo{Remind me, why are there three versions of this theorem?}
 \begin{mainthmprimeprime}
     Suppose that a curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies the oriented smoothing property
      \[
@@ -373,9 +444,28 @@ Then $\bar{f}(C) = \frac{1}{2} \left(f(C)+f(C^{-1})\right)$ has a dual geodesic 
 \[
 i(\mu_{\bar{f}},C)={\bar{f}}(C)
 \]
-for every curve $C$.
+for every curve~$C$.
 \label{thm:intersect_oriented}
 \end{mainthmprimeprime}
+\DPTtodo{Give a pointer to the proof}
+
+\begin{remark}
+  \DPTtodo{Moved this remark to the end of Section. Edited the statement}
+If we modify the statements of
+Propositions~\ref{prop:oriented_smoothing_unoriented}
+and~\ref{prop:cont_conn_disc} to refer to $C$-quasi-smoothing (for fixed
+$C>0$), then the \emph{do not} go through. For example, in the
+induction from connected to disconnected
+oriented smoothing, inequality~\ref{eq:inequality_smoothing} would
+have to be replaced by
+\[
+f([a^{2n}b^{2n}]) \geq 2nf([ab]) - C n.
+\]
+Following the same chain of inequalities that prove the induction does
+not yield the desired inequality, since one accumulates one extra $-C$
+factor. We suspect the modified statement for quasi-smoothing is not
+true.
+\end{remark}
 
 %%% Local Variables:
 %%% mode: LaTeX
