@@ -58,11 +58,6 @@ stability, then $f$ satisfies smoothing.
 We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
 starting with some lemmas. The first lets us approximate
 disconnected curves by connected curves and vice versa.
-\DPTtodo{Earlier (Eq. \eqref{eq:delta-curve}) we used the notation
-  $\delta_{[g]}$ for this same current. Holding off on switching it
-  in this section till we decide which one we prefer. I did move the def out of
-  the statement of the lemma}
-\DMGtodo{I changed it to $\delta$, and added conjugacy class to the equation}
 \begin{lemma}
   Given any $g,h \in \pi_1(S)$, we have
 \[
@@ -72,7 +67,7 @@ in the weak$^*$-topology of geodesic currents.
 \label{lem:gnhn_to_gsumh}
 \end{lemma}
 
-Recall that here $\delta_{[g]}$ denotes the geodesic current representing the curve $[g]$ (Equation~\ref{eq:delta-curve}). \DMGtodo{added this reference}
+Recall that here $\delta_{[g]}$ denotes the geodesic current representing the curve $[g]$ (Equation~\ref{eq:delta-curve}).
 
 \begin{proof}
   This is a straightforward fact of the weak$^*$-topology convergence
@@ -93,9 +88,6 @@ The proof is by induction on~$n$, repeatedly applying
 Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}. The case
 $n=1$ is directly that lemma.
 For the inductive step, we have:
-\DPTtodo{I started moving the reasons next to the equations. Only did
-  a few to see if we like it}
-  \DMGtodo{I like it}
 \begin{align*}
   &\bigl(\ora{a},\ora{a^{n-1}b^{n-1}},\ora{b}\bigr)\text{ R-parallel}
     &&\text{(Induction)}\\
@@ -160,6 +152,7 @@ $\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}
   caption to include
   Lemma~\ref{lem:powers_parallel}.}
   \DMGtodo{I labeled $\protect\ora{ab}$ and shifted some labels to make them more visible. I'm not sure I see which ones are switched.}
+\DPTtodo{Say in caption which geodesics have endpoints in which intervals}
 \begin{figure}
      \begin{subfigure}[b]{0.45\textwidth}
 \centerline{\svgfignormal{anbn_ba_c}}
@@ -205,12 +198,6 @@ conjugation, and transitivity of R\hyp parallelism. See
 Figure~\ref{fig:cross_lemma}.
 \end{proof}
 
-
-\DPTtodo[inline]{This proof has a slightly complicated structure,
-  shown below (out TODO environment to allow a list). I'm wondering if
-  there are ways to make this clearer. For instance, maybe have two
-  Proof environments.}
-  \DMGtodo{I implemented the two proof environment proposal}
 
 \begin{proof}[Proof of Direction 1 of Proposition~\ref{prop:cont_conn_disc}]
 		
@@ -367,36 +354,21 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 	\end{itemize}
 \end{proof}
 
-As an immediate corollary, we get the following.
-\DPTtodo{Do we really need two corollaries that are basically
-  replacing ``convex union'' to ``additive''? Why are they separated
-  so far in the text?}
-  \DMGtodo{we don't need it, I deleted it and referred to the proposition in the relevant places}
-
 Finally, we show that power smoothing and oriented disconnected smoothing imply stability.
 
 \begin{proposition}
-  \DPTtodo{Why are we spelling out the conditions here and not in
-    other statements in this section?}
-    \DMGtodo{removed the spelling-out}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying:
 \begin{enumerate}
 \item additivity
 \item sub-stability
 \item oriented disconnected smoothing.
 \end{enumerate}
-\DPTtodo{Note ``stability'' as previously defined applies to curve
-  functionals, not functions on $\pi_1$}
-  \DMGtodo{stated it in terms of a curve functional}
 Then $f$ satisfies stability: $f(C^n) = nf(C)$.
 \label{prop:power_disconnected_imply_stable}
 \end{proposition}
 \begin{proof}
   Let $a \in \pi_1(S)$ be an arbitary element.
-\DPTtodo{Reorganized the proof to put the roadmap first}
 By hypothesis~(2)
-\DPTtodo{We have not used ``sub-stable'' before. It's a fine term that
-  maybe we should introduce earlier} \DMGtodo{I'm okay with calling it sub-stable. Also, I fixed power smoothing to mean: $f([a^{n+m}]) \geq f([a^n][a^m])$. Sub-stable means $f([a^{n+m}]) \geq f([a^n])+ f([a^m])$  which is really what we need here. Of course, power smoothing + additive implies sub-stable. I added definition of sub-stable after definition of stable, and also added this remark}
 (sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$.
 By Fekete's Lemma~\ref{lem:fekete}, the limit
 \[
@@ -406,9 +378,8 @@ exists, and $f(a) \leq F(a)$. We must show $F(a) \leq f(a)$.
   
   Find $b \in
 \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross, which we can find by
-\DPTtodo{We already showed we could find $b$ like this explicitly and
-  more precisely, cite that}
-  \DMGtodo{yes, in the proof of Lemma~\ref{lem:if_unbounded_then_reducible}, but it is much later in the paper. Should we add a forward reference or be precise here and add a backward reference there? There is also another instance before, in the proof of Proposition~\ref{prop:graph_collapse}, but we are less precise there, and also the crossing elements are assumed to satisfy further properties. I did not change anything.}
+\DPTtodo{We later show we could find $b$ like this explicitly and
+  more precisely, cite that in addition}
 density of endpoints of axes of hyperbolic elements in $G(S)$.
 Then, applying oriented disconnected smoothing to the R-crossing pair $(\ora{a^n}, \ora{b})$, we get
 \begin{equation}
