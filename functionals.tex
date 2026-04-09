@@ -158,7 +158,7 @@ f([ab]) \ge f([a][b]).
 \item \textbf{Power smoothing.}
 For any element $a \in \pi_1(S)$ and integers $n,m \ge 1$,
 \begin{equation}
-f([a^{n+m}]) \ge f([a^m]) + f([a^n]).
+f([a^{n+m}]) \ge f([a^m][a^n]).
 \label{eq:power_smoothing}
 \end{equation}
 
@@ -200,8 +200,15 @@ Section~\ref{subsec:triality}.
          \label{eq:stable}
          f(C^n) = f(nC).
        \end{equation}
-       Note that stability implies $f$ satisfies power smoothing.
+       A related notion is that of \emph{sub-stability}
+              \begin{equation}
+       	\label{eq:substable}
+       	f(C^{n+m}) \geq f(C^m) + f(C^n)
+       \end{equation} \DMGtodo{added this}
+       for every $m,n \geq 0$. 
 \end{definition}
+
+It is easy to see that if a curve functional satisfies additivity, then stability implies sub-stability, and power smoothing and sub-stability are equivalent. \DMGtodo{added this}
 
 \begin{definition}\label{def:homogeneous} For an arbitrary oriented
   multi-curve~$C$, we say $f$ satisfies \emph{homogeneity} if
@@ -535,7 +542,7 @@ Does $R \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
 non-compact type $G$, such as $\SL(n,\mathbb{R})$.
-In fact, Theorem~\ref{thm:intersect} shows that such representations
+In fact, Theorem~\ref{thm:intersect} together with~\cite[Theorem~1.1]{MZ19:PositivelyRatioed} show that such representations
 satisfy full smoothing if and only if they are positively ratioed (see item (9) in Examples). Hence, for non-positively ratioed ones (such as quasi-Fuchsian but non-fuchsian) we get non-examples.
         \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
@@ -573,6 +580,7 @@ We now give a direct proof of this more general fact.
 Suppose $\Gamma=\pi_1(S)$ acts on a geodesic space $X$ by isometries, and
 let $\ell$ be the stable length of the action. Suppose $\ell$ is
 non-trivial and there is an infinite normal subgroup~$N$ of $\Gamma$ so that $\ell(b)=0$ for all $b \in N$. Then $\ell$ does not satisfy quasi-smoothing.
+\label{prop:graph_collapse}
 \end{proposition}
 \begin{proof} Let $a \in \Gamma$, with $\ell(a)>0$, and fix $b\in N$. Then $\frac{1}{2n} b a^n b a^{-n}$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
 Hence, $\ell$ cannot extend continuously. To see explicitly that
