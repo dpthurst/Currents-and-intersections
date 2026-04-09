@@ -153,18 +153,19 @@ $\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}
   Lemma~\ref{lem:powers_parallel}.}
   \DMGtodo{I labeled $\protect\ora{ab}$ and shifted some labels to make them more visible. I'm not sure I see which ones are switched.}
 \DPTtodo{Say in caption which geodesics have endpoints in which intervals}
+\DMGtodo{added detials in caption}
 \begin{figure}
      \begin{subfigure}[b]{0.45\textwidth}
 \centerline{\svgfignormal{anbn_ba_c}}
     \caption{$\protect\ora{a}$ and $\protect\ora{b}$ are R-parallel
       implies $(\protect\ora{b^ma^m}, \protect\ora{a^n b^n})$ R-cross
-      and $(\ora{a},\ora{a^n b^n}, \ora{b})$ are R-parallel}
+      and $(\ora{a},\ora{a^n b^n}, \ora{b})$ are R-parallel. Here the endpoints of the geodesic $\protect\ora{a^nb^n}$ satisfy $(a^nb^n)^+ \in (ab^+, a^+)$ and $(a^nb^n)^- \in (ab^-, b^-)$, and the endpoints of the geodesic $\protect\ora{b^ma^m}$ satisfy $(b^ma^m)^+ \in (b^+, ba^+)$ and $(b^ma^m)^- \in (a^-, ba^-)$. }
     \label{fig:parallel_lemma}
   \end{subfigure}
   \hfill
     \begin{subfigure}[b]{0.45\textwidth}
  \centerline{\svgfignormal{anbn_ba_p}}
-    \caption{$\protect\ora{b}$ and $\protect\ora{a}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$}
+    \caption{$\protect\ora{b}$ and $\protect\ora{a}$ R-cross implies $\protect\ora{a^n b^n}$ is R-parallel to $\protect\ora{ba}$. Note that the geodesic $\protect\ora{a^{n-1}b^na}$ and $\ora{ba}$ are parallel, since $\protect\ora{a^{n-1}b^{n-1}}$ and $\protect\ora{ba}$ are parallel by induction. After conjugation by $a$ the result follows.}
     \label{fig:cross_lemma}
      \end{subfigure}
   \caption{Crossings of powers}
@@ -202,10 +203,7 @@ Figure~\ref{fig:cross_lemma}.
 \begin{proof}[Proof of Direction 1 of Proposition~\ref{prop:cont_conn_disc}]
 		
 Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, disconnected smoothing, homogeneity and it extends continuously to geodesic currents.
-		\begin{itemize}
-			\item \textbf{Part one:} Oriented connected smoothing $[ab] \reducesto
-			[a][b]$.
-			
+
 			Given a pair $a, b \in \pi_1(S)$ with $(\ora{a},\ora{b})$ parallel (so
 			$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
 			satisfies oriented connected
@@ -241,21 +239,12 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 			\]
 			which proves oriented connected smoothing.
 			
-			\item \textbf{Part two:} Unoriented connected smoothing $[ab] \reducesto
-			[aB]$.
-			
-			
 			Second, we prove unoriented connected smoothing: with $a,b$ as above,
 			$f([ab]) \ge f([aB])$.
 			We split into two cases, depending on the relative position of $\ora{aB}$
 			and $\ora{Ba}$. By
 			Lemma~\ref{lem:ab_parallel_aB}, $(\ora{aB},\ora{Ba})$ are either anti-parallel
 			or cross.
-			
-			
-			\begin{itemize}
-				\item \textbf{Case A:} $\ora{aB}, \ora{Ba}$ anti-parallel.
-				
 				We first consider the case when $(\ora{aB},\ora{Ba})$ are anti-parallel. We will prove by induction that
 				\begin{equation}
 					2nf([ab]) \geq f([(aB)^n (Ab)^n]).
@@ -267,14 +256,15 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 				\]
 				By homogeneity and disconnected smoothing, we get the base case.
 				Now, we prove the induction step:
-				\begin{center}
-				\begin{align*}
-					2nf([ab]) = 2(n-1)f([ab]) + 2f([ab]) &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) \\
-					&\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)]) = f([(aB)^n (Ab)^n]).
-				\end{align*}
-				\end{center}
-				In the first inequality we used the induction step. The second inequality
-				uses convex union and disconnected smoothing applied to
+\begin{align*}
+2nf([ab])
+&= 2(n-1)f([ab]) + 2f([ab]) \\
+&\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) && \text{(Induction)} \\
+&\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)])
+&& \text{(Convex union and disconnected smoothing)} \\
+&= f([(aB)^n (Ab)^n]).
+\end{align*}
+				where the disconnected smoothing is applied to
 				\[[(aB)^{n-1}(Ab)^{n-1}][(Ab)(aB)] \reducesto [(aB)^{n-1} (Ab)^{n-1}
 				(Ab)(aB)].
 				\]
@@ -290,9 +280,6 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 				\]
 				where we used symmetry and homogeneity in the last equality.
 				
-				
-				\item \textbf{Case B:} $\ora{aB}, \ora{Ba}$ cross.
-				
 				Now, still in the unoriented connected smoothing case, suppose
 				$(\ora{aB},\ora{Ba})$ cross.
 				If $(\ora{a},\ora{b})$ are parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that either $(\ora{a},\ora{bA})$ are parallel or $(\ora{b}, \ora{aB})$ are parallel.
@@ -305,22 +292,12 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 				\[
 				f([ab]) = f([aB)(b^2)]) \geq f([aB]) + f(b^2) \geq f([aB])
 				\]
-				as before. This proves unoriented connected smoothing.
-				
-			\end{itemize}
-\end{itemize}
-
-						This finishes the proof that disconnected smoothing implies
-		connected smoothing.
+				as before. This proves unoriented connected smoothing and thus finishes the proof that disconnected smoothing implies connected smoothing.
 \end{proof}	
 		
 \begin{proof}[Proof of Direction 2 of Proposition~\ref{prop:cont_conn_disc}]
 		
 		We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies symmetry, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part.
-		
-		\begin{itemize}
-			\item \textbf{Part one:} Oriented disconnected smoothing $[a][b] \reducesto
-			[ab]$.
 			
 			 Namely, given $a, b \in \pi_1(S)$ with $(\ora{a},\ora{b})$ crossing, we prove, by induction on $n$, the following inequality
 			\begin{equation}
@@ -336,22 +313,18 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 			\begin{align*}
 				f([a^{2n}b^{2n}]) &= f([a^2(a^{2(n-1)}b^{2(n-1)})b^2])\\
 				&= f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
-				&\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) \\
-				&\geq 2f([ab]) + 2(n-1)f([ab]) = 2nf([ab]).
+				&\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) && \text{(Oriented connected smoothing)} \\
+				&\geq 2f([ab]) + 2(n-1)f([ab]) && \text{(Induction)} \\ = 2nf([ab]).
 			\end{align*}
-			To get the first inequality we used oriented connected smoothing and that $b^2a^2$ and $a^{2(n-1)}b^{2(n-1)}$ are parallel, which follows from the fact that $a$ and $b$ are crossing, and Lemma~\ref{lem:anbn_vs_bkak_parallel}. For the second inequality we used the induction step twice.
+			To apply oriented connected smoothing, we used that $b^2a^2$ and $a^{2(n-1)}b^{2(n-1)}$ are parallel, which follows from the fact that $a$ and $b$ are crossing, and Lemma~\ref{lem:anbn_vs_bkak_parallel}. 
 			Finally, using Lemma~\ref{lem:gnhn_to_gsumh} as above, we get
 			\[
 			f([a] [b]) \geq f([ab])
 			\]
 			which proves oriented disconnected smoothing.
 	
-			
-			\item \textbf{Part two:} Unoriented disconnected smoothing $[a][b]\reducesto [aB]$.
-			
 			Unoriented disconnected smoothing is proved in the same way, replacing
 			$b$ by~$B$.
-	\end{itemize}
 \end{proof}
 
 Finally, we show that power smoothing and oriented disconnected smoothing imply stability.
@@ -379,7 +352,7 @@ exists, and $f(a) \leq F(a)$. We must show $F(a) \leq f(a)$.
   Find $b \in
 \pi_1(S)$ so that $(\ora{a},\ora{b})$ R-cross, which we can find by
 \DPTtodo{We later show we could find $b$ like this explicitly and
-  more precisely, cite that in addition}
+  more precisely, cite that in addition} \DMGtodo{looking closely at it, I don't think it's more precise, it's the same argument: we invoke density and say it exists (in proof of Lemma 10.10). So I think we should not do any forward reference.}
 density of endpoints of axes of hyperbolic elements in $G(S)$.
 Then, applying oriented disconnected smoothing to the R-crossing pair $(\ora{a^n}, \ora{b})$, we get
 \begin{equation}
