@@ -152,10 +152,10 @@ to at least one of the elements $x$, $y$, $xy$, or $xY$.
 
 We note that our result says nothing concrete about the dual multi-curve, whereas Erlandsson's result explicitly constructs it in the specific case of simple generating sets. It would be interesting to describe these multi-curves in general.
 
-\subsection{Inequalities between intersection numbers} \DMGtodo{change title}
+\subsection{Length metrics and intersection domination}
 \label{subsec:ineqintersection}
 
- Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves(\Sigma)$.
+ Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves^+(S)$.
 
  As an immediate application of Theorem~\ref{thm:intersect}, we can study what intersection numbers dominating one curve over another imply about dual currents associated to metrics on the surface.
 
@@ -262,7 +262,7 @@ See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudo-metri
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
 Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudo-metric $d$ on $\wt{\Sigma}$ inducing a curve functional, there exists a straight invariant pseudo-metric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
-\item \DMGtodo{this observation might not be surprising, but it did surprise me initially} Suppose $(X,d)$ is a length pseudo-metric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
+\item Suppose $(X,d)$ is a length pseudo-metric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
 where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of $g$.
 From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
 \[
@@ -464,7 +464,7 @@ number with a measured lamination also satisfies connected
 max-smoothing.
 
 \begin{theorem}
-A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity, stability and the \emph{max-smoothing property}:
+A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
     For any essential crossing of a multi-curve $C$, we have
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
@@ -472,7 +472,7 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
     \label{prop:char_laminations_plus}
 \end{theorem}
 \begin{proof}
-Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:lam-char}, $f$ is dual to a measured lamination. On the other hand, $f$ is dual to a measured lamination,  Theorem~\ref{thm:lam-char} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, additive and stable, and noting that if $f$ satisfies disconnected max-smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
+Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:lam-char}, $f$ is dual to a measured lamination. On the other hand, if $f$ is dual to a measured lamination,  Theorem~\ref{thm:lam-char} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, symmetric, additive and stable, and noting that if $f$ satisfies disconnected max-smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by

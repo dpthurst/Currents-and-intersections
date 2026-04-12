@@ -21,13 +21,6 @@ We now turn to the outline of the construction of the ``sufficiently rich family
 
 Let $f\colon \Curves^+(S) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing and stability.
-% Recall that since $f$ satisfies the symmetry condition,
-% $f([a])=f([A])$ for any $a \in \pi_1(S,\ast)$.
-% Recall, also, that the fact that $f$ satisfies the smoothing condition
-% for unoriented curves means $f$ is non-increasing under smoothing
-% essential crossings for either of the two possible unoriented resolutions
-% (the one coherent with the chosen orientation, and the one which
-% isn't).
 We wish to construct a current $\mu_f$ and show that
 $f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
@@ -385,7 +378,7 @@ Note this function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically $\pi_1(S)$-invariant.
 
 To prove Proposition~\ref{prop:limitexists}, we
-first we look at a key ingredient limit.
+first look at a key ingredient limit.
 
 \begin{lemma}\label{lem:additivity-limit}
 Let $f$ be a curve functional satisfying additivity, smoothing, and
@@ -471,7 +464,7 @@ Lemma~\ref{lem:additivity-limit}.
 \begin{lemma}\label{lem:additivity-limit-2}
   Let $a,b,x,y \in \pi_1(S)$ be so that
   $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel, and
-  let $f \colon \Curves^+(S) \to \bbR$ satisfy additivity, smoothing,
+  let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
   stability, and homogeneity. Then
   \begin{equation}
     \lim_{n,m \to \infty} f([ax^nby^m]) - nf([x]) - mf([y])
@@ -517,7 +510,7 @@ Now we check the hypotheses to apply
  Theorem~\ref{thm:caratheodory} to construct a measure.
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
-  let $f \colon \Curves^+(S) \to \bbR$ satisfy additivity, smoothing,
+  let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
   stability, and homogeneity.
   If $a$ and $b$ cross $x$ to the right, then
   \[

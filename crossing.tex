@@ -111,7 +111,7 @@ the basepoints are actually on the axis.
 
 \begin{figure}
 \centering{
-\resizebox{45mm}{!}{\svgfig{doublecoset}}
+\resizebox{55mm}{!}{\svgfig{doublecoset}}
 \caption{Two different translates of $\protect\ora{g}$ captured by the double coset $\protect\langle g \protect\rangle q_1^{-1} q_2 \protect\langle g \protect\rangle.$}.
 \label{fig:doublecoset}
 }
@@ -195,15 +195,17 @@ essential crossings for concrete curves $\gamma$ that are not minimal:
 a crossing is essential if its two smoothings also arise from a
 crossing in some minimal diagram.
 
-We will also distinguish between different types of smoothings.
+We distinguish between two types of smoothing.
 \begin{definition}\label{def:smoothing_types}
-  If $\gamma$ is oriented, then the \emph{oriented smoothing}
-  is the smoothing that respects the orientation on $X(\gamma)$:
-  \begin{equation*}
-    \mfig{curves-3} \reducesto \mfig{curves-4}
-  \end{equation*}
-  The \emph{unoriented smoothing} is the one that does not respect the
-  orientation.
+If $\gamma$ is oriented, the \emph{oriented smoothing} is the smoothing that respects the orientation on $X(\gamma)$:
+\begin{equation*}
+\mfig{curves-3} \reducesto \mfig{curves-4}.
+\end{equation*}
+One may also perform the smoothing that does not respect the orientation; we refer to this as the \emph{unoriented smoothing}:
+\begin{equation*}
+\mfig{curves-3} \reducesto \mfigrotate{curves-4}.
+\end{equation*}
+In this case, the resulting curve does not carry a preferred orientation. Accordingly, unoriented smoothing will only be used in the context of symmetric curve functionals, for which all choices of orientation yield the same value. \DMGtodo{phrased this more explicitly}
   In addition, we call a smoothing \emph{connected} or \emph{disconnected} if the
   original curve is connected or disconnected.
 
@@ -601,10 +603,10 @@ Nevertheless, we can extract information about composite pairs such as
 $\ora{ab},\ora{Ab}$ (Lemmas~\ref{lem:bA_parallel_ba}
 and~\ref{lem:a_parallel_Ba}),
 which is used in Corollaries~\ref{cor:oriented_smoothing_unoriented}
-and~\ref{cor:cont_conn_disc}, needed for the algebraic characterization
+and Proposition~\ref{prop:cont_conn_disc}, needed for the algebraic characterization
 Theorem~\ref{thm:intersections_group}.
 
-Fix $a,b \in \Isom^+(\bbH)$ so that $\ora{a}$ and $\ora{b}$ are
+Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
@@ -902,7 +904,7 @@ two different elements. We work with three elements $a,x,y\in\pi_1(S)$
 so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel; this
 implies, for instance, that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
 R-parallel.
-We again work in the normalized band model
+We again consider the normalized band model
 centered on~$\ora{x}$, starting with another lemma about endpoints.
 
 \begin{lemma}\label{lem:ayx-window}

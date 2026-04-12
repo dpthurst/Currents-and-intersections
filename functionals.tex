@@ -6,7 +6,6 @@ of our curve functionals, including examples and non-examples for the
 hypotheses of Theorem~\ref{thm:intersect}.
 In particular, we relate the results of this paper to our previous
 work~\cite{MGT21:Smoothings}.
-We then turn to further questions motivated by these results.
 
 \subsection{Curve functionals and their properties}
 \label{subsec:mainhypotheses}
@@ -72,19 +71,18 @@ In practice, the oriented geodesic currents we will be interested in in our appl
 \leftrightarrow
 \{\text{flip-invariant oriented geodesic currents}\}.
 \]
- Any flip-invariant oriented geodesic current (equivalently, unoriented geodesic current) is determined by its geometric intersection number with all closed curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, a fact which fails to be true for general oriented geodesic currents.
+ Any flip-invariant oriented geodesic current is determined by its geometric intersection number with all closed curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, a fact which fails to be true for general oriented geodesic currents.
 The geometric intersection number will play a central role throughout.
 By default, the intersection number $i(C,D)$ of two multi-curves is
-defined for unoriented curves. If $C$ and $D$ are oriented,
+defined, for unoriented curves, as the minimal number of intersections among transversely intersecting representatives. If $C$ and $D$ are oriented,
 the
 intersection number is defined by forgetting orientations. See also
-Definition~\ref{def:intersection_currents}. The reader should keep in mind the example of the curve functional $i(\mu, \cdot) \colon \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or, more generally, oriented geodesic current.
+Definition~\ref{def:intersection_currents}.  The reader should keep in mind the example of the curve functional $i(\mu, \cdot) \colon \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or, more generally, oriented geodesic current $\mu$.
 
 As explained in Appendix~\ref{sec:asymmetric}, there are asymmetric
 variants of intersection number for oriented curves which only record crossings of a given orientation. For such notions, the analogue of the main
 duality theorem (Theorem~\ref{thm:intersect}) fails. This phenomenon
-also appears in the proof (see Proposition~\ref{prop:recoverintersection}
-and Remark~\ref{rmk:use_symmetry}).
+also appears in the proof (see Proposition~\ref{prop:recoverintersection}).
 
 A curve functional that does not depend
 on orientation may equivalently be viewed as a functional on
@@ -280,13 +278,13 @@ below).
 
 Theorem~\ref{thm:intersect} considered curve functions on the space of unoriented multi-curves $\Curves(S)$.
 
-When performing an smoothing for an oriented multi-curve, one could
+When performing a smoothing for an oriented multi-curve, one could
 also choose to reglue in the incoherent orientation. In this case,
 there two possible (incoherent) orientations to equip the resulting
 curve with. See also Section~\ref{subsec:crossings}.
 
 \begin{definition}[smoothing and max-smoothing]
-Let $C$ be an unoriented closed curve, and $C'$ either of the two smoothings, oriented or unoriented. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
+Let $C$ be an unoriented closed curve, and $C'$ either of the two smoothings. We say $f \colon \Curves(S) \to \mathbb{R}$ satisfies \emph{smoothing} if $f(C) \geq f(C')$, Schematically, we have
      \[
       f\left(\mfig{curves-0}\right) \ge \max \left\{ f\left(\mfig{curves-1}\right), f\left(\mfig{curves-2}\right)\right\}.
    \]
@@ -299,7 +297,7 @@ Smoothing is satisfied by many natural functionals, including
 intersection functionals $i(\mu,\cdot)$ for any geodesic current $\mu$
 (see~\cite[Section~4.1]{MGT21:Smoothings}; cf.~Appendix~\ref{app:necessary}),
 as well as curve lengths arising from a length metric structure on $S$
-(see~\cite[Section~4.3]{MGT21:Smoothings}; cf.~Section~\ref{subsec:domination}).
+(see~\cite[Section~4.3]{MGT21:Smoothings}; cf. Section~\ref{subsec:ineqintersection}).
 Further examples are discussed in Section~\ref{subsec:examples_and_non}.
 
 As before, smoothing and max-smoothing admit algebraic reformulations.

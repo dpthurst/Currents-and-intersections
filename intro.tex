@@ -34,8 +34,7 @@ functions associated to certain higher-rank representations of surface
 groups (such as Hitchin representations) also arise from
 currents~\cite{MZ19:PositivelyRatioed,BIPP24:PositiveCrossratios}.
 
-Despite this ubiquity, there has been no intrinsic characterization of which curve functionals arise as intersection with a geodesic current.
-We provide such a characterization.
+From this perspective, geodesic currents form a distinguished subclass of curve functionals. The ambient space is vast and includes many natural examples not arising from currents (Section~\ref{subsec:examples_and_non}). We give a necessary and sufficient intrinsic axiomatic characterization of those curve functionals that arise as intersection with a geodesic current.
 
 \begin{mainthm}
   A curve functional $f \colon \Curves(S)\to\mathbb{R}$ is dual to a
@@ -88,7 +87,7 @@ Theorem~\ref{thm:intersect} produces numerous new dual currents and unifies seve
 
 This extends earlier constructions for negatively curved, non-positively curved, and locally $\CAT(0)$ or $\CAT(-1)$ metrics~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos}. 
 
-It also yields dual currents (in fact, dual multi-curves) for stable
+Theorem~\ref{thm:intersect} further yields dual currents (in fact, dual multi-curves) for stable
 lengths associated to embedded graphs. Let $\iota \colon \mathcal{G}
 \hookrightarrow S$ be a filling embedded graph, in the sense that the complementary
 regions are disks. 
@@ -174,9 +173,7 @@ and~\eqref{eq:disconn_oriented} together recover smoothing in the
 sense of Theorem~\ref{thm:intersect}
 (Corollary~\ref{cor:oriented_smoothing_unoriented}).
 
-The two oriented inequalities are logically independent:
-neither~\eqref{eq:conn_oriented} nor~\eqref{eq:disconn_oriented}
-implies the other without further hypotheses (see Proposition~\ref{prop:cont_conn_disc}). Moreover,
+Inequalities~\eqref{eq:conn_oriented} and~\eqref{eq:disconn_oriented} are individually necessary and logically independent (Section~\ref{subsec:mainhypotheses}), but become equivalent for functionals that extend continuously to geodesic currents (Proposition~\ref{prop:cont_conn_disc}). Moreover,
 the symmetrization $\overline f(g)=\tfrac12(f(g)+f(G))$ is
 essential; without it, the conclusion fails
 (Appendix~\ref{sec:asymmetric}).
@@ -199,6 +196,7 @@ satisfies exact smoothing. Theorem~\ref{thm:intersect} places these
 results in a unified framework by identifying smoothing and additivity
 as the precise necessary and sufficient conditions for duality with a
 geodesic current.
+These results identify a common axiomatic structure underlying curve functionals arising from a variety of geometric and dynamical constructions, which we explore further below.
 
 \subsection{Characterization of measured laminations and hyperbolic metrics}
 
@@ -284,11 +282,7 @@ of Theorem~\ref{thm:lam-char}.
 
 \subsection{Characterizing small actions on real trees} 
 
-We next apply Theorem~\ref{thm:intersect} to actions of surface groups on
-$\mathbb{R}$-trees. We obtain several new characterizations of those
-$\pi_1(S)$-actions that are dual to measured laminations and, in
-particular, recover Skora’s classical theorem~\cite{Sko90:GeometricAction}
-as a corollary.
+We next apply Theorem~\ref{thm:intersect} to actions of surface groups on $\mathbb{R}$-trees. We obtain new characterizations of those $\pi_1(S)$-actions that are dual to measured laminations. In particular, we give an axiomatic characterization in terms of explicit inequalities on pairs of group elements. Skora’s classical theorem then emerges as a formal consequence, yielding a conceptual and streamlined proof~\cite{Sko90:GeometricAction}.
 
 A \emph{$\Gamma$-tree} is an isometric action of a finitely generated
 group $\Gamma$ on an $\mathbb{R}$-tree $T$. For $g\in\Gamma$, its
@@ -458,7 +452,7 @@ most of this work while at Indiana University Bloomington.
          $\Curves(S)$ & unoriented multi-curves \\
          $\Curves^+(S)$ & oriented multi-curves \\
          $f$ & curve functional \\
-         $\Curr(S)$ & unoriented geodesic currents \\
+         $\Curr(S)$ & flip-invariant geodesic currents \\
          $\Curr^+(S)$ & oriented geodesic currents \\
          $C,D$ & multi-curves on $S$\\
          $g,h,a,b,x$ & elements of $\pi_1(S)$ \\ 
@@ -509,6 +503,8 @@ Theorem~\ref{thm:intersections_group}. They therefore induce geodesic
 currents; this proves Theorem~\ref{mainthm:crossratio}.
 
 In Section~\ref{sec:skora}, we prove Theorem~\ref{mainthm:skora}. We recall the necessary background on real trees and group actions.
+
+Finally, Section~\ref{sec:questions} discusses further questions and conjectures.
 
 The Appendices address topics not central to the main proofs. Appendix~\ref{sec:hyp-par} gives a hyperbolic
 parallelogram identity used to characterize hyperbolic lengths.
