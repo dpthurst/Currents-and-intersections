@@ -49,7 +49,9 @@ conditions explained below.
   with different lifts of a single curve $\protect[x]$. There are no
   constraints on how the base lift $\protect\ora{x}$ sits with respect to the
   other lifts. The other four lifts have constraints in how they
-  sit; some other possibilities are shown in Figure~\ref{fig:rhbox}.}
+  sit; some other possibilities are shown in Figure~\ref{fig:rhbox}.
+  Recall from Section~\ref{sec:actions} that the thicker arrows denote
+the \emph{right} action of $\pi_1$.}
 \label{fig:newmodel3}
 }
 \end{figure}
@@ -81,7 +83,7 @@ instance, the window
 $[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$ must avoid the
 diagonal.
 
-\begin{definition}
+\begin{definition}\label{def:RH-lift-system}
   A \emph{right-handed lift system} (RH lift system) is a collection of elements
   $(p_1,q_1,p_2,q_2)$ in $\pi_1(S)$ so that
   \begin{enumerate}
@@ -116,15 +118,6 @@ by condition \ref{item:box-edges-cross}.
      \label{fig:rhbox}
 \end{figure}
 
-\begin{remark}
- Condition~\ref{item:box-diags-cross-lift} is
- phrased as it is to ensure translation invariance for boxes of type~2
- and type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
- enough~$n$.
- For boxes of type~1, the crossing is essential for all~$n$.
-\label{rmk:largeenough}
-\end{remark}
-
 \begin{figure}
   \centering{
 \resizebox{45mm}{!}{\svgfig{box3}}
@@ -151,6 +144,10 @@ the same right-handed box.
 The set of right-handed boxes is denoted $\mathcal{B}$.
 \end{definition}
 
+The conditions in Definition~\ref{def:RH-lift-system} are chosen to
+make the following proposition work.
+
+\DPTtodo{Need the proposition to be an iff. State that.}
 \begin{proposition}\label{prop:rh-boxes}
   Let $(p_1,q_1,p_2,q_2)$ be a RH lift system determining a RH box with $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
@@ -160,13 +157,14 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
 \end{proposition}
 
 \begin{proof}
-  We first note that condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. \DMGtodo{moved this here } Also, condition~\ref{item:box-edges-cross-lift} implies
+  We first note that condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Also, condition~\ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
   are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
   $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel.
 
   To exploit condition~\ref{item:box-diags-cross-lift}, we prove a lemma.
-
+  \DPTtodo{Think about notation for this lemma}
+  
   \begin{lemma}\label{lem:box-endpoints}
     In the setting above, fix $n \in \bbZ$ and $i,j \in \{1,2\}$, and
     set $g = q_j x^n p_i$. Then $g$ is hyperbolic, with
@@ -180,8 +178,8 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
 
   \begin{proof}
     First note that $g \cdot (\ell_i^-,\ell_i^+) = q_j x^n p_i P_i
-    \cdot (x^-,x^+) = (r_j^-,r_j^+) \subsetneq (\ell_i^-,\ell_i^+)$, since $(\ora{\ell_i}, \ora{r_j})$ are R-parallel, \DMGtodo{added this} so
-    $g^- \in (\ell_i^-,\ell_i^+)$ and $g^+ \in (r_j^-,r_j^+)$. \DMGtodo{wrote this instead}
+    \cdot (x^-,x^+) = (r_j^-,r_j^+) \subsetneq (\ell_i^-,\ell_i^+)$, so
+    $g^- \in (\ell_i^-,\ell_i^+)$ and $g^+ \in (r_j^-,r_j^+)$ by Lemma~\ref{lem:NS-dynamics}.
 
     For convenience, set
     $\ora{\ell_{i,j,n}} = P_i x^{-n}Q_j \cdot \ora{\ell_i}$ and
@@ -211,6 +209,15 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
 \end{proof}
 
 \begin{remark}
+ Condition~\ref{item:box-diags-cross-lift} is
+ phrased as it is to ensure translation invariance for boxes of type~2
+ and type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
+ enough~$n$.
+ For boxes of type~1, the crossing is essential for all~$n$.
+\label{rmk:largeenough}
+\end{remark}
+
+\begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
   the specified way. It turns out we could have made a different choice and it would not matter for the resulting current, as by
   Proposition~\ref{prop:spikes}
@@ -235,18 +242,11 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 \end{proposition}
 \begin{proof}
   By Lemma~\ref{lem:diagonaldense}, we can find translates
-  $p_i\cdot \ora{x}$ and $q_j \cdot \ora{x}$ with both endpoints in
-  the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. To
-  make a RH box (which will be automatically of type~1, since both endpoints of the lifts of $\ora{x}$ are constrained in a small neighborhood), we must require that
-  $p_i \cdot \ora{x}$ be clockwise $B_\epsilon(v_i)$ and the endpoints
-  of $q_i \cdot \ora{x}$ be counterclockwise within $B_\epsilon(w_i)$;
-  again we can achieve this.
-  See Figure~\ref{fig:approx2} (right).
-  This guarantees Condition~\ref{item:box-edges-cross-lift}.
-  Condition~\ref{item:box-nontriv-lift} will be satisfied, since the
-  lifts are disjoint.
-  The cyclic order of the $v_i$ and $w_i$ guarantees
-  Condition~\ref{item:box-diags-cross-lift}.
+  $\ora{\ell_i} = P_i\cdot \ora{x}$ and $\ora{r_j} = q_j \cdot \ora{x}$ with both endpoints in
+  the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$.
+  Furthermore, that same lemma lets us arrange the orientations so
+  that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a
+  RH lift system of type~$1$.
 \end{proof}
 
 \begin{figure}
@@ -283,8 +283,11 @@ Note that, by Eq.~\eqref{eq:double_coset}, the relative position
 of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
 
+\DPTtodo{Update this notation}
 Note that, for instance, the points $[p_1^{-1}]$ and $[q_1]$ are related via $a$ by the right action: $[p_1^{-1}] \cdot a = [q_1]$.
-On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action: $q_1 p_1 \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crosses $\ora{x}$.
+On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and
+$\ora{r_1}$ are related via the element $q_1 p_1$ by the left action:
+$q_1 p_1 \cdot \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crosses $\ora{x}$.
 
 The action of translating all lifts by $\pi_1(S)$ has been baked in to
 this alternate parametrization,
@@ -349,19 +352,24 @@ We will now start setting up the definition of the measure of an orbit
 of right-handed box $[B]_{a,b,c,d}$. In particular, we will define a function
 $\mu_f \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
 involving the $f$-value of a certain combination of words involving
-$a,b,c,d,x$ (recall $\mathcal{B}$
-denotes the family of right-handed boxes) \DMGtodo{recalled this}. 
+$a,b,c,d,x$. (Recall $\mathcal{B}$
+denotes the family of right-handed boxes.)
 
 \begin{proposition}
 \label{prop:limitexists}
 Let $B(p_1,q_1,p_2,q_2)$ be a right-handed box so that $[B(p_1,q_1,p_2,q_2)]=[B]_{a,b,c,d}$.
-Then following limit exists:
+Then following limit exists and only depends on the $\pi_1(S)$-orbit
+of the box:
 \[
 \mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \]
 \end{proposition}
 Note this function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically $\pi_1(S)$-invariant.
+
+\DPTtodo[inline]{Prove that this is in fact a function on boxes, i.e.,
+doesn't change under the transformations on the $a,b,c,d$. Also state
+that this is enough to prove it only depends on the box}
 
 We will now prove the limit in Proposition~\ref{prop:limitexists} exists using the properties
 of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
