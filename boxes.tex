@@ -57,10 +57,12 @@ the \emph{right} action of $\pi_1$.}
 
 The measure that we ultimately assign to the associated windows will
 be invariant under
-\begin{itemize}
-\item changing $p_i$ preserving $\ell_i$, by $p_i \mapsto xp_i$ and
-\item changing $q_i$ preserving $r_i$, by $q_i \mapsto q_ix$.
-\end{itemize}
+\begin{subequations}\label{eq:changes}
+\begin{align}
+\text{(changing $p_i$ preserving $\ell_i$)} \quad & p_i \mapsto xp_i, \label{eq:changes-p}\\
+\text{(changing $q_i$ preserving $r_i$)} \quad & q_i \mapsto q_ix. \label{eq:changes-q}
+\end{align}
+\end{subequations}
 These two conditions are clearly necessary since the endpoints of $\ell_i$ and $r_i$ are invariant under such transformations.
 In fact, ultimately we will take a limit of these
 transformations: we look at the limit as $n\to \infty$ of $p_i \mapsto x^np_i$
@@ -148,8 +150,9 @@ make the following proposition work.
 
 \DPTtodo{Need the proposition to be an iff. State that. Also show that
 the $p_i$/$q_j$ translations are enough to determine box}
+\DMGtodo{I'm a bit confused about what we mean by $p_i/q_j$ translations are enough to determine a box. Every tuple $(p_1,q_1,p_2,q_2)$ determines a box, no? }
 \begin{proposition}\label{prop:rh-boxes}
-  Let $(p_1,q_1,p_2,q_2)$ be a RH lift system determining a RH box with $\ora{\ell_i} =
+  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system if and only if $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular the boxes in $\cB$ avoid the
@@ -284,8 +287,9 @@ of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
 
 \DPTtodo{Update this notation}
-Note that, for instance, the points $[p_1^{-1}]$ and $[q_1]$ are related via $a$ by the right action: $[p_1^{-1}] \cdot a = [q_1]$.
-On the other hand, the lifts of $[x]$ given by $\ora{\ell_1}$ and
+\DMGtodo{updated it}
+Note that, for instance, the points $\wt \ast \cdot p_1^{-1}$ and $\wt \ast \cdot q_1$ are related via $a$ by the right action: $(\wt \ast \cdot p_1^{-1}) \cdot a = \wt \ast \cdot q_1$.
+On the other hand, the lifts of $[x]$ give by $\ora{\ell_1}$ and
 $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action:
 $q_1 p_1 \cdot \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crosses $\ora{x}$.
 
@@ -293,13 +297,14 @@ The action of translating all lifts by $\pi_1(S)$ has been baked in to
 this alternate parametrization,
 but the measure corresponding to the associated window should be
 invariant under the following four transformations:
-\begin{itemize}
-\item translating on $\ell_1$: $a \mapsto xa$ and $b \mapsto xb$;
-\item translating on $\ell_2$: $c \mapsto xc$ and $d \mapsto xd$;
-\item translating on $r_1$: $a \mapsto ax$ and $c \mapsto cx$; and
-\item translating on $r_2$: $b \mapsto bx$ and $d \mapsto dx$.
-\end{itemize}
-
+\begin{subequations}\label{eq:translations}
+\begin{align}
+\text{(translating along $\ell_1$)} \quad & a \mapsto xa,\quad b \mapsto xb \label{eq:translations-l1}\\
+\text{(translating along $\ell_2$)} \quad & c \mapsto xc,\quad d \mapsto xd \label{eq:translations-l2}\\
+\text{(translating along $r_1$)} \quad & a \mapsto ax,\quad c \mapsto cx \label{eq:translations-r1}\\
+\text{(translating along $r_2$)} \quad & b \mapsto bx,\quad d \mapsto dx \label{eq:translations-r2}
+\end{align}
+\end{subequations}
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
 $aCdB = 1$, we can
 construct four lifts of $[x]$ related by Equation~\ref{eq:relationdatum}, for instance
@@ -360,9 +365,10 @@ denotes the family of right-handed boxes.)
 Let $B(p_1,q_1,p_2,q_2)$ be a right-handed box so that $[B(p_1,q_1,p_2,q_2)]=[B]_{a,b,c,d}$.
 Then following limit exists and only depends on the $\pi_1(S)$-orbit
 of the box:
-\[
+\begin{equation}
 \mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
-\]
+\label{eq:def_measure}
+\end{equation}
 \end{proposition}
 Note this function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically $\pi_1(S)$-invariant.
@@ -370,6 +376,7 @@ then a measure) is automatically $\pi_1(S)$-invariant.
 \DPTtodo[inline]{Prove that this is in fact a function on boxes, i.e.,
 doesn't change under the transformations on the $a,b,c,d$. Also state
 that this is enough to prove it only depends on the box}
+\DMGtodo{I added this in the proof, and stated it.}
 
 We will now prove the limit in Proposition~\ref{prop:limitexists} exists using the properties
 of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
@@ -417,9 +424,6 @@ smoothing of $f$, there is $N>0$ (depending on $a,x$) so that, for $n > N$,
   limit \eqref{eq:additivity-limit} exists.
 \end{proof}
 
-\begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-This follows immediately from Lemma~\ref{lem:additivity-limit}.
-\end{proof}
 
 \begin{remark}
 The limit in Lemma~\ref{lem:additivity-limit} need not exist if one
@@ -494,8 +498,6 @@ Lemma~\ref{lem:additivity-limit}.
    Lemma~\ref{lem:limexistrmidconvextwovar} the limit exists.
 \end{proof}
 
-Now we check the hypotheses to apply
- Theorem~\ref{thm:caratheodory} to construct a measure, starting with positivity.
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
   let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
@@ -525,6 +527,32 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
   $\epsilon$ of their limiting value.) Conversely,
   Equation~\eqref{eq:cross-split} implies the opposite inequality.
 \end{proof}
+
+\DMGtodo{moved the proof a bit further down since it is using double limit}
+\begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
+The existence of the limit follows immediately from Lemma~\ref{lem:additivity-limit}.
+It remains to show that the limit is invariant under the translations in Equation~\ref{eq:translations}.
+Let us prove it for Equation~\ref{eq:translations-l1}, since the other are similar.
+
+The translation in the RH orbit $a \mapsto xa,\quad b \mapsto xb$ (Eq.~\ref Equation~\ref{eq:translations-l1} corresponds to a translation of the RH lift system $p_1 \mapsto xp_1$ (Eq.~\ref{eq:changes-p}). Thus,
+\begin{align}
+\mu_f(B(xp_1,q_1,p_2,q_2))
+&= \frac{1}{2}\lim_{n \to \infty}
+\Big( f([bx^{n+1}]) + f([cx^n]) - f([ax^{n+1}]) - f([dx^n]) \Big)
+&& \text{(Equation~\ref{eq:def_measure})} \\
+&= \frac{1}{2}\lim_{n,m \to \infty}
+\Big( f([bx^{m}]) + f([cx^n]) - f([ax^{m}]) - f([dx^n]) \Big)
+&& \text{(Lemma~\ref{prop:join-split-alg})} \\
+&= \frac{1}{2}\lim_{n \to \infty}
+\Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
+&& \text{(Equation~\ref{eq:def_measure})} \\
+&= \mu_f(B(p_1,q_1,p_2,q_2)).
+\end{align}
+Hence, $\mu_f$ only depends on the RH box and, since the definition of $\mu_f$ is given in terms of the RH orbit, it only depends on the RH box orbit.
+\end{proof}
+
+Now we check the hypotheses to apply
+ Theorem~\ref{thm:caratheodory} to construct a measure, starting with positivity.
 
 \begin{proposition}
   \label{prop:box-positive}
@@ -726,7 +754,7 @@ all the way back to the diagonal.
   of~$B_0$, or not.  (Such long whiskers necessarily also pass through the bottom
   or left edge as well.)
   Suppose first that there is no
-  ``long'' whiskers in~$W$. Then the partition is in fact trivial, since
+  long whiskers in~$W$. Then the partition is in fact trivial, since
   the only possible box with no long whiskers that contains a
   point near the upper-right corner of~$B_0$ is $B_0$ itself.
 
