@@ -1,36 +1,33 @@
 \section{Boxes and their measures}
 \label{sec:define_measure}
-Our main goal is to define a measure on the space of geodesics---in fact, a geodesic current---associated to a curve functional~$f$. 
+Our main goal in the paper is to define a measure on the space of geodesics---in fact, a geodesic current---associated to a curve functional~$f$. 
 Roughly speaking, our strategy is to associate a positive number, in a
-countably additive way, to a collection of boxes of geodesics
+countably additive way, to a collection of boxes of geodesics that is 
 sufficiently rich to generate the $\sigma$-algebra of open sets of
 $G(\Sigma)$.
 
 To define the measure of our elementary boxes, we look at the
-functional~$f$ applied to longer and longer curves~$C_i$
-(Section~\ref{sec:boxes}). The
+functional~$f$ applied to longer and longer curves~$C_i$. The
 measure of a box is a linear combination of $f(C_i)$ chosen so that
 the highest growth term vanishes, and the limit of interest picks out
-the next asymptotics. This is similar to the construction of Otal
+the next asymptotics. This is reminiscent to the construction of Otal
 \cite{Otal90:SpectreMarqueNegative}.
 
 \subsection{Right-handed boxes}
 \label{sec:boxes}
 
-We now turn to the outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
+We now outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
 
 Let $f\colon \Curves^+(S) \to \mathbb{R}$ be a
 functional satisfying symmetry, additive union, smoothing and stability.
-We wish to construct a current $\mu_f$ and show that
-$f(C) = i(C, \mu_f)$. To construct~$\mu_f$, as mentioned above, we fix
+Fix
 (arbitrarily) a simple closed oriented curve~$[x]$ passing through the
 basepoint. The endpoints of the lifts of $[x]$ are dense in
 $\partial_\infty S$, by minimality of the action of $\pi_1(S)$
 (reviewed in Lemma~\ref{lem:minimal}).
 
-The main objects in our proof are certain boxes in the
-space of geodesics to which we will assign measures. The prototype for
-the kind of boxes we consider is shown in
+The prototype for
+the kind of boxes to which we assign measures is shown in
 Figure~\ref{fig:newmodel3}: we have four geodesics, all lifts of~$[x]$, with
 two lifts $\ora{\ell_1},\ora{\ell_2}$ on the left and two $\ora{r_1},\ora{r_2}$ on the right,
 and consider the window
@@ -85,7 +82,7 @@ $[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$ must avoid the
 diagonal.
 
 \begin{definition}
-  A \emph{right-handed lift system} is a collection of elements
+  A \emph{right-handed lift system} (RH lift system) is a collection of elements
   $(p_1,q_1,p_2,q_2)$ in $\pi_1(S)$ so that
   \begin{enumerate}
   \item\label{item:box-nontriv-lift} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
@@ -99,9 +96,9 @@ diagonal.
 See Figure~\ref{fig:rhbox} for examples of
 RH systems, and Figure~\ref{fig:box4} for a non-example.
  We
-distinguish three types of RH systems: type 1 has
-no nested lifts of $[x]$; type 2 has one parallel pair of nested lifts; and
-type 3 has two parallel pairs of nested lifts.
+distinguish three types of RH systems: \emph{type 1} has
+no nested lifts of $[x]$; \emph{type 2} has one parallel pair of nested lifts; and
+\emph{type 3} has two parallel pairs of nested lifts.
 Note that since $[x]$ is simple, lifts
 cannot intersect each other, and nested lifts cannot be anti-parallel
 by condition \ref{item:box-edges-cross}.
@@ -121,10 +118,10 @@ by condition \ref{item:box-edges-cross}.
 
 \begin{remark}
  Condition~\ref{item:box-diags-cross-lift} is
- phrased as it is to ensure translation invariance for boxes of Type~2
- and Type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
+ phrased as it is to ensure translation invariance for boxes of type~2
+ and type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
  enough~$n$.
- For boxes of Type~1, the crossing is essential for all~$n$.
+ For boxes of type~1, the crossing is essential for all~$n$.
 \label{rmk:largeenough}
 \end{remark}
 
@@ -163,7 +160,7 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
 \end{proposition}
 
 \begin{proof}
-  We first note that condition \ref{item:box-edges-cross-lift} implies
+  We first note that condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. \DMGtodo{moved this here } Also, condition~\ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
   are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
   $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel.
@@ -183,9 +180,8 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
 
   \begin{proof}
     First note that $g \cdot (\ell_i^-,\ell_i^+) = q_j x^n p_i P_i
-    \cdot (x^-,x^+) = (r_j^-,r_j^+) \subset (\ell_i^-,\ell_i^+)$, so
-    $g^-,g^+$ are in the regions cut out by $\ora{\ell_i}, \ora{r_j}$,
-    respectively. 
+    \cdot (x^-,x^+) = (r_j^-,r_j^+) \subsetneq (\ell_i^-,\ell_i^+)$, since $(\ora{\ell_i}, \ora{r_j})$ are R-parallel, \DMGtodo{added this} so
+    $g^- \in (\ell_i^-,\ell_i^+)$ and $g^+ \in (r_j^-,r_j^+)$. \DMGtodo{wrote this instead}
 
     For convenience, set
     $\ora{\ell_{i,j,n}} = P_i x^{-n}Q_j \cdot \ora{\ell_i}$ and
@@ -207,13 +203,11 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
   $g_{i,j,n} = q_j x^n p_i$, it follows that
   $\lim_{n\to\infty} g_{i,j,n}^+ = r_j^+$ and
   $\lim_{n\to\infty} g_{i,j,n}^- = \ell_i^-$.
-
+  
   By condition~\ref{item:box-diags-cross-lift}, for sufficiently large $n$
   the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$
   appear in that ccw order, which by the limiting behavior implies
-  that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as desired. (At
-  the last step we need condition~\ref{item:box-nontriv-lift} to
-  guarantee that $\ell_1 \ne \ell_2$ and $r_1 \ne r_2$.)
+  that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as desired.
 \end{proof}
 
 \begin{remark}
@@ -222,7 +216,7 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
   Proposition~\ref{prop:spikes}
   the weight of the
   boundary of these boxes under any geodesic current is necessarily
-  zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box must be a single lift of~$[x]$, and by definition of
+  zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box is a a single lift of~$[x]$, and by definition of
   right-handed box, this lift is not contained in box. The half-open
   choice we made is
   more convenient the proof of Proposition~\ref{prop:countablyadditive}.
@@ -235,7 +229,7 @@ of rectangles in $G(S)$, in the following sense. For any
 $v_1,v_2,w_2,w_1\in \bdy_\infty S$ in that cyclic order,
 and any $\epsilon>0$ so the respective $\epsilon$-neighborhoods are
 disjoint, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
-Type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
+type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 \label{prop:density}
 \end{proposition}
@@ -243,7 +237,7 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
   By Lemma~\ref{lem:diagonaldense}, we can find translates
   $p_i\cdot \ora{x}$ and $q_j \cdot \ora{x}$ with both endpoints in
   the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. To
-  make a RH box (which will be automatically of Type~1, since both endpoints of the lifts of $\ora{x}$ are constrained in a small neighborhood), we must require that
+  make a RH box (which will be automatically of type~1, since both endpoints of the lifts of $\ora{x}$ are constrained in a small neighborhood), we must require that
   $p_i \cdot \ora{x}$ be clockwise $B_\epsilon(v_i)$ and the endpoints
   of $q_i \cdot \ora{x}$ be counterclockwise within $B_\epsilon(w_i)$;
   again we can achieve this.
@@ -255,10 +249,6 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
   Condition~\ref{item:box-diags-cross-lift}.
 \end{proof}
 
-\begin{remark}
-A similar argument guarantees that boxes of Type~2 and Type~3 are also dense in the above sense.
-\end{remark}
-
 \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{approxfin}}
@@ -267,6 +257,7 @@ A similar argument guarantees that boxes of Type~2 and Type~3 are also dense in 
 }
 \end{figure}
 
+\DMGtodo{we need to be more clear if we mean left or right action in general}
 We now turn to invariance under translation by $\pi_1(S)$, as in
 Eq.~\eqref{eq:box-translate}. The $\pi_1(S)$-orbit of $(p_1,q_1,p_2,q_2)$
 can be parameterized by group elements $(a,b,c,d)$ related
@@ -282,7 +273,7 @@ can be parameterized by group elements $(a,b,c,d)$ related
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3_orbits}}
-\caption{Parameterizing an RH orbit via elements $a,b,c,d$. The original position of $\protect\ora{x}$ is arbitrary, but the particular lifts determining the box fall into a Type 1. Compare with Figure~\ref{fig:newmodel3}.}
+\caption{Parameterizing an RH orbit via elements $a,b,c,d$. The original position of $\protect\ora{x}$ is arbitrary, but the particular lifts determining the box fall into a type 1. Compare with Figure~\ref{fig:newmodel3}.}
 \label{fig:newmodel3_orbit}
 }
 \end{figure}
@@ -308,8 +299,8 @@ invariant under the following four transformations:
 
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
 $aCdB = 1$, we can
-construct four lifts of $[x]$ with the above relations, for instance
-setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = ca^{-1}$.
+construct four lifts of $[x]$ related by Equation~\ref{eq:relationdatum}, for instance
+setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = cA$.
 
 
 \begin{definition}[RH orbit]
@@ -328,7 +319,7 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ be such that:
 Then we call the datum $[a,b,c,d]$ a \emph{right-handed lift orbit} (or \emph{RH orbit}, for short).
 \end{definition}
 
-As explained above, this determines a $\pi_1(S)$-orbit of windows.
+As explained above, this determines a $\pi_1(S)$-orbit of RH lift systems.
 The one non-obvious point to check is that
 condition~\ref{item:box-diags-cross} corresponds
 to condition~\ref{item:box-diags-cross-lift}:
@@ -339,7 +330,7 @@ to condition~\ref{item:box-diags-cross-lift}:
 \end{align*}
 Thus the two crossing conditions are equivalent.
 
-\begin{definition}
+\begin{definition}\DMGtodo{many RH orbits determine the same box}
   We denote a $\pi_1(S)$-orbit of boxes by $[B(p_1,q_1,p_2,q_2)]$ or
   $[B]_{a,b,c,d}$ depending on whether we want to
   draw attention to a concrete representative of the orbit or to the
@@ -355,16 +346,11 @@ Thus the two crossing conditions are equivalent.
 \subsection{Measures of boxes}
 
 We will now start setting up the definition of the measure of an orbit
-of right-handed box $[B]_{a,b,c,d}$. In particular, if $\mathcal{B}$
-denotes the family of right-handed boxes, we will define a function
+of right-handed box $[B]_{a,b,c,d}$. In particular, we will define a function
 $\mu_f \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
 involving the $f$-value of a certain combination of words involving
-$a,b,c,d,x$. We will then prove the limit exists using the properties
-of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
-results about how certain words behave under smoothings proven in
-Section~\ref{subsec:crossings}. Finally, we will show $\mathcal{B}$ is
-a semi-ring (in the sense of Definition~\ref{def:semiring}) and
-$\mu_f$ is finitely additive.
+$a,b,c,d,x$ (recall $\mathcal{B}$
+denotes the family of right-handed boxes) \DMGtodo{recalled this}. 
 
 \begin{proposition}
 \label{prop:limitexists}
@@ -377,7 +363,12 @@ Then following limit exists:
 Note this function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically $\pi_1(S)$-invariant.
 
-To prove Proposition~\ref{prop:limitexists}, we
+We will now prove the limit in Proposition~\ref{prop:limitexists} exists using the properties
+of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
+results about how certain words behave under smoothings proven in
+Section~\ref{subsec:crossings}. 
+
+We
 first look at a key ingredient limit.
 
 \begin{lemma}\label{lem:additivity-limit}
@@ -397,18 +388,17 @@ Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
     f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
   \]
   (If $x$ is simple, we can take $r=1$.) Here we used oriented smoothing and
-  convex union. (Quasi-smoothing does not suffice; see
-  Remark~\ref{rmk:nonconvex}.)
+  convex union. 
   Hence, $n \mapsto f([a x^n])$ is $r$-convex, and
   thus so is $g(n) \coloneqq f([a x^n]) - f([x^n]) = f([a x^n]) -
   nf([x])$, using stability of~$f$.
  
-  By Lemma~\ref{lem:rhs_prod} and additivity and (oriented)
+  By Lemma~\ref{lem:rhs_prod}, additivity, and (oriented)
  smoothing of~$f$, we get
  \[
  f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
- By Eq.~\eqref{eq:cross-cancel} with $m=0$, and by
+ By Eq.~\eqref{eq:cross-cancel} with $m=0$,
 additivity and (unoriented)
 smoothing of $f$, there is $N>0$ (depending on $a,x$) so that, for $n > N$,
   \[
@@ -446,17 +436,7 @@ This example can be promoted to one on the genus-two surface.
 \end{remark}
 
 \begin{remark}
-Convexity of $f([ab^n])$ as a function of $n$ (when $(a,b)$ cross) plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves \cite[Corollary~4.4]{Luo98:IntersectionNumbers}.
-Luo's work characterizes functions $f \colon \mathcal{S}(S) \to
-\mathbb{R}$ on simple closed curves that come from intersection
-numbers in terms of an infinite family of polynomial equations
-involving the $f$-value of triples of simple curves in the $(\max,+)$
-semi-ring structure on the real numbers.
-One of the tools in the proof of this characterization is the fact
-that, for $a,b$ simple crossing curves, the function $h(n) \coloneqq f([a^n
-b])$ is convex.
-In the proof of Lemma~\ref{lem:additivity-limit}, we generalize this to the case where $a,b$ might be non-simple, obtaining  $r$-convexity of~$g$.
-%\begin{comment}See Proposition~\ref{prop:feng} for how our conditions on a curve function $f$ imply Luo's conditions for the restriction of $f$ to simple curves.\end{comment}
+Convexity of $f([ab^n])$ as a function of $n$ (when $(a,b)$ cross) also plays a key role in the work of Feng Luo of characterization of intersection numbers for simple closed curves \cite[Corollary~4.4]{Luo98:IntersectionNumbers}.
 \end{remark}
 
 We will also later need a two-variable version of
@@ -507,7 +487,7 @@ Lemma~\ref{lem:additivity-limit}.
 \end{proof}
 
 Now we check the hypotheses to apply
- Theorem~\ref{thm:caratheodory} to construct a measure.
+ Theorem~\ref{thm:caratheodory} to construct a measure, starting with positivity.
 \begin{proposition}\label{prop:join-split-alg}
 Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
   let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
@@ -518,15 +498,16 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
   \]
 \end{proposition}
 \begin{proof}
-  First, Lemmas~\ref{lem:additivity-limit}
-  and~\ref{lem:additivity-limit-2} imply that the limit
-  exists. We must now show that the limits as $n,m \to \infty$ of
+  We must now show that the limits as $n,m \to \infty$ of
   \begin{align*}
     g(n,m) &= f([ax^nbx^m]) - (n+m)f([x])\\
     \shortintertext{and}
     h(n,m) &= f([ax^n]) + f([bx^m]) - (n+m)f([x])
   \end{align*}
-  are equal.
+  exist and are equal.
+  First, Lemmas~\ref{lem:additivity-limit}
+  and~\ref{lem:additivity-limit-2} imply that the limits
+  exist. 
   Equation \eqref{eq:cross-join} says that there are arbitrarily large
   $n,m$ so that $g(n',m') \le h(n,m)$ with $n'+m' = n+m$, and $n',m'$
   closer to the diagonal. This immediately implies
@@ -539,7 +520,7 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
 
 \begin{proposition}
   \label{prop:box-positive}
-  In the terminology of Section~\ref{sec:boxes}, for a right-handed
+  For a right-handed
   box $B\in \mathcal{B}$, we have $\mu_f(B) \geq 0$.
 \end{proposition}
 
@@ -553,7 +534,7 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
 \[
 f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 \]
-  Then by Proposition~\ref{prop:join-split-alg} and the
+  Then by Proposition~\ref{prop:join-split-alg} and taking the
   limit as $n \to \infty$, we obtain
   \[
   \mu_f(B) \geq 0. \qedhere
@@ -567,6 +548,10 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
  \end{remark}
  
 \subsection{Side-by-side and finite additivity}
+
+Finally, we will show $\mathcal{B}$ is
+a semi-ring (in the sense of Definition~\ref{def:semiring}) and
+$\mu_f$ is finitely additive.
 
 First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
 
@@ -597,9 +582,9 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 \end{figure}
 
 To show that this side-by-side additivity shows that $\mu_f$ is finitely
-additive, and furthermore that the allowable boxes form a semi-ring,
+additive, and furthermore that the allowable boxes in $\mathcal{B}$ form a semi-ring,
 we examine exactly which boxes are allowed, making concrete the
-constraints in Definition~\ref{def:RH-lift-sys}. Note that the boxes
+constraints in Definition~\ref{def:RH-lift-sys}. Boxes
 are bounded at positive or negative ends of translates of $\ora{x}$,
 i.e., at $P_i \cdot x^-$ (also referred to as $\ell_i^-$) or at
 $q_j \cdot x^+$ (also referred to as $r_j^+$).
@@ -622,12 +607,11 @@ L-anti-parallel.
 
 To visualize these conditions better, draw the space of oriented
 geodesics 
-$G(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (Definition~\ref{def:spacegeodesics}),
+$G(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (Definition~\ref{def:spacegeodesics})
 in the
 usual way as a square with opposite sides identified. We represent
-$(r^+,r^-)$ by drawing a ``whisker'', a vertical segment at
-$x$-coordinate $r^+$ from $r^+$ (on the diagonal) to $r^-$, as in
-Figure~\ref{fig:whiskers}.
+$(r^+,r^-)$ by drawing a ``whisker'': a vertical segment at
+$x$-coordinate $r^+$ from $r^+$ (on the diagonal) to $r^-$.
 Similarly represent $(\ell^-,\ell^+)$ by a
 horizontal segment at
 $y$-coordinate $\ell^-$ from $\ell^-$ to $\ell^+$.
@@ -739,7 +723,7 @@ all the way back to the diagonal.
   whisker and use it to write $B_0 = B_1' \sqcup B_2'$. Subdivide any
   of the $B_i$ that intersect both $B_1'$ and $B_2'$, in a
   side-by-side way, getting sets of boxes $B_{i,1}$ and $B_{i,2}$,
-  partitions of $B_1'$ and $B_2'$ respectively. These give
+  which are partitions of $B_1'$ and $B_2'$ respectively. These give
   subdivisions of $B_1'$ and $B_2'$ that involve fewer
   whiskers. Thus by induction,
   \[
@@ -805,8 +789,8 @@ all the way back to the diagonal.
 }
 \end{figure}
 
-From now on, we denote the semiring of boxes by $\mathcal{S}$.
-Let $\mathcal{R}$ be the ring generated by $\mathcal{S}$. By
+From now on, we denote the semiring of boxes by $\mathcal{B}$.
+Let $\mathcal{R}$ be the ring generated by $\mathcal{B}$. By
 Proposition~\ref{prop:addsemitoring}, $\mu_f$ is finitely additive
 on~$\mathcal{R}$.
 
