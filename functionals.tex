@@ -12,6 +12,11 @@ work~\cite{MGT21:Smoothings}.
 
 % We now describe in detail the hypotheses of Theorem~\ref{thm:intersect}.
 \begin{definition}[multi-curve]\label{def:multi-curve}  \DMGtodo{I added immersion and embedding (simple)}
+\DPTtodo{I don't think we want ``immersion'' in the def of
+  multi-curve. In particular, the easiest way to define the cut-paste
+  operation does not result in an immersed curve, and for very general
+length metrics length-minimizers are not immersions. (Think about cone
+points with cone angle $> 2\pi$.)}
 A \emph{concrete multi-curve} $\gamma$ on a surface $S$ is a smooth
 oriented 1-manifold without boundary $X(\gamma)$ together with an orientation-preserving immersion
 (also called $\gamma$) from $X(\gamma)$
@@ -28,8 +33,8 @@ they are related by a sequence of the following moves:
 \end{itemize}
 The equivalence class of $\gamma$ is denoted by~$[\gamma]$, and we will
 call it a \emph{multi-curve}.
-If $X(\gamma)$ is connected, we will call $[\gamma]$ a \emph{curve}; 
-a concrete multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
+If $X(\gamma)$ is connected, we will call $\gamma$ a \emph{concrete curve}.
+A concrete multi-curve~$\gamma$ is \emph{simple} if $\gamma$ is
 an embedding, and a multi-curve is simple if it has a concrete representative
 that is simple.
 We write $\Curves^+(S)$ for the space of all multi-curves.
@@ -199,14 +204,14 @@ Section~\ref{subsec:triality}.
          f(C^n) = f(nC).
        \end{equation}
        A related notion is that of \emph{sub-stability}
-              \begin{equation}
+       \begin{equation}
        	\label{eq:substable}
        	f(C^{n+m}) \geq f(C^m) + f(C^n)
-       \end{equation} \DMGtodo{added this}
+       \end{equation} 
        for every $m,n \geq 0$. 
 \end{definition}
 
-It is easy to see that if a curve functional satisfies additivity, then stability implies sub-stability, and power smoothing and sub-stability are equivalent. \DMGtodo{added this}
+It is immediate that if a curve functional satisfies additivity, then stability implies sub-stability, and power smoothing and sub-stability are equivalent.
 
 \begin{definition}\label{def:homogeneous} For an arbitrary oriented
   multi-curve~$C$, we say $f$ satisfies \emph{homogeneity} if
