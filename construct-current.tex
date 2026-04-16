@@ -6,7 +6,7 @@
 \subsection{Countable additivity}
 \label{sec:countable-additivity}
 
-We prove countable additivity of the function $\mu_{f}$ by
+We prove countable sub-additivity of the function $\mu_{f}$ by
 proving approximation results. We first find controlled sequences of
 decreasing nested RH boxes that we can show have measure going to zero.
 
@@ -27,7 +27,7 @@ and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
   q_1^{(k)}\coloneqq q_1,\quad
   q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
 \]
-This defines boxes whose vertical height becomes narrower as $k$
+This defines boxes whose  height becomes smaller as $k$
 grows, with the top endpoint fixed. See
 Figure~\ref{fig:vertical-accordion}.
 
@@ -58,18 +58,17 @@ Figure~\ref{fig:vertical-accordion}.
 
 
 
-Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$, or
-equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
+Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$, define the
 \emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
 \[
-  p_1^{(k)}\coloneqq p_1 p_2^{-1}x^k p_2,\quad
+  p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\quad
   p_2^{(k)}\coloneqq p_2,\quad
   q_1^{(k)}\coloneqq q_1,\quad
   q_2^{(k)} \coloneqq q_1.
 \]
 \label{def:accordion}
 \end{definition}
-
+See Figure~\ref{fig:horizontal-accordion}.
 % \begin{figure}
 % \centering{
 % \resizebox{80mm}{!}{\svgfig{final}}
@@ -93,7 +92,7 @@ equivalently $\ora{p_1P_2}$ R-crosses $\ora{x}$, define the
   We first prove the results in the case of vertical accordions,
   starting with checking that $F(k)$ is a box. Since $\ora{r_2}$ is
   nested inside $\ora{r_1}$, the NS dynamics of the group element $r_1
-  = q_1 x q_1^{-1}$ translate $\ora{r_2}$ towards $r_1^+$, as depicted
+  = q_1 x q_1^{-1}$ translate $\ora{r_2}$ inside $(r_1^-,r_1^+)$, as depicted
   in Figure~\ref{fig:vertical-accordion}. In particular the cyclic
   order of the endpoints doesn't change, and we also automatically
   have $F(k+1) \subset F(k)$.
@@ -127,7 +126,7 @@ by definition of $\mu_f$, we need to evaluate the nested limit:
   &\qquad\qquad-f([ax^n])-\bigl(f([x^nc]) + f([x^ke])\bigr)\\
   &= 0.
 \end{align*}
-As shown above, we can apply Lemma~\ref{lem:additivity-limit-2}
+Here, we apply Lemma~\ref{lem:additivity-limit-2}
 (adding and subtracting suitable copies of $f([x^n])$ and $f([x^k])$)
 to see the double limit
 exists, and then by applying Proposition~\ref{prop:join-split-alg} twice we
@@ -138,7 +137,7 @@ confusing inverses so we spell it out briefly.
 Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
 the assumption that $\ora{\ell_1}$
 is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_2},\ora{\ell_1})$ are R-parallel) is equivalent to $\ora{P_2 p_1}$ 
-crossing $\ell_2$ to the right, which in turn is equivalent to $\ora{p_1 P_2}$
+crossing $\ora{\ell_2}$ to the right, which in turn is equivalent to $\ora{p_1 P_2}$
 crossing $\ora{x}$ to the right. In particular we have
 \[
   \ora{\ell_1^{(k)}} = \bigl(p_1^{(k)}\bigr)^{-1} \cdot \ora{x}
@@ -149,10 +148,10 @@ which by NS dynamics of $\ell_2$ gives the picture on the left of
 Figure~\ref{fig:horizontal-accordion}. In particular all of the $F(k)$
 are boxes with $F(k+1) \subset F(k)$.
 
-For the limiting computation, we set $e = p_1 P_2$, so that
+For the limiting computation, we set $h = p_1 P_2$, so that
 \begin{align*}
-  a^{(k)} &= p_1^{(k)} q_1 = e x^k c &
-  b^{(k)} &= p_1^{(k)} q_2 = e x^k d\\
+  a^{(k)} &= p_1^{(k)} q_1 = h x^k c &
+  b^{(k)} &= p_1^{(k)} q_2 = h x^k d\\
   c^{(k)} &= p_2 q_1 = c &
   d^{(k)} &= p_2 q_2 = d.
 \end{align*}
@@ -211,8 +210,7 @@ without increasing the mass much.
   $\mu_f(F_1(k_1))<\epsilon/2$.
   Repeat the procedure to find a horizontal
   accordion $F_2$ abutting on $B \cup F_1(k_1)$. Again there is $k_2$
-  large enough so that $\mu_f(F_2(k_2)) < \epsilon/2$, and set
-  Let $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
+  large enough so that $\mu_f(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
 \end{proof}
 
 \begin{lemma}\label{lem:extend2}
@@ -243,8 +241,8 @@ In the setting of Lemma~\ref{lem:extend2}, also set
   W^\circ(B,\epsilon) \coloneqq \bigl([s_1,s_2] \times (t_1',t_1]\bigr) \cup
     \bigl((s_2',s_2] \times [t_1,t_2]\bigr);
 \]
-this is an open neighborhood of the upper and right edges of the
-$\overline{B}$ in the subspace topology.
+this is an open neighborhood of the upper and right edges of
+$\overline{B}$ in the subspace topology of $\overline{B}$.
 
 \begin{proposition}\label{prop:countablyadditive}
   The finitely additive measure $\mu_f$ is countably sub-additive on $\cS$.
@@ -262,7 +260,7 @@ $\overline{B}$ in the subspace topology.
   $V_0 \coloneqq W(B_0,\epsilon)$ and $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$.
 
   Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$, since
-  the $B_i$ cover $B_0$, $B_i \subset V_i^\circ$, and
+  the $B_i$, for $i \geq 1$, cover $B_0$, $B_i \subset V_i^\circ$, and
   $\overline{B_0}\setminus B_0 \subset V_0^\circ$. Since
   $\overline{B_0}$ is compact and the $V_i^\circ$ are open (in the
   subspace topology), we have a finite subcover; let $I \subset
@@ -283,7 +281,7 @@ We now put everything together to obtain a geodesic current.
 
 \begin{proposition}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
-Then $\mu_f$ is an oriented geodesic current.
+Then $\mu_f$ extends to an oriented geodesic current.
 \end{proposition}
 \begin{proof}
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
