@@ -148,7 +148,6 @@ Modifying the right-handed lift system by changing $p_i$ by
 Eq.~\eqref{eq:changes-p} or changing $q_i$ by Eq.~\eqref{eq:changes-q}) determines
 the same right-handed box. Conversely, choices of the $p_i$/$q_i$
 determining the same RH box are related in this way.
-\DPTtodo{Added statement for converse direction}
 \end{remark}
 
 The conditions in Definition~\ref{def:RH-lift-system} are chosen to
@@ -263,7 +262,6 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
 }
 \end{figure}
 
-\DMGtodo{we need to be more clear if we mean left or right action in general}
 We now turn to invariance under translation by $\pi_1(S)$, as in
 Eq.~\eqref{eq:box-translate}. The $\pi_1(S)$-orbit of $(p_1,q_1,p_2,q_2)$
 can be parameterized by group elements $(a,b,c,d)$ related
@@ -289,8 +287,6 @@ Note that, by Eq.~\eqref{eq:double_coset}, the relative position
 of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
 
-\DPTtodo{Update this notation}
-\DMGtodo{updated it}
 Note that, for instance, the points $\wt \ast \cdot p_1^{-1}$ and $\wt \ast \cdot q_1$ are related via $a$ by the right action: $(\wt \ast \cdot p_1^{-1}) \cdot a = \wt \ast \cdot q_1$.
 On the other hand, the lifts of $[x]$ give by $\ora{\ell_1}$ and
 $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action:
@@ -341,11 +337,13 @@ to condition~\ref{item:box-diags-cross-lift}:
 \end{align*}
 Thus the two crossing conditions are equivalent.
 
-\begin{definition}\DMGtodo{many RH orbits determine the same box}
-  We denote a $\pi_1(S)$-orbit of boxes by $[B(p_1,q_1,p_2,q_2)]$ or
-  $[B]_{a,b,c,d}$ depending on whether we want to
-  draw attention to a concrete representative of the orbit or to the
-  orbit itself.
+\begin{definition}
+  Let $B = B(p_1,q_1,p_2,q_2)$ be an RH box. The \emph{$\pi_1(S)$-orbit of $B$}
+  \[
+    [B] \;=\; \bigcup_{g \in \pi_1(S)} g \cdot B,
+  \]
+  where we consider the left-action.
+  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
 \end{definition}
 
 % Furthermore, by construction, a different choice of lift of $[x]$
@@ -531,7 +529,6 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
   Equation~\eqref{eq:cross-split} implies the opposite inequality.
 \end{proof}
 
-\DMGtodo{moved the proof a bit further down since it is using double limit}
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
 The existence of the limit in Equation~\ref{eq:def_measure} follows immediately from Lemma~\ref{lem:additivity-limit}.
 Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
