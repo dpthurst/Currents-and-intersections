@@ -139,18 +139,19 @@ B(p_1,q_1,p_2,q_2) \coloneqq [\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)
 \]
 where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
 
-Modifying the right-handed lift system by changing $p_i$ preserving
-$\ora{\ell_i}$, or changing $q_i$ preserving $\ora{r_i}$, determines
-the same right-handed box.
 The set of right-handed boxes is denoted $\mathcal{B}$.
 \end{definition}
+
+\begin{remark}
+\label{rmk:box_from_system}
+Modifying the right-handed lift system by changing $p_i$ preserving
+$\ora{\ell_i}$ (Eq.~\eqref{eq:changes-p}), or changing $q_i$ preserving $\ora{r_i}$ (Eq.~\eqref{eq:changes-q}), determines
+the same right-handed box. \DMGtodo{made this into a remark} 
+\end{remark}
 
 The conditions in Definition~\ref{def:RH-lift-system} are chosen to
 make the following proposition work.
 
-\DPTtodo{Need the proposition to be an iff. State that. Also show that
-the $p_i$/$q_j$ translations are enough to determine box}
-\DMGtodo{I'm a bit confused about what we mean by $p_i/q_j$ translations are enough to determine a box. Every tuple $(p_1,q_1,p_2,q_2)$ determines a box, no? }
 \begin{proposition}\label{prop:rh-boxes}
   A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system if and only if $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
@@ -530,11 +531,12 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
 
 \DMGtodo{moved the proof a bit further down since it is using double limit}
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-The existence of the limit follows immediately from Lemma~\ref{lem:additivity-limit}.
-It remains to show that the limit is invariant under the translations in Equation~\eqref{eq:translations}.
-Let us prove it for Equation~\eqref{eq:translations-l1}, since the other are similar.
+The existence of the limit in Equation~\ref{eq:def_measure} follows immediately from Lemma~\ref{lem:additivity-limit}.
+Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
+To this end, by Remark~\ref{rmk:box_from_system}, it is enough to prove that the limit is invariant under the transformations described in Equations~\eqref{eq:translations}.
+We prove this for Equation~\eqref{eq:translations-l1}; the other cases are analogous.
 
-The translation in the RH orbit $a \mapsto xa,\quad b \mapsto xb$ (Eq.~\eqref{eq:translations-l1} corresponds to a translation of the RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
+The translation in the RH orbit $a \mapsto xa, b \mapsto xb$ (Eq.~\eqref{eq:translations-l1}) corresponds to a translation of the RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
 \begin{align*}
 \mu_f(B(xp_1,q_1,p_2,q_2))
 &= \frac{1}{2}\lim_{n \to \infty}
@@ -542,7 +544,7 @@ The translation in the RH orbit $a \mapsto xa,\quad b \mapsto xb$ (Eq.~\eqref{eq
 && \text{(Equation~\eqref{eq:def_measure})} \\
 &= \frac{1}{2}\lim_{n,m \to \infty}
 \Big( f([bx^{m}]) + f([cx^n]) - f([ax^{m}]) - f([dx^n]) \Big)
-&& \text{(Lemma~\ref{prop:join-split-alg})} \\
+&& \text{(Proposition~\ref{prop:join-split-alg})} \\
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
 && \text{(Equation~\eqref{eq:def_measure})} \\
