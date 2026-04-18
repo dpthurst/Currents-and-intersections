@@ -17,7 +17,7 @@ $B = [s_1,s_2) \times [t_2,t_1)$, where $s_i = \ell_i^-$ and $t_i =
 r_i^+$. Further assume that $\ora{r_2}$ is nested inside $\ora{r_1}$,
 so the box is of type~2 or~3.
 
-Define the \emph{vertical accordion} $F(p_1, q_1, p_2,\vec{q_2})$ of
+Define the \emph{vertical accordion at $q_2$}, $F(p_1, q_1, p_2,\vec{q_2})$ of
 boxes based at $B$ to be
 the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
 and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
@@ -29,11 +29,7 @@ and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
 \]
 This defines boxes whose  height becomes smaller as $k$
 grows, with the top endpoint fixed. See
-Figure~\ref{fig:vertical-accordion}.
-
-
-
-  \begin{figure}
+Figure~\ref{fig:vertical-accordion}. \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{v-accordion}}
 \caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in
@@ -41,6 +37,17 @@ Figure~\ref{fig:vertical-accordion}.
   \label{fig:vertical-accordion}
 }
 \end{figure}
+
+ \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{v-accordion2}}
+\caption{A vertical accordion $F(p_1,\vec{q_1}, p_2,q_2)$, shown in
+    the disk (left) and in the whiskers picture (right)}
+  \label{fig:vertical-accordion2}
+}
+\end{figure}
+
+ 
 
 \begin{comment}
     %Hand drawn figure
@@ -58,8 +65,8 @@ Figure~\ref{fig:vertical-accordion}.
 
 
 
-Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$, define the
-\emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
+Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we have a box of type 2 or 3), define the
+\emph{horizontal accordion at $\vec{p_1}$} $F(\vec{p_1},q_1, p_2,q_2)$ by
 \[
   p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\quad
   p_2^{(k)}\coloneqq p_2,\quad
@@ -76,6 +83,9 @@ See Figure~\ref{fig:horizontal-accordion}.
 % \label{fig:finalfamily}
 % }
 % \end{figure}
+
+
+
 
 \begin{proposition}
   Let $F = F(p_1,q_1,p_2,\vec{q_2})$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
@@ -99,7 +109,7 @@ See Figure~\ref{fig:horizontal-accordion}.
 
   To show the measures go to zero, we first reformulate the nesting
   condition algebraically. Note that
-  $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Thus  $\ora{r_2}$ and $\ora{r_1}$ being nested means $(\ora{r_2},\ora{r_1})$ are R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
+  $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Thus  $\ora{r_2}$ and $\ora{r_1}$ being nested means $(\ora{r_1},\ora{r_2})$ are R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
   in turn equivalent to $Q_2 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
   R-crossing $\ora{x}$; write $e = Q_1q_2$.
 
@@ -179,6 +189,14 @@ Proposition~\ref{prop:join-split-alg} apply as before.
 }
 \end{figure}
 
+  \begin{figure}
+\centering{
+\resizebox{120mm}{!}{\svgfignormal{h-accordion2}}
+\caption{Horizontal accordion $F(p_1,q_1,\vec{p_2},q_2)$}
+  \label{fig:horizontal-accordion2}
+}
+\end{figure}
+
 We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
 is countably additive.
 We will need to consider more types of boxes
@@ -188,6 +206,21 @@ $\overline{B} \coloneqq [s_1,s_2] \times [t_2,t_1]$ and
 $B^\circ \coloneqq (s_1,s_2) \times (t_2,t_1)$ be the corresponding
 closed and open boxes.
 
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.47\textwidth}
+        \svgfignormal{ca1}
+        \caption{$V(B,\epsilon)$ is an $\epsilon$-down and left extesion of an RH box $B$ as in Lemma~\ref{lem:extend1}}\label{fig:ca1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.47\textwidth}
+        \svgfignormal{ca2}
+        \caption{$W(B,\epsilon)$ is an $\epsilon$ of the upper and right edges of an RH box $B$ as in Lemma~\ref{lem:extend2}}\label{fig:ca2}
+     \end{subfigure}
+     \caption{Extensions used in the proof of countable sub-additivity}
+     \label{fig:cases}
+\end{figure}
+
 \begin{lemma}\label{lem:extend1}
   For $B = [s_1,s_2)\times [t_2,t_1) \in \cB$ a right-handed box and
   any $\epsilon > 0$, there is a right-handed box $V(B,\epsilon) =
@@ -195,8 +228,7 @@ closed and open boxes.
   $s_1' < s_1$ and $t_2' < t_2$ and
   $\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
 \end{lemma}
-
-That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
+See Figure~\ref{fig:ca1}. That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
 without increasing the mass much.
 
 \begin{proof}
@@ -221,8 +253,7 @@ without increasing the mass much.
   \bigl([s_2',s_2) \times [t_1,t_2)\bigr)$ is in $\mathcal{R}$ and satisfies
   $\mu_f(W(B,\epsilon)) < \epsilon$.
 \end{lemma}
-
-That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
+See Figure~\ref{fig:ca2}. That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
 edges of~$B$ with small mass.
 
 \begin{proof}
@@ -233,7 +264,7 @@ edges of~$B$ with small mass.
   $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
   for sufficiently large $k$, we have $\mu_f(F_1(k)) < \epsilon/2$ and
   $\mu_f(F_2(k)) < \epsilon/2$. Take
-  $W(B,\epsilon) = (F_1(k) \cup F_2(k)) \cap B$.
+  $W(B,\epsilon) = F_1(k) \cup F_2(k)$.
 \end{proof}
   
 In the setting of Lemma~\ref{lem:extend2}, also set
@@ -245,7 +276,7 @@ this is an open neighborhood of the upper and right edges of
 $\overline{B}$ in the subspace topology of $\overline{B}$.
 
 \begin{proposition}\label{prop:countablyadditive}
-  The finitely additive measure $\mu_f$ is countably sub-additive on $\cS$.
+  The finitely additive measure $\mu_f$ is countably sub-additive on $\cB$.
 \end{proposition}
 
 \begin{proof}
@@ -287,7 +318,7 @@ Then $\mu_f$ extends to an oriented geodesic current.
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
 \ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\mu_f$
 is a finitely
-additive and countably subbadditive pre-measure on $\mathcal{R}$. By covering by an exhaustion consisting of a union of boxes, we see $\mu_f$ is $\sigma$-finite.
+additive and countably subb-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably subb-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\mu_f$. By covering $G(S)$ by a countable exhaustion consisting of a union of RH boxes, we see $\mu_f$ is $\sigma$-finite.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory},
 $\mu_f$ can be extend to a unique measure on
 $\mathcal{A}_{\mathcal{R}}$, the $\sigma$-algebra generated
@@ -295,18 +326,14 @@ by~$\mathcal{R}$; we temporarily denote the extension $\hat\mu_f$.
 Let $\cA$ be the Borel $\sigma$-algebra of $G(S)$.
 Since $\cR \subset \cA$, we have $\cA_{\cR} \subset \cA$.
 
-On the other hand, given a half-open box of geodesics
-$B=[s_1,s_2) \times [t_2,t_1) \in \mathcal{B}$, it can be written as
+On the other hand, given a open box of geodesics
+$B=(s_1,s_2) \times (t_2,t_1) \in \mathcal{B}$, it can be written as
 an intersection of two countable unions of boxes in $\mathcal{R}$,
 since, by Proposition~\ref{prop:density}, the set of elements in
 $\mathcal{R}$ is dense in the subspace of half-open rectangles of
-$G(S)$. It follows that $\cA \subset \cA_{\cR}$. (This is the same as
-the standard argument one uses to prove
-the Borel $\sigma$-algebra generated by half-rectangles with rational
-endpoints is the usual Borel $\sigma$-algebra.)
+$G(S)$. By the standard argument that half-rectangles with rational endpoints generate the Borel $\sigma$-algebra (see, e.g.,~\cite[Lemma~1.2.11]{Bo07:MeasureTheory}), it follows that $\cA \subset \cA_{\cR}$, hence $\hat\mu_f$ is a Borel measure.
 
-Note that $\hat\mu_f$ is locally finite, since any compact subset of $G(S)$ can be covered by one of the boxes in $\mathcal{R}$, where the measure takes a finite value.
-Therefore, $\hat\mu_f$ is a Borel and locally-finite measure. 
+Note that $\hat\mu_f$ is also locally finite, since any compact subset of $G(S)$ can be covered by a finite union the boxes in $\mathcal{R}$, where the measure takes a finite value.
 By definition of $\mu_f$, the extension $\hat\mu_f$ is
 $\pi_1(S)$-invariant. Finally, $\hat\mu_f$ is non-negative by
 Proposition~\ref{prop:box-positive}.

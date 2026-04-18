@@ -54,19 +54,19 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{h-accordion.pdf}}%
-    \put(0.300895,0.36143668){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_1}$\end{tabular}}}}%
-    \put(0.51976274,0.45238756){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_1^+$\end{tabular}}}}%
-    \put(0.52429071,0.40194368){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_2^+$\end{tabular}}}}%
-    \put(0.20521141,0.42023715){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_2}$\end{tabular}}}}%
-    \put(0.20616788,0.30326478){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(0)}}$\end{tabular}}}}%
-    \put(0.15553129,0.20786375){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(1)}}$\end{tabular}}}}%
-    \put(0.16325215,0.14648399){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(2)}}$\end{tabular}}}}%
-    \put(0.21673978,0.08509807){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(3)}}$\end{tabular}}}}%
-    \put(0.88904155,0.01182127){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_2^-$\end{tabular}}}}%
-    \put(0.66028805,0.0116165){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(\ell_1^{(0)})^-$\end{tabular}}}}%
-    \put(0.74825415,0.01296628){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(\ell_1^{(1)})^-$\end{tabular}}}}%
-    \put(0.82656169,0.01114415){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(\ell_1^{(2)})^-$\end{tabular}}}}%
-    \put(0.33318979,0.18346129){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2}$\end{tabular}}}}%
+    \put(0.300895,0.36143668){\color[rgb]{0,0.03529412,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_1}$\end{tabular}}}}%
+    \put(0.51976274,0.45238756){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_1^+$\end{tabular}}}}%
+    \put(0.52429071,0.40194368){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_2^+$\end{tabular}}}}%
+    \put(0.20521141,0.42023715){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_2}$\end{tabular}}}}%
+    \put(0.20616788,0.30326478){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(0)}}$\end{tabular}}}}%
+    \put(0.15553129,0.20786375){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(1)}}$\end{tabular}}}}%
+    \put(0.16325215,0.14648399){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(2)}}$\end{tabular}}}}%
+    \put(0.21673978,0.08509807){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1^{(3)}}$\end{tabular}}}}%
+    \put(0.88904155,0.01182127){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_2^-$\end{tabular}}}}%
+    \put(0.66028805,0.0116165){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(\ell_1^{(0)})^-$\end{tabular}}}}%
+    \put(0.74825415,0.01296628){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(\ell_1^{(1)})^-$\end{tabular}}}}%
+    \put(0.82656169,0.01114415){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(\ell_1^{(2)})^-$\end{tabular}}}}%
+    \put(0.33318979,0.18346129){\color[rgb]{0,0.03529412,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{h-accordion.pdf}}%
   \end{picture}%
 \endgroup%

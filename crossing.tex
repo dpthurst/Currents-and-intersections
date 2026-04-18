@@ -682,13 +682,21 @@ If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-paral
 The figures cover the case $(\ora{a}, \ora{b})$ being R-parallel. For the L-parallel case, note that $(\ora{a},\ora{b})$ being L-parallel, implies $(\ora{b},\ora{a})$ is R-parallel. Applying the statement, we obtain that $\ora{bA},\ora{Ab}$ cross (resp. are anti-parallel), which is equivalent, by taking inverses, to $\ora{aB}, \ora{Ba}$ crossing (resp. are anti-parallel.
 \end{proof}
 It also follows that, when $(\ora{a},\ora{b})$ are parallel, many composite pairs do not cross. We can extract the following two results.
-\begin{lemma}
+\begin{lemma}\DMGtodo{was more precise in this alignments and added the proofs}
 Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, then $(\ora{ab},\ora{Ab})$ is parallel or $(\ora{ba},\ora{Ba})$ is parallel.
+If $\ora{a},\ora{b}$ are parallel, then:
+\begin{itemize}
+\item $(\ora{ab},\ora{Ab})$ and $(\ora{b},\ora{Ab})$ are parallel or
+\item $(\ora{ba},\ora{Ba})$ and $(\ora{a},\ora{Ba})$ are parallel.
+\end{itemize}
 \label{lem:bA_parallel_ba}
 \end{lemma}
 \begin{proof}
-The figures above discuss the case $(\ora{a},\ora{b})$ being R-parallel. If $(\ora{a},\ora{b})$ is L-parallel, then $(\ora{b}, \ora{a})$ is R-parallel, then the statement implies $(\ora{ba}, \ora{Ba})$ is parallel or $(\ora{ab}, \ora{Ab})$ is parallel which proves the claim in this case. 
+The figures above discuss the case $(\ora{a},\ora{b})$ being R-parallel. If $(\ora{a},\ora{b})$ is L-parallel, then $(\ora{b}, \ora{a})$ is R-parallel, then the statement implies:
+\begin{itemize} \item $(\ora{ba}, \ora{Ba})$ and $(\ora{a},\ora{Ba})$ are parallel or
+\item $(\ora{ab}, \ora{Ab})$ and $(\ora{b},\ora{Ab})$ are parallel
+\end{itemize}
+which proves the claim in this case. 
 \end{proof}
 
 If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise (the proof is similar as the previous lemma).
@@ -1052,13 +1060,6 @@ be clockwise and the other will be counterclockwise.
 \begin{proof}
   Immediate from Lemma~\ref{lem:diagonaldense}.
 \end{proof}
-
-\begin{remark}\label{rem:unoriented}
-  The main place we use unoriented smoothings in this paper is in the
-  proof of Eqs.~\eqref{eq:cross-cancel} and~\eqref{eq:cancel-ayx},
-  but it is necessary there. See
-  Appendix~\ref{sec:asymmetric}.
-\end{remark}
 
 %%% Local Variables:
 %%% mode: latex
