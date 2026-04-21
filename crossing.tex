@@ -943,8 +943,15 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \end{align}
   Furthermore, there is $s' > 0$ so that, for $n,m \ge s'$,
   \begin{equation}\label{eq:cancel-ayx}
-    [a y^m x^n][a] \reducesto [y^m][x^n].
+    [a y^m x^n][a] \reducesto [y^m][x^n];
   \end{equation}
+\textcolor{red}{and for $m, n \geq 2$,
+\begin{equation}
+\label{eq:crossbelowy}
+[x^nY^m] \reducesto [x^{n-2}][Y^m]
+\quad \text{or} \quad
+[y^mX^n] \reducesto [y^{m-2}][X^n]
+\end{equation}}
 \end{proposition}
 
 \begin{proof}
@@ -989,9 +996,36 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \[
     [a x^n y^m][a] = [g][a] \reducesto [x^n y^m] \reducesto [x^n][y^m]
   \]
-  by unoriented disconnected smoothing and then (by
-  Lemma~\ref{lem:righthandedfoundation}) oriented connected
+  by unoriented disconnected smoothing and then (by Lemma~\ref{lem:righthandedfoundation}) oriented connected
   smoothing.
+  \textcolor{red}{Finally, we see Eq.~\ref{eq:crossbelowy}. Let $m, n \geq 2$.
+  Since $(\ora{y},\ora{x})$ is R-parallel by assumption, by Lemma~\ref{lem:ab_parallel_aB} $(\ora{x^{n-2}}, \ora{Y^m x^2})$ are parallel or  $(\ora{y^{m-2}}, \ora{X^n y^2})$ are parallel.
+  In the first case, we have (Fig.~\ref{fig:lb}) 
+  \[
+  [ax^nY^m] = [a][x^{n-2}Y^m x^2] \searrow [a][x^{n-2}][(Y^mx)x] \searrow [a][x^{n-2}][Y^m]
+  \]
+  by oriented connected smoothing and unoriented connected smoothing.
+   In the second case, we have (Fig.~\ref{fig:lb2}) 
+  \[
+  [ay^mX^n] = [a][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].
+  \] 
+  }
+  \begin{figure}
+     \begin{subfigure}[b]{0.45\textwidth}
+ \resizebox{50mm}{!}{\svgfignormal{lb} }
+    \caption{$\protect\ora{y}$ and $\protect\ora{Xy}$ are R-parallel }
+    \label{fig:lb}
+\end{subfigure} 
+\hfill
+\begin{subfigure}[b]{0.45\textwidth}
+
+    \resizebox{50mm}{!}{\svgfignormal{lb2}}
+    \caption{$\protect\ora{x}$ and $\protect\ora{Yx}$ are R-parallel }
+    \label{fig:anti}
+   \end{subfigure}
+   \caption{Cases for relative position}
+   \label{fig:lb2}
+ \end{figure}
 \end{proof}
 
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with

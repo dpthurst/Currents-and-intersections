@@ -133,14 +133,9 @@ many such extensions arise canonically as intersection with a current.
     Let $a,b \in \pi_1(S)$ be non-trivial elements that are not common
     powers. We write $A$ for the inverse of $a \in \pi_1(S)$. Fix any
     hyperbolic structure on $S$, and denote by $\ora{a}$ and $\ora{b}$
-    the corresponding axes in the universal cover, with endpoints
-    $a^\pm$ and $b^\pm$ on the boundary at infinity. We say that
-    $(a,b)$ is \emph{R-crossing} if the points $a^-, b^-, a^+, b^+$
-    appear in this counterclockwise order on
-    $\partial_\infty \widetilde S$, and \emph{R-parallel} if
-    $b^-, b^+, a^+, a^-$ appear in this order (see
-    Definition~\ref{def:crossing} and
-    Figure~\ref{fig:cases-a-b}).
+    the corresponding axes in the universal cover. We say $(\ora{a}, \ora{b})$ are \emph{crossing} if they intersect at a point, and are \emph{parallel} if they are non-intersecting and coherently aligned (see
+Definition~\ref{def:crossing} and
+    Figure~\ref{fig:cases-a-b} for a precise definition). \DMGtodo{changed this}
 
 \begin{mainthmprime}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
@@ -154,10 +149,10 @@ if and only if $f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
 \item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
 \item stability: 
 $f(a^n)=nf(a) \mbox{ for all } n \geq 1$.
-\item R-oriented smoothing:
+\item oriented smoothing:
  \begin{align}
-    \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
-    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
+    \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{parallel;} \\
+    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{crossing}.
   \end{align}
 \end{enumerate}
 \label{thm:intersections_group}

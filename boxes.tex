@@ -382,12 +382,13 @@ Section~\ref{subsec:crossings}.
 We
 first look at a key ingredient limit.
 
+\DMGtodo{tweaked this to include negative exponent}
 \begin{lemma}\label{lem:additivity-limit}
-Let $f$ be a curve functional satisfying additivity, smoothing, and
+Let $f$ be a curve functional satisfying symmetry, additivity, smoothing, and
 stability.
 Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
   \begin{equation}\label{eq:additivity-limit}
-    \lim_{n \to \infty} f([a x^n]) - f([x^n])
+    \lim_{n \to \infty} f([a x^{\pm n}]) - f([x^n])
   \end{equation}
   exists.
 \end{lemma}
@@ -400,23 +401,23 @@ Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
   \]
   (If $x$ is simple, we can take $r=1$.) Here we used oriented smoothing and
   convex union. 
-  Hence, $n \mapsto f([a x^n])$ is $r$-convex, and
-  thus so is $g(n) \coloneqq f([a x^n]) - f([x^n]) = f([a x^n]) -
+  Hence, $n \mapsto f([a x^{\pm n}])$ are $r$-convex, and
+  thus so are $g_{\pm}(n) \coloneqq f([a x^{\pm n}]) - f([x^{\pm n}]) = f([a x^{\pm n}]) -
   nf([x])$, using stability of~$f$.
  
-  By Lemma~\ref{lem:rhs_prod}, additivity, and (oriented)
- smoothing of~$f$, we get
+  By Lemma~\ref{lem:rhs_prod}, additivity, and 
+ disconnected smoothing of~$f$, we get
  \[
- f([a]) + f([x^{n}]) \geq f([ax^{n}]).
+ f([a]) + f([x^{\pm n}]) \geq f([ax^{\pm n}]).
  \]
  By Eq.~\eqref{eq:cross-cancel} with $m=0$,
-additivity and (unoriented)
+additivity and unoriented disconnected
 smoothing of $f$, there is $N>0$ (depending on $a,x$) so that, for $n > N$,
   \[
-    f([a x^n]) \ge -f([a]) + f([x^n]).
+    f([a x^{\pm n}]) \ge -f([a]) + f([x^{\pm n}]).
   \] 
-  This shows that $g$ for $n > N$ is an $r$-convex and
-  bounded function, so by Lemma~\ref{lem:limexistrmidconvex}, the
+  This shows that $g_{\pm}$ for $n > N$ are $r$-convex and
+  bounded functions, so by Lemma~\ref{lem:limexistrmidconvex}, the
   limit \eqref{eq:additivity-limit} exists.
 \end{proof}
 
@@ -456,22 +457,24 @@ different elements $x,y \in \pi_1(S)$.
   let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
   stability, and homogeneity. Then
   \begin{equation}
-    \lim_{n,m \to \infty} f([ax^nby^m]) - nf([x]) - mf([y])
+    \lim_{n,m \to \infty} f([ax^nby^{\pm m}]) - nf([x]) - mf([y])
   \end{equation}
   exists.  
 \end{lemma}
+\DMGtodo{had to add the $\pm$ changes}
 \begin{proof}
-  Define $g(n,m) \coloneqq f([ax^nby^m]) - nf([x]) - mf([y])$. First,
-  by Corollary~\ref{cor:fund-axby}, there is some $s$ so that $g(n,m)$
+  Define $g_
+  {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. First,
+  by Corollary~\ref{cor:fund-axby}, there is some $s$ so that both $g_{\pm}(n,m)$
   is $(s,s)$-axis-convex: apply $f$ to the left hand side of
   Eqs.~\eqref{eq:axby-cross-n} and~\eqref{eq:axby-cross-m}, and use
   convex union, oriented smoothing, stability, and homogeneity. (The extra
-  linear terms in $g(n,m)$ are irrelevant for convexity.)
+  linear terms in $g_{\pm}(n,m)$ are irrelevant for convexity.)
 
-  Next we check that $g$ is bounded.
+  Next we check that $g_{\pm}$ is bounded.
   On the one hand,
   \[
-    [ab][x^n][y^m] \reducesto [ax^nb][y^m] \reducesto [ax^nby^m].
+    [ab][x^n][y^{\pm m}] \reducesto [ax^nb][y^{\pm m}] \reducesto [ax^nby^{\pm m}].
   \]
   For the first reduction, the hypotheses imply that
   $(\ora{x}, ba\cdot\ora{x})$ are R-parallel, and thus $(\ora{ba},\ora{x})$ R-cross by Lemma~\ref{lem:rhs}. For the second one, note
@@ -479,17 +482,18 @@ different elements $x,y \in \pi_1(S)$.
   $ax^n b\cdot(B\cdot x^+, B\cdot x^-) = (a\cdot x^+, a\cdot x^-)$;
   then a look at the bands model centered on $\ora{y}$ shows that
   $\ora{a x^n b}$ crosses $\ora{y}$.   Applying $f$ and using additivity
-  and oriented smoothing shows that
+  and oriented smoothing for $g_+$ and unoriented smoothing for $g_-$ shows that
   \[
-    g(n,m) \le f([ab]).
+    g_{\pm}(n,m) \le f([ab]).
   \]
 
-  To get a lower bound, applying $f$ to both sides of
+  To get a lower bound for $g_+$, applying $f$ to both sides of
   Eq.~\eqref{eq:cancel-axby} and using additivity and unoriented smoothing shows
   that, for $n, m$ sufficiently large,
   \[
-    g(n,m) \ge -f([ab]).
+    g_+(n,m) \ge -f([ab]).
   \]
+ \textcolor{red}{ To get the lower bound for $g_-$, apply $f$ to both sides of Eq.~\ref{eq:crossbelowy}.}
 
    Thus by
    Lemma~\ref{lem:limexistrmidconvextwovar} the limit exists.

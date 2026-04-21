@@ -142,6 +142,24 @@ to see the double limit
 exists, and then by applying Proposition~\ref{prop:join-split-alg} twice we
 can break up the limit into canceling terms as desired.
 
+For the 
+In the RH orbit notation, we then have
+  \begin{align*}
+    a^{(k)} &= p_1 q_1^{(k)} = ap_1 q_2 x^{-k} q_2^{-1}q_1 = a x^k e\\ &
+    b^{(k)} &= p_1 q = p_1 q_1 x^k q_1^{-1}q_2 = a x^k e\\
+    c^{(k)} &= p_2 q_1 = c &
+    d^{(k)} &= p_2 q_2^{(k)} = p_2 q_1 x^k q_1^{-1} q_2 = c x^k e.
+  \end{align*}
+
+  \begin{align*}
+  \lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr)
+   &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) +
+     f([cx^n])-f([ax^n])-f([cx^kex^n]) \\
+  &= \frac{1}{2}\lim_{k,n \to \infty} \bigl(f([x^n a]) + f([x^ke])\bigr) + f([cx^n])\\
+  &\qquad\qquad-f([ax^n])-\bigl(f([x^nc]) + f([x^ke])\bigr)\\
+  &= 0.
+\end{align*}
+
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
 Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
@@ -359,34 +377,27 @@ It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves
 If $y$ is a hyperbolic element representing a closed curve
 $C$ in the surface $S$, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
-$y_-,\, z,\, y \cdot z,\, y_+$ are in cyclic order.
+$y^+,y^-,\, z,\, y \cdot z$ are in cyclic order.
 Then
-$(y_+,y_-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
+$(y^+,y^-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
   action of $\langle y \rangle$ on the set of geodesics that intersect
   $\ora{y}$ transversally.
 
 First we note that the following.
 
 \begin{lemma}The intersection
-of a closed curve $C$ with an oriented geodesic current $\mu$ can be computed as 
+of a closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \[
-i(\mu, C) = \mu([z,y \cdot z) \times (y_+,y_-)).
+i(\mu, C) = \mu([z,y \cdot z) \times (y^+,y^-)).
 \]
 \end{lemma}
 \begin{proof}
-The claim follows from the fact that $G[q,y\cdot q)$ and $[z,y \cdot z) \times (y_+,y_-)$ are just two different fundamental domains for the
-  action of $\langle y \rangle$ on the set of geodesics that intersect
-  $\ora{y}$ transversally.
-Specifically, if $y \in \pi_1(S)$ denotes the element representing the oriented curve $C$, then for any $q \in \ora{y}$,
+The claim follows from the observation that, for any $q \in \ora{y}$, $G[q, y\cdot q)$---the set of geodesics intersecting $[q, y\cdot q)$ transversely---and $[z, y\cdot z) \times (y^+, y^-)$ are two fundamental domains for the action of $\langle y \rangle$ on the set of geodesics that intersect $\ora{y}$ transversely.
+Specifically, if $y \in \pi_1(S)$ denotes the element representing the oriented curve $C$, then 
 \[
-\mu(G[q, y \cdot q))= \mu([z,y \cdot z) \times (y_+,y_-))
+\mu(G[q, y \cdot q))= \mu([z,y \cdot z) \times (y^+,y^-))
 \]
-for every $z \in \partial_{\infty} S - \{ y_-, y_+\}$ so that
-$y_-, z, y \cdot z, y_+$ are in cyclic order.
-This is
-spelled out in detail in the proof
-of~\cite[Lemma~4.4]{MZ19:PositivelyRatioed}, (cf.
-\cite[Page~153]{Otal90:SpectreMarqueNegative}). The proof only uses
+for every $q \in \ora{y}$ and for every $z \notin \{ y^-, y^+\}$ so that $z, y\cdot z, y^+, y^-$ are in the cylic order. See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
 the $\pi_1(S)$-invariance of $\mu$, and no flip-invariance.
 \end{proof}
 
@@ -394,7 +405,7 @@ We finish by proving Theorem~\ref{thm:intersect}, first in the following
 form.
 
 \begin{theorem}
-Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability.
+Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability, and $\mu_f, \overline{\mu_f}$ as above.
 For $C$ a closed curve, we have
 \[
 i(\mu_f,C)=i(\overline{\mu_f},C)=f(C).
@@ -443,9 +454,9 @@ In the RH orbit notation, we have
   c^{(n)} &= p y^{n+1} q &  d^{(n)} &= p y^{-n} q.
 \end{align*}
 
-If we let $z=(p_1^{-1} \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
+If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
     \begin{multline*}
-      \mu_f((\gamma_-,\gamma_+) \times [z,y \cdot z))\\
+      i(\mu, [y])=\mu_f([z,Y \cdot z))\times (y^+,y^-) \\
       \begin{aligned}
     &= \lim_{n\to\infty} \mu_f(B_n)  \\
     &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
@@ -458,29 +469,24 @@ If we let $z=(p_1^{-1} \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}
       \end{aligned}
     \end{multline*}
     The first equality follows by the fact that the boxes defined
-    above converge from below to $(\gamma_-,\gamma_+) \times [z,y
-      \cdot z)$ as $n \to \infty$, since $B_{n-1} \subset B_n$.
-    At the second equality, we use definition of $\mu_f$ on boxes.
+    above converge from below to the  $[z,Y
+      \cdot z) \times (y^+,y^-)$ (the fundamental domain for the
+  action of $\langle Y \rangle$) as $n \to \infty$, since $B_{n-1} \subset B_n$.
+    At the second equality, we use definition of $\widehat{\mu_f}$ on boxes.
     For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass
     from the iterated limit to a double limit, and gives a
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      It remains then to check the property $i(\overline{\mu}_f, C)=f(C)$ for any closed curve $C$ persists. Indeed,
-\[
-i(\sigma_*(\mu_f),C)=i(\mu_f,\sigma_*(C))=i(\mu_f,C^{-1})=i(\mu_f,C).
-\]
-The first equality is by the fact that intersection number is invariant under the action of the flip map on both factors, and the fact that the flip map is an involution; the last equality is because of symmetry of intersection number.
-Therefore, $\overline{\mu_f}$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\mu_f$.
+      The property $i(\overline{\mu}_f, C)=f(C)$ for any closed curve $C$ persists by the definition of $i$. Therefore, $\mu_f$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\mu_f$.
 
- Finally, the uniqueness of the geodesic current $\overline{\mu_f}$ is
+ Finally, the uniqueness of the geodesic current $\mu_f$ is
  a result of Otal, geodesic currents are determined by their marked
  length spectrum \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 \end{proof}
 
 \begin{remark}
-In \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} the authors
-produce a geodesic current induced
+In \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} a geodesic current is induced
 from a cross-ratio.
 Our construction is more general (in particular, we do not rely on a cross-ratio).
 We discuss here why our construction does not follow from their arguments.
@@ -490,11 +496,11 @@ that is (1) side-by-side additive: if $R,R_1,R_2 \in \mathcal{R}(X)$
 with $R=R_1 \cup R_2$, with $R_1,R_2$ disjoint, $r(R)=r(R_1)+r(R_2)$;
 and (2) monotonic: if $R,R' \in \mathcal{R}(X)$ with $R \subset R'$, we have $r(R) \leq r(R')$.
 
-Our function $\mu_f$ satisfies these properties by Proposition~\ref{prop:sidebyside}
-and Proposition~\ref{prop:finitely-additive}, however, it is only
-defined in a proper subset of $\mathcal{R}(X)$, with $X$ to
+Our function $\mu_f$ on RH boxes satisfies these properties by Proposition~\ref{prop:sidebyside}
+and Proposition~\ref{prop:finitely-additive}, however, if we take $X$ to
 be the set of
-endpoints of translates of~$x$.
+endpoints of translates of~$x$, then $\mu_f$ is only
+defined in a proper subset of $\mathcal{R}(X)$
 Therefore, we cannot directly apply their result.
 
 Moreover, we need the extra control on the family of RH
@@ -511,7 +517,7 @@ Now we prove the theorem as stated in the introduction: in terms of functionals 
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersect}]
 
-By Definition~\ref{def:smoothing} and by Proposition~\ref{prop:power_disconnected_imply_stable}, the induced additive and symmetric functional on oriented multi-curves satisfies stability. Hence, by Theorem~\ref{prop:recoverintersection}, the result follows.
+By Definition~\ref{def:smoothing} and Proposition~\ref{prop:power_disconnected_imply_stable}, the induced additive and symmetric functional on oriented multi-curves satisfies stability. Hence, by Theorem~\ref{prop:recoverintersection}, the result follows.
 \end{proof}
 
 \subsection{Proof of Theorem~\texorpdfstring{\ref{thm:intersections_group}}{A'}}
@@ -531,15 +537,6 @@ function on multi-curves.
 
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
-Note first that R-oriented smoothing of $f$ is equivalent to oriented smoothing of $f$: indeed, if $(\ora{a},\ora{b})$ are L-parallel, then $(\ora{b},\ora{a})$ are R-parallel, and hence by R-oriented connected smoothing
-\[
-f(ba) \geq f(b) + f(a).
-\]
-Using the fact that $f$ is conjugacy invariant shows that this is equivalent to
-\[
-f(ba) \geq f(b) + f(a).
-\]
-The case of oriented disconnected smoothing is similar.
 
 We will first verify smoothing of $\overline{f}$.
 We start
@@ -572,38 +569,27 @@ $(\ora{B},\ora{A})$. Then
      = \overline{f}(a) + \overline{f}(b).
 \end{align*}
 
-We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Corollary~\ref{cor:oriented_smoothing_unoriented},
+We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Corollary~\ref{cor:oriented_smoothing_unoriented} below,
 $\overline{f}$~satisfies unoriented connected and disconnected smoothing as well. 
 Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing of $\overline{f}$. Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
 We are thus under the
 hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 
-In fact, we can prove the following variation with a slightly weaker hypothesis
-(replacing stability by oriented power smoothing).
+\DMGtodo{made this version into a remark, it seemed more natural to keep the version with stability in the intro}
 
-The following theorem follows from Proposition~\ref{prop:power_disconnected_imply_stable} and~Theorem~\ref{thm:intersections_group}.
 
-\begin{theorem}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$, with $G$ denoting the inverse of $g$.
-There exists a (unique) geodesic current $\mu_{\overline{f}}$ on $S$ so that
-\[
-i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
-\]
-for every $g \in \pi_1(S)$ if and only if $f$ satisfies the following conditions (for $a,b \in \pi_1(S)$):
-\begin{enumerate}
-\item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item power smoothing: 
-$f(a^{n+m}) \geq f(a^n) + f(a^m) \mbox{ for all } n,m \geq 1$.
-\item R-oriented smoothing:
+\begin{remark}
+In fact, from Proposition~\ref{prop:power_disconnected_imply_stable} and~Theorem~\ref{thm:intersections_group} we can replace the following hypotheses by the slightly weaker ones:
+\begin{itemize}
+\item stability of $f$ can be replaced by power smoothing;
+\item oriented smoothing can be replaced by $R$-oriented smoothing:
  \begin{align}
     f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{R-parallel;} \\
     f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (a,b)\mbox{ are } \mbox{R-crossing}.
   \end{align}
-\end{enumerate}
-\label{thm:intersections_group2}
-\end{theorem}
-
+\end{itemize}
+\end{remark}
 
 
 
