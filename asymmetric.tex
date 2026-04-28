@@ -16,21 +16,35 @@ The asymmetric intersection number is an intersection number between oriented cu
 \begin{definition} Given two oriented curves $\vec C$, $\vec D$, the
   asymmetric intersection number $\vec i(\vec C, \vec D)$ is the
   minimal number of right-handed crossings between any two homotopy
-  class representatives of $C$ and~$D$.
+  class representatives of $\vec C$ and~$\vec D$.
+  Similarly, we can define an asymmetric intersection number between any two oriented geodesic currents by defining
+\[
+\vec{i}(\mu,\nu) \coloneqq \int_{\DG(S)} \mathbf{1}_R \, d(\mu \otimes \nu),
+\]
+where the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
+\[
+\mathbf{1}_R(l,m) \coloneqq
+\begin{cases}
+1 & \text{if } (l,m)\text{ are $R$-crossing},\\
+0 & \text{otherwise}.
+\end{cases}
+\]
+  It is straightforward to see $i(\delta_{\vec C}, \delta_{\vec D})$ recovers the asymmetric intersection between the oriented curves $\vec C$ and $\vec D$.
+  
 
-  Likewise define $h(\vec C)\in H_1(\Sigma)$ to be the homology class
+  Define $h(\vec C)\in H_1(\Sigma)$ to be the homology class
   associated to~$\vec C$, and let 
   $\langle h(\vec C), h(\vec D)\rangle$ be the algebraic intersection
   number, the number of right-handed crossings minus the number of
   left-handed crossings in any generic representatives of $\vec C$
-  and~$\vec D$~\cite[6.1]{FM12:PrimerMCG}.
+  and~$\vec D$.
 \end{definition}
 
 \begin{lemma}\label{lem:asym-intersect}
   If $\langle \vec C, \vec D\rangle$ is the algebraic intersection
   number between the (homology classes of) $\vec C$ and $\vec D$, then
   \[
-    \vec i(\vec C, \vec D) = i(C, D) + {\textstyle\frac12}\langle \vec C,\vec D\rangle.
+    \vec i(\vec C, \vec D) = {\textstyle\frac12}\ i(C, D) + {\textstyle\frac12}\langle \vec C,\vec D\rangle.
   \]
 \end{lemma}
 
@@ -46,17 +60,17 @@ functionals can come from an asymmetric intersection number.
   $\sum_i h(\vec C_i) = 0$, let $\vec{\mathbf{C}} = \bigcup_i (\vec C_i
   \cup -\vec C_i)$. Then for any oriented curve~$\vec D$, we have
   \[
-    \vec i(\vec{\mathbf C},D) = 0.
+    \vec i(\vec{\mathbf C}, D) = 0.
   \]
 \end{proposition}
 \begin{proof}
   Immediate from Lemma~\ref{lem:asym-intersect}.
 \end{proof}
 
-It is easy to see from this that an oriented geodesic current is not determined by its asymmetric intersection numbers with all oriented curves.
-It is also easy to construct asymmetric functionals that cannot come
+We see from this that an oriented geodesic current is not determined by its asymmetric intersection numbers with all oriented curves.
+It is also easy to construct asymmetric functionals satisfying smoothing, stability and additivity that cannot come
 from asymmetric intersection numbers. First consider the flat unpunctured torus,
-and, consider the functional $f$ on given by word-length with respect
+and consider the functional $f$ given by word-length with respect
 to a monoid generating set corresponding to an oriented triangle. With
 respect to standard generators $a,b$ with $[a,b] = e$, we consider the
 three (monoid) generators $a$, $b$, and $c = a^{-1}b^{-1}$. Word length with
@@ -65,10 +79,10 @@ respect to this generating set behaves like this:
   \resizebox{50mm}{!}{\svgfig{length_asymmetric}}
 \]
 This word length satisfies oriented smoothing: we are looking at
-length with respect to an oriented graph, which is still embedded. As
-such, given a concrete representatives for an oriented multi-curve in
+length with respect to an oriented graph with edges $\vec a, \vec b, \vec c$, which is still embedded. As
+such, given a concrete representative for an oriented multi-curve in
 a neighborhood of this directed graph, we can smooth any essential
-crossing and get a new oriented multi-curve still in the neighborhood (by the same smoothing argument as in Corollary~\ref{cor:domination}).
+crossing and get a new oriented multi-curve still in the neighborhood by the same smoothing argument as in Corollary~\ref{cor:domination}.
 
 Now consider the three curves
 \begin{align*}
@@ -76,11 +90,10 @@ Now consider the three curves
   \vec C_2 &= \overrightarrow{[b]} & 
   \vec C_3 &= \overrightarrow{[c]}.
 \end{align*}
-These satisfy the conditions of
+These curves satisfy the conditions of
 Proposition~\ref{prop:asym-constraint}, but have lengths
 $\ell(\vec C_i) = 1$ and $\ell(-\vec C_i) = 2$. Concretely,
-Proposition~\ref{prop:asym-constraint} says that the alternating sum
-of lengths of curves around the central hexagon must be zero, as one
+Proposition~\ref{prop:asym-constraint} implies that, for any $\vec D$, $i(\vec{\mathbf C_i}, \vec D)=0$ for $i=1,2,3$, which is not satisfied by these lengths, as one
 can see by example in Figure~\ref{fig:shortcurves}.
 
 
@@ -95,22 +108,20 @@ can see by example in Figure~\ref{fig:shortcurves}.
 \end{subfigure}
 \caption{Left: the three shortest curves in the flat triangular unpunctured
   torus (up to symmetry, shown in an unfolding in the universal
-  cover), and their corresponding intersection functions.}
+  cover). Right: their corresponding asymmetric intersection functions.}
   \label{fig:shortcurves}
 \end{figure}
 
  Develop these simple curves in the universal cover of the triangular punctured torus, and consider the same triangulation as in Figure~\ref{fig:shortcurves} lifted to the universal cover.
-
- The corresponding lifts of geodesics intersect the edges of the triangulations, which we orient. If we note the asymmetric intersection number of these geodesics as we develop the torus further and further, which corresponds to taking more powers of the curve, and keep track of the right-handed intersections, we obtain the diagrams of asymmetric intersections for each curve, color coded in Figure~\ref{fig:shortcurves}. We observe that counting right-handed crossings corresponds to taking the maximum of the algebraic intersection number, a linear function on simple curves, with 0. 
-
-It is easy to upgrade this example to one living on a genus~$2$
+ 
+ We can upgrade this example to one living on a genus~$2$
 surface (so hyperbolic and in the context of this paper.) For
-instance, one can divide the genus~$2$ surface into two holed-tori, consider monoid generators $a,b,c$ on the right-hand torus as
+instance, one can divide the genus~$2$ surface into two once-punctured tori, consider monoid generators $a,b,c$ on the right-hand torus as
 above, considered as edges with very long length in an embedded
-directed graph, and supplement them with (short) monoid generators on
-the left-hand torus. We can do this while keeping the generating graph
+directed graph, and supplement them with short monoid generators on
+the left-hand torus so lengths are very close to the ones in the unpunctured torus above. We can do this while keeping the generating graph
 embedded, so the argument above still applies to show that oriented
-smoothing holds.
+smoothing holds for the genus 2 surface.
 
 %%% Local Variables:
 %%% mode: latex
