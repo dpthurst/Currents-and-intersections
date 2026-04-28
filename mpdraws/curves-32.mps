@@ -45,12 +45,12 @@ newpath 7.01538 -11.02444 moveto
 5.01105 -5.01105 lineto
 11.02444 -7.01538 lineto stroke
 9.11536 -4.91537 moveto
-(a) cmmi7 6.97385 fshow
+(b) cmmi7 6.97385 fshow
 newpath -7.01535 3.00629 moveto
 -9.01968 9.01968 lineto
 -3.00629 7.01535 lineto stroke
 -13.43675 1.91278 moveto
-(a) cmmi7 6.97385 fshow
+(b) cmmi7 6.97385 fshow
  0 0 0.8 setrgbcolor
 newpath -14.03073 -14.03073 moveto
 0 0 lineto
@@ -59,12 +59,12 @@ newpath -11.02444 -7.01538 moveto
 -5.01105 -5.01105 lineto
 -7.01538 -11.02444 lineto stroke
 -4.91537 -13.95825 moveto
-(b) cmmi7 6.97385 fshow
+(a) cmmi7 6.97385 fshow
 newpath 3.00629 7.01535 moveto
 9.01968 9.01968 lineto
 7.01535 3.00629 lineto stroke
 1.41188 9.11536 moveto
-(b) cmmi7 6.97385 fshow
+(a) cmmi7 6.97385 fshow
  0 0 0 setrgbcolor 0 3 dtransform truncate idtransform setlinewidth pop
 newpath 0 0 moveto 0 0 rlineto stroke
 showpage

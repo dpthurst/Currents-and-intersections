@@ -682,7 +682,7 @@ If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-paral
 The figures cover the case $(\ora{a}, \ora{b})$ being R-parallel. For the L-parallel case, note that $(\ora{a},\ora{b})$ being L-parallel, implies $(\ora{b},\ora{a})$ is R-parallel. Applying the statement, we obtain that $\ora{bA},\ora{Ab}$ cross (resp. are anti-parallel), which is equivalent, by taking inverses, to $\ora{aB}, \ora{Ba}$ crossing (resp. are anti-parallel.
 \end{proof}
 It also follows that, when $(\ora{a},\ora{b})$ are parallel, many composite pairs do not cross. We can extract the following two results.
-\begin{lemma}\DMGtodo{was more precise in this alignments and added the proofs}
+\begin{lemma}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel, then:
 \begin{itemize}
@@ -807,7 +807,7 @@ examples.
 
 \begin{proof}
   For the first part, it suffices to show that $\ora{g_1}$ crosses
-  $x^ka \cdot \ora{x}$ and $x^{-\ell A} \cdot \ora{x}$ to the right,
+  $x^ka \cdot \ora{x}$ and $x^{-\ell} A\cdot \ora{x}$ to the right,
   or equivalently (by translation) that $\ora{x^{\ell+k}a}$ and $\ora{ax^{k+\ell}}$
   cross $\ora{x}$ to the right. This follows from
   Lemma~\ref{lem:rhs_prod}.
@@ -948,9 +948,9 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \textcolor{red}{and for $m, n \geq 2$,
 \begin{equation}
 \label{eq:crossbelowy}
-[x^nY^m] \reducesto [x^{n-2}][Y^m]
+[ax^nY^m] \reducesto [a][x^{n-2}][Y^m]
 \quad \text{or} \quad
-[y^mX^n] \reducesto [y^{m-2}][X^n]
+[ay^mX^n] \reducesto [a][y^{m-2}][X^n]
 \end{equation}}
 \end{proposition}
 
@@ -1021,10 +1021,10 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 
     \resizebox{50mm}{!}{\svgfignormal{lb2}}
     \caption{$\protect\ora{x}$ and $\protect\ora{Yx}$ are R-parallel }
-    \label{fig:anti}
+    \label{fig:lb2}
    \end{subfigure}
    \caption{Cases for relative position}
-   \label{fig:lb2}
+   \label{fig:lb-cases}
  \end{figure}
 \end{proof}
 

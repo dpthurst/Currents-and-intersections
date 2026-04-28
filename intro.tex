@@ -195,12 +195,12 @@ These results identify a common axiomatic structure underlying curve functionals
 
 \subsection{Characterization of measured laminations and hyperbolic metrics}
 
-As an application of Theorem~\ref{thm:intersect}, we obtain intrinsic
+As an application of Theorem~\ref{thm:intersections_group}, we obtain intrinsic
 characterizations of those curve functionals whose dual currents are
 measured laminations or hyperbolic Liouville currents.
 (Measured laminations are precisely those currents $\alpha$
 satisfying $i(\alpha,\alpha)=0$~\cite[Proposition~17]{Bonahon88:GeodesicCurrent}.)
-
+\begin{comment}
 \begin{mainthm}\label{thm:lam-char}
 Let $f$ be a curve functional satisfying the hypotheses of
 Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
@@ -229,6 +229,56 @@ where
 \lambda(g)\coloneqq 2\cosh\!\big(f(g)/2\big).
 \]
 \end{mainthm}
+\end{comment}
+
+\begin{mainthm}
+\label{thm:hyp-lam-char}
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set
+\[
+\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).
+\]
+Then there exists a measured lamination, respectively a hyperbolic metric,
+$\mu_{\overline f}$ on $S$ such that
+\[
+i(\mu_{\overline f},[g])=\overline f(g)
+\quad\text{for every } g\in \pi_1(S),
+\]
+if and only if $f$ satisfies the following common conditions:
+\[
+\begin{minipage}{0.78\textwidth}
+\begin{enumerate}
+\item $f$ is class invariant;
+\item $f$ is stable: $f(a^n)=n f(a)$ for all $n\geq 1$;
+\item for all $a,b\in\pi_1(S)$,
+\[
+f(ab)\geq f(a)+f(b)
+\quad\text{if }(a,b)\text{ are parallel}.
+\]
+\end{enumerate}
+\end{minipage}
+\]
+and, when $(a,b)$ are crossing, the corresponding condition:
+\[
+\begin{array}{c@{\qquad\qquad}c}
+\textbf{Measured lamination} & \textbf{Hyperbolic metric} \\[4pt]
+\begin{minipage}{0.42\textwidth}
+$f(a)+f(b)=\max\{f(ab),f(aB)\}$.
+\end{minipage}
+&
+\begin{minipage}{0.42\textwidth}
+\[
+\begin{aligned}
+\lambda(a)\lambda(b)
+&= \lambda(ab)+\lambda(aB),\\
+\lambda(g)
+&\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
+\end{aligned}
+\]
+\end{minipage}
+\end{array}
+\]
+\end{mainthm}
+
 These theorems are proved in Section~\ref{sec:special-classes}.
 
 The $\lambda$-length functional arises naturally in the study of the
@@ -492,13 +542,13 @@ these results to deduce Theorem~\ref{thm:intersections_group} from
 Theorem~\ref{thm:intersect}; the proof of Theorem~\ref{thm:intersect}
 does not rely on this section.
 
+
+
+In Section~\ref{sec:skora}, we prove Theorem~\ref{mainthm:skora}. We recall the necessary background on real trees and group actions.
 In Section~\ref{sec:crossratios}, we show that period functionals
 arising from generalized cross-ratios satisfy the hypotheses of
 Theorem~\ref{thm:intersections_group}. They therefore induce geodesic
 currents; this proves Theorem~\ref{mainthm:crossratio}.
-
-In Section~\ref{sec:skora}, we prove Theorem~\ref{mainthm:skora}. We recall the necessary background on real trees and group actions.
-
 Finally, Section~\ref{sec:questions} discusses further questions and conjectures.
 
 The Appendices address topics not central to the main proofs. Appendix~\ref{sec:hyp-par} gives a hyperbolic

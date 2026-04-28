@@ -46,6 +46,8 @@ Figure~\ref{fig:vertical-accordion}. \begin{figure}
   \label{fig:vertical-accordion2}
 }
 \end{figure}
+\begin{comment}
+\end{comment}
 
  
 
@@ -126,6 +128,7 @@ We thus get the family of RH orbits given by
 \bigl([B]_{a,a x^k e,c,c x^k e}\bigr)_{k=0}^\infty.
 \]
 %Figure~\ref{fig:finalfamily} related the box to the orbit notation.
+
 To show this family of RH orbits have measure going to zero,
 by definition of $\mu_f$, we need to evaluate the nested limit:
 \begin{align*}
@@ -141,30 +144,40 @@ Here, we apply Lemma~\ref{lem:additivity-limit-2}
 to see the double limit
 exists, and then by applying Proposition~\ref{prop:join-split-alg} twice we
 can break up the limit into canceling terms as desired.
-
-For the 
+\begin{comment}
+For the other horizontal case 
 In the RH orbit notation, we then have
   \begin{align*}
-    a^{(k)} &= p_1 q_1^{(k)} = ap_1 q_2 x^{-k} q_2^{-1}q_1 = a x^k e\\ &
-    b^{(k)} &= p_1 q = p_1 q_1 x^k q_1^{-1}q_2 = a x^k e\\
-    c^{(k)} &= p_2 q_1 = c &
-    d^{(k)} &= p_2 q_2^{(k)} = p_2 q_1 x^k q_1^{-1} q_2 = c x^k e.
-  \end{align*}
+a^{(k)} &= p_1 q_1^{(k)} = p_1 q_2 x^{k} q_2^{-1}q_1 = b x^{k} e^{-1}
+&\qquad
+b^{(k)} &= p_1 q_2 = b\\
+c^{(k)} &= p_2 q_1^{(k)} = p_2 q_2 x^{k} q_2^{-1}q_1 = d x^{k} e^{-1}
+&\qquad
+d^{(k)} &= p_2 q_2 = d.
+\end{align*}
 
   \begin{align*}
-  \lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr)
-   &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) +
-     f([cx^n])-f([ax^n])-f([cx^kex^n]) \\
+  \lim_{k \to \infty} \bigl(\mu_f([B]_{b x^{k} e^{-1},b,d x^{k} e^{-1},d})\bigr)
+   &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([b x^n]) +
+     f([d x^{k} e^{-1}x^n])-f([b x^{k} e^{-1}x^n])-f([dx^n]) \\
   &= \frac{1}{2}\lim_{k,n \to \infty} \bigl(f([x^n a]) + f([x^ke])\bigr) + f([cx^n])\\
   &\qquad\qquad-f([ax^n])-\bigl(f([x^nc]) + f([x^ke])\bigr)\\
   &= 0.
 \end{align*}
-
+In the second equality we used
+\[
+\lim_{n,k}f([dx^ke^{-1}x^n]) = \lim_{n,k} f([cx^ndx^kD]) = \lim_{n,k} f([cx^n(dxD)^k]) 
+\]
+On the other hand,
+\[
+\lim_{n,k}f([dx^ke^{-1}x^nd])
+\]
+\end{comment}
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
 Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
 the assumption that $\ora{\ell_1}$
-is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_2},\ora{\ell_1})$ are R-parallel) is equivalent to $\ora{P_2 p_1}$ 
+is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_1},\ora{\ell_2})$ are R-parallel) is equivalent to $\ora{P_2 p_1}$ 
 crossing $\ora{\ell_2}$ to the right, which in turn is equivalent to $\ora{p_1 P_2}$
 crossing $\ora{x}$ to the right. In particular we have
 \[
@@ -268,7 +281,7 @@ without increasing the mass much.
   any $\epsilon > 0$, there is some $s_2',t_1'$ with
   $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region
   $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup
-  \bigl([s_2',s_2) \times [t_1,t_2)\bigr)$ is in $\mathcal{R}$ and satisfies
+  \bigl([s_2',s_2) \times [t_2,t_1)\bigr)$ is in $\mathcal{R}$ and satisfies
   $\mu_f(W(B,\epsilon)) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca2}. That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
@@ -297,7 +310,7 @@ $\overline{B}$ in the subspace topology of $\overline{B}$.
   The finitely additive measure $\mu_f$ is countably sub-additive on $\cB$.
 \end{proposition}
 
-\begin{proof}
+\begin{proof}\DMGtodo{I don't think the $V_i^0$ cover, since $V_0^0$ might missing points by how it is defined. We should slightly enlarge $W^0$ in its definition, but at the moment we don't have accordions shriking from top to bottom or from right to left (which is what we need). The problem is that only the type 1 boxes would work for that, but then one does not get nested lifts and no parallelism.}
   Let $B_0$ be a right-handed box, and suppose we are given a
   countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
   must show that

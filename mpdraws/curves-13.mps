@@ -37,7 +37,7 @@ newpath -14.03073 -14.03073 moveto
 21.7797 -6.28177 21.7797 6.28177 14.03073 14.03073 curveto
 6.28177 21.7797 -6.28177 21.7797 -14.03073 14.03073 curveto
 -21.7797 6.28177 -21.7797 -6.28177 -14.03073 -14.03073 curveto closepath stroke
- 0.7 0 0 setrgbcolor [] 0 setdash
+ 0 0 0.8 setrgbcolor [] 0 setdash
 newpath -14.03073 -14.03073 moveto
 14.03073 14.03073 lineto stroke
 newpath 3.00606 7.01512 moveto
@@ -45,7 +45,7 @@ newpath 3.00606 7.01512 moveto
 7.01512 3.00606 lineto stroke
 9.11536 0.62587 moveto
 (a) cmmi10 9.96265 fshow
- 0 0 0.8 setrgbcolor
+ 0.7 0 0 setrgbcolor
 newpath 14.03073 -14.03073 moveto
 -14.03073 14.03073 lineto stroke
 newpath -5.61198 1.60292 moveto

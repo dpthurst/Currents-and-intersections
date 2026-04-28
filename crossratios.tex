@@ -1,20 +1,20 @@
 \section{Cross-ratios}
 \label{sec:crossratios}
 
-In this section we will see that every generalized cross-ratio induces a geodesic current. Precisely, we will prove that generalized cross-ratios induce functions on $\pi_1(S)$ (periods) satisfying the hypotheses of Theorem~\ref{thm:intersections_group}, and therefore induce a geodesic current $\mu$ dual to the period. This unifies the work of Martone-Zhang~\cite{MZ19:PositivelyRatioed} and Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios} under the framework of Theorem~\ref{thm:intersect}.
+In this section we will see that every generalized cross-ratio induces a geodesic current. Precisely, we will prove that generalized cross-ratios induce functions on $\pi_1(S)$ (periods) satisfying the hypotheses of Theorem~\ref{thm:intersections_group}, and therefore induce a geodesic current $\mu$ dual to the period. This unifies the work of Martone--Zhang~\cite{MZ19:PositivelyRatioed} and Burger--Iozzi--Parreau--Pozzetti~\cite{BIPP24:PositiveCrossratios} under the framework of Theorem~\ref{thm:intersect}.
 
 \begin{definition}
 A \emph{generalized cross-ratio} on $S$ is a function of type
 \[
 [\cdot, \cdot, \cdot, \cdot] \colon (\partial_{\infty} S)^{(4)} \to \mathbb{R}
 \]
-where $(\partial_{\infty} S)^{(4)}$ denotes the space of ccw oriented 4-tuples in $(\partial_{\infty} S)^{4}$ such that $\{ a,d\} \cap \{b,c\} = \emptyset$, satisfying the following four properties:
+where $(\partial_{\infty} S)^{(4)}$ denotes the space of ccw oriented distinct 4-tuples in $(\partial_{\infty} S)^{4}$, satisfying the following four properties:
 \begin{enumerate}
 \item \emph{flip-invariance:} $[a,b,c,d]=[c,d,a, b].$
-\item \emph{additivity:} For any ccw oriented $a,b,c,d,e$, we have
+\item \emph{additivity:} For any ccw oriented and distinct $a,b,c,d,e$, we have
 $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
-\item \emph{$\pi_1(S)$-invariance:} For any ccw oriented $a,b,c,d$ and every $g \in \pi_1(S)$, $[g \cdot a, g \cdot b, g \cdot c, g \cdot d] = [a,b,c,d]$.
-\item \emph{positivity:} For every ccw oriented $a,b,c,d$, we have
+\item \emph{$\pi_1(S)$-invariance:} For any tuple $(a,b,c,d) \in (\partial_{\infty} S)^{4}$ and every $g \in \pi_1(S)$, $[g \cdot a, g \cdot b, g \cdot c, g \cdot d] = [a,b,c,d]$.
+\item \emph{positivity:}  For any tuple $(a,b,c,d) \in (\partial_{\infty} S)^{4}$, we have
 \[
 [a,b,c,d] \geq 0.
 \]
@@ -22,22 +22,20 @@ $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 \label{def:general_crossratio}
 \end{definition}
 
-There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Ot92:Symplectique}, Martone-Zhang~\cite{MZ19:PositivelyRatioed}, Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}). 
+There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Ot92:Symplectique}, Martone--Zhang~\cite{MZ19:PositivelyRatioed}, Burger--Iozzi--Parreau--Pozzetti~\cite{BIPP24:PositiveCrossratios}). 
 In all of these references (except the last one) the authors consider the cross-ratios to be continuous or even H\"older continuous, but we will not assume this here. Furthermore, in all of the above definitions, flip-invariance is assumed.
-For an even more general definition of cross-ratio where flip-invariance is not assumed, see Labourie's~\cite[Definition~3.1]{L07:Crossratio}. We will always assume our cross-ratios are flip-invariant.
+Labourie~\cite[Definition~3.1]{L07:Crossratio} has considered more general definition of cross-ratios where flip-invariance is not assumed.  We will always assume our cross-ratios are flip-invariant.
 
 As alluded above, generalized cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
 In this setting, there are (at least) two natural generalized cross-ratios associated to a geodesic current (see Question~\ref{que:howmany_crossratios}).
 \[
 [a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))
-\]
-and
-\[
+\quad\text{and}\quad
 [a,b,c,d]^- \coloneqq \mu((d,a] \times (b,c]).
 \]
 It is easily checked that these satisfy the properties of generalized cross-ratios,
-and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios}, when $\mu$ is a closed curve).
-If $\mu$ has no atoms, the two generalized cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are equal, since the measure of the boundary of any box of geodesics is zero.
+and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios} when $\mu$ is a closed curve).
+If $\mu$ has no atoms, the two generalized cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are equal, since the measure of the boundary of any box of geodesics is zero by Proposition~  \ref{prop:spikes}
 
 Given a generalized cross-ratio $[ \cdot, \cdot, \cdot, \cdot ]$, let
 the \emph{period} function of a curve $C=[g]$ be, for $x$ an arbitrary
@@ -45,7 +43,7 @@ point in $(g^-,g^+)$,
 \[
   \ell_{[]}(g) = \ell(g) \coloneqq [g^-, x , g \cdot x, g^+].
 \]
-The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is well-defined.
+The $\pi_1(S)$-invariance and additivity of the cross-ratio show this is independent of~$x$.
 
 Given a geodesic current $\mu$, the two (possibly distinct)
 generalized cross-ratios $[ \cdot, \cdot, \cdot, \cdot ]^{\pm}$ induce
@@ -56,7 +54,7 @@ by their periods \cite[Theorem 1.f]{L95:BordDesVar} (c.f.\
 \cite{Ot92:Symplectique}).
 
 Going the other direction, it is immediate that a cross-ratio gives a
-finitely additive function $\bigl[\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]} \bigr]\coloneqq [a,b,c,d]$, on the semiring of boxes $\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]}$ in $G(S)$, where the notation means boxes made of mixed closed and open intervals, and $a,b,c,d$ appear in ccw
+finitely additive function $\bigl[\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]} \bigr]\coloneqq [a,b,c,d]$, on the semiring of boxes $\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]}$ in $G(S)$, where the notation means either $(d,a] \times (b,c]$ or $[d,a) \times [b,c)$, and $a,b,c,d$ appear in ccw
 order; however, this function need not be countably additive and will
 not in general agree with the geodesic current~$\mu$ we construct. For
 instance, if we start with a geodesic current $\mu$ with atoms,
@@ -75,22 +73,23 @@ convenience in the proofs, we will use the function on boxes and its finite addi
 \end{question}
 
 \begin{lemma}
+\label{lem:crossratio_stability}
 For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
 \[
 \ell(g^n) = n\ell(g).
 \]
-\label{lem:crossratio_stability}
 \end{lemma}
 \begin{proof}
-    This follows readily by additivity and $\pi_1(S)$-invariance of the cross-ratio.
+This follows readily by additivity and $\pi_1(S)$-invariance of the cross-ratio.
 \end{proof}
 
-\begin{lemma}
+The fact that the period is a symmetric curve functional will use flip-invariance. 
+
+\begin{lemma}    \label{lem:crinv}
     For every $g \in \pi_1(S)$, we have
     \[
     \ell(g)=\ell(g^{-1}).
     \]
-    \label{lem:crinv}
 \end{lemma}
 \begin{proof}
 The geodesic $\ora{g}$ with endpoints $g^-, g^+$ divides $\partial_{\infty}S$ into two open intervals:
@@ -107,6 +106,7 @@ We then have
      \frac{[g^{-n}y, g^{n}x, g^+, g^{n} y]}{2n}\\
   &= \ell(g).
 \end{align*}
+For the first equality, we used Lemma~\ref{lem:crossratio_stability}.
 To see the last equality, note that by $\pi_1(S)$-invariance, the
 numerator of the first term is $[y,g^-,x,g^{2n}y]$ which is bounded by
 $[y,g^-,x,g^+]$, and thus the entire first term has limit zero
@@ -138,7 +138,7 @@ We will need another lemma on equality of cross-ratios.
   \begin{figure}
 \centering{
 \resizebox{80mm}{!}{\svgfignormal{cr_geo}}
-\caption{This illustrates the objects in the proof of Lemma~\ref{lem:cr-switcheroo} (1)}
+\caption{The statement and proof of Lemma~\ref{lem:cr-switcheroo}(1)}
   \label{fig:cr-geo}
 }
 \end{figure}
@@ -148,7 +148,7 @@ too. The geometric significance of
 the common value is unclear to us.
 
 \begin{proof}
-  We will prove the first part, the second part is similar.
+  We will prove the first part.
   In what follows, compare Figure~\ref{fig:cr-geo}.
   Set $L = [x,g^+)\times[y,g \cdot y)$ and
   $R = [G \cdot x,x)\times[g^-,y)$. To show $[L] = [R]$, we will
@@ -189,6 +189,7 @@ the common value is unclear to us.
   \]
   The $L_i'$ are disjoint, with union contained in the same set
   $[g^-,y) \times [G \cdot x, g^+)$, so as before $\lim_{i^+} [L_i'] = 0$.
+  The proof of the second part is similar, although the setup is different.
 \end{proof}
 
 Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
@@ -201,13 +202,12 @@ We divide the proof into two cases, depending on the type of smoothing (connecte
 
 We will verify Equation~\eqref{eq:disconn_oriented} in Theorem~\ref{thm:intersections_group}.
 
-\begin{lemma}
+\begin{lemma}\label{lem:crossratio_disconnected_smoothing}
 Let $a, b \in \pi_1(S)$ so that $(\ora{b},\ora{a})$ are R-crossing.
 Then
 \[
 \ell(a) + \ell(b) \geq \ell(ab).
 \]
-\label{lem:crossratio_disconnected_smoothing}
 \end{lemma}
 
 \begin{proof}
@@ -228,34 +228,36 @@ Combining these two, the result follows.
 We proceed with Step~1. 
 \end{comment}
 
-
-We start by giving finding
-fundamental domains $F(ab)$, $F(a)$, and $F(b)$ for $\ora{ab}$,
-$\ora{a}$, and~$\ora{b}$, respectively, with the property that all
-boxes share the same right-hand factor.
-
-Start with the fundamental domain $F_0(ab) = [ab^+,ab^-) \times [Ab^+, a
-\cdot bA^+)$ for $\langle ab \rangle$, and write it as the union
-$F(ab) = F_1 \cup F_2$ where
-\begin{align*}
-  F_1 &= [ab^+,ab^-) \times [Ab^+, bA^+) \\
-  F_2 &= [ab^+,ab^-) \times [bA^+, a \cdot bA^+).
-  \\\intertext{Translate $F_2$ by $A$ to get}
-  F_2 \equiv F_2' &= [ba^+,ba^-) \times [Ab^+, bA^+)
-  \\\intertext{so that}
-  F(ab) \equiv F_1 + F_2' &= \bigl([ab^+,ab^-) + [ba^+,ba^-)\bigr)
-                            \times [Ab^+, bA^+)
-\end{align*}
-where in the last step we switch to multi-set notation.
+See
+Figure~\ref{fig:rcross_cr}. We start by giving finding
+fundamental domains $F(ab)$, $F(a)$, and $F(b)$ for $\langle ab \rangle$,
+$\langle a \rangle$, and~$\langle b \rangle$, respectively, with the property that all
+boxes share the same right-hand factor $[Ab^+, bA^+)$.
 
 Fundamental domains $F(a)$, $F(b)$ with this right-hand factor are immediate:
 \begin{align*}
   F(a) &= [a^+, a^-) \times [Ab^+, bA^+)\\
   F(b) &= [b^+, b^-) \times [Ab^+, bA^+).
 \end{align*}
+
+Consider next the fundamental domain $F_0(ab) = [ab^+,ab^-) \times [Ab^+, a
+\cdot bA^+)$ for $\langle ab \rangle$, and write it as the union
+$F_0(ab) = F_1 \cup F_2$ where
+\begin{align*}
+  F_1 &= [ab^+,ab^-) \times [Ab^+, bA^+) \\
+  F_2 &= [ab^+,ab^-) \times [bA^+, a \cdot bA^+).
+  \\\intertext{Translate $F_2$ by $A$ to get}
+  F_2 \equiv F_2' &= [ba^+,ba^-) \times [Ab^+, bA^+)
+  \\\intertext{so that}
+  F_0(ab) \equiv F_1 + F_2' &= \bigl([ab^+,ab^-) + [ba^+,ba^-)\bigr)
+                            \times [Ab^+, bA^+)
+\end{align*}
+where $F \equiv F'$ means $F, F'$ are equivalent up to translation, and in the last step we switch to multi-set notation.
+
+
 Then we have
 \begin{align*}
-  F(a) + F(b) - F(ab)
+  F(a) + F(b) - F_0(ab)
     &\equiv \bigl([a^+,a^-) + [b^+, b^-) - [ab^+,ab^-) - [ba^+,ba^-)\bigr)
       \times [Ab^+, bA^+)\\
     &= \bigl([ba^-,a^-) - [b^-,ab^-) - [ab^+,a^+) + [b^+,ba^+)\bigr)
@@ -263,14 +265,12 @@ Then we have
     &= R_1 - R_2 - R_3 + R_4
 \end{align*}
 where the $R_i$ are the terms appearing in the previous equation in
-order, and we have switched to virtual multi-sets. See
-Figure~\ref{fig:rcross_cr}.
-
+order, and we have switched to virtual multi-sets. 
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{rcross_cr}}
     \caption{Checking $\ell(a) + \ell(b) \geq \ell(ab)$, part 1.
-      The difference $F(a) + F(b) - F(ab)$  decomposes into $R_1$ (blue) + $R_2$
+      The difference $F(a) + F(b) - F_0(ab)$  decomposes into $R_1$ (blue) + $R_2$
       (red) + 
       $R_3$ (purple) + $R_4$ (cyan).}\label{fig:rcross_cr}
 \end{figure}
@@ -298,12 +298,12 @@ Figure~\ref{fig:rcross_cr}.
 \end{figure} 
 \end{comment}
 
-We next show that $[R_3] \le [R_4]$. By Lemma~\ref{lem:cr-switcheroo} (1)
+We next show that $[R_3] \le [R_4]$. By Lemma~\ref{lem:cr-switcheroo}(1)
 with $g=a$, $y=Ab^+$, and $x=ab^+$, we have
 \[
   [R_3] = \bigl[[ba^+,ab^+) \times [a^-,Ab^+)\bigr] = [R_3'].
 \]
-By the Lemma~\ref{lem:cr-switcheroo} (2), with $g=b$, $y=Ab^+$, and $x=ba^+$, we have
+By the Lemma~\ref{lem:cr-switcheroo}(2), with $g=b$, $y=Ab^+$, and $x=ba^+$, we have
 \[
   [R_4] = \bigl[[ba^+,ab^+) \times [b^-,Ab^+)\bigr] = [R_4'].
 \]
@@ -391,7 +391,7 @@ The argument for $[R_1] \leq [R_2]$ is symmetric.
 \end{proof}
 
 \begin{remark}
-  The argument above shows that
+  If one traces through the last inequalities, the argument shows that
   \[
     \ell(a) + \ell(b) - \ell(ab) = [R_1] - [R_2] - [R_3] + [R_4]
     = \bigl[[ba^+, ab^+) \times [b^-,a^-)\bigr]
@@ -402,17 +402,14 @@ The argument for $[R_1] \leq [R_2]$ is symmetric.
 
 \subsection{Connected smoothing}
 
-Here we verify that Equation~\eqref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group} is satisfied.
+Here we verify that Equation~\eqref{eq:conn_oriented} in Theorem~\ref{thm:intersections_group}, oriented connected smoothing, is satisfied.
 
-Now we prove connected smoothing.
-
-\begin{lemma}
+\begin{lemma}\label{lem:crossratio_connected_smoothing}
 Let $a,b \in \pi_1(S)$ with $(a,b)$ R-parallel.
 Then, we have
 \[
 \ell(ab) \geq \ell(a) + \ell(b).
 \]
-\label{lem:crossratio_connected_smoothing}
 \end{lemma}
 
 \begin{proof}
@@ -423,12 +420,12 @@ Then, we have
 \resizebox{80mm}{!}{\svgfignormal{c8}}
     \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
 \end{figure} 
-Suppose $(a,b)$ are R-parallel. By Lemma~\ref{lem:anbn_vs_bkak}, $(b^m a^m, a^nb^n)$ R-cross for every $m,n \geq 1$.
+Suppose $(a,b)$ are R-parallel. By Lemma~\ref{lem:anbn_vs_bkak}, $(\ora{b^m a^m}, \ora{a^nb^n})$ R-cross for every $m,n \geq 1$.
 Since by Lemma~\ref{lem:crossratio_disconnected_smoothing} we already know disconnected smoothing for $\ell$, it follows that for every $n,m \geq 1$, we have
 \[
 \ell(a^n b^n) + \ell(b^m a^m) \geq \ell((b^m a^m)(a^n b^n)) = \ell(a^{n+m}b^{n+m}),
 \]
-i.e. the sequence $a_n \coloneqq \ell(a^n b^n)$ is sub-additive. By Fekete's lemma~\ref{lem:fekete}, 
+i.e., the sequence $a_n \coloneqq \ell(a^n b^n)$ is sub-additive. By Fekete's lemma~\ref{lem:fekete}, 
 we have
 \[
 \ell(ab) \geq \lim_n \frac{\ell(a^nb^n)}{n}.
@@ -437,8 +434,8 @@ We will now prove that, for sufficiently large $n$, we have
 \[
 \ell(a^nb^n) \geq \ell(a^n) + \ell(b^n).
 \]
-Indeed, take $n_0$ large enough so that for all $n \geq n_0$, we have $\ora{a}$ and $B^n \cdot \ora{a}$ do not cross, and so that $\ora{b}$ and $a^n \cdot \ora{b}$ do not cross.
-This can be achieved by NS (North-South) dynamics of $a$ and $B$. To clarify
+Indeed, take $n_0$ large enough so that for all $n \geq n_0$, neither $(\ora{a}, B^n \cdot \ora{a})$ nor $(\ora{b}, a^n \cdot \ora{b})$ cross. 
+This can be achieved by NS dynamics of $a$ and $B$. To clarify
 notation, we will let $g \coloneqq a^n$ and $h \coloneqq b^n$. Compare
 Figure~\ref{fig:c8}, where we consider the fundamental domain $F(gh) =
 (gh^+, gh^-) \times [h^-, g\cdot h^-)$ (dark green).
@@ -452,7 +449,7 @@ Hence, by invariance and finite additivity, we get
 [F(g)] + [F(h)] \leq [F(gh)],
 \]
 which proves the claim.
-Hence, 
+Therefore, 
 \[
 \lim_n \frac{\ell(a^nb^n)}{n} \geq \ell(a) + \ell(b),
 \]
@@ -467,10 +464,9 @@ as desired.
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{theorem}
 \begin{proof}
-By the Lemmas~\ref{lem:crinv}, \ref{lem:crossratio_stability}, \ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+By the Lemmas~\ref{lem:crossratio_stability},\ref{lem:crinv}, \ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
 \end{proof}
 
-\newpage
 
 
 

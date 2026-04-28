@@ -13,17 +13,19 @@ characterization of filling geodesic currents.
   $\mu$ a geodesic current and $f$ the functional on curves associated
   to $\mu$, i.e., so that $\mu_f=\mu$. The following subsets are in
   bijection.
+  
+  
 
 \begin{enumerate}
-    \item The set of filling currents, i.e., $ \Curr_{\mbox{fill}}(S)$
+    \item The set of filling currents (Definition~\ref{def:filling_current}).
     \item The set of functionals $f \colon \Curves^+(S) \to
       \mathbb{R}$ which satisfy symmetry, oriented smoothing,
       additivity, and stability, and so that their continuous extension to geodesic currents is positive.
     \item The set of curve functionals $f \colon \Curves^+(S) \to
-      \mathbb{R}$ for which their systole \[\sys(f)\coloneqq \inf \{
+      \mathbb{R}$ satisfying symmetry, oriented smoothing, additivity,
+      and stability for which their systole \[\sys(f)\coloneqq \inf \{
         f(C) : C \in \Curves^+(S),\ C \mbox{ non-trivial} \}\] is
-      positive and satisfy symmetry, oriented smoothing, additivity,
-      and stability.
+      positive.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
@@ -32,35 +34,36 @@ These equivalences follow from Theorem~\ref{thm:intersections_group} and \cite[T
 
 \subsection{Multi-curves}
 
-We say $M$ is an \emph{integral} weighted multi-curve if its a weighted multi-curve whose weights are integer numbers. We say that $M$ is a \emph{half-integral} multi-curve if its weights are $\lambda_i = \frac{\lambda_i'}{2}$ for some $\lambda_i' \in \mathbb{Z}$. Note that, by definition, all integral multi-curves are also half-integral.
+We say that a weighted multi-curve $M$ is \emph{integral} if 
+ if its a weighted multi-curve whose weights are integers. We say that $M$ is a \emph{half-integral} multi-curve if its weights are in $\frac{1}{2}\mathbb{Z}$. Note that, by definition, all integral multi-curves are also half-integral.
 
 We have the following criterion for half-integral multi-curves.
 
 \begin{corollary}
-Let $f \in \AConvex(S)$ such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves^+(S)$. Then $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
-Moreover, $\vec{M} = 0$ in $\mathbb{Z}_2$-homology.
+Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}  such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves^+(S)$. Then $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
+Moreover, $[\vec{M}] = 0$ in $\mathbb{Z}/2\mathbb{Z}$-homology.
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
-Since $f \in \AConvex(S)$, by Theorem~\ref{thm:intersect} there exists a geodesic current $\mu$ so that
+By Theorem~\ref{thm:intersect} there exists a geodesic current $\mu$ so that
 \[
 i(\mu, C) = f(C)
 \]
 for every closed curve $C$.
-It suffices to show $\mu$ is an integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $A_n, B_n, C_n, D_n \in \Curves^+(S)$ so that
+We must show $\mu$ is a half-integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $A_n, B_n, C_n, D_n \in \Curves^+(S)$ so that
 \[
-\mu(R) = \frac{1}{2}\lim_n i(\mu, B_n) + i(\mu, C_n) - i(\mu, A_n) - i(\mu, D_n).
+\mu(R) = \frac{1}{2}\lim_{n^+} i(\mu, B_n) + i(\mu, C_n) - i(\mu, A_n) - i(\mu, D_n).
 \]
 Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$). 
-Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. For more details about this last argument, see~\cite{JMG:StrongDuals}.
-By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
-We furthermore claim that $\vec{M}=0$ in $\mathbb{Z}_2$-homology. 
+Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. (For more details about this last argument, see~\cite{JMG:StrongDuals}.)
+By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve $M$, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
+We furthermore claim that $[\vec{M}]=0$ in $\mathbb{Z}/2\mathbb{Z}$-homology. 
 Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
-$[C] \in H^1(S,\mathbb{Z}_2)$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \cdot, \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(\mu, C) \notin \mathbb{Z}$, a contradiction.
+$[C] \in H^1(S,\mathbb{Z}/2\mathbb{Z})$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \cdot, \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(\mu, C) \notin \mathbb{Z}$, a contradiction.
 \end{proof}
 
 \begin{remark}
-  As shown above, there are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
+  There are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
 For example, let $\mu$ be the geodesic current supported on a
   separating simple closed curve. Then $\mu/2$ has an integral
   length spectrum but is not an integral multi-curve. 
@@ -73,16 +76,16 @@ It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \ge
 i(M, C) = \sum_{i=1}^n \lambda_i n_i.
 \label{eq:weighted_multicurve}
 \end{equation}
-
+i.e., $\{i(\mu,C)\}_{\Curves(S)}$ is contained in a finite rank subgroup of $\mathbb{R}$. In this case, we say $\mu$ has \emph{finite rank spectrum}.
 This property does not characterize weighted multi-curves, since certain negatively curved metrics that satisfy this condition can be constructed (see~\cite{Agol25:Spectrum}).
 Hence, is natural to ask the following two questions.
 
 \begin{question}
-    What is the subspace of geodesic currents whose marked length spectrum satisfies Equation~\ref{eq:weighted_multicurve}?
+    What is the subspace of geodesic currents with finite rank spectrum?
 \end{question}
 
 \begin{question}
-    What conditions on the marked length spectrum characterize weighted multi-curves?
+    What conditions on the (marked) length spectrum characterize weighted multi-curves?
 \end{question}
 
 The last question was originally posed by Viveka Erlandsson to the first author.
@@ -122,10 +125,10 @@ Hence, Corollary~\ref{cor:int_multicurve} implies the result.
 \end{figure}
 
 \begin{example}[Embedded graph but not simple generating set]
-As an example of an embedded graph which does not arise as a simple generating set, consider a square punctured torus with an embedded two-vertex graph with four edges, $r, g, c, b$ (for red, green, cyan, blue), see Figure~\ref{fig:embedded-graph}. Since it has more than one vertex, it does not arise from a simple generating set in the sense of Erlandsson. 
+As an example of an embedded graph which does not arise as a simple generating set, consider a square punctured torus $S'$ with an embedded two-vertex graph with four edges, $r, g, c, b$ (for red, green, cyan, blue), see Figure~\ref{fig:embedded-graph}. Since it has more than one vertex, it does not arise from a simple generating set in the sense of Erlandsson. 
 Indeed, we have
 \[
-[x]=[rB]=[gC] , \qquad , [y]=[rG]=[bC]
+[x]=[rB]=[gC] , \qquad [y]=[rG]=[bC]
 \]
 and thus
 \[
@@ -139,15 +142,18 @@ Moreover,
 \ell([xY])=\ell([(gC)(cB)])=\ell([gB])=2.
 \]
 
-This phenomenon does not occur for any of the simple generating sets of $F_2$, namely
+This phenomenon does not occur for any of the simple generating sets of $\pi_1(S') \simeq F_2$, namely
 \[
 \{ x^{\pm1},y^{\pm1} \}, \quad
 \{ x^{\pm1},(xy)^{\pm1} \}, \quad
-\{ x^{\pm1},(xY)^{\pm1} \},
+\{ x^{\pm1},(xY)^{\pm1} \}, \quad
+\{ y^{\pm1},(xY)^{\pm1} \}, \quad
+\{ y^{\pm1},(xY)^{\pm1} \},
 \]
-nor for the analogous generating sets obtained by replacing the single element $x$ by $y$ in the last two sets. 
+nor for the analogous generating sets obtained by acting diagonally by the mapping class group. 
 Indeed, each of these generating sets assigns length strictly greater than $2$ 
-to at least one of the elements $x$, $y$, $xy$, or $xY$.
+to at least one of the elements $x$, $y$, $xy$, or $xY$. \DMGtodo{why some assign 1 to all of these?}
+Even though this example corresponds to a punctured surface and hence does not fall in the scope of our theorem, one can produce similar examples in genus 2 from this one.
 \end{example}
 
 We note that our result says nothing concrete about the dual multi-curve, whereas Erlandsson's result explicitly constructs it in the specific case of simple generating sets. It would be interesting to describe these multi-curves in general.
@@ -155,9 +161,9 @@ We note that our result says nothing concrete about the dual multi-curve, wherea
 \subsection{Length metrics and intersection domination}
 \label{subsec:ineqintersection}
 
- Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$ if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves^+(S)$.
+ Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$, if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves^+(S)$.
 
- As an immediate application of Theorem~\ref{thm:intersect}, we can study what intersection numbers dominating one curve over another imply about dual currents associated to metrics on the surface.
+ As an immediate application of Theorem~\ref{thm:intersect}, we investigate how inequalities between intersection numbers of curves constrain the dual currents associated with metrics on the surface.
 
 For example, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
 
@@ -165,19 +171,15 @@ For example, we answer positively the following question at the end of \cite{NC0
 Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows that $\ell_g(C_1) \leq \ell_g(C_2)$ for all Riemannian metrics $g$ on $S$?
 \end{question}
 
-We answer this question affirmatively and, in fact, give a much stronger result.
+In fact, give a much stronger result (see Corollary~\ref{cor:domination} below).
 
-First, we show that any length induced by a metric (in fact, by a pseudo-metric) on $S$ has a dual geodesic current.
+First, we show that any length induced by a metric (in fact, by a pseudometric) on $S$ has a dual geodesic current.
 
-\DMGtodo{edited this part, added definition of pseudo-metric, and more detail to the proof of smoothing}
-We first recall the definition of a length induced by a pseudo-metric (see~\cite[Chapter~I.1]{BH11:NonPosCurvature} for a definition in the context of metrics). A \emph{pseudo-metric space} is a pair $(X,d)$, where $X$ is a set and $d \colon X \times X \to \mathbb{R}_{\ge 0}$ is a function satisfying, for all $x,y,z \in X$,
+We first recall the definition of a length induced by a pseudometric on $S$. See~\cite[Chapter~I.1]{BH11:NonPosCurvature} for a definition in the context of metrics. A \emph{pseudometric space} is a pair $(X,d)$, where $X$ is a set and $d \colon X \times X \to \mathbb{R}_{\ge 0}$ is a function satisfying, for all $x,y,z \in X$,
 \[
 d(x,x)=0,\quad d(x,y)=d(y,x),\quad d(x,z)\le d(x,y)+d(y,z).
 \]
-Suppose now $X$ is a topological space. We will not assume any compatibility of the topology induced by $d$ and the underlying topology of $X$: for many examples it will be compatible, but there are some important examples where it won't, such as pseudo-metrics induced from geodesic currents with atoms (Remark~\ref{rmk:pseudo_metrics}).
-\DMGtodo{added this}
-A \emph{path} in $X$ is a continuous map $c \colon [a,b] \to X$.
-We say $c$ joins the point $c(a)$ to $c(b)$. The \emph{$d$-length} $\ell(c)$ of a path $c \colon [a,b] \to X$
+ The \emph{$d$-length} $\ell(c)$ of a continuous path $c \colon [a,b] \to X$
 is defined as
 \begin{equation}
 \ell(c) \coloneqq \sup_{a=t_0 \leq t_1 \leq \cdots \leq t_n=b} \sum_{i=0}^{n-1} d(c(t_i),c(t_{i+1})),
@@ -185,27 +187,37 @@ is defined as
 \end{equation}
 where the supremum is taken over all possible partitions of $[a,b]$ (no bound on $n$), with
 $a=t_0 \leq t_1 \leq \cdots t_n = b$.
-The length of a path $c$ is either a non-negative number or it is infinite. We say
-a path $c$ is \emph{$d$-rectifiable} if its $d$-length is finite.
-Consider now a pseudo-metric $(X,d)$ on $S$.
+The length of a path $c$ is either a non-negative number or it is infinite.
+
+Let $\mathcal{P} = (t_0, \dots, t_n)$ with $t_0 \leq \cdots \leq t_n$ be an arbitrary partition of $I$, and let $\mathcal{P}' = (t_0', \dots, t_m')$ be a refinement of the partition $\mathcal{P}$. By the triangle inequality, for every such partition we have
+\[
+\sum_{i=0}^{n-1} d(\gamma(t_i), \gamma(t_{i+1}))
+\;\leq\;
+\sum_{j=0}^{m-1} d(\gamma(t_j'), \gamma(t_{j+1}')).
+\]
+
+We say
+a concrete curve $c$ is \emph{$d$-rectifiable} if its $d$-length is finite.
+Consider now a pseudometric $(X,d)$ on $S$.
 For a curve $C$ on $S$, we define the \emph{$d$-length} of $C$ as
 \[
 \ell_d(C) \coloneqq \inf_{\gamma \in C} \ell_d(\gamma)
 \]
 where $\gamma$ runs over all the concrete curves in the equivalence class of $C$.
+We extend this definition of multi-curves linearly.
 We call this the \emph{length induced by $d$}.
-If there exists at least a $d$-rectifiable path in every class $C$, then $\ell_d$ induces a curve functional. This is the case, for example, when  $(X,d)$ is a \emph{length pseudo-metric} on $S$, i.e., 
-$d$ is given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.1]{BH11:NonPosCurvature}. Precisely
+If there exists at least a $d$-rectifiable concrete curve representative in curve $C$, then $\ell_d$ induces a curve functional. This is the case, for example, when  $(X,d)$ is a \emph{length pseudometric} on $S$, i.e., 
+$d$ is given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.1]{BH11:NonPosCurvature}. Precisely, this means
 \[
 d(x,y) = \inf_{\gamma} \{ \ell_d(\gamma) : \gamma(0)=x, \gamma(1)=y, \gamma : [0,1] \to X \}.
 \]
 After these preliminaries, we can state and prove the following corollary of Theorem~\ref{thm:intersect}.
 \begin{corollary}
-    Let $d$ be a pseudo-metric on $S$, with induced length on curves $\ell_d$ inducing a curve functional. Then there exists a geodesic current $\mu_d$ dual to $\ell_d$.
+    Let $d$ be a pseudometric on $S$, with induced length on curves $\ell_d$ inducing a curve functional. Then there exists a geodesic current $\mu_d$ dual to $\ell_d$.
     \label{cor:length_dual}
 \end{corollary}
 \begin{proof}
-Additivity is satisfied by definition of $\ell_d$ on multi-curves by extending linearly. It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
+Additivity is satisfied by definition of $\ell_d$ on multi-curves. It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
 The key point is to check that $\ell_d$ satisfies smoothing. 
 Let $C$ be a multicurve with an essential crossing $x$, and let $C'$ be obtained by smoothing $C$ at $x$.
 
@@ -216,25 +228,17 @@ Fix $\epsilon>0$. Since $\ell_d$ is a curve functional, $\ell_d(C)<\infty$ for e
 In particular, $\gamma$ is $d$-rectifiable.
 Let $\gamma' \in C'$ be the concrete multi-curve obtained by smoothing $\gamma$ at $x'$.
 
-By abuse of notation, let $\gamma \colon I \to X$ be a continuous $d$-rectifiable path parameterizing the concrete multi-curve $\gamma$ where $I$ is a finite union of intervals. Let $t' < t''$ be points in $I$ such that $\gamma(t') = \gamma(t'') = x'$ correspond to the essential crossing. Let $\gamma' \colon I \to X$ be a continuous parametrization of the $d$-rectifiable path $\gamma'$ such that
+By abuse of notation, let $\gamma \colon I \to X$ be a continuous $d$-rectifiable concrete curve parameterizing the concrete multi-curve $\gamma$ where $I$ is a finite union of intervals. Let $t' \neq t''$ be points in (possibly different components of) $I$ such that $\gamma(t') = \gamma(t'') = x'$ correspond to the essential crossing. Let $\gamma' \colon I' \to X$ be a continuous parametrization of the $d$-rectifiable concrete curve $\gamma'$ such that
 \[
-\gamma(I) = \gamma'(I).
+\gamma(I) = \gamma'(I')
 \]
+and $I'$ is another finite union of intervals.
 
-Let $\mathcal{P} = (t_0, \dots, t_n)$ with $t_0 \leq \cdots \leq t_n$ be an arbitrary partition of $I$, and let $\mathcal{P}' = (t_0', \dots, t_m')$ be the refinement obtained by inserting $t'$ and $t''$ into $\mathcal{P}$. By the triangle inequality, for every such partition we have
-\[
-\sum_{i=0}^{n-1} d(\gamma(t_i), \gamma(t_{i+1}))
-\;\leq\;
-\sum_{j=0}^{m-1} d(\gamma(t_j'), \gamma(t_{j+1}')).
-\]
+Let $\mathcal{P}'$ be the refinement of $\mathcal{P}$ obtained by inserting $t'$ and $t''$. 
 
 Taking the supremum over all partitions, we obtain
 \begin{align*}
-\ell_d(\gamma)
-&= \sup_{\mathcal{P}} \sum_{i=0}^{n-1} d(\gamma(t_i), \gamma(t_{i+1})) \\
-&= \sup_{\mathcal{P}'} \sum_{j=0}^{m-1} d(\gamma(t_j'), \gamma(t_{j+1}')) \\
-&= \sup_{\mathcal{P}'} \sum_{j=0}^{m-1} d(\gamma'(t_j'), \gamma'(t_{j+1}')) \\
-&= \ell_d(\gamma').
+\ell_d(\gamma)= \ell_d(\gamma').
 \end{align*}
 
 By definition of $\ell_d(C')$ as an infimum over representatives of $C'$, we have
@@ -253,16 +257,17 @@ We continue with some remarks.
 
 \begin{remark}\label{rmk:pseudo_metrics}
 \begin{enumerate}
-\item Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudo-metric on $\wt{\Sigma}$ defined via
+\item Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{\Sigma}$ defined via
 \[
 d_\mu^\Sigma(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right).
 \]
-See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudo-metric is \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in the natural order, then
+See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudometric is \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in the natural order, then
 \[
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
-Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudo-metric $d$ on $\wt{\Sigma}$ inducing a curve functional, there exists a straight invariant pseudo-metric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
-\item Suppose $(X,d)$ is a length pseudo-metric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
+(The $d_\mu^\Sigma$ pseudometric need not be continuous with respect to the topology of $\Sigma$.9)
+Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudometric $d$ on $\wt{\Sigma}$ inducing a curve functional, there exists a straight invariant pseudometric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
+\item Suppose $(X,d)$ is a length pseudometric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
 where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of $g$.
 From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
 \[
@@ -275,37 +280,40 @@ The equality between translation length and stable length does not hold in gener
 \end{remark}
 \begin{corollary}
 Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
-    $\ell_d(C_1) \leq \ell_d(C_2)$ for all pseudo-metrics $d$ on $S$.
+    $\ell_d(\mu_1) \leq \ell_d(\mu_2)$ for all length pseudometrics $d$ on $S$.
     \label{cor:domination}
 \end{corollary}
 
 \begin{proof}
-By Corollary~\ref{cor:length_dual}, for every length pseudo-metric $d$ on $S$, there exist a dual geodesic current $\mu_d$ for the induced curve functional $\ell_d$.
+By Corollary~\ref{cor:length_dual}, for every length pseudometric $d$ on $S$, there exist a dual geodesic current $\mu_d$ for the induced curve functional $\ell_d$.
 Approximating the current $\mu_d$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
 
 \subsection{Measured laminations}
 
-We will now characterize measured laminations as curve functionals in $\AConvex(S)$.
+We will now characterize measured laminations among curve functionals.
 
 We will need a relation about the measure of sets intersecting pairs of geodesic segments.
 
-We introduce the following notation. Given two geodesics segments $t$ and $t'$, let $G(t , t')$ be the set of geodesics intersecting from segment $t$ to segment $t'$ transversely. We will refer to sets of this type as \emph{double transversals}.
+We introduce the following notation. Given two half-closed half-open geodesics segments $[x,w), [y,z)$, let $\mu(G([x,w), [y,z)))$ be the set of bi-infinite geodesics in $G(S)$ intersecting $[x,w)$ and $[y,z)$ transversely. We will refer to sets of this type as \emph{double transversals}. Given a geodesic segment $[x,y)$, a geodesic $\gamma$ intersects $x$ transversely if $x\in\gamma$ and $[x,y) \nsubseteq \gamma$.
 
 Let $x,y,z,w \in \wt{\Sigma}$ appear counter-clockwise as vertices of an
 embedded convex geodesic quadrilateral on $\wt{\Sigma}$.
-The following result is~\cite[Lemma~6.2]{dRMG22:Duals}.
 
 \begin{lemma}
 \label{lem:otalclaim}
 Given the setup described above, we have 
 \begin{multline*}
-\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) = \\
-\mu(G[x,z)) + \mu(G[w,y))- \mu(G([w,z)) - \mu(G([x,y)).
+\mu(G([x,w), [y,z))) + \mu(G((x,w], (y,z])) = \mu(G[x,z)) + \mu(G[w,y))- \mu(G([w,z)) - \mu(G([x,y)).
 \end{multline*}
 \end{lemma}
+\begin{proof}
+This is~\cite[Lemma~6.2]{dRMG22:Duals}.
+\end{proof}
+We also need the following hyperbolic geometry lemma, about \emph{hyperbolic parallelograms} (Appendix~\ref{sec:hyp-par}). It can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
 
-We also need the following hyperbolic geometry lemma.
+Consider Figure~\ref{fig:smoothing_1}. 
+
 
 \begin{proposition}
 Consider two elements $a, b \in \pi_1(S)$ with hyperbolic axes $\ora{a}$ and $\ora{b}$ that intersect at a point $O$, and translation lengths $\ell(a),\ell(b)$.
@@ -316,7 +324,7 @@ We define the following four points:
 \item $Q'$ is the point on $\ora{b}$ obtained by moving forward from $O$ by distance $\ell(b)/2$;
 \item $P'$ is the point on $\ora{a}$ obtained by moving backward from $O$ by distance $\ell(a)/2$.
 \end{itemize}
-We have the following (see Figure~\ref{fig:smoothing_1}):
+Then:
 \begin{enumerate}
 \item The segment $(Q,P]$ is on the line $\ora{ab}$ and has length $\ell(ba)/2$.
 \item The segment $(P',Q']$ is on the line $\ora{ba}$ and has length $\ell(ba)/2$.
@@ -338,8 +346,7 @@ Similarly, $G((P,Q']) \cup b \cdot G((Q,P'])$ is a Borel fundamental domain for
 \label{fig:smoothing_1}
 \end{figure}
 
-Figure~\ref{fig:smoothing_1} shows a \emph{hyperbolic parallelogram},
-described more in Appendix~\ref{sec:hyp-par}.
+
 
 \begin{proof}
   We prove the first case.
@@ -380,31 +387,50 @@ $\DG(\Sigma)$, as desired.
 The other claim is similar.
 \end{proof}
 
-The above lemma can be seen as a refinement of~\cite[Lemma~5.6]{NCS23:Property}.
 Using it, we characterize measured laminations among curve
 functionals.
-We start with a technical lemma that defines some sets of interest. We will resort to this setup several times in the proofs below. 
+We start with a  lemma, that first requires defining some sets of interest.
 
-\begin{lemma} \DMGtodo{in this lemma we do want to use the inverse $a^{-1}$ notation, since we are already using capitals for something else (just noting)}
 Given elements $a, b \in \pi_1(S)$ which R-cross,
-consider the hyperbolic parallelogram~$H$ at the center of
-Figure~\ref{fig:smoothing_1}, bounded by the vertices $Q,P,P',Q'$.
-Consider the sets $R_{a,b}^+ \coloneqq G([Q,P), [P', Q'))$ (resp. $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times [Q', P))$), and $R_{a,b}^- \coloneqq G((Q,P], (P', Q'])$ (resp. $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times (Q', P])$) consisting of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ (resp. $\ora{a^{-1}b}$) to the open segment of $H$ contained in $\ora{ba}$ (resp. $\ora{ba^{-1}}$).
-Let $B_{a,b}^+ = (a^+, b^-] \times [a^-, b^+)$ (resp.  $(B_{a,b}^{\perp})^+ = (b^-, a^-] \times [b^+, a^+)$), 
-and $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ (resp.  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$). We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ (resp. $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $).
+consider the hyperbolic parallelogram~$H$ as in Proposition~\ref{prop:keygeometry}, bounded by the vertices $Q,P,P',Q'$.
+Consider the sets
+\begin{itemize} \item $R_{a,b}^+ \coloneqq G([Q,P), [P', Q'))$, and $(R_{a,b}^{\perp})^+ \coloneqq G([P',Q) \times [Q', P))$, 
+\item $R_{a,b}^- \coloneqq G((Q,P], (P', Q'])$, and $(R_{a,b}^{\perp})^- \coloneqq G((P',Q] \times (Q', P])$
+\end{itemize}
+consisting, respectively, of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ to the open segment of $H$ contained in $\ora{ba}$, and from the segment of $H$ contained in $\ora{a^{-1}b}$ to the one in $\ora{ba^{-1}}$.
+Consider also the boxes of geodesics:
+\begin{itemize} \item $B_{a,b}^+ = (a^+, b^-] \times [a^-, b^+)$ and  $(B_{a,b}^{\perp})^+ = (b^-, a^-] \times [b^+, a^+)$, 
+\item $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ and  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$.
+\end{itemize}
+We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ and $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $.
+
+We will resort to this setup several times in the proofs below. 
+The following lemma  says that when taking large powers of $a$ and $b$, the corresponding rectangles approximate boxes of geodesics.
+
+  \begin{figure}
+\centering{
+\svgfignormal{rectangles}}
+\caption{Rectangle $R_3^+$ and box $B_{a,b}^+$.}
+\label{fig:rectangles}
+\end{figure}
+
+
+\begin{lemma} 
+Given elements $a, b \in \pi_1(S)$ which R-cross,
+Let $B_{a,b}^{\perp},(B_{a,b}^{\pm})^{\perp}, R_{a,b}^{\pm}, (R_{a,b}^{\pm})^\perp$ as above.
+
 For every $n \in \mathbb{N}$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
 \begin{enumerate} 
 \item $R_n^{\pm}  \subset R_{n+1}^{\pm}$, and $\bigcup_{n \geq 1} R_n^{\pm}  = B_{a,b}^{\pm}$ and $(R_n^{\perp})^{\pm}  \subset (R_{n+1}^{\perp})^{\pm}$ and $\bigcup_{n \geq 1} (R_n^{\perp})^{\pm} = (B_{a,b}^{\perp})^{\pm}$.
 \item We have $\lim_{n} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{g,h}^{\perp})^{\pm})$.
-\item  If we let $a_n=a^n$, $b_n=b^n$, $c_n=a_n b_n^{-1}$ and $d_n=a_n b_n$,
-and $A_n=f(a_n)$, $B_n=f(b_n)$, $C_n=f(a_nb_n^{-1})$, $D_n=f(a_nb_n)$, we have 
+\item  If we let $c_n=a^n b^{-n}$ and $d_n=a^n b^n$, we have 
 \begin{equation}\label{eq:Rn-meas}
-\mu(R_n^+)+\mu(R_n^-)=A_n + B_n-C_n,
+\mu(R_n^+)+\mu(R_n^-)=f(a^n) + f(b^n)-f(c_n),
 \end{equation}
 and
 \begin{equation}\label{eq:Rn-perp-meas}
-\mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=A_n + B_n -D_n,
+\mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=f(a^n) + f(b^n) -f(d_n),
 \end{equation}
 \end{enumerate}
 \label{lem:measures_parallelogram}
@@ -415,8 +441,29 @@ Item (2) follows by Item (1) and lower semi-continuity of measures.
 Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
 \end{proof}
 
+Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
 We now prove Theorem~\ref{thm:lam-char}, whose statement we recall.
-
+\DMGtodo{stated it paralleling Theorem A'}
+\begin{theorem}
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
+Then there exists a measured lamination $\mu_{\overline{f}}$ on $S$ so that
+\[
+i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
+\quad\text{for every }g \in \pi_1(S).
+\]
+if and only if $f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
+\begin{enumerate}
+\item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
+\item stability: 
+$f(a^n)=nf(a) \mbox{ for all } n \geq 1$.
+\item oriented smoothing:
+ \begin{align}
+     f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{parallel;} \\
+    \label{eq:disconn-max-smoothing-a} f(a) + f(b) &= \max \{ f(ab),f(aB) \}  && \mbox{ if }  (a,b)\mbox{ are } \mbox{crossing}.
+  \end{align}
+\end{enumerate}
+\end{theorem}
+\begin{comment}
 \begin{taggedthm}{\ref{thm:lam-char}}
 Let $f$ be a curve functional satisfying the hypotheses of
 Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
@@ -429,19 +476,20 @@ f(a)+f(b)
 \max\{f(ab),\,f(aB)\}.
 \end{equation}
 \end{taggedthm}
+\end{comment}
 \begin{proof}
-Suppose first $f$ satisfies Eq.~\eqref{eq:disconn-max-smoothing-a}.
-By Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
+Suppose first $f$ satisfies the conditions in the hypotheses.
+By Theorem~\ref{thm:intersections_group}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
 It remains to show that $\mu_f$ is a measured lamination.
 Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
-By max-smoothing, for every $n$, we have $\mu((R_n^\perp)^{\pm})=0$ or $\mu(R_n^{\pm})=0$.
+By the hypothesis of max-smoothing, for every $n$, we have $\mu((R_n^\perp)^+)=\mu((R_n^\perp)^-)=0$ or $\mu(R_n^{+})=\mu(R_n^{-})=0$, by Eq.~\eqref{eq:Rn-meas} and Eq.~\eqref{eq:Rn-perp-meas}.
 Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq 1$.
 Hence, $\mu(B_{a,b}^{\pm})=0$ or $\mu((B_{a,b}^{\perp})^{\pm})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-By density of $B_{a,b}^{\pm}$ in the space of boxes of geodesics as $a,b$ runs over intersecting pairs in $\pi_1(S)$, given any box $B$, we can find a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B$.
-Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n^{\pm}) =\mu(B)$ and $\lim_n \mu((B_n^{\perp})^{\pm}) = \mu(B^{\perp})$.
+The pairs of the diagonal endpoints of the family of boxes $B_{a,b}^{\pm}$ (as $a,b$ runs over crossing pairs in $\pi_1(S)$) are dense in the space of geodesics. Hence, we can find sequences of crossing pairs $a_n, b_n \in \pi_1(S)$ so that if $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B$.
+Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n^{\pm}) =\mu(B)$ and $\lim_n \mu((B_n^{\perp})^{\pm}) = \mu(B^{\perp})$. Hence, $\mu(B)=0$ or $\mu(B^{\perp})=0$, and thus $\mu$ is a measured lamination.
 Now we prove the other implication, by proving the contra-positive.
 If disconnected max-smoothing is \emph{not} satisfied for the elements
 $a,b$, then by Equations~\eqref{eq:Rn-meas}
@@ -452,7 +500,7 @@ and~\eqref{eq:Rn-perp-meas}, both:
     \item and
 $\mu((R_{a,b}^{\perp})^{+})>0$ or $\mu((R_{a,b}^{\perp})^{-})>0$
 \end{itemize} 
-For every $\gamma \in R_{a,b}^+ \cup R_{a,b}^-$ and every $\gamma' \in (R_{a,b}^\perp)^+\cup (R_{a,b}^\perp)^-$, $\gamma$ and $\gamma'$ cross. Consequenty, we have $i(\mu, \mu) >0$,
+For every $\gamma \in R_{a,b}^+ \cup R_{a,b}^-$ and every $\gamma' \in (R_{a,b}^\perp)^+\cup (R_{a,b}^\perp)^-$, $\gamma$ and $\gamma'$ cross. Consequently, we have $i(\mu, \mu) >0$,
 and hence $\mu$ is not a measured lamination.
 \end{proof}
 
@@ -477,9 +525,7 @@ Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-s
 
 The fact that measured laminations satisfy max-smoothing was proven by
 the second author in~\cite{Thu00:GeometricIntersection} using
-different techniques. A related characterization of measured
-laminations in terms of valuations in the character variety has been
-proven recently by Marché and Simon~\cite[Theorem~3.1]{MS21:Valuations}.
+different techniques. 
 
 \subsection{Liouville currents}
 \label{subsec:liouville}
@@ -492,7 +538,6 @@ Bonahon gives an algebraic characterization for a geodesic current to be a Liouv
    \]
    \label{thm:bonahonliouville}
 \end{theorem}
-
 Whether the endpoints of the intervals are included or excluded in the
 above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
 
@@ -503,11 +548,12 @@ Let $f$ be a curve functional satisfying the hypotheses of
 Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
 $\mu_f$ is the Liouville current of a hyperbolic
 metric if and only if for every crossing pair $a,b\in\pi_1(S)$, $f$ satisfies
-\[
+\begin{equation}
 \lambda(a)\lambda(b)
 =
 \lambda(ab)+\lambda(aB),
-\]
+\label{eq:lambdasmoothing}
+\end{equation}
 where
 \[
 \lambda(g)\coloneqq 2\cosh\!\big(f(g)/2\big).
@@ -515,12 +561,13 @@ where
   \end{taggedthm}
 \begin{proof}
 The proof is similar to that of Theorem~\ref{thm:lam-char}.
-If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The disconnected $\lambda$-smoothing property follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}) applied to the hyperbolic parallelogram~$H$ at the center of
+If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The relation in Equation~\eqref{eq:lambdasmoothing} follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}) applied to the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}.
+
 For the other direction, by the assumptions on $f$, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
-It remains to show that $\mu_f$ is a Liouville current, which is where the disconnected $\lambda$-smoothing will play a role.
+It remains to show that $\mu_f$ is a Liouville current, which is where Equation~\eqref{eq:lambdasmoothing} will play a role.
 Given elements $a, b \in \pi_1(S)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 
@@ -540,13 +587,13 @@ Therefore, we have
 \[
 \lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}=1.
 \]
-By Lemma~\ref{lem:measures_parallelogram} (2) we also get $\lim_n \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
+By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_n \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
 Finally, note that $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$ by Lemma~\ref{prop:spikes}, since the vertices of the boxes $B_{a,b})^{\pm}$ and $B_{a,b}^{\perp})^{\pm}$ are the endpoints of the elements $a,b$, and the geodesics $\ora{a},\ora{b}$ are not contained in either of these boxes. Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
 for any intersecting pair $a,b \in \pi_1(S)$.
-As in the proof of Theorem~\ref{thm:lam-char},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run over intersecting pairs in $\pi_1(S)$. Hence, given any box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B)$. Hence,
+As in the proof of Theorem~\ref{thm:lam-char},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B^\perp)$. Specifically,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]

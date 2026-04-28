@@ -169,9 +169,9 @@
      inkscape:window-height="1494"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="1.8628319"
-     inkscape:cx="102.53206"
-     inkscape:cy="205.33254"
+     inkscape:zoom="3.7256638"
+     inkscape:cx="127.76247"
+     inkscape:cy="157.95843"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
@@ -288,6 +288,13 @@
        ry="2.8507924" />
     <ellipse
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.12054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path1305-99"
+       cx="82.23143"
+       cy="71.98381"
+       rx="2.5568426"
+       ry="2.8507924" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.12054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1305-5"
        cx="138.02957"
        cy="143.14249"
@@ -377,14 +384,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:12px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.805334"
-       x="58.812"
-       y="66.779808"
+       x="97.809509"
+       y="69.920082"
+       id="text1356-8-8-4-8"
+       transform="scale(0.98571249,1.0144946)"><tspan
+         sodipodi:role="line"
+         id="tspan1354-7-5-8-5"
+         x="97.809509"
+         y="69.920082"
+         style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334">$R$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.805334"
+       x="49.281532"
+       y="73.923302"
        id="text1444"
        transform="scale(0.98571249,1.0144946)"><tspan
          sodipodi:role="line"
          id="tspan1442"
-         x="58.812"
-         y="66.779808"
+         x="49.281532"
+         y="73.923302"
          style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334">$\ora{a}$</tspan></text>
   </g>
 </svg>
