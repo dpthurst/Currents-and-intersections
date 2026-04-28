@@ -133,9 +133,9 @@ many such extensions arise canonically as intersection with a current.
     Let $a,b \in \pi_1(S)$ be non-trivial elements that are not common
     powers. We write $A$ for the inverse of $a \in \pi_1(S)$. Fix any
     hyperbolic structure on $S$, and denote by $\ora{a}$ and $\ora{b}$
-    the corresponding axes in the universal cover. We say $(\ora{a}, \ora{b})$ are \emph{crossing} if they intersect at a point, and are \emph{parallel} if they are non-intersecting and coherently aligned (see
+    the corresponding axes in the universal cover. We say $(\ora{a}, \ora{b})$ are \emph{crossing} if they intersect at a point, and are \emph{parallel} if they are non-intersecting and coherently aligned. (See
 Definition~\ref{def:crossing} and
-    Figure~\ref{fig:cases-a-b} for a precise definition). \DMGtodo{changed this}
+    Figure~\ref{fig:cases-a-b} for a precise definition.)
 
 \begin{mainthmprime}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
@@ -243,37 +243,23 @@ $\mu_{\overline f}$ on $S$ such that
 i(\mu_{\overline f},[g])=\overline f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $f$ satisfies the following common conditions:
-\[
-\begin{minipage}{0.78\textwidth}
-\begin{enumerate}
-\item $f$ is class invariant;
-\item $f$ is stable: $f(a^n)=n f(a)$ for all $n\geq 1$;
-\item for all $a,b\in\pi_1(S)$,
-\[
-f(ab)\geq f(a)+f(b)
-\quad\text{if }(a,b)\text{ are parallel}.
-\]
-\end{enumerate}
-\end{minipage}
-\]
-and, when $(a,b)$ are crossing, the corresponding condition:
+if and only if $f$ satisfies the conditions of
+Theorem~\ref{thm:intersections_group}
+and, when $(\ora{a},\ora{b}b)$ are crossing, the corresponding condition:
 \[
 \begin{array}{c@{\qquad\qquad}c}
 \textbf{Measured lamination} & \textbf{Hyperbolic metric} \\[4pt]
-\begin{minipage}{0.42\textwidth}
+\begin{minipage}{0.35\textwidth}
 $f(a)+f(b)=\max\{f(ab),f(aB)\}$.
 \end{minipage}
 &
-\begin{minipage}{0.42\textwidth}
-\[
-\begin{aligned}
+\begin{minipage}{0.6\textwidth}
+$
 \lambda(a)\lambda(b)
-&= \lambda(ab)+\lambda(aB),\\
+= \lambda(ab)+\lambda(aB), \text{ where }
 \lambda(g)
-&\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
-\end{aligned}
-\]
+\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
+$
 \end{minipage}
 \end{array}
 \]

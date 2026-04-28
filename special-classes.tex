@@ -151,8 +151,9 @@ This phenomenon does not occur for any of the simple generating sets of $\pi_1(S
 \{ y^{\pm1},(xY)^{\pm1} \},
 \]
 nor for the analogous generating sets obtained by acting diagonally by the mapping class group. 
-Indeed, each of these generating sets assigns length strictly greater than $2$ 
-to at least one of the elements $x$, $y$, $xy$, or $xY$. \DMGtodo{why some assign 1 to all of these?}
+Indeed, in none of these cases are $x$, $y$, $xy$, $xY$ the shortest
+elements in $\pi_1$ with equal length.
+
 Even though this example corresponds to a punctured surface and hence does not fall in the scope of our theorem, one can produce similar examples in genus 2 from this one.
 \end{example}
 
@@ -253,31 +254,6 @@ so $\ell_d$ satisfies smoothing.
 Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_d$ dual to $\ell_d$.
 \end{proof}
 
-We continue with some remarks.
-
-\begin{remark}\label{rmk:pseudo_metrics}
-\begin{enumerate}
-\item Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{\Sigma}$ defined via
-\[
-d_\mu^\Sigma(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right).
-\]
-See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudometric is \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in the natural order, then
-\[
-d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
-\]
-(The $d_\mu^\Sigma$ pseudometric need not be continuous with respect to the topology of $\Sigma$.9)
-Hence, Corollary~\ref{cor:length_dual} shows that for every invariant pseudometric $d$ on $\wt{\Sigma}$ inducing a curve functional, there exists a straight invariant pseudometric $d_\mu^\Sigma$ on $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every closed curve $C$. 
-\item Suppose $(X,d)$ is a length pseudometric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
-where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of $g$.
-From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
-\[
-\ell_d(C)=\lim \frac{1}{n} \ell_d(C^n) = \lim \frac{1}{n} \inf_{x \in \wt{X}} \wt{d}(x, g^n x) = \lim \frac{1}{n} \wt{d}(x,g^n x) \eqqcolon L_{\wt{d}}(g)
-\]
-for every $x \in \wt{X}$, and every $g \in \pi_1(S)$ so that $[g]=C$.
-The quantity $L_{\wt{d}}(g)$ is the \emph{$\wt{d}$-stable length} of $g$.
-The equality between translation length and stable length does not hold in general even in the setting of geodesic Gromov hyperbolic spaces~\cite[Proposition~6.4]{CDP90:Lectures}.
-\end{enumerate}
-\end{remark}
 \begin{corollary}
 Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
     $\ell_d(\mu_1) \leq \ell_d(\mu_2)$ for all length pseudometrics $d$ on $S$.
@@ -289,6 +265,36 @@ By Corollary~\ref{cor:length_dual}, for every length pseudometric $d$ on $S$, th
 Approximating the current $\mu_d$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
 
+We continue with some remarks.
+
+\DPTtodo{These remarks new}
+\begin{remark}\label{rmk:pseudo_metrics}
+Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{\Sigma}$ defined via
+\[
+d_\mu^\Sigma(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right).
+\]
+See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudometric is \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in the natural order, then
+\[
+d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
+\]
+(The $d_\mu^\Sigma$ pseudometric need not be continuous with respect to the topology of $\Sigma$.9)
+Hence, Corollary~\ref{cor:length_dual} shows that for every invariant
+pseudometric $d$ on $\wt{\Sigma}$ inducing a curve functional, there
+exists a straight invariant pseudometric $d_\mu^\Sigma$ on
+$\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every
+closed curve $C$.
+\end{remark}
+\begin{remark}
+Suppose $(X,d)$ is a length pseudometric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
+where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of~$g$.
+From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
+\[
+\ell_d(C)=\lim \frac{1}{n} \ell_d(C^n) = \lim \frac{1}{n} \inf_{x \in \wt{X}} \wt{d}(x, g^n x) = \lim \frac{1}{n} \wt{d}(x,g^n x) \eqqcolon L_{\wt{d}}(g)
+\]
+for every $x \in \wt{X}$, and every $g \in \pi_1(S)$ so that $[g]=C$.
+The quantity $L_{\wt{d}}(g)$ is the \emph{$\wt{d}$-stable length} of~$g$.
+The equality between translation length and stable length does not hold in general even in the setting of geodesic Gromov hyperbolic spaces~\cite[Proposition~6.4]{CDP90:Lectures}.
+\end{remark}
 \subsection{Measured laminations}
 
 We will now characterize measured laminations among curve functionals.
@@ -360,7 +366,7 @@ Similarly, $G((P,Q']) \cup b \cdot G((Q,P'])$ is a Borel fundamental domain for
   r_Pr_Q$, from which the statement about $(Q,P]$
   follows. The other cases are similar.
 
-  \begin{comment}
+\begin{comment}
   Since $\ora{a}$ and $\ora{b}$ intersect at $O$, so do the curves $[a]$ and $[b]$ at some point $o \in \Sigma$.
 Perform a smoothing operation obtaining a new curve $\alpha$ of length $\ell(a) + \ell(b)$.
 A lift $\alpha$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $\ora{b}$ of length $\ell(b)$, then a segment of $\ora{b^{-1}ab}$ of length $\ell(a)$, etc.
@@ -442,8 +448,8 @@ Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeome
 \end{proof}
 
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
-We now prove Theorem~\ref{thm:lam-char}, whose statement we recall.
-\DMGtodo{stated it paralleling Theorem A'}
+We now prove the measured lamination part of Theorem~\ref{thm:hyp-lam-char}, whose statement we recall.
+\DPTtodo{Copy edits from intro}
 \begin{theorem}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
 Then there exists a measured lamination $\mu_{\overline{f}}$ on $S$ so that

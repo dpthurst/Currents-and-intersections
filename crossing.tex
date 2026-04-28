@@ -945,13 +945,13 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \begin{equation}\label{eq:cancel-ayx}
     [a y^m x^n][a] \reducesto [y^m][x^n];
   \end{equation}
-\textcolor{red}{and for $m, n \geq 2$,
+and for $m, n \geq 2$,
 \begin{equation}
 \label{eq:crossbelowy}
 [ax^nY^m] \reducesto [a][x^{n-2}][Y^m]
 \quad \text{or} \quad
 [ay^mX^n] \reducesto [a][y^{m-2}][X^n]
-\end{equation}}
+\end{equation}
 \end{proposition}
 
 \begin{proof}
@@ -998,7 +998,9 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \]
   by unoriented disconnected smoothing and then (by Lemma~\ref{lem:righthandedfoundation}) oriented connected
   smoothing.
-  \textcolor{red}{Finally, we see Eq.~\ref{eq:crossbelowy}. Let $m, n \geq 2$.
+
+\DPTtodo{Read this new proof}
+  Finally, we see Eq.~\eqref{eq:crossbelowy}. Let $m, n \geq 2$.
   Since $(\ora{y},\ora{x})$ is R-parallel by assumption, by Lemma~\ref{lem:ab_parallel_aB} $(\ora{x^{n-2}}, \ora{Y^m x^2})$ are parallel or  $(\ora{y^{m-2}}, \ora{X^n y^2})$ are parallel.
   In the first case, we have (Fig.~\ref{fig:lb}) 
   \[
@@ -1007,9 +1009,8 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   by oriented connected smoothing and unoriented connected smoothing.
    In the second case, we have (Fig.~\ref{fig:lb2}) 
   \[
-  [ay^mX^n] = [a][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].
+  [ay^mX^n] = [a][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].\qedhere
   \] 
-  }
   \begin{figure}
      \begin{subfigure}[b]{0.45\textwidth}
  \resizebox{50mm}{!}{\svgfignormal{lb} }
