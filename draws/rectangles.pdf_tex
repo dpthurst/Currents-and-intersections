@@ -54,18 +54,17 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{rectangles.pdf}}%
-    \put(0.61364332,0.58919781){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{b}$\end{tabular}}}}%
+    \put(0.61364332,0.58919781){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{b}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{rectangles.pdf}}%
-    \put(0.39876911,0.28761624){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q_1$\end{tabular}}}}%
-    \put(0.38376516,0.22763263){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q_2$\end{tabular}}}}%
-    \put(0.35458752,0.15568456){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q_3$\end{tabular}}}}%
-    \put(0.47743934,0.30639085){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$O$\end{tabular}}}}%
+    \put(0.49532809,0.26395608){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q_1$\end{tabular}}}}%
+    \put(0.47776629,0.19885679){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q_2$\end{tabular}}}}%
+    \put(0.45818061,0.15056885){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q_3$\end{tabular}}}}%
     \put(0.56904142,0.39896591){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q'_1$\end{tabular}}}}%
     \put(0.59216122,0.46441526){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q'_2$\end{tabular}}}}%
-    \put(0.69382392,0.34905151){\color[rgb]{0,0.42745098,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_3^+$\end{tabular}}}}%
-    \put(0.26611683,0.33085226){\color[rgb]{0,0.42745098,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_3^+$\end{tabular}}}}%
-    \put(0.09771721,0.2941765){\color[rgb]{0,0.42745098,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$B_{a,b}^+$\end{tabular}}}}%
-    \put(0.90210387,0.33081265){\color[rgb]{0,0.42745098,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$B_{a,b}^+$\end{tabular}}}}%
+    \put(0.64074846,0.34905151){\color[rgb]{0,0.42745098,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_{a,b}^+$\end{tabular}}}}%
+    \put(0.33645781,0.3334101){\color[rgb]{0,0.42745098,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_{a,b}^+$\end{tabular}}}}%
+    \put(0.10475131,0.26923742){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$B_{a,b}^+$\end{tabular}}}}%
+    \put(0.87332803,0.34488084){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$B_{a,b}^+$\end{tabular}}}}%
     \put(0.61411797,0.52525484){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q'_3$\end{tabular}}}}%
     \put(0.59211316,0.25382156){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P'_1$\end{tabular}}}}%
     \put(0.65045791,0.21503015){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P'_2$\end{tabular}}}}%
@@ -73,7 +72,7 @@
     \put(0.37796344,0.50516548){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P_2$\end{tabular}}}}%
     \put(0.42273595,0.45326143){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P_1$\end{tabular}}}}%
     \put(0.33455224,0.5436012){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P_3$\end{tabular}}}}%
-    \put(0.2582458,0.50700021){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{a}$\end{tabular}}}}%
+    \put(0.2582458,0.50700021){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{a}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{rectangles.pdf}}%
   \end{picture}%
 \endgroup%

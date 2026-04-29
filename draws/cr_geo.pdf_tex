@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{216bp}%
+    \setlength{\unitlength}{211.28302002bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,25 +50,30 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1)%
+  \begin{picture}(1,1.03842924)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{cr_geo.pdf}}%
-    \put(0.45167574,0.95536821){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^+$\end{tabular}}}}%
+    \put(0.36087868,0.97559548){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{cr_geo.pdf}}%
-    \put(0.38257148,0.05157116){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^-$\end{tabular}}}}%
-    \put(0.56852166,0.14648025){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R$\end{tabular}}}}%
-    \put(0.64968247,0.0079705){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_i$\end{tabular}}}}%
-    \put(0.76988343,0.29131124){\color[rgb]{0.70980392,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L$\end{tabular}}}}%
-    \put(0.91588042,0.38807682){\color[rgb]{0,0.5372549,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L_i$\end{tabular}}}}%
-    \put(0.94922547,0.21028411){\color[rgb]{0,0.63137255,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$V_i$\end{tabular}}}}%
-    \put(0.41891161,0.52411385){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{g}$\end{tabular}}}}%
-    \put(0.81058604,0.03355443){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$y$\end{tabular}}}}%
-    \put(0.77707282,0.3699436){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g\cdot y$\end{tabular}}}}%
-    \put(0.97219023,0.63287334){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$G\cdot x$\end{tabular}}}}%
-    \put(0.80235428,0.94646417){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^{i-1}\cdot x$\end{tabular}}}}%
-    \put(0.56830657,0.82718801){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^{i}\cdot x$\end{tabular}}}}%
-    \put(0.7824292,0.84276806){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
+    \put(0.29023163,0.05162079){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^-$\end{tabular}}}}%
+    \put(0.48033323,0.14864877){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R$\end{tabular}}}}%
+    \put(0.6603588,0.67572805){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R$\end{tabular}}}}%
+    \put(0.56330599,0.00704673){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_i$\end{tabular}}}}%
+    \put(0.66851955,0.88982825){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R_i$\end{tabular}}}}%
+    \put(0.68619048,0.29671317){\color[rgb]{0.70980392,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L$\end{tabular}}}}%
+    \put(0.46361078,0.79901185){\color[rgb]{0.70980392,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L$\end{tabular}}}}%
+    \put(0.83544692,0.39563908){\color[rgb]{0,0.5372549,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L_i$\end{tabular}}}}%
+    \put(0.43562482,1.00489977){\color[rgb]{0,0.5372549,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$L_i$\end{tabular}}}}%
+    \put(0.8695364,0.21387707){\color[rgb]{0,0.63137255,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$V_i$\end{tabular}}}}%
+    \put(0.71624767,0.92964172){\color[rgb]{0,0.63137255,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$V_i$\end{tabular}}}}%
+    \put(0.32738308,0.53471319){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{g}$\end{tabular}}}}%
+    \put(0.7278018,0.03320183){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$y$\end{tabular}}}}%
+    \put(0.69354038,0.37710102){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g\cdot y$\end{tabular}}}}%
+    \put(0.89301386,0.64590078){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$G\cdot x$\end{tabular}}}}%
+    \put(0.66040892,1.00766554){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^{i-1}\cdot x$\end{tabular}}}}%
+    \put(0.48011333,0.8445536){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$g^{i}\cdot x$\end{tabular}}}}%
+    \put(0.70903145,0.85491758){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{cr_geo.pdf}}%
   \end{picture}%
 \endgroup%

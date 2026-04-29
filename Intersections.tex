@@ -257,6 +257,20 @@
 \tikzset{biimplication/.style={double equal sign distance, implies-implies}}
 \input{macros}
 
+
+
+
+
+\newcounter{submainthm}[mainthm]
+
+\renewcommand{\thesubmainthm}{%
+  \themainthm\textup{(\ifcase\value{submainthm}\or L\or H\fi)}%
+}
+
+\newcommand{\mainthmsublabel}[1]{%
+  \refstepcounter{submainthm}\label{#1}%
+}
+
 % This suppresses warnings when multiple PDFS are included on a single page
 %\pdfsuppresswarningpagegroup=1
 

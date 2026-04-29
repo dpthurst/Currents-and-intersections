@@ -423,7 +423,7 @@ The following lemma  says that when taking large powers of $a$ and $b$, the corr
 
 \begin{lemma} 
 Given elements $a, b \in \pi_1(S)$ which R-cross,
-Let $B_{a,b}^{\perp},(B_{a,b}^{\pm})^{\perp}, R_{a,b}^{\pm}, (R_{a,b}^{\pm})^\perp$ as above.
+let $B_{a,b}^{\perp},(B_{a,b}^{\pm})^{\perp}, R_{a,b}^{\pm}, (R_{a,b}^{\pm})^\perp$ as above. Suppose $\mu$ is an arbitrary geodesic current.
 
 For every $n \in \mathbb{N}$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
@@ -436,15 +436,16 @@ Then:
 \end{equation}
 and
 \begin{equation}\label{eq:Rn-perp-meas}
-\mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=f(a^n) + f(b^n) -f(d_n),
+\mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=f(a^n) + f(b^n) -f(d_n).
 \end{equation}
+\item We have $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$.
 \end{enumerate}
 \label{lem:measures_parallelogram}
 \end{lemma}
 \begin{proof}
 Item (1) is by construction of $R_n^{\pm}$.
 Item (2) follows by Item (1) and lower semi-continuity of measures.
-Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry},
+Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}. Finally, Item (4) follows by Lemma~\ref{prop:spikes}, since the vertices of the boxes $(B_{a,b})^{\pm}$ and $(B_{a,b}^{\perp})^{\pm}$ are the endpoints of the elements $a,b$, and the geodesics $\ora{a},\ora{b}$ are not contained in either of these boxes.
 \end{proof}
 
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
@@ -538,12 +539,11 @@ different techniques.
 \label{subsec:liouville}
 Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $\Sigma$.
 
-\begin{theorem} [{\cite[Theorem~13]{Bonahon88:GeodesicCurrent}}]
+\begin{theorem}[{\cite[Theorem~13]{Bonahon88:GeodesicCurrent}}]   \label{thm:bonahonliouville}
    A geodesic current $\mu \in \Curr(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} S$, we have
    \[
       e^{-\mu([x,y]\times[z,w])} + e^{-\mu([y,z]\times [w,x])}=1.
    \]
-   \label{thm:bonahonliouville}
 \end{theorem}
 Whether the endpoints of the intervals are included or excluded in the
 above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
@@ -571,7 +571,7 @@ where
 \begin{proof}
 The proof is similar to the lamination part.
 If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The relation in Equation~\eqref{eq:lambdasmoothing} follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}) applied to the hyperbolic parallelogram~$H$ at the center of
-Figure~\ref{fig:smoothing_1}.
+Figure~\ref{fig:smoothing_1}, and the fact that the hyperbolic Liouville current is the dual current for the hyperbolic length.
 
 For the other direction, by the assumptions on $f$, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
@@ -584,11 +584,11 @@ Now, we compute
 \[
 e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}} = e^{\frac{-(A_n+B_n)+C_n}{2}} + e^{\frac{-(A_n+B_n)+D_n}{2}} = e^{\frac{-(A_n+B_n)}{2}} (e^{\frac{C_n}{2}} + e^{\frac{D_n}{2}}).
 \]
-On the other hand, when $n$ goes to infinity, we have $e^{\frac{A_n}{2}} \sim \lambda(a_n)$, $e^{\frac{B_n}{2}} \sim \lambda(b_n)$, $e^{\frac{C_n}{2}} \sim \lambda(c_n)$ and $e^{\frac{D_n}{2}} \sim \lambda(d_n)$, where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity. The disconnected $\lambda$-smoothing relation for $a_n, b_n$ is given by
+On the other hand, when $n$ goes to infinity, we have $e^{\frac{A_n}{2}} \sim \lambda(a_n)$, $e^{\frac{B_n}{2}} \sim \lambda(b_n)$, $e^{\frac{C_n}{2}} \sim \lambda(c_n)$ and $e^{\frac{D_n}{2}} \sim \lambda(d_n)$, where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity. Applying Equation~\eqref{eq:lambdasmoothing} for $a_n, b_n$ we get
 \[
 \lambda(a_n)\lambda(b_n) = \lambda(c_n) + \lambda(d_n).
 \]
-A straightforward computation shows $\lambda(c_n) + \lambda(d_n) \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}$, and hence we get
+A computation shows $\lambda(c_n) + \lambda(d_n) \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}$, and hence we get
 \[
 e^{\frac{A_n}{2}}e^{\frac{B_n}{2}} \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}.
 \]
@@ -597,12 +597,12 @@ Therefore, we have
 \lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}=1.
 \]
 By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_n \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
-Finally, note that $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$ by Lemma~\ref{prop:spikes}, since the vertices of the boxes $(B_{a,b})^{\pm}$ and $(B_{a,b}^{\perp})^{\pm}$ are the endpoints of the elements $a,b$, and the geodesics $\ora{a},\ora{b}$ are not contained in either of these boxes. Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
+ Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
 for any intersecting pair $a,b \in \pi_1(S)$.
-As in the proof of the lamination part of Theorem~\ref{thm:hyp-lam-char},we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B^\perp)$. Specifically,
+As in the proof of the lamination part of Theorem~\ref{thm:hyp-lam-char}, we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B^\perp)$. Specifically,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]

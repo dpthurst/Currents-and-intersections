@@ -24,7 +24,7 @@ $[a,b, d, e]=[a,b,c,e] + [a,c,d, e]$.
 
 There are many definitions of cross ratios in the literature (Ledrappier~\cite{L95:BordDesVar}, Hamenst\"adt~\cite{Ham99:Cocycles}, Otal~\cite{Ot92:Symplectique}, Martone--Zhang~\cite{MZ19:PositivelyRatioed}, Burger--Iozzi--Parreau--Pozzetti~\cite{BIPP24:PositiveCrossratios}). 
 In all of these references (except the last one) the authors consider the cross-ratios to be continuous or even H\"older continuous, but we will not assume this here. Furthermore, in all of the above definitions, flip-invariance is assumed.
-Labourie~\cite[Definition~3.1]{L07:Crossratio} has considered more general definition of cross-ratios where flip-invariance is not assumed.  We will always assume our cross-ratios are flip-invariant.
+Labourie~\cite[Definition~3.1]{L07:Crossratio} has considered a more general definition of cross-ratios where flip-invariance is not assumed.  We will always assume our cross-ratios are flip-invariant.
 
 As alluded above, generalized cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
 In this setting, there are (at least) two natural generalized cross-ratios associated to a geodesic current (see Question~\ref{que:howmany_crossratios}).
@@ -54,8 +54,8 @@ by their periods \cite[Theorem 1.f]{L95:BordDesVar} (c.f.\
 \cite{Ot92:Symplectique}).
 
 Going the other direction, it is immediate that a cross-ratio gives a
-finitely additive function $\bigl[\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]} \bigr]\coloneqq [a,b,c,d]$, on the semiring of boxes $\mathrlap{[}(d,a)\llap{]} \times \rlap{[}(b, c)\llap{]}$ in $G(S)$, where the notation means either $(d,a] \times (b,c]$ or $[d,a) \times [b,c)$, and $a,b,c,d$ appear in ccw
-order; however, this function need not be countably additive and will
+finitely additive function $\bigl[[d,a) \times [b,c)\bigr]\coloneqq [a,b,c,d]$, on the semiring of boxes $[d,a) \times [b,c)$, where $a,b,c,d$ appear in ccw
+order on $\partial_\infty S$; however, this function need not be countably additive and will
 not in general agree with the geodesic current~$\mu$ we construct. For
 instance, if we start with a geodesic current $\mu$ with atoms,
 construct the cross-ratio $[a,b,c,d]^-$ as above, and look at the
@@ -120,13 +120,13 @@ We will need another lemma on equality of cross-ratios.
   
   \begin{enumerate} 
       \item If $g^-,y,g\cdot y, G \cdot x, x,g^+$
-  appear in ccw order, then
+  appear in ccw order as in Fig.~\ref{fig:cr-geo1}, then
   \[
     \bigl[[x,g^+)\times[y,g \cdot y)\bigr]
       = \bigl[[G \cdot x,x)\times[g^-,y)\bigr].
   \]
   \item If $g^-,y,g\cdot y, g^+, x, G \cdot x$
-  appear in ccw order, then
+  appear in ccw order as in Fig.~\ref{fig:cr-geo2}, then
   \[
     \bigl[[g^+,x)\times[y,g \cdot y)\bigr]
       = \bigl[[x,G \cdot x)\times[g^-,y)\bigr].
@@ -135,12 +135,25 @@ We will need another lemma on equality of cross-ratios.
 \end{lemma}
 
 
-  \begin{figure}
-\centering{
-\resizebox{80mm}{!}{\svgfignormal{cr_geo}}
-\caption{The statement and proof of Lemma~\ref{lem:cr-switcheroo}(1)}
-  \label{fig:cr-geo}
-}
+\begin{figure}
+\centering
+
+\begin{subfigure}{0.48\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{cr_geo}}
+\caption{Lemma~\ref{lem:cr-switcheroo}(1)}
+\label{fig:cr-geo1}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+\centering
+\resizebox{\linewidth}{!}{\svgfignormal{cr_geo2}}
+\caption{Lemma~\ref{lem:cr-switcheroo}(2)}
+\label{fig:cr-geo2}
+\end{subfigure}
+
+\caption{The statement and proof of Lemma~\ref{lem:cr-switcheroo}.}
+\label{fig:cr-geo}
 \end{figure}
 
 Other variations of this lemma, with different position of $x,y$, hold
@@ -149,7 +162,7 @@ the common value is unclear to us.
 
 \begin{proof}
   We will prove the first part.
-  In what follows, compare Figure~\ref{fig:cr-geo}.
+  In what follows, compare Figure~\ref{fig:cr-geo1}.
   Set $L = [x,g^+)\times[y,g \cdot y)$ and
   $R = [G \cdot x,x)\times[g^-,y)$. To show $[L] = [R]$, we will
   translate $R$ by~$g$ and cut off a piece that is a subset of $L$.
@@ -189,7 +202,7 @@ the common value is unclear to us.
   \]
   The $L_i'$ are disjoint, with union contained in the same set
   $[g^-,y) \times [G \cdot x, g^+)$, so as before $\lim_{i^+} [L_i'] = 0$.
-  The proof of the second part is similar, although the setup is different.
+  The proof of the second part is similar, although the setup is slightly different (see~Figure~\ref{fig:cr-geo2}).
 \end{proof}
 
 Now we will prove that $\ell$ satisfies the smoothing hypotheses in Theorem~\ref{thm:intersections_group}.
@@ -464,7 +477,7 @@ as desired.
 There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
 \end{theorem}
 \begin{proof}
-By the Lemmas~\ref{lem:crossratio_stability},\ref{lem:crinv}, \ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+By the Lemmas~\ref{lem:crossratio_stability},~\ref{lem:crinv},~\ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
 \end{proof}
 
 

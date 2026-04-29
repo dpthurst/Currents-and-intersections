@@ -233,6 +233,9 @@ where
 
 \begin{mainthm}
 \label{thm:hyp-lam-char}
+\mainthmsublabel{mainthm:char_lam}
+\mainthmsublabel{mainthm:char_hyp}
+
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set
 \[
 \overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).
@@ -245,10 +248,11 @@ i(\mu_{\overline f},[g])=\overline f(g)
 \]
 if and only if $f$ satisfies the conditions of
 Theorem~\ref{thm:intersections_group}
-and, when $(\ora{a},\ora{b}b)$ are crossing, the corresponding condition:
+and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition:
 \[
 \begin{array}{c@{\qquad\qquad}c}
-\textbf{Measured lamination} & \textbf{Hyperbolic metric} \\[4pt]
+\textbf{Measured lamination \textup{(L)}} &
+\textbf{Hyperbolic metric \textup{(H)}} \\[4pt]
 \begin{minipage}{0.35\textwidth}
 $f(a)+f(b)=\max\{f(ab),f(aB)\}$.
 \end{minipage}
@@ -265,7 +269,7 @@ $
 \]
 \end{mainthm}
 
-These theorems are proved in Section~\ref{sec:special-classes}.
+This theorem is proved in Section~\ref{sec:special-classes}.
 
 The $\lambda$-length functional arises naturally in the study of the
 skein algebra of a surface; see, for example,
@@ -276,7 +280,6 @@ skein algebra of a surface; see, for example,
 
 We highlight some features of Theorem~\ref{thm:hyp-lam-char}.
 
-\DPTtodo{Edited to reflect combined theorem, and put more points in bullets}
 \begin{itemize}
     \item Combined with Theorem~\ref{thm:intersect}, it provides
     criteria for determining whether a curve functional arises from a
@@ -477,7 +480,7 @@ most of this work while at Indiana University Bloomington.
          &  fundamental group of $S$ \\
          $G(S)$
          &  oriented geodesics of $\wt{S}$ \\   $\partial_{\infty}S$ &  boundary at infinity of $\wt{S}$ \\        
-        $(\partial _\infty S)^{(4)}$ & 4-tuples of ccw ordered points in $\partial_\infty S$ \\
+        $(\partial _\infty S)^{(4)}$ & 4-tuples of ccw distinct ordered points in $\partial_\infty S$ \\
          $\Curves(S)$ & unoriented multi-curves \\
          $\Curves^+(S)$ & oriented multi-curves \\
          $f$ & curve functional \\

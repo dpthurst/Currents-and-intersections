@@ -17,7 +17,7 @@ $B = [s_1,s_2) \times [t_2,t_1)$, where $s_i = \ell_i^-$ and $t_i =
 r_i^+$. Further assume that $\ora{r_2}$ is nested inside $\ora{r_1}$,
 so the box is of type~2 or~3.
 
-Define the \emph{vertical accordion at $q_2$}, $F(p_1, q_1, p_2,\vec{q_2})$ of
+Define the \emph{vertical accordion}, $F(p_1, q_1, p_2,\vec{q_2})$ of
 boxes based at $B$ to be
 the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
 and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
@@ -38,6 +38,7 @@ Figure~\ref{fig:vertical-accordion}. \begin{figure}
 }
 \end{figure}
 
+\begin{comment}
  \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{v-accordion2}}
@@ -46,7 +47,6 @@ Figure~\ref{fig:vertical-accordion}. \begin{figure}
   \label{fig:vertical-accordion2}
 }
 \end{figure}
-\begin{comment}
 \end{comment}
 
  
@@ -67,8 +67,8 @@ Figure~\ref{fig:vertical-accordion}. \begin{figure}
 
 
 
-Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we have a box of type 2 or 3), define the
-\emph{horizontal accordion at $\vec{p_1}$} $F(\vec{p_1},q_1, p_2,q_2)$ by
+Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we have a box of type 2 or 3), \DMGtodo{in the figures, both vertical and horizontal accordions are of type 2: two lifts nested, the other not} define the
+\emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
 \[
   p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\quad
   p_2^{(k)}\coloneqq p_2,\quad
@@ -219,7 +219,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
   \label{fig:horizontal-accordion}
 }
 \end{figure}
-
+\begin{comment}
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{h-accordion2}}
@@ -227,7 +227,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
   \label{fig:horizontal-accordion2}
 }
 \end{figure}
-
+\end{comment}
 We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
 is countably additive.
 We will need to consider more types of boxes
@@ -310,7 +310,7 @@ $\overline{B}$ in the subspace topology of $\overline{B}$.
   The finitely additive measure $\mu_f$ is countably sub-additive on $\cB$.
 \end{proposition}
 
-\begin{proof}\DMGtodo{I don't think the $V_i^0$ cover, since $V_0^0$ might missing points by how it is defined. We should slightly enlarge $W^0$ in its definition, but at the moment we don't have accordions shriking from top to bottom or from right to left (which is what we need). The problem is that only the type 1 boxes would work for that, but then one does not get nested lifts and no parallelism.}
+\begin{proof}
   Let $B_0$ be a right-handed box, and suppose we are given a
   countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
   must show that
@@ -327,9 +327,9 @@ $\overline{B}$ in the subspace topology of $\overline{B}$.
   $\overline{B_0}$ is compact and the $V_i^\circ$ are open (in the
   subspace topology), we have a finite subcover; let $I \subset
   \mathbb{N}$ be the set of
-  indices included in the subcover.
+  indices included in the subcover, which necessarily contains $V_0^\circ$.
 
-  By finite additivity, we then have
+  By finite additivity and since $V_0^\circ \cap B_0 \subset V_0 \cap B_0$, we then have
   \begin{align*}
     \mu_f(B_0) &\le \sum_{i \in I} \mu_f(V_i)\\
       &\le \sum_{i \in I, i \ne 0} \mu_f(B_i) + \sum_{i \in I, i \ne 0}
@@ -589,18 +589,17 @@ We are thus under the
 hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 
-\DPTtodo{Needs some editing}
 \begin{remark}
-In fact, from Proposition~\ref{prop:power_disconnected_imply_stable}
-and~Theorem~\ref{thm:intersections_group} we can replace the following
-hypotheses by the slightly weaker ones:
+In fact,  we can replace the following hypotheses in~Theorem~\ref{thm:intersections_group} by the following slightly weaker ones:
 \begin{itemize}
-\item stability of $f$ can be replaced by power smoothing;
-\item oriented smoothing can be replaced by oriented smoothing:
+ \item $f$ can be replaced by power smoothing (by Proposition~\ref{prop:power_disconnected_imply_stable});
+\item oriented smoothing can be replaced by $R$-oriented smoothing:
  \begin{align}
-    f(ab) &\geq  f(a) + f(b) && \mbox{ if } (\ora{a},\ora{b})\mbox{ are parallel;} \\
-    f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (\ora{a},\ora{b})\mbox{ cross}.
-  \end{align}
+f(ab) &\ge f(a) + f(b)
+&& \text{if } (\ora{a},\ora{b}) \text{ are $R$-parallel}, \\
+f(a) + f(b) &\ge f(ab)
+&& \text{if } (\ora{a},\ora{b}) \text{ $R$-cross}.
+\end{align}
 \end{itemize}
 \end{remark}
 

@@ -594,6 +594,7 @@ We now turn to some elementary lemmas about crossing.
 
 \subsection{Position of axes 
 \texorpdfstring{$\protect\ora{aB}$}{aB} and \texorpdfstring{$\protect\ora{Ba}$}{Ba} in parallel  case}
+\label{subsec:antiparallel}
 If $\ora{a}$ and $\ora{b}$ are R-parallel,
 Lemma~\ref{lem:righthandedfoundation} makes no claim about the
 relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
@@ -1001,34 +1002,61 @@ and for $m, n \geq 2$,
 
 \DPTtodo{Read this new proof}
   Finally, we see Eq.~\eqref{eq:crossbelowy}. Let $m, n \geq 2$.
-  Since $(\ora{y},\ora{x})$ is R-parallel by assumption, by Lemma~\ref{lem:ab_parallel_aB} $(\ora{x^{n-2}}, \ora{Y^m x^2})$ are parallel or  $(\ora{y^{m-2}}, \ora{X^n y^2})$ are parallel.
-  In the first case, we have (Fig.~\ref{fig:lb}) 
-  \[
-  [ax^nY^m] = [a][x^{n-2}Y^m x^2] \searrow [a][x^{n-2}][(Y^mx)x] \searrow [a][x^{n-2}][Y^m]
+  Since $(\ora{y},\ora{x})$ is R-parallel, by the analysis in Section~\ref{subsec:antiparallel},we have three cases depending on the relative position of $(\ora{a}, \ora{x^nY^m})$ and $(\ora{x},\ora{y}, \ora{x^nY^m})$.
+  \begin{enumerate}
+  \item $(\ora{A}, \ora{Y^mx^n})$ parallel, $(\ora{Y}, \ora{Y^mx^n})$ parallel.
+
+    \[
+  [AY^mx^n] \searrow [A][Y^{m-2}x^n Y^2] \searrow [A][Y^{m-2}][(Y^2x^n)] \searrow  [A][Y^{m-2}][(Y(Yx^n)] \searrow  [A][Y^{m-2}][x^n].
   \]
-  by oriented connected smoothing and unoriented connected smoothing.
-   In the second case, we have (Fig.~\ref{fig:lb2}) 
+  
+    \item $(\ora{A}, \ora{Y^mx^n})$ parallel, $(\ora{Y}, \ora{Y^mx^n})$ parallel.
+
+    \[
+  [AY^mx^n] \searrow [A][Y^{m-2}x^n Y^2] \searrow [A][Y^{m-2}][(Y^2x^n)] \searrow  [A][Y^{m-2}][(Y(Yx^n)] \searrow  [A][Y^{m-2}][x^n].
+  \]
+  
+  \item $(\ora{A}$
+  $(\ora{y}, \ora{Y^mx^n})$
+  \end{enumerate}
+  $(\ora{y^{m-2}}, \ora{X^n y^2})$ are parallel or
+  $(\ora{X^{m-2}}, \ora{X^n y^2})$ 
+   In the first case, we have (Fig.~\ref{fig:lb2}) 
   \[
-  [ay^mX^n] = [a][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].\qedhere
-  \] 
-  \begin{figure}
-     \begin{subfigure}[b]{0.45\textwidth}
- \resizebox{50mm}{!}{\svgfignormal{lb} }
-    \caption{$\protect\ora{y}$ and $\protect\ora{Xy}$ are R-parallel }
+  [ay^mX^n] = [a][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].
+  \]
+  \DMGtodo{still working on this second case}
+     In the second case, we have (Fig.~\ref{fig:lb2}) 
+  \[
+  [Ay^mX^n] = [A][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].
+  \]
+  
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \resizebox{50mm}{!}{\svgfignormal{lb}}
+    \caption{$\protect\ora{y}$ and $\protect\ora{Xy}$ are R-parallel}
     \label{fig:lb}
-\end{subfigure} 
+\end{subfigure}
 \hfill
-\begin{subfigure}[b]{0.45\textwidth}
-
+\begin{subfigure}[b]{0.32\textwidth}
+    \centering
     \resizebox{50mm}{!}{\svgfignormal{lb2}}
-    \caption{$\protect\ora{x}$ and $\protect\ora{Yx}$ are R-parallel }
+    \caption{$\protect\ora{x}$ and $\protect\ora{Yx}$ are R-parallel}
     \label{fig:lb2}
-   \end{subfigure}
-   \caption{Cases for relative position}
-   \label{fig:lb-cases}
- \end{figure}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.32\textwidth}
+    \centering
+    \resizebox{50mm}{!}{\svgfignormal{lb3}}
+    \caption{(add caption here)}
+    \label{fig:lb3}
+\end{subfigure}
+\caption{Cases for relative position}
+\label{fig:lb-cases}
+\end{figure}
 \end{proof}
-
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
 four group elements.
 \begin{corollary}\label{cor:fund-axby}
@@ -1046,13 +1074,30 @@ four group elements.
   \begin{equation}\label{eq:cancel-axby}
     [a x^n b y^m][ab] \reducesto [x^n][y^m].
   \end{equation}
+  \begin{equation}
+\label{eq:crossbelowy}
+[ax^nY^m] \reducesto [a][x^{n-2}][Y^m]
+\quad \text{or} \quad
+[ay^mX^n] \reducesto [a][y^{m-2}][X^n]
+\end{equation}
 \end{corollary}
 
 \begin{proof}
   The conditions imply that
   $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.
   Apply Proposition~\ref{prop:fundamental-ayx} with $y' = y$,
-  $x' = axA$, and $a' = ab$. 
+  $x' = axA$, and $a' = ab$ for Eqs.\ref{eq:crossuniform_n},\ref{eq:crossuniform_m}
+\ref{eq:cancel-ayx}.  
+In the first case of Eq.\ref{eq:crossbelowy}
+apply it with $y'=Bxb, x'=y, a`=ab$ to get
+\[
+[ax^mbY^n] \reducesto [ab][x^{m-2}][Y^{n}]
+\]
+In the second case of Eq. \ref{eq:crossbelowy}
+\ref{eq:crossbelowy}, apply it with $y'=Bxb, x'=y, a`=ab$ to get
+\[
+[ax^mbY^n] \reducesto [ab][x^{m-2}][Y^{n}]
+\]
 \end{proof}
 
 We now check this configuration is easy to find. The following result
