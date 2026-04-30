@@ -948,11 +948,12 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \end{equation}
 and for $m, n \geq 2$,
 \DPTtodo{The label \texttt{eq:crossbelowy} is multiply defined}
-\begin{equation}
-\label{eq:crossbelowy}
-[ax^nY^m] \reducesto [a][x^{n-2}][Y^m]
-\quad \text{or} \quad
-[ay^mX^n] \reducesto [a][y^{m-2}][X^n]
+\begin{equation}\label{eq:crossbelowy}
+\begin{aligned}
+[ax^n Y^m]   &\searrow [A][Y^{m-2}][x^n],\\
+[ay^m X^n]   &\searrow [a][X^{n-2}][y^m],\\
+[ay^m X^n]    &\searrow [a][y^{m-2}][X^n].
+\end{aligned}
 \end{equation}
 \end{proposition}
 
@@ -1003,58 +1004,50 @@ and for $m, n \geq 2$,
 
 \DPTtodo{Read this new proof}
   Finally, we see Eq.~\eqref{eq:crossbelowy}. Let $m, n \geq 2$.
-  Since $(\ora{y},\ora{x})$ is R-parallel, by the analysis in Section~\ref{subsec:antiparallel},we have three cases depending on the relative position of $(\ora{a}, \ora{x^nY^m})$ and $(\ora{x},\ora{y}, \ora{x^nY^m})$.
+  Since $(\ora{y},\ora{x})$ is R-parallel, by the analysis in Section~\ref{subsec:antiparallel}, we have three possible configurations presented in Fig.~\ref{fig:lb-cases}, depending on the relative position of $(\ora{a}, \ora{x^nY^m})$ and $(\ora{x},\ora{y}, \ora{x^nY^m})$.
   \begin{enumerate}
-  \item $(\ora{A}, \ora{Y^mx^n})$ parallel, $(\ora{Y}, \ora{Y^mx^n})$ parallel.
+  \item Since $(\ora{a}, \ora{x^nY^m})$ and  $(\ora{x}, \ora{x^nY^m})$ are parallel, \DMGtodo{need $ay^m X^n$ here too.}
+    \[
+  [ax^n Y^m] \searrow [a][x^{n-2}x^2 Y^m] \searrow [a][x^{n-2}][(x^2Y^m)] \searrow  [a][x^{n-2}][(x(xY^m)] \searrow  [a][x^{n-2}][Y^m].
+  \]
+    \item Since $(\ora{a}, \ora{y^mX^n})$ and $(\ora{X}, \ora{X^ny^m})$ are parallel.
 
     \[
-  [AY^mx^n] \searrow [A][Y^{m-2}x^n Y^2] \searrow [A][Y^{m-2}][(Y^2x^n)] \searrow  [A][Y^{m-2}][(Y(Yx^n)] \searrow  [A][Y^{m-2}][x^n].
+  [ay^mX^n] \searrow [a][X^{2}y^m X^{n-2}] \searrow [a][X^{n-2}][(X^2y^m)] \searrow  [a][X^{n-2}][(X(Xy^m)] \searrow  [a][X^{n-2}][y^m].
   \]
-  
-    \item $(\ora{A}, \ora{Y^mx^n})$ parallel, $(\ora{Y}, \ora{Y^mx^n})$ parallel.
+       \item Since $(\ora{a}, \ora{y^mX^n})$ and $(\ora{y}, \ora{y^mX^n})$ are parallel.
 
     \[
-  [AY^mx^n] \searrow [A][Y^{m-2}x^n Y^2] \searrow [A][Y^{m-2}][(Y^2x^n)] \searrow  [A][Y^{m-2}][(Y(Yx^n)] \searrow  [A][Y^{m-2}][x^n].
+  [ay^mX^n] \searrow [a][y^{m-2}y^2 X^{n}] \searrow [a][y^{m-2}][(y^2X^n)] \searrow  [a][y^{m-2}][(y(yX^n)] \searrow  [a][y^{m-2}][X^n].
   \]
-  
-  \item $(\ora{A}$
-  $(\ora{y}, \ora{Y^mx^n})$
   \end{enumerate}
-  $(\ora{y^{m-2}}, \ora{X^n y^2})$ are parallel or
-  $(\ora{X^{m-2}}, \ora{X^n y^2})$ 
-   In the first case, we have (Fig.~\ref{fig:lb2}) 
-  \[
-  [ay^mX^n] = [a][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].
-  \]
-  \DMGtodo{still working on this second case}
-     In the second case, we have (Fig.~\ref{fig:lb2}) 
-  \[
-  [Ay^mX^n] = [A][y^{m-2}X^n y^2] \searrow [a][y^{m-2}][(X^ny)y] \searrow [a][y^{m-2}][X^n].
-  \]
+
   
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.32\textwidth}
     \centering
     \resizebox{50mm}{!}{\svgfignormal{lb}}
-    \caption{$\protect\ora{y}$ and $\protect\ora{Xy}$ are R-parallel}
+    \caption{Case 1}
     \label{fig:lb}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.32\textwidth}
     \centering
     \resizebox{50mm}{!}{\svgfignormal{lb2}}
-    \caption{$\protect\ora{x}$ and $\protect\ora{Yx}$ are R-parallel}
+    \caption{Case 2}
     \label{fig:lb2}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.32\textwidth}
     \centering
     \resizebox{50mm}{!}{\svgfignormal{lb3}}
-    \caption{(add caption here)}
+    \caption{Case 3}
     \label{fig:lb3}
 \end{subfigure}
-\caption{Cases for relative position}
+\caption{Cases for relative position between 
+$(\protect\ora{a}, \protect\ora{x}, \protect\ora{y}, 
+\protect\ora{x^nY^m}, \protect\ora{Y^m x^n})$}
 \label{fig:lb-cases}
 \end{figure}
 \end{proof}
@@ -1075,11 +1068,13 @@ four group elements.
   \begin{equation}\label{eq:cancel-axby}
     [a x^n b y^m][ab] \reducesto [x^n][y^m].
   \end{equation}
-  \begin{equation}
-\label{eq:crossbelowy}
-[ax^nY^m] \reducesto [a][x^{n-2}][Y^m]
-\quad \text{or} \quad
-[ay^mX^n] \reducesto [a][y^{m-2}][X^n]
+  \DMGtodo{the next has to be changed yet}
+\begin{equation}\label{eq:crossbelowy}
+\begin{aligned}
+[BABX^mb y^n]   &\searrow [BA][X^{m-2}][y^n],\\
+[ax^n bY^m]   &\searrow [ab][Y^{n-2}][x^m],\\
+[ay^m X^n]    &\searrow [a][x^{m-2}][Y^n].
+\end{aligned}
 \end{equation}
 \end{corollary}
 
@@ -1090,12 +1085,16 @@ four group elements.
   $x' = axA$, and $a' = ab$ for Eqs.\ref{eq:crossuniform_n},\ref{eq:crossuniform_m}
 \ref{eq:cancel-ayx}.  
 In the first case of Eq.\ref{eq:crossbelowy}
+the conditions imply that $(BA \cdot \ora{y}, B \cdot \ora{x}, \ora{y})$ are parallel, so we can take $a'=ab$, $x'=Bxb$ and $y'=BA \cdot y$.
+
+\DMGtodo{still editing here, first case is not settled yet...}
+
+
 apply it with $y'=Bxb, x'=y, a`=ab$ to get
 \[
 [ax^mbY^n] \reducesto [ab][x^{m-2}][Y^{n}]
 \]
-In the second case of Eq. \ref{eq:crossbelowy}
-\ref{eq:crossbelowy}, apply it with $y'=Bxb, x'=y, a`=ab$ to get
+In the second and third case of Eq.~\ref{eq:crossbelowy}, apply it with $y'=Bxb, x'=y, a`=ab$ to get
 \[
 [ax^mbY^n] \reducesto [ab][x^{m-2}][Y^{n}]
 \]
