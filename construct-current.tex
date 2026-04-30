@@ -20,7 +20,7 @@ so the box is of type~2 or~3.
 Define the \emph{vertical accordion}, $F(p_1, q_1, p_2,\vec{q_2})$ of
 boxes based at $B$ to be
 the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
-and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
+and $q_2$ translated by powers of $r_1 = q_1 x Q_1$:
 \[
   p_1^{(k)}\coloneqq p_1,\quad
   p_2^{(k)}\coloneqq p_2,\quad
@@ -29,7 +29,12 @@ and $q_2$ successively translated by $r_1 = q_1 x Q_1$:
 \]
 This defines boxes whose  height becomes smaller as $k$
 grows, with the top endpoint fixed. See
-Figure~\ref{fig:vertical-accordion}. \begin{figure}
+Figure~\ref{fig:vertical-accordion}.
+
+\DPTtodo{In Figure~\ref{fig:vertical-accordion}, maybe make $r_1$ a
+  different shade of blue from the $r_2^{(k)}$. Similarly for
+  Figure~\ref{fig:horizontal-accordion}}
+\begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{v-accordion}}
 \caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in
@@ -67,7 +72,7 @@ Figure~\ref{fig:vertical-accordion}. \begin{figure}
 
 
 
-Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we have a box of type 2 or 3), \DMGtodo{in the figures, both vertical and horizontal accordions are of type 2: two lifts nested, the other not} define the
+Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again have a box of type 2 or 3), define the
 \emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
 \[
   p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\quad
@@ -78,6 +83,7 @@ Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we have a box of ty
 \label{def:accordion}
 \end{definition}
 See Figure~\ref{fig:horizontal-accordion}.
+\DPTtodo{Do we need both figures? I guess probably}
 % \begin{figure}
 % \centering{
 % \resizebox{80mm}{!}{\svgfig{final}}
@@ -237,16 +243,19 @@ $\overline{B} \coloneqq [s_1,s_2] \times [t_2,t_1]$ and
 $B^\circ \coloneqq (s_1,s_2) \times (t_2,t_1)$ be the corresponding
 closed and open boxes.
 
+\DPTtodo{Labels in Figure~\ref{fig:cases} are misplaced, too far for
+  vertical labels and too close for horizontal labels}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.47\textwidth}
         \svgfignormal{ca1}
-        \caption{$V(B,\epsilon)$ is an $\epsilon$-down and left extesion of an RH box $B$ as in Lemma~\ref{lem:extend1}}\label{fig:ca1}
+        \caption{$V(B,\epsilon)$ is a down and left extension of an RH
+          box $B$ with mass less than $\epsilon$, as in Lemma~\ref{lem:extend1}}\label{fig:ca1}
      \end{subfigure}
      \hfill
      \begin{subfigure}[b]{0.47\textwidth}
         \svgfignormal{ca2}
-        \caption{$W(B,\epsilon)$ is an $\epsilon$ of the upper and right edges of an RH box $B$ as in Lemma~\ref{lem:extend2}}\label{fig:ca2}
+        \caption{$W(B,\epsilon)$ is an $\epsilon$ neighborhood of the upper and right edges of an RH box $B$, as in Lemma~\ref{lem:extend2}}\label{fig:ca2}
      \end{subfigure}
      \caption{Extensions used in the proof of countable sub-additivity}
      \label{fig:cases}
@@ -304,7 +313,9 @@ In the setting of Lemma~\ref{lem:extend2}, also set
     \bigl((s_2',s_2] \times [t_1,t_2]\bigr);
 \]
 this is an open neighborhood of the upper and right edges of
-$\overline{B}$ in the subspace topology of $\overline{B}$.
+$\overline{B}$ in the subspace topology of $\overline{B}$. Note that
+neither $W(B,\epsilon)$ nor $W^\circ(B,\epsilon)$ is a subset of the
+other.
 
 \begin{proposition}\label{prop:countablyadditive}
   The finitely additive measure $\mu_f$ is countably sub-additive on $\cB$.
@@ -324,8 +335,8 @@ $\overline{B}$ in the subspace topology of $\overline{B}$.
   Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$, since
   the $B_i$, for $i \geq 1$, cover $B_0$, $B_i \subset V_i^\circ$, and
   $\overline{B_0}\setminus B_0 \subset V_0^\circ$. Since
-  $\overline{B_0}$ is compact and the $V_i^\circ$ are open (in the
-  subspace topology), we have a finite subcover; let $I \subset
+  $\overline{B_0}$ is compact and the $V_i^\circ \cap \overline{B_0}$ are open in the
+  subspace topology, we have a finite subcover; let $I \subset
   \mathbb{N}$ be the set of
   indices included in the subcover, which necessarily contains $V_0^\circ$.
 
@@ -349,7 +360,7 @@ Then $\mu_f$ extends to an oriented geodesic current.
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
 \ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\mu_f$
 is a finitely
-additive and countably subb-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably subb-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\mu_f$. By covering $G(S)$ by a countable exhaustion consisting of a union of RH boxes, we see $\mu_f$ is $\sigma$-finite.
+additive and countably sub-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably sub-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\mu_f$. By covering $G(S)$ by a countable exhaustion consisting of a union of RH boxes, we see $\mu_f$ is $\sigma$-finite.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory},
 $\mu_f$ can be extend to a unique measure on
 $\mathcal{A}_{\mathcal{R}}$, the $\sigma$-algebra generated
@@ -357,14 +368,20 @@ by~$\mathcal{R}$; we temporarily denote the extension $\hat\mu_f$.
 Let $\cA$ be the Borel $\sigma$-algebra of $G(S)$.
 Since $\cR \subset \cA$, we have $\cA_{\cR} \subset \cA$.
 
-On the other hand, given a open box of geodesics
-$B=(s_1,s_2) \times (t_2,t_1) \in \mathcal{B}$, it can be written as
-an intersection of two countable unions of boxes in $\mathcal{R}$,
-since, by Proposition~\ref{prop:density}, the set of elements in
+\DPTtodo{I couldn't tell what the first part of this argument was
+  doing, so I commented it out. Maybe restore it in a less confusing way?}
+On the other hand,
+% given a open box of geodesics
+% $B=(s_1,s_2) \times (t_2,t_1) \in \mathcal{B}$, it can be written as
+% an intersection of two countable unions of boxes in $\mathcal{R}$,
+% since,
+by Proposition~\ref{prop:density}, the set of elements in
 $\mathcal{R}$ is dense in the subspace of half-open rectangles of
 $G(S)$. By the standard argument that half-rectangles with rational endpoints generate the Borel $\sigma$-algebra (see, e.g.,~\cite[Lemma~1.2.11]{Bo07:MeasureTheory}), it follows that $\cA \subset \cA_{\cR}$, hence $\hat\mu_f$ is a Borel measure.
 
-Note that $\hat\mu_f$ is also locally finite, since any compact subset of $G(S)$ can be covered by a finite union the boxes in $\mathcal{R}$, where the measure takes a finite value.
+Note that $\hat\mu_f$ is also locally finite, since any compact subset
+of $G(S)$ can be covered by a finite union of the boxes in
+$\mathcal{R}$, where the measure takes a finite value.
 By definition of $\mu_f$, the extension $\hat\mu_f$ is
 $\pi_1(S)$-invariant. Finally, $\hat\mu_f$ is non-negative by
 Proposition~\ref{prop:box-positive}.
@@ -593,12 +610,12 @@ hypotheses of Theorem~\ref{thm:intersect}.
 In fact,  we can replace the following hypotheses in~Theorem~\ref{thm:intersections_group} by the following slightly weaker ones:
 \begin{itemize}
  \item $f$ can be replaced by power smoothing (by Proposition~\ref{prop:power_disconnected_imply_stable});
-\item oriented smoothing can be replaced by $R$-oriented smoothing:
+\item oriented smoothing can be replaced by R-oriented smoothing:
  \begin{align}
 f(ab) &\ge f(a) + f(b)
-&& \text{if } (\ora{a},\ora{b}) \text{ are $R$-parallel}, \\
+&& \text{if } (\ora{a},\ora{b}) \text{ are R-parallel}, \\
 f(a) + f(b) &\ge f(ab)
-&& \text{if } (\ora{a},\ora{b}) \text{ $R$-cross}.
+&& \text{if } (\ora{a},\ora{b}) \text{ R-cross}.
 \end{align}
 \end{itemize}
 \end{remark}
