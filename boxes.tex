@@ -306,7 +306,7 @@ invariant under the following four transformations:
 \end{subequations}
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
 $aCdB = 1$, we can
-construct four lifts of $[x]$ related by Equation~\ref{eq:relationdatum}, for instance
+construct four lifts of $[x]$ related by Equation~\eqref{eq:relationdatum}, for instance
 setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = cA$.
 
 
@@ -452,13 +452,13 @@ different elements $x,y \in \pi_1(S)$.
   Let $a,b,x,y \in \pi_1(S)$ be so that
   $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel, and
   let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
-  stability, and homogeneity. Then
-  \begin{equation}
-    \lim_{n,m \to \infty} f([ax^nby^{\pm m}]) - nf([x]) - mf([y])
-  \end{equation}
-  exists.  
+  stability, and homogeneity. Then the limits
+  \begin{gather*}
+    \lim_{n,m \to \infty} f([ax^nby^m]) - nf([x]) - mf([y])\\
+    \lim_{n,m \to \infty} f([ax^nby^{-m}]) - nf([x]) - mf([y])
+  \end{gather*}
+  exist.
 \end{lemma}
-\DMGtodo{had to add the $\pm$ changes}
 \begin{proof}
   Define $g_
   {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. First,
@@ -527,7 +527,7 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-The existence of the limit in Equation~\ref{eq:def_measure} follows immediately from Lemma~\ref{lem:additivity-limit}.
+The existence of the limit in Equation~\eqref{eq:def_measure} follows immediately from Lemma~\ref{lem:additivity-limit}.
 Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
 To this end, by Remark~\ref{rmk:box_from_system}, it is enough to prove that the limit is invariant under the transformations described in Equations~\eqref{eq:translations}.
 We prove this for Equation~\eqref{eq:translations-l1}; the other cases are analogous.
