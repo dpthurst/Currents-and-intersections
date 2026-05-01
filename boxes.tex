@@ -145,7 +145,7 @@ The set of right-handed boxes is denoted $\mathcal{B}$.
 \begin{remark}
 \label{rmk:box_from_system}
 Modifying the right-handed lift system by changing $p_i$ by
-Eq.~\eqref{eq:changes-p} or changing $q_i$ by Eq.~\eqref{eq:changes-q}) determines
+Eq.~\eqref{eq:changes-p} or changing $q_i$ by Eq.~\eqref{eq:changes-q} determines
 the same right-handed box. Conversely, choices of the $p_i$/$q_i$
 determining the same RH box are related in this way.
 \end{remark}
@@ -168,48 +168,41 @@ make the following proposition work.
   $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel.
 
   To exploit condition~\ref{item:box-diags-cross-lift}, we prove a lemma.
-  \DPTtodo{Think about notation for this lemma}
-  
+
+  \DPTtodo{Rewrote to drop subscripts and put more in lemma.}
   \begin{lemma}\label{lem:box-endpoints}
-    In the setting above, fix $n \in \bbZ$ and $i,j \in \{1,2\}$, and
-    set $g = q_j x^n p_i$. Then $g$ is hyperbolic, with
+    Suppose $p,q \in \pi_1(S)$ so that $(\ora{pq},\ora{x})$ R-cross.
+    Set $\ell = Pxp$, $r = qxQ$, and
+    for $n \in \bbZ$ set $g_n \coloneqq q x^n p$. Then
     \begin{align*}
-      g^- &\in G P_i \cdot (x^+,x^-) \subset (\ell_i^+,\ell_i^-)\\
-      g^+ &\in g q_j \cdot (x^-,x^+) \subset (r_j^+,r_j^-).
-%      g^- &\in P_i x^{-n}Q_j P_i \cdot (x^+,x^-) \subset (\ell_i^+,\ell_i^-)\\
-%      g^+ &\in q_j x^n p_i q_j \cdot (x^-,x^+) \subset (r_j^+,r_j^-).
+      \lim_{n^+} g_n^- &= \ell^- &
+      \lim_{n^+} g_n^+ &= r^+.
     \end{align*}
   \end{lemma}
 
   \begin{proof}
-    First note that $g \cdot (\ell_i^-,\ell_i^+) = q_j x^n p_i P_i
-    \cdot (x^-,x^+) = (r_j^-,r_j^+) \subsetneq (\ell_i^-,\ell_i^+)$, so
-    $g^- \in (\ell_i^-,\ell_i^+)$ and $g^+ \in (r_j^-,r_j^+)$ by Lemma~\ref{lem:NS-dynamics}.
+    First note that $g_n \cdot (\ell^-,\ell^+) = q x^n p P
+    \cdot (x^-,x^+) = (r^-,r^+) \subsetneq (\ell^-,\ell^+)$, so
+    $g_n^- \in (\ell^-,\ell^+)$ and $g_n^+ \in (r^-,r^+)$ by Lemma~\ref{lem:NS-dynamics}.
+    Now set
+    $\ora{\ell_n} \coloneqq G \cdot \ora{\ell}$ and
+    $\ora{r_n} \coloneqq g \cdot \ora{r}$. Since $g_n \cdot
+    \ora{\ell_n} = \ora{\ell}$ and $g_n \cdot \ora{r} = \ora{r_n}$, it
+    follows that $g_n^- \in (\ell_n^+,\ell_n^-) \subset
+    (\ell^+,\ell^-)$ and $g_n^+ \in (r_n^-,r_n^+) \subset (r^-,r^+)$.
 
-    For convenience, set
-    $\ora{\ell_{i,j,n}} = P_i x^{-n}Q_j \cdot \ora{\ell_i}$ and
-    $\ora{r_{j,i,n}} = q_j x^n p_i \cdot \ora{r_j}$. Now consider
-    translating $(\ora{\ell_i}, \ora{r_j})$ by $g^\pm$. We find
-    \begin{align*}
-      g \cdot (\ora{\ell_i}, \ora{r_j}) &= (\ora{r_j}, \ora{r_{j,i,n}})\\
-      G \cdot (\ora{\ell_i}, \ora{r_j}) &= (\ora{\ell_{i,j,n}}, \ora{\ell_i}).
-    \end{align*}
-    The result follows.
+    Concretely, we have $\ora{r_n} = g \cdot \ora{x} = q x^n
+    \ora{\ell}$. From this we see that $r \cdot \ora{r_n} =
+    \ora{r_{n+1}}$. Similarly $\ell \cdot
+    \ora{\ell_n} = \ora{\ell_{n-1}}$, and the result follows from NS
+    dynamics of $r$ and~$\ell$.
   \end{proof}
 
-  Returning to the proof of Proposition~\ref{prop:rh-boxes}, note that
-  $r_j \cdot \ora{r_{j,i,n}} = \ora{r_{j,i,n+1}}$ (setting
-  $r_j = q_jxQ_j$ to match the convention on geodesics). Thus, by NS
-  dynamics of $r_j$, we have
-  $\lim_{n\to\infty} r_{j,i,n}^\pm = r_j^+$. Similarly
-  $\lim_{n\to\infty} \ell_{i,j,n}^\pm = \ell_i^-$. If we set
-  $g_{i,j,n} = q_j x^n p_i$, it follows that
-  $\lim_{n\to\infty} g_{i,j,n}^+ = r_j^+$ and
-  $\lim_{n\to\infty} g_{i,j,n}^- = \ell_i^-$.
-  
-  By condition~\ref{item:box-diags-cross-lift}, for sufficiently large $n$
+  Returning to the proof of Proposition~\ref{prop:rh-boxes}, set
+  $g_{i,j,n} \coloneqq q_j x^n p_i$.
+  Condition~\ref{item:box-diags-cross-lift} says that for sufficiently large $n$
   the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$
-  appear in that ccw order, which by the limiting behavior implies
+  appear in that ccw order, which by Lemma~\ref{lem:box-endpoints} implies
   that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as desired.
 \end{proof}
 
