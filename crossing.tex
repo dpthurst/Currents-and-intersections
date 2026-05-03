@@ -945,13 +945,22 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \begin{equation}\label{eq:cancel-ayx}
     [a y^m x^n][a] \reducesto [y^m][x^n];
   \end{equation}
-and 
-\begin{equation}\label{eq:crossbelowy}
-\begin{aligned}
+and at least one of the three cases happens
+\begin{subequations}\label{eq:crossbelowy}
+\begin{align}
 [A][a Y^m x^{n}]
 & \searrow [X^{s'}][Y^{m-1}][Y x][x^{n+s'-1}]
-\end{aligned}
-\end{equation}
+\label{eq:crossbelowy-a}\\
+%
+[ay^m X^n]
+&\searrow [a][X^{n-2}][y^m]
+\label{eq:crossbelowy-b}\\
+%
+[ay^m X^n]
+&\searrow [a][y^{m-2}][X^n]
+\label{eq:crossbelowy-c}
+\end{align}
+\end{subequations}
 \end{proposition}
 
 \begin{proof}
@@ -1001,26 +1010,46 @@ and
 
   Finally, we see Eq.~\eqref{eq:crossbelowy}. Let $m, n \geq 2$.
   Since $(\ora{y},\ora{x})$ is R-parallel, by the analysis in Section~\ref{subsec:antiparallel}, we have a priori severalconfigurations presented in Fig.~\ref{fig:lb-cases}, depending on the relative position of $(\ora{x},\ora{y}, \ora{x^nY^m}, \ora{Y^mx^n})$.
-  However, as $n \to \infty$, $(x^n Y^n)^+ \to x^+$, $(x^n Y^n)^- \to x^-$, and as $m \to \infty$, $(x^n Y^n)^+ \to y^+$, $(x^n Y^n)^- \to y^-$, thus,
-after taking $n,m$ large enough, we can assume we are in Case 1 (Fig.~\ref{fig:lb}).
-  By Lemma~\ref{lem:ayx-window}, there exist $s'>0$ so that $(\ora{a}, X^{s'} a Y^m x^{n+s'}$ cross.
+\begin{figure}
+\centering{
+\resizebox{150mm}{!}{\svgfigbig{crossing_yx_A}}
+\caption{new figure}
+\label{fig:crossing_yx_A}
+}
+\end{figure}
+  
+\begin{enumerate} \item Case 1 (Fig.~\ref{fig:lb}).
+  By Lemma~\ref{lem:ayx-window}, there exist $s'>0$ so that 
+  
+  
+  
+  
+  
+  
+  $(\ora{a}, x^{s'} Y^m ax^{n+s'})$ cross.
   Then,
  \[
 \begin{aligned}
-[A][X^{s'} a Y^m x^{n+s'}]
-&\searrow [A X^{s'} a Y^m x^{n+s'}]
-&& \text{($\protect\ora{a}, \protect\ora{X^{s'} a Y^m x^{n+s'}}$ cross)} \\
+[A][x^{s'} Y^m ax^{n+s'}]
+&\searrow [A x^{s'} Y^m a x^{n+s'}]
+&& \text{($\protect\ora{A}, \protect\ora{x^{s'} Y^m ax^{n+s'}}$ cross)} \\
 %
-&\searrow [A X^{s'} a][Y^m x^{n+s'}]
-&& \text{($\protect\ora{A X^{s'} a}, \protect\ora{Y^m x^{n+s'}}$ parallel)} \\
+&\searrow [A x^{s'} Y^ma ][x^{n+s'}]
+&& \text{($\protect\ora{Ax^{s'} Y^m a}, \protect\ora{x}$ parallel)} \\
 %
-&\searrow [X^{s'}][Y^{m-1}][Y x^{n+s'}]
-&& \text{($\protect\ora{Y}, \protect\ora{Y x^{n+s'}}$ parallel)} \\
-%
-&\searrow [X^{s'}][Y^{m-1}][Y x][x^{n+s'-1}]
-&& \text{($\protect\ora{x}, \protect\ora{Y x}$ parallel)}
+&\searrow [x^{s'-1}Y][Y^{m-1}][x^{n+s'}]
+&& \text{($\protect\ora{Y}, \protect\ora{x^{s'}Y^{m}}$ parallel)} \\
 \end{aligned}
 \]
+\item Case 2 (Fig.~\ref{fig:lb2}). Since $(\ora{a}, \ora{y^mX^n})$ and $(\ora{X}, \ora{X^ny^m})$ are parallel, we have,
+    \[
+  [ay^mX^n] \searrow [a][X^{2}y^m X^{n-2}] \searrow [a][X^{n-2}][(X^2y^m)] \searrow  [a][X^{n-2}][(X(Xy^m)] \searrow  [a][X^{n-2}][y^m].
+  \]
+       \item Case 3 (Fig.~\ref{fig:lb3}). Since $(\ora{a}, \ora{y^mX^n})$ and $(\ora{y}, \ora{y^mX^n})$ are parallel, we have
+    \[
+  [ay^mX^n] \searrow [a][y^{m-2}y^2 X^{n}] \searrow [a][y^{m-2}][(y^2X^n)] \searrow  [a][y^{m-2}][(y(yX^n)] \searrow  [a][y^{m-2}][X^n].
+  \]
+  \end{enumerate}
 
 \begin{figure}
 \centering
@@ -1067,11 +1096,18 @@ four group elements.
 \begin{equation}\label{eq:cancel-axby}
     [a x^n b y^m][ab] \reducesto [x^n][y^m]
   \end{equation}
-and
+and at least one of these three cases holds
 \begin{equation}
 \begin{aligned}
 [A][ax^nb Y^m]
 & \searrow [X^{s'}][Y^{m-1}][Y axA][x^{n+s'-1}].
+\\
+%
+[ax^m by^n]
+&\searrow [ab][X^{n-2}][y^m]\\
+%
+[abx^m Y^n]
+&\searrow [ab][y^{m-2}][X^n]
 \label{eq:crossbelowy-alt}
 \end{aligned}
 \end{equation}
@@ -1080,11 +1116,9 @@ and
 \begin{proof}
   The conditions imply that
   $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.
-  Apply Proposition~\ref{prop:fundamental-ayx} with $y' = y$,
-  $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n}, 
-  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n}
+  Apply $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n},  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy-a} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n}
     \eqref{eq:axby-cross-m}
-    \eqref{eq:cancel-axby} and~\eqref{eq:crossbelowy}.
+    \eqref{eq:cancel-axby} and the first case of~\eqref{eq:crossbelowy}. To get the other two cases of Eq.~\eqref{eq:crossbelowy}, apply~\eqref{eq:crossbelowy-b} and~\eqref{eq:crossbelowy-c} with $y'=Bxb, x'=y, a'=ab$.
 \end{proof}
 
 We now check this configuration is easy to find. The following result
