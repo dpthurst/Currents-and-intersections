@@ -135,8 +135,8 @@ Given a box of oriented geodesics $B=[a,b) \times [c,d)$ and let $l$ be any orie
   $(p_1,q_1,p_2,q_2)$ determines a
   half-closed half-open box in
   $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$, 
-  given by $B=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$, where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
-This, in turn, determines a \emph{right-handed box}, the right-oriented box $\ora{B}$, which we denote by $B(p_1,q_1,p_2,q_2)$.
+  given by $\overline{B}=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$, where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
+This, in turn, determines a \emph{right-handed box}, the right-oriented box $\ora{B}$, which we denote by $B(p_1,q_1,p_2,q_2)$. (On occasion, we may write $B_x(p_1,q_1,p_2,q_2)$ to make the choice of base element explicit.)
 The set of all right-handed boxes is denoted by $\mathcal{B}$.
 \end{definition}
 
@@ -155,7 +155,7 @@ make the following proposition work.
   A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system if and only if $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
-  counter-clockwise order. In particular the boxes in $\cB$ avoid the
+  counter-clockwise order. In particular RH boxes in $\cB$ avoid the
   diagonal.
 \end{proposition}
 
@@ -333,13 +333,16 @@ Thus the two crossing conditions are equivalent.
     [B] \;=\; \bigcup_{g \in \pi_1(S)} g \cdot B,
   \]
   where we consider the left-action.
-  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
+  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit. (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element).
 \end{definition}
 
-We finally observe that flipping an RH orbit wrt $x$ gives a new RH orbit wrt $x^{-1}$, in the following sense.
+Even though in the sequel we will fix our base element to be $x$ once and for all, we observe that flipping an RH orbit wrt $x$ gives a new RH orbit wrt $x^{-1}$, in the following sense.
 \begin{lemma}
 Let $[a,b,c,d]$ define an RH orbit with respect to the fixed element $x \in \pi_1(S)$.
-Then the datum $[a', b', c', d']$ with $a' \coloneqq D$, $b' \coloneqq B$, $c'\coloneqq C, d'\coloneqq A$ is an RH orbit with respect to the base element $x' \coloneqq X$.
+Then the datum $[a', b', c', d']$ with $a' \coloneqq D$, $b' \coloneqq B$, $c'\coloneqq C, d'\coloneqq A$ is an RH orbit with respect to the base element $x' \coloneqq X$. Similarly, if $[p_1,q_1,p_2,q_2]$ is an RH lift system in the RH orbit $[a,b,c,d]$ with base element $x$, the datum $[p_1',q_1',p_2',q_2']$
+where $p_1' \coloneqq Q_2$, $p_2' \coloneqq Q_1, q_1' \coloneqq P_2, q_2' \coloneqq P_1$
+is an RH system with RH orbit $[a',b',c',d']$ and basepoint $x'$.
+\label{lem:flip_rh_box}
 \end{lemma}
 \begin{proof}
 We need to check that the conditions in  Definition~\ref{def:RH-lift-sys} are satisfied. 
@@ -357,6 +360,18 @@ $\ora{d'(x')^na' C'}$ crosses
   $\ora{Ax^{-n}D c}$ crosses
   $\ora{Cx^{-n}}$ to the right, which, after conjugating by $c$ and inverting, is equivalent to~\ref{item:box-diags-cross}.
 \end{enumerate}
+The claim about the RH system follows from Equations~\eqref{eq:relationdatum}.
+\end{proof}
+
+The following result is then immediate.
+
+\begin{lemma}
+Let $[p_1,q_1,p_2,q_2]$ be an RH system with RH orbit $[a,b,c,d]$ in this orbit, we have
+$B_x(p_1,q_1,p_2,q_2)=[B_{x'}]_{p_1',q_1',p_2',q_2'}$ as in Lemma~\ref{lem:flip_rh_box}, where $\sigma$ denotes the flip map on geodesics.
+\label{lem:orbit_flip_RH}
+\end{lemma}
+\begin{proof}
+Immediate from Lemma~\ref{lem:flip_rh_box} and the definition of RH box.
 \end{proof}
 
 
