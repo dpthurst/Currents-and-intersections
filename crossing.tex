@@ -679,7 +679,7 @@ If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-paral
 \label{lem:ab_parallel_aB}
 \end{lemma}
 \begin{proof}
-The figures cover the case $(\ora{a}, \ora{b})$ being R-parallel. For the L-parallel case, note that $(\ora{a},\ora{b})$ being L-parallel, implies $(\ora{b},\ora{a})$ is R-parallel. Applying the statement, we obtain that $\ora{bA},\ora{Ab}$ cross (resp. are anti-parallel), which is equivalent, by taking inverses, to $\ora{aB}, \ora{Ba}$ crossing (resp. are anti-parallel.
+The figures cover the case $(\ora{a}, \ora{b})$ being R-parallel. For the L-parallel case, note that $(\ora{a},\ora{b})$ being L-parallel implies $(\ora{b},\ora{a})$ is R-parallel. Applying the statement, we obtain that $\ora{bA},\ora{Ab}$ cross (resp.~are anti-parallel), which is equivalent, by taking inverses, to $\ora{aB}, \ora{Ba}$ crossing (resp.~are anti-parallel.
 \end{proof}
 It also follows that, when $(\ora{a},\ora{b})$ are parallel, many composite pairs do not cross. We can extract the following two results.
 \begin{lemma}
@@ -699,7 +699,7 @@ The figures above discuss the case $(\ora{a},\ora{b})$ being R-parallel. If $(\o
 which proves the claim in this case. 
 \end{proof}
 
-If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise (the proof is similar as the previous lemma).
+If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise 
 \begin{lemma}\label{lem:a_parallel_Ba}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross, and
@@ -710,6 +710,9 @@ and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
 \item $(\ora{g},\ora{h})$ is anti-parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$.
 \end{itemize}
 \end{lemma}
+\begin{proof}
+The proof is similar as the previous lemma.
+\end{proof}
 
 From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
 $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not
@@ -945,7 +948,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \begin{equation}\label{eq:cancel-ayx}
     [a y^m x^n][a] \reducesto [y^m][x^n];
   \end{equation}
-and at least one of the three cases happens
+and at least one of the three cases happens:
 \begin{subequations}\label{eq:crossbelowy}
 \begin{align}
 [A][a Y^m x^{n}]
@@ -1019,13 +1022,17 @@ and at least one of the three cases happens
 \end{figure}
   
 \begin{enumerate} \item Case 1 (Fig.~\ref{fig:lb}).
+\begin{claim}
+  We claim that since $(\ora{Y}, \ora{xY})$ and $(\ora{xY}, \ora{x})$ are parallel, it follows that
+   $(\ora{Y}, \ora{x^nY^m})$ and $(\ora{x^nY^m}, \ora{x})$ are parallel for every $n,m$ positive.
+\end{claim}
+\begin{proof}
+   This can be proven by a double induction. The case $m=1$ and $n$ arbitrary follows by induction on $n$. First, the case $n=1$ is the hypothesis. For the inductive step use that $(\ora{x^nY}, \ora{x})$ is parallel by the induction step, and thus by Lemma-\ref{lem:righthandedfoundation}\eqref{item:ab-parallel} implies $(\ora{x^{n+1}Y}, \ora{x})$ is parallel. A similar argument gives us
+   $(\ora{Y},\ora{Y^mx})$ is parallel for every $m$. Conjugate by $y^m$ to get $(\ora{Y},\ora{xY^m})$ is parallel for every $m$. 
+   Since $\ora{x^nY^m}$ and $\ora{Y^mx^n}$ are conjugates of each other by $y$ and by $x$, neither the axis of $\ora{x}$ nor of $\ora{y}$ can separate them. 
+   This forces $(\ora{Y^mx^n},\ora{x})$ to be parallel.
+ \end{proof}
   By Lemma~\ref{lem:ayx-window}, there exist $s'>0$ so that 
-  
-  
-  
-  
-  
-  
   $(\ora{a}, x^{s'} Y^m ax^{n+s'})$ cross.
   Then,
  \[
@@ -1041,14 +1048,21 @@ and at least one of the three cases happens
 && \text{($\protect\ora{Y}, \protect\ora{x^{s'}Y^{m}}$ parallel)} \\
 \end{aligned}
 \]
-\item Case 2 (Fig.~\ref{fig:lb2}). Since $(\ora{a}, \ora{y^mX^n})$ and $(\ora{X}, \ora{X^ny^m})$ are parallel, we have,
+\item Case 2 (Fig.~\ref{fig:lb2}).
+We claim that
+  \begin{claim} For every $n,m$ positive, we have $(\ora{X}, \ora{X^ny^m})$ or $(\ora{y}, \ora{y^mX^n})$. 
+  \end{claim}\begin{proof} First, $(\ora{x}, \ora{xY})$ and  $(\ora{x}, \ora{Yx})$  are parallel, and hence
+   Lemma-\ref{lem:righthandedfoundation}\eqref{item:ab-parallel} proves $(\ora{x}, \ora{x^nY})$ and $(\ora{x}, \ora{Yx^n})$ are parallel for every $n$.
+   Now, if for a given $m$ we have $(\ora{X}, \ora{X^ny^m})$ is parallel, we are done. Otherwise, $(\ora{x}, \ora{X^ny^m})$ are parallel, so $(\ora{x}, \ora{x^nY^m})$ are antiparallel and then $(\ora{Y}, \ora{x^nY^m})$ are parallel (see Fig.~\ref{fig:lb2}).
+   
+   Thus, taking inverses we get that $(\ora{y},\ora{y^mX^n})$ must be parallel.
+\end{proof}
+Since $(\ora{a}, \ora{y^mX^n})$, if we have $(\ora{X}, \ora{X^ny^m})$ are parallel, we have,
     \[
   [ay^mX^n] \searrow [a][X^{2}y^m X^{n-2}] \searrow [a][X^{n-2}][(X^2y^m)] \searrow  [a][X^{n-2}][(X(Xy^m)] \searrow  [a][X^{n-2}][y^m].
   \]
-       \item Case 3 (Fig.~\ref{fig:lb3}). Since $(\ora{a}, \ora{y^mX^n})$ and $(\ora{y}, \ora{y^mX^n})$ are parallel, we have
-    \[
-  [ay^mX^n] \searrow [a][y^{m-2}y^2 X^{n}] \searrow [a][y^{m-2}][(y^2X^n)] \searrow  [a][y^{m-2}][(y(yX^n)] \searrow  [a][y^{m-2}][X^n].
-  \]
+  The case $(\ora{y}, \ora{y^nX^m})$ is similar.
+       \item Case 3 (Fig.~\ref{fig:lb3}). This is symmetric to Case 2. 
   \end{enumerate}
 
 \begin{figure}
