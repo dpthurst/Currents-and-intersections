@@ -1,35 +1,20 @@
 \section{Asymmetric intersection number and non-examples}
 \label{sec:asymmetric}
-One might wonder whether Theorem~\ref{thm:intersect} applies to
-\emph{oriented} currents with an appropriate asymmetric notion of intersection.
-Indeed, up to Proposition~\ref{prop:recoverintersection}, we managed
-to construct a geodesic current~$\mu_f$ associated to a
-not-necessarily-symmetric curve functional~$f$. One could hope that
-(asymmetric) intersections with $\mu_f$ recover $f$ in the more
+One might wonder whether Theorem~\ref{thm:intersect} applies in the more general setting of
+not-necessarily-symmetric curve functionals~$f$. One could hope that
+asymmetric intersections with $\mu_f$ (Definition~\ref{def:asymmetric}) recover $f$ in the more
 general context. In this section, we dash this hope: there are
 asymmetric curve functionals satisfying oriented smoothing and additivity that
 are not realized as asymmetric intersection numbers with any oriented
 geodesic currents.
 
-The asymmetric intersection number is an intersection number between oriented curves, defined analogously as the geometric intersection number but only considering right-handed intersections (Definition~\ref{def:crossing}).
+Analogously as in Definition~\ref{def:asymmetric} an asymmetric intersection number between curves only considering right-handed intersections (Definition~\ref{def:crossing}).
 
 \begin{definition} Given two oriented curves $\vec C$, $\vec D$, the
   asymmetric intersection number $\vec i(\vec C, \vec D)$ is the
   minimal number of right-handed crossings between any two homotopy
   class representatives of $\vec C$ and~$\vec D$.
-  Similarly, we can define an asymmetric intersection number between any two oriented geodesic currents by defining
-\[
-\vec{i}(\mu,\nu) \coloneqq \int_{\DG(S)} \mathbf{1}_R \, d(\mu \otimes \nu),
-\]
-where the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
-\[
-\mathbf{1}_R(l,m) \coloneqq
-\begin{cases}
-1 & \text{if } (l,m)\text{ are R-crossing},\\
-0 & \text{otherwise}.
-\end{cases}
-\]
-  It is straightforward to see $i(\delta_{\vec C}, \delta_{\vec D})$ recovers the asymmetric intersection between the oriented curves $\vec C$ and $\vec D$.
+  It is straightforward to see that the asymmetric intersection number between the oriented geodesic currents $\vec{i} (\delta_{\vec C}, \delta_{\vec D})$ recovers the asymmetric intersection between the oriented curves $\vec C$ and $\vec D$.
   
 
   Define $h(\vec C)\in H_1(\Sigma)$ to be the homology class
@@ -67,7 +52,7 @@ functionals can come from an asymmetric intersection number.
   Immediate from Lemma~\ref{lem:asym-intersect}.
 \end{proof}
 
-We see from this that an oriented geodesic current is not determined by its asymmetric intersection numbers with all oriented curves.
+This shows that an oriented geodesic current is not determined by its asymmetric intersection numbers with all oriented curves, and hence cannot, in general, be realized as an asymmetric curve functional.
 It is also easy to construct asymmetric functionals satisfying smoothing, stability and additivity that cannot come
 from asymmetric intersection numbers. First consider the flat unpunctured torus,
 and consider the functional $f$ given by word-length with respect

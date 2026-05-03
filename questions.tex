@@ -38,51 +38,11 @@ continuous; see~\cite[Remark~2.26]{MGT21:Smoothings} and
 also~\cite{Sas22:Currents, T22:ThurstonCompactification}. It is thus
 hard to get started working entirely in this setting.
 
-\begin{comment}
-Thus we might want to look at $\Curr(\pi_1(S))$, which is different
-since the action of $\pi_1(S)$ on $\bbH^2$ is not cocompact.
-These spaces are
-related by a continuous map
-\[
-\phi_* \colon \Curr(\pi_1(S)) \to \Curr_{\mathrm{cusp}}(S),
-\]
-given by push-forward under the map $\phi \colon \partial \pi_1(S) \to \partial \mathbb{H}^2$ associated to a discrete and faithful representation $\rho$ defining the cusped hyperbolic structure (cf.~\cite[Section~4]{Sas22:Currents}). The map $\phi_*$ is surjective but not injective, and $\phi$ is non-surjective.
 
-
-It is therefore natural to ask whether analogues of our main results hold on the algebraic space $\Curr(\pi_1(S))$. 
-
-Two features of the closed-surface case used essentially in our arguments fail in the cusped setting:
-\begin{itemize}
-\item For closed surfaces, the boundary at infinity carries a natural
-  cyclic order, which is lost when $\pi_1(S)$ is free. 
-\item In $\Curr_{\mathrm{cusp}}(S)$, one may have currents supported
-  on cusp-to-cusp arcs, and several such arcs may limit to the same
-  puncture. This obstructs the non-atomicity properties of boundary
-  measures used in this paper in the closed case (see
-  Remark~\ref{rmk:no_atom_boundary_box} and the proof of
-  Theorem~\ref{thm:hyp-char}). 
-\end{itemize}
-
-This suggests that $\Curr(\pi_1(S))$ provides a more natural setting in which to seek extensions of the duality and characterization results of the present paper.
-\end{comment}
 The case of $\Curr_{\mathrm{open}}(S)$ is different. Even though intersection number is continuous in this case, it is not true that our defining properties of $\AConvex(S)$ guarantee a dual geodesic current.
 The key issue is that the intersection number is degenerate: any
 geodesic current $\mu$ supported on boundary curves will have zero
 intersection number with all geodesic currents $\nu \in \Curr(S)$.
-
-\begin{comment}
-We can give a concrete example of how our theorem fails in this
-setting, related to the second example
-in~\cite[Remark~2.26]{MGT21:Smoothings}.
-
-Let $\bar{\Sigma}$ denote the (compact) convex core of $\Sigma$.
-Let $\ell$ be the restriction to $\Sigma$ of the hyperbolic
-length on the double of $\bar{\Sigma}$.
-We note that $\ell$ satisfies additivity, stability and homogeneity
-properties. Also, it satisfies smoothing: for non-boundary-parallel curves, smoothing is satisfied by the same argument as the proof of Corollary~\ref{cor:domination}. Since boundary parallel curves do not intersect each other or other non-boundary parallel curves, smoothing is vacuously satisfied.
-
-However, $\ell(C) \neq 0$ for $C$ a boundary parallel curve, whereas for any geodesic current $\mu$, we have $i(\mu,C)=0$, so $\ell$ cannot be realized as intersection number with a geodesic current. For more details, see also~\cite[Proposition~2.2]{T22:ThurstonCompactification}.
-\end{comment}
 
 To better understand the relation between the cusped and open
 situation, consider Figure~\ref{fig:open_surfaces} in a surface with
@@ -340,18 +300,6 @@ Even a positive answer to Question~\ref{q:Green} would be interesting, since the
 Theorem~\ref{thm:intersect} would give a dual geodesic current for the
 Green metric, and then one could study what types of geodesic currents
 can arise.
-\begin{comment}
-  Note that, for punctured surfaces, some admissible metrics
-coming from random walks can be realized as geodesic currents. For
-example, consider a simple generating set $F$ (in the sense of
-Erlandsson~\cite{Erlandsson:WordLength}, see also
-Section~\ref{subsec:embedded_graphs}) on a punctured surface $S'$.
-By Erlandsson's result, the word-length with respect to $F$ is dual to a geodesic
-current $m_F$ which is a multi-curve plus a finite collection of weighted arcs going from cusp to cusp. If we take the uniform probability
-measure on $F$, the stable length of the resulting Green metric is a multiple of the standard word-metric on $F \cong \pi_1(S')$ (by~\cite{GMM18:Entropy}), and hence by~\cite{Erlandsson:WordLength}, is a multiple of the intersection number with $m_F$, and consequently, a geodesic current. The situation
-is different if $S$ is closed (the setting on which our Theorem~\ref{thm:intersect} applies): again, by the results in~\cite{GMM18:Entropy}, the stable length of the Green metric induced by the uniform probability measure on the standard generating set cannot be a multiple of the word-metric in the case of a
-closed surface.
-\end{comment}
 
 \subsection{Smoothing vs multi-smoothing}
 \label{subsec:multismoothing}

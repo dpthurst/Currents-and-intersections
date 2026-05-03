@@ -2,7 +2,7 @@
 \label{sec:skora}
 
 
-As a final application of Theorem~\ref{thm:intersect}, we prove
+As an application of Theorem~\ref{thm:intersect}, we prove
 Theorem~\ref{mainthm:skora},
 giving new
 characterizations of small actions of surface groups on
@@ -35,7 +35,9 @@ ray
 emanating from $p$ that meets every component of the inverse system
 corresponding to the end.
 Hence, there is a one-to-one correspondence between
-rays emanating from $p$ and ends of $T$. Given two distinct
+rays emanating from $p$ and ends of $T$. 
+
+Given two distinct
 ends of $T$, the corresponding rays meet in an interval with $p$ as
 endpoint. The union of these two rays minus the interior of their
 intersection is a \emph{line} in $T$. Conversely, given any line in $T$, the
@@ -44,9 +46,7 @@ determine two distinct ends of the tree, and these ends do not depend
 on the choice of point. We will say this line \emph{joins} the two
 ends. It follows from the definition of real trees that there is exactly
 one line connecting
-any two distinct ends.
-
-We can alternately define a line directly as the image of an isometric map from $\bbR$.
+any two distinct ends. We can alternately define a line directly as the image of an isometric map from $\bbR$.
 
 \textbf{Actions on real trees.} If $\Gamma$ is a finitely generated
 group, a
@@ -70,7 +70,7 @@ case we call $T_g$ the \emph{axis} of $g$.
 The translation lengths of any $\Gamma$-tree can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition.
 Even though we will not use it in the proofs, it is helpful to keep it in mind;
 it can be viewed as a simpler repackaging of axioms due to Culler and
-Morgan, as proved by Parry.
+Morgan~\cite[Section~1.11]{CM87:GroupActions}, as proved by Parry (\cite[Equation~(0.2)]{Par91:Translation} and~\cite[Main Theorem]{Par91:Translation}).
 
 \begin{proposition}
 \label{prop:max_twice}
@@ -96,11 +96,12 @@ The other implication follows by a deep result of Parry~\cite{Par91:Translation}
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
 
-A $\Gamma$-tree with non-trivial translation length function
-$\| \cdot \|$ is of one of three
+A $\Gamma$-tree with  translation length function
+$\| \cdot \|$ is of one of four
 types~\cite[Page~583]{CM87:GroupActions}:
 \begin{itemize}
-\item \textit{Fixed end:} $\| \cdot \|$ is trivial on $[\Gamma,\Gamma]$;
+\item \textit{Global fixed point}: $\| \cdot \|$ is zero on all of $\Gamma$; equivalently,  $\Gamma$ fixes a global point in $T$.
+\item \textit{Fixed end:} $\| \cdot \|$ is non-trivial but zero on $[\Gamma,\Gamma]$;
   equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2,
   Corollary~2.3]{CM87:GroupActions}.
 \item \textit{Dihedral:} $\| \cdot \|$ is non-trivial on $[\Gamma,\Gamma]$, but
@@ -110,18 +111,16 @@ types~\cite[Page~583]{CM87:GroupActions}:
 \item \textit{Irreducible:} $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{itemize}
 A \emph{reducible} action of $\Gamma$ is one that is not irreducible,
-i.e., fixed end, dihedral, or with trivial translation length $\|\cdot\|$. In the
-latter case there is necessarily a global fixed point.
+i.e., it is fixed end, dihedral, or has a global fixed point. 
 
-Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$.
-If $T_g \cap T_h \neq \emptyset$, we say $T_g$ and $T_h$ \emph{intersect}.
+We now recall and recast some classical results on $\mathbb{R}$-actions, drawing on~\cite{CM87:GroupActions, Pa89:Paulin1989TheGT}.
 
-Let $\Delta \coloneqq T_g \cap T_h$. If $\Delta$ is a non-degenerate interval (i.e., non-empty and not a singleton) we distinguish two types of overlap:
+Consider two hyperbolic elements $g, h \in \Gamma$ with axes in the $\mathbb{R}$-tree given respectively by $T_g,T_h$. Let $\Delta \coloneqq T_g \cap T_h$. If $\Delta$ is a non-degenerate interval (i.e., non-empty and not a singleton) we distinguish two types of overlap:
 \begin{itemize}
 \item if $g$ and $h$ translate in the same direction along $\Delta$, we say
-that $g$ and $h$ \emph{overlap coherently};
+that they \emph{overlap coherently};
 \item if $g$ and $h$ translate in opposite
-directions along $\Delta$, we say that $g$ and $h$ \emph{overlap incoherently}.
+directions along $\Delta$, we say that they \emph{overlap incoherently}.
 \end{itemize}
 Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
 \begin{itemize} 
@@ -144,22 +143,13 @@ form a good pair of isometries.
 to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
 \end{proof}
 
-\begin{comment}
-  First we have a
-characterization in terms of hyperbolic elements with bounded overlap.
-\begin{theorem}[{\cite[Theorem~2.7]{CM87:GroupActions}}]
-A $\Gamma$-tree is irreducible if and only if there exist hyperbolic elements $g,h$ in $T$ so that $T_g \cap T_h$ is bounded.
-\label{thm:char_irred_noninter}
-\end{theorem}
-\end{comment}
-
-We next give a useful criterion that implies reducibility.
+We next recall a useful criterion that implies reducibility.
 \begin{lemma}[{\cite[Lemma~2.1]{CM87:GroupActions}}]
     If there exists a hyperbolic element $g \in \Gamma$ so that for all hyperbolic $h \in \Gamma$ we have  $T_g \cap T_h \neq \emptyset$, then the action is reducible.
     \label{lem:CM_red_criterion}
 \end{lemma}
 
-To get started here, good pairs provide pairs of non-intersecting
+Next, we show that good pairs yield pairs of non-intersecting
 hyperbolic elements.
 
 \begin{lemma}
@@ -168,7 +158,7 @@ hyperbolic elements.
 \end{lemma}
 \begin{proof}
    This is contained in the proof
-   of~\cite[Lemma~3.4]{CM87:GroupActions}. See Figure~\ref{fig:trees_goodpair}.
+   of~\cite[Lemma~3.4]{CM87:GroupActions}. See Figure~\ref{fig:trees_goodpair}, where the distance $\Delta$ is strictly positive and the position of the relevant points follow from the identities $Hg \cdot (G \cdot y) = H \cdot y$ and $gH \cdot (h \cdot x) = g \cdot x$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -177,12 +167,11 @@ hyperbolic elements.
     \caption{Axes of $gH, Hg$ in $T$ are disjoint when $g,h$ form a good pair}\label{fig:trees_goodpair}
 \end{figure}
 
-We have the following classical results about the relative
-position of axes of two hyperbolic elements in a real tree.
+We now look at the relative positions of the characteristic sets of a pair of elements $g,h \in \Gamma$, distinguishing the cases that arise in Proposition~\ref{prop:max_twice}.
 
 \begin{lemma}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
-We have the following cases, depending on the relative position of $g,h$.
+We have the following cases, depending on the relative position of $T_g,T_h$.
 \begin{enumerate}[(\arabic*)]
 \item \label{item:tree-intersect}(Intersecting axes)
 $T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gH\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
@@ -227,7 +216,7 @@ and~(2),
 as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$
 in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions};
 case~(1c) is parallel.
-The remark of part (2) about $T_{gh}, T_g$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
+The result of part (2) about $T_{gh}, T_g$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
 
@@ -236,7 +225,7 @@ We will also use the following.
 \begin{lemma}[{\cite[Lemma~6.2]{CM87:GroupActions}}]\label{lem:powers_intersect}
     Let $T$ be an arbitrary $\Gamma$-tree.
     If $g,h$ are hyperbolic isometries of $T$ and satisfy $\|g\| + \|h\| = \|gh\|$ (or
-    equivalently, overlap coherently), then for all positive integers $m,n$, we have
+    equivalently, overlap coherently or in a point), then for all positive integers $m,n$, we have
     \[
     \|g^m h^n\| = m \| g \| + n \|h \|.
     \]
@@ -261,7 +250,7 @@ disjoint, and implies $T_{gh}$ and $T_{hg}$ overlap incoherently.
 \end{lemma}
 
 \begin{proof}
-The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted the specifics about relative positions of axes. The statement of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT} is divided into two cases depending on the relative position of $T_g, T_h$.  
+The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted most specifics about relative positions of axes. The statement there is divided into two cases depending on the relative position of $T_g, T_h$.  
 If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghG}$ is a non-empty interval and contains $T_g \cap T_h$.
 Then, the inequalities follow depending on the overlap between $T_h$ and $T_{ghG}$.
 If $T_g \cap T_h = \emptyset$, then the equality of lengths in
@@ -269,7 +258,7 @@ case~(3) is stated explicitly
 in~\cite[Section~1.5]{CM87:GroupActions}. The fact that
 $T_{ghG} \cap T_h = \emptyset$ in this same case follows
 from~\cite[Fact~1.7]{CM87:GroupActions}.
-The last claim about case (3) follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $I_1 \coloneqq [z,h(z)]$. Since $T_{g}=T_{G}$ for any element $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $I_2 \coloneqq [z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $I_1$ and $I_2$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
+The last claim about case (3) follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $[z,h(z)]$. Since $T_{g}=T_{G}$ for any $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $[z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $T_{hg}$ and $T_{HG}$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
 
 Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows. 
 \end{proof}
@@ -278,8 +267,7 @@ Since each case is exclusive, the triality depending on the relative position of
   Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic
   isometries, we have $\norm{gh} = \norm{gH}$ and $\|gh\|>0$ if and only if
   $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$,
-  the shortest connecting arc between $T_g$ and $T_h$ is contained in
-  $T_{gh}$, and $T_{gh}, T_{hg}$ overlap incoherently along it.
+ then $T_{gh}, T_{hg}$ overlap incoherently  along the shortest connecting arc between $T_g$ and $T_h$.
 \label{lem:pau_two_ell}
 \end{lemma}
 \begin{proof}
@@ -293,9 +281,9 @@ the minimal segment connecting $T_g$ and $T_h$; we already know $S
 \[
   \norm{gh} = d(y,gh(y)) = d(y, g(y)) = d(y, gH(y)) = \norm{gH}.
 \]
-Finally, we prove the statement about incoherent overlap. Let $h(S) \cap S$ be the subsegment $[x,z] \subset S$ fixed by $h$, and $g(S) \cap S$ the subsegment $[z',y]\subset S$ fixed by $g$. By~\cite[Figure~9]{Pa89:Paulin1989TheGT}, the subarc $[z,g(z)]=[z,gh(z)] \subset T_{gh}$ and the subarc $[z',h(z')]=[z',hg(z')] \subset T_{hg}$ overlap incoherently along the non-degenerate subsegment $[z,z']$.
+Finally, we prove the statement about incoherent overlap. Let $g(S) \cap S$ be the subsegment $[x,z'] \subset S$ fixed by $g$, and $h(S) \cap S$ the subsegment $[z,y]\subset S$ fixed by $h$. By~\cite[Figure~9]{Pa89:Paulin1989TheGT}, the subarc $[z,g(z)]=[z,gh(z)] \subset T_{gh}$ and the subarc $[z',h(z')]=[z',hg(z')] \subset T_{hg}$ overlap incoherently along the non-degenerate subsegment $[z,z']$.
 \end{proof}
-Finally, the following result will be useful.
+Finally, the following result allows us to convert incoherent overlaps into coherent ones.
 
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
 Let $T$ be an arbitrary $\Gamma$-tree.
@@ -317,12 +305,9 @@ The length function for the
 restriction to this minimal invariant subtree is equal to the length
 function of the original tree. Hence, without loss of generality, one
 can always restrict to the action on the minimal invariant subtree
-without changing the length functional. In what follows, we will
-always consider minimal actions.
-
-Note, however, that if the translation lengths of two $\Gamma$-trees are
+without changing the length functional. Note, however, that if the translation lengths of two $\Gamma$-trees are
 equal, that does not necessarily imply the trees are equivariantly
-isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupActions}.
+isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupActions}. 
 
 \subsection{Surface group actions on real trees}
 
@@ -366,10 +351,6 @@ $S$-trees give counter examples (preserving axis intersection while not
 being dual to a measured lamination), but showed that irreducible
 $S$-trees that preserve axis intersection are dual to measured
 laminations~\cite{Sko90:GeometricAction}.
-
-% Morgan-Otal asked in~\cite{MO93:RelativeGrowths}: if a minimal action preserves axis intersection, does it follow it is small?
-% Without further assumptions, the axis intersection being preserved alone does not imply in general that the action is small, as the example of a dihedral action of a surface group acting on $\mathbb{R}$ shows (this was noted by Skora in~\cite[Section~4]{Sko90:GeometricAction}).
-% However, in~\cite{Sko90:GeometricAction}, Skora showed that a minimal $S$-tree is dual to a measured lamination if and only if it is irreducible and preserves axis intersection.
 
 In this section, we prove Theorem~\ref{mainthm:skora}, in particular showing
 that Skora's theorem~\cite{Sko90:GeometricAction} follows readily from
@@ -425,23 +406,7 @@ R-crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
 
-%we do not need this lemma anymore
-\begin{comment}
-\begin{lemma}
-Suppose $\pi_1(S) \acts T$ is an irreducible action that preserves axis intersection.
-Then, there exist a good pair $(a,b)$ so that $(\ora{a},\ora{b})$ is crossing.
-\label{lem:irredaxis_crossing_goodpair}
-\end{lemma}
-\begin{proof}
- First, we claim that since the action is irreducible there exist a crossing hyperbolic pair $(a,b)$ so that $T_a \cap T_b$ is bounded. Suppose not, i.e., say that for every crossing hyperbolic pair $(a,b)$, $T_a \cap T_b$ is unbounded.
-    We show that for \emph{all} hyperbolic pairs $(a,b)$, $T_a \cap T_b \neq \emptyset$, which implies the action is reducible by Lemma~\ref{lem:CM_red_criterion}. Since the action preserves axis, a crossing hyperbolic pair $(a,b)$ always satisfies $T_a \cap T_b \neq \emptyset$.
-    Suppose $(a,b)$ is parallel and assume, for the sake of contradiction, that $T_a \cap T_b =\emptyset$. Then $(ab,ba)$ are a crossing pair with incoherent overlap length given by $d(T_a, T_b)$, by Lemma~\ref{lem:foundation_trees} (2), a contradiction.
-    If $(a,b)$ is antiparallel and $T_a \cap T_b = T_a \cap T_B = \emptyset$, repeat the same argument with the parallel pair $(a,B)$. 
-    
-    We have thus shown there exists a crossing hyperbolic pair $(a,b)$ with $T_a \cap T_b$ bounded. We now improve this to $(a,b)$ being a good pair. Since the action preserves axis, $T_a \cap T_b \neq \emptyset$. If $T_a \cap T_b=\{ * \}$, we replace $a$ by $ab$, to get the pair of crossing $(ab,b)$, with non-degenerate overlap.
-    We can further assume that the overlap is coherent up to exchanging the orientation of $b$, and take powers, by Lemma~\ref{lem:powers_goodpair}, to ensure it is a good pair.
-\end{proof}
-\end{comment}
+
 
 We are now ready for the main component of Theorem~\ref{mainthm:skora}.
 

@@ -1,18 +1,15 @@
 \section{Intersection numbers satisfy smoothing}
 \label{app:necessary}
-\DPTtodo{Rewrote this intro}
+
 In this appendix we give a detailed proof that intersection numbers
 satisfy the hypotheses of our theorem. The only non-trivial condition
 to check is smoothing.
 In a previous paper, we gave one proof, first proving it
 topologically for closed curves and then invoking density of weighted
-curves and continuity \cite[Example~4.2]{MGT21:Smoothings}. Here we
-give a different proof, instead relying
+curves and continuity \cite[Example~4.2]{MGT21:Smoothings}. Yet another proof of the results below could be given considering any of the generalized cross-ratios associated to $\mu$, such as $[a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))$, and applying Lemmas~\ref{lem:crossratio_stability},~\ref{lem:crinv},~\ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing}. Here we
+give third  different proof, instead relying
 on the hyperbolic geometry of the universal cover and the results of Martone and Zhang
-\cite{MZ19:PositivelyRatioed}; these alternate techniques are useful
-in the proof of Theorem~\ref{prop:char_laminations_plus}.
-\DPTtodo{Seems like we should refer to this appendix more if we claim
-  the techniques are useful}
+\cite{MZ19:PositivelyRatioed}.
 
 
 \begin{proposition}
@@ -39,7 +36,7 @@ particular, power smoothing.
 \end{proof}
 
 
-
+The following result can be proven applying 
 
 \begin{proposition}\label{prop:smoothing_nec}
 Suppose $a,b \in \pi_1(S)$ are non-trivial elements with distinct fixed points on 
@@ -62,32 +59,24 @@ i(\mu,ab) &\ge i(\mu,aB).
 \end{enumerate}
 \end{proposition}
 
-
-\DPTtodo[inline]{We lean on \cite[Proposition
-  3.14]{MZ19:PositivelyRatioed}, should we recall it? But I don't see
-  a Prop.\ 3.14 in any of the arXiv versions of that paper, or the published one}
-
 \begin{proof}
 \begin{enumerate}
 \item Let $p$ be the intersection point between the hyperbolic axes $\ora{a}$ and~$\ora{b}$.
 Since $p \in \ora{a}$, we have $x=B \cdot p \in \ora{b}$.
 We have $p$ and $y= a \cdot p$ are in $\ora{a}$. Thus
 \begin{align*}
-  i(\mu, ab) &\leq \mu(G(x, ab x]) &&\text{by \cite[Proposition 3.14(i)]{MZ19:PositivelyRatioed}}\\
+  i(\mu, ab) &\leq \mu(G(x, ab x]) &&\text{by \cite[Lemma 4.4(2)]{MZ19:PositivelyRatioed}}\\
   &\leq \mu(G(x, b x]) + \mu(G(bx, ab x]) &&\text{since $G(x, b x] \subset G(x, b x] \cup G(bx, ab x]$}\\
              &= \mu(G(B p, p]) + \mu(G(p, ap])\\
                &= i(\mu, b) + i(\mu, a).
 \end{align*}
-\DPTtodo{Divided up the reasoning. I was confused on which equality this last one is relevant to}
 In the last equality we use the fact that $p$ is in the
-axis of $a$ and of $b$, and~\cite[Proposition 3.14(ii)]{MZ19:PositivelyRatioed}.
+axis of $a$ and of $b$, and~\cite[Lemma 4.4(1)]{MZ19:PositivelyRatioed}.
 A similar argument with $aB$ gives the other inequality.
 \item
-  \DPTtodo{Might be nice to point out there is argument that doesn't rely on continuity}
   The inequalities can be checked directly using a similar analysis as in the previous part (in fact, these have already been proven in~\cite[Proposition~4.5]{MZ19:PositivelyRatioed}).
-However, we can give a much more direct prove, as follows. Since $i(\mu, \dot)$ is continuous by~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} and homogeneous, it follows from Proposition~\ref{prop:cont_conn_disc} that $i(\mu, \cdot)$ satisfies connected smoothing, as we wanted to show.
+However, we can give a much more direct proof relying on the continuity of intersection number: since $i(\mu, \cdot)$ is continuous by~\cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds} and homogeneous, it follows from Proposition~\ref{prop:cont_conn_disc} that $i(\mu, \cdot)$ satisfies connected smoothing, as we wanted to show.
 \end{enumerate}
-\DPTtodo[inline]{Maybe add note that this also follows from Section~\ref{sec:crossratios}}
 \end{proof}
 
 %%% Local Variables:

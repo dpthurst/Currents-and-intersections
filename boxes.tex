@@ -128,18 +128,16 @@ by condition \ref{item:box-edges-cross}.
 }
 \end{figure}
 
+Given a box of oriented geodesics $B=[a,b) \times [c,d)$ and let $l$ be any oriented geodesic intersecting all the geodesics of $B$ transversely so that $[a,b)$ is on the left of the forward direction of $l$, and $[c,d)$ is on the right. We denote by $\ora{B}$ be the \emph{right-oriented box} of $B$, i.e., the subset of $B$ consisting of geodesics that $R$-cross $l$.
+
 \begin{definition}\label{def:RH-box}
   Every right handed lift system
-  $(p_1,q_1,p_2,q_2)$ determines a \emph{right-handed box}, a
+  $(p_1,q_1,p_2,q_2)$ determines a
   half-closed half-open box in
-  $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$
-  given by
-\[
-B(p_1,q_1,p_2,q_2) \coloneqq [\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)
-\]
-where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
-
-The set of right-handed boxes is denoted $\mathcal{B}$.
+  $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$, 
+  given by $B=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$, where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
+This, in turn, determines a \emph{right-handed box}, the right-oriented box $\ora{B}$, which we denote by $B(p_1,q_1,p_2,q_2)$.
+The set of all right-handed boxes is denoted by $\mathcal{B}$.
 \end{definition}
 
 \begin{remark}
@@ -338,17 +336,35 @@ Thus the two crossing conditions are equivalent.
   We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
 \end{definition}
 
-% Furthermore, by construction, a different choice of lift of $[x]$
-% determines a different box $B_{p_1,q_1,p_2,q_2}'$, whose endpoints
-% differ from the endpoints of $B_{p_1,q_1,p_2,q_2}$ by translation by
-% some element in $\pi_1(S)$.
+We finally observe that flipping an RH orbit wrt $x$ gives a new RH orbit wrt $x^{-1}$, in the following sense.
+\begin{lemma}
+Let $[a,b,c,d]$ define an RH orbit with respect to the fixed element $x \in \pi_1(S)$.
+Then the datum $[a', b', c', d']$ with $a' \coloneqq D$, $b' \coloneqq B$, $c'\coloneqq C, d'\coloneqq A$ is an RH orbit with respect to the base element $x' \coloneqq X$.
+\end{lemma}
+\begin{proof}
+We need to check that the conditions in  Definition~\ref{def:RH-lift-sys} are satisfied. 
+\begin{enumerate}[label=(\arabic*${}'$),start=0]
+\item $a' C' d' B' = DcAb=1$, and taking inverses the result follows by condition~\ref{item:box-close}.
+\item 
+$a'C'=Dc$ and $A'b'=dB$; taking inverses in~\ref{item:box-nontriv} it follows these are not powers of $x'$.
+\item We are inverting all the elements involved, so $R$-crossing is satisfied by~\ref{item:box-edges-cross} 
+\item
+
+We need to show that for sufficiently large~$n$,
+$\ora{d'(x')^na' C'}$ crosses
+  $\ora{c'(x')^n}$ to the right.
+  This is equivalent to
+  $\ora{Ax^{-n}D c}$ crosses
+  $\ora{Cx^{-n}}$ to the right, which, after conjugating by $c$ and inverting, is equivalent to~\ref{item:box-diags-cross}.
+\end{enumerate}
+\end{proof}
 
 
 \subsection{Measures of boxes}
 
 We will now start setting up the definition of the measure of an orbit
 of right-handed box $[B]_{a,b,c,d}$. In particular, we will define a function
-$\mu_f \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
+$\wh{\mu_f} \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
 involving the $f$-value of a certain combination of words involving
 $a,b,c,d,x$. (Recall $\mathcal{B}$
 denotes the family of right-handed boxes.)
@@ -359,7 +375,7 @@ Let $B(p_1,q_1,p_2,q_2)$ be a right-handed box so that $[B(p_1,q_1,p_2,q_2)]=[B]
 Then following limit exists and only depends on the $\pi_1(S)$-orbit
 of the box:
 \begin{equation}
-\mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
+\wh{\mu_{f}}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \label{eq:def_measure}
 \end{equation}
 \end{proposition}
@@ -374,7 +390,6 @@ Section~\ref{subsec:crossings}.
 We
 first look at a key ingredient limit.
 
-\DMGtodo{tweaked this to include negative exponent}
 \begin{lemma}\label{lem:additivity-limit}
 Let $f$ be a curve functional satisfying symmetry, additivity, smoothing, and
 stability.
@@ -520,13 +535,13 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
 The existence of the limit in Equation~\eqref{eq:def_measure} follows immediately from Lemma~\ref{lem:additivity-limit}.
-Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
+Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\wh{\mu_f}([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
 To this end, by Remark~\ref{rmk:box_from_system}, it is enough to prove that the limit is invariant under the transformations described in Equations~\eqref{eq:translations}.
 We prove this for Equation~\eqref{eq:translations-l1}; the other cases are analogous.
 
 The translation in the RH orbit $a \mapsto xa, b \mapsto xb$ (Eq.~\eqref{eq:translations-l1}) corresponds to a translation of the RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
 \begin{align*}
-\mu_f(B(xp_1,q_1,p_2,q_2))
+\wh{\mu_f}(B(xp_1,q_1,p_2,q_2))
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n+1}]) + f([cx^n]) - f([ax^{n+1}]) - f([dx^n]) \Big)
 && \text{(Equation~\eqref{eq:def_measure})} \\
@@ -536,7 +551,7 @@ The translation in the RH orbit $a \mapsto xa, b \mapsto xb$ (Eq.~\eqref{eq:tran
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
 && \text{(Equation~\eqref{eq:def_measure})} \\
-&= \mu_f(B(p_1,q_1,p_2,q_2)).
+&= \wh{\mu_f}(B(p_1,q_1,p_2,q_2)).
 \end{align*}
 Hence, $\mu_f$ only depends on the RH box and, since the definition of $\mu_f$ is given in terms of the RH orbit, it only depends on the RH box orbit.
 \end{proof}
@@ -547,7 +562,7 @@ Now we check the hypotheses to apply
 \begin{proposition}
   \label{prop:box-positive}
   For a right-handed
-  box $B\in \mathcal{B}$, we have $\mu_f(B) \geq 0$.
+  box $B\in \mathcal{B}$, we have $\wh{\mu_f}(B) \geq 0$.
 \end{proposition}
 
 \begin{proof}
@@ -563,7 +578,7 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
   Then by Proposition~\ref{prop:join-split-alg} and taking the
   limit as $n \to \infty$, we obtain
   \[
-  \mu_f(B) \geq 0. \qedhere
+  \wh{\mu_f}(B) \geq 0. \qedhere
   \]
 \end{proof}
 
@@ -577,9 +592,9 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 
 Finally, we will show $\mathcal{B}$ is
 a semi-ring (in the sense of Definition~\ref{def:semiring}) and
-$\mu_f$ is finitely additive.
+$\wh{\mu_f}$ is finitely additive.
 
-First we prove that $\mu_f$ satisfies a notion slightly weaker than finite additivity.
+First we prove that $\wh{\mu_f}$ satisfies a notion slightly weaker than finite additivity.
 
 \begin{proposition}
   If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in
@@ -596,7 +611,7 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
   $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that
   $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order,
   so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also a
-  RH box. The definition of $\mu_f$ immediately yields the additivity.
+  RH box. The definition of $\wh{\mu_f}$ immediately yields the additivity.
 \end{proof}
 
   \begin{figure}
@@ -607,7 +622,7 @@ First we prove that $\mu_f$ satisfies a notion slightly weaker than finite addit
 }
 \end{figure}
 
-To show that this side-by-side additivity shows that $\mu_f$ is finitely
+To show that this side-by-side additivity shows that $\wh{\mu_f}$ is finitely
 additive, and furthermore that the allowable boxes in $\mathcal{B}$ form a semi-ring,
 we examine exactly which boxes are allowed, making concrete the
 constraints in Definition~\ref{def:RH-lift-sys}. Boxes
@@ -648,14 +663,6 @@ Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
 
-% \begin{figure}
-% \centering{
-% \resizebox{120mm}{!}{\svgfig{originwhiskers}}
-% \caption{Illustration defining a whisker, given by a choice of elements $q,x \in \pi_1(S)$ with a right handed crossing.}
-% \label{fig:whiskers}
-% }
-% \end{figure}
-
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{rhs_whiskers}}
@@ -664,17 +671,6 @@ all the way back to the diagonal.
 }
 \end{figure}
 
-\begin{comment}%Hand-drawn figure
-\begin{figure}
-\[
-  \includegraphics[height=2in]{box-whiskers-disk}
-  \qquad\qquad
-  \includegraphics[height=2in]{box-whiskers-rect}
-\]
-\caption{Example of the correspondence between right-handed boxes and collections of four whiskers.}
-\label{fig:whiskers}
-\end{figure}
-\end{comment}
 \begin{proposition}
   \label{prop:RHsemiring}
   The set of RH boxes $\mathcal{B}$ is a semi-ring, in the sense of
@@ -697,22 +693,6 @@ all the way back to the diagonal.
   write the L as the union of three boxes, as shown on the right of
   Figure~\ref{fig:box-difference}.
 \end{proof}
-
-\begin{comment}
-%Hand-drawn figure
-\begin{figure}
-  \[
-    \mathcenter{\includegraphics[height=2in]{difference-1}}
-    \quad\leadsto\quad
-    \mathcenter{\includegraphics[height=2in]{difference-2}}
-  \]
-  \caption{Decomposing a difference of boxes. Left: A possible shape
-    for $A \setminus B$. Right: Adding a horizontal whisker allows us to
-    write the region as a union of boxes.
-  }
-  \label{fig:box-difference}
-\end{figure}
-\end{comment}
 
 \begin{proposition}
   \label{prop:finitely-additive}
@@ -756,57 +736,11 @@ all the way back to the diagonal.
   subdivisions of $B_1'$ and $B_2'$ that involve fewer
   whiskers. Thus by induction,
   \[
-    \mu_f(B_0) = \mu_f(B_1') + \mu_f(B_2') = \sum_j \mu_f(B_{j,1}) +
-    \sum_k \mu_f(B_{k,2}) = \sum_i \mu_f(B_i). \qedhere
+    \wh{\mu_f}(B_0) = \wh{\mu_f}(B_1') + \wh{\mu_f}(B_2') = \sum_j \wh{\mu_f}(B_{j,1}) +
+    \sum_k \wh{\mu_f}(B_{k,2}) = \sum_i \wh{\mu_f}(B_i). \qedhere
   \]
 \end{proof}
 
-\begin{comment}
-%Old proof.
-  In order to apply Proposition~\ref{prop:sidebyside}, we must show
-  show that any way of partitioning a box $B_0 = \bigsqcup_i B_i$ into
-  finitely many smaller boxes can be further refined into smaller boxes $B_j'$ so
-  that $B_0$ and each $B_i$ can be written as a side-by-side union of
-  the $B_j'$.
-
-  Consider the pattern of whiskers that appear as an edge of $B_0$ or
-  any of the $B_i$ (as on the left of
-  Figure~\ref{fig:finite-additivity}), and add to it sufficiently many
-  long horizontal whiskers (guaranteed by Lemma~\ref{lem:diagonaldense})
-  for the following to hold. Divide the horizontal whiskers into
-  ``short'' whiskers, with one endpoint in the interior of $B_0$, and
-  ``long'' ones, extending the full width of $B_0$. The long horizontal
-  whiskers divide $B_0$ into horizontal strips. Make sure that in each
-  such strip there is the end of at most one short whisker (horizontal or
-  vertical), as on the right of Figure~\ref{fig:finite-additivity}.
-  Now define the $B_j'$ to be the minimal boxes you can make from this
-  new collection. Each individual horizontal strip is now standard, in
-  one of two general forms, depending on whether or not it contains an end of
-  a short horizontal whisker. In either case it can easily be assembled by
-  side-by-side additivity. Then all the horizontal strips can be
-  assembled to form $B_0$, showing that $\mu_f(B_0)$ is the sum of all
-  $\mu_f(B_j')$.
-
-  If we restrict to the $B_j'$ contained in any individual $B_i$, the
-  whiskers we have added divide it satisfying the same restrictions,
-  so they can also be assembled by side-by-side additivity.
-\end{comment}
-
-\begin{comment}
-%Hand-drawn figure
-\begin{figure}
-  \[
-    \mathcenter{\includegraphics[height=2.5in]{finite-additive-1}}
-    \quad\leadsto\quad
-    \mathcenter{\includegraphics[height=2.5in]{finite-additive-2}}
-  \]
-  \caption{Finite additivity of $\mu_f$. We can turn an
-    arbitrary division of a large box into smaller boxes (left) into
-    one that is side-by-side decomposable (right). Note that we
-    subdivided the cyan box in the initial division to make this possible.}
-  \label{fig:finite-additivity}
-\end{figure}
-\end{comment}
  \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{finite-additive}}
@@ -819,7 +753,7 @@ all the way back to the diagonal.
 \end{figure}
 
 Let $\mathcal{R}$ be the ring generated by the semiring~$\mathcal{B}$. By
-Proposition~\ref{prop:addsemitoring}, $\mu_f$ is finitely additive
+Proposition~\ref{prop:addsemitoring}, $\wh{\mu_f}$ is finitely additive
 on~$\mathcal{R}$.
 
 %%% Local Variables:

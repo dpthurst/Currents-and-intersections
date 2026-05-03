@@ -75,9 +75,6 @@ and intersections between distinct components.
 The hypotheses of smoothing and additivity are
 independent and necessary (see
 Section~\ref{subsec:examples_and_non}).
-% An algebraic formulation in
-% terms of $\pi_1(S)$ is given in
-% Theorem~\ref{thm:intersections_group}.
 
 Theorem~\ref{thm:intersect} produces numerous new dual currents and unifies several constructions. In particular, it applies to curve lengths arising from arbitrary Riemannian metrics on $S$, and more generally from any length (pseudo-)metric on $S$, including Finsler metrics (see Corollary~\ref{cor:length_dual}).
 \begin{maincor}
@@ -200,37 +197,6 @@ characterizations of those curve functionals whose dual currents are
 measured laminations or hyperbolic Liouville currents.
 (Measured laminations are precisely those currents $\alpha$
 satisfying $i(\alpha,\alpha)=0$~\cite[Proposition~17]{Bonahon88:GeodesicCurrent}.)
-\begin{comment}
-\begin{mainthm}\label{thm:lam-char}
-Let $f$ be a curve functional satisfying the hypotheses of
-Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
-$\mu_f$ is a measured lamination if and only if
-$f$ satisfies the \emph{disconnected max-smoothing property}: for every
-crossing pair $a,b\in\pi_1(S)$,
-\begin{equation}\label{eq:disconn-max-smoothing}
-f(a)+f(b)
-=
-\max\{f(ab),\,f(aB)\}.
-\end{equation}
-\end{mainthm}
-
-\begin{mainthm}\label{thm:hyp-char}
-Let $f$ be a curve functional satisfying the hypotheses of
-Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
-$\mu_f$ is the Liouville current of a hyperbolic
-metric if and only if for every crossing pair $a,b\in\pi_1(S)$, $f$ satisfies
-\[
-\lambda(a)\lambda(b)
-=
-\lambda(ab)+\lambda(aB),
-\]
-where
-\[
-\lambda(g)\coloneqq 2\cosh\!\big(f(g)/2\big).
-\]
-\end{mainthm}
-\end{comment}
-
 \begin{mainthm}
 \label{thm:hyp-lam-char}
 \mainthmsublabel{mainthm:char_lam}
@@ -498,9 +464,9 @@ $\Gamma$
          $T$ & real tree \\ 
          $T_g$ & axis/fixed point set of isometry $g \in \Gamma$ acting on $T$ \\ 
         $[\cdot,\cdot,\cdot, \cdot ]$ & generalized cross-ratio \\
-        $\mathcal{G}$ & graph\\
-%         $\bigl[\cdot \bigr]$ & function on boxes induced by generalized cross-ratio. \\          
-      \bottomrule\addlinespace
+        $\mathcal{G}$ & graph\\ 
+        $\vec{i}(\cdot, \cdot)$ & asymmetric intersection number between oriented currents \\
+        $i(\cdot, \cdot)$ & intersection between oriented currents \\ \bottomrule\addlinespace
     \end{tabular}
   \caption{Notation for the most common objects in the paper.}\label{tab:object-notation}
 \end{table} 
@@ -547,99 +513,7 @@ Appendix~\ref{app:necessary} gives an alternative proof of the
 necessity of the hypotheses in Theorem~\ref{thm:intersect} and
 Theorem~\ref{thm:intersections_group}, using hyperbolic geometry on $\wt{S}$.
 
-\begin{comment}
-Figure~\ref{fig:dependencies} summarizes the logical dependencies among the main sections and the main theorems.
 
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}[
-  box/.style = {draw, rectangle, align=center, font=\small, inner xsep=6pt, inner ysep=3pt},
-  thm/.style = {box, font=\small\bfseries},
-  arrow/.style = {->, line width=0.4pt, shorten <=2pt, shorten >=2pt}
-]
-
-% Three-column matrix:
-%   col 1 = sources
-%   col 2 = Theorem A (center)
-%   col 3 = other theorems (shifted down by three rows)
-\matrix (M) [matrix of nodes,
-  nodes={anchor=center},
-  column sep=22mm,
-  row sep=5.5mm
-]{
-  |[box] (S4)|   {Section 4}   & {} & |[thm] (C)|   {Theorem C}     \\
-  |[box] (S5)|   {Section 5}   & |[thm] (A)| {Theorem A} & {}        \\
-  |[box] (S6)|   {Section 6}   & {} & {}                           \\
-  |[box] (S7)|   {Section 7}   & {} & {}                           \\
-  |[box] (AppD)| {Appendix D}  & {} & |[thm] (Apr)| {Theorem A$'$}  \\
-  |[box] (S8)|   {Section 8}   & {} & |[thm] (D)|   {Theorem D}     \\
-  |[box] (S10)|  {Section 10}  & {} & |[thm] (B)|   {Theorem B}     \\
-  {}                         & {} & {}                              \\
-};
-
-% ---------- Sections -> Theorem A (left -> center) ----------
-\draw[arrow] (S4.east)   to[out=0,in=180] (A.west);
-\draw[arrow] (S5.east)   --              (A.west);
-\draw[arrow] (S6.east)   to[out=0,in=180] (A.west);
-\draw[arrow] (S7.east)   to[out=0,in=180] (A.west);
-\draw[arrow] (AppD.east) to[out=0,in=180] (A.west);
-
-% ---------- Sections -> right-column theorems (left -> right) ----------
-% A' (late drop)
-\draw[arrow]
-  (S5.east)
-  .. controls ++(8mm,-8mm) and ++(-8mm,6mm) ..
-  (Apr.west);
-\draw[arrow] (S7.east) to[out=0,in=180] (Apr.west);
-
-% B
-\draw[arrow] (S8.east) to[out=0,in=180] (B.west);
-
-% C
-\draw[arrow] (S4.east) to[out=0,in=180] (C.west);
-% S5 -> C (late rise, a bit higher before turning in)
-\draw[arrow]
-  (S5.east)
-  .. controls ++(8mm,8mm) and ++(-8mm,-6mm) ..
-  (C.west);
-% Late-rise curve from Section 10 to Theorem C
-\draw[arrow]
-  (S10.east)
-  .. controls ++(10mm,6mm) and ++(-10mm,-6mm) ..
-  (C.west);
-
-% D
-% Curvier arrow that bends down earlier and separates from nearby arrows
-\draw[arrow]
-  (S4.east)
-  .. controls ++(10mm,-10mm) and ++(-10mm,10mm) ..
-  (D.west);
-
-% S5 -> D (late drop, a bit lower before turning in)
-\draw[arrow]
-  (S5.east)
-  .. controls ++(8mm,-8mm) and ++(-8mm,6mm) ..
-  (D.west);
-
-% ---------- Theorem dependencies ----------
-% A -> A'  (longer horizontal shoot, then curve down)
-\draw[arrow]
-  (A.east) -- ++(9mm,0)
-  .. controls ++(10mm,-2mm) and ++(-10mm,2mm) ..
-  (Apr.west);
-
-% A -> B, A -> C
-\draw[arrow] (A.east) to[out=0,in=180] (B.west);
-\draw[arrow] (A.east) to[out=10,in=180] (C.west);
-
-% A' -> D
-\draw[arrow] (Apr.south) -- (D.north);
-
-\end{tikzpicture}
-\caption{Logical dependencies between sections/appendix and the main theorems.}
-\label{fig:dependencies}
-\end{figure}
-\end{comment}
 
 
 

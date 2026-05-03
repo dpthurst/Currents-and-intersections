@@ -365,22 +365,6 @@ Similarly, $G((P,Q']) \cup b \cdot G((Q,P'])$ is a Borel fundamental domain for
   r_Pr_Q$, from which the statement about $(Q,P]$
   follows. The other cases are similar.
 
-\begin{comment}
-  Since $\ora{a}$ and $\ora{b}$ intersect at $O$, so do the curves $[a]$ and $[b]$ at some point $o \in \Sigma$.
-Perform a smoothing operation obtaining a new curve $\alpha$ of length $\ell(a) + \ell(b)$.
-A lift $\alpha$  of this curve in $\wt{X}$ going through $O$ is a piecewise geodesic consisting of a segment on $\ora{b}$ of length $\ell(b)$, then a segment of $\ora{b^{-1}ab}$ of length $\ell(a)$, etc.
-Let $\alpha_*$ be the geodesic representative in the homotopy class of $\alpha$.
-Now, connecting the midpoints of the geodesic segments of $\alpha$ we obtain another piecewise geodesic $\alpha'$ which is, in fact, a geodesic segment.
-Indeed, we note that $\alpha$ is invariant under angle $\pi$ rotation around any of the intersection points between $\alpha$ and $\alpha'$.
-Since $\alpha$ and $\alpha'$ have the same stabilizer, they are lifts of the same geodesic $\alpha$.
-Thus, the lift of $\alpha_*$ is $\alpha'$, which is determined by two of the midpoints defining $\alpha$, such as $P'$ and $Q'$.
-As for the translation lengths, we note that $b=r_O r_{Q'}$ where $r_O$ denotes the reflection along the geodesic perpendicular to $\ora{b}$ at $O$,
-and $r_{Q'}$ is the corresponding reflection at $Q'$.
-Similarly, we can write $a=r_{P'}r_O$, and thus $ab=(r_{P'}r_O)(r_O r_{Q'})=r_{P'}r_{Q'}$, which corresponds to a translation along $\alpha'$ of translation length
-twice the distance between $P'$ and $Q'$.
-The other cases follow similarly.
-\end{comment}
-
 For the assertion on fundamental domains, we note that the segment
 $(P',Q']$ on the axis of $\ora{ba}$, is sent by $a$ to a segment
 $(P,R]$, where $R=a(Q')$ appears forward of $P$ in according to the
@@ -448,43 +432,23 @@ Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeome
 \end{proof}
 
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
-We now prove the measured lamination part of Theorem~\ref{thm:hyp-lam-char}, whose statement we recall.
-\DPTtodo{Copy edits from intro, here and in next section. Figure out
-  what to do with theorem numbering}
-  \DMGtodo{there are two subtheorems, L and H, we can refer to those too, if we need to}
+We now prove  Theorem~\ref{mainthm:char_hyp}, whose statement we recall.
+
 \begin{theorem}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
-Then there exists a measured lamination $\mu_{\overline{f}}$ on $S$ so that
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set $\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).$
+Then there exists a measured lamination
+$\mu_{\overline f}$ on $S$ such that
 \[
-i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
-\quad\text{for every }g \in \pi_1(S).
+i(\mu_{\overline f},[g])=\overline f(g)
+\quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
-\begin{enumerate}
-\item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
-\item stability: 
-$f(a^n)=nf(a) \mbox{ for all } n \geq 1$.
-\item oriented smoothing:
+if and only if $f$ satisfies the conditions of
+Theorem~\ref{thm:intersections_group}
+and disconnected max-smoothing:
  \begin{align}
-     f(ab) &\geq  f(a) + f(b) && \mbox{ if } (a,b)\mbox{ are } \mbox{parallel;} \\
-    \label{eq:disconn-max-smoothing-a} f(a) + f(b) &= \max \{ f(ab),f(aB) \}  && \mbox{ if }  (a,b)\mbox{ are } \mbox{crossing}.
+    \label{eq:disconn-max-smoothing-a} f(a) + f(b) &= \max \{ f(ab),f(aB) \}  & \mbox{ if }  (a,b)\mbox{ are } \mbox{crossing}.
   \end{align}
-\end{enumerate}
 \end{theorem}
-\begin{comment}
-\begin{taggedthm}{\ref{thm:lam-char}}
-Let $f$ be a curve functional satisfying the hypotheses of
-Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
-$\mu_f$ is a measured lamination if and only if
-$f$ satisfies the \emph{disconnected max-smoothing property}: for every
-crossing pair $a,b\in\pi_1(S)$,
-\begin{equation}\label{eq:disconn-max-smoothing-a}
-f(a)+f(b)
-=
-\max\{f(ab),\,f(aB)\}.
-\end{equation}
-\end{taggedthm}
-\end{comment}
 \begin{proof}
 Suppose first $f$ satisfies the conditions in the hypotheses.
 By Theorem~\ref{thm:intersections_group}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
@@ -518,6 +482,7 @@ to conclude $f$ is a measured lamination, i.e., one does not have to
 check essential \emph{self}-crossings of connected components of multi-curves. It is however true that intersection
 number with a measured lamination also satisfies connected
 max-smoothing.
+We state this result along the lines of Theorem~\ref{thm:intersect}.
 
 \begin{theorem}
 A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
@@ -537,7 +502,7 @@ different techniques.
 
 \subsection{Liouville currents}
 \label{subsec:liouville}
-Bonahon gives an algebraic characterization for a geodesic current to be a Liouville current for a hyperbolic structure $\Sigma$.
+Bonahon gives an algebraic characterization for a geodesic current $\mu$ to be a Liouville current $\mathcal{L}_\Sigma$ for a marked hyperbolic structure $\Sigma \in \Teich(S)$, the \emph{Teichm\"uller space} of $S$.
 
 \begin{theorem}[{\cite[Theorem~13]{Bonahon88:GeodesicCurrent}}]   \label{thm:bonahonliouville}
    A geodesic current $\mu \in \Curr(S)$ is $\mu=\mathcal{L}_{\Sigma}$ for some $\Sigma$ if and only if, for any four points $x,y,z,w \in \partial_{\infty} S$, we have
@@ -550,28 +515,28 @@ above statement is immaterial, since it follows from the hypothesis that the cur
 
 We use this to prove the hyperbolic part of Theorem~\ref{thm:hyp-lam-char}.
 
-% \begin{taggedthm}{\ref{thm:hyp-char}}
 \begin{theorem}
-Let $f$ be a curve functional satisfying the hypotheses of
-Theorem~\ref{thm:intersect} with dual current~$\mu_f$. Then
-$\mu_f$ is the Liouville current of a hyperbolic
-metric if and only if for every crossing pair $a,b\in\pi_1(S)$, $f$ satisfies
-\begin{equation}
-\lambda(a)\lambda(b)
-=
-\lambda(ab)+\lambda(aB),
-\label{eq:lambdasmoothing}
-\end{equation}
-where
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set $\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).$
+Then there exists a hyperbolic Liouville current
+$\mu_{\overline f}$ on $S$ such that
 \[
-\lambda(g)\coloneqq 2\cosh\!\big(f(g)/2\big).
+i(\mu_{\overline f},[g])=\overline f(g)
+\quad\text{for every } g\in \pi_1(S),
 \]
+if and only if $f$ satisfies the conditions of
+Theorem~\ref{thm:intersections_group}
+and whenever $(\ora{a},\ora{b})$ cross, we have
+ \begin{align}
+    \label{eq:lambdasmoothing}  \lambda(a)\lambda(b)
+= \lambda(ab)+\lambda(aB), \text{ where }
+\lambda(g)
+\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
+  \end{align}
 \end{theorem}
-%  \end{taggedthm}
 \begin{proof}
 The proof is similar to the lamination part.
 If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The relation in Equation~\eqref{eq:lambdasmoothing} follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}) applied to the hyperbolic parallelogram~$H$ at the center of
-Figure~\ref{fig:smoothing_1}, and the fact that the hyperbolic Liouville current is the dual current for the hyperbolic length.
+Figure~\ref{fig:smoothing_1}, and the fact that the hyperbolic Liouville current is the dual current for the hyperbolic length, by~\cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
 
 For the other direction, by the assumptions on $f$, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed

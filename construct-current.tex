@@ -31,9 +31,6 @@ This defines boxes whose  height becomes smaller as $k$
 grows, with the top endpoint fixed. See
 Figure~\ref{fig:vertical-accordion}.
 
-\DPTtodo{In Figure~\ref{fig:vertical-accordion}, maybe make $r_1$ a
-  different shade of blue from the $r_2^{(k)}$. Similarly for
-  Figure~\ref{fig:horizontal-accordion}}
 \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{v-accordion}}
@@ -42,35 +39,6 @@ Figure~\ref{fig:vertical-accordion}.
   \label{fig:vertical-accordion}
 }
 \end{figure}
-
-\begin{comment}
- \begin{figure}
-\centering{
-\resizebox{120mm}{!}{\svgfignormal{v-accordion2}}
-\caption{A vertical accordion $F(p_1,\vec{q_1}, p_2,q_2)$, shown in
-    the disk (left) and in the whiskers picture (right)}
-  \label{fig:vertical-accordion2}
-}
-\end{figure}
-\end{comment}
-
- 
-
-\begin{comment}
-    %Hand drawn figure
-\begin{figure}
-  \[
-    \mathcenter{\includegraphics[height=2.5in]{v-accordion-disk}}
-    \qquad\qquad
-    \mathcenter{\includegraphics[height=2.5in]{v-accordion-whiskers}}
-  \]
-  \caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in
-    the disk (left) and in the whiskers picture (right)}
-  \label{fig:vertical-accordion}
-\end{figure}
-\end{comment}
-
-
 
 Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again have a box of type 2 or 3), define the
 \emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
@@ -83,17 +51,6 @@ Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again have a box
 \label{def:accordion}
 \end{definition}
 See Figure~\ref{fig:horizontal-accordion}.
-\DPTtodo{Do we need both figures? I guess probably}
-% \begin{figure}
-% \centering{
-% \resizebox{80mm}{!}{\svgfig{final}}
-% \caption{Sequence of boxes determining an accordion.}
-% \label{fig:finalfamily}
-% }
-% \end{figure}
-
-
-
 
 \begin{proposition}
   Let $F = F(p_1,q_1,p_2,\vec{q_2})$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
@@ -101,7 +58,7 @@ See Figure~\ref{fig:horizontal-accordion}.
   \begin{itemize}
   \item each $F(k)$ is a RH box;
   \item $F(k+1) \subset F(k)$; and
-  \item $\displaystyle \lim_{k \to \infty} \mu_f(F(k)) = 0$.
+  \item $\displaystyle \lim_{k \to \infty} \wh{\mu_f}(F(k)) = 0$.
   \end{itemize}
 \label{prop:finalfamily}
 \end{proposition}
@@ -133,12 +90,11 @@ We thus get the family of RH orbits given by
 \[
 \bigl([B]_{a,a x^k e,c,c x^k e}\bigr)_{k=0}^\infty.
 \]
-%Figure~\ref{fig:finalfamily} related the box to the orbit notation.
 
 To show this family of RH orbits have measure going to zero,
-by definition of $\mu_f$, we need to evaluate the nested limit:
+by definition of $\wh{\mu_f}$, we need to evaluate the nested limit:
 \begin{align*}
-  \lim_{k \to \infty} \bigl(\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr)
+  \lim_{k \to \infty} \bigl(\wh{\mu_f}([B]_{a,ax^ke,c,cx^ke})\bigr)
    &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) +
      f([cx^n])-f([ax^n])-f([cx^kex^n]) \\
   &= \frac{1}{2}\lim_{k,n \to \infty} \bigl(f([x^n a]) + f([x^ke])\bigr) + f([cx^n])\\
@@ -150,35 +106,7 @@ Here, we apply Lemma~\ref{lem:additivity-limit-2}
 to see the double limit
 exists, and then by applying Proposition~\ref{prop:join-split-alg} twice we
 can break up the limit into canceling terms as desired.
-\begin{comment}
-For the other horizontal case 
-In the RH orbit notation, we then have
-  \begin{align*}
-a^{(k)} &= p_1 q_1^{(k)} = p_1 q_2 x^{k} q_2^{-1}q_1 = b x^{k} e^{-1}
-&\qquad
-b^{(k)} &= p_1 q_2 = b\\
-c^{(k)} &= p_2 q_1^{(k)} = p_2 q_2 x^{k} q_2^{-1}q_1 = d x^{k} e^{-1}
-&\qquad
-d^{(k)} &= p_2 q_2 = d.
-\end{align*}
 
-  \begin{align*}
-  \lim_{k \to \infty} \bigl(\mu_f([B]_{b x^{k} e^{-1},b,d x^{k} e^{-1},d})\bigr)
-   &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([b x^n]) +
-     f([d x^{k} e^{-1}x^n])-f([b x^{k} e^{-1}x^n])-f([dx^n]) \\
-  &= \frac{1}{2}\lim_{k,n \to \infty} \bigl(f([x^n a]) + f([x^ke])\bigr) + f([cx^n])\\
-  &\qquad\qquad-f([ax^n])-\bigl(f([x^nc]) + f([x^ke])\bigr)\\
-  &= 0.
-\end{align*}
-In the second equality we used
-\[
-\lim_{n,k}f([dx^ke^{-1}x^n]) = \lim_{n,k} f([cx^ndx^kD]) = \lim_{n,k} f([cx^n(dxD)^k]) 
-\]
-On the other hand,
-\[
-\lim_{n,k}f([dx^ke^{-1}x^nd])
-\]
-\end{comment}
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
 Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
@@ -206,18 +134,6 @@ Lemma~\ref{lem:additivity-limit-2} and
 Proposition~\ref{prop:join-split-alg} apply as before.
 \end{proof}
 
-\begin{comment}
-%Hand drawn figure
-\begin{figure}
-  \[
-    \mathcenter{\includegraphics[height=2.5in]{h-accordion-disk}}
-    \qquad\qquad
-    \mathcenter{\includegraphics[height=2.5in]{h-accordion-whiskers}}
-  \]
-  \caption{Horizontal accordion $F(\vec{p_1},q_1,p_2,q_2)$}
-  \label{fig:horizontal-accordion}
-\end{figure}
-\end{comment}
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{h-accordion}}
@@ -225,15 +141,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
   \label{fig:horizontal-accordion}
 }
 \end{figure}
-\begin{comment}
-  \begin{figure}
-\centering{
-\resizebox{120mm}{!}{\svgfignormal{h-accordion2}}
-\caption{Horizontal accordion $F(p_1,q_1,\vec{p_2},q_2)$}
-  \label{fig:horizontal-accordion2}
-}
-\end{figure}
-\end{comment}
+
 We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
 is countably additive.
 We will need to consider more types of boxes
@@ -243,8 +151,6 @@ $\overline{B} \coloneqq [s_1,s_2] \times [t_2,t_1]$ and
 $B^\circ \coloneqq (s_1,s_2) \times (t_2,t_1)$ be the corresponding
 closed and open boxes.
 
-\DPTtodo{Labels in Figure~\ref{fig:cases} are misplaced, too far for
-  vertical labels and too close for horizontal labels}
 \begin{figure}
      \centering
      \begin{subfigure}[b]{0.47\textwidth}
@@ -266,7 +172,7 @@ closed and open boxes.
   any $\epsilon > 0$, there is a right-handed box $V(B,\epsilon) =
   [s_1',s_2) \times [t_2',t_1) \in \cB$ so that
   $s_1' < s_1$ and $t_2' < t_2$ and
-  $\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
+  $\wh{\mu_f}(V(B,\epsilon) \setminus B) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca1}. That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
 without increasing the mass much.
@@ -279,10 +185,10 @@ without increasing the mass much.
   each $k$, $B \cup F_1(k)$ is a RH box. 
   By Proposition~\ref{prop:finalfamily}, there is $k_1$ large enough
   so that
-  $\mu_f(F_1(k_1))<\epsilon/2$.
+  $\wh{\mu_f}(F_1(k_1))<\epsilon/2$.
   Repeat the procedure to find a horizontal
   accordion $F_2$ abutting on $B \cup F_1(k_1)$. Again there is $k_2$
-  large enough so that $\mu_f(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
+  large enough so that $\wh{\mu_f}(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
 \end{proof}
 
 \begin{lemma}\label{lem:extend2}
@@ -291,7 +197,7 @@ without increasing the mass much.
   $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region
   $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup
   \bigl([s_2',s_2) \times [t_2,t_1)\bigr)$ is in $\mathcal{R}$ and satisfies
-  $\mu_f(W(B,\epsilon)) < \epsilon$.
+  $\wh{\mu_f}(W(B,\epsilon)) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca2}. That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
 edges of~$B$ with small mass.
@@ -302,8 +208,8 @@ edges of~$B$ with small mass.
   vertical accordion. Similarly find $p_3$ so that $P_3 \cdot \ora{x}$
   is nested inside $P_2 \cdot \ora{x}$ and
   $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
-  for sufficiently large $k$, we have $\mu_f(F_1(k)) < \epsilon/2$ and
-  $\mu_f(F_2(k)) < \epsilon/2$. Take
+  for sufficiently large $k$, we have $\wh{\mu_f}(F_1(k)) < \epsilon/2$ and
+  $\wh{\mu_f}(F_2(k)) < \epsilon/2$. Take
   $W(B,\epsilon) = F_1(k) \cup F_2(k)$.
 \end{proof}
   
@@ -318,7 +224,7 @@ neither $W(B,\epsilon)$ nor $W^\circ(B,\epsilon)$ is a subset of the
 other.
 
 \begin{proposition}\label{prop:countablyadditive}
-  The finitely additive measure $\mu_f$ is countably sub-additive on $\cB$.
+  The finitely additive measure $\wh{\mu_f}$ is countably sub-additive on $\cB$.
 \end{proposition}
 
 \begin{proof}
@@ -326,7 +232,7 @@ other.
   countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
   must show that
   \[
-    \mu_f(B_0) \le \sum_{i=1}^\infty \mu_f(B_i).
+    \wh{\mu_f}(B_0) \le \sum_{i=1}^\infty \wh{\mu_f}(B_i).
   \]
   Fix $\epsilon > 0$. For $i \ge 1$, set
   $V_i \coloneqq V(B_i, \epsilon/2^i)$. Also add one more set by setting
@@ -342,53 +248,51 @@ other.
 
   By finite additivity and since $V_0^\circ \cap B_0 \subset V_0 \cap B_0$, we then have
   \begin{align*}
-    \mu_f(B_0) &\le \sum_{i \in I} \mu_f(V_i)\\
-      &\le \sum_{i \in I, i \ne 0} \mu_f(B_i) + \sum_{i \in I, i \ne 0}
-        \mu_f(V_i \setminus B_i) + \mu_f(V_0)\\
-      &< \sum_{i=1}^\infty \mu_f(B_i) + 2\epsilon.
+    \wh{\mu_f}(B_0) &\le \sum_{i \in I} \wh{\mu_f}(V_i)\\
+      &\le \sum_{i \in I, i \ne 0} \wh{\mu_f}(B_i) + \sum_{i \in I, i \ne 0}
+        \wh{\mu_f}(V_i \setminus B_i) + \wh{\mu_f}(V_0)\\
+      &< \sum_{i=1}^\infty \wh{\mu_f}(B_i) + 2\epsilon.
   \end{align*}
   Since $\epsilon$ was arbitrary, we are done.
 \end{proof}
 
-We now put everything together to obtain a geodesic current.
+We now put everything together to obtain an oriented geodesic current.
 
 \begin{proposition}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
-Then $\mu_f$ extends to an oriented geodesic current.
+Then $\wh{\mu_f}$ extends to an oriented geodesic current $\mu_f$.
 \end{proposition}
 \begin{proof}
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
-\ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\mu_f$
+\ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\wh{\mu_f}$
 is a finitely
-additive and countably sub-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably sub-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\mu_f$. By covering $G(S)$ by a countable exhaustion consisting of a union of RH boxes, we see $\mu_f$ is $\sigma$-finite.
+additive and countably sub-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably sub-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\wh{\mu_f}$. By covering $G(S)$ by a countable exhaustion consisting of a union of RH boxes, we see $\mu_f$ is $\sigma$-finite.
 Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory},
-$\mu_f$ can be extend to a unique measure on
+$\wh{\mu_f}$ can be extend to a unique measure on
 $\mathcal{A}_{\mathcal{R}}$, the $\sigma$-algebra generated
-by~$\mathcal{R}$; we temporarily denote the extension $\hat\mu_f$.
+by~$\mathcal{R}$; we denote this extension by $\overline{\mu_f}$.
 Let $\cA$ be the Borel $\sigma$-algebra of $G(S)$.
 Since $\cR \subset \cA$, we have $\cA_{\cR} \subset \cA$.
 On the other hand, by Proposition~\ref{prop:density}, the set of elements in
 $\mathcal{R}$ is dense in the subspace of half-open rectangles of
-$G(S)$. By the standard argument that half-rectangles with rational endpoints generate the Borel $\sigma$-algebra (see, e.g.,~\cite[Lemma~1.2.11]{Bo07:MeasureTheory}), it follows that $\cA \subset \cA_{\cR}$, hence $\hat\mu_f$ is a Borel measure.
+$G(S)$. By the standard argument that half-rectangles with rational endpoints generate the Borel $\sigma$-algebra (see, e.g.,~\cite[Lemma~1.2.11]{Bo07:MeasureTheory}), it follows that $\cA \subset \cA_{\cR}$, hence $\overline{\mu_f}$ is a Borel measure.
 
-Note that $\hat\mu_f$ is also locally finite, since any compact subset
+Note that $\overline{\mu_f}$ is also locally finite, since any compact subset
 of $G(S)$ can be covered by a finite union of the boxes in
 $\mathcal{R}$, where the measure takes a finite value.
-By definition of $\mu_f$, the extension $\hat\mu_f$ is
-$\pi_1(S)$-invariant. Finally, $\hat\mu_f$ is non-negative by
+By definition of $\wh{\mu_f}$, the extension $\overline{\mu_f}$ is
+$\pi_1(S)$-invariant. Finally, $\overline{\mu_f}$ is non-negative by
 Proposition~\ref{prop:box-positive}.
 \end{proof}
 
-It is not \emph{a priori} clear from the definition of $\hat\mu_f$ that it is a flip-invariant geodesic current (recall
+It is not \emph{a priori} clear from the definition of $\overline{\mu_f}$ that it is a flip-invariant geodesic current (recall
 Definition~\ref{def:currents}).
-In order to obtain a flip-invariant current, we can take
+In order to obtain a flip-invariant current, we take
 \[
-\overline{\mu_f} \coloneqq 1/2(\hat\mu_f + \sigma_*(\hat\mu_f))
+\mu_f \coloneqq 1/2(\overline{\mu_f} + \sigma_*(\overline{\mu_f}))
 \]
 where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$
 the induced push-forward map on oriented geodesic currents.
-
-From now on, we will drop the hat on $\hat \mu_f$.
 
 \subsection{
 Recovering \texorpdfstring{$f$}{f} on curves}
@@ -405,22 +309,63 @@ $(y^+,y^-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
   action of $\langle y \rangle$ on the set of geodesics that intersect
   $\ora{y}$ transversally.
 
-First we note that the following.
+Before proceeding, we discuss an asymmetric version of intersection number between oriented geodesic currents.
 
-\begin{lemma}The intersection
+\begin{definition} The \emph{asymmetric intersection} number between oriented geodesic currents is defined as follows
+\begin{equation}
+\vec{i}(\mu,\nu) \coloneqq \int_{\DG(S)} \mathbf{1}_R \, d(\mu \otimes \nu),
+\label{eq:asymmetric}
+\end{equation}
+where the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
+\[
+\mathbf{1}_R(l,m) \coloneqq
+\begin{cases}
+1 & \text{if } (l,m)\text{ are R-crossing},\\
+0 & \text{otherwise}.
+\end{cases}
+\]
+\label{def:asymmetric}
+\end{definition}
+From the definition, we have the following relation between the standard intersection form between oriented geodesic currents and the asymmetric one.
+\begin{equation}
+i(\mu, \nu) = \vec{i}(\mu, \nu) + \vec{i}(\mu, \sigma(\nu)).
+\label{eq:relation_intersections}
+\end{equation}
+
+For $p,q \in \wt{S}$, one can write  $\ora{G[p,q)}\subset G(S)$ for a \emph{right-oriented} transversal, i.e., the subset of
+oriented geodesics in $G[p,q)$ which right cross the bi-infinite $\ora{l}$ oriented geodesic obtained by extending $[p,q) \subset \wt{S}$. Similarly, we will use $\ole{G[p,q)}\subset G(S)$ for the \emph{left-oriented} transversal, i.e., the subset of
+oriented geodesics in $G[p,q)$ intersecting the inverted geodesic $\ora{L}$ to the right. Recall that given a box $B$, we denote by $\ora{B}$ its associated right-oriented box, and we can similarly define a left-oriented box $\ole{B}$.
+We have the following partitions.
+\begin{subequations}\label{eq:partition_oriented}
+\begin{align}
+G[p,q) &= \ora{G[p,q)} \cup \ole{G[p,q)} 
+\label{eq:partition_transversal_oriented}\\
+B &= \ora{B} \cup \ole{B}.
+\label{eq:partition_box_oriented}
+\end{align}
+\end{subequations}
+
+We can compute intersections with oriented curves as follows.
+
+\begin{lemma}The intersection and asymmetric intersection
 of a closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \[
-i(\mu, C) = \mu([z,y \cdot z) \times (y^+,y^-)).
+i(\mu, C) = \mu([z,y \cdot z) \times (y^+,y^-))
+\]
+and
+\[
+\vec{i}(\mu, C) = \mu(\ora{[z,y \cdot z) \times (y^+,y^-)}).
 \]
 \end{lemma}
 \begin{proof}
-The claim follows from the observation that, for any $q \in \ora{y}$, $G[q, y\cdot q)$---the set of geodesics intersecting $[q, y\cdot q)$ transversely---and $[z, y\cdot z) \times (y^+, y^-)$ are two fundamental domains for the action of $\langle y \rangle$ on the set of geodesics that intersect $\ora{y}$ transversely.
+The second claim follows from the observation that, for any $q \in \ora{y}$, $\ora{G[q, y\cdot q)}$ and $\ora{[z, y\cdot z) \times (y^+, y^-)}$ are two fundamental domains for the action of $\langle y \rangle$ on the set of geodesics that intersect $\ora{y}$ to the right.
 Specifically, if $y \in \pi_1(S)$ denotes the element representing the oriented curve $C$, then 
 \[
-\mu(G[q, y \cdot q))= \mu([z,y \cdot z) \times (y^+,y^-))
+\mu(\ora{G[q, y \cdot q)})= \mu(\ora{[z,y \cdot z) \times (y^+,y^-)})
 \]
 for every $q \in \ora{y}$ and for every $z \notin \{ y^-, y^+\}$ so that $z, y\cdot z, y^+, y^-$ are in the cylic order. See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
-the $\pi_1(S)$-invariance of $\mu$, and no flip-invariance.
+the $\pi_1(S)$-invariance of $\mu$. 
+The same claim follows for the intersection number using Equation~\ref{eq:relation_intersections}.
 \end{proof}
 
 We finish by proving Theorem~\ref{thm:intersect}, first in the following
@@ -430,13 +375,13 @@ form.
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability, and $\mu_f, \overline{\mu_f}$ as above.
 For $C$ a closed curve, we have
 \[
-i(\mu_f,C)=i(\overline{\mu_f},C)=f(C).
+i(\mu_f,C)=\vec{i}(\overline{\mu_f},C)=f(C).
 \]
-In particular, $\overline{\mu_f}$ is unique among flip-invariant geodesic currents.
+In particular, $\mu_f$ is unique among flip-invariant geodesic currents.
 \label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
-We first prove that $i(\mu_f,C)=f(C)$. Given a representative $y \in
+We first prove that $\vec{i}(\overline{\mu_f},C)=f(C)$. Given a representative $y \in
 \pi_1(S)$ of the conjugacy class~$C$, we will find a sequence of
 RH boxes to approximating the fundamental domain for $\langle
 y\rangle$ above, and then show that computing the measure of that
@@ -478,29 +423,24 @@ In the RH orbit notation, we have
 
 If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
     \begin{multline*}
-      i(\mu, [y])=\mu_f([z,Y \cdot z))\times (y^+,y^-) \\
+      \vec{i}(\mu, [y])=\overline{\mu_f}(\ora{[z,Y \cdot z))\times (y^+,y^-)}) \\
       \begin{aligned}
-    &= \lim_{n\to\infty} \mu_f(B_n)  \\
+    &= \lim_{n\to\infty} \overline{\mu_f}(B_n)  \\
     &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
-    % &=\frac{1}{2}\lim_{n,m\to\infty}(f([py^{n+1}qx^{m}]) - f([y^{n+1}]) - f([x^m])) \\
-    % &\qquad+ (f([py^{-(n+1)}qx^{m}])-f([y^{-(n+1)}]) -f([x^m])) \\
-    % &\qquad-(f([py^{n}qx^{m}])-f([y^n])-f([x^m]))\\
-    % &\qquad- (f([py^{-n}qx^{m}])-f([y^{-n}])-f([x^m])) \\
-    % &\qquad+ f([y^{n+1}])+f([y^{-(n+1)}]) - f([y^n]) - f([y^{-n}])\\
     &= \frac{1}{2}\bigl(f([y]) + f([y^{-1}])\bigr) =f([y]).
       \end{aligned}
     \end{multline*}
     The first equality follows by the fact that the boxes defined
-    above converge from below to the  $[z,Y
-      \cdot z) \times (y^+,y^-)$ (the fundamental domain for the
+    above converge from below to the  $\ora{[z,Y
+      \cdot z) \times (y^+,y^-)}$ (the fundamental domain for the
   action of $\langle Y \rangle$) as $n \to \infty$, since $B_{n-1} \subset B_n$.
-    At the second equality, we use definition of $\widehat{\mu_f}$ on boxes.
+    At the second equality, we use definition of $\wh{\mu_f}$ on RH boxes.
     For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass
     from the iterated limit to a double limit, and gives a
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      The property $i(\overline{\mu}_f, C)=f(C)$ for any closed curve $C$ persists by the definition of $i$. Therefore, $\mu_f$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\mu_f$.
+      The property $i(\mu_f, C)=f(C)$ for any closed curve $C$ persists by the definition of $\mu_f$ and the fact that $\overline{\mu_f}$ is finitely additive. Therefore, $\mu_f$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\overline{\mu_f}$.
 
  Finally, the uniqueness of the geodesic current $\mu_f$ is
  a result of Otal, geodesic currents are determined by their marked
@@ -552,10 +492,6 @@ As in the statement, let $\overline{f}(a) \coloneqq
 \frac{1}{2}\left(f(a) + f(A) \right)$, and extend it linearly to be an
 additive
 function on multi-curves.
-% \[
-% \overline{f}(s \cdot a + t \cdot b) = s\cdot \overline{f}(a) + t \cdot \overline{f}(b)
-% \]
-% for every $s,t \geq 0$, and $a,b \in \Gamma$.
 
 To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
 
