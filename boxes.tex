@@ -70,13 +70,11 @@ and $q_i \mapsto q_i x^n$.
 
 The measure $\mu$ will also be $\pi_1(S)$ invariant, which translates to
 invariance under
-\begin{itemize}
-\item (left-)translating all the lifts by $g \in \pi_1(S)$:
+(left-)translating all the lifts by $g \in \pi_1(S)$:
   \begin{equation}\label{eq:box-translate}
     (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
       (p_1 G, gq_1, p_2 G,  gq_2).
   \end{equation}
-\end{itemize}
 We will put off imposing this last invariance for the moment.
 
 We now turn to the conditions on the lifts; for
@@ -104,7 +102,7 @@ no nested lifts of $[x]$; \emph{type 2} has one parallel pair of nested lifts; a
 \emph{type 3} has two parallel pairs of nested lifts.
 Note that since $[x]$ is simple, lifts
 cannot intersect each other, and nested lifts cannot be anti-parallel
-by condition \ref{item:box-edges-cross}.
+by condition \ref{item:box-edges-cross-lift}.
 
 
 \begin{figure}
@@ -166,6 +164,8 @@ make the following proposition work.
 
   To exploit condition~\ref{item:box-diags-cross-lift}, we prove a lemma.
 
+  \DPTtodo{Depending on edits in Section~\ref{subsec:antiparallel},
+    this lemma might become redundant}
   \begin{lemma}\label{lem:box-endpoints}
     Suppose $p,q \in \pi_1(S)$ so that $(\ora{pq},\ora{x})$ R-cross.
     Set $\ell = Pxp$, $r = qxQ$, and
@@ -478,15 +478,16 @@ different elements $x,y \in \pi_1(S)$.
     \lim_{n,m \to \infty} f([ax^nby^{-m}]) - nf([x]) - mf([y])
   \end{gather*}
   exist.
-\end{lemma}
+w\end{lemma}
 \begin{proof}
-  Define $g_
+  For $n,m \ge 0$, define $g_
   {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. First,
-  by Corollary~\ref{cor:fund-axby}, there is some $s$ so that both $g_{\pm}(n,m)$
+  by Corollary~\ref{cor:fund-axby}, there is some $s$ so that both
+  $g_+$ and $g_-$
   are $(s,s)$-axis-convex: apply $f$ to the left hand side of
   Eqs.~\eqref{eq:axby-cross-n} and~\eqref{eq:axby-cross-m}, and use
   convex union, oriented smoothing, stability, and homogeneity. (The extra
-  linear terms in $g_{\pm}(n,m)$ are irrelevant for convexity.)
+  linear terms in $g_{\pm}$ are irrelevant for convexity.)
 
   Next we check that $g_{\pm}$ is bounded.
   On the one hand,
@@ -510,7 +511,8 @@ different elements $x,y \in \pi_1(S)$.
   \[
     g_+(n,m) \ge -f([ab]).
   \]
- To get the lower bound for $g_-$, apply $f$ to both sides of Eq.~\eqref{eq:crossbelowy}.
+ To get a (more complicated) lower bound for $g_-$, similarly apply $f$ to both sides of
+ Eq.~\eqref{eq:crossbelowy-ab}.
 
    Thus by
    Lemma~\ref{lem:limexistrmidconvextwovar} the limit exists.
