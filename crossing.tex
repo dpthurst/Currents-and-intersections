@@ -731,6 +731,20 @@ $\ora{aB}, \ora{Ba}$ could be on $a$-side or $b$-side
   $\ora{a^n B^m}$ and $\ora{B^m a^n}$ split $\ora{a}$ and~$\ora{b}$.
 \end{lemma}
 
+This will follow from the next lemma.
+
+\begin{lemma}
+Given two hyperbolic elements $a,b$ in $\PSL(2,\mathbb{R})$, 
+$\lim_{n^+ \to \mathbb{N}} (a^nb^m)^+ = a^+$ uniformly in $m$.
+\end{lemma}
+\begin{proof}
+Up to inverting $b$, we can assume that either $a,b$ cross or $a,b$ are parallel.
+If $a,b$ cross, Proposition~\ref{prop:keygeometry} shows that, if $o$ denotes the intersection point between $\ora{a},\ora{b}$, then $d(a^nb^m \cdot o,o) \geq d(a^n \cdot o, o) \geq \ell(a^n)/2$.
+If $a,b$ are parallel, let $o_n$ be the intersection point between $\ora{a^nb^m}$ and $\ora{b^ma^n}$. It follows that $a^n \cdot o_{n,m} \in \ora{a^n b^m}$.
+Orthogonally projecting $a^n \cdot o_{n,m}$ and $o_{n,m}$ onto the geodesic axis $\ora{a}$ shows that $d(a^n \cdot o_{n,m}, o_{n,m}) \geq n\ell(a)$.
+Moreover, $o_{n,m}$ stays in a uniformly bounded region (independent of $n$ and $m$). In either case, this implies $\lim_{n^+} (a^nb^m)^+ = $
+\end{proof}
+
 From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
 $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not
 parallel (in fact, they are anti-parallel). Let us show a concrete
