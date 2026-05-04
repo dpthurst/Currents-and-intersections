@@ -327,7 +327,6 @@ Then the datum $[a', b', c', d']$ with $a' \coloneqq D$, $b' \coloneqq B$, $c'\c
 where $p_1' \coloneqq Q_2$, $p_2' \coloneqq Q_1, q_1' \coloneqq P_2, q_2' \coloneqq P_1$
 is an RH system with RH orbit $[a',b',c',d']$ and basepoint $x'$.
 From this, one immediately has
-\DPTtodo{Put in a $\sigma$}
 \[B_x(p_1,q_1,p_2,q_2)=\sigma\bigl(B_{x'}(p_1',q_1',p_2',q_2')\bigr).\]
 \end{remark}
 
@@ -351,7 +350,7 @@ of the box:
 \end{equation}
 \end{proposition}
 Note this function on boxes (which will eventually become a pre-measure and
-then a measure) is automatically $\pi_1(S)$-invariant.
+then a measure) is automatically (left) $\pi_1(S)$-invariant.
 
 We will now prove the limit in Proposition~\ref{prop:limitexists} exists using the properties
 of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
@@ -390,7 +389,7 @@ Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
  for $n \in \mathbb{Z}$.
  By Eq.~\eqref{eq:cross-cancel} with $m=0$,
 additivity and unoriented disconnected
-smoothing of $f$, there is $N>0$ (depending on $a,x$) so that, for $|n| > N$,
+smoothing of $f$, there is $N \in \mathbb{Z}$ (depending on $a,x$) so that, for $|n| > N$,
   \[
     f([a x^{n}]) \ge -f([a]) + f([x^{ n}]).
   \] 
@@ -436,7 +435,7 @@ different elements $x,y \in \pi_1(S)$.
     \lim_{n,m \to \infty} f([ax^nby^{-m}]) - nf([x]) - mf([y])
   \end{gather*}
   exist.
-w\end{lemma}
+\end{lemma}
 \begin{proof}
   For $n,m \ge 0$, define $g_
   {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. First,
