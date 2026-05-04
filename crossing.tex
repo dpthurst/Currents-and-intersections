@@ -977,23 +977,23 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   bottom, also of equal widths (but not necessarily equal to widths on
   the top). Take
   \[
-    s_0 \coloneqq \lceil\max(\wid(w(\ora{y})),
-    \wid(w(a\cdot\ora{y})))\rceil.
+    s \ge \max(\wid(w(\ora{y})),
+    \wid(w(a\cdot\ora{y}))).
   \]
-  For $r > s_0$, consider the elements $g_1 = x^n ay^m x^r$ and $g_2 =
+  For $r > s$, consider the elements $g_1 = x^n ay^m x^r$ and $g_2 =
   x^{n-r} a y^m$. By Lemma~\ref{lem:ayx-window}, we have
   \begin{align*}
     g_1^+ &\in w(x^n a\cdot\ora{y}) & g_1^- &\in w(x^{-r}\cdot\ora{y})\\
     g_2^+ &\in w(x^{n-r} a \cdot\ora{y}) & g_2^- &\in w(\ora{y}).
   \end{align*}
-  Since $r>s_0$, the endpoints appear in the cyclic order
+  Since $r>s$, the endpoints appear in the cyclic order
   $(x^-,g_2^+,g_1^+,x^+,g_2^-,g_1^-)$ on $\partial_\infty S$. In
   particular $[g_1][g_2] \reducesto [g_1 g_2]$ by oriented disconnected smoothing, as desired.
   
   To see Eq.~\eqref{eq:crossuniform_m}, apply
   Eq.~\eqref{eq:crossuniform_n} with the change of variables
   $a' = a$, $y' = x$, and $x' = ayA$.
-  This gives the desired result for some $s_1 \ge 0$.
+  This gives the desired result, after possibly increasing~$s$.
 
   For Eq.~\eqref{eq:cancel-ayx}, we consider $g = a y ^m x^n$ and
   compare its endpoints to those of $a$. By
@@ -1007,8 +1007,9 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   Similarly $a^+ \in w(a \cdot \ora{x}) \subset w(a \cdot \ora{y})$.
   Considering the bands model centered on $a \cdot \ora{y}$ shows that,
   for $m$ large enough, $g^+$ is to the right of $a^+$, and thus
-  $\ora{g}$ crosses $\ora{a}$ to the right. For some $s_2$ and $n,m
-  \ge s_2$ we therefore have
+  $\ora{g}$ crosses $\ora{a}$ to the right. Thus if $s$ is large
+  enough and $n,m
+  \ge s$ we therefore have
   \[
     [a x^n y^m][A] = [g][A] \reducesto [x^n y^m] \reducesto [x^n][y^m]
   \]
@@ -1016,19 +1017,16 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   Lemma~\ref{lem:righthandedfoundation}) oriented connected
   smoothing.
 
-  \DPTtodo{Thinking it's a mistake to name all these intermediate
-    values of $s$}
   Finally, we see Eq.~\eqref{eq:crossbelowy}. By
-  Lemma~\ref{lem:aB-powers}, there is some $s_{4a}$ so that
+  Lemma~\ref{lem:aB-powers}, if $s$ is large enough,
   \DPTtodo{Need some better terminology}
-  $(y^{s_{4a}}, x^{s_{4a}})$ is in Case~1 of
-  Section~\ref{subsec:antiparallel}. Similarly there is an $s_{4b}$ so
-  that $(x^{s_{4b}}, a y^{s_{4b}} A)$ is in Case~1; by translating by
-  $A$, we see that $(A x^{s_{4b}} a, y^{s_{4b}})$ is as well. See
+  $(y^s, x^s)$ and $(x^s, a y^s A)$ are both in Case~1 of
+  Section~\ref{subsec:antiparallel}. By translating by
+  $A$, we see that $(A x^s a, y^s)$ is as well. See
   Figure~\ref{XXX}. Furthermore, by a similar but easier window
-  analysis as for Eq.~\eqref{eq:cancel-ayx}, there is an $s_{4c}$ so
-  that for $n > 2s_{4c}$, $\ora{a}$ crosses $\ora{x^s a Y^m x^{n-s}}$. Take
-  $s_4 \coloneqq \max(s_{4a}, s_{4b}, s_{4c}/2)$. For $n,m > 2s_4$, we
+  analysis as for Eq.~\eqref{eq:cancel-ayx}, if $s$ is large enough
+  and $n > 2s$, $\ora{a}$ crosses $\ora{x^s a Y^m x^{n-s}}$. Take
+  For $n,m > 2s$, we
   then have
   \begin{align*}
     [a Y^m x^n] [a] &= [x^s a Y^m x^{n-s}] [a] \\
@@ -1043,9 +1041,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \end{align*}
   In each of the last three reductions, the parallelism follows from
   various pairs being in Case~1.
-
-  For the full
-  statement, take $s \coloneqq\max(s_0,s_1,s_2,s_3,s_4)$.
 \end{proof}
 
 \begin{figure}
