@@ -166,6 +166,8 @@ make the following proposition work.
 
   \DPTtodo{Depending on edits in Section~\ref{subsec:antiparallel},
     this lemma might become redundant}
+  \DMGtodo{cn
+  
   \begin{lemma}\label{lem:box-endpoints}
     Suppose $p,q \in \pi_1(S)$ so that $(\ora{pq},\ora{x})$ R-cross.
     Set $\ell = Pxp$, $r = qxQ$, and
@@ -177,21 +179,8 @@ make the following proposition work.
   \end{lemma}
 
   \begin{proof}
-    First note that $g_n \cdot (\ell^-,\ell^+) = q x^n p P
-    \cdot (x^-,x^+) = (r^-,r^+) \subsetneq (\ell^-,\ell^+)$, so
-    $g_n^- \in (\ell^-,\ell^+)$ and $g_n^+ \in (r^-,r^+)$ by Lemma~\ref{lem:NS-dynamics}.
-    Now set
-    $\ora{\ell_n} \coloneqq G \cdot \ora{\ell}$ and
-    $\ora{r_n} \coloneqq g \cdot \ora{r}$. Since $g_n \cdot
-    \ora{\ell_n} = \ora{\ell}$ and $g_n \cdot \ora{r} = \ora{r_n}$, it
-    follows that $g_n^- \in (\ell_n^+,\ell_n^-) \subset
-    (\ell^+,\ell^-)$ and $g_n^+ \in (r_n^-,r_n^+) \subset (r^-,r^+)$.
-
-    Concretely, we have $\ora{r_n} = g \cdot \ora{x} = q x^n
-    \ora{\ell}$. From this we see that $r \cdot \ora{r_n} =
-    \ora{r_{n+1}}$. Similarly $\ell \cdot
-    \ora{\ell_n} = \ora{\ell_{n-1}}$, and the result follows from NS
-    dynamics of $r$ and~$\ell$.
+  For the second statement, apply Lemma~\ref{lem:convergence_action} with $x=qxQ$ and $g=qp$.
+  For the first statement, apply it with $x=PXp$ and $g=PQ$.
   \end{proof}
 
   Returning to the proof of Proposition~\ref{prop:rh-boxes}, set
@@ -335,43 +324,16 @@ Thus the two crossing conditions are equivalent.
   We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit. (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element $x$).
 \end{definition}
 
-Even though in the sequel we will fix our base element to be $x$ once and for all, we observe that flipping an RH orbit with respect to $x$ gives a new RH orbit with respect to $x^{-1}$, in the following sense.
-\begin{lemma}
+\begin{remark} Even though in the sequel we will fix our base element to be $x$ once and for all, we observe that flipping an RH orbit with respect to $x$ gives a new RH orbit with respect to $x^{-1}$, in the following sense.
+
 Let $[a,b,c,d]$ define an RH orbit with respect to the fixed element $x \in \pi_1(S)$.
 Then the datum $[a', b', c', d']$ with $a' \coloneqq D$, $b' \coloneqq B$, $c'\coloneqq C, d'\coloneqq A$ is an RH orbit with respect to the base element $x' \coloneqq X$. Similarly, if $[p_1,q_1,p_2,q_2]$ is an RH lift system in the RH orbit $[a,b,c,d]$ with base element $x$, the datum $[p_1',q_1',p_2',q_2']$
 where $p_1' \coloneqq Q_2$, $p_2' \coloneqq Q_1, q_1' \coloneqq P_2, q_2' \coloneqq P_1$
 is an RH system with RH orbit $[a',b',c',d']$ and basepoint $x'$.
-\label{lem:flip_rh_box}
-\end{lemma}
-\begin{proof}
-We need to check that the conditions in  Definition~\ref{def:RH-lift-sys} are satisfied. 
-\begin{enumerate}[label=(\arabic*${}'$),start=0]
-\item $a' C' d' B' = DcAb=1$, and taking inverses the result follows by condition~\ref{item:box-close}.
-\item 
-By definition, $a'C'=Dc$ and $A'b'=dB$. Taking inverses in~\ref{item:box-nontriv} it follows these are not powers of $x'$.
-\item $R$-crossing is satisfied by~\ref{item:box-edges-cross}, since we are inverting all the elements involved.
-\item
-We need to show that for sufficiently large~$n$,
-$\ora{d'(x')^na' C'}$ crosses
-  $\ora{c'(x')^n}$ to the right.
-  This is equivalent to
-  $\ora{Ax^{-n}D c}$ crossing
-  $\ora{Cx^{-n}}$ to the right, which, after conjugating by $c$ and inverting, is equivalent to~\ref{item:box-diags-cross}.
-\end{enumerate}
-The claim about the RH system follows from Equations~\eqref{eq:relationdatum}.
-\end{proof}
-
-The following result is then immediate.
-
-\begin{lemma}
-Let $[p_1,q_1,p_2,q_2]$ be an RH system with RH orbit $[a,b,c,d]$ in this orbit, we have
-$B_x(p_1,q_1,p_2,q_2)=[B_{x'}]_{p_1',q_1',p_2',q_2'}$ as in Lemma~\ref{lem:flip_rh_box}, where $\sigma$ denotes the flip map on geodesics.
-\label{lem:orbit_flip_RH}
-\end{lemma}
-\begin{proof}
-Immediate from Lemma~\ref{lem:flip_rh_box} and the definition of RH box.
-\end{proof}
-
+From this, one immediately has
+\[B_x(p_1,q_1,p_2,q_2)=B_{x'}(p_1',q_1',p_2',q_2').\]
+\label{rmk:flip_rh_box}
+\end{remark}
 
 \subsection{Measures of boxes}
 
