@@ -720,13 +720,15 @@ and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
 The proof is similar as the previous lemma.
 \end{proof}
 
-(Introduce Case 1/3 distinction for powers as well. Maybe find a
-better name.)
+\DPTtodo[inline]{Introduce Case 1/3 distinction for powers as well. Maybe find a
+  better name.}
+Terminology: $\ora{a^n B^m}$ splits $\ora{a},\ora{b}$. Alternate:
+$\ora{aB}, \ora{Ba}$ could be on $a$-side or $b$-side
 
 \begin{lemma}\label{lem:aB-powers}
   For $a,b \in \pi_1(S)$ so that $(\ora{a},\ora{b})$ are R-parallel,
   there is an $s > 0$ so that for all $n,m \ge s$, the geodesics
-  $\ora{a^n B^m}$ and $\ora{B^m a^n}$ are in Case 1.
+  $\ora{a^n B^m}$ and $\ora{B^m a^n}$ split $\ora{a}$ and~$\ora{b}$.
 \end{lemma}
 
 From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
@@ -1033,7 +1035,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
     &\reducesto [A x^s a Y^m x^{n-s}]
       &&\text{$(\ora{a}, \ora{x^s a Y^m x^{n-s}})$ cross}\\
     &\reducesto [A x^s a Y^s] [Y^{m-s} x^{n-s}]
-      &&\text{$(\ora{A x^s a Y^s}, Y^{m-s} x^{n-s})$ parallel}\\
+      &&\text{$(\ora{A x^s a Y^s}, \ora{Y^{m-s} x^{n-s}})$ parallel}\\
     &\reducesto [A x^s a Y^s] [Y^{m-s} x^s] [x^{n-2s}]
       &&\text{$(\ora{Y^{m-s} x^s}, \ora{x^{n-2s}})$ parallel}\\
     &\reducesto [A x^s a Y^s] [Y^{m-2s}] [Y^s x^s] [x^{n-2s}]
@@ -1051,80 +1053,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 }
 \end{figure}
 
-% Let $m, n \geq 2$.
-%   Since $(\ora{y},\ora{x})$ is R-parallel, by the analysis in Section~\ref{subsec:antiparallel}, we have a priori severalconfigurations presented in Fig.~\ref{fig:lb-cases}, depending on the relative position of $(\ora{x},\ora{y}, \ora{x^nY^m}, \ora{Y^mx^n})$.
-  
-% \begin{enumerate} \item Case 1 (Fig.~\ref{fig:lb}).
-% \begin{claim}
-%   We claim that since $(\ora{Y}, \ora{xY})$ and $(\ora{xY}, \ora{x})$ are parallel, it follows that
-%    $(\ora{Y}, \ora{x^nY^m})$ and $(\ora{x^nY^m}, \ora{x})$ are parallel for every $n,m$ positive.
-% \end{claim}
-% \begin{proof}
-%    This can be proven by a double induction. The case $m=1$ and $n$ arbitrary follows by induction on $n$. First, the case $n=1$ is the hypothesis. For the inductive step use that $(\ora{x^nY}, \ora{x})$ is parallel by the induction step, and thus by Lemma-\ref{lem:righthandedfoundation}\eqref{item:ab-parallel} implies $(\ora{x^{n+1}Y}, \ora{x})$ is parallel. A similar argument gives us
-%    $(\ora{Y},\ora{Y^mx})$ is parallel for every $m$. Conjugate by $y^m$ to get $(\ora{Y},\ora{xY^m})$ is parallel for every $m$. 
-%    Since $\ora{x^nY^m}$ and $\ora{Y^mx^n}$ are conjugates of each other by $y$ and by $x$, neither the axis of $\ora{x}$ nor of $\ora{y}$ can separate them. 
-%    This forces $(\ora{Y^mx^n},\ora{x})$ to be parallel.
-%  \end{proof}
-%   By Lemma~\ref{lem:ayx-window}, there exist $s'>0$ so that 
-%   $(\ora{a}, x^{s'} Y^m ax^{n+s'})$ cross.
-%   Then,
-%  \[
-% \begin{aligned}
-% [A][x^{s'} Y^m ax^{n+s'}]
-% &\searrow [A x^{s'} Y^m a x^{n+s'}]
-% && \text{($\protect\ora{A}, \protect\ora{x^{s'} Y^m ax^{n+s'}}$ cross)} \\
-% %
-% &\searrow [A x^{s'} Y^ma ][x^{n+s'}]
-% && \text{($\protect\ora{Ax^{s'} Y^m a}, \protect\ora{x}$ parallel)} \\
-% %
-% &\searrow [x^{s'-1}Y][Y^{m-1}][x^{n+s'}]
-% && \text{($\protect\ora{Y}, \protect\ora{x^{s'}Y^{m}}$ parallel)} \\
-% \end{aligned}
-% \]
-% \item Case 2 (Fig.~\ref{fig:lb2}).
-% We claim that
-%   \begin{claim} For every $n,m$ positive, we have $(\ora{X}, \ora{X^ny^m})$ or $(\ora{y}, \ora{y^mX^n})$. 
-%   \end{claim}\begin{proof} First, $(\ora{x}, \ora{xY})$ and  $(\ora{x}, \ora{Yx})$  are parallel, and hence
-%    Lemma-\ref{lem:righthandedfoundation}\eqref{item:ab-parallel} proves $(\ora{x}, \ora{x^nY})$ and $(\ora{x}, \ora{Yx^n})$ are parallel for every $n$.
-%    Now, if for a given $m$ we have $(\ora{X}, \ora{X^ny^m})$ is parallel, we are done. Otherwise, $(\ora{x}, \ora{X^ny^m})$ are parallel, so $(\ora{x}, \ora{x^nY^m})$ are antiparallel and then $(\ora{Y}, \ora{x^nY^m})$ are parallel (see Fig.~\ref{fig:lb2}).
-   
-%    Thus, taking inverses we get that $(\ora{y},\ora{y^mX^n})$ must be parallel.
-% \end{proof}
-% Since $(\ora{a}, \ora{y^mX^n})$, if we have $(\ora{X}, \ora{X^ny^m})$ are parallel, we have,
-%     \[
-%   [ay^mX^n] \searrow [a][X^{2}y^m X^{n-2}] \searrow [a][X^{n-2}][(X^2y^m)] \searrow  [a][X^{n-2}][(X(Xy^m)] \searrow  [a][X^{n-2}][y^m].
-%   \]
-%   The case $(\ora{y}, \ora{y^nX^m})$ is similar.
-%        \item Case 3 (Fig.~\ref{fig:lb3}). This is symmetric to Case 2. 
-%   \end{enumerate}
-
-% \begin{figure}
-% \centering
-% \begin{subfigure}[b]{0.32\textwidth}
-%     \centering
-%     \resizebox{50mm}{!}{\svgfignormal{lb}}
-%     \caption{Case 1}
-%     \label{fig:lb}
-% \end{subfigure}
-% \hfill
-% \begin{subfigure}[b]{0.32\textwidth}
-%     \centering
-%     \resizebox{50mm}{!}{\svgfignormal{lb2}}
-%     \caption{Case 2}
-%     \label{fig:lb2}
-% \end{subfigure}
-% \hfill
-% \begin{subfigure}[b]{0.32\textwidth}
-%     \centering
-%     \resizebox{50mm}{!}{\svgfignormal{lb3}}
-%     \caption{Case 3}
-%     \label{fig:lb3}
-% \end{subfigure}
-% \caption{Cases for relative position between 
-% $(\protect\ora{a}, \protect\ora{x}, \protect\ora{y}, 
-% \protect\ora{x^nY^m}, \protect\ora{Y^m x^n})$}
-% \label{fig:lb-cases}
-% \end{figure}
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
 four group elements.
 \begin{corollary}\label{cor:fund-axby}
