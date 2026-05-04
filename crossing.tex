@@ -1021,11 +1021,10 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 
   Finally, we see Eq.~\eqref{eq:crossbelowy}. By
   Lemma~\ref{lem:aB-powers}, if $s$ is large enough,
-  \DPTtodo{Need some better terminology}
-  $(y^s, x^s)$ and $(x^s, a y^s A)$ are both in Case~1 of
-  Section~\ref{subsec:antiparallel}. By translating by
-  $A$, we see that $(A x^s a, y^s)$ is as well. See
-  Figure~\ref{XXX}. Furthermore, by a similar but easier window
+  $\ora{Y^s x^s}$ and $\ora{x^s Y^s}$ split $\ora{y},\ora{x}$, and
+  similarly $\ora{A x^s a Y^s}$ and $ora{Y^s A x^s a}$ split $A \cdot
+  \ora{x}, \ora{y}$; see
+  Figure~\ref{fig:crossing_yx_A}. Furthermore, by a similar but easier window
   analysis as for Eq.~\eqref{eq:cancel-ayx}, if $s$ is large enough
   and $n > 2s$, $\ora{a}$ crosses $\ora{x^s a Y^m x^{n-s}}$.
   For $n,m > 2s$, we
@@ -1039,10 +1038,8 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
     &\reducesto [A x^s a Y^s] [Y^{m-s} x^s] [x^{n-2s}]
       &&\text{$(\ora{Y^{m-s} x^s}, \ora{x^{n-2s}})$ parallel}\\
     &\reducesto [A x^s a Y^s] [Y^{m-2s}] [Y^s x^s] [x^{n-2s}]
-      &&\text{$(\ora{Y^{m-2s}}, \ora{Y^s x^s})$ parallel.}
+      &&\text{$(\ora{Y^{m-2s}}, \ora{Y^s x^s})$ parallel.} \qedhere
   \end{align*}
-  In each of the last three reductions, the parallelism follows from
-  various pairs being in Case~1.
 \end{proof}
 
 \begin{figure}
@@ -1066,33 +1063,20 @@ four group elements.
     \label{eq:axby-cross-m}
        [ax^n by^{m+r}][ax^n by^{m-r}] &\reducesto [(ax^n by^m)^2].
   \end{align}
-  Furthermore, there is $s' > 0$ so that, for $n,m \ge s'$,
-\begin{equation}\label{eq:cancel-axby}
-    [a x^n b y^m][ab] \reducesto [x^n][y^m]
-  \end{equation}
-and at least one of these three cases holds
-\begin{equation}
-\begin{aligned}
-[A][ax^nb Y^m]
-& \searrow [X^{s'}][Y^{m-1}][Y axA][x^{n+s'-1}].
-\\
-%
-[ax^m by^n]
-&\searrow [ab][X^{n-2}][y^m]\\
-%
-[abx^m Y^n]
-&\searrow [ab][y^{m-2}][X^n]
-\label{eq:crossbelowy-alt}
-\end{aligned}
-\end{equation}
+  Furthermore, for $n,m \ge s$,
+\begin{align}\label{eq:cancel-axby}
+  [a x^n b y^m][ab] &\reducesto [x^n][y^m]\\
+  \intertext{and for $n,m > 2s$,}
+   [a x^n b Y^m][ab] &\reducesto [a x^s A Y^s] [B x^s b Y^s] [x^{n-2s}] [Y^{n-2s}]
+\end{align}
 \end{corollary}
 
 \begin{proof}
   The conditions imply that
   $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.
-  Apply $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n},  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy-a} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n}
+  Apply $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n},  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n}
     \eqref{eq:axby-cross-m}
-    \eqref{eq:cancel-axby} and the first case of~\eqref{eq:crossbelowy}. To get the other two cases of Eq.~\eqref{eq:crossbelowy}, apply~\eqref{eq:crossbelowy-b} and~\eqref{eq:crossbelowy-c} with $y'=Bxb, x'=y, a'=ab$.
+    \eqref{eq:cancel-axby} and~\eqref{eq:crossbelowy}.
 \end{proof}
 
 We now check this configuration is easy to find. The following result
