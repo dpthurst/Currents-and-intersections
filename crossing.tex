@@ -605,29 +605,35 @@ Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
+\DPTtodo[inline]{Figure issues: In Fig. 4.4(a), missing right angles
+  between $R_1$ and $a,b$. In 4.4(d), missing right angle between
+  $R_1$ and $b$; also, right angle between $Ba$ and $R_2$ looks like
+  it's between $aB$ and $R_2$ from the tilting. Dotting spacing is
+  different in 4.4(d) and the others.}
 \begin{figure}
      \centering
-     \begin{subfigure}[b]{0.45\textwidth}
+     \begin{subfigure}[b]{0.35\textwidth}
 \svgfignormal{r3}
     \caption{Case 1}\label{fig:r3}
      \end{subfigure}
      \hfill
-     \begin{subfigure}[b]{0.45\textwidth}
+     \begin{subfigure}[b]{0.35\textwidth}
 \svgfignormal{r2}
     \caption{Case 2 (not possible)}\label{fig:r2}
 \end{subfigure}\\[8pt]
-\begin{subfigure}{0.45\textwidth}
+\begin{subfigure}{0.35\textwidth}
    \svgfignormal{r1}
      \caption{Case 3(a), $\protect\ora{aB}$ and $\protect\ora{Ba}$  disjoint}\label{fig:r1}
    \end{subfigure}\hfill
-\begin{subfigure}{0.45\textwidth}
+\begin{subfigure}{0.35\textwidth}
   \svgfignormal{c2}
     \caption{Case 3(b), $\protect\ora{aB}$ and $\protect\ora{Ba}$ crossing}\label{fig:c2}
    \end{subfigure}\hfill
 
-   \begin{subfigure}{0.45\textwidth}
+   \begin{subfigure}{0.35\textwidth}
   \svgfignormal{r1_switched}
-    \caption{Case 3(c), $\protect\ora{aB}$ and $\protect\ora{Ba}$ $b$-sided and parallel}\label{fig:r1_switched}
+    \caption{Case 3(c), $\protect\ora{aB}$ and $\protect\ora{Ba}$
+      $b$-sided and parallel (not possible)}\label{fig:r1_switched}
    \end{subfigure}\hfill
    \caption{Topological cases for
      connected smoothing of $\protect\ora{ab}$ with
@@ -658,7 +664,8 @@ to~$R_1$:
 \begin{description}
 \item[Case 1] Disjoint on both sides (Figure~\ref{fig:r3});
 \item[Case 2] Disjoint on one side, nested on the other (Figure~\ref{fig:r2}); or
-\item[Case 3] Nested on both sides (Figure~\ref{fig:r1} or~\ref{fig:c2}).
+\item[Case 3] Nested on both sides (Figures \ref{fig:r1},
+  \ref{fig:c2}, and~\ref{fig:r1_switched}).
 \end{description}
 
 
@@ -677,7 +684,7 @@ L-parallel. Also note that in Case~3 the pairs $R_2,R_3$ and $R_4,R_5$
 could be nested in either order; we get the other possible nesting by
 reflecting the figures left-to-right, switching $a,b$, and reversing
 $\ora{aB}$ and $\ora{Ba}$ gives the other case.
-\DPTtodo{Need to think about this}
+\DPTtodo{Needs rewording}
 In particular, one could obtain a double nesting of Case~2 type on both sides (Fig.~\ref{fig:r1_switched}); this can also be ruled out by the NS dyamics of $b$ (see also Lemma~\ref{lem:ab_parallel_aB}).
 
 From this discussion, we get the following result.
@@ -1050,9 +1057,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
        [a y^{m+r} x^n][a y^{m-r} x^n] &\reducesto [(a y^m x^n)^2].
   \end{align}
   Furthermore, for $n,m \ge s$,
-  \DPTtodo{Currently making the statement a little unnatural so
-    smoothings are oriented}
-    \DMGtodo{looks good to me}
   \begin{align}\label{eq:cancel-ayx}
     [a y^m x^n][A] &\reducesto [y^m][x^n]\\
     \intertext{and for $n,m > 2s$,}
