@@ -311,13 +311,13 @@ $(y^+,y^-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
 
 Before proceeding, we discuss an asymmetric version of intersection number between oriented geodesic currents.
 
-\begin{definition} The \emph{asymmetric intersection} number between oriented geodesic currents is defined as follows
+\begin{definition} The \emph{asymmetric intersection} number between oriented geodesic currents is defined as 
 \begin{equation}
-\vec{i}(\mu,\nu) \coloneqq \int_{\mathcal{F}} \mathbf{1}_R \, d(\mu \otimes \nu),
+\vec{i}(\mu,\nu) \coloneqq \int_{\overline{\mathcal{F}}} \mathbf{1}_R \, d(\mu \otimes \nu),
 \label{eq:asymmetric}
 \end{equation}
-where $\mathcal{F}$ is a fundamental domain of the diagonal action of $\pi_1(S)$ on $\DG(S)$ (obtained 
-where the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
+where $\overline{\mathcal{F}}$ is a fundamental domain of the diagonal action of $\pi_1(S)$ on $\DG(S)$, obtained by a similar argument as in Definition~\ref{def:intersection_currents};
+the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
 \[
 \mathbf{1}_R(l,m) \coloneqq
 \begin{cases}
@@ -327,15 +327,15 @@ where the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
 \]
 \label{def:asymmetric}
 \end{definition}
-From the definition, we have the following relation between the standard intersection form between oriented geodesic currents and the asymmetric one.
+From the definition, we have
 \begin{equation}
 i(\mu, \nu) = \vec{i}(\mu, \nu) + \vec{i}(\mu, \sigma(\nu)).
 \label{eq:relation_intersections}
 \end{equation}
 
-For $p,q \in \wt{S}$, one can write  $\ora{G[p,q)}\subset G(S)$ for a \emph{right-oriented} transversal, i.e., the subset of
+For $p,q \in \wt{S}$, one can write  $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversal, i.e., the subset of
 oriented geodesics in $G[p,q)$ which right cross the bi-infinite $\ora{l}$ oriented geodesic obtained by extending $[p,q) \subset \wt{S}$. Similarly, we will use $\ole{G[p,q)}\subset G(S)$ for the \emph{left-oriented} transversal, i.e., the subset of
-oriented geodesics in $G[p,q)$ intersecting the inverted geodesic $\ora{L}$ to the right. Recall that given a box $B$, we denote by $\ora{B}$ its associated right-oriented box, and we can similarly define a left-oriented box $\ole{B}$.
+oriented geodesics in $G[p,q)$ intersecting the inverted geodesic $\ora{L}$ to the right. 
 We have the following partitions.
 \begin{subequations}\label{eq:partition_oriented}
 \begin{align}
@@ -349,11 +349,10 @@ B &= \ora{B} \cup \ole{B}.
 We can compute intersections with oriented curves as follows.
 
 \begin{lemma}The intersection and asymmetric intersection
-of a closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
+of an oriented closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \[
 i(\mu, C) = \mu([z,y \cdot z) \times (y^+,y^-))
 \]
-and
 \[
 \vec{i}(\mu, C) = \mu(\ora{[z,y \cdot z) \times (y^+,y^-)}).
 \]
@@ -362,7 +361,7 @@ and
 The second claim follows from the observation that, for any $q \in \ora{y}$, $\ora{G[q, y\cdot q)}$ and $\ora{[z, y\cdot z) \times (y^+, y^-)}$ are two fundamental domains for the action of $\langle y \rangle$ on the set of geodesics that intersect $\ora{y}$ to the right.
 Specifically, if $y \in \pi_1(S)$ denotes the element representing the oriented curve $C$, then 
 \[
-\mu(\ora{G[q, y \cdot q)})= \mu(\ora{[z,y \cdot z) \times (y^+,y^-)})
+\mu(\ora{G[q, y \cdot q)})= \mu([z,y \cdot z) \times (y^+,y^-))
 \]
 for every $q \in \ora{y}$ and for every $z \notin \{ y^-, y^+\}$ so that $z, y\cdot z, y^+, y^-$ are in the cylic order. See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
 the $\pi_1(S)$-invariance of $\mu$. 
@@ -408,16 +407,6 @@ at the following particular family for $n \ge 0$:
   \label{fig:recover-f}
 \end{figure}
 
-\begin{comment}
-%Hand drawn figure
-\begin{figure}
-\centering{
-\includegraphics[height=88mm]{recover-f}
-\caption{The boxes used in proving that $\mu_f$ recovers $f$.}
-\label{fig:recover-f}
-}
-\end{figure}
-\end{comment}
 In the RH orbit notation, we have
 \begin{align*}
   a^{(n)} &= p y^{n}   q &  b^{(n)} &= p y^{-(n+1)} q \\
@@ -426,7 +415,7 @@ In the RH orbit notation, we have
 
 If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
     \begin{multline*}
-      \vec{i}(\mu, [y])=\overline{\mu_f}(\ora{[z,Y \cdot z))\times (y^+,y^-)}) \\
+      \vec{i}(\mu, [y])=\overline{\mu_f}([z,Y \cdot z))\times (y^+,y^-)) \\
       \begin{aligned}
     &= \lim_{n\to\infty} \overline{\mu_f}(B_n)  \\
     &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
@@ -434,8 +423,8 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n
       \end{aligned}
     \end{multline*}
     The first equality follows by the fact that the boxes defined
-    above converge from below to the  $\ora{[z,Y
-      \cdot z) \times (y^+,y^-)}$ (the fundamental domain for the
+    above converge from below to the  $[z,Y
+      \cdot z) \times (y^+,y^-)$ (the fundamental domain for the
   action of $\langle Y \rangle$) as $n \to \infty$, since $B_{n-1} \subset B_n$.
     At the second equality, we use definition of $\wh{\mu_f}$ on RH boxes.
     For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass
