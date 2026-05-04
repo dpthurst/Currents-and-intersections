@@ -54,18 +54,19 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{crossing_yx_A.pdf}}%
-    \put(0.30286391,0.1838724){\color[rgb]{0.02352941,0.64705882,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{a}$\end{tabular}}}}%
+    \put(0.33688038,0.2698909){\color[rgb]{0.02352941,0.64705882,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{y}$\end{tabular}}}}%
+    \put(0.60905087,0.27281734){\color[rgb]{0.02352941,0.64705882,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a \cdot \ora{y}$\end{tabular}}}}%
     \put(0.44766668,0.16552214){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a \cdot \ora{y}$\end{tabular}}}}%
-    \put(0.75831748,0.18898274){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^{s'}Y^ma\cdot \ora{y}$\end{tabular}}}}%
-    \put(0.30708844,0.26336764){\color[rgb]{1,0,0.61960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x^{s'}Y^ma x^{n+s'}}$\end{tabular}}}}%
+    \put(0.31425367,0.4069038){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x^sY^s}$\end{tabular}}}}%
+    \put(0.32756762,0.04125543){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{Y^sx^s}$\end{tabular}}}}%
+    \put(0.05456408,0.26192189){\color[rgb]{1,0,0.61960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A \cdot \ora{x}$\end{tabular}}}}%
+    \put(0.46897132,0.27090987){\color[rgb]{1,0,0.61960784}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{crossing_yx_A.pdf}}%
-    \put(0.75062939,0.04616805){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$w(x^{s'} Y^ma \cdot \ora{x})$\end{tabular}}}}%
-    \put(-0.0011008,0.21331928){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^-$\end{tabular}}}}%
-    \put(0.55017132,0.20831902){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x}$\end{tabular}}}}%
-    \put(0.94919837,0.21410204){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x^+$\end{tabular}}}}%
-    \put(0.34500218,0.04906286){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$w(a\cdot \ora{x})$\end{tabular}}}}%
-    \put(0.21433067,0.40623556){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{x}$\end{tabular}}}}%
-    \put(0.06780067,0.40512069){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$w(x^{-n-s}\ora{y})$\end{tabular}}}}%
+    \put(0.78938953,0.21036363){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{a}$\end{tabular}}}}%
+    \put(0.13813824,0.40460318){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{Ax^saY^s}$\end{tabular}}}}%
+    \put(0.15574637,0.04264881){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{Y^sAx^sa}$\end{tabular}}}}%
+    \put(0.47564346,0.40754129){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x^saY^sA}$\end{tabular}}}}%
+    \put(0.50305253,0.04250972){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{aY^sAx^s}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{crossing_yx_A.pdf}}%
   \end{picture}%
 \endgroup%
