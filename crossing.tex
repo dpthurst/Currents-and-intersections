@@ -672,6 +672,7 @@ L-parallel. Also note that in Case~3 the pairs $R_2,R_3$ and $R_4,R_5$
 could be nested in either order; we get the other possible nesting by
 reflecting the figures left-to-right, switching $a,b$, and reversing
 $\ora{aB}$ and $\ora{Ba}$ gives the other case.
+\DPTtodo{Need to think about this}
 In particular, one could obtain a double nesting of Case~2 type on both sides; this can also be ruled out (see Lemma~\ref{lem:ab_parallel_aB}).
 
 From this discussion, we get the following result.
@@ -726,16 +727,15 @@ The proof is similar as the previous lemma.
 \]
 as in Figure~\ref{fig:r3}, we say that
 \emph{$\ora{a^nB^m}$ splits $\ora{a},\ora{b}$}.
-
-Whenever
+Similarly, whenever
 \[
 \big((a^nB^m)^-,(a^nB^m)^+\big),
 \big((B^ma^n)^-,(B^ma^n)^+\big)
 \subsetneq (b^-,b^+),
 \]
 as in Figure~\ref{fig:r1},
-we say that \emph{$\ora{a^nB^m}$ $b$-sides $\ora{a},\ora{b}$}.
-Similarly, we say that it \emph{$a$-sides $\ora{a},\ora{b}$} if both intervals
+we say that \emph{$\ora{a^nB^m}$ is on the $b$-side of $\ora{a},\ora{b}$},
+and we say that it \emph{is on the $a$-side of $\ora{a},\ora{b}$} if both intervals
 are contained in $(a^+,a^-)$.
 
 \begin{lemma}\label{lem:aB-powers}
@@ -758,7 +758,7 @@ the element $x^n g$ is hyperbolic and
 \label{lem:convergence_action}
 \end{lemma}
 
-\begin{proof}[Proof of Claim]
+\begin{proof}
 This follows from NS dynamics on $\partial_\infty S$.
 Indeed, choose a neighborhood $V$ of $x^+$ such that
 $x^- \notin g \cdot V$. Then, by NS, there is
