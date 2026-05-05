@@ -182,7 +182,7 @@ Since this is independent of the hyperbolic structure, we will also
 write $G(S)$.
 \end{definition}
 
-There is a natural involution map $\sigma \colon G(S) \to G(S)$, defined by $(a,b) \mapsto (b,a)$, i.e., reversing the orientation of the geodesic.
+There is a natural involution map $\sigma \colon G(S) \to G(S)$, defined by $(a,b) \mapsto (b,a)$, i.e., reversing the orientation of the geodesic. We will sometimes refer to $\sigma$ as the \emph{flip map}.
 
 \begin{definition}\label{def:currents}
 We define $\Curr^+(S)$, the space of \emph{oriented geodesic currents} on $S$,
@@ -229,7 +229,7 @@ The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
 
 For $g \in \pi_1(S)$, let $\ora{g}$ denote the \emph{hyperbolic axis} of $g$, i.e., the oriented geodesic left invariant by $g$ along which $g$ translates the least hyperbolic distance (see also Section~\ref{sec:actions}).
 
-For $\gamma$ a concrete curve with lift $\ora{\gamma}$ to the
+For $\gamma$ a concrete curve with lift geodesic representative  $\ora{\gamma}$ to the
 universal cover,
 since the orbit $\pi_1(S)\cdot \ora{\gamma}$ is discrete and countable, one can define a natural geodesic current associated to the oriented closed curve $C=[\gamma]=[g]$ by
 \begin{equation}\label{eq:delta-curve}
@@ -298,7 +298,7 @@ geodesic currents are completely determined by their intersection
 numbers with closed curves.
 This is no longer true for general oriented geodesic currents; for example,
 any oriented geodesic current $\mu$ and its orientation flip $\sigma(\mu)$ have the same intersection numbers. 
-See also Appendix~\ref{sec:asymmetric}.
+See also Definition~\ref{def:asymmetric} and Appendix~\ref{sec:asymmetric} for discussions about a version of intersection for oriented closed curves.
 
 Finally, we highlight a special subset of geodesic currents that can be regarded as the interior of the cone of geodesic currents.
 
@@ -320,11 +320,11 @@ We will need some results guaranteeing the existence of limits of sequences.
  
  Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$.
 
- We say $g \colon \mathbb{\mathbb{N}} \to \mathbb{R}$ is \emph{convex} if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \geq 2$.
+ We say $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ is \emph{convex} if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \in \mathbb{Z}$. Similarly, $g \colon \mathbb{N} \to \mathbb{R}$ is convex  if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \geq 2$.
 
  \begin{lemma}
- Let $g \colon \mathbb{\mathbb{N}} \to \mathbb{R}$ be a convex and bounded function.
- Then $\lim_{n^+} g(n)$ exists.
+ Let $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ be a convex and bounded function.
+ Then $\lim_{n^{\pm}} g(n)$ exists.
  \label{lem:onevarconvexbounded}
  \end{lemma}
  \begin{proof}
@@ -366,7 +366,7 @@ include a proof for reference.
   if for all $r \ge R$ and $n \in \bbN$ for which the inequality makes
   sense, we have $g(n-r) + g(n+r) \geq
   2 g(n)$. Similarly a
-  function $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ is
+  function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is
   \emph{$(R,S)$-axis-convex} if, for all $n,m$, $g(\cdot, m)$ is
   $R$-convex and $g(n, \cdot)$ is $S$-convex. We say that $g$ is
   \emph{axis-convex} if it is $(1,1)$-axis-convex.

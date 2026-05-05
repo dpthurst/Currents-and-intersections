@@ -99,7 +99,7 @@ moves points a bounded distance.
 We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, there will be two types of
 arrows (see, e.g., Figure~\ref{fig:newmodel3}): arrows
-connecting two endpoints of $\partial_{\infty}\Sigma$, which
+connecting two endpoints of $\partial_{\infty}S$, which
 correspond to axes hyperbolic axes $\ora{g}$ of an element
 $g \in \pi_1(S)$, the axis of the \emph{left} action; and arrows
 representing paths connecting points on these axes that correspond to
@@ -605,131 +605,73 @@ Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
-\DPTtodo[inline]{Figure issues: In Fig. 4.4(a), missing right angles
-  between $R_1$ and $a,b$. In 4.4(d), missing right angle between
-  $R_1$ and $b$; also, right angle between $Ba$ and $R_2$ looks like
-  it's between $aB$ and $R_2$ from the tilting. Dotting spacing is
-  different in 4.4(d) and the others. Caption for 4.4(e) is manifestly
-  wrong, but I don't know how to fix it}
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.35\textwidth}
-\svgfignormal{r3}
-    \caption{Case 1}\label{fig:r3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.35\textwidth}
-\svgfignormal{r2}
-    \caption{Case 2 (not possible)}\label{fig:r2}
-\end{subfigure}\\[8pt]
-\begin{subfigure}{0.35\textwidth}
-   \svgfignormal{r1}
-     \caption{Case 3(a), $\protect\ora{aB}$ and $\protect\ora{Ba}$  disjoint}\label{fig:r1}
-   \end{subfigure}\hfill
-\begin{subfigure}{0.35\textwidth}
-  \svgfignormal{c2}
-    \caption{Case 3(b), $\protect\ora{aB}$ and $\protect\ora{Ba}$ crossing}\label{fig:c2}
-   \end{subfigure}\hfill
+\begin{figure}[hb!]
+  \centering
+  \setlength{\abovecaptionskip}{3pt}
+  \setlength{\belowcaptionskip}{0pt}
 
-   \begin{subfigure}{0.35\textwidth}
-  \svgfignormal{r1_switched}
-    \caption{Case 3(c), $\protect\ora{aB}$ and $\protect\ora{Ba}$
-      $b$-sided and parallel (not possible)}\label{fig:r1_switched}
-   \end{subfigure}\hfill
-   \caption{Topological cases for
-     connected smoothing of $\protect\ora{ab}$ with
-     $\protect\ora{ba}$.}
-   \label{fig:cases-conn-smoothing}
+  \begin{subfigure}[b]{0.34\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\svgfignormal{r3}}
+    \caption{$\protect\ora{Ba},\protect\ora{aB}$ splitting}
+    \label{fig:r3}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.34\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\svgfignormal{r2}}
+    \caption{Impossible case}
+    \label{fig:r2}
+  \end{subfigure}
+
+  \vspace{4pt}
+
+  \begin{subfigure}[b]{0.34\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\svgfignormal{r1}}
+    \caption{$\protect\ora{aB}$, $\protect\ora{Ba}$ are $b$-sided and antiparallel to each other}
+    \label{fig:r1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.34\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\svgfignormal{c2}}
+    \caption{$\protect\ora{aB}$, $\protect\ora{Ba}$ are $b$-sided and crossing}
+    \label{fig:c2}
+  \end{subfigure}
+
+  \vspace{4pt}
+
+  \begin{subfigure}[b]{0.34\textwidth}
+    \centering
+    \resizebox{\linewidth}{!}{\svgfignormal{r1_switched}}
+    \caption{$\protect\ora{aB}$, $\protect\ora{Ba}$ are $b$-sided but have different parallelism to $\protect\ora{b}$}
+    \label{fig:r1_switched}
+  \end{subfigure}
+
+  \caption{Topological cases for connected smoothing of $\protect\ora{ab}$ with $\protect\ora{ba}$.}
+  \label{fig:cases-conn-smoothing}
 \end{figure}
 
-Consider the common hyperbolic perpendicular of $\ora{a}$
-and $\ora{b}$, which we will denote~$R_1$. We will also use the
-same notation for the reflection through~$R_1$.
-Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
-that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
-$R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
-are perpendicular to $\ora{b}$; see
-Figure~\ref{fig:cases-conn-smoothing}.
-
-Since
-$ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
-these elements are hyperbolic, we see
-that the $R_i$ are reflections along pairwise non-intersecting reflection
-lines.
-We have several potential configurations of the~$R_i$. As shown
-in Figure~\ref{fig:cases-conn-smoothing}, $R_2$ and~$R_3$ are on one
-side of~$R_1$ (since $\ora{a}$ and $\ora{b}$ are parallel), and $R_4$
-and~$R_5$ are on the other. On each side
-of~$R_1$, the two~$R_i$ can be either disjoint or nested with respect
-to~$R_1$:
-\begin{description}
-\item[Case 1] Disjoint on both sides (Figure~\ref{fig:r3});
-\item[Case 2] Disjoint on one side, nested on the other (Figure~\ref{fig:r2}); or
-\item[Case 3] Nested on both sides (Figures \ref{fig:r1},
-  \ref{fig:c2}, or~\ref{fig:r1_switched}).
-\end{description}
-
-
-The figure also has the corresponding translation axes for all six
-isometries, further dividing Case 3 according to whether $\ora{aB}$
-and $\ora{Ba}$ are disjoint (Figure~\ref{fig:r1}) or cross (Figure~\ref{fig:c2}).
-Case 2 can be ruled out, since $b\cdot \ora{Ba} = \ora{aB}$, and thus
-$\ora{Ba}$ and $\ora{aB}$ must be
-on the same side of $\ora{b}$, which does not happen in that
-configuration.
-
-The figures show the case where $(\ora{a},\ora{b})$ are R-parallel.
-Switching $a,b$ and reversing $\ora{aB}$ and $\ora{Ba}$ gives the case
-where they are
-L-parallel. Also note that in Case~3 the pairs $R_2,R_3$ and $R_4,R_5$
-could be nested in either order; we get the other possible nesting by
-reflecting the figures left-to-right, switching $a,b$, and reversing
-$\ora{aB}$ and $\ora{Ba}$ gives the other case.
-\DPTtodo{Needs rewording}
-In particular, one could obtain a double nesting of Case~2 type on both sides (Fig.~\ref{fig:r1_switched}); this can also be ruled out by the NS dyamics of $b$ (see also Lemma~\ref{lem:ab_parallel_aB}).
-
-From this discussion, we get the following result.
+The following Lemma rules out
+configurations such as the one in Fig.\ref{fig:r2}.
 
 \begin{lemma}
-Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, then $\ora{aB}$ and $\ora{Ba}$ are anti-parallel or cross.
-\label{lem:ab_parallel_aB}
+If $(\ora{a},\ora{b})$ are parallel, neither $\ora{aB}$ cannot cross $\ora{a}$ nor $\ora{b}$.
+\label{lem:aB_a_nocross}
 \end{lemma}
 \begin{proof}
-The figures construct possible configurations $(\ora{a}, \ora{b})$ being R-parallel. For the L-parallel case, note that $(\ora{a},\ora{b})$ being L-parallel implies $(\ora{b},\ora{a})$ is R-parallel. Applying the statement, we obtain that $\ora{bA},\ora{Ab}$ cross (resp.~are anti-parallel), which is equivalent, by taking inverses, to $\ora{aB}, \ora{Ba}$ crossing (resp.~are anti-parallel.
-It remains to show no other configurations are possible. First, $(\ora{a},\ora{aB})$ cannot cross. Indeed, if they did cross, one would get by Lemma~\ref{lem:righthandedfoundation}~\ref{item:ab-cross}, that $(\ora{a},\ora{b})$ cross, a contradiction. Finally, for $g \in \{ a, b\}$, the endpoints of $\ora{aB}, \ora{Ba}$ are in the same connected component of $\partial_{\infty} S$, by the NS dynamics of $g$. This rules out configurations such as Fig.~\ref{fig:r2}.
-\end{proof}
-It also follows that, when $(\ora{a},\ora{b})$ are parallel, many composite pairs do not cross. We can extract the following two results.
-\begin{lemma}
-Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, then either:
-\begin{itemize}
-\item $(\ora{ab},\ora{Ab})$ and $(\ora{b},\ora{Ab})$ are parallel or
-\item $(\ora{ba},\ora{Ba})$ and $(\ora{a},\ora{Ba})$ are parallel.
-\end{itemize}
-\label{lem:bA_parallel_ba}
-\end{lemma}
-\begin{proof}
-The figures above discuss the case $(\ora{a},\ora{b})$ being R-parallel. If $(\ora{a},\ora{b})$ is L-parallel, then $(\ora{b}, \ora{a})$ is R-parallel, then the statement implies:
-\begin{itemize} \item $(\ora{ba}, \ora{Ba})$ and $(\ora{a},\ora{Ba})$ are parallel or
-\item $(\ora{ab}, \ora{Ab})$ and $(\ora{b},\ora{Ab})$ are parallel
-\end{itemize}
-which proves the claim in this case. 
+If $\ora{aB}$ crossed $\ora{a}$, then $\ora{(bA)a}=\ora{b}$ would cross $\ora{a}$, a contradiction.
 \end{proof}
 
-If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise.
-\begin{lemma}\label{lem:a_parallel_Ba}
-Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross,
-let $\mathcal{A} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$
-and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
-\begin{itemize}
-\item $(\ora{g},\ora{h})$ is parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$; or
-\item $(\ora{g},\ora{h})$ is anti-parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$.
-\end{itemize}
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel, for $g \in \{ a, b \}$, the endpoints of $\ora{aB},\ora{Ba}$ are in the
+same connected component of $\partial_\infty S - \{ g^+,g^-\}$.  
+\label{lem:aB_Ba_together}
 \end{lemma}
 \begin{proof}
-The proof is similar to the previous lemma.
+Note that $a \cdot \ora{Ba} = b \cdot \ora{Ba} = \ora{aB}$, hence, by NS dynamics of $a$ and $b$,
+the endpoints cannot be in different components.
 \end{proof}
 
  Whenever
@@ -751,12 +693,96 @@ we say that \emph{$\ora{a^nB^m}$ is on the $b$-side of $\ora{a},\ora{b}$},
 and we say that it \emph{is on the $a$-side of $\ora{a},\ora{b}$} if both intervals
 are contained in $(a^+,a^-)$.
 
-\begin{lemma}\label{lem:aB-powers}
-  Let $a,b \in \pi_1(S)$ be such that $(\ora{a},\ora{b})$ are
-  $R$-parallel. Then there is an $s>0$ such that, for all $n,m \ge s$,
-  the geodesics $\ora{a^nB^m}$ and $\ora{B^ma^n}$ split
-  $\ora{a}$ and~$\ora{b}$.
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel, it follows that $\ora{aB},\ora{Ba}$ are in exactly one of the following
+three cases:
+\begin{enumerate}
+\item $a$-sided
+\item splitting
+\item $b$-sided
+\end{enumerate}
+\label{lem:trichotomy_ab}
 \end{lemma}
+\begin{proof}
+It follows from Lemma~\ref{lem:aB_Ba_together} and Lemma~\ref{lem:aB_a_nocross}.
+\end{proof}
+
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel, they are both parallel or anti-parallel to $\ora{a}$ and $\ora{b}$ if and only if they are $a$-sided or $b$-sided.
+\label{lem:aB_bA_antiparallel_a}
+\end{lemma}
+\begin{proof}
+If they are $a$-sided, then $a \cdot \ora{Ba} = \ora{aB}$ implies they have to be both parallel or anti-parallel to $\ora{a}$ and hence to $\ora{b}$. The $b$-sided case is similar.
+If parallel or anti-parallel to $\ora{a}$ (and $\ora{b}$) then Lemma~\ref{lem:splitting_specific} and Lemma~\ref{lem:trichotomy_ab} imply that they are $a$-sided or $b$-sided.
+\end{proof}
+
+This last result excludes cases such as the one in Fig.~\ref{fig:r1_switched}.
+
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel, it follows that $\ora{aB},\ora{Ba}$  are anti-parallel or cross.
+\label{lem:aB_bA_antiparallel_cross}
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:aB_Ba_together} and the fact that $a \cdot \ora{Ba} = \ora{aB}$,
+it follows that $\ora{aB},\ora{Ba}$ cannot be nested with respect to $\ora{a}$.
+If they are splitting, then by Lemma~\ref{lem:splitting_specific} they are anti-parallel to each other. If they are $a$-sided or $b$-sided, then, by Lemma~\ref{lem:aB_bA_antiparallel_a}, they must both be either parallel or anti-parallel to $\ora{a}$, so cannot be parallel to each other.
+\end{proof}
+
+See Figure~\ref{fig:c2} for an example of $\ora{Ba},\ora{aB}$ crossing.
+
+\begin{comment}
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel, 
+then both $\ora{Ba}/\ora{aB}$ are parallel to $\ora{a}$ if and only if $\ora{Ba}$ is to the left
+of $\ora{b}$.
+\label{lem:aB_bA_orientation}
+\end{lemma}
+\begin{proof}
+Suppose $\ora{Ba}/\ora{aB}$ are parallel to $\ora{a}$.
+By Lemma~\ref{lem:trichotomy_ab}, they can only be both parallel to $\ora{a}$ if they are
+$a$-sided or $b$-sided.
+If they are $a$-sided, then they are to the left of $\ora{b}$.
+If they are $b$-sided, then $\ora{aB}$ is to the right of $\ora{b}$, which means, 
+\end{proof}\DMGtodo{item 4, still editing}
+\end{comment}
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel and in the splitting case.
+Then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
+\label{lem:splitting_specific}
+\end{lemma}
+\begin{proof}
+It follows from $a \cdot \ora{Ba}=\ora{aB}$ and the fact that $a,b$ 
+move in opposite directions (cw/ccw) on this intervals.
+\end{proof}
+
+To draw specific examples precisely, we consider the common hyperbolic perpendicular of $\ora{a}$
+and $\ora{b}$, which we will denote~$R_1$. We will also use the
+same notation for the reflection through~$R_1$.
+Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
+that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
+$R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
+are perpendicular to $\ora{b}$; see
+Figure~\ref{fig:cases-conn-smoothing}.
+
+Since
+$ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
+these elements are hyperbolic, we see
+that the $R_i$ are reflections along pairwise non-intersecting reflection
+lines.
+We have several potential configurations. We show some
+in Figure~\ref{fig:cases-conn-smoothing}.
+The figures show the case where $(\ora{a},\ora{b})$ are R-parallel.
+Switching $a,b$ and reversing $\ora{aB}$ and $\ora{Ba}$ gives the case
+where they are
+L-parallel. Also note that in Figure~\ref{fig:r2} the pairs $R_2,R_3$ and $R_4,R_5$
+could be nested in either order; we could get the other possible nesting by reflecting the figures left-to-right, switching $a,b$, and reversing
+$\ora{aB}$ and $\ora{Ba}$.
+
+In what follows we determine precisely what configurations can arise.
+
+
+
+
 
 
 First, we prove the following claim.
@@ -784,52 +810,59 @@ Thus $x^n g$ is hyperbolic, with
 \[
 (x^n g)^+ \in x^n g \cdot V \subsetneq V.
 \]
-\DPTtodo{Modified last argument, and added claim about $\pi_1$ here}
 As $n \to \infty$, $x^n g \cdot V \to x^+$ and so $(x^n g)^+ \to x^+$.
 
-If $g,x \in \pi_1(S)$, since each point in $\bdy^\infty S$ is the
+If $g,x \in \pi_1(S)$, since each point in $\bdy_\infty S$ is the
 endpoint of at most one geodesic, if $g \cdot x^+ = x^-$ then also $g
 \cdot x^- = x^+$. But this implies that $g$ is elliptic of order~$2$,
 which is impossible in a surface group.
 \end{proof}
 
-\begin{proof}[Proof of Lemma~\ref{lem:aB-powers}]
-  Apply Lemma~\ref{lem:convergence_action} with $g=a$ and $x=B$.
-\DPTtodo{Needs editing}
-  This gives some $s_1>0$ such that
-$(a^{s_1}B)^+$ is closer to $a^+$ than half the width of the window
-\[
-\big((a^{s_1}B)^+,(a^{s_1}B)^-\big).
-\]
-Since $\ora{a^{s_1}B}$ cannot cross $\ora{b}$, it follows that
-\[
-\big((a^{s_1}B)^+,(a^{s_1}B)^-\big) \subsetneq (a^+,b^+).
-\]
-Since $\ora{a^{s_1}B}$ is parallel to $\ora{B}$, the starting point
-satisfies
-\[
-(a^{s_1}B^m)^- \in \big(b^+,(a^{s_1}B)^-\big)
-\]
-for every $m>0$.
 
-Similarly, since
-$(\ora{a},\ora{a^{s_1}B^m},\ora{a^{s_1}B})$ are parallel, it follows that
+\begin{lemma}
+Let $\ora{a},\ora{b}$ be parallel. If $\ora{a^nB^m}$ splits $\ora{a},\ora{b}$, then so does
+$\ora{a^{n'}B^{m'}}$ for every $n' \geq n$ and $m' \geq m$.
+\label{lem:once_splits}
+\end{lemma}
+\begin{proof}
+It suffices to prove it for $\ora{a^{n+1}B^m}$ and $\ora{a^nB^m}$.
+Note that $\ora{a},\ora{a^nB^m}$ being parallel implies
+$(a^{n+1}B^m)^+ \in ((a^nB^m)^+, a^+) \subset (b^+, a^+)$.
+Similarly, $\ora{a^nB^m},\ora{B}$ are parallel, so $(a^nB^{m+1})^- \in (B^-, (a^nB^m)^-) \subset (b^+,a^+)$
+This proves the claim.
+\end{proof}
+
+\begin{proposition}
+If $\ora{a}$ and $\ora{b}$ are parallel, then there exist $n,m \geq 0$ such that
+$\ora{a^{n'} B^{m'}}$ is splitting for every $n' \geq n$ and $m' \geq m$.
+\label{prop:eventual_splitting}
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:once_splits}, it suffices to show that there exist $n,m \geq 0$
+such that $\ora{a^{n} B^{m}}$ is splitting.
+
+First, choose $m>0$ so that
 \[
-(a^{s_1}B^m)^+ \in \big((a^{s_1}B)^+,a^+\big).
+B^m \cdot a^- \in (b^+, a^+).
 \]
-Hence $\ora{a^{s_1}B^m}$ splits $\ora{a},\ora{b}$ for every $m>0$.
-The argument for the other axis is analogous.
+Fix such an $m$. As $n \to \infty$, Lemma~\ref{lem:convergence_action} gives
+\begin{align*}
+\lim_{n \to \infty} (a^n B^m)^+ &= a^+, \\
+\lim_{n \to \infty} (a^n B^m)^- &= B^m \cdot a^-.
+\end{align*}
+In particular, for $n$ sufficiently large, we have
+\[
+(a^n B^m)^- \in (b^+, a^+),
+\]
+which implies that $\ora{a^n B^m}$ is splitting.
 \end{proof}
 
 \begin{remark}
 A ping-pong argument~\cite[\S 8.2.E]{Gromov1987HyperbolicGroups}
 shows that, in the splitting configuration, the subgroup generated by $a$ and $b$
 is free.
-\DPTtodo{Are we confident this is the only free case? I think it's
-  probably true, but don't have a proof}
-In fact, this is the only case in which freeness occurs.
-
-Accordingly, Lemma~\ref{lem:aB-powers} can also be deduced from the existence
+Accordingly, Proposition~\ref{prop:eventual_splitting} can also be deduced from the existence
 of an exponent $s>0$ (depending on $a,b$) such that, for all $m,n \ge s$,
 the subgroup generated by $a^m$ and $b^n$ is free.
 
@@ -838,13 +871,48 @@ Gromov hyperbolic groups and for mapping class groups; see, e.g.,
 \cite{Fujiwara2015SubgroupsPseudoAnosovII}.
 \end{remark}
 
-From Case~3(b), if we swap $b$ by $B$, we see that $\ora{ab}$ and
+From the above analysis, it follows that when $(\ora{a},\ora{b})$ are parallel, many composite pairs are parallel. We can extract the following two results making this precise. In the next Lemma, we emphasize that the two alternatives are not mutually exclusive.
+
+\begin{lemma}
+Let $a,b \in \pi_1(S)$.
+If $\ora{a},\ora{b}$ are parallel, then:
+\begin{itemize}
+\item $(\ora{ab},\ora{Ab})$ and $(\ora{b},\ora{Ab})$ are parallel or \label{item:ab_Ab_case}
+\item $(\ora{ba},\ora{Ba})$ and $(\ora{a},\ora{Ba})$ are parallel.\label{item:ba_Ba_case}
+\end{itemize}
+\label{lem:bA_parallel_ba}
+\end{lemma}
+\begin{proof}
+If $\ora{aB},\ora{Ba}$ are $a$-sided, then they are either parallel or anti-parallel to $\ora{a}$.
+If they are parallel, since $\ora{ab}$ and $\ora{b}$ are parallel to $\ora{a}$, then we are in case second case of the statement.
+Otherwise we are in the first case.
+If they are $b$-sided, we are the analysis is similar (just swap $a \mapsto B$ and $b \mapsto A$, since $(\ora{B},\ora{A})$ are parallel.
+In the splitting case, the statement follows from
+Lemma~\ref{lem:splitting_specific}
+\end{proof}
+
+If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise, and in fact the alternatives are mutually exclusive.
+\begin{lemma}\label{lem:a_parallel_Ba}
+Let $a,b \in \pi_1(S)$.
+If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross,
+let $\mathcal{A} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$
+and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
+\begin{itemize}
+\item $(\ora{g},\ora{h})$ is parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$; or
+\item $(\ora{g},\ora{h})$ is anti-parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+The proof is similar to the previous lemma.
+\end{proof}
+
+Suppose that $\ora{Ba},\ora{aB}$ are $b$-sided and cross, as in Figure~\ref{fig:c2}. If we swap $b$ by $B$, we see that $\ora{ab}$ and
 $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not
 parallel (in fact, they are anti-parallel). Let us show a concrete
 example where this situation arises.
 
 \begin{example}
-  To see that Case~3(b) actually arises, consider any two parallel $\ora{g}$
+  To see that the case $b$-sided and crossing actually arises, consider any two parallel $\ora{g}$
   and $\ora{h}$, for instance coming from an appropriately-oriented
   pair of disjoint simple closed curves sitting
   as the cuffs of an embedded pair of pants.
@@ -1125,7 +1193,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   smoothing.
 
   Finally, we see Eq.~\eqref{eq:crossbelowy}. By
-  Lemma~\ref{lem:aB-powers}, if $s$ is large enough,
+  Proposition~\ref{prop:eventual_splitting}, if $s_0$ is large enough, for every $s \geq s_0$
   $\ora{Y^s x^s}$ and $\ora{x^s Y^s}$ split $\ora{y},\ora{x}$, and
   similarly $\ora{A x^s a Y^s}$ and $\ora{Y^s A x^s a}$ split $A \cdot
   \ora{x}, \ora{y}$; see
