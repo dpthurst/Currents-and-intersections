@@ -574,20 +574,25 @@ If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we 
 
 Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and
 \[
-\|(ghG)H\|=2\|h\| > \|(ghG)h\|
+\|(ghG)H\|=2\|h\| \geq \|(ghG)h\|
 \]
 where the first inequality is from
 Lemma~\ref{lem:foundation_trees}(1c).
-Note that $g$ and $gHG$ are elliptic, and $\ora{g},\ora{gHG}$ are antiparallel, so $\ora{g}, \ora{ghG}$ are parallel.
+Note that $g$ and $hGH$ are elliptic, and $\ora{g},\ora{hGH}$ are crossing or anti-parallel. If they are crossing, subcase 3.1 gives us
 
-Thus, we can apply subcase 3.2 to get
-
-\[\|G(ghG)\|=\|g(ghG)\|\]
-i.e.
-\[\|hG\|=\|gh\|\]
-a contradiction.
-
-
+$\|ghGH\|=0$, a contradiction.
+If they are anti-parallel, then $\ora{g},\ora{hgH}$ are parallel, and subcase 3.2 gives us
+\[
+\|g(hgH)\| = \|g(hGH)\|.
+\]
+The right hand side is $2\|h\|>0$, by above.
+If $\|ghgH\|=0$, we get a contradiction. Then, suppose $\|ghgH\|>0$, so that then $gh, gH$ overlap in more than a point.
+ If $gh,gH$ overlap coherently,
+\[
+\|ghgH\| =\| gh\| + \|gH\| < 2\|h\|.
+\]
+If $gh,gH$ overlap incoherently then $gh,Hg$ are coherent
+so $\|gh\|+\|Hg\|=\|ghHg\|=0$, a contradiction.
 
 \begin{case}
   In the action on~$T$, $g,h$ are both elliptic.
