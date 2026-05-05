@@ -574,36 +574,19 @@ If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we 
 
 Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and
 \[
-\|(ghG)h\|>2\|h\| = \|h\| + \|gH\| > \|gh\| + \|gH\|.
+\|(ghG)H\|=2\|h\| > \|(ghG)h\|
 \]
 where the first inequality is from
 Lemma~\ref{lem:foundation_trees}(1c).
-Hence, $T_{gh},T_{Gh}$ overlap incoherently, again by Lemma~\ref{lem:foundation_trees}(1c).
-However, if $(\ora{g},\ora{h})$ are parallel, $(\ora{gh},\ora{Gh})$
-are parallel or $(\ora{hg},\ora{Hg})$
-(by Lemma~\ref{lem:bA_parallel_ba}). The first is a contradiction by Proposition~\ref{prop:parallel-incoherent}.
+Note that $g$ and $gHG$ are elliptic, and $\ora{g},\ora{gHG}$ are antiparallel, so $\ora{g}, \ora{ghG}$ are parallel.
 
-Let's deal with the other pair.
-First note that
-$(hg)(Hg)=(hgH)g$.
-Since $(\ora{g},\ora{h})$ are parallel, by NS dynamics of $h$ we have that $\ora{hgH}, \ora{g}$ cross or $\ora{hgH}, \ora{g}$ are anti-parallel. 
-If they cross, since $hgH$ and $g$ are elliptic, we can apply Subcase 3.1. to get
-$\|(hgH)g\|=0$. But, on the other hand, by conjugating by $g$, we have $\|hgHg\| =\| ghgH\|$.
-If $gh,gH$ overlapped coherently, then $\| ghgH\| = \|gh\| + \|gH\| >0$, a contradiction.
-If $gh, gH$ overlap incoherently
-then $gh,hG$ overlap coherently, and thus 
-we would have
-$\|gh\| + \|hG\|=\|(gh)(hG)\|=\|gh^2G\|=2\|h\|$. But $\|gh\| + \|hG\|<2\|h\|$, a contradiction.
+Thus, we can apply subcase 3.2 to get
 
-If $\ora{hgH},\ora{g}$ are anti-parallel, then we have $\ora{hgH}, \ora{G}$ are parallel, so by Subcase 3.2 we have 
-$\|(hgH)G\| = \|(hgH)g\|$.
+\[\|G(ghG)\|=\|g(ghG)\|\]
+i.e.
+\[\|hG\|=\|gh\|\]
+a contradiction.
 
-Note that we are assuming $h,ghG$ overlap incoherently, and thus $h$ and $gHG$ overlap coherently.
-Hence, $\|(hgH)G\| =\|h(gHG)\|=\|h\|+\|gHG\| = 2\|h\|.$.
-On the other hand, if $hg, Hg$ overlapped coherently $(hg)(Hg)\|=\|hg\| + \|Hg\| <2\|h\|$, since $\|h \|>\|gh\|$.
-
-Thus it must be that $hg$, $Gh$ overlap coherently.
-But that also leads to a contradiction, since on the one hand $\|gh\|+\|gH\|=\|h\|+ \|gh\|<2\|h\|$ and on the other $\|(hg)(Gh)\|=\|h^2\|=2\|h\|$.
 
 
 \begin{case}
