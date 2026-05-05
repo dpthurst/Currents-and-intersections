@@ -617,21 +617,13 @@ hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This wil
     \label{fig:r3}
   \end{subfigure}
   \hfill
-    \begin{subfigure}[b]{0.34\textwidth}
-    \centering
-    \resizebox{\linewidth}{!}{\svgfignormal{r1_switched}}
-    \caption{$\protect\ora{aB}$, $\protect\ora{Ba}$ are $b$-sided but have different parallelism to $\protect\ora{b}$}
-    \label{fig:r1_switched}
-  \end{subfigure}
-  \vspace{4pt}
-
-  \begin{subfigure}[b]{0.34\textwidth}
+ \begin{subfigure}[b]{0.34\textwidth}
     \centering
     \resizebox{\linewidth}{!}{\svgfignormal{r1}}
     \caption{$\protect\ora{aB}$, $\protect\ora{Ba}$ are $b$-sided and antiparallel to each other}
     \label{fig:r1}
   \end{subfigure}
-  \hfill
+  \vspace{4pt}
   \begin{subfigure}[b]{0.34\textwidth}
     \centering
     \resizebox{\linewidth}{!}{\svgfignormal{c2}}
@@ -690,7 +682,7 @@ the same axis.
 
 \begin{lemma}
 If $(\ora{a},\ora{b})$ are parallel, then $\ora{aB},\ora{Ba}$ are
-exactly one of $a$-sided; splitting; or $b$-sided.
+exactly one of $a$-sided, splitting, or $b$-sided.
 \label{lem:trichotomy_ab}
 \end{lemma}
 \begin{proof}
@@ -713,67 +705,37 @@ If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parall
 \begin{proof}
 By Lemma~\ref{lem:aB_Ba_together} and the fact that $a \cdot \ora{Ba} = \ora{aB}$,
 it follows that $\ora{aB},\ora{Ba}$ cannot be nested with respect to $\ora{a}$.
-If they are splitting, then by Lemma~\ref{lem:splitting_specific} they are anti-parallel to each other. If they are $a$-sided or $b$-sided, then, by Lemma~\ref{lem:aB_bA_antiparallel_a}, they must both be either parallel or anti-parallel to $\ora{a}$, so cannot be parallel to each other.
+Then by Lemma~\ref{lem:aB_bA_antiparallel_a}, they must both be either parallel or anti-parallel to $\ora{a}$, so cannot be parallel to each other.
 \end{proof}
 
-See Figure~\ref{fig:c2} for an example of $\ora{Ba},\ora{aB}$ crossing.
+See Figure~\ref{fig:c2} and Example~\ref{ex:ab_parallel_aB_crossing} for examples where $(\ora{Ba},\ora{aB})$ cross.
 
-\begin{comment}
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, 
-then both $\ora{Ba}/\ora{aB}$ are parallel to $\ora{a}$ if and only if $\ora{Ba}$ is to the left
-of $\ora{b}$.
-\label{lem:aB_bA_orientation}
-\end{lemma}
-\begin{proof}
-Suppose $\ora{Ba}/\ora{aB}$ are parallel to $\ora{a}$.
-By Lemma~\ref{lem:trichotomy_ab}, they can only be both parallel to $\ora{a}$ if they are
-$a$-sided or $b$-sided.
-If they are $a$-sided, then they are to the left of $\ora{b}$.
-If they are $b$-sided, then $\ora{aB}$ is to the right of $\ora{b}$, which means, 
-\end{proof}\DMGtodo{item 4, still editing}
-\end{comment}
-\begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel and in the splitting case.
-Then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
+If $(\ora{a},\ora{b})$ are parallel and $\ora{aB},\ora{Ba}$ are splitting,
+then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
 \label{lem:splitting_specific}
 \end{lemma}
 \begin{proof}
-It follows from $a \cdot \ora{Ba}=\ora{aB}$ and the fact that $a,b$ 
-move in opposite directions (cw/ccw) on this intervals.
+This follows from $a \cdot \ora{Ba}= b \cdot \ora{Ba} \ora{aB}$ and the fact that $a,b$ 
+move in opposite directions (cw/ccw) on these intervals. The only way the $a$ and $b$ actions can end up in the same place is if they move from one interval to the other.
 \end{proof}
 
-To draw specific examples precisely, we consider the common hyperbolic perpendicular of $\ora{a}$
+To draw specific examples precisely, consider the common hyperbolic perpendicular of $\ora{a}$
 and $\ora{b}$, which we will denote~$R_1$. We will also use the
 same notation for the reflection through~$R_1$.
 Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
 that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
 $R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
-are perpendicular to $\ora{b}$; see
-Figure~\ref{fig:cases-conn-smoothing}.
+are perpendicular to $\ora{b}$.
 
 Since
 $ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
 these elements are hyperbolic, we see
 that the $R_i$ are reflections along pairwise non-intersecting reflection
-lines.
-We have several potential configurations. We show some
+lines. There are several potential configurations, as shown
 in Figure~\ref{fig:cases-conn-smoothing}.
-The figures show the case where $(\ora{a},\ora{b})$ are R-parallel.
-Switching $a,b$ and reversing $\ora{aB}$ and $\ora{Ba}$ gives the case
-where they are
-L-parallel. Also note that in Figure~\ref{fig:r2} the pairs $R_2,R_3$ and $R_4,R_5$
-could be nested in either order; we could get the other possible nesting by reflecting the figures left-to-right, switching $a,b$, and reversing
-$\ora{aB}$ and $\ora{Ba}$.
 
-In what follows we determine precisely what configurations can arise.
-
-
-
-
-
-
-First, we prove the following claim.
+% First, we prove the following claim.
 
 \begin{lemma}
 \label{lem:convergence_action}
@@ -897,7 +859,7 @@ The proof is similar to the previous lemma.
 Suppose that $\ora{Ba},\ora{aB}$ are $b$-sided and cross, as in Figure~\ref{fig:c2}. If we swap $b$ by $B$, we see that $\ora{ab}$ and
 $\ora{ba}$ can cross even though $\ora{a}$ and $\ora{b}$ are not
 parallel (in fact, they are anti-parallel). Let us show a concrete
-example where this situation arises (see also~\cite{}
+example where this situation arises (see also the initial discussion~\cite{MGT25:SmoothingsErratum})..
 
 \begin{example}
   To see that the case $b$-sided and crossing actually arises, consider any two parallel $\ora{g}$
