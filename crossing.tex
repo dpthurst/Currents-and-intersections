@@ -653,45 +653,53 @@ hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This wil
   \label{fig:cases-conn-smoothing}
 \end{figure}
 
-The following Lemma rules out
-configurations such as the one in Fig.\ref{fig:r2}.
+% The following Lemma rules out
+% configurations such as the one in Fig.\ref{fig:r2}.
 
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, neither $\ora{aB}$ cannot cross $\ora{a}$ nor $\ora{b}$.
+If $(\ora{a},\ora{b})$ are parallel, $\ora{aB}$ does not cross $\ora{a}$ or $\ora{b}$.
 \label{lem:aB_a_nocross}
 \end{lemma}
 \begin{proof}
-If $\ora{aB}$ crossed $\ora{a}$, then $\ora{(bA)a}=\ora{b}$ would cross $\ora{a}$, a contradiction.
+If $\ora{aB}$ crossed $\ora{a}$, then $\ora{(bA)a}=\ora{b}$ would
+cross $\ora{a}$, a contradiction. Similarly $\ora{aB}$ cannot cross $\ora{b}$.
 \end{proof}
 
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, for $g \in \{ a, b \}$, the endpoints of $\ora{aB},\ora{Ba}$ are in the
-same connected component of $\partial_\infty S - \{ g^+,g^-\}$.  
+If $(\ora{a},\ora{b})$ are parallel, for $g \in \{ a, b \}$, the
+endpoints of $\ora{aB}$ and the endpoints of $\ora{Ba}$ are in the
+same connected component of $\partial_\infty S - \{ g^+,g^-\}$.
 \label{lem:aB_Ba_together}
 \end{lemma}
 \begin{proof}
-Note that $a \cdot \ora{Ba} = b \cdot \ora{Ba} = \ora{aB}$, hence, by NS dynamics of $a$ and $b$,
-the endpoints cannot be in different components.
+  By the previous lemma, the endpoints of $\ora{Ba}$ are in one
+  connected component.
+  Since $a \cdot \ora{Ba} = b \cdot \ora{Ba} = \ora{aB}$, by NS dynamics of $a$ and $b$,
+the endpoints of $\ora{aB}$ are in the same connected component.
 \end{proof}
 
- Whenever
+When $\ora{a},\ora{b}$ are R-parallel and
 \[
-\big((a^nB^m)^-,(a^nB^m)^+\big) \subsetneq (b^+,a^+)
+\big((aB)^-,(aB)^+\big) \subsetneq (b^+,a^+)
 \quad\text{and}\quad
-\big((B^ma^n)^-,(B^ma^n)^+\big) \subsetneq (a^-,b^-),
+\big((Ba)^-,(Ba)^+\big) \subsetneq (a^-,b^-),
 \]
 as in Figure~\ref{fig:r3}, we say that
-\emph{$\ora{a^nB^m}$ splits $\ora{a},\ora{b}$}.
+\emph{$\ora{aB}$ splits $\ora{a},\ora{b}$}.
 Similarly, whenever
 \[
-\big((a^nB^m)^-,(a^nB^m)^+\big),
-\big((B^ma^n)^-,(B^ma^n)^+\big)
+\big((aB)^-,(aB)^+\big),
+\big((Ba)^-,(Ba)^+\big)
 \subsetneq (b^-,b^+),
 \]
 as in Figure~\ref{fig:r1},
-we say that \emph{$\ora{a^nB^m}$ is on the $b$-side of $\ora{a},\ora{b}$},
+we say that \emph{$\ora{aB}$ is on the $b$-side of $\ora{a},\ora{b}$},
 and we say that it \emph{is on the $a$-side of $\ora{a},\ora{b}$} if both intervals
-are contained in $(a^+,a^-)$.
+are contained in $(a^+,a^-)$. When $\ora{a},\ora{b}$ are L-parallel
+the terminology is adjusted accordingly. We will also use this
+terminology for powers $\ora{a^n B^m}$ and $\ora{B^m a^n}$, which will
+have the same division of cases since $\ora{a^n}$ and $\ora{a}$ have
+the same axis.
 
 \begin{lemma}
 If $(\ora{a},\ora{b})$ are parallel, it follows that $\ora{aB},\ora{Ba}$ are in exactly one of the following
