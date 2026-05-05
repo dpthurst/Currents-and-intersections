@@ -573,27 +573,36 @@ point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, a
 If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
 
 Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by
-Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and, from
+Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and we must
+derive a contradiction. From
 Lemma~\ref{lem:foundation_trees}(1c),
 \[
 \|(ghG)H\|=2\|h\| > \|(ghG)h\|.
 \]
-Note that $g$ and $hGH$ are elliptic, and $\ora{g}$ and $\ora{hgH} = h
+We can see now that $gh$ is hyperbolic: if it were elliptic, then so are $hg$
+and $GH$. But since $\ora{gh}$ and $\ora{GH}$ cross, we can apply
+Subcase 3.1 below to the pair $gh, GH$ to conclude $\|ghGH\| = 0$, a
+contradiction.
+
+Note that $g$ and $hgH$ are elliptic, and $\ora{g}$ and $\ora{hgH} = h
 \cdot \ora{g}$ are
-crossing or anti-parallel. If they are crossing, Subcase 3.1 below gives us
+crossing or anti-parallel. If they are crossing, Subcase 3.1
+again gives us
 $\|ghGH\|=0$, a contradiction.
 If they are anti-parallel, then Subcase 3.2 gives us
 \[
 \|g(hGH)\| = \|g(hgH)\|.
 \]
-The left hand side is $2\|h\|>0$, by above, so $\|ghgH\|>0$, so, by
+The left hand side is $2\|h\|>0$, by above, so $\|ghgH\|>0$.
+Now by
 Lemma~\ref{lem:foundation_trees}, $T_{gh}, T_{gH}$ overlap in more than a point.
- If $T_{gh},T_{gH}$ overlap coherently,
+ If they overlap coherently,
 \[
-\|ghgH\| =\| gh\| + \|gH\| < 2\|h\|.
+\|ghgH\| =\| gh\| + \|gH\| < 2\|h\|,
 \]
-If $T_{gh},T_{gH}$ overlap incoherently then $T_{gh},T_{Hg}$ are coherent
-so $\|gh\|+\|Hg\|=\|ghHg\|=0$, a contradiction.
+a contradiction.
+If $T_{gh},T_{gH}$ overlap incoherently then $T_{gh},T_{hG}$ are coherent
+so $\|gh\|+\|hG\|=\|ghhG\|=2\|h\|=0$, a contradiction.
 
 \begin{case}
   In the action on~$T$, $g,h$ are both elliptic.
