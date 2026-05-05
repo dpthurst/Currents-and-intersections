@@ -596,8 +596,8 @@ We now turn to some elementary lemmas about crossing.
 If $\ora{a}$ and $\ora{b}$ are R-parallel,
 Lemma~\ref{lem:righthandedfoundation} makes no claim about the
 relationship of $\ora{aB}$ and $\ora{Ba}$. Indeed this is not
-determined by the hypotheses, as we now analyze.
-This relative position can be crossing or anti-parallel (Lemma~\ref{lem:bA_parallel_ba}).
+determined by the hypotheses: they can be crossing or anti-parallel
+(Lemma~\ref{lem:aB_bA_antiparallel_cross}).
 Nevertheless, we can extract some information about composite pairs.
 
 Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
@@ -681,17 +681,17 @@ have the same division of cases since $\ora{a^n}$ and $\ora{a}$ have
 the same axis.
 
 \begin{lemma}
+\label{lem:trichotomy_ab}
 If $(\ora{a},\ora{b})$ are parallel, then $\ora{aB},\ora{Ba}$ are
 exactly one of $a$-sided, splitting, or $b$-sided.
-\label{lem:trichotomy_ab}
 \end{lemma}
 \begin{proof}
 This follows from Lemma~\ref{lem:aB_Ba_together}.
 \end{proof}
 
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parallel or cross.
 \label{lem:aB_bA_antiparallel_cross}
+If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parallel or cross.
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{lem:aB_Ba_together} and the fact that $a \cdot \ora{Ba} = \ora{aB}$,
@@ -710,15 +710,6 @@ then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
 This follows from $a \cdot \ora{Ba}= b \cdot \ora{Ba} =\ora{aB}$ and the fact that $a,b$ 
 move in opposite directions (cw/ccw) on these intervals. The only way the $a$ and $b$ actions can end up in the same place is if they move from one interval to the other.
 \end{proof}
-
-% \begin{lemma}
-% If $(\ora{a},\ora{b})$ are parallel, $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ and $\ora{b}$ if and only if they are $a$-sided or $b$-sided.
-% \label{lem:aB_bA_antiparallel_a}
-% \end{lemma}
-% \begin{proof}
-% If $\ora{Ba},\ora{aB}$ are $a$-sided, then $a \cdot \ora{Ba} = \ora{aB}$ implies they have to be both parallel or anti-parallel to $\ora{a}$ and hence to $\ora{b}$. The $b$-sided case is similar.
-% If $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ (and $\ora{b}$) then Lemma~\ref{lem:splitting_specific} and Lemma~\ref{lem:trichotomy_ab} imply that they are $a$-sided or $b$-sided.
-% \end{proof}
 
 To draw specific examples precisely, consider the common hyperbolic perpendicular of $\ora{a}$
 and $\ora{b}$, which we will denote~$R_1$. We will also use the
@@ -838,49 +829,8 @@ Gromov hyperbolic groups and for mapping class groups; see, e.g.,
 \end{remark}
 
 From the above analysis, it follows that when $(\ora{a},\ora{b})$ are
-parallel, many composite pairs are parallel. We can extract two
-particular results we will use later.
-
-\begin{lemma}
-Let $a,b \in \pi_1(S)$.
-If $(\ora{a},\ora{b})$ are parallel, then either
-\begin{itemize}
-\item $(\ora{ab},\ora{Ab})$ and $(\ora{b},\ora{Ab})$ are parallel, or \label{item:ab_Ab_case}
-\item $(\ora{ba},\ora{Ba})$ and $(\ora{a},\ora{Ba})$ are parallel.\label{item:ba_Ba_case}
-\end{itemize}
-\label{lem:bA_parallel_ba}
-\end{lemma}
-
-These conclusions are not mutually exclusive. Note $Ab = (Ba)^{-1}$.
-
-\begin{proof}
-If $\ora{aB},\ora{Ba}$ are $a$-sided, then they are either parallel or anti-parallel to $\ora{a}$.
-If they are parallel, since $\ora{ab}$ and $\ora{b}$ are parallel to
-$\ora{a}$ and on the opposite side of $\ora{ab}$, then we are in case
-second case of the statement.
-Otherwise we are in the first case.
-If they are $b$-sided, we are the analysis is similar (just swap $a \leftrightarrow B$ and $b \leftrightarrow A$, since $(\ora{B},\ora{A})$ are parallel).
-In the splitting case, from
-Lemma~\ref{lem:splitting_specific} we have that $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$, and by Lemma~\ref{lem:aB_bA_antiparallel_cross} they are anti-parallel.
-It follows that $\ora{aB}$ and $\ora{a}$ are parallel, $\ora{Ba}$ and $\ora{a}$ are parallel.
-Also, $\ora{aB}$ does not cross $\ora{ab}$ nor $\ora{ba}$. Indeed, if it crossed $\ora{ba}$, we would have $\ora{(aB)(ba)}=\ora{a^2}$ would cross $\ora{ba}$ which is not true. The argument with $\ora{ab}$ is similar, using $aB=(bA)^{-1}$.
-Hence, we have possible three cases
-\begin{enumerate}
-\item $\ora{aB}, \ora{ab}$ are anti-parallel and $\ora{aB}, \ora{ba}$ are anti-parallel
- \item $\ora{aB}, \ora{ab}$ are parallel and $\ora{aB}, \ora{ba}$ are anti-parallel
-\item
-  $\ora{aB}, \ora{ab}$ are parallel and $\ora{aB}, \ora{ba}$ are parallel
-\end{enumerate}
-We claim that only case 2 can hold.
-Indeed, we rule out case 1 (and case 3 is rule out similarly by symmetry). To rule out case 1, note that $\ora{aB},\ora{ab}$ being anti-parallel means $\ora{bA}, \ora{ab}$ are parallel. Hence, $(bA)(ab)=b^2$ and $(ab)(bA)=ab^2A$ would cross, and thus $\ora{b}$ and $a \cdot \ora{b}$ would cross.
-But since $a \cdot \ora{Ba}=\ora{aB}$, and it means that the ccw oriented triple of points $(Ba^+, b^-, b^+)$ get sent to $(aB^+, a \cdot b^-, a \cdot b^+)$, so they cannot cross.
-
-It follows that the endpoints of $\ora{aB}, \ora{Ba}, \ora{ab}, \ora{ba}$ appear ccw as
-$(ba^+, aB^-, aB^-, ab^+)$ and $(ab^-, Ba^-, Ba^+, ab^-)$.
-This shows $\ora{ba},\ora{Ba}$ are parallel, and $\ora{a},\ora{Ba}$ are parallel. 
-\end{proof}
-
-If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise.
+parallel, many composite pairs are parallel. We can extract a
+particular result we will use later.
 \begin{lemma}\label{lem:a_parallel_Ba}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel and $(\ora{aB}, \ora{Ba})$ cross,
@@ -892,9 +842,16 @@ and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
 \end{itemize}
 \end{lemma}
 \begin{proof}
-The proof is similar to the previous lemma. Since
+Since
 $(\ora{aB},\ora{Ba})$ cross, they must be either $a$-sided or
-$b$-sided. In either case the result easily follows.
+$b$-sided.
+If they are $a$-sided, then they are either parallel or anti-parallel to $\ora{a}$.
+If they are parallel, since $\ora{ab}$, $\ora{ba}$, and $\ora{b}$ are parallel to
+$\ora{a}$ and on the opposite side of $\ora{ab}$, we are in the first
+case of the statement.
+Otherwise we are in the second case.
+
+If they are $b$-sided, the analysis is similar: just swap $a \leftrightarrow B$ and $b \leftrightarrow A$, since $(\ora{B},\ora{A})$ are parallel.
 \end{proof}
 
 Suppose that $\ora{Ba},\ora{aB}$ are $b$-sided and cross, as in Figure~\ref{fig:c2}. If we replace $b$ by $B$, we see that $\ora{ab}$ and
