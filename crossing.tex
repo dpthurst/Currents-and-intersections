@@ -605,7 +605,7 @@ Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
-\begin{figure}[hb!]
+\begin{figure}[hb]
   \centering
   \setlength{\abovecaptionskip}{3pt}
   \setlength{\belowcaptionskip}{0pt}
@@ -690,22 +690,13 @@ This follows from Lemma~\ref{lem:aB_Ba_together}.
 \end{proof}
 
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ and $\ora{b}$ if and only if they are $a$-sided or $b$-sided.
-\label{lem:aB_bA_antiparallel_a}
-\end{lemma}
-\begin{proof}
-If $\ora{Ba},\ora{aB}$ are $a$-sided, then $a \cdot \ora{Ba} = \ora{aB}$ implies they have to be both parallel or anti-parallel to $\ora{a}$ and hence to $\ora{b}$. The $b$-sided case is similar.
-If $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ (and $\ora{b}$) then Lemma~\ref{lem:splitting_specific} and Lemma~\ref{lem:trichotomy_ab} imply that they are $a$-sided or $b$-sided.
-\end{proof}
-
-\begin{lemma}
 If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parallel or cross.
 \label{lem:aB_bA_antiparallel_cross}
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{lem:aB_Ba_together} and the fact that $a \cdot \ora{Ba} = \ora{aB}$,
 it follows that $\ora{aB},\ora{Ba}$ cannot be nested with respect to $\ora{a}$.
-Then by Lemma~\ref{lem:aB_bA_antiparallel_a}, they must both be either parallel or anti-parallel to $\ora{a}$, so cannot be parallel to each other.
+Then since $a \cdot \ora{Ba} = \ora{aB}$, they must both be either parallel or anti-parallel to $\ora{a}$, so cannot be parallel to each other.
 \end{proof}
 
 See Figure~\ref{fig:c2} and Example~\ref{ex:ab_parallel_aB_crossing} for examples where $(\ora{Ba},\ora{aB})$ cross.
@@ -718,6 +709,15 @@ then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
 \begin{proof}
 This follows from $a \cdot \ora{Ba}= b \cdot \ora{Ba} \ora{aB}$ and the fact that $a,b$ 
 move in opposite directions (cw/ccw) on these intervals. The only way the $a$ and $b$ actions can end up in the same place is if they move from one interval to the other.
+\end{proof}
+
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel, $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ and $\ora{b}$ if and only if they are $a$-sided or $b$-sided.
+\label{lem:aB_bA_antiparallel_a}
+\end{lemma}
+\begin{proof}
+If $\ora{Ba},\ora{aB}$ are $a$-sided, then $a \cdot \ora{Ba} = \ora{aB}$ implies they have to be both parallel or anti-parallel to $\ora{a}$ and hence to $\ora{b}$. The $b$-sided case is similar.
+If $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ (and $\ora{b}$) then Lemma~\ref{lem:splitting_specific} and Lemma~\ref{lem:trichotomy_ab} imply that they are $a$-sided or $b$-sided.
 \end{proof}
 
 To draw specific examples precisely, consider the common hyperbolic perpendicular of $\ora{a}$
@@ -735,7 +735,9 @@ that the $R_i$ are reflections along pairwise non-intersecting reflection
 lines. There are several potential configurations, as shown
 in Figure~\ref{fig:cases-conn-smoothing}.
 
-% First, we prove the following claim.
+\DPTtodo{edited here, including adding a more general statement to lemma}
+We next show that we can often reduce to the splitting case, starting
+with a general convergence lemma.
 
 \begin{lemma}
 \label{lem:convergence_action}
@@ -745,7 +747,15 @@ the element $x^n g$ is hyperbolic and
 \[
 \lim_{n \to \infty} (x^n g)^+ = x^+ .
 \]
-If $x,g \in \pi_i(S)$, the hypothesis that $g \cdot x^+ \ne x^-$ is automatic.
+More generally, if $g,h,x \in \PSL(2,\bbR)$ with $x$ hyperbolic and
+$hg \cdot x^+ \ne x^-$, then for all sufficiently large $n$, the
+element $g x^n h$ is hyperbolic and
+\begin{align*}
+  \lim_{n \to \infty} (g x^n h)^+ &= g \cdot x^+ &
+  \lim_{n \to \infty} (g x^n h)^- &= H \cdot x^-.
+\end{align*}
+If $x,g \in \pi_i(S)$, the hypotheses that $g \cdot x^+ \ne x^-$,
+resp.\ $hg \cdot x^+ \ne x^-$, are automatic.
 \end{lemma}
 
 \begin{proof}
