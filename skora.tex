@@ -572,25 +572,27 @@ If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
 
-Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and
+Finally, if $T_{ghG}$ and $T_{h}$ overlap incoherently, by
+Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and, from
+Lemma~\ref{lem:foundation_trees}(1c),
 \[
-\|(ghG)H\|=2\|h\| \geq \|(ghG)h\|
+\|(ghG)H\|=2\|h\| > \|(ghG)h\|.
 \]
-where the first inequality is from
-Lemma~\ref{lem:foundation_trees}(1c).
-Note that $g$ and $hGH$ are elliptic, and $\ora{g},\ora{hGH}$ are crossing or parallel. If they are crossing, subcase 3.1 gives us
+Note that $g$ and $hGH$ are elliptic, and $\ora{g}$ and $\ora{hgH} = h
+\cdot \ora{g}$ are
+crossing or anti-parallel. If they are crossing, Subcase 3.1 below gives us
 $\|ghGH\|=0$, a contradiction.
-If they are parallel, then, and subcase 3.2 gives us
+If they are anti-parallel, then Subcase 3.2 gives us
 \[
 \|g(hGH)\| = \|g(hgH)\|.
 \]
-The left hand side is $2\|h\|>0$, by above.
-If $\|ghgH\|=0$, we get a contradiction. Then, suppose $\|ghgH\|>0$, so that then $gh, gH$ overlap in more than a point.
- If $gh,gH$ overlap coherently,
+The left hand side is $2\|h\|>0$, by above, so $\|ghgH\|>0$, so, by
+Lemma~\ref{lem:foundation_trees}, $T_{gh}, T_{gH}$ overlap in more than a point.
+ If $T_{gh},T_{gH}$ overlap coherently,
 \[
 \|ghgH\| =\| gh\| + \|gH\| < 2\|h\|.
 \]
-If $gh,gH$ overlap incoherently then $gh,Hg$ are coherent
+If $T_{gh},T_{gH}$ overlap incoherently then $T_{gh},T_{Hg}$ are coherent
 so $\|gh\|+\|Hg\|=\|ghHg\|=0$, a contradiction.
 
 \begin{case}
