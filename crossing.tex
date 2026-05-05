@@ -711,14 +711,14 @@ This follows from $a \cdot \ora{Ba}= b \cdot \ora{Ba} \ora{aB}$ and the fact tha
 move in opposite directions (cw/ccw) on these intervals. The only way the $a$ and $b$ actions can end up in the same place is if they move from one interval to the other.
 \end{proof}
 
-\begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ and $\ora{b}$ if and only if they are $a$-sided or $b$-sided.
-\label{lem:aB_bA_antiparallel_a}
-\end{lemma}
-\begin{proof}
-If $\ora{Ba},\ora{aB}$ are $a$-sided, then $a \cdot \ora{Ba} = \ora{aB}$ implies they have to be both parallel or anti-parallel to $\ora{a}$ and hence to $\ora{b}$. The $b$-sided case is similar.
-If $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ (and $\ora{b}$) then Lemma~\ref{lem:splitting_specific} and Lemma~\ref{lem:trichotomy_ab} imply that they are $a$-sided or $b$-sided.
-\end{proof}
+% \begin{lemma}
+% If $(\ora{a},\ora{b})$ are parallel, $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ and $\ora{b}$ if and only if they are $a$-sided or $b$-sided.
+% \label{lem:aB_bA_antiparallel_a}
+% \end{lemma}
+% \begin{proof}
+% If $\ora{Ba},\ora{aB}$ are $a$-sided, then $a \cdot \ora{Ba} = \ora{aB}$ implies they have to be both parallel or anti-parallel to $\ora{a}$ and hence to $\ora{b}$. The $b$-sided case is similar.
+% If $\ora{Ba},\ora{aB}$ are both parallel or anti-parallel to $\ora{a}$ (and $\ora{b}$) then Lemma~\ref{lem:splitting_specific} and Lemma~\ref{lem:trichotomy_ab} imply that they are $a$-sided or $b$-sided.
+% \end{proof}
 
 To draw specific examples precisely, consider the common hyperbolic perpendicular of $\ora{a}$
 and $\ora{b}$, which we will denote~$R_1$. We will also use the
@@ -735,9 +735,10 @@ that the $R_i$ are reflections along pairwise non-intersecting reflection
 lines. There are several potential configurations, as shown
 in Figure~\ref{fig:cases-conn-smoothing}.
 
-\DPTtodo{edited here, including adding a more general statement to lemma}
-We next show that we can often reduce to the splitting case, starting
-with a general convergence lemma.
+\DPTtodo{edited here, including adding a more general derived
+  statement to lemma}
+We next show that by taking powers we can reduce to the splitting
+case, starting with a general convergence lemma.
 
 \begin{lemma}
 \label{lem:convergence_action}
@@ -754,7 +755,7 @@ element $g x^n h$ is hyperbolic and
   \lim_{n \to \infty} (g x^n h)^+ &= g \cdot x^+ &
   \lim_{n \to \infty} (g x^n h)^- &= H \cdot x^-.
 \end{align*}
-If $x,g \in \pi_i(S)$, the hypotheses that $g \cdot x^+ \ne x^-$,
+If $x,g,h \in \pi_i(S)$, the hypotheses that $g \cdot x^+ \ne x^-$,
 resp.\ $hg \cdot x^+ \ne x^-$, are automatic.
 \end{lemma}
 
@@ -772,20 +773,26 @@ Thus $x^n g$ is hyperbolic, with
 \]
 As $n \to \infty$, $x^n g \cdot V \to x^+$ and so $(x^n g)^+ \to x^+$.
 
+For the more general statement, apply the first part of the statement
+to $x^n hg$ and to $X^n GH$. Since
+$g \cdot \ora{x^n hg} = \ora{g x^n h}$ and $H \cdot \ora{X^n GH} =
+\ora{H X^n G}$, we get the claimed result.
+
 If $g,x \in \pi_1(S)$, since each point in $\bdy_\infty S$ is the
 endpoint of at most one geodesic, if $g \cdot x^+ = x^-$ then also $g
 \cdot x^- = x^+$. But this implies that $g$ is elliptic of order~$2$,
-which is impossible in a surface group.
+which is impossible in a surface group. Similarly for the more general
+statement.
 \end{proof}
 
 
 \begin{lemma}
 Let $\ora{a},\ora{b}$ be parallel. If $\ora{a^nB^m}$ splits $\ora{a},\ora{b}$, then so does
-$\ora{a^{n'}B^{m'}}$ for every $n' \geq n$ and $m' \geq m$.
+$\ora{a^NB^M}$ for every $N \geq n$ and $M \geq m$.
 \label{lem:once_splits}
 \end{lemma}
 \begin{proof}
-It suffices to prove it for $\ora{a^{n+1}B^m}$ and $\ora{a^nB^m}$.
+It suffices to prove the claim for $\ora{a^{n+1}B^m}$ and $\ora{a^nB^{m+1}}$.
 Note that $\ora{a},\ora{a^nB^m}$ being parallel implies
 $(a^{n+1}B^m)^+ \in ((a^nB^m)^+, a^+) \subset (b^+, a^+)$.
 Similarly, $\ora{a^nB^m},\ora{B}$ are parallel, so $(a^nB^{m+1})^- \in (B^-, (a^nB^m)^-) \subset (b^+,a^+)$
