@@ -856,7 +856,7 @@ If $(\ora{a},\ora{b})$ are parallel, then either
 \label{lem:bA_parallel_ba}
 \end{lemma}
 
-These conclusions are not mutually exclusive.
+These conclusions are not mutually exclusive. Note $Ab = (Ba)^{-1}$.
 
 \begin{proof}
 If $\ora{aB},\ora{Ba}$ are $a$-sided, then they are either parallel or anti-parallel to $\ora{a}$.
@@ -864,7 +864,7 @@ If they are parallel, since $\ora{ab}$ and $\ora{b}$ are parallel to
 $\ora{a}$ and on the opposite side of $\ora{ab}$, then we are in case
 second case of the statement.
 Otherwise we are in the first case.
-If they are $b$-sided, we are the analysis is similar (just swap $a \mapsto B$ and $b \mapsto A$, since $(\ora{B},\ora{A})$ are parallel.
+If they are $b$-sided, we are the analysis is similar (just swap $a \leftrightarrow B$ and $b \leftrightarrow A$, since $(\ora{B},\ora{A})$ are parallel).
 In the splitting case, from
 Lemma~\ref{lem:splitting_specific} we have that $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$, and by Lemma~\ref{lem:aB_bA_antiparallel_cross} they are anti-parallel.
 It follows that $\ora{aB}$ and $\ora{a}$ are parallel, $\ora{Ba}$ and $\ora{a}$ are parallel.
@@ -889,10 +889,10 @@ hgHG
 
 
 
-If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise, and in fact the alternatives are mutually exclusive.
+If the pair $(\ora{aB},\ora{Ba})$ crosses, we can be more precise.
 \begin{lemma}\label{lem:a_parallel_Ba}
 Let $a,b \in \pi_1(S)$.
-If $\ora{a},\ora{b}$ are parallel, and $\ora{aB}, \ora{Ba}$ cross,
+If $\ora{a},\ora{b}$ are parallel and $(\ora{aB}, \ora{Ba})$ cross,
 let $\mathcal{A} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$
 and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
 \begin{itemize}
@@ -901,7 +901,9 @@ and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
 \end{itemize}
 \end{lemma}
 \begin{proof}
-The proof is similar to the previous lemma.
+The proof is similar to the previous lemma. Since
+$(\ora{aB},\ora{Ba})$ cross, they must be either $a$-sided or
+$b$-sided. In either case the result easily follows.
 \end{proof}
 
 Suppose that $\ora{Ba},\ora{aB}$ are $b$-sided and cross, as in Figure~\ref{fig:c2}. If we replace $b$ by $B$, we see that $\ora{ab}$ and
