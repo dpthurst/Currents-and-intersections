@@ -309,32 +309,35 @@ $(y^+,y^-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
   action of $\langle y \rangle$ on the set of geodesics that intersect
   $\ora{y}$ transversally.
 
-Before proceeding, we discuss an asymmetric version of intersection number between oriented geodesic currents.
+Before proceeding, we discuss an asymmetric version of intersection
+number between oriented geodesic currents.
 
-\begin{definition} The \emph{asymmetric intersection} number between oriented geodesic currents is defined as 
+\DPTtodo[inline]{Simplified here mildly. There was no call for a bar
+  on the fundamental domain, since it's just the same object as previously.}
+\begin{definition}\label{def:asymmetric}
+  The \emph{asymmetric intersection} number between oriented geodesic currents is
 \begin{equation}
-\vec{i}(\mu,\nu) \coloneqq \int_{\overline{\mathcal{F}}} \mathbf{1}_R \, d(\mu \otimes \nu),
+\vec{\imath}(\mu,\nu) \coloneqq \int_{\overline{\mathcal{F}}} \mathbf{1}_R \, d(\mu \otimes \nu),
 \label{eq:asymmetric}
 \end{equation}
-where $\overline{\mathcal{F}}$ is a fundamental domain of the proper and free diagonal action of $\pi_1(S)$ on $\DG(S)$, obtained by a similar argument as in Definition~\ref{def:intersection_currents};
-the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is defined as
+where $\cF$ is a fundamental domain of the action of $\pi_1(S)$ on
+$\DG(S)$, as in Definition~\ref{def:intersection_currents}, and
+the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is
 \[
-\mathbf{1}_R(l,m) \coloneqq
+\mathbf{1}_R(\gamma_1,\gamma_2) \coloneqq
 \begin{cases}
-1 & \text{if } (l,m)\text{ are R-crossing},\\
+1 & \text{if } (\gamma_1,\gamma_2)\text{ are R-crossing},\\
 0 & \text{otherwise}.
 \end{cases}
 \]
-\label{def:asymmetric}
 \end{definition}
-From the definition, we have the following relation to the standard intersection number
+From the definition, we have a relation to the standard intersection number:
 \begin{equation}
-i(\mu, \nu) = \vec{i}(\mu, \nu) + \vec{i}(\mu, \sigma(\nu)).
+i(\mu, \nu) = \vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu)).
 \label{eq:relation_intersections}
 \end{equation}
-
-For $p,q \in \wt{S}$, one can write  $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversal, i.e., the subset of
-oriented geodesics in $G[p,q)$ which right cross the bi-infinite $\ora{l}$ oriented geodesic obtained by extending $[p,q) \subset \wt{S}$. Similarly, we will use $\ole{G[p,q)}\subset G(S)$ for the \emph{left-oriented} transversal, i.e., the subset of
+For $p,q \in \wt{S}$, one can write  $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversals, i.e., the subset of
+oriented geodesics in $G[p,q)$ which right cross the bi-infinite $\ora{l}$ oriented geodesic obtained by extending $[p,q) \subset \wt{S}$. Similarly, we will use $\ole{G[p,q)}\subset G(S)$ for the \emph{left-oriented} transversals, i.e., the subset of
 oriented geodesics in $G[p,q)$ intersecting the inverted geodesic $\ora{L}$ to the right. Clearly, $\sigma(\ora{G[p,q)})= \ole{G[p,q)}$.
 We have the following partition
 \begin{equation}\label{eq:partition_oriented}
@@ -347,12 +350,10 @@ We can compute intersections with oriented curves as follows.
 
 \begin{lemma}The intersection and asymmetric intersection
 of an oriented closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
-\[
-i(\mu, C) = \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma[z,y \cdot z) \times (y^+,y^-))
-\]
-\[
-\vec{i}(\mu, C) = \mu([z,y \cdot z) \times (y^+,y^-)).
-\]
+\begin{align*}
+i(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma[z,y \cdot z) \times (y^+,y^-))\\
+\vec{\imath}(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)).
+\end{align*}
 \end{lemma}
 \begin{proof}
 The second claim follows from the observation that, for any $q \in \ora{y}$, $\ora{G[q, y\cdot q)}$ and $[z, y\cdot z) \times (y^+, y^-)$ are two fundamental domains for the action of $\langle y \rangle$ on the set of geodesics that intersect $\ora{y}$ to the right.
@@ -372,15 +373,15 @@ form.
 
 \begin{theorem}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability, and $\mu_f, \overline{\mu_f}$ as above.
-For $C$ a closed curve, we have
+For $C$ an oriented closed curve, we have
 \[
-i(\mu_f,C)=\vec{i}(\overline{\mu_f},C)=f(C).
+i(\mu_f,C)=\vec{\imath}(\overline{\mu_f},C)=f(C).
 \]
 In particular, $\mu_f$ is unique among flip-invariant geodesic currents.
 \label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
-We first prove that $\vec{i}(\overline{\mu_f},C)=f(C)$. Given a representative $y \in
+We first prove that $\vec{\imath}(\overline{\mu_f},C)=f(C)$. Given a representative $y \in
 \pi_1(S)$ of the conjugacy class~$C$, we will find a sequence of
 RH boxes to approximating the fundamental domain for $\langle
 y\rangle$ above, and then show that computing the measure of that
@@ -412,7 +413,7 @@ In the RH orbit notation, we have
 
 If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
     \begin{multline*}
-      \vec{i}(\mu, [y])=\overline{\mu_f}([z,Y \cdot z))\times (y^+,y^-)) \\
+      \vec{\imath}(\mu, [y])=\overline{\mu_f}([z,Y \cdot z))\times (y^+,y^-)) \\
       \begin{aligned}
     &= \lim_{n\to\infty} \overline{\mu_f}(B_n)  \\
     &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
@@ -437,6 +438,11 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n
 \end{proof}
 
 \begin{remark}
+  Uniqueness is not true for the oriented geodesic current
+  $\overline{\mu_f}$. See Appendix~\ref{sec:asymmetric}.
+\end{remark}
+
+\begin{remark}
 In \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} a geodesic current is induced
 from a cross-ratio.
 Our construction is more general (in particular, we do not rely on a cross-ratio).
@@ -458,7 +464,6 @@ Moreover, we need the extra control on the family of RH
 boxes to recover the curve functional~$f$ from the geodesic current.
 In Section~\ref{sec:crossratios}, we prove that every cross-ratio induces a curve functional (i.e., period) satisfying the hypotheses of our Theorem~\ref{thm:intersect}, and thus our result generalizes \cite[Proposition~4.3]{BIPP24:PositiveCrossratios}.
 \end{remark}
-
 
 
 

@@ -311,12 +311,13 @@ to condition~\ref{item:box-diags-cross-lift}:
 Thus the two crossing conditions are equivalent.
 
 \begin{definition}
-  Let $B = B(p_1,q_1,p_2,q_2)$ be an RH box. The \emph{$\pi_1(S)$-orbit of $B$}
+  Let $B = B(p_1,q_1,p_2,q_2)$ be an RH box. The
+  \emph{$\pi_1(S)$-orbit of $B$} is
   \[
-    [B] \;=\; \{ g \cdot B \colon g \in \pi_1(S) \},
+    [B] \coloneqq \{ g \cdot B \colon g \in \pi_1(S) \},
   \]
   where we consider the left action.
-  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit. (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element $x$).
+  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit. (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element $x$.)
 \end{definition}
 
 \begin{remark}\label{rmk:flip_rh_box}
@@ -393,9 +394,10 @@ smoothing of $f$, there is $N \in \mathbb{Z}$ (depending on $a,x$) so that, for 
   \[
     f([a x^{n}]) \ge -f([a]) + f([x^{ n}]).
   \] 
-  This shows that for $|n| > N$, $f$ is an $r$-convex and
-  bounded function on $\mathbb{Z}$, so by Lemma~\ref{lem:limexistrmidconvex}, the
-  limits \eqref{eq:additivity-limit} exist.
+  This shows that $f$ is an $r$-convex and
+  bounded function  for $|n| > N$, so by Lemma~\ref{lem:limexistrmidconvex}, the
+  limit as $n \to \infty$ in \eqref{eq:additivity-limit} exists. The
+  limit as $n \to -\infty$ is similar.
 \end{proof}
 
 
