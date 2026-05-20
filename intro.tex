@@ -196,11 +196,9 @@ characterizations of those curve functionals whose dual currents are
 measured laminations or hyperbolic Liouville currents.
 (Measured laminations are precisely those currents $\alpha$
 satisfying $i(\alpha,\alpha)=0$~\cite[Proposition~17]{Bonahon88:GeodesicCurrent}.)
+\DPTtodo{Get better refs to the subthms}
 \begin{mainthm}
 \label{thm:hyp-lam-char}
-\mainthmsublabel{mainthm:char_lam}
-\mainthmsublabel{mainthm:char_hyp}
-
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set
 \[
 \overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).
@@ -238,7 +236,6 @@ skein algebra of a surface; see, for example,
 
 
 We highlight some features of Theorem~\ref{thm:hyp-lam-char}.
-
 \begin{itemize}
     \item Combined with Theorem~\ref{thm:intersect}, it provides
     criteria for determining whether a curve functional arises from a
@@ -305,20 +302,19 @@ If two hyperbolic isometries of $T$ have axes intersecting in a
 non-degenerate arc, we say they \emph{overlap incoherently} if they
 translate in opposite directions along the overlap. We prove the following equivalences.
 
+\DPTtodo{Use term ``max-smoothing'' somewhere, though keep the
+  explicit conditions}
 \begin{mainthm}
 Let $(S,T)$ be an $S$-tree. The following are equivalent:
 \begin{enumerate}[(A)]
 \item There exists a measured lamination $\lambda$ on $S$ such that
 $T$ is $\pi_1(S)$-equivariantly isometric to $T_\lambda$;
-
 \item The $S$-tree is irreducible and preserves axis intersection;
-
 \item The $S$-tree is irreducible and preserves characteristic intersection;
-
 \item The translation length function
 $\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies:
 \begin{enumerate}
-\item For every pair $(a,b)$ crossing in $\wt{S}$,
+\item For every pair $(\ora{a},\ora{b})$ crossing in $\wt{S}$,
 \begin{equation}
 \|a\|+\|b\|
 =
@@ -326,7 +322,7 @@ $\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies:
 \label{eq:small_disconn}
 \end{equation}
 
-\item For every pair $(a,b)$ parallel in $\wt{S}$,
+\item For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
 \begin{equation}
 \|ab\|
 =
@@ -345,7 +341,7 @@ The equivalence of {\rm (A)} and {\rm (B)} recovers
 Skora’s theorem~\cite{Sko90:GeometricAction}.
 All remaining equivalences are new.
 
-Skora also gave another  condition
+We note for reference that Skora gave another condition
 equivalent to duality with a measured lamination~\cite{Sk96:Splittings}:
 \begin{enumerate}[label=(\Alph*), start=6]
 \item The $S$-tree is \emph{small}, i.e., stabilizers of non-degenerate arcs are cyclic.
@@ -367,6 +363,7 @@ maximum among
 \]
 is attained at least twice.
 
+\DPTtodo{Do we really mean Thm.\ A and not E?}
 When $\Gamma=\pi_1(S)$, Theorem~\ref{thm:intersect} refines Parry’s
 characterization by isolating precisely which translation lengths arise
 from \emph{small} actions on $\mathbb{R}$-trees, or equivalently from

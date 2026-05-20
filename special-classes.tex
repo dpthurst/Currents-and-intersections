@@ -496,7 +496,18 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
     \label{prop:char_laminations_plus}
 \end{theorem}
 \begin{proof}
-Suppose $f$ is a curve functional satisfying max-smoothing and additivity. Max-smoothing clearly implies smoothing, as well as disconnected max-smoothing. Thus, by Theorem~\ref{thm:hyp-lam-char}, $f$ is dual to a measured lamination. On the other hand, if $f$ is dual to a measured lamination,  Theorem~\ref{thm:hyp-lam-char} implies disconnected max-smoothing. Connected max-smoothing follows from tracing through the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact that $i(\mu, \cdot)$ is continuous, symmetric, additive and stable, and noting that if $f$ satisfies disconnected max-smoothing, all the inequalities become equalities in the proof of disconnected smoothing implies connected smoothing.
+  Suppose $f$ is a curve functional satisfying max-smoothing and
+  additivity. Max-smoothing clearly implies smoothing, as well as
+  disconnected max-smoothing. Thus, by
+  Theorem~\ref{thm:hyp-lam-char}(L), $f$ is dual to a measured
+  lamination. On the other hand, if $f$ is dual to a measured
+  lamination, Theorem~\ref{thm:hyp-lam-char}(L) implies disconnected
+  max-smoothing. Connected max-smoothing follows from tracing through
+  the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact
+  that $i(\mu, \cdot)$ is continuous, symmetric, additive and stable,
+  and noting that if $f$ satisfies disconnected max-smoothing, all the
+  inequalities become equalities in the proof of disconnected
+  smoothing implies connected smoothing.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by
@@ -516,7 +527,7 @@ Bonahon gives an algebraic characterization for a geodesic current $\mu$ to be a
 Whether the endpoints of the intervals are included or excluded in the
 above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
 
-We use this to prove the hyperbolic part of Theorem~\ref{thm:hyp-lam-char}.
+We use this to prove Theorem~\ref{thm:hyp-lam-char}(H).
 
 \begin{theorem}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set $\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).$
@@ -570,7 +581,13 @@ By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_n \mu(R_n^{\pm})=
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
 for any intersecting pair $a,b \in \pi_1(S)$.
-As in the proof of the lamination part of Theorem~\ref{thm:hyp-lam-char}, we use the density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$, we can find, for every $n \in \mathbb{N}$ a sequence of intersecting pairs $a_n, b_n \in \pi_1(S)$ so that if we let $B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and $\lim_n \mu(B_n^{\perp}) = \mu(B^\perp)$. Specifically,
+As in the proof of Theorem~\ref{thm:hyp-lam-char}(L), we use the
+density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run
+over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$,
+we can find, for every $n \in \mathbb{N}$ a sequence of intersecting
+pairs $a_n, b_n \in \pi_1(S)$ so that if we let
+$B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and
+$\lim_n \mu(B_n^{\perp}) = \mu(B^\perp)$. Specifically,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
