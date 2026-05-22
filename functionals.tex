@@ -461,9 +461,7 @@ appropriate references.
 \item Lengths with respect to negatively curved Riemannian  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
 \item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
 \item
-  \DPTtodo{It seems that the $1/n$ trans structures are special cases
-    of the NPC cone metrics?}
-  More generally, non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}, and Finsler metrics compatible with $1/n$-translation structures (singular Euclidan metrics with conical singularities of angle $2\pi/n$ for $n>1$) \cite[Definition~2.2]{PS26:1ntranslation}.
+  More generally, non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}. As an important case, see the recent characterization~\cite[Definition~2.2]{PS26:1ntranslation}.
     \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
     \item Lengths associated to Anosov representations induced by positive generalized cross-ratios \cite[Proposition~2.24]{MZ19:PositivelyRatioed}, \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}. Specifically, Martone-Zhang~\cite{MZ19:PositivelyRatioed} showed that a family of representations equipped with positive H\"older generalized
 cross-ratios and termed \emph{positively ratioed}, induce curve
@@ -533,6 +531,12 @@ constant}, i.e., the minimal $R>0$ so that $\ell_{\rho} \in \QConvex_R(S)$.
 Does $R \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \end{question}
 
+For sequences of quasi-Fuchsian representations degenerating to fibers of mapping tori, this can be seen as follows. Let $\phi$ be a pseudo-Anosov homeomorphism of a closed surface $S$, and let $M_\phi$ denote the associated hyperbolic mapping torus. The infinite cyclic cover corresponding to the fiber subgroup $\pi_1(S)$ is a doubly degenerate hyperbolic $3$-manifold arising as the geometric limit of the quasi-Fuchsian sequence $Q(\phi^{-n}X,\phi^nY)$.
+
+Let $\ell_{M_\phi}(\gamma)$ denote the translation length of $\gamma\in\pi_1(S)$ in this cyclic cover. Since $M_\phi$ is closed hyperbolic, there exists $\epsilon>0$ such that $\ell_{M_\phi}(\gamma)\geq \epsilon$ for every non-trivial closed curve $\gamma$. If $\ell_{M_\phi}$ extended continuously to geodesic currents, then for any hyperbolic structure $X$ on $S$, compactness of $\mathbb P\mathcal C(S)$ would imply the existence of $K>0$ such that $\ell_X(\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for every closed curve $\gamma$.
+
+On the other hand, the deck transformation induces $\phi$, so $\ell_{M_\phi}(\phi^n\gamma)=\ell_{M_\phi}(\gamma)$ for all $n\in\mathbb Z$. Hence $\ell_X(\phi^n\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for all $n$, contradicting the fact that the curves $\phi^n\gamma$ are pairwise distinct while a closed hyperbolic surface admits only finitely many closed geodesics of bounded length.
+In particular, by~\cite[Theorem~A]{MGT21:Smoothings}, the length cannot satisfy $R$-quasi-smoothing for any $R>0$. This limiting representation, even though not convex cocompact, is still discrete and faithful. This shows that in general lengths associated to discrete faithful representations of surface groups into $\PSL(2,\mathbb{C})$ need not extend continuously to geodesic currents.
 \item The previous example fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of

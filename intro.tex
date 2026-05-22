@@ -302,19 +302,26 @@ If two hyperbolic isometries of $T$ have axes intersecting in a
 non-degenerate arc, we say they \emph{overlap incoherently} if they
 translate in opposite directions along the overlap. We prove the following equivalences.
 
-\DPTtodo{Use term ``max-smoothing'' somewhere, though keep the
-  explicit conditions}
 \begin{mainthm}
+\label{mainthm:skora}
 Let $(S,T)$ be an $S$-tree. The following are equivalent:
-\begin{enumerate}[(A)]
-\item There exists a measured lamination $\lambda$ on $S$ such that
+\begin{enumerate}[label=(\Alph*),ref=\themainthm~(\Alph*)]
+\item\label{item:skora_lamination}
+There exists a measured lamination $\lambda$ on $S$ such that
 $T$ is $\pi_1(S)$-equivariantly isometric to $T_\lambda$;
-\item The $S$-tree is irreducible and preserves axis intersection;
-\item The $S$-tree is irreducible and preserves characteristic intersection;
-\item The translation length function
-$\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies:
+
+\item\label{item:skora_axis}
+The $S$-tree is irreducible and preserves axis intersection;
+
+\item\label{item:skora_characteristic}
+The $S$-tree is irreducible and preserves characteristic intersection;
+
+\item\label{item:skora_maxsmoothing}
+The translation length function
+$\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies \emph{max-smoothing}:
 \begin{enumerate}
-\item For every pair $(\ora{a},\ora{b})$ crossing in $\wt{S}$,
+\item\label{item:skora_maxsmoothing_crossing}
+For every pair $(\ora{a},\ora{b})$ crossing in $\wt{S}$,
 \begin{equation}
 \|a\|+\|b\|
 =
@@ -322,7 +329,8 @@ $\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies:
 \label{eq:small_disconn}
 \end{equation}
 
-\item For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
+\item\label{item:skora_maxsmoothing_parallel}
+For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
 \begin{equation}
 \|ab\|
 =
@@ -331,10 +339,10 @@ $\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies:
 \end{equation}
 \end{enumerate}
 
-\item The $S$-tree has no pair of hyperbolic isometries that are
+\item\label{item:skora_incoherent}
+The $S$-tree has no pair of hyperbolic isometries that are
 parallel in $\wt{S}$ and overlap incoherently in $T$.
 \end{enumerate}
-\label{mainthm:skora}
 \end{mainthm}
 
 The equivalence of {\rm (A)} and {\rm (B)} recovers
@@ -363,8 +371,7 @@ maximum among
 \]
 is attained at least twice.
 
-\DPTtodo{Do we really mean Thm.\ A and not E?}
-When $\Gamma=\pi_1(S)$, Theorem~\ref{thm:intersect} refines Parry’s
+When $\Gamma=\pi_1(S)$, Theorem~\ref{mainthm:skora} refines Parry’s
 characterization by isolating precisely which translation lengths arise
 from \emph{small} actions on $\mathbb{R}$-trees, or equivalently from
 actions dual to measured laminations.
