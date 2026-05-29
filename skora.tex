@@ -825,46 +825,26 @@ for convenience.
 
 \begin{taggedthm}{\ref{mainthm:skora}}
 Let $(S,T)$ be an $S$-tree. The following are equivalent:
-\begin{enumerate}[(A)]
+\begin{enumerate}[(a)]
 \item There exists a measured lamination $\lambda$ on $S$ such that
 $T$ is $\pi_1(S)$-equivariantly isometric to $T_\lambda$;
-
 \item The $S$-tree is irreducible and preserves axis intersection;
-
 \item The $S$-tree is irreducible and preserves characteristic intersection;
-
 \item The translation length function
-$\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies:
-\begin{enumerate}
-\item For every R-crossing pair $(a,b)$,
-\begin{equation*}
-\|a\|+\|b\|
-=
-\max\{\|ab\|,\|aB\|\};
-\end{equation*}
-
-\item For every R-parallel pair $(a,b)$,
-\begin{equation*}
-\|ab\|
-=
-\max\{\|a\|+\|b\|,\|aB\|\}.
-\end{equation*}
-\end{enumerate}
-
+$\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies max-smoothing;
 \item The $S$-tree has no pair of hyperbolic isometries that are
-parallel in the disk and overlap incoherently in $T$.
+parallel in $\wt{S}$ and overlap incoherently in $T$.
 \end{enumerate}
 \end{taggedthm}
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
-The equivalence of (A) and~(D) is
+The equivalence (a) $\Leftrightarrow$ (d) is
 Theorem~\ref{thm:hyp-lam-char}(L).
-(A) implies (B) follows work of Morgan-Otal~\cite{MO93:RelativeGrowths}.
-(B) implies (D) follows by Theorem~\ref{thm:small}.
-Thus, we have (B) is equivalent to (D).
-Theorem~\ref{thm:axis_incoherent_characterization} shows (C) is equivalent to (E). The implication (C) $\Rightarrow$ (B) is immediate and (B) $\Rightarrow$ (C) is part
-of Theorem~\ref{thm:small}.
-All the equivalences follow.
+Morgan-Otal~\cite{MO93:RelativeGrowths} show (a) $\Rightarrow$ (b).
+Theorem~\ref{thm:small} shows (b) $\Rightarrow$ (c), (d).
+Theorem~\ref{thm:axis_incoherent_characterization} shows (c)
+$\Leftrightarrow$ (e). The implication (c) $\Rightarrow$ (b) is
+immediate.
 \end{proof}
 
 
