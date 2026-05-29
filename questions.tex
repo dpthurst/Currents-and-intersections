@@ -175,7 +175,7 @@ to~$\ell$.
 In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan, CMGR26:GreenMetrics}.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
 
-A metric space $X$ is uniformy quasi-geodesic if there exists
+A metric space $X$ is uniformly quasi-geodesic if there exists
 constants $\lambda >0$ and $\epsilon \geq 0$, so that
 every two points $x, y \in X$ are connected by a
 $(\lambda,\epsilon)$-quasi-geodesic. We say that an action
@@ -355,8 +355,6 @@ the space of geodesic currents (recalled as
 Proposition~\ref{prop:local_compactness} below) that the space
 $\AConvex(S)$ with the product topology is locally compact, which is
 not obvious \textit{a priori} by looking directly at the functionals.
-Connecting with the discussion in the above paragraph, a shadow of
-this fact can be seen as follows.
 
 The sublevel set $\Lambda_f \coloneqq \{ \vec{x} \in V(\tau)
 : f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of
@@ -366,7 +364,9 @@ let $f_i(\cdot) = i(\mu_i, \cdot)$ for $f(\cdot) = i(\mu, \cdot)$.
 Then $\Lambda_{f_i} \to \Lambda_f$ in the Hausdorff topology. With
 respect to this topology,
 the subset of compact convex subsets of $\mathbb{R}^N$ is locally
-compact~\cite[Chapter~6]{Lay92:Convex}. We see this phenomenon as a shadow of the local compactness of $\AConvex(S)$, which suggests that the same local compactness for $\Convex(S)$ should hold.
+compact \cite[Chapter~6]{Lay92:Convex}. We see this phenomenon as a
+shadow of the local compactness of $\AConvex(S)$, which suggests that
+the same local compactness for $\Convex(S)$ should hold.
 
 \begin{conjecture}
 The set $\Convex(S)$ with the product topology is locally compact.
@@ -378,6 +378,7 @@ lengths associated to conformal structures or to elastic graphs
 
 \subsection{Domination}
 \label{subsec:domination}
+\DPTtodo{Can we reorder to put these questions next to multi-smoothing?}
 For another direction from Section~\ref{subsec:multismoothing},
 another property that intersection numbers satisfy is \emph{domination}.
 We say that a curve $C$ dominates another curve $C'$ if $i(C,D) \geq
@@ -440,11 +441,17 @@ Our theorem can be thought of in analogy to $\alpha \cap \beta =
 In Poincaré duality, one also has the standard relation $\alpha^* \cup \beta^* = \alpha \cap \beta$, where $\cup$ denotes the cup product in cohomology.  
 A natural question that arises then is the following.
 
+\DPTtodo{Added question on proving continuity of $i(\cdot,\cdot)$}
 \begin{question} What is the appropriate analog of the cup product?
-  More precisely, can one define the intersection of two geodesic
-  currents directly via their dual curve functionals?
+  More precisely, can one define the intersection $i(\cdot,\cdot)$ of
+  two geodesic
+  currents directly via their dual curve functionals, and prove its
+  continuity?
 \end{question}
 
+\DPTtodo[inline]{I want to add a question: Characterize the space of
+  additive, asymmetric functionals satisfying smoothing. We show it's
+  not given by periods, but there should be some definition}
 
 
 %%% Local Variables:

@@ -10,7 +10,8 @@ $\mathbb{R}$-trees and reproving a classical theorem of
  Skora~\cite{Sko90:GeometricAction}.
 
 \subsection{Finitely generated groups acting on real trees}
-\ \relax
+We start by recalling background material on $\bbR$-tree actions,
+following Culler-Morgan \cite{CM87:GroupActions}.
 
 \textbf{Real trees.}
 A \emph{real tree} or \emph{$\mathbb{R}$-tree} is a non-empty metric space $T$ such that for
@@ -33,7 +34,7 @@ space $T$ is the limit of the inverse system $\pi_0(T-B)$ where $B$
 ranges over the closed and bounded subsets of $T$. Fix a point $p$ in
 an $\bbR$-tree $T$. For every end of~$T$, there is a unique
 ray
-emanating from $p$ that meets every component of the inverse system
+emanating from~$p$ that meets every component of the inverse system
 corresponding to the end.
 Hence, there is a one-to-one correspondence between
 rays emanating from $p$ and ends of $T$. 
@@ -101,7 +102,8 @@ A $\Gamma$-tree with  translation length function
 $\| \cdot \|$ is of one of four
 types~\cite[Page~583]{CM87:GroupActions}:
 \begin{itemize}
-\item \textit{Global fixed point}: $\| \cdot \|$ is zero on all of $\Gamma$; equivalently,  $\Gamma$ fixes a global point in $T$.
+\item \textit{Global fixed point}: $\| \cdot \|$ is zero on all of
+  $\Gamma$; equivalently,  $\Gamma$ globally fixes a point in~$T$.
 \item \textit{Fixed end:} $\| \cdot \|$ is non-trivial but zero on $[\Gamma,\Gamma]$;
   equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2,
   Corollary~2.3]{CM87:GroupActions}.
@@ -158,8 +160,12 @@ hyperbolic elements.
     \label{lem:oppgoodpair}
 \end{lemma}
 \begin{proof}
-   This is contained in the proof
-   of~\cite[Lemma~3.4]{CM87:GroupActions}. See Figure~\ref{fig:trees_goodpair}, where the distance $\Delta$ is strictly positive and the position of the relevant points follow from the identities $Hg \cdot (G \cdot y) = H \cdot y$ and $gH \cdot (h \cdot x) = g \cdot x$.
+  This is contained in the proof
+  of~\cite[Lemma~3.4]{CM87:GroupActions}. See
+  Figure~\ref{fig:trees_goodpair}, where the distance $\Delta$ is
+  strictly positive and the position of the relevant points follow
+  from the identities $Hg \cdot (G \cdot y) = H \cdot y$ and
+  $gH \cdot (h \cdot x) = g \cdot x$, where $[x,y] = T_g \cap T_h$.
 \end{proof}
 
 \begin{figure}[ht]
@@ -178,7 +184,7 @@ We have the following cases, depending on the relative position of $T_g,T_h$.
 $T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gH\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
 Moreover,
 \begin{enumerate}
-\item $T_g \cap T_h$ is a single point iff $\|gh\| = \| gH\| = \|  g \| + \|h \|$;
+\item $T_g \cap T_h$ is a single point iff $\|  g \| + \|h \| = \|gh\| = \| gH\|$;
 \item $g,h$ overlap coherently iff 
 $\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case, $T_g \cap
 T_h = T_{gh} \cap T_{hg}$; and
@@ -217,7 +223,7 @@ and~(2),
 as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$
 in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions};
 case~(1c) is parallel.
-The result of part (2) about $T_{gh}, T_g$ overlapping in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
+The result of part (2) about $T_{gh}, T_g$ overlapping coherently in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
 
@@ -329,7 +335,8 @@ be careful to distinguish this from the characteristic set $T_g$ in
 the action on~$T$.
 
 In checking whether an $S$-tree is dual to a measured
-lamination, there are several relevant conditions on the action:
+lamination, recall from the introduction that there are several
+relevant conditions on the action:
 \begin{itemize}
 \item The action is irreducible, not dihedral or fixed end.
 \item The action is \emph{small}: the stabilizer of any
@@ -392,12 +399,12 @@ We start by proving a geometric criterion for axis-preserving,
 irreducible actions.
 
 \begin{lemma}
-Suppose that an $S$-tree preserves axis intersection and is
+\label{lem:if_unbounded_then_reducible}
+Suppose that an $S$-tree~$T$ preserves axis intersection and is
 irreducible. Then for all
 hyperbolic $g \in \pi_1(S)$,
 there exist a hyperbolic $h \in \pi_1(S)$ so that $\ora{h}$
 crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
-\label{lem:if_unbounded_then_reducible}
 \end{lemma}
 \begin{proof}
     We will prove a contra-positive. Namely, if the action preserves
@@ -487,11 +494,12 @@ is the key place where we invoke irreducibility.
 
 \begin{proposition}\label{prop:parallel-incoherent}
   Let $T$ be an irreducible $S$-tree that preserves axis
-  intersection. Then, for $g,h \in \pi_1(S)$, it cannot happen that
-  $(\ora{g},\ora{h})$ are parallel while $T_g,T_h$ intersect incoherently.
+  intersection, and pick $g,h \in \pi_1(S)$ with
+  $(\ora{g},\ora{h})$ are parallel. Then $T_g,T_h$ do not intersect incoherently.
 \end{proposition}
 
 \begin{proof}
+  Suppose $T_g, T_h$ do intersect incoherently.
     If the overlap is bounded, according to
     Lemma~\ref{lem:powers_goodpair} there exists $m>0,n>0$ so that
     $g^m$ and $h^{-n}$ form a good pair, and hence, by
@@ -509,8 +517,8 @@ is the key place where we invoke irreducibility.
     and that $T_g \cap T_h$ includes the attracting end of $T_g$. By
     Lemma~\ref{lem:if_unbounded_then_reducible}, there exists
     $c_0 \in \pi_1(S)$ acting hyperbolically on~$T$ so that
-    $T_{c_0} \cap T_g$ is empty or bounded, and so that
-    $(\ora{c_0},\ora{g})$ R-cross.
+    $(\ora{c_0},\ora{g})$ R-cross and
+    $T_{c_0} \cap T_g$ is bounded, as in Figure~\ref{fig:tree_bounded_incoherent}.
     % (For other configurations of
     % $(\ora{g},\ora{h})$ and $T_g,T_h$, we may want
     % $(\ora{c_0},\ora{g})$ to L-cross instead.)
@@ -525,11 +533,10 @@ is the key place where we invoke irreducibility.
     parallel. On the other hand, the same conjugation also ensures
     that the (still bounded and coherent) intersection between
     $T_{c_2}$ and $T_g$ is near the attracting end of $T_g$ and thus
-    $T_{c_2}$ has bounded, incoherent intersection with $T_h$. Thus
-    $c_2$ and $h$ form a pair that is parallel in the disk and
-    intersect incoherently on the tree, a contradiction.
-   See Figure~\ref{fig:tree_bounded_incoherent} for a diagram of the
-   configuration.
+    $T_{c_2}$ has bounded, incoherent intersection with $T_h$. Since
+    $\ora{c_2}$ and $\ora{h}$ are parallel in the disk, this is a
+    contradiction with the first
+    part of this proof.
    \end{proof}
 
 \begin{figure}
@@ -549,7 +556,8 @@ is the key place where we invoke irreducibility.
     \caption{Configuration of axes on $T$}
     \label{fig:tree_k_crossing_14}
   \end{subfigure}
-  \caption{The construction of a parallel pair in the disk with bounded incoherent overlap in $T$.}
+  \caption{Proof of Proposition~\ref{prop:parallel-incoherent} in the
+    unbounded intersection case}
   \label{fig:tree_bounded_incoherent}
 \end{figure}
 
@@ -572,19 +580,38 @@ $\ora{g}, \ora{h}$ cross.
 \end{subcase}
 Then $T_g \cap T_h \neq \emptyset$ by axis intersection preservation, and disconnected max-smoothing follows from~Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
 \begin{subcase}
-$\ora{g},\ora{h}$ are parallel and $T_g \cap T_h$ is empty or a single point.
+$\ora{g},\ora{h}$ are parallel and $T_g \cap T_h$ is empty.
 \end{subcase}
-Then $\|gh\|=\|gh^{-1}\| \geq \|g\|+\|h\|$
+Then $\|gh\|=\|gh^{-1}\| > \|g\|+\|h\|$
 by~Lemma~\ref{lem:foundation_trees}\ref{item:tree-disjoint}.
 \begin{subcase}
-$\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently.
+$\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently or in
+a single point.
 \end{subcase}
-    Then $\|gh\|=\|g\|+\|h\|>\|gh^{-1}\|$, by
+    Then $\|gh\|=\|g\|+\|h\|\ge\|gh^{-1}\|$, by
     Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
     \begin{subcase}
       $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap incoherently.
     \end{subcase}
-    This cannot happen by Proposition~\ref{prop:parallel-incoherent}.
+    Impossible by Proposition~\ref{prop:parallel-incoherent}.
+
+\begin{case}
+  In the action on~$T$, $g,h$ are both elliptic.
+\end{case}
+\begin{subcase}
+$\ora{g},\ora{h}$ cross.
+\end{subcase}
+Suppose $T_g \cap T_h = \emptyset$.
+Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
+On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
+$T_{hg}$ overlap incoherently,
+contradicting Proposition~\ref{prop:parallel-incoherent}. Thus $T_g
+\cap T_h = \emptyset$ and, by Lemma~\ref{lem:pau_two_ell} again,
+$\|g\| + \|h\| = \|gh\| = \|gH\| = 0$.
+\begin{subcase}
+  $\ora{g}, \ora{h}$ are parallel. \end{subcase}
+By Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gH\|$ and
+thus we have max\hyp smoothing.
 
 \begin{case}
   In the action on~$T$, $g$ is elliptic and $h$ is hyperbolic.
@@ -597,9 +624,12 @@ Then $\ora{ghG}$ and $\ora{h}$ are parallel.
 By Proposition~\ref{prop:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq \|gH\|$, and we
-are done. The only remaining option to rule out is that $T_{ghG}$ and
-$T_{h}$ do not intersect. In that case, by Lemma~\ref{lem:pau_ell_hyp}(3), $gh$ and $hg$ overlap incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this is a contradiction by Proposition~\ref{prop:parallel-incoherent}.
+are done. If $T_{ghG} \cap T_{h} = \emptyset$, by
+Lemma~\ref{lem:pau_ell_hyp}(3), $T_{gh}$ and $T_{hg}$ overlap
+incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this
+contradicts Proposition~\ref{prop:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
+\DPTtodo{HERE}
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
 point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$, and max-smoothing follows.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then $\|gh\|=\|gH\| > \|h\|$, and we are done.
@@ -635,24 +665,6 @@ Lemma~\ref{lem:foundation_trees}, $T_{gh}, T_{gH}$ overlap in more than a point.
 a contradiction.
 If $T_{gh},T_{gH}$ overlap incoherently then $T_{gh},T_{hG}$ are coherent
 so $\|gh\|+\|hG\|=\|ghhG\|=2\|h\|=0$, a contradiction.
-
-\begin{case}
-  In the action on~$T$, $g,h$ are both elliptic.
-\end{case}
-\begin{subcase}
-$\ora{g},\ora{h}$ cross.
-\end{subcase}
-Then we claim that $\|gh\|=0$, which, by~Lemma~\ref{lem:pau_two_ell} is equivalent to $T_g \cap T_h \neq \emptyset$.  Suppose $\|gh\|>0$ or, equivalently by Lemma~\ref{lem:pau_ell_hyp}, $T_g \cap T_h = \emptyset$.
-Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
-On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
-$T_{hg}$ overlap on the shortest arc connecting
-$T_g$ to $T_h$, and are incoherent on that arc.
-This is a contradiction by Proposition~\ref{prop:parallel-incoherent}. Hence, $\norm{gh}=0$ and, equivalently by Lemma~\ref{lem:pau_two_ell}, $T_g \cap T_h \neq \emptyset$.
-
-\begin{subcase}
-  $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-By Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gH\|$ and
-thus we have max\hyp smoothing.
 
 Finally, note that in all the subcases where
 $(\ora{g},\ora{h})$ cross,
