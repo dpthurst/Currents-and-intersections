@@ -604,12 +604,11 @@ a single point.
 \begin{subcase}
 $\ora{g},\ora{h}$ cross.
 \end{subcase}
-Suppose $T_g \cap T_h = \emptyset$.
 Since $\ora{g},\ora{h}$ cross, $\ora{gh},\ora{hg}$ are parallel by Lemma~\ref{lem:righthandedfoundation}.
-On the other hand, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
-$T_{hg}$ overlap incoherently,
-contradicting Proposition~\ref{prop:parallel-incoherent}. Thus $T_g
-\cap T_h = \emptyset$ and, by Lemma~\ref{lem:pau_two_ell} again,
+If $T_g \cap T_h = \emptyset$, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
+$T_{hg}$ overlap incoherently; this
+contradicts Proposition~\ref{prop:parallel-incoherent}. Thus
+$T_g \cap T_h \ne \emptyset$ and, by Lemma~\ref{lem:pau_two_ell} again,
 $\|g\| + \|h\| = \|gh\| = \|gH\| = 0$.
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
@@ -626,7 +625,9 @@ $\ora{g},\ora{h}$ cross.
 Then $\ora{ghG}$ and $\ora{h}$ are parallel.
 By Proposition~\ref{prop:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq \|gH\|$, and we
+point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq
+\|gH\|$ and
+$T_g \cap T_h \ne \emptyset$, and we
 are done. If $T_{ghG} \cap T_{h} = \emptyset$, by
 Lemma~\ref{lem:pau_ell_hyp}(3), $T_{gh}$ and $T_{hg}$ overlap
 incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this
@@ -668,8 +669,7 @@ Indeed, it is not true for a general finitely generated group $\Gamma$
 that free $(\Gamma,T)$ actions are dense in the space of small minimal
 $(\Gamma,T)$ actions. For free groups, by a result of
 Bestvina-Feighn~\cite{BF11:OuterLimits} it is known that the closure
-of the space of free actions, i.e.,
-$\operatorname{Cl}(\operatorname{Free}(\Gamma, T))$ is equal to
+of the space of free actions is equal to
 $\operatorname{VS}(\Gamma,T)$, the space of ``very small'' actions, a
 strictly proper subset of the subset of small actions. For surface
 groups, one can see that free actions are dense in the space of small
@@ -682,18 +682,18 @@ measured laminations, and their dual tree actions are free.
 We follow up with some consequences of this proof.
 
 \begin{proposition}
+ \label{prop:preserves_axis}
   For an $S$-tree~$T$,
   let $\mathcal{I}$ denote the set of $(g,h)$ so that
   $(\ora{g},\ora{h})$ are parallel and $T_g,T_h$ overlap incoherently.
  Then the $S$-tree preserves axis intersection if and only if either $\mathcal{I}$ is empty or all $(g,h) \in \mathcal{I}$ have unbounded overlap.
- \label{prop:preserves_axis}
 \end{proposition}
 \begin{proof}
 If $T$ preserves axis intersection, either
 the action is irreducible and by Proposition~\ref{prop:parallel-incoherent}
 $\mathcal{I}$ is
-empty, or it is reducible, i.e., trivial, dihedral or fixed end, and hence all intersections, including those in
-$\mathcal{I}$, have unbounded overlap.
+empty, or it is reducible and hence all intersections, including those
+in~$\mathcal{I}$, have unbounded overlap.
 
 Conversely, if $T$ does not preserve axis intersection, by assumption
 there exists a pair of hyperbolic elements
@@ -708,9 +708,9 @@ overlap.
 We now show that reducible actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
 
 \begin{lemma}
+\label{lem:red_not_smoothing}
 Let $T$ be an $S$-tree.
-If  $(\Gamma, T)$ is reducible, then:
-
+If the $\pi_1(S)$-action is reducible, then:
 \begin{enumerate}
     \item $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not satisfy connected smoothing but does satisfy disconnected smoothing.
     \item $-\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$ does not
@@ -718,22 +718,25 @@ If  $(\Gamma, T)$ is reducible, then:
     \item There exist a pair of hyperbolic elements $(g,h)$ with
       incoherent overlap so that $(\ora{g},\ora{h})$ are parallel.
 \end{enumerate}
-\label{lem:red_not_smoothing}
 \end{lemma}
 \begin{proof}
-By~\cite[Proposition~1.6~(3)]{Pa89:Paulin1989TheGT}, either $g,h$ overlap coherently, in which case
+\DPTtodo{Stated assumption $g,h$ are hyperbolic. Other cleanups}
+  Let $g,h$ be two hyperbolic elements.
+By \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}, either $T_g,T_h$ overlap coherently, in which case
 \begin{equation}
-\|gh \|=\| g \| + \| h \| \mbox{ and } \|gH \| = |\,\|g \|- \| h \|\, |,
+\|gh \|=\| g \| + \| h \| > \|gH \| = |\,\|g \|- \| h \|\, |,
 \label{eq:reducible1}
 \end{equation}
-or $g,h$ overlap incoherently, in which case
+or they overlap incoherently, in which case
 \begin{equation}
-\|gH \| =\| g\| + \| h \| \mbox{ and } \| gh \| = |\, \| g \| - \| h \|\,|.
+\|gH \| =\| g\| + \| h \| > \| gh \| = |\, \| g \| - \| h \|\,|.
 \label{eq:reducible2}
 \end{equation}
-Note that Equations~\eqref{eq:reducible1}~and~\eqref{eq:reducible2} hold for any pair of hyperbolic isometries $(g,h)$. In particular, they hold if $(\ora{g},\ora{h})$ cross.
-Hence, $\| \cdot \|$ always satisfies disconnected smoothing. Similarly, they also hold if $(\ora{g},\ora{h})$ are parallel. Thus, $-\| \cdot \|$ always satisfies connected smoothing.
+\DPTtodo{Don't we have to check what happens if $g,h$ are not hyperbolic?}
+Since these equations hold if $(\ora{g},\ora{h})$ cross,
+$\| \cdot \|$ always satisfies disconnected smoothing. Similarly, they also hold if $(\ora{g},\ora{h})$ are parallel. Thus, $-\| \cdot \|$ always satisfies connected smoothing.
 
+\DPTtodo{HERE}
 \begin{claim} Suppose $a,x \in \Gamma$ are hyperbolic elements of a
   reducible action so that $\| a \|>\| x \|$ and $(T_a,T_x)$ overlap
   coherently. Then the pair $(T_{ax},T_{xA})$ has incoherent overlap.
@@ -793,6 +796,7 @@ this tells us $\| gh \| < \|gH\|=\|g\| + \|h\|$, which violates both oriented an
 
 Hence a reducible action cannot be dual to a geodesic current, since
 smoothing (both connected and disconnected) is a necessary condition.
+\DPTtodo{Seems like a nonsequitur}
 Another example of curve functionals satisfying disconnected smoothing
 but not connected smoothing can be seen in Example~\ref{ex:linEL} in
 the setting of the linear extension of extremal length.
