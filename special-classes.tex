@@ -96,7 +96,10 @@ The last question was originally posed by Viveka Erlandsson to the first author.
 \label{subsec:embedded_graphs}
 Related to multi-curves, we also obtain geodesic currents dual to stable lengths associated to embedded graphs in surfaces.
 
- Let $\iota \colon \mathcal{G} \to S$ be an \emph{embedded graph}, i.e., an embedding of a finite graph in $S$ that is filling, in the sense that the complementary regions are disks, or equivalently $i_*$ is surjective on $\pi_1$.
+ Let $\iota \colon \mathcal{G} \hookrightarrow S$ be an \emph{embedded
+   graph}, i.e., an embedding of a finite graph in $S$ that is
+ filling, in the sense that the complementary regions are disks, or
+ equivalently $i_*$ is surjective on~$\pi_1$.
  Endow $\mathcal{G}$ with a length metric $g$. Then any closed multi-curve $C$ on $S$ can be homotoped so that it factors through $\mathcal{G}$, in many different ways. Let $\ell_{\mathcal{G}}(C)$ be the length of the smallest
  multi-curve $D$ on $\mathcal{G} $ so that $\iota(D)$ is homotopic to $C$. It is easy to see that this length is realized and is positive. 
 
@@ -105,15 +108,27 @@ Let $\iota \colon \mathcal{G} \to S$ be an embedded graph. Then $\ell_{\mathcal{
 \label{thm:dual_embeddedgraph}
 \end{theorem}
 \begin{proof}
-In~\cite[4.4]{MGT21:Smoothings} we show that such lengths are in $\AConvex(S)$, hence by Theorem~\ref{thm:intersect} they have a dual geodesic current. 
+In \cite[Sec.\ 4.4]{MGT21:Smoothings} we show that such lengths are in $\AConvex(S)$, hence by Theorem~\ref{thm:intersect} they have a dual geodesic current. 
 \end{proof}
 
-If furthermore $\mathcal{G}$ is an embedded graph with the edge-metric on $\pi_1(S)$ (i.e., each edge has weight 1), $\mu_{\mathcal{G}}$ must be $1/2$ of an integral multi-curve. This generalizes the main result in~\cite{Erlandsson:WordLength}, where Erlandsson finds that word-metric arising from \emph{simple generating set} are dual to 1/2 of an integral multi-curve dual. Such generating sets correspond to choosing $\mathcal{G}$ to be a rose graph with only one vertex and edges of length 1.
+If furthermore $\mathcal{G}$ is an embedded graph with the edge metric
+on $\pi_1(S)$ (i.e., each edge has length~$1$), then as stated in the
+Introduction, $\mu_{\mathcal{G}}$ must
+be $1/2$ of an integral multi-curve. This generalizes the main result
+in~\cite{Erlandsson:WordLength} in the case of closed surfaces, where
+Erlandsson finds that
+word metric arising from \emph{simple generating set} are dual to 1/2
+of an integral multi-curve dual. Such generating sets correspond to
+choosing $\mathcal{G}$ to be a rose graph with only one vertex.
 
-\begin{corollary}
-Let $\mathcal{G}$ be an embedded graph with the edge-metric on $\pi_1(S)$ (i.e., each edge has weight 1). Then $\ell_{\mathcal{G}}$ is dual to a geodesic current $\mu_{\mathcal{G}}$ which is $1/2$ of an integral multi-curve.
-\label{cor:generalization_wordlength}
-\end{corollary}
+\DPTfyi{Tweaked labeling and made statement the same as in intro}
+\begin{taggedcor}{\ref{maincor:embedded}}
+Let $\mathcal{G} \hookrightarrow S$ be a filling embedded graph
+endowed with the edge metric. Then
+the functional $\ell_{\mathcal{G}}$ is dual to a
+geodesic current $\mu_{\mathcal{G}}$ which is $1/2$ of an integral
+multi-curve.
+\end{taggedcor}
 \begin{proof}
 Since $\mathcal{G}$ is equipped with the edge-metric, $\ell_{\mathcal{G}}(C) \in \mathbb{Z}$.
 Hence, Corollary~\ref{cor:int_multicurve} implies the result.
@@ -214,11 +229,13 @@ $d$ is given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.
 \[
 d(x,y) = \inf_{\gamma} \{ \ell_d(\gamma) : \gamma(0)=x, \gamma(1)=y, \gamma : [0,1] \to X \}.
 \]
-After these preliminaries, we can state and prove the following corollary of Theorem~\ref{thm:intersect}.
-\begin{corollary}
-    Let $d$ be a pseudometric on $S$, with induced length on curves $\ell_d$ inducing a curve functional. Then there exists a geodesic current $\mu_d$ dual to $\ell_d$.
-    \label{cor:length_dual}
-\end{corollary}
+\DPTfyi{Tweaked numbering so we don't give two numbers to the same statement}
+After these preliminaries, we can prove Corollary~\ref{maincor:length_dual} from the introduction.
+\begin{taggedcor}{\ref{maincor:length_dual}}
+    Let $d$ be a length pseudometric on $S$, with induced length on
+    curves~$\ell_d$. Then there exists a geodesic current dual
+    to~$\ell_d$.
+\end{taggedcor}
 \begin{proof}
 Additivity is satisfied by definition of $\ell_d$ on multi-curves. It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
 The key point is to check that $\ell_d$ satisfies smoothing. 
@@ -263,7 +280,7 @@ Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
 \end{corollary}
 
 \begin{proof}
-By Corollary~\ref{cor:length_dual}, for every length pseudometric $d$ on $S$, there exist a dual geodesic current $\mu_d$ for the induced curve functional $\ell_d$.
+By Corollary~\ref{maincor:length_dual}, for every length pseudometric $d$ on $S$, there exist a dual geodesic current $\mu_d$ for the induced curve functional $\ell_d$.
 Approximating the current $\mu_d$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
 \end{proof}
 
@@ -279,7 +296,7 @@ See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}. This pseudometric
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
 (The $d_\mu^\Sigma$ pseudometric need not be continuous with respect to the topology of $\Sigma$.)
-Hence, Corollary~\ref{cor:length_dual} shows that for every invariant
+Hence, Corollary~\ref{maincor:length_dual} shows that for every invariant
 pseudometric $d$ on $\wt{\Sigma}$ inducing a curve functional, there
 exists a straight invariant pseudometric $d_\mu^\Sigma$ on
 $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every
