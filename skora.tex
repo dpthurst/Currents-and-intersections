@@ -212,7 +212,7 @@ $d(T_g, T_h)$.
 \begin{figure}[ht]
      \centering
 \resizebox{80mm}{!}{\svgfignormal{trees_disjoint}}
-    \caption{Relative position of disjoint axes in a tree, , from
+    \caption{Relative position of disjoint axes in a tree, from
       \cite[Fig.\ 2]{Pa89:Paulin1989TheGT}. See also \cite{CM87:GroupActions}.}\label{fig:trees_disjoint}
 \end{figure}
 
@@ -420,8 +420,9 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}. 
     If the overlap between necessary, we can change $k$ to a new $k' \coloneqq h^m k $
     Since the $S$-tree preserves axis intersection, $T_k$ intersects both $T_g$ and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
-      
-    By Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
+    We will further divide into three cases depending on the intersection $T_h \cap T_k$.
+    \begin{itemize}
+    \item Coherent bounded overlap. By Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
     $\ora{h^nk^n}$ R-crosses $\ora{g}$ (in addition to crossing $\ora{h}$). See
     Figure~\ref{fig:tree_k_crossing} for an illustration of the
     purported situation in~$T$. In
@@ -429,25 +430,15 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
     We claim this forces $T_g$ and $T_h$ to intersect.
     First, by taking $n$ larger if needed, $T_{h^nk^n}$ and $T_h$
-    overlap in a non-degenerate interval, by Lemma
-    Changing $h$ by $H$, if necessary, we can assume the overlap is
-    coherent.
+    also overlap in a coherent and bounded interval, by Lemma~\ref{lem:foundation_trees} (see Fig.~\ref{fig:trees_intersection}). If we let $x \in T_k \cap T_h=[x',x]$, where $x'<x$ in the natural orientation, we have that $K^n \cdot x \in T_{h^nk^n}$, and thus $h^nk^n (K^n x) = h^n x \in T_{h^nk^n}$. Since $x \in T_h$, and $h$ is hyperbolic, it follows that $d(x,h^n x)=\ell(h^n)>0$.
+    Since
+    $T_{h^nk^n}$ and $T_g$ are assumed to intersect, this creates a loop, which is a contradiction (See
+    Figure~\ref{fig:tree_k_crossing} for an illustration
+    \item Incoherent bounded overlap. In this case, replace $k$ by $k' \coloneqq h^m k h^m$ for $m>0$ large enough, by Lemma~\ref{lem:make_coherent}, and repeat the argument above.
+    \item Coherent unbounded overlap. This is similar to the first case, see Fig.~\ref{fig:tree_k_crossing_unbounded_coherent}.
+    \item Incoherent unbounded overlap. Use $H^nk^n$ in place of $h^nk^n$ and repeat the same argument as in the previous case Fig.~\ref{fig:tree_k_crossing_unbounded_incoherent}.
+    \end{itemize}
     
-    
-    
-    Indeed,  the
-    length of the overlap of $T_{h^nk^n}$ and $T_h$ cannot be strictly larger or
-    smaller than that of the overlap of $T_k$ and $T_h$, since
-    otherwise, from the fact that
-    $T_{h^nk^n}$ and $T_g$ intersect, this would create a loop. (See
-    Figure~\ref{fig:tree_k_crossing} for an illustration of the
-    ``strictly larger overlap'' case.) This
-    implies that as soon as $T_k$ and $T_{h^nk^n}$ intersect, they do
-    so in a ray. If $T_k$ and $T_h$ also overlap in a ray, then $T_g,
-    T_h$ must overlap in the same ray, and hence $T_g \cap T_h \neq
-    \emptyset$, a contradiction. Otherwise, the intersection of $T_k$
-    and $T_h$ is bounded. But then this forces the intersection of
-    $T_{h^nk^n}$ and $T_g$ to be bounded, which is a contradiction.
     
     If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
@@ -477,8 +468,21 @@ intersection. Then:
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
     \svgfignormal{tree_k_crossing}
-    \caption{Configuration of axes on $T$}
+    \caption{Configuration of axes on $T$. $T_k \cap T_h$ bounded and coherent}
     \label{fig:tree_k_crossing}
+  \end{subfigure}\\
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \svgfignormal{tree_k_crossing_unbounded_coherent}
+    \caption{Configuration of axes on $T$, $T_k \cap T_h$ unbounded coherent}
+    \label{fig:tree_k_crossing_unbounded_coherent}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \svgfignormal{tree_k_crossing_unbounded_incoherent}
+    \caption{Configuration of axes on $T$, $T_k \cap T_h$ unbounded incoherent}
+    \label{fig:tree_k_crossing_unbounded_incoherent}
   \end{subfigure}
   \caption{The proof of Lemma~\ref{lem:if_unbounded_then_reducible} }
 \label{fig:main_k_crossing}

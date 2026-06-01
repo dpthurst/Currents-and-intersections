@@ -54,9 +54,13 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0.88096779,0.43853534){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_g$\end{tabular}}}}%
-    \put(0.64215352,0.19221149){\color[rgb]{0.2627451,0.74901961,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{h^nk^n}$\end{tabular}}}}%
+    \put(0.64066065,0.30865553){\color[rgb]{0.2627451,0.74901961,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{h^nk^n}$\end{tabular}}}}%
     \put(0.42439853,0.31014829){\color[rgb]{0.75294118,0.12156863,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{k}$\end{tabular}}}}%
     \put(0.89892768,0.29760821){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_h$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{tree_k_crossing.pdf}}%
+    \put(0.34164949,0.12443495){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$K^n \cdot x$\end{tabular}}}}%
+    \put(0.55042411,0.21520152){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
+    \put(0.74713026,0.21221575){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$h^n \cdot x$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{tree_k_crossing.pdf}}%
   \end{picture}%
 \endgroup%

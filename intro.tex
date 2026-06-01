@@ -13,6 +13,7 @@ central tool in low-dimensional geometry and topology. They play a
 fundamental role in compactifications of spaces of geometric
 \DPTtodo{Does it make sense to cite the Labourie paper with the
   embedding in currents too? XXX: Which paper?}
+  \DMGtodo{I don't think so, these are embeddings into flip-invariant currents that we are referring to, and we will say below that they recover intersection numbers}
 structures~\cite{Bonahon88:GeodesicCurrent, DLR10:DegenerationFlatMetrics,
 MZ19:PositivelyRatioed,BIPP24:PositiveCrossratios}, in curve counting
 problems~\cite{RS19:CountingProblems, EPS20:CountingCurves,
@@ -76,7 +77,6 @@ intersection.
 The hypotheses of smoothing and additivity are
 independent and necessary (see
 Section~\ref{subsec:examples_and_non}).
-\DPTfyi{Added mention of positivity and stability}
 Some other natural properties,
 notably positivity ($f \ge 0$) and stability (values on non-primitive
 curves), come out in the proof.
@@ -92,6 +92,18 @@ Theorem~\ref{thm:intersect} produces numerous new dual currents and unifies seve
   stating. XXX: Give ref}
 
 This extends earlier constructions for negatively curved, non-positively curved, and locally $\CAT(0)$ or $\CAT(-1)$ metrics~\cite{Otal90:SpectreMarqueNegative, CFF92:RigidityNonPosCurvedRiem, DLR10:DegenerationFlatMetrics, HP97:RigidityNegCurvedCone,BL17:RigidityFlat,Con18:MarkedNonpos, PS26:1ntranslation}. 
+
+Every geodesic current induces a length pseudo-metric on $S$ (\cite[Section~4]{BIPP21:Systoles},\cite{dRMG22:Duals}); hence, by Theorem~\ref{thm:intersect}, we also have a converse.
+
+\begin{maincor}
+     For every curve functional $f \colon \Curves(S)\to\mathbb{R}$ satisfying
+smoothing and additivity there exist a length pseudo-metric $d$ on $S$ so that
+\[
+\ell_d(C)=i(\mu_f, C)
+\]
+for every closed curve $C$ on $S$.
+\end{maincor}
+See also Remark~\ref{rmk:pseudo_metrics}. \DMGtodo{added this corollary and previous paragraph, as well as reference to remark}
 
 Theorem~\ref{thm:intersect} further yields dual currents (in fact, dual multi-curves) for stable
 lengths associated to embedded graphs. Let $\iota \colon \mathcal{G}
@@ -124,6 +136,7 @@ setting, Theorem~\ref{thm:intersect} strengthens this by showing that
 many such extensions arise canonically as intersection with a current.
     
 \DPTtodo{This seems perhaps weaker than the rest of the intro}
+\DMGtodo{I'm happy to drop the reference in the intro}
     As a further application, we prove in
     Section~\ref{subsec:ineqintersection} that domination of
     intersection numbers with all closed curves implies domination of
@@ -193,8 +206,7 @@ satisfies exact smoothing. Theorem~\ref{thm:intersect} places these
 results in a unified framework by identifying smoothing and additivity
 as the precise necessary and sufficient conditions for duality with a
 geodesic current.
-\DPTtodo{I don't know what this next sentence is saying}
-These results identify a common axiomatic structure underlying curve functionals arising from a variety of geometric and dynamical constructions, which we explore further below.
+
 
 \subsection{Characterization of measured laminations and hyperbolic metrics}
 
@@ -260,9 +272,7 @@ We highlight some features of Theorem~\ref{thm:hyp-lam-char}.
     Section~\ref{subsec:green}.
   \item It extends Luo’s characterizations of those
 functions on simple closed curves that arise as either intersection with
-\DPTtodo{Are we sure about this Luo ref? Luo also has a 2010 paper in
-  JDG with the same title that seems likely to be more complete}
-measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Luo98:IntersectionNumbers}
+measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Lu10}
 or as hyperbolic length
 functions~\cite{Luo98:GeodesicLength}.
 \item Likewise, we recover the result of the second
@@ -318,7 +328,6 @@ translate in opposite directions along the overlap.
 
 We prove the following equivalences.
 
-\DPTfyi{Changed naming of thm items to avoid Thm E(E)}
 \begin{mainthm}
 \label{mainthm:skora}
 Let $T$ be an $S$-tree. The following are equivalent:
@@ -352,13 +361,11 @@ For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
 \end{equation}
 \end{enumerate}
 \item\label{item:skora_incoherent}
-  \DPTfyi{rephrased this one}%
   There is no pair $(\ora{a},\ora{b})$ that are
 parallel in $\wt{S}$ and act hyperbolically and overlap incoherently in $T$.
 \end{enumerate}
 \end{mainthm}
 
-\DPTfyi{Clarified we rely on Morgan-Otal}
 The implication $\text{(a)} \Rightarrow \text{(b)}$ is due to
 Morgan-Otal~\cite{MO93:RelativeGrowths} (which we rely on), and
 $\text{(b)} \Rightarrow \text{(a)}$ recovers
@@ -442,8 +449,7 @@ e.g.~\cite{OT23:SO23,OT24:Blaschke,Reid25:Boundary,PS26:1ntranslation}).
 \subsection{Acknowledgments}
 \label{sec:acknowledgments}
 
-\DPTtodo{This seems like perhaps an odd list. Eg, no Hugo Parlier? Kasra Rafi?}
-We would like to thank Viveka Erlandsson, Maxime Fortier Bourque, Meenakshy Jyothis, Giuseppe Martone, Beatrice Pozzetti, Eduardo Reyes, Jenya Sapir, Noelle Sawyer, Juan Souto and Ivan Tel\-pu\-khov\-skiy for useful conversations.
+We would like to thank Viveka Erlandsson, Maxime Fortier Bourque, Meenakshy Jyothis, Giuseppe Martone, Hugo Parlier, Beatrice Pozzetti, Kasra Rafi, Eduardo Reyes, Jenya Sapir, Noelle Sawyer, Juan Souto and Ivan Tel\-pu\-khov\-skiy for useful conversations.
 
 The first author was supported by the Hazel King Thompson fellowship
 of the Mathematics Department of the Indiana University Bloomington,
@@ -519,7 +525,6 @@ averaging, we obtain a geodesic current. Finally, we show that this
 current is dual to the original curve functional. We also introduce
 the notion of asymmetric intersection number. This completes the proof
 of Theorem~\ref{thm:intersect}.
-\DPTtodo{Is this last sentence still accurate, or did we reorganize?}
 We then prove Theorem~\ref{thm:intersections_group} and several variants as corollaries.
 
 In Section~\ref{sec:smoothing-types}, we analyze the different notions
