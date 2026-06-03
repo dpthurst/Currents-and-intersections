@@ -186,7 +186,9 @@ Moreover,
 \begin{enumerate}
 \item $T_g \cap T_h$ is a single point iff $\|  g \| + \|h \| = \|gh\| = \| gH\|$;
 \item $g,h$ overlap coherently iff 
-$\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case, $T_g \cap
+  $\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case,
+  \DPTtodo{Assert coherent overlap there}
+  $T_g \cap
 T_h = T_{gh} \cap T_{hg}$; and
 \item $g,h$ overlap incoherently iff 
 $\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
@@ -422,14 +424,18 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     \neq \emptyset$.
 
     For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}.
-    \DPTtodo{Fixed a typo, but I'm unclear when it would be necessary}
-    If necessary, we can change $k$ to a new $k' \coloneqq h^m k $.
     Since $T$ preserves axis intersection, $T_k$ intersects both $T_g$
-    and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
-    We will further divide into cases depending on the intersection $T_h \cap T_k$.
+    and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded. For
+    definiteness (replacing $g,h$ by their inverses if necessary) we
+    assume $T_g\cap T_k$ is coherent.
+    \DPTtodo{Figures assume $T_h \cap T_k$ occurs before $T_g \cap
+      T_k$ on $T_k$}
+    We will further divide into cases depending on the intersection
+    $T_h \cap T_k$.
+    \DPTtodo{DPT will edit, hopefully getting rid of cases}
     \begin{itemize}
     \item Coherent bounded overlap. By
-      \DPTtodo{This is still the wrong lemma}
+      \DPTtodo{This is still the wrong lemma. Dídac will track it down}
       Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
     $\ora{h^nk^n}$ R-crosses~$\ora{g}$, in addition to crossing~$\ora{h}$. See
     Figure~\ref{fig:tree_k_crossing} for an illustration of the
@@ -438,7 +444,13 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
     We claim this forces $T_g$ and $T_h$ to intersect.
     First, by taking $n$ larger if needed, $T_{h^nk^n}$ and $T_h$
-    also overlap in a coherent and bounded interval, by Lemma~\ref{lem:foundation_trees} (see Fig.~\ref{fig:trees_intersection}). If we let $x \in T_k \cap T_h=[x',x]$, where $x'<x$ in the natural orientation, we have that $K^n \cdot x \in T_{h^nk^n}$, and thus $h^nk^n (K^n x) = h^n x \in T_{h^nk^n}$. Since $x \in T_h$, and $h$ is hyperbolic, it follows that $d(x,h^n x)=\ell(h^n)>0$.
+    also overlap in a coherent and bounded interval, by
+    Lemma~\ref{lem:foundation_trees} (see
+    Fig.~\ref{fig:trees_intersection}). If we let $x \in T_k \cap
+    T_h=[x',x]$, where $x'<x$ in the natural orientation. Since $x \in
+    T_{h^n k^n}$ by (the lemma), and $x$ is in the interval between
+    $K^n \cdot x$ and $h^n k^n(K^n \cdot x) = h^n \cdot x$, both $K^n
+    \cdot x$ and $h^n \cdot x$ are in $T_{h^nk^n}$. Since $x \in T_h$, and $h$ is hyperbolic, it follows that $d(x,h^n x)=\ell(h^n)>0$.
     Since
     $T_{h^nk^n}$ and $T_g$ are assumed to intersect, this creates a loop, which is a contradiction. See
     Figure~\ref{fig:tree_k_crossing} for an illustration.
@@ -446,7 +458,9 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     \DPTtodo{This $\ora{k'}$ no longer crosses $\ora{g}$, so I think
       this needs its own argument}
     Replace $k$ by $k' \coloneqq h^m k h^m$ for $m>0$ large enough, by Lemma~\ref{lem:make_coherent}, and repeat the argument above.
-    \item Coherent unbounded overlap. This is similar to the first case, see Fig.~\ref{fig:tree_k_crossing_unbounded_coherent}.
+  \item
+    \DPTtodo{Merge with first case}
+    Coherent unbounded overlap. This is similar to the first case, see Fig.~\ref{fig:tree_k_crossing_unbounded_coherent}.
     \item Incoherent unbounded overlap. Use $H^nk^n$ in place of
       $h^nk^n$ and repeat the same argument as in the previous case.
       See Fig.~\ref{fig:tree_k_crossing_unbounded_incoherent}.
