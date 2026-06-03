@@ -456,20 +456,60 @@ A natural question that arises then is the following.
 
 In this paper, we characterized additive, unoriented curve functionals that
 satisfy smoothing as exactly those coming from geodesic currents.
-\begin{itemize}
-\item Define $\AConvex^+_{\ge 0}(S)$ as oriented curve functionals that are additive;
-  satisfy oriented smoothing (connected and disconnected); and are
-  positive
-\item \textbf{Not} generally from oriented intersection number
-  $\vec\imath$; see Appendix~\ref{sec:asymmetric}.
-\item Examples from asymmetric monoidal generating sets, or in general
-  any asymmetric (pseudo-)metric on~$S$
-\item Question: Is the space reasonable, e.g., locally compact?
-\item Question: Are there examples that don't come from asymmetric metrics?
-\item Remark: If we drop positive, can add elements of $H^1$. If we also
-  weaken smoothing to quasi-smoothing, add in the large class of
-  quasi-morphisms.
-\end{itemize}
+We could instead look at functionals on \emph{oriented} curves.
+
+\DPTfyi{Note I added stability as a condition}
+\begin{definition}
+  Let $\AConvex^+(S)$ be the space of functionals on oriented curves
+  $\Curves^+(S)$ that satisfy additivity, oriented smoothing
+  (connected and disconnected), and stability, endowed with the
+  product topology. Similarly, $\AConvex^+_{\ge 0}(S)$ is the subspace
+  of positive functionals.
+\end{definition}
+
+Appendix~\ref{sec:asymmetric} can be summarized as saying that
+$\AConvex^+(S)$ is not very related to the space $\GC^+(S)$ of
+oriented geodesic currents: the natural map $\mu \mapsto
+\vec\imath(\mu,\cdot)$ is neither injective nor surjective, in what
+appear to be large ways.
+
+Nevertheless the space $\AConvex^+_{\ge 0}(S)$ may be of independent
+interest. There are many examples of such functionals. For instance,
+you can take an asymmetric metric on $S$ and turn it into a functional
+on curves as in Section~\ref{subsec:ineqintersection}. As in the
+symmetric case, if there are rectifiable curves in each homotopy class
+the result is automatically positive and satisfies oriented smoothing.
+
+For a more concrete example, you can take an asymmetric generating set
+for $\pi_1(S)$ as a monoid whose (directed) graph is simple in~$S$, as
+in the example in Appendix~\ref{sec:asymmetric}.
+
+\begin{question}
+  Is the space $\AConvex^+_{\ge 0}(S)$ a reasonable space? For
+  instance, is it locally compact?
+\end{question}
+
+\begin{question}
+  Does every element of $\AConvex^+_{\ge 0}(S)$ come from an
+  asymmetric pseudo-metric in the style of
+  Corollary~\ref{maincor:lengthdual}?
+\end{question}
+
+In this oriented context, the restriction that the functional is
+positive is non-trivial (unlike for unoriented functionals): for any
+functional $f$ and element $\omega \in H^1(S; \bbZ)$, for sufficiently
+large $K>0$ the combination $f + K\omega$ will take negative values.
+
+We could also relax the condition of smoothing to quasi-smoothing, and
+ask similar questions. If we drop positivity and also consider
+quasi-smoothings, then the space of functionals includes the much
+larger space of quasi-morphisms (Section~\ref{sub:quasimorphism}).
+\DPTtodo[inline]{It seemed like maybe another natural question was whether
+  the space of functionals satisfying $K$-quasi-smoothing, additivity,
+  and positivity was also locally compact (for fixed $K$). Do we want
+  to ask that somewhere? Maybe generalize this section and
+  Section~\ref{sec:convexity_charts} to ask about local compactness
+  for various weakenings?}
 
 %%% Local Variables:
 %%% mode: latex
