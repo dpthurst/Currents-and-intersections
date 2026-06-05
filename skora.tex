@@ -177,6 +177,7 @@ hyperbolic elements.
 We now look at the relative positions of the characteristic sets of a pair of elements $g,h \in \Gamma$, distinguishing the cases that arise in Proposition~\ref{prop:max_twice}.
 
 \begin{lemma}
+\label{lem:foundation_trees}
 Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
 We have the following cases, depending on the relative position of $T_g,T_h$.
 \begin{enumerate}[(\arabic*)]
@@ -187,9 +188,8 @@ Moreover,
 \item $T_g \cap T_h$ is a single point iff $\|  g \| + \|h \| = \|gh\| = \| gH\|$;
 \item $g,h$ overlap coherently iff 
   $\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case,
-  \DPTtodo{Assert coherent overlap there}
   $T_g \cap
-T_h = T_{gh} \cap T_{hg}$; and
+T_h = T_{gh} \cap T_{hg}$, and the four axes intersect coherently there; and
 \item $g,h$ overlap incoherently iff 
 $\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{enumerate}
@@ -201,7 +201,6 @@ in a segment of positive length and
 $T_{gh},T_{hg}$ overlap incoherently on a segment of length
 $d(T_g, T_h)$.
 \end{enumerate}
-\label{lem:foundation_trees}
 \end{lemma}
 
 \begin{figure}[ht]
@@ -425,17 +424,34 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
 
     For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}.
     Since $T$ preserves axis intersection, $T_k$ intersects both $T_g$
-    and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded. For
+    and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
+    For
     definiteness (replacing $g,h$ by their inverses if necessary) we
     assume $T_g\cap T_k$ is coherent.
-    \DPTtodo{Figures assume $T_h \cap T_k$ occurs before $T_g \cap
-      T_k$ on $T_k$}
+    \begin{itemize}
+    \item Orient $k$ so the unbounded ray $T_g \cap T_k$ is the
+      attracting direction
+    \item Orient $h$ so $T_k \cap T_h$ is coherent
+    \item Let $x$ be point on $T_h \cap T_k$ that is largest wrt order
+      on $T_k$
+    \item Consider $h k^n$ for large $n$. By
+      Lemma~\ref{lem:convergence_action},
+      $\lim_{n \to \infty} (h k^n)^- = k^-$ and
+      $\lim_{n \to \infty} (h k^n)^+ = h \cdot k^+$, so for
+      sufficiently large $n$, $\ora{hk^n}$ crosses both $\ora{g}$ and
+      $\ora{h}$.
+    \item By
+      Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}, $x$
+      is also on the axis of $T_{h k^n}$.
+    \item Now since $x \in [K^n \cdot x, h \cdot x]$, we must have
+      $h \cdot x \in T_{h k^n}$ as well.
+    \item This contradicts $T$ being a tree
+    \end{itemize}
+
     We will further divide into cases depending on the intersection
     $T_h \cap T_k$.
-    \DPTtodo{DPT will edit, hopefully getting rid of cases}
     \begin{itemize}
     \item Coherent bounded overlap. By
-      \DPTtodo{This is still the wrong lemma. Dídac will track it down}
       Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
     $\ora{h^nk^n}$ R-crosses~$\ora{g}$, in addition to crossing~$\ora{h}$. See
     Figure~\ref{fig:tree_k_crossing} for an illustration of the
