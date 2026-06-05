@@ -412,94 +412,97 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
 \begin{proof}
     We will prove a contra-positive. Namely, if the action preserves
     axis intersection and there exists a hyperbolic
-    element $g$ so that for every hyperbolic element $h$ with $\ora{h}$ R-crossing
+    element $g$ so that for every hyperbolic element $h$ with $\ora{h}$ crossing
     $\ora{g}$, the intersection $T_g \cap T_h$ is unbounded, we will deduce
     that the action must be reducible. (Note $T_g \cap T_h$ cannot be
     empty since the action on $T$ is axis-preserving.)
     
     Fix such a~$g$. By Lemma~\ref{lem:CM_red_criterion}, it suffices
     to show that for any hyperbolic element $h$ so that
-    $(\ora{g},\ora{h})$ are parallel (or anti-parallel), $T_g \cap T_h
-    \neq \emptyset$.
+    $(\ora{g},\ora{h})$ do not cross, $T_g \cap T_h \neq \emptyset$.
+    \DPTfyi{I realized we didn't actually care about whether the axes
+      are parallel or anti-parallel in the disk, which gives more
+      freedom to make them nice in the tree}%
+    For the sake of contradiction, suppose $T_g \cap T_h = \emptyset$.
+    By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so
+    that $\ora{k}$ crosses $\ora{g}$ and $\ora{h}$, as in
+    Figure~\ref{fig:k_crossing}. Since $T$ preserves axis
+    intersection, $T_k$ intersects both $T_g$ and $T_h$. Thus, by
+    hypothesis, $T_g \cap T_k$ is unbounded. For definiteness, by
+    replacing $k$ by its inverse if necessary, we may assume this
+    unbounded intersection is at the attracting end of~$k$. By
+    replacing $g$ and/or $h$ by their inverses if necessary, we may
+    assume that $T_g \cap T_k$ and $T_h \cap T_k$ are coherent (or a
+    point in the case of $T_h \cap T_k$).
 
-    For the sake of contradiction, suppose $(\ora{g},\ora{h})$ are parallel and $T_g \cap T_h = \emptyset$. By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so that $\ora{k}$ R-crosses $\ora{g}$ and $\ora{h}$, as in Figure~\ref{fig:k_crossing}.
-    Since $T$ preserves axis intersection, $T_k$ intersects both $T_g$
-    and $T_h$. Thus, by hypothesis, $T_g \cap T_k$ is unbounded.
-    For
-    definiteness (replacing $g,h$ by their inverses if necessary) we
-    assume $T_g\cap T_k$ is coherent.
-    \begin{itemize}
-    \item Orient $k$ so the unbounded ray $T_g \cap T_k$ is the
-      attracting direction
-    \item Orient $h$ so $T_k \cap T_h$ is coherent
-    \item Let $x$ be point on $T_h \cap T_k$ that is largest wrt order
-      on $T_k$
-    \item Consider $h k^n$ for large $n$. By
-      Lemma~\ref{lem:convergence_action},
-      $\lim_{n \to \infty} (h k^n)^- = k^-$ and
-      $\lim_{n \to \infty} (h k^n)^+ = h \cdot k^+$, so for
-      sufficiently large $n$, $\ora{hk^n}$ crosses both $\ora{g}$ and
-      $\ora{h}$.
-    \item By
-      Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}, $x$
-      is also on the axis of $T_{h k^n}$.
-    \item Now since $x \in [K^n \cdot x, h \cdot x]$, we must have
-      $h \cdot x \in T_{h k^n}$ as well.
-    \item This contradicts $T$ being a tree
-    \end{itemize}
-
-    We will further divide into cases depending on the intersection
-    $T_h \cap T_k$.
-    \begin{itemize}
-    \item Coherent bounded overlap. By
-      Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
-    $\ora{h^nk^n}$ R-crosses~$\ora{g}$, in addition to crossing~$\ora{h}$. See
-    Figure~\ref{fig:tree_k_crossing} for an illustration of the
-    purported situation in~$T$. Since the action preserves axis
-    intersection, $T_{h^nk^n}$ and
-    $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
-    We claim this forces $T_g$ and $T_h$ to intersect.
-    First, by taking $n$ larger if needed, $T_{h^nk^n}$ and $T_h$
-    also overlap in a coherent and bounded interval, by
-    Lemma~\ref{lem:foundation_trees} (see
-    Fig.~\ref{fig:trees_intersection}). If we let $x \in T_k \cap
-    T_h=[x',x]$, where $x'<x$ in the natural orientation. Since $x \in
-    T_{h^n k^n}$ by (the lemma), and $x$ is in the interval between
-    $K^n \cdot x$ and $h^n k^n(K^n \cdot x) = h^n \cdot x$, both $K^n
-    \cdot x$ and $h^n \cdot x$ are in $T_{h^nk^n}$. Since $x \in T_h$, and $h$ is hyperbolic, it follows that $d(x,h^n x)=\ell(h^n)>0$.
-    Since
-    $T_{h^nk^n}$ and $T_g$ are assumed to intersect, this creates a loop, which is a contradiction. See
-    Figure~\ref{fig:tree_k_crossing} for an illustration.
-  \item Incoherent bounded overlap.
-    \DPTtodo{This $\ora{k'}$ no longer crosses $\ora{g}$, so I think
-      this needs its own argument}
-    Replace $k$ by $k' \coloneqq h^m k h^m$ for $m>0$ large enough, by Lemma~\ref{lem:make_coherent}, and repeat the argument above.
-  \item
-    \DPTtodo{Merge with first case}
-    Coherent unbounded overlap. This is similar to the first case, see Fig.~\ref{fig:tree_k_crossing_unbounded_coherent}.
-    \item Incoherent unbounded overlap. Use $H^nk^n$ in place of
-      $h^nk^n$ and repeat the same argument as in the previous case.
-      See Fig.~\ref{fig:tree_k_crossing_unbounded_incoherent}.
-    \end{itemize}
+    Now consider $h k^n$ for large $n$. By
+    Lemma~\ref{lem:convergence_action},
+    $\lim_{n \to \infty} (h k^n)^- = k^-$ and
+    $\lim_{n \to \infty} (h k^n)^+ = h \cdot k^+$, so for sufficiently
+    large $n$, $\ora{hk^n}$ crosses both $\ora{g}$ and $\ora{h}$. Fix
+    such an $n$.
+    
+    Let $x$ be the point on $T_h \cap T_k$ that is the largest with
+    respect to the ordering on~$T_k$, as shown in
+    Figure~\ref{fig:tree_k_crossing}. By
+    Lemma~\ref{lem:foundation_trees}(1b), $x$ is also on $T_{h k^n}$.
+    Since $T_h \cap T_k$ is coherent, we have
+    $x \in [K^n \cdot x, h \cdot x]$, and so $h \cdot x \in T_{h k^n}$
+    as well. But this contradicts~$T$ being a tree: with respect to
+    the order on $T_{h k^n}$, the intersection $T_{h k^n} \cap T_k$
+    contains both $x$ which is smaller than $h \cdot x$, and points
+    larger than $h \cdot x$, at the attracting end of $T_{h k^n}$.
+    \DPTtodo{Small point missing: Why is the unbounded intersection
+      $T_{h k^n} \cap T_g$ at the attracting end of $T_{h k^n}$?}%
+  %   \medskip\hrule\medskip
+  %   (old proof below)
+    
+  %   We will further divide into cases depending on the intersection
+  %   $T_h \cap T_k$.
+  %   \begin{itemize}
+  %   \item Coherent bounded overlap. By
+  %     Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
+  %   $\ora{h^nk^n}$ R-crosses~$\ora{g}$, in addition to crossing~$\ora{h}$. See
+  %   Figure~\ref{fig:tree_k_crossing} for an illustration of the
+  %   purported situation in~$T$. Since the action preserves axis
+  %   intersection, $T_{h^nk^n}$ and
+  %   $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
+  %   We claim this forces $T_g$ and $T_h$ to intersect.
+  %   First, by taking $n$ larger if needed, $T_{h^nk^n}$ and $T_h$
+  %   also overlap in a coherent and bounded interval, by
+  %   Lemma~\ref{lem:foundation_trees} (see
+  %   Fig.~\ref{fig:trees_intersection}). If we let $x \in T_k \cap
+  %   T_h=[x',x]$, where $x'<x$ in the natural orientation. Since $x \in
+  %   T_{h^n k^n}$ by (the lemma), and $x$ is in the interval between
+  %   $K^n \cdot x$ and $h^n k^n(K^n \cdot x) = h^n \cdot x$, both $K^n
+  %   \cdot x$ and $h^n \cdot x$ are in $T_{h^nk^n}$. Since $x \in T_h$, and $h$ is hyperbolic, it follows that $d(x,h^n x)=\ell(h^n)>0$.
+  %   Since
+  %   $T_{h^nk^n}$ and $T_g$ are assumed to intersect, this creates a loop, which is a contradiction. See
+  %   Figure~\ref{fig:tree_k_crossing} for an illustration.
+  % \item Incoherent bounded overlap.
+  %   \DPTtodo{This $\ora{k'}$ no longer crosses $\ora{g}$, so I think
+  %     this needs its own argument}
+  %   Replace $k$ by $k' \coloneqq h^m k h^m$ for $m>0$ large enough, by Lemma~\ref{lem:make_coherent}, and repeat the argument above.
+  % \item
+  %   \DPTtodo{Merge with first case}
+  %   Coherent unbounded overlap. This is similar to the first case, see Fig.~\ref{fig:tree_k_crossing_unbounded_coherent}.
+  %   \item Incoherent unbounded overlap. Use $H^nk^n$ in place of
+  %     $h^nk^n$ and repeat the same argument as in the previous case.
+  %     See Fig.~\ref{fig:tree_k_crossing_unbounded_incoherent}.
+  %   \end{itemize}
     
     
-    If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
+  %   If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
 
-
-
-We are now ready for the main component of Theorem~\ref{mainthm:skora}.
-
-\begin{theorem}
-Let $T$ be an irreducible $S$-tree that preserves axis
-intersection. Then:
-\begin{itemize}
-\item $T$ preserves characteristic intersection; and
-\item $\| \cdot \|$ satisfies max-smoothing. 
-\end{itemize}
-\label{thm:small}
-\end{theorem}
-
+\DPTtodo[inline]{In Figure~\ref{fig:main_k_crossing}, updates for
+  revised proof: \textbullet\ drop parts
+  (c) and (d) \textbullet\ Change label to $T_{h k^n}$ (in (a), (b))
+  \textbullet\ Color on $T_{h k^n}$ is too light. Make it darker while
+  still contrasting with $T_h$ (in (a), (b)) \textbullet\ Label for
+  $T_k$ is in a confusing place, since many axes are overlapping right
+  there. Move it somewhere (in (b)) \textbullet\ Change label for
+  $h^n \cdot x$ to $h \cdot x$ (in (b))}
 \begin{figure}
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
@@ -531,6 +534,19 @@ intersection. Then:
 \label{fig:main_k_crossing}
 \end{figure}
 
+
+
+We are now ready for the main component of Theorem~\ref{mainthm:skora}.
+
+\begin{theorem}
+Let $T$ be an irreducible $S$-tree that preserves axis
+intersection. Then:
+\begin{itemize}
+\item $T$ preserves characteristic intersection; and
+\item $\| \cdot \|$ satisfies max-smoothing. 
+\end{itemize}
+\label{thm:small}
+\end{theorem}
 
 
 Note that, in light of Proposition~\ref{prop:max_twice}, to prove
