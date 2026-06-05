@@ -189,7 +189,7 @@ Moreover,
 \item $g,h$ overlap coherently iff 
   $\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case,
   $T_g \cap
-T_h = T_{gh} \cap T_{hg}$, and the four axes intersect coherently there; and
+T_h = T_{gh} \cap T_{hg}$, and all four axes intersect coherently there; and
 \item $g,h$ overlap incoherently iff 
 $\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{enumerate}
@@ -420,9 +420,6 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     Fix such a~$g$. By Lemma~\ref{lem:CM_red_criterion}, it suffices
     to show that for any hyperbolic element $h$ so that
     $(\ora{g},\ora{h})$ do not cross, $T_g \cap T_h \neq \emptyset$.
-    \DPTfyi{I realized we didn't actually care about whether the axes
-      are parallel or anti-parallel in the disk, which gives more
-      freedom to make them nice in the tree}%
     For the sake of contradiction, suppose $T_g \cap T_h = \emptyset$.
     By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so
     that $\ora{k}$ crosses $\ora{g}$ and $\ora{h}$, as in
@@ -435,6 +432,8 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
     assume that $T_g \cap T_k$ and $T_h \cap T_k$ are coherent (or a
     point in the case of $T_h \cap T_k$).
 
+    \DPTtodo{Issue: Proof is implicitly assuming something about order
+      of intersections along $\ora{k}$ vs order along $T_k$. Fix that.}
     Now consider $h k^n$ for large $n$. By
     Lemma~\ref{lem:convergence_action},
     $\lim_{n \to \infty} (h k^n)^- = k^-$ and
@@ -496,13 +495,16 @@ crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
 \end{proof}
 
 \DPTtodo[inline]{In Figure~\ref{fig:main_k_crossing}, updates for
-  revised proof: \textbullet\ drop parts
-  (c) and (d) \textbullet\ Change label to $T_{h k^n}$ (in (a), (b))
-  \textbullet\ Color on $T_{h k^n}$ is too light. Make it darker while
-  still contrasting with $T_h$ (in (a), (b)) \textbullet\ Label for
-  $T_k$ is in a confusing place, since many axes are overlapping right
-  there. Move it somewhere (in (b)) \textbullet\ Change label for
-  $h^n \cdot x$ to $h \cdot x$ (in (b))}
+  revised proof: \textbullet\ drop parts (c) and (d) \textbullet\
+  Change label to $T_{h k^n}$ (in (a), (b)) \textbullet\ Color on
+  $T_{h k^n}$ is too light. Make it darker while still contrasting
+  with $T_h$ (in (a), (b)) \textbullet\ Label for $T_k$ is in a
+  confusing place, since many axes are overlapping right there. Move
+  it somewhere (in (b)) \textbullet\ Change label for $h^n \cdot x$ to
+  $h \cdot x$ (in (b)) \textbullet\ In (a), $\ora{k}$ intersects
+  $\ora{g}$ then $\ora{h}$, while in (b) they intersect the opposite
+  direction. Of course we don't (yet) know these are correlated, but I
+  think it's still less confusing to switch them}
 \begin{figure}
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
