@@ -54,10 +54,10 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0.88096779,0.43853534){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_g$\end{tabular}}}}%
-    \put(0.30028577,0.31313418){\color[rgb]{0.2627451,0.74901961,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{H^nk^n}$\end{tabular}}}}%
+    \put(0.30028577,0.31313418){\color[rgb]{0.36078431,0.56078431,0.21176471}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{Hk^n}$\end{tabular}}}}%
     \put(0.92344498,0.20027292){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$K^n \cdot x$\end{tabular}}}}%
     \put(0.55746368,0.20146706){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$x$\end{tabular}}}}%
-    \put(0.39438763,0.20295994){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$H^n \cdot x$\end{tabular}}}}%
+    \put(0.39438762,0.20295994){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$H \cdot x$\end{tabular}}}}%
     \put(0.47814198,0.31611977){\color[rgb]{0.75294118,0.12156863,0.62352941}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_{k}$\end{tabular}}}}%
     \put(0.89892768,0.29760821){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$T_h$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{tree_k_crossing_unbounded_incoherent.pdf}}%
