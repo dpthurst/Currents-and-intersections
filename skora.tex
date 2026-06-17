@@ -401,6 +401,7 @@ For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
 We start by proving a geometric criterion for axis-preserving,
 irreducible actions.
 
+\DPTtodo{Read this}
 \begin{lemma}
 \label{lem:if_unbounded_then_reducible}
 Suppose that an $S$-tree~$T$ preserves axis intersection and is
@@ -479,9 +480,8 @@ Suppose first $\ora{k}$ intersects $\ora{g}$ before $\ora{h}$.
     \caption{Relevant configuration if $\protect\ora{k}$ intersects $\protect\ora{h}$ before $\protect\ora{g}$, and the overlap $T_{k^nh}$ is on the repelling end of $T_g$.}
     \label{fig:tree_k_crossing_bis2}
   \end{subfigure}
+  \caption{New cases for proof of Lemma~\ref{lem:if_unbounded_then_reducible}}
   \end{figure}
-    \DPTtodo{Small point missing: Why is the unbounded intersection
-      $T_{h k^n} \cap T_g$ at the attracting end of $T_{h k^n}$?}%
   %   \medskip\hrule\medskip
   %   (old proof below)
     
@@ -523,17 +523,6 @@ Suppose first $\ora{k}$ intersects $\ora{g}$ before $\ora{h}$.
   %   If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
 \end{proof}
 
-\DPTtodo[inline]{In Figure~\ref{fig:main_k_crossing}, updates for
-  revised proof: \textbullet\ drop parts (c) and (d) \textbullet\
-  Change label to $T_{h k^n}$ (in (a), (b)) \textbullet\ Color on
-  $T_{h k^n}$ is too light. Make it darker while still contrasting
-  with $T_h$ (in (a), (b)) \textbullet\ Label for $T_k$ is in a
-  confusing place, since many axes are overlapping right there. Move
-  it somewhere (in (b)) \textbullet\ Change label for $h^n \cdot x$ to
-  $h \cdot x$ (in (b)) \textbullet\ In (a), $\protect\ora{k}$ intersects
-  $\protect\ora{g}$ then $\protect\ora{h}$, while in (b) they intersect the opposite
-  direction. Of course we don't (yet) know these are correlated, but I
-  think it's still less confusing to switch them}
 \begin{figure}
   \begin{subfigure}[b]{0.45\textwidth}
     \centering
@@ -801,55 +790,22 @@ overlap.
 
 We now show that reducible fixed-end actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
 
-\DMGtodo{had to edit this one: in the two elliptic case, disconnected smoothing actually fails in the dihedral case. I added the dihedral assumption to the first item. Removed the part about $-\|\cdot\|$ satisfying connected smoothing, since it is not true (perhaps an oriented version works, but it is harder to state). }
+\DPTtodo{Reread this. Typesetting of $\|\cdot\|$}
 \begin{lemma}
 \label{lem:red_not_smoothing}
 Let $T$ be an $S$-tree.
-If the $\pi_1(S)$-action is reducible, then:
-\begin{enumerate}
-\item If the action is fixed-end, $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$
-  satisfies disconnected smoothing but not connected smoothing.
-    \item There exist a pair of hyperbolic elements $(g,h)$ with
-      incoherent overlap so that $(\ora{g},\ora{h})$ are parallel.
-\end{enumerate}
+If the $\pi_1(S)$-action is reducible,
+then there exist a pair incoherently overlapping elements $(g,h)$ so that
+$(\ora{g},\ora{h})$ are parallel and $\|\cdot\|$ does not
+satisfy connected smoothing.
+In particular, if the
+action is fixed-end, $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$
+satisfies disconnected smoothing but not connected smoothing.
 \end{lemma}
-\begin{proof}
-  Suppose $g,h$ be two hyperbolic elements of $\Gamma$.
-By \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}, either $T_g,T_h$ overlap coherently, in which case
-\begin{equation}
-\|gh \|=\| g \| + \| h \| > \|gH \| = |\,\|g \|- \| h \|\, |,
-\label{eq:reducible1}
-\end{equation}
-\DPTtodo{Need to assert $gh$ overlaps $g,h$ coherently in this
-  coherent case}\DMGtodo{why? the proposition in Paulin does not require that}
-or they overlap incoherently, in which case
-\begin{equation}
-\|gH \| =\| g\| + \| h \| > \| gh \| = |\, \| g \| - \| h \|\,|.
-\label{eq:reducible2}
-\end{equation}
-Since these equations hold if $(\ora{g},\ora{h})$ cross,
-$\| \cdot \|$ satisfies disconnected smoothing.
 
-Next, suppose $g$ be elliptic and $h$ hyperbolic.
-Then, by~\cite[Lemma~6.5]{CM87:GroupActions}, either:
-\begin{itemize} \item $\|gh\|=\|h\|$ and $\|gh^{-1}\|=\|h\|$; or
-\item $\|gh\|=0$ and $\|gh^{-1}\|=0$
-\end{itemize}
-\DMGtodo{double check if oriented or both versions are needed}
-In the first case, if $(\ora{g},\ora{h})$ cross, disconnected smoothing holds for $\| \cdot \|$. To see that connected smoothing does not hold, we can apply the previous case to the pair of hyperbolic elements $gh,h^{-1}g$. If $(\ora{g},\ora{h})$ cross, then $(\ora{gh},\ora{h^{-1}g})$ cross. Hence, $\| \cdot\|$ does not satisfy connected smoothing, since $\|(gh)(h^{-1}g)\|=\|g^2\|=0$.
-
-Finally, it remains to consider $g$ and $h$ elliptic.
-If the action has a fixed end, then $T_g \cap T_h = \emptyset$ and hence, by Lemma~\ref{lem:pau_two_ell}, $\|gh\|=0$.
-Thus, both smoothings are satisfied in this case.
-If the action was dihedral, there would be elements $r$ and $s$ in $\Gamma$
-acting as reflections with distinct fixed points on the invariant line (see, e.g., proof of~\cite[Theorem~2.2]{CM87:GroupActions}).
-Hence, $T_r \cap T_s = \emptyset$, and by Lemma~\ref{lem:pau_two_ell}, $\|gh\|>0$.
-Thus, if $(\ora{g},\ora{h})$ crosses, disconnected smoothing is not satisfied in this case. 
-If $(\ora{g},\ora{h})$ are parallel, connected smoothing is satisfied in this case.
-
-To get the second item of the lemma, we prove a subsidiary claim.
-
-\begin{claim} Suppose $a,x \in \Gamma$ are hyperbolic elements of a
+We start with a subsidiary claim.
+\begin{claim}\label{claim:incoherent}
+  Suppose $a,x \in \Gamma$ are hyperbolic elements of a
   reducible action so that $\| a \|>\| x \|$ and $(T_a,T_x)$ overlap
   coherently. Then the pair $(T_{ax},T_{xA})$ has incoherent overlap.
 \end{claim}
@@ -869,8 +825,11 @@ On the other hand,
 \]
 implying that $(ax,xA)$ overlap incoherently by Eq.~\eqref{eq:reducible2}.
 \end{proof}
-We return to the proof of Lemma~\ref{lem:red_not_smoothing}.
-First, find a pair $(g,h)$ of hyperbolic elements so $(\ora{g},\ora{h})$ are
+
+\begin{proof}[Proof of Lemma~\ref{lem:red_not_smoothing}]
+  We start by finding a pair of incoherently overlapping elements so
+  that $(\ora{g},\ora{h})$ are parallel.
+  First, find a pair $(g,h)$ of hyperbolic elements so $(\ora{g},\ora{h})$ are
 parallel. Start with any two hyperbolic elements that
 are not common powers. (For instance, take any hyperbolic element
 and a non-trivial conjugate.)
@@ -881,24 +840,69 @@ consider the pair $(\ora{g},\ora{H})$ instead.
 
 Now we consider their overlaps in the tree. If $(T_g,T_h)$
 overlap
-incoherently, we have proved item~(3). Otherwise, use
+incoherently, we have established this claim. Otherwise, use
 Example~\ref{ex:ab_parallel_aB_crossing} to obtain a pair $a \coloneqq hghgh$
 and $b \coloneqq hgh$, still parallel with coherent overlap, so that
 $\|a\|>\|b\|$ and
 $(\ora{aB},\ora{Ba})$ is crossing. By Lemma~\ref{lem:a_parallel_Ba},
 it follows that either $(\ora{ab},\ora{bA})$ is parallel or $(\ora{ba},\ora{aB})$ is parallel.
-By the Claim above, we have found a pair $(\ora{g},\ora{h})$, with
+By Claim~\ref{claim:incoherent}, we have found a pair $(\ora{g},\ora{h})$, with
 $g = ab, h = Ba$ or  $g = ba, h = aB$, of parallel hyperbolic elements with
-incoherent overlap. This proves item~(3). 
+incoherent overlap. This proves the first claim.
 
-To finish the proof of items (1) and~(2), note
+To see that connected smoothing fails, note
 this tells us $\| gh \| < \|gH\|=\|g\| + \|h\|$, which violates both
-oriented and unoriented connected smoothing, while its negation
-violates disconnected smoothing.
+oriented and unoriented connected smoothing.
+
+We now turn to proving disconnected smoothing in the fixed-end case. (In
+fact most cases of disconnected smoothing hold in the reducible case
+as well.)
+
+  Suppose $g,h$ are two hyperbolic elements of $\Gamma$.
+By \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}, either $T_g,T_h$ overlap coherently, in which case
+\begin{equation}
+\|gh \|=\| g \| + \| h \| > \|gH \| = |\,\|g \|- \| h \|\, |,
+\label{eq:reducible1}
+\end{equation}
+or they overlap incoherently, in which case
+\begin{equation}
+\|gH \| =\| g\| + \| h \| > \| gh \| = |\, \| g \| - \| h \|\,|.
+\label{eq:reducible2}
+\end{equation}
+Since these equations hold if $(\ora{g},\ora{h})$ cross,
+$\| \cdot \|$ satisfies disconnected smoothing.
+
+Next, suppose $g$ be elliptic and $h$ hyperbolic.
+Then, by~\cite[Lemma~6.5]{CM87:GroupActions}, either:
+\begin{itemize} \item $\|gh\|=\|h\|$ and $\|gH\|=\|h\|$; or
+\item $\|gh\|=0$ and $\|gH\|=0$.
+\end{itemize}
+In the first case, if $(\ora{g},\ora{h})$ cross, disconnected
+smoothing holds for $\| \cdot \|$. To see that connected smoothing
+does not hold, we can apply the previous case to the pair of
+hyperbolic elements $gh,Hg$. If $(\ora{g},\ora{h})$ cross, then
+$(\ora{gh},\ora{Hg})$ cross. Hence, $\| \cdot\|$ does not satisfy
+connected smoothing, since $\|(gh)(Hg)\|=\|g^2\|=0$.
+
+Finally, it remains to consider $g$ and $h$ elliptic.
+Here we use the assumption the action has a fixed end, so $T_g \cap
+T_h = \emptyset$ and hence, by Lemma~\ref{lem:pau_two_ell},
+$\|gh\|=0$.
+Thus, both smoothings are satisfied in this case.
 \end{proof}
 
 Hence a reducible action cannot be dual to a geodesic current, since
 smoothing (both connected and disconnected) is a necessary condition.
+
+\begin{remark}
+  In Lemma~\ref{lem:red_not_smoothing}, if the action is dihedral,
+  there are elliptic elements $g$ and $h$ in $\Gamma$ with distinct
+  fixed points on the invariant line (see, e.g., proof
+  of~\cite[Theorem~2.2]{CM87:GroupActions}). Hence,
+  $T_g \cap T_h = \emptyset$, and by Lemma~\ref{lem:pau_two_ell},
+  $\|gh\|>0$. Thus, if $(\ora{g},\ora{h})$ cross, disconnected
+  smoothing is not satisfied in this case.
+\end{remark}
 
 Putting this all together we can give another characterization of small surface actions on real trees.
 
