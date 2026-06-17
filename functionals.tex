@@ -65,14 +65,27 @@ A few times throughout the paper we will allow multi-curves to have weights.
   instance, $C \cup C$ is equivalent to $2C$.
 \end{definition}
 
-\DPTtodo{HERE}
 Oriented multi-curves are more natural from a group-theoretic perspective, appearing naturally in the study of cross-ratios (Section~\ref{sec:crossratios}) and group actions on real trees (Section~\ref{sec:skora}). 
 Moreover, to verify smoothing for curve functionals that do not arise from natural length metrics on the surface, it is convenient to work in terms of the relative position of pairs of hyperbolic elements in $\pi_1(S)$, where orientation is essential (see Section~\ref{subsec:triality} and compare Theorem~\ref{thm:intersect} with Theorem~\ref{thm:intersections_group}).
 
-Accordingly, we will
-work with oriented geodesic currents, i.e., invariant measures on oriented geodesics of $\wt{\Sigma}$ (see
-Section~\ref{sec:currents} for details). Some authors prefer to work with \emph{unoriented geodesic currents} (see Remark~\ref{rmk:unoriented_currents}), but oriented currents are more general, and appear naturally in algebraic contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves, CR25:Manhattan, CMGR26:GreenMetrics} (as alluded above) as well as higher Teichm\"uller theory and Anosov representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
-In practice, the oriented geodesic currents we will be interested in our applications (Section~\ref{sec:special-classes},~\ref{sec:crossratios},~\ref{sec:skora}) will also be flip invariant, and in this case there is a bijection~\cite[Exercise~3.1]{ES22:GeodesicCount}
+\DPTtodo{Extended discussion of currents feels odd here, since this
+  section is about curves. Shorten the stuff on currents. Eg, define
+  intersection number for curves}
+We will therefore
+work with oriented curves and oriented geodesic currents, i.e.,
+invariant measures on oriented geodesics in~$\wt{\Sigma}$ (see
+Section~\ref{sec:currents} for details). Some authors prefer to work
+with unoriented geodesic currents (see
+Remark~\ref{rmk:unoriented_currents}), but oriented currents are more
+general, and, as alluded above, appear naturally in algebraic
+contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
+  CR25:Manhattan, CMGR26:GreenMetrics} as well as
+higher Teichm\"uller theory and Anosov
+representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+In practice, the oriented geodesic currents we will be interested in
+our applications will also be flip invariant,
+and in this case there is a
+bijection~\cite[Exercise~3.1]{ES22:GeodesicCount}
 \[
 \{\text{unoriented geodesic currents}\}
 \longleftrightarrow
@@ -84,11 +97,15 @@ By default, the intersection number $i(C,D)$ of two multi-curves is
 defined, for unoriented curves, as the minimal number of intersections among transversely intersecting representatives. If $C$ and $D$ are oriented,
 the
 intersection number is defined by forgetting orientations. See also
-Definition~\ref{def:intersection_currents}.  The reader should keep in mind the example of the curve functional $i(\mu, \cdot) \colon \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or, more generally, oriented geodesic current $\mu$.
+Definition~\ref{def:intersection_currents}.  The reader should keep in
+mind the example of the curve functional $i(\mu, \cdot) \colon
+\Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or,
+more generally, oriented geodesic current $\mu$.
 
 As explained in Appendix~\ref{sec:asymmetric}, there are asymmetric
-variants of intersection number for oriented curves which only record crossings of a given orientation. For such notions, the analogue of the main
-duality theorem (Theorem~\ref{thm:intersect}) fails. This phenomenon
+variants of intersection number for oriented curves which only record
+crossings of a given orientation. For such notions, the analogue of
+Theorem~\ref{thm:intersect} fails. This phenomenon
 also appears in the proof (see Proposition~\ref{prop:recoverintersection}).
 
 A curve functional that does not depend
