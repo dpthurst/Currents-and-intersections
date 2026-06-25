@@ -68,6 +68,9 @@ set of fixed points of~$g$. The converse is also true: if $\norm{g} =
 If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the
 real line, and $g$ translates along $T_g$ by distance $\| g\|$; in this
 case we call $T_g$ the \emph{axis} of $g$.
+\DPTfyi{Defined $T_g^\pm$ here, rename from $\xi_g^\pm$. Also
+  preferring $T_g^-$ to $T_G^+$ or $T_{g^{-1}}^+$}
+Let $T_g^+$ be the attracting end of $T_g$ and $T_g^-$ the repelling end.
 
 The translation lengths of any $\Gamma$-tree can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition.
 Even though we will not use it in the proofs, it is helpful to keep it in mind;
@@ -290,10 +293,14 @@ the minimal segment connecting $T_g$ and $T_h$; we already know $S
 \]
 Finally, we prove the statement about incoherent overlap. Let $g(S) \cap S$ be the subsegment $[x,z'] \subset S$ fixed by $g$, and $h(S) \cap S$ the subsegment $[z,y]\subset S$ fixed by $h$. By~\cite[Figure~9]{Pa89:Paulin1989TheGT}, the subarc $[z,g(z)]=[z,gh(z)] \subset T_{gh}$ and the subarc $[z',h(z')]=[z',hg(z')] \subset T_{hg}$ overlap incoherently along the non-degenerate subsegment $[z,z']$.
 \end{proof}
+\DPTtodo{Edit this transition once following things settle down}
 Finally, the following results allow us to convert incoherent overlaps into coherent ones, and elliptic elements into hyperbolic ones.
 
+\DPTtodo{Guiradel also has the assumption that $g \cdot T_h^+ \ne
+  T_h^-$, or some permutation of this. Is that an issue? Also I'm
+  annoyed that he numbers some of his Faits and not others}
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
-Let $T$ be an arbitrary $\Gamma$-tree.
+Let $T$ be a $\Gamma$-tree.
 Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
 $T_{ghG}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
 in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
@@ -301,31 +308,35 @@ and its axis contains $I$, translating along the same direction as $h$.
 \label{lem:make_coherent}
 \end{lemma}
 
-\DMGtodo{added this lemma}
-
-The proof of the following lemma follows verbatim~\cite[Page~853]{Gui05:Coeur}. We sketch it here for completeness.
-Recall that $\xi_h^+$ means the attractive end in $T$ of the hyperbolic element $h$, while $\xi_h^-$ means the repelling end.
 
 \begin{lemma}
 \label{lem:make_hyperbolic}
 Let $(\Gamma,T)$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is hyperbolic.
-Then,
 \begin{itemize}
-\item If $T_g \cap T_h$ is a point, then $h^kg$ is hyperbolic for some $k>0$, provided that $g \cdot \xi_{h}^+ \neq \xi_{h^{-1}}^+$.
+\item If $T_g \cap T_h$ is a point and $g \cdot T_h^+ \ne T_h^-$, then
+  for some $k > 0$, $h^kg$ is hyperbolic.
 \item If $T_g \cap T_h$ is empty, or non-empty and not a point, then $gh$ is hyperbolic.
 \end{itemize}
 \end{lemma}
 \begin{proof}
+\DPTtodo{We should be consistent in how much we sketch vs just quote
+  the result. But also what's written is very brief and not very
+  self-contained. It doesn't make sense to give this proof and not,
+  eg, the proof of his Fait 1.5.}
+This is proved by Guiradel \cite[Page~853]{Gui05:Coeur}. We sketch it here for
+completeness.
+
 We divide the proof in several cases, depending on the relative
 position of $T_g$ (the fixed-point set of $g$) and $T_h$ (the axis of $h$).
 
 Suppose first $T_g \cap T_h$ is empty or not a point.
 Then by~\cite[Fait~1.5]{Gui05:Coeur}, $gh$ is hyperbolic.
-If $T_g \cap T_h$ is a point, since $g \cdot \xi_h \neq \xi_{h^{-1}}$, then
+If $T_g \cap T_h$ is a point, since $g \cdot T_h^+ \neq T_h^-$, then
 $h^kg$ is hyperbolic for $k>0$ large enough.
 \end{proof}
 
-
+\DPTtodo{Shouldn't this def be next to def of irreducible, dihedral,
+  etc action? Also maybe it should be a definition}
 We say that a $\Gamma$-tree $(\Gamma,T)$ is \emph{minimal} if $T$ is
 non-trivial and there is no proper subtree of $T$ that is $\Gamma$-invariant.
 If $\norm{\cdot}$ is non-zero then by
@@ -337,7 +348,8 @@ The length function for the
 restriction to this minimal invariant subtree is equal to the length
 function of the original tree. Hence, without loss of generality, one
 can always restrict to the action on the minimal invariant subtree
-without changing the length functional. Note, however, that if the translation lengths of two $\Gamma$-trees are
+without changing the length functional. Note, however, that if the
+translation lengths of two \DPTfyi{added ``minimal''}minimal $\Gamma$-trees are
 equal, that does not necessarily imply the trees are equivariantly
 isometric, but the exceptions all have fixed ends \cite[Theorem~3.7]{CM87:GroupActions}. 
 
@@ -397,86 +409,115 @@ a small action is also
 dual to a measured lamination~\cite{Sk96:Splittings}.
 It follows that the action being small is equivalent to it being irreducible and preserving axis intersection.
 
+\DPTfyi{Moved this lemma first}
+We start with a preliminary lemma.
+\begin{lemma}
+Let $(\pi_1(S),T)$ be preserves axis intersection and 
+suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{c}, \ora{b})$ cross.
+\label{lem:hyperbolic_crossing}
+\end{lemma}
+\begin{proof}
+  \DPTtodo{Division into cases is funny. Haven't read the proof in
+    detail yet}
+Let $a$ so that $(\ora{a},\ora{b})$ cross, which exists due to density of endpoints.
+If $a$ is hyperbolic, take $c=a$.
+If $a$ is elliptic, we divide the proof in several cases, depending on the relative
+position of $T_a$ (the fixed-point set of $a$) and $T_b$ (the axis of $b$).
+The analysis is the same as in~\cite[Page~853]{Gui05:Coeur}.
+Suppose first that $T_a \cap T_b$ is empty or not a point. Then by~Lemma~\ref{lem:make_hyperbolic}, $ba$ is hyperbolic, and by Lemma~\ref{lem:rhs_prod}, $(\ora{ba},\ora{b})$ cross. Hence, we take $c=ba$.
+If $T_a \cap T_b$ is a point, we subdivide into cases. 
+Suppose first $a \cdot T_b^+ \neq T_b^-$. 
+Then by Lemma~\ref{lem:make_hyperbolic}, $b^ka$ is hyperbolic for some $k>0$, and $(\ora{b^ka},\ora{b})$ cross by Lemma~\ref{lem:rhs_prod} cross. Thus we can take $c=b^ka$.
+Otherwise, $a \cdot T_b^+=T_b^-$. We subdivide into two cases.
+\setcounter{case}{0}
+\setcounter{subcase}{0}
+\begin{case}
+\label{case:axes_not_same}
+$a \cdot T_b \neq T_b$,
+\begin{subcase}
+\label{subcase:a_is_oppend}
+Suppose $a \cdot T_b^+ = T_b^-$.
+In this case, since $a \cdot T_b \neq T_b$, we have
+$a \cdot T_b^- \neq T_b^+$.
+This means that the period of $T_b^+$ under the action of $a$ is at least
+3. Hence, in particular $a^2 \cdot T_b^+ \neq T_b^-$.
+  Thus either:
+\begin{itemize}
+\item $T_{a^2} \cap T_b$ is a point. Thus, by~Lemma~\ref{lem:make_hyperbolic}, $b^ka^2$ is hyperbolic for some $k>0$. Moreover, $(\ora{b^ka^2},\ora{b})$ cross Lemma~\ref{lem:rhs_prod} (and we take $c=b^ka^2$); or
+\item $T_{a^2} \cap T_b$ is empty or not a point. Hence, since $a^2
+  \cdot T_b^+ \neq T_b^-$, by Lemma~\ref{lem:make_hyperbolic}
+  $ba^2$ is hyperbolic, and $(\ora{ba^2},\ora{b})$ cross by
+  Lemma~\ref{lem:rhs_prod}. Thus, we take $c=ba^2$.
+\end{itemize}, 
+\end{subcase}
+\end{case}
 
-We start by proving a geometric criterion for axis-preserving,
+\begin{case}
+\label{case:axes_same}
+Suppose $a \cdot T_b = T_b$.
+Then $b^ka$ and $ab^k$ act as reflections on $T_b$
+for all $k>0$ and as $k$ tend to $+\infty$,
+their fixed points converge respectively to $T_b^+$ and $T_b^-$, hence their fixed points do not coincide.
+Thus $b^ka^2b^k=(b^ka)(ab^k)$ is a product of elliptic elements with disjoint fixed point sets, so by Lemma~\ref{lem:pau_two_ell}, it is hyperbolic. Then we take $c=b^ka^2b^k$. By Lemma~\ref{lem:rhs_prod} applied twice, it follows that $(\ora{c},\ora{b})$ cross.
+\qedhere
+\end{case}
+\end{proof}
+
+
+We also need a geometric criterion for axis-preserving,
 irreducible actions.
 
-\DPTtodo{Read this}
-\begin{lemma}
-\label{lem:if_unbounded_then_reducible}
+\begin{proposition}
+\label{prop:if_unbounded_then_reducible}
 Suppose that an $S$-tree~$T$ preserves axis intersection and is
 irreducible. Then for all
 hyperbolic $g \in \pi_1(S)$,
 there exist a hyperbolic $h \in \pi_1(S)$ so that $\ora{h}$
 crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
+\end{proposition}
+
+\DPTfyi{Moved some preliminary defs and lemmas}
+Before proving this proposition, we make some preliminary lemmas.
+
+We will be supposing there is an element $g$ with unbounded
+intersection with every hyperbolic $h$ so that $\ora{h}$ crosses
+$\ora{g}$.
+In this context, let $E_g \coloneqq \{ h \in \Gamma \mid (\ora{g},\ora{h}) \mbox{ cross and } h \mbox{ is hyperbolic } \}$.
+We also pick out subsets of $E_g$ where the intersection is unbounded
+on one end or the other:
+\begin{align*}
+E_g^+
+&\coloneqq
+  \{ h \in E_g \mid T_h \text{ shares the positive end of } T_g \}
+  = \{h \in E_g \mid h \cdot T_g^+ = T_g^+\}\\
+E_g^-
+&\coloneqq
+  \{ h \in E_g \mid T_h \text{ shares the negative end of } T_g \}
+  = \{h \in E_g \mid h \cdot T_g^- = T_g^-\}.
+\end{align*}
+
+\begin{lemma}
+Suppose $a,b$ are hyperbolic.
+Suppose $a \in E_g^+ \setminus E_g^-$ and $b \in E_g^- \setminus E_g^+$.
+If $m, n \in \mathbb{Z} \setminus \{ 0\}$ is such that $a^m b^n$ is hyperbolic, then $T_{a^m b^n} \cap T_g$ is bounded.
+\label{lem:force_bounded}
 \end{lemma}
 \begin{proof}
-    We will prove a contra-positive. Namely, if the action preserves
-    axis intersection and there exists a hyperbolic
-    element $g$ so that for every hyperbolic element $h$ with $\ora{h}$ crossing
-    $\ora{g}$, the intersection $T_g \cap T_h$ is unbounded, we will deduce
-    that the action must be reducible. (Note $T_g \cap T_h$ cannot be
-    empty since the action on $T$ is axis-preserving.)
-    
-    Fix such a~$g$.
-
-    \DMGtodo{the proof has changed starting here.}
-    Let $E_g \coloneqq \{ h \in \Gamma \mid (\ora{g},\ora{h}) \mbox{ cross and } h \mbox{ is hyperbolic } \}$.
-    Note that, by hypothesis, for every $h \in E_g$,
-       we have that $T_g \cap T_h$ is unbounded, which means that every $T_h$ shares an end with $T_g$. 
-       Define
-\begin{align*}
-E_g^+
-&\coloneqq
-\{ h \in E_g \mid T_h \text{ shares the positive end of } T_g \},\\
-E_g^-
-&\coloneqq
-\{ h \in E_g \mid T_h \text{ shares the negative end of } T_g \}.
-\end{align*}
-
-Equivalently,
-\begin{align*}
-E_g^+
-&=
-\{ h \in E_g \mid h\xi_g^+ = \xi_g^+ \},\\
-E_g^-
-&=
-\{ h \in E_g \mid h\xi_g^- = \xi_g^- \},
-\end{align*}
-where $\xi_g^+$ denotes the attractive end of $g$ on $T_g$ and $\xi_g^-$ the repelling one.
-
-\begin{claim}
-Suppose $a,b$ are hyperbolic.
-Suppose $a \in E_g^+ \backslash E_g^-$ and $b \in E_g^- \backslash E_g^+$.
-If $m, n \in \mathbb{Z} \backslash \{ 0\}$ is such that $a^m b^n$ is hyperbolic, then $T_{a^m b^n} \cap T_g$ is bounded.
-\label{claim:force_bounded}
-\end{claim}
-\begin{proof}
-By assumption, $a \xi_g^+ = \xi_g^+$ and $a \xi_g^- \neq \xi_g^-$,
-and $b \xi_g^- = \xi_g^-$ and $b \xi_g^+ \neq \xi_g^+$.
-Then for every $m, n \in \mathbb{Z} \backslash \{ 0\}$, $a^m b^n$
-fixes neither $\xi^+_g$ nor $\xi^-_g$.
-Indeed, suppose
-\[
-a^m b^n \xi_g^+ = \xi_g^+.
-\]
-Since $a$ is hyperbolic, $a^m \xi_g^+ = \xi_g^+$ for every $m$, it follows that
-$b^n \xi_g^+ = \xi_g^+$, which is a contradiction with $b \xi_g^+ \neq \xi_g^+$.
-Similarly, one shows $a^m b^n \xi_g^- \neq \xi_g^-$.
-Therefore, $a^mb^n$ fixes neither endpoint of $T_g$, and thus,
-if $a^mb^n$ is hyperbolic, it follows that
-$T_{a^m b^n} \cap T_g$ is bounded.
+  \DPTfyi{Shortened this}
+  We will show more generally that for every $m, n \in \mathbb{Z} \setminus \{ 0\}$, $a^m b^n$
+  fixes neither $T^+_g$ nor $T^-_g$: by assumption, we have
+  \begin{align*}
+    a^m b^n \cdot T_g^- &= a^m \cdot T_g^- \ne T_g^-\\
+    B^n A^m \cdot T_g^+ &= B^n \cdot T_g^+ \ne T_g^+. \qedhere
+  \end{align*}
 \end{proof}
 
-First, we claim that $E_g = E_g^+$ or $E_g = E_g^-$.
-Indeed, suppose there exist $a,b$ hyperbolic so that $a \in E_g^+ \backslash E_g^-$ and $b \in E_g^- \backslash E_g^+$. Choose the signs of $m,n$ so that $(\ora{a^m},\ora{b^n})$ cross or are parallel, to ensure that $\ora{a^m b^n}$ also crosses $\ora{g}$. Furthermore, choose $|m|$ much larger than $|n|$ so that, $\|a^m \| >\|b^n\|$ and hence, by Lemma~\ref{lem:product_hyperbolic}, $a^m b^n$ is hyperbolic.
-Then, by Claim~\ref{claim:force_bounded}, $T_{a^m b^n} \cap T_g$ is bounded. Thus $\ora{a^m b^n}$ is a hyperbolic element crossing $\ora{g}$ so that $T_{a^m b^n} \cap T_g$ is bounded, a contradiction. 
-Hence, without loss of generality, we can suppose $E_g = E_g^+$.
-
-    We now claim that $E_g$ generates $\Gamma$.
-    Assuming this claim, it follows that the entire group $\Gamma$ preserves $\xi_{g}^+$, and thus the action is reducible.
-
-    Let us prove the claim that $E_g$ generates $\Gamma$, i.e., that every element $h \in \Gamma$ can be written as a product of elements in $E_g$.
+\begin{lemma}\label{lem:Eg-generates}
+  For any irreducible, axis-preserving $S$-tree and every hyperbolic
+  $g \in \Gamma$, the subset $E_g$ generates $\Gamma$.
+\end{lemma}
+\begin{proof}
+  Fix $h \in \Gamma$. We will write it as a product of elements in $E_g$.
     \setcounter{case}{0}
 \setcounter{subcase}{0}
     \begin{case}
@@ -509,10 +550,37 @@ Hence, without loss of generality, we can suppose $E_g = E_g^+$.
        \label{subcase:generate_ell_incoherent}
     If no such $b$ exists, then by Lemma~\ref{lem:make_hyperbolic}, for every hyperbolic element $b$, we have $a \cdot \xi_{b^{-1}}^+=\xi_b^+$.
     Since the action is irreducible, by Lemma~\ref{lem:CM_red_criterion}, we can find a pair of hyperbolic elements $c,d$ with $T_c \cap T_d = \emptyset$. In particular, their ends are a definite distance apart in the space of ends. Then, by Lemma~\ref{lem:product_hyperbolic}, $e=c^n d^m$ is hyperbolic for $n,m$ large enough. Moreover, $\xi_e^+$ is close to $\xi_c^+$ and $\xi_e^-$ is close to $\xi_d^-$.
-    But since $a \dot \xi_e^+ = \xi_e^-$, $a$ would have to send $\xi_c^+$ close to $\xi_d^-$ a contradiction with the fact that they are a definite distance apart.
+    But since $a \dot \xi_e^+ = \xi_e^-$, $a$ would have to send $\xi_c^+$ close to $\xi_d^-$ a contradiction with the fact that they are a definite distance apart.\qedhere
     \end{subcase}
     \end{case}
-    This finishes the proof.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:if_unbounded_then_reducible}]
+    We will prove a contra-positive. Namely, if the action preserves
+    axis intersection and there exists a hyperbolic
+    element $g$ so that for every hyperbolic element $h$ with $\ora{h}$ crossing
+    $\ora{g}$, the intersection $T_g \cap T_h$ is unbounded, we will deduce
+    that the action must be reducible. (Note $T_g \cap T_h$ cannot be
+    empty since the action on $T$ is axis-preserving.)
+    
+    Fix such a~$g$.
+
+We now claim that $E_g = E_g^+$ or $E_g = E_g^-$.
+Indeed, suppose there exist $a,b$ hyperbolic so that
+$a \in E_g^+ \setminus E_g^-$ and $b \in E_g^- \setminus E_g^+$.
+Choose the signs of $m,n$ so that
+\DPTfyi{Changed the condition here, since we need to care about the
+  orientation wrt $\ora{g}$.}
+$\ora{a^m}$ and $\ora{b^n}$ both R-cross $\ora{g}$,
+to ensure that $\ora{a^m b^n}$ also R-crosses $\ora{g}$.
+Furthermore, choose $|m|$ much larger than $|n|$ so that,
+$\|a^m \| >\|b^n\|$ and hence, by Lemma~\ref{lem:product_hyperbolic},
+$a^m b^n$ is hyperbolic.
+Then, by Lemma~\ref{lem:force_bounded}, $T_{a^m b^n} \cap T_g$ is bounded. Thus $\ora{a^m b^n}$ is a hyperbolic element crossing $\ora{g}$ so that $T_{a^m b^n} \cap T_g$ is bounded, a contradiction. 
+
+Thus we may suppose $E_g = E_g^+$. But since $E_g$ generates $\Gamma$
+by Lemma~\ref{lem:Eg-generates}, the entire group fixes $T_g^+$ and
+the action is reducible.
     \end{proof}
     
     \begin{comment}
@@ -657,54 +725,6 @@ Suppose first $\ora{k}$ intersects $\ora{g}$ before $\ora{h}$.
 \end{figure}
 \end{comment}
 
-\DMGtodo{this lemma is new, follows exactly same analysis as in~\cite[Page~853]{Gui05:Coeur}}
-\begin{lemma}
-Let $(\pi_1(S),T)$ be axis preserving and 
-suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{c}, \ora{b})$ cross.
-\label{lem:hyperbolic_crossing}
-\end{lemma}
-\begin{proof}
-Let $a$ so that $(\ora{a},\ora{b})$ cross, which exists due to density of endpoints.
-If $a$ is hyperbolic, take $c=a$.
-If $a$ is elliptic, we divide the proof in several cases, depending on the relative
-position of $T_a$ (the fixed-point set of $a$) and $T_b$ (the axis of $b$).
-The analysis is the same as in~\cite[Page~853]{Gui05:Coeur}.
-Suppose first that $T_a \cap T_b$ is empty or not a point. Then by~Lemma~\ref{lem:make_hyperbolic}, $ba$ is hyperbolic, and by Lemma~\ref{lem:rhs_prod}, $(\ora{ba},\ora{b})$ cross. Hence, we take $c=ba$.
-If $T_a \cap T_b$ is a point, we subdivide into cases. 
-Suppose first $a \cdot \xi_{b} \neq \xi_{b^{-1}}$. 
-Then by Lemma~\ref{lem:make_hyperbolic}, $b^ka$ is hyperbolic for some $k>0$, and $(\ora{b^ka},\ora{b})$ cross by Lemma~\ref{lem:rhs_prod} cross. Thus we can take $c=b^ka$.
-Otherwise, $a \cdot \xi_b=\xi_{b^{-1}}$. We subdivide into two cases.
-\setcounter{case}{0}
-\setcounter{subcase}{0}
-\begin{case}
-\label{case:axes_not_same}
-$a \cdot T_b \neq T_b$,
-\begin{subcase}
-\label{subcase:a_is_oppend}
-Suppose $a \cdot \xi_b^+ = \xi_{b^{-1}}^+$.
-In this case, since $a \cdot T_b \neq T_b$, we have
-$a \cdot \xi_{b^{-1}}^+ \neq \xi_{b}^+$.
-This means that the period of $\xi_b^+$ under the action of $a$ is at least
-3. Hence, in particular $a^2 \cdot \xi_b^+ \neq \xi_{b^{-1}}$.
-  Thus either:
-\begin{itemize}
-    \item $T_{a^2} \cap T_b$ is a point. Thus, by~Lemma~\ref{lem:make_hyperbolic}, $b^ka^2$ is hyperbolic for some $k>0$. Moreover, $(\ora{b^ka^2},\ora{b})$ cross Lemma~\ref{lem:rhs_prod} (and we take $c=b^ka^2$); or
-    \item $T_{a^2} \cap T_b$ is empty or not a point. Hence, since $a^2 \cdot \xi_b^+ \neq \xi_{b^{-1}}$, by Lemma~\ref{lem:make_hyperbolic} $ba^2$ is hyperbolic, and $(\ora{ba^2},\ora{b})$ cross by Lemma~\ref{lem:rhs_prod}. Thus, we take $c=ba^2$.
-\end{itemize}, 
-\end{subcase}
-\end{case}
-
-\begin{case}
-\label{case:axes_same}
-Suppose $a \cdot T_b = T_b$.
-Then $b^ka$ and $ab^k$ act as reflections on $T_b$
-for all $k>0$ and as $k$ tend to $+\infty$,
-their fixed points converge respectively to $\xi_b$ and $\xi_{b^{-1}}$, hence their fixed points do not coincide.
-Thus $b^ka^2b^k=(b^ka)(ab^k)$ is a product of elliptic elements with disjoint fixed point sets, so by Lemma~\ref{lem:pau_two_ell}, it is hyperbolic. Then we take $c=b^ka^2b^k$. By Lemma~\ref{lem:rhs_prod} applied twice, it follows that $(\ora{c},\ora{b})$ cross.
-\end{case}
-
-\end{proof}
-
 
 We are now ready for the main component of Theorem~\ref{mainthm:skora}.
 
@@ -754,7 +774,7 @@ is the key place where we invoke irreducibility.
     bounded overlap. Suppose, without essential loss of generality,
     that $(\ora{g},\ora{h})$ are R-parallel,
     and that $T_g \cap T_h$ includes the attracting end of $T_g$. By
-    Lemma~\ref{lem:if_unbounded_then_reducible}, there exists
+    Proposition~\ref{prop:if_unbounded_then_reducible}, there exists
     $c_0 \in \pi_1(S)$ acting hyperbolically on~$T$ so that
     $(\ora{c_0},\ora{g})$ R-cross and
     $T_{c_0} \cap T_g$ is bounded, as in Figure~\ref{fig:tree_bounded_incoherent}.
