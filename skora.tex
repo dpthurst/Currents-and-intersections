@@ -309,10 +309,7 @@ Finally, we prove the statement about incoherent overlap. Let $g(S) \cap S$ be t
 \DPTtodo{Edit this transition once following things settle down}
 Finally, the following results allow us to convert incoherent overlaps into coherent ones, and elliptic elements into hyperbolic ones.
 
-\DMGtodo{no, it's not an issue, since our assumption that the two elements do not share a ray is stronger than his. We could also adopt Guirardel's assumption, since now we have worked more with the ends, so it might be more natural to state. I agree the formatting in Guirardel's paper is annoying.}
-\DPTtodo{Guiradel also has the assumption that $g \cdot T_h^+ \ne
-  T_h^-$, or some permutation of this. Is that an issue? Also I'm
-  annoyed that he numbers some of his Faits and not others}
+\DPTtodo{Either adopt Guiradel's assumption exactly or give a short proof}
 \begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
 Let $T$ be a $\Gamma$-tree.
 Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
@@ -323,6 +320,8 @@ and its axis contains $I$, translating along the same direction as $h$.
 \end{lemma}
 
 
+\DPTtodo{(after later revisions) Move second bullet point into Lemma~\ref{lem:pau_ell_hyp}.
+  Either just assert first case or draw a picture}
 \begin{lemma}
 \label{lem:make_hyperbolic}
 Let $(\Gamma,T)$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is hyperbolic.
@@ -409,14 +408,13 @@ suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{
 \label{lem:hyperbolic_crossing}
 \end{lemma}
 \begin{proof}
-  \DPTtodo{Division into cases is funny. Haven't read the proof in
-    detail yet}
-    \DMGtodo{yes, some cases are covered in the introductory lemma, since we also use that lemma later. And then this proof covers the others. So it's funny, I agree.}
+  \DPTtodo{Dylan will take a look}
 Let $a$ so that $(\ora{a},\ora{b})$ cross, which exists due to density of endpoints.
 If $a$ is hyperbolic, take $c=a$.
 If $a$ is elliptic, we divide the proof in several cases, depending on the relative
 position of $T_a$ (the fixed-point set of $a$) and $T_b$ (the axis of $b$).
-The analysis is the same as in~\cite[Page~853]{Gui05:Coeur}.
+The analysis is the same as in~\cite[Page~853]{Gui05:Coeur}, though we
+also need to check that each element constructed crosses $\ora{c}$.
 Suppose first that $T_a \cap T_b$ is empty or not a point. Then by~Lemma~\ref{lem:make_hyperbolic}, $ba$ is hyperbolic, and by Lemma~\ref{lem:rhs_prod}, $(\ora{ba},\ora{b})$ cross. Hence, we take $c=ba$.
 If $T_a \cap T_b$ is a point, we subdivide into cases. 
 Suppose first $a \cdot T_b^+ \neq T_b^-$. 
@@ -426,10 +424,12 @@ Otherwise, $a \cdot T_b^+=T_b^-$. We subdivide into two cases.
 \setcounter{subcase}{0}
 \begin{case}
 \label{case:axes_not_same}
-$a \cdot T_b \neq T_b$,
+$a \cdot T_b \neq T_b$
+\end{case}
 \begin{subcase}
 \label{subcase:a_is_oppend}
 Suppose $a \cdot T_b^+ = T_b^-$.
+\end{subcase}
 In this case, since $a \cdot T_b \neq T_b$, we have
 $a \cdot T_b^- \neq T_b^+$.
 This means that the period of $T_b^+$ under the action of $a$ is at least
@@ -441,19 +441,17 @@ This means that the period of $T_b^+$ under the action of $a$ is at least
   \cdot T_b^+ \neq T_b^-$, by Lemma~\ref{lem:make_hyperbolic}
   $ba^2$ is hyperbolic, and $(\ora{ba^2},\ora{b})$ cross by
   Lemma~\ref{lem:rhs_prod}. Thus, we take $c=ba^2$.
-\end{itemize}, 
-\end{subcase}
-\end{case}
+\end{itemize}
 
 \begin{case}
 \label{case:axes_same}
 Suppose $a \cdot T_b = T_b$.
+\end{case}
 Then $b^ka$ and $ab^k$ act as reflections on $T_b$
 for all $k>0$ and as $k$ tend to $+\infty$,
 their fixed points converge respectively to $T_b^+$ and $T_b^-$, hence their fixed points do not coincide.
 Thus $b^ka^2b^k=(b^ka)(ab^k)$ is a product of elliptic elements with disjoint fixed point sets, so by Lemma~\ref{lem:pau_two_ell}, it is hyperbolic. Then we take $c=b^ka^2b^k$. By Lemma~\ref{lem:rhs_prod} applied twice, it follows that $(\ora{c},\ora{b})$ cross.
 \qedhere
-\end{case}
 \end{proof}
 
 
@@ -505,6 +503,7 @@ If $m, n \in \mathbb{Z} \setminus \{ 0\}$ is such that $a^m b^n$ is hyperbolic, 
 \end{proof}
 
 \begin{lemma}\label{lem:Eg-generates}
+  \DMGtodo{Dídac will see if he can remove irreducibility assumption}
   For any irreducible, axis-preserving $S$-tree and every hyperbolic
   $g \in \Gamma$, the subset $E_g$ generates $\Gamma$.
 \end{lemma}
@@ -515,36 +514,38 @@ If $m, n \in \mathbb{Z} \setminus \{ 0\}$ is such that $a^m b^n$ is hyperbolic, 
     \begin{case}
 \label{case:generate_hyperbolic}
     Suppose first $h$ is hyperbolic.
+  \end{case}
     \begin{subcase}
     \label{subcase:generate_hyp_cross}
-    If $(\ora{g},\ora{h})$  cross, then $h \in E_g$ and we are done.
-    \end{subcase}
+    $(\ora{g},\ora{h})$  cross.
+    \end{subcase} Then $h \in E_g$ and we are done.
     \begin{subcase}
     \label{subcase:generate_hyp_parallel}
-    If $(\ora{g},\ora{h})$ are parallel, then by Lemma~\ref{lem:hyperbolic_crossing} we can take $k \in \Gamma$ so that $\ora{k}$ crosses $\ora{g}$ and $k$ is hyperbolic.
-
+    $(\ora{g},\ora{h})$ are parallel.
+    \end{subcase}
+    By Lemma~\ref{lem:hyperbolic_crossing}, we can take $k \in \Gamma$ so that $\ora{k}$ crosses $\ora{g}$ and $k$ is hyperbolic.
     Thus, for large enough $n>0$, $\ora{k^nh}$ crosses $\ora{g}$ by~Lemma~\ref{lem:convergence_action}, and, if $k$ is hyperbolic, we have $n\|k\|>\|h\|$ and by Lemma~\ref{lem:product_hyperbolic}, $k^nh$ is hyperbolic.
     Hence, we can write $h=(k^{-n})(k^n h)$, with $k^{-n}, k^nh \in E_g$.
-    \end{subcase}
     \begin{subcase}
-    The case $(\ora{g},\ora{h})$ anti-parallel is the same switching $h$ by $H$ in the previous argument.
+      $(\ora{g},\ora{h})$ anti-parallel.
 \end{subcase}
-\end{case}
+      This is the same switching $h$ by $H$ in the previous argument.
 \begin{case}
 \label{case:generate_ell}
     Assume $h$ is elliptic.
+    \end{case}
     \begin{subcase}
     \label{subcase:generate_ell_coherent}
     There exists a hyperbolic $b$ so that $b^m h$ is hyperbolic for some $m>0$.
-    Then we can write $h=b^{-m}(b^mh)$, with $b^{-m}$ and $b^mh$ hyperbolic.
        \end{subcase} 
+    Then we can write $h=b^{-m}(b^mh)$, with $b^{-m}$ and $b^mh$ hyperbolic.
        \begin{subcase}
        \label{subcase:generate_ell_incoherent}
-    If no such $b$ exists, then by Lemma~\ref{lem:make_hyperbolic}, for every hyperbolic element $b$, we have $a \cdot \xi_{b^{-1}}^+=\xi_b^+$.
-    Since the action is irreducible, by Lemma~\ref{lem:CM_red_criterion}, we can find a pair of hyperbolic elements $c,d$ with $T_c \cap T_d = \emptyset$. In particular, their ends are a definite distance apart in the space of ends. Then, by Lemma~\ref{lem:product_hyperbolic}, $e=c^n d^m$ is hyperbolic for $n,m$ large enough. Moreover, $\xi_e^+$ is close to $\xi_c^+$ and $\xi_e^-$ is close to $\xi_d^-$.
-    But since $a \dot \xi_e^+ = \xi_e^-$, $a$ would have to send $\xi_c^+$ close to $\xi_d^-$ a contradiction with the fact that they are a definite distance apart.\qedhere
+       No such $b$ exists.
     \end{subcase}
-    \end{case}
+       Then by Lemma~\ref{lem:make_hyperbolic}, for every hyperbolic element $b$, we have $a \cdot T_b^-=T_b^+$.
+    Since the action is irreducible, by Lemma~\ref{lem:CM_red_criterion}, we can find a pair of hyperbolic elements $c,d$ with $T_c \cap T_d = \emptyset$. In particular, their ends are a definite distance apart in the space of ends. Then, by Lemma~\ref{lem:product_hyperbolic}, $e=c^n d^m$ is hyperbolic for $n,m$ large enough. Moreover, $T_e^+$ is close to $T_c^+$ and $T_e^-$ is close to $T_d^-$.
+    But since $a \dot T_e^+ = T_e^-$, $a$ would have to send $T_c^+$ close to $T_d^-$ a contradiction with the fact that they are a definite distance apart.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:if_unbounded_then_reducible}]
