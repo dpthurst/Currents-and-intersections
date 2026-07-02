@@ -410,7 +410,7 @@ compact \cite[Chapter~6]{Lay92:Convex}. We see this phenomenon as a
 shadow of the local compactness of $\AConvex(S)$, which suggests that
 the same local compactness for $\Convex(S)$ should hold.
 
-\begin{conjecture}
+\begin{conjecture}\label{conj:convex-compact}
 The set $\Convex(S)$ with the product topology is locally compact.
 \end{conjecture}
 
@@ -467,14 +467,14 @@ We could instead look at functionals on \emph{oriented} curves.
 \end{definition}
 
 Appendix~\ref{sec:asymmetric} can be summarized as saying that
-$\AConvex^+(S)$ is not very related to the space $\GC^+(S)$ of
+$\AConvex^+(S)$ is not very related to the space $\Curr^+(S)$ of
 oriented geodesic currents: the natural map $\mu \mapsto
 \vec\imath(\mu,\cdot)$ is neither injective nor surjective, in what
 appear to be large ways.
 
 Nevertheless the space $\AConvex^+_{\ge 0}(S)$ may be of independent
 interest. There are many examples of such functionals. For instance,
-you can take an asymmetric metric on $S$ and turn it into a functional
+you can take an asymmetric metric on $S$ and obtain a functional
 on curves as in Section~\ref{subsec:ineqintersection}. As in the
 symmetric case, if there are rectifiable curves in each homotopy class
 the result is automatically positive and satisfies oriented smoothing.
@@ -483,7 +483,7 @@ For a more concrete example, you can take an asymmetric generating set
 for $\pi_1(S)$ as a monoid whose (directed) graph is simple in~$S$, as
 in the example in Appendix~\ref{sec:asymmetric}.
 
-\begin{question}
+\begin{question}\label{quest:AConvex+-compact}
   Is the space $\AConvex^+_{\ge 0}(S)$ a reasonable space? For
   instance, is it locally compact?
 \end{question}
@@ -496,25 +496,27 @@ in the example in Appendix~\ref{sec:asymmetric}.
 
 In this oriented context, the restriction that the functional is
 positive is non-trivial (unlike for unoriented functionals): for any
-functional $f$ and element $\omega \in H^1(S; \bbZ)$, for sufficiently
-large $K>0$ the combination $f + K\omega$ will take negative values.
+functional $f$ and element $\omega \in H^1(S; \bbZ)$, for a sufficiently
+large constant $\lambda>0$ the combination $f + \lambda\omega$ will take negative values.
 
 We could also relax the condition of smoothing to quasi-smoothing, and
 ask similar questions. If we drop positivity and also consider
 quasi-smoothings, then the space of functionals includes the much
-larger space of quasi-morphisms (Section~\ref{sub:quasimorphism}).
-\DPTtodo[inline]{It seemed like maybe another natural question was whether
-  the space of functionals satisfying $K$-quasi-smoothing, additivity,
-  and positivity was also locally compact (for fixed $K$). Do we want
-  to ask that somewhere? Maybe generalize this section and
-  Section~\ref{sec:convexity_charts} to ask about local compactness
-  for various weakenings?}
+larger space of quasi-morphisms (Section~\ref{sub:quasimorphism}), which an infinite dimensional Banach space and hence not locally compact (see, e.g.,~\cite{CRH26:Quasimorphisms}).
 
-\DPTtodo[inline]{Maybe ask about non-orientable surfaces?}
+Recall that $\QConvex_K^+(S) \subset \QConvex^+(S)$ denotes the subspace of curve functionals on oriented multi-curves satisfying oriented quasi-smoothing with constant~$K$, homogeneity, stability and convex union.
+$\QConvex_K^+(S)$ contains, for example, the space of homogeneous $K$-quasi-morphisms. The space of $K$-quasi-morphisms is easily seen to be locally compact by an inequality
+\[
+f(C) \leq K' \ell_F(C)
+\]
+where $\ell_F$ is the word-length induced by any finite generating set, and $K'$ is a constant depending only on a finite subset of curves.
+The hypotheses of oriented $K$-quasi-smoothing are much weaker than those of $K$-quasi-morphisms.
 
-\DMGtodo[inline]{we already have questions about local convexity in
-  the further questions, which are very relates to these. DMG will
-  take a stab}
+\begin{question}\label{quest:QConvex+-compact}
+Is $\QConvex_K^+(S)$ locally compact?
+\end{question}
+
+More generally, one could ask about local compactness for various weakenings of the the hypotheses defining the subset $\AConvex(S)$; Conjecture~\ref{conj:convex-compact} and Questions~\ref{quest:AConvex+-compact} and \ref{quest:QConvex+-compact} are some examples.
 
 %%% Local Variables:
 %%% mode: latex

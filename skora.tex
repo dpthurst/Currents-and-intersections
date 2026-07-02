@@ -244,7 +244,7 @@ The result of part (2) about $T_{gh}, T_g$ overlapping coherently in a segment o
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
 \end{proof}
 
-We will also use the following result.
+It will also be useful to determine when a product of hyperbolic elements is hyperbolic.
 
 \begin{lemma}\label{lem:product_hyperbolic}
     Let $T$ be an arbitrary $\Gamma$-tree.
@@ -253,6 +253,17 @@ We will also use the following result.
 \begin{proof}
 It follows directly from~\cite[Proposition~1.6]{Pa89:Paulin1989TheGT}.
 \end{proof}
+
+The following result will allow us to convert certain incoherent overlaps into coherent ones.
+
+\begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
+Let $T$ be a $\Gamma$-tree.
+Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
+$g \cdot T_h^+ \neq T_h^-$, and let $I$ be a non-degenerate arc contained
+in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
+and its axis contains $I$, translating along the same direction as $h$.
+\label{lem:make_coherent}
+\end{lemma}
 
 We will need analogous statements for pairs $g,h \in \Gamma$ where one
 or both group elements are allowed to be elliptic. These have been
@@ -263,28 +274,41 @@ Proposition~\ref{prop:max_twice}
 %$\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---
 more
 apparent.
+The last two bullet points are claimed in~\cite[Page~853]{Gui05:Coeur}, but we give a proof here using~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} for completeness.
+
 \begin{lemma}\label{lem:pau_ell_hyp}
 Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
 \[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \|gh\|=\|h\|\ge\|gH\|; & \|gH\|=\|h\|>\|gh\|; & \|gh\|=\|gH\|>\|h\|. \end{array} \]
-Furthermore, case~(3) happens exactly when $T_g$ and $T_h$ are
-disjoint, and implies $T_{gh}$ and $T_{hg}$ overlap incoherently.
+Furthermore, in terms of $T_g \cap T_h$, we have:
+\begin{itemize}
+\item Case~(3) happens exactly when $T_g$ and $T_h$ are
+disjoint, and implies $T_{gh}$ and $T_{hg}$ overlap incoherently
+\item If $T_g \cap T_h$ is a point and $g \cdot T_h^+ \ne T_h^-$, then
+  for some $k > 0$, $h^kg$ is hyperbolic.
+\item If $T_g \cap T_h$ is empty, or non-empty and not a point, then $gh$ is hyperbolic.
+\end{itemize}
 \end{lemma}
 
 \begin{proof}
-The statement is a condensed version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}, where we have omitted most specifics about relative positions of axes. The statement there is divided into two cases depending on the relative position of $T_g, T_h$.  
+The statement is a rephrased version of \cite[Proposition~1.7]{Pa89:Paulin1989TheGT}. The statement there is divided into two cases depending on the relative position of $T_g, T_h$.  
 If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghG}$ is a non-empty interval and contains $T_g \cap T_h$.
-Then, the inequalities follow depending on the overlap between $T_h$ and $T_{ghG}$.
+Then, the inequalities between translation lengths follow depending on the overlap between $T_h$ and $T_{ghG}$.
 If $T_g \cap T_h = \emptyset$, then the equality of lengths in
 case~(3) is stated explicitly
 in~\cite[Section~1.5]{CM87:GroupActions}. The fact that
 $T_{ghG} \cap T_h = \emptyset$ in this same case follows
 from~\cite[Fact~1.7]{CM87:GroupActions}.
-The last claim about case (3) follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $[z,h(z)]$. Since $T_{g}=T_{G}$ for any $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $[z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $T_{hg}$ and $T_{HG}$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
-
-Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows. 
+Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
+Now we prove the items in the bullet list.
+The first bullet point follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $[z,h(z)]$. Since $T_{g}=T_{G}$ for any $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $[z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $T_{hg}$ and $T_{HG}$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
+The second bullet point follows from the fact that the hypotheses imply where are in the setting where $T_g \cap T_h$ is a point in the subcases (ii) and (iii) of~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT}. In these two settings, $gh$ is hyperbolic provided $\|h\| >2d(x,z)$
+where $x$ is an endpoint of $I$ (which is at most a ray, by assumption), and $\{ z \} = T_g \cap T_h$. Since $T_h = T_{h^k}$, we can guarantee this condition by replacing the pair $(g,h)$ by $(g,h^k)$, where $k$ is taken so that $k\|h\| > 2d(x,z)$.
+For the third bullet point, for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT} in all cases where $T_g \cap T_h$ is not a point, we get $\|gh\|>0$;  for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (2)]{Pa89:Paulin1989TheGT}, we get $\|gh\|>0$, and the claim follows.
 \end{proof}
+
+Finally, we need to consider the relative position of the characteristic sets of two elliptic elements.
 
 \begin{lemma}
   Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic
@@ -306,44 +330,7 @@ the minimal segment connecting $T_g$ and $T_h$; we already know $S
 \]
 Finally, we prove the statement about incoherent overlap. Let $g(S) \cap S$ be the subsegment $[x,z'] \subset S$ fixed by $g$, and $h(S) \cap S$ the subsegment $[z,y]\subset S$ fixed by $h$. By~\cite[Figure~9]{Pa89:Paulin1989TheGT}, the subarc $[z,g(z)]=[z,gh(z)] \subset T_{gh}$ and the subarc $[z',h(z')]=[z',hg(z')] \subset T_{hg}$ overlap incoherently along the non-degenerate subsegment $[z,z']$.
 \end{proof}
-\DPTtodo{Edit this transition once following things settle down}
-Finally, the following results allow us to convert incoherent overlaps into coherent ones, and elliptic elements into hyperbolic ones.
 
-\DPTtodo{Either adopt Guiradel's assumption exactly or give a short proof}
-\begin{lemma}[{\cite[Fait, page 854]{Gui05:Coeur}}]
-Let $T$ be a $\Gamma$-tree.
-Let $g,h$ be two hyperbolic elements of $\Gamma$ so that
-$T_{ghG}$ and $T_h$ do not share a ray, and let $I$ be a non-degenerate arc contained
-in $T_h$. Then for large enough $k \geq 0$, $h^k g h^k$ is hyperbolic
-and its axis contains $I$, translating along the same direction as $h$.
-\label{lem:make_coherent}
-\end{lemma}
-
-
-\DPTtodo{(after later revisions) Move second bullet point into Lemma~\ref{lem:pau_ell_hyp}.
-  Either just assert first case or draw a picture}
-\begin{lemma}
-\label{lem:make_hyperbolic}
-Let $(\Gamma,T)$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is hyperbolic.
-\begin{itemize}
-\item If $T_g \cap T_h$ is a point and $g \cdot T_h^+ \ne T_h^-$, then
-  for some $k > 0$, $h^kg$ is hyperbolic.
-\item If $T_g \cap T_h$ is empty, or non-empty and not a point, then $gh$ is hyperbolic.
-\end{itemize}
-\end{lemma}
-
-\begin{proof}
-This is proved by Guiradel \cite[Page~853]{Gui05:Coeur}. We sketch it here for
-completeness.
-
-We divide the proof in several cases, depending on the relative
-position of $T_g$ (the fixed-point set of $g$) and $T_h$ (the axis of $h$).
-
-Suppose first $T_g \cap T_h$ is empty or not a point.
-Then by~\cite[Fait~1.5]{Gui05:Coeur}, $gh$ is hyperbolic.
-If $T_g \cap T_h$ is a point, since $g \cdot T_h^+ \neq T_h^-$, then
-$h^kg$ is hyperbolic for $k>0$ large enough.
-\end{proof}
 
 \subsection{Surface group actions on real trees}
 
@@ -403,7 +390,7 @@ It follows that the action being small is equivalent to it being irreducible and
 
 We start with a preliminary lemma.
 \begin{lemma}
-Let $(\pi_1(S),T)$ be preserves axis intersection and 
+Let $(\pi_1(S),T)$ preserve axis intersection and 
 suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{c}, \ora{b})$ cross.
 \label{lem:hyperbolic_crossing}
 \end{lemma}
@@ -415,10 +402,10 @@ If $a$ is elliptic, we divide the proof in several cases, depending on the relat
 position of $T_a$ (the fixed-point set of $a$) and $T_b$ (the axis of $b$).
 The analysis is the same as in~\cite[Page~853]{Gui05:Coeur}, though we
 also need to check that each element constructed crosses $\ora{c}$.
-Suppose first that $T_a \cap T_b$ is empty or not a point. Then by~Lemma~\ref{lem:make_hyperbolic}, $ba$ is hyperbolic, and by Lemma~\ref{lem:rhs_prod}, $(\ora{ba},\ora{b})$ cross. Hence, we take $c=ba$.
+Suppose first that $T_a \cap T_b$ is empty or not a point. Then by~Lemma~\ref{lem:pau_ell_hyp}, $ba$ is hyperbolic, and by Lemma~\ref{lem:rhs_prod}, $(\ora{ba},\ora{b})$ cross. Hence, we take $c=ba$.
 If $T_a \cap T_b$ is a point, we subdivide into cases. 
 Suppose first $a \cdot T_b^+ \neq T_b^-$. 
-Then by Lemma~\ref{lem:make_hyperbolic}, $b^ka$ is hyperbolic for some $k>0$, and $(\ora{b^ka},\ora{b})$ cross by Lemma~\ref{lem:rhs_prod} cross. Thus we can take $c=b^ka$.
+Then by Lemma~\ref{lem:pau_ell_hyp}, $b^ka$ is hyperbolic for some $k>0$, and $(\ora{b^ka},\ora{b})$ cross by Lemma~\ref{lem:rhs_prod}. Thus we can take $c=b^ka$.
 Otherwise, $a \cdot T_b^+=T_b^-$. We subdivide into two cases.
 \setcounter{case}{0}
 \setcounter{subcase}{0}
@@ -436,9 +423,9 @@ This means that the period of $T_b^+$ under the action of $a$ is at least
 3. Hence, in particular $a^2 \cdot T_b^+ \neq T_b^-$.
   Thus either:
 \begin{itemize}
-\item $T_{a^2} \cap T_b$ is a point. Thus, by~Lemma~\ref{lem:make_hyperbolic}, $b^ka^2$ is hyperbolic for some $k>0$. Moreover, $(\ora{b^ka^2},\ora{b})$ cross Lemma~\ref{lem:rhs_prod} (and we take $c=b^ka^2$); or
+\item $T_{a^2} \cap T_b$ is a point. Thus, by~Lemma~\ref{lem:pau_ell_hyp}, $b^ka^2$ is hyperbolic for some $k>0$. Moreover, $(\ora{b^ka^2},\ora{b})$ cross Lemma~\ref{lem:rhs_prod} (and we take $c=b^ka^2$); or
 \item $T_{a^2} \cap T_b$ is empty or not a point. Hence, since $a^2
-  \cdot T_b^+ \neq T_b^-$, by Lemma~\ref{lem:make_hyperbolic}
+  \cdot T_b^+ \neq T_b^-$, by Lemma~\ref{lem:pau_ell_hyp}
   $ba^2$ is hyperbolic, and $(\ora{ba^2},\ora{b})$ cross by
   Lemma~\ref{lem:rhs_prod}. Thus, we take $c=ba^2$.
 \end{itemize}
@@ -503,10 +490,12 @@ If $m, n \in \mathbb{Z} \setminus \{ 0\}$ is such that $a^m b^n$ is hyperbolic, 
 \end{proof}
 
 \begin{lemma}\label{lem:Eg-generates}
-  \DMGtodo{Dídac will see if he can remove irreducibility assumption}
   For any irreducible, axis-preserving $S$-tree and every hyperbolic
   $g \in \Gamma$, the subset $E_g$ generates $\Gamma$.
 \end{lemma}
+
+Note the irreducibility assumption is necessary: for a dihedral action, every element in $E_g$ fixes both $T_g^+$ and $T_g^-$, but the group as a whole does not.
+
 \begin{proof}
   Fix $h \in \Gamma$. We will write it as a product of elements in $E_g$.
     \setcounter{case}{0}
@@ -541,11 +530,29 @@ If $m, n \in \mathbb{Z} \setminus \{ 0\}$ is such that $a^m b^n$ is hyperbolic, 
     Then we can write $h=b^{-m}(b^mh)$, with $b^{-m}$ and $b^mh$ hyperbolic.
        \begin{subcase}
        \label{subcase:generate_ell_incoherent}
-       No such $b$ exists.
+       No such $b$ exists.%
     \end{subcase}
-       Then by Lemma~\ref{lem:make_hyperbolic}, for every hyperbolic element $b$, we have $a \cdot T_b^-=T_b^+$.
-    Since the action is irreducible, by Lemma~\ref{lem:CM_red_criterion}, we can find a pair of hyperbolic elements $c,d$ with $T_c \cap T_d = \emptyset$. In particular, their ends are a definite distance apart in the space of ends. Then, by Lemma~\ref{lem:product_hyperbolic}, $e=c^n d^m$ is hyperbolic for $n,m$ large enough. Moreover, $T_e^+$ is close to $T_c^+$ and $T_e^-$ is close to $T_d^-$.
-    But since $a \dot T_e^+ = T_e^-$, $a$ would have to send $T_c^+$ close to $T_d^-$ a contradiction with the fact that they are a definite distance apart.
+       Then by Lemma~\ref{lem:pau_ell_hyp}, for every hyperbolic element $b$, we have $h \cdot T_b^-=T_b^+$.
+    We show this implies the minimal invariant subtree is reducible, reaching a contradiction.
+Suppose it is irreducible, so the minimal $\Gamma$-invariant tree is not a line. Since the minimal invariant tree is the union the axes of hyperbolic elements~\cite[Proposition~3.1]{CM87:GroupActions}, it follows that there must exist hyperbolic elements $b,c$ such that
+\[
+\{T_b^+,T_b^-,T_c^+,T_c^-\}
+\]
+contains at least three distinct ends. After relabeling, we may assume that
+\[
+T_b^\pm=\{\xi,\eta\},
+\qquad
+T_c^\pm=\{\xi,\zeta\},
+\]
+where $\eta\neq\zeta$.
+
+Since $h$ swaps the endpoints of every hyperbolic axis, we have
+\[
+h(\xi)=\eta
+\qquad\text{and}\qquad
+h(\xi)=\zeta,
+\]
+a contradiction. Hence all hyperbolic axes have the same pair of endpoints, so the minimal invariant subtree is a line, a contradiction.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:if_unbounded_then_reducible}]
@@ -571,7 +578,7 @@ Then, by Lemma~\ref{lem:force_bounded}, $T_{a^m b^n} \cap T_g$ is bounded. Thus 
 
 Thus we may suppose $E_g = E_g^+$. But since $E_g$ generates $\Gamma$
 by Lemma~\ref{lem:Eg-generates}, the entire group fixes $T_g^+$ and
-the action is reducible.
+the action is fixed-end, hence reducible.
     \end{proof}
     
     \begin{comment}
