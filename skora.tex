@@ -281,10 +281,10 @@ Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
 \[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \|gh\|=\|h\|\ge\|gH\|; & \|gH\|=\|h\|>\|gh\|; & \|gh\|=\|gH\|>\|h\|. \end{array} \]
-Furthermore, in terms of $T_g \cap T_h$, we have:
+In terms of $T_g \cap T_h$, we have:
 \begin{itemize}
 \item Case~(3) happens exactly when $T_g$ and $T_h$ are
-disjoint, and implies $T_{gh}$ and $T_{hg}$ overlap incoherently
+disjoint, and implies $T_{gh}$ and $T_{hg}$ overlap incoherently.
 \item If $T_g \cap T_h$ is a point and $g \cdot T_h^+ \ne T_h^-$, then
   for some $k > 0$, $h^kg$ is hyperbolic.
 \item If $T_g \cap T_h$ is empty, or non-empty and not a point, then $gh$ is hyperbolic.
@@ -395,50 +395,27 @@ suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{
 \label{lem:hyperbolic_crossing}
 \end{lemma}
 \begin{proof}
-  \DPTtodo{Dylan will take a look}
-Let $a$ so that $(\ora{a},\ora{b})$ cross, which exists due to density of endpoints.
-If $a$ is hyperbolic, take $c=a$.
-If $a$ is elliptic, we divide the proof in several cases, depending on the relative
-position of $T_a$ (the fixed-point set of $a$) and $T_b$ (the axis of $b$).
-The analysis is the same as in~\cite[Page~853]{Gui05:Coeur}, though we
-also need to check that each element constructed crosses $\ora{c}$.
-Suppose first that $T_a \cap T_b$ is empty or not a point. Then by~Lemma~\ref{lem:pau_ell_hyp}, $ba$ is hyperbolic, and by Lemma~\ref{lem:rhs_prod}, $(\ora{ba},\ora{b})$ cross. Hence, we take $c=ba$.
-If $T_a \cap T_b$ is a point, we subdivide into cases. 
-Suppose first $a \cdot T_b^+ \neq T_b^-$. 
-Then by Lemma~\ref{lem:pau_ell_hyp}, $b^ka$ is hyperbolic for some $k>0$, and $(\ora{b^ka},\ora{b})$ cross by Lemma~\ref{lem:rhs_prod}. Thus we can take $c=b^ka$.
-Otherwise, $a \cdot T_b^+=T_b^-$. We subdivide into two cases.
-\setcounter{case}{0}
-\setcounter{subcase}{0}
-\begin{case}
-\label{case:axes_not_same}
-$a \cdot T_b \neq T_b$
-\end{case}
-\begin{subcase}
-\label{subcase:a_is_oppend}
-Suppose $a \cdot T_b^+ = T_b^-$.
-\end{subcase}
-In this case, since $a \cdot T_b \neq T_b$, we have
-$a \cdot T_b^- \neq T_b^+$.
-This means that the period of $T_b^+$ under the action of $a$ is at least
-3. Hence, in particular $a^2 \cdot T_b^+ \neq T_b^-$.
-  Thus either:
-\begin{itemize}
-\item $T_{a^2} \cap T_b$ is a point. Thus, by~Lemma~\ref{lem:pau_ell_hyp}, $b^ka^2$ is hyperbolic for some $k>0$. Moreover, $(\ora{b^ka^2},\ora{b})$ cross Lemma~\ref{lem:rhs_prod} (and we take $c=b^ka^2$); or
-\item $T_{a^2} \cap T_b$ is empty or not a point. Hence, since $a^2
-  \cdot T_b^+ \neq T_b^-$, by Lemma~\ref{lem:pau_ell_hyp}
-  $ba^2$ is hyperbolic, and $(\ora{ba^2},\ora{b})$ cross by
-  Lemma~\ref{lem:rhs_prod}. Thus, we take $c=ba^2$.
-\end{itemize}
+Find $a$ so that $(\ora{a},\ora{b})$ cross, which exists due to density of endpoints.
+We follow Guiradel~\cite[Page~853]{Gui05:Coeur} to show that some
+element of the form $c = b^k a^\ell$ with $\ell \ne 0$ is hyperbolic.
 
-\begin{case}
-\label{case:axes_same}
-Suppose $a \cdot T_b = T_b$.
-\end{case}
-Then $b^ka$ and $ab^k$ act as reflections on $T_b$
-for all $k>0$ and as $k$ tend to $+\infty$,
-their fixed points converge respectively to $T_b^+$ and $T_b^-$, hence their fixed points do not coincide.
-Thus $b^ka^2b^k=(b^ka)(ab^k)$ is a product of elliptic elements with disjoint fixed point sets, so by Lemma~\ref{lem:pau_two_ell}, it is hyperbolic. Then we take $c=b^ka^2b^k$. By Lemma~\ref{lem:rhs_prod} applied twice, it follows that $(\ora{c},\ora{b})$ cross.
-\qedhere
+If $a$ is hyperbolic, take $c=a$.
+
+Otherwise, consider the relative
+position of $T_a$ and~$T_b$.
+Suppose first that $T_a \cap T_b$ is empty or larger than a point.
+Then by Lemma~\ref{lem:pau_ell_hyp}, $c = ba$ is hyperbolic.
+
+\DPTfyi{Simplified Guiradel's argument, removing the most complicated case}
+If $T_a \cap T_b$ is a point, consider whether $a \cdot T_b^+
+\overset{?}{=} T_b^-$. If this happens, then
+necessarily $a^2 \cdot T_b^+ \neq T_b^-$. Set $\ell = 1$ or $\ell = 2$,
+whichever one satisfies $a^\ell \cdot T_b^+ \ne T_b^-$.
+Then by Lemma~\ref{lem:pau_ell_hyp}, $c = b^ka^\ell$ is hyperbolic for some
+$k>0$.
+
+In any of these cases, by
+Lemma~\ref{lem:rhs_prod}, $\ora{c}$ crosses $\ora{b}$.
 \end{proof}
 
 
