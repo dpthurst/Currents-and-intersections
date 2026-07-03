@@ -57,16 +57,16 @@ action $\Gamma \acts T$ by isometries.
 There are two types of isometries of real trees: those with fixed
 points, called \emph{elliptic}, and those without fixed points, called
 \emph{hyperbolic}.
-Given $g\in \Gamma$, let $\| g\|\coloneqq\inf_{x \in T} d(x,gx)$, and
-let $T_g \coloneqq \{ x\in T : d(x,gx)=\| g\| \}$ be the
+Given $g\in \Gamma$, let $\norm{ g}\coloneqq\inf_{x \in T} d(x,gx)$, and
+let $T_g \coloneqq \{ x\in T : d(x,gx)=\norm{ g} \}$ be the
 \emph{characteristic set} of~$g$; this is a closed, non-empty subtree
 of $T$ invariant under the action of $g$.
-If $g$ is elliptic, then $\| g \| =0$, and $T_g$ is the
+If $g$ is elliptic, then $\norm{ g } =0$, and $T_g$ is the
 set of fixed points of~$g$. The converse is also true: if $\norm{g} =
 0$, then $g$ has fixed points \cite[Section~1.3]{CM87:GroupActions}.
 
-If $g$ is hyperbolic, then $\| g \| >0$, $T_g$ is isometric to the
-real line, and $g$ translates along $T_g$ by distance $\| g\|$; in this
+If $g$ is hyperbolic, then $\norm{ g } >0$, $T_g$ is isometric to the
+real line, and $g$ translates along $T_g$ by distance $\norm{ g}$; in this
 case we call $T_g$ the \emph{axis} of $g$.
 Let $T_g^+$ be the attracting end of $T_g$ and $T_g^-$ the repelling end.
 
@@ -81,7 +81,7 @@ Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ 
 Then $f$ is the translation length function of
 a $\Gamma$-tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
 \begin{equation}
-\|g\|+\|h\|, \quad \|gh\|, \quad \|gH\|.
+\norm{g}+\norm{h}, \quad \norm{gh}, \quad \norm{gH}.
 \label{eq:maxcondition_tree}
 \end{equation}
 \end{proposition}
@@ -100,19 +100,19 @@ characterizes translation lengths of actions on real trees among all conjugacy c
 \end{proof}
 
 A $\Gamma$-tree with  translation length function
-$\| \cdot \|$ is of one of four
+$\norm{ \cdot }$ is of one of four
 types~\cite[Page~583]{CM87:GroupActions}:
 \begin{itemize}
-\item \textit{Global fixed point}: $\| \cdot \|$ is zero on all of
+\item \textit{Global fixed point}: $\norm{ \cdot }$ is zero on all of
   $\Gamma$; equivalently,  $\Gamma$ globally fixes a point in~$T$.
-\item \textit{Fixed end:} $\| \cdot \|$ is non-trivial but zero on $[\Gamma,\Gamma]$;
+\item \textit{Fixed end:} $\norm{ \cdot }$ is non-trivial but zero on $[\Gamma,\Gamma]$;
   equivalently $\Gamma$ fixes an end of $T$ ~\cite[Theorem~2.2,
   Corollary~2.3]{CM87:GroupActions}.
-\item \textit{Dihedral:} $\| \cdot \|$ is non-trivial on $[\Gamma,\Gamma]$, but
-  $\| [g,h] \|=0$ for all $g,h$ hyperbolic in~$T$; equivalently
+\item \textit{Dihedral:} $\norm{ \cdot }$ is non-trivial on $[\Gamma,\Gamma]$, but
+  $\norm{[g,h]}=0$ for all $g,h$ hyperbolic in~$T$; equivalently
   $\Gamma$ fixes a line of $T$ inverting
   orientation~\cite[Theorem~2.4]{CM87:GroupActions}.
-\item \textit{Irreducible:} $\| [g,h] \| \neq 0$ for some $g,h$ hyperbolic in $T$.
+\item \textit{Irreducible:} $\norm{[g,h]} \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{itemize}
 A \emph{reducible} action of $\Gamma$ is one that is not irreducible,
 i.e., it is fixed end, dihedral, or has a global fixed point. 
@@ -146,7 +146,7 @@ Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{
 \item they are both hyperbolic;
 \item their axes in the tree intersect and their overlap is a non-degenerate arc;
 \item they overlap coherently; and
-\item the length of $T_g \cap T_h$ is strictly less than $\min \{ \| g \|, \| h \| \}$.
+\item the length of $T_g \cap T_h$ is strictly less than $\min \{ \norm{ g }, \norm{ h } \}$.
 \end{itemize}
 
 \begin{lemma}[{\cite[Remark~3.3]{CM87:GroupActions}}]
@@ -159,7 +159,7 @@ form a good pair of isometries.
 
 \begin{proof}[Proof sketch]
    The sign of $n$ is chosen so that the overlap is coherent, and the magnitudes of $m,n$ are chosen
-to ensure $m \| g \|$ and $n \|h\|$ are both greater than the length  of $T_g \cap T_h$.
+to ensure $m \norm{ g }$ and $n \norm{h}$ are both greater than the length  of $T_g \cap T_h$.
 \end{proof}
 
 We next recall a useful criterion that implies reducibility.
@@ -198,19 +198,19 @@ Let $g,h$ be hyperbolic isometries with axes $T_g$ and $T_h$.
 We have the following cases, depending on the relative position of $T_g,T_h$.
 \begin{enumerate}[(\arabic*)]
 \item \label{item:tree-intersect}(Intersecting axes)
-$T_g \cap T_h \neq \emptyset$ if and only if $\| g \| + \| h \| =\max \{ \| gh \| , \|gH\| \}$, as shown in Figure~\ref{fig:trees_intersection}.
+$T_g \cap T_h \neq \emptyset$ if and only if $\norm{ g } + \norm{ h } =\max \{ \norm{ gh } , \norm{gH} \}$, as shown in Figure~\ref{fig:trees_intersection}.
 Moreover,
 \begin{enumerate}
-\item $T_g \cap T_h$ is a single point iff $\|  g \| + \|h \| = \|gh\| = \| gH\|$;
+\item $T_g \cap T_h$ is a single point iff $\norm{  g } + \norm{h } = \norm{gh} = \norm{ gH}$;
 \item $g,h$ overlap coherently iff 
-  $\| g \| + \| h \| = \| gh \| >\|gH\|$. In this case,
+  $\norm{ g } + \norm{ h } = \norm{ gh } >\norm{gH}$. In this case,
   $T_g \cap
 T_h = T_{gh} \cap T_{hg}$, and all four axes intersect coherently there; and
 \item $g,h$ overlap incoherently iff 
-$\| g \| + \| h \| = \| gH \| >\|gh\|$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
+$\norm{ g } + \norm{ h } = \norm{ gH } >\norm{gh}$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{enumerate}
 \item \label{item:tree-disjoint}(Disjoint axes) $T_g \cap T_h =\emptyset$ iff
-$\|gh\| = \| gH\| = \|  g \| + \|h \| + 2d(T_g,T_h),$
+$\norm{gh} = \norm{ gH} = \norm{  g } + \norm{h } + 2d(T_g,T_h),$
 as shown in Figure~\ref{fig:trees_disjoint}.
 In this case, $T_{gh}, T_g$ overlap coherently
 in a segment of positive length and
@@ -248,7 +248,7 @@ It will also be useful to determine when a product of hyperbolic elements is hyp
 
 \begin{lemma}\label{lem:product_hyperbolic}
     Let $T$ be an arbitrary $\Gamma$-tree.
-    If $g,h$ are hyperbolic isometries of $T$ so that $\|g \| \neq \|h \|$. Then $gh$ is also hyperbolic.
+    If $g,h$ are hyperbolic isometries of $T$ so that $\norm{g } \neq \norm{h }$. Then $gh$ is also hyperbolic.
 \end{lemma}
 \begin{proof}
 It follows directly from~\cite[Proposition~1.6]{Pa89:Paulin1989TheGT}.
@@ -271,7 +271,7 @@ analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the
 form that will be most convenient for us, making
 Proposition~\ref{prop:max_twice}
 %---that the maximum among
-%$\|gh\|,\|gH\|$ and $\|g\|+\|h\|$ appears at least twice---
+%$\norm{gh},\norm{gH}$ and $\norm{g}+\norm{h}$ appears at least twice---
 more
 apparent.
 The last two bullet points are claimed in~\cite[Page~853]{Gui05:Coeur}, but we give a proof here using~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} for completeness.
@@ -280,7 +280,7 @@ The last two bullet points are claimed in~\cite[Page~853]{Gui05:Coeur}, but we g
 Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
-\[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \|gh\|=\|h\|\ge\|gH\|; & \|gH\|=\|h\|>\|gh\|; & \|gh\|=\|gH\|>\|h\|. \end{array} \]
+\[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \norm{gh}=\norm{h}\ge\norm{gH}; & \norm{gH}=\norm{h}>\norm{gh}; & \norm{gh}=\norm{gH}>\norm{h}. \end{array} \]
 In terms of $T_g \cap T_h$, we have:
 \begin{itemize}
 \item Case~(3) happens exactly when $T_g$ and $T_h$ are
@@ -303,16 +303,16 @@ from~\cite[Fact~1.7]{CM87:GroupActions}.
 Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
 Now we prove the items in the bullet list.
 The first bullet point follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $[z,h(z)]$. Since $T_{g}=T_{G}$ for any $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $[z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $T_{hg}$ and $T_{HG}$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
-The second bullet point follows from the fact that the hypotheses imply where are in the setting where $T_g \cap T_h$ is a point in the subcases (ii) and (iii) of~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT}. In these two settings, $gh$ is hyperbolic provided $\|h\| >2d(x,z)$
-where $x$ is an endpoint of $I$ (which is at most a ray, by assumption), and $\{ z \} = T_g \cap T_h$. Since $T_h = T_{h^k}$, we can guarantee this condition by replacing the pair $(g,h)$ by $(g,h^k)$, where $k$ is taken so that $k\|h\| > 2d(x,z)$.
-For the third bullet point, for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT} in all cases where $T_g \cap T_h$ is not a point, we get $\|gh\|>0$;  for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (2)]{Pa89:Paulin1989TheGT}, we get $\|gh\|>0$, and the claim follows.
+The second bullet point follows from the fact that the hypotheses imply where are in the setting where $T_g \cap T_h$ is a point in the subcases (ii) and (iii) of~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT}. In these two settings, $gh$ is hyperbolic provided $\norm{h} >2d(x,z)$
+where $x$ is an endpoint of $I$ (which is at most a ray, by assumption), and $\{ z \} = T_g \cap T_h$. Since $T_h = T_{h^k}$, we can guarantee this condition by replacing the pair $(g,h)$ by $(g,h^k)$, where $k$ is taken so that $k\norm{h} > 2d(x,z)$.
+For the third bullet point, for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT} in all cases where $T_g \cap T_h$ is not a point, we get $\norm{gh}>0$;  for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (2)]{Pa89:Paulin1989TheGT}, we get $\norm{gh}>0$, and the claim follows.
 \end{proof}
 
 Finally, we need to consider the relative position of the characteristic sets of two elliptic elements.
 
 \begin{lemma}
   Let $T$ be an arbitrary $\Gamma$-tree. If $g,h$ are both elliptic
-  isometries, we have $\norm{gh} = \norm{gH}$ and $\|gh\|>0$ if and only if
+  isometries, we have $\norm{gh} = \norm{gH}$ and $\norm{gh}>0$ if and only if
   $T_g \cap T_h = \emptyset$. Moreover, if $T_g \cap T_h = \emptyset$,
  then $T_{gh}, T_{hg}$ overlap incoherently  along the shortest connecting arc between $T_g$ and $T_h$.
 \label{lem:pau_two_ell}
@@ -320,8 +320,8 @@ Finally, we need to consider the relative position of the characteristic sets of
 \begin{proof}
 The statement is contained
 in~\cite[Proposition~1.8]{Pa89:Paulin1989TheGT}, except the equality
-$\|gh\|=\|gH\|$, and the statement about incoherent overlap, which we outline here. If $T_g \cap T_h \neq
-\emptyset$, then $\|gh\|=\|gH\|=0$. Otherwise, let $S=[x,y]$ denote
+$\norm{gh}=\norm{gH}$, and the statement about incoherent overlap, which we outline here. If $T_g \cap T_h \neq
+\emptyset$, then $\norm{gh}=\norm{gH}=0$. Otherwise, let $S=[x,y]$ denote
 the minimal segment connecting $T_g$ and $T_h$; we already know $S
 \subset T_{gh}$ by Paulin's result. Since $T_h = T_H$, we also have $S
 \subset T_{gH}$. We therefore have
@@ -490,7 +490,7 @@ Note the irreducibility assumption is necessary: for a dihedral action, every el
     $(\ora{g},\ora{h})$ are parallel.
     \end{subcase}
     By Lemma~\ref{lem:hyperbolic_crossing}, we can take $k \in \Gamma$ so that $\ora{k}$ crosses $\ora{g}$ and $k$ is hyperbolic.
-    Thus, for large enough $n>0$, $\ora{k^nh}$ crosses $\ora{g}$ by~Lemma~\ref{lem:convergence_action}, and, if $k$ is hyperbolic, we have $n\|k\|>\|h\|$ and by Lemma~\ref{lem:product_hyperbolic}, $k^nh$ is hyperbolic.
+    Thus, for large enough $n>0$, $\ora{k^nh}$ crosses $\ora{g}$ by~Lemma~\ref{lem:convergence_action}, and, if $k$ is hyperbolic, we have $n\norm{k}>\norm{h}$ and by Lemma~\ref{lem:product_hyperbolic}, $k^nh$ is hyperbolic.
     Hence, we can write $h=(k^{-n})(k^n h)$, with $k^{-n}, k^nh \in E_g$.
     \begin{subcase}
       $(\ora{g},\ora{h})$ anti-parallel.
@@ -549,7 +549,7 @@ Choose the signs of $m,n$ so that
 $\ora{a^m}$ and $\ora{b^n}$ both R-cross $\ora{g}$,
 to ensure that $\ora{a^m b^n}$ also R-crosses $\ora{g}$.
 Furthermore, choose $|m|$ much larger than $|n|$ so that,
-$\|a^m \| >\|b^n\|$ and hence, by Lemma~\ref{lem:product_hyperbolic},
+$\norm{a^m} >\norm{b^n}$ and hence, by Lemma~\ref{lem:product_hyperbolic},
 $a^m b^n$ is hyperbolic.
 Then, by Lemma~\ref{lem:force_bounded}, $T_{a^m b^n} \cap T_g$ is bounded. Thus $\ora{a^m b^n}$ is a hyperbolic element crossing $\ora{g}$ so that $T_{a^m b^n} \cap T_g$ is bounded, a contradiction. 
 
@@ -601,12 +601,12 @@ Suppose first $\ora{k}$ intersects $\ora{g}$ before $\ora{h}$.
     Fig.~\ref{fig:tree_k_crossing_bis2} in the repelling end.
     In the first case, note that $g^{-1}k^nh$ is hyperbolic for $n$ large enough, since $k^nh$ and is hyperbolic and $g^{-1}$ is hyperbolic, and they have unbounded incoherent overlap, thus:
    \[
-   \|g^{-m}k^nh\| = \|g^m\|-\|k^nh\|.
+   \|g^{-m}k^nh\| = \norm{g^m}-\norm{k^nh}.
    \]
     Thus, for $m>0$ large enough, $T_{g^{-m}k^nh}$ has unbounded incoherent overlap  with $T_g$ as well.
     Then, it follows that
     \[
-\|k^nh\|=\|g^m(g^{-m}k^nh)\|=\|g^{-1}k^nh\|-\|g\| = \|k^nh\|-2\|g\|
+\norm{k^nh}=\|g^m(g^{-m}k^nh)\|=\|g^{-1}k^nh\|-\norm{g} = \norm{k^nh}-2\norm{g}
     \]
     a contradiction since $g$ is assumed to be hyperbolic.
     In the second case,  a similar computation gives a contradiction.
@@ -708,7 +708,7 @@ Let $T$ be an irreducible $S$-tree that preserves axis
 intersection. Then:
 \begin{itemize}
 \item $T$ preserves characteristic intersection; and
-\item $\| \cdot \|$ satisfies max-smoothing. 
+\item $\norm{ \cdot }$ satisfies max-smoothing. 
 \end{itemize}
 \label{thm:small}
 \end{theorem}
@@ -817,13 +817,13 @@ Then $T_g \cap T_h \neq \emptyset$ by axis intersection preservation, and discon
 \begin{subcase}
 $\ora{g},\ora{h}$ are parallel and $T_g \cap T_h$ is empty.
 \end{subcase}
-Then $\|gh\|=\|gh^{-1}\| > \|g\|+\|h\|$
+Then $\norm{gh}=\norm{gh^{-1}} > \norm{g}+\norm{h}$
 by~Lemma~\ref{lem:foundation_trees}\ref{item:tree-disjoint}.
 \begin{subcase}
 $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap coherently or in
 a single point.
 \end{subcase}
-    Then $\|gh\|=\|g\|+\|h\|\ge\|gh^{-1}\|$, by
+    Then $\norm{gh}=\norm{g}+\norm{h}\ge\norm{gh^{-1}}$, by
     Lemma~\ref{lem:foundation_trees}\ref{item:tree-intersect}.
     \begin{subcase}
       $\ora{g},\ora{h}$ are parallel and $T_g,T_h$ overlap incoherently.
@@ -841,10 +841,10 @@ If $T_g \cap T_h = \emptyset$, by Lemma~\ref{lem:pau_two_ell}, $T_{gh}$ and
 $T_{hg}$ overlap incoherently; this
 contradicts Proposition~\ref{prop:parallel-incoherent}. Thus
 $T_g \cap T_h \ne \emptyset$ and, by Lemma~\ref{lem:pau_two_ell} again,
-$\|g\| + \|h\| = \|gh\| = \|gH\| = 0$.
+$\norm{g} + \norm{h} = \norm{gh} = \norm{gH} = 0$.
 \begin{subcase}
   $\ora{g}, \ora{h}$ are parallel. \end{subcase}
-By Lemma~\ref{lem:pau_two_ell}, $\| gh\| = \| gH\|$ and
+By Lemma~\ref{lem:pau_two_ell}, $\norm{ gh} = \norm{ gH}$ and
 thus we have max\hyp smoothing.
 
 \begin{case}
@@ -857,8 +857,8 @@ $\ora{g},\ora{h}$ cross.
 Then $\ora{ghG}$ and $\ora{h}$ are parallel.
 By Proposition~\ref{prop:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\| gh \| = \|h\|\geq
-\|gH\|$ and
+point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\norm{ gh } = \norm{h}\geq
+\norm{gH}$ and
 $T_g \cap T_h \ne \emptyset$, and we
 are done. If $T_{ghG} \cap T_{h} = \emptyset$, by
 Lemma~\ref{lem:pau_ell_hyp}(3), $T_{gh}$ and $T_{hg}$ overlap
@@ -866,23 +866,23 @@ incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this
 contradicts Proposition~\ref{prop:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\| gh \| = \|h\| \geq \|gH\|$.
+point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\norm{ gh } = \norm{h} \geq \norm{gH}$.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then
-$\|gh\|=\|gH\| > \|h\|$. In either of these cases, we have
+$\norm{gh}=\norm{gH} > \norm{h}$. In either of these cases, we have
 max-smoothing as desired.
 
 If $T_{ghG}$ and $T_{h}$ overlap incoherently, by
-Lemma~\ref{lem:pau_ell_hyp}(2), $\|gH\| = \|h\| > \|gh\|$ and we must
+Lemma~\ref{lem:pau_ell_hyp}(2), $\norm{gH} = \norm{h} > \norm{gh}$ and we must
 derive a contradiction. From
 Lemma~\ref{lem:foundation_trees}(1c),
 \[
-\|(ghG)H\|=2\|h\| > \|(ghG)h\|.
+\norm{(ghG)H}=2\norm{h} > \norm{(ghG)h}.
 \]
 Now consider $gh$ and $GH$. Since one is conjugate to the inverse of
-the other, $\|gh\| = \|GH\| < \|h\|$, while $\ora{gh}$ and $\ora{GH}$ cross.
+the other, $\norm{gh} = \norm{GH} < \norm{h}$, while $\ora{gh}$ and $\ora{GH}$ cross.
 We can apply Subcase 1.1 or Subcase 2.1
 (depending whether they are hyperbolic or elliptic) to conclude
-$\|gh\| + \|GH\| \ge \|ghGH\|$, a contradiction.
+$\norm{gh} + \norm{GH} \ge \norm{ghGH}$, a contradiction.
 
 \medskip
 Finally, note that in all the subcases where
@@ -936,38 +936,38 @@ overlap.
 
 We now show that reducible fixed-end actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
 
-\DPTtodo{Reread this. Typesetting of $\|\cdot\|$}
+\DPTtodo{Reread this.}
 \begin{lemma}
 \label{lem:red_not_smoothing}
 Let $T$ be an $S$-tree.
 If the $\pi_1(S)$-action is reducible,
 then there exist a pair incoherently overlapping elements $(g,h)$ so that
-$(\ora{g},\ora{h})$ are parallel and $\|\cdot\|$ does not
+$(\ora{g},\ora{h})$ are parallel and $\norm{\cdot}$ does not
 satisfy connected smoothing.
 In particular, if the
-action is fixed-end, $\| \cdot \| \colon \Curves^+(S) \to \mathbb{R}$
+action is fixed-end, $\norm{ \cdot } \colon \Curves^+(S) \to \mathbb{R}$
 satisfies disconnected smoothing but not connected smoothing.
 \end{lemma}
 
 We start with a subsidiary claim.
 \begin{claim}\label{claim:incoherent}
   Suppose $a,x \in \Gamma$ are hyperbolic elements of a
-  reducible action so that $\| a \|>\| x \|$ and $(T_a,T_x)$ overlap
+  reducible action so that $\norm{ a }>\norm{ x }$ and $(T_a,T_x)$ overlap
   coherently. Then the pair $(T_{ax},T_{xA})$ has incoherent overlap.
 \end{claim}
 \begin{proof}
 On one hand, by Eqs.~\eqref{eq:reducible1} and \eqref{eq:reducible2},
 \begin{align*}
-\|ax\|&=\|a\|+\|x\| \\
-\|xA\| &= \|a\|-\|x\|
+\norm{ax}&=\norm{a}+\norm{x} \\
+\norm{xA} &= \norm{a}-\norm{x}
 \end{align*}
 so adding these equations, we get
 \[
-\|ax\| + \|xA\| = 2\|a\|.
+\norm{ax} + \norm{xA} = 2\norm{a}.
 \]
 On the other hand,
 \[
-\|(xA)(ax)\| = 2\|x\|,
+\norm{(xA)(ax)} = 2\norm{x},
 \]
 implying that $(ax,xA)$ overlap incoherently by Eq.~\eqref{eq:reducible2}.
 \end{proof}
@@ -989,7 +989,7 @@ overlap
 incoherently, we have established this claim. Otherwise, use
 Example~\ref{ex:ab_parallel_aB_crossing} to obtain a pair $a \coloneqq hghgh$
 and $b \coloneqq hgh$, still parallel with coherent overlap, so that
-$\|a\|>\|b\|$ and
+$\norm{a}>\norm{b}$ and
 $(\ora{aB},\ora{Ba})$ is crossing. By Lemma~\ref{lem:a_parallel_Ba},
 it follows that either $(\ora{ab},\ora{bA})$ is parallel or $(\ora{ba},\ora{aB})$ is parallel.
 By Claim~\ref{claim:incoherent}, we have found a pair $(\ora{g},\ora{h})$, with
@@ -997,7 +997,7 @@ $g = ab, h = Ba$ or  $g = ba, h = aB$, of parallel hyperbolic elements with
 incoherent overlap. This proves the first claim.
 
 To see that connected smoothing fails, note
-this tells us $\| gh \| < \|gH\|=\|g\| + \|h\|$, which violates both
+this tells us $\norm{ gh } < \norm{gH}=\norm{g} + \norm{h}$, which violates both
 oriented and unoriented connected smoothing.
 
 We now turn to proving disconnected smoothing in the fixed-end case. (In
@@ -1007,33 +1007,33 @@ as well.)
   Suppose $g,h$ are two hyperbolic elements of $\Gamma$.
 By \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}, either $T_g,T_h$ overlap coherently, in which case
 \begin{equation}
-\|gh \|=\| g \| + \| h \| > \|gH \| = |\,\|g \|- \| h \|\, |,
+\norm{gh }=\norm{ g } + \norm{ h } > \norm{gH } = |\,\norm{g }- \norm{ h }\, |,
 \label{eq:reducible1}
 \end{equation}
 or they overlap incoherently, in which case
 \begin{equation}
-\|gH \| =\| g\| + \| h \| > \| gh \| = |\, \| g \| - \| h \|\,|.
+\norm{gH } =\norm{ g} + \norm{ h } > \norm{ gh } = |\, \norm{ g } - \norm{ h }\,|.
 \label{eq:reducible2}
 \end{equation}
 Since these equations hold if $(\ora{g},\ora{h})$ cross,
-$\| \cdot \|$ satisfies disconnected smoothing.
+$\norm{ \cdot }$ satisfies disconnected smoothing.
 
 Next, suppose $g$ be elliptic and $h$ hyperbolic.
 Then, by~\cite[Lemma~6.5]{CM87:GroupActions}, either:
-\begin{itemize} \item $\|gh\|=\|h\|$ and $\|gH\|=\|h\|$; or
-\item $\|gh\|=0$ and $\|gH\|=0$.
+\begin{itemize} \item $\norm{gh}=\norm{h}$ and $\norm{gH}=\norm{h}$; or
+\item $\norm{gh}=0$ and $\norm{gH}=0$.
 \end{itemize}
 In the first case, if $(\ora{g},\ora{h})$ cross, disconnected
-smoothing holds for $\| \cdot \|$. To see that connected smoothing
+smoothing holds for $\norm{ \cdot }$. To see that connected smoothing
 does not hold, we can apply the previous case to the pair of
 hyperbolic elements $gh,Hg$. If $(\ora{g},\ora{h})$ cross, then
-$(\ora{gh},\ora{Hg})$ cross. Hence, $\| \cdot\|$ does not satisfy
-connected smoothing, since $\|(gh)(Hg)\|=\|g^2\|=0$.
+$(\ora{gh},\ora{Hg})$ cross. Hence, $\norm{ \cdot}$ does not satisfy
+connected smoothing, since $\norm{(gh)(Hg)}=\norm{g^2}=0$.
 
 Finally, it remains to consider $g$ and $h$ elliptic.
 Here we use the assumption the action has a fixed end, so $T_g \cap
 T_h = \emptyset$ and hence, by Lemma~\ref{lem:pau_two_ell},
-$\|gh\|=0$.
+$\norm{gh}=0$.
 Thus, both smoothings are satisfied in this case.
 \end{proof}
 
@@ -1046,7 +1046,7 @@ smoothing (both connected and disconnected) is a necessary condition.
   fixed points on the invariant line (see, e.g., proof
   of~\cite[Theorem~2.2]{CM87:GroupActions}). Hence,
   $T_g \cap T_h = \emptyset$, and by Lemma~\ref{lem:pau_two_ell},
-  $\|gh\|>0$. Thus, if $(\ora{g},\ora{h})$ cross, disconnected
+  $\norm{gh}>0$. Thus, if $(\ora{g},\ora{h})$ cross, disconnected
   smoothing is not satisfied in this case.
 \end{remark}
 
@@ -1080,7 +1080,7 @@ $T$ is $\pi_1(S)$-equivariantly isometric to $T_\lambda$;
 \item The $S$-tree is irreducible and preserves axis intersection;
 \item The $S$-tree is irreducible and preserves characteristic intersection;
 \item The translation length function
-$\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies max-smoothing;
+$\norm{\cdot}\colon \pi_1(S)\to\mathbb{R}$ satisfies max-smoothing;
 \item   There is no pair $(\ora{a},\ora{b})$ that are
 parallel in $\wt{S}$ and act hyperbolically and overlap incoherently in $T$.
 \end{enumerate}

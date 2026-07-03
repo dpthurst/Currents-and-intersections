@@ -282,14 +282,14 @@ A \emph{$\Gamma$-tree} is an isometric action of a finitely generated
 group $\Gamma$ on an $\mathbb{R}$-tree $T$. For $g\in\Gamma$, its
 translation length is
 \[
-\|g\|=\inf_{x\in T} d(x,gx).
+\norm{g}=\inf_{x\in T} d(x,gx).
 \]
 The \emph{characteristic set} $T_g$ of $g \in \Gamma$ is the set of
 points that are translated the least. Concretely,
 an isometry $g$ of $T$ either has a non-empty set $T_g$ of fixed
 points (\emph{elliptic}) or
 has no fixed points and translates points on its invariant
-axis $T_g$ by a definite distance of $\|g\|$
+axis $T_g$ by a definite distance of $\norm{g}$
 (\emph{hyperbolic}). See \cite[\S1.3]{CM87:GroupActions}.
 We say the action is \emph{irreducible} if it does not have a global
 fixed point, $T$ has no ends fixed by all of
@@ -327,22 +327,22 @@ The $S$-tree is irreducible and preserves axis intersection;
 The $S$-tree is irreducible and preserves characteristic intersection;
 \item\label{item:skora_maxsmoothing}
 The translation length function
-$\|\cdot\|\colon \pi_1(S)\to\mathbb{R}$ satisfies \emph{max-smoothing}:
+$\norm{\cdot}\colon \pi_1(S)\to\mathbb{R}$ satisfies \emph{max-smoothing}:
 \begin{enumerate}[(i)]
 \item\label{item:skora_maxsmoothing_crossing}
 For every pair $(\ora{a},\ora{b})$ crossing in $\wt{S}$,
 \begin{equation}
-\|a\|+\|b\|
+\norm{a}+\norm{b}
 =
-\max\{\|ab\|,\|aB\|\};
+\max\{\norm{ab},\norm{aB}\};
 \label{eq:small_disconn}
 \end{equation}
 \item\label{item:skora_maxsmoothing_parallel}
 For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
 \begin{equation}
-\|ab\|
+\norm{ab}
 =
-\max\{\|a\|+\|b\|,\|aB\|\}.
+\max\{\norm{a}+\norm{b},\norm{aB}\}.
 \label{eq:small_conn}
 \end{equation}
 \end{enumerate}
@@ -372,11 +372,11 @@ functions $f\colon\Gamma\to\mathbb{R}$. Parry~\cite{Par91:Translation}
 answered this affirmatively.
 A restatement of these axioms (see Proposition~\ref{prop:max_twice})
 is that a conjugacy-invariant
-function $\|\cdot\|\colon\Gamma\to\mathbb{R}$ is the translation length
+function $\norm{\cdot}\colon\Gamma\to\mathbb{R}$ is the translation length
 of a $\Gamma$-tree if and only if for every pair $a,b\in\Gamma$ the
 maximum among
 \[
-\|a\|+\|b\|, \qquad \|ab\|, \qquad \|aB\|
+\norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}
 \]
 is attained at least twice.
 
