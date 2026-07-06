@@ -933,48 +933,74 @@ found a pair of parallel hyperbolic elements with bounded incoherent
 overlap.
 \end{proof}
 
-We now show that reducible fixed-end actions satisfy disconnected smoothing but never satisfy connected smoothing, and that any reducible action has a parallel hyperbolic pair with incoherent overlap.
+\DPTfyi{Shortened this transition}
+We now prove some related facts about reducible smoothings.
 
-\DPTtodo{Reread this.}
 \begin{lemma}
 \label{lem:red_not_smoothing}
 Let $T$ be an $S$-tree.
 If the $\pi_1(S)$-action is reducible,
 then there exist a pair incoherently overlapping elements $(g,h)$ so that
-$(\ora{g},\ora{h})$ are parallel and $\norm{\cdot}$ does not
+$(\ora{g},\ora{h})$ are parallel and $\norm{\cdot} \colon \Curves^+(S) \to \mathbb{R}$ does not
 satisfy connected smoothing.
-In particular, if the
-action is fixed-end, $\norm{ \cdot } \colon \Curves^+(S) \to \mathbb{R}$
+If the
+action is fixed-end, $\norm{\cdot}$
 satisfies disconnected smoothing but not connected smoothing.
 \end{lemma}
 
-We start with a subsidiary claim.
+We start with subsidiary facts.
+\DPTfyi{Pulled this out and made it clear Paulin didn't bother with a
+  proof either}
+\begin{claim}\label{claim:reducible-overlap}
+  Suppose $g,h \in \Gamma$ are hyperbolic elements of a reducible action. Then
+ either $T_g,T_h$ overlap coherently, in which case
+\begin{equation}
+\norm{gh }=\norm{ g } + \norm{ h } > \norm{gH } = |\,\norm{g }- \norm{ h }\, |,
+\label{eq:reducible1}
+\end{equation}
+or they overlap incoherently, in which case
+\begin{equation}
+\norm{gH } =\norm{ g} + \norm{ h } > \norm{ gh } = |\, \norm{ g } - \norm{ h }\,|.
+\label{eq:reducible2}
+\end{equation}
+\end{claim}
+\begin{proof}
+  Clear from looking at the action on the common axis; see
+  \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}.
+\end{proof}
+
 \begin{claim}\label{claim:incoherent}
   Suppose $a,x \in \Gamma$ are hyperbolic elements of a
   reducible action so that $\norm{ a }>\norm{ x }$ and $(T_a,T_x)$ overlap
   coherently. Then the pair $(T_{ax},T_{xA})$ has incoherent overlap.
 \end{claim}
 \begin{proof}
-On one hand, by Eqs.~\eqref{eq:reducible1} and \eqref{eq:reducible2},
-\begin{align*}
-\norm{ax}&=\norm{a}+\norm{x} \\
-\norm{xA} &= \norm{a}-\norm{x}
-\end{align*}
-so adding these equations, we get
-\[
-\norm{ax} + \norm{xA} = 2\norm{a}.
-\]
-On the other hand,
-\[
-\norm{(xA)(ax)} = 2\norm{x},
-\]
-implying that $(ax,xA)$ overlap incoherently by Eq.~\eqref{eq:reducible2}.
+  \DPTfyi{Shortened substantially}
+  Using Claim~\ref{claim:reducible-overlap}, we see that
+  $\norm{(xA)(ax)} = 2\norm{x} < 2\norm{a} = \norm{xA} + \norm{ax}$,
+  implying $T_{ax}$ and $T_{xA}$ overlap inconsistently.
+% By looking at the action of $a,x$ on their common axis (see
+% \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}), we have
+% \begin{align*}
+% \norm{ax}&=\norm{a}+\norm{x} \\
+% \norm{xA} &= \norm{a}-\norm{x}.
+% \end{align*}
+% Adding these equations, we get
+% \[
+% \norm{ax} + \norm{xA} = 2\norm{a}.
+% \]
+% On the other hand,
+% \[
+% \norm{(xA)(ax)} = 2\norm{x},
+% \]
+% implying that $(ax,xA)$ overlap incoherently.
 \end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{lem:red_not_smoothing}]
-  We start by finding a pair of incoherently overlapping elements so
-  that $(\ora{g},\ora{h})$ are parallel.
-  First, find a pair $(g,h)$ of hyperbolic elements so $(\ora{g},\ora{h})$ are
+  We start by finding a pair of elements so that $(\ora{g},\ora{h})$
+  are parallel and $T_g,T_h$ overlap incoherently.
+
+  Start by finding any pair $(g,h)$ of hyperbolic elements so $(\ora{g},\ora{h})$ are
 parallel. Start with any two hyperbolic elements that
 are not common powers. (For instance, take any hyperbolic element
 and a non-trivial conjugate.)
@@ -985,14 +1011,15 @@ consider the pair $(\ora{g},\ora{H})$ instead.
 
 Now we consider their overlaps in the tree. If $(T_g,T_h)$
 overlap
-incoherently, we have established this claim. Otherwise, use
-Example~\ref{ex:ab_parallel_aB_crossing} to obtain a pair $a \coloneqq hghgh$
-and $b \coloneqq hgh$, still parallel with coherent overlap, so that
-$\norm{a}>\norm{b}$ and
+incoherently, we have established this claim. Otherwise, following
+Example~\ref{ex:ab_parallel_aB_crossing} and consider $a \coloneqq hghgh$
+and $b \coloneqq hgh$. Then $T_a,T_b$ are still parallel with coherent
+overlap, so that
+$\norm{a}>\norm{b}$, while
 $(\ora{aB},\ora{Ba})$ is crossing. By Lemma~\ref{lem:a_parallel_Ba},
 it follows that either $(\ora{ab},\ora{bA})$ is parallel or $(\ora{ba},\ora{aB})$ is parallel.
-By Claim~\ref{claim:incoherent}, we have found a pair $(\ora{g},\ora{h})$, with
-$g = ab, h = Ba$ or  $g = ba, h = aB$, of parallel hyperbolic elements with
+By Claim~\ref{claim:incoherent}, we have found a pair $(\ora{k},\ora{\ell})$, with
+$k = ab, \ell = Ba$ or ff $k = ba, \ell = aB$, of parallel hyperbolic elements with
 incoherent overlap. This proves the first claim.
 
 To see that connected smoothing fails, note
@@ -1000,38 +1027,40 @@ this tells us $\norm{ gh } < \norm{gH}=\norm{g} + \norm{h}$, which violates both
 oriented and unoriented connected smoothing.
 
 We now turn to proving disconnected smoothing in the fixed-end case. (In
-fact most cases of disconnected smoothing hold in the reducible case
-as well.)
+fact most cases of disconnected smoothing hold in the dihedral case
+as well.) Fix $g,h\in\Gamma$; we will show that in any case, $\norm{g}
++ \norm{h} = \max\{\norm{gh},\norm{gH}\}$, which in the case
+$\ora{g},\ora{h}$ cross implies disconnected smoothing.
 
-  Suppose $g,h$ are two hyperbolic elements of $\Gamma$.
-By \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}, either $T_g,T_h$ overlap coherently, in which case
-\begin{equation}
-\norm{gh }=\norm{ g } + \norm{ h } > \norm{gH } = |\,\norm{g }- \norm{ h }\, |,
-\label{eq:reducible1}
-\end{equation}
-or they overlap incoherently, in which case
-\begin{equation}
-\norm{gH } =\norm{ g} + \norm{ h } > \norm{ gh } = |\, \norm{ g } - \norm{ h }\,|.
-\label{eq:reducible2}
-\end{equation}
-Since these equations hold if $(\ora{g},\ora{h})$ cross,
-$\norm{ \cdot }$ satisfies disconnected smoothing.
+If $g,h$ are both hyperbolic,
+Claim~\ref{claim:reducible-overlap} gives the desired disconnected
+smoothing.
 
-Next, suppose $g$ be elliptic and $h$ hyperbolic.
+Next, suppose $g$ is elliptic and $h$ is hyperbolic.
 Then, by~\cite[Lemma~6.5]{CM87:GroupActions}, either:
-\begin{itemize} \item $\norm{gh}=\norm{h}$ and $\norm{gH}=\norm{h}$; or
-\item $\norm{gh}=0$ and $\norm{gH}=0$.
+\begin{itemize}
+\item $\norm{gh}=\norm{gH}=\norm{h}$; or
+\item $\norm{gh}=\norm{gH}=0$.
 \end{itemize}
-In the first case, if $(\ora{g},\ora{h})$ cross, disconnected
-smoothing holds for $\norm{ \cdot }$. To see that connected smoothing
-does not hold, we can apply the previous case to the pair of
-hyperbolic elements $gh,Hg$. If $(\ora{g},\ora{h})$ cross, then
-$(\ora{gh},\ora{Hg})$ cross. Hence, $\norm{ \cdot}$ does not satisfy
-connected smoothing, since $\norm{(gh)(Hg)}=\norm{g^2}=0$.
+In the first case, we have disconnected smoothing. The second case is
+not possible, as it contradicts Proposition~\ref{prop:max_twice}.
+\DPTtodo{Culler-Morgan's second case in Lemma 6.5 is never possible;
+  they presumably observe this at some later point.}
+\DPTfyi{Deleted stuff about
+  connected smoothing, that's already done}
+% To see that connected smoothing
+% does not hold, we can apply the previous case to the pair of
+% hyperbolic elements $gh,Hg$. If $(\ora{g},\ora{h})$ cross, then
+% $(\ora{gh},\ora{Hg})$ cross. Hence, $\norm{ \cdot}$ does not satisfy
+% connected smoothing, since $\norm{(gh)(Hg)}=\norm{g^2}=0$.
 
-Finally, it remains to consider $g$ and $h$ elliptic.
-Here we use the assumption the action has a fixed end, so $T_g \cap
-T_h = \emptyset$ and hence, by Lemma~\ref{lem:pau_two_ell},
+Finally, if $g$ and $h$ elliptic. Here we use the assumption the
+action has a fixed end,
+\DPTtodo{Changed ``$=$'' to ``$\ne$'' here and added why they
+  intersect, please check.}
+so $T_g \cap
+T_h \ne \emptyset$ (since the fixed sets intersect on a ray to the
+fixed end) and hence, by Lemma~\ref{lem:pau_two_ell},
 $\norm{gh}=0$.
 Thus, both smoothings are satisfied in this case.
 \end{proof}
