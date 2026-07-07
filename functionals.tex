@@ -68,10 +68,13 @@ A few times throughout the paper we will allow multi-curves to have weights.
 Oriented multi-curves are more natural from a group-theoretic perspective, appearing naturally in the study of cross-ratios (Section~\ref{sec:crossratios}) and group actions on real trees (Section~\ref{sec:skora}). 
 Moreover, to verify smoothing for curve functionals that do not arise from natural length metrics on the surface, it is convenient to work in terms of the relative position of pairs of hyperbolic elements in $\pi_1(S)$, where orientation is essential (see Section~\ref{subsec:triality} and compare Theorem~\ref{thm:intersect} with Theorem~\ref{thm:intersections_group}).
 
-\DMGtodo{edited this to remove reference to geodesic currents. do we need to be more formal with the definition of geometric intersection for curves?}
+\DPTfyi{I don't think we have to be more formal on intersection
+  number, it's standard and there are no subtleties, since we're not
+  talking about self-intersections}
 The geometric intersection number will play a central role throughout.
-By default, the intersection number $i(C,D)$ of two multi-curves is
-defined, for unoriented curves, as the minimal number of intersections among  intersecting representatives in minimal position. If $C$ and $D$ are oriented,
+The intersection number $i(C,D)$ of two unoriented multi-curves is
+defined to be the minimal number of intersections among  intersecting
+representatives in minimal position. If $C$ and $D$ are oriented,
 the
 intersection number is defined by forgetting orientations. See also
 Definition~\ref{def:intersection_currents}.  The reader should keep in
@@ -79,10 +82,17 @@ mind the example of the curve functional $i(\mu, \cdot) \colon
 \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or,
 more generally, oriented geodesic current $\mu$.
 
-As explained in Appendix~\ref{sec:asymmetric}, there are asymmetric
-variants of intersection number for oriented curves which only record
+As explained in Appendix~\ref{sec:asymmetric}, there is an asymmetric
+variant of intersection number for oriented curves which only record
 crossings of a given orientation. For such notions, the analogue of
-Theorem~\ref{thm:intersect} fails. This phenomenon
+Theorem~\ref{thm:intersect} fails,
+\DPTfyi{Added comment about embedding failure}
+and oriented curves are not determined by their asymmetric
+intersection number,
+so we will not use it in the bulk
+of this paper.
+\DPTtodo{I don't know what this last sentence is saying; expand or delete}
+This phenomenon
 also appears in the proof (see Proposition~\ref{prop:recoverintersection}).
 
 A curve functional that does not depend
@@ -485,7 +495,9 @@ current.
 \subsubsection{Non-examples}
 
 In order to illustrate the complexity of the problem,
-we now show examples of many natural functions on curves that do \emph{not} satisfy the $\AConvex$ properties (even though many of them still extend continuously to geodesic currents).
+we now show examples of many natural functions on curves that do
+\emph{not} satisfy the $\AConvex$ properties, even though many of them
+still extend continuously to geodesic currents.
 
 \begin{enumerate}
     \item Some curve functionals are not symmetric but nevertheless satisfy
@@ -494,6 +506,8 @@ $\QConvex^+(S)$ (see also item~(3) below). For instance, the stable
 lengths of word metrics arising from asymmetric generating sets,
 as discussed in~\cite[Section~4.6]{MGT21:Smoothings}, furnish such
 examples.
+
+This illustrates the proper containment $\QConvex(S) \subsetneq \QConvex^+(S)$.
     \item The square root of extremal length satisfies symmetry, smoothing,
 stability, convex union, and homogeneity, and therefore provides an
 example in $\Convex(S)$. However, it does not satisfy additivity
@@ -507,15 +521,52 @@ smoothing or stability (see~\cite[Example~4.10]{MGT21:Smoothings},
 \cite[Theorem~1.5]{EPS20:CountingCurves},
 \cite{Erlandsson:WordLength}). 
 Moreover, its stabilized version does not necessarily satisfy smoothing
-(see the same example and~\cite[Theorem~B]{MGT21:Smoothings}).
+(see
+\DPTtodo{What is ``the same example''?}
+the same example and~\cite[Theorem~B]{MGT21:Smoothings}).
 
 This illustrates the proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
-    \item Another example is provided by stable lengths associated to
-quasi-Fuchsian representations. These satisfy quasi-smoothing by
+    \item \DPTfyi{edited} Stable lengths associated to
+quasi-Fuchsian representations into $\PSL(2,\bbC)$ satisfy quasi-smoothing
 \cite[Proposition~4.11]{MGT21:Smoothings}, and satisfy strict
 smoothing if and only if the representation is Fuchsian
-(see~\cite[Theorem~A]{FF22:QF} as well as~\cite[Proposition~1.8]{BR24:Cubulations}. This furnishes another instance of the
+(\cite[Theorem~A]{FF22:QF}, \cite[Proposition~1.8]{BR24:Cubulations}).
+
+This furnishes another instance of the
 proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
+\item \DPTtodo{Pulled out the specific mapping torus example, but that
+  leaves the quasi-Fuchsian question as an orphan}
+  Lengths associated to more general discrete faithful
+  representations into $\PSL(2,\bbC)$ need not extend continuously to
+  currents, as we can see explicitly for mapping tori. Let $\phi$ be a
+  pseudo-Anosov homeomorphism of a closed surface~$S$, and let
+  $M_\phi$ denote the associated hyperbolic mapping torus. Let
+  $\ell_{M_\phi}(\gamma)$ denote the translation length of
+  $\gamma\in\pi_1(S)$. Since $M_\phi$ is closed
+  hyperbolic, there exists $\epsilon>0$ such that
+  $\ell_{M_\phi}(\gamma)\geq \epsilon$ for every non-trivial~$\gamma$.
+  If $\ell_{M_\phi}$ extended continuously to
+  geodesic currents, then for any hyperbolic structure $X$ on $S$,
+  compactness of $\mathbb {P}\Curr(S)$ would imply the existence of
+  $K>0$ such that $\ell_X(\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for
+  every closed curve~$\gamma$.
+
+  On the other hand,
+  $\ell_{M_\phi}(\phi^n\gamma)=\ell_{M_\phi}(\gamma)$ for all
+  $n\in\mathbb Z$. Hence
+  $\ell_X(\phi^n\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for all $n$,
+  contradicting the fact that the curves $\phi^n\gamma$ are pairwise
+  distinct while a closed hyperbolic surface admits only finitely many
+  closed geodesics of bounded length. In particular,
+  by~\cite[Theorem~A]{MGT21:Smoothings}, $\ell_{M_\phi}(\gamma)$
+  cannot satisfy $K$-quasi-smoothing for any $K>0$. This mapping torus
+  representation is a limit of degenerating quasi-Fuchsian
+  representations. Even though the limit is not convex cocompact, it is
+  still discrete
+  and faithful.
+  
+\medskip\hrule\medskip
+
 A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
 \PSL(2,\mathbb{C})$ is a
 conjugate of Fuchsian group by a (properly normalized) quasi-conformal
@@ -531,20 +582,23 @@ constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \QConvex_K(S)$.
 Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \end{question}
 
-\DMGtodo{BTW, this example is new, can you please read it?}
-For sequences of quasi-Fuchsian representations degenerating to fibers of mapping tori, this can be seen as follows. Let $\phi$ be a pseudo-Anosov homeomorphism of a closed surface $S$, and let $M_\phi$ denote the associated hyperbolic mapping torus. The infinite cyclic cover corresponding to the fiber subgroup $\pi_1(S)$ is a doubly degenerate hyperbolic $3$-manifold arising as the geometric limit of the quasi-Fuchsian sequence $Q(\phi^{-n}X,\phi^nY)$---where $Q(Z,W)$ denotes the quasi-Fuchsian 3-manifold obtained by simultaneous
-uniformization of the hyperbolic metrics $Z,W$~\cite[Section~6.4]{Hub06:Vol1}.
-
-Let $\ell_{M_\phi}(\gamma)$ denote the translation length of $\gamma\in\pi_1(S)$ in this cyclic cover. Since $M_\phi$ is closed hyperbolic, there exists $\epsilon>0$ such that $\ell_{M_\phi}(\gamma)\geq \epsilon$ for every non-trivial closed curve $\gamma$. If $\ell_{M_\phi}$ extended continuously to geodesic currents, then for any hyperbolic structure $X$ on $S$, compactness of $\mathbb {P}\Curr(S)$ would imply the existence of $K>0$ such that $\ell_X(\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for every closed curve $\gamma$.
-
-On the other hand, the deck transformation induces $\phi$, so $\ell_{M_\phi}(\phi^n\gamma)=\ell_{M_\phi}(\gamma)$ for all $n\in\mathbb Z$. Hence $\ell_X(\phi^n\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for all $n$, contradicting the fact that the curves $\phi^n\gamma$ are pairwise distinct while a closed hyperbolic surface admits only finitely many closed geodesics of bounded length.
-In particular, by~\cite[Theorem~A]{MGT21:Smoothings}, the length cannot satisfy $K$-quasi-smoothing for any $K>0$. This limiting representation, even though not convex cocompact, is still discrete and faithful. This shows that in general lengths associated to discrete faithful representations of surface groups into $\PSL(2,\mathbb{C})$ need not extend continuously to geodesic currents.
+\dots The infinite cyclic
+cover corresponding to the fiber subgroup $\pi_1(S)$ is a doubly
+degenerate hyperbolic $3$-manifold arising as the geometric limit of
+the quasi-Fuchsian sequence $Q(\phi^{-n}X,\phi^nY)$, where $Q(Z,W)$
+denotes the quasi-Fuchsian 3-manifold obtained by simultaneous
+uniformization of the hyperbolic metrics $Z,W$ \cite[Section~6.4]{Hub06:Vol1}.
 \item The previous example fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
 non-compact type $G$, such as $\SL(n,\mathbb{R})$.
-In fact,~\cite[Theorem~1.1]{MZ19:PositivelyRatioed} show that such representations
-satisfy full smoothing if and only if they are positively ratioed (see item (9) in Examples). Hence, for non-positively ratioed ones (such as quasi-Fuchsian but non-fuchsian) we get non-examples.
+In fact, Martone-Zhang \cite[Theorem~1.1]{MZ19:PositivelyRatioed} show
+that such representations
+satisfy full smoothing if and only if they are positively ratioed
+\DPTtodo{Reference unclear; is this to Martone-Zhang?}
+(see
+item (9) in Examples). Hence, for non-positively ratioed ones (such as
+quasi-Fuchsian but not Fuchsian) we get non-examples.
         \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
 geometrically defined groups, including hyperbolic groups, admit such
