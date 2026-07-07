@@ -557,149 +557,6 @@ by Lemma~\ref{lem:Eg-generates}, the entire group fixes $T_g^+$ and
 the action is fixed-end, hence reducible.
     \end{proof}
     
-    \begin{comment}
-    \DMGtodo{old proof below}
-    
-    
-    By Lemma~\ref{lem:CM_red_criterion}, it suffices
-    to show that for any hyperbolic element $h$ so that
-    $(\ora{g},\ora{h})$ do not cross, $T_g \cap T_h \neq \emptyset$.
-    For the sake of contradiction, suppose $T_g \cap T_h = \emptyset$.
-    By density of axes of hyperbolic elements, let $k \in \pi_1(S)$ so
-    that $\ora{k}$ crosses $\ora{g}$ and $\ora{h}$, as in
-    Figure~\ref{fig:k_crossing}. Since $T$ preserves axis
-    intersection, $T_k$ intersects both $T_g$ and $T_h$. Thus, by
-    hypothesis, $T_g \cap T_k$ is unbounded. For definiteness, by
-    replacing $k$ by its inverse if necessary, we may assume this
-    unbounded intersection is at the attracting end of~$g$ (the argument is the same if the intersection is at the repelling end of~$g$. By
-    replacing $g$ and/or $h$ by their inverses if necessary, we may
-    assume that $T_g \cap T_k$ and $T_h \cap T_k$ are coherent (or a
-    point in the case of $T_h \cap T_k$).
-Suppose first $\ora{k}$ intersects $\ora{g}$ before $\ora{h}$.
-   
-    Now consider $h k^n$ for large $n$. By
-    Lemma~\ref{lem:convergence_action},
-    $\lim_{n \to \infty} (h k^n)^- = k^-$ and
-    $\lim_{n \to \infty} (h k^n)^+ = h \cdot k^+$, so for sufficiently
-    large $n$, $\ora{hk^n}$ crosses both $\ora{g}$ and $\ora{h}$. Fix
-    such an $n$.
-    
-    Let $x$ be the point on $T_h \cap T_k$ that is the largest with
-    respect to the ordering on~$T_k$, as shown in
-    Figure~\ref{fig:tree_k_crossing}. By
-    Lemma~\ref{lem:foundation_trees}(1b), $x$ is also on $T_{h k^n}$.
-    Since $T_h \cap T_k$ is coherent, we have
-    $x \in [K^n \cdot x, h \cdot x]$, and so $h \cdot x \in T_{h k^n}$
-    as well. But this contradicts~$T$ being a tree: with respect to
-    the order on $T_{h k^n}$, the intersection $T_{h k^n} \cap T_k$
-    contains both $x$ which is smaller than $h \cdot x$, and points
-    larger than $h \cdot x$, at the attracting end of $T_{h k^n}$.
-
-\DMGtodo{this part needs to be corrected}
-    If $\ora{k}$ intersects $\ora{h}$ before $\ora{g}$, we consider $\ora{k^nh}$. For $n>0$ large enough, $\ora{k^nh}$ intersects $\ora{g}$. In Fig.~\ref{fig:tree_k_crossing_bis}, we show the configuration in $T$ when $T_g$ and $T_{k^nh}$ overlap in the attractive end of $T_g$, and 
-    Fig.~\ref{fig:tree_k_crossing_bis2} in the repelling end.
-    In the first case, note that $g^{-1}k^nh$ is hyperbolic for $n$ large enough, since $k^nh$ and is hyperbolic and $g^{-1}$ is hyperbolic, and they have unbounded incoherent overlap, thus:
-   \[
-   \norm{g^{-m}k^nh} = \norm{g^m}-\norm{k^nh}.
-   \]
-    Thus, for $m>0$ large enough, $T_{g^{-m}k^nh}$ has unbounded incoherent overlap  with $T_g$ as well.
-    Then, it follows that
-    \[
-\norm{k^nh}=\norm{g^m(g^{-m}k^nh)}=\|g^{-1}k^nh\|-\norm{g} = \norm{k^nh}-2\norm{g}
-    \]
-    a contradiction since $g$ is assumed to be hyperbolic.
-    In the second case,  a similar computation gives a contradiction.
-    
-\begin{figure}
-  \begin{subfigure}[b]{0.45\textwidth}
-    \centering
-    \svgfignormal{tree_k_crossing_bis}
-    \caption{Relevant configuration if $\protect\ora{k}$ intersects $\protect\ora{h}$ before $\protect\ora{g}$, and the overlap $T_{k^nh}$ is on the attractive end of $T_g$.}
-    \label{fig:tree_k_crossing_bis}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.45\textwidth}
-    \centering
-    \svgfignormal{tree_k_crossing_bis2}
-    \caption{Relevant configuration if $\protect\ora{k}$ intersects $\protect\ora{h}$ before $\protect\ora{g}$, and the overlap $T_{k^nh}$ is on the repelling end of $T_g$.}
-    \label{fig:tree_k_crossing_bis2}
-  \end{subfigure}
-  \caption{New cases for proof of Lemma~\ref{lem:if_unbounded_then_reducible}}
-  \end{figure}
-  %   \medskip\hrule\medskip
-  %   (old proof below)
-    
-  %   We will further divide into cases depending on the intersection
-  %   $T_h \cap T_k$.
-  %   \begin{itemize}
-  %   \item Coherent bounded overlap. By
-  %     Lemma~\ref{lem:measures_parallelogram}, for $n$ large enough,
-  %   $\ora{h^nk^n}$ R-crosses~$\ora{g}$, in addition to crossing~$\ora{h}$. See
-  %   Figure~\ref{fig:tree_k_crossing} for an illustration of the
-  %   purported situation in~$T$. Since the action preserves axis
-  %   intersection, $T_{h^nk^n}$ and
-  %   $T_g$ must intersect. By assumption on~$g$, this intersection is unbounded.
-  %   We claim this forces $T_g$ and $T_h$ to intersect.
-  %   First, by taking $n$ larger if needed, $T_{h^nk^n}$ and $T_h$
-  %   also overlap in a coherent and bounded interval, by
-  %   Lemma~\ref{lem:foundation_trees} (see
-  %   Fig.~\ref{fig:trees_intersection}). If we let $x \in T_k \cap
-  %   T_h=[x',x]$, where $x'<x$ in the natural orientation. Since $x \in
-  %   T_{h^n k^n}$ by (the lemma), and $x$ is in the interval between
-  %   $K^n \cdot x$ and $h^n k^n(K^n \cdot x) = h^n \cdot x$, both $K^n
-  %   \cdot x$ and $h^n \cdot x$ are in $T_{h^nk^n}$. Since $x \in T_h$, and $h$ is hyperbolic, it follows that $d(x,h^n x)=\ell(h^n)>0$.
-  %   Since
-  %   $T_{h^nk^n}$ and $T_g$ are assumed to intersect, this creates a loop, which is a contradiction. See
-  %   Figure~\ref{fig:tree_k_crossing} for an illustration.
-  % \item Incoherent bounded overlap.
-  %   \DPTtodo{This $\ora{k'}$ no longer crosses $\ora{g}$, so I think
-  %     this needs its own argument}
-  %   Replace $k$ by $k' \coloneqq h^m k h^m$ for $m>0$ large enough, by Lemma~\ref{lem:make_coherent}, and repeat the argument above.
-  % \item
-  %   \DPTtodo{Merge with first case}
-  %   Coherent unbounded overlap. This is similar to the first case, see Fig.~\ref{fig:tree_k_crossing_unbounded_coherent}.
-  %   \item Incoherent unbounded overlap. Use $H^nk^n$ in place of
-  %     $h^nk^n$ and repeat the same argument as in the previous case.
-  %     See Fig.~\ref{fig:tree_k_crossing_unbounded_incoherent}.
-  %   \end{itemize}
-    
-    
-  %   If $(\ora{g},\ora{h})$ are anti-parallel, proceed similarly with the parallel pair $(\ora{g},\ora{H})$.
-\end{proof}
-
-\begin{figure}
-  \begin{subfigure}[b]{0.45\textwidth}
-    \centering
-    \svgfignormal{k_crossing}
-    \caption{Configuration of axes on $\wt{S}$}
-    \label{fig:k_crossing}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.45\textwidth}
-    \centering
-    \svgfignormal{tree_k_crossing}
-    \caption{Configuration of axes on $T$. $T_k \cap T_h$ bounded and coherent}
-    \label{fig:tree_k_crossing}
-  \end{subfigure}\\
-  \begin{subfigure}[b]{0.45\textwidth}
-    \centering
-    \svgfignormal{tree_k_crossing_unbounded_coherent}
-    \caption{Configuration of axes on $T$, $T_k \cap T_h$ unbounded coherent}
-    \label{fig:tree_k_crossing_unbounded_coherent}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.45\textwidth}
-    \centering
-    \svgfignormal{tree_k_crossing_unbounded_incoherent}
-    \caption{Configuration of axes on $T$, $T_k \cap T_h$ unbounded incoherent}
-    \label{fig:tree_k_crossing_unbounded_incoherent}
-  \end{subfigure}
-  \caption{The proof of Lemma~\ref{lem:if_unbounded_then_reducible} }
-\label{fig:main_k_crossing}
-\end{figure}
-\end{comment}
-
-
 We are now ready for the main component of Theorem~\ref{mainthm:skora}.
 
 \begin{theorem}
@@ -934,7 +791,8 @@ overlap.
 \end{proof}
 
 \DPTfyi{Shortened this transition}
-We now prove some related facts about reducible smoothings.
+For the full statement of Theorem~\ref{mainthm:skora},
+we prove some related facts about reducible smoothings.
 
 \begin{lemma}
 \label{lem:red_not_smoothing}
@@ -965,6 +823,7 @@ or they overlap incoherently, in which case
 \end{equation}
 \end{claim}
 \begin{proof}
+  \DMGtodo{Look for proof in Culler-Morgan}
   Clear from looking at the action on the common axis; see
   \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}.
 \end{proof}
@@ -1044,20 +903,11 @@ Then, by~\cite[Lemma~6.5]{CM87:GroupActions}, either:
 \end{itemize}
 In the first case, we have disconnected smoothing. The second case is
 not possible, as it contradicts Proposition~\ref{prop:max_twice}.
-\DPTtodo{Culler-Morgan's second case in Lemma 6.5 is never possible;
-  they presumably observe this at some later point.}
-\DPTfyi{Deleted stuff about
-  connected smoothing, that's already done}
-% To see that connected smoothing
-% does not hold, we can apply the previous case to the pair of
-% hyperbolic elements $gh,Hg$. If $(\ora{g},\ora{h})$ cross, then
-% $(\ora{gh},\ora{Hg})$ cross. Hence, $\norm{ \cdot}$ does not satisfy
-% connected smoothing, since $\norm{(gh)(Hg)}=\norm{g^2}=0$.
+(This is also impossible in the Culler-Morgan setting of any reducible
+action.)
 
 Finally, if $g$ and $h$ elliptic. Here we use the assumption the
 action has a fixed end,
-\DPTtodo{Changed ``$=$'' to ``$\ne$'' here and added why they
-  intersect, please check.}
 so $T_g \cap
 T_h \ne \emptyset$ (since the fixed sets intersect on a ray to the
 fixed end) and hence, by Lemma~\ref{lem:pau_two_ell},
