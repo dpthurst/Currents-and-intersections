@@ -243,16 +243,15 @@ introduced in \cite{MGT21:Smoothings}.
 \begin{definition} Let $f$ be a curve functional. We define the
   following properties.
 \begin{itemize}
-    \item \textbf{Oriented quasi-smoothing:} There is a constant $R\ge 0$ with the
-    \DPTtodo{Change $R$ to $K$ here and throughout. DMG on it}
+    \item \textbf{Oriented quasi-smoothing:} There is a constant $K\ge 0$ with the
       following property. Let $C$~be an oriented curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
-    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-R$. Schematically, we
+    smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-K$. Schematically, we
     have
     \begin{equation}\label{eq:quasismoothing}
-      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -R.
+      f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -K.
     \end{equation}
-    If $R=0$, we recover the oriented smoothing property. 
+    If $K=0$, we recover the oriented smoothing property. 
     
 We note that the above properties correspond to what we termed
 \emph{quasi-smoothing} and \emph{smoothing} in
@@ -380,22 +379,22 @@ curve functionals.
 
 \begin{enumerate}
 \item Let $\operatorname{Cont}^+(S)$ denote the space of continuous functions on $\Curr^+(S)$, the space of oriented geodesic currents.
-\item For fixed $R>0$, let $\QConvex_R^+(S)$ denote the set of curve
-functionals satisfying oriented $R$-quasi-smoothing, convex union,
+\item For fixed $K>0$, let $\QConvex_K^+(S)$ denote the set of curve
+functionals satisfying oriented $K$-quasi-smoothing, convex union,
 stability, and homogeneity. We refer to this as the space of
-\emph{oriented $R$-quasi-convex functionals}. Define
+\emph{oriented $K$-quasi-convex functionals}. Define
 \[
-\QConvex^+(S) \coloneqq \bigcup_{R>0} \QConvex_R^+(S),
+\QConvex^+(S) \coloneqq \bigcup_{K>0} \QConvex_K^+(S),
 \]
 the space of \emph{oriented quasi-convex curve functionals}.
 
-\item For $R>0$, let $\QConvex_R(S)$ be the subset of
-$\QConvex_R^+(S)$ consisting of symmetric curve functionals that also
-satisfy $R$-quasi-smoothing in both the oriented and unoriented
-settings. We call this the space of \emph{$R$-quasi-convex functionals}
+\item For $K>0$, let $\QConvex_K(S)$ be the subset of
+$\QConvex_K^+(S)$ consisting of symmetric curve functionals that also
+satisfy $K$-quasi-smoothing in both the oriented and unoriented
+settings. We call this the space of \emph{$K$-quasi-convex functionals}
 and define
 \[
-\QConvex(S) \coloneqq \bigcup_{R>0} \QConvex_R(S),
+\QConvex(S) \coloneqq \bigcup_{K>0} \QConvex_K(S),
 \]
 the space of \emph{quasi-convex curve functionals}.
 
@@ -510,13 +509,13 @@ smoothing or stability (see~\cite[Example~4.10]{MGT21:Smoothings},
 Moreover, its stabilized version does not necessarily satisfy smoothing
 (see the same example and~\cite[Theorem~B]{MGT21:Smoothings}).
 
-This illustrates the proper inclusion $\Convex(S) \subsetneq \QConvex_R(S)$ for $R>0$.
+This illustrates the proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
     \item Another example is provided by stable lengths associated to
 quasi-Fuchsian representations. These satisfy quasi-smoothing by
 \cite[Proposition~4.11]{MGT21:Smoothings}, and satisfy strict
 smoothing if and only if the representation is Fuchsian
 (see~\cite[Theorem~A]{FF22:QF} as well as~\cite[Proposition~1.8]{BR24:Cubulations}. This furnishes another instance of the
-proper inclusion $\Convex(S) \subsetneq \QConvex_R(S)$ for $R>0$.
+proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
 A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
 \PSL(2,\mathbb{C})$ is a
 conjugate of Fuchsian group by a (properly normalized) quasi-conformal
@@ -527,9 +526,9 @@ constant for $f_{\rho}$.
 
 \begin{question}
   Let $\rho$ be a
-quasi-Fuchsian representation, and let $R>0$ be the \emph{quasi-smoothing
-constant}, i.e., the minimal $R>0$ so that $\ell_{\rho} \in \QConvex_R(S)$. 
-Does $R \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
+quasi-Fuchsian representation, and let $K>0$ be the \emph{quasi-smoothing
+constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \QConvex_K(S)$. 
+Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \end{question}
 
 \DMGtodo{BTW, this example is new, can you please read it?}
@@ -539,7 +538,7 @@ uniformization of the hyperbolic metrics $Z,W$~\cite[Section~6.4]{Hub06:Vol1}.
 Let $\ell_{M_\phi}(\gamma)$ denote the translation length of $\gamma\in\pi_1(S)$ in this cyclic cover. Since $M_\phi$ is closed hyperbolic, there exists $\epsilon>0$ such that $\ell_{M_\phi}(\gamma)\geq \epsilon$ for every non-trivial closed curve $\gamma$. If $\ell_{M_\phi}$ extended continuously to geodesic currents, then for any hyperbolic structure $X$ on $S$, compactness of $\mathbb {P}\Curr(S)$ would imply the existence of $K>0$ such that $\ell_X(\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for every closed curve $\gamma$.
 
 On the other hand, the deck transformation induces $\phi$, so $\ell_{M_\phi}(\phi^n\gamma)=\ell_{M_\phi}(\gamma)$ for all $n\in\mathbb Z$. Hence $\ell_X(\phi^n\gamma)\leq K\,\ell_{M_\phi}(\gamma)$ for all $n$, contradicting the fact that the curves $\phi^n\gamma$ are pairwise distinct while a closed hyperbolic surface admits only finitely many closed geodesics of bounded length.
-In particular, by~\cite[Theorem~A]{MGT21:Smoothings}, the length cannot satisfy $R$-quasi-smoothing for any $R>0$. This limiting representation, even though not convex cocompact, is still discrete and faithful. This shows that in general lengths associated to discrete faithful representations of surface groups into $\PSL(2,\mathbb{C})$ need not extend continuously to geodesic currents.
+In particular, by~\cite[Theorem~A]{MGT21:Smoothings}, the length cannot satisfy $K$-quasi-smoothing for any $K>0$. This limiting representation, even though not convex cocompact, is still discrete and faithful. This shows that in general lengths associated to discrete faithful representations of surface groups into $\PSL(2,\mathbb{C})$ need not extend continuously to geodesic currents.
 \item The previous example fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
@@ -568,8 +567,8 @@ item), such translation lengths do not satisfy smoothing in general.
 homogeneity, and smoothing, but fails to satisfy additivity and even
 convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). 
 Thus it provides an example of a curve functional lying outside
-$\QConvex_R^+(S)$, despite extending to geodesic currents by
-Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_R^+(S) \subsetneq \operatorname{Cont}(S)$. Another example are exotic length functions on surface groups which vanish precisely on simple closed geodesics~\cite[Section~9]{CMGR26:GreenMetrics}: these extend to geodesic currents, since they satisfy the bouned-backtracking property (see~\cite{CR25:Manhattan} and~\cite[Section~7]{CMGR26:GreenMetrics}. However, they cannot satisfy $C$-quasi-smoothing for any $C>0$: indeed, we can take sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $a_n, b_n$ crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to infinity as $n \to \infty$. This shows they violate disconnected $C$-quasi-smoothing for every $C$.
+$\QConvex_K^+(S)$, despite extending to geodesic currents by
+Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_K^+(S) \subsetneq \operatorname{Cont}(S)$. Another example are exotic length functions on surface groups which vanish precisely on simple closed geodesics~\cite[Section~9]{CMGR26:GreenMetrics}: these extend to geodesic currents, since they satisfy the bouned-backtracking property (see~\cite{CR25:Manhattan} and~\cite[Section~7]{CMGR26:GreenMetrics}. However, they cannot satisfy $K$-quasi-smoothing for any $K>0$: indeed, we can take sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $a_n, b_n$ crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to infinity as $n \to \infty$. This shows they violate disconnected $C$-quasi-smoothing for every $K$.
 \item
   Lengths of quotients of embedded graphs $\mathcal{G}$ by large subgraphs do not necessarily extend continuously to geodesic
   currents~\cite[Proposition~11]{Bonahon91:CurrentsGroups}. In particular, they
@@ -589,10 +588,10 @@ Hence, $\ell$ cannot extend continuously. To see explicitly that
 $\ell$ does not satisfy quasi-smoothing, find crossing
 $\ora{a}$ and $\ora{b}$ as above. If quasi-smoothing were satisfied, by
 Proposition~\ref{prop:join-split-geom},
-Equation~\eqref{eq:cross-cancel}, there would exist a constants $R>0$
+Equation~\eqref{eq:cross-cancel}, there would exist a constant $K>0$
 and $s'>0$ so that for all $n \geq s'$, we would have
 \[
-\ell(ba^n ba^{-n}) \geq \ell(a^{2n})-R.
+\ell(ba^n ba^{-n}) \geq \ell(a^{2n})-K.
 \]
 But this inequality is violated, since on the one hand, the left hand side is $0$, and, on the other hand, the right hand side is positive for large enough $n$.
 \end{proof}
@@ -687,11 +686,12 @@ right. As in Proposition~\ref{prop:curve-positive}, we have
 \end{align*}
 Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
 \begin{align*}
-    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - R\\
-     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - R.
+    f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - K\\
+     f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - K
 \end{align*}
-Adding the equations, we get $f([a^n]) \geq -2R$. By stability and
-homogeneity, this yields $n f([a]) \geq -2R$, and taking $n$ large
+for some $K>0$.
+Adding the equations, we get $f([a^n]) \geq -2K$. By stability and
+homogeneity, this yields $n f([a]) \geq -2K$, and taking $n$ large
 enough we see that $f([a]) \geq 0$.
 \end{proof}
 
