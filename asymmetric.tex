@@ -10,7 +10,7 @@ geodesic currents.
 
 Analogously as in Definition~\ref{def:asymmetric} an asymmetric intersection number between curves only considering right-handed intersections (Definition~\ref{def:crossing}).
 
-In this Appendix, we will emphasize curves are oriented by writing $\vec C$ instead of $C$, and will write $-\vec C$ for the oriented curve with the opposite orientation to that of $\vec C$. \DMGtodo{added this, since the $\vec C$ notation is not consistent with the rest of the paper}
+In this Appendix, we will emphasize curves are oriented by writing $\vec C$ instead of $C$, and will write $-\vec C$ for the oriented curve with the opposite orientation to that of $\vec C$.
 
 \begin{definition} Given two oriented curves $\vec C$, $\vec D$, the
   asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the
@@ -41,12 +41,10 @@ In this Appendix, we will emphasize curves are oriented by writing $\vec C$ inst
 
 As a result, we have strong constraints on which asymmetric curve
 functionals can come from an asymmetric intersection number.
-
-\DPTtodo{The $\mathbf{C}$ notation for a virtual curve is new, should
-  probably explain it}
-
-For any collection of oriented curves $\{\vec C_i\}_{i=1}^k$, let $\vec{\mathbf{C}} \coloneqq \bigcup_i (\vec C_i
-  \cup -\vec C_i)$ denote the, that is, the oriented multi-curve obtained by taking both orientation representatives for each oriented curve in the collection. \DMGtodo{added this}
+For any collection of oriented curves $\{\vec C_i\}_{i=1}^k$, let
+$\vec{\mathbf{C}} \coloneqq \bigcup_i (\vec C_i \cup -\vec C_i)$
+denote the oriented multi-curve obtained by taking both
+orientation representatives for each oriented curve in the collection.
   
 \begin{proposition}\label{prop:asym-constraint}
   Consider a collection of oriented curves $\{\vec C_i\}_{i=1}^k$ so that
@@ -66,18 +64,30 @@ from asymmetric intersection numbers.
 
 \begin{example} First consider the flat unpunctured torus,
 and consider the functional $f$ given by word-length with respect
-to a monoid generating set corresponding to an oriented triangle. With
+to a monoid generating set corresponding to an oriented triangle. That
+is, with
 respect to standard generators $a,b$ with $[a,b] = e$, we consider the
 three (monoid) generators $a$, $b$, and $c = a^{-1}b^{-1}$. Word length with
 respect to this generating set behaves like this:
 \[
   \resizebox{50mm}{!}{\svgfig{length_asymmetric}}
 \]
-\DPTtodo{This argument maybe deserves a picture of the graph, and it
-  would be helpful to pull it out into an Example environment. DMG on it}
-  \DMGtodo{is this the right picture? also, there seems to be a notation clash between the edges and the curves $C_1,C_2,C_3$, which should be dual to the generators, no? Unless I'm confused here.}
-This word length satisfies oriented smoothing: we are looking at
-length with respect to an oriented graph with edges $\vec a, \vec b, \vec c$, which is still embedded.
+  \DMGtodo{is this the right picture? also, there seems to be a
+    notation clash between the edges and the curves $C_1,C_2,C_3$,
+    which should be dual to the generators, no? Unless I'm confused
+    here.}
+  \DPTtodo{WRT the $C_i$, the notation is not the clearest, but the
+    curves you drew are the $C_i$; there aren't curves ``dual to the
+    generators'', since the complement of the $a,b,c$ graph has two
+    triangles}
+  This word length satisfies oriented smoothing: we are looking at
+  length with respect to an oriented graph with edges
+  $\vec a, \vec b, \vec c$, which is still embedded:
+  \DPTtodo[inline]{To make this clearer, I would: \textbullet\ Put
+    copies of the $\vec{a}$ and $\vec{b}$ labels on both sides of the
+    parallelogram \textbullet\ Delete the $C_i$ extra curves
+    \textbullet\ Mark the vertex and make the arrowheads not overlap
+    as much.}
 \[
   \resizebox{50mm}{!}{\svgfig{torus_graph}}
 \]
@@ -96,8 +106,13 @@ These curves satisfy the conditions of
 Proposition~\ref{prop:asym-constraint}, but have lengths
 $\ell(\vec C_i) = 1$ and $\ell(-\vec C_i) = 2$. Concretely,
 Proposition~\ref{prop:asym-constraint} implies that, for any $\vec D$,
-$\vec{\imath}(\vec{\mathbf C_i}, \vec D)=0$ for $i=1,2,3$, which is not satisfied by these lengths, as one
-can see by example in Figure~\ref{fig:shortcurves}.
+$\vec{\imath}(\vec{\mathbf C_i}, \vec D)=0$ for $i=1,2,3$, which is
+not satisfied by these lengths. Figure~\ref{fig:shortcurves} shows
+some asymmetric intersection numbers that do satisfy these
+constraints.
+\DPTtodo{Figure needs more labeling; I will work on, eg, giving
+  captions to the subfigures. I think there's also at least one
+  mistaken number}
 
 
 \begin{figure}
