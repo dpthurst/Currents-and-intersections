@@ -10,6 +10,8 @@ geodesic currents.
 
 Analogously as in Definition~\ref{def:asymmetric} an asymmetric intersection number between curves only considering right-handed intersections (Definition~\ref{def:crossing}).
 
+In this Appendix, we will emphasize curves are oriented by writing $\vec C$ instead of $C$, and will write $-\vec C$ for the oriented curve with the opposite orientation to that of $\vec C$. \DMGtodo{added this, since the $\vec C$ notation is not consistent with the rest of the paper}
+
 \begin{definition} Given two oriented curves $\vec C$, $\vec D$, the
   asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the
   minimal number of right-handed crossings between any two homotopy
@@ -42,20 +44,22 @@ functionals can come from an asymmetric intersection number.
 
 \DPTtodo{The $\mathbf{C}$ notation for a virtual curve is new, should
   probably explain it}
+
+For any collection of oriented curves $\{\vec C_i\}_{i=1}^k$, let $\vec{\mathbf{C}} \coloneqq \bigcup_i (\vec C_i
+  \cup -\vec C_i)$ denote the, that is, the oriented multi-curve obtained by taking both orientation representatives for each oriented curve in the collection. \DMGtodo{added this}
+  
 \begin{proposition}\label{prop:asym-constraint}
-  For any collection of oriented curves $\{\vec C_i\}_{i=1}^k$ so that
-  $\sum_i h(\vec C_i) = 0$, let $\vec{\mathbf{C}} = \bigcup_i (\vec C_i
-  \cup -\vec C_i)$. Then for any oriented curve~$\vec D$, we have
+  Consider a collection of oriented curves $\{\vec C_i\}_{i=1}^k$ so that
+  $\sum_i h(\vec C_i) = 0$. Then for any oriented curve~$\vec D$, we have
   \[
-    \vec{\imath}(\vec{\mathbf C}, D) = 0.
+    \vec{\imath}(\vec{\mathbf C}, \vec D) = 0.
   \]
 \end{proposition}
 \begin{proof}
   Immediate from Lemma~\ref{lem:asym-intersect}.
 \end{proof}
 
-This shows that an oriented geodesic current is not determined by its asymmetric intersection numbers with all oriented curves, and hence cannot, in general, be realized as an asymmetric curve functional.
-\DPTtodo{Maybe contrast with Otal's result?}
+This shows that an oriented geodesic current is not determined by its asymmetric intersection numbers with all oriented curves, and hence cannot, in general, be realized as an asymmetric curve functional. In contrast, flip-invariant geodesic currents are determined by their geometric intersection numbers with all closed curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 We can also construct asymmetric functionals satisfying smoothing, stability and additivity that cannot come
 from asymmetric intersection numbers.
 
