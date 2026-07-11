@@ -72,11 +72,14 @@ def texlabelang(expr ang,s,p) = labelang(ang,textext(s),p) enddef;
 
 % ----------------------------------------
 % Colors
-color darkgreen, darkred, darkblue, purple;
+color darkgreen, darkred, darkblue, purple,yellow,darkyellow,orange;
 darkgreen = 0.6[black,0.1[green,blue]];
 darkred = 0.7[black,red];
 darkblue = 0.8[black,blue];
 purple = (0.8,0.17,0.68);
+yellow = (1,1,0);
+darkyellow = 0.8[black,yellow];
+orange = 0.5[yellow,red];
 % IU colors
 color IUcrimson, IUcream, IUoldgold, IUmidnight, IUmint, IUlimestone, IUmajestic;
 IUcrimson = (125, 17, 12)/256;
