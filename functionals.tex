@@ -420,9 +420,44 @@ functionals that additionally satisfy additivity.
 
 The examples and discussion below show we have strict inclusions
 \[
-\AConvex(S) \subsetneq \Convex(S) \subsetneq  \QConvex(S) \subsetneq \QConvex^+(S) \subsetneq \operatorname{Cont}^+(S)
+  \begin{tikzpicture}[x=3.25cm, y=1.25cm]
+    \node (AConvex) at (0,0) {$\strut\AConvex(S)$};
+    %
+    \node (Convex) at (1,1) {$\strut\Convex(S)$};
+    \node (AQConvex) at (1,0) {$\strut\AQConvex(S)$};
+    \node (AConvex+) at (1,-1) {$\strut\AConvex^+(S)$};
+    %
+    \node (QConvex) at (2,1) {$\strut\QConvex(S)$};
+    \node (Convex+) at (2,0) {$\strut\Convex^+(S)$};
+    \node (AQConvex+) at (2,-1) {$\strut\AQConvex^+(S)$};
+    %
+    \node (QConvex+) at (3,0) {$\strut\QConvex^+(S)$};
+    %
+    \node (Cont) at (3,2) {$\strut\Cont(S)$};
+    \node (Cont+) at (4,1) {$\strut\Cont^+(S)$};
+    %%
+    \draw [right hook->] (AConvex) to (Convex);
+    \draw [right hook->] (AConvex) to (AQConvex);
+    \draw [right hook->] (AConvex) to (AConvex+);
+    %
+    \draw [right hook->] (Convex) to (QConvex);
+    \draw [right hook->] (AQConvex) to (QConvex);
+    \draw [right hook->] (AQConvex) to (AQConvex+);
+    \draw [right hook->] (AConvex+) to (AQConvex+);
+    \draw [white,line width=1.5ex] (Convex) to (Convex+);
+    \draw [right hook->] (Convex) to (Convex+);
+    \draw [white,line width=1.5ex] (AConvex+) to (Convex+);
+    \draw [right hook->] (AConvex+) to (Convex+);
+    %
+    \draw [right hook->] (QConvex) to (QConvex+);
+    \draw [right hook->] (Convex+) to (QConvex+);
+    \draw [right hook->] (AQConvex+) to (QConvex+);
+    %
+    \draw [right hook->] (QConvex) to (Cont);
+    \draw [right hook->] (QConvex+) to (Cont+);
+    \draw [right hook->] (Cont) to (Cont+);
+  \end{tikzpicture}
 \]
-
 
 \subsection{Examples and non-examples}
 \label{subsec:examples_and_non}
