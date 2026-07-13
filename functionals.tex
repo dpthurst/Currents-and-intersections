@@ -251,7 +251,7 @@ introduced in \cite{MGT21:Smoothings}.
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-K$. Schematically, we
     have
-    \begin{equation}\label{eq:quasismoothing}
+    \begin{equation}\label{eq:or-quasismoothing}
       f\left(\mfig{curves-3}\right) \ge f\left(\mfig{curves-4}\right) -K.
     \end{equation}
     If $K=0$, we recover the oriented smoothing property. 
@@ -369,56 +369,9 @@ Proposition~\ref{prop:crossings-triality}.
 
 \subsection{General context and examples}
 
-Here we place our results in the broader framework initiated
-in~\cite{MGT21:Smoothings}, explain their relation to recent work in
-the literature, and provide examples of curve functionals that do and
-do not satisfy the hypotheses of the main theorem.
-This section is logically independent of the main arguments and is not
-used in the proofs of the principal results.
-
-\begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
-In decreasing order of generality, we consider the following classes of
-curve functionals.
-
-\begin{enumerate}
-\item Let $\operatorname{Cont}^+(S)$ denote the space of continuous functions on $\Curr^+(S)$, the space of oriented geodesic currents.
-\item For fixed $K>0$, let $\QConvex_K^+(S)$ denote the set of curve
-functionals satisfying oriented $K$-quasi-smoothing, convex union,
-stability, and homogeneity. We refer to this as the space of
-\emph{oriented $K$-quasi-convex functionals}. Define
-\[
-\QConvex^+(S) \coloneqq \bigcup_{K>0} \QConvex_K^+(S),
-\]
-the space of \emph{oriented quasi-convex curve functionals}.
-
-\item For $K>0$, let $\QConvex_K(S)$ be the subset of
-$\QConvex_K^+(S)$ consisting of symmetric curve functionals that also
-satisfy $K$-quasi-smoothing in both the oriented and unoriented
-settings. We call this the space of \emph{$K$-quasi-convex functionals}
-and define
-\[
-\QConvex(S) \coloneqq \bigcup_{K>0} \QConvex_K(S),
-\]
-the space of \emph{quasi-convex curve functionals}.
-
-\item Let
-\[
-\Convex(S) \coloneqq \QConvex_{0}(S)
-\]
-be the space of \emph{convex curve functionals}.
-Under the stronger smoothing assumption of multi-smoothing, such functionals induce convex
-functions in train-track coordinates (see
-Section~\ref{sec:convexity_charts}).
-
-\item Let $\AConvex(S)$ denote the space of \emph{additive convex curve
-functionals}, namely the subset of $\Convex(S)$ consisting of
-functionals that additionally satisfy additivity.
-(The prefix ``A'' indicates additivity.)
-
-\end{enumerate}
-\end{definition}
-
-The examples and discussion below show we have strict inclusions
+To put the present work in the broader context of our previous
+work~\cite{MGT21:Smoothings}, we can consider a variety of spaces of
+functionals on currents, as summarized in the following diagram.
 \[
   \begin{tikzpicture}[x=3.25cm, y=1.25cm]
     \node (AConvex) at (0,0) {$\strut\AConvex(S)$};
@@ -458,15 +411,112 @@ The examples and discussion below show we have strict inclusions
     \draw [right hook->] (Cont) to (Cont+);
   \end{tikzpicture}
 \]
+Although our main theorem is about the smallest space $\AConvex(S)$,
+we digress to define and give examples of the other spaces to better
+delineate the scope of our results.
 
-\subsection{Examples and non-examples}
-\label{subsec:examples_and_non}
-In previous work, we proved the following result.
+\begin{definition}[Variations on convex curve functionals]
+  The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
+  is the set of functionals on unoriented curves satisfying smoothing,
+  convex union, stability, and homogeneity. We may equivalently think
+  of these as functionals on oriented curves that satisfy the symmetry
+  property.
+
+  For the qualifier $A$, the \emph{additive} functionals, replace the
+  condition of convex union~\eqref{eq:union-convex} with
+  additivity~\eqref{eq:union-additive}.
+
+  For the qualifier $Q$, the \emph{quasi-convex} functionals, replace
+  the condition of smoothing~\eqref{eq:smoothing} with
+  unoriented quasi-smoothing\DPTtodo{Put this eq here since we never
+    stated it earlier or for that matter in our previous paper. But
+    maybe it should be moved}
+\begin{equation}\label{eq:quasismoothing}
+f\!\left(\mfig{curves-0}\right)
+\ge
+\max\!\left\{
+f\!\left(\mfig{curves-1}\right),
+f\!\left(\mfig{curves-2}\right)
+\right\} - K
+\end{equation}
+  for some $K > 0$. We can add a subscript $\QConvex_K(S)$ to
+  indicate a fixed value of~$K$.
+
+  For the qualifier ${}^+$, the \emph{oriented} functionals, we
+  consider instead functions on oriented curves. The smoothing
+  property~\eqref{eq:smoothing} is replaced by the weaker oriented
+  smoothing property~\eqref{eq:or-smoothing}, and likewise
+  quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
+  quasi-smoothing~\eqref{eq:or-quasismoothing}.
+\end{definition}
+
+\begin{definition}
+  The space $\Cont^+(S)$ is the space of all \emph{continuous functionals} on
+  the space of oriented geodesic currents, $\Curr^+(S)$. The subspace
+  $\Cont(S)$ consists of continuous functionals on unoriented geodesic
+  currents $\Curr(S)$.
+\end{definition}
+
+% Here we place our results in the broader framework initiated
+% in~\cite{MGT21:Smoothings}, explain their relation to recent work in
+% the literature, and provide examples of curve functionals that do and
+% do not satisfy the hypotheses of the main theorem.
+
+% \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
+% In decreasing order of generality, we consider the following classes of
+% curve functionals.
+
+% \begin{enumerate}
+% \item Let $\operatorname{Cont}^+(S)$ denote the space of continuous functions on $\Curr^+(S)$, the space of oriented geodesic currents.
+% \item For fixed $K>0$, let $\QConvex_K^+(S)$ denote the set of curve
+% functionals satisfying oriented $K$-quasi-smoothing, convex union,
+% stability, and homogeneity. We refer to this as the space of
+% \emph{oriented $K$-quasi-convex functionals}. Define
+% \[
+% \QConvex^+(S) \coloneqq \bigcup_{K>0} \QConvex_K^+(S),
+% \]
+% the space of \emph{oriented quasi-convex curve functionals}.
+
+% \item For $K>0$, let $\QConvex_K(S)$ be the subset of
+% $\QConvex_K^+(S)$ consisting of symmetric curve functionals that also
+% satisfy $K$-quasi-smoothing in both the oriented and unoriented
+% settings. We call this the space of \emph{$K$-quasi-convex functionals}
+% and define
+% \[
+% \QConvex(S) \coloneqq \bigcup_{K>0} \QConvex_K(S),
+% \]
+% the space of \emph{quasi-convex curve functionals}.
+
+% \item Let
+% \[
+% \Convex(S) \coloneqq \QConvex_{0}(S)
+% \]
+% be the space of \emph{convex curve functionals}.
+% Under the stronger smoothing assumption of multi-smoothing, such functionals induce convex
+% functions in train-track coordinates (see
+% Section~\ref{sec:convexity_charts}).
+
+% \item Let $\AConvex(S)$ denote the space of \emph{additive convex curve
+% functionals}, namely the subset of $\Convex(S)$ consisting of
+% functionals that additionally satisfy additivity.
+% (The prefix ``A'' indicates additivity.)
+
+% \end{enumerate}
+% \end{definition}
+
+% The examples and discussion below show we have strict inclusions
+
+All the inclusions are immediate from the definitions, with the
+exception of the inclusions into $\Cont^+(S)$, which was the main
+result of our previous work.
 
 \begin{theorem}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex^+(S)$. Then there is a unique continuous homogeneous function
   $\bar{f} \colon \Curr^+(S) \to \bbR_{\ge 0}$ that extends~$f$.
 \end{theorem}
+
+\subsection{Examples and non-examples}
+\label{subsec:examples_and_non}
 
 It is straightforward to verify that the properties of symmetry,
 smoothing, additivity, and stability---defining the space
