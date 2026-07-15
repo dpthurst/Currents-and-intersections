@@ -115,6 +115,7 @@ We introduce several properties that $f$ may satisfy.
 If $C$ and $C'$ are oriented multi-curves with the same underlying unoriented multi-curve, then
 \begin{equation}
 f(C)=f(C').
+\label{eq:symmetry}
 \end{equation}
 
 \item \textbf{Oriented smoothing:}
@@ -155,18 +156,18 @@ non-increasing under such a type of smoothing.
   inequalities  are satisfied.
 \begin{itemize}
 
-\item \textbf{Oriented disconnected smoothing.}
+\item \textbf{Oriented disconnected smoothing:}
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect,
 \begin{equation}\label{eq:or-disconn-smoothing}
 f([a][b]) \ge f([ab]).
 \end{equation}
-\item \textbf{Oriented connected smoothing.}
+\item \textbf{Oriented connected smoothing:}
 For any pair of elements $a,b \in \pi_1(S)$ whose hyperbolic axes are parallel
 (i.e., disjoint and coherently oriented),
 \begin{equation}\label{eq:or-conn-smoothing}
 f([ab]) \ge f([a][b]).
 \end{equation}
-\item \textbf{Power smoothing.}
+\item \textbf{Power smoothing:}
 For any element $a \in \pi_1(S)$ and integers $n,m \ge 1$,
 \begin{equation}
 f([a^{n+m}]) \ge f([a^m][a^n]).
@@ -266,26 +267,22 @@ curve with. See also Section~\ref{subsec:crossings}.
 
 As before, smoothing and max-smoothing admit algebraic reformulations.
 
-\DPTtodo{In principle this is a redefinition of ``smoothing''. Maybe make
-  this a definition for a function on $\pi_1$? But also it's not
-  parallel to the structure in the oriented case. Also make these
-  properties bold to parallel everything else}
+\DMGtodo{edited this, not sure if that's what you had in mind.}
 \begin{definition}[smoothing for oriented curve functionals]
  Given an \emph{oriented} curve functional $f \colon \Curves^+(S) \to \mathbb{R}$, we will say it satisfies \emph{smoothing} if it satisfies the following hypotheses:
 \begin{itemize}
-\item Symmetry, as defined above;
-\item (Disconnected smoothing) For any pair of
+\item \textbf{Symmetry:} as in Definition~\ref{def:properties};
+\item \textbf{Disconnected smoothing:} For any pair of
   elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have 
   \[ f([a] [b]) \geq \max\,\{\,f([ab]), f([aB])\,\}; \] if the inequality is
   strengthened to an equality we obtain \emph{disconnected max-smoothing}.
-\item (Connected smoothing) For any pair of elements $a,b \in
+\item \textbf{Connected smoothing:} For any pair of elements $a,b \in
   \pi_1(S)$ whose hyperbolic axes are parallel, we have
   \[ f([ab]) \geq \max\,\{\,f([aB]), f([a] [b])\,\}; \]
   if the inequality is
   strengthened to an equality we get \emph{connected max-smoothing}.
- \item (Power smoothing) For any element $a \in \pi_1(S)$, and any
-  integers $n,m\geq 1$, we have \begin{equation} f([a^{n+m}]) \geq f([a^{ m}]) +
-  f([a^{ n}]).\label{eq:power_smoothing_unoriented}\end{equation}
+ \item \textbf{Power smoothing:} For any element $a \in \pi_1(S)$, and any
+  integers $n,m\geq 1$, we have \begin{equation} f([a^{n+m}]) \geq f([a^{ m}][a^{ n}]).\label{eq:power_smoothing_unoriented}\end{equation}
 \end{itemize}
 \label{def:smoothing_for_oriented}
 \end{definition}
@@ -518,9 +515,7 @@ section discussing the examples in more detail.
 \item More generally, length w.r.t.\ a non-positively curved Euclidean
   cone metric of angle $\geq 2\pi$
   \cite[Proposition~3.3]{BL17:RigidityFlat},
-  \cite{Con18:MarkedNonpos}. As an important case, see the recent
-  \DPTtodo{Characterization of what? DMG will expand}
-  characterization \cite[Definition~2.2]{PS26:1ntranslation}.
+  \cite{Con18:MarkedNonpos}. As an important case, see the recent construction of dual currents for $\frac{1}{n}$-translation structures~\cite[Definition~2.2]{PS26:1ntranslation}.
 \item \label{item:simple-gen}
   Word length w.r.t.\ simple generating sets
   \cite[Theorem~1.2]{Erlandsson:WordLength}
@@ -668,6 +663,7 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 
 \DPTtodo{Previous example uses the following, consequence of
   compactness, first step to curve-counting. Flesh this out}
+  \DMGtodo{this also needs homogeneity, otherwise it is not true}
 \begin{proposition}
   If $f \colon \Curves^+(S) \to \bbR_{\ge 0}$ has positive systole
   and extends continuously to currents, then for each~$K$, there are
@@ -678,10 +674,10 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 Example~\ref{examp:qf} fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
-non-compact type $G$, such as $\SL(n,\mathbb{R})$.
+non-compact type $\mathbb{G}$, such as $\SL(n,\mathbb{R})$.
 Let $\mathfrak{a}$ be a Cartan subspace with an associated set of simple restricted
 roots $\Pi$. Given $\Theta\subset\Pi$, let
-$\mathfrak{a}_\Theta\subset\mathfrak{a}$ and $P_\Theta<G$ be the
+$\mathfrak{a}_\Theta\subset\mathfrak{a}$ and $P_\Theta<\mathbb{G}$ be the
 associated subspace and parabolic subgroup. If
 $\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, then, for every positive
 linear functional $\varphi\in\mathfrak{a}_\Theta^*$, the function
@@ -754,7 +750,7 @@ $\ACont(S)$.
   \DPTtodo{Too abbreviated. Define example first}
   Given an embedded, filling graph $\cG \subset S$ and a large
   subgraph $\mathcal{H} \subset \cG$, consider
-  $\ell_{\cG/\cH}$, the length on the quotient graph $\cG/\cH$. These lengths
+  $\ell_{\cG/\cH}$, the length on the quotient graph $\cG/\cH$. For example, let $\cG$ be a filling graph arising as a generating set of curves, and let $\cH$ be a subgraph consisting of at least a pair of generators generating a normal subgroup of $\cH$. \DMGtodo{added a few more words to the initial example, not sure if it was necessary} These lengths
   do not necessarily extend continuously to geodesic
   currents~\cite[Proposition~11]{Bonahon91:CurrentsGroups}. In particular, they
 do not satisfy quasi-smoothing in general. By considering the
@@ -785,11 +781,12 @@ But this inequality is violated, since on the one hand, the left hand side is $0
 \end{proof}
 
 \begin{example}\label{examp:lorentzian}
-The Lorentzian length associated to an affine action of a Fuchsian
+The signed Lorentzian length associated to an affine action of a Fuchsian
 group~\cite{GM00:FlatLorentzian} does not satisfy quasi-smoothing.
 Indeed, although it satisfies
-\DPTtodo{Aren't all these conditions obvious? Why is there a citation?}
-symmetry, stability, and additivity
+\DPTtodo{Aren't all these conditions obvious? Why is there a citation?} 
+\DMGtodo{they are only obvious when the affine action is proper, in which case it is the actual lorentzian length of curves in some manifold, otherwise is a weird signed function. In fact, I need to double check this example because originally I assumed function was symmetric, which is *not true* in general, and hence I cannot apply Proposition~\ref{prop:curve-positive2} to conclude it does not satisfy quasi-smoothing. I still think it does not satisfy oriented quasi-smoothing, but it requires a proof}
+stability, and additivity
 \cite[p.~1053]{GML09:ProperAffine}, it takes both positive and negative
 values. Proposition~\ref{prop:curve-positive2} below shows that this
 precludes quasi-smoothing.
@@ -833,6 +830,7 @@ This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. t
 \DPTtodo[inline]{Is $\sqrt{\vec\imath(\mu,\mu)}$ continuous? If so it
 gives an example in $\Cont^+(S)$. It is easy to give unnatural
 examples in $\Cont^+$ anyway. DMG will think about examples here}
+\DMGtodo{I believe the example of signed lorentzian length should be such a natural example, but still pending, see comment above}
 
 \subsection{Non-negativity}
 
