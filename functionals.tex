@@ -280,8 +280,8 @@ Smoothing is satisfied by many natural functionals, including
 intersection functionals $i(\mu,\cdot)$ for any geodesic current $\mu$
 (see~\cite[Section~4.1]{MGT21:Smoothings}; cf.~Appendix~\ref{app:necessary}),
 as well as curve lengths arising from a length metric structure on $S$
-(see~\cite[Section~4.3]{MGT21:Smoothings}; cf. Section~\ref{subsec:ineqintersection}).
-Further examples are discussed in Section~\ref{subsec:examples_and_non}.
+(see~\cite[Section~4.3]{MGT21:Smoothings}; cf. Section~\ref{subsec:length-metrics}).
+Further examples are discussed in Section~\ref{subsec:examples}.
 
 As before, smoothing and max-smoothing admit algebraic reformulations.
 
@@ -396,12 +396,15 @@ the properties above.
 \end{definition}
 
 
-\DPTfyi{Totally rewritten}
 With this setup, we can consider a variety of spaces of
-functionals on currents, as summarized in the following diagram and
-explained at greater length below.
-\DPTtodo{Should this be a figure rather than an equation?}
-\[
+functionals on currents, as summarized in
+Figure~\ref{fig:curve-functionals}.
+Our main theorems are about the smallest space $\AConvex(S)$, but
+we digress to explore the other spaces to better
+delineate the scope of our results.
+
+\begin{figure}
+  \centering
   \begin{tikzpicture}[x=3.25cm, y=1.25cm]
     \node (AConvex) at (0,0) {$\strut\AConvex(S)$};
     %
@@ -439,10 +442,10 @@ explained at greater length below.
     \draw [right hook->] (QConvex+) to (Cont+);
     \draw [right hook->] (Cont) to (Cont+);
   \end{tikzpicture}
-\]
-Our main theorem is about the smallest space $\AConvex(S)$, but
-we digress to explore the other spaces to better
-delineate the scope of our results.
+  
+  \caption{Spaces of curve functionals and inclusions between them}
+  \label{fig:curve-functionals}
+\end{figure}
 
 \begin{definition}[Variations on convex curve functionals]
   The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
@@ -457,9 +460,7 @@ delineate the scope of our results.
 
   For the qualifier $Q$, the \emph{quasi-convex} functionals, replace
   the condition of smoothing~\eqref{eq:smoothing} with
-  quasi-smoothing\DPTtodo{Put this eq here since we never
-    stated it earlier or for that matter in our previous paper. But
-    maybe it should be moved}
+  quasi-smoothing~\eqref{eq:quasismoothing}.
   We can add a subscript, like $\QConvex_K(S)$, to
   indicate a fixed value of~$K$.
 
@@ -469,13 +470,11 @@ delineate the scope of our results.
   smoothing property~\eqref{eq:or-smoothing}, and likewise
   quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
   quasi-smoothing~\eqref{eq:or-quasismoothing}.
-\end{definition}
 
-\begin{definition}
-  The space $\Cont^+(S)$ is the space of all \emph{continuous functionals} on
-  the space of oriented geodesic currents, $\Curr^+(S)$. The subspace
-  $\Cont(S)$ consists of continuous functionals on unoriented geodesic
-  currents $\Curr(S)$.
+  Finally, the space $\Cont^+(S)$ is the space of all \emph{continuous
+    functionals} on the space of oriented geodesic currents,
+  $\Curr^+(S)$. The subspace $\Cont(S)$ consists of continuous
+  functionals on unoriented geodesic currents $\Curr(S)$.
 \end{definition}
 
 % Here we place our results in the broader framework initiated
@@ -528,8 +527,8 @@ delineate the scope of our results.
 % The examples and discussion below show we have strict inclusions
 
 All the inclusions are immediate from the definitions, with the
-exception of the inclusions into $\Cont^+(S)$, which was the main
-result of our previous work.
+exception of the inclusions into $\Cont(S)$ and $\Cont^+(S)$, which
+was the main result of our previous work.
 
 \begin{theorem}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex^+(S)$. Then there is a unique continuous homogeneous function
@@ -542,9 +541,10 @@ a convex function in every train-track coordinate chart in the space
 of measured laminations. See Sections~\ref{subsec:multismoothing}
 and~\ref{sec:convexity_charts}.
 
-\subsection{Examples and non-examples}
-\label{subsec:examples_and_non}
-
+\subsection{Examples}
+\label{subsec:examples}
+\DPTtodo{I think we've mentioned this fact several times now. Right
+  here seems like the natural place to state it}
 It is straightforward to verify that the properties of symmetry,
 smoothing, additivity, and stability---defining the space
 $\AConvex(S)$---are satisfied by every intersection functional
@@ -561,76 +561,147 @@ Appendix~\ref{app:necessary}, more closely aligned with the arguments
 in this paper
 involving lifts to the universal cover.
 
-Many natural notions of length satisfy these properties and are known
-to extend continuously to geodesic currents as intersection
-functionals. We list several such examples below, along with the
-appropriate references.
+Many natural notions of ``length'' satisfy the properties of
+$\AConvex(S)$ and were previously known
+to extend continuously to geodesic currents, and furthermore have dual
+geodesic currents. We list several such examples below, along with the
+appropriate references. These are all subsumed by
+Theorem~\ref{thm:intersect}; we give pointers to the particular
+section discussing the examples in more detail.
 
-\subsubsection{Examples}
-\label{subsec:examples}
 \begin{enumerate}
-   \item Intersection number with a fixed geodesic current. See \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}.
-    \item Hyperbolic lengths  \cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
-    \item More generally, length w.r.t.\ negatively curved Riemannian metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}.
-    \item Even more generally, non-positively curved Riemannian metrics
-\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}.
-\item Lengths with respect to negatively curved Riemannian  metrics with conical singularities of angle $\geq 2\pi$ \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
-\item Lengths with respect to singular Euclidean metrics coming from quadratic differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
-\item
-  More generally, non-positively curved Euclidean cone metrics of angle $\geq 2\pi$ \cite[Proposition~3.3]{BL17:RigidityFlat}, \cite{Con18:MarkedNonpos}. As an important case, see the recent characterization~\cite[Definition~2.2]{PS26:1ntranslation}.
-    \item Word length with respect to simple generating sets \cite[Theorem~1.2]{Erlandsson:WordLength}.
-    \item Lengths associated to Anosov representations induced by positive generalized cross-ratios \cite[Proposition~2.24]{MZ19:PositivelyRatioed}, \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}. Specifically, Martone-Zhang~\cite{MZ19:PositivelyRatioed} showed that a family of representations equipped with positive H\"older generalized
-cross-ratios and termed \emph{positively ratioed}, induce curve
+   \item Intersection number with a fixed geodesic current
+     \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}
+     (Appendix~\ref{app:necessary}).
+    \item Length with respect to a fixed hyperbolic metric
+      \cite[Proposition~14]{Bonahon88:GeodesicCurrent}
+      (Section~\ref{subsec:liouville}).
+    \item More generally, length w.r.t.\ negatively curved Riemannian
+      metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}
+      (Section~\ref{subsec:length-metrics} for this and the next
+      several examples).
+    \item Even more generally, length w.r.t.\ non-positively curved Riemannian metrics
+\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
+\item Length w.r.t.\ to a negatively curved Riemannian metric with
+  conical singularities of angle $\geq 2\pi$
+  \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
+\item Length w.r.t.\ a singular Euclidean metric coming from quadratic
+  differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
+\item More generally, length w.r.t.\ a non-positively curved Euclidean
+  cone metric of angle $\geq 2\pi$
+  \cite[Proposition~3.3]{BL17:RigidityFlat},
+  \cite{Con18:MarkedNonpos}. As an important case, see the recent
+  \DPTtodo{Characterization of what?}
+  characterization \cite[Definition~2.2]{PS26:1ntranslation}.
+\item \label{item:simple-gen}
+  Word length w.r.t.\ simple generating sets
+  \cite[Theorem~1.2]{Erlandsson:WordLength}
+  (Section~\ref{subsec:embedded_graphs}).
+\item Lengths associated to Anosov representations induced by positive
+  generalized cross-ratios. Specifically,
+  Martone-Zhang \cite[Proposition~2.24]{MZ19:PositivelyRatioed} showed that a family of representations equipped with positive H\"older generalized
+cross-ratios and termed \emph{positively ratioed} induce curve
 functionals, via their \emph{periods}, dual to geodesic currents. They further established that
 these functionals satisfy connected smoothing~\cite[Proposition~4.5]{MZ19:PositivelyRatioed}.
-Burger-Iozzi-Parreau-Pozzetti later extended their construction to generalized cross-ratios that need not be continuous.
+Burger-Iozzi-Parreau-Pozzetti later extended their construction to
+generalized cross-ratios that need not be continuous
+\cite[Theorem~1.6]{BIPP24:PositiveCrossratios}
+(Section~\ref{sec:crossratios}.
 \label{item:positively-ratioed}
 \end{enumerate}
 
-Theorem~\ref{thm:intersect} subsumes all of the
-preceding results. This is explained in
-Section~\ref{sec:special-classes} for items~(1)--(8) and in
-Section~\ref{sec:crossratios} for item~(9). In fact, by Theorem~\ref{mainthm:crossratio}, the period of any generalized cross-ratio satisfies smoothing.
-
-In particular, Section~\ref{subsec:embedded_graphs} shows that
+We have generalizations of many of these. In
+Section~\ref{subsec:length-metrics}, we further generalize items
+(2)--(7) to show than any curve length arising from a length
+(pseudo)metric structure on $S$ induces a dual geodesic current. In
+Section~\ref{subsec:embedded_graphs} we show that
 item~(8) admits a further generalization to stable lengths associated
-to embedded graphs on the surface. Moreover,
-Section~\ref{subsec:ineqintersection} discusses how any curve length
-arising from a length metric structure on $S$ induces a dual geodesic
-current.
+to embedded graphs on the surface. Theorem~\ref{mainthm:crossratio},
+proved in Section~\ref{sec:questions}, shows that the period of any
+generalized cross-ratio satisfies smoothing, generalizing
+item~\ref{item:positively-ratioed}.
 
-\subsubsection{Non-examples}
+\subsection{Non-examples}
+\label{subsec:non-examples}
 
 In order to illustrate the complexity of the problem,
 we now show examples of many natural functions on curves that do
 \emph{not} satisfy the $\AConvex$ properties, even though many of them
-still extend continuously to geodesic currents.
+still extend continuously to geodesic currents. In each case we give
+the largest class the example is contained in.
+
+\begin{example}\label{examp:embedded-dir-graph}
+  Generalizing item~\ref{item:simple-gen} in
+  Section~\ref{subsec:examples}, we can consider not only length with
+  respect to any embedded unoriented graph
+  (Section~\ref{subsec:embedded_graphs}) but also length with respect
+  on embedded directed graphs, giving examples in
+  $\AConvex^+(S)$ (Appendix~\ref{sec:asymmetric}).
+\end{example}
+
+\begin{example}\label{examp:non-emb-graph}
+  Continuing from the previous example, we can consider length of
+  curves with respect to a graph that need not be embedded. This is
+  closely related to considering word length with respect to an
+  arbitrary (not simple) generating set of $\pi_1(S)$. Such word need
+  not satisfy smoothing or stability
+  (see~\cite[Example~4.10]{MGT21:Smoothings},
+  \cite[Theorem~1.5]{EPS20:CountingCurves},
+  \cite{Erlandsson:WordLength}). The stable length does
+  not necessarily satisfy smoothing
+  (see~\cite[Example~4.10]{MGT21:Smoothings}
+  and~\cite[Theorem~B]{MGT21:Smoothings}), giving examples in
+  $\AQConvex(S)$ or $\AQConvex^+(S)$ depending on whether the graph is
+  undirected or directed (or whether the generating set is symmetric
+  under inverse or not).
+\end{example}
+
+\begin{example}\label{examp:el}
+  The square root of extremal length w.r.t.\ a fixed conformal
+  structure on~$S$ satisfies symmetry, smoothing, stability, convex
+  union, and homogeneity, and therefore provides an example in
+  $\Convex(S)$. However, it does not satisfy additivity
+  \cite[Section~4.8]{MGT21:Smoothings}.
+\end{example}
+
+\DPTtodo{Following example new. May need to be expanded}
+\begin{example}\label{examp:el-graph}
+  Continuing from the three previous examples, there is a
+  version of extremal length with respect to a graph generating
+  $\pi_1(S)$ \cite{Thu16:Research,Thurston19:Elastic}. (define
+  functional) This give examples in $\Convex(S)$, $\Convex^+(S)$,
+  $\QConvex(S)$, or $\QConvex^+(S)$, depending on whether the graph is
+  undirected or directed, and on whether the graph is embedded or not.
+  We omit the details.
+\end{example}
+
+\DPTtodo[inline]{In progress: pull these out into Example environments}
 
 \begin{enumerate}
-    \item Some curve functionals are not symmetric but nevertheless satisfy
-oriented quasi-smoothing, thus providing examples in
-$\QConvex^+(S)$ (see also item~(3) below). For instance, the stable
-lengths of word metrics arising from asymmetric generating sets,
-as discussed in~\cite[Section~4.6]{MGT21:Smoothings}, furnish such
-examples.
+%     \item Some curve functionals are not symmetric but nevertheless satisfy
+% oriented quasi-smoothing, thus providing examples in
+% $\QConvex^+(S)$ (see also item~(3) below). For instance, the stable
+% lengths of word metrics arising from asymmetric generating sets,
+% as discussed in~\cite[Section~4.6]{MGT21:Smoothings}, furnish such
+% examples.
 
-This illustrates the proper containment $\QConvex(S) \subsetneq \QConvex^+(S)$.
-    \item The square root of extremal length satisfies symmetry, smoothing,
-stability, convex union, and homogeneity, and therefore provides an
-example in $\Convex(S)$. However, it does not satisfy additivity
-(see~\cite[Section~4.8]{MGT21:Smoothings}). Functionals of this type
-extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
+% This illustrates the proper containment $\QConvex(S) \subsetneq \QConvex^+(S)$.
+%     \item The square root of extremal length satisfies symmetry, smoothing,
+% stability, convex union, and homogeneity, and therefore provides an
+% example in $\Convex(S)$. However, it does not satisfy additivity
+% (see~\cite[Section~4.8]{MGT21:Smoothings}). Functionals of this type
+% extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
 
-This example illustrates the proper containment $\AConvex(S) \subsetneq \Convex(S).$
-    \item Word length with respect to an arbitrary generating set of $\pi_1(S)$
-satisfies additivity (by linear extension), but it need not satisfy
-smoothing or stability (see~\cite[Example~4.10]{MGT21:Smoothings},
-\cite[Theorem~1.5]{EPS20:CountingCurves},
-\cite{Erlandsson:WordLength}). 
-Moreover, its stabilized version does not necessarily satisfy smoothing
-(see~\cite[Example~4.10]{MGT21:Smoothings} and~\cite[Theorem~B]{MGT21:Smoothings}).
+% This example illustrates the proper containment $\AConvex(S) \subsetneq \Convex(S).$
+%     \item Word length with respect to an arbitrary generating set of $\pi_1(S)$
+% satisfies additivity (by linear extension), but it need not satisfy
+% smoothing or stability (see~\cite[Example~4.10]{MGT21:Smoothings},
+% \cite[Theorem~1.5]{EPS20:CountingCurves},
+% \cite{Erlandsson:WordLength}). 
+% Moreover, its stabilized version does not necessarily satisfy smoothing
+% (see~\cite[Example~4.10]{MGT21:Smoothings} and~\cite[Theorem~B]{MGT21:Smoothings}).
 
-This illustrates the proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
+% This illustrates the proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
     \item A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
 \PSL(2,\mathbb{C})$ is a
 conjugate of Fuchsian group by a (properly normalized) quasi-conformal
