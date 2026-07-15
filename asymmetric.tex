@@ -11,16 +11,14 @@ geodesic currents.
 Analogously to Definition~\ref{def:asymmetric}, we define an asymmetric
 intersection number between curves only considering right-handed
 intersections (Definition~\ref{def:crossing}).
-\DPTfyi{Changed notation to be multiplicative for inverses, since we
-  also need negative linear combinations}
 We will emphasize curves are oriented by writing
 $\vec C$ or $\vec{[g]}$ instead of $C$ or $[g]$, and will write $\vec
 C^{-1}$ or $\vec{[G]}$ for the oriented
 curve with the opposite orientation.
 
 \begin{definition}\label{def:asym-intersect}
-  \DPTfyi{Expanded on ``right-handed''}
-  Given two oriented curves $\vec C$, $\vec D$, the
+  
+  Given two curves $\vec C$, $\vec D$, the
   asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the
   minimal number of \emph{right-handed} crossings between any two homotopy
   class representatives of $\vec C$ and~$\vec D$, i.e., the number of
@@ -53,8 +51,8 @@ curve with the opposite orientation.
 
 As a result, we have strong constraints on which asymmetric curve
 functionals can come from an asymmetric intersection number.
-\DPTfyi{Changed notation. We did need to be talking about virtual curves}%
-For any oriented curve $\vec C$, let
+
+For any curve $\vec C$, let
 $r(\vec C) = \OneHalf(\vec C - \vec C^{-1})$ be the anti-symmetrized
 virtual copy of $\vec C$. Here a virtual curve is a weighted
 curve where the coefficients are allowed to be negative. Similarly
@@ -62,7 +60,7 @@ for an oriented multi-curve $\vec C = \sum_i a_i \vec C_i$, define
 $r(\vec C) = \sum_i a_i r(\vec C_i)$.
 \begin{proposition}\label{prop:asym-constraint}
   For an oriented multi-curve $\vec C$ so that $h(\vec C) = 0$ and for
-  any oriented curve~$\vec D$, we have
+  any curve~$\vec D$, we have
   \[
     \vec{\imath}(r(\vec{C}, \vec D) = 0.
   \]
@@ -72,7 +70,7 @@ $r(\vec C) = \sum_i a_i r(\vec C_i)$.
 \end{proof}
 
 This shows that an oriented geodesic current is \emph{not} determined
-by its asymmetric intersection numbers with all oriented curves, and
+by its asymmetric intersection numbers with all curves, and
 hence the space of oriented geodesic currents cannot be realized as
 subspace of the space of (asymmetric) curve functionals. In contrast,
 flip-invariant geodesic currents are determined by their geometric
@@ -118,7 +116,7 @@ function of $k,\ell$, which can readily be verified directly.
 Now consider the multi-curve
 $\vec C = \vec{[a]} + \vec{[b]} + \vec{[c]}$. We have $h(\vec C) = 0$,
 so, by Proposition~\ref{prop:asym-constraint},
-$\vec\imath(\vec C, \vec D)$ for any oriented curve $\vec D$. But the
+$\vec\imath(\vec C, \vec D)$ for any curve $\vec D$. But the
 values of $\ell_\Delta$ in Eq.~\eqref{eq:l_Delta} do not satisfy this
 constraint: the alternating sum of the values around the central
 hexagon is not zero.
