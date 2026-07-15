@@ -453,56 +453,8 @@ delineate the scope of our results.
     functionals} on the space of oriented geodesic currents,
   $\Curr^+(S)$. The subspace $\Cont(S)$ consists of continuous
   functionals on unoriented geodesic currents $\Curr(S)$.
+  \DPTtodo[inline]{Define $\mathrm{ACont}(S)$ as well}
 \end{definition}
-
-% Here we place our results in the broader framework initiated
-% in~\cite{MGT21:Smoothings}, explain their relation to recent work in
-% the literature, and provide examples of curve functionals that do and
-% do not satisfy the hypotheses of the main theorem.
-
-% \begin{definition}[Quasi-convex, convex, and additive-convex curve functionals]
-% In decreasing order of generality, we consider the following classes of
-% curve functionals.
-
-% \begin{enumerate}
-% \item Let $\operatorname{Cont}^+(S)$ denote the space of continuous functions on $\Curr^+(S)$, the space of oriented geodesic currents.
-% \item For fixed $K>0$, let $\QConvex_K^+(S)$ denote the set of curve
-% functionals satisfying oriented $K$-quasi-smoothing, convex union,
-% stability, and homogeneity. We refer to this as the space of
-% \emph{oriented $K$-quasi-convex functionals}. Define
-% \[
-% \QConvex^+(S) \coloneqq \bigcup_{K>0} \QConvex_K^+(S),
-% \]
-% the space of \emph{oriented quasi-convex curve functionals}.
-
-% \item For $K>0$, let $\QConvex_K(S)$ be the subset of
-% $\QConvex_K^+(S)$ consisting of symmetric curve functionals that also
-% satisfy $K$-quasi-smoothing in both the oriented and unoriented
-% settings. We call this the space of \emph{$K$-quasi-convex functionals}
-% and define
-% \[
-% \QConvex(S) \coloneqq \bigcup_{K>0} \QConvex_K(S),
-% \]
-% the space of \emph{quasi-convex curve functionals}.
-
-% \item Let
-% \[
-% \Convex(S) \coloneqq \QConvex_{0}(S)
-% \]
-% be the space of \emph{convex curve functionals}.
-% Under the stronger smoothing assumption of multi-smoothing, such functionals induce convex
-% functions in train-track coordinates (see
-% Section~\ref{sec:convexity_charts}).
-
-% \item Let $\AConvex(S)$ denote the space of \emph{additive convex curve
-% functionals}, namely the subset of $\Convex(S)$ consisting of
-% functionals that additionally satisfy additivity.
-% (The prefix ``A'' indicates additivity.)
-
-% \end{enumerate}
-% \end{definition}
-
-% The examples and discussion below show we have strict inclusions
 
 All the inclusions are immediate from the definitions, with the
 exception of the inclusions into $\Cont(S)$ and $\Cont^+(S)$, which
@@ -642,7 +594,8 @@ the largest class the example is contained in.
 
 \DPTtodo{Following example new. May need to be expanded}
 \begin{example}\label{examp:el-graph}
-  Continuing from the three previous examples, there is a
+  Continuing from Examples \ref{examp:embedded-dir-graph},
+  \ref{examp:non-emb-graph}, and~\ref{examp:el}, there is a
   version of extremal length with respect to a graph generating
   $\pi_1(S)$ \cite{Thu16:Research,Thurston19:Elastic,MGT21:Smoothings}. (define
   functional) This give examples in $\Convex(S)$, $\Convex^+(S)$,
@@ -655,58 +608,37 @@ the largest class the example is contained in.
   are occupied, all inclusions in Figure~\ref{fig:curve-functionals}
   are strict}
 
-\DPTtodo[inline]{In progress: pull these out into Example environments}
-
-\begin{enumerate}
-%     \item Some curve functionals are not symmetric but nevertheless satisfy
-% oriented quasi-smoothing, thus providing examples in
-% $\QConvex^+(S)$ (see also item~(3) below). For instance, the stable
-% lengths of word metrics arising from asymmetric generating sets,
-% as discussed in~\cite[Section~4.6]{MGT21:Smoothings}, furnish such
-% examples.
-
-% This illustrates the proper containment $\QConvex(S) \subsetneq \QConvex^+(S)$.
-%     \item The square root of extremal length satisfies symmetry, smoothing,
-% stability, convex union, and homogeneity, and therefore provides an
-% example in $\Convex(S)$. However, it does not satisfy additivity
-% (see~\cite[Section~4.8]{MGT21:Smoothings}). Functionals of this type
-% extend to geodesic currents by~\cite[Theorem~A]{MGT21:Smoothings}.
-
-% This example illustrates the proper containment $\AConvex(S) \subsetneq \Convex(S).$
-%     \item Word length with respect to an arbitrary generating set of $\pi_1(S)$
-% satisfies additivity (by linear extension), but it need not satisfy
-% smoothing or stability (see~\cite[Example~4.10]{MGT21:Smoothings},
-% \cite[Theorem~1.5]{EPS20:CountingCurves},
-% \cite{Erlandsson:WordLength}). 
-% Moreover, its stabilized version does not necessarily satisfy smoothing
-% (see~\cite[Example~4.10]{MGT21:Smoothings} and~\cite[Theorem~B]{MGT21:Smoothings}).
-
-% This illustrates the proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
-    \item A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
+\begin{example}\label{examp:qf}
+A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
 \PSL(2,\mathbb{C})$ is a
 conjugate of Fuchsian group by a (properly normalized) quasi-conformal
 self-homeomorphism of the 2-sphere $f_{\rho}$
-\cite[Definition~6.12.2]{Hub06:Vol1}. The
-\emph{quasi-Fuchsian} constant $K$ of $\rho$ is the smallest quasi-conformal
-constant for $f_{\rho}$.
+\cite[Definition~6.12.2]{Hub06:Vol1}.
 Stable lengths associated to
 quasi-Fuchsian representations into $\PSL(2,\bbC)$ satisfy quasi-smoothing
 \cite[Proposition~4.11]{MGT21:Smoothings}, and satisfy strict
 smoothing if and only if the representation is Fuchsian
 (\cite[Theorem~A]{FF22:QF}, \cite[Proposition~1.8]{BR24:Cubulations}).
-This furnishes another instance of the
-proper inclusion $\Convex(S) \subsetneq \QConvex_K(S)$ for $K>0$.
+These examples are in $\AQConvex_K(S)$ for some $K > 0$.
+\end{example}
+
+In this context, recall that the
+\emph{quasi-Fuchsian} constant $K$ of $\rho$ is the smallest quasi-conformal
+constant for $f_{\rho}$.
 \begin{question}
   Let $\rho$ be a
 quasi-Fuchsian representation, and let $K>0$ be the \emph{quasi-smoothing
-constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \QConvex_K(S)$. 
+constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \AQConvex_K(S)$. 
 Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \end{question} 
 
-\item 
-  Lengths associated to more general discrete faithful
+\DPTtodo[inline]{In progress: pull these out into Example environments}
+
+\begin{example}\label{examp:fibered}
+  Continuing from Example~\ref{examp:qf},
+  lengths associated to more general discrete faithful
   representations into $\PSL(2,\bbC)$ need not extend continuously to
-  currents, as we can see explicitly for mapping tori. These give examples of curve functionals not belonging to $\Cont(S)$. Let $\phi$ be a
+  currents, as we can see explicitly for mapping tori. Let $\phi$ be a
   pseudo-Anosov homeomorphism of a closed surface~$S$, and let
   $M_\phi$ denote the associated hyperbolic mapping torus. Let
   $\ell_{M_\phi}(\gamma)$ denote the translation length of
@@ -732,14 +664,18 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
   representations. Even though the limit is not convex cocompact, it is
   still discrete
   and faithful.
-  \DPTtodo{Using the following, consequence of compactness, first step
-    to curve-counting. Flesh this out}
-  \begin{proposition}
-    If $f \colon \Curves^+(S) \to \bbR_{\ge 0}$ has positive systole
-    and extends continuously to currents, then for each~$K$, there are
-    only finitely many oriented curves $C$ so that $f(C) \le K$.
-  \end{proposition}
-\item The example of quasi-Fuchsian representations fits into the broader framework of length
+\end{example}
+
+\DPTtodo{Previous example uses the following, consequence of
+  compactness, first step to curve-counting. Flesh this out}
+\begin{proposition}
+  If $f \colon \Curves^+(S) \to \bbR_{\ge 0}$ has positive systole
+  and extends continuously to currents, then for each~$K$, there are
+  only finitely many oriented curves $C$ so that $f(C) \le K$.
+\end{proposition}
+
+\begin{example}\label{examp:higher-rank}
+Example~\ref{examp:qf} fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
 non-compact type $G$, such as $\SL(n,\mathbb{R})$.
@@ -764,7 +700,10 @@ item~\ref{item:positively-ratioed} in Section~\ref{subsec:examples}). Hence, for
 quasi-Fuchsian but not Fuchsian) we get examples that are not in
 $\AConvex(S)$; it is not clear whether or not they are in
 $\AQConvex(S)$ in general, though they are in $\Cont(S)$.
-        \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
+\end{example}
+
+\begin{example}\label{examp:biautomatic}
+ Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
 geometrically defined groups, including hyperbolic groups, admit such
 structures. A biautomatic structure satisfies additional
@@ -780,15 +719,24 @@ these translation lengths satisfy oriented quasi-smoothing, and used
 this property to construct a hierarchically hyperbolic group that is
 not biautomatic. 
 
-Since this class includes ordinary word length (cf.\ the previous
-item), such translation lengths do not satisfy smoothing in general.
-    \item The square root of the self-intersection number satisfies stability,
+Since this class includes ordinary word length (cf.\
+Example~\ref{examp:non-emb-graph}), such translation lengths do not
+satisfy smoothing in general and lie in $\AQConvex(S)$
+\end{example}
+
+\begin{example}\label{examp:self-intersect}
+The square root of the self-intersection number satisfies stability,
 homogeneity, and smoothing, but fails to satisfy additivity and even
 convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). 
 Thus it provides an example of a curve functional lying outside
 $\QConvex_K^+(S)$, despite extending to geodesic currents by
-Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_K(S) \subsetneq \Cont(S)$.
-\item  Another example are exotic length functions on surface groups
+Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it lies in
+$\ACont(S)$.
+\end{example}
+
+\begin{example}\label{examp:exotic-lengths}
+  Another example of functionals that are only continuous are exotic
+  length functions on surface groups
   which vanish precisely on simple closed
   geodesics~\cite[Section~9]{CMGR26:GreenMetrics}: these extend to
   geodesic currents, since they satisfy the bouned-backtracking
@@ -799,8 +747,10 @@ Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the
   crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to
   infinity as $n \to \infty$. This shows they violate disconnected
   $K$-quasi-smoothing for every~$K$, giving examples in $\Cont(S)$ but
-  not $\QConvex(S)$.
-\item
+  not $\QConvex(S)$.  
+\end{example}
+
+\begin{example}\label{examp:quotient-graph}
   \DPTtodo{Too abbreviated. Define example first}
   Given an embedded, filling graph $\cG \subset S$ and a large
   subgraph $\mathcal{H} \subset \cG$, consider
@@ -812,6 +762,8 @@ universal cover of such  a quotient, we obtain an isometric action of
 $\Gamma$ on a geodesic space $X$ with a large normal subgroup acting
 trivially. Its stable length then does not satisfy quasi-smoothing.
 We now give a direct proof of this more general fact.
+\end{example}
+
 \DPTtodo{Similar to arguments in fibered 3-manifold case}
 \begin{proposition}
 Suppose $\Gamma=\pi_1(S)$ acts on a geodesic space $X$ by isometries, and
@@ -831,9 +783,13 @@ and $s'>0$ so that for all $n \geq s'$, we would have
 \]
 But this inequality is violated, since on the one hand, the left hand side is $0$, and, on the other hand, the right hand side is positive for large enough $n$.
 \end{proof}
-\item The Lorentzian length associated to an affine action of a Fuchsian
+
+\begin{example}\label{examp:lorentzian}
+The Lorentzian length associated to an affine action of a Fuchsian
 group~\cite{GM00:FlatLorentzian} does not satisfy quasi-smoothing.
-Indeed, although it satisfies symmetry, stability, and additivity
+Indeed, although it satisfies
+\DPTtodo{Aren't all these conditions obvious? Why is there a citation?}
+symmetry, stability, and additivity
 \cite[p.~1053]{GML09:ProperAffine}, it takes both positive and negative
 values. Proposition~\ref{prop:curve-positive2} below shows that this
 precludes quasi-smoothing.
@@ -842,7 +798,7 @@ Nevertheless, it extends continuously to geodesic currents, as shown
 in~\cite[Section~6.1]{GML09:ProperAffine}. Strictly speaking, that
 result is stated for surfaces with boundary, but the same argument
 applies to closed surfaces by~\cite{Lab01:Diffusion}.
-\end{enumerate}
+\end{example}
 
 As an example of a curve functional that does not extend
 continuously to geodesic currents---and hence does not satisfy
