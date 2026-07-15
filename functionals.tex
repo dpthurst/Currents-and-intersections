@@ -139,7 +139,7 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \end{itemize}
 \end{definition}
 
-The oriented smoothing paper was called just ``smoothing'' in ourprior work
+The oriented smoothing paper was called just ``smoothing'' in our prior work
 \cite[Eq.~(1.3)]{MGT21:Smoothings}. In the present paper,
 we distinguish these notions from its unoriented counterparts, and
 similarly for quasi-smoothing (see below).
@@ -263,13 +263,6 @@ curve with. See also Section~\ref{subsec:crossings}.
   \end{itemize}
 \label{def:smoothing_and_max}
 \end{definition}
-
-Smoothing is satisfied by many natural functionals, including
-intersection functionals $i(\mu,\cdot)$ for any geodesic current $\mu$
-(see~\cite[Section~4.1]{MGT21:Smoothings}; cf.~Appendix~\ref{app:necessary}),
-as well as curve lengths arising from a length metric structure on $S$
-(see~\cite[Section~4.3]{MGT21:Smoothings}; cf. Section~\ref{subsec:length-metrics}).
-Further examples are discussed in Section~\ref{subsec:examples}.
 
 As before, smoothing and max-smoothing admit algebraic reformulations.
 
@@ -528,8 +521,6 @@ and~\ref{sec:convexity_charts}.
 
 \subsection{Examples}
 \label{subsec:examples}
-\DPTtodo{I think we've mentioned this fact several times now. Right
-  here seems like the natural place to state it}
 It is straightforward to verify that the properties of symmetry,
 smoothing, additivity, and stability---defining the space
 $\AConvex(S)$---are satisfied by every intersection functional
@@ -576,7 +567,7 @@ section discussing the examples in more detail.
   cone metric of angle $\geq 2\pi$
   \cite[Proposition~3.3]{BL17:RigidityFlat},
   \cite{Con18:MarkedNonpos}. As an important case, see the recent
-  \DPTtodo{Characterization of what?}
+  \DPTtodo{Characterization of what? DMG will expand}
   characterization \cite[Definition~2.2]{PS26:1ntranslation}.
 \item \label{item:simple-gen}
   Word length w.r.t.\ simple generating sets
@@ -591,7 +582,7 @@ these functionals satisfy connected smoothing~\cite[Proposition~4.5]{MZ19:Positi
 Burger-Iozzi-Parreau-Pozzetti later extended their construction to
 generalized cross-ratios that need not be continuous
 \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}
-(Section~\ref{sec:crossratios}.
+(Section~\ref{sec:crossratios}).
 \label{item:positively-ratioed}
 \end{enumerate}
 
@@ -653,12 +644,16 @@ the largest class the example is contained in.
 \begin{example}\label{examp:el-graph}
   Continuing from the three previous examples, there is a
   version of extremal length with respect to a graph generating
-  $\pi_1(S)$ \cite{Thu16:Research,Thurston19:Elastic}. (define
+  $\pi_1(S)$ \cite{Thu16:Research,Thurston19:Elastic,MGT21:Smoothings}. (define
   functional) This give examples in $\Convex(S)$, $\Convex^+(S)$,
   $\QConvex(S)$, or $\QConvex^+(S)$, depending on whether the graph is
   undirected or directed, and on whether the graph is embedded or not.
   We omit the details.
 \end{example}
+
+\DPTtodo[inline]{Summarize the graph examples as in notes. All spaces
+  are occupied, all inclusions in Figure~\ref{fig:curve-functionals}
+  are strict}
 
 \DPTtodo[inline]{In progress: pull these out into Example environments}
 
@@ -737,7 +732,14 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
   representations. Even though the limit is not convex cocompact, it is
   still discrete
   and faithful.
-\item \DMGtodo{added some more here to talk about the general case} The example of quasi-Fuchsian representations fits into the broader framework of length
+  \DPTtodo{Using the following, consequence of compactness, first step
+    to curve-counting. Flesh this out}
+  \begin{proposition}
+    If $f \colon \Curves^+(S) \to \bbR_{\ge 0}$ has positive systole
+    and extends continuously to currents, then for each~$K$, there are
+    only finitely many oriented curves $C$ so that $f(C) \le K$.
+  \end{proposition}
+\item The example of quasi-Fuchsian representations fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
 non-compact type $G$, such as $\SL(n,\mathbb{R})$.
@@ -755,11 +757,13 @@ by~\cite[Appendix~A]{JMG26:Horoboundary} and~\cite[Section~7]{CMGR26:GreenMetric
 suffices that $\varphi$ be positive on the Benoist limit cone
 $\mathcal{L}_\Theta^\rho$.
 In fact, Martone-Zhang \cite[Theorem~1.1]{MZ19:PositivelyRatioed} show
-that such representations
+that such representations, in the symmetric case,
 satisfy full smoothing if and only if they are positively ratioed
 (see
 item~\ref{item:positively-ratioed} in Section~\ref{subsec:examples}). Hence, for non-positively ratioed ones (such as
-quasi-Fuchsian but not Fuchsian) we get non-examples.
+quasi-Fuchsian but not Fuchsian) we get examples that are not in
+$\AConvex(S)$; it is not clear whether or not they are in
+$\AQConvex(S)$ in general, though they are in $\Cont(S)$.
         \item  Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
 geometrically defined groups, including hyperbolic groups, admit such
@@ -783,15 +787,32 @@ homogeneity, and smoothing, but fails to satisfy additivity and even
 convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). 
 Thus it provides an example of a curve functional lying outside
 $\QConvex_K^+(S)$, despite extending to geodesic currents by
-Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_K^+(S) \subsetneq \operatorname{Cont}(S)$. Another example are exotic length functions on surface groups which vanish precisely on simple closed geodesics~\cite[Section~9]{CMGR26:GreenMetrics}: these extend to geodesic currents, since they satisfy the bouned-backtracking property (see~\cite{CR25:Manhattan} and~\cite[Section~7]{CMGR26:GreenMetrics}. However, they cannot satisfy $K$-quasi-smoothing for any $K>0$: indeed, we can take sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $a_n, b_n$ crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to infinity as $n \to \infty$. This shows they violate disconnected $C$-quasi-smoothing for every $K$.
+Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it illustrates the proper containtment $\QConvex_K(S) \subsetneq \Cont(S)$.
+\item  Another example are exotic length functions on surface groups
+  which vanish precisely on simple closed
+  geodesics~\cite[Section~9]{CMGR26:GreenMetrics}: these extend to
+  geodesic currents, since they satisfy the bouned-backtracking
+  property (see~\cite{CR25:Manhattan}
+  and~\cite[Section~7]{CMGR26:GreenMetrics}. However, they cannot
+  satisfy $K$-quasi-smoothing for any $K>0$: indeed, we can take
+  sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $a_n, b_n$
+  crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to
+  infinity as $n \to \infty$. This shows they violate disconnected
+  $K$-quasi-smoothing for every~$K$, giving examples in $\Cont(S)$ but
+  not $\QConvex(S)$.
 \item
-  Lengths of quotients of embedded graphs $\mathcal{G}$ by large subgraphs do not necessarily extend continuously to geodesic
+  \DPTtodo{Too abbreviated. Define example first}
+  Given an embedded, filling graph $\cG \subset S$ and a large
+  subgraph $\mathcal{H} \subset \cG$, consider
+  $\ell_{\cG/\cH}$, the length on the quotient graph $\cG/\cH$. These lengths
+  do not necessarily extend continuously to geodesic
   currents~\cite[Proposition~11]{Bonahon91:CurrentsGroups}. In particular, they
 do not satisfy quasi-smoothing in general. By considering the
 universal cover of such  a quotient, we obtain an isometric action of
 $\Gamma$ on a geodesic space $X$ with a large normal subgroup acting
 trivially. Its stable length then does not satisfy quasi-smoothing.
 We now give a direct proof of this more general fact.
+\DPTtodo{Similar to arguments in fibered 3-manifold case}
 \begin{proposition}
 Suppose $\Gamma=\pi_1(S)$ acts on a geodesic space $X$ by isometries, and
 let $\ell$ be the stable length of the action. Suppose $\ell$ is
@@ -853,9 +874,11 @@ This leads to the conclusion that $G$ cannot satisfy connected smoothing, i.e. t
   $G(ab) < G(a) + G(b)$. In fact, it follows from~\cite[Theorem~A]{MGT21:Smoothings} that it cannot satisfy connected quasi-smoothing, i.e., this inequality does not hold either even up to additive error.
 \end{example}
 
+\DPTtodo[inline]{Is $\sqrt{\vec\imath(\mu,\mu)}$ continuous? If so it
+gives an example in $\Cont^+(S)$. It is easy to give unnatural
+examples in $\Cont^+$ anyway}
 
-
-\subsubsection{Non-negativity}
+\subsection{Non-negativity}
 
 Observe that we do not require in the hypotheses of
 Theorem~\ref{thm:intersect} that the curve
