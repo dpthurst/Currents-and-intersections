@@ -397,13 +397,26 @@ delineate the scope of our results.
     %
     \node (QConvex+) at (3,0) {$\strut\QConvex^+(S)$};
     %
-    \node (Cont) at (3,2) {$\strut\Cont(S)$};
-    \node (Cont+) at (4,1) {$\strut\Cont^+(S)$};
+%    \node (ACont) at (2,1.75) {$\strut\ACont(S)$};
+%    \node (ACont+) at (3,0.75) {$\strut\ACont^+(S)$};
+    \node (Cont) at (2.75,2) {$\strut\Cont(S)$};
+    \node (Cont+) at (3.75,1) {$\strut\Cont^+(S)$};
     %%
+%    \draw [right hook->] (AQConvex) to (ACont);
+%    \draw [right hook->] (AQConvex+) to (ACont+);
+%    \draw [right hook->] (ACont) to (ACont+);
+%    \draw [right hook->] (ACont) to (Cont);
+%    \draw [right hook->] (ACont+) to (Cont+);
+%    \draw [white,line width=1.5ex] (QConvex) to (Cont);
+    \draw [right hook->] (QConvex) to (Cont);
+    \draw [right hook->] (QConvex+) to (Cont+);
+    \draw [right hook->] (Cont) to (Cont+);
+    %
     \draw [right hook->] (AConvex) to (Convex);
     \draw [right hook->] (AConvex) to (AQConvex);
     \draw [right hook->] (AConvex) to (AConvex+);
     %
+%    \draw [white,line width=1.5ex] (Convex) to (QConvex);
     \draw [right hook->] (Convex) to (QConvex);
     \draw [right hook->] (AQConvex) to (QConvex);
     \draw [right hook->] (AQConvex) to (AQConvex+);
@@ -413,15 +426,14 @@ delineate the scope of our results.
     \draw [white,line width=1.5ex] (AConvex+) to (Convex+);
     \draw [right hook->] (AConvex+) to (Convex+);
     %
+%    \draw [white,line width=1.5ex] (QConvex) to (QConvex+);
     \draw [right hook->] (QConvex) to (QConvex+);
+%    \draw [white,line width=1.5ex] (Convex+) to (QConvex+);
     \draw [right hook->] (Convex+) to (QConvex+);
     \draw [right hook->] (AQConvex+) to (QConvex+);
-    %
-    \draw [right hook->] (QConvex) to (Cont);
-    \draw [right hook->] (QConvex+) to (Cont+);
-    \draw [right hook->] (Cont) to (Cont+);
   \end{tikzpicture}
-\caption{The various families of curve functionals}
+\caption{The various families of curve functionals. For clarity,
+  $\ACont(S)$ and $\ACont^+(S)$ are not shown.}
 \label{fig:curve-functionals}
 \end{figure}
 
@@ -449,11 +461,17 @@ delineate the scope of our results.
   quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
   quasi-smoothing~\eqref{eq:or-quasismoothing}.
 
-  Finally, the space $\Cont^+(S)$ is the space of all \emph{continuous
-    functionals} on the space of oriented geodesic currents,
-  $\Curr^+(S)$. The subspace $\Cont(S)$ consists of continuous
-  functionals on unoriented geodesic currents $\Curr(S)$.
-  \DPTtodo[inline]{Define $\mathrm{ACont}(S)$ as well}
+  \DPTfyi{I tried adding $\ACont$ to
+    Figure~\ref{fig:curve-functionals} but it was too messy}
+  \DPTtodo{Probably we want to restrict to homogeneous functions on
+    $\Curr(S)$, so $f(a\mu) = a f(\mu)$. Should we change the name
+    $\Cont(S)$?}
+  Finally, the space $\Cont(S)$ is the space of all \emph{continuous
+    functionals} on the space of unoriented geodesic currents
+  $\Curr(S)$. On $\Cont(S)$, the qualifiers $A$ and ${}^+$ make sense:
+  $\Cont^+(S)$ is the larger space of continuous functions on oriented
+  geodesic currents, and $\ACont(S)$ is the space of functions that
+  are linear on segments contained in the convex set $\Curr(S)$.
 \end{definition}
 
 All the inclusions are immediate from the definitions, with the
@@ -555,10 +573,12 @@ item~\ref{item:positively-ratioed}.
 In order to illustrate the complexity of the problem,
 we now show examples of many natural functions on curves that do
 \emph{not} satisfy the $\AConvex$ properties, even though many of them
-still extend continuously to geodesic currents. In each case we give
+still extend continuously to geodesic currents. Unless stated
+otherwise, we give
 the largest class the example is contained in.
 
-\begin{example}\label{examp:embedded-dir-graph}
+\begin{example}[Directed graphs]
+  \label{examp:embedded-dir-graph}
   Generalizing item~\ref{item:simple-gen} in
   Section~\ref{subsec:examples}, we can consider not only length with
   respect to any embedded unoriented graph
@@ -567,7 +587,8 @@ the largest class the example is contained in.
   $\AConvex^+(S)$ (Appendix~\ref{sec:asymmetric}).
 \end{example}
 
-\begin{example}\label{examp:non-emb-graph}
+\begin{example}[Non-embedded graphs]
+  \label{examp:non-emb-graph}
   Continuing from the previous example, we can consider length of
   curves with respect to a graph that need not be embedded. This is
   closely related to considering word length with respect to an
@@ -584,7 +605,8 @@ the largest class the example is contained in.
   under inverse or not).
 \end{example}
 
-\begin{example}\label{examp:el}
+\begin{example}[Extremal length]
+  \label{examp:el}
   The square root of extremal length w.r.t.\ a fixed conformal
   structure on~$S$ satisfies symmetry, smoothing, stability, convex
   union, and homogeneity, and therefore provides an example in
@@ -592,8 +614,9 @@ the largest class the example is contained in.
   \cite[Section~4.8]{MGT21:Smoothings}.
 \end{example}
 
-\DPTtodo{Following example new. May need to be expanded}
-\begin{example}\label{examp:el-graph}
+\DPTtodo{Expand this}
+\begin{example}[Extremal length for graphs]
+  \label{examp:el-graph}
   Continuing from Examples \ref{examp:embedded-dir-graph},
   \ref{examp:non-emb-graph}, and~\ref{examp:el}, there is a
   version of extremal length with respect to a graph generating
@@ -604,11 +627,30 @@ the largest class the example is contained in.
   We omit the details.
 \end{example}
 
-\DPTtodo[inline]{Summarize the graph examples as in notes. All spaces
-  are occupied, all inclusions in Figure~\ref{fig:curve-functionals}
-  are strict}
+Examples~\ref{examp:embedded-dir-graph}, \ref{examp:non-emb-graph},
+and~\ref{examp:el-graph} give a variety of examples of different types
+of functionals:
+\[
+  \left\{ \begin{matrix} \mathrm{length} \\ \sqrt{\EL} \end{matrix} \right\}
+  \text{ with respect to a(n) }
+  \left\{ \begin{matrix} \mathrm{embedded} \\ \mathrm{general} \end{matrix} \right\}
+  \left\{ \begin{matrix} \mathrm{undirected} \\ \mathrm{directed} \end{matrix} \right\}
+  \text{ graph on $S$ generating $\pi_1(S)$}
+\]
+gives a curve functional in
+\[
+  \left\{ \begin{matrix} \mathrm{A} \\ \emptyset \end{matrix} \right\}
+  \left\{ \begin{matrix} \emptyset \\ \mathrm{Q} \end{matrix} \right\}
+  \Convex
+  \left\{ \begin{matrix} \emptyset \\ {}^+ \end{matrix} \right\}
+  (S).
+\]
+In particular this shows that all the inclusions involving any
+version of convexity in Figure~\ref{fig:curve-functionals} are proper
+inclusions.
 
-\begin{example}\label{examp:qf}
+\begin{example}[Quasi-Fuchsian representations]
+  \label{examp:qf}
 A quasi-Fuchsian representation $\rho \colon \pi_1(S) \to
 \PSL(2,\mathbb{C})$ is a
 conjugate of Fuchsian group by a (properly normalized) quasi-conformal
@@ -632,12 +674,11 @@ constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \AQConvex_K(S)$.
 Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \end{question} 
 
-\DPTtodo[inline]{In progress: pull these out into Example environments}
-
-\begin{example}\label{examp:fibered}
+\begin{example}[Fibered 3-manifolds]
+  \label{examp:fibered}
   Continuing from Example~\ref{examp:qf},
   lengths associated to more general discrete faithful
-  representations into $\PSL(2,\bbC)$ need not extend continuously to
+  representations into $\PSL(2,\bbC)$ need \emph{not} extend continuously to
   currents, as we can see explicitly for mapping tori. Let $\phi$ be a
   pseudo-Anosov homeomorphism of a closed surface~$S$, and let
   $M_\phi$ denote the associated hyperbolic mapping torus. Let
@@ -674,7 +715,8 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
   only finitely many oriented curves $C$ so that $f(C) \le K$.
 \end{proposition}
 
-\begin{example}\label{examp:higher-rank}
+\begin{example}[Higher rank length functions]
+  \label{examp:higher-rank}
 Example~\ref{examp:qf} fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
@@ -702,8 +744,9 @@ $\AConvex(S)$; it is not clear whether or not they are in
 $\AQConvex(S)$ in general, though they are in $\Cont(S)$.
 \end{example}
 
-\begin{example}\label{examp:biautomatic}
- Translation lengths associated to biautomatic structures. Automatic structures provide regular-language normal forms for group
+\begin{example}[Biautomatic structures]
+\label{examp:biautomatic}
+Automatic structures provide regular-language normal forms for group
 elements and yield efficient solutions to the word problem. Many
 geometrically defined groups, including hyperbolic groups, admit such
 structures. A biautomatic structure satisfies additional
@@ -724,17 +767,19 @@ Example~\ref{examp:non-emb-graph}), such translation lengths do not
 satisfy smoothing in general and lie in $\AQConvex(S)$
 \end{example}
 
-\begin{example}\label{examp:self-intersect}
+\begin{example}[Self intersection]
+  \label{examp:self-intersect}
 The square root of the self-intersection number satisfies stability,
 homogeneity, and smoothing, but fails to satisfy additivity and even
 convex union (see~\cite[Example~1.12]{MGT21:Smoothings}). 
 Thus it provides an example of a curve functional lying outside
-$\QConvex_K^+(S)$, despite extending to geodesic currents by
+$\QConvex(S)$, despite extending to geodesic currents by
 Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it lies in
 $\ACont(S)$.
 \end{example}
 
 \begin{example}\label{examp:exotic-lengths}
+  \DPTtodo{Do these have names?}
   Another example of functionals that are only continuous are exotic
   length functions on surface groups
   which vanish precisely on simple closed
@@ -746,20 +791,21 @@ $\ACont(S)$.
   sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $a_n, b_n$
   crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to
   infinity as $n \to \infty$. This shows they violate disconnected
-  $K$-quasi-smoothing for every~$K$, giving examples in $\Cont(S)$ but
-  not $\QConvex(S)$.  
+  $K$-quasi-smoothing for every~$K$, giving examples in $\Cont(S)$.
 \end{example}
 
-\begin{example}\label{examp:quotient-graph}
-  \DPTtodo{Too abbreviated. Define example first}
+\begin{example}[Lengths from quotient graphs]
+  \label{examp:quotient-graph}
+\DPTtodo{Why aren't these pseudo-metrics on $S$?}
   Given an embedded, filling graph $\cG \subset S$ and a large
   subgraph $\mathcal{H} \subset \cG$, consider
   $\ell_{\cG/\cH}$, the length on the quotient graph $\cG/\cH$. These lengths
   do not necessarily extend continuously to geodesic
   currents~\cite[Proposition~11]{Bonahon91:CurrentsGroups}. In particular, they
 do not satisfy quasi-smoothing in general. By considering the
-universal cover of such  a quotient, we obtain an isometric action of
-$\Gamma$ on a geodesic space $X$ with a large normal subgroup acting
+universal cover of such  a quotient, we obtain an isometric action
+of~$\Gamma$ on a geodesic space~$X$ with a large normal subgroup
+acting
 trivially. Its stable length then does not satisfy quasi-smoothing.
 We now give a direct proof of this more general fact.
 \end{example}
@@ -771,7 +817,10 @@ let $\ell$ be the stable length of the action. Suppose $\ell$ is
 non-trivial and there is an infinite normal subgroup~$N$ of $\Gamma$ so that $\ell(b)=0$ for all $b \in N$. Then $\ell$ does not satisfy quasi-smoothing.
 \label{prop:graph_collapse}
 \end{proposition}
-\begin{proof} Let $a \in \Gamma$, with $\ell(a)>0$, and fix $b\in N$. Then $\frac{1}{2n} b a^n b a^{-n}$ converges to $a$ in the weak$^*$ topology, but since $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
+\begin{proof} Let $a \in \Gamma$, with $\ell(a)>0$, and fix $b\in N$.
+  Then $\frac{1}{2n} b a^n b a^{-n}$ converges to $a$ in the weak$^*$
+  topology on the space of unoriented currents, but since
+  $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
 Hence, $\ell$ cannot extend continuously. To see explicitly that
 $\ell$ does not satisfy quasi-smoothing, find crossing
 $\ora{a}$ and $\ora{b}$ as above. If quasi-smoothing were satisfied, by
@@ -784,7 +833,8 @@ and $s'>0$ so that for all $n \geq s'$, we would have
 But this inequality is violated, since on the one hand, the left hand side is $0$, and, on the other hand, the right hand side is positive for large enough $n$.
 \end{proof}
 
-\begin{example}\label{examp:lorentzian}
+\begin{example}[Lorentzian lengths]
+  \label{examp:lorentzian}
 The Lorentzian length associated to an affine action of a Fuchsian
 group~\cite{GM00:FlatLorentzian} does not satisfy quasi-smoothing.
 Indeed, although it satisfies
@@ -797,13 +847,15 @@ precludes quasi-smoothing.
 Nevertheless, it extends continuously to geodesic currents, as shown
 in~\cite[Section~6.1]{GML09:ProperAffine}. Strictly speaking, that
 result is stated for surfaces with boundary, but the same argument
-applies to closed surfaces by~\cite{Lab01:Diffusion}.
+applies to closed surfaces by~\cite{Lab01:Diffusion}. This thus gives
+examples in $\Cont(S)$.
 \end{example}
 
 As an example of a curve functional that does not extend
 continuously to geodesic currents---and hence does not satisfy
 smoothing by~\cite[Theorem~A]{MGT21:Smoothings}---we present the following.
-\begin{example}\label{ex:linEL}
+\begin{example}[Additive version of $\sqrt{\EL}$]
+  \label{ex:linEL}
 Let $\sqrt{EL}$ denote the (square root of) extremal length.
 In \cite[Section 4.8]{MGT21:Smoothings} the authors proved that $\sqrt{EL}$ satisfies stability, homogeneity, smoothing, and convex union. By  \cite[Theorem~A]{MGT21:Smoothings}, $\sqrt{EL}$ extends continuously to a continuous on geodesic currents.
 $\sqrt{EL}$ does not satisfy additivity, so it is not dual to a
@@ -835,22 +887,23 @@ gives an example in $\Cont^+(S)$. It is easy to give unnatural
 examples in $\Cont^+$ anyway. DMG will think about examples here}
 
 \subsection{Non-negativity}
+\label{subsec:nonnegative}
 
 Observe that we do not require in the hypotheses of
 Theorem~\ref{thm:intersect} that the curve
-functional $f \in \AConvex(S)$ is non-negative: in fact it follows
-from the other conditions.
-We finish this subsection by relating the hypotheses on $f$ to non-negativity. In particular, we prove that smoothing and convex union on~$f$ imply non-negativity.
+functional is non-negative: in fact it follows
+from the other conditions. Here we prove, more generally, that any
+function $f \in \QConvex(S)$ is non-negative, in two slightly
+different forms. (We only use the first version in this paper.)
 
 \begin{proposition}
   Let $f$ be a curve functional satisfying convex union and smoothing. Then $f([a]) \geq 0$ for any $a \in \pi_1(S)$.
   \label{prop:curve-positive}
 \end{proposition}
 \begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right, so
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$, so
 $[a][x] \reducesto [ax]$.
-By Lemma~\ref{lem:rhs_prod}, we see that
+By Lemma~\ref{lem:rhs_prod} below, we see that
 $(\ora{ax},\ora{a})$ L-cross, so
 (by unoriented smoothing) $[ax][a]
 \reducesto [x]$. We thus have
@@ -860,9 +913,6 @@ $(\ora{ax},\ora{a})$ L-cross, so
 \end{align*}
 Adding the equations, we get $f([a]) \geq 0$.
 \end{proof}
-
-Although we will not use it in this paper, we note that a similar
-argument with different assumptions also yields positivity.
 
 \begin{proposition}
   Let $f$ be a curve functional satisfying convex union, quasi-smoothing,
@@ -890,13 +940,17 @@ enough we see that $f([a]) \geq 0$.
 \end{proof}
 
 \begin{remark}
-The use of both the oriented and the unoriented smoothing hypothesis
+\DPTfyi{Edited so there were examples satisfying smoothing and not
+  just quasi-smoothing}
+The use of both the oriented and the unoriented (quasi-)smoothing hypothesis
 is essential in both of the above results. In fact, there exist
-natural examples of functions that satisfy the oriented
-quasi-smoothing condition (but not the unoriented one), as well as all
-the other necessary hypotheses mentioned above, yet still take
-negative values. For instance, curve functionals arising from
-homogeneous quasi-morphisms have this property; see
+natural examples of functionals in $\AConvex^+(S)$ (satisfying
+oriented but not unoriented smoothing, as well as the other
+hypotheses above) that take negative values. For instance, curve
+functionals from an element of $H^1(S; \bbZ)$ has this property. More
+generally, the much larger space of
+homogeneous quasi-morphisms is in $\AQConvex^+(S)$. All of these take negative
+values; see
 Section~\ref{sub:quasimorphism}.
 \end{remark}
 
