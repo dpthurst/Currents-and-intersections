@@ -11,7 +11,7 @@ Throughout, $S$ will be a closed, orientable surface of genus at least~$2$.
 \subsection{Curve functionals and their properties}
 \label{subsec:mainhypotheses}
 
-In our constructions, it will be crucial to work in the setting of oriented curves.
+In our constructions, it will be crucial to work in the setting of curves.
 
 \begin{definition}[multi-curve]\label{def:multi-curve}  
 A \emph{concrete multi-curve} $\gamma$ on a surface $S$ is a smooth
@@ -46,7 +46,7 @@ required to preserve orientation.
   \begin{notation*}
     From now on, for $a, b\in \pi_1(S)$, we write $[a]$ for the
     conjugacy class of~$a$, or, equivalently, the free homotopy class
-    of the oriented curve represented by $a$, and
+    of the curve represented by $a$, and
     write $[a][b]$ to denote the multi-curve $[a] \cup [b]$.
   \end{notation*} 
 
@@ -83,16 +83,16 @@ representatives. If $C$ and $D$ are oriented,
 the
 intersection number is defined by forgetting orientations. See also
 Definition~\ref{def:intersection_currents}.
-\DPTfyi{edited. Is this ``most important''?}
-This gives the most important example of curve functionals, $i(\mu, \cdot) \colon
+
+This gives an important example of curve functionals, $i(\mu, \cdot) \colon
 \Curves^+(S) \to \mathbb{R}$, for a given oriented multi-curve or,
 more generally, oriented geodesic current $\mu$.
 
 As explained in Appendix~\ref{sec:asymmetric}, there is an asymmetric
-variant of intersection number for oriented curves which only record
+variant of intersection number for curves which only record
 crossings of a given orientation. For such notions, the analogue of
 Theorem~\ref{thm:intersect} fails,
-and oriented curves are not determined by their asymmetric
+and curves are not determined by their asymmetric
 intersection number functionals,
 so we will not use it in the bulk
 of this paper.
@@ -118,7 +118,7 @@ f(C)=f(C').
 \end{equation}
 
 \item \textbf{Oriented smoothing:}
-Let $C$ be an oriented curve on $S$, and let $x$ be an essential crossing of $C$.
+Let $C$ be an curve on $S$, and let $x$ be an essential crossing of $C$.
 Let $C'$ denote the oriented smoothing of $C$ at $x$.
 Then
 \begin{equation}\label{eq:or-smoothing}
@@ -131,7 +131,7 @@ essential crossing; it is a crossing that cannot be removed by
 homotopy.) If the inequality is replaced by equality, we obtain \emph{oriented max-smoothing.}
 
 \item \textbf{Additivity:}
-For oriented curves $C_1$ and $C_2$ on $S$,
+For curves $C_1$ and $C_2$ on $S$,
 \begin{equation}\label{eq:union-additive}
 f(C_1 \cup C_2) = f(C_1) + f(C_2).
 \end{equation}
@@ -177,33 +177,22 @@ f([a^{n+m}]) \ge f([a^m][a^n]).
 \label{lem:oriented_smoothing_lemma_top_alg}
 \end{lemma}
 
-\DPTtodo{Do we want to define \emph{oriented} max-smoothing? I'm
-  skeptical, it seems too strong and would reduce to (co)homology}
-If the inequalities are replaced by equalities in all the items of the previous Lemma, we get \emph{oriented max-smoothing}.
 
-\begin{lemma}
-  A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies
-  oriented max-smoothing iff it satisfies
-  Eqs.~\eqref{eq:or-disconn-smoothing}, \eqref{eq:or-conn-smoothing},
-  and~\eqref{eq:power_smoothing} with equality replacing the equalities.
-\label{lem:orientedmax_smoothing_lemma_top_alg}
-\end{lemma}
 
-Lemmas~\ref{lem:oriented_smoothing_lemma_top_alg}
-and~\ref{lem:orientedmax_smoothing_lemma_top_alg} are proved in
+
+Lemma~\ref{lem:oriented_smoothing_lemma_top_alg}
+is proved in
 Section~\ref{subsec:triality}.
 
-\DPTtodo{Should we be dropping ``oriented'' here and other similar
-  places? It's the default, right?}
 \begin{definition}
-  For $C$ an oriented multi-curve,  $C^n$ is the oriented multi-curve with as many components as~$C$, in which each
+  For $C$ an multi-curve,  $C^n$ is the multi-curve with as many components as~$C$, in which each
   component of~$C$ is covered by an $n$-fold cover. That is, if $C =
   [g]$ for
   $g \in \pi_1(S,x)$, then $C^n = [g^n]$.
-  On the other hand, $nC$ is the oriented multi-curve
+  On the other hand, $nC$ is the multi-curve
   that consists of $n$~parallel
   copies of~$C$ (so with $n$ times as many components) or,
-  in the context of weighted oriented multi-curves,
+  in the context of weighted multi-curves,
   with weights multiplied by~$n$.
 \end{definition}
 
@@ -261,8 +250,7 @@ curve with. See also Section~\ref{subsec:crossings}.
 \begin{definition}
   Let $f$ be an unoriented curve functional, or equivalently a curve
   functional invariant under symmetry. We define the most important
-  property for this paper.\DPTfyi{Here and elsewhere, made all
-    properties be defined in the same format}
+  property for this paper.
   \begin{itemize}
   \item \textbf{Smoothing:} If $C$ is an unoriented closed curve, and
     $C'$ either of the two smoothings, then $f(C) \geq f(C')$,
@@ -352,13 +340,11 @@ We refer the reader to Sections~\ref{subsec:crossings}
 and~\ref{subsec:triality} for precise
 definitions and proofs of
 Lemma~\ref{lem:oriented_smoothing_lemma_top_alg},
-\ref{lem:orientedmax_smoothing_lemma_top_alg},
 and~\ref{lem:smoothing_lemma_top_alg}. See in particular
 Proposition~\ref{prop:crossings-triality}.
 
 \subsection{General context and examples}
 
-\DPTfyi{Moved quasi-smoothing defs here}
 To put the present work in the broader context of our previous
 work~\cite{MGT21:Smoothings}, we recall some weaker generalizations of
 the properties above.
@@ -366,7 +352,7 @@ the properties above.
   following properties.
 \begin{itemize}
     \item \textbf{Oriented quasi-smoothing:} There is a constant $K\ge 0$ with the
-      following property. Let $C$~be an oriented curve on~$S$, and
+      following property. Let $C$~be an curve on~$S$, and
     let $x$~be an essential crossing of~$C$. Let $C'$ be the oriented
     smoothing of~$C$ at~$x$. Then $f(C) \ge f(C')-K$. Schematically, we
     have
@@ -386,7 +372,7 @@ the properties above.
       f\!\left(\mfig{curves-2}\right)
     \right\} - K
 \end{equation}
-\item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two oriented curves
+\item \textbf{Convex union:} Let $C_1$ and~$C_2$ be two curves
     on~$S$. Then
     \begin{equation}\label{eq:union-convex}
       f(C_1 \cup C_2) \le f(C_1) + f(C_2).
@@ -442,16 +428,15 @@ delineate the scope of our results.
     \draw [right hook->] (QConvex+) to (Cont+);
     \draw [right hook->] (Cont) to (Cont+);
   \end{tikzpicture}
-  
-  \caption{Spaces of curve functionals and inclusions between them}
-  \label{fig:curve-functionals}
+\caption{The various families of curve functionals}
+\label{fig:diagram_curvefunctionals}
 \end{figure}
 
 \begin{definition}[Variations on convex curve functionals]
   The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
   is the set of functionals on unoriented curves satisfying smoothing,
   convex union, stability, and homogeneity. We may equivalently think
-  of these as functionals on oriented curves that satisfy the symmetry
+  of these as functionals on curves that satisfy the symmetry
   property.
 
   For the qualifier $A$, the \emph{additive} functionals, replace the
@@ -465,7 +450,7 @@ delineate the scope of our results.
   indicate a fixed value of~$K$.
 
   For the qualifier ${}^+$, the \emph{oriented} functionals, we
-  consider instead functions on oriented curves. The smoothing
+  consider instead functions on curves. The smoothing
   property~\eqref{eq:smoothing} is replaced by the weaker oriented
   smoothing property~\eqref{eq:or-smoothing}, and likewise
   quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
@@ -726,7 +711,7 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \item 
   Lengths associated to more general discrete faithful
   representations into $\PSL(2,\bbC)$ need not extend continuously to
-  currents, as we can see explicitly for mapping tori. Let $\phi$ be a
+  currents, as we can see explicitly for mapping tori. These give examples of curve functionals not belonging to $\Cont(S)$. Let $\phi$ be a
   pseudo-Anosov homeomorphism of a closed surface~$S$, and let
   $M_\phi$ denote the associated hyperbolic mapping torus. Let
   $\ell_{M_\phi}(\gamma)$ denote the translation length of
@@ -752,10 +737,23 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
   representations. Even though the limit is not convex cocompact, it is
   still discrete
   and faithful.
-\item The example of quasi-Fuchsian representations fits into the broader framework of length
+\item \DMGtodo{added some more here to talk about the general case} The example of quasi-Fuchsian representations fits into the broader framework of length
 functions arising from higher-rank representations of
 $\pi_1(S)$ into a connected real semisimple algebraic group of
 non-compact type $G$, such as $\SL(n,\mathbb{R})$.
+Let $\mathfrak{a}$ be a Cartan subspace with an associated set of simple restricted
+roots $\Pi$. Given $\Theta\subset\Pi$, let
+$\mathfrak{a}_\Theta\subset\mathfrak{a}$ and $P_\Theta<G$ be the
+associated subspace and parabolic subgroup. If
+$\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, then, for every positive
+linear functional $\varphi\in\mathfrak{a}_\Theta^*$, the function
+\[
+\varphi\circ\lambda_\Theta\circ\rho\colon\pi_1(S)\to\mathbb{R}
+\]
+extends continuously to the space of oriented geodesic currents
+by~\cite[Appendix~A]{JMG26:Horoboundary} and~\cite[Section~7]{CMGR26:GreenMetrics}, giving natural examples of curve functionals in $\Cont^+(S)$. In fact, more generally, for it to extend continuously, it
+suffices that $\varphi$ be positive on the Benoist limit cone
+$\mathcal{L}_\Theta^\rho$.
 In fact, Martone-Zhang \cite[Theorem~1.1]{MZ19:PositivelyRatioed} show
 that such representations
 satisfy full smoothing if and only if they are positively ratioed
