@@ -268,18 +268,24 @@ curve with. See also Section~\ref{subsec:crossings}.
 As before, smoothing and max-smoothing admit algebraic reformulations.
 
 \DMGtodo{edited this, not sure if that's what you had in mind.}
+\DPTtodo{It seems more natural to me to say that an oriented curve
+  functional satisfies smoothing iff it is symmetric and the extension
+  of a function satisfying Def.~\ref{def:smoothing_and_max}, and then
+  make Lemma~\ref{lem:smoothing-equiv} say smoothing is equivalent to
+  disconn + conn smoothing}
 \begin{definition}[smoothing for oriented curve functionals]
  Given an \emph{oriented} curve functional $f \colon \Curves^+(S) \to \mathbb{R}$, we will say it satisfies \emph{smoothing} if it satisfies the following hypotheses:
 \begin{itemize}
-\item \textbf{Symmetry:} as in Definition~\ref{def:properties};
+\item \textbf{Symmetry:} as in Definition~\ref{def:properties}.
 \item \textbf{Disconnected smoothing:} For any pair of
   elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have 
-  \[ f([a] [b]) \geq \max\,\{\,f([ab]), f([aB])\,\}; \] if the inequality is
+  \[ f([a] [b]) \geq \max\,\{\,f([ab]), f([aB])\,\}. \]
+  If the inequality is
   strengthened to an equality we obtain \emph{disconnected max-smoothing}.
 \item \textbf{Connected smoothing:} For any pair of elements $a,b \in
   \pi_1(S)$ whose hyperbolic axes are parallel, we have
-  \[ f([ab]) \geq \max\,\{\,f([aB]), f([a] [b])\,\}; \]
-  if the inequality is
+  \[ f([ab]) \geq \max\,\{\,f([aB]), f([a] [b])\,\}. \]
+  If the inequality is
   strengthened to an equality we get \emph{connected max-smoothing}.
  \item \textbf{Power smoothing:} For any element $a \in \pi_1(S)$, and any
   integers $n,m\geq 1$, we have \begin{equation} f([a^{n+m}]) \geq f([a^{ m}][a^{ n}]).\label{eq:power_smoothing_unoriented}\end{equation}
@@ -303,10 +309,9 @@ Conversely, if $f \colon \Curves^+(S) \to \mathbb{R}$ is symmetric, then it indu
 where $C$ is any oriented representative of the unoriented
 multi-curve $\overline{C}$.
 
-\begin{lemma}
+\begin{lemma}\label{lem:smoothing-equiv}
 The following equivalences hold.
 \begin{itemize}
-
 \item Let $f \colon \Curves(S) \to \mathbb{R}$ be an unoriented curve functional.
 Then $f$ satisfies smoothing (resp.\ max-smoothing) in the sense of
 Definition~\ref{def:smoothing_and_max} if and only if its extension
