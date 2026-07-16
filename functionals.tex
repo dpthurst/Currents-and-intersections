@@ -713,10 +713,21 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to $\infty$?
 \DMGtodo{this also needs homogeneity, otherwise it is not true}
 \DPTtodo{I wanted to fold homogeneity into the def of $\Cont(S)$,
   maybe renaming the space}
+  \DMGtodo{added this first sentence before proposition, and a proof}
+The following proposition is standard and useful in curve counting application (see~\cite[Corollary~3.8]{ES22:GeodesicCount}). We include it for completeness.
 \begin{proposition}
   If $f \in \Cont^+(S)$ has positive systole, then for each~$K$, there are
   only finitely many oriented multi-curves $C$ so that $f(C) \le K$.
 \end{proposition}
+\begin{proof}
+Fix a point $X \in \Teich(S)$.
+Consider the function $h \colon \mathbb{P}\Curr(X) \to \mathbb{R}$ given by $[\mu] \mapsto \frac{f(\mu)}{\ell_X(\mu)},$ which is well-defined, continuous and strictly positive by the assumptions. Since $\mathbb{P}\Curr(S)$ is compact by Proposition~\ref{prop:local_compactness}, there exists positive constants $m,M>0$ depending on $X$ and $f$ so that
+\[
+m \leq \frac{f(\mu)}{\ell_X(\mu)} \leq M
+\]
+for every $\mu \in \Curr(S)$.
+Since given $K>0$, there are finitely many multi-curves of $X$-hyperbolic length at most $Km$, it follows there are finitely many multi-curves $C$ with $f(C) \leq K$.
+\end{proof}
 
 \begin{example}[Higher rank length functions]
   \label{examp:higher-rank}
@@ -781,8 +792,7 @@ Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it lies in
 $\ACont(S)$.
 \end{example}
 
-\begin{example}\label{examp:exotic-lengths}
-  \DPTtodo{Do these have names?}
+\begin{example}[Exotic boundary metrics]\label{examp:exotic-lengths}
   Another example of functionals that are only continuous are exotic
   length functions on surface groups
   which vanish precisely on simple closed
