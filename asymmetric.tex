@@ -17,7 +17,6 @@ C^{-1}$ or $\vec{[G]}$ for the oriented
 curve with the opposite orientation.
 
 \begin{definition}\label{def:asym-intersect}
-  
   Given two curves $\vec C$, $\vec D$, the
   asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the
   minimal number of \emph{right-handed} crossings between any two homotopy
@@ -79,8 +78,8 @@ curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 
 In the other direction, we can construct asymmetric functionals
 satisfying smoothing, stability and additivity that cannot come
-from asymmetric intersection numbers.
-
+from asymmetric intersection numbers, from looking at directed graphs
+on a surface; compare \cite[Section~4.6]{MGT21:Smoothings}
 
 \begin{example}\label{examp:flat-torus}
   We start with an example on the unpunctured torus~$T$,  not quite in the
@@ -125,27 +124,12 @@ asymmetric intersection numbers: here is $\vec\imath(\vec{[\gamma]},
 \cdot)$ where $[\gamma]$ ranges over the shortest curves on the
 hexagonal torus,
 up to symmetries:
-% \begin{figure}
-%      \centering
-%      \begin{subfigure}[b]{0.5\textwidth}
-% \resizebox{70mm}{!} {\svgfignormal{torus_curves} }
-%      \end{subfigure}
-%      \hfill
-%      \begin{subfigure}[b]{0.4\textwidth}
-% \resizebox{40mm}{!}{\svgfignormal{intersection_asymmetric} }
-% \end{subfigure}
-% \caption{Left: the three shortest curves in the flat triangular unpunctured
-%   torus (up to symmetry, shown in an unfolding in the universal
-%   cover). Right: their corresponding asymmetric intersection functions.}
-%   \label{fig:shortcurves}
-% \end{figure}
 \begin{align*}
     \vec\imath(\vec{[a]}, \cdot) &= \mfig{hex-torus-11} &
     \vec\imath(\ora{[ac^{-1}]}, \cdot) &= \mfig{hex-torus-12}\\
     \vec\imath(\ora{[a^2c^{-1}]}, \cdot) &= \mfig{hex-torus-13} &
     \vec\imath(\ora{[a^3c^{-1}]}, \cdot) &= \mfig{hex-torus-14}.
 \end{align*}
- % Develop these simple curves in the universal cover of the triangular punctured torus, and consider the same triangulation as in Figure~\ref{fig:shortcurves} lifted to the universal cover.
 These functions all satisfy
 Proposition~\ref{prop:asym-constraint}.
 \end{example}

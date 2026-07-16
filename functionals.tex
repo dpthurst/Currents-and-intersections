@@ -572,6 +572,7 @@ the largest class the example is contained in.
 
 \begin{example}[Directed graphs]
   \label{examp:embedded-dir-graph}
+  \DPTtodo{Ref Sec. 4.6 of \cite{MGT21:Smoothings}}
   Generalizing item~\ref{item:simple-gen} in
   Section~\ref{subsec:examples}, we can consider not only length with
   respect to any embedded unoriented graph
@@ -611,13 +612,21 @@ the largest class the example is contained in.
 \begin{example}[Extremal length for graphs]
   \label{examp:el-graph}
   Continuing from Examples \ref{examp:embedded-dir-graph},
-  \ref{examp:non-emb-graph}, and~\ref{examp:el}, there is a
-  version of extremal length with respect to a graph generating
-  $\pi_1(S)$ \cite{Thu16:Research,Thurston19:Elastic,MGT21:Smoothings}. (define
-  functional) This give examples in $\Convex(S)$, $\Convex^+(S)$,
-  $\QConvex(S)$, or $\QConvex^+(S)$, depending on whether the graph is
-  undirected or directed, and on whether the graph is embedded or not.
-  We omit the details.
+  \ref{examp:non-emb-graph}, and~\ref{examp:el}, there is a version of
+  extremal length with respect to a graph~$\cG$ generating $\pi_1(S)$;
+  see \cite[Section~4.9]{MGT21:Smoothings}, following
+  \cite{Thurston19:Elastic}. As explained in that reference, the
+  resulting functionals $\sqrt{\EL}(C; \cG)$ give examples in
+  $\Convex(S)$, $\Convex^+(S)$, $\QConvex(S)$, or $\QConvex^+(S)$,
+  depending on whether $\cG$ is undirected or directed, and on whether
+  it is embedded or not \cite[Propositions 4.22
+  and~4.23]{MGT21:Smoothings}. For the case of non-embedded graphs we
+  need to stabilize $\sqrt{\EL}$ to get an element of $\QConvex$. The
+  reference does not treat the case of directed graphs, but the proofs
+  are identical.
+
+  This example can be further generalized to energies $E_p(C; \cG)$
+  \cite[Section~4.10]{MGT21:Smoothings}.
 \end{example}
 
 Examples~\ref{examp:embedded-dir-graph}, \ref{examp:non-emb-graph},
