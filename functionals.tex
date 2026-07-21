@@ -856,18 +856,19 @@ non-trivial and there is an infinite normal subgroup~$N$ of $\Gamma$ so that $\e
 Hence, $\ell$ cannot extend continuously. To see explicitly that
 $\ell$ does not satisfy quasi-smoothing, find crossing
 $\ora{a}$ and $\ora{b}$ as above.
-\DPTtodo{Does this work? Proposition~\ref{prop:join-split-alg} doesn't
-allow the two exponents to have opposite signs, does it?
-Proposition~\ref{prop:fundamental-ayx} and
-Corollary~\ref{cor:fund-axby} are where we allow arbitrary signs}
-If quasi-smoothing were satisfied, by
-Proposition~\ref{prop:join-split-geom},
-Equation~\eqref{eq:cross-cancel}, there would exist a constant $K>0$
-and $s'>0$ so that for all $n \geq s'$, we would have
+\DPTfyi{Corrected the smoothing argument. We need to do two smoothings}
+Then Proposition~\ref{prop:join-split-geom},
+Eqs.~\eqref{eq:cross-split} and~\eqref{eq:cross-cancel} says that, for
+some fixed $s > 0$ and all sufficiently large $n$,
 \[
-\ell(ba^n ba^{-n}) \geq \ell(a^{2n})-K.
+  [b a^{-n} b a^n] \reducesto [b a^{-n+s}][b a^{n-s}] \reducesto
+     [a^{2n - s}].
 \]
-But this inequality is violated, since on the one hand, the left hand side is $0$, and, on the other hand, the right hand side is positive for large enough $n$.
+Thus if $\ell$ satisfied $K$-quasi-smoothing, we would have
+\[
+0 = \ell(ba^n ba^{-n}) \geq \ell(a^{2n-s})-2K = (2n-s)\ell(a)-2K,
+\]
+a contradiction.
 \end{proof}
 
 \begin{example}[Lorentzian lengths]
@@ -886,12 +887,9 @@ Nevertheless, it extends continuously to geodesic currents, as shown
 in~\cite[Section~6.1]{GML09:ProperAffine}. Strictly speaking, that
 result is stated for surfaces with boundary, but the same argument
 applies to closed surfaces by~\cite{Lab01:Diffusion}. This thus gives
-examples in $\Cont(S)$.
+examples in $\mathbf{\bCont(S)}$.
 \end{example}
 
-As an example of a curve functional that does not extend
-continuously to geodesic currents---and hence does not satisfy
-smoothing by~\cite[Theorem~A]{MGT21:Smoothings}---we present the following.
 \begin{example}[Additive version of $\sqrt{\EL}$]
   \label{ex:linEL}
 Let $\sqrt{EL}$ denote the (square root of) extremal length.
@@ -901,12 +899,16 @@ geodesic current. However, we can consider $\sqrt{EL}$ as a function
 on \emph{connected} curves and extended it additively to a function
 $G$ on (weighted)
 multi-curves,
-which is thus not equal to $\sqrt{EL}$ on multi-curves. $G$ cannot extend continuously to currents, since we know $G=\sqrt{EL}$ on (weighted) connected curves, which are dense in the space of geodesic currents.
+which is thus not equal to $\sqrt{EL}$ on multi-curves. $G$ is
+\textbf{not in $\mathbf{\bACont(S)}$}, since we know $G=\sqrt{EL}$ on
+(weighted) connected curves, which are dense in the space of geodesic
+currents.
 Thus, the purported continuous extension $\overline{G}$ would have to satisfy $\overline{G}=\sqrt{EL}$ on all geodesic currents, hence on all multi-curves, a contradiction.
+
 Since $G$ is additive and stable, it follows from
 \cite[Theorem~A]{MGT21:Smoothings} that $G$ cannot satisfy oriented
-smoothing or quasi-smoothing.
-Specifically, we will show that $G$ satisfies disconnected smoothing
+smoothing or quasi-smoothing. We go further, and show that $G$
+satisfies disconnected smoothing
 but not connected smoothing.
 Indeed, suppose $(\ora{a}, \ora{b})$ are a crossing pair. Then
 \begin{align*}
