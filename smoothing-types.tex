@@ -313,17 +313,17 @@ Finally, we show that power smoothing and oriented disconnected smoothing imply 
 \begin{proposition}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying:
 \begin{enumerate}
-\item additivity
-\item sub-stability
+\item additivity;
+\item power smoothing; and
 \item oriented disconnected smoothing.
 \end{enumerate}
-Then $f$ satisfies stability: $f(C^n) = nf(C)$.
+Then $f$ satisfies stability: $f(C^n) = f(nC) = nf(C)$.
 \label{prop:power_disconnected_imply_stable}
 \end{proposition}
 \begin{proof}
   Let $a \in \pi_1(S)$ be an arbitary element.
-By hypothesis~(2)
-(sub-stable), we have $f(a^{n+m}) \geq f(a^n) + f(a^m)$.
+  By the power smoothing hypothesis and additivity, we have
+  $f(a^{n+m}) \geq f(a^n) + f(a^m)$.
 By Fekete's Lemma~\ref{lem:fekete}, the limit
 \[
 F(a)\coloneqq\lim_{n^+} \frac{f(a^n)}{n}

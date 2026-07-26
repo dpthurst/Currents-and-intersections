@@ -92,7 +92,7 @@ As explained in Appendix~\ref{sec:asymmetric}, there is an asymmetric
 variant of intersection number for curves which only record
 crossings of a given orientation. For such notions, the analogue of
 Theorem~\ref{thm:intersect} fails,
-and curves are not determined by their asymmetric
+and on the other hand curves are not determined by their asymmetric
 intersection number functionals,
 so we will not use it in the bulk
 of this paper.
@@ -129,7 +129,6 @@ f\!\left(\mfig{curves-4}\right).
 \end{equation}
 (An essential crossing is one that cannot be removed by
 homotopy; see Section~\ref{subsec:crossings}.)
-If the inequality is replaced by equality, we obtain \emph{oriented max-smoothing.}
 
 \item \textbf{Additivity:}
 For curves $C_1$ and $C_2$ on $S$,
@@ -142,9 +141,9 @@ f(C_1 \cup C_2) = f(C_1) + f(C_2).
 
 The oriented smoothing paper was called just ``smoothing'' in our prior work
 \cite[Eq.~(1.3)]{MGT21:Smoothings}. In the present paper,
-we distinguish these notions from its unoriented counterparts, and
+we distinguish this notions from its unoriented counterpart, and
 similarly for quasi-smoothing (see below).
-Oriented smoothing condition will be further divided into three
+Oriented smoothing condition can be further divided into three
 types; see
 Definition~\ref{def:smoothing_types}.  Accordingly, we will
 say $f$ satisfies a particular smoothing property if $f$ is
@@ -206,11 +205,8 @@ Section~\ref{subsec:triality}.
       \label{eq:stable}
       f(C^n) = f(nC).
     \end{equation}
-  \item \textbf{Sub-stability:} For all $m,n \ge 0$ and all multi-curves~$C$,
-    \begin{equation}
-      \label{eq:substable}
-      f(C^{n+m}) \geq f(C^m) + f(C^n)
-    \end{equation}
+    \DPTfyi{Deleted sub-stability, since the one time in the paper we
+      used it we were also using additivity}%
   \item \textbf{Homogeneity:} for all $n \ge 0$ and all multi-curves~$C$,
     \begin{equation}
       \label{eq:homogeneous}
@@ -219,9 +215,8 @@ Section~\ref{subsec:triality}.
   \end{itemize}
 \end{definition}
 
-It is immediate that if $f$ is additive, then it is homogeneous,
-stability implies sub-stability, and power smoothing and sub-stability
-are equivalent.
+It is immediate that if $f$ is additive, then it is homogeneous and
+stability implies power smoothing
 
 We emphasize that oriented connected smoothing does not imply oriented
 disconnected smoothing, nor vice versa.
@@ -229,8 +224,7 @@ For instance, the curve functional $f$ assigning to a curve its number
 of connected components satisfies oriented disconnected smoothing but
 not oriented connected smoothing. Its negative satisfies oriented
 connected smoothing but not oriented disconnected smoothing.
-
-Although this example is not stable, one can construct additive and
+We can also construct additive and
 stable functionals exhibiting only one of these two smoothing
 properties;
 see Example~\ref{ex:linEL}.
@@ -265,7 +259,8 @@ curve with. See also Section~\ref{subsec:crossings}.
 \label{def:smoothing_and_max}
 \end{definition}
 
-As before, smoothing and max-smoothing admit algebraic reformulations.
+Like oriented smoothing, general smoothing and max-smoothing admit
+algebraic reformulations.
 For this it is convenient to work with oriented curves.
 Given a curve functional on unoriented multi-curves
 $f \colon \Curves(S) \to \mathbb{R}$, there is a canonical extension to
@@ -289,33 +284,29 @@ multi-curve~$\overline{C}$.
   We define properties for an \emph{oriented} curve functional
   $f \colon \Curves^+(S) \to \mathbb{R}$.
 \begin{itemize}
-\item \textbf{Smoothing} or \textbf{max-smoothing:}  $f$ is symmetric as in
-  Definition~\ref{def:properties} and $\overline{f}$ satisfies
-  smoothing (or max-smoothing) in the sense of
-  Definition~\ref{def:smoothing_and_max}.
 \item \textbf{Disconnected smoothing:} For any pair of
   elements $a,b \in \pi_1(S)$ whose hyperbolic axes intersect, we have 
   \[ f([a] [b]) \geq \max\,\{\,f([ab]), f([aB])\,\}. \]
-  If the inequality is
-  strengthened to an equality we obtain \emph{disconnected max-smoothing}.
 \item \textbf{Connected smoothing:} For any pair of elements $a,b \in
   \pi_1(S)$ whose hyperbolic axes are parallel, we have
   \[ f([ab]) \geq \max\,\{\,f([aB]), f([a] [b])\,\}. \]
-  If the inequality is
-  strengthened to an equality we get \emph{connected max-smoothing}.
  \item \textbf{Power smoothing:} For any element $a \in \pi_1(S)$, and any
   integers $n,m\geq 1$, we have
 \begin{equation} f([a^{n+m}]) \geq f([a^{ m}][a^{ n}]).\label{eq:power_smoothing_unoriented}\end{equation}
 \end{itemize}
+All of the above have corresponding max-smoothing
+properties, strengthening the inequality to an equality.
 \end{definition}
 
 \begin{lemma}\label{lem:smoothing-equiv}
   Let $f \colon \Curves^+(S)\to \mathbb{R}$ be a symmetric oriented curve
   functional. Then $f$ satisfies smoothing iff if it satisfies
   disconnected smoothing, connected smoothing, and power smoothing.
-
   Likewise, $f$ satisfies max-smoothing iff it satisfies disconnected
-  max-smoothing, connected max-smoothing, and power smoothing.
+  max-smoothing, connected max-smoothing, and
+  \DPTfyi{Replaced ``power smoothing'' with ``stability''. Maybe it's
+    true the other way but it's less confusing like this.}
+  stability.
 \label{lem:smoothing_lemma_top_alg}
 \end{lemma}
 
@@ -329,7 +320,7 @@ Proposition~\ref{prop:crossings-triality}.
 \subsection{General context and examples}
 
 To put the present work in the broader context of our previous
-work~\cite{MGT21:Smoothings}, we recall some weaker generalizations of
+work~\cite{MGT21:Smoothings}, we recall some weakenings of
 the properties above.
 \begin{definition} Let $f$ be a curve functional. We define the
   following properties.
@@ -370,7 +361,7 @@ and~\ref{lem:smoothing_lemma_top_alg}.
 
 With this setup, we can consider a variety of spaces of
 functionals on currents, as summarized in
-Figure~\ref{fig:curve-functionals}.
+Figure~\ref{fig:curve-functionals} and defined below.
 Our main theorems are about the smallest space $\AConvex(S)$, but
 we digress to explore the other spaces to better
 delineate the scope of our results.
@@ -425,14 +416,15 @@ delineate the scope of our results.
     \draw [right hook->] (Convex+) to (QConvex+);
     \draw [right hook->] (AQConvex+) to (QConvex+);
   \end{tikzpicture}
-\caption{The various families of curve functionals. For clarity,
+\caption{The various families of curve functionals and their
+  inclusions. For clarity,
   $\ACont(S)$ and $\ACont^+(S)$ are not shown.}
 \label{fig:curve-functionals}
 \end{figure}
 
 \begin{definition}[Variations on convex curve functionals]
   The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
-  is the set of functionals on unoriented curves satisfying smoothing,
+  is the set of functionals on unoriented multi-curves satisfying smoothing,
   convex union, stability, and homogeneity. We may equivalently think
   of these as functionals on curves that satisfy the symmetry
   property.
@@ -448,15 +440,15 @@ delineate the scope of our results.
   indicate a fixed value of~$K$.
 
   For the qualifier ${}^+$, the \emph{oriented} functionals, we
-  consider instead functions on curves. The smoothing
+  consider instead functions on oriented multi-curves. The smoothing
   property~\eqref{eq:smoothing} is replaced by the weaker oriented
-  smoothing property~\eqref{eq:or-smoothing}, and likewise
+  smoothing property~\eqref{eq:or-smoothing}, and likewise, if relevant,
   quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
   quasi-smoothing~\eqref{eq:or-quasismoothing}.
 
-  Finally, the space $\Cont(S)$ is the space of functionals on the
+  Finally, the space $\Cont(S)$ is the much larger space of functions on the
   space of unoriented currents $\Curr(S)$ that are \emph{continuous}
-  and additionally homogeneous: for $a \ge 0$, we have
+  and \emph{homogeneous}: for $a \ge 0$, we have
   $f(a\mu) = a f(\mu)$.
   Here, the qualifiers $A$ and ${}^+$ make sense:
   $\Cont^+(S)$ is the larger space of homogeneous continuous functions on oriented
@@ -464,7 +456,8 @@ delineate the scope of our results.
   are linear on segments contained in the convex set $\Curr(S)$.
 \end{definition}
 
-All the inclusions are immediate from the definitions, with the
+All the inclusions in Figure~\ref{fig:curve-functionals} are immediate
+from the definitions, with the
 exception of the inclusions into $\Cont(S)$ and $\Cont^+(S)$, which
 was the main result of our previous work.
 
@@ -473,15 +466,16 @@ was the main result of our previous work.
   $\bar{f} \colon \Curr^+(S) \to \bbR_{\ge 0}$ that extends~$f$.
 \end{theorem}
 
-For some motivation for the terminology, if we further assume that a
-functional in $\Convex(S)$ satisfies multi-smoothing, then it induces
+For some motivation for the terminology, if we strengthen the
+smoothing assumption for a
+functional in $\Convex(S)$ to multi-smoothing, then it induces
 a convex function in every train-track coordinate chart in the space
 of measured laminations. See Sections~\ref{subsec:multismoothing}
 and~\ref{sec:convexity_charts}.
 
 \subsection{Examples}
 \label{subsec:examples}
-It is straightforward to verify that the properties of symmetry,
+The properties of symmetry,
 smoothing, additivity, and stability---defining the space
 $\AConvex(S)$---are satisfied by every intersection functional
 \[
@@ -491,13 +485,14 @@ where $\mu$ is a geodesic current. This was established
 in~\cite[Section~4]{MGT21:Smoothings} by first verifying the
 properties for multi-curves and then extending to arbitrary currents
 using the density of weighted curves together with the continuity and
-bilinearity of the intersection pairing.
+bilinearity of the intersection pairing. (Smoothing is the only
+non-obvious property.)
 For completeness, we provide an alternative proof in
 Appendix~\ref{app:necessary}, more closely aligned with the arguments
 in this paper
 involving lifts to the universal cover.
 
-Many natural notions of ``length'' satisfy the properties of
+Many natural notions of ``length'' satisfy the conditions of
 $\AConvex(S)$ and were previously known
 to extend continuously to geodesic currents, and furthermore have dual
 geodesic currents. We list several such examples below, along with the
@@ -509,29 +504,32 @@ section discussing the examples in more detail.
    \item Intersection number with a fixed geodesic current
      \cite[Proposition~4.5]{Bonahon86:EndsHyperbolicManifolds}
      (Appendix~\ref{app:necessary}).
-    \item Length with respect to a fixed hyperbolic metric
+   \item \label{item:metric-hyperbolic}\label{item:metric-first}
+     Length with respect to a fixed hyperbolic metric
       \cite[Proposition~14]{Bonahon88:GeodesicCurrent}
       (Section~\ref{subsec:liouville}).
     \item More generally, length w.r.t.\ negatively curved Riemannian
       metrics \cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}
       (Section~\ref{subsec:length-metrics} for this and the next
       several examples).
-    \item Even more generally, length w.r.t.\ non-positively curved Riemannian metrics
-\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}
+    \item More generally, length w.r.t.\ non-positively curved Riemannian metrics
+\cite[Theorem~A]{CFF92:RigidityNonPosCurvedRiem}.
 \item Length w.r.t.\ to a negatively curved Riemannian metric with
   conical singularities of angle $\geq 2\pi$
   \cite[Theorem~A]{HP97:RigidityNegCurvedCone}.
 \item Length w.r.t.\ a singular Euclidean metric coming from quadratic
   differentials \cite[Lemma~9]{DLR10:DegenerationFlatMetrics}.
-\item More generally, length w.r.t.\ a non-positively curved Euclidean
+\item \label{item:metric-last}
+  More generally, length w.r.t.\ a non-positively curved Euclidean
   cone metric of angle $\geq 2\pi$
   \cite[Proposition~3.3]{BL17:RigidityFlat},
   \cite{Con18:MarkedNonpos}. As an important case, see the recent construction of dual currents for $\frac{1}{n}$-translation structures~\cite[Definition~2.2]{PS26:1ntranslation}.
 \item \label{item:simple-gen}
-  Word length w.r.t.\ simple generating sets
+  Word length w.r.t.\ simple generating sets for $\pi_1(S)$
   \cite[Theorem~1.2]{Erlandsson:WordLength}
   (Section~\ref{subsec:embedded_graphs}).
-\item Lengths associated to Anosov representations induced by positive
+\item \label{item:positively-ratioed}
+  Lengths associated to Anosov representations induced by positive
   generalized cross-ratios. Specifically,
   Martone-Zhang \cite[Proposition~2.24]{MZ19:PositivelyRatioed} showed that a family of representations equipped with positive H\"older generalized
 cross-ratios and termed \emph{positively ratioed} induce curve
@@ -541,16 +539,19 @@ Burger-Iozzi-Parreau-Pozzetti later extended their construction to
 generalized cross-ratios that need not be continuous
 \cite[Theorem~1.6]{BIPP24:PositiveCrossratios}
 (Section~\ref{sec:crossratios}).
-\label{item:positively-ratioed}
 \end{enumerate}
 
 We have generalizations of many of these. In
 Section~\ref{subsec:length-metrics}, we further generalize items
-(2)--(7) to show than any curve length arising from a length
-(pseudo)metric structure on $S$ induces a dual geodesic current. In
+\ref{item:metric-first}--~\ref{item:metric-last} to show than any curve length arising from a length
+(pseudo)metric structure on~$S$ induces a dual geodesic current. In
 Section~\ref{subsec:embedded_graphs} we show that
-item~(8) admits a further generalization to stable lengths associated
-to embedded graphs on the surface. Theorem~\ref{mainthm:crossratio},
+item~\ref{item:positively-ratioed} admits a further generalization to stable lengths associated
+to embedded graphs on the surface.
+\DPTtodo{This suggests our result is more general than theirs for
+  cross-ratios; I don't think it is? Also cites a different result
+  from the BIPP paper}
+Theorem~\ref{mainthm:crossratio},
 proved in Section~\ref{sec:questions}, shows that the period of any
 generalized cross-ratio satisfies smoothing, generalizing
 item~\ref{item:positively-ratioed}.
@@ -570,8 +571,8 @@ the largest class the example is contained in.
   Generalizing item~\ref{item:simple-gen} in
   Section~\ref{subsec:examples}, we can consider length with
   respect to embedded \emph{directed} graphs, giving examples in
-  $\mathbf{\bAConvex^+(S)}$ (Appendix~\ref{sec:asymmetric}, expanding on
-  \cite[Section~4.6]{MGT21:Smoothings}).
+  $\mathbf{\bAConvex^+(S)}$. See Appendix~\ref{sec:asymmetric}, expanding on
+  \cite[Section~4.6]{MGT21:Smoothings}.
 \end{example}
 
 \begin{example}[Non-embedded graphs]
@@ -588,11 +589,11 @@ the largest class the example is contained in.
   satisfies quasi-smoothing bot
   not necessarily smoothing
   (see~\cite[Example~4.10]{MGT21:Smoothings}
-  and~\cite[Theorem~B]{MGT21:Smoothings}), giving examples in
+  and~\cite[Theorem~B]{MGT21:Smoothings}), thus giving examples in
   $\mathbf{\bAQConvex(S)}$ or $\mathbf{\bAQConvex^+(S)}$ depending on
   whether the graph is
-  undirected or directed, or correspondingly whether the generating
-  set is symmetric
+  undirected or directed, or correspondingly whether a generating
+  set for $\pi_1(S)$ is symmetric
   under inverse or not.
 \end{example}
 
@@ -616,7 +617,7 @@ the largest class the example is contained in.
   $\mathbf{\bQConvex(S)}$
   depending on whether $\cG$ is embedded or not \cite[Propositions 4.22
   and~4.23]{MGT21:Smoothings}. (For the case of non-embedded graphs we
-  need to stabilize to get a functional satisfying stability, as in
+  need to stabilize, as in
   Example~\ref{examp:non-emb-graph}.) We can also allow $\cG$ to be a
   directed graph generating $\pi_1(S)$; the same proofs show
   the stabilization of $\sqrt{\EL}$ is in $\mathbf{\bConvex^+(S)}$ or
@@ -649,8 +650,8 @@ gives a curve functional in
 In particular this shows that all the inclusions in
 Figure~\ref{fig:curve-functionals} are proper inclusions, except for
 those involving the space $\Cont(S)$ or a variant thereof.
-\DPTtodo{Give refs to make this last claim more precise}
-These inclusions are also proper.
+It is easy to see those inclusions are also proper, and we give some
+examples below.
 
 \begin{example}[Quasi-Fuchsian representations]
   \label{examp:qf}
@@ -667,9 +668,9 @@ smoothing if and only if the representation is Fuchsian
 These examples are in $\bAQConvex_K\mathbf{(S)}$ for some $K > 0$.
 \end{example}
 
-In this context, recall that the
+Recall that the
 \emph{quasi-Fuchsian} constant of $\rho$ is the smallest quasi-conformal
-constant for $f_{\rho}$.
+constant for~$f_{\rho}$.
 \begin{question}
   Let $\rho$ be a
 quasi-Fuchsian representation, and let $K>0$ be the \emph{quasi-smoothing
@@ -712,12 +713,17 @@ Here we used the following standard fact, useful in curve
 counting applications (see \cite[Corollary~3.8]{ES22:GeodesicCount}).
 We include it for completeness.
 \begin{proposition}\label{prop:pos-systole}
-  If $f \in \mathbf{\Cont^+(S)}$ has positive systole, then for each~$K$, there are
+  If $f \in \Cont^+(S)$ has positive systole, then for each~$K$, there are
   only finitely many oriented multi-curves $C$ so that $f(C) \le K$.
 \end{proposition}
 \begin{proof}
 Fix a point $X \in \Teich(S)$.
-Consider the function $h \colon \mathbb{P}\Curr(X) \to \mathbb{R}$ given by $[\mu] \mapsto \frac{f(\mu)}{\ell_X(\mu)},$ which is well-defined, continuous and strictly positive by the assumptions. Since $\mathbb{P}\Curr(S)$ is compact by Proposition~\ref{prop:local_compactness}, there exists positive constants $m,M>0$ depending on $X$ and $f$ so that
+Consider the function $h \colon \mathbb{P}\Curr(X) \to \mathbb{R}$
+given by $[\mu] \mapsto \frac{f(\mu)}{\ell_X(\mu)},$ which is
+well-defined, continuous and strictly positive by the assumptions.
+Since $\mathbb{P}\Curr(S)$ is compact
+(see Proposition~\ref{prop:local_compactness}), there exist positive
+constants $m,M>0$ depending on $X,f$ so that
 \[
 m \leq \frac{f(\mu)}{\ell_X(\mu)} \leq M
 \]
@@ -725,6 +731,7 @@ for every $\mu \in \Curr(S)$.
 Since given $K>0$, there are finitely many multi-curves of $X$-hyperbolic length at most $Km$, it follows there are finitely many multi-curves $C$ with $f(C) \leq K$.
 \end{proof}
 
+\DPTfyi{HERE}
 \begin{example}[Higher rank length functions]
   \label{examp:higher-rank}
 Example~\ref{examp:qf} fits into the broader framework of length
