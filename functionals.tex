@@ -204,9 +204,7 @@ Section~\ref{subsec:triality}.
     \begin{equation}
       \label{eq:stable}
       f(C^n) = f(nC).
-    \end{equation}
-    \DPTfyi{Deleted sub-stability, since the one time in the paper we
-      used it we were also using additivity}%
+    \end{equation}%
   \item \textbf{Homogeneity:} for all $n \ge 0$ and all multi-curves~$C$,
     \begin{equation}
       \label{eq:homogeneous}
@@ -303,10 +301,7 @@ properties, strengthening the inequality to an equality.
   functional. Then $f$ satisfies smoothing iff if it satisfies
   disconnected smoothing, connected smoothing, and power smoothing.
   Likewise, $f$ satisfies max-smoothing iff it satisfies disconnected
-  max-smoothing, connected max-smoothing, and
-  \DPTfyi{Replaced ``power smoothing'' with ``stability''. Maybe it's
-    true the other way but it's less confusing like this.}
-  stability.
+  max-smoothing, connected max-smoothing, and stability.
 \label{lem:smoothing_lemma_top_alg}
 \end{lemma}
 
@@ -551,10 +546,11 @@ to embedded graphs on the surface.
 \DPTtodo{This suggests our result is more general than theirs for
   cross-ratios; I don't think it is? Also cites a different result
   from the BIPP paper}
+  \DMGtodo{clarified that we recover it only from the period}
 Theorem~\ref{mainthm:crossratio},
 proved in Section~\ref{sec:questions}, shows that the period of any
-generalized cross-ratio satisfies smoothing, generalizing
-item~\ref{item:positively-ratioed}.
+generalized cross-ratio satisfies smoothing, recovering
+item~\ref{item:positively-ratioed}, and generalizing the method of proof by showing that it is possible to reconstruct the geodesic currents only from the cross-ratio period values.
 
 \subsection{Non-examples}
 \label{subsec:non-examples}
@@ -868,23 +864,17 @@ Thus if $\ell$ satisfied $K$-quasi-smoothing, we would have
 a contradiction.
 \end{proof}
 
+\DMGtodo{edited this example, I wasn't able to prove it does not satisfy quasi-smoothing, in fact, now  think it might satisfy it. So I decided to delete the part where I claim no quasi-smoothing, I still think it is an interesting asymmetric example to mention}
 \begin{example}[Lorentzian lengths]
   \label{examp:lorentzian}
 The signed Lorentzian length associated to an affine action of a Fuchsian
-group~\cite{GM00:FlatLorentzian} does not satisfy quasi-smoothing.
-Indeed, although it satisfies
-\DPTtodo{Aren't all these conditions obvious? Why is there a citation?} 
-\DMGtodo{they are only obvious when the affine action is proper, in which case it is the actual lorentzian length of curves in some manifold, otherwise is a weird signed function. In fact, I need to double check this example because originally I assumed function was symmetric, which is *not true* in general, and hence I cannot apply Proposition~\ref{prop:curve-positive2} to conclude it does not satisfy quasi-smoothing. I still think it does not satisfy oriented quasi-smoothing, but it requires a proof}
-stability, and additivity
-\cite[p.~1053]{GML09:ProperAffine}, it takes both positive and negative
-values. Proposition~\ref{prop:curve-positive2} below shows that this
-precludes quasi-smoothing.
-
-Nevertheless, it extends continuously to geodesic currents, as shown
+group~\cite{GM00:FlatLorentzian} is a natural example of asymmetric curve functional satisfying stability, and additivity
+\cite[p.~1053]{GML09:ProperAffine}, and it takes both positive and negative
+values. It also extends continuously to geodesic currents, as shown
 in~\cite[Section~6.1]{GML09:ProperAffine}. Strictly speaking, that
 result is stated for surfaces with boundary, but the same argument
 applies to closed surfaces by~\cite{Lab01:Diffusion}. This thus gives
-examples in $\mathbf{\bCont(S)}$.
+examples in $\mathbf{\bCont^+(S)}$.
 \end{example}
 
 \begin{example}[Additive version of $\sqrt{\EL}$]
@@ -920,10 +910,18 @@ connected quasi-smoothing; i.e., for any $K$ there is some parallel
 pair $(\ora{a},\ora{b})$ so that $G([ab]) < G([a]) + G([b]) - K$.
 \end{example}
 
-\DPTtodo[inline]{Is $\sqrt{\vec\imath(\mu,\mu)}$ continuous? If so it
-gives an example in $\Cont^+(S)$. It is easy to give unnatural
-examples in $\Cont^+$ anyway. DMG will think about examples here}
-\DMGtodo[inline]{I believe the example of signed lorentzian length should be such a natural example, but still pending, see comment above}
+\DMGtodo{added this}
+\begin{example}[Asymmetric self-intersection]
+By definition of $\vec\imath(\cdot,\cdot)$, for any pair of oriented geodesic currents, we have
+\[
+\vec\imath(\alpha,\beta) \leq i(\alpha, \beta).
+\]
+The proof of continuity of $i(\cdot,\cdot)$ reduces to carefully upper bounding the measure of a current $\alpha \times \beta$ near the diagonal of the locus of transversely intersecting geodesics $\mathcal{D}(S)$ (see, e.g.,~\cite[Theorem~8.2.21]{Martelli16:IntroGeoTop}). Hence, the same proof gives that $\vec\imath(\cdot,\cdot) \colon \Curr^+(S) \times \Curr^+(S) \to \mathbb{R}$ is continuous. In particular, the function,
+\[
+\mu \mapsto \sqrt{\vec\imath(\mu,\mu)}
+\]
+is in $\Cont^+(S)$ but not in $\QConvex^+(S)$, by the same reason as in Example~\ref{examp:self-intersect}.
+\end{example}
 
 \subsection{Non-negativity}
 \label{subsec:nonnegative}
