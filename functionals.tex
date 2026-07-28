@@ -541,16 +541,13 @@ Section~\ref{subsec:length-metrics}, we further generalize items
 \ref{item:metric-first}--~\ref{item:metric-last} to show than any curve length arising from a length
 (pseudo)metric structure on~$S$ induces a dual geodesic current. In
 Section~\ref{subsec:embedded_graphs} we show that
-item~\ref{item:positively-ratioed} admits a further generalization to stable lengths associated
+item~\ref{item:simple-gen} admits a further generalization to stable lengths associated
 to embedded graphs on the surface.
-\DPTtodo{This suggests our result is more general than theirs for
-  cross-ratios; I don't think it is? Also cites a different result
-  from the BIPP paper}
-  \DMGtodo{clarified that we recover it only from the period}
+\DPTfyi{Shortened this text}
 Theorem~\ref{mainthm:crossratio},
-proved in Section~\ref{sec:questions}, shows that the period of any
-generalized cross-ratio satisfies smoothing, recovering
-item~\ref{item:positively-ratioed}, and generalizing the method of proof by showing that it is possible to reconstruct the geodesic currents only from the cross-ratio period values.
+proved in Section~\ref{sec:questions}, gives an alternate proof
+of item~\ref{item:positively-ratioed} using only the periods and not
+the cross-ratio values on general boxes.
 
 \subsection{Non-examples}
 \label{subsec:non-examples}
@@ -828,7 +825,13 @@ $\mathbf{\bACont(S)}$.
   $\phi^*$ necessarily has a large kernel. Now consider the length
   function $\ell_{\cG}(C) = \ell(\phi(C))$, assigning to a curve the
   length of its image, up to homotopy in~$\cG$. In particular
-  $\ell_\cG$ vanishes on $\ker \phi^*$. \DMGtodo{added this because a priori this might not be the stable length. in this example it so happens to be} Note that $\ell_\cG$ can be equivalently defined as as an infimum over the translation distances in the universal cover~\cite[Exercise~8.3.13]{BBI01:MetricGeometry}, and, since the universal cover of $\cG$ is a tree, it follows that $\ell_\cG$ is the same as the stable length in this example~\cite[Section~2.6]{Gromov1981HyperbolicManifolds}. Bonahon used this to show
+  $\ell_\cG$ vanishes on $\ker \phi^*$. Note that $\ell_\cG$ can be
+  equivalently defined as as an infimum over the translation distances
+  in the universal cover~\cite[Exercise~8.3.13]{BBI01:MetricGeometry},
+  and, since the universal cover of $\cG$ is a tree, it follows that
+  $\ell_\cG$ is the same as the stable length
+  \cite[Section~2.6]{Gromov1981HyperbolicManifolds}. Bonahon
+  used this to show
   $\ell_\cG$ is \textbf{not in $\mathbf{\bCont(S)}$}
   \cite[Proposition~11]{Bonahon91:CurrentsGroups}. In
   particular, $\ell_\cG$ does not satisfy quasi-smoothing. We now give a direct proof that quasi-smoothing is violated.
@@ -865,6 +868,8 @@ a contradiction.
 \end{proof}
 
 \DMGtodo{edited this example, I wasn't able to prove it does not satisfy quasi-smoothing, in fact, now  think it might satisfy it. So I decided to delete the part where I claim no quasi-smoothing, I still think it is an interesting asymmetric example to mention}
+\DPTfyi{Made the question explicit per the convention at the beginning
+  that we state the smallest space examples live in unless stated otherwise}
 \begin{example}[Lorentzian lengths]
   \label{examp:lorentzian}
 The signed Lorentzian length associated to an affine action of a Fuchsian
@@ -874,8 +879,9 @@ values. It also extends continuously to geodesic currents, as shown
 in~\cite[Section~6.1]{GML09:ProperAffine}. Strictly speaking, that
 result is stated for surfaces with boundary, but the same argument
 applies to closed surfaces by~\cite{Lab01:Diffusion}. This thus gives
-examples in $\mathbf{\bCont^+(S)}$.
+examples in $\mathbf{\bACont^+(S)}$ and possibly in $\AQConvex^+(S)$.
 \end{example}
+
 
 \begin{example}[Additive version of $\sqrt{\EL}$]
   \label{ex:linEL}
@@ -910,13 +916,20 @@ connected quasi-smoothing; i.e., for any $K$ there is some parallel
 pair $(\ora{a},\ora{b})$ so that $G([ab]) < G([a]) + G([b]) - K$.
 \end{example}
 
-\DMGtodo{added this}
 \begin{example}[Asymmetric self-intersection]
 By definition of $\vec\imath(\cdot,\cdot)$, for any pair of oriented geodesic currents, we have
 \[
 \vec\imath(\alpha,\beta) \leq i(\alpha, \beta).
 \]
-The proof of continuity of $i(\cdot,\cdot)$ reduces to carefully upper bounding the measure of a current $\alpha \times \beta$ near the diagonal of the locus of transversely intersecting geodesics $\mathcal{D}(S)$ (see, e.g.,~\cite[Theorem~8.2.21]{Martelli16:IntroGeoTop}). Hence, the same proof gives that $\vec\imath(\cdot,\cdot) \colon \Curr^+(S) \times \Curr^+(S) \to \mathbb{R}$ is continuous. In particular, the function,
+One proof of continuity of $i(\cdot,\cdot)$ reduces to carefully upper
+bounding the measure of a current $\alpha \times \beta$ near the
+diagonal of the locus of transversely intersecting geodesics
+$\mathcal{D}(S)$ (see,
+e.g.,~\cite[Theorem~8.2.21]{Martelli16:IntroGeoTop}). Hence, the same
+proof gives that $\vec\imath(\cdot,\cdot) \colon \Curr^+(S) \times
+\Curr^+(S) \to \mathbb{R}$ is continuous.
+\DPTtodo{Maybe add sketch of alternate proof}
+In particular, the function
 \[
 \mu \mapsto \sqrt{\vec\imath(\mu,\mu)}
 \]
