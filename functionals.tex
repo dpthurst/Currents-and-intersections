@@ -724,20 +724,21 @@ for every $\mu \in \Curr(S)$.
 Since given $K>0$, there are finitely many multi-curves of $X$-hyperbolic length at most $Km$, it follows there are finitely many multi-curves $C$ with $f(C) \leq K$.
 \end{proof}
 
-\DPTfyi{HERE}
 \begin{example}[Higher rank length functions]
   \label{examp:higher-rank}
 Example~\ref{examp:qf} fits into the broader framework of length
 functions arising from higher-rank representations of
-$\pi_1(S)$ into a connected real semisimple algebraic group of
-non-compact type $\mathbb{G}$, such as $\SL(n,\mathbb{R})$.
+$\pi_1(S)$ into a connected real semisimple algebraic group~ $\mathbb{G}$ of
+non-compact type, such as $\SL(n,\mathbb{R})$.
 Let $\mathfrak{a}$ be a Cartan subspace with an associated set of simple restricted
 roots $\Pi$, and let $\mathfrak{a}^+ \subset \mathfrak{a}$ be the Weyl chamber cone. Given $\Theta\subset\Pi$, let
-$\mathfrak{a}_\Theta^+ \subset\mathfrak{a}$ and $P_\Theta<\mathbb{G}$ be the
+\DPTfyi{Asserted $\mathfrak{a}_\Theta^+ \subset \mathfrak{a}^+$. Is
+  that right or does the inclusion go the other way?}
+$\mathfrak{a}_\Theta^+ \subset\mathfrak{a}^+$ and $P_\Theta<\mathbb{G}$ be the
 associated cone and parabolic subgroup. If
 $\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, then, for every 
 linear functional
-$\varphi\in\mathfrak{a}^*$ positive on $\mathfrak{a}_\Theta^+$ the function
+$\varphi\in\mathfrak{a}^*$ that is positive on $\mathfrak{a}_\Theta^+$ the function
 \begin{equation}\label{eq:higher-rank-funct}
 \varphi\circ\lambda_\Theta\circ\rho\colon\pi_1(S)\to\mathbb{R}
 \end{equation}
@@ -750,7 +751,7 @@ extend continuously, it
 suffices that $\varphi$ is positive on the Benoist limit
 cone~$\mathcal{L}_\Theta^\rho \subset \mathfrak{a}_\Theta^+$.)
 
-In the case that $\Theta$ is symmetric with respect to the natural Cartan involution, Martone-Zhang
+If $\Theta$ is symmetric with respect to the natural Cartan involution, Martone-Zhang
 \cite[Theorem~1.1]{MZ19:PositivelyRatioed} show
 that Eq.~\eqref{eq:higher-rank-funct}
 satisfies full smoothing for $\varphi=\omega_\alpha$, $\alpha \in \Theta$ ($\omega_\alpha$ denoting the fundamental weight of $\alpha$) if and only it is $\Theta$-positively ratioed
@@ -764,7 +765,7 @@ These non-positively-ratioed examples generalize
 Example~\ref{examp:qf} on
 quasi-Fuchsian representations, though in the broader context it is
 not clear whether or not these functionals are always in
-$\AQConvex(S)$, though they are in $\ACont(S)$.
+$\AQConvex(S) \subset \ACont(S)$.
 \end{example}
 
 \begin{example}[Biautomatic structures]
@@ -811,9 +812,10 @@ $\mathbf{\bACont(S)}$.
   property (see~\cite{CR25:Manhattan}
   and~\cite[Section~7]{CMGR26:GreenMetrics}. However, they cannot
   satisfy $K$-quasi-smoothing for any $K>0$: indeed, we can take
-  sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $a_n, b_n$
-  crossing, so that $a_nb_n$ is non-simple and $\ell(a_n b_n)$ goes to
-  infinity as $n \to \infty$. This shows they violate disconnected
+  \DPTfyi{Edited a little}
+  sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $\ora{a_n}, \ora{b_n}$
+  crossing, so that $[a_nb_n] \reducesto [a_n][b_n]$ and $\lim_{n\to
+    \infty}\ell(a_n b_n) = \infty$. This shows they violate disconnected
   $K$-quasi-smoothing for every~$K$, giving examples in $\mathbf{\bACont(S)}$.
 \end{example}
 
@@ -821,17 +823,18 @@ $\mathbf{\bACont(S)}$.
   \label{examp:quotient-graph}
   Consider a $\pi_1$-surjective map $\phi$ from $S$ to to a
   graph~$\cG$. For instance, take a pair-of-pants decomposition of~$S$
-  and let $\cG$ be the corresponding trivalent graph. On $\pi_1$,
-  $\phi^*$ necessarily has a large kernel. Now consider the length
+  and let $\cG$ be the corresponding trivalent graph. The map $\phi^*
+  \colon \pi_1(S) \to \pi_1(\cG)$ necessarily has a large kernel. Now
+  consider the length
   function $\ell_{\cG}(C) = \ell(\phi(C))$, assigning to a curve the
   length of its image, up to homotopy in~$\cG$. In particular
   $\ell_\cG$ vanishes on $\ker \phi^*$. Note that $\ell_\cG$ can be
   equivalently defined as as an infimum over the translation distances
   in the universal cover~\cite[Exercise~8.3.13]{BBI01:MetricGeometry},
   and, since the universal cover of $\cG$ is a tree, it follows that
-  $\ell_\cG$ is the same as the stable length
+  $\ell_\cG$ is stable
   \cite[Section~2.6]{Gromov1981HyperbolicManifolds}. Bonahon
-  used this to show
+  used the large kernel to show
   $\ell_\cG$ is \textbf{not in $\mathbf{\bCont(S)}$}
   \cite[Proposition~11]{Bonahon91:CurrentsGroups}. In
   particular, $\ell_\cG$ does not satisfy quasi-smoothing. We now give a direct proof that quasi-smoothing is violated.
@@ -840,7 +843,9 @@ $\mathbf{\bACont(S)}$.
 \begin{proposition}
 Suppose $\Gamma=\pi_1(S)$ acts on a geodesic space $X$ by isometries, and
 let $\ell$ be the stable length of the action. Suppose $\ell$ is
-non-trivial and there is an infinite normal subgroup~$N$ of $\Gamma$ so that $\ell(b)=0$ for all $b \in N$. Then $\ell$ does not satisfy quasi-smoothing.
+non-trivial and there is an infinite normal subgroup~$N < \Gamma$ so
+that $\ell(b)=0$ for all $b \in N$. Then $\ell$ does not satisfy
+quasi-smoothing.
 \label{prop:graph_collapse}
 \end{proposition}
 \begin{proof}
@@ -850,7 +855,9 @@ non-trivial and there is an infinite normal subgroup~$N$ of $\Gamma$ so that $\e
   Then $\frac{1}{2n} b a^n b a^{-n}$ converges to $a$ in the weak$^*$
   topology on the space of unoriented currents, but since
   $a^n b a^{-n} b\in N$, we have $\ell(a^n b a^{-n} b)=0$.
-Hence, $\ell$ cannot extend continuously. To see explicitly that
+  Hence, $\ell$ cannot extend continuously.
+
+  To see explicitly that
 $\ell$ does not satisfy quasi-smoothing, find crossing
 $\ora{a}$ and $\ora{b}$ as above.
 Then Proposition~\ref{prop:join-split-geom},
@@ -913,34 +920,28 @@ pair $(\ora{a},\ora{b})$ so that $G([ab]) < G([a]) + G([b]) - K$.
 \end{example}
 
 \begin{example}[Asymmetric self-intersection]
-By definition of $\vec\imath(\cdot,\cdot)$, for any pair of oriented geodesic currents, we have
+In Appendix~\ref{sec:asymmetric} we define a continuous asymmetric intersection
+number $\vec\imath(\alpha,\beta)$ for $\alpha,\beta \in \Curr^+(S)$.
+By definition, we have
 \[
 \vec\imath(\alpha,\beta) \leq i(\alpha, \beta).
 \]
-One proof of continuity of $i(\cdot,\cdot)$ reduces to carefully upper
-bounding the measure of a current $\alpha \times \beta$ near the
-diagonal of the locus of transversely intersecting geodesics
-$\mathcal{D}(S)$ (see,
-e.g.,~\cite[Theorem~8.2.21]{Martelli16:IntroGeoTop}). Hence, the same
-proof gives that $\vec\imath(\cdot,\cdot) \colon \Curr^+(S) \times
-\Curr^+(S) \to \mathbb{R}$ is continuous.
-\DPTtodo{Maybe add sketch of alternate proof}
 In particular, the function
 \[
 \mu \mapsto \sqrt{\vec\imath(\mu,\mu)}
 \]
-is in $\Cont^+(S)$ but not in $\QConvex^+(S)$, by the same reason as
-in Example~\ref{examp:self-intersect}. See Appendix~\ref{sec:asymmetric}.
+is in $\mathbf{\bCont^+(S)}$ but not in $\QConvex^+(S)$, by the same reasoning as
+in Example~\ref{examp:self-intersect}.
 \end{example}
 
 \subsection{Non-negativity}
 \label{subsec:nonnegative}
 
-Observe that we do not require in the hypotheses of
+Observe that we do not assume in the hypotheses of
 Theorem~\ref{thm:intersect} that the curve
 functional is non-negative: in fact it follows
 from the other conditions. Here we prove, more generally, that any
-function $f \in \QConvex(S)$ is non-negative, in two slightly
+functional $f \in \QConvex(S)$ is non-negative, in two slightly
 different forms. (We only use the first version in this paper.)
 
 \begin{proposition}
@@ -948,10 +949,11 @@ different forms. (We only use the first version in this paper.)
   \label{prop:curve-positive}
 \end{proposition}
 \begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$, so
+Fix $a \in \pi_1(S)$ and let $x \in \pi_1(S)$ be so that $\ora{a}$
+crosses $\ora{x}$ so (by oriented smoothing)
 $[a][x] \reducesto [ax]$.
-By Lemma~\ref{lem:rhs_prod} below, we see that
-$(\ora{ax},\ora{a})$ L-cross, so
+By Lemma~\ref{lem:rhs_prod} below,
+$(\ora{ax},\ora{a})$ cross, so
 (by unoriented smoothing) $[ax][a]
 \reducesto [x]$. We thus have
 \begin{align*}
@@ -969,21 +971,23 @@ Adding the equations, we get $f([a]) \geq 0$.
 \end{proposition}
 
 \begin{proof}
-Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$ to the
-right. As in Proposition~\ref{prop:curve-positive}, we have
+Let $x \in \pi_1(S)$ be so that $\ora{a}$ crosses $\ora{x}$. As in
+Proposition~\ref{prop:curve-positive}, we have
 \begin{align*}
 [a^n][x] &\reducesto [a^nx]\\
 [a^nx][a^n]&\reducesto [x].
 \end{align*}
-Since $f$ satisfies quasi-smoothing (oriented and unoriented) as well as convex union, we get
+Since $f$ satisfies convex union and $K$-quasi-smoothing (oriented and
+unoriented) for
+some $K \ge 0$, we get
 \begin{align*}
     f([a^n]) + f([x]) &\geq f([a^n] [x]) \geq f([a^nx]) - K\\
      f([a^nx]) + f([a^n]) &\geq f([ax] [a^n]) \geq f([x]) - K
 \end{align*}
 for some $K>0$.
 Adding the equations, we get $f([a^n]) \geq -2K$. By stability and
-homogeneity, this yields $n f([a]) \geq -2K$, and taking $n$ large
-enough we see that $f([a]) \geq 0$.
+homogeneity, this yields $n f([a]) \geq -2K$, and taking $n\to\infty$
+we see that $f([a]) \geq 0$.
 \end{proof}
 
 \begin{remark}
@@ -992,7 +996,7 @@ is essential in both of the above results. In fact, there exist
 natural examples of functionals in $\AConvex^+(S)$ (satisfying
 oriented but not unoriented smoothing, as well as the other
 hypotheses above) that take negative values. For instance, curve
-functionals from an element of $H^1(S; \bbZ)$ has this property. More
+functionals from an element of $H^1(S; \bbZ)$ have this property. More
 generally, the much larger space of
 homogeneous quasi-morphisms is in $\AQConvex^+(S)$. All of these take negative
 values; see
