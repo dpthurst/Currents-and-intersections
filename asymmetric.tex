@@ -36,26 +36,34 @@ curve with the opposite orientation.
   and~$\vec D$.
 \end{definition}
 
+\DPTfyi{Added verbiage asserting continuity}
 \begin{lemma}\label{lem:asym-intersect}
-  If $\langle \vec C, \vec D\rangle$ is the algebraic intersection
-  number between the (homology classes of) $\vec C$ and $\vec D$, then
+  The asymmetric intersection number on curves satisfies
   \[
     \vec{\imath}(\vec C, \vec D) = {\textstyle\frac12}\,i(C, D) + {\textstyle\frac12}\langle \vec C,\vec D\rangle.
   \]
+  It extends continuously to currents.
 \end{lemma}
 
 \begin{proof}
-  Immediate from the definitions.
+  The equality is 
+  immediate from the definitions.
 
-  (continuity)
-  One proof of continuity of $i(\cdot,\cdot)$ reduces to carefully upper
+  The continuous extension to currents follows from the fact that
+  $h(\vec C) \colon \Curves^+(S) \to H_1(S)$ extends continuously to
+  currents,\DPTtodo{Find some citation in general currents setting}
+  and then both terms on the RHS are continuous on currents.
+
+  Alternately, the standard proof of continuity of $i(\cdot,\cdot)$
+  reduces to carefully upper
 bounding the measure of a current $\alpha \times \beta$ near the
 diagonal of the locus of transversely intersecting geodesics
 $\mathcal{D}(S)$ (see,
-e.g.,~\cite[Theorem~8.2.21]{Martelli16:IntroGeoTop}). Hence, the same
+e.g.,~\cite[Theorem~8.2.21]{Martelli16:IntroGeoTop}).
+Since by definition $\abs{\vec\imath(\alpha,\beta)} < i(\alpha,\beta)$,
+the same
 proof gives that $\vec\imath(\cdot,\cdot) \colon \Curr^+(S) \times
 \Curr^+(S) \to \mathbb{R}$ is continuous.
-\DPTtodo{Add alternate proof}
 \end{proof}
 
 As a result, we have strong constraints on which asymmetric curve
