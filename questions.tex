@@ -171,7 +171,7 @@ and seems to be dual
 to~$\ell$.
 
 
-\subsection{Generalizations to hyperbolic groups}
+\subsection{Hyperbolic groups}
 In recent work of Cantrell and Reyes and, independently, Kapovich and the first author, the following property has played a key role in extending stable lengths coming from group actions of hyperbolic groups $\Gamma$ acting on uniformly quasi-geodesic hyperbolic spaces $X$~\cite{KMG:BBP,CR25:Manhattan, CMGR26:GreenMetrics}.
 Roughly, a Gromov hyperbolic space is a metric space whose triangles are thin. A group $\Gamma$ is said to be Gromov hyperbolic if its Cayley graph is.
 
@@ -189,7 +189,8 @@ $\iota([x,y])$ and $[\iota(x),\iota(y)])$ are $C$-Hausdorff close in $d$.
 
 There are examples of stable lengths satisfying bounded backtracking
 which do not satisfy quasi-smoothing
-(see~\cite[Section~9]{CMGR26:GreenMetrics}). On the other hand, one
+\DPTfyi{Pointed to the longer discussion in non-examples}
+(see Example~\ref{examp:exotic-lengths}). On the other hand, one
 can ask if all functions on $\pi_1(S)$ satisfying quasi-smoothing
 arise as the stable length of some action of $\pi_1(S)$ satisfying
 bounded backtracking. 
@@ -364,29 +365,50 @@ If a curve functional satisfies homogeneity, stability,
 convex union, and smoothing, does it necessarily satisfy domination?
 \end{question}
 
-\subsection{Convexity on train-track charts and local compactness}
+\subsection{Convexity on train-track charts}
 \label{sec:convexity_charts}
 
+\DPTtodo[inline]{Edited. I think the convexity bit should be moved somewhere
+  else, maybe to Section~\ref{sec:functionals}, since I'm grabbing the
+  local compactness stuff for its own section}
 One of the reasons multi-smoothing is a useful property is that,
 coupled with convex union, homogeneity, and stability, it
 yields convex functions when restricted to train-track coordinates.
-Precisely, let $f$ be a curve functional satisfying the aforementioned
-properties, including multi-smoothing. Let $\tau$ be a maximal train-track (i.e., a
-train-track all of whose complementary components are trigons), let
+Precisely, let $f$ be a function in $\Convex(S)$ that furthermore
+satisfies multi-smoothing. Let $\tau$ be a train-track on~$S$, let
 $V(\tau)$ be the set of admissible weights on~$\tau$, $\ML(\tau)$ be the subspace of
 measured laminations carried by $\tau$, and
-$\phi_{\tau} \colon V(\tau) \to \ML(\tau)$ be the induced
-chart on measured laminations.
-Since $f$ extends continuously to geodesic currents \cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition $f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to \mathbb{R}$. Under these assumptions, the same proof as in~~\cite[Appendix~A]{Mir04:SimpleGeodesics}, \cite[Theorem~2]{Thu16:Research}, \cite[Theorem~4.7]{AH21:EffectiveCounting3}, shows $f_{\tau}$ is convex and homogeneous. 
+$\phi_{\tau} \colon V(\tau) \to \ML(S)$ be the induced
+map to measured laminations. If $\tau$ is maximal (i.e., all complementary
+components are trigons), then the image of $\phi_\tau$ is an open
+chart in $\ML(S)$.
+Since $f$ extends continuously to geodesic currents
+\cite[Theorem~A]{MGT21:Smoothings}, we can consider the composition
+$f_{\tau} \coloneqq f \circ \phi_{\tau} \colon V(\tau) \to
+\mathbb{R}$.
 
+\begin{proposition}\label{prop:convexity-charts}
+  If $f \in \Convex(S)$ also satisfies multi-smoothing, the function
+  $f_\tau \colon V(\tau) \to \bbR$ is convex and homogeneous.
+\end{proposition}
+
+\begin{proof}
+  The same proof as in
+  \cite[Appendix~A]{Mir04:SimpleGeodesics},
+  \cite[Theorem~2]{Thu16:Research},
+  \cite[Theorem~4.7]{AH21:EffectiveCounting3} applies.
+\end{proof}
+
+\begin{comment}
+\DPTtodo{Which curve functionals?}
 These curve functionals form a subset of the functionals that extend
 continuously to currents, by~\cite[Theorem~A]{MGT21:Smoothings}.
 Moreover, the map $\Psi \colon \Curr(S) \to \mathbb{R}^{\Curves(S)}$
 defined by $\Psi(\mu) = i(\mu, \cdot)$ is a homeomorphism onto its
 image when $\mathbb{R}^{\Curves(S)}$ is equipped with the product
-topology,
-by~\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}.
-Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
+topology
+\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}.
+Thus, a restatement of our Theorem~\ref{thm:intersect} is as follows.
 
 \begin{theorem}
    The image of~$\Psi$ is homeomorphically $\AConvex(S) \subset \bbR^{\Curves(S)}$.
@@ -394,7 +416,7 @@ Thus, a restatement of Theorem~\ref{thm:intersect} is as follows.
 
 It is a consequence of this last result and the local compactness of
 the space of geodesic currents (recalled as
-Proposition~\ref{prop:local_compactness} below) that the space
+Proposition~\ref{prop:local_compactness}) that the space
 $\AConvex(S)$ with the product topology is locally compact, which is
 not obvious \textit{a priori} by looking directly at the functionals.
 
@@ -417,7 +439,7 @@ The set $\Convex(S)$ with the product topology is locally compact.
 Some examples of interest for this conjecture would be extremal
 lengths associated to conformal structures or to elastic graphs
 \cite[Sections 4.8 and 4.9]{MGT21:Smoothings}.
-
+\end{comment}
 
 
 \subsection{Analogy to Poincar\'e duality}
@@ -448,29 +470,72 @@ A natural question that arises then is the following.
   continuity?
 \end{question}
 
-\subsection{Asymmetric analogues}
-\label{sec:asymmetric-analogues}
+\subsection{Local compactness for variations on the spaces}
+\label{sec:local-compactness}
 
-In this paper, we characterized additive, unoriented curve functionals that
-satisfy smoothing as exactly those coming from geodesic currents.
-We could instead look at functionals on \emph{oriented} curves.
+\DPTtodo[inline]{First pass at this new subsection. Much earlier
+  material got moved here}
+One way to get a handle on which spaces of curve functionals in
+Definition~\ref{def:functional-variations}
+are reasonable spaces is to ask about local compactness.
 
-\begin{definition}
-  Let $\AConvex^+(S)$ be the space of functionals on oriented curves
-  $\Curves^+(S)$ that satisfy additivity, oriented smoothing
-  (connected and disconnected), and stability, endowed with the
-  product topology. Similarly, $\AConvex^+_{\ge 0}(S)$ is the subspace
-  of positive functionals.
-\end{definition}
+We start with the smallest space $\AConvex(S)$.
+The map $\Psi \colon \Curr(S) \to \mathbb{R}^{\Curves(S)}$
+defined by $\Psi(\mu) = i(\mu, \cdot)$ is a homeomorphism onto its
+image when $\mathbb{R}^{\Curves(S)}$ is equipped with the product
+topology
+\cite[Theorem~11]{DLR10:DegenerationFlatMetrics}.
+Thus, a restatement of our Theorem~\ref{thm:intersect} is as follows.
 
-Appendix~\ref{sec:asymmetric} can be summarized as saying that
+\begin{theorem}
+   The image of~$\Psi$ is homeomorphically $\AConvex(S) \subset \bbR^{\Curves(S)}$.
+\end{theorem}
+
+It is a consequence of this result and the local compactness of
+the space of geodesic currents
+(Proposition~\ref{prop:local_compactness}) that the space
+$\AConvex(S)$ with the product topology is locally compact, which is
+not obvious \textit{a priori} by looking directly at the functionals.
+
+\begin{question}
+  Which of the spaces $\Convex(S)$, $\AConvex^+(S)$, and
+  $\Convex^+(S)$ are locally compact?
+\end{question}
+
+Let us start with $\Convex(S)$. For one shadow of a conjectural local
+compactness, compare Proposition~\ref{prop:convexity-charts}. For
+$\tau$ any train track and notation there,
+the sublevel set $\Lambda_f \coloneqq \{ \vec{x} \in V(\tau)
+: f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of
+$\mathbb{R}^N$ for some $N>0$ depending on the combinatorics of~$\tau$.
+\DPTtodo{A little twisted up in the logic, help, please}
+For any sequence of functionals $f_i \in \Convex(S)$, if $f_i$
+converge in $\bbR^{\Curves(S)}$ to~$f$, then the sub-level sets
+$\Lambda_{f_i}$ converge to $\Lambda_f$ in the Hausdorff topology. With
+respect to this topology,
+the subset of compact convex subsets of $\mathbb{R}^N$ is locally
+compact \cite[Chapter~6]{Lay92:Convex}. We see this phenomenon as a
+shadow of the local compactness of $\AConvex(S)$, which suggests that
+the same local compactness for $\Convex(S)$ should hold.
+
+\begin{conjecture}\label{conj:convex-compact}
+The set $\Convex(S)$ with the product topology is locally compact.
+\end{conjecture}
+
+Some examples of interest for this conjecture would be extremal
+lengths associated to conformal structures or to elastic graphs
+\cite[Sections 4.8 and 4.9]{MGT21:Smoothings}.
+
+Turning to asymmetric functionals, Appendix~\ref{sec:asymmetric} can be summarized as saying that
 $\AConvex^+(S)$ is not very related to the space $\Curr^+(S)$ of
 oriented geodesic currents: the natural map $\mu \mapsto
-\vec\imath(\mu,\cdot)$ is neither injective nor surjective, in what
-appear to be large ways.
+\vec\imath(\mu,\cdot)$ is neither injective nor surjective, with what
+appears to be a large difference.
 
-Nevertheless the space $\AConvex^+_{\ge 0}(S)$ may be of independent
-interest. There are many examples of such functionals. For instance,
+Nevertheless the space may be of independent
+interest, particularly the subspace $\AConvex_{\ge 0}^+(S)$ of
+functionals with non-negative values.
+There are many examples of such functionals. For instance,
 you can take an asymmetric metric on $S$ and obtain a functional
 on curves as in Section~\ref{subsec:length-metrics}. As in the
 symmetric case, if there are rectifiable curves in each homotopy class
@@ -481,43 +546,66 @@ for $\pi_1(S)$ as a monoid whose (directed) graph is simple in~$S$, as
 in the example in Appendix~\ref{sec:asymmetric}.
 
 \begin{question}\label{quest:AConvex+-compact}
-  Is the space $\AConvex^+_{\ge 0}(S)$ a reasonable space? For
-  instance, is it locally compact?
+  Is the space $\AConvex^+_{\ge 0}(S)$ locally compact?
 \end{question}
-
-\begin{question}
+\begin{question}\label{quest:asym-pseudo-metric}
   Does every element of $\AConvex^+_{\ge 0}(S)$ come from an
   asymmetric pseudo-metric in the style of
   Corollary~\ref{maincor:length_dual}?
 \end{question}
+\DPTtodo[inline]{Is the space of asymmetric pseudo-metrics locally
+  compact? Does Question~\ref{quest:asym-pseudo-metric} imply
+  Question~\ref{quest:AConvex+-compact}? What if we strengthen the
+  notion of ``pseudo-metric''?}
 
 In this oriented context, the restriction that the functional is
 positive is non-trivial (unlike for unoriented functionals): for any
 functional $f$ and element $\omega \in H^1(S; \bbZ)$, for a sufficiently
 large constant $\lambda>0$ the combination $f + \lambda\omega$ will take negative values.
 
-We could also relax the condition of smoothing to quasi-smoothing, and
-ask similar questions. If we drop positivity and also consider
-quasi-smoothings, then the space of functionals includes the much
-larger space of quasi-morphisms (Section~\ref{sub:quasimorphism}), which an infinite dimensional Banach space and hence not locally compact (see, e.g.,~\cite{CRH26:Quasimorphisms}).
+We next turn to the various varieties of quasi-convex functionals from
+Definition~\ref{def:functional-variations}.
 
-Recall that $\QConvex_K^+(S) \subset \QConvex^+(S)$ denotes the subspace of curve functionals on oriented multi-curves satisfying oriented quasi-smoothing with constant~$K$, homogeneity, stability and convex union.
-$\QConvex_K^+(S)$ contains, for example, the space of homogeneous $K$-quasi-morphisms. The space of $K$-quasi-morphisms is easily seen to be locally compact by an inequality
+\begin{question}
+  For fixed $K > 0$ and surface $S$, which of the spaces $\AQConvex_K$,
+  $\QConvex^+_K$, $\AQConvex^+_K$, $\QConvex^+_K$ are
+  locally compact? What about the subspaces $\AQConvex^+_{K,\ge 0}$
+  and $\QConvex^+_{K,\ge 0}$ of positive functionals?
+\end{question}
+
+Without the restriction to a fixed value of~$K$, these spaces are
+unlikely to be locally compact. We give two examples.
+
+Inside $\QConvex^+(S)$ (with no positivity assumption), we have the
+large space of quasi-morphisms (Section~\ref{sub:quasimorphism}),
+which an infinite dimensional Banach space and hence not locally
+compact (see, e.g., \cite{CRH26:Quasimorphisms}).
+
+On the other hand, if we fix~$K$, the quasi-morphisms in
+$\QConvex_K^+(S)$ are the homogeneous $K$-quasi-morphisms. The space
+of $K$-quasi-morphisms is easily seen to be locally compact by an
+inequality
 \[
 f(C) \leq K' \ell_F(C)
 \]
-where $\ell_F$ is the word-length induced by any finite generating set, and $K'>0$ is a constant depending only on a finite subset of curves.
-The hypotheses of oriented $K$-quasi-smoothing are much weaker than those of $K$-quasi-morphisms.
+where $\ell_F$ is the word-length induced by any finite generating
+set, and $K'>0$ is a constant depending only on a finite subset of
+curves. So it remains plausible that $\QConvex_K^+(S)$ is locally
+compact.
 
-\begin{question}\label{quest:QConvex+-compact}
-Is $\QConvex_K^+(S)$ locally compact?
-\end{question}
-
-More generally, one could ask about local compactness for various weakenings of the the hypotheses defining the subset $\AConvex(S)$; Conjecture~\ref{conj:convex-compact} and Questions~\ref{quest:AConvex+-compact} and \ref{quest:QConvex+-compact} are some examples.
-
-\DPTtodo[inline]{Ask which of spaces in
-  Figure~\ref{fig:curve-functionals} are locally compact. Consider
-  $\QConvex_K$ for any quasi-convex functionals}
+Example~\ref{examp:fibered} shows that a sequence of convex cocompact
+$\SL(2,\bbC)$ representations~$\rho_i$ can converge as a representation of
+$\pi_1(S)$ to a fibered 3-manifold representation~$\rho_\infty$. The
+corresponding curve functionals
+\[
+  \ell_i(x) = \cosh^{-1}\bigl(\abs{\tr(\rho_i(x))}\bigr)
+\]
+are all $K$-quasi-convex, for values of $K$ that presumably go to
+infinity. (See Question~\ref{quest:qf-const}.) Since the
+representations $\rho_i$ converge, the curve
+functionals $\ell_i$ also converge in $\bbR^{\Curves(S)}$ to the
+functional $\ell_\infty$ corresponding to $\rho_\infty$; but
+$\ell_\infty$ is not even in $\Cont(S)$.
 
 %%% Local Variables:
 %%% mode: latex

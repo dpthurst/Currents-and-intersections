@@ -418,6 +418,7 @@ delineate the scope of our results.
 \end{figure}
 
 \begin{definition}[Variations on convex curve functionals]
+  \label{def:functional-variations}
   The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
   is the set of functionals on unoriented multi-curves satisfying smoothing,
   convex union, stability, and homogeneity. We may equivalently think
@@ -440,6 +441,9 @@ delineate the scope of our results.
   smoothing property~\eqref{eq:or-smoothing}, and likewise, if relevant,
   quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
   quasi-smoothing~\eqref{eq:or-quasismoothing}.
+  \DPTtodo[inline]{We could consider also adding positivity, like
+    $\AConvex^+_{\ge 0}$ as a well-defined
+    subspace. Probably don't add it to the figure though}
 
   Finally, the space $\Cont(S)$ is the much larger space of functions on the
   space of unoriented currents $\Curr(S)$ that are \emph{continuous}
@@ -552,6 +556,7 @@ the cross-ratio values on general boxes.
 \subsection{Non-examples}
 \label{subsec:non-examples}
 
+\DPTtodo{The boldface method put $S$ no longer in italics}
 In order to illustrate the complexity of the problem,
 we now show examples of many natural functions on curves that do
 \emph{not} satisfy the $\AConvex$ properties, even though many of them
@@ -664,7 +669,7 @@ These examples are in $\bAQConvex_K\mathbf{(S)}$ for some $K > 0$.
 Recall that the
 \emph{quasi-Fuchsian} constant of $\rho$ is the smallest quasi-conformal
 constant for~$f_{\rho}$.
-\begin{question}
+\begin{question}\label{quest:qf-const}
   Let $\rho$ be a
 quasi-Fuchsian representation, and let $K>0$ be the \emph{quasi-smoothing
 constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \AQConvex_K(S)$. 
