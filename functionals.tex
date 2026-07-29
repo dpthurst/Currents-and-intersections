@@ -441,10 +441,6 @@ delineate the scope of our results.
   smoothing property~\eqref{eq:or-smoothing}, and likewise, if relevant,
   quasi-smoothing~\eqref{eq:quasismoothing} is replaced by oriented
   quasi-smoothing~\eqref{eq:or-quasismoothing}.
-  \DPTtodo[inline]{We could consider also adding positivity, like
-    $\AConvex^+_{\ge 0}$ as a well-defined
-    subspace. But maybe it's redundant, we don't really say anything
-    about it until Section~\ref{sec:local-compactness}} \DMGtodo{I think it might not be necessary}
 
   Finally, the space $\Cont(S)$ is the much larger space of functions on the
   space of unoriented currents $\Curr(S)$ that are \emph{continuous}
@@ -557,7 +553,6 @@ the cross-ratio values on general boxes.
 \subsection{Non-examples}
 \label{subsec:non-examples}
 
-\DPTtodo{The boldface method put $S$ no longer in italics}
 In order to illustrate the complexity of the problem,
 we now show examples of many natural functions on curves that do
 \emph{not} satisfy the $\AConvex$ properties, even though many of them
@@ -570,7 +565,7 @@ the largest class the example is contained in.
   Generalizing item~\ref{item:simple-gen} in
   Section~\ref{subsec:examples}, we can consider length with
   respect to embedded \emph{directed} graphs, giving examples in
-  $\mathbf{\bAConvex^+(S)}$. See Appendix~\ref{sec:asymmetric}, expanding on
+  $\bm{\AConvex^+(S)}$. See Appendix~\ref{sec:asymmetric}, expanding on
   \cite[Section~4.6]{MGT21:Smoothings}.
 \end{example}
 
@@ -589,7 +584,7 @@ the largest class the example is contained in.
   not necessarily smoothing
   (see~\cite[Example~4.10]{MGT21:Smoothings}
   and~\cite[Theorem~B]{MGT21:Smoothings}), thus giving examples in
-  $\mathbf{\bAQConvex(S)}$ or $\mathbf{\bAQConvex^+(S)}$ depending on
+  $\bm{\AQConvex(S)}$ or $\bm{\AQConvex^+(S)}$ depending on
   whether the graph is
   undirected or directed, or correspondingly whether a generating
   set for $\pi_1(S)$ is symmetric
@@ -602,7 +597,7 @@ the largest class the example is contained in.
   structure on~$S$ satisfies symmetry, smoothing, stability, convex
   union, homogeneity, but not additivity
   \cite[Section~4.8]{MGT21:Smoothings} and therefore provides an example in
-  $\mathbf{\bConvex(S)}$.
+  $\bm{\Convex(S)}$.
 \end{example}
 
 \begin{example}[Extremal length for graphs]
@@ -612,15 +607,15 @@ the largest class the example is contained in.
   see \cite[Section~4.9]{MGT21:Smoothings}, following
   \cite{Thurston19:Elastic}. As explained there, the
   resulting functionals $\sqrt{\EL}(C; \cG)$ give examples in
-  $\mathbf{\bConvex(S)}$ or
-  $\mathbf{\bQConvex(S)}$
+  $\bm{\Convex(S)}$ or
+  $\bm{\QConvex(S)}$
   depending on whether $\cG$ is embedded or not \cite[Propositions 4.22
   and~4.23]{MGT21:Smoothings}. (For the case of non-embedded graphs we
   need to stabilize, as in
   Example~\ref{examp:non-emb-graph}.) We can also allow $\cG$ to be a
   directed graph generating $\pi_1(S)$; the same proofs show
-  the stabilization of $\sqrt{\EL}$ is in $\mathbf{\bConvex^+(S)}$ or
-  $\mathbf{\bQConvex^+(S)}$.
+  the stabilization of $\sqrt{\EL}$ is in $\bm{\Convex^+(S)}$ or
+  $\bm{\QConvex^+(S)}$.
 
   This example can be further generalized to energies $E_p(C; \cG)$,
   depending on a parameter $1 \le p \le \infty$,
@@ -664,7 +659,7 @@ quasi-Fuchsian representations into $\PSL(2,\bbC)$ satisfy quasi-smoothing
 \cite[Proposition~4.11]{MGT21:Smoothings}, and satisfy strict
 smoothing if and only if the representation is Fuchsian
 (\cite[Theorem~A]{FF22:QF}, \cite[Proposition~1.8]{BR24:Cubulations}).
-These examples are in $\bAQConvex_K\mathbf{(S)}$ for some $K > 0$.
+These examples are in $\bm{\AQConvex_K(S)}$ for some $K > 0$.
 \end{example}
 
 Recall that the
@@ -694,7 +689,7 @@ Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to~$\infty$?
   $n\in\mathbb Z$; if $\ell_{M_\phi}$ extended continuously to
   currents, we would get a contradiction to
   Proposition~\ref{prop:pos-systole} below.
-  Thus this example is \textbf{not in $\bCont\mathbf{(S)}$}.
+  Thus this example is \textbf{not in $\bm{\Cont(S)}$}.
   In particular,
   by~\cite[Theorem~A]{MGT21:Smoothings}, $\ell_{M_\phi}(\gamma)$
   cannot satisfy $K$-quasi-smoothing for any $K>0$.
@@ -730,7 +725,6 @@ for every $\mu \in \Curr(S)$.
 Since given $K>0$, there are finitely many multi-curves of $X$-hyperbolic length at most $Km$, it follows there are finitely many multi-curves $C$ with $f(C) \leq K$.
 \end{proof}
 
-\DMGtodo{expanded this, and added a signed lorentzian length mention at the end}
 \begin{example}[Higher rank length functions]
   \label{examp:higher-rank}
 Example~\ref{examp:qf} fits into the broader framework of length
@@ -739,43 +733,64 @@ $\pi_1(S)$ into a connected real semisimple algebraic group~ $\mathbb{G}$ of
 non-compact type, such as $\SL(n,\mathbb{R})$.
 Let $\mathfrak{a}$ be a Cartan subspace with an associated set of simple restricted
 roots $\Pi$, and let $\mathfrak{a}^+ \subset \mathfrak{a}$ be the Weyl chamber cone. Given $\Theta\subset\Pi$, let
-$\mathfrak{a}_\Theta \coloneqq \bigcap_{\alpha \in \Pi-\Theta} \ker \alpha \subset\mathfrak{a}$, $p_\Theta \colon \mathfrak{a} \to \mathfrak{a}_\Theta$ is the natural projection, and
+$\mathfrak{a}_\Theta \coloneqq \bigcap_{\alpha \in \Pi-\Theta} \ker
+\alpha \subset\mathfrak{a}$, let $p_\Theta \colon \mathfrak{a} \to
+\mathfrak{a}_\Theta$ be the natural projection, and let
 $P_\Theta<\mathbb{G}$ be the
-associated cone and parabolic subgroup. Let $\lambda \colon \mathbb{G} \to \mathfrak{a}^+$ denote the vector of generalized eigenvalues, and $\lambda_\Theta \coloneqq p_\Theta \circ \lambda$.
+parabolic subgroup. Let $\lambda \colon \mathbb{G} \to \mathfrak{a}^+$ denote the vector of generalized eigenvalues, and $\lambda_\Theta \coloneqq p_\Theta \circ \lambda$.
 If
-$\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, we define the \emph{limit cone} $\mathcal{L}_\Theta^\rho$ as the smallest closed cone containing all the elements $\lambda_\Theta(\rho(\gamma))$ as $\gamma \in \pi_1(S)$.
+$\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, we define the
+\DPTtodo{I see, so you no longer define a rep-independent cone
+  $\mathfrak{a}^+_\Theta$, that seems fine. You also dropped the name
+  ``Benoist'', was that intentional?}
+\emph{limit cone} $\mathcal{L}_\Theta^\rho$ as the smallest closed cone containing all the elements $\lambda_\Theta(\rho(\gamma))$ for $\gamma \in \pi_1(S)$.
 For every 
 linear functional
-$\varphi\in\mathfrak{a}^*$ that is positive on $\mathcal{L}_\Theta^\rho$ the function
+$\varphi\in\mathfrak{a}^*$ that is positive on $\mathcal{L}_\Theta^\rho$, the function
 \begin{equation}\label{eq:higher-rank-funct}
 \varphi\circ\lambda_\Theta\circ\rho\colon\pi_1(S)\to\mathbb{R}
 \end{equation}
 extends continuously to the space of oriented geodesic currents
-by~\cite[Appendix~A]{JMG26:Horoboundary}
-and~\cite[Section~7]{CMGR26:GreenMetrics}, giving natural examples of
-curve functionals in $\mathbf{\bACont^+(S)}$ (and maybe in a subspace).
-(For Eq.~\eqref{eq:higher-rank-funct} to
-extend continuously, it
-suffices that $\varphi$ is positive on the Benoist limit
-cone~$\mathcal{L}_\Theta^\rho \subset \mathfrak{a}_\Theta^+$.)
+by \cite[Appendix~A]{JMG26:Horoboundary}
+and \cite[Section~7]{CMGR26:GreenMetrics}, giving natural examples of
+curve functionals in $\bm{\ACont^+(S)}$ (and maybe in a subspace).
+% (For Eq.~\eqref{eq:higher-rank-funct} to
+% extend continuously, it
+% suffices that $\varphi$ is positive on the Benoist limit
+% cone~$\mathcal{L}_\Theta^\rho \subset \mathfrak{a}_\Theta^+$.)
 
 If $\Theta$ is symmetric with respect to the natural Cartan involution, Martone-Zhang
 \cite[Theorem~1.1]{MZ19:PositivelyRatioed} show
 that Eq.~\eqref{eq:higher-rank-funct}
-satisfies full smoothing for $\varphi=\omega_\alpha$, $\alpha \in \Theta$ ($\omega_\alpha$ denoting the fundamental weight of $\alpha$) if and only it is $\Theta$-positively ratioed
+satisfies full smoothing for $\varphi=\omega_\alpha$, $\alpha \in
+\Theta$
+(where $\omega_\alpha$ denotes the fundamental weight of $\alpha$) if
+and only
+\DPTfyi{Changed ``it'' to ``$\rho$''}
+$\rho$ is $\Theta$-positively ratioed
 (see
 item~\ref{item:positively-ratioed} in Section~\ref{subsec:examples}).
 Hence, for non-positively-ratioed representations we get examples that
-are not in
+are in $\ACont(S)$ but not in
 $\AConvex(S)$.
 
 These non-positively-ratioed examples generalize
 Example~\ref{examp:qf} on
 quasi-Fuchsian representations, though in the broader context it is
-not clear whether or not these functionals are always in
-$\AQConvex(S) \subset \ACont(S)$. 
+not clear whether or not these functionals are in the
+intermediate space
+$\AQConvex(S)$.
 
-When $\mathbb{G}$ is not semisimple, e.g., $\mathbb{G} = \operatorname{SO}(n+1,n) \ltimes \mathbb{R}^{2n+1}$, the signed Lorentzian length associated to a \emph{Margulis space time} (i.e., representations $\rho$ where $\rho(\Gamma)$ acts properly on $\mathbb{R}^{2n+1}$)~\cite{GM00:FlatLorentzian} is a natural example of asymmetric curve functional satisfying stability, and additivity extending continuously to geodesic currents~\cite[Section~6.1]{GML09:ProperAffine}~\cite{Lab01:Diffusion}.
+\DPTtodo{Thanks for the reminder $\bbG$ is not semi-simple. Edited
+  since this example is written in a specific way, only for the
+  Lorentzian case and not other non semisimple groups}
+When $\mathbb{G}$ is the non-semisimple group $\SO(n+1,n) \ltimes \bbR^{2n+1}$, the signed
+Lorentzian length associated to a \emph{Margulis space time} (i.e.,
+representations $\rho$ where $\rho(\Gamma)$ acts properly on
+$\mathbb{R}^{2n+1}$) \cite{GM00:FlatLorentzian} is a natural example
+of asymmetric curve functional satisfying stability, and additivity
+extending continuously to geodesic
+currents \cite[Section~6.1]{GML09:ProperAffine}\cite{Lab01:Diffusion}.
 \end{example}
 
 \begin{example}[Biautomatic structures]
@@ -798,7 +813,7 @@ not biautomatic.
 
 Since this class includes ordinary word length (cf.\
 Example~\ref{examp:non-emb-graph}), such translation lengths do not
-satisfy smoothing in general and lie in $\mathbf{\bAQConvex(S)}$.
+satisfy smoothing in general and lie in $\bm{\AQConvex(S)}$.
 \end{example}
 
 \begin{example}[Self intersection]
@@ -810,7 +825,7 @@ convex union (see~\cite[Example~1.12]{MGT21:Smoothings}).
 Thus it provides an example of a curve functional lying outside
 $\QConvex(S)$, despite extending to geodesic currents by
 Bonahon’s work~\cite{Bonahon86:EndsHyperbolicManifolds}, so it lies in
-$\mathbf{\bACont(S)}$.
+$\bm{\ACont(S)}$.
 \end{example}
 
 \begin{example}[Exotic boundary metrics]\label{examp:exotic-lengths}
@@ -824,7 +839,7 @@ $\mathbf{\bACont(S)}$.
   sequences of simple elements $a_n,b_n \in \pi_1(S)$, with $\ora{a_n}, \ora{b_n}$
   crossing, so that $[a_nb_n] \reducesto [a_n][b_n]$ and $\lim_{n\to
     \infty}\ell(a_n b_n) = \infty$. This shows they violate disconnected
-  $K$-quasi-smoothing for every~$K$, giving examples in $\mathbf{\bACont(S)}$.
+  $K$-quasi-smoothing for every~$K$, giving examples in $\bm{\ACont(S)}$.
 \end{example}
 
 \begin{example}[Lengths from quotient graphs]
@@ -843,7 +858,7 @@ $\mathbf{\bACont(S)}$.
   $\ell_\cG$ is stable
   \cite[Section~2.6]{Gromov1981HyperbolicManifolds}. Bonahon
   used the large kernel to show
-  $\ell_\cG$ is \textbf{not in $\mathbf{\bCont(S)}$}
+  $\ell_\cG$ is \textbf{not in $\bm{\Cont(S)}$}
   \cite[Proposition~11]{Bonahon91:CurrentsGroups}. In
   particular, $\ell_\cG$ does not satisfy quasi-smoothing. We now give a direct proof that quasi-smoothing is violated.
 \end{example}
@@ -891,7 +906,7 @@ a contradiction.
 % in~\cite[Section~6.1]{GML09:ProperAffine}. Strictly speaking, that
 % result is stated for surfaces with boundary, but the same argument
 % applies to closed surfaces by~\cite{Lab01:Diffusion}. This thus gives
-% examples in $\mathbf{\bACont^+(S)}$ and possibly in $\AQConvex^+(S)$.
+% examples in $\bm{\ACont^+(S)}$ and possibly in $\AQConvex^+(S)$.
 % \end{example}
 
 \begin{example}[Additive version of $\sqrt{\EL}$]
@@ -904,7 +919,7 @@ on \emph{connected} curves and extended it additively to a function
 $G$ on (weighted)
 multi-curves,
 which is thus not equal to $\sqrt{EL}$ on multi-curves. $G$ is
-\textbf{not in $\mathbf{\bACont(S)}$}, since we know $G=\sqrt{EL}$ on
+\textbf{not in $\bm{\ACont(S)}$}, since we know $G=\sqrt{EL}$ on
 (weighted) connected curves, which are dense in the space of geodesic
 currents.
 Thus, the purported continuous extension $\overline{G}$ would have to satisfy $\overline{G}=\sqrt{EL}$ on all geodesic currents, hence on all multi-curves, a contradiction.
@@ -934,7 +949,7 @@ The function
 \[
 \mu \mapsto \sqrt{\vec\imath(\mu,\mu)}
 \]
-is in $\mathbf{\bCont^+(S)}$ but not in $\QConvex^+(S)$, by the same reasoning as
+is in $\bm{\Cont^+(S)}$ but not in $\QConvex^+(S)$, by the same reasoning as
 in Example~\ref{examp:self-intersect}.
 \end{example}
 
