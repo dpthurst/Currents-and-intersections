@@ -40,9 +40,10 @@ curve with the opposite orientation.
 \begin{lemma}\label{lem:asym-intersect}
   The asymmetric intersection number on curves satisfies
   \[
-    \vec{\imath}(\vec C, \vec D) = {\textstyle\frac12}\,i(C, D) + {\textstyle\frac12}\langle \vec C,\vec D\rangle.
+    \vec{\imath}(\vec C, \vec D) = {\textstyle\frac12}\,i(C, D) +
+    {\textstyle\frac12}\langle h(\vec C), h(\vec D)\rangle.
   \]
-  It extends continuously to currents.
+  It extends continuously to oriented currents.
 \end{lemma}
 
 \begin{proof}
@@ -50,9 +51,10 @@ curve with the opposite orientation.
   immediate from the definitions.
 
   The continuous extension to currents follows from the fact that
-  $h(\vec C) \colon \Curves^+(S) \to H_1(S)$ extends continuously to
-  currents,\DPTtodo{Find some citation in general currents setting}
-  and then both terms on the RHS are continuous on currents.
+  $h \colon \Curves^+(S) \to H_1(S)$ extends continuously to
+  oriented currents.\DPTtodo{Find some citation in general currents setting}
+  (The map $h$ vanishes on oriented currents that are flip-invariant.)
+  Using this fact, both terms on the RHS are continuous on currents.
 
   Alternately, the standard proof of continuity of $i(\cdot,\cdot)$
   reduces to carefully upper
