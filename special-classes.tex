@@ -175,23 +175,12 @@ Even though this example corresponds to a punctured surface and hence does not f
 
 We note that our result says nothing concrete about the dual multi-curve, whereas Erlandsson's result explicitly constructs it in the specific case of simple generating sets. It would be interesting to describe these multi-curves in general.
 
-\subsection{Length metrics and intersection domination}
+\subsection{Length metrics}
 \label{subsec:length-metrics}
-
-\DPTtodo{Refocus this section to be mainly about length metrics}
- Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$, if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves^+(S)$.
-
- As an immediate application of Theorem~\ref{thm:intersect}, we investigate how inequalities between intersection numbers of curves constrain the dual currents associated with metrics on the surface.
-
-For example, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
-
-\begin{question}[Neumann-Coto, 2001]
-Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows that $\ell_g(C_1) \leq \ell_g(C_2)$ for all Riemannian metrics $g$ on $S$?
-\end{question}
-
-In fact, give a much stronger result (see Corollary~\ref{cor:domination} below).
-
-First, we show that any length induced by a metric (in fact, by a pseudometric) on $S$ has a dual geodesic current.
+We now prove Corollary~\ref{maincor:length_dual}: any length induced
+by a metric (in fact, by a pseudometric) on $S$ has a dual geodesic
+current. We will then use that result to derive some corollaries about
+domination.
 
 We first recall the definition of a length induced by a pseudometric on $S$. See~\cite[Chapter~I.1]{BH11:NonPosCurvature} for a definition in the context of metrics. A \emph{pseudometric space} is a pair $(X,d)$, where $X$ is a set and $d \colon X \times X \to \mathbb{R}_{\ge 0}$ is a function satisfying, for all $x,y,z \in X$,
 \[
@@ -232,7 +221,7 @@ $d$ is given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.
 \[
 d(x,y) = \inf_{\gamma} \{ \ell_d(\gamma) : \gamma(0)=x, \gamma(1)=y, \gamma : [0,1] \to X \}.
 \]
-After these preliminaries, we can prove Corollary~\ref{maincor:length_dual} from the introduction.
+We now prove the corollary from the introduction.
 \begin{taggedcor}{\ref{maincor:length_dual}}
   An additive curve functional satisfies the smoothing
   property~\eqref{eq:smoothing}, and is thus dual to a geodesic
@@ -287,21 +276,13 @@ and so that
 See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}.
 \end{proof}
 
-\begin{corollary}
-Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
-    $\ell_d(\mu_1) \leq \ell_d(\mu_2)$ for all length pseudometrics $d$ on $S$.
-    \label{cor:domination}
-\end{corollary}
-
-\begin{proof}
-By Corollary~\ref{maincor:length_dual}, for every length pseudometric $d$ on $S$, there exist a dual geodesic current $\mu_d$ for the induced curve functional $\ell_d$.
-Approximating the current $\mu_d$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
-\end{proof}
-
 We continue with some remarks.
 
 \begin{remark}\label{rmk:pseudo_metrics}
- The pseudometric $d_\mu$ is \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in the natural order, then
+ For any geodesic current~$\mu$, the pseudometric $d_\mu$ is
+ \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the
+ sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in
+ the natural order, then
 \[
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
@@ -312,7 +293,10 @@ exists a straight invariant pseudometric $d_\mu^\Sigma$ on
 $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every
 closed curve $C$.
 \end{remark}
+
 \begin{remark}
+  \DPTtodo{Is this worth stating as a proposition, that length is
+    stable length on surfaces? On the other hand I doubt it's new}
 Suppose $(X,d)$ is a length pseudometric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
 where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of~$g$.
 From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
@@ -323,6 +307,31 @@ for every $x \in \wt{X}$, and every $g \in \pi_1(S)$ so that $[g]=C$.
 The quantity $L_{\wt{d}}(g)$ is the \emph{$\wt{d}$-stable length} of~$g$.
 The equality between translation length and stable length does not hold in general even in the setting of geodesic Gromov hyperbolic spaces~\cite[Proposition~6.4]{CDP90:Lectures}.
 \end{remark}
+
+\subsection{Domination}\label{sec:domination}
+\DPTfyi{Made this its own subsection. Maybe it's not worth it}
+We take a brief detour from the special classes of currents to
+consider questions related to domination.
+Let $\mu_1,\mu_2 \in \Curr(S)$. Say $\mu_1 \leq \mu_2$, or $\mu_2$ \emph{dominates} $\mu_1$, if $i(\mu_1,C) \leq i(\mu_2,C)$ for all $C \in \Curves^+(S)$.
+As an application of Corollary~\ref{maincor:length_dual}, we answer positively the following question at the end of \cite{NC01:ShortestGeodesics}.
+
+\begin{question}[Neumann-Coto, 2001]
+Let $C_1,C_2$ be two multi-curves. If $C_2$ dominates $C_1$, does it follows that $\ell_g(C_1) \leq \ell_g(C_2)$ for all Riemannian metrics $g$ on $S$?
+\end{question}
+
+In fact, we give a stronger result.
+
+\begin{corollary}\label{cor:domination}
+Let $\mu_1, \mu_2$ be two geodesic currents. If $\mu_2$ dominates $\mu_1$, then
+    $\ell_d(\mu_1) \leq \ell_d(\mu_2)$ for all length pseudometrics $d$ on $S$.
+\end{corollary}
+
+\begin{proof}
+By Corollary~\ref{maincor:length_dual}, for every length pseudometric $d$ on $S$, there exist a dual geodesic current $\mu_d$ for the induced curve functional $\ell_d$.
+Approximating the current $\mu_d$ by weighted multi-curves and using continuity of intersection number on currents the result follows.
+\end{proof}
+
+
 \subsection{Measured laminations}
 \label{subsec:laminations}
 
