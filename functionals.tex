@@ -444,7 +444,7 @@ delineate the scope of our results.
   \DPTtodo[inline]{We could consider also adding positivity, like
     $\AConvex^+_{\ge 0}$ as a well-defined
     subspace. But maybe it's redundant, we don't really say anything
-    about it until Section~\ref{sec:local-compactness}}
+    about it until Section~\ref{sec:local-compactness}} \DMGtodo{I think it might not be necessary}
 
   Finally, the space $\Cont(S)$ is the much larger space of functions on the
   space of unoriented currents $\Curr(S)$ that are \emph{continuous}
@@ -463,7 +463,7 @@ was the main result of our previous work.
 
 \begin{theorem}{\cite[Theorem~A]{MGT21:Smoothings}}\label{thm:convex}
    Let $f \in \QConvex^+(S)$. Then there is a unique continuous homogeneous function
-  $\bar{f} \colon \Curr^+(S) \to \bbR_{\ge 0}$ that extends~$f$.
+  $\bar{f} \colon \Curr^+(S) \to \bbR$ that extends~$f$.
 \end{theorem}
 
 For some motivation for the terminology, if we strengthen the
@@ -730,6 +730,7 @@ for every $\mu \in \Curr(S)$.
 Since given $K>0$, there are finitely many multi-curves of $X$-hyperbolic length at most $Km$, it follows there are finitely many multi-curves $C$ with $f(C) \leq K$.
 \end{proof}
 
+\DMGtodo{expanded this, and added a signed lorentzian length mention at the end}
 \begin{example}[Higher rank length functions]
   \label{examp:higher-rank}
 Example~\ref{examp:qf} fits into the broader framework of length
@@ -738,12 +739,14 @@ $\pi_1(S)$ into a connected real semisimple algebraic group~ $\mathbb{G}$ of
 non-compact type, such as $\SL(n,\mathbb{R})$.
 Let $\mathfrak{a}$ be a Cartan subspace with an associated set of simple restricted
 roots $\Pi$, and let $\mathfrak{a}^+ \subset \mathfrak{a}$ be the Weyl chamber cone. Given $\Theta\subset\Pi$, let
-$\mathfrak{a}^+ \subset \mathfrak{a}_\Theta^+ \subset\mathfrak{a}$ and
+$\mathfrak{a}_\Theta \coloneqq \bigcap_{\alpha \in \Pi-\Theta} \ker \alpha \subset\mathfrak{a}$, $p_\Theta \colon \mathfrak{a} \to \mathfrak{a}_\Theta$ is the natural projection, and
 $P_\Theta<\mathbb{G}$ be the
-associated cone and parabolic subgroup. If
-$\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, then, for every 
+associated cone and parabolic subgroup. Let $\lambda \colon \mathbb{G} \to \mathfrak{a}^+$ denote the vector of generalized eigenvalues, and $\lambda_\Theta \coloneqq p_\Theta \circ \lambda$.
+If
+$\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, we define the \emph{limit cone} $\mathcal{L}_\Theta^\rho$ as the smallest closed cone containing all the elements $\lambda_\Theta(\rho(\gamma))$ as $\gamma \in \pi_1(S)$.
+For every 
 linear functional
-$\varphi\in\mathfrak{a}^*$ that is positive on $\mathfrak{a}_\Theta^+$ the function
+$\varphi\in\mathfrak{a}^*$ that is positive on $\mathcal{L}_\Theta^\rho$ the function
 \begin{equation}\label{eq:higher-rank-funct}
 \varphi\circ\lambda_\Theta\circ\rho\colon\pi_1(S)\to\mathbb{R}
 \end{equation}
@@ -770,7 +773,9 @@ These non-positively-ratioed examples generalize
 Example~\ref{examp:qf} on
 quasi-Fuchsian representations, though in the broader context it is
 not clear whether or not these functionals are always in
-$\AQConvex(S) \subset \ACont(S)$.
+$\AQConvex(S) \subset \ACont(S)$. 
+
+When $\mathbb{G}$ is not semisimple, e.g., $\mathbb{G} = \operatorname{SO}(n+1,n) \ltimes \mathbb{R}^{2n+1}$, the signed Lorentzian length associated to a \emph{Margulis space time} (i.e., representations $\rho$ where $\rho(\Gamma)$ acts properly on $\mathbb{R}^{2n+1}$)~\cite{GM00:FlatLorentzian} is a natural example of asymmetric curve functional satisfying stability, and additivity extending continuously to geodesic currents~\cite[Section~6.1]{GML09:ProperAffine}~\cite{Lab01:Diffusion}.
 \end{example}
 
 \begin{example}[Biautomatic structures]
