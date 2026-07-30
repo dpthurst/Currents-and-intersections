@@ -369,10 +369,6 @@ convex union, and smoothing, does it necessarily satisfy domination?
 \subsection{Convexity on train-track charts}
 \label{sec:convexity_charts}
 
-\DPTtodo[inline]{Edited. I think the convexity bit should be moved somewhere
-  else, maybe to Section~\ref{sec:functionals}, since I'm grabbing the
-  local compactness stuff for its own section}
-  \DMGtodo{I would leave it here since it relies on multi-smoothing, which is introduced right before. I gave a pointer in Section~\ref{sec:functionals} to this subsection when we introduce the term $\Convex(S)$}
 One of the reasons multi-smoothing is a useful property is that,
 coupled with convex union, homogeneity, and stability, it
 yields convex functions when restricted to train-track coordinates.
@@ -475,8 +471,6 @@ A natural question that arises then is the following.
 \subsection{Local compactness for variations on the spaces}
 \label{sec:local-compactness}
 
-\DPTtodo[inline]{First pass at this new subsection. Much earlier
-  material got moved here}
 One way to get a handle on which spaces of curve functionals in
 Definition~\ref{def:functional-variations}
 are reasonable spaces is to ask about local compactness.
@@ -520,7 +514,6 @@ compact \cite[Chapter~6]{Lay92:Convex}. We see this phenomenon as a
 shadow of the local compactness of $\AConvex(S)$, which suggests that
 the same local compactness for $\Convex(S)$ should hold.
 
-\DMGtodo{I am fairly confident about this conjecture, and I've made some progress. I am less confident about local compactness of the oriented versions, I would state those as questions}
 \begin{conjecture}\label{conj:convex-compact}
 The set $\Convex(S)$ with the product topology is locally compact.
 \end{conjecture}
@@ -556,11 +549,6 @@ in the example in Appendix~\ref{sec:asymmetric}.
   asymmetric length pseudo-metric on $S$ in the style of
   Corollary~\ref{maincor:length_dual}?
 \end{question}
-\DPTtodo[inline]{Is the space of asymmetric pseudo-metrics locally
-  compact? Does Question~\ref{quest:asym-pseudo-metric} imply
-  Question~\ref{quest:AConvex+-compact}? What if we strengthen the
-  notion of ``pseudo-metric''?}
-  \DMGtodo{The space of pseudo-metrics on the surface group up to rough similarity is *not* locally compact (see~\cite{CMGR26:GreenMetrics}). Also the topology is convergence in Lipschitz metric (which restricts to the topology of currents). But I don't think thats' what we mean here, I guess we want asymmetric length pseudo-metrics on the surface. I do not know if this is locally compact. }
 
   Note that the restriction to considering length pseudo-metrics on $S$ is crucial. There are many other pseudo-metrics induced by pulling back geometric actions of $\pi_1(S)$ on Gromov hyperbolic spaces, and most of those are not induced by geodesic currents (e.g. quasi-fuchsian representations, see~\ 
 

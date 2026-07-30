@@ -424,8 +424,14 @@ delineate the scope of our results.
   convex union, stability, and homogeneity. We may equivalently think
   of these as functionals on multi-curves that satisfy the symmetry
   property.
-  \DMGtodo{added this}
-  We use the qualifier \emph{convex} because these functions extend continuously to the space of geodesic currents and, under a slight strengthening of the smoothing hypothesis, their restrictions to train-track charts are convex in the corresponding train-track coordinates (see Section~\ref{sec:convexity_charts}).
+  \DPTfyi{Deleted the similar motivation that was a little later. This
+    is a better place for it}
+  We use the qualifier \emph{convex} because these functions extend
+  continuously to the space of geodesic currents and, under a slight
+  strengthening of the smoothing hypothesis, their restrictions to
+  train-track charts are convex in the corresponding train-track
+  coordinates; see Sections~\ref{subsec:multismoothing}
+  and~\ref{sec:convexity_charts}.
 
   For the qualifier $A$, the \emph{additive} functionals, replace the
   condition of convex union~\eqref{eq:union-convex} with
@@ -463,13 +469,6 @@ was the main result of our previous work.
    Let $f \in \QConvex^+(S)$. Then there is a unique continuous homogeneous function
   $\bar{f} \colon \Curr^+(S) \to \bbR$ that extends~$f$.
 \end{theorem}
-
-For some motivation for the terminology, if we strengthen the
-smoothing assumption for a
-functional in $\Convex(S)$ to multi-smoothing, then it induces
-a convex function in every train-track coordinate chart in the space
-of measured laminations. See Sections~\ref{subsec:multismoothing}
-and~\ref{sec:convexity_charts}.
 
 \subsection{Examples}
 \label{subsec:examples}
@@ -782,7 +781,7 @@ When $\mathbb{G}$ is the non-semisimple group $\SO(n+1,n) \ltimes \bbR^{2n+1}$, 
 Lorentzian length associated to a \emph{Margulis space time} (i.e.,
 representations $\rho$ where $\rho(\Gamma)$ acts properly on
 $\mathbb{R}^{2n+1}$) \cite{GM00:FlatLorentzian} is a natural example
-of asymmetric curve functional satisfying stability, additivity
+of an asymmetric curve functional satisfying stability and additivity
 and extending continuously to geodesic
 currents \cite[Section~6.1]{GML09:ProperAffine}\cite{Lab01:Diffusion}.
 \end{example}
