@@ -422,8 +422,10 @@ delineate the scope of our results.
   The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
   is the set of functionals on unoriented multi-curves satisfying smoothing,
   convex union, stability, and homogeneity. We may equivalently think
-  of these as functionals on curves that satisfy the symmetry
+  of these as functionals on multi-curves that satisfy the symmetry
   property.
+  \DMGtodo{added this}
+  We use the qualifier \emph{convex} because these functions extend continuously to the space of geodesic currents and, under a slight strengthening of the smoothing hypothesis, their restrictions to train-track charts are convex in the corresponding train-track coordinates (see Section~\ref{sec:convexity_charts}).
 
   For the qualifier $A$, the \emph{additive} functionals, replace the
   condition of convex union~\eqref{eq:union-convex} with
@@ -544,7 +546,6 @@ Section~\ref{subsec:length-metrics}, we further generalize items
 Section~\ref{subsec:embedded_graphs} we show that
 item~\ref{item:simple-gen} admits a further generalization to stable lengths associated
 to embedded graphs on the surface.
-\DPTfyi{Shortened this text}
 Theorem~\ref{mainthm:crossratio},
 proved in Section~\ref{sec:questions}, gives an alternate proof
 of item~\ref{item:positively-ratioed} using only the periods and not
@@ -740,10 +741,7 @@ $P_\Theta<\mathbb{G}$ be the
 parabolic subgroup. Let $\lambda \colon \mathbb{G} \to \mathfrak{a}^+$ denote the vector of generalized eigenvalues, and $\lambda_\Theta \coloneqq p_\Theta \circ \lambda$.
 If
 $\rho\colon\pi_1(S)\to G$ is $P_\Theta$-Anosov, we define the
-\DPTtodo{I see, so you no longer define a rep-independent cone
-  $\mathfrak{a}^+_\Theta$, that seems fine. You also dropped the name
-  ``Benoist'', was that intentional?}
-\emph{limit cone} $\mathcal{L}_\Theta^\rho$ as the smallest closed cone containing all the elements $\lambda_\Theta(\rho(\gamma))$ for $\gamma \in \pi_1(S)$.
+\emph{Benoist limit cone} $\mathcal{L}_\Theta^\rho$ as the smallest closed cone containing all the elements $\lambda_\Theta(\rho(\gamma))$ for $\gamma \in \pi_1(S)$.
 For every 
 linear functional
 $\varphi\in\mathfrak{a}^*$ that is positive on $\mathcal{L}_\Theta^\rho$, the function
@@ -766,7 +764,6 @@ satisfies full smoothing for $\varphi=\omega_\alpha$, $\alpha \in
 \Theta$
 (where $\omega_\alpha$ denotes the fundamental weight of $\alpha$) if
 and only
-\DPTfyi{Changed ``it'' to ``$\rho$''}
 $\rho$ is $\Theta$-positively ratioed
 (see
 item~\ref{item:positively-ratioed} in Section~\ref{subsec:examples}).
@@ -781,15 +778,12 @@ not clear whether or not these functionals are in the
 intermediate space
 $\AQConvex(S)$.
 
-\DPTtodo{Thanks for the reminder $\bbG$ is not semi-simple. Edited
-  since this example is written in a specific way, only for the
-  Lorentzian case and not other non semisimple groups}
 When $\mathbb{G}$ is the non-semisimple group $\SO(n+1,n) \ltimes \bbR^{2n+1}$, the signed
 Lorentzian length associated to a \emph{Margulis space time} (i.e.,
 representations $\rho$ where $\rho(\Gamma)$ acts properly on
 $\mathbb{R}^{2n+1}$) \cite{GM00:FlatLorentzian} is a natural example
-of asymmetric curve functional satisfying stability, and additivity
-extending continuously to geodesic
+of asymmetric curve functional satisfying stability, additivity
+and extending continuously to geodesic
 currents \cite[Section~6.1]{GML09:ProperAffine}\cite{Lab01:Diffusion}.
 \end{example}
 
