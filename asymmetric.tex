@@ -38,10 +38,10 @@ curve with the opposite orientation.
 
 \begin{lemma}\label{lem:asym-intersect}
   The asymmetric intersection number on curves satisfies
-  \[
+  \begin{equation}\label{eq:asym-intersect}
     \vec{\imath}(\vec C, \vec D) = {\textstyle\frac12}\,i(C, D) +
     {\textstyle\frac12}\langle h(\vec C), h(\vec D)\rangle.
-  \]
+  \end{equation}
   It extends continuously to oriented currents.
 \end{lemma}
 
@@ -50,15 +50,23 @@ curve with the opposite orientation.
   immediate from the definitions.
 
   The continuous extension to currents follows from the fact that the map
-  $h \colon \Curves^+(S) \to H_1(S)$ sending a geodesic current $\mu$ to a homology class extends continuously to
-  oriented currents
-  (The map $h$ vanishes on oriented currents that are flip-invariant.) Indeed, given $\mu \in \Curr(S)$, we can define a linear map  $h_\mu \colon H^1(S,\mathbb{R})\to \mathbb{R}$ on de Rham cohomology
+  $h \colon \Curves^+(S) \to H_1(S)$ sending an oriented curve to a
+  homology class extends continuously to
+  oriented currents.
+  (The map~$h$ vanishes on oriented currents that are flip-invariant.) Indeed, given $\mu \in \Curr(S)$, we can define a linear map  $h_\mu \colon H^1(S,\mathbb{R})\to \mathbb{R}$ on de Rham cohomology
   \[
   [\omega] \mapsto \int_{T^1 S} \omega_x(v)d\hat{\mu}(x,v)
   \]
-  where here $\hat{\mu}$ is the geodesic flow invariant measure $T^1S$ induced by $\mu$. The map $h$ is then defined by sending $\mu \mapsto h_\mu \in H_1(S;\mathbb{R})$(see~\cite{Schwartzman:AsymptoticCycles} and~\cite{RuelleSullivan:CurrentsFlowsDiffeomorphisms} for further details).
-  
-  Using this fact, both terms on the RHS are continuous on currents.
+  where $\hat{\mu}$ is the geodesic flow invariant measure on
+  $T^1 S$
+  induced by $\mu$. The map $h$ is then defined by sending $\mu
+  \mapsto h_\mu \in
+  H_1(S;\mathbb{R})$; see
+  \cite{Schwartzman:AsymptoticCycles,RuelleSullivan:CurrentsFlowsDiffeomorphisms}
+  for further
+  details.
+  Using this fact, both terms on the RHS of \eqref{eq:asym-intersect}
+  are continuous on currents.
 
   Alternately, the standard proof of continuity of $i(\cdot,\cdot)$
   reduces to carefully upper
