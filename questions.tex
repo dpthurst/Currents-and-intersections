@@ -498,22 +498,13 @@ not obvious \textit{a priori} by looking directly at the functionals.
   $\Convex^+(S)$ are locally compact?
 \end{question}
 
-\DPTtodo{Delete this next paragraph, but then we need some other
-  transition}
-Let us start with $\Convex(S)$. For one shadow of a conjectural local
-compactness, compare Proposition~\ref{prop:convexity-charts}. For
-$\tau$ any train track and notation there,
-the sublevel set $\Lambda_f \coloneqq \{ \vec{x} \in V(\tau)
-: f_{\tau}(\vec{x}) \leq 1 \}$ is a compact convex subset of
-$\mathbb{R}^N$ for some $N>0$ depending on the combinatorics of~$\tau$.
-For any sequence of functionals $f_i \in \Convex(S)$, if $f_i$
-converge in $\bbR^{\Curves(S)}$ to~$f$, then the sub-level sets
-$\Lambda_{f_i}$ converge to $\Lambda_f$ in the Hausdorff topology. With
-respect to this topology,
-the subset of compact convex subsets of $\mathbb{R}^N$ is locally
-compact \cite[Chapter~6]{Lay92:Convex}. We see this phenomenon as a
-shadow of the local compactness of $\AConvex(S)$, which suggests that
-the same local compactness for $\Convex(S)$ should hold.
+
+Let us start with $\Convex(S)$. 
+We expect the smoothing relation and convex union properties of $f$ to give, for every curve $C$, an upper bound 
+\[
+f(C) \leq \sum_{i=1}^k n_i f(D_i),
+\]
+where $n_i \geq 0$ are non-negative integers depending on $C$, and $D_1,\cdots, D_k$ is a fixed finite collection of curves (independent of $C$). An inequality like that would give a positive answer to the following conjecture.
 
 \begin{conjecture}\label{conj:convex-compact}
 The set $\Convex(S)$ with the product topology is locally compact.
@@ -591,11 +582,7 @@ compact.
 Example~\ref{examp:fibered} shows that a sequence of convex cocompact
 $\SL(2,\bbC)$ representations~$\rho_i$ can converge as a representation of
 $\pi_1(S)$ to a fibered 3-manifold representation~$\rho_\infty$. The
-corresponding curve functionals
-\[
-  \ell_i(x) = \cosh^{-1}\bigl(\abs{\tr(\rho_i(x))}\bigr)
-\]
-are all $K$-quasi-convex, for values of $K$ that presumably go to
+corresponding curve functionals $\ell_i$ are all $K_i$-quasi-convex, for values of $K_i$ that presumably go to
 infinity. (See Question~\ref{quest:qf-const}.)
 Since the
 representations $\rho_i$ converge, the curve
