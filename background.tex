@@ -241,27 +241,37 @@ The $\pi_1(S)$-invariance of geodesic currents highly constrains their atoms.
   geodesic.
 \end{proposition}
 
-\DPTfyi{HERE}
-For $g \in \pi_1(S)$, let $\ora{g}$ denote the \emph{hyperbolic axis} of $g$, i.e., the oriented geodesic left invariant by $g$ along which $g$ translates the least hyperbolic distance (see also Section~\ref{sec:actions}).
-
-For $\gamma$ a closed curve with oriented geodesic representative $\ora{\gamma}$ in the universal cover, the orbit $\pi_1(S)\cdot \ora{\gamma}$ is discrete and countable. One can therefore define the geodesic current naturally associated to the oriented closed curve $C=[\gamma]=[g]$ by
+\DPTfyi{Clarifications}
+For $g \in \pi_1(S)$, let $\ora{g}$ denote the \emph{hyperbolic axis}
+of $g$, i.e., the oriented geodesic that is invariant by $g$, acting
+on the left, along which
+$g$ translates the least positive hyperbolic distance. (See also
+Section~\ref{sec:actions}.)
+The orbit $\pi_1(S)\cdot \ora{g}$ is discrete and countable, and does
+not depend on $g$ within its conjugacy class. One can therefore define
+the geodesic current naturally associated to the oriented closed curve
+$C=[\gamma]=[g]$ by
 \begin{equation}\label{eq:delta-curve}
 \delta_C
-= \sum_{g \in \pi_1(S)/\operatorname{Stab}(\ora{\gamma})}
-\delta_{g\cdot \ora{\gamma}},
+= \sum_{h \in \pi_1(S)/\operatorname{Stab}(\ora{\gamma})}
+\delta_{h\cdot \ora{\gamma}},
 \end{equation}
-where $\operatorname{Stab}(l)$ denotes the stabilizer of the oriented geodesic $l$, and $\delta_l$ denotes the Dirac measure supported on the oriented geodesic $l\in G(S)$.
- This definition extends naturally to associate a geodesic current to any weighted curve and, by linearity, to any weighted multi-curve. Moreover, geodesic currents arising from weighted multi-curves (and also those from weighted curves) are dense in the space of geodesic currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
+where $\operatorname{Stab}(\ora{g}) = \langle g \rangle$ is the
+stabilizer and $\delta_l$ is the Dirac measure supported on
+the oriented geodesic $l\in G(S)$.
+
+This definition extends naturally to associate a geodesic current to any weighted curve and, by linearity, to any weighted multi-curve. Moreover, geodesic currents arising from weighted multi-curves (and also those from weighted curves) are dense in the space of geodesic currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
 
 It is easy to see that a geodesic $l \in G(S)$ can only be an atom of a geodesic current when it is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
-
 One can also look at 1-dimensional sets.
-For $x \in \partial_{\infty}\Sigma$, its
+For $x \in \partial_{\infty}\Sigma$, the
 \emph{pencil} $P(x)$ is the subset of $G(S)$ of geodesics with either
 endpoint at~$x$.
-The only $0$-dimensional and $1$-dimensional subsets
-that may have non-zero measure are those containing lifts of closed
-geodesics.
+\DPTfyi{Deleted claim about measures of general 1-D subsets, since it's making
+  a stronger claim than we need.}
+% The only $0$-dimensional and $1$-dimensional subsets
+%that may have non-zero measure are those containing lifts of closed
+%geodesics.
 
 \begin{proposition}
   \label{prop:spikes}
@@ -275,14 +285,17 @@ geodesics.
 For uniqueness, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
 \end{proof}
 
-Given $p,q \in \wt{S}$ we will write  $G[p,q)\subset G(S)$ for the set of
-geodesics intersecting the geodesic segment $[p,q) \subset \wt{S}$ transversally.
+\DPTfyi{Pointed out this depends on the hyperbolic structure}
+Given $p,q \in \wt{\Sigma}$ we will write $G[p,q)\subset G(\Sigma)$
+for the set of geodesics intersecting the geodesic segment
+$[p,q) \subset \wt{\Sigma}$ transversally. Note this depends on the
+hyperbolic structure on~$\Sigma$.
 
 \begin{definition}[Intersection form of geodesic currents]
 \label{def:intersection_currents}
 Let $\DG(S) \subset \{ (\gamma_1,\gamma_2) \mid \gamma_1 \cap \gamma_2 = \{ \mbox{pt} \} \}$ be the set of pairs of oriented geodesics of $\wt{S}$ intersecting transversely.
 There is a continuous equivariant map $(\gamma_1,\gamma_2) \mapsto
-\gamma_1 \cap \gamma_2$ from $\DG(S)$ to $\wt{S}$,
+\gamma_1 \cap \gamma_2$ from $\DG(S)$ to $\wt{\Sigma}$,
 so the action of $\pi_1(S)$ on $\DG(S)$ is properly discontinuous and free. Let
 $\mathcal{F}$ be a fundamental domain of this action. Following
 Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented
@@ -291,11 +304,14 @@ currents $\mu, \nu$ we define
 i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
 \label{eq:intersection}
 \end{equation}
-Bonahon defined the same intersection number in the context of unoriented geodesic currents, but the definition is the same for oriented ones. Moreover, this intersection number remains unchanged upon flipping the orientation of any of its factors.
+Bonahon defined intersection number in the context of unoriented
+geodesic currents, but the definition is the same for oriented ones.
+Moreover, intersection number remains unchanged upon flipping the
+orientation of any of its factors.
 It enjoys all the other properties of Bonahon's intersection: it is continuous and extends the geometric intersection of closed curves.
 \end{definition}
 
-If $\nu=\delta_C$, then we will write $i(\mu, C)$ for $i(\mu, \delta_C)$.
+We will write $i(\mu, C)$ for $i(\mu, \delta_C)$.
 In this case, we have
 \begin{equation}
 i(\mu, \delta_C)=\mu(G[q,y \cdot q))
@@ -310,7 +326,8 @@ geodesic currents are completely determined by their intersection
 numbers with closed curves.
 This is no longer true for general oriented geodesic currents; for example,
 any oriented geodesic current $\mu$ and its orientation flip $\sigma(\mu)$ have the same intersection numbers. 
-See also Definition~\ref{def:asymmetric} and Appendix~\ref{sec:asymmetric} for discussions about a version of intersection for oriented closed curves.
+See also Definition~\ref{def:asymmetric} and
+Appendix~\ref{sec:asymmetric}.
 
 Finally, we highlight a special subset of geodesic currents that can be regarded as the interior of the cone of geodesic currents.
 
@@ -330,13 +347,20 @@ We will need some results guaranteeing the existence of limits of sequences.
  generalizing to two variables and to less-standard notions of
  convexity. We also recall Fekete's Lemma.
  
- Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$.
+ Let $\lim_{n^{+}}f(n)$ denote $\lim_{n \to +\infty}f(n)$, and
+ similarly let $\lim_{n^+,m^+}$ denote the two variable limit
+ $\lim_{n,m \to +\infty}$
 
- We say $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ is \emph{convex} if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \in \mathbb{Z}$. Similarly, $g \colon \mathbb{N} \to \mathbb{R}$ is convex  if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \geq 2$.
+ \DPTfyi{Declared that $\bbN$ includes $0$, which we use at some point}%
+ We say $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ is \emph{convex}
+ if $2g(n) \leq g(n+1) + g(n-1)$ for all $n \in \mathbb{Z}$.
+ Similarly, $g \colon \mathbb{N} \to \mathbb{R}$ is convex if
+ $2g(n) \leq g(n+1) + g(n-1)$ for all $n \geq 1$. (For us $\bbN$
+ includes $0$.)
 
  \begin{lemma}
- Let $g \colon \mathbb{\mathbb{Z}} \to \mathbb{R}$ be a convex and bounded function.
- Then $\lim_{n^{\pm}} g(n)$ exists.
+ Let $g \colon \bbN \to \bbR$ be a convex and bounded function.
+ Then $\lim_{n^+} g(n)$ exists.
  \label{lem:onevarconvexbounded}
  \end{lemma}
  \begin{proof}
@@ -368,25 +392,28 @@ include a proof for reference.
     A_\epsilon$. By monotonicity, $A_\epsilon$ contains all $(n,m)$
     with $n\ge n_0, m \ge m_0$. Since $\epsilon$ is arbitrary, it
     follows that $\lim_{n^+,m^+} a_{n,m} = V$. It also follows that
-    for $n \ge n_0$, $\lim_{m^+} a_{n,m} > V-\epsilon$. (This limit
-    exists by single-variable monotonicity.) Again we see that the
-    double limits exist and are equal to $V$.
+    for fixed $n_1 \ge n_0$, we have $\lim_{m^+} a_{n_1,m} >
+    V-\epsilon$. (This limit
+    exists by single-variable monotonicity.) We now see that the
+    double limits exist and are equal to~$V$.
   \end{proof}
 
 \begin{definition}
-  A function $g \colon \bbN \to \bbR$ is \emph{$R$-convex}
-  if for all $r \ge R$ and $n \in \bbN$ for which the inequality makes
-  sense, we have $g(n-r) + g(n+r) \geq
-  2 g(n)$. Similarly a
-  function $g \colon \mathbb{Z} \times \mathbb{Z} \to \mathbb{R}$ is
+  A function $g \colon \bbN \to \bbR$ is \emph{$R$-convex} if for all
+  $r \ge R$ and $n \in \bbN$ with $n \ge r$, we have
+  $g(n-r) + g(n+r) \geq 2 g(n)$. Similarly a function
+  $g \colon \bbN \times \bbN \to \bbR$ is
   \emph{$(R,S)$-axis-convex} if, for all $n,m$, $g(\cdot, m)$ is
   $R$-convex and $g(n, \cdot)$ is $S$-convex. We say that $g$ is
   \emph{axis-convex} if it is $(1,1)$-axis-convex.
 \end{definition}
  
  \begin{lemma}
+   \DPTfyi{Stated these are also equal to the inf of the values. Don't
+     know if we use it, but it's easy}
    Let $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ be axis-convex and bounded. Then the following limits exist and are equal:
-   \[\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+} \lim_{n^+} g(n,m).\]
+   \[\lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m)
+     = \lim_{m^+} \lim_{n^+} g(n,m) = \inf_{n,m \ge 0} g(n,m).\]
  \end{lemma}
 \begin{proof}
   As in Lemma~\ref{lem:onevarconvexbounded}, the function $h_1(n,m) =
@@ -407,22 +434,23 @@ include a proof for reference.
   Lemma~\ref{lem:onevarconvexbounded} has a well-defined limit as
   $n \to \infty$. We must show these limits agree for different~$k$.
   By $R$-convexity,
-  $g(k + nR) \le \frac{1}{2} \bigl(g((k-1) + (n-1)R) + g((k+1) +
+  $g(k + nR) \le \frac{1}{2} \bigl(g(k-1 + (n-1)R) + g(k+1 +
   (n+1)R\bigr)$. Taking the limit, we see that
-  $\lim_{n^+} g_k \le \frac{1}{2} (\lim_{n^+} g_{k-1} + \lim_{n^+}
-  g_{k+1})$. The limits are therefore a convex function on $\bbZ/R\bbZ$ and
-  thus constant.
+
+  $\lim_{n^+} g_k \le \frac{1}{2} (\lim_{n^+} g_{k-1} + \lim_{n^+} g_{k+1})$.
+  The limits of the~$g_k$ are therefore a convex function on
+  $\bbZ/R\bbZ$ and thus constant.
 \end{proof}
  
 \begin{lemma}
+  \label{lem:limexistrmidconvextwovar}
   Let $g \colon \mathbb{N} \times \mathbb{N} \to \mathbb{R}$ be a
   bounded, $(R,S)$-axis-convex function. Then the
   following limits exist and are equal:
   \[
-    \lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m) = \lim_{m^+}
-    \lim_{n^+} g(n,m).
+    \lim_{n^+,m^+} g(n,m) = \lim_{n^+} \lim_{m^+} g(n,m)
+    = \lim_{m^+} \lim_{n^+} g(n,m) = \inf_{n,m \ge 0} g(n,m).
   \]
-  \label{lem:limexistrmidconvextwovar}
 \end{lemma}
 
 \begin{proof}
@@ -434,21 +462,16 @@ include a proof for reference.
   $k,\ell$ and thus the overall limits exist and are equal.
 \end{proof}
 
-The following result is straightforward.
-
  \begin{lemma}
  Let $f_m \colon \mathbb{N} \to \mathbb{R}$ be a sequence of convex functions converging to a  function
  $f \colon \mathbb{N} \to \mathbb{R}$. Then $f$ is also convex.
  \label{lem:limitconvex}
  \end{lemma}
 
- \begin{remark}
-  We use the term \emph{axis-convex} because the condition is not
-  strong enough to deserve the term convex. For instance, the
-  function $g(n,m) = -mn$ is axis-convex by the above definition, but
-  $g(n+1,m+1) + g(n-1,m-1) - 2g(n,m) = -2 < 0$.
-\end{remark}
-
+ \begin{proof}
+   Straightforward.
+ \end{proof}
+ 
 Finally, we will use the following classical lemma on sub-additive sequences.
 \begin{lemma}[Fekete's Lemma]\label{lem:fekete}
 Let $(a_n)$ be a sequence of real numbers such that, for all $m,n\ge 0$,
@@ -465,6 +488,14 @@ Then
 = \sup_{n} \frac{a_n}{n} \ge a_1\text{).}
 \]
 \end{lemma}
+
+\begin{remark}
+  We use the term \emph{axis-convex} for the 2-variable functions
+  because the condition is not strong enough to deserve the term
+  \emph{convex}. For instance, the function $g(n,m) = -mn$ is
+  axis-convex by the above definition, but
+  $g(n+1,m+1) + g(n-1,m-1) - 2g(n,m) = -2 < 0$.
+\end{remark}
 
 
 %%% Local Variables:

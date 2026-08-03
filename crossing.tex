@@ -10,10 +10,15 @@ To fix conventions, we briefly recall elementary facts about actions of $\pi_1(S
 follow the convention that path composition works in the natural
 order, where a product $\gamma_1 \cdot \gamma_2$ of paths in~$S$ is
 defined if $\gamma_1(1) = \gamma_2(0)$.
-Recall that $a \in \pi_1(S,\ast)$ is the homotopy class of the
-curve relative to the basepoint $*$, which we will write $a = (\gamma)$.
- We will sometimes follow the
- group theory convention of denoting inverses by a capital letter.
+Recall that $a \in \pi_1(S,\ast)$ is the homotopy class of a
+curve relative to the basepoint $*$, which we will write $a =
+(\gamma)$.
+\DPTfyi{Added this reminder}
+(Recall that for us $[\gamma]$ means the unbased homotopy class of
+$\gamma$, which is equivalent to the conjugacy class $[a]$.)
+ We will follow the
+ convention that a capital letter means the inverse of a
+ group element.
 
 
 \begin{definition}[Right action]
@@ -27,8 +32,8 @@ We observe
 the following.
 \begin{itemize}
 \item 
-  This right action does not depend on a choice of basepoint
-  on~$\wt S$, and works for any covering space.%
+  This right action only depends on $\ast \in S$ and not on a lift
+  to~$\wt S$, and works for any covering space.%
   \footnote{One succinct statement of the classification theorem for
     covering spaces is that coverings of $S$ are in bijection with
     sets with a right action of $\pi_1(S)$. If we restrict to
@@ -44,27 +49,29 @@ the following.
 When $\wt S$ is the universal cover of~$S$ (or, more generally, any
 normal cover of~$S$), there is a \emph{left} action of $\pi_1(S,\ast)$
 on all of $\wt S$ by deck transformations. Take
-the standard model of $\wt S$, and lift $\ast \in S$ to a basepoint
+the standard model of $\wt S$, as follows. Lift $\ast \in S$ to a basepoint
 $\wt \ast \in \wt S$, which we think about as the constant path. We
 write other
 points in $\wt S$ as $\wt{\ast} \cdot (\gamma)$, where $\gamma$ is a
 path in~$S$ with $\gamma(0) = \ast$, considered up to homotopy fixing
-the endpoint. The left action is then
+the endpoints. The left action is then
 defined by
 $(\gamma_1) \cdot (\wt \ast \cdot (\gamma)) \coloneqq
 \wt \ast \cdot (\gamma_1 \cdot \gamma)$.
+w\end{definition}
 
-\end{definition}
-Here we make the following observations.
+We observe the following.
 \begin{itemize}
-\item This left action is an isometry of all of~$\wt S$.
+\item This left action is an isometry of all of~$\wt S$, and extends
+  to the circle at infinity $\bdy_\infty S$.
 \item The left action depends on a lift of
   $\ast \in S$ to a basepoint  $\wt \ast \in \wt S$.
 \item The distance between $x \in \wt S$ and $(\gamma) \cdot x$
-  is unbounded, although since the basement $\wt \ast$ is moved by the
+  is unbounded, although since $\wt \ast$ is moved by the
   length of~$\gamma$ we do have a bound on
   the translation length.
-\item This left action extends to an action on the circle at infinity $\partial_{\infty} S$.
+\item While the left and right actions are generally unrelated, we do
+  have $\wt \ast \cdot (\gamma) = (\gamma) \cdot \wt \ast$.
 \end{itemize}
 
 For any non-trivial $g \in \pi_1(S,*)$, there is a corresponding
@@ -77,11 +84,10 @@ quasi-geodesic in $\wt S$. After choosing a hyperbolic structure
 $\Sigma$ on $S$, this quasi-geodesic determines an oriented hyperbolic
 geodesic
 denoted $\ora{g}$ with endpoints $g^+ = \lim_{k^+} \wt \ast \cdot g^k$ 
-and $g^- = \lim_{k^-} \wt \ast \cdot g^k$. Note that $g$
-acts on the left on $\wt S$ as a hyperbolic isometry
-fixing $\ora{g}$ set-wise. This action
-extends continuously to $\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ and has north-south (NS) dynamics, with unique
-attracting point $g^+$ and repelling point $g^-$: for any point
+and $g^- = \lim_{k^-} \wt \ast \cdot g^k$.
+The element $g$ acts on $\wt S$ by a hyperbolic isometry
+fixing $\ora{g}$ set-wise, extending continuously to
+$\overline{\wt S} \coloneqq \wt S \cup \partial_{\infty} S$ with \emph{north-south (NS) dynamics}: for any point
 $x \in \overline{\wt S}$ other
 than $g^-$, we have $\lim _{k^+} g^k \cdot x = g^+$.
 
@@ -100,22 +106,20 @@ We will frequently draw pictures of group elements $g\in\pi_1(S,\ast)$
 acting on~$\bbH^2$. In these pictures, there will be two types of
 arrows (see, e.g., Figure~\ref{fig:newmodel3}): arrows
 connecting two endpoints of $\partial_{\infty}S$, which
-correspond to axes hyperbolic axes $\ora{g}$ of an element
+correspond to hyperbolic axes $\ora{g}$ of an element
 $g \in \pi_1(S)$, the axis of the \emph{left} action; and arrows
 representing paths connecting points on these axes that correspond to
 the \emph{right} action on the fiber. As explained above, the
-relevant lifts of the basepoints are a quasi-geodesic that are a
+relevant lifts of the basepoints form a quasi-geodesic that are a
 bounded distance from the axis; the pictures are clearer if we imagine
-the basepoints are actually on the axis.
+the basepoints are actually \emph{on} the axis.
 
 \begin{figure}
-\centering{
-\resizebox{55mm}{!}{\svgfig{doublecoset}}
-\caption{Two different translates of $\protect\ora{g}$ captured by the double coset $\protect\langle g \protect\rangle q_1^{-1} q_2 \protect\langle g \protect\rangle.$}.
-\label{fig:doublecoset}
-}
+\centering{\resizebox{55mm}{!}{\svgfig{doublecoset}}}
+\caption{Two different translates of $\protect\ora{g}$ captured by the double coset $\protect\langle g \protect\rangle q_1^{-1} q_2 \protect\langle g \protect\rangle.$}\label{fig:doublecoset}
 \end{figure}
 
+\DPTfyi{HERE}
 With these preliminaries, we can see that two different lifts of
 $[g]$ (see Figure~\ref{fig:doublecoset}) 
 \begin{align*}
