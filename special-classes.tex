@@ -8,14 +8,11 @@ In this section we characterize special classes of geodesic currents as curve fu
 Using a result of Burger, Iozzi, Parreau, and Pozzetti, we can give a
 characterization of filling geodesic currents.
 
-\begin{corollary}
+\begin{corollary}\label{cor:systole}
   Let $S$ a closed surface,
   $\mu$ a geodesic current and $f$ the functional on curves associated
   to $\mu$, i.e., so that $\mu_f=\mu$. The following subsets are in
   bijection.
-  
-  
-
 \begin{enumerate}
     \item The set of filling currents (Definition~\ref{def:filling_current}).
     \item The set of functionals $f \colon \Curves^+(S) \to
@@ -265,15 +262,29 @@ so $\ell_d$ satisfies smoothing.
 Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_d$ dual to $\ell_d$. 
 
 
-Finally, we prove the other implication. Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{\Sigma}$ defined via
+Finally, we prove the other implication. Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{S}$ defined via
+\DPTfyi{Tweaked notation since this is a metric on the cover not on $S$}
+\begin{equation}\label{eq:d_mu}
+\wt d^\Sigma_\mu(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right),
+\end{equation}
+inducing a metric $d^\Sigma_\mu$ on~$S$
+so that 
 \[
-d_\mu^\Sigma(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right),
-\]
-and so that 
-\[
-\ell_{d_\mu}(C)=i(\mu, C).
+\ell_{d^\Sigma_\mu}(C)=i(\mu, C).
 \]
 See~\cite[Section~4]{BIPP21:Systoles} and~\cite{dRMG22:Duals}.
+\end{proof}
+
+One corollary is the following folklore result.
+
+\begin{corollary}\label{cor:length-stable}
+  Any length pseudometric $(S,d)$ on a surface~$S$ is stable.
+\end{corollary}
+
+\begin{proof}
+  This follows from Corollary~\ref{maincor:length_dual}. More
+  precisely, this is a consequence of
+  Proposition~\ref{prop:power_disconnected_imply_stable}.
 \end{proof}
 
 We continue with some remarks.
@@ -294,19 +305,39 @@ $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every
 closed curve $C$.
 \end{remark}
 
+\DPTfyi{Separated out stability claim and rewrote; added ref to qFuchs
+  examples}
 \begin{remark}
-  \DPTtodo{Is this worth stating as a proposition, that length is
-    stable length on surfaces? On the other hand I doubt it's new}
-Suppose $(X,d)$ is a length pseudometric structure on $S$. Let $\wt{d}$ be the lift of the metric $d$ to the universal cover $\wt{X}$ of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality~\cite[8.3.13]{BBI01:MetricGeometry}  \[\ell_d(C)=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
-where $[g]=C$. The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation length} of~$g$.
-From the fact that $\ell_d$ satisfies smoothing (Proposition~\ref{prop:power_disconnected_imply_stable}), it follows that $\ell_d(C^n)=n\ell_d(C)$, and hence,
-\[
-\ell_d(C)=\lim \frac{1}{n} \ell_d(C^n) = \lim \frac{1}{n} \inf_{x \in \wt{X}} \wt{d}(x, g^n x) = \lim \frac{1}{n} \wt{d}(x,g^n x) \eqqcolon L_{\wt{d}}(g)
-\]
-for every $x \in \wt{X}$, and every $g \in \pi_1(S)$ so that $[g]=C$.
-The quantity $L_{\wt{d}}(g)$ is the \emph{$\wt{d}$-stable length} of~$g$.
-The equality between translation length and stable length does not hold in general even in the setting of geodesic Gromov hyperbolic spaces~\cite[Proposition~6.4]{CDP90:Lectures}.
+Suppose $(S,d)$ is a length pseudometric structure on $S$. Let
+$\wt{d}$ be the lift of the metric $d$ to $\wt{S}$
+of $X$, where $\pi_1(X)$ acts by isometries. Then we have the equality
+\cite[8.3.13]{BBI01:MetricGeometry}
+\[\ell_d([g])=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
+The quantity $\tau_{\wt{d}}(g)$ is the \emph{$\wt{d}$-translation
+  length} of~$g$. If we try to generalize this more,
+Corollary~\ref{cor:length-stable} does not hold
+even in the setting of geodesic Gromov hyperbolic
+spaces \cite[Proposition~6.4]{CDP90:Lectures}; see also Example~\ref{examp:qf}.
 \end{remark}
+
+\DPTfyi{This remark and question new. BIPP seem to have omitted to ask it, maybe
+  it was an obvious question for them}
+\begin{remark}
+  The pseudometric $d_\mu$ constructed from a geodesic current~$\mu$
+  by Eq.~\eqref{eq:d_mu} is generally not continuous or positive. The
+  easiest examples where it fails to both conditions are when
+  $\mu = \delta_C$ is supported on a multi-curve. On the other hand,
+  in that case it is easy to smear out the metric so that it is
+  continuous, motivating the following question.
+\end{remark}
+
+\begin{question}
+  Can the length pseudometrics in Corollary~\ref{maincor:length_dual}
+  be improved so that $d(\cdot,\cdot)$ is continuous on $S \times S$?
+  If furthermore the systole of the curve functional is positive, can
+  $d(\cdot,\cdot)$ be made into an ordinary length metric? (See
+  Corollary~\ref{cor:systole}.)
+\end{question}
 
 \subsection{Domination}\label{sec:domination}
 We take a brief detour from the special classes of currents to
@@ -447,7 +478,6 @@ The following lemma  says that when taking large powers of $a$ and $b$, the corr
 Given elements $a, b \in \pi_1(S)$ which R-cross,
 let $B_{a,b}^{\perp},(B_{a,b}^{\pm})^{\perp}, R_{a,b}^{\pm}, (R_{a,b}^{\pm})^\perp$ as above. Suppose $\mu$ is an arbitrary geodesic current.
 
-\DPTfyi{Changed to $n > 0$ here since $\bbN$ will include $0$}
 For every $n > 0$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
 \begin{enumerate} 
