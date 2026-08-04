@@ -348,7 +348,6 @@ vertex is not a crossing.)
 The following justifies the power smoothing
 hypothesis~\eqref{eq:power_smoothing_unoriented}.
 
-\DPTfyi{Fixed the refs to the erratum, which were out of date}
 \begin{proposition}[{\cite[Lemma 1.12]{HS94:ShorteningCurves}}]
   \label{prop:crossings-powers}
   If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
@@ -401,20 +400,21 @@ and if $\ora{a}$ is parallel to $\ora{b}$, then
 Now we give the proofs of the algebraic rephrasings of various types
 of smoothing we gave in Section~\ref{sec:functionals}.
 
-\begin{proof}[Proof of Lemmas~\ref{lem:oriented-smoothing-alg}]
+\begin{proof}[Proof of Lemma~\ref{lem:oriented-smoothing-alg}]
 The first two items follow by applying
 Equation~\eqref{eq:or-smoothing} to the essential crossing guaranteed
 by Proposition~\ref{prop:crossings-triality}.
 The last item follows from Proposition~\ref{prop:crossings-powers}.
 \end{proof}
 
-\DPTfyi{HERE}
 \begin{proof}[Proof of Lemma~\ref{lem:smoothing-alg}]
-The first two items follow by using Equation~\eqref{eq:smoothing} at the desired essential crossing, applying each case of Proposition~\ref{prop:crossings-triality}, and using symmetry of $f$.
-The last item follows by Proposition~\ref{prop:crossings-powers}.
+The first two items follow by apply Equation~\eqref{eq:smoothing} and
+symmetry of~$f$ to
+the essential crossing guaranteed by Proposition~\ref{prop:crossings-triality}.
+The last item follows from Proposition~\ref{prop:crossings-powers}.
 \end{proof}
 
-If we swap $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
+If we swap and/or invert $\ora{a}$ and $\ora{b}$, the type of L/R crossing/parallelism
 can change, as recorded below for future reference.
 
 \begin{lemma} Let $a,b\in \Isom^+(\bbH^2)$ be hyperbolic elements.
@@ -443,8 +443,8 @@ We now turn to some elementary lemmas about crossing.
 
 \begin{convention}\label{conv:circle-intervals}
   Intervals on the circle are always written with endpoints in counterclockwise
-  order. (Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
-  $(x,y) \cup (y,x)$ is almost the entire circle.)
+  order. Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
+  $(x,y) \cup (y,x)$ is almost the entire circle.
 \end{convention}
 
 \begin{lemma}\label{lem:NS-dynamics}
@@ -452,7 +452,7 @@ We now turn to some elementary lemmas about crossing.
   the following are equivalent:
   \begin{itemize}
   \item $a$ is hyperbolic with attracting and repelling
-    endpoint $a^+ \in(x,y)$ and $a^- \notin (x,y)$; and
+    endpoint $a^+ \in(x,y)$ and $a^- \in [y,x]$; and
   \item  $a \cdot (x,y) \subsetneq (x,y)$.
   \end{itemize}
 \end{lemma}
@@ -468,11 +468,17 @@ We now turn to some elementary lemmas about crossing.
  \label{lem:rhs}
 \end{lemma}
 \begin{proof}
-  The statement that $(\ora{x}, a\cdot\ora{x})$ are R-parallel is (by
-  definition) equivalent to $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
+  If $(\ora{x}, a\cdot\ora{x})$ are R-parallel, then (by
+  definition) $a\cdot(x^-,x^+) \subsetneq (x^-,x^+)$,
   which is equivalent, by Lemma~\ref{lem:NS-dynamics}, to $a^+ \in (x^-,x^+)$ and
   $a^- \in (x^+,x^-)$, which is equivalent to
   $(\ora{a},\ora{x})$ R-crossing.
+  \DPTfyi{Corrected the reasoning. Previous argument had issues with
+    $(\ora{x}, a\cdot \ora{x})$ being anti-parallel}%
+  For the reverse implication, if $(\ora{a},\ora{x})$ R-cross, then by
+  NS dynamics of $a$ we have $a \cdot x^+ \in (x^+,a^+)$ and
+  $a \cdot x^- \in (a^+,x^-)$, which implies that
+  $(\ora{x},a \cdot \ora{x})$ are R-parallel.
 \end{proof}
 
 \begin{lemma}
@@ -567,15 +573,17 @@ We now turn to some elementary lemmas about crossing.
    \end{subfigure}
    \caption{Cases for relative position 
      of $\protect\ora{a}$ with $\protect\ora{b}$, and corresponding
-     endpoints of products.}
+     endpoints of products.  On $\bdy^\infty S$, blue arrows indicate
+     the action of~$a$
+     and red arrows indicate the action of~$b$.}
    \label{fig:cases-a-b}
  \end{figure}
- 
+ \DPTfyi{All the intervals in this case had the wrong orientation. Fixed.}
     To see this, by the dynamics of $a$ and $b$ on the
-    circle as shown, $ba$ maps the interval
-    $(b^+,a^+)$ strictly inside itself, so $ba$ is
-    hyperbolic with $(ba)^+\in(b^+,a^+)$;
-    similarly $(ba)^- \in (b^-,a^-)$. The actions of
+    circle, $ba$ maps the interval
+    $(a^+,b^+)$ strictly inside itself, so $ba$ is
+    hyperbolic with $(ba)^+\in(a^+,b^+)$;
+    similarly $(ba)^- \in (a^-,b^-)$. The actions of
     $b$ and $a$ interchange $(ba)^- \leftrightarrow (ab)^-$ and
     $(ba)^+ \leftrightarrow (ab)^+$, forcing the configuration shown.
     (Note that all four endpoints $(ba)^\pm,(ab)^\pm$ are on the
@@ -607,6 +615,7 @@ determined by the hypotheses: they can be crossing or anti-parallel
 Nevertheless, we can extract some finer information about composite
 pairs, useful in subsidiary results.
 
+\DPTfyi{HERE}
 Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
