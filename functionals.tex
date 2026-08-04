@@ -150,6 +150,7 @@ say $f$ satisfies a particular smoothing property if $f$ is
 non-increasing under such a type of smoothing.
 
 \begin{lemma}
+\label{lem:oriented-smoothing-alg}
   A curve functional $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies
   oriented smoothing iff the following three families of
   inequalities  are satisfied.
@@ -172,15 +173,10 @@ For any element $a \in \pi_1(S)$ and integers $n,m \ge 1$,
 f([a^{n+m}]) \ge f([a^m][a^n]).
 \label{eq:power_smoothing}
 \end{equation}
-
 \end{itemize}
-\label{lem:oriented_smoothing_lemma_top_alg}
 \end{lemma}
 
-
-
-
-Lemma~\ref{lem:oriented_smoothing_lemma_top_alg}
+Lemma~\ref{lem:oriented-smoothing-alg}
 is proved in
 Section~\ref{subsec:triality}.
 
@@ -296,20 +292,20 @@ All of the above have corresponding max-smoothing
 properties, strengthening the inequality to an equality.
 \end{definition}
 
-\begin{lemma}\label{lem:smoothing-equiv}
+\begin{lemma}
+\label{lem:smoothing-alg}
   Let $f \colon \Curves^+(S)\to \mathbb{R}$ be a symmetric oriented curve
   functional. Then $f$ satisfies smoothing iff if it satisfies
   disconnected smoothing, connected smoothing, and power smoothing.
   Likewise, $f$ satisfies max-smoothing iff it satisfies disconnected
   max-smoothing, connected max-smoothing, and stability.
-\label{lem:smoothing_lemma_top_alg}
 \end{lemma}
 
 We refer the reader to Sections~\ref{subsec:crossings}
 and~\ref{subsec:triality} for precise
 definitions and proofs of
-Lemma \ref{lem:smoothing_lemma_top_alg}
-and~\ref{lem:oriented_smoothing_lemma_top_alg}. See in particular
+Lemma \ref{lem:smoothing-alg}
+and~\ref{lem:oriented-smoothing-alg}. See in particular
 Proposition~\ref{prop:crossings-triality}.
 
 \subsection{General context and examples}
@@ -351,8 +347,8 @@ the properties above.
 \end{definition}
 
 Oriented and unoriented quasi-smoothing also have algebraic
-formulations parallel to Lemmas \ref{lem:smoothing-equiv}
-and~\ref{lem:smoothing_lemma_top_alg}.
+formulations parallel to Lemmas \ref{lem:oriented-smoothing-alg}
+and~\ref{lem:smoothing-alg}.
 
 With this setup, we can consider a variety of spaces of
 functionals on currents, as summarized in
