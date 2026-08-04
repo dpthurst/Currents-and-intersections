@@ -118,7 +118,6 @@ the basepoints are actually \emph{on} the axis.
 \caption{Two different translates of $\protect\ora{g}$ captured by the double coset $\protect\langle g \protect\rangle q_1^{-1} q_2 \protect\langle g \protect\rangle.$}\label{fig:doublecoset}
 \end{figure}
 
-\DPTfyi{HERE}
 With these preliminaries, we can see that two different lifts of
 $[g]$ (see Figure~\ref{fig:doublecoset}) 
 \begin{align*}
@@ -139,10 +138,10 @@ e.g., determining if $\ora{\ell_1}$ and $\ora{\ell_2}$ intersect.
 
 We can express many of our constructions as working with either
 elements of $\pi_1(S)$ (acting by isometries on the universal cover)
-or with general hyperbolic elements of the group $\Isom^+(\bbH^2)$.
-(Every element of $\pi_1(S)$ necessarily acts hyperbolically on
-$\wt S$.) When there is a choice, we prefer to state lemmas in terms
-of $\Isom^+(\bbH^2)$, since in principle it is more general, as we do
+or with general hyperbolic elements of $\Isom^+(\bbH^2)$.
+(Every element of $\pi_1(S)$ necessarily acts hyperbolically on~$\wt S$.)
+When there is a choice, we prefer to state lemmas in terms
+of $\Isom^+(\bbH^2)$: in principle it is more general, as we do
 not need to assume the group elements generate a discrete subgroup.
 
 
@@ -155,8 +154,10 @@ considered up to homotopy (Definition~\ref{def:multi-curve}).
 
 \begin{definition}\label{def:essential-crossing}
   A \emph{crossing} of a concrete multi-curve~$\gamma$ is a pair
-  $(p,q) \in X(\gamma)^2$ so that
-  $\gamma(p) = \gamma(q) \in S$. We say~$\gamma$ is \emph{minimal} if
+  $(p,q) \in X(\gamma)^2$
+  \DPTfyi{Added $p \ne q$, which we forgot earlier}
+  with $p \ne q$ so that
+  $\gamma(p) = \gamma(q) \in S$. We say $\gamma$~is \emph{minimal} if
   it has only transverse crossings and a minimum number of
   them among all representatives of $C = [\gamma]$.
   A crossing that appears in some minimal representative is said
@@ -217,7 +218,9 @@ In this case, the resulting curve does not carry a preferred orientation. Accord
   in the next section.
   \begin{itemize}
   \item \emph{Oriented connected smoothing:} As shown in
-    Figure~\ref{fig:sm_oriented_connected}, parallel oriented geodesics
+    Figure~\ref{fig:sm_oriented_connected},
+    \DPTfyi{Added ``in general'' since otherwise we leave out power smoothing}
+    in general parallel oriented geodesics
     $\ora{a}$ and $\ora{b}$ (on the bottom) give a self-crossing oriented
     curve $[ab]$, with $[ab] \reducesto [a][b]$. (The result is
     disconnected.)
@@ -242,7 +245,7 @@ In this case, the resulting curve does not carry a preferred orientation. Accord
   specially:
   \begin{itemize}
   \item \emph{Power smoothing:}
-    $[a^{n+m}] \geq [a^m][a^n]$ for every $a \in \pi_1(S)$ and every
+    $[a^{n+m}] \reducesto [a^m][a^n]$ for every $a \in \pi_1(S)$ and every
     $m,n \geq 1$, as shown in Figure~\ref{fig:sm_power} for $m=1,n=2$.
   \end{itemize}
 \end{definition}
@@ -302,9 +305,13 @@ For $a,b \in \pi_1(S,*)$, let $a * b$ be a 4-valent graph mapped into
 $S$ obtained by taking the union of the paths $a,b$ joined at the
 basepoint~$*$, and let $[a * b]$
 be its free homotopy class.
-Free homotopy means in particular invariance under simultaneous
+Free homotopy
+\DPTtodo{Changed ``in particular'' to ``amounts to''. That's a
+  complete statement of free homotopy, right?}
+amounts to invariance under simultaneous
 conjugation: $[a * b] = [caC * cbC]$. A \emph{minimal} representative of $[a * b]$
-is one with a minimum number of transverse crossings.
+is one with a minimum number of transverse crossings. (The 4-valent
+vertex is not a crossing.)
 
 \begin{definition}\label{def:crossing}
   Depending on the (counterclockwise) cyclic order of the endpoints,
@@ -336,8 +343,8 @@ is one with a minimum number of transverse crossings.
 \end{definition}
 
 \begin{definition}
-  Non-trivial group elements $a,b\in \pi_1$ are \emph{common powers}
-  if there are non-zero $k,\ell$ so that $a^k = b^\ell$. Since $\pi_1$
+  Non-trivial group elements $a,b\in \pi_1(S)$ are \emph{common powers}
+  if there are non-zero $k,\ell$ so that $a^k = b^\ell$. Since $\pi_1(S)$
   has no torsion, we may assume that $k,\ell$ are relatively prime and
   then we see this is equivalent to the existence of a $c$ so that
   $a = c^\ell$ and $b = c^k$.
@@ -346,16 +353,18 @@ is one with a minimum number of transverse crossings.
 The following justifies the power smoothing
 hypothesis~\eqref{eq:power_smoothing_unoriented}.
 
-\begin{proposition}[{\cite[Proposition~2.9a]{MGT25:SmoothingsErratum}}]
+\DPTfyi{Fixed the refs, which were out of date}
+\begin{proposition}[{\cite[Lemma 1.12]{HS94:ShorteningCurves}}]
+  \label{prop:crossings-powers}
   If $a = c^k$ and $b = c^\ell$ are common powers of a primitive
   element~$c$ with $k,\ell \ge 1$, then the factorization $[ab]$
-  reduces to $[a][b]$.\label{prop:crossings-powers}
+  reduces to $[a][b]$.
 \end{proposition}
 
 The following result justifies the oriented/unoriented connected/disconnected smoothing variations of smoothing.
-It is an oriented version of the result for smoothing in~\cite[Proposition~2.9b]{MGT25:SmoothingsErratum}, and its proof goes through verbatim.
 
-\begin{proposition}\label{prop:crossings-triality}
+\begin{proposition}[{\cite[Proposition 3]{MGT25:SmoothingsErratum}}]
+  \label{prop:crossings-triality}
   Let $a,b \in \pi_1(S,*)$ be non-trivial elements that are not
   common powers. Then in the following three trialities the same
   possibility holds in each case.
@@ -385,7 +394,7 @@ It is an oriented version of the result for smoothing in~\cite[Proposition~2.9b]
 \end{proposition}
 
 We will use Proposition~\ref{prop:crossings-triality} without explicit
-reference, in particular that if $\ora{a}$ crosses $\ora{b}$, then
+reference. In particular if $\ora{a}$ crosses $\ora{b}$, then
 \[
   [a][b] \reducesto [ab]\qquad\text{and}\qquad[a][b] \reducesto [aB]
 \]
@@ -394,6 +403,7 @@ and if $\ora{a}$ is parallel to $\ora{b}$, then
   [ab] \reducesto [a][b]\qquad\text{and}\qquad[ab] \reducesto [aB].
 \] 
 
+\DPTfyi{HERE}
 Now we give the proofs of the algebraic rephrasings of oriented smoothing, oriented max-smoothing, and smoothing we gave in Section~\ref{sec:functionals}.
 
 \begin{proof}[Proofs of Lemmas~\ref{lem:oriented_smoothing_lemma_top_alg}]
