@@ -570,7 +570,7 @@ We now turn to some elementary lemmas about crossing.
    \end{subfigure}
    \caption{Cases for relative position 
      of $\protect\ora{a}$ with $\protect\ora{b}$, and corresponding
-     endpoints of products.  On $\bdy^\infty S$, blue arrows indicate
+     endpoints of products.  On $\bdy_\infty S$, blue arrows indicate
      the action of~$a$
      and red arrows indicate the action of~$b$.}
    \label{fig:cases-a-b}
@@ -611,9 +611,14 @@ determined by the hypotheses: they can be crossing or anti-parallel
 Nevertheless, we can extract some finer information about composite
 pairs, useful in subsidiary results.
 
-Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
-R-parallel. We know that $ab$ and $ba$ are
-hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
+\DPTfyi{Made this an explicit Convention}
+\begin{convention}\label{conv:aB-hyperbolic}
+  For this subsection, $a,b \in \Isom^+(\bbH^2)$ are elements so that
+  $\ora{a}$ and $\ora{b}$ are R-parallel. We know that $ab$ and $ba$
+  are hyperbolic (with crossing axes). Suppose also that $aB$ is
+  hyperbolic. (This will be the case, for example, if
+  $a,b \in \pi_1(S)$.)
+\end{convention}
 
 \begin{lemma}
 If $(\ora{a},\ora{b})$ are parallel and $aB$ is hyperbolic, $\ora{aB}$
@@ -639,26 +644,22 @@ the endpoints of $\ora{aB}$ are in the same connected component as the
 endpoints of $\ora{Ba}$.
 \end{proof}
 
-\DPTtodo{These cases are more precise than we have yet proved. Weaken
-  it here then prove the strengthening}
-In light of the above lemmas, when $(\ora{a},\ora{b})$ are R-parallel and
+\DPTfyi{Weakened statements here. Please verify everything is still justified}
+In light of the above lemmas, if $(\ora{a},\ora{b})$ are R-parallel,
+  we say that $\ora{aB}$ \emph{splits}
+$\ora{a}, \ora{b}$ when
 \[
-\big((aB)^-,(aB)^+\big) \subsetneq (b^+,a^+)
-\quad\text{and}\quad
-\big((Ba)^-,(Ba)^+\big) \subsetneq (a^-,b^-),
+\bigl\{(aB)^-,(aB)^+,(Ba)^-,(Ba)^+\bigr\} \subset (b^+,a^+) \cup (a^-,b^-),
 \]
-as in Figure~\ref{fig:r3}, we say that
-\emph{$\ora{aB}$ splits $\ora{a},\ora{b}$}.
-Similarly, whenever
+as in Figure~\ref{fig:r3}.
+Similarly, we say that $\ora{aB}$ is \emph{on the $b$-side} of
+$\ora{a},\ora{b}$ when
 \[
-\big((aB)^-,(aB)^+\big),
-\big((Ba)^-,(Ba)^+\big)
-\subsetneq (b^-,b^+),
+\bigl\{(aB)^-,(aB)^+,(Ba)^-,(Ba)^+\bigr\} \subset (b^-,b^+),
 \]
-as in Figure~\ref{fig:r1} or Figure~\ref{fig:c2},
-we say that \emph{$\ora{aB}$ is on the $b$-side of $\ora{a},\ora{b}$},
-and we say that it \emph{is on the $a$-side of $\ora{a},\ora{b}$} if both intervals
-are contained in $(a^+,a^-)$. When $\ora{a},\ora{b}$ are L-parallel
+as in Figure~\ref{fig:r1} or Figure~\ref{fig:c2}.
+Similarly $\ora{aB}$ is \emph{on the $a$-side} of $\ora{a},\ora{b}$ if
+all endpoints are in $(a^+,a^-)$. When $\ora{a},\ora{b}$ are L-parallel
 the terminology is adjusted accordingly. We will also use this
 terminology for powers $\ora{a^n B^m}$ and $\ora{B^m a^n}$ with
 $n,m \ge 1$; these will
@@ -705,7 +706,6 @@ exactly one of $a$-sided, splitting, or $b$-sided.
 This follows from Lemma~\ref{lem:aB_Ba_together}.
 \end{proof}
 
-\DPTfyi{OK without detailed knowledge}
 \begin{lemma}
 \label{lem:aB_bA_antiparallel_cross}
 If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parallel or cross.
@@ -713,23 +713,37 @@ If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parall
 \begin{proof}
 By Lemma~\ref{lem:aB_Ba_together} and the fact that $a \cdot \ora{Ba} = \ora{aB}$,
 it follows that $\ora{aB},\ora{Ba}$ cannot be nested with respect to $\ora{a}$.
-Then since $a \cdot \ora{Ba} = \ora{aB}$, they must both be either parallel or anti-parallel to $\ora{a}$, so cannot be parallel to each other.
+Then since $a \cdot \ora{Ba} = \ora{aB}$, they must either be both
+parallel or both anti-parallel to $\ora{a}$, so cannot be parallel to each other.
 \end{proof}
 
 See Figure~\ref{fig:c2} and Example~\ref{ex:ab_parallel_aB_crossing} for examples where $(\ora{Ba},\ora{aB})$ cross.
 
 \begin{lemma}
 \label{lem:splitting_specific}
-If $(\ora{a},\ora{b})$ are parallel and $\ora{aB},\ora{Ba}$ are split
+If $(\ora{a},\ora{b})$ are R-parallel and $\ora{aB},\ora{Ba}$ split
 $\ora{a},\ora{b}$,
 then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
+Furthermore $\ora{aB}$ and $\ora{Ba}$ are both parallel to~$\ora{a}$
+and anti-parallel to~$\ora{b}$.
 \end{lemma}
 \begin{proof}
-This follows from $a \cdot \ora{Ba}= b \cdot \ora{Ba} =\ora{aB}$ and the fact that $a,b$ 
-move in opposite directions (cw/ccw) on the intervals $(b^+,a^+)$ and
-$(a^-,b^-)$. The only way the $a$ and $b$ actions can end up in the
-same place is if they move from one interval to the other.
-\DPTtodo{Say a few words about specifically which interval they are on}
+  \DPTfyi{Rewrote this proof to be a little more specific. Also added
+    ``R-parallel'' to the assumptions, and parallelism to the
+    conclusion}
+  Note that $a \cdot (Ba)^+ = b \cdot (Ba)^+ = (aB)^+$ and $a,b$ move
+  in opposite directions (cw/ccw) on the intervals $(b^+,a^+)$ and
+  $(a^-,b^-)$. The only way the $a$ and $b$ actions on can end up in
+  the same place is if they move from one interval to the other.
+  Examination of the NS dynamics shows specifically that $(Ba)^+ \in
+  (a^-,b^-)$ and $(aB)^+ \in (b^+, a^+)$. The same argument works for
+  the repelling endpoints.
+
+  To see that $\ora{aB}$ is parallel to $\ora{a}$, note that $a,B$
+  move the same direction on $(b^+,a^+)$, away from $b^+$ and
+  towards~$a^+$. Thus the attracting endpoint of $\ora{aB}$ must be
+  closer to $a^+$ than to $b^+$ within this interval. Similarly for
+  $\ora{Ba}$ and for the relation to $\ora{b}$.
 \end{proof}
 
 To draw specific examples precisely, consider the common hyperbolic perpendicular of $\ora{a}$
@@ -740,11 +754,20 @@ that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
 $R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
 are perpendicular to~$\ora{b}$.
 
-Since
-$ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
-these elements are hyperbolic, we see
-that the $R_i$ are reflections along pairwise non-intersecting reflection
-lines. There are several potential configurations, as shown
+\DPTfyi{Added the missing products giving $a^2,b^2$ to the list, and
+  organized it a bit}
+In fact every pair of products of the $R_i$ has a name:
+\begin{align*}
+  R_1 R_2 &= a  &  R_1 R_3 &= b  &  R_4 R_1 &= a  &  R_5 R_1 &= b\\
+               &&  R_3 R_2 &= Ba &  R_4 R_2 &= a^2&  R_5 R_2 &= ba\\
+                              &&&&  R_4 R_3 &= ab &  R_5 R_3 &= b^2\\
+                                             &&&&&& R_4 R_5 &= aB.
+\end{align*}
+Since all
+these elements are hyperbolic by Convention~\ref{conv:aB-hyperbolic},
+we see
+that the $R_i$ are pairwise non-intersecting reflection
+lines. Some realized configurations are shown
 in Figure~\ref{fig:cases-conn-smoothing}.
 
 We next show that by taking powers we can reduce to the splitting
@@ -765,7 +788,7 @@ element $g x^n h$ is hyperbolic and
   \lim_{n \to \infty} (g x^n h)^+ &= g \cdot x^+, &
   \lim_{n \to \infty} (g x^n h)^- &= H \cdot x^-.
 \end{align*}
-If $x,g,h \in \pi_i(S)$, the hypotheses that $g \cdot x^+ \ne x^-$,
+If $x,g,h \in \pi_1(S)$, the hypotheses that $g \cdot x^+ \ne x^-$,
 resp.\ $hg \cdot x^+ \ne x^-$, are automatic.
 \end{lemma}
 
@@ -777,7 +800,7 @@ $n_0>0$ such that, for every $n \ge n_0$,
 \[
 x^n g \cdot V \subsetneq V.
 \]
-Thus $x^n g$ is hyperbolic, with
+Thus, by Lemma~\ref{lem:NS-dynamics}, $x^n g$ is hyperbolic, with
 \[
 (x^n g)^+ \in x^n g \cdot V \subsetneq V.
 \]
@@ -797,16 +820,20 @@ statement.
 
 
 \begin{lemma}
-Let $\ora{a},\ora{b}$ be parallel. If $\ora{a^nB^m}$ splits $\ora{a},\ora{b}$, then so does
-$\ora{a^NB^M}$ for every $N \geq n$ and $M \geq m$.
 \label{lem:once_splits}
+Let $\ora{a},\ora{b}$ be parallel. If, for some $n,m \ge 1$,
+$\ora{a^nB^m}$ splits $\ora{a},\ora{b}$, then so does
+$\ora{a^NB^M}$ for every $N \geq n$ and $M \geq m$.
 \end{lemma}
 \begin{proof}
 It suffices to prove the claim for $\ora{a^{n+1}B^m}$ and $\ora{a^nB^{m+1}}$.
-Note that $\ora{a},\ora{a^nB^m}$ being parallel implies
-$(a^{n+1}B^m)^+ \in ((a^nB^m)^+, a^+) \subset (b^+, a^+)$.
-Similarly, $\ora{a^nB^m},\ora{B}$ are parallel, so $(a^nB^{m+1})^- \in (B^-, (a^nB^m)^-) \subset (b^+,a^+)$
-This proves the claim.
+By Lemma~\ref{lem:splitting_specific}, $(\ora{a}, \ora{a^n B^m})$ are
+parallel. By Lemma~\ref{lem:righthandedfoundation}, we have
+$(a^{n+1}B^m)^+ \in ((a^nB^m)^+, a^+) \subset (b^+, a^+)$, proving the
+claim for $\ora{a^{n+1} B^m}$.
+
+Similarly, $\ora{a^nB^m},\ora{B}$ are parallel, so $(a^nB^{m+1})^- \in
+(B^-, (a^nB^m)^-) \subset (b^+,a^+)$, completing the proof.
 \end{proof}
 
 \begin{proposition}
@@ -816,24 +843,23 @@ $\ora{a^n B^m}$ is splitting for every $n,m \ge s$.
 \end{proposition}
 
 \begin{proof}
-By Lemma~\ref{lem:once_splits}, it suffices to show that there exist $n,m \geq 0$
+By Lemma~\ref{lem:once_splits}, it suffices to show that there exist $n,m \geq 1$
 such that $\ora{a^{n} B^{m}}$ is splitting.
-
 Suppose for definiteness that $(\ora{a},\ora{b})$ are R-parallel.
 Choose $m>0$ so that
 \[
 B^m \cdot a^- \in (b^+, a^+).
 \]
-Fix such an $m$. As $n \to \infty$, Lemma~\ref{lem:convergence_action} gives
+Fix such an $m$ and consider $a^n B^m$ for varying~$n$. As $B^m \cdot
+a^+$ is in $(b^+, a^+)$ and is thus not equal to $a^-$,
+Lemma~\ref{lem:convergence_action} gives
 \begin{align*}
 \lim_{n \to \infty} (a^n B^m)^+ &= a^+, &
 \lim_{n \to \infty} (a^n B^m)^- &= B^m \cdot a^-.
 \end{align*}
 In particular, for $n$ sufficiently large, we have
-\[
-(a^n B^m)^- \in (b^+, a^+),
-\]
-which implies that $\ora{a^n B^m}$ is splitting.
+$(a^n B^m)^- \in (b^+, a^+)$,
+so $\ora{a^n B^m}$ is splitting.
 \end{proof}
 
 \begin{remark}
@@ -855,18 +881,19 @@ particular result we will use later.
 \begin{lemma}\label{lem:a_parallel_Ba}
 Let $a,b \in \pi_1(S)$.
 If $\ora{a},\ora{b}$ are parallel and $(\ora{aB}, \ora{Ba})$ cross,
-let $\mathcal{A} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$
-and $\mathcal{B} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
+let $\mathcal{P} \coloneqq \{ \ora{a},\ora{b}, \ora{ab},\ora{ba} \}$
+and $\mathcal{Q} \coloneqq \{ \ora{aB}, \ora{Ba} \}$. Then either
 \begin{itemize}
-\item $(\ora{g},\ora{h})$ is parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$; or
-\item $(\ora{g},\ora{h})$ is anti-parallel for every $\ora{g} \in \mathcal{A}, \ora{h} \in \mathcal{B}$.
+\item $(\ora{g},\ora{h})$ are parallel for every $\ora{g} \in \mathcal{P}, \ora{h} \in \mathcal{Q}$; or
+\item $(\ora{g},\ora{h})$ are anti-parallel for every $\ora{g} \in \mathcal{P}, \ora{h} \in \mathcal{Q}$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
 Since
 $(\ora{aB},\ora{Ba})$ cross, they must be either $a$-sided or
 $b$-sided.
-If they are $a$-sided, then they are either parallel or anti-parallel to $\ora{a}$.
+If they are $a$-sided, then they are either both parallel or both
+anti-parallel to $\ora{a}$.
 If they are parallel, since $\ora{ab}$, $\ora{ba}$, and $\ora{b}$ are parallel to
 $\ora{a}$ and on the opposite side of $\ora{ab}$, we are in the first
 case of the statement.
@@ -881,6 +908,7 @@ parallel (in fact, they are anti-parallel). Let us show a concrete
 example where this situation arises. See also the discussion
 in~\cite{MGT25:SmoothingsErratum}.
 
+\DPTfyi{HERE}
 \begin{example}
   To see that the case $b$-sided and crossing actually arises, consider any two parallel $\ora{g}$
   and $\ora{h}$, for instance coming from an appropriately-oriented
