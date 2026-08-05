@@ -215,9 +215,9 @@ representative for each curve $C$, then $\ell_d$ induces a curve
 functional. This is the case, for example, when  $(X,d)$ is a
 \emph{length pseudometric} on $S$, i.e.,
 $d$ is given by the infimum of lengths of paths~\cite[Chapter~I.2, Definition~3.1]{BH11:NonPosCurvature}. Precisely, this means
-\[
+\begin{equation}\label{eq:length-metric}
 d(x,y) = \inf_{\gamma} \{ \ell_d(\gamma) : \gamma(0)=x, \gamma(1)=y, \gamma : [0,1] \to X \}.
-\]
+\end{equation}
 We now prove the corollary from the introduction.
 \begin{taggedcor}{\ref{maincor:length_dual}}
   An additive curve functional satisfies the smoothing
@@ -322,20 +322,50 @@ spaces \cite[Proposition~6.4]{CDP90:Lectures}; see also Example~\ref{examp:qf}.
   it was an obvious question for them}
 \begin{remark}
   The pseudometric $d_\mu$ constructed from a geodesic current~$\mu$
-  by Eq.~\eqref{eq:d_mu} is generally not continuous or positive (in fact, $d_\mu$ is continuous iff $\mu$ has no atoms: see~\cite[Propositions~4.7, 4.12]{dRMG22:Duals}). The
-  easiest examples where it fails to both conditions are when
-  $\mu = \delta_C$ is supported on a multi-curve. On the other hand,
-  in that case it is easy to smear out the metric so that it is
-  continuous, motivating the following question.
-\end{remark} \DMGtodo{I'm not sure I know how to do the smearing.}
+  by Eq.~\eqref{eq:d_mu} is generally not continuous or positive. In
+  fact, $d_\mu$ is continuous iff $\mu$ has no atoms
+  \cite[Propositions~4.7, 4.12]{dRMG22:Duals}.
+\end{remark}
 
-\begin{question}
+\begin{question}\label{quest:pseudometric-continuous}
   Can the length pseudometrics in Corollary~\ref{maincor:length_dual}
   be improved so that $d(\cdot,\cdot)$ is continuous on $S \times S$?
   If furthermore the systole of the curve functional is positive, can
   $d(\cdot,\cdot)$ be made into an ordinary length metric? (See
   Corollary~\ref{cor:systole}.)
 \end{question}
+
+\DPTfyi{This sketch new}
+As motivation for Question~\ref{quest:pseudometric-continuous},
+consider the easiest case where continuity and positivity both fail
+for the construction above,
+when $\mu = \delta_C$ is supported on a multi-curve~$C$. In this case
+we can make the metric continuous, as we now sketch. Pick a minimal position
+for~$C$, with only transverse self-intersections and no triple
+intersections, and pick a small tubular thickening $N(C)$. Define the
+length pseudometric on small scales as follows.
+\begin{enumerate}[start=0]
+\item Within a single connected component of the complement of
+  $N(C)$, distances are identically zero.
+\item Within a thickening of a single strand of~$C$, measure distances
+  by the transverse measure of~$C$.
+\item Within a thickening of a crossing, topologically a square, use
+  the Manhattan metric.
+\end{enumerate}
+These pieces are then assembled into a global length pseudometric as
+usual using Eq.~\eqref{eq:length-metric}.
+Several variations are possible. In fact, if $C$ is filling, we can
+make the pseudometric into an honest metric as follows.
+\begin{enumerate}[start=0]
+\item The complementary regions of $N(C)$ are all disks, by definition
+  of ``filling''. Collapse those disks to points; this does not change
+  the topology of~$S$.
+\item Inside thickenings of a single strand, add a longitudinal
+  component to make a Manhattan metric. This does not change lengths
+  of curves: shortest paths will cut straight across these regions,
+  and the longitudinal component will not matter.
+\item No change inside thickenings of crossings.
+\end{enumerate}
 
 \subsection{Domination}\label{sec:domination}
 We take a brief detour from the special classes of currents to

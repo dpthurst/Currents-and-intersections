@@ -611,12 +611,61 @@ determined by the hypotheses: they can be crossing or anti-parallel
 Nevertheless, we can extract some finer information about composite
 pairs, useful in subsidiary results.
 
-\DPTfyi{HERE}
 Fix $a,b \in \Isom^+(\bbH^2)$ so that $\ora{a}$ and $\ora{b}$ are
 R-parallel. We know that $ab$ and $ba$ are
 hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This will be the case, for example, if $a,b \in \pi_1(S)$.)
 
-\begin{figure}[hb]
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel and $aB$ is hyperbolic, $\ora{aB}$
+does not cross $\ora{a}$ or $\ora{b}$.
+\label{lem:aB_a_nocross}
+\end{lemma}
+\begin{proof}
+If $\ora{aB}$ crossed $\ora{a}$, then by Lemma~\ref{lem:rhs_prod}, $\ora{(bA)a}=\ora{b}$ would
+cross $\ora{a}$, a contradiction. Similarly $\ora{aB}$ cannot cross $\ora{b}$.
+\end{proof}
+
+\begin{lemma}
+If $(\ora{a},\ora{b})$ are parallel and $aB$ is hyperbolic, for $g \in \{ a, b \}$, the
+endpoints of $\ora{aB}$ and the endpoints of $\ora{Ba}$ are in the
+same connected component of $\partial_\infty S - \{ g^+,g^-\}$.
+\label{lem:aB_Ba_together}
+\end{lemma}
+\begin{proof}
+  By the previous lemma, the endpoints of $\ora{Ba}$ are in one
+  connected component.
+  Since $a \cdot \ora{Ba} = b \cdot \ora{Ba} = \ora{aB}$, by NS dynamics of $a$ and $b$,
+the endpoints of $\ora{aB}$ are in the same connected component as the
+endpoints of $\ora{Ba}$.
+\end{proof}
+
+\DPTtodo{These cases are more precise than we have yet proved. Weaken
+  it here then prove the strengthening}
+In light of the above lemmas, when $(\ora{a},\ora{b})$ are R-parallel and
+\[
+\big((aB)^-,(aB)^+\big) \subsetneq (b^+,a^+)
+\quad\text{and}\quad
+\big((Ba)^-,(Ba)^+\big) \subsetneq (a^-,b^-),
+\]
+as in Figure~\ref{fig:r3}, we say that
+\emph{$\ora{aB}$ splits $\ora{a},\ora{b}$}.
+Similarly, whenever
+\[
+\big((aB)^-,(aB)^+\big),
+\big((Ba)^-,(Ba)^+\big)
+\subsetneq (b^-,b^+),
+\]
+as in Figure~\ref{fig:r1} or Figure~\ref{fig:c2},
+we say that \emph{$\ora{aB}$ is on the $b$-side of $\ora{a},\ora{b}$},
+and we say that it \emph{is on the $a$-side of $\ora{a},\ora{b}$} if both intervals
+are contained in $(a^+,a^-)$. When $\ora{a},\ora{b}$ are L-parallel
+the terminology is adjusted accordingly. We will also use this
+terminology for powers $\ora{a^n B^m}$ and $\ora{B^m a^n}$ with
+$n,m \ge 1$; these will
+have the same division of cases since $\ora{a^n}$ and $\ora{a}$ have
+the same axis.
+
+\begin{figure}
   \centering
   \setlength{\abovecaptionskip}{3pt}
   \setlength{\belowcaptionskip}{0pt}
@@ -648,51 +697,6 @@ hyperbolic (with crossing axes). Suppose also that $aB$ is hyperbolic. (This wil
 \end{figure}
 
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, $\ora{aB}$ does not cross $\ora{a}$ or $\ora{b}$.
-\label{lem:aB_a_nocross}
-\end{lemma}
-\begin{proof}
-If $\ora{aB}$ crossed $\ora{a}$, then $\ora{(bA)a}=\ora{b}$ would
-cross $\ora{a}$, a contradiction. Similarly $\ora{aB}$ cannot cross $\ora{b}$.
-\end{proof}
-
-\begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel, for $g \in \{ a, b \}$, the
-endpoints of $\ora{aB}$ and the endpoints of $\ora{Ba}$ are in the
-same connected component of $\partial_\infty S - \{ g^+,g^-\}$.
-\label{lem:aB_Ba_together}
-\end{lemma}
-\begin{proof}
-  By the previous lemma, the endpoints of $\ora{Ba}$ are in one
-  connected component.
-  Since $a \cdot \ora{Ba} = b \cdot \ora{Ba} = \ora{aB}$, by NS dynamics of $a$ and $b$,
-the endpoints of $\ora{aB}$ are in the same connected component.
-\end{proof}
-
-When $\ora{a},\ora{b}$ are R-parallel and
-\[
-\big((aB)^-,(aB)^+\big) \subsetneq (b^+,a^+)
-\quad\text{and}\quad
-\big((Ba)^-,(Ba)^+\big) \subsetneq (a^-,b^-),
-\]
-as in Figure~\ref{fig:r3}, we say that
-\emph{$\ora{aB}$ splits $\ora{a},\ora{b}$}.
-Similarly, whenever
-\[
-\big((aB)^-,(aB)^+\big),
-\big((Ba)^-,(Ba)^+\big)
-\subsetneq (b^-,b^+),
-\]
-as in Figure~\ref{fig:r1},
-we say that \emph{$\ora{aB}$ is on the $b$-side of $\ora{a},\ora{b}$},
-and we say that it \emph{is on the $a$-side of $\ora{a},\ora{b}$} if both intervals
-are contained in $(a^+,a^-)$. When $\ora{a},\ora{b}$ are L-parallel
-the terminology is adjusted accordingly. We will also use this
-terminology for powers $\ora{a^n B^m}$ and $\ora{B^m a^n}$, which will
-have the same division of cases since $\ora{a^n}$ and $\ora{a}$ have
-the same axis.
-
-\begin{lemma}
 \label{lem:trichotomy_ab}
 If $(\ora{a},\ora{b})$ are parallel, then $\ora{aB},\ora{Ba}$ are
 exactly one of $a$-sided, splitting, or $b$-sided.
@@ -701,6 +705,7 @@ exactly one of $a$-sided, splitting, or $b$-sided.
 This follows from Lemma~\ref{lem:aB_Ba_together}.
 \end{proof}
 
+\DPTfyi{OK without detailed knowledge}
 \begin{lemma}
 \label{lem:aB_bA_antiparallel_cross}
 If $(\ora{a},\ora{b})$ are parallel, then $(\ora{aB},\ora{Ba})$  are anti-parallel or cross.
@@ -714,22 +719,26 @@ Then since $a \cdot \ora{Ba} = \ora{aB}$, they must both be either parallel or a
 See Figure~\ref{fig:c2} and Example~\ref{ex:ab_parallel_aB_crossing} for examples where $(\ora{Ba},\ora{aB})$ cross.
 
 \begin{lemma}
-If $(\ora{a},\ora{b})$ are parallel and $\ora{aB},\ora{Ba}$ are splitting,
-then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
 \label{lem:splitting_specific}
+If $(\ora{a},\ora{b})$ are parallel and $\ora{aB},\ora{Ba}$ are split
+$\ora{a},\ora{b}$,
+then $(aB)^{\pm} \in (b^+, a^+)$ and $(Ba)^{\pm} \in (a^-,b^-)$.
 \end{lemma}
 \begin{proof}
 This follows from $a \cdot \ora{Ba}= b \cdot \ora{Ba} =\ora{aB}$ and the fact that $a,b$ 
-move in opposite directions (cw/ccw) on these intervals. The only way the $a$ and $b$ actions can end up in the same place is if they move from one interval to the other.
+move in opposite directions (cw/ccw) on the intervals $(b^+,a^+)$ and
+$(a^-,b^-)$. The only way the $a$ and $b$ actions can end up in the
+same place is if they move from one interval to the other.
+\DPTtodo{Say a few words about specifically which interval they are on}
 \end{proof}
 
 To draw specific examples precisely, consider the common hyperbolic perpendicular of $\ora{a}$
-and $\ora{b}$, which we will denote~$R_1$. We will also use the
+and~$\ora{b}$, which we will denote~$R_1$. We will also use the
 same notation for the reflection through~$R_1$.
 Let $R_2, R_3, R_4, R_5$ be the lines and corresponding reflections so
 that $a=R_1 R_2 = R_4 R_1$, and $b=R_1 R_3 = R_5 R_1$. Precisely,
 $R_2$ and $R_4$ are perpendicular to $\ora{a}$, and $R_3$ and $R_5$
-are perpendicular to $\ora{b}$.
+are perpendicular to~$\ora{b}$.
 
 Since
 $ab=R_4 R_3$, $ba=R_5 R_2$, $Ba=R_3 R_2$, and $aB=R_4 R_5$, and all of
