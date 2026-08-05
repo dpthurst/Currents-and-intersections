@@ -263,7 +263,7 @@ Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_d$ du
 
 
 Finally, we prove the other implication. Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{S}$ defined via
-\DPTfyi{Tweaked notation since this is a metric on the cover not on $S$}
+
 \begin{equation}\label{eq:d_mu}
 \wt d^\Sigma_\mu(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right),
 \end{equation}
@@ -305,8 +305,6 @@ $\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every
 closed curve $C$.
 \end{remark}
 
-\DPTfyi{Separated out stability claim and rewrote; added ref to qFuchs
-  examples}
 \begin{remark}
 Suppose $(S,d)$ is a length pseudometric structure on $S$. Let
 $\wt{d}$ be the lift of the metric $d$ to $\wt{S}$
@@ -324,12 +322,12 @@ spaces \cite[Proposition~6.4]{CDP90:Lectures}; see also Example~\ref{examp:qf}.
   it was an obvious question for them}
 \begin{remark}
   The pseudometric $d_\mu$ constructed from a geodesic current~$\mu$
-  by Eq.~\eqref{eq:d_mu} is generally not continuous or positive. The
+  by Eq.~\eqref{eq:d_mu} is generally not continuous or positive (in fact, $d_\mu$ is continuous iff $\mu$ has no atoms: see~\cite[Propositions~4.7, 4.12]{dRMG22:Duals}). The
   easiest examples where it fails to both conditions are when
   $\mu = \delta_C$ is supported on a multi-curve. On the other hand,
   in that case it is easy to smear out the metric so that it is
   continuous, motivating the following question.
-\end{remark}
+\end{remark} \DMGtodo{I'm not sure I know how to do the smearing.}
 
 \begin{question}
   Can the length pseudometrics in Corollary~\ref{maincor:length_dual}
