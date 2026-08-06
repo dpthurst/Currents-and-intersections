@@ -7,20 +7,6 @@ closure of the set
 of weighted closed geodesics. Equivalently, from a dynamical
 viewpoint, they may be regarded as measures on the unit tangent bundle
 that are invariant under the geodesic flow and the orientation flip.
-\DMGtodo{added this sentence to connect it to currents, which might be
-  more familiar to geometric analyists (might be good if we send it to
-  Acta)}%
-\DPTtodo{You're connecting it to the more general current theory, I
-  guess. I think that's a good thing to do, but I wouldn't do it here
-  since it's not the way we generally think about it. We can expect
-  the Acta audience to be aware of this kind of background}
-Each such measure determines
-a closed one-current tangent to the orbit foliation of the geodesic
-flow, and hence a foliation cycle in the sense of Sullivan
-\cite{Sul76:Cycles}. We introduce a third, purely topological
-description, characterizing geodesic currents as the nonnegative
-additive functionals on curves that do not increase under smoothing
-essential crossings.
 
 Since their introduction by Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}
 in his study of ends of hyperbolic $3$-manifolds, they have become a
@@ -137,25 +123,8 @@ induce the standard topology on~$S$, and the distance functions may
 not even be continuous on $S \times S$ \cite[Propositions 4.7, 4.12]{dRMG22:Duals}.
 These terms are defined, and Corollary~\ref{maincor:length_dual} is
 proved, in Section~\ref{subsec:length-metrics}.
-\DMGtodo{I added this diagram}%
-\DPTtodo{I don't think it's adding enough, I'd like to nix it}
-In short, Theorem~\ref{thm:intersect} and Corollary~\ref{maincor:length_dual} give two new equivalent geometric perspectives on geodesic currents: as additive curve functionals satisfying smoothing and as length pseudo-metrics on $S$. This can be summarized in the following diagram.
 
-\[
-\begin{gathered}
-\text{geodesic currents}\\
-\text{on $S$}
-\end{gathered}
-\quad\Longleftrightarrow\quad
-\begin{gathered}
-\text{marked length spectra of length}\\ \text{pseudometrics on $S$}
-\end{gathered}
-\quad\Longleftrightarrow\quad
-\begin{gathered}
-\text{additive curve functionals}\\
-\text{satisfying smoothing}.
-\end{gathered}
-\]
+In short, Theorem~\ref{thm:intersect} and Corollary~\ref{maincor:length_dual} give two new equivalent geometric perspectives on geodesic currents: as additive curve functionals satisfying smoothing and as length pseudo-metrics on $S$. 
 
 Theorem~\ref{thm:intersect} further yields dual currents (in fact, dual multi-curves) for stable
 lengths associated to embedded graphs. Let $\iota \colon \mathcal{G}
@@ -271,10 +240,7 @@ $\mu_{\overline f}$ on $S$ such that
 i(\mu_{\overline f},[g])=\overline f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $f$ satisfies the conditions
-\DPTfyi{Spelled out the conditions. Also put the definition of
-  $\lambda(g)$ on a separate line, since I kept reading past it}
-of class invariance,
+if and only if $f$ satisfies the conditions of class invariance,
 stability, and oriented smoothing from Theorem~\ref{thm:intersections_group}
 and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition:
 \[
@@ -317,6 +283,11 @@ We highlight some features of Theorem~\ref{thm:hyp-lam-char}.
     $\pi_1(S)$, suggesting applications to the study of singularity
     properties of their hitting measures; see
     Section~\ref{subsec:green}.
+\item \DMGtodo{condensed it into a paragraph} If $\mathcal{M}$ is a class of marked symmetric length metrics on $S$ where marked length
+spectrum rigidity holds, it follows from Theorem~\ref{thm:hyp-lam-char} and Corollary~\ref{maincor:length_dual} that $d \in \mathcal{M}$ is marked-isometric to a hyperbolic metric 
+if and only if it satisfies the hypothesis of Theorem~\ref{thm:hyp-lam-char}(H). Some $\mathcal{M}$ for which it applies are negatively curved Riemannian metrics \cite{Otal90:SpectreMarqueNegative} \cite{HP97:RigidityNegCurvedCone}, nonpositively curved
+Riemannian metrics \cite{CFF92:RigidityNonPosCurvedRiem}\cite{Con18:MarkedNonpos}, and Riemannian metrics with Anosov geodesic flow
+\cite{GLP25:MarkedAnosov}.
   \item It extends Luo’s characterizations of those
 functions on simple closed curves that arise as either intersection with
 measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Luo10:Simple}
@@ -327,50 +298,8 @@ functions~\cite{Luo98:GeodesicLength}.
   that measured laminations satisfy max-smoothing.
 \end{itemize}
 
-\DMGtodo{added the following corollary and remark}
-\DPTtodo{Looking more, I don't think it belongs in the intro. It takes
-  too long to explain for the
-  payoff added over what the theorem already says}
 
-Combined with a weakening of marked length spectrum rigidity, we obtain a recognition result for hyperbolic metrics from their marked length spectrum, which is an immediate corollary of Theorem~\ref{thm:hyp-lam-char} and Corollary~\ref{maincor:length_dual}.
 
-\begin{maincor}\label{maincor:hyperbolic-recognition-rigidity}
-Let $\mathcal{M}$ be a class of marked symmetric length metrics on $S$. Assume that, for every $d \in \mathcal{M}$ and every marked hyperbolic metric $\Sigma \in \Teich(S)$,
-\[
-\ell_d(C)=\ell_\Sigma(C)
-\quad\text{for every }C\in\Curves(S)
-\]
-implies that $d$ are marked-isometric.
-Then $d$ is marked-isometric to a hyperbolic metric if and only if it satisfies the hypothesis of Theorem~\ref{thm:hyp-lam-char}(H).
-\end{maincor}
-
-\begin{remark}
-The hypothesis of Corollary~\ref{maincor:hyperbolic-recognition-rigidity}
-is automatically satisfied whenever $\mathcal{M}$ contains the
-hyperbolic metrics and marked length spectrum rigidity holds on
-$\mathcal{M}$, that is, whenever the map
-\[
-d\longmapsto \bigl(\ell_d(C)\bigr)_{C\in\Curves(S)}
-\]
-is injective on $\mathcal{M}$ modulo marked isometry.  Thus the
-corollary applies to smooth negatively curved Riemannian metrics
-\cite{Otal90:SpectreMarqueNegative}, smooth nonpositively curved
-Riemannian metrics \cite{CFF92:RigidityNonPosCurvedRiem}, and smooth
-Riemannian metrics with Anosov geodesic flow
-\cite{GLP25:MarkedAnosov}.  Analogous conclusions hold in the
-corresponding classes of negatively curved Riemannian cone metrics
-\cite{HP97:RigidityNegCurvedCone} and nonpositively curved Riemannian
-metrics with cone singularities \cite{Con18:MarkedNonpos}.
-
-The hypothesis used here is weaker than marked length spectrum
-rigidity on the whole class $\mathcal{M}$.  For example,
-Croke--Fathi--Feldman \cite{CFF92:RigidityNonPosCurvedRiem} show that
-it is satisfied by every smooth Riemannian metric without conjugate
-points: if such a metric has the same marked length spectrum as a
-hyperbolic metric, their theorem implies that the two metrics are
-marked-isometric.  Marked length spectrum rigidity for two arbitrary
-metrics without conjugate points remains open.
-\end{remark}
 
 
 
