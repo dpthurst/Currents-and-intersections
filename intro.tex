@@ -6,7 +6,15 @@ space of unoriented geodesics on~$\wt{S}$, forming the weak$^*$
 closure of the set
 of weighted closed geodesics. Equivalently, from a dynamical
 viewpoint, they may be regarded as measures on the unit tangent bundle
-that are invariant under the geodesic flow and the orientation flip. \DMGtodo{added this sentence to connect it to currents, which might be more familiar to geometric analyists (might be good if we send it to Acta)}Each such measure determines
+that are invariant under the geodesic flow and the orientation flip.
+\DMGtodo{added this sentence to connect it to currents, which might be
+  more familiar to geometric analyists (might be good if we send it to
+  Acta)}%
+\DPTtodo{You're connecting it to the more general current theory, I
+  guess. I think that's a good thing to do, but I wouldn't do it here
+  since it's not the way we generally think about it. We can expect
+  the Acta audience to be aware of this kind of background}
+Each such measure determines
 a closed one-current tangent to the orbit foliation of the geodesic
 flow, and hence a foliation cycle in the sense of Sullivan
 \cite{Sul76:Cycles}. We introduce a third, purely topological
@@ -129,7 +137,8 @@ induce the standard topology on~$S$, and the distance functions may
 not even be continuous on $S \times S$ \cite[Propositions 4.7, 4.12]{dRMG22:Duals}.
 These terms are defined, and Corollary~\ref{maincor:length_dual} is
 proved, in Section~\ref{subsec:length-metrics}.
-\DMGtodo{I added this diagram}
+\DMGtodo{I added this diagram}%
+\DPTtodo{I don't think it's adding enough, I'd like to nix it}
 In short, Theorem~\ref{thm:intersect} and Corollary~\ref{maincor:length_dual} give two new equivalent geometric perspectives on geodesic currents: as additive curve functionals satisfying smoothing and as length pseudo-metrics on $S$. This can be summarized in the following diagram.
 
 \[
@@ -262,8 +271,11 @@ $\mu_{\overline f}$ on $S$ such that
 i(\mu_{\overline f},[g])=\overline f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $f$ satisfies the conditions of
-Theorem~\ref{thm:intersections_group}
+if and only if $f$ satisfies the conditions
+\DPTfyi{Spelled out the conditions. Also put the definition of
+  $\lambda(g)$ on a separate line, since I kept reading past it}
+of class invariance,
+stability, and oriented smoothing from Theorem~\ref{thm:intersections_group}
 and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition:
 \[
 \begin{array}{c@{\qquad}c}
@@ -272,9 +284,8 @@ and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition:
 f(a)+f(b)=\max\{f(ab),f(aB)\}.
 &
 \lambda(a)\lambda(b)
-= \lambda(ab)+\lambda(aB), \text{ where }
-\lambda(g)
-\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
+  = \lambda(ab)+\lambda(aB),\\
+  &\text{ where }\lambda(g)\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
 \end{array}
 \]
 \end{mainthm}
@@ -317,6 +328,9 @@ functions~\cite{Luo98:GeodesicLength}.
 \end{itemize}
 
 \DMGtodo{added the following corollary and remark}
+\DPTtodo{Looking more, I don't think it belongs in the intro. It takes
+  too long to explain for the
+  payoff added over what the theorem already says}
 
 Combined with a weakening of marked length spectrum rigidity, we obtain a recognition result for hyperbolic metrics from their marked length spectrum, which is an immediate corollary of Theorem~\ref{thm:hyp-lam-char} and Corollary~\ref{maincor:length_dual}.
 

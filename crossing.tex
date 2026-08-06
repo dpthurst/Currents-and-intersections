@@ -908,20 +908,22 @@ parallel (in fact, they are anti-parallel). Let us show a concrete
 example where this situation arises. See also the discussion
 in~\cite{MGT25:SmoothingsErratum}.
 
-\DPTfyi{HERE}
 \begin{example}
-  To see that the case $b$-sided and crossing actually arises, consider any two parallel $\ora{g}$
+  To see that the case where $(\ora{a},\ora{b})$ are parallel and
+  $(\ora{aB},\ora{Ba})$ cross actually occurs (thus
+  violating a naive smoothing condition), consider any two parallel $\ora{g}$
   and $\ora{h}$, for instance coming from an appropriately-oriented
   pair of disjoint simple closed curves sitting
   as the cuffs of an embedded pair of pants.
   Define $a \coloneqq hghgh$ and $b
   \coloneqq hgh$. We claim that $\ora{a}$ and $\ora{b}$ are
   parallel. First, by
-  Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}, $\ora{hg}$ and $\ora{gh}$ cross and $\ora{h}$ and $\ora{gh}$ are
+  Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel},
+  $(\ora{hg},\ora{gh})$ cross and $(\ora{h},\ora{gh},\ora{g})$ are
   parallel. Applying the lemma again to $(\ora{h},\ora{gh})$, we see
-  that $\ora{hgh}$ and $\ora{gh}$ are parallel, and applying the lemma
+  that $(\ora{hgh},\ora{gh})$ are parallel, and applying the lemma
   once more we see $\ora{b} = \ora{hgh}$ and $\ora{a} = \ora{hghgh}$
-  are parallel, as desired. See Figure~\ref{fig:crossing_aB}.
+  are parallel. See Figure~\ref{fig:crossing_aB}.
   Finally, $aB=(hghgh)(HGH)=hg$ and $Ba=(HGH)(hghgh)=gh$, which cross,
   as desired.
   \label{ex:ab_parallel_aB_crossing}
@@ -941,6 +943,7 @@ in~\cite{MGT25:SmoothingsErratum}.
 \subsection{Fundamental smoothing results}
 \label{sec:fund-smoothing}
 
+\DPTfyi{HERE}
 As part of our construction, we will use large powers of some fixed
 elements. We collect some propositions guaranteeing essential
 crossings in this context.
