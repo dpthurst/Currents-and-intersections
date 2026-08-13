@@ -446,19 +446,90 @@ We now turn to some elementary lemmas about crossing.
   $(x,y) \cup (y,x)$ is almost the entire circle.
 \end{convention}
 
+\DMGtodo{for characterization, one has to fix the hypothesis of the second, since the old one allowed parabolic (which in our case we know do not exist)}
 \begin{lemma}\label{lem:NS-dynamics}
-  Let $a \in \Isom(\bbH^2)$ and $(x,y) \subset \partial\bbH^2$. Then
+  Let $a \in \Isom^+(\bbH^2)$ and $(x,y) \subset \partial\bbH^2$. Then
   the following are equivalent:
   \begin{itemize}
   \item $a$ is hyperbolic with attracting and repelling
     endpoint $a^+ \in(x,y)$ and $a^- \in [y,x]$; and
-  \item  $a \cdot (x,y) \subsetneq (x,y)$.
+\item The closed interval $[x,y]$ is mapped strictly into its
+interior:
+\[
+a\bigl([x,y]\bigr)\subset(x,y).
+\]
+In this case,
+\[
+\bigcap_{n\geq 0}a^n([x,y])=\{a^+\},
+\qquad
+\bigcap_{n\geq 0}a^{-n}([y,x])=\{a^-\}.
+\]
+If $a$ is already known to be non-parabolic, then the hypothesis can be replaced by
+\[
+a(x,y)\subsetneq(x,y).
+\]
+
   \end{itemize}
 \end{lemma}
 
 \begin{proof}
-  This is a statement of NS dynamics of hyperbolic elements.
+Suppose first that $a$ is hyperbolic, with
+$a^+\in(x,y)$ and $a^-\in(y,x)$. Conjugating in
+$\Isom^+(\mathbb H^2)$, we may assume that $a^-=0, a^+=\infty, a(t)=\lambda t$
+on $\partial_\infty\mathbb H^2=\mathbb R\cup\{\infty\}$, where
+$\lambda>1$.
+
+Since $(x,y)$ contains $\infty$ but not $0$, its endpoints may be
+written with $x>0>y$, and $[x,y]$ is the closed interval passing
+through $\infty$. Therefore
+\[
+a([x,y])=[\lambda x,\lambda y]\subset(x,y),
+\]
+because $\lambda x>x$ and $\lambda y<y$.
+
+Conversely, suppose that
+\[
+a([x,y])\subset(x,y).
+\]
+After identifying $[x,y]$ with a compact real interval, the
+restriction
+\[
+a\colon [x,y]\longrightarrow [x,y]
+\]
+has a fixed point by the fixed-point theorem for intervals. Since the
+image is contained in $(x,y)$, this fixed point belongs to $(x,y)$.
+
+Taking complementary intervals in the boundary circle gives
+\[
+a^{-1}([y,x])\subset(y,x).
+\]
+Applying the same argument to $a^{-1}$ on $[y,x]$ produces a fixed
+point of $a^{-1}$, and hence of $a$, in $(y,x)$. Thus $a$ has two
+distinct fixed points on $\partial_\infty\mathbb H^2$. Since
+$a\in\Isom^+(\mathbb H^2)$, it follows that $a$ is hyperbolic.
+
+The strict forward trapping of $[x,y]$ shows that the fixed point in
+$(x,y)$ is attracting, while the strict backward trapping of
+$[y,x]$ shows that the fixed point in $(y,x)$ is repelling. Hence they
+are respectively $a^+$ and $a^-$.
+
+Finally, NS dynamics gives the last statement.
 \end{proof}
+
+\begin{remark}
+If $a$ is already known to be hyperbolic, then
+\[
+a(x,y)\subsetneq(x,y)
+\]
+is equivalent to
+\[
+a^+\in(x,y)
+\qquad\text{and}\qquad
+a^-\notin(x,y).
+\]
+This weaker open-interval formulation cannot be used to prove that
+$a$ is hyperbolic, since it also permits parabolic isometries.
+\end{remark}
 
 \begin{lemma}
   Let $a,x \in \Isom^+(\bbH^2)$ be hyperbolic elements that do not share any endpoints.
@@ -831,6 +902,7 @@ Similarly, $\ora{a^nB^m},\ora{B}$ are parallel, so $(a^nB^{m+1})^- \in
 (B^-, (a^nB^m)^-) \subset (b^+,a^+)$, completing the proof.
 \end{proof}
 
+\DMGtodo{edited this changing $B$ by $b$ in two places}
 \begin{proposition}
 If $\ora{a}$ and $\ora{b}$ are parallel, then there exists $s > 0$ such that
 $\ora{a^n B^m}$ is splitting for every $n,m \ge s$.
@@ -843,14 +915,14 @@ such that $\ora{a^{n} B^{m}}$ is splitting.
 Suppose for definiteness that $(\ora{a},\ora{b})$ are R-parallel.
 Choose $m>0$ so that
 \[
-B^m \cdot a^- \in (b^+, a^+).
+b^m \cdot a^- \in (b^+, a^+).
 \]
 Fix such an $m$ and consider $a^n B^m$ for varying~$n$. As $B^m \cdot
 a^+$ is in $(b^+, a^+)$ and is thus not equal to $a^-$,
 Lemma~\ref{lem:convergence_action} gives
 \begin{align*}
 \lim_{n \to \infty} (a^n B^m)^+ &= a^+, &
-\lim_{n \to \infty} (a^n B^m)^- &= B^m \cdot a^-.
+\lim_{n \to \infty} (a^n B^m)^- &= b^m \cdot a^-.
 \end{align*}
 In particular, for $n$ sufficiently large, we have
 $(a^n B^m)^- \in (b^+, a^+)$,
@@ -1138,7 +1210,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
     [a y^m x^n][A] &\reducesto [y^m][x^n]\\
     \intertext{and for $n,m > 2s$,}
     \label{eq:crossbelowy}
-    [a Y^m x^n][A] &\reducesto [x^s Y^s] [A x^s a Y^s] [x^{n-2s}] [Y^{n-2s}]
+    [a Y^m x^n][A] &\reducesto [x^s Y^s] [A x^s a Y^s] [x^{n-2s}] [Y^{m-2s}]
   \end{align}
 \end{proposition}
 
@@ -1241,7 +1313,7 @@ four group elements.
   [a x^n b y^m][ab] &\reducesto [x^n][y^m]\\
   \intertext{and for $n,m > 2s$,}
   \label{eq:crossbelowy-ab}
-   [a x^n b Y^m][ab] &\reducesto [a x^s A Y^s] [B x^s b Y^s] [x^{n-2s}] [Y^{n-2s}]
+   [a x^n b Y^m][ab] &\reducesto [a x^s A Y^s] [B x^s b Y^s] [x^{n-2s}] [Y^{m-2s}]
 \end{align}
 \end{corollary}
 

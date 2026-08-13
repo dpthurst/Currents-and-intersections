@@ -213,8 +213,10 @@ of rectangles in $G(S)$, in the following sense. For any
 $v_1,v_2,w_2,w_1\in \bdy_\infty S$ in that cyclic order,
 and any $\epsilon>0$ so the respective $\epsilon$-neighborhoods are
 disjoint, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
-type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $p_i\cdot x^- \in B_\epsilon(v_i)$
+type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $P_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
+In particular, right-handed boxes
+form a neighborhood basis of $\mathcal G(\widetilde S)$.  
 \label{prop:density}
 \end{proposition}
 \begin{proof}
@@ -224,6 +226,14 @@ and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
   Furthermore, that same lemma lets us arrange the orientations so
   that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a
   RH lift system of type~$1$.
+  
+  \DMGtodo{added this} Finally, we prove the statement about it being a neighborhood basis.
+given $(u,v)\in\mathcal G(\widetilde S)$ and a product neighborhood
+$U\times V$ with disjoint coordinate closures, choose target
+endpoints in $U$ on the two sides of $u$, and target endpoints in
+$V$ on the two sides of $v$.  Applying the previously proven statement with
+$\varepsilon$sufficiently small gives a right-handed box containing
+$(u,v)$ and contained in $U\times V$.
 \end{proof}
 
 \begin{figure}
@@ -640,6 +650,14 @@ Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
 
+We have the following converse characterization of an RH box in terms of whiskers, which follows easily from the previous discussion.
+
+\DMGtodo{added this to emphasize}
+Conversely, whiskers allow us to characterize RH boxes.
+\begin{lemma} \label{lem:whiskertobox} A half-open rectangle whose four boundary sides lie on two horizontal and two vertical
+whiskers is an RH box exactly when the four chosen endpoints occur in ccw order and each horizontal whisker
+meets each vertical whisker. \end{lemma}
+
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{rhs_whiskers}}
@@ -657,7 +675,7 @@ all the way back to the diagonal.
 \begin{proof}
   First, the intersection of boxes is obviously a box. Indeed, all
   sides of a box are necessarily in the respective whisker, and any
-  new vertices of the intersection are thus intersections of whiskers.
+  new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box. \DMGtodo{added this}
 
   Second, we must show that if $A,B$ are boxes, then $A \setminus B$
   is a finite union of boxes. In the interesting case, $A\setminus B$

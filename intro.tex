@@ -103,7 +103,7 @@ curves), come out in the proof.
 Theorem~\ref{thm:intersect} produces numerous new dual currents and
 unifies several constructions. In particular, it applies to curve
 lengths arising from arbitrary Riemannian metrics on $S$, and more
-generally from any length (pseudo-)metric on~$S$, including Finsler
+generally from any length (pseudo-)metric on~$S$, including reversible Finsler
 metrics. In fact this gives another characterization of geodesic
 currents.
 \begin{maincor}
@@ -170,6 +170,7 @@ many such extensions arise canonically as intersection with a current.
 Definition~\ref{def:crossing} and
     Figure~\ref{fig:cases-a-b} for a precise definition.)
 
+\DMGtodo{had to edit the way we phrase this statement since $\overline f$ satisfying the Conditions does not imply $f$ satisfying the conditions. So stated characterization with $\overline f$, and then, afterwards, just with $f$ as a sufficient criterion. }
 \begin{mainthmprime}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
 Then there exists a dual geodesic current $\mu_{\overline{f}}$ on $S$ so that
@@ -177,17 +178,18 @@ Then there exists a dual geodesic current $\mu_{\overline{f}}$ on $S$ so that
 i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
 \quad\text{for every }g \in \pi_1(S).
 \]
-if and only if $f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
+if and only if $\overline f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
 \begin{enumerate}
-\item class invariant: $f(a)=f(b)$ whenever $a$ is conjugate to $b$.
+\item class invariant: $\overline f (a)=\overline f(b)$ whenever $a$ is conjugate to $b$.
 \item stability: 
-$f(a^n)=nf(a) \mbox{ for all } n \geq 1$.
+$\overline f(a^n)=n\overline f(a) \mbox{ for all } n \geq 1$.
 \item oriented smoothing:
  \begin{align}
-    \label{eq:conn_oriented} f(ab) &\geq  f(a) + f(b) && \mbox{ if } (\ora{a},\ora{b})\mbox{ are } \mbox{parallel;} \\
-    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (\ora{a},\ora{b})\mbox{ are } \mbox{crossing}.
+    \label{eq:conn_oriented} \overline f(ab) &\geq  \overline f(a) + \overline f(b) && \mbox{ if } (\ora{a},\ora{b})\mbox{ are } \mbox{parallel;} \\
+    \label{eq:disconn_oriented} \overline f(a) + \overline f(b) &\geq \overline f(ab)  && \mbox{ if }  (\ora{a},\ora{b})\mbox{ are } \mbox{crossing}.
   \end{align}
 \end{enumerate}
+In particular, Conditions~(1),(2),(3) on just $f$ are sufficient to guarantee the existence of $\mu_{\overline f}$.
 \label{thm:intersections_group}
 \end{mainthmprime}
 

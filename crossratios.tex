@@ -98,7 +98,7 @@ For every $g \in \pi_1(S)$, and every $n \in \mathbb{N}$ we have
 This follows readily by additivity and $\pi_1(S)$-invariance of the
 cross-ratio, as follows. (See also Equation~\eqref{eq:intersection-stability}.)
 \begin{equation}\label{eq:crossratio-stability}
- \ell(g^n) =[g^-, x , g^n \cdot x, g^+]= \sum_{i=1}^{n} [g^-, g^{i-1}x , g^i \cdot x, g^+] = n[g^-, x , g^n \cdot x, g^+] = n \ell(g).\qedhere
+ \ell(g^n) =[g^-, x , g^n \cdot x, g^+]= \sum_{i=1}^{n} [g^-, g^{i-1}x , g^i \cdot x, g^+] = n[g^-, x , g \cdot x, g^+] = n \ell(g).\qedhere
 \end{equation}
 \end{proof}
 
@@ -202,7 +202,7 @@ the common value is unclear to us.
   $n\ge 0$, we have $L = L_n \sqcup \bigsqcup_{i=1}^n V_i$.
   We thus have
   \[
-    [R] = [R_n] + \sum_{i=1}^n [V_n] = [R_n] - [L_n] + [L].
+    [R] = [R_n] + \sum_{i=1}^n [V_i] = [R_n] - [L_n] + [L].
   \]
 
   To complete the proof, we must show
@@ -352,9 +352,9 @@ This can be achieved by NS dynamics of $a$ and $B$. To clarify
 notation, we will let $g \coloneqq a^n$ and $h \coloneqq b^n$. Compare
 Figure~\ref{fig:c8}, where we consider the fundamental domain $F(gh) =
 (gh^+, gh^-) \times [h^-, g\cdot h^-)$ (dark green).
-This contains the fundamental domain of $F(H)$ given by $(h^-, h^+) \times [g^+, H \cdot g^+)$ (dark blue). $F(ab)$ also contains the box $R=(H \cdot g^+, gh^-) \times [h^-, g \cdot h^-)$. Note that
+This contains the fundamental domain of $F(H)$ given by $(h^-, h^+) \times [g^+, H \cdot g^+)$ (dark blue). $F(gh)$ also contains the box $R=(H \cdot g^+, gh^-) \times [h^-, g \cdot h^-)$. Note that
 \[
-h \cdot R = (g^+, hg^-) \times [h^- \cdot hg \cdot h^-)
+h \cdot R = (g^+, hg^-) \times [h^-, hg \cdot h^-)
 \]
 (cyan), which contains $F(g)$ given by $(g^+, g^-) \times [h^-, g \cdot h^-)$.
 Hence, by invariance and finite additivity, we get

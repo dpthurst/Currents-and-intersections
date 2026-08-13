@@ -25,7 +25,7 @@ We will check each hypothesis:
  can be partitioned into $\bigcup_{i=1}^{n-1} G(x, \gamma^{i} \cdot
  x]$.  Thus, by Equation~\eqref{eq:intersection_curve},
 \begin{equation}\label{eq:intersection-stability}
-i(\mu, \gamma^n) = \mu(G(x, \gamma^n x]) = \sum_{i=1}^{n-1} \mu(G(x, \gamma^{i} \cdot x]) = n\mu(G(x, \gamma x]) = n i(\mu, \gamma),
+i(\mu, \gamma^n) = \mu(G(x, \gamma^n x]) = \sum_{i=1}^{n-1} \mu(G(\gamma^{i-1} \cdot x, \gamma^{i} \cdot x]) = n\mu(G(x, \gamma x]) = n i(\mu, \gamma),
 \end{equation}
 where in the second equality we used finite additivity of $\mu$, and
 in the third one, $\Gamma$-invariance. This proves stability and, in
@@ -66,7 +66,7 @@ Since $p \in \ora{a}$, we have $x=B \cdot p \in \ora{b}$.
 We have $p$ and $y= a \cdot p$ are in $\ora{a}$. Thus
 \begin{align*}
   i(\mu, ab) &\leq \mu(G(x, ab x]) &&\text{by \cite[Lemma 4.4(2)]{MZ19:PositivelyRatioed}}\\
-  &\leq \mu(G(x, b x]) + \mu(G(bx, ab x]) &&\text{since $G(x, b x] \subset G(x, b x] \cup G(bx, ab x]$}\\
+  &\leq \mu(G(x, b x]) + \mu(G(bx, ab x]) &&\text{since $G(x, ab x] \subset G(x, b x] \cup G(bx, ab x]$}\\
              &= \mu(G(B p, p]) + \mu(G(p, ap])\\
                &= i(\mu, b) + i(\mu, a).
 \end{align*}

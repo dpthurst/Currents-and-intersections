@@ -46,7 +46,7 @@ Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again have a box
   p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\quad
   p_2^{(k)}\coloneqq p_2,\quad
   q_1^{(k)}\coloneqq q_1,\quad
-  q_2^{(k)} \coloneqq q_1.
+  q_2^{(k)} \coloneqq q_2.
 \]
 \label{def:accordion}
 \end{definition}
@@ -75,8 +75,8 @@ Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again have a box
   To show the measures go to zero, we first reformulate the nesting
   condition algebraically. Note that
   $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Thus  $\ora{r_2}$ and $\ora{r_1}$ being nested means $(\ora{r_1},\ora{r_2})$ are R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
-  in turn equivalent to $Q_2 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
-  R-crossing $\ora{x}$; write $e = Q_1q_2$.
+  in turn equivalent to $Q_1 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
+  R-crossing $Q_1 \cdot \ora{r_1} = \ora{x}$; write $e = Q_1q_2$.
 
   In the RH orbit notation, we then have
   \begin{align*}
@@ -120,8 +120,30 @@ crossing $\ora{x}$ to the right. In particular we have
   = \ell_2^{-k} \cdot \ora{\ell_1},
 \]
 which by NS dynamics of $\ell_2$ gives the picture on the left of
-Figure~\ref{fig:horizontal-accordion}. In particular all of the $F(k)$
-are boxes with $F(k+1) \subset F(k)$.
+Figure~\ref{fig:horizontal-accordion}.
+Moreover, $\ora a$, $\ora c$, and $\ora e$ all $R$-cross
+$\ora x$. Lemma~\ref{lem:rhs} implies that
+\[
+\ora{ax^ke}
+\quad\text{and}\quad
+\ora{cx^ke}
+\]
+$R$-cross $\ora x$ for every $k\geq0$. It also implies that
+$\ora{x^ke}$ $R$-crosses $\ora x$, so
+$x^ke$ is not a power of $x$. Hence Conditions~(1) and~(2) in the
+definition of an RH lift system continue to hold.
+
+Since
+\[
+\ora{r_2^{(k)}}
+  =r_1^k\cdot\ora{r_2},
+\]
+the north-south dynamics preserves the strict RH cyclic order and gives
+\[
+F(k+1)\subset F(k).
+\]
+The converse whisker characterization now shows that every $F(k)$ is
+an RH box.
 
 For the limiting computation, we set $h = p_1 P_2$, so that
 \begin{align*}
@@ -215,8 +237,10 @@ edges of~$B$ with small mass.
   
 In the setting of Lemma~\ref{lem:extend2}, also set
 \[
-  W^\circ(B,\epsilon) \coloneqq \bigl([s_1,s_2] \times (t_1',t_1]\bigr) \cup
-    \bigl((s_2',s_2] \times [t_1,t_2]\bigr);
+W^\circ(B,\varepsilon):=
+\bigl([s_1,s_2]\times(t'_1,t_1]\bigr)
+\cup
+\bigl((s'_2,s_2]\times[t_2,t_1]\bigr).
 \]
 this is an open neighborhood of the upper and right edges of
 $\overline{B}$ in the subspace topology of $\overline{B}$. Note that
@@ -236,15 +260,22 @@ other.
   \]
   Fix $\epsilon > 0$. For $i \ge 1$, set
   $V_i \coloneqq V(B_i, \epsilon/2^i)$. Also add one more set by setting
-  $V_0 \coloneqq W(B_0,\epsilon)$ and $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$.
+  $V_0 \coloneqq W(B_0,\epsilon)$, $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$ and $V_i^\circ \coloneqq V^\circ(B_i,\varepsilon/2^i)$.
 
-  Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$, since
-  the $B_i$, for $i \geq 1$, cover $B_0$, $B_i \subset V_i^\circ$, and
-  $\overline{B_0}\setminus B_0 \subset V_0^\circ$. Since
-  $\overline{B_0}$ is compact and the $V_i^\circ \cap \overline{B_0}$ are open in the
-  subspace topology, we have a finite subcover; let $I \subset
-  \mathbb{N}$ be the set of
-  indices included in the subcover, which necessarily contains $V_0^\circ$.
+  Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$. Indeed, the sets $V_i^\circ$, $i\geq1$,
+cover $B_0$, since
+$B_i\subset V_i^\circ$
+while
+$\overline{B}_0\setminus B_0\subset V_0^\circ$
+Moreover, each $V_i^\circ\cap\overline{B}_0$
+is open in the subspace topology of $\overline{B}_0$. Since
+$\overline{B}_0$ is compact, there is a finite set
+$I\subset\mathbb N\cup\{0\}$ such that
+\[
+\overline{B}_0\subset\bigcup_{i\in I}V_i^\circ.
+\]
+After adjoining $0$ to $I$ if necessary, we may assume that
+$0\in I$.
 
   By finite additivity and since $V_0^\circ \cap B_0 \subset V_0 \cap B_0$, we then have
   \begin{align*}
@@ -262,34 +293,41 @@ We now put everything together to obtain an oriented geodesic current.
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
 Then $\wh{\mu_f}$ extends to an oriented geodesic current $\mu_f$.
 \end{proposition}
-\begin{proof}
+\DMGtodo{edited the proof to make it non-dependent on the "standard argument for the Lebesgue measure"}
+\begin{proof} 
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
 \ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\wh{\mu_f}$
 is a finitely
-additive and countably sub-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably sub-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\wh{\mu_f}$. By covering $G(S)$ by a countable exhaustion consisting of a union of RH boxes, we see $\mu_f$ is $\sigma$-finite.
-Therefore, by Carathéodory extension Theorem~\ref{thm:caratheodory},
-$\wh{\mu_f}$ can be extend to a unique measure on
-$\mathcal{A}_{\mathcal{R}}$, the $\sigma$-algebra generated
-by~$\mathcal{R}$; we denote this extension by $\overline{\mu_f}$.
-Let $\cA$ be the Borel $\sigma$-algebra of $G(S)$.
-Since $\cR \subset \cA$, we have $\cA_{\cR} \subset \cA$.
-On the other hand, by Proposition~\ref{prop:density}, the set of elements in
-$\mathcal{R}$ is dense in the subspace of half-open rectangles of
-$G(S)$. By the standard argument that half-rectangles with rational endpoints generate the Borel $\sigma$-algebra (see, e.g.,~\cite[Lemma~1.2.11]{Bo07:MeasureTheory}), it follows that $\cA \subset \cA_{\cR}$, hence $\overline{\mu_f}$ is a Borel measure.
+additive and countably sub-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably sub-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we also denote by $\wh{\mu_f}$. 
 
-Note that $\overline{\mu_f}$ is also locally finite, since any compact subset
-of $G(S)$ can be covered by a finite union of the boxes in
-$\mathcal{R}$, where the measure takes a finite value.
-By definition of $\wh{\mu_f}$, the extension $\overline{\mu_f}$ is
-$\pi_1(S)$-invariant. Finally, $\overline{\mu_f}$ is non-negative by
+By Proposition~\ref{prop:density}, for every
+$\xi\in\mathcal G(S)$ and every open neighborhood $U$ of $\xi$, there
+is an RH box $B\in\mathcal B$ such that
+$\xi\in B^\circ\subset B\subset U.$
+Since $\pi_1(S)$ is countable, $\mathcal B$ is countable. Consequently,
+every open set is a countable union of RH boxes, and hence
+$\sigma(\mathcal B)=\operatorname{Bor}(\mathcal G(S)).$
+Thus the Carath\'eodory extension~\ref{thm:caratheodory}, $\overline\mu_f$ is a Borel measure.
+
+
+Moreover, every point has an open neighborhood contained in an RH box
+of finite $\overline\mu_f$-mass. A compact set therefore admits a finite
+cover by such neighborhoods, so $\overline\mu_f$ is locally finite.
+Furthermore, $\overline\mu_f$ is non-negative by
 Proposition~\ref{prop:box-positive}.
+Finally, for every $\gamma\in\pi_1(S)$, the measures
+$\gamma_*\overline\mu_f$ and $\overline\mu_f$ agree on $\mathcal B$, by the
+$\pi_1(S)$-invariance of the original premeasure. Since both are
+$\sigma$-finite extensions of that premeasure, uniqueness in the
+Carath\'eodory extension theorem gives
+$\gamma_*\overline\mu_f=\overline\mu_f.$
 \end{proof}
 
-It is not \emph{a priori} clear from the definition of $\overline{\mu_f}$ that it is a flip-invariant geodesic current (recall
+It is not \emph{a priori} clear from the definition of $\overline\mu_f$ that it is a flip-invariant geodesic current (recall
 Definition~\ref{def:currents}).
 In order to obtain a flip-invariant current, we can take
 \[
-\mu_f \coloneqq \overline{\mu_f} + \sigma_*(\overline{\mu_f})
+\mu_f:=\frac14\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr).
 \]
 where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$
 the induced push-forward map on oriented geodesic currents.
@@ -353,32 +391,38 @@ i(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma[z,y \cdot z) \time
 \end{align*}
 \end{lemma}
 \begin{proof}
-The second claim follows from the observation that, for any $q \in \ora{y}$, $\ora{G[q, y\cdot q)}$ and $[z, y\cdot z) \times (y^+, y^-)$ are two fundamental domains for the action of $\langle y \rangle$ on the set of geodesics that intersect $\ora{y}$ to the right.
-Specifically, if $y \in \pi_1(S)$ denotes the element representing the curve $C$, then 
+Choose $z\in(y^+,y^-)$ so that $y^+,z,Yz,y^-$
+occur in cyclic order, and set
 \[
-\mu(\ora{G[q, y \cdot q)})= \mu([z,y \cdot z) \times (y^+,y^-))
+A_y\coloneqq [z,Yz)\times(y^-,y^+).
 \]
-for every $q \in \ora{y}$ and for every $z \notin \{ y^-, y^+\}$ so that $z, y\cdot z, y^+, y^-$ are in the cylic order. See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
-the $\pi_1(S)$-invariance of $\mu$. 
-The same claim follows for the intersection number using Equation~\ref{eq:relation_intersections}.
-\end{proof}
+Then $A_y$ is a Borel fundamental domain for the action of
+$\langle y\rangle$ on the oriented geodesics which cross
+$\ora y$ to the right (See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
+the $\pi_1(S)$-invariance of $\mu$.) Hence
+$\vec i(\mu,[y])=\mu(A_y)$,
+and, using the opposite crossing orientation,
+$i(\mu,[y])=\mu(A_y)+\mu(\sigma A_y)$. The same claim follows for the intersection number using Equation~\ref{eq:relation_intersections}.
+\end{proof} 
+
 
 
 
 We finish by proving Theorem~\ref{thm:intersect}, first in the following
 form.
 
+\DMGtodo{edited this to correct normalization}
 \begin{theorem}
-Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability, and $\mu_f, \overline{\mu_f}$ as above.
+Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability, and $\mu_f$ as above.
 For $C$ an oriented closed curve, we have
 \[
-i(\mu_f,C)=\vec{\imath}(\overline{\mu_f},C)=f(C).
+i(\mu_f,C)=f(C).
 \]
 In particular, $\mu_f$ is unique among flip-invariant geodesic currents.
 \label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
-We first prove that $\vec{\imath}(\overline{\mu_f},C)=f(C)$. Given a representative $y \in
+We first prove that $\vec{\imath}(\overline{\mu_f},C)=\frac{1}{2}f(C)$. Given a representative $y \in
 \pi_1(S)$ of the conjugacy class~$C$, we will find a sequence of
 RH boxes to approximating the fundamental domain for $\langle
 y\rangle$ above, and then show that computing the measure of that
@@ -410,16 +454,16 @@ In the RH orbit notation, we have
 
 If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
     \begin{multline*}
-      \vec{\imath}(\mu, [y])=\overline{\mu_f}([z,Y \cdot z))\times (y^+,y^-)) \\
+      \vec{\imath}(\mu, [y])=\overline{\mu_f}([z,Yz)\times(y^-,y^+)) \\
       \begin{aligned}
     &= \lim_{n\to\infty} \overline{\mu_f}(B_n)  \\
-    &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
-    &= \frac{1}{2}\bigl(f([y]) + f([y^{-1}])\bigr) =f([y]).
+    &= \frac{1}{4}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
+    &= \frac{1}{4}\bigl(f([y]) + f([y^{-1}])\bigr) =\frac{1}{2}f([y]).
       \end{aligned}
     \end{multline*}
     The first equality follows by the fact that the boxes defined
     above converge from below to the  $[z,Y
-      \cdot z) \times (y^+,y^-)$ (the fundamental domain for the
+      \cdot z) \times (y^-,y^+)$ (the fundamental domain for the
   action of $\langle Y \rangle$) as $n \to \infty$, since $B_{n-1} \subset B_n$.
     At the second equality, we use definition of $\wh{\mu_f}$ on RH boxes.
     For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass
@@ -427,7 +471,7 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      The property $i(\mu_f, C)=f(C)$ for any closed curve $C$ persists by the definition of $\mu_f$ and the fact that $\overline{\mu_f}$ is finitely additive. Therefore, $\mu_f$ is a geodesic current with the same intersection numbers as the oriented geodesic current $\overline{\mu_f}$.
+      The property $i(\mu_f, C)=f(C)$ for any closed curve $C$ follows by the definition of $\mu_f$ and the fact that $\overline{\mu_f}$ is finitely additive. 
 
  Finally, the uniqueness of the geodesic current $\mu_f$ is
  a result of Otal, geodesic currents are determined by their marked
@@ -482,10 +526,21 @@ By Definition~\ref{def:smoothing} and Proposition~\ref{prop:power_disconnected_i
 As in the statement, let $\overline{f}(a) \coloneqq
 \frac{1}{2}\left(f(a) + f(A) \right)$, and extend it linearly to be an
 additive
-function on multi-curves.
+function on multi-curves. Since $\overline{f}$ is
+symmetric, its oriented smoothing inequalities imply the corresponding
+unoriented smoothing inequalities by Corollary~7.3. Stability gives
+power smoothing:
+\[
+\overline{f}(a^{n+m})=\overline{f}(a^n)+\overline{f}(a^m).
+\]
+Thus $\overline{f}$ satisfies the hypotheses of Theorem~\ref{thm:intersect}, which produces the
+required geodesic current.
 
-To prove the theorem, we will show that (this extension of) $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}, and then apply that Theorem to conclude.
+Conversely, if $\overline{f}(g)=i(\mu,[g])$, then class invariance, stability,
+and the smoothing inequalities follow from the corresponding
+properties of intersection with a geodesic current (See Proposition~\ref{prop:necessary}).
 
+To prove the sufficient criterion, we will show that, assuming the oriented smoothing hypotheses on $f$, the extension of $\overline{f}$ satisfies the hypothesis of Theorem~\ref{thm:intersect}.
 
 We will first verify smoothing of $\overline{f}$.
 We start

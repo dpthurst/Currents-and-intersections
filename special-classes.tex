@@ -243,12 +243,16 @@ By abuse of notation, let $\gamma \colon I \to X$ be a continuous $d$-rectifiabl
 \]
 and $I'$ is another finite union of intervals.
 
-Let $\mathcal{P}'$ be the refinement of $\mathcal{P}$ obtained by inserting $t'$ and $t''$. 
-
-Taking the supremum over all partitions, we obtain
-\begin{align*}
-\ell_d(\gamma)= \ell_d(\gamma').
-\end{align*}
+By Lemma~\ref{lem:essential-cross}, the chosen representative $\gamma$ has a crossing
+$x'$ corresponding to $x$, whose prescribed smoothing represents
+$C'$. Cut the parameter domain of $\gamma$ at the two preimages of
+$x'$. The smoothed curve $\gamma'$ is obtained by concatenating
+exactly the same finitely many restricted paths, only with different
+pairings at their common endpoints. Since length in a pseudometric
+space is additive under concatenation of rectifiable paths,
+\[
+\ell_d(\gamma')=\ell_d(\gamma).
+\]
 
 By definition of $\ell_d(C')$ as an infimum over representatives of $C'$, we have
 \[
@@ -298,11 +302,15 @@ We continue with some remarks.
 d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
 \]
 (The $d_\mu^\Sigma$ pseudometric need not be continuous with respect to the topology of $\Sigma$.)
-Hence, Corollary~\ref{maincor:length_dual} shows that for every invariant
-pseudometric $d$ on $\wt{\Sigma}$ inducing a curve functional, there
-exists a straight invariant pseudometric $d_\mu^\Sigma$ on
-$\wt{\Sigma}$ so that $\ell_{d_\mu^\Sigma}(C)=\ell_{d}(C)$ for every
-closed curve $C$.
+Hence, Corollary~\ref{maincor:length_dual} Hence, if $d$ is a length pseudometric on $S$ and
+$\widetilde d$ is its lifted length pseudometric on $\widetilde S$,
+then Corollary~\ref{maincor:length_dual} produces a geodesic current $\mu$ such that the
+associated straight invariant pseudometric $d^\Sigma_\mu$ has the
+same marked length spectrum:
+\[
+\ell_{d^\Sigma_\mu}(C)=\ell_d(C)
+\]
+for every closed curve $C$.
 \end{remark}
 
 \begin{remark}
@@ -557,8 +565,25 @@ By the hypothesis of max-smoothing, for every $n$, we have $\mu((R_n^\perp)^+)=\
 Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq 1$.
 Hence, $\mu(B_{a,b}^{\pm})=0$ or $\mu((B_{a,b}^{\perp})^{\pm})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-The pairs of the diagonal endpoints of the family of boxes $B_{a,b}^{\pm}$ (as $a,b$ runs over crossing pairs in $\pi_1(S)$) are dense in the space of geodesics. Hence, we can find sequences of crossing pairs $a_n, b_n \in \pi_1(S)$ so that if $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B$.
-Then, by lower and upper continuity of measures, respectively, we get $\lim_n \mu(B_n^{\pm}) =\mu(B)$ and $\lim_n \mu((B_n^{\perp})^{\pm}) = \mu(B^{\perp})$. Hence, $\mu(B)=0$ or $\mu(B^{\perp})=0$, and thus $\mu$ is a measured lamination.
+The pairs of the diagonal endpoints of the family of boxes $B_{a,b}^{\pm}$ (as $a,b$ runs over crossing pairs in $\pi_1(S)$) are dense in the space of geodesics. Hence, we can find sequences of crossing pairs $a_n, b_n \in \pi_1(S)$ so that if $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B^\perp$.
+Choosing the periodic endpoints successively from the appropriate
+sides, we may arrange that
+\[
+B_n^\pm\subset B_{n+1}^\pm,\qquad
+(B_{n+1}^\perp)^\pm\subset(B_n^\perp)^\pm,
+\]
+with
+\[
+\bigcup_n B_n^\pm=B,\qquad
+\bigcap_n(B_n^\perp)^\pm=B^\perp.
+\] For every $n$,
+\[
+\min\{\mu(B_n),\mu(B_n^\perp)\}=0.
+\]
+If $\mu(B_n)=0$ for every $n$, continuity from below gives
+$\mu(B)=0$. Otherwise, choose $N$ with $\mu(B_N)>0$. Then
+$\mu(B_n^\perp)=0$ for every $n\ge N$, and continuity from above
+gives $\mu(B^\perp)=0$, and thus $\mu$ is a measured lamination.
 Now we prove the other implication, by proving the contra-positive.
 If disconnected max-smoothing is \emph{not} satisfied for the elements
 $a,b$, then by Equations~\eqref{eq:Rn-meas}
@@ -582,7 +607,7 @@ max-smoothing.
 We state this result along the lines of Theorem~\ref{thm:intersect}.
 
 \begin{theorem}
-A curve functional $f$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
+An unoriented curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
     For any essential crossing of a multi-curve $C$, we have
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
@@ -590,7 +615,7 @@ A curve functional $f$ is dual to a measured lamination if and only if it satisf
     \label{prop:char_laminations_plus}
 \end{theorem}
 \begin{proof}
-  Suppose $f$ is a curve functional satisfying max-smoothing and
+  Suppose $f$ is a symmetric curve functional satisfying max-smoothing and
   additivity. Max-smoothing clearly implies smoothing, as well as
   disconnected max-smoothing. Thus, by
   Theorem~\ref{thm:hyp-lam-char}(L), $f$ is dual to a measured
@@ -675,7 +700,30 @@ By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_n \mu(R_n^{\pm})=
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
 for any intersecting pair $a,b \in \pi_1(S)$.
-As in the proof of Theorem~\ref{thm:hyp-lam-char}(L), we use the
+
+We next show that $\mu$ is non-atomic. Suppose, toward a
+contradiction, that an oriented geodesic $\ell=(\xi,\eta)$ is an atom
+of mass $w\coloneqq\mu(\{\ell\})>0$.
+
+By Proposition~3.19, $\ell$ is a lift of a closed geodesic, and it is
+the unique possible atom in the pencil $P(\xi)$.
+
+Choose a box $B$ such that $\ell$ lies on exactly one boundary side
+of $B$ and is disjoint from $\overline{B^\perp}$. Choose the other
+three vertices outside the countable set of endpoints of lifts of
+closed geodesics. Thus the only possible boundary atom of either box
+is $\ell$.
+
+\DMGtodo{had to add atomless}
+We approximate the same
+cyclic quadruple by periodic-endpoint boxes in two ways. In the first
+approximation, the limiting first box contains $\ell$; in the second,
+it does not. The limiting transverse box is the same in both
+approximations and does not contain $\ell$. Writing $u$ and $v$ for
+the common masses away from $\ell$, continuity from below and above
+gives respectively $e^{-(u+w)}+e^{-v}=1$
+and $e^{-u}+e^{-v}=1$. Subtracting these equalities gives $e^{-u}(e^{-w}-1)=0$,
+and therefore $w=0$, a contradiction. Hence $\mu$ is non-atomic. Now we use the
 density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run
 over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$,
 we can find, for every $n \in \mathbb{N}$ a sequence of intersecting
