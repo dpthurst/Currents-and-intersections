@@ -446,7 +446,7 @@ We now turn to some elementary lemmas about crossing.
   $(x,y) \cup (y,x)$ is almost the entire circle.
 \end{convention}
 
-\DMGtodo{for characterization, one has to fix the hypothesis of the second, since the old one allowed parabolic (which in our case we know do not exist)}
+\DPTtodo{Edited a bit}x
 \begin{lemma}\label{lem:NS-dynamics}
   Let $a \in \Isom^+(\bbH^2)$ and $(x,y) \subset \partial\bbH^2$. Then
   the following are equivalent:
@@ -458,6 +458,7 @@ interior:
 \[
 a\bigl([x,y]\bigr)\subset(x,y).
 \]
+  \end{itemize}
 In this case,
 \[
 \bigcap_{n\geq 0}a^n([x,y])=\{a^+\},
@@ -466,13 +467,12 @@ In this case,
 \]
 If $a$ is already known to be non-parabolic, then the hypothesis can be replaced by
 \[
-a(x,y)\subsetneq(x,y).
+a\cdot(x,y)\subsetneq(x,y).
 \]
-
-  \end{itemize}
 \end{lemma}
 
 \begin{proof}
+  \DMGtodo{Proof is new}
 Suppose first that $a$ is hyperbolic, with
 $a^+\in(x,y)$ and $a^-\in(y,x)$. Conjugating in
 $\Isom^+(\mathbb H^2)$, we may assume that $a^-=0, a^+=\infty, a(t)=\lambda t$

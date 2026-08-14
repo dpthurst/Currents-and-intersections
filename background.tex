@@ -257,7 +257,8 @@ $C=[\gamma]=[g]$ by
 \end{equation}
 where $\operatorname{Stab}(\ora{g}) = \langle g \rangle$ is the
 stabilizer and $\delta_l$ is the Dirac measure supported on
-the oriented geodesic $l\in G(S)$. \DMGtodo{added the non-primitive bit} For non-primitive curves $C=[h^n]$, where $[h]$ is primitive, we scale as $\delta_C = n \delta_{[h]}$.
+the oriented geodesic $l\in G(S)$. For non-primitive curves $C=[h^n]$,
+where $[h]$ is primitive, we scale as $\delta_C = n \delta_{[h]}$.
 
 This definition extends naturally to associate a geodesic current to any weighted curve and, by linearity, to any weighted multi-curve. Moreover, geodesic currents arising from weighted multi-curves (and also those from weighted curves) are dense in the space of geodesic currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
 
@@ -412,13 +413,16 @@ include a proof for reference.
   g(n+1,m) - g(n,m)$ is increasing as a function of $n$ by convexity
   and hence non-positive by boundedness of $g$. Similarly for
   $h_2(n,m) = g(n,m+1) - g(n,m)$. Thus $g$ is monotonically decreasing
-  and the result follows by Lemma~\ref{lem:monotone-double-limit} applied to $(-g(n,m))$.
+  and the result follows by Lemma~\ref{lem:monotone-double-limit}
+  applied to $-g(n,m)$.
 \end{proof}
 
 \DMGtodo{extended this to both ends}
+\DPTtodo{Switched it back, since otherwise it's only about the
+  constant functions}
 \begin{lemma}
   Let $g$ be a bounded, $R$-convex function
-  $g \colon \bbZ \to \bbR$. Then $\lim_{n^\pm} g(n)$ exists.
+  $g \colon \bbN \to \bbR$. Then $\lim_{n^+} g(n)$ exists.
  \label{lem:limexistrmidconvex}
 \end{lemma}
 \begin{proof}
@@ -433,7 +437,6 @@ include a proof for reference.
   $\lim_{n^+} g_k \le \frac{1}{2} (\lim_{n^+} g_{k-1} + \lim_{n^+} g_{k+1})$.
   The limits of the~$g_k$ are therefore a convex function on
   $\bbZ/R\bbZ$ and thus constant.
-  For the limit as $n \to -\infty$, set $\widetilde g(n)=g(-n)$ and apply the preceding argument. 
 \end{proof}
  
 \begin{lemma}

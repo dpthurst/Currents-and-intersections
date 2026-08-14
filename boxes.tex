@@ -227,12 +227,12 @@ form a neighborhood basis of $\mathcal G(\widetilde S)$.
   that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a
   RH lift system of type~$1$.
   
-  \DMGtodo{added this} Finally, we prove the statement about it being a neighborhood basis.
-given $(u,v)\in\mathcal G(\widetilde S)$ and a product neighborhood
+  Finally, we prove the statement about it being a neighborhood basis.
+Given $(u,v)\in\mathcal G(\widetilde S)$ and a product neighborhood
 $U\times V$ with disjoint coordinate closures, choose target
 endpoints in $U$ on the two sides of $u$, and target endpoints in
 $V$ on the two sides of $v$.  Applying the previously proven statement with
-$\varepsilon$sufficiently small gives a right-handed box containing
+$\varepsilon$ sufficiently small gives a right-handed box containing
 $(u,v)$ and contained in $U\times V$.
 \end{proof}
 
@@ -650,13 +650,16 @@ Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
 
-We have the following converse characterization of an RH box in terms of whiskers, which follows easily from the previous discussion.
-
-\DMGtodo{added this to emphasize}
 Conversely, whiskers allow us to characterize RH boxes.
 \begin{lemma} \label{lem:whiskertobox} A half-open rectangle whose four boundary sides lie on two horizontal and two vertical
 whiskers is an RH box exactly when the four chosen endpoints occur in ccw order and each horizontal whisker
-meets each vertical whisker. \end{lemma}
+meets each vertical whisker.
+\end{lemma}
+\DPTtodo{Added a ``proof''}
+\begin{proof}
+  This follows from the previous discussion.
+\end{proof}
+
 
   \begin{figure}
 \centering{
@@ -675,7 +678,7 @@ meets each vertical whisker. \end{lemma}
 \begin{proof}
   First, the intersection of boxes is obviously a box. Indeed, all
   sides of a box are necessarily in the respective whisker, and any
-  new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box. \DMGtodo{added this}
+  new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box.
 
   Second, we must show that if $A,B$ are boxes, then $A \setminus B$
   is a finite union of boxes. In the interesting case, $A\setminus B$
