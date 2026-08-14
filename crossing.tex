@@ -446,7 +446,6 @@ We now turn to some elementary lemmas about crossing.
   $(x,y) \cup (y,x)$ is almost the entire circle.
 \end{convention}
 
-\DPTtodo{Edited a bit}x
 \begin{lemma}\label{lem:NS-dynamics}
   Let $a \in \Isom^+(\bbH^2)$ and $(x,y) \subset \partial\bbH^2$. Then
   the following are equivalent:
@@ -1267,9 +1266,18 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   $\ora{Y^s x^s}$ and $\ora{x^s Y^s}$ split $\ora{y},\ora{x}$, and
   similarly $\ora{A x^s a Y^s}$ and $\ora{Y^s A x^s a}$ split $A \cdot
   \ora{x}, \ora{y}$; see
-  Figure~\ref{fig:crossing_yx_A}. Furthermore, by a similar but easier window
-  analysis as for Eq.~\eqref{eq:cancel-ayx}, if $s$ is large enough
+  Figure~\ref{fig:crossing_yx_A}. Furthermore, we claim that if $s$ is large enough
   and $n > 2s$, $\ora{a}$ crosses $\ora{x^s a Y^m x^{n-s}}$.
+  \DMGtodo{added detailed argument}
+  Indeed, in the normalized bands model centered on $\ora{x}$, let $I_- \coloneqq w(\ora{y}$ and $I_+ \coloneqq w(a \cdot \ora{y})$, and let $t$ denote the horizontalcoordinate. The R-parallel hypothesis places $I_-$ and $I_+$ on the two different boundary components of the band. Applying Lemma~\ref{lem:ayx-window} with all exponents equal to zero, we get $a^- \in I_-, a^+ \in I_+$. Increasing $s_0$, we may assume for $s>s_0$, $\inf t(I_+) + s > t(a^+)$ and $\sup t(I_-) -s<t(a^-)$. Fix such an $s$ and let $g \coloneqq x^s aY^m x^{n-s}$. Lemma~\ref{lem:ayx-window} with $k=s$, $\ell=n-s$ and the middle exponent equal to $-m$, gives
+  \[
+  g^+ \in w(x^s a \cdot y)=I_+ s, \quad  g^- \in w(x^{s-n} \cdot y)=I_- (s-n).
+  \]
+  Thus $t(g^+)>t(a^+)$, so if $n>2s$, then $s-n<-s$ and hence,
+  \[
+  t(g^-)< \sup t(I_-) + s-n < \sup t(I_-) -s < t(a^-).
+  \]
+  Hence, the endpoints $a^+,g^+,a^-,g^-$ occur in cyclic order, so $(\ora{a},\ora{g}$ are R-crossing.
   For $n,m > 2s$, we
   then have
   \begin{align*}
