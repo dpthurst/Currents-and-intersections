@@ -1049,14 +1049,25 @@ the negative $x$-axis and $x^+$ to infinity on the positive $x$-axis.
 We choose the \emph{normalized} band model, picking $v$ so that the
 action of $x$ is horizontal translation by $z \mapsto z+1$.
 
+\DPTfyi{Edits from here, including defining $\overline{w}$ and
+  changing the proof of Lemma \ref{lem:windows} to parallel Lemma
+  \ref{lem:ayx-window}}
 For any geodesic $\ora{y}$ that is parallel to
 $\ora{x}$, there is a \emph{window} $w(\ora{y})$ cut out by the
 endpoints on the band model centered on~$\ora{x}$, the interval between $y^\pm$ that
-misses~$x^\pm$. Observe that $w(x^k\cdot\ora{y})$ is the horizontal
-translate of $w(\ora{y})$ by $k$. See Figure~\ref{fig:abcrossings} for
+misses~$x^\pm$. For instance, if $(\ora{x},\ora{y})$ are R-parallel
+(so $\ora{y}$ is on the bottom of the bands model),
+then $w(\ora{y}) = (y^-,y^+)$, while if $(\ora{y},\ora{x})$ are R-parallel than
+$w(\ora{y}) = (y^+,y^-)$.
+Observe that $w(x^k\cdot\ora{y})$ is the horizontal
+translate of $w(\ora{y})$ by $k$.
+Also define $\overline{w}(\ora{y})$ to be the (open)
+complementary window.
+See Figure~\ref{fig:abcrossings} for
 examples.
 
 \begin{lemma}
+\label{lem:windows}
   Given $a,b, x \in \pi_1(S)$ so that $\ora{a}$ and $\ora{b}$ cross $\ora{x}$ to
   the right and $g_1 = x^k ax^\ell$ with $k,\ell \in \bbZ$, we have
   $g_1^+ \in w(x^k a\cdot\ora{x})$ and
@@ -1064,9 +1075,24 @@ examples.
   $g_2 = x^k a x^\ell b x^n$ with $k,\ell,n\in\bbZ$, we have
   $g_2^+ \in w(x^ka \cdot \ora{x})$ and $g_2^- \in w(x^{-n} B
   \cdot\ora{x})$.
-\label{lem:windows}
 \end{lemma}
 
+\begin{proof}
+  \DPTfyi{Proof new, for consideration. Old version in comments}
+  For the first part, consider the action of $(g_1)^2$ on
+  $\overline{w}(x^{-\ell}A \cdot \ora{x})$.We have
+  \begin{align*}
+    (g_1)^2 \cdot x^{-\ell}A \cdot (x^-, x^+)
+      &= g_1 \cdot (x^-,x^+)\\
+      &= x^k a \cdot (x^-,x^+) = w(x^k a \cdot \ora{x}).
+  \end{align*}
+  This implies the statement by Lemma~\ref{lem:NS-dynamics}.
+
+  Similarly for the second part, consider the action of $g_2$
+  on $\overline{w}(x^{-n} B \cdot \ora{x})$.
+\end{proof}
+
+\begin{comment}
 \begin{proof}
   For the first part, it suffices to show that $\ora{g_1}$ crosses
   $x^ka \cdot \ora{x}$ and $x^{-\ell} A\cdot \ora{x}$ to the right.
@@ -1082,6 +1108,7 @@ examples.
   see that $\ora{g_2}$ crosses $x^ka \cdot \ora{x}$ and $x^{-n}B \cdot
   \ora{x}$ to the right.
 \end{proof}
+\end{comment}
 
 \begin{figure}
 \centering{\resizebox{150mm}{!}{\svgfigbig{abliftsbands}}}
@@ -1157,19 +1184,35 @@ examples.
 
   To see that with $x$ simple we get Eq.~\eqref{eq:cross-cancel} with
   $s'=0$ (i.e., $[ax^n][ax^{n+1}] \reducesto [x]$), we look slightly deeper
-  in the words. The analysis above shows $(ax^n)^- \in
-  w(x^{-n}A\cdot\ora{x})$, which is to the right of
-  $(ax^{n+1})^- \in w(x^{-n-1}A\cdot\ora{x})$. By
-  looking at the band model centered on $a \cdot \ora{x}$ (or
-  equivalently by conjugating by $a$), we see that
-  $(ax^n)^+ \in w(ax^na\cdot\ora{x}) \subset w(a\cdot\ora{x})$. Similarly
-  $(ax^{n+1})^+ \in w(ax^{n+1}a\cdot\ora{x}) \subset
-  w(a\cdot\ora{x})$. We therefore have that $(ax^n)^+$ is to the left
-  of $(ax^{n+1})^+$, implying that $\ora{ax^n}$ crosses $\ora{ax^{n+1}}$ as
-  desired.
+  in the words.
+  \DPTfyi{Proof revised here}%
+  Consider $(a x^n)^3$ acting on
+  $\overline{w}(x^{-n} A \cdot \ora{x}) = x^{-n} A \cdot (x^-,x^+)$.
+  Computations as in Lemma~\ref{lem:windows} show that
+  \[
+    (a x^n)^3 \cdot \overline{w}(x^{-n} A \cdot \ora{x}) = w(a x^n a
+    \cdot \ora{x}),
+  \]
+  so $(a x^n)^- \in w(x^{-n} A \cdot \ora{x})$ and
+  $(a x^n)^+ \in w(a x^n a \cdot \ora{x})$. Similarly
+  $(a x^{n+1})^- \in w(x^{-n-1} A \cdot \ora{x})$ and
+  $(a x^{n+1})^+ \in w(a x^{n+1} a \cdot \ora{x})$. It follows that
+  $\ora{ax^n}$ crosses $\ora{ax^{n+1}}$ as desired. (To see the
+  relative positions of $w(a x^n a \cdot \ora{x})$ and
+  $w(a x^{n+1} a \cdot \ora{x})$, look at the band model centered on
+  $a \cdot \ora{x}$, or alternately conjugate by $A$.)
+  % The analysis above shows $(ax^n)^- \in
+  % w(x^{-n}A\cdot\ora{x})$, which is to the right of
+  % $(ax^{n+1})^- \in w(x^{-n-1}A\cdot\ora{x})$. By
+  % looking at the band model centered on $a \cdot \ora{x}$ (or
+  % equivalently by conjugating by $a$), we see that
+  % $(ax^n)^+ \in w(ax^na\cdot\ora{x}) \subset w(a\cdot\ora{x})$. Similarly
+  % $(ax^{n+1})^+ \in w(ax^{n+1}a\cdot\ora{x}) \subset
+  % w(a\cdot\ora{x})$. We therefore have that $(ax^n)^+$ is to the left
+  % of $(ax^{n+1})^+$, implying that $\ora{ax^n}$ crosses $\ora{ax^{n+1}}$ as
+  % desired.
 \end{proof}
 
-\DPTfyi{HERE}
 We also need some results about smoothings where we have high powers of
 two different elements. We work with three elements $a,x,y\in\pi_1(S)$
 so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel; this
@@ -1187,12 +1230,11 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \end{lemma}
 
 \begin{proof}
-  Let $v = x^{-\ell} \cdot (y^-,y^+)$, the \emph{complement}
-  of $w(x^{-\ell} \cdot \ora{y})$.
   We have
-  $g \cdot v = x^k ay^n \cdot(y^-,y^+) = x^k a\cdot (y^-,y^+) = w(x^k a \cdot
-  \ora{y}) \subset (x^-,x^+) \subsetneq v$,
-  proving the result by Lemma~\ref{lem:NS-dynamics}.
+  $g \cdot \overline{w}(x^{-\ell} \cdot \ora{y}) = x^k ay^n
+  \cdot(y^-,y^+) = x^k a\cdot (y^-,y^+) = w(x^k a \cdot \ora{y})$,
+  proving the result by
+  Lemma~\ref{lem:NS-dynamics}.
 \end{proof}
 
 \begin{proposition}\label{prop:fundamental-ayx}
