@@ -443,7 +443,7 @@ We now turn to some elementary lemmas about crossing.
 \begin{convention}\label{conv:circle-intervals}
   Intervals on the circle are always written with endpoints in counterclockwise
   order. Thus if $x,y \in \partial_{\infty} \Sigma$ are distinct points,
-  $(x,y) \cup (y,x)$ is almost the entire circle.
+  $\{x\} \cup (x,y) \cup \{y\}\cup (y,x)$ is the entire circle.
 \end{convention}
 
 \begin{lemma}\label{lem:NS-dynamics}
@@ -455,7 +455,7 @@ We now turn to some elementary lemmas about crossing.
 \item The closed interval $[x,y]$ is mapped strictly into its
 interior:
 \[
-a\bigl([x,y]\bigr)\subset(x,y).
+a \cdot [x,y]\subset(x,y).
 \]
   \end{itemize}
 In this case,
@@ -471,24 +471,30 @@ a\cdot(x,y)\subsetneq(x,y).
 \end{lemma}
 
 \begin{proof}
-  \DMGtodo{Proof is new}
+  \DPTtodo{This feels too long for a statement that's basically
+    obvious from the classification of hyperbolic isometries. In
+    particular invoking the fixed-point theorem is one usual way to
+    get at that classification}
 Suppose first that $a$ is hyperbolic, with
+\DPTtodo{Why this assumption on endpoints? It's not the statement}
 $a^+\in(x,y)$ and $a^-\in(y,x)$. Conjugating in
-$\Isom^+(\mathbb H^2)$, we may assume that $a^-=0, a^+=\infty, a(t)=\lambda t$
+$\Isom^+(\mathbb H^2)$,
+\DPTfyi{Switched around endpoints so our interval notation is more normal}
+we may assume that $a^-=\infty$, $a^+=0$, and $a(t)=t/\lambda$
 on $\partial_\infty\mathbb H^2=\mathbb R\cup\{\infty\}$, where
 $\lambda>1$.
 
-Since $(x,y)$ contains $\infty$ but not $0$, its endpoints may be
-written with $x>0>y$, and $[x,y]$ is the closed interval passing
-through $\infty$. Therefore
+Since $(x,y)$ contains $0$ but not~$\infty$, we have
+$x<0<y$, and $[x,y]$ is the closed interval passing
+through~$0$. Therefore
 \[
-a([x,y])=[\lambda x,\lambda y]\subset(x,y),
+a \cdot [x,y]=[x/\lambda,y/\lambda]\subset(x,y),
 \]
-because $\lambda x>x$ and $\lambda y<y$.
+because $x/\lambda>x$ and $y/\lambda<y$.
 
 Conversely, suppose that
 \[
-a([x,y])\subset(x,y).
+a \cdot [x,y]\subset(x,y).
 \]
 After identifying $[x,y]$ with a compact real interval, the
 restriction
@@ -901,23 +907,25 @@ Similarly, $\ora{a^nB^m},\ora{B}$ are parallel, so $(a^nB^{m+1})^- \in
 (B^-, (a^nB^m)^-) \subset (b^+,a^+)$, completing the proof.
 \end{proof}
 
-\DMGtodo{edited this changing $B$ by $b$ in two places}
 \begin{proposition}
-If $\ora{a}$ and $\ora{b}$ are parallel, then there exists $s > 0$ such that
-$\ora{a^n B^m}$ is splitting for every $n,m \ge s$.
+If $\ora{a}$ and $\ora{b}$ are parallel, then there exists $s > 0$ so
+that for every $n,m \ge s$, 
+$\ora{a^n B^m}$ is splitting.
 \label{prop:eventual_splitting}
 \end{proposition}
 
 \begin{proof}
-By Lemma~\ref{lem:once_splits}, it suffices to show that there exist $n,m \geq 1$
+By Lemma~\ref{lem:once_splits}, it suffices to show that there exists
+some $n,m \geq 1$
 such that $\ora{a^{n} B^{m}}$ is splitting.
 Suppose for definiteness that $(\ora{a},\ora{b})$ are R-parallel.
 Choose $m>0$ so that
 \[
 b^m \cdot a^- \in (b^+, a^+).
 \]
-Fix such an $m$ and consider $a^n B^m$ for varying~$n$. As $B^m \cdot
-a^+$ is in $(b^+, a^+)$ and is thus not equal to $a^-$,
+\DPTfyi{Edited to fix hypotheses on $a^+$/$a^-$}
+In particular, $b^m \cdot a^- \ne a^+$ so $B^m \cdot a^+ \ne a^-$.
+Now consider $a^n B^m$ for varying~$n$.
 Lemma~\ref{lem:convergence_action} gives
 \begin{align*}
 \lim_{n \to \infty} (a^n B^m)^+ &= a^+, &
@@ -1212,7 +1220,8 @@ examples.
 We also need some results about smoothings where we have high powers of
 two different elements. We work with three elements $a,x,y\in\pi_1(S)$
 so that $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel; this
-implies, for instance, that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
+implies that $\ora{a}$ R-crosses both $\ora{x}$ and
+$\ora{y}$, and that $(a\cdot\ora{y},a\cdot\ora{x})$ are also
 R-parallel.
 We again consider the normalized band model
 centered on~$\ora{x}$, starting with another lemma about endpoints.
@@ -1220,7 +1229,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \begin{lemma}\label{lem:ayx-window}
   For any triple $a,x,y\in\pi_1(S)$ so that
   $(\ora{y},\ora{x},a\cdot\ora{y})$ are R-parallel, and for
-  $\ora{g}=\ora{x^k ay^n x^\ell}$ with $k,\ell,n\in\bbZ$, we have
+  $g=x^k ay^n x^\ell$ with $k,\ell,n\in\bbZ$, we have
   $g^+ \in w(x^k a \cdot\ora{y})$ and
   $g^- \in w(x^{-\ell}\cdot\ora{y})$.
 \end{lemma}
@@ -1228,9 +1237,8 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \begin{proof}
   We have
   $g \cdot \overline{w}(x^{-\ell} \cdot \ora{y}) = x^k ay^n
-  \cdot(y^-,y^+) = x^k a\cdot (y^-,y^+) = w(x^k a \cdot \ora{y})$,
-  proving the result by
-  Lemma~\ref{lem:NS-dynamics}.
+  \cdot(y^-,y^+) = x^k a\cdot (y^-,y^+) = w(x^k a \cdot \ora{y})$.
+  Lemma~\ref{lem:NS-dynamics} then proves the result.
 \end{proof}
 
 \begin{proposition}\label{prop:fundamental-ayx}
@@ -1244,13 +1252,15 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \end{align}
   Furthermore, for $n,m \ge s$,
   \begin{align}\label{eq:cancel-ayx}
-    [a y^m x^n][A] &\reducesto [y^m][x^n]\\
-    \intertext{and for $n,m > 2s$,}
+    [a y^m x^n][A] &\reducesto [y^m][x^n],\\
+    \intertext{and for $n,m > s$,}
     \label{eq:crossbelowy}
-    [a Y^m x^n][A] &\reducesto [x^s Y^s] [A x^s a Y^s] [x^{n-2s}] [Y^{m-2s}]
+    [a Y^m x^n][A] &\reducesto [x^s Y^s] [A x^s a Y^s] [x^{n-2s}] [Y^{m-2s}].
   \end{align}
 \end{proposition}
 
+\DPTtodo{Edit proof to remove the $2s$ previously in the statement,
+  after reading Dídac's edits}
 \begin{proof}
   We first prove Eq.~\eqref{eq:crossuniform_n}. We will have a number
   of windows $w(x^m \cdot \ora{y})$ on the top, all of equal width
@@ -1277,7 +1287,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   This gives the desired result, after possibly increasing~$s$.
 
   For Eq.~\eqref{eq:cancel-ayx}, we consider $g = a y ^m x^n$ and
-  compare its endpoints to those of $a$. By
+  compare the endpoints of $\ora{g}$ to those of $\ora{a}$. By
   Lemma~\ref{lem:ayx-window}, we have
   $g^- \in w(x^{-n} \cdot \ora{y})$, which for large enough $n$ is to
   the left of $a^- \in w(\ora{y})$. For $g^+$,
@@ -1298,6 +1308,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   Lemma~\ref{lem:righthandedfoundation}) oriented connected
   smoothing.
 
+  \DPTtodo{Other edits here to consider}
   Finally, we see Eq.~\eqref{eq:crossbelowy}. By
   Proposition~\ref{prop:eventual_splitting}, there is an $s_0$ so that
   for every $s \geq s_0$ we have
@@ -1336,7 +1347,9 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 \resizebox{100mm}{!}{\svgfigbig{crossing_yx_A}}
 \caption{Configuration  $\protect\ora{Y^s x^s}$ and $\protect\ora{x^s Y^s}$ splitting $\protect\ora{y},\protect\ora{x}$, and
    $\protect\ora{A x^s a Y^s}$ and $\protect\ora{Y^s A x^s a}$ splitting $A \cdot
-  \protect\ora{x}, \protect\ora{y}$, used in Proposition~\ref{prop:fundamental-ayx}}
+  \protect\ora{x}, \protect\ora{y}$, used in
+  Proposition~\ref{prop:fundamental-ayx} and shown in the bands model
+  centered on $\ora{a}$.}
 \label{fig:crossing_yx_A}
 }
 \end{figure}
@@ -1366,9 +1379,9 @@ four group elements.
 \begin{proof}
   The conditions imply that
   $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.
-  Apply $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n},  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy-ab} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n}
-    \eqref{eq:axby-cross-m}
-    \eqref{eq:cancel-axby} and~\eqref{eq:crossbelowy}.
+  Apply $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n},  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy-ab} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n},
+    \eqref{eq:axby-cross-m},
+    \eqref{eq:cancel-axby}, and~\eqref{eq:crossbelowy}.
 \end{proof}
 
 We now check this configuration is easy to find. The following result
