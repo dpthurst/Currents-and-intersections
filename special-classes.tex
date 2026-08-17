@@ -539,23 +539,24 @@ Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeome
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
 We now prove  Theorem~\ref{thm:lam-char}, whose statement we recall.
 
-\begin{theorem}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function.
-Then there exists a measured lamination
-$\mu_{f}$ on $S$ such that
+\begin{taggedthm}{\ref{thm:lam-char}}
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a functional on~$\pi_1(S)$.
+Then there exists a measured lamination~$\mu_{f}$ on $S$ such that
 \[
+\text{for every } g\in \pi_1(S),\quad
 i(\mu_{f},[g])=f(g)
-\quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $f$ satisfies the conditions of
-Theorem~\ref{thm:intersections_group}
-and disconnected max-smoothing:
- \begin{align}
-    \label{eq:disconn-max-smoothing-a} f(a) + f(b) &= \max \{ f(ab),f(aB) \}  & \mbox{ if }  (a,b)\mbox{ are } \mbox{crossing}.
-  \end{align}
-\end{theorem}
+if and only if $f$ satisfies the conditions of symmetry, class invariance,
+stability, oriented smoothing,
+and, when $(\ora{g}, \ora{h})$ are crossing,
+\[
+f(g)+f(h)=\max\{f(gh),f(gH)\}.
+\]
+\end{taggedthm}
+
 \begin{proof}
-Suppose first $f$ satisfies the conditions in the hypotheses.
+Suppose first $f$ satisfies the conditions in the hypotheses including
+disconnected max-smoothing.
 By Theorem~\ref{thm:intersections_group}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
 It remains to show that $\mu_f$ is a measured lamination.
 Given elements $a, b \in \pi_1(S)$ which R-cross,
@@ -584,6 +585,7 @@ If $\mu(B_n)=0$ for every $n$, continuity from below gives
 $\mu(B)=0$. Otherwise, choose $N$ with $\mu(B_N)>0$. Then
 $\mu(B_n^\perp)=0$ for every $n\ge N$, and continuity from above
 gives $\mu(B^\perp)=0$, and thus $\mu$ is a measured lamination.
+
 Now we prove the other implication, by proving the contra-positive.
 If disconnected max-smoothing is \emph{not} satisfied for the elements
 $a,b$, then by Equations~\eqref{eq:Rn-meas}
@@ -646,35 +648,43 @@ Bonahon gives an algebraic characterization for a geodesic current $\mu$ to be a
 Whether the endpoints of the intervals are included or excluded in the
 above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
 
-We use this to prove Theorem~\ref{thm:hyp-char}.
+We use this to prove Theorem~\ref{thm:hyp-char}. Again we recall the statement.
 
-\begin{theorem}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function.
-Then there exists a hyperbolic Liouville current
-$\mu_{f}$ on $S$ such that
+\begin{taggedthm}{\ref{thm:hyp-char}}
+Let $f \colon \pi_1(S) \to \mathbb{R}$.
+Then there exists a  hyperbolic metric~$d$
+on $S$, with associated Liouville current $\mu_d$, such that
 \[
-i(\mu_{f},[g])=\overline f(g)
-\quad\text{for every } g\in \pi_1(S),
+\text{for every } g\in \pi_1(S),\quad
+f(g) = \ell_d([g]) = i(\mu_d,[g])
 \]
-if and only if $f$ is symmetric, satisfies the conditions of
-Theorem~\ref{thm:intersections_group}, $f(C)>0$ for every curve $C$,
-and whenever $(\ora{a},\ora{b})$ cross, we have
- \begin{align}
-    \label{eq:lambdasmoothing}  \lambda(a)\lambda(b)
-= \lambda(ab)+\lambda(aB), \text{ where }
-\lambda(g)
-\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
-  \end{align}
-\end{theorem}
+if and only if $f$ satisfies the conditions of symmetry, class invariance,
+stability, oriented smoothing,
+and, when $(\ora{g},\ora{h})$ are crossing,
+\[
+\lambda(g)\lambda(h)
+  = \lambda(gh)+\lambda(gH)
+\]
+where $\lambda(g)\coloneqq 2\cosh\!\bigl(f(g)/2\bigr)$.
+\end{taggedthm}
+
 \begin{proof}
-The proof is similar to the lamination part.
-If $\mu$ is hyperbolic Liouville current then smoothing, additivity, stability follow from the fact these are necessary conditions for a geodesic current, as shown in Appendix~\ref{prop:necessary}. The relation in Equation~\eqref{eq:lambdasmoothing} follows from the relation between the hyperbolic lengths of the sides of a hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram}) applied to the hyperbolic parallelogram~$H$ at the center of
+  \DPTfyi{Deleted the claim the proof was similar, not sure that's
+    still true}
+%  The proof is similar to the proof of Theorem~\ref{thm:lam-char}.
+If $\mu$ is hyperbolic Liouville current then smoothing, additivity,
+stability follow from the fact these are necessary conditions for a
+geodesic current, as shown in Appendix~\ref{prop:necessary}. The
+$\lambda$-smoothing relation~\eqref{eq:lambda-smoothing} follows from
+the relation between the hyperbolic lengths of the sides of a
+hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram})
+applied to the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the fact that the hyperbolic Liouville current is the dual current for the hyperbolic length, by~\cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
 
 For the other direction, by the assumptions on $f$, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
-It remains to show that $\mu_f$ is a Liouville current, which is where Equation~\eqref{eq:lambdasmoothing} will play a role.
+It remains to show that $\mu_f$ is a Liouville current, which is where Equation~\eqref{eq:lambda-smoothing} will play a role.
 Given elements $a, b \in \pi_1(S)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 
