@@ -170,8 +170,8 @@ many such extensions arise canonically as intersection with a current.
 Definition~\ref{def:crossing} and
     Figure~\ref{fig:cases-a-b} for a precise definition.)
 
-\DMGtodo{had to edit the way we phrase this statement since $\overline f$ satisfying the Conditions does not imply $f$ satisfying the conditions. So stated characterization with $\overline f$, and then, afterwards, just with $f$ as a sufficient criterion. }
 \begin{mainthmprime}
+\label{thm:intersections_group}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$ for every $g \in \pi_1(S)$.
 Then there exists a dual geodesic current $\mu_{\overline{f}}$ on $S$ so that
 \[
@@ -189,8 +189,9 @@ $\overline f(a^n)=n\overline f(a) \mbox{ for all } n \geq 1$.
     \label{eq:disconn_oriented} \overline f(a) + \overline f(b) &\geq \overline f(ab)  && \mbox{ if }  (\ora{a},\ora{b})\mbox{ are } \mbox{crossing}.
   \end{align}
 \end{enumerate}
-In particular, Conditions~(1),(2),(3) on just $f$ are sufficient to guarantee the existence of $\mu_{\overline f}$.
-\label{thm:intersections_group}
+\DPTfyi{Reworded}
+Assuming that~$f$ satisfies Conditions (1), (2), and
+(3) is sufficient to guarantee the existence of~$\mu_{\overline f}$.
 \end{mainthmprime}
 
 Condition~(3) in Theorem~\ref{thm:intersections_group} is formally
@@ -230,6 +231,11 @@ characterizations of those curve functionals whose dual currents are
 measured laminations or hyperbolic Liouville currents.
 (Measured laminations are precisely those currents $\alpha$
 satisfying $i(\alpha,\alpha)=0$~\cite[Proposition~17]{Bonahon88:GeodesicCurrent}.)
+\DPTtodo{Does this need the same revision as Theorem A', to require
+  $\overline{f}$ to satisfy the conditions?}
+\DPTtodo{Two statements are no longer parallel enough to make them a
+  combined theorem. If it remains like this, make it two separate
+  theorems again}
 \begin{mainthm}
 \label{thm:hyp-lam-char}
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set
@@ -244,7 +250,7 @@ i(\mu_{\overline f},[g])=\overline f(g)
 \]
 if and only if $f$ satisfies the conditions of class invariance,
 stability, and oriented smoothing from Theorem~\ref{thm:intersections_group}
-and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition: \DMGtodo{had to add the condition $\overline{f}(g)>0 \text{ for every } g \in \pi_1(S)$ for (H), otherwise $f \equiv 0$ satisfies the assumptions. Also, fixed the proof, since it was secretly using positivity.}
+and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition:
 \[
 \begin{array}{c@{\qquad}c}
 \textbf{Measured lamination \textup{(L)}} &
@@ -296,7 +302,11 @@ Theorem~\ref{thm:hyp-lam-char}(H). Some $\mathcal{M}$ for which this
 applies are negatively curved Riemannian metrics
 \cite{Otal90:SpectreMarqueNegative,HP97:RigidityNegCurvedCone},
 nonpositively curved
-Riemannian metrics \cite{CFF92:RigidityNonPosCurvedRiem,Con18:MarkedNonpos}, and Riemannian metrics with Anosov geodesic flow~\cite{GLP25:MarkedAnosov}.
+Riemannian metrics
+\cite{CFF92:RigidityNonPosCurvedRiem,Con18:MarkedNonpos}, and
+\DPTtodo{I thought full rigidity was not known for this Anosov
+  geodesic flow case?}
+Riemannian metrics with Anosov geodesic flow~\cite{GLP25:MarkedAnosov}.
   \item It extends Luo’s characterizations of those
 functions on simple closed curves that arise as either intersection with
 measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Luo10:Simple}
