@@ -657,13 +657,13 @@ i(\mu_{\overline f},[g])=\overline f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
 if and only if $f$ satisfies the conditions of
-Theorem~\ref{thm:intersections_group}
+Theorem~\ref{thm:intersections_group}, $\overline{f}(C)>0$ for every curve $C$,
 and whenever $(\ora{a},\ora{b})$ cross, we have
  \begin{align}
     \label{eq:lambdasmoothing}  \lambda(a)\lambda(b)
 = \lambda(ab)+\lambda(aB), \text{ where }
 \lambda(g)
-\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
+\coloneqq 2\cosh\!\bigl(\overline{f}(g)/2\bigr).
   \end{align}
 \end{theorem}
 \begin{proof}
@@ -680,15 +680,40 @@ Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measu
 
 Now, we compute
 \[
-e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}} = e^{\frac{-(A_n+B_n)+C_n}{2}} + e^{\frac{-(A_n+B_n)+D_n}{2}} = e^{\frac{-(A_n+B_n)}{2}} (e^{\frac{C_n}{2}} + e^{\frac{D_n}{2}}).
+e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}} = e^{\frac{-(A_n+B_n)+C_n}{2}} + e^{\frac{-(A_n+B_n)+D_n}{2}}.
 \]
-On the other hand, when $n$ goes to infinity, we have $e^{\frac{A_n}{2}} \sim \lambda(a_n)$, $e^{\frac{B_n}{2}} \sim \lambda(b_n)$, $e^{\frac{C_n}{2}} \sim \lambda(c_n)$ and $e^{\frac{D_n}{2}} \sim \lambda(d_n)$, where $\sim$ means that the ratio of the left hand side to the right hand side tends to 1 as $n$ tends to infinity. Applying Equation~\eqref{eq:lambdasmoothing} for $a_n, b_n$ we get
+
+Define
 \[
-\lambda(a_n)\lambda(b_n) = \lambda(c_n) + \lambda(d_n).
+r_n\coloneqq A_n+B_n-C_n,
+\qquad
+q_n \coloneqq A_n+B_n-D_n.
 \]
-A computation shows $\lambda(c_n) + \lambda(d_n) \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}$, and hence we get
+Since
 \[
-e^{\frac{A_n}{2}}e^{\frac{B_n}{2}} \sim e^{\frac{C_n}{2}}+e^{\frac{D_n}{2}}.
+\lambda(g)=2\cosh\!\left(\frac{\overline{f}(g)}{2}\right)
+=e^{\overline{f}(g)/2}+e^{-\overline{f}(g)/2},
+\]
+the identity
+\[
+\lambda(a^n)\lambda(b^n)
+=\lambda(a^n b^{-n})+\lambda(a^n b^n)
+\]
+gives, after multiplication by $e^{-(A_n+B_n)/2}$,
+\begin{equation}
+\begin{aligned}
+e^{-r_n/2}+e^{-q_n/2}
+={}&1+e^{-A_n}+e^{-B_n}+e^{-(A_n+B_n)}\\
+&-e^{-(A_n+B_n+C_n)/2}
+-e^{-(A_n+B_n+D_n)/2}.
+\end{aligned}
+\label{eq:comp}
+\end{equation}
+Because $A,B>0$ (since $\overline{f}(C)>0$ for every curve $C$) and $C_n,D_n\geq0$, every non-constant term on the
+right-hand side of Equation~\ref{eq:comp} tends to zero. Hence
+\[
+\lim_{n\to\infty}
+\left(e^{-r_n/2}+e^{-q_n/2}\right)=1.
 \]
 Therefore, we have
 \[

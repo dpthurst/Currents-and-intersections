@@ -469,7 +469,11 @@ If $a$ is already known to be non-parabolic, then the hypothesis can be replaced
 a\cdot(x,y)\subsetneq(x,y).
 \]
 \end{lemma}
+\begin{proof}
+It follows from the classification of hyperbolic isometries and north-south dynamics.
+\end{proof}
 
+\begin{comment}
 \begin{proof}
   \DPTtodo{This feels too long for a statement that's basically
     obvious from the classification of hyperbolic isometries. In
@@ -520,7 +524,7 @@ are respectively $a^+$ and $a^-$.
 
 Finally, NS dynamics gives the last statement.
 \end{proof}
-
+\end{comment}
 \begin{remark}
 If $a$ is already known to be hyperbolic, then
 \[
@@ -923,7 +927,6 @@ Choose $m>0$ so that
 \[
 b^m \cdot a^- \in (b^+, a^+).
 \]
-\DPTfyi{Edited to fix hypotheses on $a^+$/$a^-$}
 In particular, $b^m \cdot a^- \ne a^+$ so $B^m \cdot a^+ \ne a^-$.
 Now consider $a^n B^m$ for varying~$n$.
 Lemma~\ref{lem:convergence_action} gives
@@ -1083,7 +1086,6 @@ examples.
 \end{lemma}
 
 \begin{proof}
-  \DPTfyi{Proof new, for consideration. Old version in comments}
   For the first part, consider the action of $(g_1)^2$ on
   $\overline{w}(x^{-\ell}A \cdot \ora{x})$.We have
   \begin{align*}
@@ -1259,8 +1261,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   \end{align}
 \end{proposition}
 
-\DPTtodo{Edit proof to remove the $2s$ previously in the statement,
-  after reading Dídac's edits}
 \begin{proof}
   We first prove Eq.~\eqref{eq:crossuniform_n}. We will have a number
   of windows $w(x^m \cdot \ora{y})$ on the top, all of equal width
@@ -1349,7 +1349,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
    $\protect\ora{A x^s a Y^s}$ and $\protect\ora{Y^s A x^s a}$ splitting $A \cdot
   \protect\ora{x}, \protect\ora{y}$, used in
   Proposition~\ref{prop:fundamental-ayx} and shown in the bands model
-  centered on $\ora{a}$.}
+  centered on $\protect\ora{a}$.}
 \label{fig:crossing_yx_A}
 }
 \end{figure}
