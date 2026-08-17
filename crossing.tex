@@ -470,20 +470,16 @@ a\cdot(x,y)\subsetneq(x,y).
 \]
 \end{lemma}
 \begin{proof}
-It follows from the classification of hyperbolic isometries and north-south dynamics.
+  This follows from the classification of isometries of the hyperbolic
+  plane and the north-south dynamics of hyperbolic isometries.
 \end{proof}
 
 \begin{comment}
 \begin{proof}
-  \DPTtodo{This feels too long for a statement that's basically
-    obvious from the classification of hyperbolic isometries. In
-    particular invoking the fixed-point theorem is one usual way to
-    get at that classification}
 Suppose first that $a$ is hyperbolic, with
 \DPTtodo{Why this assumption on endpoints? It's not the statement}
 $a^+\in(x,y)$ and $a^-\in(y,x)$. Conjugating in
 $\Isom^+(\mathbb H^2)$,
-\DPTfyi{Switched around endpoints so our interval notation is more normal}
 we may assume that $a^-=\infty$, $a^+=0$, and $a(t)=t/\lambda$
 on $\partial_\infty\mathbb H^2=\mathbb R\cup\{\infty\}$, where
 $\lambda>1$.
@@ -1099,24 +1095,6 @@ examples.
   on $\overline{w}(x^{-n} B \cdot \ora{x})$.
 \end{proof}
 
-\begin{comment}
-\begin{proof}
-  For the first part, it suffices to show that $\ora{g_1}$ crosses
-  $x^ka \cdot \ora{x}$ and $x^{-\ell} A\cdot \ora{x}$ to the right.
-  
-  By translation, the first needed crossing is equivalent to
-  $A x^{-k} \cdot \ora{g_1} = \ora{x^{k+\ell} a}$ crossing
-  $\ora{x}$ to the right, which follows from Lemma~\ref{lem:rhs_prod}.
-  Similarly the other crossing is equivalent to $\ora{ax^{k+\ell}}$
-  crossing $\ora{x}$ to the right, which also follows from
-  Lemma~\ref{lem:rhs_prod}.
-
-  For the second part, we similarly
-  see that $\ora{g_2}$ crosses $x^ka \cdot \ora{x}$ and $x^{-n}B \cdot
-  \ora{x}$ to the right.
-\end{proof}
-\end{comment}
-
 \begin{figure}
 \centering{\resizebox{150mm}{!}{\svgfigbig{abliftsbands}}}
 \caption{The band model centered on $\protect\ora{x}$ used in
@@ -1207,16 +1185,6 @@ examples.
   relative positions of $w(a x^n a \cdot \ora{x})$ and
   $w(a x^{n+1} a \cdot \ora{x})$, look at the band model centered on
   $a \cdot \ora{x}$, or alternately conjugate by $A$.)
-  % The analysis above shows $(ax^n)^- \in
-  % w(x^{-n}A\cdot\ora{x})$, which is to the right of
-  % $(ax^{n+1})^- \in w(x^{-n-1}A\cdot\ora{x})$. By
-  % looking at the band model centered on $a \cdot \ora{x}$ (or
-  % equivalently by conjugating by $a$), we see that
-  % $(ax^n)^+ \in w(ax^na\cdot\ora{x}) \subset w(a\cdot\ora{x})$. Similarly
-  % $(ax^{n+1})^+ \in w(ax^{n+1}a\cdot\ora{x}) \subset
-  % w(a\cdot\ora{x})$. We therefore have that $(ax^n)^+$ is to the left
-  % of $(ax^{n+1})^+$, implying that $\ora{ax^n}$ crosses $\ora{ax^{n+1}}$ as
-  % desired.
 \end{proof}
 
 We also need some results about smoothings where we have high powers of

@@ -678,11 +678,11 @@ It remains to show that $\mu_f$ is a Liouville current, which is where Equation~
 Given elements $a, b \in \pi_1(S)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 
+\DPTtodo{It seems we forgot to define $A_n,\dots,D_n$}
 Now, we compute
 \[
 e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}} = e^{\frac{-(A_n+B_n)+C_n}{2}} + e^{\frac{-(A_n+B_n)+D_n}{2}}.
 \]
-
 Define
 \[
 r_n\coloneqq A_n+B_n-C_n,
@@ -709,7 +709,12 @@ e^{-r_n/2}+e^{-q_n/2}
 \end{aligned}
 \label{eq:comp}
 \end{equation}
-Because $A,B>0$ (since $\overline{f}(C)>0$ for every curve $C$) and $C_n,D_n\geq0$, every non-constant term on the
+\DPTtodo{Should this be $A_n,B_n$?}%
+Because $A,B>0$ (since $\overline{f}(C)>0$ for every curve $C$) and
+$C_n,D_n\geq0$,
+\DPTtodo{Don't we need that $A_n,B_n \to \infty$? For $A_n$ this is
+  clear from non-vanishing. Seems like we don't need anything for $C_n,D_n$}
+every non-constant term on the
 right-hand side of Equation~\ref{eq:comp} tends to zero. Hence
 \[
 \lim_{n\to\infty}
@@ -726,7 +731,7 @@ e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
 \]
 for any intersecting pair $a,b \in \pi_1(S)$.
 
-We next show that $\mu$ is non-atomic. Suppose, toward a
+We next show that $\mu$ is non-atomic. Suppose, for
 contradiction, that an oriented geodesic $\ell=(\xi,\eta)$ is an atom
 of mass $w\coloneqq\mu(\{\ell\})>0$.
 
