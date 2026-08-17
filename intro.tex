@@ -231,43 +231,46 @@ characterizations of those curve functionals whose dual currents are
 measured laminations or hyperbolic Liouville currents.
 (Measured laminations are precisely those currents $\alpha$
 satisfying $i(\alpha,\alpha)=0$~\cite[Proposition~17]{Bonahon88:GeodesicCurrent}.)
-\DPTtodo{Does this need the same revision as Theorem A', to require
-  $\overline{f}$ to satisfy the conditions?}
-\DPTtodo{Two statements are no longer parallel enough to make them a
-  combined theorem. If it remains like this, make it two separate
-  theorems again}
+
 \begin{mainthm}
-\label{thm:hyp-lam-char}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set
+\label{thm:hyp-char}
+Let $f \colon \pi_1(S) \to \mathbb{R}$.
+Then there exists a  hyperbolic metric,
+$\mu_{f}$ on $S$ such that
 \[
-\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).
-\]
-Then there exists a measured lamination, respectively a hyperbolic metric,
-$\mu_{\overline f}$ on $S$ such that
-\[
-i(\mu_{\overline f},[g])=\overline f(g)
+i(\mu_{f},[g])=f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $\overline{f}$ satisfies the conditions of class invariance,
-stability, and oriented smoothing from Theorem~\ref{thm:intersections_group}
-and, when $(\ora{a},\ora{b})$ are crossing, the corresponding condition:
+if and only if $f$ satisfies the conditions of class invariance,
+stability, oriented smoothing from Theorem~\ref{thm:intersections_group}, symmetry, positivity ($f(g)>0$ for every $g \in \pi_1(S)$)
+and, when $(\ora{a},\ora{b})$ are crossing, the condition:
 \[
-\begin{array}{c@{\qquad}c}
-\textbf{Measured lamination \textup{(L)}} &
-\textbf{Hyperbolic metric \textup{(H)}} \\[4pt]
-f(a)+f(b)=\max\{f(ab),f(aB)\}.
-&
 \lambda(a)\lambda(b)
   = \lambda(ab)+\lambda(aB),\\
-  &\text{ where }\lambda(g)\coloneqq 2\cosh\!\bigl(\overline f(g)/2\bigr),\\
-  &\overline{f}(g)>0 \text{ for every } g \in \pi_1(S).
-\end{array}
+  \text{ where }\lambda(g)\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
+\]
+\end{mainthm}
+
+\begin{mainthm}
+\label{thm:lam-char}
+Let $f \colon \pi_1(S) \to \mathbb{R}$.
+Then there exists a  hyperbolic metric,
+$\mu_{f}$ on $S$ such that
+\[
+i(\mu_{f},[g])=f(g)
+\quad\text{for every } g\in \pi_1(S),
+\]
+if and only if $f$ satisfies the conditions of class invariance,
+stability, oriented smoothing from Theorem~\ref{thm:intersections_group}, symmetry,
+and, when $(\ora{a},\ora{b})$ are crossing, the condition:
+\[
+f(a)+f(b)=\max\{f(ab),f(aB)\}.
 \]
 \end{mainthm}
 
 These theorems are proved in Sections \ref{subsec:laminations}
-(Theorem~\ref{thm:hyp-lam-char}(L)) and~\ref{subsec:liouville}
-(Theorem~\ref{thm:hyp-lam-char}(H)).
+(Theorem~\ref{thm:lam-char}) and~\ref{subsec:liouville}
+(Theorem~\ref{thm:hyp-char}).
 The $\lambda$-length functional arises naturally in the study of the
 skein algebra of a surface; see, for example,
 \cite[Secs.~1--2]{Pen12:Decorated} and
@@ -275,9 +278,9 @@ skein algebra of a surface; see, for example,
 
 
 
-We highlight some features of Theorem~\ref{thm:hyp-lam-char}.
+We highlight some features of Theorems~\ref{thm:hyp-char} and Theorems~\ref{thm:lam-char}.
 \begin{itemize}
-    \item Combined with Theorem~\ref{thm:intersect}, it provides
+    \item Combined with Theorem~\ref{thm:intersect}, they provide
     criteria for determining whether a curve functional arises from a
     measured lamination or from a hyperbolic metric. It suffices to verify
     a countable family of inequalities together with a countable family of
@@ -286,7 +289,7 @@ We highlight some features of Theorem~\ref{thm:hyp-lam-char}.
     self-crossings. In the setting of trace identities in the
     $\PSL(2,\mathbb{R})$ character variety, the relations for
     self-crossings are more intricate, as they depend on sign choices.
-    \item It characterizes hyperbolic metrics among \emph{all}
+    \item Theorem~\ref{thm:hyp-char} characterizes hyperbolic metrics among \emph{all}
     curve functionals. In particular, it applies to stable lengths arising
     from Green metrics associated to admissible random walks on
     $\pi_1(S)$, suggesting applications to the study of singularity
@@ -298,23 +301,19 @@ spectrum rigidity holds, it follows from
 Corollary~\ref{maincor:length_dual}
 that $d \in \mathcal{M}$ is isometric to a hyperbolic metric 
 if and only if it satisfies the hypothesis of
-Theorem~\ref{thm:hyp-lam-char}(H). Some $\mathcal{M}$ for which this
+Theorem~\ref{thm:hyp-char}. Some $\mathcal{M}$ for which this
 applies are negatively curved Riemannian metrics
 \cite{Otal90:SpectreMarqueNegative,HP97:RigidityNegCurvedCone},
 nonpositively curved
 Riemannian metrics
 \cite{CFF92:RigidityNonPosCurvedRiem,Con18:MarkedNonpos}, and
-\DPTtodo{I thought full rigidity was not known for this Anosov
-  geodesic flow case?}
-  \DMGtodo{apparently it is now if I am reading their main theorem correctly.}
 Riemannian metrics with Anosov geodesic flow~\cite{GLP25:MarkedAnosov}.
-  \item It extends Luo’s characterizations of those
+  \item They extend Luo’s characterizations of those
 functions on simple closed curves that arise as either intersection with
 measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Luo10:Simple}
 or as hyperbolic length
 functions~\cite{Luo98:GeodesicLength}.
-\item Likewise, we recover the result of the second
-  author~\cite{Thu00:GeometricIntersection}
+\item Likewise, Theorem~\ref{thm:lam-char} recovers the result of the second author~\cite{Thu00:GeometricIntersection}
   that measured laminations satisfy max-smoothing.
 \end{itemize}
 
@@ -485,9 +484,7 @@ result applies more generally to finite-type surfaces. Their
 construction uses the values of the cross-ratio on all geodesic boxes.
 By contrast, our proof constructs the associated geodesic current solely
 from the periods of the cross-ratio. This is useful because these
-periods can
-\DPTtodo{Can we drop ``often''?}
-often be accessed directly from the underlying
+periods can be accessed directly from the underlying
 representation, without considering the limit maps. At the same time, our method provides an alternative
 approach to constructing geodesic currents associated with
 compactifications of certain spaces of Anosov representations, a topic
@@ -587,8 +584,8 @@ In Section~\ref{sec:special-classes}, we discuss subclasses of
 geodesic currents, including filling currents, multi-curves, measured
 laminations, and hyperbolic lengths/Liouville currents. In particular,
 we prove
-Corollaries~\ref{maincor:length_dual} and~\ref{maincor:embedded} and
-Theorem~\ref{thm:hyp-lam-char}. We
+Corollaries~\ref{maincor:length_dual} ~\ref{maincor:embedded} and
+Theorems~\ref{thm:hyp-char} and Theorems~\ref{thm:lam-char}. We
 construct currents dual to
 embedded graphs. We explain how to obtain dual currents for arbitrary
 length metrics.

@@ -537,14 +537,14 @@ Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeome
 \end{proof}
 
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
-We now prove  Theorem~\ref{thm:hyp-lam-char}(L), whose statement we recall.
+We now prove  Theorem~\ref{thm:lam-char}, whose statement we recall.
 
 \begin{theorem}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set $\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).$
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function.
 Then there exists a measured lamination
-$\mu_{\overline f}$ on $S$ such that
+$\mu_{f}$ on $S$ such that
 \[
-i(\mu_{\overline f},[g])=\overline f(g)
+i(\mu_{f},[g])=f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
 if and only if $f$ satisfies the conditions of
@@ -618,9 +618,9 @@ An unoriented curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a
   Suppose $f$ is a symmetric curve functional satisfying max-smoothing and
   additivity. Max-smoothing clearly implies smoothing, as well as
   disconnected max-smoothing. Thus, by
-  Theorem~\ref{thm:hyp-lam-char}(L), $f$ is dual to a measured
+  Theorem~\ref{thm:lam-char}, $f$ is dual to a measured
   lamination. On the other hand, if $f$ is dual to a measured
-  lamination, Theorem~\ref{thm:hyp-lam-char}(L) implies disconnected
+  lamination, Theorem~\ref{thm:lam-char} implies disconnected
   max-smoothing. Connected max-smoothing follows from tracing through
   the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact
   that $i(\mu, \cdot)$ is continuous, symmetric, additive and stable,
@@ -646,24 +646,24 @@ Bonahon gives an algebraic characterization for a geodesic current $\mu$ to be a
 Whether the endpoints of the intervals are included or excluded in the
 above statement is immaterial, since it follows from the hypothesis that the current is non-atomic. 
 
-We use this to prove Theorem~\ref{thm:hyp-lam-char}(H).
+We use this to prove Theorem~\ref{thm:hyp-char}.
 
 \begin{theorem}
-Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function and set $\overline{f}(g) \coloneqq \frac{1}{2}\bigl(f(g)+f(g^{-1})\bigr).$
+Let $f \colon \pi_1(S) \to \mathbb{R}$ be a function.
 Then there exists a hyperbolic Liouville current
-$\mu_{\overline f}$ on $S$ such that
+$\mu_{f}$ on $S$ such that
 \[
-i(\mu_{\overline f},[g])=\overline f(g)
+i(\mu_{f},[g])=\overline f(g)
 \quad\text{for every } g\in \pi_1(S),
 \]
-if and only if $f$ satisfies the conditions of
-Theorem~\ref{thm:intersections_group}, $\overline{f}(C)>0$ for every curve $C$,
+if and only if $f$ is symmetric, satisfies the conditions of
+Theorem~\ref{thm:intersections_group}, $f(C)>0$ for every curve $C$,
 and whenever $(\ora{a},\ora{b})$ cross, we have
  \begin{align}
     \label{eq:lambdasmoothing}  \lambda(a)\lambda(b)
 = \lambda(ab)+\lambda(aB), \text{ where }
 \lambda(g)
-\coloneqq 2\cosh\!\bigl(\overline{f}(g)/2\bigr).
+\coloneqq 2\cosh\!\bigl(f(g)/2\bigr).
   \end{align}
 \end{theorem}
 \begin{proof}
@@ -691,8 +691,8 @@ q_n \coloneqq A_n+B_n-D_n.
 \]
 Since
 \[
-\lambda(g)=2\cosh\!\left(\frac{\overline{f}(g)}{2}\right)
-=e^{\overline{f}(g)/2}+e^{-\overline{f}(g)/2},
+\lambda(g)=2\cosh\!\left(\frac{f(g)}{2}\right)
+=e^{f(g)/2}+e^{-f(g)/2},
 \]
 the identity
 \[
@@ -710,7 +710,7 @@ e^{-r_n/2}+e^{-q_n/2}
 \label{eq:comp}
 \end{equation}
 \DPTtodo{Should this be $A_n,B_n$?}%
-Because $A,B>0$ (since $\overline{f}(C)>0$ for every curve $C$) and
+Because $A,B>0$ (since $f(C)>0$ for every curve $C$) and
 $C_n,D_n\geq0$,
 \DPTtodo{Don't we need that $A_n,B_n \to \infty$? For $A_n$ this is
   clear from non-vanishing. Seems like we don't need anything for $C_n,D_n$}
