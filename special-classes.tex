@@ -314,18 +314,19 @@ for every closed curve $C$.
 \end{remark}
 
 \begin{remark}
-  \DPTtodo{edited, but it's not coming out very coherently}
-  \DMGtodo{edited a bit more and added a sentence and a reference}
+  \DPTfyi{Edited some more}
 Suppose $(S,d)$ is a length pseudometric structure on $S$. Let
 $\wt{d}$ be the lift of the metric $d$ to $\wt{S}$, where $\pi_1(X)$
 acts by isometries. Then $\ell_d$ is the same
 as translation length on $\wt S$
 \cite[8.3.13]{BBI01:MetricGeometry}:
 \[\ell_d([g])=\inf_{x \in \wt{X}} \wt{d}(x, g x) \eqqcolon \tau_{\wt{d}}(g),\]
-If we try to generalize this further,
-Corollary~\ref{cor:length-stable} does not hold in general
-even in the setting of geodesic Gromov hyperbolic
-spaces \cite[Proposition~6.4]{CDP90:Lectures}; see also Example~\ref{examp:qf}. However, it holds for \emph{convex} Gromov hyperbolic spaces~\cite[Section~2.6]{Gromov1981HyperbolicManifolds}.
+This translation length is stable by Corollary~\ref{cor:length-stable}.
+More broadly,
+Corollary~\ref{cor:length-stable} holds for \emph{convex} Gromov
+hyperbolic spaces~\cite[Section~2.6]{Gromov1981HyperbolicManifolds}
+but not for more general spaces like geodesic Gromov hyperbolic
+spaces \cite[Proposition~6.4]{CDP90:Lectures}; see also Example~\ref{examp:qf}.
 \end{remark}
 
 \begin{remark}
@@ -608,7 +609,6 @@ number with a measured lamination also satisfies connected
 max-smoothing.
 We state this result along the lines of Theorem~\ref{thm:intersect}.
 
-\DPTtodo{Wasn't some version of this stated in intro?}
 \begin{theorem}
 An unoriented curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
     For any essential crossing of a multi-curve $C$, we have
@@ -661,6 +661,7 @@ f(g) = \ell_d([g]) = i(\mu_d,[g])
 \]
 if and only if $f$ satisfies the conditions of symmetry, class invariance,
 stability, oriented smoothing,
+positivity ($f(g) > 0$ for every non-identity element~$g$),
 and, when $(\ora{g},\ora{h})$ are crossing,
 \[
 \lambda(g)\lambda(h)
@@ -679,7 +680,8 @@ hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram})
 applied to the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the fact that the hyperbolic Liouville current is the dual current for the hyperbolic length, by~\cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
 
-For the other direction, by the assumptions on $f$, there exists a
+For the other direction, by the assumptions on~$f$ and
+Theorem~\ref{thm:intersections_group}, there exists a
 geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
 It remains to show that $\mu_f$ is a Liouville current, which is where Equation~\eqref{eq:lambda-smoothing} will play a role.
@@ -688,29 +690,23 @@ Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measu
 
 Let $A_n \coloneqq f(a^n)=nf(a)$, $B_n \coloneqq f(b^n)=nf(b)$, $C_n \coloneqq f(a^nb^n)$ and $D_n \coloneqq f(a^n b^{-n})$.
 Now, we compute
+\DPTfyi{Some shortenings. Deleted defs of $r_n,q_n$, I thought they
+  were more confusing than helpful in the end}
 \[
-e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}} = e^{\frac{-(A_n+B_n)+C_n}{2}} + e^{\frac{-(A_n+B_n)+D_n}{2}}.
+e^{(-\mu(R_n^+)-\mu(R_n^-))/2} + e^{(-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-))/2} = e^{-(A_n+B_n-C_n)/2} + e^{-(A_n+B_n-D_n/2}.
 \]
-Define
-\[
-r_n\coloneqq A_n+B_n-C_n,
-\qquad
-q_n \coloneqq A_n+B_n-D_n.
-\]
-Since
-\[
-\lambda(g)=2\cosh\!\left(\frac{f(g)}{2}\right)
-=e^{f(g)/2}+e^{-f(g)/2},
-\]
-the identity
+% Define
+% $r_n\coloneqq A_n+B_n-C_n$ and
+% $q_n \coloneqq A_n+B_n-D_n$.
+The identity
 \[
 \lambda(a^n)\lambda(b^n)
 =\lambda(a^n b^{-n})+\lambda(a^n b^n)
 \]
-gives, after multiplication by $e^{-(A_n+B_n)/2}$,
+gives, after expansion and multiplication by $e^{-(A_n+B_n)/2}$,
 \begin{equation}
 \begin{aligned}
-e^{-r_n/2}+e^{-q_n/2}
+e^{-(A_n+B_n-C_n/2}+e^{-(A_n+B_n-D_n/2}
 ={}&1+e^{-A_n}+e^{-B_n}+e^{-(A_n+B_n)}\\
 &-e^{-(A_n+B_n+C_n)/2}
 -e^{-(A_n+B_n+D_n)/2}.
@@ -721,14 +717,11 @@ Because $f(a)>0$ and $f(b)>0$ (since $f(C)>0$ for every curve $C$), it follows t
 Thus, since $C_n, D_n \geq 0$, every non-constant term on the
 right-hand side of Equation~\ref{eq:comp} tends to zero. Hence
 \[
-\lim_{n\to\infty}
-\left(e^{-r_n/2}+e^{-q_n/2}\right)=1.
+1 = \lim_{n\to\infty}
+\left(e^{-(A_n+B_n-C_n)/2}+e^{-(A_n+B_n-D_n)/2}\right)=1.
+= \lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}.
 \]
-Therefore, we have
-\[
-\lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}=1.
-\]
-By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_n \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
+By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_{n^+} \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_{n^-} \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
  Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
@@ -748,7 +741,6 @@ three vertices outside the countable set of endpoints of lifts of
 closed geodesics. Thus the only possible boundary atom of either box
 is $\ell$.
 
-\DMGtodo{had to add atomless}
 We approximate the same
 cyclic quadruple by periodic-endpoint boxes in two ways. In the first
 approximation, the limiting first box contains $\ell$; in the second,
