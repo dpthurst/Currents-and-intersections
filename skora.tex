@@ -25,7 +25,7 @@ space $X$ satisfying the \emph{$0$-hyperbolic Gromov point condition}:
 for any four-tuple of points $x,y,z,w \in X$,
 the maximum among the following three quantities appears (at least) twice:
 \[
-d(x,z) + d(y,w), \quad d(x,y) + d(z,w), \quad d(x,z) + d(y,w).
+d(x,z) + d(y,w), \quad d(x,y) + d(z,w), \quad d(x,w) + d(y,z).
 \]
 A \emph{ray} in a real tree is the image of an isometric embedding of
 the ray $[0,\infty)$. If $p$ is the image of $0$ under this embedding,
@@ -78,7 +78,7 @@ Morgan~\cite[Section~1.11]{CM87:GroupActions}, as proved by Parry (\cite[Equatio
 
 \begin{proposition}
 \label{prop:max_twice}
-Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ be a conjugacy class invariant function.
+Let $\Gamma$ be a finitely generated group and $f \colon \Gamma \to \mathbb{R}$ be a non-negative conjugacy class invariant function.
 Then $f$ is the translation length function of
 a $\Gamma$-tree if and only if for any pair $g,h \in \Gamma$, the maximum among the following three quantities appears (at least) twice:
 \begin{equation}
@@ -304,9 +304,9 @@ from~\cite[Fact~1.7]{CM87:GroupActions}.
 Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
 Now we prove the items in the bullet list.
 The first bullet point follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $[z,h(z)]$. Since $T_{g}=T_{G}$ for any $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $[z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $T_{hg}$ and $T_{HG}$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
-The second bullet point follows from the fact that the hypotheses imply where are in the setting where $T_g \cap T_h$ is a point in the subcases (ii) and (iii) of~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT}. In these two settings, $gh$ is hyperbolic provided $\norm{h} >2d(x,z)$
+The second bullet point follows from the fact that the hypotheses imply we are in the setting where $T_g \cap T_h$ is a point in the subcases (ii) and (iii) of~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT}. In these two settings, $gh$ is hyperbolic provided $\norm{h} >2d(x,z)$
 where $x$ is an endpoint of $I$ (which is at most a ray, by assumption), and $\{ z \} = T_g \cap T_h$. Since $T_h = T_{h^k}$, we can guarantee this condition by replacing the pair $(g,h)$ by $(g,h^k)$, where $k$ is taken so that $k\norm{h} > 2d(x,z)$.
-For the third bullet point, for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT} in all cases where $T_g \cap T_h$ is not a point, we get $\norm{gh}>0$;  for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (2)]{Pa89:Paulin1989TheGT}, we get $\norm{gh}>0$, and the claim follows.
+For the third bullet point, for $T_g \cap T_h \neq \emptyset$, by~\cite[Proposition~1.7 (1)]{Pa89:Paulin1989TheGT} in all cases where $T_g \cap T_h$ is not a point, we get $\norm{gh}>0$;  for $T_g \cap T_h = \emptyset$, by~\cite[Proposition~1.7 (2)]{Pa89:Paulin1989TheGT}, we get $\norm{gh}>0$, and the claim follows.
 \end{proof}
 
 Finally, we need to consider the relative position of the characteristic sets of two elliptic elements.
@@ -372,7 +372,7 @@ satisfy the first three conditions above. They also showed that if an $S$-tree
 is small and preserves axis intersection, it is dual to a measured
 lamination, and asked if the ``small'' condition could be dropped.
 
-In a followup, Skora noted that dihedral
+In a follow-up, Skora noted that dihedral
 $S$-trees give counter examples (preserving axis intersection while not
 being dual to a measured lamination), but showed that irreducible
 $S$-trees that preserve axis intersection are dual to measured
@@ -391,7 +391,7 @@ It follows that the action being small is equivalent to it being irreducible and
 
 We start with a preliminary lemma.
 \begin{lemma}
-Let $(\pi_1(S),T)$ preserve axis intersection and 
+Suppose that an $S$-tree $T$  preserves axis intersection and 
 suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{c}, \ora{b})$ cross.
 \label{lem:hyperbolic_crossing}
 \end{lemma}
@@ -504,7 +504,7 @@ Note the irreducibility assumption is necessary: for a dihedral action, every el
     \label{subcase:generate_ell_coherent}
     There exists a hyperbolic $b$ so that $b^m h$ is hyperbolic for some $m>0$.
        \end{subcase} 
-    Then we can write $h=b^{-m}(b^mh)$, with $b^{-m}$ and $b^mh$ hyperbolic.
+    Then we can write $h=b^{-m}(b^mh)$, with $b^{-m}$ and $b^mh$ hyperbolic and products of elements of $E_g$ by Case 1.
        \begin{subcase}
        \label{subcase:generate_ell_incoherent}
        No such $b$ exists.%
@@ -547,7 +547,7 @@ Indeed, suppose there exist $a,b$ hyperbolic so that
 $a \in E_g^+ \setminus E_g^-$ and $b \in E_g^- \setminus E_g^+$.
 Choose the signs of $m,n$ so that
 $\ora{a^m}$ and $\ora{b^n}$ both R-cross $\ora{g}$,
-to ensure that $\ora{a^m b^n}$ also R-crosses $\ora{g}$.
+to ensure that $\ora{a^m b^n}$ also R-crosses $\ora{g}$, by Lemma~\ref{lem:rhs_prod}.
 Furthermore, choose $\abs{m}$ much larger than $\abs{n}$ so that,
 $\norm{a^m} >\norm{b^n}$ and hence, by Lemma~\ref{lem:product_hyperbolic},
 $a^m b^n$ is hyperbolic.
@@ -589,7 +589,7 @@ is the key place where we invoke irreducibility.
   $(\ora{g},\ora{h})$ are parallel. Then $T_g,T_h$ do not intersect incoherently.
 \end{proposition}
 
-\begin{proof}
+\begin{proof}\DMGtodo{edited this to clarify better some points}
   Suppose $T_g, T_h$ do intersect incoherently.
     If the overlap is bounded, according to
     Lemma~\ref{lem:powers_goodpair} there exists $m>0,n>0$ so that
@@ -605,19 +605,19 @@ is the key place where we invoke irreducibility.
     the assumption of irreducibility to construct another pair with
     bounded overlap. Suppose, without essential loss of generality,
     that $(\ora{g},\ora{h})$ are R-parallel,
-    and that $T_g \cap T_h$ includes the attracting end of $T_g$. By
+    and that $T_g \cap T_h$ includes the attracting end of $T_g$ (other configurations follow from the same argument after reversing cyclic orders and interchanging the attracting and repelling ends throughout). By
     Proposition~\ref{prop:if_unbounded_then_reducible}, there exists
     $c_0 \in \pi_1(S)$ acting hyperbolically on~$T$ so that
     $(\ora{c_0},\ora{g})$ R-cross and
     $T_{c_0} \cap T_g$ is bounded, as in Figure~\ref{fig:tree_bounded_incoherent}.
-    % (For other configurations of
-    % $(\ora{g},\ora{h})$ and $T_g,T_h$, we may want
-    % $(\ora{c_0},\ora{g})$ to L-cross instead.)
+    We may assume that $c_0 \cdot T_g^+ \neq T_g^-$: indeed, otherwise replace $c_0$ by $c_0^2$, since this does not change $T_{c_0}$, it preserves the R-crossing relation and $c_0^2 \cdot T_g^+ = c_0 \cdot T_g^- \neq T_g^-$.
     By
     Lemma~\ref{lem:make_coherent}, if we set $c_1=g^kc_0 g^k$ for
     $k \geq 0$ large enough, the overlap between $T_{c_1}$ and $T_g$
     is coherent and, by Lemma~\ref{lem:rhs_prod}, $\ora{c_1}$ still
-    R-crosses $\ora{g}$. Letting $c_2=g^n c_1 g^{-n}$ for $n$ large
+    R-crosses $\ora{g}$. Furthermore, this overlap is bounded: $c_1$ fixes an end of $T_g$ if and only if $c_0$ fixes that end, while $c_0$ fixes neither end since $T_{c_0} \cap T_g$ is bounded.
+    
+    Letting $c_2=g^n c_1 g^{-n}$ for $n$ large
     enough, we can ensure two things. On the one hand, the endpoints of
     $\ora{c_2}$ are near $g^+$ on the boundary of the disk and thus
     $(\ora{c_2},\ora{h})$ are
@@ -714,7 +714,7 @@ $\ora{g},\ora{h}$ cross.
 Then $\ora{ghG}$ and $\ora{h}$ are parallel.
 By Proposition~\ref{prop:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}(2), $\norm{ gh } = \norm{h}\geq
+point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\norm{ gh } = \norm{h}\geq
 \norm{gH}$ and
 $T_g \cap T_h \ne \emptyset$, and we
 are done. If $T_{ghG} \cap T_{h} = \emptyset$, by
@@ -750,7 +750,7 @@ axis intersection, it also preserves characteristic intersection.
 \end{proof}
 
 \begin{remark}
-One could hope to bypass Cases 2 and 3 by approximating action on $T$ by actions consisting solely of hyperbolic isometries (case 1), i.e., free actions, but this is would require some extra work.
+One could hope to bypass Cases 2 and 3 by approximating action on $T$ by actions consisting solely of hyperbolic isometries (case 1), i.e., free actions, but this would require some extra work.
 Indeed, it is not true for a general finitely generated group $\Gamma$
 that free $(\Gamma,T)$ actions are dense in the space of small minimal
 $(\Gamma,T)$ actions. For free groups, by a result of
@@ -833,32 +833,17 @@ See~\cite[Lemma~6.4]{CM87:GroupActions}.
 \begin{proof}
   Using Claim~\ref{claim:reducible-overlap}, we see that
   $\norm{(xA)(ax)} = 2\norm{x} < 2\norm{a} = \norm{xA} + \norm{ax}$,
-  implying $T_{ax}$ and $T_{xA}$ overlap inconsistently.
-% By looking at the action of $a,x$ on their common axis (see
-% \cite[Proposition~1.6(3)]{Pa89:Paulin1989TheGT}), we have
-% \begin{align*}
-% \norm{ax}&=\norm{a}+\norm{x} \\
-% \norm{xA} &= \norm{a}-\norm{x}.
-% \end{align*}
-% Adding these equations, we get
-% \[
-% \norm{ax} + \norm{xA} = 2\norm{a}.
-% \]
-% On the other hand,
-% \[
-% \norm{(xA)(ax)} = 2\norm{x},
-% \]
-% implying that $(ax,xA)$ overlap incoherently.
+  implying $T_{ax}$ and $T_{xA}$ overlap incoherently.
 \end{proof}
 
 \begin{proof}[Proof of Lemma~\ref{lem:red_not_smoothing}]
-  We start by finding a pair of elements so that $(\ora{g},\ora{h})$
+  We begin by finding a pair of elements so that $(\ora{g},\ora{h})$
   are parallel and $T_g,T_h$ overlap incoherently.
 
-  Start by finding any pair $(g,h)$ of hyperbolic elements so $(\ora{g},\ora{h})$ are
+  First, find any pair $(g,h)$ of hyperbolic elements so $(\ora{g},\ora{h})$ are
 parallel. Start with any two hyperbolic elements that
-are not common powers. (For instance, take any hyperbolic element
-and a non-trivial conjugate.)
+are not common powers. (For instance, take any hyperbolic element $g$
+and a conjugating element $h$ outside of the normalizer of $\langle g \rangle$.)
 If the pair is parallel, we are
 done. If it is crossing, consider $(\ora{gh},\ora{hg})$, which is parallel by
 Lemma~\ref{lem:righthandedfoundation}. If it is anti-parallel,
@@ -874,7 +859,7 @@ $\norm{a}>\norm{b}$, while
 $(\ora{aB},\ora{Ba})$ is crossing. By Lemma~\ref{lem:a_parallel_Ba},
 it follows that either $(\ora{ab},\ora{bA})$ is parallel or $(\ora{ba},\ora{aB})$ is parallel.
 By Claim~\ref{claim:incoherent}, we have found a pair $(\ora{k},\ora{\ell})$, with
-$k = ab, \ell = Ba$ or ff $k = ba, \ell = aB$, of parallel hyperbolic elements with
+$k = ab, \ell = Ba$ or $k = ba, \ell = bA$, of parallel hyperbolic elements with
 incoherent overlap. This proves the first claim.
 
 To see that connected smoothing fails, note
@@ -902,7 +887,7 @@ not possible, as it contradicts Proposition~\ref{prop:max_twice}.
 (This is also impossible in the Culler-Morgan setting of any reducible
 action.)
 
-Finally, if $g$ and $h$ elliptic. Here we use the assumption the
+Finally, if $g$ and $h$ are elliptic. Here we use the assumption the
 action has a fixed end,
 so $T_g \cap
 T_h \ne \emptyset$ (since the fixed sets intersect on a ray to the
@@ -928,7 +913,7 @@ Putting this all together we can give another characterization of small surface 
 
 \begin{theorem}
 An $S$-tree is irreducible and preserves axis intersection if and only
-if no pair hyperbolic elements $(g,h)$ so that $(\ora{g},\ora{h})$ are
+if no pair of hyperbolic elements $(g,h)$ so that $(\ora{g},\ora{h})$ are
 parallel have incoherent
 overlap.
 \label{thm:axis_incoherent_characterization}
@@ -955,17 +940,17 @@ $T$ is $\pi_1(S)$-equivariantly isometric to $T_\lambda$;
 \item The $S$-tree is irreducible and preserves characteristic intersection;
 \item The translation length function
 $\norm{\cdot}\colon \pi_1(S)\to\mathbb{R}$ satisfies max-smoothing;
-\item   There is no pair $(\ora{a},\ora{b})$ that are
-parallel in $\wt{S}$ and act hyperbolically and overlap incoherently in $T$.
+\item   There are no hyperbolic elements $(a,b)$ whose axes $(\ora{a},\ora{b})$ are
+parallel in $\wt{S}$ and overlap incoherently in $T$.
 \end{enumerate}
 \end{taggedthm}
 
 \begin{proof}[Proof of Theorem~\ref{mainthm:skora}]
 The equivalence $\text{(a)} \Leftrightarrow \text{(d)}$ is
-Theorem~\ref{thm:lam-char}.
+Theorem~\ref{prop:char_laminations_plus}.
 Morgan-Otal~\cite{MO93:RelativeGrowths} show $\text{(a)} \Rightarrow \text{(b)}$.
 Theorem~\ref{thm:small} shows $\text{(b)} \Rightarrow \text{(c)}$, (d).
-Theorem~\ref{thm:axis_incoherent_characterization} shows $\text{(c)}
+Theorem~\ref{thm:axis_incoherent_characterization} shows $\text{(b)}
 \Leftrightarrow \text{(e)}$. The implication $\text{(c)} \Rightarrow \text{(b)}$ is
 immediate.
 \end{proof}
