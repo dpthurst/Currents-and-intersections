@@ -1272,7 +1272,6 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
 }
 \end{figure}
 
-\DPTfyi{HERE}
 In practice we will apply Proposition~\ref{prop:fundamental-ayx} with
 four group elements.
 \begin{corollary}\label{cor:fund-axby}
@@ -1298,9 +1297,13 @@ four group elements.
 \begin{proof}
   The conditions imply that
   $(\ora{y}, a \cdot \ora{x}, ab \cdot \ora{y})$ are R-parallel.
-  Apply $x' = axA$, and $a' = ab$ to Eqs.~\eqref{eq:crossuniform_n},  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx} and~\eqref{eq:crossbelowy-ab} in order to get, respectively, Eqs.~\eqref{eq:axby-cross-n},
+  Substitute $x' = axA$, $y'=y$, and $a' = ab$ into
+  Eqs.~\eqref{eq:crossuniform_n},
+  \eqref{eq:crossuniform_m}, \eqref{eq:cancel-ayx},
+  and~\eqref{eq:crossbelowy} in order to get, respectively,
+  Eqs.~\eqref{eq:axby-cross-n},
     \eqref{eq:axby-cross-m},
-    \eqref{eq:cancel-axby}, and~\eqref{eq:crossbelowy}.
+    \eqref{eq:cancel-axby}, and~\eqref{eq:crossbelowy-ab}.
 \end{proof}
 
 We now check this configuration is easy to find. The following result
@@ -1316,20 +1319,20 @@ $\pi_1(S)\cdot p$ is dense.
 We care about the orientations, so we need a slightly more precise result.
 
 \begin{lemma}
+\label{lem:diagonaldense}
 Let $x \in \pi_1(S)$.
 Given any $z \in \partial_\infty  S$
 and any $\epsilon>0$, there exists a lift $g \cdot \ora{x}$ whose
 endpoints $g\cdot x^+$ and $g\cdot x^-$ are in $(z-\epsilon,z+\epsilon)$, and are ordered counter-clockwise (or clockwise)
 with respect to the $\partial_\infty S$ order.
-\label{lem:diagonaldense}
 \end{lemma}
 \begin{proof}
 By Lemma~\ref{lem:minimal}, endpoints of axes of elements of
 $\pi_1(S)$ are dense in $\partial_\infty S$; choose any $g$ so that
 $g^+ \in (z-\epsilon,z+\epsilon)$. Next choose any $h$ so that
-$\ora{h}$ crosses $\ora{g}$. Then for sufficiently large $k$, $h^{\pm k}\cdot
+$\ora{h}$ crosses~$\ora{g}$. Then for sufficiently large~$k$, $h^{\pm k}\cdot
 \ora{x}$ will be in a neighborhood of $h^{\pm}$ and in particular will
-not cross $\ora{g}$.
+not cross~$\ora{g}$.
 Finally, for large enough $n$, we have
 that $g^n h^{\pm k} \cdot x^{\pm} \in (z-\epsilon,z+\epsilon)$.
 Tracing through orientations shows that one of these translates will

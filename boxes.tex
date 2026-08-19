@@ -1,6 +1,7 @@
 \section{Boxes and their measures}
 \label{sec:define_measure}
-Our main goal in the paper is to define a measure on the space of geodesics---in fact, a geodesic current---associated to a curve functional~$f$. 
+Our main goal in the paper is to define a geodesic current, a measure
+on the space of geodesics, associated to a curve functional~$f$. 
 Roughly speaking, our strategy is to associate a positive number, in a
 countably additive way, to a collection of boxes of geodesics that is 
 sufficiently rich to generate the $\sigma$-algebra of open sets of
@@ -19,11 +20,12 @@ the next asymptotics. This is reminiscent to the construction of Otal
 We now outline of the construction of the ``sufficiently rich family of boxes'' on which our measure will be defined.
 
 Let $f\colon \Curves^+(S) \to \mathbb{R}$ be a
-functional satisfying symmetry, additive union, smoothing and stability.
+functional satisfying symmetry, additive union, smoothing, and stability.
 Fix
-(arbitrarily) a simple closed curve~$[x]$ which for convenience we take passing through the basepoint. The endpoints of the lifts of $[x]$ are dense in
-$\partial_\infty S$, by minimality of the action of $\pi_1(S)$
-(reviewed in Lemma~\ref{lem:minimal}).
+(arbitrarily) a simple closed curve~$[x]$ which for convenience we
+take to pass through the basepoint. The endpoints of the lifts of
+$[x]$ are dense in
+$\partial_\infty S$ (Lemmas~\ref{lem:minimal} and~\ref{lem:diagonaldense}).
 
 The prototype for
 the kind of boxes to which we assign measures is shown in
@@ -40,6 +42,10 @@ The lifts are defined by a 4-tuple of
 elements $[p_1,q_1,p_2,q_2]$ of $\pi_1(S)$ by
 $\ell_i = P_i \cdot \ora{x}$ and $r_i = q_i \cdot \ora{x}$, with
 conditions explained below.
+\DPTtodo{Can we get colors consistent between these three figures?
+  Blue for $\ora{x}$ seems to be more standard elsewhere in the paper}
+\DPTtodo{In Figure~\ref{fig:newmodel3}, make the dots marking the
+  relevant ends of $\ell_i$, $r_i$ bigger}
 
 \begin{figure}
 \centering{
@@ -63,7 +69,9 @@ be invariant under
 \text{(changing $q_i$ preserving $r_i$)} \quad & q_i \mapsto q_ix. \label{eq:changes-q}
 \end{align}
 \end{subequations}
-These two conditions are clearly necessary since the endpoints of $\ell_i$ and $r_i$ are invariant under such transformations.
+\DPTfyi{Changed ``conditions'' to ``transformations''.}
+Invariance under these two transformations is clearly necessary since
+they do not change the endpoints of~$\ell_i$ and~$r_i$.
 In fact, ultimately we will take a limit of these
 transformations: we look at the limit as $n\to \infty$ of $p_i \mapsto x^np_i$
 and $q_i \mapsto q_i x^n$.
@@ -75,7 +83,8 @@ invariance under
     (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
       (p_1 G, gq_1, p_2 G,  gq_2).
   \end{equation}
-We will put off imposing this last invariance for the moment.
+\DPTfyi{Reworded}
+We will put off quotienting by this invariance for the moment.
 
 We now turn to the conditions on the lifts; for
 instance, the window
@@ -133,6 +142,8 @@ by condition \ref{item:box-edges-cross-lift}.
   given by \[
   B(p_1,q_1,p_2,q_2)=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+),\] where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
  (On occasion, we may write $B_x(p_1,q_1,p_2,q_2)$ to make the choice of base element explicit.)
+\DPTfyi{Arrgh, really a semiring shouldn't need to have the empty set
+  and then we wouldn't need this quibble}
 The set of all right-handed boxes and the empty set is denoted by $\mathcal{B}$.
 \end{definition}
 
@@ -148,13 +159,16 @@ The conditions in Definition~\ref{def:RH-lift-system} are chosen to
 make the following proposition work.
 
 \begin{proposition}\label{prop:rh-boxes}
-  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system if and only if $\ora{\ell_i} =
-  P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$. Then the
+  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system if and only
+  \DPTfyi{reworded}
+  if, with $\ora{\ell_i} =
+  P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$, the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular RH boxes in $\cB$ avoid the
   diagonal.
 \end{proposition}
 
+\DPTfyi{HERE}
 \begin{proof}
   We first note that condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Also, condition~\ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
