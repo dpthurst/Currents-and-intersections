@@ -1,7 +1,7 @@
 \section{Special classes of geodesic currents}
 \label{sec:special-classes}
 
-In this section we characterize special classes of geodesic currents as curve functionals, such as filling currents, hyperbolic metrics, measured laminations, integral multi-curves, or currents dual to embedded graphs.
+In this section we characterize special classes of geodesic currents as curve functionals, such as filling currents, hyperbolic metrics, measured laminations, integral multi-curves, \DMGtodo{emphasized the last bit is only a criterion} and give a criterion for currents dual to embedded graphs.
 
 \subsection{Filling currents}
 \label{subsec:filling}
@@ -34,12 +34,14 @@ These equivalences follow from Theorem~\ref{thm:intersections_group} and \cite[T
 We say that a weighted multi-curve $M$ is \emph{integral}
  if its a weighted multi-curve whose weights are integers. We say that $M$ is a \emph{half-integral} multi-curve if its weights are in $\frac{1}{2}\mathbb{Z}$. Note that, by definition, all integral multi-curves are also half-integral.
 
-We have the following criterion for half-integral multi-curves.
+ \DMGtodo{made this into an if and only if and added a sentence at the end of the proof to justify it}
 
-\DMGtodo{this can be made an if and only if, no? if so, in the intro, we could have a triality in Corollary C between integral valued AConvex functionals, half integral multicurves null homologous in Z/2 coefficients, and embedded graphs?}
+We have the following characterization for half-integral multi-curves which are zero in $\mathbb{Z}/2\mathbb{Z}$-homology.
+
+
 \begin{corollary}
-Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}  such that $f(C) \in \mathbb{Z}$ for every $C \in \Curves^+(S)$. Then $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$.
-Moreover, $[\vec{M}] = 0$ in $\mathbb{Z}/2\mathbb{Z}$-homology.
+Let $f$ be a curve functional satisfying the hypotheses of Theorem~\ref{thm:intersect}.
+Then, $f(C) \in \mathbb{Z}$ for every $C \in \Curves^+(S)$ if and only if $f$ is dual to a half-integral multi-curve $\mu=\frac{1}{2}M$ with $[\vec{M}] = 0$ in $\mathbb{Z}/2\mathbb{Z}$-homology.
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
@@ -56,10 +58,13 @@ Since the expression in the limit is one-half of an integer number for every $n$
 Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. (For more details about this last argument, see~\cite[Appendix~A]{JMG26:CoarseNegativeCurvature}.)
 By~\cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows that $2\mu$ must be an integral multi-curve $M$, and hence $\mu=\frac{1}{2} M$ is a half-integral multi-curve, for some integral multi-curve $M$.
 We furthermore claim that $[\vec{M}]=0$ in $\mathbb{Z}/2\mathbb{Z}$-homology. 
-Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}_2$-homology class
+Indeed, suppose there exists a simple closed curve $C$ so that its $\mathbb{Z}/2\mathbb{Z}$-homology class
 $[C] \in H^1(S,\mathbb{Z}/2\mathbb{Z})$ satisfies $\langle \vec M,\vec C\rangle=1 \mod 2$, where $\langle \cdot, \cdot \rangle$ denotes the algebraic intersection number. Since algebraic and geometric intersection are equal modulo 2, we have $i(\mu, C) \notin \mathbb{Z}$, a contradiction.
+\DMGtodo{added this last sentence}
+On the other hand, a similar argument shows that any half-integral multi-curve $\frac{1}{2}M$ with $[\vec{M}]=0$ in $\mathbb{Z}/2\mathbb{Z}$-homology satisfies $i(\mu, C) \in \mathbb{Z}$ for every closed curve $C \in \Curves(S)$.
 \end{proof}
-
+\DMGtodo{in view of the characterization, the remark has been removed}
+\begin{comment}
 \begin{remark}
   There are examples of half-integral multi-curves which are not integral yet have integral intersection numbers.
 For example, let $\mu$ be the geodesic current supported on a
@@ -68,7 +73,7 @@ For example, let $\mu$ be the geodesic current supported on a
   For more involved examples, there are certain word-lengths (whose marked length spectrum is integral) that are
   dual to a half-integral multi-curve~\cite[Theorem~1.1]{Erlandsson:WordLength}. See also Section~\ref{subsec:embedded_graphs}.
 \end{remark}
-
+\end{comment}
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
 i(M, C) = \sum_{i=1}^n \lambda_i n_i.
@@ -172,6 +177,21 @@ Even though this example corresponds to a punctured surface and hence does not f
 \end{example}
 
 We note that our result says nothing concrete about the dual multi-curve, whereas Erlandsson's result explicitly constructs it in the specific case of simple generating sets. It would be interesting to describe these multi-curves in general.
+
+\DMGtodo{added these discussion and question below}
+Furthermore, it seems reasonable to expect a converse, as follows.
+
+\begin{question}
+Let $C=\frac{1}{2}M$, where $M$ is an integral
+multi-curve with $[\vec{M}] = 0$ in $\mathbb{Z}/2\mathbb{Z}$-homology.
+Then there exists a filling embedded graph $\mathcal{G} \hookrightarrow S$ endowed with the edge metric so that
+\[
+\ell_{\mathcal{G}}(D)=i(C,D)
+\]
+for every closed curve $D \in \Curves(S)$.
+\end{question}
+
+A positive answer would give a new triality, where $\AConvex_{\mathbb{Z}}(S)$, that is, functionals in $\AConvex(S)$ with integral values, correspond to $1/2$-integral multi-curves $M$ which are zero in $\mathbb{Z}/2\mathbb{Z}$-homology which, in turn, correspond to filling embedded graphs in $S$.
 
 \subsection{Length metrics}
 \label{subsec:length-metrics}

@@ -63,12 +63,12 @@
     \put(0.04339995,0.19955574){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$\ell_2^-$\end{tabular}}}}%
     \put(0.03857382,0.57896036){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$\ell_1^-$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{newmodel3.pdf}}%
-    \put(0.20169671,0.65952246){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell_1=p_1^{-1}\cdot\ora{x}$\end{tabular}}}}%
-    \put(0.09708794,0.25772681){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell_2=p_2^{-1}\cdot\ora{x}$\end{tabular}}}}%
-    \put(0.69060794,0.64295602){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_1=q_1\cdot\ora{x}$\end{tabular}}}}%
-    \put(0.72377055,0.1945263){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_2=q_2\cdot\ora{x}$\end{tabular}}}}%
+    \put(0.20169671,0.65952246){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell_1=p_1^{-1}\cdot\ora{x}$\end{tabular}}}}%
+    \put(0.09708794,0.25772681){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell_2=p_2^{-1}\cdot\ora{x}$\end{tabular}}}}%
+    \put(0.69060794,0.64295602){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_1=q_1\cdot\ora{x}$\end{tabular}}}}%
+    \put(0.72377055,0.1945263){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_2=q_2\cdot\ora{x}$\end{tabular}}}}%
     \put(0.76681982,0.3020925){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r_2^+$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{newmodel3.pdf}}%
-    \put(0.39545575,0.14807654){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x}$\end{tabular}}}}%
+    \put(0.39545575,0.14807654){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ora{x}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
