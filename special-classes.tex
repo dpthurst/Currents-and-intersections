@@ -40,12 +40,12 @@ $M$ is a \emph{half-integral} multi-curve if its weights are in
 $\frac{1}{2}\mathbb{Z}$. Note that, by definition, all integral
 multi-curves are also half-integral.
 
-\DPTfyi{Defined and used this}
 Also define $\AConvex_{\bbZ}(S)$ to be the functionals in
 $f \in \AConvex(S)$ so that $f(C) \in \bbZ$ for all closed curves~$C$.
 
 \DPTtodo{Should we be writing $[M]$ for the class in $\bbZ/2\bbZ$
   homology? That class doesn't depend on the orientation.}
+  \DMGtodo{probably not, vec notation makes it different from $[g]$ which we use now for conjugacy class of group element}
 \begin{corollary}
 A curve functional $f$ is in $\AConvex_{\bbZ}(S)$ iff it is dual to a
 half-integral multi-curve $\mu=\frac{1}{2}M$ with $[\vec{M}] = 0$ in
@@ -69,7 +69,6 @@ By \cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows
 that $2\mu$ must be an integral multi-curve~$M$, and hence
 $\mu=\frac{1}{2} M$ is half-integral.
 
-\DPTfyi{edited}
 We furthermore claim that $[\vec{M}]=0$ in $\mathbb{Z}/2\mathbb{Z}$-homology. 
 Indeed, if $[\vec M] \ne 0$, there exists a simple closed curve $C$ so
 that
@@ -95,7 +94,7 @@ i(M, C) = \sum_{i=1}^n \lambda_i n_i.
 \end{equation}
 i.e., $\{i(\mu,C)\}_{\Curves(S)}$ is contained in a finite rank subgroup of $\mathbb{R}$. In this case, we say $\mu$ has \emph{finite rank spectrum}.
 This property does not characterize weighted multi-curves, since certain negatively curved metrics that satisfy this condition can be constructed (see~\cite{Agol25:Spectrum}).
-\DPTfyi{edited}
+
 Hence, it is natural to ask the following two questions, from
 conversations of the first author with, respectively, Meenakshy
 Jyothis and Viveka Erlandsson.
@@ -135,7 +134,7 @@ be $1/2$ of an integral multi-curve. This generalizes the main result
 in~\cite{Erlandsson:WordLength} in the case of closed surfaces, where
 Erlandsson finds that
 word metric arising from \emph{simple generating set} are dual to 1/2
-of an integral multi-curve dual. Such generating sets correspond to
+of an integral multi-curve. Such generating sets correspond to
 choosing $\mathcal{G}$ to be a rose graph with only one vertex.
 
 \begin{taggedcor}{\ref{maincor:embedded}}
@@ -150,8 +149,7 @@ $H_1(S; \mathbb{Z}/2\mathbb{Z})$.
 Since $\mathcal{G}$ is equipped with the edge-metric, $\ell_{\mathcal{G}}(C) \in \mathbb{Z}$.
 Hence, Corollary~\ref{cor:int_multicurve} implies the result.
 \end{proof}
-
-\DPTtodo{Labels are too far from edges in Figure~\ref{fig:embedded-graph}}%
+%
 \begin{figure}
 \centering{
 \svgfignormal{embedded}}
