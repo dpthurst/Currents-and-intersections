@@ -78,7 +78,7 @@ invariance under
     (p_1,q_1,p_2,q_2) \mapsto g \cdot (p_1,q_1,p_2,q_2) \coloneqq
       (p_1 G, gq_1, p_2 G,  gq_2).
   \end{equation}
-\DPTfyi{Reworded}
+
 We will put off quotienting by this invariance for the moment.
 
 We now turn to the conditions on the lifts; for
@@ -137,8 +137,6 @@ by condition \ref{item:box-edges-cross-lift}.
   given by \[
   B(p_1,q_1,p_2,q_2)=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+),\] where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
  (On occasion, we may write $B_x(p_1,q_1,p_2,q_2)$ to make the choice of base element explicit.)
-\DPTfyi{Arrgh, really a semiring shouldn't need to have the empty set
-  and then we wouldn't need this quibble}
 The set of all right-handed boxes and the empty set is denoted by $\mathcal{B}$.
 \end{definition}
 
@@ -154,19 +152,14 @@ The conditions in Definition~\ref{def:RH-lift-system} are chosen to
 make the following proposition work.
 
 \begin{proposition}\label{prop:rh-boxes}
-  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system iff,
-  \DPTfyi{reworded}
-  with $\ora{\ell_i} =
+  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system iff, with $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$, the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular RH boxes in $\cB$ avoid the
   diagonal.
 \end{proposition}
-
-\DPTtodo{For some reason there's weird amounts of vertical space here}
 \begin{proof}
-  \DPTfyi{edited}
-  Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Condition~\ref{item:box-edges-cross-lift} implies
+Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Condition~\ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
   are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
   $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel, so all
@@ -175,8 +168,6 @@ make the following proposition work.
   To exploit condition~\ref{item:box-diags-cross-lift}, for $i,j \in
   \{1,2\}$ and $n \ge 0$, set $g_{i,j,n} \coloneqq q_j x^n p_i$. By
   Lemma~\ref{lem:convergence_action},
-  \DPTfyi{Deleted the lemma, which seemed unnecessary given the
-    earlier one}
   \begin{align}\label{eq:box-endpoints}
     \lim_{n^+} g_{i,j,n}^- &= P_i \cdot x^- = \ell_i^- &
     \lim_{n^+} g_n^+ &= q_j \cdot x^+ = r_j^+.
@@ -193,9 +184,6 @@ make the following proposition work.
 
 \begin{remark}
 \label{rmk:largeenough}
-  \DPTfyi{reworded, simplified. I think this condition is now less
-    mysterious than it
-    was in earlier drafts}
   For boxes of type~1, the group elements in
   condition~\ref{item:box-diags-cross-lift} cross for all~$n$. For
   boxes of type~2 or type~3, we need the ``sufficiently large'' condition.
@@ -228,11 +216,9 @@ and any $\epsilon>0$ so the respective $\epsilon$-neighborhoods are
 disjoint, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
 type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $P_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
-\DPTtodo{What does this last statement mean? RH boxes are not open by
-  our def. But that's also not what we'll need to see $\cB$ generates
-  the Borel algebra. What's the correct condition?}
-In particular, right-handed boxes
-form a neighborhood basis of $\mathcal G(\widetilde S)$.  
+
+In particular, the interiors of right-handed boxes
+form a basis of $\mathcal G(\widetilde S)$.  
 \label{prop:density}
 \end{proposition}
 \begin{proof}
@@ -243,7 +229,7 @@ form a neighborhood basis of $\mathcal G(\widetilde S)$.
   that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a
   RH lift system of type~$1$.
 
-  \DPTfyi{Rewritten}%
+
   To prove the statement about a neighborhood basis, consider
   $(v,w) \in \cG(\widetilde S) \subset (\bdy_\infty S)^2$ and a
   product neighborhood
@@ -253,16 +239,6 @@ form a neighborhood basis of $\mathcal G(\widetilde S)$.
   statement with $\varepsilon$ sufficiently small gives a right-handed
   box containing $(u,v)$ and contained in $U\times V$.
 \end{proof}
-
-\DPTtodo{Not sure Figure~\ref{fig:approx2} is needed. We never refer
-  to it.}
-\begin{figure}
-\centering{
-\resizebox{60mm}{!}{\svgfig{approxfin}}
-\caption{Approximating a boundary point of the interval of endpoints of a right-handed box}
-\label{fig:approx2}
-}
-\end{figure}
 
 We now turn to an alternate parameterization that builds in invariance
 under translation by $\pi_1(S)$, as in
@@ -279,6 +255,7 @@ Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related
 \DPTtodo{Colors of $p_i,q_j$ in Figure~\ref{fig:newmodel3_orbit} need
   to be adjusted. Also, is the circle circular? And the labels are
   sometimes oddly placed. And does it need to be so big?}
+  \DMGtodo{what's wrong with the colors?}
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3_orbits}}
