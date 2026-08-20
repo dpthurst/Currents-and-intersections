@@ -374,12 +374,13 @@ of the box:
 This function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically (left) $\pi_1(S)$-invariant.
 
-\DPTfyi{HERE}
-We will now prove the limit in Proposition~\ref{prop:limitexists} exists using the properties
-of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
-results about how certain words behave under smoothings proven in
-Section~\ref{subsec:crossings}. 
-
+\DPTfyi{Edited}
+To prove the limit exists, we
+will use
+the properties
+of~$f$ from Section~\ref{subsec:mainhypotheses} and the
+results from
+Section~\ref{sec:fund-smoothing}.
 We
 first look at a key ingredient limit.
 
@@ -400,24 +401,27 @@ Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
     f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
   \]
   (If $x$ is simple, we can take $r=1$.) Here we used oriented smoothing and
-  convex union. 
-  Hence, $n \mapsto f([a x^{n}])$ is $r$-convex, and so is $f([a x^{n}]) - f([x^{n}]) = f([a x^{n}]) -
-  nf([x])$, using stability of~$f$.
+  convex union.
+\DPTfyi{Reworded, in particular added the necessary condition $n > 0$
+  for this convexity}
+  Hence, $n \mapsto f([a x^{n}])$ is $r$-convex. For $n > 0$, so
+  is $n \mapsto f([a x^n]) - n f([x]) = f([a x^n]) - f([x^n])$. (Here
+  we used stability of~$f$.)
  
   By Lemma~\ref{lem:rhs_prod}, additivity, and 
- disconnected smoothing of~$f$, we get
+ disconnected smoothing of~$f$, we get, for $n \in \bbZ$,
  \[
- f([a]) + f([x^{n}]) \geq f([ax^{n}])
+ f([a]) + f([x^{n}]) \geq f([ax^{n}]).
  \]
- for $n \in \mathbb{Z}$.
  By Eq.~\eqref{eq:cross-cancel} with $m=0$,
-additivity and unoriented disconnected
+additivity, symmetry, and unoriented disconnected
 smoothing of $f$, there is $N \in \mathbb{Z}$ (depending on $a,x$) so that, for $\abs{n} > N$,
   \[
     f([a x^{n}]) \ge -f([a]) + f([x^{ n}]).
   \] 
-  This shows that $f$ is an $r$-convex and
-  bounded function  for $\abs{n} > N$, so by Lemma~\ref{lem:limexistrmidconvex}, the
+  This shows that for $\abs{n} > N$, the function $n \mapsto f([ax^n])
+  - f([x^n])$ is $r$-convex and
+  bounded, so by Lemma~\ref{lem:limexistrmidconvex}, the
   limit as $n \to \infty$ in \eqref{eq:additivity-limit} exists. The
   limit as $n \to -\infty$ is similar.
 \end{proof}
@@ -460,6 +464,7 @@ different elements $x,y \in \pi_1(S)$.
   \end{gather*}
   exist.
 \end{lemma}
+\DPTfyi{HERE}
 \begin{proof}
   For $n,m \ge 0$, define $g_
   {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. First,
