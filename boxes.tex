@@ -154,63 +154,67 @@ The conditions in Definition~\ref{def:RH-lift-system} are chosen to
 make the following proposition work.
 
 \begin{proposition}\label{prop:rh-boxes}
-  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system if and only
+  A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system iff,
   \DPTfyi{reworded}
-  if, with $\ora{\ell_i} =
+  with $\ora{\ell_i} =
   P_i \cdot \ora{x}$ and $\ora{r_i} = q_j \cdot \ora{x}$, the
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular RH boxes in $\cB$ avoid the
   diagonal.
 \end{proposition}
 
-\DPTfyi{HERE}
+\DPTtodo{For some reason there's weird amounts of vertical space here}
 \begin{proof}
-  We first note that condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Also, condition~\ref{item:box-edges-cross-lift} implies
+  \DPTfyi{edited}
+  Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Condition~\ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
   are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
-  $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel.
+  $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel, so all
+  endpoints are unique.
 
-  To exploit condition~\ref{item:box-diags-cross-lift}, we prove a lemma.
-  
-  \begin{lemma}\label{lem:box-endpoints}
-    Suppose $p,q \in \pi_1(S)$ so that $(\ora{pq},\ora{x})$ R-cross.
-    Set $\ell = Pxp$, $r = qxQ$, and
-    for $n \in \bbZ$ set $g_n \coloneqq q x^n p$. Then
-    \begin{align*}
-      \lim_{n^+} g_n^- &= \ell^- &
-      \lim_{n^+} g_n^+ &= r^+.
-    \end{align*}
-  \end{lemma}
-
-  \begin{proof}
-  For the second statement, apply Lemma~\ref{lem:convergence_action} with $x=qxQ$ and $g=qp$.
-  For the first statement, apply it with $x=PXp$ and $g=PQ$.
-  \end{proof}
-
-  Returning to the proof of Proposition~\ref{prop:rh-boxes}, set
-  $g_{i,j,n} \coloneqq q_j x^n p_i$.
-  Condition~\ref{item:box-diags-cross-lift} says that for sufficiently large $n$
+  To exploit condition~\ref{item:box-diags-cross-lift}, for $i,j \in
+  \{1,2\}$ and $n \ge 0$, set $g_{i,j,n} \coloneqq q_j x^n p_i$. By
+  Lemma~\ref{lem:convergence_action},
+  \DPTfyi{Deleted the lemma, which seemed unnecessary given the
+    earlier one}
+  \begin{align}\label{eq:box-endpoints}
+    \lim_{n^+} g_{i,j,n}^- &= P_i \cdot x^- = \ell_i^- &
+    \lim_{n^+} g_n^+ &= q_j \cdot x^+ = r_j^+.
+  \end{align}
+  Condition~\ref{item:box-diags-cross-lift} says that for
+  sufficiently large~$n$
   the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$
-  appear in that ccw order, which by Lemma~\ref{lem:box-endpoints} implies
-  that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as desired.
+  appear in that ccw order, which by Eq.~\eqref{eq:box-endpoints} implies
+  that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as
+  desired.
+
+  The converse direction follows the same way.
 \end{proof}
 
 \begin{remark}
- Condition~\ref{item:box-diags-cross-lift} is
- phrased as it is to ensure translation invariance for boxes of type~2
- and type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
- enough~$n$.
- For boxes of type~1, the crossing is essential for all~$n$.
 \label{rmk:largeenough}
+  \DPTfyi{reworded, simplified. I think this condition is now less
+    mysterious than it
+    was in earlier drafts}
+  For boxes of type~1, the group elements in
+  condition~\ref{item:box-diags-cross-lift} cross for all~$n$. For
+  boxes of type~2 or type~3, we need the ``sufficiently large'' condition.
+ % Condition~\ref{item:box-diags-cross-lift} is
+ % phrased as it is to ensure translation invariance for boxes of type~2
+ % and type~3: $\ora{q_2 x^n p_1}$ and $\ora{q_1 x^n p_2}$ might only cross for large
+ % enough~$n$.
+ % For boxes of type~1, the crossing is essential for all~$n$.
 \end{remark}
 
 \begin{remark}
   The reader may wonder why we choose to make the boxes half-open in
-  the specified way. It turns out we could have made a different choice and it would not matter for the resulting current, as by
+  the specified way. It turns out \textit{post facto} we could have
+  made a different choice and it would not matter for the resulting
+  current, as by
   Proposition~\ref{prop:spikes}
   the weight of the
   boundary of these boxes under any geodesic current is necessarily
-  zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box is a single lift of~$[x]$, and by definition, these lifts are not contained in an RH box. The half-open
+  zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box is a single lift of~$[x]$, and by definition, these lifts are not contained in the RH box. The half-open
   choice we made is
   more convenient the proof of Proposition~\ref{prop:countablyadditive}.
   \label{rmk:no_atom_boundary_box}
@@ -224,6 +228,9 @@ and any $\epsilon>0$ so the respective $\epsilon$-neighborhoods are
 disjoint, there exist $p_1,p_2,q_1,q_2 \in \pi_1(S)$ forming a
 type~1 RH box $B(p_1,q_1,p_2,q_2)$ so that $P_i\cdot x^- \in B_\epsilon(v_i)$
 and $q_j\cdot x^+ \in B_\epsilon(w_j)$.
+\DPTtodo{What does this last statement mean? RH boxes are not open by
+  our def. But that's also not what we'll need to see $\cB$ generates
+  the Borel algebra. What's the correct condition?}
 In particular, right-handed boxes
 form a neighborhood basis of $\mathcal G(\widetilde S)$.  
 \label{prop:density}
@@ -235,16 +242,20 @@ form a neighborhood basis of $\mathcal G(\widetilde S)$.
   Furthermore, that same lemma lets us arrange the orientations so
   that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a
   RH lift system of type~$1$.
-  
-  Finally, we prove the statement about it being a neighborhood basis.
-Given $(u,v)\in\mathcal G(\widetilde S)$ and a product neighborhood
-$U\times V$ with disjoint coordinate closures, choose target
-endpoints in $U$ on the two sides of $u$, and target endpoints in
-$V$ on the two sides of $v$.  Applying the previously proven statement with
-$\varepsilon$ sufficiently small gives a right-handed box containing
-$(u,v)$ and contained in $U\times V$.
+
+  \DPTfyi{Rewritten}%
+  To prove the statement about a neighborhood basis, consider
+  $(v,w) \in \cG(\widetilde S) \subset (\bdy_\infty S)^2$ and a
+  product neighborhood
+  $(v,w) \subset V \times W \subset \cG(\widetilde S)$. Choose target
+  endpoints in $V$ on the two sides of~$n$, and target endpoints in
+  $W$ on the two sides of~$w$. Applying the previously proven
+  statement with $\varepsilon$ sufficiently small gives a right-handed
+  box containing $(u,v)$ and contained in $U\times V$.
 \end{proof}
 
+\DPTtodo{Not sure Figure~\ref{fig:approx2} is needed. We never refer
+  to it.}
 \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{approxfin}}
@@ -253,18 +264,21 @@ $(u,v)$ and contained in $U\times V$.
 }
 \end{figure}
 
-We now turn to invariance under translation by $\pi_1(S)$, as in
-Eq.~\eqref{eq:box-translate}. The $\pi_1(S)$-orbit of $(p_1,q_1,p_2,q_2)$
-can be parameterized by group elements $(a,b,c,d)$ related
-  to the $p_i$ and $q_i$ by
+We now turn to an alternate parameterization that builds in invariance
+under translation by $\pi_1(S)$, as in
+Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related
+  to the $p_i$ and $q_j$ by
 \begin{equation}
 \begin{aligned}
-  a &= p_1 q_1 &\qquad\qquad\qquad\qquad\qquad b &= p_1 q_2\\[2pt]
+  a &= p_1 q_1\qquad&\qquad b &= p_1 q_2\\[2pt]
   c &= p_2 q_1 & d &= p_2 q_2.
 \end{aligned}
   \label{eq:relationdatum}
 \end{equation}
 
+\DPTtodo{Colors of $p_i,q_j$ in Figure~\ref{fig:newmodel3_orbit} need
+  to be adjusted. Also, is the circle circular? And the labels are
+  sometimes oddly placed. And does it need to be so big?}
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3_orbits}}
@@ -277,6 +291,7 @@ can be parameterized by group elements $(a,b,c,d)$ related
 \end{figure}
 
 Compare Figure~\ref{fig:newmodel3_orbit}. In this parameterization, we necessarily have $aCbD = 1$.
+\DPTfyi{HERE. Double ``note that''}
 Note that, by Eq.~\eqref{eq:double_coset}, the relative position
 of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
