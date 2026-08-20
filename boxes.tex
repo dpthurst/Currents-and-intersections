@@ -136,6 +136,7 @@ by condition \ref{item:box-edges-cross-lift}.
   $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$, 
   given by \[
   B(p_1,q_1,p_2,q_2)=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+),\] where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
+ \DPTtodo{Do we actually use this $B_x$ notation?}
  (On occasion, we may write $B_x(p_1,q_1,p_2,q_2)$ to make the choice of base element explicit.)
 The set of all right-handed boxes and the empty set is denoted by $\mathcal{B}$.
 \end{definition}
@@ -155,7 +156,8 @@ make the following proposition work.
   endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
   counter-clockwise order. In particular RH boxes in $\cB$ avoid the
   diagonal.
-\end{proposition} \begin{proof}
+\end{proposition}
+\begin{proof}
 Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Condition~\ref{item:box-edges-cross-lift} implies
   that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
   are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
@@ -227,14 +229,14 @@ form a basis of $\mathcal G(\widetilde S)$.
   RH lift system of type~$1$.
 
 
-  To prove the statement about a neighborhood basis, consider
+  To prove the statement about a basis, consider
   $(v,w) \in \cG(\widetilde S) \subset (\bdy_\infty S)^2$ and a
   product neighborhood
   $(v,w) \subset V \times W \subset \cG(\widetilde S)$. Choose target
-  endpoints in $V$ on the two sides of~$n$, and target endpoints in
+  endpoints in $V$ on the two sides of~$v$, and target endpoints in
   $W$ on the two sides of~$w$. Applying the previously proven
   statement with $\varepsilon$ sufficiently small gives a right-handed
-  box containing $(u,v)$ and contained in $U\times V$.
+  box containing $(v,w)$ and contained in $V\times W$.
 \end{proof}
 
 We now turn to an alternate parameterization that builds in invariance
@@ -264,16 +266,26 @@ Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related
 }
 \end{figure}
 
+\DPTfyi{reworded next paragraphs, expanded slightly, reorganized}
 Compare Figure~\ref{fig:newmodel3_orbit}. In this parameterization, we necessarily have $aCbD = 1$.
-\DPTfyi{HERE. Double ``note that''}
-Note that, by Eq.~\eqref{eq:double_coset}, the relative position
+Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
+$aCdB = 1$, we can
+construct four lifts of $[x]$ related by Equation~\eqref{eq:relationdatum}, for instance
+setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = cA$.
+
+Note that, for instance, the points $\wt \ast \cdot P_1$ and $\wt \ast
+\cdot q_1$ are related via $a$ by the right action: $(\wt \ast \cdot
+P_1) \cdot a = \wt \ast \cdot q_1$. This is related to the fact that,
+by Eq.~\eqref{eq:double_coset}, the relative position
 of (say) $\ora{\ell_1}$ and $\ora{r_1}$ is given by the double coset
 $\langle x \rangle a \langle x \rangle$.
-
-Note that, for instance, the points $\wt \ast \cdot p_1^{-1}$ and $\wt \ast \cdot q_1$ are related via $a$ by the right action: $(\wt \ast \cdot p_1^{-1}) \cdot a = \wt \ast \cdot q_1$.
 On the other hand, the lifts of $[x]$ give by $\ora{\ell_1}$ and
 $\ora{r_1}$ are related via the element $q_1 p_1$ by the left action:
-$q_1 p_1 \cdot \ora{\ell_1} = \ora{r_1}$. Furthermore, $(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by Lemma~\ref{lem:rhs}) to $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$ R-crosses $\ora{x}$.
+$q_1 p_1 \cdot \ora{\ell_1} = \ora{r_1}$. Furthermore,
+$(\ora{\ell_1},\ora{r_1})$ are R-parallel, which is equivalent (by
+Lemma~\ref{lem:rhs}) to $\ora{q_1p_1}$ R-crossing $\ora{p_1}$, or
+equivalently $p_1 \cdot \ora{q_1 p_1} = \ora{p_1 q_1} = \ora{a}$
+R-crossing~$\ora{x}$.
 
 The action of translating all lifts by $\pi_1(S)$ has been baked in to
 this alternate parametrization,
@@ -287,10 +299,7 @@ invariant under the following four transformations:
 \text{(translating along $r_2$)} \quad & b \mapsto bx,\quad d \mapsto dx \label{eq:translations-r2}
 \end{align}
 \end{subequations}
-Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
-$aCdB = 1$, we can
-construct four lifts of $[x]$ related by Equation~\eqref{eq:relationdatum}, for instance
-setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = cA$.
+
 
 
 \begin{definition}[RH orbit]
@@ -298,11 +307,11 @@ setting $p_1 = 1$, $q_1 = a$, $q_2 = b$, and $p_2 = cA$.
 Let $a,b,c,d \in \pi_1(S,\ast)$ be such that:
 \begin{enumerate}[label=(\arabic*${}'$),start=0]
 \item\label{item:box-close} $a C d B = 1$;
-\item\label{item:box-nontriv} $aC(=bD)$ and $Ab(=Cd)$ are not powers of~$x$;
+\item\label{item:box-nontriv} $aC\mathrel{(=}bD)$ and $Ab\mathrel{(=}Cd)$ are not powers of~$x$;
 \item\label{item:box-edges-cross} $\ora{a},\ora{b},\ora{c},\ora{d}$ cross $\ora{x}$ to the right; and
 \item\label{item:box-diags-cross} for sufficiently large~$n$,
   $\ora{dx^na C}
-  (= \ora{cAbx^na C})$ crosses
+  \mathrel{(=} \ora{cAbx^na C})$ crosses
   $\ora{cx^n}$ to the right.
 \end{enumerate}
 
@@ -312,11 +321,12 @@ Then we call the datum $[a,b,c,d]$ a \emph{right-handed lift orbit} (or \emph{RH
 As explained above, this determines a $\pi_1(S)$-orbit of RH lift systems.
 The one non-obvious point to check is that
 condition~\ref{item:box-diags-cross} corresponds
-to condition~\ref{item:box-diags-cross-lift}:
+to condition~\ref{item:box-diags-cross-lift}. The two crossing
+elements in condition~\ref{item:box-diags-cross} are
 \begin{align*}
-  cx^n &= p_2 q_1 x^n& dx^naC &= p_2 q_2 x^n p_1 P_2\\
+   dx^naC &= p_2 q_2 x^n p_1 P_2 & cx^n &= p_2 q_1 x^n\\
   \intertext{which after conjugating by $P_2$ yields}
-  q_1 x^n p_2 &= g_{2,1,n} & q_2 x^n p_1 &= g_{1,2,n}.
+  q_2 x^n p_1 &= g_{1,2,n} & q_1 x^n p_2 &= g_{2,1,n}.
 \end{align*}
 Thus the two crossing conditions are equivalent.
 
@@ -327,7 +337,11 @@ Thus the two crossing conditions are equivalent.
     [B] \coloneqq \{ g \cdot B \colon g \in \pi_1(S) \},
   \]
   where we consider the left action.
-  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit. (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element $x$.)
+  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen
+  representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
+ \DPTtodo{Do we actually use this $B_x$ notation? Seems it is only
+   used in the next remark}
+  (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element $x$.)
 \end{definition}
 
 \begin{remark}\label{rmk:flip_rh_box}
@@ -343,12 +357,11 @@ where $\sigma$ is the flip map.
 
 \subsection{Measures of boxes}
 
-We will now start setting up the definition of the measure of an orbit
-of right-handed box $[B]_{a,b,c,d}$. In particular, we will define a function
+\DPTfyi{shortened}
+We will now start defining the measure of an RH orbit $[B]_{a,b,c,d}$:
+we will define a function
 $\wh{\mu_f} \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
-involving the $f$-value of a certain combination of words involving
-$a,b,c,d,x$. (Recall $\mathcal{B}$
-denotes the family of right-handed boxes.)
+of values of~$f$.
 
 \begin{proposition}
 \label{prop:limitexists}
@@ -360,9 +373,10 @@ of the box:
 \label{eq:def_measure}
 \end{equation}
 \end{proposition}
-Note this function on boxes (which will eventually become a pre-measure and
+This function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically (left) $\pi_1(S)$-invariant.
 
+\DPTfyi{HERE}
 We will now prove the limit in Proposition~\ref{prop:limitexists} exists using the properties
 of~$f$ introduced in Section~\ref{subsec:mainhypotheses} and the
 results about how certain words behave under smoothings proven in
