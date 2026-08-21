@@ -415,15 +415,17 @@ $i(\mu,[y])=\mu(A_y)+\mu(\sigma A_y)$. The same claim follows for the intersecti
 We finish by proving Theorem~\ref{thm:intersect}, first in the following
 form.
 
-\DMGtodo{edited this to correct normalization}
 \begin{theorem}
-Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying symmetry, smoothing, additivity and stability, and $\mu_f$ as above.
+  \label{thm:recoverintersection}
+  \DPTfyi{Edited; removed uniqueness statement and moved it to proof
+    of Thm A}
+Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional
+satisfying symmetry, smoothing, additivity and stability, and let
+$\mu_f$ be as above.
 For $C$ an oriented closed curve, we have
 \[
 i(\mu_f,C)=f(C).
 \]
-In particular, $\mu_f$ is unique among flip-invariant geodesic currents.
-\label{prop:recoverintersection}
 \end{theorem}
 \begin{proof}
 We first prove that $\vec{\imath}(\overline\mu_f,C)=\frac{1}{2}f(C)$. Given a representative $y \in
@@ -476,16 +478,7 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
       The property $i(\mu_f, C)=f(C)$ for any closed curve $C$ follows by the definition of $\mu_f$ and the fact that $\overline\mu_f$ is finitely additive. 
-
- Finally, the uniqueness of the geodesic current $\mu_f$ is
- a result of Otal, geodesic currents are determined by their marked
- length spectrum \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
 \end{proof}
-
-\begin{remark}
-  Uniqueness is not true for the oriented geodesic current
-  $\overline\mu_f$. See Appendix~\ref{sec:asymmetric}.
-\end{remark}
 
 \begin{remark}
 In \cite[Proposition~4.3]{BIPP24:PositiveCrossratios} a geodesic current is induced
@@ -522,9 +515,29 @@ Now we prove the two versions of the main theorem as stated in the introduction.
 theorem, namely, Theorem~\ref{thm:intersections_group}, is phrased in terms of functions on the surface group.
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersect}]
+  \DPTfyi{Edited, added claim about the topology to the proof}
+  Given a functional~$f$ as in the statement, by
+  Definition~\ref{def:smoothing} and
+  Proposition~\ref{prop:power_disconnected_imply_stable}, the induced
+  additive and symmetric functional on oriented multi-curves satisfies
+  stability. Hence the existence of $\mu_f$ follows by
+  Theorem~\ref{thm:recoverintersection}.
 
-By Definition~\ref{def:smoothing} and Proposition~\ref{prop:power_disconnected_imply_stable}, the induced additive and symmetric functional on oriented multi-curves satisfies stability. Hence, by Theorem~\ref{prop:recoverintersection}, the result follows.
+
+  Uniqueness of the geodesic current $\mu_f$ is a result of Otal,
+  geodesic currents are determined by their marked length spectrum
+  \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
+  The claim about the topology is due to Duchin-Leininger-Rafi, who
+  show that the map $\Curr(S) \to \bbR^{\Curves(S)}$
+  defined by $\mu \mapsto i(\mu, \cdot)$ is a homeomorphism onto its
+  image \cite[Theorem~12]{DLR10:DegenerationFlatMetrics}.
 \end{proof}
+
+\DPTfyi{Moved this remark here}
+\begin{remark}
+  Uniqueness is not true if we don't assume $\mu_f$ is flip-invariant.
+  See Appendix~\ref{sec:asymmetric}.
+\end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
 As in the statement, let $\overline{f}(a) \coloneqq
