@@ -134,9 +134,6 @@ by condition \ref{item:box-edges-cross-lift}.
   $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$, 
   given by \[
   B(p_1,q_1,p_2,q_2)=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+),\] where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
- \DPTtodo{Do we actually use this $B_x$ notation?}
- \DMGtodo{only in the beginning when discussing things comparing $B_x$ to $B_{x^{-1}}$, but mostly we don't}
- (On occasion, we may write $B_x(p_1,q_1,p_2,q_2)$ to make the choice of base element explicit.)
 The set of all right-handed boxes and the empty set is denoted by $\mathcal{B}$.
 \end{definition}
 
@@ -343,7 +340,9 @@ where $p_1' \coloneqq Q_2$, $p_2' \coloneqq Q_1, q_1' \coloneqq P_2, q_2' \colon
 is an RH system with RH orbit $[a',b',c',d']$ and basepoint $x'$.
 From this, one immediately has
 \[B_x(p_1,q_1,p_2,q_2)=\sigma\bigl(B_{x'}(p_1',q_1',p_2',q_2')\bigr),\]
-where $\sigma$ is the flip map, \DMGtodo{added this next clarification} and the notation $B_x$ is explicit about the basepoint element $x$ in the construction of the RH box.
+where $\sigma$ is the flip map, and we introduce notation $B_x$ to be
+explicit about the
+base element~$x$ in the construction of the RH box.
 \end{remark}
 
 \subsection{Measures of boxes}
@@ -454,18 +453,17 @@ different elements $x,y \in \pi_1(S)$.
   \end{gather*}
   exist.
 \end{lemma}
-\DPTfyi{HERE}
 \begin{proof}
   For $n,m \ge 0$, define $g_
-  {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. First,
-  by Corollary~\ref{cor:fund-axby}, there is some $s$ so that both
+  {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$.
+  By Corollary~\ref{cor:fund-axby}, there is some $s$ so that both
   $g_+$ and $g_-$
   are $(s,s)$-axis-convex: apply $f$ to the left hand side of
   Eqs.~\eqref{eq:axby-cross-n} and~\eqref{eq:axby-cross-m}, and use
   convex union, oriented smoothing, stability, and homogeneity. (The extra
   linear terms in $g_{\pm}$ are irrelevant for convexity.)
 
-  Next we check that $g_{\pm}$ is bounded.
+  Next we check that $g_{\pm}$ are bounded.
   On the one hand,
   \[
     [ab][x^n][y^{\pm m}] \reducesto [ax^nb][y^{\pm m}] \reducesto [ax^nby^{\pm m}].
@@ -495,7 +493,7 @@ different elements $x,y \in \pi_1(S)$.
 \end{proof}
 
 \begin{proposition}\label{prop:join-split-alg}
-Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
+Let $a,b,x\in \pi_1(S)$ and
   let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
   stability, and homogeneity.
   If $a$ and $b$ cross $x$ to the right, then
@@ -525,31 +523,35 @@ Let $a,b,x$ be arbitrary elements of $\pi_1(S)$ and
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
-The existence of the limit in Equation~\eqref{eq:def_measure} follows immediately from Lemma~\ref{lem:additivity-limit}.
+The existence of the limit in Equation~\eqref{eq:def_measure} follows from Lemma~\ref{lem:additivity-limit}.
 Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\wh{\mu_f}([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
 To this end, by Remark~\ref{rmk:box_from_system}, it is enough to prove that the limit is invariant under the transformations described in Equations~\eqref{eq:translations}.
 We prove this for Equation~\eqref{eq:translations-l1}; the other cases are analogous.
 
-The translation in the RH orbit $a \mapsto xa, b \mapsto xb$ (Eq.~\eqref{eq:translations-l1}) corresponds to a translation of the RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
+The translation in the RH orbit $a \mapsto xa, b \mapsto xb$
+(Eq.~\eqref{eq:translations-l1}) corresponds to a translation of the
+RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
+\DPTtodo{Edited some of these reasons. Still seems a little long maybe}
 \begin{align*}
 \wh{\mu_f}(B(xp_1,q_1,p_2,q_2))
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n+1}]) + f([cx^n]) - f([ax^{n+1}]) - f([dx^n]) \Big)
-&& \text{(Eq.~\eqref{eq:def_measure})} \\
+&& \text{(Definition)} \\
 &= \frac{1}{2}\lim_{n,m \to \infty}
 \Big( f([bx^{m}]) + f([cx^n]) - f([ax^{m}]) - f([dx^n]) \Big)
 && \text{(Prop.~\ref{prop:join-split-alg})} \\
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
-&& \text{(Eq.~\eqref{eq:def_measure})} \\
+&&\\
 &= \wh{\mu_f}(B(p_1,q_1,p_2,q_2)).
 \end{align*}
-Hence, $\mu_f$ only depends on the RH box and, since the definition of $\mu_f$ is given in terms of the RH orbit, it only depends on the RH box orbit.
+Hence, $\mu_f$ only depends on the RH orbit.
 \end{proof}
 
 Now we check the hypotheses to apply
  Theorem~\ref{thm:caratheodory} to construct a measure, starting with positivity.
 
+ \DPTfyi{HERE}
 \begin{proposition}
   \label{prop:box-positive}
   For a right-handed
