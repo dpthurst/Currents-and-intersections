@@ -261,7 +261,6 @@ Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related
 }
 \end{figure}
 
-\DPTfyi{reworded next paragraphs, expanded slightly, reorganized}
 Compare Figure~\ref{fig:newmodel3_orbit}. In this parameterization, we necessarily have $aCbD = 1$.
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
 $aCdB = 1$, we can
@@ -334,9 +333,6 @@ Thus the two crossing conditions are equivalent.
   where we consider the left action.
   We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen
   representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
- \DPTtodo{Do we actually use this $B_x$ notation? Seems it is only
-   used in the next remark}
-  (On occasion we might write $[B_x]_{a,b,c,d}$ to be explicit about the base element $x$.)
 \end{definition}
 
 \begin{remark}\label{rmk:flip_rh_box}
@@ -347,12 +343,11 @@ where $p_1' \coloneqq Q_2$, $p_2' \coloneqq Q_1, q_1' \coloneqq P_2, q_2' \colon
 is an RH system with RH orbit $[a',b',c',d']$ and basepoint $x'$.
 From this, one immediately has
 \[B_x(p_1,q_1,p_2,q_2)=\sigma\bigl(B_{x'}(p_1',q_1',p_2',q_2')\bigr),\]
-where $\sigma$ is the flip map.
+where $\sigma$ is the flip map, \DMGtodo{added this next clarification} and the notation $B_x$ is explicit about the basepoint element $x$ in the construction of the RH box.
 \end{remark}
 
 \subsection{Measures of boxes}
 
-\DPTfyi{shortened}
 We will now start defining the measure of an RH orbit $[B]_{a,b,c,d}$:
 we will define a function
 $\wh{\mu_f} \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
@@ -371,7 +366,6 @@ of the box:
 This function on boxes (which will eventually become a pre-measure and
 then a measure) is automatically (left) $\pi_1(S)$-invariant.
 
-\DPTfyi{Edited}
 To prove the limit exists, we
 will use
 the properties
@@ -399,8 +393,7 @@ Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
   \]
   (If $x$ is simple, we can take $r=1$.) Here we used oriented smoothing and
   convex union.
-\DPTfyi{Reworded, in particular added the necessary condition $n > 0$
-  for this convexity}
+
   Hence, $n \mapsto f([a x^{n}])$ is $r$-convex. For $n > 0$, so
   is $n \mapsto f([a x^n]) - n f([x]) = f([a x^n]) - f([x^n])$. (Here
   we used stability of~$f$.)
