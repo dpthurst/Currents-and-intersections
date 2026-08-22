@@ -551,7 +551,6 @@ Hence, $\mu_f$ only depends on the RH orbit.
 Now we check the hypotheses to apply
  Theorem~\ref{thm:caratheodory} to construct a measure, starting with positivity.
 
- \DPTfyi{HERE}
 \begin{proposition}
   \label{prop:box-positive}
   For a right-handed
@@ -559,6 +558,8 @@ Now we check the hypotheses to apply
 \end{proposition}
 
 \begin{proof}
+  \DPTtodo{Notation conflict: $B$ as $b^{-1}$ and as a box. Not sure
+    how to resolve}
   Set $[B] = [B]_{a,b,c,d}$.
   By condition~\ref{item:box-diags-cross}, for sufficiently large~$n$,
   \[
@@ -570,9 +571,7 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 \]
   Then by Proposition~\ref{prop:join-split-alg} and taking the
   limit as $n \to \infty$, we obtain
-  \[
-  \wh{\mu_f}(B) \geq 0. \qedhere
-  \]
+  $\wh{\mu_f}(B) \geq 0$.
 \end{proof}
 
 \begin{remark} 
@@ -591,11 +590,11 @@ $\wh{\mu_f}$ is finitely additive.
 First we prove that $\wh{\mu_f}$ satisfies a notion slightly weaker than finite additivity.
 
 \begin{proposition}
+  \label{prop:sidebyside}
   If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in
   Figure~\ref{fig:finiteadditivity} (or the symmetric version changing
   the $p_i$), then $B_1 \cup B_2$ is a RH box
   and $\mu_f(B_1 \cup B_2) = \mu_f(B_1) + \mu_f(B_2)$.
-  \label{prop:sidebyside}
 \end{proposition}
 
 \begin{proof}
@@ -608,11 +607,12 @@ First we prove that $\wh{\mu_f}$ satisfies a notion slightly weaker than finite 
   RH box. The definition of $\wh{\mu_f}$ immediately yields the additivity.
 \end{proof}
 
-  \begin{figure}
+\DPTtodo{Mark the relevant endpoints in Figure \ref{fig:finiteadditivity}}
+\begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{finiteadditivity}}
-\caption{Side-by-side additivity for boxes}
-\label{fig:finiteadditivity}
+\caption{Side-by-side additivity for boxes}%
+\label{fig:finiteadditivity}%
 }
 \end{figure}
 
@@ -646,13 +646,17 @@ $G(S) = \partial_\infty \Sigma \times \partial_\infty \Sigma \setminus \Delta$ (
 in the
 usual way as a square with opposite sides identified. We represent
 $(r^+,r^-)$ by drawing a ``whisker'': a vertical segment at
-$x$-coordinate $r^+$ from $r^+$ (on the diagonal) to $r^-$.
+$x$-coordinate $r^+$ from $y$-coordinate $r^+$ (on the diagonal) to $r^-$.
 Similarly represent $(\ell^-,\ell^+)$ by a
 horizontal segment at
-$y$-coordinate $\ell^-$ from $\ell^-$ to $\ell^+$.
+$y$-coordinate $\ell^-$ from $x$-coordinate $\ell^-$ to $\ell^+$.
 Then $(\ora{\ell}, \ora{r})$
 are R-parallel iff these two segments intersect, as in
 Figure~\ref{fig:whiskers}.
+\DPTtodo{Figure \ref{fig:whiskers}: \textbullet\ What are the grey
+  geodesics? They're a bit distracting. \textbullet\ The $\ell_i$,
+  $r_j$ labels are in the middle of everything, and not very well
+  spaced. Maybe move them outside the circle?}
 Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
@@ -682,7 +686,7 @@ meets each vertical whisker.
 \end{proposition}
 
 \begin{proof}
-  First, the intersection of boxes is obviously a box. Indeed, all
+  First, the intersection of boxes is a box. Indeed, all
   sides of a box are necessarily in the respective whisker, and any
   new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box.
 
@@ -693,7 +697,10 @@ meets each vertical whisker.
   orientation of the region.) If necessary, add a horizontal whisker
   slightly above the horizontal inner edge of the L, making
   sure that it intersects the vertical whisker forming the
-  other inner edge of the L. The resulting whiskers allow us to
+  other inner edge of the~L;
+  \DPTfyi{Added this}
+  this is possible by Lemma~\ref{lem:initial}.
+  The resulting whiskers allow us to
   write the L as the union of three boxes, as shown on the right of
   Figure~\ref{fig:box-difference}.
 \end{proof}
@@ -719,15 +726,17 @@ meets each vertical whisker.
 \begin{proof}
   Given a division $B_0 = \bigsqcup_i B_i$, we will show that the
   $B_i$ can be further divided so that the result can be joined by
-  side-by-side additivity to form $B_0$. Let $W$ be the whiskers
-  involved in any side of one of the~$B_i$. We proceed by induction on
-  $\abs{W}$.
+  side-by-side additivity to form $B_0$.
+  \DPTtodo{Clarified def of $W$, I hope. But maybe you need to exclude
+    whiskers involved in the sides of $B_9$ to make induction work?}
+  Let $W$ be the set of all whiskers
+  involved in any side of one of the~$B_i$. We proceed by induction on~$\abs{W}$.
 
   Whiskers in $W$ can be ``long'', passing through
   the interior of the upper or right edge
   of~$B_0$, or not.  (Such long whiskers necessarily also pass through the bottom
   or left edge as well.)
-  Suppose first that there is no
+  Suppose first that there are no
   long whiskers in~$W$. Then the partition is in fact trivial, since
   the only possible box with no long whiskers that contains a
   point near the upper-right corner of~$B_0$ is $B_0$ itself.
@@ -737,8 +746,8 @@ meets each vertical whisker.
   of the $B_i$ that intersect both $B_1'$ and $B_2'$, in a
   side-by-side way, getting sets of boxes $B_{i,1}$ and $B_{i,2}$,
   which are partitions of $B_1'$ and $B_2'$ respectively. These give
-  subdivisions of $B_1'$ and $B_2'$ that involve fewer
-  whiskers. Thus by induction,
+  subdivisions of $B_1'$ and $B_2'$ that each involve fewer total
+  whiskers. Thus by induction and Proposition~\ref{prop:sidebyside},
   \[
     \wh{\mu_f}(B_0) = \wh{\mu_f}(B_1') + \wh{\mu_f}(B_2') = \sum_j \wh{\mu_f}(B_{j,1}) +
     \sum_k \wh{\mu_f}(B_{k,2}) = \sum_i \wh{\mu_f}(B_i). \qedhere
@@ -759,6 +768,7 @@ meets each vertical whisker.
 Let $\mathcal{R}$ be the ring generated by the semiring~$\mathcal{B}$. By
 Proposition~\ref{prop:addsemitoring}, $\wh{\mu_f}$ is finitely additive
 on~$\mathcal{R}$.
+\DPTfyi{HERE}
 
 %%% Local Variables:
 %%% mode: latex
