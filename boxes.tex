@@ -349,7 +349,7 @@ base element~$x$ in the construction of the RH box.
 
 We will now start defining the measure of an RH orbit $[B]_{a,b,c,d}$:
 we will define a function
-$\wh{\mu_f} \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
+$\wh\mu_f \colon \mathcal{B} \to \mathbb{R}_{\geq 0}$ in terms of a limit
 of values of~$f$.
 
 \begin{proposition}
@@ -358,7 +358,7 @@ Let $B(p_1,q_1,p_2,q_2)$ be a right-handed box so that $[B(p_1,q_1,p_2,q_2)]=[B]
 Then following limit exists and only depends on the $\pi_1(S)$-orbit
 of the box:
 \begin{equation}
-\wh{\mu_{f}}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
+\wh\mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \label{eq:def_measure}
 \end{equation}
 \end{proposition}
@@ -524,7 +524,7 @@ Let $a,b,x\in \pi_1(S)$ and
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
 The existence of the limit in Equation~\eqref{eq:def_measure} follows from Lemma~\ref{lem:additivity-limit}.
-Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\wh{\mu_f}([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
+Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\wh\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
 To this end, by Remark~\ref{rmk:box_from_system}, it is enough to prove that the limit is invariant under the transformations described in Equations~\eqref{eq:translations}.
 We prove this for Equation~\eqref{eq:translations-l1}; the other cases are analogous.
 
@@ -533,7 +533,7 @@ The translation in the RH orbit $a \mapsto xa, b \mapsto xb$
 RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
 \DPTtodo{Edited some of these reasons. Still seems a little long maybe}
 \begin{align*}
-\wh{\mu_f}(B(xp_1,q_1,p_2,q_2))
+\wh\mu_f(B(xp_1,q_1,p_2,q_2))
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n+1}]) + f([cx^n]) - f([ax^{n+1}]) - f([dx^n]) \Big)
 && \text{(Definition)} \\
@@ -543,7 +543,7 @@ RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
 &= \frac{1}{2}\lim_{n \to \infty}
 \Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
 &&\\
-&= \wh{\mu_f}(B(p_1,q_1,p_2,q_2)).
+&= \wh\mu_f(B(p_1,q_1,p_2,q_2)).
 \end{align*}
 Hence, $\mu_f$ only depends on the RH orbit.
 \end{proof}
@@ -554,12 +554,13 @@ Now we check the hypotheses to apply
 \begin{proposition}
   \label{prop:box-positive}
   For a right-handed
-  box $B\in \mathcal{B}$, we have $\wh{\mu_f}(B) \geq 0$.
+  box $B\in \mathcal{B}$, we have $\wh\mu_f(B) \geq 0$.
 \end{proposition}
 
 \begin{proof}
   \DPTtodo{Notation conflict: $B$ as $b^{-1}$ and as a box. Not sure
     how to resolve}
+    \DMGtodo{I think it's not worth resolving, it's clear from context. At best, we could change the notation for orbit of a box, instead of using [B], but I would not even change that.}
   Set $[B] = [B]_{a,b,c,d}$.
   By condition~\ref{item:box-diags-cross}, for sufficiently large~$n$,
   \[
@@ -571,7 +572,7 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 \]
   Then by Proposition~\ref{prop:join-split-alg} and taking the
   limit as $n \to \infty$, we obtain
-  $\wh{\mu_f}(B) \geq 0$.
+  $\wh\mu_f(B) \geq 0$.
 \end{proof}
 
 \begin{remark} 
@@ -585,9 +586,9 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 
 Finally, we will show $\mathcal{B}$ is
 a semi-ring (in the sense of Definition~\ref{def:semiring}) and
-$\wh{\mu_f}$ is finitely additive.
+$\wh\mu_f$ is finitely additive.
 
-First we prove that $\wh{\mu_f}$ satisfies a notion slightly weaker than finite additivity.
+First we prove that $\wh\mu_f$ satisfies a notion slightly weaker than finite additivity.
 
 \begin{proposition}
   \label{prop:sidebyside}
@@ -604,10 +605,11 @@ First we prove that $\wh{\mu_f}$ satisfies a notion slightly weaker than finite 
   $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that
   $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order,
   so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also a
-  RH box. The definition of $\wh{\mu_f}$ immediately yields the additivity.
+  RH box. The definition of $\wh\mu_f$ immediately yields the additivity.
 \end{proof}
 
 \DPTtodo{Mark the relevant endpoints in Figure \ref{fig:finiteadditivity}}
+\DMGtodo{addressed it}
 \begin{figure}
 \centering{
 \resizebox{60mm}{!}{\svgfig{finiteadditivity}}
@@ -616,7 +618,7 @@ First we prove that $\wh{\mu_f}$ satisfies a notion slightly weaker than finite 
 }
 \end{figure}
 
-To show that this side-by-side additivity shows that $\wh{\mu_f}$ is finitely
+To show that this side-by-side additivity shows that $\wh\mu_f$ is finitely
 additive, and furthermore that the allowable boxes in $\mathcal{B}$ form a semi-ring,
 we examine exactly which boxes are allowed, making concrete the
 constraints in Definition~\ref{def:RH-lift-sys}. Boxes
@@ -698,7 +700,6 @@ meets each vertical whisker.
   slightly above the horizontal inner edge of the L, making
   sure that it intersects the vertical whisker forming the
   other inner edge of the~L;
-  \DPTfyi{Added this}
   this is possible by Lemma~\ref{lem:initial}.
   The resulting whiskers allow us to
   write the L as the union of three boxes, as shown on the right of
@@ -729,8 +730,9 @@ meets each vertical whisker.
   side-by-side additivity to form $B_0$.
   \DPTtodo{Clarified def of $W$, I hope. But maybe you need to exclude
     whiskers involved in the sides of $B_9$ to make induction work?}
+    \DMGtodo{yes, edited it accordingly}
   Let $W$ be the set of all whiskers
-  involved in any side of one of the~$B_i$. We proceed by induction on~$\abs{W}$.
+  involved in any side of one of the~$B_i$, excluding the whiskers supporting the boundary of $B_0$. We proceed by induction on~$\abs{W}$.
 
   Whiskers in $W$ can be ``long'', passing through
   the interior of the upper or right edge
@@ -747,10 +749,10 @@ meets each vertical whisker.
   side-by-side way, getting sets of boxes $B_{i,1}$ and $B_{i,2}$,
   which are partitions of $B_1'$ and $B_2'$ respectively. These give
   subdivisions of $B_1'$ and $B_2'$ that each involve fewer total
-  whiskers. Thus by induction and Proposition~\ref{prop:sidebyside},
+  whiskers: indeed, the chose whisker is now part of the boundary of each $B_j'$ and hence is not counted in the corresponding induction parameter. Thus by induction and Proposition~\ref{prop:sidebyside},
   \[
-    \wh{\mu_f}(B_0) = \wh{\mu_f}(B_1') + \wh{\mu_f}(B_2') = \sum_j \wh{\mu_f}(B_{j,1}) +
-    \sum_k \wh{\mu_f}(B_{k,2}) = \sum_i \wh{\mu_f}(B_i). \qedhere
+    \wh\mu_f(B_0) = \wh\mu_f(B_1') + \wh\mu_f(B_2') = \sum_j \wh\mu_f(B_{j,1}) +
+    \sum_k \wh\mu_f(B_{k,2}) = \sum_i \wh\mu_f(B_i). \qedhere
   \]
 \end{proof}
 
@@ -766,7 +768,7 @@ meets each vertical whisker.
 \end{figure}
 
 Let $\mathcal{R}$ be the ring generated by the semiring~$\mathcal{B}$. By
-Proposition~\ref{prop:addsemitoring}, $\wh{\mu_f}$ is finitely additive
+Proposition~\ref{prop:addsemitoring}, $\wh\mu_f$ is finitely additive
 on~$\mathcal{R}$.
 \DPTfyi{HERE}
 
