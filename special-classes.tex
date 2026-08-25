@@ -42,16 +42,14 @@ multi-curves are also half-integral.
 
 Also define $\AConvex_{\bbZ}(S)$ to be the functionals in
 $f \in \AConvex(S)$ so that $f(C) \in \bbZ$ for all closed curves~$C$.
-
-\DPTtodo{Should we be writing $[M]$ for the class in $\bbZ/2\bbZ$
-  homology? That class doesn't depend on the orientation.}
-  \DMGtodo{probably not, vec notation makes it different from $[g]$ which we use now for conjugacy class of group element}
-  \DMGtodo{I'm going to use $h(M)$ since that's what we use in the appendix}
-  Let $h(M) \in H_1(S;\mathbb{Z}/2\mathbb{Z})$ denote the \emph{homology class} of the multicurve $M$ in $\mathbb{Z}/2\mathbb{Z}$ coefficients. 
+\DPTfyi{Added a subscript $h_2$}
+For $M$ a multicurve and $\vec M$ any orientation, let $h(\vec M) \in
+H_1(S; \bbZ)$ and
+$h_2(M) \in H_1(S;\mathbb{Z}/2\mathbb{Z})$
+denote the respective homology classes.
 \begin{corollary}
 A curve functional $f$ is in $\AConvex_{\bbZ}(S)$ iff it is dual to a
-half-integral multi-curve $\mu=\frac{1}{2}M$ with $h(M) = 0$ in
-$\mathbb{Z}/2\mathbb{Z}$-homology.
+half-integral multi-curve $\mu=\frac{1}{2}M$ with $h_2(M) = 0$.
 \label{cor:int_multicurve}
 \end{corollary}
 \begin{proof}
@@ -71,23 +69,28 @@ By \cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows
 that $2\mu$ must be an integral multi-curve~$M$, and hence
 $\mu=\frac{1}{2} M$ is half-integral.
 
-We furthermore claim that $h(M)=0$ in $\mathbb{Z}/2\mathbb{Z}$-homology. 
-Indeed, if $h(M) \ne 0$, there exists a simple closed curve $C$ so
+We furthermore claim that $h_2(M)=0$.
+Indeed, if $h_2(M) \ne 0$, there exists a simple closed curve $C$ so
 that
 \[
-  1 = \langle h(M), h(C) \rangle_{\bbZ/2\bbZ}
-  \equiv \langle h(M), h(C)\rangle_{\bbZ}
+  1 = \langle h_2(M), h_2(C) \rangle_{\bbZ/2\bbZ}
+  \equiv \langle h(\vec M), h(\vec C)\rangle_{\bbZ}
   \equiv i(M, C) \pmod 2,
 \]
 where $\langle \cdot, \cdot \rangle$ denotes the algebraic
 intersection number (with $\bbZ/2\bbZ$ or $\bbZ$ coefficients, as
-indicated) and equivalences are modulo~2. It follows that $i(\mu,C)
+indicated),
+\DPTfyi{expanded}
+$\vec M$ and $\vec C$ are arbitrary orientations of the respective multicurves,
+and equivalences are modulo~2. It follows that $i(\mu,C)
 \notin \bbZ$, a contraction.
 
-For the other direction, a similar argument shows that any
-half-integral multi-curve $\frac{1}{2}M$ with $h(M)=0$ in
-$\mathbb{Z}/2\mathbb{Z}$-homology satisfies $i(\mu, C) \in \mathbb{Z}$
-for every closed curve $C \in \Curves(S)$.
+\DPTfyi{Wrote out the argument}
+For the other direction, if $h_2(M) = 0$ then
+for every $C \in \Curves(S)$, we have
+$i(M,C) \equiv \langle
+h(\vec M), h(\vec C)\rangle_{\bbZ} \equiv 0 \pmod 2$ so 
+$i(\frac12 M, C) \in \mathbb{Z}$.
 \end{proof}
 It is easy to see that if $M = \sum_{i=1}^n \lambda_i C_i$, where $\lambda_i \geq 0$ are non-negative real numbers, then for every closed curve $C$, there exist integer numbers $n_i$ so that
 \begin{equation}
