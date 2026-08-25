@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{309.60001373bp}%
+    \setlength{\unitlength}{331.19999313bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,18 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.46511626)%
+  \begin{picture}(1,0.43478262)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{rhs_whiskers.pdf}}%
-    \put(0.03897247,0.4322632){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1} = P_1 \cdot \ora{x}$\end{tabular}}}}%
-    \put(0.58143321,-0.00117336){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_1^-$\end{tabular}}}}%
-    \put(0.67242292,0.00064346){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_2^-$\end{tabular}}}}%
-    \put(0.41900665,0.4370565){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_1} = q_1 \cdot \ora{x}$\end{tabular}}}}%
-    \put(0.51321328,0.40822582){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_1^+$\end{tabular}}}}%
-    \put(0.52260284,0.31798842){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_2^+$\end{tabular}}}}%
-    \put(0.46342192,0.05288916){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2} = q_2 \cdot \ora{x}$\end{tabular}}}}%
-    \put(0.02894211,0.0186456){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_2} = P_2 \cdot \ora{x}$\end{tabular}}}}%
+    \put(0.03643079,0.40407214){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1} = P_1 \cdot \ora{x}$\end{tabular}}}}%
+    \put(0.61877188,0.00290625){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_1^-$\end{tabular}}}}%
+    \put(0.70382748,0.00460458){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_2^-$\end{tabular}}}}%
+    \put(0.39168015,0.40855284){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_1} = q_1 \cdot \ora{x}$\end{tabular}}}}%
+    \put(0.55500107,0.38560552){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_1^+$\end{tabular}}}}%
+    \put(0.56377827,0.30125317){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_2^+$\end{tabular}}}}%
+    \put(0.43319878,0.04943987){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2} = q_2 \cdot \ora{x}$\end{tabular}}}}%
+    \put(0.02705459,0.01742959){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_2} = P_2 \cdot \ora{x}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{rhs_whiskers.pdf}}%
   \end{picture}%
 \endgroup%

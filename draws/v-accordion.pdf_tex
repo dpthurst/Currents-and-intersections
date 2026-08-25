@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{309.60001373bp}%
+    \setlength{\unitlength}{331.19999313bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,23 +50,23 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.46511626)%
+  \begin{picture}(1,0.43478262)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{v-accordion.pdf}}%
-    \put(0.16463047,0.31456171){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1}$\end{tabular}}}}%
-    \put(0.90493712,-0.0002529){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_1^-$\end{tabular}}}}%
-    \put(0.96881587,0.00078093){\color[rgb]{0,0.76078431,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_2^-$\end{tabular}}}}%
-    \put(0.18280347,0.25768873){\color[rgb]{0.29803922,0.69019608,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_1}$\end{tabular}}}}%
-    \put(0.39330452,0.12920958){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(0)}}$\end{tabular}}}}%
-    \put(0.35538594,0.25788799){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(1)}}$\end{tabular}}}}%
-    \put(0.3358539,0.32247723){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(2)}}$\end{tabular}}}}%
-    \put(0.27366808,0.37313103){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(3)}}$\end{tabular}}}}%
-    \put(0.52082458,0.33861392){\color[rgb]{0.29803922,0.69019608,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_1^+$\end{tabular}}}}%
-    \put(0.49858751,0.19184911){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(r_2^{(0)})^+$\end{tabular}}}}%
-    \put(0.49571066,0.23195853){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(r_2^{(1)})^+$\end{tabular}}}}%
-    \put(0.49649875,0.27434667){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(r_2^{(2)})^+$\end{tabular}}}}%
-    \put(0.13575763,0.15959988){\color[rgb]{0,0.76078431,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_2}$\end{tabular}}}}%
+    \put(0.15389371,0.29404684){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_1}$\end{tabular}}}}%
+    \put(0.90836781,0.00056421){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_1^-$\end{tabular}}}}%
+    \put(0.96808049,0.00153062){\color[rgb]{0,0.76078431,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ell_2^-$\end{tabular}}}}%
+    \put(0.17088152,0.24088296){\color[rgb]{0.29803922,0.69019608,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_1}$\end{tabular}}}}%
+    \put(0.36765425,0.12078288){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(0)}}$\end{tabular}}}}%
+    \put(0.33220861,0.24106922){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(1)}}$\end{tabular}}}}%
+    \put(0.3139504,0.30144613){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(2)}}$\end{tabular}}}}%
+    \put(0.25582018,0.34879642){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{r_2^{(3)}}$\end{tabular}}}}%
+    \put(0.53889805,0.2989168){\color[rgb]{0.29803922,0.69019608,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$r_1^+$\end{tabular}}}}%
+    \put(0.53492423,0.20335579){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(r_2^{(0)})^+$\end{tabular}}}}%
+    \put(0.5370387,0.23364382){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(r_2^{(1)})^+$\end{tabular}}}}%
+    \put(0.53617416,0.26526132){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$(r_2^{(2)})^+$\end{tabular}}}}%
+    \put(0.12690388,0.14919121){\color[rgb]{0,0.76078431,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{\ell_2}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{v-accordion.pdf}}%
   \end{picture}%
 \endgroup%
