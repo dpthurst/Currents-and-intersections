@@ -244,18 +244,11 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\systole}{systole}
 \DeclareMathOperator{\vol}{vol}
-\newcommand{\lpbrack}{\mathrlap{[}(}
-\newcommand{\rpbrack}{)\llap{]}}
+
+% Suppress complaint about page groups: https://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
+\pdfsuppresswarningpagegroup=1
 
 \hyphenation{Teich-müller}
-
-%smoothing lemma appendix
-\newcommand{\SC}{\mathcal{SC}}
-\newcommand{\TC}{\mathcal{TC}}
-\DeclareMathOperator{\Sm}{Sm}
-\newcommand{\FLP}{{\textit{FLP}}} 
-
-% Fathi, Laudenbach, Poenaru
 
 \usetikzlibrary{arrows}
 \tikzset{
@@ -267,21 +260,6 @@
 \tikzset{implication/.style={double equal sign distance, -implies}}
 \tikzset{biimplication/.style={double equal sign distance, implies-implies}}
 \input{macros}
-
-
-
-
-
-\newcounter{submainthm}[mainthm]
-
-\renewcommand{\thesubmainthm}{%
-  \themainthm\textup{(\ifcase\value{submainthm}\or L\or H\fi)}%
-}
-
-\newcommand{\mainthmsublabel}[1]{%
-  \refstepcounter{submainthm}\label{#1}%
-}
-
 
 \begin{document}
 \title{The intersection dual of geodesic currents} 
