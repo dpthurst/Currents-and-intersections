@@ -105,7 +105,11 @@
 \newtheorem*{ex*}{Exercise}
 
 %dealing with cases and subcases in proofs
-\newtheorem{case}{Case}
+\newcounter{case}[theorem]
+\newenvironment{case}%
+  {\smallskip\par\refstepcounter{case}\noindent\textbf{Case \thecase.}\ \begingroup\itshape}%
+  {\endgroup}
+
 \newcounter{subcase}[case]
 \newenvironment{subcase}%
   {\smallskip\par\refstepcounter{subcase}\noindent\textbf{Subcase \thecase.\thesubcase.}\ \begingroup\itshape}%
