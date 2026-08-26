@@ -6,31 +6,39 @@
 \subsection{Countable additivity}
 \label{sec:countable-additivity}
 
-\DPTfyi{HERE}
-We prove countable sub-additivity of the function $\mu_{f}$ by
+We will prove countable sub-additivity of the function $\wh\mu_{f}$ by
 proving approximation results. We first find controlled sequences of
 decreasing nested RH boxes that we can show have measure going to zero.
 
 \begin{definition}
+\label{def:accordion}
 Let the RH lift system $(p_1,q_1,p_2,q_2)$ determine a right-handed
 box
 $B = [s_1,s_2) \times [t_2,t_1)$, where $s_i = \ell_i^-$ and $t_i =
 r_i^+$. Further assume that $\ora{r_2}$ is nested inside $\ora{r_1}$,
 so the box is of type~2 or~3.
 
-Define the \emph{vertical accordion} (Figure~\ref{fig:vertical-accordion}), $F(p_1, q_1, p_2,\vec{q_2})$ of
+As in Figure~\ref{fig:vertical-accordion},
+define the \emph{vertical accordion} $F(p_1, q_1, p_2,\vec{q_2})$ of
 boxes based at $B$ to be
 the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
 and $q_2$ translated by powers of $r_1 = q_1 x Q_1$:
+\DPTfyi{Changed some instances of $q_1^{-1}$ to $Q_1$}
 \[
-  p_1^{(k)}\coloneqq p_1,\quad
-  p_2^{(k)}\coloneqq p_2,\quad
-  q_1^{(k)}\coloneqq q_1,\quad
-  q_2^{(k)} \coloneqq q_1 x^k q_1^{-1}q_2.
+  p_1^{(k)}\coloneqq p_1,\qquad
+  p_2^{(k)}\coloneqq p_2,\qquad
+  q_1^{(k)}\coloneqq q_1,\qquad
+  q_2^{(k)} \coloneqq q_1 x^k Q_1 q_2.
 \]
 This defines boxes whose  height becomes smaller as $k$
 grows, with the top endpoint fixed.
-
+\DPTtodo{In Figure \ref{fig:vertical-accordion}, marking is
+  inconsistent between $\ell_i$ and $r_i$. I like the $r_i$ marking
+  better: solid dots on the relevant endpoint. Also, the captions on
+  the RH figure really run into each other and into the border of the
+  square. Maybe simplify some out?
+  Can we abuse notation slightly and write $r_2^{(1)+}$? Similarly for
+horizontal accordions}
 
 \begin{figure}
 \centering{
@@ -41,50 +49,54 @@ grows, with the top endpoint fixed.
 }
 \end{figure}
 
-Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again have a box of type 2 or 3), define the
-\emph{horizontal accordion} (Figure~\ref{fig:horizontal-accordion}) $F(\vec{p_1},q_1, p_2,q_2)$ by
+Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again
+have a box of type 2 or 3), as in
+Figure~\ref{fig:horizontal-accordion} define the
+\emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
 \[
-  p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\quad
-  p_2^{(k)}\coloneqq p_2,\quad
-  q_1^{(k)}\coloneqq q_1,\quad
+  p_1^{(k)}\coloneqq p_1 P_2x^k p_2,\qquad
+  p_2^{(k)}\coloneqq p_2,\qquad
+  q_1^{(k)}\coloneqq q_1,\qquad
   q_2^{(k)} \coloneqq q_2.
 \]
-\label{def:accordion}
 \end{definition}
 
 
 \begin{proposition}
+\label{prop:finalfamily}
   Let $F = F(p_1,q_1,p_2,\vec{q_2})$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
   vertical or horizontal accordion as above. Then
   \begin{itemize}
   \item each $F(k)$ is a RH box;
   \item $F(k+1) \subset F(k)$; and
-  \item $\displaystyle \lim_{k \to \infty} \wh{\mu_f}(F(k)) = 0$.
+  \item $\displaystyle \lim_{k \to \infty} \wh\mu_f(F(k)) = 0$.
   \end{itemize}
-\label{prop:finalfamily}
 \end{proposition}
 
 \begin{proof}
   We first prove the results in the case of vertical accordions,
   starting with checking that $F(k)$ is a box. Since $\ora{r_2}$ is
   nested inside $\ora{r_1}$, the NS dynamics of the group element $r_1
-  = q_1 x q_1^{-1}$ translate $\ora{r_2}$ inside $(r_1^-,r_1^+)$, as depicted
+  = q_1 x Q_1$ translate $\ora{r_2}$ inside $(r_1^-,r_1^+)$, as depicted
   in Figure~\ref{fig:vertical-accordion}. In particular the cyclic
   order of the endpoints doesn't change, and we also automatically
   have $F(k+1) \subset F(k)$.
 
   To show the measures go to zero, we first reformulate the nesting
   condition algebraically. Note that
-  $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Thus  $\ora{r_2}$ and $\ora{r_1}$ being nested means $(\ora{r_1},\ora{r_2})$ are R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
+  $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Then  $\ora{r_2}$ and
+  $\ora{r_1}$ being nested means $(\ora{r_1},\ora{r_2})$ are
+  R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to
+  $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
   in turn equivalent to $Q_1 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
   R-crossing $Q_1 \cdot \ora{r_1} = \ora{x}$; write $e = Q_1q_2$.
 
   In the RH orbit notation, we then have
   \begin{align*}
     a^{(k)} &= p_1 q_1 = a &
-    b^{(k)} &= p_1 q_2^{(k)} = p_1 q_1 x^k q_1^{-1}q_2 = a x^k e\\
+    b^{(k)} &= p_1 q_2^{(k)} = p_1 q_1 x^k Q_1q_2 = a x^k e\\
     c^{(k)} &= p_2 q_1 = c &
-    d^{(k)} &= p_2 q_2^{(k)} = p_2 q_1 x^k q_1^{-1} q_2 = c x^k e.
+    d^{(k)} &= p_2 q_2^{(k)} = p_2 q_1 x^k Q_1 q_2 = c x^k e.
   \end{align*}
 
 We thus get the family of RH orbits given by
@@ -92,22 +104,24 @@ We thus get the family of RH orbits given by
 \bigl([B]_{a,a x^k e,c,c x^k e}\bigr)_{k=0}^\infty.
 \]
 
-To show this family of RH orbits have measure going to zero,
-by definition of $\wh{\mu_f}$, we need to evaluate the nested limit:
+To show this family of RH orbits have measure going to zero, we
+evaluate:
 \begin{align*}
-  \lim_{k \to \infty} \bigl(\wh{\mu_f}([B]_{a,ax^ke,c,cx^ke})\bigr)
+  \lim_{k \to \infty} \bigl(\wh\mu_f([B]_{a,ax^ke,c,cx^ke})\bigr)
    &= \frac{1}{2}\lim_{k \to \infty} \lim_{n\to \infty} f([ax^ke x^n]) +
      f([cx^n])-f([ax^n])-f([cx^kex^n]) \\
   &= \frac{1}{2}\lim_{k,n \to \infty} \bigl(f([x^n a]) + f([x^ke])\bigr) + f([cx^n])\\
   &\qquad\qquad-f([ax^n])-\bigl(f([x^nc]) + f([x^ke])\bigr)\\
   &= 0.
 \end{align*}
-Here, we apply Lemma~\ref{lem:additivity-limit-2}
+Here, after applying the definition of $\wh\mu_f$, we apply
+Lemma~\ref{lem:additivity-limit-2}
 (adding and subtracting suitable copies of $f([x^n])$ and $f([x^k])$)
 to see the double limit
-exists, and then by applying Proposition~\ref{prop:join-split-alg} twice we
-can break up the limit into canceling terms as desired.
+exists. Then by applying Proposition~\ref{prop:join-split-alg} twice we
+can break up the limit into canceling terms as indicated.
 
+\DPTfyi{HERE}
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
 Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
@@ -166,7 +180,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
 }
 \end{figure}
 
-We now use Proposition~\ref{prop:finalfamily} to prove that $\mu_f$
+We now use Proposition~\ref{prop:finalfamily} to prove that $\wh\mu_f$
 is countably additive.
 We will need to consider more types of boxes
 than the half-open boxes we have been working with so far. For $B$ a
@@ -196,7 +210,7 @@ closed and open boxes.
   any $\epsilon > 0$, there is a right-handed box $V(B,\epsilon) =
   [s_1',s_2) \times [t_2',t_1) \in \cB$ so that
   $s_1' < s_1$ and $t_2' < t_2$ and
-  $\wh{\mu_f}(V(B,\epsilon) \setminus B) < \epsilon$.
+  $\wh\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca1}. That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
 without increasing the mass much.
@@ -209,10 +223,10 @@ without increasing the mass much.
   each $k$, $B \cup F_1(k)$ is a RH box. 
   By Proposition~\ref{prop:finalfamily}, there is $k_1$ large enough
   so that
-  $\wh{\mu_f}(F_1(k_1))<\epsilon/2$.
+  $\wh\mu_f(F_1(k_1))<\epsilon/2$.
   Repeat the procedure to find a horizontal
   accordion $F_2$ abutting on $B \cup F_1(k_1)$. Again there is $k_2$
-  large enough so that $\wh{\mu_f}(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
+  large enough so that $\wh\mu_f(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
 \end{proof}
 
 \begin{lemma}\label{lem:extend2}
@@ -221,7 +235,7 @@ without increasing the mass much.
   $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region
   $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup
   \bigl([s_2',s_2) \times [t_2,t_1)\bigr)$ is in $\mathcal{R}$ and satisfies
-  $\wh{\mu_f}(W(B,\epsilon)) < \epsilon$.
+  $\wh\mu_f(W(B,\epsilon)) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca2}. That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
 edges of~$B$ with small mass.
@@ -232,8 +246,8 @@ edges of~$B$ with small mass.
   vertical accordion. Similarly find $p_3$ so that $P_3 \cdot \ora{x}$
   is nested inside $P_2 \cdot \ora{x}$ and
   $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
-  for sufficiently large $k$, we have $\wh{\mu_f}(F_1(k)) < \epsilon/2$ and
-  $\wh{\mu_f}(F_2(k)) < \epsilon/2$. Take
+  for sufficiently large $k$, we have $\wh\mu_f(F_1(k)) < \epsilon/2$ and
+  $\wh\mu_f(F_2(k)) < \epsilon/2$. Take
   $W(B,\epsilon) = F_1(k) \cup F_2(k)$.
 \end{proof}
   
@@ -250,7 +264,7 @@ neither $W(B,\epsilon)$ nor $W^\circ(B,\epsilon)$ is a subset of the
 other.
 
 \begin{proposition}\label{prop:countablyadditive}
-  The finitely additive measure $\wh{\mu_f}$ is countably sub-additive on $\cB$.
+  The finitely additive measure $\wh\mu_f$ is countably sub-additive on $\cB$.
 \end{proposition}
 
 \begin{proof}
@@ -258,7 +272,7 @@ other.
   countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
   must show that
   \[
-    \wh{\mu_f}(B_0) \le \sum_{i=1}^\infty \wh{\mu_f}(B_i).
+    \wh\mu_f(B_0) \le \sum_{i=1}^\infty \wh\mu_f(B_i).
   \]
   Fix $\epsilon > 0$. For $i \ge 1$, set
   $V_i \coloneqq V(B_i, \epsilon/2^i)$. Also add one more set by setting
@@ -282,10 +296,10 @@ $0\in I$.
 
   By finite additivity and since $V_0^\circ \cap B_0 \subset V_0 \cap B_0$, we then have
   \begin{align*}
-    \wh{\mu_f}(B_0) &\le \sum_{i \in I} \wh{\mu_f}(V_i)\\
-      &\le \sum_{i \in I, i \ne 0} \wh{\mu_f}(B_i) + \sum_{i \in I, i \ne 0}
-        \wh{\mu_f}(V_i \setminus B_i) + \wh{\mu_f}(V_0)\\
-      &< \sum_{i=1}^\infty \wh{\mu_f}(B_i) + 2\epsilon.
+    \wh\mu_f(B_0) &\le \sum_{i \in I} \wh\mu_f(V_i)\\
+      &\le \sum_{i \in I, i \ne 0} \wh\mu_f(B_i) + \sum_{i \in I, i \ne 0}
+        \wh\mu_f(V_i \setminus B_i) + \wh\mu_f(V_0)\\
+      &< \sum_{i=1}^\infty \wh\mu_f(B_i) + 2\epsilon.
   \end{align*}
   Since $\epsilon$ was arbitrary, we are done.
 \end{proof}

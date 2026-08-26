@@ -548,8 +548,25 @@ RH lift system $p_1 \mapsto xp_1$ (Eq.~\eqref{eq:changes-p}). Thus,
 Hence, $\mu_f$ only depends on the RH orbit.
 \end{proof}
 
-Now we check the hypotheses to apply
- Theorem~\ref{thm:caratheodory} to construct a measure, starting with positivity.
+\begin{remark} 
+ The existence of the double limits in Lemma~\ref{prop:join-split-alg} (and the other limits in this section) is reminiscent of the existence of
+ similar limits in the context of the eigenvalue projection function
+ on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}).
+ See also Example~\ref{examp:higher-rank}.
+ \end{remark}
+ 
+\subsection{Elementary properties of box measure}
+
+\DPTfyi{Changed which section positivity is in}
+We check the hypotheses to apply
+Theorem~\ref{thm:caratheodory} to construct a measure. In this
+subsection we will check elementary properties, namely positivity,
+side-by-side additivity, and finite additivity. (This includes showing
+that $\cB$ is a semi-ring.)
+
+In the next section we
+will move on to more involved properties such as countable
+(sub)additivity.
 
 \begin{proposition}
   \label{prop:box-positive}
@@ -572,27 +589,12 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
   $\wh\mu_f(B) \geq 0$.
 \end{proof}
 
-\begin{remark} 
- The existence of the double limits in Lemma~\ref{prop:join-split-alg} (and the other limits in this section) is reminiscent of the existence of
- similar limits in the context of the eigenvalue projection function
- on reductive Lie groups (see~\cite[Lemma~7.10]{BQ16:Random}).
- See also Example~\ref{examp:higher-rank}.
- \end{remark}
- 
-\subsection{Side-by-side and finite additivity}
-
-Finally, we will show $\mathcal{B}$ is
-a semi-ring (in the sense of Definition~\ref{def:semiring}) and
-$\wh\mu_f$ is finitely additive.
-
-First we prove that $\wh\mu_f$ satisfies a notion slightly weaker than finite additivity.
-
 \begin{proposition}
   \label{prop:sidebyside}
   If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in
   Figure~\ref{fig:finiteadditivity} (or the symmetric version changing
   the $p_i$), then $B_1 \cup B_2$ is a RH box
-  and $\mu_f(B_1 \cup B_2) = \mu_f(B_1) + \mu_f(B_2)$.
+  and $\wh\mu_f(B_1 \cup B_2) = \wh\mu_f(B_1) + \wh\mu_f(B_2)$.
 \end{proposition}
 
 \begin{proof}
@@ -650,9 +652,6 @@ $y$-coordinate $\ell^-$ from $x$-coordinate $\ell^-$ to $\ell^+$.
 Then $(\ora{\ell}, \ora{r})$
 are R-parallel iff these two segments intersect, as in
 Figure~\ref{fig:whiskers}.
-\DPTtodo{Figure \ref{fig:whiskers}: Can you add some more space
-  between the two halves? Or maybe make them two separate
-  figures and do that spacing in TeX}
 Lemma~\ref{lem:diagonaldense} says that there are dense sets of these
 horizontal and vertical whiskers that extend from the diagonal almost
 all the way back to the diagonal.
@@ -702,7 +701,7 @@ meets each vertical whisker.
 
 \begin{proposition}
   \label{prop:finitely-additive}
-  The function $\mu_f$ is finitely additive on boxes.
+  The function $\wh\mu_f$ is finitely additive on boxes.
 \end{proposition}
 
 
@@ -752,7 +751,7 @@ meets each vertical whisker.
  \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{finite-additive}}
-\caption{Finite additivity of $\mu_f$. We can turn an
+\caption{Finite additivity of $\wh\mu_f$. We can turn an
     arbitrary division of a large box into smaller boxes (left) into
     one that is side-by-side decomposable (right). Note that we
     subdivided the cyan box in the initial division to make this possible. }
