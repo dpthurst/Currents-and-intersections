@@ -54,11 +54,11 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{smoothing_1.pdf}}%
-    \put(0.65308801,0.77738505){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{b}$\end{tabular}}}}%
-    \put(0.78309481,0.57555506){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{bA}$\end{tabular}}}}%
-    \put(0.80188978,0.28395503){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{Ab}$\end{tabular}}}}%
-    \put(0.2860584,0.83862254){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{ab}$\end{tabular}}}}%
-    \put(0.46295021,0.90195478){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{ba}$\end{tabular}}}}%
+    \put(0.65308801,0.77738505){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{b}$\end{tabular}}}}%
+    \put(0.78309481,0.57555506){\color[rgb]{0.83137255,0.66666667,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{bA}$\end{tabular}}}}%
+    \put(0.80188978,0.28395503){\color[rgb]{0.66666667,0.53333333,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{Ab}$\end{tabular}}}}%
+    \put(0.2860584,0.83862254){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{ab}$\end{tabular}}}}%
+    \put(0.46295021,0.90195478){\color[rgb]{0,0.72156863,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{ba}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{smoothing_1.pdf}}%
     \put(0.42286935,0.40122486){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$Q$\end{tabular}}}}%
     \put(0.48813114,0.44722705){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$O$\end{tabular}}}}%
@@ -66,6 +66,6 @@
     \put(0.65526035,0.37061093){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P'$\end{tabular}}}}%
     \put(0.32050594,0.59951532){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P$\end{tabular}}}}%
     \put(0.33476408,0.75370297){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$R$\end{tabular}}}}%
-    \put(0.1686716,0.73960142){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{a}$\end{tabular}}}}%
+    \put(0.1686716,0.73960142){\color[rgb]{1,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ora{a}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

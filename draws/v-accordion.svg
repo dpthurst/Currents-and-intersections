@@ -268,46 +268,6 @@
     </marker>
     <marker
        style="overflow:visible"
-       id="marker5"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Colored dot"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.45)"
-         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
-         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         sodipodi:nodetypes="sssss"
-         id="path5" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="ColoredDot-7"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Colored dot"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.45)"
-         style="fill:context-fill;fill-rule:evenodd;stroke:context-stroke;stroke-width:2"
-         d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z"
-         sodipodi:nodetypes="sssss"
-         id="path20-8" />
-    </marker>
-    <marker
-       style="overflow:visible"
        id="Dot"
        refX="0"
        refY="0"
@@ -862,12 +822,12 @@
        id="path3-6-2-6-9-98"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#006e00;stroke-width:0.212;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5);marker-mid:url(#marker4);marker-end:url(#ColoredDot-0)"
+       style="fill:none;stroke:#006e00;stroke-width:0.212;stroke-dasharray:none;stroke-opacity:1;marker-start:;marker-mid:url(#marker4);marker-end:url(#Dot-2)"
        d="M 26.548492,-0.85760166 C 28.751214,6.0015993 23.572689,13.832643 14.973204,14.082664"
        id="path4-0-1"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#00c200;stroke-width:0.212;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5);marker-mid:url(#marker4-6);marker-end:url(#ColoredDot-7)"
+       style="fill:none;stroke:#00c200;stroke-width:0.212;stroke-dasharray:none;stroke-opacity:1;marker-start:;marker-mid:url(#marker4-6);marker-end:url(#Dot-0)"
        d="M 16.479212,28.636059 C 28.06577,26.521967 30.850893,33.88823 29.58253,40.941532"
        id="path4-0-1-6"
        sodipodi:nodetypes="cc" />
@@ -898,24 +858,24 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#006e00;fill-opacity:1;stroke:none;stroke-width:0.0735573"
-       x="118.24309"
-       y="44.68557"
+       x="117.40119"
+       y="45.059746"
        id="text1461-1-6-4"><tspan
          sodipodi:role="line"
          id="tspan1459-1-8-0"
-         x="118.24309"
-         y="44.68557"
+         x="117.40119"
+         y="45.059746"
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#006e00;fill-opacity:1;stroke-width:0.0735573">$\ell_1^-$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#00c200;fill-opacity:1;stroke:none;stroke-width:0.0735573"
-       x="125.21992"
-       y="44.572655"
+       x="125.68764"
+       y="45.040375"
        id="text1461-1-6-4-8"><tspan
          sodipodi:role="line"
          id="tspan1459-1-8-0-5"
-         x="125.21992"
-         y="44.572655"
+         x="125.68764"
+         y="45.040375"
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#00c200;fill-opacity:1;stroke-width:0.0735573">$\ell_2^-$</tspan></text>
     <text
        xml:space="preserve"
@@ -975,47 +935,47 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#4cb0ff;fill-opacity:1;stroke:none;stroke-width:0.0735573"
-       x="75.074242"
-       y="9.8260536"
+       x="73.10981"
+       y="9.4518766"
        id="text1461-1-6-5-3"><tspan
          sodipodi:role="line"
          id="tspan1459-1-8-9-5"
-         x="75.074242"
-         y="9.8260536"
+         x="73.10981"
+         y="9.4518766"
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#4cb0ff;fill-opacity:1;stroke-width:0.0735573">$r_1^+$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.0735573"
-       x="74.60994"
-       y="20.991402"
+       x="72.084244"
+       y="22.862288"
        id="text1461-1-6-5-3-4"><tspan
          sodipodi:role="line"
-         x="74.60994"
-         y="20.991402"
+         x="72.084244"
+         y="22.862288"
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke-width:0.0735573"
-         id="tspan9">$(r_2^{(0)})^+$</tspan></text>
+         id="tspan9">$(r_2^{(0)+})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.0735573"
-       x="74.856995"
-       y="17.452549"
+       x="72.144211"
+       y="18.575081"
        id="text1461-1-6-5-3-4-6"><tspan
          sodipodi:role="line"
-         x="74.856995"
-         y="17.452549"
+         x="72.144211"
+         y="18.575081"
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke-width:0.0735573"
-         id="tspan9-3">$(r_2^{(1)})^+$</tspan></text>
+         id="tspan9-3">$(r_2^{(1)+})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.0735573"
-       x="74.755981"
-       y="13.75836"
+       x="72.136742"
+       y="14.319626"
        id="text1461-1-6-5-3-4-6-4"><tspan
          sodipodi:role="line"
-         x="74.755981"
-         y="13.75836"
+         x="72.136742"
+         y="14.319626"
          style="font-size:3.175px;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke-width:0.0735573"
-         id="tspan9-3-7">$(r_2^{(2)})^+$</tspan></text>
+         id="tspan9-3-7">$(r_2^{(2)+})$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#00c200;fill-opacity:1;stroke:none;stroke-width:0.074;stroke-dasharray:none"

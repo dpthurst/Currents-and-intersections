@@ -134,8 +134,8 @@
      id="namedview14"
      showgrid="false"
      inkscape:zoom="2.6344421"
-     inkscape:cx="201.18111"
-     inkscape:cy="21.256872"
+     inkscape:cx="201.18112"
+     inkscape:cy="21.446666"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
@@ -183,16 +183,16 @@
        d="M 82.874287,278.93031 A 143.14191,145.84456 0 0 1 -0.37491701,170.36311 143.14191,145.84456 0 0 1 42.243231,39.611813"
        sodipodi:open="true" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:1.56314;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1)"
+       style="fill:none;stroke:#0000ff;stroke-width:1.56314;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1)"
        d="M 86.429614,275.58537 186.71684,21.77457"
        id="path849" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:1.54982;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       style="fill:none;stroke:#ff0000;stroke-width:1.54982;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
        d="M 236.90692,247.11734 51.67703,50.332079"
        id="path1157" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.805334"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.805334"
        x="200.61839"
        y="39.914608"
        id="text1231"
@@ -201,7 +201,7 @@
          id="tspan1229"
          x="200.61839"
          y="39.914608"
-         style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334;fill:#ff0000;fill-opacity:1">$\ora{b}$</tspan></text>
+         style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334;fill:#0000ff;fill-opacity:1">$\ora{b}$</tspan></text>
     <ellipse
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2.12054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1305-99"
@@ -464,7 +464,7 @@
          style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334">$P_3$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.805334"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.805334"
        x="49.281532"
        y="73.923302"
        id="text1444"
@@ -473,7 +473,7 @@
          id="tspan1442"
          x="49.281532"
          y="73.923302"
-         style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334;fill:#0000ff;fill-opacity:1">$\ora{a}$</tspan></text>
+         style="font-size:12px;text-align:center;text-anchor:middle;stroke-width:0.805334;fill:#ff0000;fill-opacity:1">$\ora{a}$</tspan></text>
     <path
        style="fill:none;stroke:#006d00;stroke-width:1.632;stroke-dasharray:1.632, 1.632;stroke-dashoffset:0;stroke-opacity:1"
        d="m 127.49406,172.58669 c -3.40393,-26.14271 -9.57794,-50.74649 -25.76722,-69.78622"
