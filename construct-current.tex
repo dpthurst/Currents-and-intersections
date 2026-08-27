@@ -82,7 +82,7 @@ Figure~\ref{fig:horizontal-accordion} define the
   R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to
   $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
   in turn equivalent to $Q_1 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
-  R-crossing $Q_1 \cdot \ora{r_1} = \ora{x}$; write $e = Q_1q_2$.
+  R-crossing $Q_1 \cdot \ora{r_1} = \ora{x}$; write $e \coloneqq Q_1q_2$.
 
   In the RH orbit notation, we then have
   \begin{align*}
@@ -114,47 +114,22 @@ to see the double limit
 exists. Then by applying Proposition~\ref{prop:join-split-alg} twice we
 can break up the limit into canceling terms as indicated.
 
-\DPTfyi{HERE}
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
-Since $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$,
-the assumption that $\ora{\ell_1}$
-is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_1},\ora{\ell_2})$ are R-parallel) is equivalent to $\ora{P_2 p_1}$ 
-crossing $\ora{\ell_2}$ to the right, which in turn is equivalent to $\ora{p_1 P_2}$
-crossing $\ora{x}$ to the right. In particular we have
-\[
-  \ora{\ell_1^{(k)}} = \bigl(p_1^{(k)}\bigr)^{-1} \cdot \ora{x}
-  = \bigl(p_2^{-1} x p_2)^{-k} \cdot \ora{\ell_1}
-  = \ell_2^{-k} \cdot \ora{\ell_1},
-\]
-which by NS dynamics of $\ell_2$ gives the picture on the left of
-Figure~\ref{fig:horizontal-accordion}.
-\DMGtodo{This next bit new}
-Moreover, $\ora a$, $\ora c$, and $\ora e$ all $R$-cross
-$\ora x$. Lemma~\ref{lem:rhs} implies that
-\[
-\ora{ax^ke}
-\quad\text{and}\quad
-\ora{cx^ke}
-\]
-$R$-cross $\ora x$ for every $k\geq0$. It also implies that
-$\ora{x^ke}$ $R$-crosses $\ora x$, so
-$x^ke$ is not a power of $x$. Hence Conditions~(1) and~(2) in the
-definition of an RH lift system continue to hold.
-
-Since
-\[
-\ora{r_2^{(k)}}
-  =r_1^k\cdot\ora{r_2},
-\]
-the north-south dynamics preserves the strict RH cyclic order and gives
-\[
-F(k+1)\subset F(k).
-\]
-The converse whisker characterization now shows that every $F(k)$ is
-an RH box.
-
-For the limiting computation, we set $h = p_1 P_2$, so that
+\DPTfyi{Extensive edits to horizontal accordion case to match earlier
+  edits in vertical case. D\'idac, you had some edits I cut here, but
+  I think any clarifications should go on vertical case}
+Since $\ora{\ell_1}$
+is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_1},\ora{\ell_2})$
+are R-parallel), the NS dynamics of $\ell_2 = P_2 x p_2$ translate
+$\ell_1$ inside $(\ell_2^+,\ell_1^-)$, as in
+Figure~\ref{fig:horizontal-accordion}, and the $F(k)$ are boxes with
+$F(k+1) \subset F(k)$.
+For the limiting computation, since
+$P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$ we have
+$(\ora{P_2p_1}, \ora{\ell_2})$ R-crossing and thus
+$(\ora{p_1 P_2}, \ora{x})$ R-crossing.
+Set $h \coloneqq p_1 P_2$, so that
 \begin{align*}
   a^{(k)} &= p_1^{(k)} q_1 = h x^k c &
   b^{(k)} &= p_1^{(k)} q_2 = h x^k d\\
@@ -165,6 +140,11 @@ Lemma~\ref{lem:additivity-limit-2} and
 Proposition~\ref{prop:join-split-alg} apply as before.
 \end{proof}
 
+\DPTtodo{Label placement in
+  Figure~\ref{fig:horizontal-accordion} could be improved. On left the
+labels are too far from their targets. On right something worse seems
+to have happened. The accordion might need to be widened? Or maybe
+rotate the labels $90^\circ$?}
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{h-accordion}}
@@ -173,6 +153,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
 }
 \end{figure}
 
+\DPTfyi{HERE}
 We now use Proposition~\ref{prop:finalfamily} to prove that $\wh\mu_f$
 is countably additive.
 We will need to consider more types of boxes
