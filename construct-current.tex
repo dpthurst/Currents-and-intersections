@@ -153,12 +153,11 @@ rotate the labels $90^\circ$?}
 }
 \end{figure}
 
-\DPTfyi{HERE}
 We now use Proposition~\ref{prop:finalfamily} to prove that $\wh\mu_f$
 is countably additive.
-We will need to consider more types of boxes
-than the half-open boxes we have been working with so far. For $B$ a
-right-handed box $[s_1,s_2) \times [t_2,t_1)$, let
+\DPTfyi{Small edits through these lemmas}
+Recall that a RH box~$B$ is by definition half-open, of the form
+$[s_1,s_2) \times [t_2,t_1)$. Let
 $\overline{B} \coloneqq [s_1,s_2] \times [t_2,t_1]$ and
 $B^\circ \coloneqq (s_1,s_2) \times (t_2,t_1)$ be the corresponding
 closed and open boxes.
@@ -180,9 +179,9 @@ closed and open boxes.
 \end{figure}
 
 \begin{lemma}\label{lem:extend1}
-  For $B = [s_1,s_2)\times [t_2,t_1) \in \cB$ a right-handed box and
-  any $\epsilon > 0$, there is a right-handed box $V(B,\epsilon) =
-  [s_1',s_2) \times [t_2',t_1) \in \cB$ so that
+  For $B = [s_1,s_2)\times [t_2,t_1)$ a RH box and
+  any $\epsilon > 0$, there is a RH box $V(B,\epsilon) =
+  [s_1',s_2) \times [t_2',t_1)$ so that
   $s_1' < s_1$ and $t_2' < t_2$ and
   $\wh\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
 \end{lemma}
@@ -193,7 +192,7 @@ without increasing the mass much.
   Let $B = B(p_1,q_1,p_2,q_2)$.
   By Proposition~\ref{prop:density}, there is some $q_3$ so that $q_3
   \cdot \ora{x}$ is nested inside $q_2 \cdot \ora{x}$; in particular
-  $F_1 = F(p_1,q_2,p_2,\vec{q_3})$ is a vertical accordion, and for
+  $F_1 = F(p_1,q_2,p_2,\vec{q_3})$ is a vertical accordion. Furthermore, for
   each $k$, $B \cup F_1(k)$ is a RH box. 
   By Proposition~\ref{prop:finalfamily}, there is $k_1$ large enough
   so that
@@ -204,7 +203,7 @@ without increasing the mass much.
 \end{proof}
 
 \begin{lemma}\label{lem:extend2}
-  For $B = [s_1,s_2) \times [t_2,t_1) \in \cB$ a right-handed box and
+  For $B = [s_1,s_2) \times [t_2,t_1)$ a RH box and
   any $\epsilon > 0$, there is some $s_2',t_1'$ with
   $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region
   $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup
@@ -215,13 +214,13 @@ See Figure~\ref{fig:ca2}. That is, $W(B,\epsilon)$ is a neighborhood of the uppe
 edges of~$B$ with small mass.
 
 \begin{proof}
-  Find $q_3$ so that $q_3 \cdot \ora{x}$ nested inside
+  Find $q_3$ so that $q_3 \cdot \ora{x}$ is nested inside
   $q_1 \cdot \ora{x}$ and so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a
   vertical accordion. Similarly find $p_3$ so that $P_3 \cdot \ora{x}$
   is nested inside $P_2 \cdot \ora{x}$ and
   $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
   for sufficiently large $k$, we have $\wh\mu_f(F_1(k)) < \epsilon/2$ and
-  $\wh\mu_f(F_2(k)) < \epsilon/2$. Take
+  $\wh\mu_f(F_2(k)) < \epsilon/2$. Then set
   $W(B,\epsilon) = F_1(k) \cup F_2(k)$.
 \end{proof}
   
@@ -230,7 +229,7 @@ In the setting of Lemma~\ref{lem:extend2}, also set
 W^\circ(B,\varepsilon):=
 \bigl([s_1,s_2]\times(t'_1,t_1]\bigr)
 \cup
-\bigl((s'_2,s_2]\times[t_2,t_1]\bigr).
+\bigl((s'_2,s_2]\times[t_2,t_1]\bigr);
 \]
 this is an open neighborhood of the upper and right edges of
 $\overline{B}$ in the subspace topology of $\overline{B}$. Note that
@@ -249,15 +248,15 @@ other.
     \wh\mu_f(B_0) \le \sum_{i=1}^\infty \wh\mu_f(B_i).
   \]
   Fix $\epsilon > 0$. For $i \ge 1$, set
-  $V_i \coloneqq V(B_i, \epsilon/2^i)$. Also add one more set by setting
+  $V_i \coloneqq V(B_i, \epsilon/2^i)$. Add one more set by setting
   $V_0 \coloneqq W(B_0,\epsilon)$, $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$ and $V_i^\circ \coloneqq V^\circ(B_i,\varepsilon/2^i)$.
 
-  \DMGtodo{New stuff here}
-  Then $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$. Indeed, the sets $V_i^\circ$, $i\geq1$,
+We claim $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$. Indeed,
+the sets $V_i^\circ$ for $i\geq1$
 cover $B_0$, since
-$B_i\subset V_i^\circ$
-while
-$\overline{B}_0\setminus B_0\subset V_0^\circ$
+$B_i\subset V_i^\circ$;
+in addition
+$\overline{B}_0\setminus B_0\subset V_0^\circ$.
 Moreover, each $V_i^\circ\cap\overline{B}_0$
 is open in the subspace topology of $\overline{B}_0$. Since
 $\overline{B}_0$ is compact, there is a finite set
@@ -265,10 +264,12 @@ $I\subset\mathbb N\cup\{0\}$ such that
 \[
 \overline{B}_0\subset\bigcup_{i\in I}V_i^\circ.
 \]
-After adjoining $0$ to $I$ if necessary, we may assume that
-$0\in I$.
+For simplicity assume that $0\in I$, adding it in if necessary. It
+follows that $B_0\subset \bigcup_{i\in I} V_i$; here we use that
+\DPTfyi{Edited to be more explicit about where we use this condition}
+$V_0^\circ \cap B_0 \subset V_0 \cap B_0$.
 
-  By finite additivity and since $V_0^\circ \cap B_0 \subset V_0 \cap B_0$, we then have
+  By finite additivity, we then have
   \begin{align*}
     \wh\mu_f(B_0) &\le \sum_{i \in I} \wh\mu_f(V_i)\\
       &\le \sum_{i \in I, i \ne 0} \wh\mu_f(B_i) + \sum_{i \in I, i \ne 0}
@@ -278,29 +279,45 @@ $0\in I$.
   Since $\epsilon$ was arbitrary, we are done.
 \end{proof}
 
-We now put everything together to obtain an oriented geodesic current.
+We now put everything together to obtain an oriented geodesic current,
+\DPTfyi{Put in this reference to the standard argument. Is it fair as
+  I phrased it?}
+following the standard argument that measure on boxes extends to the
+Lebesgue measure
 
 \begin{proposition}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
 Then $\wh\mu_f$ extends to an oriented geodesic current $\overline\mu_f$.
 \end{proposition}
-\DMGtodo{edited the proof to make it non-dependent on the "standard argument for the Lebesgue measure"}
 \begin{proof} 
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
-\ref{prop:finitely-additive} and~\ref{prop:countablyadditive}, $\wh\mu_f$
+\ref{prop:finitely-additive}, and~\ref{prop:countablyadditive}, $\wh\mu_f$
 is a finitely
-additive and countably sub-additive pre-measure on $\mathcal{B}$, and by Proposition~\ref{prop:addsemitoring} has a unique finitely additive and countably sub-aditive extension to $\mathcal{R}=\mathcal{R}_{\mathcal{B}}$, which we denote by $\overline\mu_f$. 
+additive and countably sub-additive pre-measure on $\mathcal{B}$, so
+by Proposition~\ref{prop:addsemitoring},
+\DPTfyi{Edited, there was some confusion about when we extend to $\cR$
+  vs $\sigma(\cR)$}
+$\wh \mu_f$ is countably additive on~$\cR$.
+\DPTtodo{Do we need to justify $\sigma$-finite? Maybe that's easiest
+  to see after seeing that $\sigma(\cR)$ is Borel.}
+By the Carath\'eodory
+Extension Theorem~\ref{thm:caratheodory}, $\wh\mu_f$ has a unique
+extension to $\sigma(\cR)$, which we denote~$\overline\mu_f$.
 
 By Proposition~\ref{prop:density}, for every
 $\xi\in G(S)$ and every open neighborhood $U$ of $\xi$, there
 is an RH box $B\in\mathcal B$ such that
 $\xi\in B^\circ\subset B\subset U.$
 Since $\pi_1(S)$ is countable, $\mathcal B$ is countable. Consequently,
+\DPTfyi{Edited}
 every open set is a countable union of RH boxes, and hence
-$\sigma(\mathcal B)=\operatorname{Bor}(G(S))$, the Borel sigma algebra of $G(S)$.
-Thus the Carath\'eodory extension~\ref{thm:caratheodory}, $\overline\mu_f$ is a Borel measure.
+$\sigma(\mathcal B)=\operatorname{Bor}(G(S))$, the Borel
+$\sigma$-algebra of $G(S)$.
+Thus $\overline\mu_f$ is a Borel measure.
 
-
+\DPTfyi{HERE}
+\DPTtodo{Don't we need some of these conditions (eg non-negative)
+  earlier?}
 Moreover, every point has an open neighborhood contained in an RH box
 of finite $\overline\mu_f$-mass. A compact set therefore admits a finite
 cover by such neighborhoods, so $\overline\mu_f$ is locally finite.
