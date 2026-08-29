@@ -289,7 +289,8 @@ Lebesgue measure
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
 Then $\wh\mu_f$ extends to an oriented geodesic current $\overline\mu_f$.
 \end{proposition}
-\begin{proof} 
+\begin{proof}
+  \DPTtodo{Reread after Dídac has tweaked the analysis}
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
 \ref{prop:finitely-additive}, and~\ref{prop:countablyadditive}, $\wh\mu_f$
 is a finitely
@@ -315,7 +316,6 @@ $\sigma(\mathcal B)=\operatorname{Bor}(G(S))$, the Borel
 $\sigma$-algebra of $G(S)$.
 Thus $\overline\mu_f$ is a Borel measure.
 
-\DPTfyi{HERE}
 \DPTtodo{Don't we need some of these conditions (eg non-negative)
   earlier?}
 Moreover, every point has an open neighborhood contained in an RH box
@@ -329,32 +329,25 @@ Carath\'eodory extension theorem gives
 $\gamma_*\overline\mu_f=\overline\mu_f.$
 \end{proof}
 
-It is not \emph{a priori} clear from the definition of $\overline\mu_f$ that it is a flip-invariant geodesic current (recall
+It is not \emph{a priori} clear from the definition of
+$\overline\mu_f$ whether it is a flip-invariant geodesic current
+(recall
 Definition~\ref{def:currents}).
 In order to obtain a flip-invariant current, we can take
-\DMGtodo{Factor of 1/4 new}
+\DMGtodo{Factor of 1/4 new. DPT is suspicious}
 \[
-\mu_f\coloneqq\frac14\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr).
+\mu_f\coloneqq\frac14\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
 \]
-where $\sigma \colon G(S) \to G(S)$ is the flip map, and $\sigma_*$
-the induced push-forward map on oriented geodesic currents.
+where $\sigma_*$ the push-forward map on oriented geodesic currents
+induced from the flip map.
 
 \subsection{
 Recovering \texorpdfstring{$f$}{f} on curves}
 \label{sec:recovery}
 
+\DPTfyi{Reorganized several bits in here}
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
-
-If $y$ is a hyperbolic element representing an oriented closed curve
-$C$ in the surface $S$, choose
-$z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
-$y^+,y^-,\, z,\, y \cdot z$ are in cyclic order.
-Then
-$(y^+,y^-) \times [z,y \cdot z)$ is a Borel fundamental domain for the
-  action of $\langle y \rangle$ on the set of geodesics that intersect
-  $\ora{y}$ transversally.
-
-Before proceeding, we discuss an asymmetric version of intersection
+Before proceeding, we detour to define an asymmetric version of intersection
 number between oriented geodesic currents.
 \begin{definition}\label{def:asymmetric}
   The \emph{asymmetric intersection} number between oriented geodesic currents is
@@ -378,25 +371,40 @@ From the definition, we have a relation to the standard intersection number:
 i(\mu, \nu) = \vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu)).
 \label{eq:relation_intersections}
 \end{equation}
-For $p,q \in \wt{S}$, one can write  $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversals, i.e., the subset of
-oriented geodesics in $G[p,q)$ which right cross the bi-infinite $\ora{l}$ oriented geodesic obtained by extending $[p,q) \subset \wt{S}$. Similarly, we will use $\ole{G[p,q)}\subset G(S)$ for the \emph{left-oriented} transversals, i.e., the subset of
-oriented geodesics in $G[p,q)$ intersecting the inverted geodesic $\ora{L}$ to the right. Clearly, $\sigma(\ora{G[p,q)})= \ole{G[p,q)}$.
-We have the following partition
+For $p,q \in \wt{S}$, partition $G[p,q]$ by
 \begin{equation}\label{eq:partition_oriented}
-\begin{aligned}
-G[p,q) &= \ora{G[p,q)} \cup \ole{G[p,q)} 
-\end{aligned}
+G[p,q) = \ora{G[p,q)} \sqcup \ole{G[p,q)} 
 \end{equation}
+where  $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversals, i.e., the subset of
+oriented geodesics in $G[p,q)$ which right-cross the bi-infinite
+oriented geodesic~$\ora{l}$ obtained by extending $[p,q) \subset
+\wt{S}$. Similarly, we will $\ole{G[p,q)}$ are the
+\emph{left-oriented} transversals, intersecting the inverted geodesic
+$\ora{L}$ to the right. By definition, $\sigma(\ora{G[p,q)})= \ole{G[p,q)}$.
 
 We can compute intersections with curves as follows.
 
-\begin{lemma}The intersection and asymmetric intersection
+\DPTtodo{Do we sometimes use $\vec C$ to denote oriented curves? Is it
+consistent?}
+\DPTfyi{Put statement of where $z$ is in the lemma statement}
+\begin{lemma}
+  For $C = [y]$ an oriented closed curve, choose
+$z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
+$y^+,y^-,\, z,\, y \cdot z$ are in cyclic order.
+The standard intersection and asymmetric intersection
 of an oriented closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \begin{align*}
-i(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma[z,y \cdot z) \times (y^+,y^-))\\
+i(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma([z,y \cdot z) \times (y^+,y^-)))\\
 \vec{\imath}(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)).
 \end{align*}
 \end{lemma}
+\DPTtodo{Probably should specify more about where the fundamental
+  domain is living. Also this is not the fundamental domain used in
+  the proof. HERE}
+Note that
+$[z,y \cdot z)\times (y^+,y^-)$ is a Borel fundamental domain for the
+  action of $\langle y \rangle$ on the set of geodesics that intersect
+  $\ora{y}$ transversally.
 \begin{proof}
   \DMGtodo{Edited}
 Choose $z\in(y^+,y^-)$ so that $y^+,z,Yz,y^-$
