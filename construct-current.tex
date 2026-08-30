@@ -136,12 +136,10 @@ Lemma~\ref{lem:additivity-limit-2} and
 Proposition~\ref{prop:join-split-alg} apply as before.
 \end{proof}
 
-\DPTtodo{Label placement in
-  Figure~\ref{fig:horizontal-accordion} could be improved. On left the
-labels are too far from their targets. On right something worse seems
-to have happened. The accordion might need to be widened? Or maybe
-rotate the labels $90^\circ$?}
 \DMGtodo{edited the figure}
+\DPTtodo{Thanks for the edits! On the right I still think you might need to
+  rotate the captions, or use arrows, or something. Or maybe it's OK,
+  the vertical accordion above worked}
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{h-accordion}}
@@ -323,9 +321,9 @@ $\overline\mu_f$ whether it is a flip-invariant geodesic current
 (recall
 Definition~\ref{def:currents}).
 In order to obtain a flip-invariant current, we can take
-\DMGtodo{Factor of 1/4 new. DPT is suspicious}
+\DPTfyi{Switched from $1/4$ to $1/2$ following other conversation}
 \[
-\mu_f\coloneqq\frac14\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
+\mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
 \]
 where $\sigma_*$ the push-forward map on oriented geodesic currents
 induced from the flip map.
@@ -354,9 +352,11 @@ the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is
 \end{cases}
 \]
 \end{definition}
-From the definition, we have a relation to the standard intersection number:
+From the definitions, we have a relation to the standard intersection
+number~\eqref{eq:intersection}:
+\DPTfyi{Put in factors of $1/2$ in this section}
 \begin{equation}
-i(\mu, \nu) = \vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu)).
+i(\mu, \nu) = \OneHalf \bigl(\vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu))\bigr).
 \label{eq:relation_intersections}
 \end{equation}
 For $p,q \in \wt{S}$, partition $G[p,q]$ by
@@ -372,9 +372,6 @@ $\ora{L}$ to the right. By definition, $\sigma(\ora{G[p,q)})= \ole{G[p,q)}$.
 
 We can compute intersections with curves as follows.
 
-\DPTtodo{Do we sometimes use $\vec C$ to denote oriented curves? Is it
-consistent?}
-\DMGtodo{sometimes, if we want to emphasize, like in the appendix, but not always. For example, in the main body we always for with oriented curves, so we omit the arrow.}
 \begin{lemma}
   For $C = [y]$ an oriented closed curve, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
@@ -382,10 +379,14 @@ $y^+,y^-,\, z,\, y \cdot z$ are in cyclic order.
 The standard intersection and asymmetric intersection
 of an oriented closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \begin{align*}
-i(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma([z,y \cdot z) \times (y^+,y^-)))\\
-\vec{\imath}(\mu, C) &= \mu([z,y \cdot z) \times (y^+,y^-)).
+i(\mu, \delta_C) &= \OneHalf \bigl(\mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma([z,y \cdot z) \times (y^+,y^-)))\bigr)\\
+\vec{\imath}(\mu, \delta_C) &= \mu([z,y \cdot z) \times (y^+,y^-)).
 \end{align*}
 \end{lemma}
+\DPTfyi{Used and reminded of $\delta_C$ notation. Also added it to
+  notation table, so maybe the reminder isn't necessary}
+Recall that $\delta_C$ is the geodesic current associated to~$C$.
+
 \DPTtodo{Probably should specify more about where the fundamental
   domain is living. Also this is not the fundamental domain used in
   the proof. HERE}
@@ -394,7 +395,6 @@ $[z,y \cdot z)\times (y^+,y^-)$ is a Borel fundamental domain for the
   action of $\langle y \rangle$ on the set of geodesics that intersect
   $\ora{y}$ transversally.
 \begin{proof}
-  \DMGtodo{Edited}
 Choose $z\in(y^+,y^-)$ so that $y^+,z,Yz,y^-$
 occur in cyclic order, and set
 \[
@@ -409,9 +409,6 @@ and, using the opposite crossing orientation,
 $i(\mu,[y])=\mu(A_y)+\mu(\sigma A_y)$. The same claim follows for the intersection number using Equation~\ref{eq:relation_intersections}.
 \end{proof} 
 
-
-
-
 We finish by proving Theorem~\ref{thm:intersect}, first in the following
 form.
 
@@ -421,12 +418,14 @@ Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional
 satisfying symmetry, smoothing, additivity and stability, and let
 $\mu_f$ be as above.
 For $C$ an oriented closed curve, we have
+\DPTfyi{Added asymmetric intersection fact to the statement}
 \[
-i(\mu_f,C)=f(C).
+i(\mu_f,\delta_C)= \vec\imath(\overline\mu_f, \delta_C) = f(C).
 \]
 \end{theorem}
 \begin{proof}
-We first prove that $\vec{\imath}(\overline\mu_f,C)=\frac{1}{2}f(C)$. Given a representative $y \in
+\DPTfyi{Edited for factors of $\OneHalf$ and other minor issues}
+We first prove that $\vec{\imath}(\overline\mu_f,\delta_C)=f(C)$. Given a representative $y \in
 \pi_1(S)$ of the conjugacy class~$C$, we will find a sequence of
 RH boxes to approximating the fundamental domain for $\langle
 y\rangle$ above, and then show that computing the measure of that
@@ -456,15 +455,14 @@ In the RH orbit notation, we have
   c^{(n)} &= p y^{n+1} q &  d^{(n)} &= p y^{-n} q.
 \end{align*}
 
-If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n)}, d^{(n)}}$ then we have
-    \begin{multline*}
-      \vec{\imath}(\mu, [y])=\overline\mu_f([z,Yz)\times(y^-,y^+)) \\
-      \begin{aligned}
-    &= \lim_{n\to\infty} \overline\mu_f(B_n)  \\
-    &= \frac{1}{4}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
-    &= \frac{1}{4}\bigl(f([y]) + f([y^{-1}])\bigr) =\frac{1}{2}f([y]).
-      \end{aligned}
-    \end{multline*}
+If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
+  b^{(n)}, c^{(n)}, d^{(n)}}$ we then have
+    \begin{align*}
+      \vec{\imath}(\overline\mu_f, \delta_{[y]})&=\overline\mu_f([z,Yz)\times(y^-,y^+)) \\
+    &= \lim_{n\to\infty} \wh\mu_f(B_n)  \\
+    &= \frac{1}{2}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
+    &= \frac{1}{2}\bigl(f([y]) + f([y^{-1}])\bigr) =f([y]).
+    \end{align*}
     The first equality follows by the fact that the boxes defined
     above converge from below to the  $[z,Y
       \cdot z) \times (y^-,y^+)$ (the fundamental domain for the
@@ -475,7 +473,9 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)}, b^{(n)}, c^{(n
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      The property $i(\mu_f, C)=f(C)$ for any closed curve $C$ follows by the definition of $\mu_f$ and the fact that $\overline\mu_f$ is finitely additive. 
+      The property $i(\mu_f, C)=f(C)$ for any multi-curve $C$
+      follows by the definition of $\mu_f$ and the fact that
+      $\overline\mu_f$ is finitely additive.
 \end{proof}
 
 \begin{remark}

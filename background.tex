@@ -138,10 +138,9 @@ In a general topological space $X$, not all locally-finite Borel
 measures are Radon. However, in a locally compact Hausdorff space with
 a countable basis, locally-finite Borel measures and Radon measures
 are the same~\cite[Theorem~29.12]{Bau01:Measure}.
-
-\DMGtodo{added this}
-
-Furthermore, under these topological properties on $X$, locally finite Borel measures are automatically $\sigma$-finite.
+\DPTfyi{Edited slightly}
+Furthermore, under these same topological conditions on $X$, locally
+finite Borel measures are automatically $\sigma$-finite.
 \begin{lemma}
 \label{lem:sigma_finite}
 If $X$ is locally compact, Hausdorff with a countable basis, any locally finite Borel measure on $X$ is $\sigma$-finite.
@@ -306,17 +305,15 @@ so the action of $\pi_1(S)$ on $\DG(S)$ is properly discontinuous and free. Let
 $\mathcal{F}$ be a fundamental domain of this action. Following
 Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented
 currents $\mu, \nu$ we define
-\DPTtodo[inline]{I think the extra factor of $1/2$ is coming from this
-  definition: $i(\mu,\nu)$ should be defined as the measure in the
-  space of \emph{unoriented} geodesics, which is half this quantity}
-  \DMGtodo{I checked and I think this is correct, since Bonahon defines the intersection on $\mathbb{P}T(S) \otimes \mathbb{P}T(S)$, where $\mathbb{P}T(S)$ denotes the projectivized tangent bundle. I accordingly added the $1/2$ factor.}
 \begin{equation}
 i(\mu, \nu) \coloneqq \frac{1}{2} \int_{\mathcal{F}} \mu \times \nu.
 \label{eq:intersection}
 \end{equation}
-Bonahon defined intersection number in the context of unoriented
-geodesic currents, hence the factor of $1/2$. \DMGtodo{edited this previous sentence}
-Moreover, intersection number remains unchanged upon flipping the
+\DPTfyi{Edited some more}
+Bonahon defined intersection number for unoriented
+geodesic currents; for oriented geodesics, there is an extra factor of
+$1/2$.
+With this definition, intersection number remains unchanged upon flipping the
 orientation of any of its factors.
 It enjoys all the other properties of Bonahon's intersection: it is continuous and extends the geometric intersection of closed curves.
 \end{definition}
