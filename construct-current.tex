@@ -23,7 +23,6 @@ define the \emph{vertical accordion} $F(p_1, q_1, p_2,\vec{q_2})$ of
 boxes based at $B$ to be
 the sequence of boxes, indexed by $k$, with $p_1, p_2, q_1$ constant
 and $q_2$ translated by powers of $r_1 = q_1 x Q_1$:
-\DPTfyi{Changed some instances of $q_1^{-1}$ to $Q_1$}
 \[
   p_1^{(k)}\coloneqq p_1,\qquad
   p_2^{(k)}\coloneqq p_2,\qquad
@@ -116,9 +115,6 @@ can break up the limit into canceling terms as indicated.
 
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
-\DPTfyi{Extensive edits to horizontal accordion case to match earlier
-  edits in vertical case. D\'idac, you had some edits I cut here, but
-  I think any clarifications should go on vertical case}
 Since $\ora{\ell_1}$
 is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_1},\ora{\ell_2})$
 are R-parallel), the NS dynamics of $\ell_2 = P_2 x p_2$ translate
@@ -145,6 +141,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
 labels are too far from their targets. On right something worse seems
 to have happened. The accordion might need to be widened? Or maybe
 rotate the labels $90^\circ$?}
+\DMGtodo{edited the figure}
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{h-accordion}}
@@ -155,7 +152,6 @@ rotate the labels $90^\circ$?}
 
 We now use Proposition~\ref{prop:finalfamily} to prove that $\wh\mu_f$
 is countably additive.
-\DPTfyi{Small edits through these lemmas}
 Recall that a RH box~$B$ is by definition half-open, of the form
 $[s_1,s_2) \times [t_2,t_1)$. Let
 $\overline{B} \coloneqq [s_1,s_2] \times [t_2,t_1]$ and
@@ -266,7 +262,6 @@ $I\subset\mathbb N\cup\{0\}$ such that
 \]
 For simplicity assume that $0\in I$, adding it in if necessary. It
 follows that $B_0\subset \bigcup_{i\in I} V_i$; here we use that
-\DPTfyi{Edited to be more explicit about where we use this condition}
 $V_0^\circ \cap B_0 \subset V_0 \cap B_0$.
 
   By finite additivity, we then have
@@ -280,8 +275,6 @@ $V_0^\circ \cap B_0 \subset V_0 \cap B_0$.
 \end{proof}
 
 We now put everything together to obtain an oriented geodesic current,
-\DPTfyi{Put in this reference to the standard argument. Is it fair as
-  I phrased it?}
 following the standard argument that measure on boxes extends to the
 Lebesgue measure
 
@@ -315,7 +308,7 @@ Thus $\overline\mu_f$ is a Borel measure.
 
 Moreover, every point has an open neighborhood contained in an RH box
 of finite $\overline\mu_f$-mass. A compact set therefore admits a finite
-cover by such neighborhoods, so $\overline\mu_f$ is locally finite.
+cover by such neighborhoods, so $\overline\mu_f$ is locally finite. Hence, by Lemma~\ref{lem:sigma_finite}, $\overline\mu_f$ is $\sigma$-finite.
 
 Finally, for every $\gamma\in\pi_1(S)$, the measures
 $\gamma_*\overline\mu_f$ and $\overline\mu_f$ agree on $\mathcal B$, by the
@@ -341,7 +334,6 @@ induced from the flip map.
 Recovering \texorpdfstring{$f$}{f} on curves}
 \label{sec:recovery}
 
-\DPTfyi{Reorganized several bits in here}
 It remains to show that $\mu_f$ recovers $f$ as an intersection number on curves.
 Before proceeding, we detour to define an asymmetric version of intersection
 number between oriented geodesic currents.
@@ -382,7 +374,7 @@ We can compute intersections with curves as follows.
 
 \DPTtodo{Do we sometimes use $\vec C$ to denote oriented curves? Is it
 consistent?}
-\DPTfyi{Put statement of where $z$ is in the lemma statement}
+\DMGtodo{sometimes, if we want to emphasize, like in the appendix, but not always. For example, in the main body we always for with oriented curves, so we omit the arrow.}
 \begin{lemma}
   For $C = [y]$ an oriented closed curve, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
