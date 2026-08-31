@@ -138,7 +138,6 @@ In a general topological space $X$, not all locally-finite Borel
 measures are Radon. However, in a locally compact Hausdorff space with
 a countable basis, locally-finite Borel measures and Radon measures
 are the same~\cite[Theorem~29.12]{Bau01:Measure}.
-\DPTfyi{Edited slightly}
 Furthermore, under these same topological conditions on $X$, locally
 finite Borel measures are automatically $\sigma$-finite.
 \begin{lemma}
@@ -207,18 +206,58 @@ We define the space of
 geodesic currents on $S$, and denote it by $\Curr(S)$. We endow both
 spaces with their natural subspace topologies as subsets of
 $\mathcal{M}(G(S))$.
+\end{definition}
 
-\begin{remark} Some authors prefer to use the space of geodesic currents $\Curr^u(S)$ as invariant Radon measures on the space of \emph{unoriented geodesics of $\wt{\Sigma}$}, i.e., 
+\DMGtodo{addded a proof of the detailed correspondence, since we need to be use it when translating it from Bonahon to our setting}
+Some authors, such as Bonahon~\cite{Bon86,Bon88}, prefer to use the space of geodesic currents $\Curr^u(S)$ as invariant Radon measures on the space of \emph{unoriented geodesics of $\wt{\Sigma}$}, i.e., 
 \[
 G^u(\Sigma) \coloneqq G(\Sigma)/\mathbb{Z}_2
 \]
-where the action of $\mathbb{Z}_2$ is by the flip involution $\sigma$.
+where the action of $\mathbb{Z}_2$ is by the flip involution $\sigma$. Let $q \colon G(\Sigma) \to G^u(\Sigma)$ denote the natural projection map that forgets orientation.
+
+\begin{lemma}
+\label{lem:unoriented_flipinvariant}
 There is a natural homeomorphism
+\begin{equation}
+\Curr(S) \longleftrightarrow \Curr^u(S).
+\label{eq:unoriented_flipinvariant}
+\end{equation}
+ by taking the push-forward of $q$ restricted to flip-invariant currents, i.e.,
 \[
-\Curr^u(S) \longleftrightarrow \Curr(S).
+q_* \colon \Curr(S) \to \Curr^u(S).\]
+\end{lemma}
+\begin{proof}
+The map $q_*$ has inverse
+\[
+(q_*)^{-1} \colon \Curr^u(S) \to \Curr(S)
 \]
-with unoriented geodesic currents (see
-\cite[Exercise~3.1]{ES22:GeodesicCount}), but oriented currents are
+defined by sending the unoriented geodesic current $\nu \in \Curr^u(S)$ to the flip-invariant geodesic current $L(\nu)$ defined as follows. For any measurable $A \subset G(\Sigma)$, define
+\[
+L(\nu)(A) \coloneqq \frac12 \int_{G^u(\Sigma)} \# q^{-1}(\gamma) \cap A d\mu(\gamma).
+\]
+In particular, for $\delta_C = \frac12 \delta_{\vec C} + \sigma \delta_{\vec C}$, we have, applying this definition,
+\[
+L(\delta_C) = \frac12 \left(\delta_{\vec C} + \delta(\sigma(\vec C)) \right).
+\]
+which implies
+\begin{equation}
+q_* (L(\delta_C) = \delta_C
+\label{eq:first_inverse}
+\end{equation}
+as well as
+\begin{equation}
+L\left(q_* \left( \frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right) \right) \right)=\frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right).
+\label{eq:second_inverse}
+\end{equation}
+Note that $q_*$ is continuous with respect to the weak$^*$-topology.
+It remains to see $L$ is also continuous. Indeed, for every compactly supported continuous function $\varphi \in C_c(G(\Sigma))$, consider
+\[
+\int \varphi dL(\nu) = \frac12 \int_{G^u(\Sigma)} \left(\sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)\right)d\nu(\gamma),
+\]
+and note that $\gamma \mapsto \sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)=\varphi(\gamma) + \varphi(\sigma(\gamma))$ is a continuous and compactly supported function on $G^u(\Sigma)$.
+Hence, $q_*$ and $L$ are continuous and linear, and since weighted flip-invariant oriented closed curves are dense in $\Curr(S)$ and weighted unoriented closed curves are dense in $\Curr^u(S)$, by Equations~\ref{eq:first_inverse} and~\ref{eq:second_inverse}, it follows that $q_*$ and $L$ are inverses of each other, and $q_*$ is a homeomorphism, as claimed.
+\end{proof}
+Oriented currents are
 more
 general, and, as alluded above, appear naturally in algebraic
 contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
@@ -231,8 +270,6 @@ geometric intersection number with all closed
 curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, a fact
 which fails to be true for general oriented geodesic currents
 (Appendix~\ref{sec:asymmetric}).
-\end{remark}
-\end{definition}
 
 As a consequence of the discussion in
 Section~\ref{subsec:RadonvsBorel}, we can replace ``Radon'' with
@@ -257,20 +294,23 @@ on the left, along which
 $g$ translates the least positive hyperbolic distance. (See also
 Section~\ref{sec:actions}.)
 The orbit $\pi_1(S)\cdot \ora{g}$ is discrete and countable, and does
-not depend on $g$ within its conjugacy class. One can therefore define
+not depend on $g$ within its conjugacy class. \DMGtodo{edited this to define currents for oriented and unoriented curves} One can therefore define
 the geodesic current naturally associated to the oriented primitive closed curve
-$C=[\gamma]=[g]$ by
+$\vec C=[\gamma]=[g]$ by
 \begin{equation}\label{eq:delta-curve}
-\delta_C
+\delta_{\vec C}
 = \sum_{h \in \pi_1(S)/\operatorname{Stab}(\ora{\gamma})}
 \delta_{h\cdot \ora{\gamma}},
 \end{equation}
 where $\operatorname{Stab}(\ora{g}) = \langle g \rangle$ is the
 stabilizer and $\delta_l$ is the Dirac measure supported on
-the oriented geodesic $l\in G(S)$. For non-primitive curves $C=[h^n]$,
-where $[h]$ is primitive, we scale as $\delta_C = n \delta_{[h]}$.
-
-This definition extends naturally to associate a geodesic current to any weighted curve and, by linearity, to any weighted multi-curve. Moreover, geodesic currents arising from weighted multi-curves (and also those from weighted curves) are dense in the space of geodesic currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
+the oriented geodesic $l\in G(S)$. For non-primitive curves $\vec C=[h^n]$,
+where $[h]$ is primitive, we scale as $\delta_{\vec C} = n \delta_{[h]}$.
+For an unoriented curve $C$, we define the corresponding flip-invariant geodesic current (recall \eqref{eq:unoriented_flipinvariant}) by
+\[
+\delta_C \coloneqq \frac12 \left( \delta_{\vec{C}}+ \delta_{\sigma(\vec C)} \right).
+\]
+These definitions extend naturally to associate a geodesic current to any weighted curve (oriented and unoriented) and, by linearity, to any weighted (oriented and unoriented) multi-curve. Moreover, geodesic currents arising from weighted multi-curves (and also those from weighted curves) are dense in the space of geodesic currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
 
 It is easy to see that a geodesic $l \in G(S)$ can only be an atom of a geodesic current when it is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
 One can also look at 1-dimensional sets.
@@ -306,17 +346,35 @@ $\mathcal{F}$ be a fundamental domain of this action. Following
 Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds}, for any two oriented
 currents $\mu, \nu$ we define
 \begin{equation}
-i(\mu, \nu) \coloneqq \frac{1}{2} \int_{\mathcal{F}} \mu \times \nu.
+i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
 \label{eq:intersection}
 \end{equation}
-\DPTfyi{Edited some more}
-Bonahon defined intersection number for unoriented
-geodesic currents; for oriented geodesics, there is an extra factor of
-$1/2$.
+\end{definition}
+In fact, Bonahon defined intersection number $i_B$ for unoriented
+geodesic currents $\Curr^u(S)$, but we have the following relation
+\begin{lemma}
+Let $q \colon G(\Sigma) \to G^u(\Sigma)$ be the natural quotient map.
+Then, for every $\mu_1, \mu_2 \in \Curr(S)$, we have
+\[
+i(\mu_1,\mu_2) = i_B(q_*(\mu_1), q_*(\mu_2))
+\]
+\end{lemma}
+\begin{proof}
+To define his intersection number $i_B$, Bonahon considers pairs of transversely intersecting unoriented geodesics $\mathcal{D}\mathcal{G}^u(S)$.
+We have the relation
+\[
+\mathcal{D}\mathcal{G}(S)=(q\times q)^{-1}(\mathcal{D}\mathcal{G}^u(S)).
+\]
+Hence, for flip-invariant oriented geodesic currents $\mu_1, \mu_2$ we have already have
+\[
+\int_{\mathcal{F}}d(\mu_1 \otimes \mu_2) = \int_{\mathcal{F}^u}d(q_*(\mu_1) \otimes q_*(\mu_2)) = i_B(q_*(\mu_1),q_*(\mu_2))
+\]
+where we used the change of variables principle.
+\end{proof}
 With this definition, intersection number remains unchanged upon flipping the
 orientation of any of its factors.
 It enjoys all the other properties of Bonahon's intersection: it is continuous and extends the geometric intersection of closed curves.
-\end{definition}
+
 
 We will write $i(\mu, C)$ for $i(\mu, \delta_C)$.
 In this case, we have

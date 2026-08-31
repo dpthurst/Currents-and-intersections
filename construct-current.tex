@@ -323,7 +323,7 @@ Definition~\ref{def:currents}).
 In order to obtain a flip-invariant current, we can take
 \DPTfyi{Switched from $1/4$ to $1/2$ following other conversation}
 \[
-\mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
+\mu_f\coloneqq\frac14\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
 \]
 where $\sigma_*$ the push-forward map on oriented geodesic currents
 induced from the flip map.
@@ -355,8 +355,9 @@ the function $\mathbf{1}_R \colon \DG(S) \to \mathbb{R}$ is
 From the definitions, we have a relation to the standard intersection
 number~\eqref{eq:intersection}:
 \DPTfyi{Put in factors of $1/2$ in this section}
+\DMGtodo{removed them}
 \begin{equation}
-i(\mu, \nu) = \OneHalf \bigl(\vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu))\bigr).
+i(\mu, \nu) = \vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu)).
 \label{eq:relation_intersections}
 \end{equation}
 For $p,q \in \wt{S}$, partition $G[p,q]$ by
@@ -373,19 +374,19 @@ $\ora{L}$ to the right. By definition, $\sigma(\ora{G[p,q)})= \ole{G[p,q)}$.
 We can compute intersections with curves as follows.
 
 \begin{lemma}
-  For $C = [y]$ an oriented closed curve, choose
+  For $\vec C = [y]$ an oriented closed curve, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
 $y^+,y^-,\, z,\, y \cdot z$ are in cyclic order.
 The standard intersection and asymmetric intersection
-of an oriented closed curve $C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
+of an oriented closed curve $\vec C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \begin{align*}
-i(\mu, \delta_C) &= \OneHalf \bigl(\mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma([z,y \cdot z) \times (y^+,y^-)))\bigr)\\
-\vec{\imath}(\mu, \delta_C) &= \mu([z,y \cdot z) \times (y^+,y^-)).
+i(\mu, \delta_C) &=  \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma([z,y \cdot z) \times (y^+,y^-))\\
+\vec{\imath}(\mu, \delta_{\vec C}) &= \mu([z,y \cdot z) \times (y^+,y^-)).
 \end{align*}
 \end{lemma}
 \DPTfyi{Used and reminded of $\delta_C$ notation. Also added it to
   notation table, so maybe the reminder isn't necessary}
-Recall that $\delta_C$ is the geodesic current associated to~$C$.
+Recall that $\delta_C$ is the geodesic current associated to the unoriented curve (or flip-invariant)~$C$, while $\delta_{\vec C}$ denotes the geodesic current representing the oriented curve $\vec C$.
 
 \DPTtodo{Probably should specify more about where the fundamental
   domain is living. Also this is not the fundamental domain used in
@@ -409,6 +410,25 @@ and, using the opposite crossing orientation,
 $i(\mu,[y])=\mu(A_y)+\mu(\sigma A_y)$. The same claim follows for the intersection number using Equation~\ref{eq:relation_intersections}.
 \end{proof} 
 
+Analogously, an asymmetric intersection number between curves can be defined as follows. \DMGtodo{moved this here from the appendix}
+
+\begin{definition}\label{def:asym-intersect}
+  Given two oriented curves $\vec C$, $\vec D$, the
+  asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the
+  minimal number of \emph{right-handed} crossings between any two homotopy
+  class representatives of $\vec C$ and~$\vec D$, i.e., the number of
+  points on~$S$ where $\vec C$ crosses $\vec D$ to the right in the
+  sense of Definition~\ref{def:crossing}.
+  It is straightforward to see that the asymmetric intersection number
+  from Definition~\ref{def:asymmetric} satisfies
+  $\vec{\imath} (\delta_{\vec C}, \delta_{\vec D}) = \vec\imath(\vec C, \vec D)$ and, for a flip-invariant curve $C$ and any oriented geodesic current $\mu$, we have
+  \[
+  \vec{\imath}(\mu, \delta_{C}) = \frac12 i(\mu, \delta_C).
+  \]
+In particular,
+\[
+\vec{\imath}(\delta_C, \delta_D) = \frac12 i(C,D)
+\]
 We finish by proving Theorem~\ref{thm:intersect}, first in the following
 form.
 
@@ -417,10 +437,10 @@ form.
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional
 satisfying symmetry, smoothing, additivity and stability, and let
 $\mu_f$ be as above.
-For $C$ an oriented closed curve, we have
+For $\vec C$ an oriented closed curve, we have
 \DPTfyi{Added asymmetric intersection fact to the statement}
 \[
-i(\mu_f,\delta_C)= \vec\imath(\overline\mu_f, \delta_C) = f(C).
+i(\mu_f,\delta_C)= \vec\imath(\overline\mu_f, \delta_{\vec C}) = f(\vec C).
 \]
 \end{theorem}
 \begin{proof}
@@ -473,7 +493,7 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      The property $i(\mu_f, C)=f(C)$ for any multi-curve $C$
+      The property $i(\mu_f, C)=f(C)$ for any flip-invariant multi-curve $C$
       follows by the definition of $\mu_f$ and the fact that
       $\overline\mu_f$ is finitely additive.
 \end{proof}
