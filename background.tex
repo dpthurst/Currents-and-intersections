@@ -208,63 +208,6 @@ spaces with their natural subspace topologies as subsets of
 $\mathcal{M}(G(S))$.
 \end{definition}
 
-\DMGtodo{addded a proof of the detailed correspondence, since we need to be use it when translating it from Bonahon to our setting}
-Some authors, such as Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent}, prefer to use the space of geodesic currents $\Curr^u(S)$ as invariant Radon measures on the space of \emph{unoriented geodesics of $\wt{\Sigma}$}, i.e., 
-\[
-G^u(\Sigma) \coloneqq G(\Sigma)/\mathbb{Z}_2
-\]
-where the action of $\mathbb{Z}_2$ is by the flip involution $\sigma$. Let $q \colon G(\Sigma) \to G^u(\Sigma)$ denote the natural projection map that forgets orientation.
-
-\begin{lemma}
-\label{lem:unoriented_flipinvariant}
-There is a natural homeomorphism
-\begin{equation}
-\Curr(S) \longleftrightarrow \Curr^u(S).
-\label{eq:unoriented_flipinvariant}
-\end{equation}
- by taking the push-forward of $q$ restricted to flip-invariant currents, i.e.,
-\[
-q_* \colon \Curr(S) \to \Curr^u(S).\]
-\end{lemma}
-\begin{proof}
-The map $q_*$ has inverse
-\[
-(q_*)^{-1} \colon \Curr^u(S) \to \Curr(S)
-\]
-defined by sending the unoriented geodesic current $\nu \in \Curr^u(S)$ to the flip-invariant geodesic current $L(\nu)$ defined as follows. For any measurable $A \subset G(\Sigma)$, define
-\[
-L(\nu)(A) \coloneqq \frac12 \int_{G^u(\Sigma)} \# q^{-1}(\gamma) \cap A d\mu(\gamma).
-\]
-In particular, for $\delta_C = \frac12 \delta_{\vec C} + \sigma \delta_{\vec C}$, we have, applying this definition,
-\[
-L(\delta_C) = \frac12 \left(\delta_{\vec C} + \delta(\sigma(\vec C)) \right).
-\]
-which implies
-\begin{equation}
-q_* (L(\delta_C) = \delta_C
-\label{eq:first_inverse}
-\end{equation}
-as well as
-\begin{equation}
-L\left(q_* \left( \frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right) \right) \right)=\frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right).
-\label{eq:second_inverse}
-\end{equation}
-Note that $q_*$ is continuous with respect to the weak$^*$-topology.
-It remains to see $L$ is also continuous. Indeed, for every compactly supported continuous function $\varphi \in C_c(G(\Sigma))$, consider
-\[
-\int \varphi dL(\nu) = \frac12 \int_{G^u(\Sigma)} \left(\sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)\right)d\nu(\gamma),
-\]
-and note that $\gamma \mapsto \sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)=\varphi(\gamma) + \varphi(\sigma(\gamma))$ is a continuous and compactly supported function on $G^u(\Sigma)$.
-Hence, $q_*$ and $L$ are continuous and linear, and since weighted flip-invariant oriented closed curves are dense in $\Curr(S)$ and weighted unoriented closed curves are dense in $\Curr^u(S)$, by Equations~\ref{eq:first_inverse} and~\ref{eq:second_inverse}, it follows that $q_*$ and $L$ are inverses of each other, and $q_*$ is a homeomorphism, as claimed.
-\end{proof}
-Oriented currents are
-more
-general, and, as alluded above, appear naturally in algebraic
-contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
-  CR25:Manhattan, CMGR26:GreenMetrics} as well as
-higher Teichm\"uller theory and Anosov
-representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
-
 Any flip-invariant oriented geodesic current is determined by its
 geometric intersection number with all closed
 curves~\cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}, a fact
@@ -330,6 +273,61 @@ endpoint at~$x$.
   \cite[Lemma~2.6]{dRMG22:Duals}.
 For uniqueness, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
 \end{proof}
+
+\DMGtodo{addded a proof of the detailed correspondence, since we need to be use it when translating it from Bonahon to our setting. Also moved this discussion after curve-currents are introduced}
+Some authors, such as Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent}, prefer to use the space of geodesic currents $\Curr^u(S)$ as invariant Radon measures on the space of \emph{unoriented geodesics of $\wt{\Sigma}$}, i.e., 
+\[
+G^u(\Sigma) \coloneqq G(\Sigma)/\mathbb{Z}_2
+\]
+where the action of $\mathbb{Z}_2$ is by the flip involution $\sigma$. Let $q \colon G(\Sigma) \to G^u(\Sigma)$ denote the natural projection map that forgets orientation.
+
+\begin{lemma}
+\label{lem:unoriented_flipinvariant}
+The restriction to  flip-invariant currents of the push-forward of $q$ gives a natural homeomorphism
+\begin{equation}
+\Curr(S) \longleftrightarrow \Curr^u(S).
+\label{eq:unoriented_flipinvariant}
+\end{equation}
+\end{lemma}
+\begin{proof}
+We claim that the map $q_*$ has inverse
+\[
+L \colon \Curr^u(S) \to \Curr(S)
+\]
+defined by sending the unoriented geodesic current $\nu \in \Curr^u(S)$ to the flip-invariant geodesic current $L(\nu)$ defined as follows. For any measurable $A \subset G(\Sigma)$, define
+\[
+L(\nu)(A) \coloneqq \frac12 \int_{G^u(\Sigma)} \# (q^{-1}(\gamma) \cap A) d\mu(\gamma).
+\]
+In particular, for $\delta_C = \frac12 \delta_{\vec C} + \sigma \delta_{\vec C}$, we have, applying this definition,
+\[
+L(\delta_C) = \frac12 \left(\delta_{\vec C} + \delta_{\sigma(\vec C)} \right).
+\]
+which implies
+\begin{equation}
+q_* (L(\delta_C)) = \delta_C
+\label{eq:first_inverse}
+\end{equation}
+as well as
+\begin{equation}
+L\left(q_* \left( \frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right) \right) \right)=\frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right).
+\label{eq:second_inverse}
+\end{equation}
+Note that $q_*$ is continuous with respect to the weak$^*$-topology.
+It remains to see $L$ is also continuous. Indeed, for every compactly supported continuous function $\varphi \in C_c(G(\Sigma))$, consider
+\[
+\int \varphi dL(\nu) = \frac12 \int_{G^u(\Sigma)} \left(\sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)\right)d\nu(\gamma),
+\]
+and note that $\gamma \mapsto \sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)=\varphi(\ell) + \varphi(\sigma(\ell))$ is a continuous and compactly supported function on $G^u(\Sigma)$.
+Hence, $q_*$ and $L$ are continuous and linear, and since weighted flip-invariant oriented closed curves are dense in $\Curr(S)$ and weighted unoriented closed curves are dense in $\Curr^u(S)$, by Equations~\ref{eq:first_inverse} and~\ref{eq:second_inverse}, it follows that $q_*$ and $L$ are inverses of each other, and $q_*$ is a homeomorphism, as claimed.
+\end{proof}
+Oriented currents are
+more
+general, and, as alluded above, appear naturally in algebraic
+contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
+  CR25:Manhattan, CMGR26:GreenMetrics} as well as
+higher Teichm\"uller theory and Anosov
+representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
+
 
 Given $p,q \in \wt{\Sigma}$ we will write $G[p,q)\subset G(\Sigma)$
 for the set of geodesics intersecting the geodesic segment
