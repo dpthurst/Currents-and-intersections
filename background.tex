@@ -237,7 +237,7 @@ on the left, along which
 $g$ translates the least positive hyperbolic distance. (See also
 Section~\ref{sec:actions}.)
 The orbit $\pi_1(S)\cdot \ora{g}$ is discrete and countable, and does
-not depend on $g$ within its conjugacy class. \DMGtodo{edited this to define currents for oriented and unoriented curves} One can therefore define
+not depend on $g$ within its conjugacy class. One can therefore define
 the geodesic current naturally associated to the oriented primitive closed curve
 $\vec C=[\gamma]=[g]$ by
 \begin{equation}\label{eq:delta-curve}
@@ -250,10 +250,18 @@ stabilizer and $\delta_l$ is the Dirac measure supported on
 the oriented geodesic $l\in G(S)$. For non-primitive curves $\vec C=[h^n]$,
 where $[h]$ is primitive, we scale as $\delta_{\vec C} = n \delta_{[h]}$.
 For an unoriented curve $C$, we define the corresponding flip-invariant geodesic current (recall \eqref{eq:unoriented_flipinvariant}) by
+\DPTtodo{These two definitions make it pretty inevitable we'll want to
+  distinguish between $C$ and $\vec C$ throughout the paper. That will
+  be annoying to fix}
 \[
 \delta_C \coloneqq \frac12 \left( \delta_{\vec{C}}+ \delta_{\sigma(\vec C)} \right).
 \]
-These definitions extend naturally to associate a geodesic current to any weighted curve (oriented and unoriented) and, by linearity, to any weighted (oriented and unoriented) multi-curve. Moreover, geodesic currents arising from weighted multi-curves (and also those from weighted curves) are dense in the space of geodesic currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
+These definitions extend naturally to associate a geodesic current to
+any weighted curve (oriented or unoriented) and, by linearity, to any
+weighted (oriented or unoriented) multi-curve. Moreover, geodesic
+currents arising from weighted multi-curves (or from
+weighted curves) are dense in the space of geodesic
+currents~\cite[Proposition~4.4]{Bonahon86:EndsHyperbolicManifolds}.
 
 It is easy to see that a geodesic $l \in G(S)$ can only be an atom of a geodesic current when it is the lift of a closed geodesic~\cite[Proposition~8.2.7]{Martelli16:IntroGeoTop}.
 One can also look at 1-dimensional sets.
@@ -274,21 +282,32 @@ endpoint at~$x$.
 For uniqueness, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
 \end{proof}
 
-\DMGtodo{addded a proof of the detailed correspondence, since we need to be use it when translating it from Bonahon to our setting. Also moved this discussion after curve-currents are introduced}
-Some authors, such as Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent}, prefer to use the space of geodesic currents $\Curr^u(S)$ as invariant Radon measures on the space of \emph{unoriented geodesics of $\wt{\Sigma}$}, i.e., 
+\DPTtodo{Should we use $\Curr_b(S)$ by analogy with $i_b$? With
+  current notation, both $\Curr$ and $\Curr^u$ represent unoriented currents}
+Some authors, such as
+Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent},
+prefer to use the space of geodesic currents $\Curr^u(S)$ as
+\DPTfyi{Switched to $\pi_1$-invariant since there's more than one type
+  of invariance here}
+$\pi_1$-invariant
+Radon measures on the space of unoriented geodesics of
+  $\wt{\Sigma}$, i.e.,
 \[
-G^u(\Sigma) \coloneqq G(\Sigma)/\mathbb{Z}_2
+G^u(\Sigma) \coloneqq G(\Sigma)/(\bbZ/2)
 \]
-where the action of $\mathbb{Z}_2$ is by the flip involution $\sigma$. Let $q \colon G(\Sigma) \to G^u(\Sigma)$ denote the natural projection map that forgets orientation.
+where the action of $\bbZ/2$ is by the flip involution~$\sigma$. Let
+$q \colon G(\Sigma) \to G^u(\Sigma)$ be the projection map.
 
 \begin{lemma}
 \label{lem:unoriented_flipinvariant}
 The restriction to  flip-invariant currents of the push-forward of $q$ gives a natural homeomorphism
 \begin{equation}
-\Curr(S) \longleftrightarrow \Curr^u(S).
+q_* \colon \Curr(S) \to \Curr^u(S).
 \label{eq:unoriented_flipinvariant}
 \end{equation}
 \end{lemma}
+\DPTtodo{$q$ is a finite-degree covering map, and the lemma is true in
+  that generality (and even larger generality, I think). It must be standard?}
 \begin{proof}
 We claim that the map $q_*$ has inverse
 \[
@@ -320,6 +339,17 @@ It remains to see $L$ is also continuous. Indeed, for every compactly supported 
 and note that $\gamma \mapsto \sum_{\ell \in q^{-1}(\gamma)} \varphi(\ell)=\varphi(\ell) + \varphi(\sigma(\ell))$ is a continuous and compactly supported function on $G^u(\Sigma)$.
 Hence, $q_*$ and $L$ are continuous and linear, and since weighted flip-invariant oriented closed curves are dense in $\Curr(S)$ and weighted unoriented closed curves are dense in $\Curr^u(S)$, by Equations~\ref{eq:first_inverse} and~\ref{eq:second_inverse}, it follows that $q_*$ and $L$ are inverses of each other, and $q_*$ is a homeomorphism, as claimed.
 \end{proof}
+\begin{remark}
+  The difference between thinking of (unoriented)
+  geodesic currents (flip-invariant measures on oriented geodesics or
+  as measures on unoriented geodesics)
+  is the difference between thinking of them as invariants or
+  coinvariants of the $\bbZ/2$ action. In some cases (as above)
+  invariants and coinvariants are isomorphic.
+\end{remark}
+
+\DPTtodo{Check if it makes sense to make this point here. Haven't we
+  already made it?}
 Oriented currents are
 more
 general, and, as alluded above, appear naturally in algebraic
@@ -327,7 +357,6 @@ contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
   CR25:Manhattan, CMGR26:GreenMetrics} as well as
 higher Teichm\"uller theory and Anosov
 representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
-
 
 Given $p,q \in \wt{\Sigma}$ we will write $G[p,q)\subset G(\Sigma)$
 for the set of geodesics intersecting the geodesic segment
@@ -351,8 +380,8 @@ i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
 In fact, Bonahon defined intersection number $i_B$ for unoriented
 geodesic currents $\Curr^u(S)$, but we have the following relation
 \begin{lemma}
-Let $q \colon G(\Sigma) \to G^u(\Sigma)$ be the natural quotient map.
-Then, for every $\mu_1, \mu_2 \in \Curr(S)$, we have
+For $q \colon G(\Sigma) \to G^u(\Sigma)$ the natural quotient map
+and any $\mu_1, \mu_2 \in \Curr(S)$, we have
 \[
 i(\mu_1,\mu_2) = i_B(q_*(\mu_1), q_*(\mu_2))
 \]
@@ -363,11 +392,14 @@ We have the relation
 \[
 \mathcal{D}\mathcal{G}(S)=(q\times q)^{-1}(\mathcal{D}\mathcal{G}^u(S)).
 \]
-Hence, for flip-invariant oriented geodesic currents $\mu_1, \mu_2$ we have already have
+\DPTfyi{Added this next sentence, other small edits}
+Since $q$ commutes with the $\pi_1$ action, there is the same
+relationship for fundamental domains.
+Hence, for flip-invariant oriented geodesic currents $\mu_1, \mu_2$,
+by the change-of-variables principle we have
 \[
-\int_{\mathcal{F}}d(\mu_1 \otimes \mu_2) = \int_{\mathcal{F}^u}d(q_*(\mu_1) \otimes q_*(\mu_2)) = i_B(q_*(\mu_1),q_*(\mu_2))
+\int_{\mathcal{F}}d(\mu_1 \otimes \mu_2) = \int_{\mathcal{F}^u}d(q_*(\mu_1) \otimes q_*(\mu_2)) = i_B(q_*(\mu_1),q_*(\mu_2)).\qedhere
 \]
-where we used the change of variables principle.
 \end{proof}
 With this definition, intersection number remains unchanged upon flipping the
 orientation of any of its factors.
@@ -400,6 +432,8 @@ Finally, we highlight a special subset of geodesic currents that can be regarded
   current $\nu \in \Curr(S)$, we have $i(\mu, \nu)>0$.
 \label{def:filling_current}
 \end{definition}
+
+\DPTtodo[inline]{Should we mention $\delta_C$ is filling iff $C$ is filling?}
 
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}
