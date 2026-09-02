@@ -24,7 +24,7 @@ characterization of filling geodesic currents.
     \item The set of curve functionals $f \colon \Curves^+(S) \to
       \mathbb{R}$ satisfying symmetry, oriented smoothing, additivity,
       and stability for which their systole \[\sys(f)\coloneqq \inf \{
-        f(C) : C \in \Curves^+(S),\ C \mbox{ non-trivial} \}\] is
+        f(\vec C) : \vec C \in \Curves^+(S),\ \vec C \mbox{ non-trivial} \}\] is
       positive.
 \end{enumerate}
 \end{corollary}
@@ -271,7 +271,7 @@ We now prove the corollary from the introduction.
 \begin{proof}
 Additivity is satisfied by definition of $\ell_d$ on multi-curves. It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
 The key point is to check that $\ell_d$ satisfies smoothing. 
-Let $C$ be a multicurve with an essential crossing $x$, and let $C'$ be obtained by smoothing $C$ at $x$.
+Let $C$ be an unoriented multicurve with an essential crossing $x$, and let $C'$ be obtained by smoothing $C$ at $x$.
 
 Fix $\epsilon>0$. Since $\ell_d$ is a curve functional, $\ell_d(C)<\infty$ for every multi-curve $C$. By definition of $\ell_d(C)$, there exists a concrete representative $\gamma$ of $C$ with an essential crossing $x'$ of the same homotopy type as $x$ such that
 \[
@@ -722,9 +722,13 @@ hyperbolic parallelogram (see Lemma~\ref{lem:hyp_parallelogram})
 applied to the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the fact that the hyperbolic Liouville current is the dual current for the hyperbolic length, by~\cite[Proposition~14]{Bonahon88:GeodesicCurrent}.
 
+The $\lambda$-length functional arises naturally in the study of the
+skein algebra of a surface; see, for example,
+\cite[Secs.~1--2]{Pen12:Decorated} and
+\cite[Sec.~3]{Thurston14:PBI}.
 For the other direction, by the assumptions on~$f$ and
 Theorem~\ref{thm:intersections_group}, there exists a
-geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
+geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every unoriented closed
 curve $C$.
 It remains to show that $\mu_f$ is a Liouville current, which is where Equation~\eqref{eq:lambda-smoothing} will play a role.
 Given elements $a, b \in \pi_1(S)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of

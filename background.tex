@@ -253,6 +253,7 @@ For an unoriented curve $C$, we define the corresponding flip-invariant geodesic
 \DPTtodo{These two definitions make it pretty inevitable we'll want to
   distinguish between $C$ and $\vec C$ throughout the paper. That will
   be annoying to fix}
+  \DMGtodo{I can fix it}
 \[
 \delta_C \coloneqq \frac12 \left( \delta_{\vec{C}}+ \delta_{\sigma(\vec C)} \right).
 \]
@@ -284,11 +285,9 @@ For uniqueness, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
 
 \DPTtodo{Should we use $\Curr_b(S)$ by analogy with $i_b$? With
   current notation, both $\Curr$ and $\Curr^u$ represent unoriented currents}
+  \DMGtodo{I prefer the current notation, since there is a b also for bounded currents, which means something different (although only relevant in non-compact setting, which doesn't appear much here other than in Further questions)}
 Some authors, such as
-Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent},
-prefer to use the space of geodesic currents $\Curr^u(S)$ as
-\DPTfyi{Switched to $\pi_1$-invariant since there's more than one type
-  of invariance here}
+Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent}, use the space of geodesic currents $\Curr^u(S)$ as
 $\pi_1$-invariant
 Radon measures on the space of unoriented geodesics of
   $\wt{\Sigma}$, i.e.,
@@ -308,6 +307,7 @@ q_* \colon \Curr(S) \to \Curr^u(S).
 \end{lemma}
 \DPTtodo{$q$ is a finite-degree covering map, and the lemma is true in
   that generality (and even larger generality, I think). It must be standard?}
+  \DMGtodo{it might be standard, but I don't know a reference.}
 \begin{proof}
 We claim that the map $q_*$ has inverse
 \[
@@ -350,9 +350,10 @@ Hence, $q_*$ and $L$ are continuous and linear, and since weighted flip-invarian
 
 \DPTtodo{Check if it makes sense to make this point here. Haven't we
   already made it?}
+  \DMGtodo{I don't think we have, the ``alluded above'' seemed to be referring to a text that didn't exist anymore, I tweaked accordingly}
 Oriented currents are
 more
-general, and, as alluded above, appear naturally in algebraic
+general appear naturally in algebraic
 contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
   CR25:Manhattan, CMGR26:GreenMetrics} as well as
 higher Teichm\"uller theory and Anosov
@@ -392,7 +393,6 @@ We have the relation
 \[
 \mathcal{D}\mathcal{G}(S)=(q\times q)^{-1}(\mathcal{D}\mathcal{G}^u(S)).
 \]
-\DPTfyi{Added this next sentence, other small edits}
 Since $q$ commutes with the $\pi_1$ action, there is the same
 relationship for fundamental domains.
 Hence, for flip-invariant oriented geodesic currents $\mu_1, \mu_2$,
@@ -434,6 +434,9 @@ Finally, we highlight a special subset of geodesic currents that can be regarded
 \end{definition}
 
 \DPTtodo[inline]{Should we mention $\delta_C$ is filling iff $C$ is filling?}
+\DMGtodo{yes, I did it below}
+
+For example, $\delta_{\vec C}$ is filling if and only if $\vec C$ is a \emph{filling multi-curve}, in the sense that $S\backslash \vec C$ is a collection of topological disks.
 
  \subsection{Convex functions on the integers}
  \label{subsec:convexity}

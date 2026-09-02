@@ -140,6 +140,7 @@ Proposition~\ref{prop:join-split-alg} apply as before.
 \DPTtodo{Thanks for the edits! On the right I still think you might need to
   rotate the captions, or use arrows, or something. Or maybe it's OK,
   the vertical accordion above worked}
+  \DMGtodo{does it work now? I spaced out the vertical  whiskers a bit more}
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{h-accordion}}
@@ -439,15 +440,13 @@ Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional
 satisfying symmetry, smoothing, additivity and stability, and let
 $\mu_f$ be as above.
 For $\vec C$ an oriented closed curve, we have
-\DPTfyi{Added asymmetric intersection fact to the statement}
 \[
 i(\mu_f,\delta_C)= \vec\imath(\overline\mu_f, \delta_{\vec C}) = f(\vec C).
 \]
 \end{theorem}
 \begin{proof}
-\DPTfyi{Edited for factors of $\OneHalf$ and other minor issues}
-We first prove that $\vec{\imath}(\overline\mu_f,\delta_C)=f(C)$. Given a representative $y \in
-\pi_1(S)$ of the conjugacy class~$C$, we will find a sequence of
+We first prove that $\vec{\imath}(\overline\mu_f,\delta_{\vec C})=f(\vec C)$. Given a representative $y \in
+\pi_1(S)$ of the conjugacy class~$\vec C$, we will find a sequence of
 RH boxes to approximating the fundamental domain for $\langle
 y\rangle$ above, and then show that computing the measure of that
 fundamental domain yields $f([y])$.
@@ -494,7 +493,7 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      The property $i(\mu_f, C)=f(C)$ for any flip-invariant multi-curve $C$
+      The property $i(\mu_f, C)=f(C)$ for any unoriented multi-curve $C$
       follows by the definition of $\mu_f$ and the fact that
       $\overline\mu_f$ is finitely additive.
 \end{proof}

@@ -317,7 +317,7 @@ Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a curve functional satisfying:
 \item power smoothing; and
 \item oriented disconnected smoothing.
 \end{enumerate}
-Then $f$ satisfies stability: $f(C^n) = f(nC) = nf(C)$.
+Then $f$ satisfies stability: $f(\vec C^n) = f(n\vec C) = nf(\vec C)$.
 \label{prop:power_disconnected_imply_stable}
 \end{proposition}
 \begin{proof}
@@ -369,16 +369,16 @@ we get $f(a) \geq F(a)$. Thus, $F(a)=f(a)$, and hence $f$ satisfies stability si
 \begin{remark}
 If we modify the statements of
 Propositions~\ref{prop:oriented_smoothing_unoriented}
-and~\ref{prop:cont_conn_disc} to refer to $C$-quasi-smoothing (for fixed
-$C>0$), then the proofs \emph{do not} go through. For example, in the
+and~\ref{prop:cont_conn_disc} to refer to $K$-quasi-smoothing (for fixed
+$K>0$), then the proofs \emph{do not} go through. For example, in the
 induction from connected to disconnected
 oriented smoothing, inequality Eq.~\eqref{eq:inequality_smoothing} would
 have to be replaced by
 \[
-f([a^{2n}b^{2n}]) \geq 2nf([ab]) - C n.
+f([a^{2n}b^{2n}]) \geq 2nf([ab]) - K n.
 \]
 Following the same chain of inequalities that prove the induction does
-not yield the desired inequality, since one accumulates one extra $-C$
+not yield the desired inequality, since one accumulates one extra $-K$
 factor. We suspect the modified statement for quasi-smoothing is not
 true.
 \end{remark}
