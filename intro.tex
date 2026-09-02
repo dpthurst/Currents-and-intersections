@@ -103,7 +103,8 @@ Section~\ref{subsec:non-examples}).
 \begin{comment}Some other natural properties,
 notably positivity ($f \ge 0$) and stability (giving behavior on
 non-primitive
-curves), come out in the proof.\end{comment}
+curves), come out in the proof.
+\end{comment}
 
 The axioms in Theorem~\ref{thm:intersect} single out a locally compact
 cone in $\mathbb{R}^{\Curves(S)}$. We expect that suitable weakenings
@@ -112,10 +113,16 @@ compactness of other natural spaces of functionals arising in
 compactifications of higher-rank surface groups representations and in
 the context of rational maps; see Sections~\ref{subsec:examples}
 and~\ref{sec:local-compactness}.
-\DMGtodo{rewrote this paragraph to highlight the generality first, and then the two cases of Riemannian and Finsler, highlighting the conjugate points possibility}
+\DPTfyi{Edited a little. Earlier version could be read as requiring
+  conjugate points to get a dual current}
 Theorem~\ref{thm:intersect} produces numerous new dual currents and
-unifies several constructions.  We show that every symmetric length pseudo-metric on $S$ has a dual geodesic current recovering its marked length spectrum. No curvature or dynamical hypotheses are required.
-In particular, this associates a canonical generalized Liouville current to any arbitary Riemannian metric on $S$ with conjugate points, or, more generally, any reversible Finsler metric. In fact this gives another characterization of geodesic
+unifies several constructions.  We show that every symmetric length
+pseudo-metric on $S$ has a dual geodesic current recovering its marked
+length spectrum; no curvature or dynamical hypotheses are required.
+In particular, this associates a canonical generalized Liouville
+current to an arbitrary Riemannian metric on~$S$, including those with
+conjugate points, or, more generally, any reversible Finsler metric.
+In fact this gives another characterization of geodesic
 currents.
 \begin{maincor}
   \label{maincor:length_dual}
@@ -130,11 +137,13 @@ non-positively curved, and locally $\CAT(-1)$ or $\CAT(0)$ metrics \cite{Otal90:
 The construction of the length pseudo-metric from a geodesic current
 is due to Burger, Iozzi, Parreau, and Pozzetti
 \cite[Section~4]{BIPP21:Systoles}; see also \cite{dRMG22:Duals}.
-\begin{comment}
+\DPTfyi{Restored this bit, since otherwise I think the corollary
+  statement is misleading}
 We caution the reader that the length pseudo-metrics in this corollary
 do not in general
 induce the standard topology on~$S$, and the distance functions may
-not even be continuous on $S \times S$ \cite[Propositions 4.7, 4.12]{dRMG22:Duals}.\end{comment}
+not even be continuous on $S \times S$ \cite[Propositions 4.7,
+4.12]{dRMG22:Duals}.
 These terms are defined, and Corollary~\ref{maincor:length_dual} is
 proved, in Section~\ref{subsec:length-metrics}.
 
@@ -269,8 +278,9 @@ f(g)+f(h)=\max\{f(gh),f(gH)\}.
 Here the conditions, except for the last, come from
 Theorem~\ref{thm:intersections_group}.
 
+\DPTfyi{Added a brief mention of Bonahon here since other ref was trimmed}
 We can likewise characterize curve functionals giving length with respect to
-(some) hyperbolic metric.
+(some) hyperbolic metric, following Bonahon \cite[Theorem~13]{Bonahon88:GeodesicCurrent}.
 \begin{mainthm}
 \label{thm:hyp-char}
 Let $f \colon \pi_1(S) \to \mathbb{R}$.
@@ -291,17 +301,16 @@ and, when $(\ora{g},\ora{h})$ are crossing,
 where $\lambda(g)\coloneqq 2\cosh\!\bigl(f(g)/2\bigr)$.
 \end{mainthm}
 
-
-
-\begin{comment}Theorem~\ref{thm:hyp-char} builds on Bonahon's characterization of
+\begin{comment}
+  Theorem~\ref{thm:hyp-char} builds on Bonahon's characterization of
 Liouville currents \cite[Theorem~13]{Bonahon88:GeodesicCurrent}, but
-is stated purely in terms of the curve functional.\end{comment}
+is stated purely in terms of the curve functional.
+\end{comment}
 
 These theorems are proved in Sections \ref{subsec:laminations}
 (Theorem~\ref{thm:lam-char}) and~\ref{subsec:liouville}
 (Theorem~\ref{thm:hyp-char}).
 
-\DMGtodo{edited this}
 We highlight some relevant consequences of these two results.
 
 \begin{itemize}
@@ -310,10 +319,10 @@ We highlight some relevant consequences of these two results.
     self-crossings. In the setting of trace identities in the
     $\PSL(2,\mathbb{R})$ character variety, the relations for
     self-crossings are more intricate, as they depend on sign choices.
-  
 \begin{comment}
 \item Likewise, Theorem~\ref{thm:lam-char} recovers the result of the second author~\cite{Thu00:GeometricIntersection}
-  that measured laminations satisfy max-smoothing.\end{comment}
+  that measured laminations satisfy max-smoothing.
+\end{comment}
 \item If $\mathcal{M}$ is a class of marked symmetric length metrics
   where marked length
 spectrum rigidity holds, it follows from
@@ -326,13 +335,16 @@ applies are negatively curved Riemannian metrics
 nonpositively curved
 Riemannian metrics
 \cite{CFF92:RigidityNonPosCurvedRiem,Con18:MarkedNonpos}, and
-Riemannian metrics with Anosov geodesic flow~\cite{GLP25:MarkedAnosov}.\begin{comment}
+Riemannian metrics with Anosov geodesic
+flow~\cite{GLP25:MarkedAnosov}.
+\begin{comment}
     \item Theorem~\ref{thm:hyp-char} characterizes hyperbolic metrics among \emph{all}
     curve functionals. In particular, it applies to stable lengths arising
     from Green metrics associated to admissible random walks on
     $\pi_1(S)$, suggesting applications to the study of singularity
     properties of their hitting measures; see
-    Section~\ref{subsec:green}.\end{comment}
+    Section~\ref{subsec:green}.
+\end{comment}
     \item They extend Luo’s characterizations of those
 functions on simple closed curves that arise as either intersection with
 measured laminations~\cite[Theorem~1.1, Theorem~1.2]{Luo10:Simple}
