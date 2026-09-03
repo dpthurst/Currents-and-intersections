@@ -272,7 +272,7 @@ We now prove the corollary from the introduction.
 \begin{proof}
 Additivity is satisfied by definition of $\ell_d$ on multi-curves. It is clear that $\ell_d$ is a symmetric curve functional, since $d$ is symmetric.
 The key point is to check that $\ell_d$ satisfies smoothing. 
-Let $C$ be an unoriented multicurve with an essential crossing $x$, and let $C'$ be obtained by smoothing $C$ at $x$.
+Let $C$ be a multi-curve with an essential crossing $x$, and let $C'$ be obtained by smoothing $C$ at $x$.
 
 Fix $\epsilon>0$. Since $\ell_d$ is a curve functional, $\ell_d(C)<\infty$ for every multi-curve $C$. By definition of $\ell_d(C)$, there exists a concrete representative $\gamma$ of $C$ with an essential crossing $x'$ of the same homotopy type as $x$ such that
 \[
@@ -313,7 +313,7 @@ Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_d$ du
 Finally, we prove the other implication. Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{S}$ defined via
 
 \begin{equation}\label{eq:d_mu}
-\wt d^\Sigma_\mu(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right),
+\wt{d^\Sigma_\mu}(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right),
 \end{equation}
 inducing a metric $d^\Sigma_\mu$ on~$S$
 so that 
@@ -338,14 +338,14 @@ One corollary is the following folklore result.
 We continue with some remarks.
 
 \begin{remark}\label{rmk:pseudo_metrics}
- For any geodesic current~$\mu$, the pseudometric $d_\mu$ is
+ For any geodesic current~$\mu$, the pseudometric $\wt{d_\mu}$ on $\wt{X}$ is
  \emph{straight} (\cite[Proposition~4.1]{BIPP21:Systoles}) in the
  sense that if $x,y,z \in l$ for any $l \in G(\Sigma)$, and $x<y<z$ in
  the natural order, then
 \[
-d_\mu^\Sigma(x,z)=d_\mu^\Sigma(x,y)+d_\mu^\Sigma(y,z).
+\wt{d_\mu^\Sigma}(x,z)=\wt{d_\mu^\Sigma}(x,y)+\wt{d_\mu^\Sigma}(y,z).
 \]
-(The $d_\mu^\Sigma$ pseudometric need not be continuous with respect to the topology of $\Sigma$.)
+(The $\wt{d_\mu^\Sigma}$ pseudometric need not be continuous with respect to the topology of $\wt{\Sigma}$.)
 If $d$ is a length pseudometric on $S$ and
 $\widetilde d$ is its lifted length pseudometric on $\widetilde S$,
 then Corollary~\ref{maincor:length_dual} produces a geodesic current $\mu$ such that the
@@ -653,7 +653,7 @@ max-smoothing.
 We state this result along the lines of Theorem~\ref{thm:intersect}.
 
 \begin{theorem}
-An unoriented curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
+A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
     For any essential crossing of a multi-curve $C$, we have
     \begin{equation}\label{eq:MLsmoothing}
       f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
@@ -729,7 +729,7 @@ skein algebra of a surface; see, for example,
 \cite[Sec.~3]{Thurston14:PBI}.
 For the other direction, by the assumptions on~$f$ and
 Theorem~\ref{thm:intersections_group}, there exists a
-geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every unoriented closed
+geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for every closed
 curve $C$.
 It remains to show that $\mu_f$ is a Liouville current, which is where Equation~\eqref{eq:lambda-smoothing} will play a role.
 Given elements $a, b \in \pi_1(S)$ which R-cross, consider the hyperbolic parallelogram~$H$ at the center of

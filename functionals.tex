@@ -77,7 +77,7 @@ of cross-ratios
 Moreover, to verify smoothing for curve functionals that do not arise from natural length metrics on the surface, it is convenient to work in terms of the relative position of pairs of hyperbolic elements in $\pi_1(S)$, where orientation is essential (see Section~\ref{subsec:triality} and compare Theorem~\ref{thm:intersect} with Theorem~\ref{thm:intersections_group}).
 
 The geometric intersection number will play a central role throughout.
-The intersection number $i(C,D)$ of two unoriented multi-curves is
+The intersection number $i(C,D)$ of two multi-curves is
 defined to be the minimal number of intersections among all
 representatives. If $\vec{C}$ and $\ora{D}$ are oriented,
 the
@@ -112,15 +112,15 @@ We introduce several properties that $f$ may satisfy.
 \begin{itemize}
 
 \item \textbf{Symmetry:}
-If $\vec{C}$ and $\ora{C'}$ are oriented multi-curves with the same underlying unoriented multi-curve, then
+If $\vec{C}$ and $\vec{C'}$ are oriented multi-curves with the same underlying unoriented multi-curve, then
 \begin{equation}
-f(\vec{C})=f(\ora{C'}).
+f(\vec{C})=f(\vec{C'}).
 \label{eq:symmetry}
 \end{equation}
 
 \item \textbf{Oriented smoothing:}
 Let $\vec{C}$ be a multi-curve on $S$, and let $x$ be an essential crossing of $\vec{C}$.
-Let $\ora{C'}$ denote the oriented smoothing of $\vec{C}$ at $x$.
+Let $\vec{C'}$ denote the oriented smoothing of $\vec{C}$ at $x$.
 Then
 \begin{equation}\label{eq:or-smoothing}
 f\!\left(\mfig{curves-3}\right)
@@ -184,7 +184,7 @@ Section~\ref{subsec:triality}.
   For $\vec{C}$ a multi-curve,  $\vec{C}^n$ is the multi-curve with as many components as~$\vec{C}$, in which each
   component of~$\vec{C}$ is covered by an $n$-fold cover. That is, if $\vec{C} =
   [g]$ for
-  $g \in \pi_1(S,x)$, then $\vec{C}^n = [\ora{g}^n]$.
+  $g \in \pi_1(S,x)$, then $\vec{C}^n = [g^n]$.
   On the other hand, $n\vec{C}$ is the multi-curve
   that consists of $n$~parallel
   copies of~$\vec{C}$ (so with $n$ times as many components) or,
@@ -241,7 +241,7 @@ curve with. See also Section~\ref{subsec:crossings}.
   functional invariant under symmetry. We define the most important
   property for this paper.
   \begin{itemize}
-  \item \textbf{Smoothing:} If $C$ is an unoriented closed curve, and
+  \item \textbf{Smoothing:} If $C$ is a closed curve, and
     $C'$ either of the two smoothings, then $f(C) \geq f(C')$,
     Schematically, we have
      \[
@@ -259,16 +259,18 @@ For this it is convenient to work with oriented curves.
 Given a curve functional on unoriented multi-curves
 $f \colon \Curves(S) \to \mathbb{R}$, there is a canonical extension to
 oriented multi-curves defined by forgetting orientation:
-\[
-f^+(\vec ) \coloneqq f(C),
-\]
+\begin{equation}
+\label{eq:oriented_extension}
+f^+(\vec C) \coloneqq f(C),
+\end{equation}
 where $C$ denotes the underlying unoriented multi-curve.
 Conversely, if $f \colon \Curves^+(S) \to \mathbb{R}$ is symmetric, then it induces a functional on unoriented multi-curves
-\[
+\begin{equation}
+\label{eq:unoriented_destriction}
 \overline{f} \colon \Curves(S) \to \mathbb{R}, 
 \qquad
 \overline{f}(C) \coloneqq f(\vec C),
-\]
+\end{equation}
 where $\vec C$ is any oriented representative of the unoriented
 multi-curve~$C$.
 
@@ -327,8 +329,8 @@ the properties above.
     If $K=0$, we recover the oriented smoothing property,
     Eq.~\eqref{eq:or-smoothing}.
 \item \textbf{Quasi-smoothing:} There is a constant $K \ge 0$ so that,
-  if $\vec C$ is an unoriented closed curve and $\vec C'$ is either of the two
-  crossings, we have $f(\vec C) \ge f(\vec C') - K$. Schematically,
+  if $C$ is a closed curve and $C'$ is either of the two
+  crossings, we have $f(C) \ge f(C') - K$. Schematically,
   \begin{equation}\label{eq:quasismoothing}
     f\!\left(\mfig{curves-0}\right)
     \ge
@@ -342,6 +344,9 @@ the properties above.
     \begin{equation}\label{eq:union-convex}
       f(\vec C_1 \cup \vec C_2) \le f(\vec C_1) + f(\vec C_2).
     \end{equation}
+    \DMGtodo{added this bit about convex union propagating to unoriented functional}
+    In particular, if $f$ is symmetric, the induced unoriented curve functional $\overline{f}$ on unoriented multicurves given by Equation~\ref{eq:unoriented_destriction} also satisfies convex union, in the sense that
+    \[ \overline{f}(C_1 \cup C_2) \le \overline{f}(C_1) + \overline{f}(C_2).\]
     If Eq.~\eqref{eq:union-convex} is strengthened to an equality, we recover additivity (Eq.~\eqref{eq:union-additive}).
 \end{itemize}
 \end{definition}
@@ -418,8 +423,8 @@ delineate the scope of our results.
   The space of \emph{convex curve functionals}, denoted $\Convex(S)$,
   is the set of functionals on unoriented multi-curves satisfying smoothing,
   convex union, stability, and homogeneity. We may equivalently think
-  of these as functionals on multi-curves that satisfy the symmetry
-  property.
+  of these as functionals on oriented multi-curves that satisfy the symmetry
+  property, convex union stability, and homogeneity.
   We use the qualifier \emph{convex} because these functions extend
   continuously to the space of geodesic currents and, under a slight
   strengthening of the smoothing hypothesis, their restrictions to
