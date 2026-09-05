@@ -319,9 +319,9 @@ We highlight some relevant consequences of these two results.
 \item Likewise, Theorem~\ref{thm:lam-char} recovers the result of the second author~\cite{Thu00:GeometricIntersection}
   that measured laminations satisfy max-smoothing.
 \end{comment}
-\item If $\mathcal{M}$ is a class of marked symmetric length metrics
+\item \DMGtodo{edited this bullet point} If $\mathcal{M}$ is a class of marked symmetric length metrics
   where marked length
-spectrum rigidity holds, it follows from
+spectrum rigidity holds, then one can decide only from the spectrum of $d \in \mathcal{M}$ if it is a hyperbolic metric: indeed, it follows from
 Corollary~\ref{maincor:length_dual}
 that $d \in \mathcal{M}$ is isometric to a hyperbolic metric 
 if and only if it satisfies the hypothesis of
@@ -355,51 +355,35 @@ functions~\cite{Luo98:GeodesicLength}.
 
 \subsection{Characterizing small actions on real trees} 
 
-We next apply Theorem~\ref{thm:intersect} to actions of surface groups
-on $\mathbb{R}$-trees. We obtain new characterizations of those
-$\pi_1(S)$-actions that are dual to measured laminations. In
-particular, we give an axiomatic characterization in terms of explicit
-inequalities on pairs of group elements. Skora’s classical theorem
-\cite{Sko90:GeometricAction}
-then emerges as a formal consequence, yielding a conceptual and
-streamlined proof.
+\DMGtodo{edited this section to make the background a bit lighter, since a lot is developed in detail in the trees section anyways}
 
-\DMGtodo{these initial definitions feel a bit too detailed for an intro, but on the other hand they are useful to understand the hypotheses of the theorem for non-experts, so maybe it's good to keep them, since we'll send to a generalist journal?}
-A \emph{$\Gamma$-tree} is an isometric action of a finitely generated
-group $\Gamma$ on an $\mathbb{R}$-tree $T$. For $g\in\Gamma$, its
-translation length is
+We next apply Theorem~\ref{thm:intersect} to give new equivalent characterizations of $\pi_1(S)$ actions 
+on $\mathbb{R}$-trees dual to measured laminations. In
+particular, we translate the smoothing axioms into explicit
+identities for translation lengths on pairs of group elements and relate them to the configuration of axes in the tree. As a consequence, we obtain a streamlined proof of Skora’s classical theorem
+\cite{Sko90:GeometricAction}.
+
+An \emph{$S$-tree} is a minimal isometric action of $\pi_1(S)$ on an $\mathbb{R}$-tree $T$. 
+For $g\in\pi_1(S)$, let
 \[
-\norm{g}=\inf_{x\in T} d(x,gx).
+\norm{g}=\inf_{x\in T} d(x,gx)
 \]
-The \emph{characteristic set} $T_g$ of $g \in \Gamma$ is the set of
-points that are translated the least. Concretely,
+denote its translation length, and let $T_g$ denote its \emph{characteristic set}, i.e., the subset of
+points of $T$ that are translated the least. Concretely,
 an isometry $g$ of $T$ either has a non-empty set $T_g$ of fixed
 points (\emph{elliptic}) or
 has no fixed points and translates points on its invariant
 axis $T_g$ by a definite distance of $\norm{g}>0$
 (\emph{hyperbolic}). See \cite[\S1.3]{CM87:GroupActions}.
-We say the action is \emph{irreducible} if it does not have a global
-fixed point, $T$ has no ends fixed by all of
-$\Gamma$, and there are no $\Gamma$-invariant lines (see Section~\ref{sec:skora}).
+We use the standard notion of irreducible action; see Section~\ref{sec:skora}.
 
-An \emph{$S$-tree} is a minimal $\pi_1(S)$-tree.
-An $S$-tree \emph{preserves axis intersection} if whenever two elements
-$a,b\in\pi_1(S)$ acting hyperbolically on the tree have intersecting hyperbolic axes in
-$\widetilde{\Sigma}$, their axes in $T$ also intersect.
-If the same holds for all characteristic sets (including elements
-acting elliptically on~$T$),
-we say the action \emph{preserves characteristic intersection}.
+We say $T$ \emph{preserves characteristic intersection} if, whenever the axes of $a,b \in \pi_1(S)$ in $\wt\Sigma$ intersect, their characteristic sets $T_a$ and $T_b$ intersect. Requiring this only when $a$ and $b$ act hyperbolically on $T$ gives \emph{preservation of axis intersection}. Two hyperbolic isometries of $T$ \emph{overlap incoherently} if their axes intersect in a
+non-degenerate arc on which they translate in opposite directions.
 
-A fundamental example is the $S$-tree $T_\lambda$ dual to a measured
+Finally, $T_\lambda$ denotes the $S$-tree dual to a measured
 lamination $\lambda$, obtained by collapsing $\widetilde{\Sigma}$
 by the pseudo-metric induced by the transverse
 measure on~$\lambda$.
- 
-If two hyperbolic isometries of $T$ have axes intersecting in a
-non-degenerate arc, we say they \emph{overlap incoherently} if they
-translate in opposite directions along the overlap.
-
-We prove the following equivalences.
 
 \begin{mainthm}
 \label{mainthm:skora}
@@ -409,9 +393,9 @@ Let $T$ be an $S$-tree. The following are equivalent:
 There exists a measured lamination $\lambda$ on $S$ such that
 $T$ is $\pi_1(S)$-equivariantly isometric to~$T_\lambda$;
 \item\label{item:skora_axis}
-The $S$-tree is irreducible and preserves axis intersection;
+The action is irreducible and preserves axis intersection;
 \item\label{item:skora_characteristic}
-The $S$-tree is irreducible and preserves characteristic intersection;
+The action is irreducible and preserves characteristic intersection;
 \item\label{item:skora_maxsmoothing}
 The translation length function
 $\norm{\cdot}\colon \pi_1(S)\to\mathbb{R}$ satisfies \emph{max-smoothing}:
@@ -434,44 +418,30 @@ For every pair $(\ora{a},\ora{b})$ parallel in $\wt{S}$,
 \end{equation}
 \end{enumerate}
 \item\label{item:skora_incoherent}
-  There is no pair $(\ora{a},\ora{b})$ that are
-parallel in $\wt{S}$ and act hyperbolically and overlap incoherently in $T$.
+  No parallel pair $(\ora{a},\ora{b})$ acts hyperbolically on $T$ with incoherently overlapping axes.
 \end{enumerate}
 \end{mainthm}
 
 The implication $\text{(a)} \Rightarrow \text{(b)}$ is due to
-Morgan-Otal~\cite{MO93:RelativeGrowths} (which we rely on), and
+Morgan-Otal~\cite{MO93:RelativeGrowths}, and
 $\text{(b)} \Rightarrow \text{(a)}$ recovers
 Skora’s theorem~\cite{Sko90:GeometricAction} (which we reprove).
-All remaining equivalences are new.
+All the remaining equivalences are new. Skora also proved that \ref{item:skora_lamination} is equivalent to the action being \emph{small}, meaning that every non-degenerate arc has cyclic stabilizer~\cite{Sk96:Splittings}.
 
-We note for reference that Skora gave another condition
-equivalent to duality with a measured lamination~\cite{Sk96:Splittings}: 
-\DMGtodo{how can we make the numbering of this next one be (f) ?}
-\begin{enumerate}[label=(\alph*), resume]
-\item The $S$-tree is \emph{small}, i.e., stabilizers of non-degenerate arcs are cyclic.
-\end{enumerate}
+The max-smoothing identities refine the general characterization of translation lengths due to Culler--Morgan and Parry~\cite{CM87:GroupActions,Par91:Translation}.
 
-For a general finitely generated group $\Gamma$,
-Culler-Morgan~\cite{CM87:GroupActions} identified axioms satisfied by
-translation lengths of $\Gamma$-actions on $\mathbb{R}$-trees and asked
-whether these axioms characterize such actions among conjugacy-invariant
-functions $f\colon\Gamma\to\mathbb{R}_{\geq 0}$. Parry~\cite{Par91:Translation}
-answered this affirmatively.
-A restatement of these axioms (see Proposition~\ref{prop:max_twice})
+A restatement of their theorem (see Proposition~\ref{prop:max_twice})
 is that a conjugacy-invariant
-function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ is the translation length
-of a $\Gamma$-tree if and only if for every pair $a,b\in\Gamma$ the
+function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ on a general finitely generated group $\Gamma$ is the translation length
+of a $\Gamma$ action on a tree $T$ if and only if for every $a,b\in\Gamma$ the
 maximum among
 \[
 \norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}
 \]
 is attained at least twice.
 
-When $\Gamma=\pi_1(S)$, Theorem~\ref{mainthm:skora} refines Parry’s
-characterization by isolating precisely which translation lengths arise
-from \emph{small} actions on $\mathbb{R}$-trees, or equivalently from
-actions dual to measured laminations.
+For surface groups, Theorem~\ref{mainthm:skora} refines this
+characterization by showing that prescribing which equality occurs according to whether $(\ora a, \ora b)$ is crossing or parallel singles out exactly the trees dual to measured laminations.
 
 \subsection{Generalized cross-ratios}
 
