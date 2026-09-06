@@ -1,8 +1,8 @@
 \section{Introduction}
 
-Geodesic currents on an orientable hyperbolic surface are $\pi_1(S)$-invariant
+Geodesic currents on a closed orientable hyperbolic surface $S$ are $\pi_1(S)$-invariant
 Radon measures on the
-space of unoriented geodesics on~$\wt{S}$, forming the weak$^*$
+space of unoriented geodesics on the universal cover~$\wt{S}$, forming the weak$^*$
 closure of the set
 of weighted closed geodesics. Equivalently, from a dynamical
 viewpoint, they may be regarded as measures on the unit tangent bundle
@@ -325,14 +325,14 @@ We highlight some relevant consequences of these two results.
       is missing that $\cM$ needs to contain hyperbolic metrics.
       Earlier this cited Corollary~\ref{maincor:length_dual}, but that
       seems irrelevant to me.}
+      \DMGtodo{edited it more, adding that hyperbolic metrics are contained in the class. I changed it to saying that, thanks to Corollary B, one only needs to check the lambda-length equation to see if a metric in $\mathcal M$ is hyperbolic.}
     In many cases, Theorem~\ref{thm:hyp-char} lets us conclude a metric is
-    hyperbolic. Specifically, 
-    if $\mathcal{M}$ is a class of marked symmetric length metrics
+    hyperbolic by looking at its spectrum. Specifically, 
+    if $\mathcal{M}$ is a class of marked symmetric length metrics containing hyperbolic metrics and
   where marked length
-spectrum rigidity holds,
-then $d \in \mathcal{M}$ is isometric to a hyperbolic metric 
-if and only if it satisfies the hypothesis of
-Theorem~\ref{thm:hyp-char}\@. Some classes $\mathcal{M}$ for which this
+spectrum rigidity holds, then, by Corollary~\ref{maincor:length_dual},
+ $d \in \mathcal{M}$ is isometric to a hyperbolic metric 
+if and only if it satisfies Equation~\eqref{eq:lambda-smoothing}\@. Some classes $\mathcal{M}$ for which this
 applies are negatively curved Riemannian metrics
 \cite{Otal90:SpectreMarqueNegative,HP97:RigidityNegCurvedCone},
 nonpositively curved
@@ -383,8 +383,6 @@ axis $T_g$ by a definite distance of $\norm{g}>0$
 (\emph{hyperbolic}). See \cite[\S1.3]{CM87:GroupActions}.
 We use the standard notion of irreducible action; see Section~\ref{sec:skora}.
 
-\DPTfyi{Edited a little. In particular talking about properties of the
-  action rather than properties of~$T$}
 We say the action on~$T$ \emph{preserves characteristic intersection} if, whenever
 the axes of $a,b \in \pi_1(S)$ in $\wt\Sigma$ intersect, their
 characteristic sets $T_a$ and $T_b$ intersect.
@@ -452,8 +450,7 @@ maximum among
 \norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}
 \]
 is attained at least twice.
-\DPTfyi{Rewrote this sentence, switching clauses. Also corrected
-  slightly: We don't prescribe which equality occurs}
+
 For surface groups, Theorem~\ref{mainthm:skora} refines this
 characterization: we single out trees dual to measured laminations
 by restricting which equality occurs, according to the geometric

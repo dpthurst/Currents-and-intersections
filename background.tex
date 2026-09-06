@@ -314,18 +314,19 @@ defined by sending the unoriented geodesic current $\nu \in \Curr^u(S)$ to the f
 \[
 L(\nu)(A) \coloneqq \frac12 \int_{G^u(\Sigma)} \# (q^{-1}(\gamma) \cap A) d\mu(\gamma).
 \]
-In particular, for $\delta_C = \frac12 \delta_{\vec C} + \sigma \delta_{\vec C}$, we have, applying this definition,
+\DMGtodo{edited this, since $L$ must take an unoriented geodesic current, and, as it is defined $\delta_C$ is not in $\Curr^u(S)$.}
+In particular, if $\delta_C^u \in \Curr^u(S)$ denotes the geodesic current representing the unoriented curve $C$, we have, applying this definition,
 \[
-L(\delta_C) = \frac12 \left(\delta_{\vec C} + \delta_{\sigma(\vec C)} \right).
+L(\delta_C^u) = \frac12 \left(\delta_{\vec C} + \delta_{\sigma(\vec C)} \right)
 \]
 which implies
 \begin{equation}
-q_* (L(\delta_C)) = \delta_C
+q_* (L(\delta_C^u)) = \delta_C^u
 \label{eq:first_inverse}
 \end{equation}
 as well as
 \begin{equation}
-L\left(q_* \left( \frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right) \right) \right)=\frac12\left(\delta_{\vec C} + \delta_{\sigma(\vec C)}\right).
+L\left(q_* \delta_C \right) =\delta_C.
 \label{eq:second_inverse}
 \end{equation}
 Note that $q_*$ is continuous with respect to the weak$^*$-topology.
