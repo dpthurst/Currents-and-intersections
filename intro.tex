@@ -319,13 +319,20 @@ We highlight some relevant consequences of these two results.
 \item Likewise, Theorem~\ref{thm:lam-char} recovers the result of the second author~\cite{Thu00:GeometricIntersection}
   that measured laminations satisfy max-smoothing.
 \end{comment}
-\item \DMGtodo{edited this bullet point} If $\mathcal{M}$ is a class of marked symmetric length metrics
+  \item
+    \DPTtodo{Edited some more. But this is still sounding maybe too
+      subtle to be worth explaining. Current assumption
+      is missing that $\cM$ needs to contain hyperbolic metrics.
+      Earlier this cited Corollary~\ref{maincor:length_dual}, but that
+      seems irrelevant to me.}
+    In many cases, Theorem~\ref{thm:hyp-char} lets us conclude a metric is
+    hyperbolic. Specifically, 
+    if $\mathcal{M}$ is a class of marked symmetric length metrics
   where marked length
-spectrum rigidity holds, then one can decide only from the spectrum of $d \in \mathcal{M}$ if it is a hyperbolic metric: indeed, it follows from
-Corollary~\ref{maincor:length_dual}
-that $d \in \mathcal{M}$ is isometric to a hyperbolic metric 
+spectrum rigidity holds,
+then $d \in \mathcal{M}$ is isometric to a hyperbolic metric 
 if and only if it satisfies the hypothesis of
-Theorem~\ref{thm:hyp-char}. Some classes $\mathcal{M}$ for which this
+Theorem~\ref{thm:hyp-char}\@. Some classes $\mathcal{M}$ for which this
 applies are negatively curved Riemannian metrics
 \cite{Otal90:SpectreMarqueNegative,HP97:RigidityNegCurvedCone},
 nonpositively curved
@@ -355,8 +362,6 @@ functions~\cite{Luo98:GeodesicLength}.
 
 \subsection{Characterizing small actions on real trees} 
 
-\DMGtodo{edited this section to make the background a bit lighter, since a lot is developed in detail in the trees section anyways}
-
 We next apply Theorem~\ref{thm:intersect} to give new equivalent characterizations of $\pi_1(S)$ actions 
 on $\mathbb{R}$-trees dual to measured laminations. In
 particular, we translate the smoothing axioms into explicit
@@ -368,8 +373,9 @@ For $g\in\pi_1(S)$, let
 \[
 \norm{g}=\inf_{x\in T} d(x,gx)
 \]
-denote its translation length, and let $T_g$ denote its \emph{characteristic set}, i.e., the subset of
-points of $T$ that are translated the least. Concretely,
+denote its translation length, and let $T_g \subset T$ denote its
+\emph{characteristic set}, i.e., those points that are translated the
+least. Concretely,
 an isometry $g$ of $T$ either has a non-empty set $T_g$ of fixed
 points (\emph{elliptic}) or
 has no fixed points and translates points on its invariant
@@ -377,12 +383,20 @@ axis $T_g$ by a definite distance of $\norm{g}>0$
 (\emph{hyperbolic}). See \cite[\S1.3]{CM87:GroupActions}.
 We use the standard notion of irreducible action; see Section~\ref{sec:skora}.
 
-We say $T$ \emph{preserves characteristic intersection} if, whenever the axes of $a,b \in \pi_1(S)$ in $\wt\Sigma$ intersect, their characteristic sets $T_a$ and $T_b$ intersect. Requiring this only when $a$ and $b$ act hyperbolically on $T$ gives \emph{preservation of axis intersection}. Two hyperbolic isometries of $T$ \emph{overlap incoherently} if their axes intersect in a
+\DPTfyi{Edited a little. In particular talking about properties of the
+  action rather than properties of~$T$}
+We say the action on~$T$ \emph{preserves characteristic intersection} if, whenever
+the axes of $a,b \in \pi_1(S)$ in $\wt\Sigma$ intersect, their
+characteristic sets $T_a$ and $T_b$ intersect.
+If we only require this when $a$ and $b$ act hyperbolically on $T$,
+we say the action \emph{preserves axis intersection}.
+Two hyperbolic
+isometries of $T$ \emph{overlap incoherently} if their axes intersect
+in a
 non-degenerate arc on which they translate in opposite directions.
-
-Finally, $T_\lambda$ denotes the $S$-tree dual to a measured
-lamination $\lambda$, obtained by collapsing $\widetilde{\Sigma}$
-by the pseudo-metric induced by the transverse
+Finally, for a measured lamination~$\lambda$, the tree $T_\lambda$ is
+$S$-tree dual to~$\lambda$, obtained by collapsing~$\widetilde{\Sigma}$
+by the pseudo-metric from the transverse
 measure on~$\lambda$.
 
 \begin{mainthm}
@@ -429,7 +443,6 @@ Skora’s theorem~\cite{Sko90:GeometricAction} (which we reprove).
 All the remaining equivalences are new. Skora also proved that \ref{item:skora_lamination} is equivalent to the action being \emph{small}, meaning that every non-degenerate arc has cyclic stabilizer~\cite{Sk96:Splittings}.
 
 The max-smoothing identities refine the general characterization of translation lengths due to Culler--Morgan and Parry~\cite{CM87:GroupActions,Par91:Translation}.
-
 A restatement of their theorem (see Proposition~\ref{prop:max_twice})
 is that a conjugacy-invariant
 function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ on a general finitely generated group $\Gamma$ is the translation length
@@ -439,9 +452,12 @@ maximum among
 \norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}
 \]
 is attained at least twice.
-
+\DPTfyi{Rewrote this sentence, switching clauses. Also corrected
+  slightly: We don't prescribe which equality occurs}
 For surface groups, Theorem~\ref{mainthm:skora} refines this
-characterization by showing that prescribing which equality occurs according to whether $(\ora a, \ora b)$ is crossing or parallel singles out exactly the trees dual to measured laminations.
+characterization: we single out trees dual to measured laminations
+by restricting which equality occurs, according to the geometric
+relation between $\ora{a}$ and~$\ora{b}$.
 
 \subsection{Generalized cross-ratios}
 
