@@ -357,8 +357,9 @@ of values of~$f$.
 Let $B(p_1,q_1,p_2,q_2)$ be a right-handed box so that $[B(p_1,q_1,p_2,q_2)]=[B]_{a,b,c,d}$.
 Then following limit exists and only depends on the $\pi_1(S)$-orbit
 of the box:
+\DPTfyi{Switched this to $1/4$ as discussed, and propagated that}
 \begin{equation}
-\wh\mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{2}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
+\wh\mu_{f}(B(p_1,q_1,p_2,q_2))\coloneqq\frac{1}{4}\lim_{n \to \infty}f([bx^n]) + f([cx^n])-f([ax^n]) - f([dx^n]).
 \label{eq:def_measure}
 \end{equation}
 \end{proposition}
@@ -531,13 +532,13 @@ are analogous:
 
 \begin{align*}
 \wh\mu_f(B(xp_1,q_1,p_2,q_2))
-&= \frac{1}{2}\lim_{n \to \infty}
+&= \frac{1}{4}\lim_{n \to \infty}
 \Big( f([bx^{n+1}]) + f([cx^n]) - f([ax^{n+1}]) - f([dx^n]) \Big)
 && \text{(Definition)} \\
-&= \frac{1}{2}\lim_{n,m \to \infty}
+&= \frac{1}{4}\lim_{n,m \to \infty}
 \Big( f([bx^{m}]) + f([cx^n]) - f([ax^{m}]) - f([dx^n]) \Big)
 && \text{(Prop.~\ref{prop:join-split-alg})} \\
-&= \frac{1}{2}\lim_{n \to \infty}
+&= \frac{1}{4}\lim_{n \to \infty}
 \Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
 &&\\
 &= \wh\mu_f(B(p_1,q_1,p_2,q_2)).
