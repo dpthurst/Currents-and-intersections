@@ -346,7 +346,7 @@ the properties above.
     \begin{equation}\label{eq:union-convex}
       f(\vec C_1 \cup \vec C_2) \le f(\vec C_1) + f(\vec C_2).
     \end{equation}
-    \DMGtodo{added this bit about convex union propagating to unoriented functional}%
+    
     
     If $f$ is symmetric, the induced unoriented curve
     functional $\overline{f}$ on unoriented multicurves
@@ -676,58 +676,7 @@ constant}, i.e., the minimal $K>0$ so that $\ell_{\rho} \in \AQConvex_K(S)$.
 Does $K \to \infty$ as the quasi-Fuchsian constant of~$\rho$ goes to~$\infty$?
 \end{question} 
 
-\begin{example}[Fibered 3-manifolds]
-  \label{examp:fibered}
-  Continuing from Example~\ref{examp:qf},
-  lengths associated to more general discrete faithful
-  representations into $\PSL(2,\bbC)$ need \emph{not} extend continuously to
-  currents, as we can see explicitly for mapping tori. Let $\phi$ be a
-  pseudo-Anosov homeomorphism of a closed surface~$S$, and let
-  $M_\phi$ denote the associated hyperbolic mapping torus. Let
-  $\ell_{M_\phi}(\gamma)$ denote the translation length of
-  $\gamma\in\pi_1(S)$. Since $M_\phi$ is closed
-  hyperbolic, there exists $\epsilon>0$ such that
-  $\ell_{M_\phi}(\gamma)\geq \epsilon$ for every non-trivial~$\gamma$.
-  
-  But $\ell_{M_\phi}(\phi^n\gamma)=\ell_{M_\phi}(\gamma)$ for all
-  $n\in\mathbb Z$; if $\ell_{M_\phi}$ extended continuously to
-  currents, we would get a contradiction to
-  Proposition~\ref{prop:pos-systole} below.
-  Thus this example is \textbf{not in $\bm{\Cont(S)}$}.
-  In particular,
-  by~\cite[Theorem~A]{MGT21:Smoothings}, $\ell_{M_\phi}(\gamma)$
-  cannot satisfy $K$-quasi-smoothing for any $K>0$.
 
-  This $\PSL(2,\bbC)$
-  representation corresponding to $M_\phi$ is a limit of degenerating
-  quasi-Fuchsian
-  representations. Even though the limit is not convex cocompact, it is
-  still discrete
-  and faithful.
-\end{example}
-
-
-Here we used the following standard fact, useful in curve
-counting applications (see \cite[Corollary~3.8]{ES22:GeodesicCount}).
-We include it for completeness.
-\begin{proposition}\label{prop:pos-systole}
-  If $f \in \Cont^+(S)$ has positive systole, then for each~$K$, there are
-  only finitely many oriented multi-curves $\vec C$ so that $f(\vec C) \le K$.
-\end{proposition}
-\begin{proof}
-Fix a point $X \in \Teich(S)$.
-Consider the function $h \colon \mathbb{P}\Curr(X) \to \mathbb{R}$
-given by $[\mu] \mapsto \frac{f(\mu)}{\ell_X(\mu)},$ which is
-well-defined, continuous and strictly positive by the assumptions.
-Since $\mathbb{P}\Curr(S)$ is compact
-(see Proposition~\ref{prop:local_compactness}), there exist positive
-constants $m,M>0$ depending on $X,f$ so that
-\[
-m \leq \frac{f(\mu)}{\ell_X(\mu)} \leq M
-\]
-for every $\mu \in \Curr(S)$.
-Since given $K>0$, there are finitely many multi-curves of $X$-hyperbolic length at most $Km$, it follows there are finitely many multi-curves $\vec C$ with $f(\vec C) \leq K$.
-\end{proof}
 
 \begin{example}[Higher rank length functions]
   \label{examp:higher-rank}
