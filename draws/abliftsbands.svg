@@ -18,6 +18,25 @@
      id="defs11450">
     <marker
        style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
        id="StopM"
        refX="0"
        refY="0"
@@ -534,6 +553,55 @@
          d="M 0,5.65 V -5.65"
          id="path189324" />
     </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker13938-86"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path13936-2"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker13938-86-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart">
+      <path
+         transform="scale(0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path13936-2-7"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-0" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -542,9 +610,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.6005938"
-     inkscape:cx="555.41888"
-     inkscape:cy="107.14774"
+     inkscape:zoom="2.0595394"
+     inkscape:cx="458.35492"
+     inkscape:cy="206.11405"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -712,6 +780,17 @@
          x="121.17445"
          y="63.723633"
          style="fill:#ff009e;fill-opacity:1;stroke-width:0.264583;font-size:4.23333333px">$\ora{ax^n}$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#007aff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="216.28336"
+       y="57.491039"
+       id="text13552-0-9-9-9"><tspan
+         sodipodi:role="line"
+         id="tspan13550-2-0-4-4"
+         x="216.28336"
+         y="57.491039"
+         style="font-size:4.23333px;fill:#007aff;fill-opacity:1;stroke-width:0.264583">$\ora{cx^{-n}}$</tspan></text>
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.7;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-mid:url(#marker14166-7)"
        id="path12997-82-3"
@@ -860,13 +939,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="100.09633"
-       y="115.84566"
+       x="94.672363"
+       y="115.84565"
        id="text8744-70"><tspan
          sodipodi:role="line"
          id="tspan8742-5"
-         x="100.09633"
-         y="115.84566"
+         x="94.672363"
+         y="115.84565"
          style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583">$w(x^{-1}a \cdot \ora{x})$</tspan></text>
     <text
        xml:space="preserve"
@@ -992,12 +1071,23 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="158.28604"
+       x="254.37648"
+       y="29.345369"
+       id="text8744-33-4-41"><tspan
+         sodipodi:role="line"
+         id="tspan8742-8-0-15"
+         x="254.37648"
+         y="29.345369"
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583">$w(x^{n}C \cdot \ora{x})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="168.20792"
        y="29.261396"
        id="text8744-33-4-4"><tspan
          sodipodi:role="line"
          id="tspan8742-8-0-1"
-         x="158.28604"
+         x="168.20792"
          y="29.261396"
          style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583">$w(x^{-n+1}A \cdot \ora{x})$</tspan></text>
     <path
@@ -1050,6 +1140,89 @@
        style="fill:none;stroke:#ff009e;stroke-width:0.540694;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 127.21026,71.792312 c 26.7126,-0.146716 36.295,-0.710611 36.295,-0.710611"
        id="path19211"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#007aff;stroke-width:0.410454;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 197.65149,71.156889 c 0,0 15.75205,-17.95222 37.42578,-31.039592 1.88559,1.123811 -2.07413,-4.101467 -1.65386,-5.683966"
+       id="path19209-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#007aff;stroke-width:0.410454;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 108.31596,71.412766 c 0,0 3.0907,13.884415 2.62714,32.852134 -1.50257,0.48063 -2.48675,3.58449 -2.57559,4.66056 0.59038,-0.26651 1.04668,-0.5583 1.57265,0.24542 -1.64589,0.89655 -1.03804,0.9848 -1.37018,1.67674"
+       id="path19209-3-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#007aff;stroke-width:0.419014;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 196.09406,70.848896 c -15.8156,-0.14882 -87.7781,0.692337 -87.7781,0.692337"
+       id="path19211-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.169;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-mid:url(#marker13938-86)"
+       id="path12997-8-6-6-2"
+       sodipodi:type="arc"
+       sodipodi:cx="149.1431"
+       sodipodi:cy="31.197041"
+       sodipodi:rx="1.5854017"
+       sodipodi:ry="1.8777362"
+       sodipodi:start="0.038291803"
+       sodipodi:end="3.0983092"
+       d="m 150.72734,31.268925 a 1.5854017,1.8777362 0 0 1 -1.58029,1.805846 1.5854017,1.8777362 0 0 1 -1.58787,-1.796481"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.169;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-mid:url(#marker13938-86-4)"
+       id="path12997-8-6-6-2-9"
+       sodipodi:type="arc"
+       sodipodi:cx="109.01167"
+       sodipodi:cy="-110.67889"
+       sodipodi:rx="1.5854017"
+       sodipodi:ry="1.8777362"
+       sodipodi:start="0.038291803"
+       sodipodi:end="3.0983092"
+       d="m 110.59591,-110.607 a 1.5854017,1.8777362 0 0 1 -1.58028,1.80584 1.5854017,1.8777362 0 0 1 -1.58787,-1.79648"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       transform="scale(1,-1)" />
+    <path
+       style="fill:#007aff;fill-opacity:1;stroke:#007aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle)"
+       d="m 149.48196,30.226677 3.30729,-6.151563"
+       id="path1"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="110.50452"
+       y="122.34301"
+       id="text8744-33-4-41-2"><tspan
+         sodipodi:role="line"
+         id="tspan8742-8-0-15-9"
+         x="110.50452"
+         y="122.34301"
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583">$w(c \cdot \ora{x})$</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;line-height:1.25;font-family:verdana;-inkscape-font-specification:verdana;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="155.03343"
+       y="23.193081"
+       id="text8744-33-4-41-2-7"><tspan
+         sodipodi:role="line"
+         id="tspan8742-8-0-15-9-0"
+         x="155.03343"
+         y="23.193081"
+         style="font-size:2.11667px;text-align:center;text-anchor:middle;stroke-width:0.264583">$w(C \cdot \ora{x})$</tspan></text>
+    <path
+       style="fill:#007aff;fill-opacity:1;stroke:#007aff;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Triangle-1)"
+       d="m 109.2808,112.84283 0,6.41613"
+       id="path1-2"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#007aff;stroke-width:0.410454;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 232.99754,34.797805 c 1.35758,-0.159824 2.46761,-0.938528 3.14124,-2.808207"
+       id="path19209-6-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
   </g>

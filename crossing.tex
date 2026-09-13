@@ -975,8 +975,11 @@ elements. We collect some propositions guaranteeing essential
 crossings in this context.
 
 \begin{proposition}\label{prop:join-split-geom}
-Let $a,b,x \in \pi_1(S)$ be curves with $\ora{a}$, $\ora{b}$
-crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b,x$)
+Let $a,b,{\color{blue} c},x \in \pi_1(S)$ be curves with $\ora{a}$, $\ora{b}$,
+{\color{blue} $\ora{c}$,}
+crossing $\ora{x}$ to the right. 
+{\color{blue} Suppose, further $\ora{a},\ora{c}$ cross.}
+Then there is $s \ge 0$ (depending on $a,b,x$)
   so that, for all
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
  -s$, we have
@@ -984,6 +987,11 @@ crossing $\ora{x}$ to the right. Then there is $s \ge 0$ (depending on $a,b,x$)
     \label{eq:cross-join} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross-split} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
+{\color{blue} and 
+  \begin{align}
+    \label{eq:cross-join-triple} [cx^{-n}][a x^n] [b x^m] &\reducesto [cx^{-n}ax^{n+r}bx^{m-r}]\\
+    \label{eq:cross-split-triple} [cx^{-n}a x^nb x^m] &\reducesto [cx^{-n}ax^{n+r}][bx^{m-r}].
+  \end{align}}
 
   There exists $s' \ge 0$ (depending on $a,x$) so that for all
   $\abs{n-m} > s'$,
@@ -1063,7 +1071,7 @@ examples.
   In each case, we will show that we can choose lifts of the curves to
   the normalized band model for which a
   relevant crossing is essential. We start with
-  Eq.~\eqref{eq:cross-join}, looking first at the windows $w(a\cdot
+  Eq.~\eqref{eq:cross-join} {\color{blue} and~\eqref{eq:cross-join-triple}}, looking first at the windows $w(a\cdot
   \ora{x})$ and $w(x^rb\cdot\ora{x})$.
   Since each window is a
   finite size, there is a finite range $[s_1,s_2]$ so that $w(x^rb\cdot\ora{x})$
@@ -1075,7 +1083,8 @@ examples.
   ordering of the windows. Set
   $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$.
 
-  Now, for Eq.~\eqref{eq:cross-join}, consider
+  Now, for Eq.~\eqref{eq:cross-join} {\color{blue} and~\eqref{eq:cross-join-triple}}, consider
+  {\color{blue} $g_0=cx^{-n}ax^n$,}
   $g_1 = ax^n$ and $g_2 = x^rbx^{m-r}$, with $s < r < m-n-s$. We have
   \[
     r-m < -n-s \le -n+s_1',
@@ -1087,23 +1096,41 @@ examples.
   \]
   so $g_2^+ \in w(x^rb\cdot\ora{x})$ is to the right of $g_1^+ \in
   w(a\cdot\ora{x})$. Thus
-  $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the left. Similarly if
-  $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the
-  right. In either case,
-  \[
-    [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
-  \]
-  by oriented disconnected smoothing.
+  $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the left. 
+  {\color{blue}  Since $(\ora{c},\ora{a})$ R-cross:
+  \begin{itemize}\item $w(x^{-n}A \cdot \ora{x})$ is to the left of $w(x^{n}C \cdot \ora{x})$ and 
+  \item $w(c \cdot \ora{x})$ is to the left of $w(a \cdot \ora{x})$, so $(\ora{cx^{-n}},\ora{ax^n})$ R-cross.
+  \item Further, $g_1^- \in w(x^{-n}A\cdot\ora{x})$ is to the left of $g_0^- \in w(x^{n}Cx^{-n}A \cdot \ora{x})$, and \item $g_0^+ \in w(cx^{-n}ax^n \cdot \ora{x})$ is to the left of  $g_1^+ \in
+  w(a\cdot\ora{x})$. Thus, $\ora{x^rbx^{m-r}}$ crosses $\ora{cx^{-n}ax^n}$ to the left. \end{itemize}}
   
-  For Eq.~\eqref{eq:cross-split}, write $[ax^n bx^m]=[gh]$ with
-  $g=x^r ax^n$ and $h=bx^{m-r}$, with $s < r < m-n-s$.
+  
+  Similarly if
+  $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}${\color{blue} and $\ora{cx^nax^n}$} to the
+  right. In either case,
+    \[
+[ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
+  \]
+{and \color{blue}
+  \[
+    [cx^{-n}][ax^n][bx^m] = [cx^{-n}ax^n][x^r bx^{m-r}] \reducesto [cx^{-n}ax^{n+r}bx^{m-r}]
+  \]  }
+  by oriented disconnected smoothing.
+
+  For Eq.~\eqref{eq:cross-split}, write   $[ax^n bx^m]=[gh]$, with $s < r < m-n-s$.
   Since $s_1 < r$ $h^+ \in w(b\cdot\ora{x})$ is to the left of
   $g^+ \in w(x^r a\cdot\ora{x})$.
-  Similarly, $r-m < -n+s_1'$, so $qh^-\in w(x^{r-m}B \cdot\ora{x})$ is to the left
-  of $g^- \in w(x^{-n}A\cdot\ora{x})$. Thus $\ora{h}$ and $\ora{g}$
+  Similarly, $r-m < -n+s_1'$, so $h^-\in w(x^{r-m}B \cdot\ora{x})$ is to the left
+  of $g^- \in w(x^{-n}A\cdot\ora{x})$.
+  {\color{blue} Similarly,   for Eq.~\eqref{eq:cross-split-triple}, set
+  $[cx^{-n}ax^n bx^m]=[kh]$ with
+  $k=x^rcx^{-n} ax^n$ and $h=bx^{m-r}$, with $s < r < m-n-s$.
+  Then $h^+ \in w(b\cdot\ora{x})$ is to the left of
+  $k^+ \in w(x^r cx^{-n}a\cdot\ora{x})$ and $h^-\in w(x^{r-m}B \cdot\ora{x})$ is to the left
+  of $k^- \in w(x^{-n}A\cdot\ora{x})$}. 
+  Thus $\ora{h}$ and $\ora{g}$
   are R-parallel, giving Eq.~\eqref{eq:cross-split} by oriented
-  connected smoothing.
-  We similarly get $(\ora{g},\ora{h})$ parallel if $m-n+s < r < -s$.
+  connected smoothing, {\color{blue} and $\ora{h}$ and $\ora{k}$ are R-parallel, giving Eq.~\eqref{eq:cross-split-triple}.}
+  We similarly get $(\ora{g},\ora{h})$  {\color{blue} and  $(\ora{k},\ora{h})$} are parallel if $m-n+s < r < -s$, 
 
   To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
   that $n < m$. Let $s_0$ be the ceiling of the width of $w(a\cdot\ora{x})$
@@ -1224,7 +1251,7 @@ centered on~$\ora{x}$, starting with another lemma about endpoints.
   enough and $n,m
   \ge s$ we therefore have
   \[
-    [a x^n y^m][A] = [g][A] \reducesto [x^n y^m] \reducesto [x^n][y^m]
+    [a y^m x^n][A] = [g][A] \reducesto [x^n y^m] \reducesto [x^n][y^m]
   \]
   by oriented disconnected smoothing and then (by
   Lemma~\ref{lem:righthandedfoundation}) oriented connected

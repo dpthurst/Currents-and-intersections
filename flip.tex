@@ -1,0 +1,128 @@
+\section{Flip-invariance}
+
+In this appendix we show the geodesic current $\overline \mu_f$ is flip-invariant.
+Recall that in Remark~\ref{rmk:flip_rh_box} we observed that flipping an RH box $B(Q_2,Q_1,P_2,P_1)$ based at $x$ we obtain a new RH box $B(p_1,p_2,q_1,q_2)$, with the slight inconvenience that it is based at $x^{-1}$, instead of $x$. Hence, its value cannot be extracted by evaluating the measure $\overline \mu_f$ on the nose, since it has been defined on RH boxes based \emph{at $x$}. Instead, to analyze its value, we approximate the RH box based at $x^{-1}$ by a suitable sequence of RH boxes based at $x$.
+
+\begin{figure}
+\centering{
+\resizebox{100mm}{!}{\svgfig{flip}}
+\caption{Approximating the flip of an RH box based at $x$ (which becomes an RH box based at $X$), via a collection of nested RH boxes based at $x$.}
+\label{fig:flip}
+}
+\end{figure}
+
+\begin{lemma}
+Let $B_L(p_1,p_2,q_1,q_2)$ be the RH box based at $X$ showed in Figure~\ref{fig:flip}, obtained by flipping by $\sigma$ a RH box $B(Q_2,Q_1,P_2,P_1)$ based at $x$. We claim
+\begin{equation}
+\begin{aligned}
+4\overline \mu_f(B_L) &=\lim_{n \to \infty}
+-f([Q_2P_2 x^n]) + f([Q_2P_1x^n])+f([Q_1P_2x^n])-f([Q_1P_1x^n])\\&=
+\lim_{n \to -\infty} -f([q_1p_1x^n]) + f([q_1p_2x^n]) + f([q_2p_1x^n]) - f([q_2p_2x^n]).
+\end{aligned}
+\label{eq:LH}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The second equality is obvious since $f$ is symmetric. Let us establish the first equality.
+To find $\mu(B_L)$ we will approximate $B_L$ by RH boxes based at $x$, as follows.
+Pick $r_i =r_i^{(0)}$, $s_i=s_i^{(0)}$ placed as in Figure~\ref{fig:flip}.
+Note $P_i \cdot \ora{x}=\ora{P_i x p_i}$, $q_i \cdot \ora{x} = \ora{q_i x Q_i}$.
+Set
+\begin{equation}
+\begin{matrix}
+r_i^{(n)}=r_i P_i x^{-n} p_i & \quad & R_i^{(n)} \cdot \ora{x} =(P_i x p_i)^{n} R_i \cdot \ora{x} \\
+s_i^{(n)}=q_i x^{-n} Q_i s_i & \quad & s_i^{(n)} \cdot \ora{x} =(q_i x Q_i)^{-n} s_i \cdot \ora{x}.
+\end{matrix}
+\end{equation}
+Set $B_n =B(r_1^{(n)},r_2^{(n)}, s_1^{(n)}, s_2^{(n)})$, which, by construction, is an RH box for based at $x$ for every $n \in \mathbb{N}$, and satisfies
+\[
+B_{n} \supset B_{n+1}
+\]
+for every $n \in \mathbb{N}$.
+Furthermore,
+\[
+B_L^\circ=\cup_{n=1}^{\infty} B_n.
+\]
+By lower semi-continuity of measures and the fact that  $\overline \mu_f(\partial B_L)=0$, it follows that
+\[
+\overline \mu_f(B_L) = \lim_{n \to \infty} \overline \mu_f(B_n).
+\]
+We now evaluate this limit. We have
+\begin{equation}
+\begin{aligned}
+4\lim_{n \to \infty} \overline \mu_f(B_n) =
+\lim_{n \to \infty} \lim_{m \to \infty}\\ -&f([r_1P_1x^{n}p_1 q_1x^{-n}Q_1s_1x^m])\\
+& +f([r_1P_1x^{n}p_1 q_2x^{-n}Q_2s_2x^m])\\
+& +f([r_2P_2x^{n}p_2 q_1x^{-n}Q_1s_1x^m])\\
+& -f([r_2P_2x^{n}p_2 q_2x^{-n}Q_2s_2x^m]).
+\end{aligned}
+\end{equation}
+Consider the first summand.
+Let $c=r_1P_1$, $a=p_1q_1$, $b=Q_1s_1$, $-n$ in place of $n$, $n$ in place of $m$ in Proposition~\ref{prop:join-split-geom}~Equations~\eqref{eq:cross-join-triple} and~\eqref{eq:cross-split-triple}, if necessary, adjusting $r_1,r_2,s_1,s_2$ so the hypotheses of parallelism and crossing conditions in Proposition~\ref{prop:join-split-geom} are met; further use Proposition~\ref{prop:join-split-geom}~\eqref{eq:cross-split} with $a=r_1P_1$ and $b=p_1 q_1$. Together with Lemma~\ref{lem:additivity-limit}, 
+it follows that the limits
+\begin{equation}
+\begin{aligned}
+\lim_{n,m\to \infty} &f([cx^{n}ax^{-n}bx^m])-f([x^{-n}])-f([x^{n}])-f([x^m]) \\
+&= \lim_{n\to \infty}  \lim_{m\to \infty}f([cx^{n}])+f([ax^{-n}])+f([bx^m])-f([x^{-n}])-f([x^{n}])-f([x^m])
+\end{aligned}
+\end{equation}
+exist and are equal.
+Proceeding in the same fashion for the other three terms, common terms cancel out and the limit becomes
+\begin{equation}
+\begin{aligned}
+4\lim_{n \to \infty} \mu(B_n) =
+\lim_{n \to \infty} -f([p_1 q_1x^{-n}])
+ +f([p_1 q_2x^{-n}])
+ +f([p_2 q_1x^{-n}])
+ -f([p_2 q_2x^{-n}]).
+\end{aligned}
+\end{equation}
+which, by Eq.~\eqref{eq:LH}, is the desired quantity
+\end{proof}
+
+\begin{comment}
+We need
+\begin{lemma}
+Let $a,b,c,x,y \in \pi_1(S)$, be so that $(B\cdot \ora{x},\ora{y},a \cdot \ora{x})$ are R-parallel, and let $f \colon \Curves^+(S) \to \mathbb{R}$ satisfy symmetry, additivity, smoothing, stability and homogeneity. Then the limit
+\[
+\lim_{n,m \to \infty} f([cx^n a^n bx^m]) - 2nf([x]) - mf([x])
+\]
+exists.
+\end{lemma}
+We need
+\begin{proposition}
+Let $x_1,x_2,x_3,a \in \pi_1(S)$, be so that $(\ora{x_1},\ora{x_2},\ora{x_3},a \cdot \ora{x_1})$ are R-parallel, and let $f \colon \Curves^+(S) \to \mathbb{R}$ satisfy symmetry, additivity, smoothing, stability and homogeneity. Then the, for all sign choices $\epsilon_i$, the limits
+\[
+\lim_{n_1, n_2, n_3 \to \infty} f([ax^{\epsilon_1 n_1} x^{\epsilon_2 n_2} x^{\epsilon_3 n_3}]) - n_1f([x_1])  - n_2f([x_2])  - n_3f([x_3]).
+\]
+exists as a triple limit.
+\label{prop:triple_limit}
+\end{proposition}
+
+\begin{corollary}
+Let $x_1,x_2,x_3,a \in \pi_1(S)$ so that for each $i$, $(\ora{x_i},a_{i+1} \cdot \ora{x_{i+1}}$ R-parallel (cyclically). Then
+\[
+\lim_{n_1,n_2,n_3 \to \infty} f([a_1x_1^{n_1}a_2x_2^{n_2}a_3x_3^{n_3}])-\sum_{i=1}^3 n_i f([x_i])
+\]
+exists.
+\label{cor:triple_limit}
+\end{corollary}
+\begin{proof}
+Apply Proposition~\ref{prop:triple_limit} to
+\[
+\ora{x_1'}=\ora{x_1}, \qquad \ora{x_2'}=a_2 \cdot \ora{x_1}, \qquad \ora{x_3'}=a_2 a_3\cdot \ora{x_3}, \qquad a'=a_3a_2a_1.
+\]
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:triple_limit}]
+Need axis-convexity, boundedness.
+\end{proof}
+
+\begin{proposition}
+In same assumptions as Proposition~\ref{prop:triple_limit}, we have
+\[
+\lim_{n_1,n_2,n_3 \to \infty} f([a_1x_1^{n_1}a_2x_2^{n_2}a_3x_3^{n_3}])-f([a_1x_1^{n_1}])-f([a_2x_2^{n_2}])-f([a_3x_3^{n_3}])=0.
+\]
+\end{proposition}
+
+\end{comment}

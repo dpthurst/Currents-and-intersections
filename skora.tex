@@ -74,6 +74,8 @@ case we call $T_g$ the \emph{axis} of $g$.
 Let $T_g^+$ be the attracting end of $T_g$ and $T_g^-$ the repelling end.
 
 The translation lengths of any $\Gamma$-tree can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition.
+
+\DMGtodo{need to double-check this restatement, since it might not work anymore}
 Even though we will rarely use it in the proofs, it is helpful to keep
 it in mind;
 it can be viewed as a simpler repackaging of axioms due to Culler and
@@ -281,11 +283,12 @@ more
 apparent.
 The last two bullet points are claimed in~\cite[Page~853]{Gui05:Coeur}, but we give a proof here using~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} for completeness.
 
+\DMGtodo{unfortunately there is a problem with case (2) here: Paulin's proposition allows $\|h\|>0$ and $\|gh\|=\|gh^{-1}\|=0$. See~\cite[Proposition~1.7(1)(ii)]{Pa89:Paulin1989TheGT}. This affects the proof of Subcase 3.2 in Proposition~\ref{thm:small}. I think it still works, but that subcase needs to be fixed. It might also affect our restatement of Culler-Morgan and Parry axioms. I don't think it affects anything else, but need to double-check. }
 \begin{lemma}\label{lem:pau_ell_hyp}
 Let $T$ be a $\Gamma$-tree. Suppose $g$ is elliptic and $h$ is
 hyperbolic. Then exactly one of the following holds depending on the
 relative position of the axes $T_h$ and $T_{ghG}$:
-\[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \norm{gh}=\norm{h}\ge\norm{gH}; & \norm{gH}=\norm{h}>\norm{gh}; & \norm{gh}=\norm{gH}>\norm{h}. \end{array} \]
+\[ \begin{array}{c@{\qquad}c@{\qquad}c} \text{\emph{(1) coherent overlap or point;}} & \text{\emph{(2) incoherent overlap;}} & \text{\emph{(3) disjoint}} \\[1.2ex] \norm{gh}=\norm{h}=\norm{gH}; & \begin{gathered}\norm{h}\geq \max \{ \norm{gh}, \norm{gH}\}, \\ \norm{h} > \min \{ \norm{gh}, \norm{gH}\}\end{gathered} & \norm{gh}=\norm{gH}>\norm{h}. \end{array} \]
 In terms of $T_g \cap T_h$, we have:
 \begin{itemize}
 \item Case~(3) happens exactly when $T_g$ and $T_h$ are
@@ -714,7 +717,7 @@ $\ora{g},\ora{h}$ cross.
 Then $\ora{ghG}$ and $\ora{h}$ are parallel.
 By Proposition~\ref{prop:parallel-incoherent}, $T_{ghG}$ and $T_{h}$
 cannot intersect incoherently. If they intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\norm{ gh } = \norm{h}\geq
+point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\norm{ gh } = \norm{h}=
 \norm{gH}$ and
 $T_g \cap T_h \ne \emptyset$, and we
 are done. If $T_{ghG} \cap T_{h} = \emptyset$, by
@@ -723,14 +726,16 @@ incoherently. But, since $(\ora{gh},\ora{hg})$ are parallel, this
 contradicts Proposition~\ref{prop:parallel-incoherent}.
 \begin{subcase} $\ora{g},\ora{h}$ are parallel. \end{subcase}
 If $T_{ghG}$ and $T_{h}$ intersect coherently or in a
-point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\norm{ gh } = \norm{h} \geq \norm{gH}$.
+point then, by Lemma~\ref{lem:pau_ell_hyp}(1), $\norm{ gh } = \norm{h} = \norm{gH}$.
 If $T_{ghG}$ and $T_{h}$ do not intersect, then
 $\norm{gh}=\norm{gH} > \norm{h}$. In either of these cases, we have
 max-smoothing as desired.
 
-If $T_{ghG}$ and $T_{h}$ overlap incoherently, by
-Lemma~\ref{lem:pau_ell_hyp}(2), $\norm{gH} = \norm{h} > \norm{gh}$ and we must
-derive a contradiction. From
+If $T_{ghG}$ and $T_{h}$ overlap incoherently, by \DMGtodo{still fixing this one}
+Lemma~\ref{lem:pau_ell_hyp}(2), $\norm{h} \geq \max \{ \norm{gh}, \norm{gH} \} > \min \{ \norm{gh}, \norm{gH} \}$ and we must
+derive a contradiction.
+Suppose first $\norm{h} \geq \norm{gh}>\norm{gH}$.
+From
 Lemma~\ref{lem:foundation_trees}(1c),
 \[
 \norm{(ghG)H}=2\norm{h} > \norm{(ghG)h}.
