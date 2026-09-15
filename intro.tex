@@ -399,8 +399,14 @@ $\text{(b)} \Rightarrow \text{(a)}$ recovers
 Skora’s theorem~\cite{Sko90:GeometricAction} (which we reprove).
 All the remaining equivalences are new. Skora also proved that \ref{item:skora_lamination} is equivalent to the action being \emph{small}, meaning that every non-degenerate arc has cyclic stabilizer~\cite{Sk96:Splittings}.
 
-The max-smoothing identities refine the general characterization of translation lengths due to Culler--Morgan and Parry~\cite{CM87:GroupActions,Par91:Translation}.
-A restatement of their theorem (see Proposition~\ref{prop:max_twice})
+\DMGtodo{rephrased this and commented the previous one}
+The max-smoothing identities refine the general characterization of translation lengths of real trees due to Culler--Morgan and Parry~\cite{CM87:GroupActions,Par91:Translation}. Roughly, they characterize when a conjugacy-invariant
+function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ on a general finitely generated group $\Gamma$ is the translation length
+of a $\Gamma$ action on a tree $T$ in terms of inequalities involving, for every $a,b\in\Gamma$ the quantities
+\[
+\norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}.
+\]
+\begin{comment}A restatement of their theorem (see Proposition~\ref{prop:max_twice})
 is that a conjugacy-invariant
 function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ on a general finitely generated group $\Gamma$ is the translation length
 of a $\Gamma$ action on a tree $T$ if and only if for every $a,b\in\Gamma$ the
@@ -409,7 +415,7 @@ maximum among
 \norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}
 \]
 is attained at least twice.
-
+\end{comment}
 For surface groups, Theorem~\ref{mainthm:skora} refines this
 characterization: we single out trees dual to measured laminations
 by restricting which equality occurs, according to the geometric
@@ -443,7 +449,7 @@ hyperbolic length function.
 
 We show that periods automatically satisfy the
 axioms of Theorem~\ref{thm:intersect}.
-
+\DMGtodo{should this be a main theorem? on the one hand it shows breadth. On the other hand, its novelty really only comes from the fact that we construct the current only using periods, which are accessible directly via the representation eigenvalues, without having to use limit maps. But the existence of such current was proven by BIPP even for surfaces with punctures, so that part is less impressive. An alternative could be to make the cross ratio section in the intro a section "Other applications", including cross ratios, characterizing multi-curves, curve domination result, etc.}
 \begin{mainthm}
 Let $[\cdot,\cdot,\cdot,\cdot]$ be a generalized cross-ratio with
 associated period $\ell$. Then $\ell$ satisfies the hypotheses of

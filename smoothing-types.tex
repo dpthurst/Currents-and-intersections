@@ -182,6 +182,38 @@ conjugation, and transitivity of R\hyp parallelism. See
 Figure~\ref{fig:cross_lemma}.
 \end{proof}
 
+\DMGtodo{added this lemma here since it is more general than what we prove in cross-ratios}
+The following result allows us to extract inequalities for parallel pairs assuming disconnected smoothing but not connected smoothing.
+\begin{lemma}
+\label{lem:fekete_upper}
+Suppose $f \colon \Curves^+(S) \to \mathbb{R}$ is symmetric and satisfies disconnected smoothing and convex union. Let $(\ora{a},\ora{b})$ be parallel.
+Then, the sequence $a_n \coloneqq f(a^nb^n)$ is sub-additive $(a_{n+m} \leq a_n + a_m, \text{ for } n,m \in \mathbb{N})$ and 
+\begin{equation}
+\label{eq:fekete1}
+f(ab) \geq \lim_n \frac{f(a^nb^n)}{n}
+\end{equation}
+for every $n \in \mathbb{N}$.
+In particular,
+\begin{equation}
+\label{eq:fekete2}
+f(ab) \geq \frac{1}{2^n} f(a^{2^n}b^{2^n}) \geq \lim_{n \to \infty} \frac{1}{2^n} f(a^{2^n}b^{2^n})
+\end{equation}
+for every $n \in \mathbb{N}$.
+\end{lemma}
+\begin{proof}
+Since $(a,b)$ are R-parallel, by Lemma~\ref{lem:anbn_vs_bkak}, $(\ora{b^m a^m}, \ora{a^nb^n})$ R-cross for every $m,n \geq 1$.
+Since $f$ satisfies disconnected smoothing and convex union by assumption, it follows that for every $n,m \geq 1$, we have
+\[
+f(a^n b^n) + f(b^m a^m) \geq f((b^m a^m)(a^n b^n)) = f(a^{n+m}b^{n+m}),
+\]
+i.e., the sequence $a_n \coloneqq \ell(a^n b^n)$ is sub-additive, as claimed, and the desired limit in Eq.~\eqref{eq:fekete1} exists and satifies the inequality by Lemma~\ref{lem:fekete}.
+In particular, an induction using the sub-additivity gives
+\[
+f(ab) \geq \frac{1}{2^n} f(a^{2n}b^{2n})
+\]
+for every $n \in \mathbb{N}$. Finally, the last inequality in Eq.~\eqref{eq:fekete2} follows by Eq~~\eqref{eq:fekete1}.
+\end{proof}
+
 
 \begin{proof}[Proof of Direction 1 of Proposition~\ref{prop:cont_conn_disc}]
 		
@@ -219,7 +251,7 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 			\]
 			which proves oriented connected smoothing.
 			
-			Second, we prove unoriented connected smoothing: with $a,b$ as above,
+Second, we prove unoriented connected smoothing: with $a,b$ as above,
 			$f([ab]) \ge f([aB])$.
 			We split into two cases, depending on the relative position of $\ora{aB}$
 			and $\ora{Ba}$. By
@@ -259,7 +291,6 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 				f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 				\]
 				where we used symmetry and homogeneity in the last equality.
-				
 				Now, still in the unoriented connected smoothing case, suppose
 				$(\ora{aB},\ora{Ba})$ cross.
 				If $(\ora{a},\ora{b})$ are parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that either $(\ora{a},\ora{bA})$ are parallel or $(\ora{b}, \ora{aB})$ are parallel.
@@ -272,7 +303,7 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 				\[
 				f([ab]) = f([aB)(b^2)]) \geq f([aB]) + f(b^2) \geq f([aB])
 				\]
-				as before. This proves unoriented connected smoothing and thus finishes the proof that disconnected smoothing implies connected smoothing.
+				as before.This proves unoriented connected smoothing and thus finishes the proof that disconnected smoothing implies connected smoothing.
 \end{proof}	
 		
 \begin{proof}[Proof of Direction 2 of Proposition~\ref{prop:cont_conn_disc}]

@@ -11,7 +11,7 @@ Burger--Iozzi--Parreau--Pozzetti~\cite{BIPP24:PositiveCrossratios}
 under the framework of Theorem~\ref{thm:intersect}. Note that
 in~\cite{BIPP24:PositiveCrossratios}, geodesic currents are also
 constructed from generalized cross-ratios for finite-type surfaces; we
-recover their result when restricted to closed surfaces.
+recover their result when restricted to closed surfaces, \DMGtodo{added this-->} with the added benefit that the construction of the extension only involves the periods, which can be directly accessed from the eigenvalues of the representation~\cite[Theorem~1.1]{MZ19:PositivelyRatioed}.
 
 \begin{definition}
 A \emph{generalized cross-ratio} on $S$ is a function of type
@@ -333,15 +333,9 @@ Then, we have
 \resizebox{80mm}{!}{\svgfignormal{c8}}
     \caption{Checking $\ell(ab) \geq \ell(a) + \ell(b)$}\label{fig:c8}
 \end{figure} 
-Suppose $(a,b)$ are R-parallel. By Lemma~\ref{lem:anbn_vs_bkak}, $(\ora{b^m a^m}, \ora{a^nb^n})$ R-cross for every $m,n \geq 1$.
-Since by Lemma~\ref{lem:crossratio_disconnected_smoothing} we already know disconnected smoothing for $\ell$, it follows that for every $n,m \geq 1$, we have
+Suppose $(a,b)$ are R-parallel. By Lemma~\ref{lem:crossratio_disconnected_smoothing}, $\ell$ satisfies disconnected smoothing. Hence, by Lemma~\ref{lem:fekete_upper},
 \[
-\ell(a^n b^n) + \ell(b^m a^m) \geq \ell((b^m a^m)(a^n b^n)) = \ell(a^{n+m}b^{n+m}),
-\]
-i.e., the sequence $a_n \coloneqq \ell(a^n b^n)$ is sub-additive. By Fekete's lemma~\ref{lem:fekete}, 
-we have
-\[
-\ell(ab) \geq \lim_n \frac{\ell(a^nb^n)}{n}.
+f(ab) \geq \lim_n \frac{f(a^nb^n)}{n}.
 \]
 We will now prove that, for sufficiently large $n$, we have
 \[

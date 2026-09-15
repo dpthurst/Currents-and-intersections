@@ -73,6 +73,7 @@ real line, and $g$ translates along $T_g$ by distance $\norm{ g}$; in this
 case we call $T_g$ the \emph{axis} of $g$.
 Let $T_g^+$ be the attracting end of $T_g$ and $T_g^-$ the repelling end.
 
+\begin{comment}
 The translation lengths of any $\Gamma$-tree can be characterized by the following relation, reminiscent of the $0$-hyperbolic condition.
 
 \DMGtodo{need to double-check this restatement, since it might not work anymore}
@@ -105,7 +106,7 @@ both are elliptic, by~Lemma~\ref{lem:pau_two_ell}.
 The other implication follows by a deep result of Parry~\cite{Par91:Translation}. It is straightforward to show that the condition in Equation~\eqref{eq:maxcondition_tree} implies the Culler-Morgan axioms assumed in the main characterization theorem of Parry, and, hence, it also
 characterizes translation lengths of actions on real trees among all conjugacy class invariant functionals.
 \end{proof}
-
+\end{comment}
 A $\Gamma$-tree with  translation length function
 $\norm{ \cdot }$ is of one of four
 types~\cite[Page~583]{CM87:GroupActions}:
@@ -197,7 +198,9 @@ hyperbolic elements.
     \caption{Axes of $gH, Hg$ in $T$ are disjoint when $g,h$ form a good pair}\label{fig:trees_goodpair}
 \end{figure}
 
-We now look at the relative positions of the characteristic sets of a pair of elements $g,h \in \Gamma$, distinguishing the cases that arise in Proposition~\ref{prop:max_twice}.
+We now look at the relative positions of the characteristic sets of a pair of elements $g,h \in \Gamma$. 
+\DMGtodo{commented out the reference to prop max twice}
+%, distinguishing the cases that arise in Proposition~\ref{prop:max_twice}.
 
 \begin{lemma}
 \label{lem:foundation_trees}
@@ -275,12 +278,11 @@ and its axis contains $I$, translating along the same direction as $h$.
 We will need analogous statements for pairs $g,h \in \Gamma$ where one
 or both group elements are allowed to be elliptic. These have been
 analyzed in~\cite{Pa89:Paulin1989TheGT}. We state them here in the
-form that will be most convenient for us, making
-Proposition~\ref{prop:max_twice}
+form that will be most convenient for us. \DMGtodo{commented out reference to prop max twice} %, making
+%Proposition~\ref{prop:max_twice}
 %---that the maximum among
 %$\norm{gh},\norm{gH}$ and $\norm{g}+\norm{h}$ appears at least twice---
-more
-apparent.
+
 The last two bullet points are claimed in~\cite[Page~853]{Gui05:Coeur}, but we give a proof here using~\cite[Proposition~1.7]{Pa89:Paulin1989TheGT} for completeness.
 
 \DMGtodo{unfortunately there is a problem with case (2) here: Paulin's proposition allows $\|h\|>0$ and $\|gh\|=\|gh^{-1}\|=0$. See~\cite[Proposition~1.7(1)(ii)]{Pa89:Paulin1989TheGT}. This affects the proof of Subcase 3.2 in Proposition~\ref{thm:small}. I think it still works, but that subcase needs to be fixed. It might also affect our restatement of Culler-Morgan and Parry axioms. I don't think it affects anything else, but need to double-check. }
@@ -575,7 +577,9 @@ intersection. Then:
 \label{thm:small}
 \end{theorem}
 
+\DMGtodo{commented out another reference to prop max twice}
 
+\begin{comment}
 Note that, in light of Proposition~\ref{prop:max_twice}, to prove
 Theorem~\ref{thm:small} it suffices
 to prove smoothing, i.e., that the multicurve with the crossing to be
@@ -583,6 +587,7 @@ smoothed---whichever of $[gh]$, $[gH]$, or $[g][h]$ it arises
 in---realizes one of
 the translation lengths appearing in the maximum of the three.
 In practice, in the proof below we will verify max-smoothing directly.
+\end{comment}
 
 There is one particular fact that we will use multiple times in
 different cases, so we pull it out as a lemma in advance. This lemma
@@ -731,10 +736,12 @@ If $T_{ghG}$ and $T_{h}$ do not intersect, then
 $\norm{gh}=\norm{gH} > \norm{h}$. In either of these cases, we have
 max-smoothing as desired.
 
-If $T_{ghG}$ and $T_{h}$ overlap incoherently, by \DMGtodo{still fixing this one}
-Lemma~\ref{lem:pau_ell_hyp}(2), $\norm{h} \geq \max \{ \norm{gh}, \norm{gH} \} > \min \{ \norm{gh}, \norm{gH} \}$ and we must
+If $T_{ghG}$ and $T_{h}$ overlap incoherently, by 
+Lemma~\ref{lem:pau_ell_hyp}(2), \DMGtodo{changed from here--->} $\norm{h} \geq \max \{ \norm{gh}, \norm{gH} \} > \min \{ \norm{gh}, \norm{gH} \}$ and we must
 derive a contradiction.
-Suppose first $\norm{h} \geq \norm{gh}>\norm{gH}$.
+If $\norm{h} \geq \norm{gh}>\norm{gH}$, we need to rule out $\norm{h} > \norm{gh} > \norm{gH}$; if $\norm{h} \geq \norm{gH}>\norm{gh}$, we need to rule this case out.
+Both cases imply, $\norm{h}>\norm{gh}$.
+\DMGtodo{<---up to here}
 From
 Lemma~\ref{lem:foundation_trees}(1c),
 \[
@@ -744,7 +751,7 @@ Now consider $gh$ and $GH$. Since one is conjugate to the inverse of
 the other, $\norm{gh} = \norm{GH} < \norm{h}$, while $\ora{gh}$ and $\ora{GH}$ cross.
 We can apply Subcase 1.1 or Subcase 2.1
 (depending whether they are hyperbolic or elliptic) to conclude
-$\norm{gh} + \norm{GH} \ge \norm{ghGH}$, a contradiction.
+$2\|h\|>\norm{gh} + \norm{GH} \ge \norm{ghGH}=2\|h\|$, a contradiction.
 
 \medskip
 Finally, note that in all the subcases where
@@ -887,10 +894,7 @@ Then, by~\cite[Lemma~6.5]{CM87:GroupActions}, either:
 \item $\norm{gh}=\norm{gH}=\norm{h}$; or
 \item $\norm{gh}=\norm{gH}=0$.
 \end{itemize}
-In the first case, we have disconnected smoothing. The second case is
-not possible, as it contradicts Proposition~\ref{prop:max_twice}.
-(This is also impossible in the Culler-Morgan setting of any reducible
-action.)
+In the first case, we have disconnected smoothing. \DMGtodo{had to edit this, since it referred to prop max twice} In the second case, we have $\norm{h} > \norm{gh}=\norm{gH}$, so disconnected smoothing is satisfied, as desired.
 
 Finally, if $g$ and $h$ are elliptic. Here we use the assumption the
 action has a fixed end,
