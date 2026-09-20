@@ -182,7 +182,7 @@ conjugation, and transitivity of R\hyp parallelism. See
 Figure~\ref{fig:cross_lemma}.
 \end{proof}
 
-\DMGtodo{added this lemma here since it is more general than what we prove in cross-ratios}
+\DMGtodo{added this lemma here since it is more general than what we prove in cross-ratios, and we also use it here}
 The following result allows us to extract inequalities for parallel pairs assuming disconnected smoothing but not connected smoothing.
 \begin{lemma}
 \label{lem:fekete_upper}
@@ -206,7 +206,7 @@ Since $f$ satisfies disconnected smoothing and convex union by assumption, it fo
 \[
 f(a^n b^n) + f(b^m a^m) \geq f((b^m a^m)(a^n b^n)) = f(a^{n+m}b^{n+m}),
 \]
-i.e., the sequence $a_n \coloneqq \ell(a^n b^n)$ is sub-additive, as claimed, and the desired limit in Eq.~\eqref{eq:fekete1} exists and satifies the inequality by Lemma~\ref{lem:fekete}.
+i.e., the sequence $a_n \coloneqq f(a^n b^n)$ is sub-additive, as claimed, and the desired limit in Eq.~\eqref{eq:fekete1} exists and satifies the inequality by Lemma~\ref{lem:fekete}.
 In particular, an induction using the sub-additivity gives
 \[
 f(ab) \geq \frac{1}{2^n} f(a^{2n}b^{2n})
@@ -223,7 +223,13 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 			$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
 			satisfies oriented connected
 			smoothing, i.e., $f([ab]) \geq f([a][b])$.
-			
+            \DMGtodo{shortened this invoking the general lemma}
+            Since $f$ satisfies disconnected smoothing, by Lemma~\ref{lem:fekete_upper} we get, for every $n \in \mathbb{N}$
+\begin{equation}\label{eq:power_ineq}
+				f(ab)  \geq \lim_n \frac{1}{n} f([a^{n}b^{n}]).
+			\end{equation}
+
+            \begin{comment}
 			We will start by showing, by induction on $n$, that
 			\begin{equation}\label{eq:power_ineq}
 				2nf([ab]) \geq f([a^{2n}b^{2n}]).
@@ -244,8 +250,9 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 				&\geq f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}])
 				&&\text{(Lemma~\ref{lem:anbn_vs_bkak} and disconnected smoothing)}
 			\end{align*}
-			Divide Eq.~\eqref{eq:power_ineq} by $2n$, let $n$ go to infinity, and
-			use Lemma~\ref{lem:gnhn_to_gsumh} to obtain
+            \end{comment}
+			Let $n$ go to infinity, and
+			use Lemma~\ref{lem:gnhn_to_gsumh} and the continuity of the extension of $f$ to geodesic currents to obtain
 			\[
 			f([ab]) \geq f([a] [b])
 			\]
@@ -274,7 +281,7 @@ Second, we prove unoriented connected smoothing: with $a,b$ as above,
 &\geq f([(aB)^{n-1} (Ab)^{n-1}]) + f([(Ab)(aB)]) && \text{(Induction)} \\
 &\geq f([(aB)^{n-1} (Ab)^{n-1} (Ab)(aB)])
 && \text{(Convex union and disconnected smoothing)} \\
-&= f([(aB)^n (Ab)^n]).
+&= f([(aB)^n (Ab)^n])
 \end{align*}
 				where the disconnected smoothing is applied to
 				\[[(aB)^{n-1}(Ab)^{n-1}][(Ab)(aB)] \reducesto [(aB)^{n-1} (Ab)^{n-1}
@@ -410,8 +417,7 @@ f([a^{2n}b^{2n}]) \geq 2nf([ab]) - K n.
 \]
 Following the same chain of inequalities that prove the induction does
 not yield the desired inequality, since one accumulates one extra $-K$
-factor. We suspect the modified statement for quasi-smoothing is not
-true.
+factor.
 \end{remark}
 
 %%% Local Variables:
