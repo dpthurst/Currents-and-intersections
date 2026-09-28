@@ -1,6 +1,6 @@
 \section{Flip-invariance}
 
-In this appendix we show the geodesic current $\overline \mu_f$ is flip-invariant.
+In this appendix we show the geodesic current $\overline \mu_f$ is flip-invariant on RH boxes.
 Recall that in Remark~\ref{rmk:flip_rh_box} we observed that flipping an RH box $B(Q_2,Q_1,P_2,P_1)$ based at $x$ we obtain a new RH box $B(p_1,p_2,q_1,q_2)$, with the slight inconvenience that it is based at $x^{-1}$, instead of $x$. Hence, its value cannot be extracted by evaluating the measure $\overline \mu_f$ on the nose, since it has been defined on RH boxes based \emph{at $x$}. Instead, to analyze its value, we approximate the RH box based at $x^{-1}$ by a suitable sequence of RH boxes based at $x$.
 
 \begin{figure}
@@ -12,6 +12,7 @@ Recall that in Remark~\ref{rmk:flip_rh_box} we observed that flipping an RH box 
 \end{figure}
 
 \begin{lemma}
+\label{lem:RH_flip_invariance}
 Let $B_L(p_1,p_2,q_1,q_2)$ be the RH box based at $X$ showed in Figure~\ref{fig:flip}, obtained by flipping by $\sigma$ a RH box $B(Q_2,Q_1,P_2,P_1)$ based at $x$. We claim
 \begin{equation}
 \begin{aligned}
@@ -77,8 +78,10 @@ Proceeding in the same fashion for the other three terms, common terms cancel ou
  -f([p_2 q_2x^{-n}]).
 \end{aligned}
 \end{equation}
-which, by Eq.~\eqref{eq:LH}, is the desired quantity
+which, by Eq.~\eqref{eq:LH}, is the desired quantity.
 \end{proof}
+
+
 
 \begin{comment}
 We need
