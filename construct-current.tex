@@ -276,9 +276,10 @@ We now put everything together to obtain an oriented geodesic current,
 following the standard argument that measure on boxes extends to the
 Lebesgue measure
 
+\DMGtodo{edited this to include flip-invariance}
 \begin{proposition}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
-Then $\wh\mu_f$ extends to an oriented geodesic current $\overline\mu_f$.
+Then $\wh\mu_f$ extends to a flip-invariant oriented geodesic current $\overline\mu_f$.
 \end{proposition}
 \begin{proof}
   \DPTtodo{Reread after Dídac has tweaked the analysis}
@@ -303,6 +304,7 @@ every open set is a countable union of RH boxes, and hence
 $\sigma(\mathcal B)=\operatorname{Bor}(G(S))$, the Borel
 $\sigma$-algebra of $G(S)$.
 Thus $\overline\mu_f$ is a Borel measure.
+\DMGtodo{added this sentence} Furthermore, since by Lemma~\ref{lem:RH_flip_invariance} $\overline \mu_f$ is flip-invariant on RH boxes, it follows that $\overline \mu_f$ is flip-invariant.
 
 Moreover, every point has an open neighborhood contained in an RH box
 of finite $\overline\mu_f$-mass. A compact set therefore admits a finite
@@ -315,17 +317,24 @@ $\sigma$-finite extensions of that premeasure, uniqueness in the
 Carath\'eodory extension theorem gives
 $\gamma_*\overline\mu_f=\overline\mu_f.$
 \end{proof}
+\DMGtodo{added this}
+\begin{notation}
+To lighten notation up, we refer to the flip-invariant geodesic current as $\mu_f$ instead of $\overline \mu_f$, from now on.
+\end{notation}
 
+\begin{comment}
 It is not \emph{a priori} clear from the definition of
 $\overline\mu_f$ whether it is a flip-invariant geodesic current
 (recall
 Definition~\ref{def:currents}).
+
 In order to obtain a flip-invariant current, we define
 \[
 \mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
 \]
 where $\sigma_*$ the push-forward map on oriented geodesic currents
 induced from the flip map.
+\end{comment}
 
 \subsection{Recovering \texorpdfstring{$f$}{f} on curves}
 \label{sec:recovery}
@@ -385,10 +394,11 @@ Recall that $\delta_C$ is the geodesic current associated to the unoriented curv
 \DPTtodo{Probably should specify more about where the fundamental
   domain is living. Also this is not the fundamental domain used in
   the proof. HERE}
+  \DMGtodo{edited to make it the same as in the proof}
 Note that
-$[z,y \cdot z)\times (y^+,y^-)$ is a Borel fundamental domain for the
-  action of $\langle y \rangle$ on the set of geodesics that intersect
-  $\ora{y}$ transversally.
+$[z,Y \cdot z)\times (y^-,y^+)$ is a Borel fundamental domain for the
+  action of $\langle Y \rangle$ on the set of geodesics that intersect
+  $\ora{y}$ transversely.
 \begin{proof}
 Choose $z\in(y^+,y^-)$ so that $y^+,z,Yz,y^-$
 occur in cyclic order, and set
@@ -397,7 +407,7 @@ A_y\coloneqq [z,Yz)\times(y^-,y^+).
 \]
 Then $A_y$ is a Borel fundamental domain for the action of
 $\langle y\rangle$ on the oriented geodesics which cross
-$\ora y$ to the right (See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
+$\ora y$ transversely (See~\cite[Lemma~4.8]{HP97:RigidityNegCurvedCone}): the proof only uses
 the $\pi_1(S)$-invariance of $\mu$.) Hence
 $\vec i(\mu,[y])=\mu(A_y)$,
 and, using the opposite crossing orientation,
@@ -433,13 +443,13 @@ satisfying symmetry, smoothing, additivity and stability, and let
 $\mu_f$ be as above.
 For $\vec C$ an oriented closed curve, we have
 \[
-  i(\mu_f,\delta_C)= i(\overline\mu_f, \delta_C) =
-  2\vec\imath(\overline\mu_f, \delta_{\vec C}) = f(\vec C).
+  i(\mu_f,\delta_C)= i(\mu_f, \delta_C) =
+  2\vec\imath(\mu_f, \delta_{\vec C}) = f(\vec C).
 \]
 \end{theorem}
 \begin{proof}
   We first prove that
-  $\vec{\imath}(\overline\mu_f,\delta_{\vec C})=\OneHalf f(\vec C)$.
+  $\vec{\imath}(\mu_f,\delta_{\vec C})=\OneHalf f(\vec C)$.
   Given a representative $y \in \pi_1(S)$ of the conjugacy
   class~$\vec C$, we will find a sequence of
 RH boxes to approximating the fundamental domain for $\langle
@@ -473,7 +483,7 @@ In the RH orbit notation, we have
 If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
   b^{(n)}, c^{(n)}, d^{(n)}}$ we then have
     \begin{align*}
-      \vec{\imath}(\overline\mu_f, \delta_{[y]})&=\overline\mu_f([z,Yz)\times(y^-,y^+)) \\
+      \vec{\imath}(\mu_f, \delta_{[y]})&=\mu_f([z,Yz)\times(y^-,y^+)) \\
     &= \lim_{n\to\infty} \wh\mu_f(B_n)  \\
     &= \frac{1}{4}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
     &= \OneFourth\bigl(f([y]) + f([y^{-1}])\bigr) =\OneHalf f([y]).
@@ -490,7 +500,7 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
 
       The property $i(\mu_f, C)=f(C)$ for any unoriented multi-curve $C$
       follows by the definition of $\mu_f$ and the fact that
-      $\overline\mu_f$ is finitely additive.
+      $\mu_f$ is finitely additive.
 \end{proof}
 
 \begin{remark}
@@ -601,7 +611,7 @@ $(\ora{B},\ora{A})$. Then
      = \overline{f}(a) + \overline{f}(b).
 \end{align*}
 
-We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Corollary~\ref{cor:oriented_smoothing_unoriented} below,
+We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Proposition~\ref{prop:oriented_smoothing_unoriented} below,
 $\overline{f}$~satisfies unoriented connected and disconnected smoothing as well. 
 Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing of $\overline{f}$. Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
 We are thus under the

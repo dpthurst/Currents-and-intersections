@@ -10,19 +10,18 @@ our previous work in~\cite{MGT21:Smoothings}. We prove the following,
 which was crucial to prove the simpler algebraic statement in
 Theorem~\ref{thm:intersections_group}; it is not necessary for the
 proof of Theorem~\ref{thm:intersect}.
-
+\DMGtodo{one implication was using additivity, and we really only use it for additive functionals, so I added additivity to the hypotheses. As a consequence, the Corollary where we specialized to additive functionals disappeared because the Proposition became the Corollary.}
 \begin{proposition}
 If $f$ satisfies oriented smoothing
-(connected and disconnected), convex union,
-stability, homogeneity, and symmetry, then $f$ satisfies smoothing.
+(connected and disconnected), additivity,
+stability, and symmetry, then $f$ satisfies smoothing.
 \label{prop:oriented_smoothing_unoriented}
 \end{proposition}
 
 The proof uses the following result, which can be seen as a weak
-converse of the main result in our previous paper.
-\begin{proposition}
-Suppose $f$ is a symmetric curve functional satisfying
-convex union and homogeneity that extends continuously to geodesic currents.
+converse of the main result in our previous paper. 
+\begin{proposition}\DMGtodo{this proposition used to assume convex union instead of additivity}
+Suppose $f$ is a symmetric curve functional satisfying additivity and stability that extends continuously to geodesic currents.
 If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
 \label{prop:cont_conn_disc}
 \end{proposition}
@@ -40,20 +39,11 @@ f([B][a]) \geq f([Ba]).
 Since $f$ is symmetric, we have $f([b][a])=f([B][a]) \geq
 f([Ba])$, as desired.
 
-Since $f$ satisfies oriented smoothing, convex union, stability and
-homogeneity, it extends continuously and homogeneously
+Since $f$ satisfies oriented smoothing, additivity and stability it extends continuously and homogeneously
 to oriented geodesic currents, by~\cite[Theorem~A]{MGT21:Smoothings}. Hence by
 Proposition~\ref{prop:cont_conn_disc}, it satisfies connected
 smoothing, and thus all cases of smoothing.
 \end{proof}
-
-As an immediate corollary, we have the following.
-
-\begin{corollary}
-If $f$ is symmetric and satisfies oriented smoothing, additivity, and
-stability, then $f$ satisfies smoothing.
-\label{cor:oriented_smoothing_unoriented}
-\end{corollary}
 
 We now turn to the proof of Proposition~\ref{prop:cont_conn_disc},
 starting with some lemmas. The first lets us approximate
@@ -217,7 +207,7 @@ for every $n \in \mathbb{N}$. Finally, the last inequality in Eq.~\eqref{eq:feke
 
 \begin{proof}[Proof of Direction 1 of Proposition~\ref{prop:cont_conn_disc}]
 		
-Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, disconnected smoothing, homogeneity and it extends continuously to geodesic currents.
+Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies additivity, disconnected smoothing, homogeneity and it extends continuously to geodesic currents.
 
 			Given a pair $a, b \in \pi_1(S)$ with $(\ora{a},\ora{b})$ parallel (so
 			$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
@@ -260,21 +250,26 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies convex union, dis
 			
 Second, we prove unoriented connected smoothing: with $a,b$ as above,
 			$f([ab]) \ge f([aB])$.
+
 			We split into two cases, depending on the relative position of $\ora{aB}$
 			and $\ora{Ba}$. By
 			Lemma~\ref{lem:aB_bA_antiparallel_cross}, $(\ora{aB},\ora{Ba})$ are either anti-parallel
 			or cross.
-				We first consider the case when $(\ora{aB},\ora{Ba})$ are anti-parallel. We will prove by induction that
+
+                We first consider the case when $(\ora{aB},\ora{Ba})$ are anti-parallel.
+
+                We will prove by induction that
 				\begin{equation}
 					2nf([ab]) \geq f([(aB)^n (Ab)^n]).
 					\label{eq:antiparallel_induction}
 				\end{equation}
-				The base case, $n=1$, follows since $(\ora{ab},\ora{ba})$ cross, hence
+
+                				The base case, $n=1$, follows since $(\ora{ab},\ora{ba})$ cross, hence
 				\[
 				[ba][ab] \reducesto [ba(ab)^{-1}] = [(aB)(Ab)].
 				\]
 				By homogeneity and disconnected smoothing, we get the base case.
-				Now, we prove the induction step:
+           Now we prove the induction step.
 \begin{align*}
 2nf([ab])
 &= 2(n-1)f([ab]) + 2f([ab]) \\
@@ -291,31 +286,36 @@ Second, we prove unoriented connected smoothing: with $a,b$ as above,
 				anti-parallel, so $\ora{aB}$ and $\ora{Ab}$ are parallel. Hence, we
 				can apply Lemma~\ref{lem:anbn_vs_bkak} to conclude that
 				$\ora{(aB)^{n-1} (Ab)^{n-1}}$ and $\ora{(Ab)(aB)}$ cross.
-				
-				Divide Eq.~\eqref{eq:antiparallel_induction} by $2n$, let $n$ go to
+
+                				Divide Eq.~\eqref{eq:antiparallel_induction} by $2n$, let $n$ go to
 				infinity, and use Lemma~\ref{lem:gnhn_to_gsumh} to get
 				\[
 				f([ab]) \geq \frac{f([aB] [Ab])}{2} = f([aB])
 				\]
 				where we used symmetry and homogeneity in the last equality.
+			
+
 				Now, still in the unoriented connected smoothing case, suppose
 				$(\ora{aB},\ora{Ba})$ cross.
 				If $(\ora{a},\ora{b})$ are parallel it follows by Lemma~\ref{lem:a_parallel_Ba} that either $(\ora{a},\ora{bA})$ are parallel or $(\ora{b}, \ora{aB})$ are parallel.
 				In the first case, we have 
-				\[
-				f([ba]) = f([bA)(a^2)]) \geq f([bA]) + f(a^2) \geq f([bA])
-				\]
-				where in the first inequality we used oriented connected smoothing, and in the last inequality the fact that $f(a^2) \geq 0$, by Proposition~\ref{prop:curve-positive}.
+\begin{align*}
+f([ba]) 
+& \geq f([bA][a^2]) && \text{(Oriented connected smoothing)}\\
+&= f([bA]) + f(a^2)  && \text{(Additivity)} \\
+&\geq f([bA]) && \text{(Positivity)} \\
+\end{align*}
+\DMGtodo{in the step above is the ONLY place where we use additivity in this proof...}
 				In the second case,
 				\[
-				f([ab]) = f([aB)(b^2)]) \geq f([aB]) + f(b^2) \geq f([aB])
+				f([ab]) \geq f([aB][b^2]) =f([aB]) + f([b^2]) \geq f([aB])
 				\]
-				as before.This proves unoriented connected smoothing and thus finishes the proof that disconnected smoothing implies connected smoothing.
+				similarly as before. This proves unoriented connected smoothing and thus finishes the proof that disconnected smoothing implies connected smoothing.
 \end{proof}	
 		
 \begin{proof}[Proof of Direction 2 of Proposition~\ref{prop:cont_conn_disc}]
 		
-		We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies symmetry, connected smoothing, homogeneity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part.
+		We now prove the second part, namely, if $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies symmetry, connected smoothing, additivity and continuity, then $f$ satisfies disconnected smoothing. The proof is very similar to the first part.
 			
 			 Namely, given $a, b \in \pi_1(S)$ with $(\ora{a},\ora{b})$ crossing, we prove, by induction on $n$, the following inequality
 			\begin{equation}
@@ -330,7 +330,7 @@ Second, we prove unoriented connected smoothing: with $a,b$ as above,
 			For the induction step, note that
 			\begin{align*}
 				f([a^{2n}b^{2n}]) &= f([a^2(a^{2(n-1)}b^{2(n-1)})b^2])\\
-				&= f([b^2a^2(a^{2(n-1)}b^{2(n-1)})]) \\
+				&= f([b^2a^2(a^{2(n-1)}b^{2(n-1)})])&& \text{(Conjugation invariance)} \\
 				&\geq f([b^2a^2]) + f([a^{2(n-1)}b^{2(n-1)})]) && \text{(Oriented connected smoothing)} \\
 				&\geq 2f([ab]) + 2(n-1)f([ab]) && \text{(Induction)} \\
                 &= 2nf([ab]).
