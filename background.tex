@@ -283,6 +283,7 @@ For uniqueness, see~\cite[Corollary~4.2.3]{Martelli16:IntroGeoTop}.
   current notation, both $\Curr$ and $\Curr^u$ represent unoriented currents}
   \DMGtodo{I prefer the current notation, since there is a b also for bounded currents, which means something different (although only relevant in non-compact setting, which doesn't appear much here other than in Further questions)}
 \DPTtodo{Then should it be $i_u$? or maybe $i_B$ or $i^u$ or $\Curr_u$?}
+\DMGtodo{I changed it to $i^u$}
 Some authors, such as
 Bonahon~\cite{Bonahon86:EndsHyperbolicManifolds,Bonahon88:GeodesicCurrent}, use the space of geodesic currents $\Curr^u(S)$ as
 $\pi_1$-invariant
@@ -351,8 +352,7 @@ Hence, $q_*$ and $L$ are continuous and linear, and since weighted flip-invarian
   \DPTtodo{There was some editing mistake}
 Oriented currents are
 more
-general and appear naturally in algebraic
-contexts~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
+general and appear naturally in geometric group theory~\cite{Bonahon91:CurrentsGroups,EPS20:CountingCurves,
   CR25:Manhattan, CMGR26:GreenMetrics} as well as
 higher Teichm\"uller theory and Anosov
 representations~\cite{BridgemanCanaryLabourieSambarino18:SimpleRoots}.
@@ -376,17 +376,17 @@ i(\mu, \nu) \coloneqq \int_{\mathcal{F}} \mu \times \nu.
 \label{eq:intersection}
 \end{equation}
 \end{definition}
-In fact, Bonahon defined intersection number $i_B$ for unoriented
+In fact, Bonahon defined intersection number $i^u$ for unoriented
 geodesic currents $\Curr^u(S)$, but we have the following relation
 \begin{lemma}
 For $q \colon G(\Sigma) \to G^u(\Sigma)$ the natural quotient map
 and any $\mu_1, \mu_2 \in \Curr(S)$, we have
 \[
-i(\mu_1,\mu_2) = i_B(q_*(\mu_1), q_*(\mu_2))
+i(\mu_1,\mu_2) = i^u(q_*(\mu_1), q_*(\mu_2))
 \]
 \end{lemma}
 \begin{proof}
-To define his intersection number $i_B$, Bonahon considers pairs of transversely intersecting unoriented geodesics $\mathcal{D}\mathcal{G}^u(S)$.
+To define his intersection number $i^u$, Bonahon considers pairs of transversely intersecting unoriented geodesics $\mathcal{D}\mathcal{G}^u(S)$.
 We have the relation
 \[
 \mathcal{D}\mathcal{G}(S)=(q\times q)^{-1}(\mathcal{D}\mathcal{G}^u(S)).
@@ -396,7 +396,7 @@ relationship for fundamental domains.
 Hence, for flip-invariant oriented geodesic currents $\mu_1, \mu_2$,
 by the change-of-variables principle we have
 \[
-\int_{\mathcal{F}}d(\mu_1 \otimes \mu_2) = \int_{\mathcal{F}^u}d(q_*(\mu_1) \otimes q_*(\mu_2)) = i_B(q_*(\mu_1),q_*(\mu_2)).\qedhere
+\int_{\mathcal{F}}d(\mu_1 \otimes \mu_2) = \int_{\mathcal{F}^u}d(q_*(\mu_1) \otimes q_*(\mu_2)) = i^u(q_*(\mu_1),q_*(\mu_2)).\qedhere
 \]
 \end{proof}
 With this definition, intersection number remains unchanged upon flipping the
