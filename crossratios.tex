@@ -42,11 +42,12 @@ Labourie~\cite[Definition~3.1]{L07:Crossratio} has considered a more general def
 
 As alluded above, generalized cross-ratios as in our definition above have been recently considered in Burger-Iozzi-Parreau-Pozzetti~\cite{BIPP24:PositiveCrossratios}.
 In this setting, there are (at least) two natural generalized cross-ratios associated to a geodesic current (see Question~\ref{que:howmany_crossratios}).
-\[
+\begin{equation}
 [a,b,c,d]^+ \coloneqq \mu([d,a) \times [b,c))
 \quad\text{and}\quad
 [a,b,c,d]^- \coloneqq \mu((d,a] \times (b,c]).
-\]
+\label{eq:current_to_crossratio}
+\end{equation}
 It is easily checked that these satisfy the properties of generalized cross-ratios,
 and these cross-ratios are different in general if $\mu$ has atoms (see~\cite[Example~3.4]{BIPP24:PositiveCrossratios} when $\mu$ is a closed curve).
 If $\mu$ has no atoms, the two generalized cross-ratios $[\cdot,\cdot,\cdot,\cdot]^{\pm}$ are equal, since the measure of the boundary of any box of geodesics is zero by Proposition~  \ref{prop:spikes}
@@ -368,10 +369,10 @@ as desired.
 \end{proof}
 
 \begin{theorem}
-There is a one-to-one correspondence between periods of generalized cross-ratios and geodesic currents.
+There is a one-to-one correspondence between \emph{periods} of generalized cross-ratios and geodesic currents.
 \end{theorem}
 \begin{proof}
-By the Lemmas~\ref{lem:crossratio_stability},~\ref{lem:crinv},~\ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve.
+On the one hand, by the Lemmas~\ref{lem:crossratio_stability},~\ref{lem:crinv},~\ref{lem:crossratio_disconnected_smoothing} and~\ref{lem:crossratio_connected_smoothing} above, every period $\ell$ induced by a generalized cross-ratio satisfies the hypotheses of Theorem~\ref{thm:intersections_group} and, since $\ell$ is symmetric, there exists a unique dual geodesic current $\mu_{\ell}$ such that $\ell(C)=i(\mu_{\ell},C)$ for every closed curve. On the other hand, every geodesic current induces a generalized cross-ratio via Equation~\ref{eq:current_to_crossratio}, and hence a period function.
 \end{proof}
 
 

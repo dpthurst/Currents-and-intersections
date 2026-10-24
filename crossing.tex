@@ -983,14 +983,10 @@ Then there is $s \ge 0$ (depending on $a,b,x$)
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
  -s$, we have
   \begin{align}
-    \label{eq:cross-join} [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
+    \label{eq:cross-join}   [a x^n] [b x^m] &\reducesto [ax^{n+r}bx^{m-r}]\\
     \label{eq:cross-split} [a x^nb x^m] &\reducesto [ax^{n+r}][bx^{m-r}].
   \end{align}
-and
-  \begin{align}
-    \label{eq:cross-join-triple} [cx^{-n}][a x^n] [b x^m] &\reducesto [cx^{-n}ax^{n+r}bx^{m-r}]\\
-    \label{eq:cross-split-triple} [cx^{-n}a x^nb x^m] &\reducesto [cx^{-n}ax^{n+r}][bx^{m-r}].
-  \end{align}
+
 
   There exists $s' \ge 0$ (depending on $a,x$) so that for all
   $\abs{n-m} > s'$,
@@ -1167,6 +1163,17 @@ examples.
   Eq.~\eqref{eq:cross-simple} follows by applying
   Eq.~\eqref{eq:cross-join} with $r=1$.
 \end{proof}
+
+\begin{remark}
+By similar arguments as those used to prove Equations~   \ref{eq:cross-join},   \ref{eq:cross-split}, we can show, that if $a,b,c$ are R-crossing $x$, then there is $s \ge 0$ (depending on $a,b,c,x$)
+  so that, for all
+ $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
+ -s$, we have
+  \begin{align}
+    \label{eq:cross-join-triple} [cx^{-n}][a x^n] [b x^m] &\reducesto [cx^{-n}ax^{n+r}bx^{m-r}]\\
+    \label{eq:cross-split-triple} [cx^{-n}a x^nb x^m] &\reducesto [cx^{-n}ax^{n+r}][bx^{m-r}].
+  \end{align}
+\end{remark}
 
 We also need some results about smoothings where we have high powers of
 two different elements. We work with three elements $a,x,y\in\pi_1(S)$
