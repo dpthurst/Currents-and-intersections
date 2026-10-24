@@ -66,7 +66,7 @@ let $T_g \coloneqq \{ x\in T \mid d(x,gx)=\norm{ g} \}$ be the
 of $T$ invariant under the action of $g$.
 If $g$ is elliptic, then $\norm{ g } =0$, and $T_g$ is the
 set of fixed points of~$g$. The converse is also true: if $\norm{g} =
-0$, then $g$ has fixed points \cite[Section~1.3]{CM87:GroupActions}.
+0$, then $g$ has fixed points \cite[1.3]{CM87:GroupActions}.
 
 If $g$ is hyperbolic, then $\norm{ g } >0$, $T_g$ is isometric to the
 real line, and $g$ translates along $T_g$ by distance $\norm{ g}$; in this
@@ -119,7 +119,7 @@ types~\cite[Page~583]{CM87:GroupActions}:
 \item \textit{Dihedral:} $\norm{ \cdot }$ is non-trivial on $[\Gamma,\Gamma]$, but
   $\norm{[g,h]}=0$ for all $g,h$ hyperbolic in~$T$; equivalently
   $\Gamma$ fixes a line of $T$ inverting
-  orientation~\cite[Theorem~2.4]{CM87:GroupActions}.
+  orientation~\cite[Theorem~2.5]{CM87:GroupActions}.
 \item \textit{Irreducible:} $\norm{[g,h]} \neq 0$ for some $g,h$ hyperbolic in $T$.
 \end{itemize}
 A \emph{reducible} action of $\Gamma$ is one that is not irreducible,
@@ -149,7 +149,7 @@ that they \emph{overlap coherently};
 \item if $g$ and $h$ translate in opposite
 directions along $\Delta$, we say that they \emph{overlap incoherently}.
 \end{itemize}
-Following~\cite[Section~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
+Following~\cite[Definition~3.2]{CM87:GroupActions}, we say that $g,h$ form a \emph{good pair} if 
 \begin{itemize} 
 \item they are both hyperbolic;
 \item their axes in the tree intersect and their overlap is a non-degenerate arc;
@@ -219,8 +219,7 @@ T_h = T_{gh} \cap T_{hg}$, and all four axes intersect coherently there; and
 \item $g,h$ overlap incoherently iff 
 $\norm{ g } + \norm{ h } = \norm{ gH } >\norm{gh}$. In this case, $T_g \cap T_h = T_{gH} \cap T_{Hg}$.
 \end{enumerate}
-\item \label{item:tree-disjoint}(Disjoint axes) $T_g \cap T_h =\emptyset$ iff
-$\norm{gh} = \norm{ gH} = \norm{  g } + \norm{h } + 2d(T_g,T_h),$
+\item \label{item:tree-disjoint}(Disjoint axes) $T_g \cap T_h =\emptyset$ iff $\norm{gh}=\norm{gH}=\norm{g}+\norm{h}+2d(T_g,T_h)$ with $d(T_g,T_h)>0$,
 as shown in Figure~\ref{fig:trees_disjoint}.
 In this case, $T_{gh}, T_g$ overlap coherently
 in a segment of positive length and
@@ -248,7 +247,7 @@ $d(T_g, T_h)$.
 The proof of the translation length equalities and inequalities of (1)
 and~(2),
 as well as the equality $T_g \cap T_h = T_{gh} \cap T_{hg}$
-in case~(1b), is in~\cite[Sections~1.5, 1.8]{CM87:GroupActions};
+in case~(1b), is in~\cite[Sections~1.5, 1.8 and the proof of Lemma~3.4]{CM87:GroupActions};
 case~(1c) is parallel.
 The result of part (2) about $T_{gh}, T_g$ overlapping coherently in a segment of positive length can be found in the proof of~\cite[Theorem~2.7]{CM87:GroupActions}.
 The statement about the axes $T_{gh},T_{hg}$ overlapping incoherently in the parallel axes case is~\cite[Remark~3.5]{CM87:GroupActions}.
@@ -307,9 +306,9 @@ If $T_g \cap T_h \neq \emptyset$, then $I\coloneqq T_{h} \cap T_{ghG}$ is a non-
 Then, the inequalities between translation lengths follow depending on the overlap between $T_h$ and $T_{ghG}$.
 If $T_g \cap T_h = \emptyset$, then the equality of lengths in
 case~(3) is stated explicitly
-in~\cite[Section~1.5]{CM87:GroupActions}. The fact that
+in~\cite[1.5]{CM87:GroupActions}. The fact that
 $T_{ghG} \cap T_h = \emptyset$ in this same case follows
-from~\cite[Fact~1.7]{CM87:GroupActions}.
+from~\cite[1.7]{CM87:GroupActions}.
 Since each case is exclusive, the triality depending on the relative position of $T_h$ and $T_{ghG}$ follows.
 Now we prove the items in the bullet list.
 The first bullet point follows from the analysis in~\cite[Proposition~1.7(2)]{Pa89:Paulin1989TheGT}, in particular, Figure~8 therein. There it is shown that if $z$ denotes the point in $T_g$ closest to $T_h$, then $T_{hg}$ contains the segment $[z,h(z)]$. Since $T_{g}=T_{G}$ for any $g \in \Gamma$, a symmetric argument applied to $G$ and $H$ shows that $T_{HG}$ contains the segment $[z,H(z)]$. In particular, if $y$ denotes the closest point of $T_h$ to $z$, both $T_{hg}$ and $T_{HG}$ contain the segment $[z,y]$, and overlap in that segment coherently. Hence, $hg$ and $gh$ overlap in that segment incoherently.
@@ -406,7 +405,7 @@ suppose that $b$ is hyperbolic. Then there exists $c$ hyperbolic so that $(\ora{
 \end{lemma}
 \begin{proof}
 Find $a$ so that $(\ora{a},\ora{b})$ cross, which exists due to density of endpoints.
-We follow Guiradel \cite[Page~853]{Gui05:Coeur} to show that some
+We follow Guirardel \cite[Fait 1.5 and the proof of Lemme 1.3, sous-cas 1.a, p.~853]{Gui05:Coeur} to show that some
 element of the form $c = b^k a^\ell$ with $\ell \ne 0$ is hyperbolic.
 
 If $a$ is hyperbolic, take $c=a$.
@@ -518,7 +517,7 @@ Note the irreducibility assumption is necessary: for a dihedral action, every el
     \end{subcase}
        Then by Lemma~\ref{lem:pau_ell_hyp}, for every hyperbolic element $b$, we have $h \cdot T_b^-=T_b^+$.
     We show this implies the minimal invariant subtree is reducible, reaching a contradiction.
-Suppose it is irreducible, so the minimal $\Gamma$-invariant tree is not a line. Since the minimal invariant tree is the union the axes of hyperbolic elements~\cite[Proposition~3.1]{CM87:GroupActions}, it follows that there must exist hyperbolic elements $b,c$ such that
+Suppose it is irreducible, so the minimal $\Gamma$-invariant tree is not a line. Since the minimal invariant tree is the union the axes of hyperbolic elements~\cite[the proof of Proposition~3.1]{CM87:GroupActions}, it follows that there must exist hyperbolic elements $b,c$ such that
 \[
 \{T_b^+,T_b^-,T_c^+,T_c^-\}
 \]

@@ -60,12 +60,23 @@ By Theorem~\ref{thm:intersect} there exists a geodesic current $\mu$ so that
 i(\mu, C) = f(C)
 \]
 for every closed curve $C$.
-We must show $\mu$ is a half-integral multi-curve. By the same argument in the proof of~\cite[Th\'eor\`eme~1]{Otal90:SpectreMarqueNegative}, there exists a family of rectangles of geodesics $\mathcal{R}$ with dense endpoints in $\partial_{\infty} S$ whose measure can be approximated by a sequence of one-half of the difference of sums of intersection numbers. That is, for every $R \in \mathcal{R}$, there exist sequences $A_n, B_n, C_n, D_n \in \Curves^+(S)$ so that
+We must show $\mu$ is a half-integral multi-curve. Fix a crossing pair $a,b\in\pi_1(S)$, and let $R_n^\pm$ and $B_{a,b}^\pm$
+be as in Lemma~\ref{lem:measures_parallelogram}. By parts (1) and (3) of
+that lemma, together with Lemma~\ref{lem:onepoint},
 \[
-\mu(R) = \frac{1}{2}\lim_{n^+} i(\mu, B_n) + i(\mu, C_n) - i(\mu, A_n) - i(\mu, D_n).
+2\,\mu(B_{a,b}^+)
+= \lim_{n\to\infty}\bigl(\mu(R_n^+)+\mu(R_n^-)\bigr)
+= \lim_{n\to\infty}\bigl(f(a^n)+f(b^n)-f(a^nb^{-n})\bigr).
 \]
-Since the expression in the limit is one-half of an integer number for every $n$, for $n$ large enough the sequence must be constant (by discreteness of $\mathbb{Z}$). 
-Hence, $\mu(R)$ is one-half of an integer for every $R \in \mathcal{R}$. (For more details about this last argument, see~\cite[Appendix~A]{JMG26:CoarseNegativeCurvature}.)
+Since $f$ is $\mathbb{Z}$-valued and stable, every term on the right is
+an integer, and a convergent sequence in the discrete set $\mathbb{Z}$ is
+eventually constant; hence $\mu(B_{a,b}^+)$ is one-half of an integer. As
+$(a,b)$ ranges over crossing pairs the quadruples $(a^+,b^-,a^-,b^+)$
+range over all quadruples in cyclic order, so these boxes are dense;
+choosing the quadruples nested and using continuity from below and above,
+$\mu(B)$ is one-half of an integer for every box $B$. (For the
+discreteness argument itself, see
+\cite[Appendix~A]{JMG26:CoarseNegativeCurvature}.)
 By \cite[Proposition~4.12]{BIPP24:PositiveCrossratios}, it follows
 that $2\mu$ must be an integral multi-curve~$M$, and hence
 $\mu=\frac{1}{2} M$ is half-integral.
@@ -308,7 +319,7 @@ Thus, by Theorem~\ref{thm:intersect}, there exists a geodesic current $\mu_d$ du
 Finally, we prove the other implication. Given a geodesic current $\mu$ and a choice of hyperbolic metric $\Sigma$ on $S$, there is an induced invariant pseudometric on $\wt{S}$ defined via
 
 \begin{equation}\label{eq:d_mu}
-\wt{d^\Sigma_\mu}(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(y,x])\right),
+\wt{d^\Sigma_\mu}(x,y) = \frac{1}{2}\left(\mu(G[x,y)) + \mu(G(x,y])\right),
 \end{equation}
 inducing a metric $d^\Sigma_\mu$ on~$S$
 so that 
@@ -483,7 +494,7 @@ Then:
 Furthermore, $G((Q,P])\cup a\cdot
 G((P',Q'])$ is a Borel fundamental domain for the
 action of $\langle ab \rangle$ on $G(\ora{ab})$.
-Similarly, $G((P,Q']) \cup b \cdot G((Q,P'])$ is a Borel fundamental domain for
+Similarly, $G((Q',P]) \cup b \cdot G((P',Q])$ is a Borel fundamental domain for
  the action of $\langle bA\rangle$ on $G(\ora{bA})$.
 \label{prop:keygeometry}
 \end{proposition}
@@ -537,7 +548,29 @@ Consider also the boxes of geodesics:
 \end{itemize}
 We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ and $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $.
 
-We will resort to this setup several times in the proofs below. 
+We will resort to this setup several times in the proofs below.
+
+\begin{lemma}\label{lem:onepoint}
+Let $\mu$ be any geodesic current and let $a,b\in\pi_1(S)$ cross. Then
+\[
+\mu\bigl((B_{a,b}^+\cup B_{a,b}^-)\setminus B_{a,b}\bigr)=0,
+\]
+and likewise with $B_{a,b}^\perp$ in place of $B_{a,b}$.
+\end{lemma}
+\begin{proof}
+Each piece of the difference is of the form $\{x\}\times J$, where $x$ is
+one of $a^\pm,b^\pm$ and $J$ is a half-open interval in
+$\partial_\infty S\setminus\{x\}$ whose other endpoint is the other fixed
+point of the element $g\in\{a,b\}$ fixing $x$. In the coordinate on the
+pencil $P(x)$ in which $g$ acts by translation, $J$ is a half-line, hence
+a disjoint union $\bigsqcup_{k\ge0} g^{-k}J_0$ of bounded pieces. Since
+$g$ fixes $x$, the sets $\{x\}\times g^{-k}J_0$ are translates of one
+another under $g$, so by $\pi_1(S)$-invariance they all carry the same
+$\mu$-mass $m$. Then $\mu(\{x\}\times J)$ is $0$ if $m=0$ and $+\infty$
+otherwise; but it is bounded above by
+$\mu(B_{a,b}^+)+\mu(B_{a,b}^-)$, which is finite. Hence $m=0$.
+\end{proof}
+
 The following lemma  says that when taking large powers of $a$ and $b$, the corresponding rectangles approximate boxes of geodesics.
 
   \begin{figure}
@@ -565,14 +598,18 @@ and
 \begin{equation}\label{eq:Rn-perp-meas}
 \mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=f(a^n) + f(b^n) -f(d_n).
 \end{equation}
-\item We have $\mu(\partial B_{a,b})^{\pm})=0$ and $\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$.
+\item \item We have $\mu(\partial B_{a,b}^{\pm})=0$ and
+$\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$, provided $\mu$ has no atom at a
+lift of $[a]$ or of $[b]$. In general the difference
+$(B_{a,b}^+\cup B_{a,b}^-)\setminus B_{a,b}$, and likewise for
+$B_{a,b}^{\perp}$, is $\mu$-null (Lemma~\ref{lem:onepoint}).
 \end{enumerate}
 \label{lem:measures_parallelogram}
 \end{lemma}
 \begin{proof}
 Item (1) is by construction of $R_n^{\pm}$.
 Item (2) follows by Item (1) and lower semi-continuity of measures.
-Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}. Finally, Item (4) follows by Lemma~\ref{prop:spikes}, since the vertices of the boxes $(B_{a,b})^{\pm}$ and $(B_{a,b}^{\perp})^{\pm}$ are the endpoints of the elements $a,b$, and the geodesics $\ora{a},\ora{b}$ are not contained in either of these boxes.
+Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}. Finally, Item (4) follows by Lemma~\ref{prop:spikes}, since the vertices…not contained in either of these boxes. → Finally, Item (4): by Lemma~\ref{prop:spikes} the only possible atom in the pencil at $a^\pm$ is $\ora{a}$ (and at $b^\pm$, $\ora{b}$), and these are excluded from the half-open boxes; the general bound on the boundary is Lemma~\ref{lem:onepoint}.
 \end{proof}
 
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
@@ -602,10 +639,9 @@ Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 By the hypothesis of max-smoothing, for every $n$, we have $\mu((R_n^\perp)^+)=\mu((R_n^\perp)^-)=0$ or $\mu(R_n^{+})=\mu(R_n^{-})=0$, by Eq.~\eqref{eq:Rn-meas} and Eq.~\eqref{eq:Rn-perp-meas}.
-Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq 1$.
-Hence, $\mu(B_{a,b}^{\pm})=0$ or $\mu((B_{a,b}^{\perp})^{\pm})=0$.
+Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus either $\mu(R_n^{\pm}) = 0$ for every $n$, in which case Lemma~\ref{lem:measures_parallelogram}(1) gives $\mu(B_{a,b}^{\pm})=0$; or there is some $N$ with $\mu(R_N^{\pm}) \neq 0$, and then $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq N$, whence $\mu((B_{a,b}^{\perp})^{\pm})=0$.
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
-The pairs of the diagonal endpoints of the family of boxes $B_{a,b}^{\pm}$ (as $a,b$ runs over crossing pairs in $\pi_1(S)$) are dense in the space of geodesics. Hence, we can find sequences of crossing pairs $a_n, b_n \in \pi_1(S)$ so that if $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $\bigcup_n B_n^{\pm} = B$, and $\bigcap_n (B_n^{\perp})^{\pm} = B^\perp$.
+The pairs of the diagonal endpoints of the family of boxes $B_{a,b}^{\pm}$ (as $a,b$ runs over crossing pairs in $\pi_1(S)$) are dense in the space of geodesics. Hence, we can find sequences of crossing pairs $a_n, b_n \in \pi_1(S)$ so that if $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $B=\bigcup_n B_n^{\pm}$, and $B^\perp \subseteq \bigcap_n (B_n^{\perp})^{\pm}$.
 Choosing the periodic endpoints successively from the appropriate
 sides, we may arrange that
 \[
@@ -789,10 +825,7 @@ and $e^{-u}+e^{-v}=1$. Subtracting these equalities gives $e^{-u}(e^{-w}-1)=0$,
 and therefore $w=0$, a contradiction. Hence $\mu$ is non-atomic. Now we use the
 density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run
 over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$,
-we can find, for every $n \in \mathbb{N}$ a sequence of intersecting
-pairs $a_n, b_n \in \pi_1(S)$ so that if we let
-$B_n \coloneqq B_{a_n, b_n}$, we have $\lim_n \mu(B_n) =\mu(B)$ and
-$\lim_n \mu(B_n^{\perp}) = \mu(B^\perp)$. Specifically,
+we can find a nested sequence, that is,; and $B_n \coloneqq B_{a_n,b_n}$, we have $\lim_n\mu(B_n)=\mu(B)$ → $B_n \coloneqq B_{a_n,b_n}$ with $B_n\subset B_{n+1}$ and $\bigcup_n B_n=B$, continuity from below gives $\lim_n\mu(B_n)=\mu(B)$. Specifically,
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]

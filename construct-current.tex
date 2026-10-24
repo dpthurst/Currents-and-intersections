@@ -41,7 +41,7 @@ grows, with the top endpoint fixed.
 }
 \end{figure}
 
-Similarly, if $\ora{\ell_1}$ is nested in $\ora{\ell_2}$ (so we again
+Similarly, if $(\ora{\ell_1},\ora{\ell_2})$ are R-parallel, that is, $\ora{\ell_2}$ is nested inside $\ora{\ell_1}$ (so we again
 have a box of type 2 or 3), as in
 Figure~\ref{fig:horizontal-accordion} define the
 \emph{horizontal accordion} $F(\vec{p_1},q_1, p_2,q_2)$ by
@@ -115,16 +115,15 @@ can break up the limit into canceling terms as indicated.
 
 The case of the horizontal accordion is similar, but there are some
 confusing inverses so we spell it out briefly.
-Since $\ora{\ell_1}$
-is nested inside $\ora{\ell_2}$ (i.e., $(\ora{\ell_1},\ora{\ell_2})$
-are R-parallel), the NS dynamics of $\ell_2 = P_2 x p_2$ translate
-$\ell_1$ inside $(\ell_2^+,\ell_1^-)$, as in
+Since $(\ora{\ell_1},\ora{\ell_2})$ are R-parallel, that is, $\ora{\ell_2}$ is nested inside $\ora{\ell_1}$, the NS dynamics of $\ell_2 = P_2 x p_2$ translate
+$\ell_1$ inside $(\ell_1^-,\ell_2^-)$, as in
 Figure~\ref{fig:horizontal-accordion}, and the $F(k)$ are boxes with
 $F(k+1) \subset F(k)$.
 For the limiting computation, since
 $P_2 p_1 \cdot \ora{\ell_1} = \ora{\ell_2}$ we have
-$(\ora{P_2p_1}, \ora{\ell_2})$ R-crossing and thus
-$(\ora{p_1 P_2}, \ora{x})$ R-crossing.
+$(\ora{P_2p_1}, \ora{\ell_2})$ R-cross and thus
+$(\ora{p_1 P_2}, \ora{x})$ R-cross.
+
 Set $h \coloneqq p_1 P_2$, so that
 \begin{align*}
   a^{(k)} &= p_1^{(k)} q_1 = h x^k c &
@@ -180,11 +179,11 @@ closed and open boxes.
   $\wh\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca1}. That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
-without increasing the mass much.
+without increasing the mass much. We write $V^\circ(B,\epsilon)\coloneqq (s_1',s_2)\times(t_2',t_1)$ for the interior of $V(B,\epsilon)$.
 
 \begin{proof}
   Let $B = B(p_1,q_1,p_2,q_2)$.
-  By Proposition~\ref{prop:density}, there is some $q_3$ so that $q_3
+  By Lemma~\ref{lem:diagonaldense}, there is some $q_3$ so that $q_3
   \cdot \ora{x}$ is nested inside $q_2 \cdot \ora{x}$; in particular
   $F_1 = F(p_1,q_2,p_2,\vec{q_3})$ is a vertical accordion. Furthermore, for
   each $k$, $B \cup F_1(k)$ is a RH box. 
@@ -210,8 +209,7 @@ edges of~$B$ with small mass.
 \begin{proof}
   Find $q_3$ so that $q_3 \cdot \ora{x}$ is nested inside
   $q_1 \cdot \ora{x}$ and so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a
-  vertical accordion. Similarly find $p_3$ so that $P_3 \cdot \ora{x}$
-  is nested inside $P_2 \cdot \ora{x}$ and
+  vertical accordion. Similarly find $p_3$ so that $P_2 \cdot \ora{x}$ is nested inside $P_3 \cdot \ora{x}$ and
   $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
   for sufficiently large $k$, we have $\wh\mu_f(F_1(k)) < \epsilon/2$ and
   $\wh\mu_f(F_2(k)) < \epsilon/2$. Then set
@@ -279,10 +277,9 @@ Lebesgue measure
 \DMGtodo{edited this to include flip-invariance}
 \begin{proposition}
 Let $f \colon \Curves^+(S) \to \mathbb{R}$ be a functional on curves satisfying symmetry, additivity, smoothing and stability.
-Then $\wh\mu_f$ extends to a flip-invariant oriented geodesic current $\overline\mu_f$.
+Then $\wh\mu_f$ extends to an oriented geodesic current $\overline\mu_f$.
 \end{proposition}
 \begin{proof}
-  \DPTtodo{Reread after Dídac has tweaked the analysis}
 By Propositions \ref{prop:limitexists}, \ref{prop:RHsemiring},
 \ref{prop:finitely-additive}, and~\ref{prop:countablyadditive}, $\wh\mu_f$
 is a finitely
@@ -290,7 +287,10 @@ additive and countably sub-additive pre-measure on $\mathcal{B}$, so
 by Proposition~\ref{prop:addsemitoring},
 $\wh \mu_f$ is countably additive on~$\cR$.
  Finally, $\wh\mu_f$ is non-negative by
-Proposition~\ref{prop:box-positive}.
+Proposition~\ref{prop:box-positive}. Since every box has finite $\wh\mu_f$-measure and the countably many
+boxes in $\mathcal B$ cover $G(S)$ (Proposition~\ref{prop:density}),
+the pre-measure $\wh\mu_f$ is $\sigma$-finite on $\cR$ in the sense of
+Theorem~\ref{thm:caratheodory}.
 By the Carath\'eodory
 Extension Theorem~\ref{thm:caratheodory}, $\wh\mu_f$ has a unique
 extension to $\sigma(\cR)$, which we denote~$\overline\mu_f$.
@@ -304,23 +304,31 @@ every open set is a countable union of RH boxes, and hence
 $\sigma(\mathcal B)=\operatorname{Bor}(G(S))$, the Borel
 $\sigma$-algebra of $G(S)$.
 Thus $\overline\mu_f$ is a Borel measure.
-\DMGtodo{added this sentence} Furthermore, since by Lemma~\ref{lem:RH_flip_invariance} $\overline \mu_f$ is flip-invariant on RH boxes, it follows that $\overline \mu_f$ is flip-invariant.
-
 Moreover, every point has an open neighborhood contained in an RH box
 of finite $\overline\mu_f$-mass. A compact set therefore admits a finite
-cover by such neighborhoods, so $\overline\mu_f$ is locally finite. Hence, by Lemma~\ref{lem:sigma_finite}, $\overline\mu_f$ is $\sigma$-finite.
+cover by such neighborhoods, so $\overline\mu_f$ is locally finite. 
 
-Finally, for every $\gamma\in\pi_1(S)$, the measures
+To check invariance, note that for every $\gamma\in\pi_1(S)$, the measures
 $\gamma_*\overline\mu_f$ and $\overline\mu_f$ agree on $\mathcal B$, by the
-$\pi_1(S)$-invariance of the original premeasure. Since both are
+$\pi_1(S)$-invariance of $\wh\mu_f$. Since both are
 $\sigma$-finite extensions of that premeasure, uniqueness in the
 Carath\'eodory extension theorem gives
 $\gamma_*\overline\mu_f=\overline\mu_f.$
 \end{proof}
-\DMGtodo{added this}
-\begin{notation}
-To lighten notation up, we refer to the flip-invariant geodesic current as $\mu_f$ instead of $\overline \mu_f$, from now on.
-\end{notation}
+
+It is not \emph{a priori} clear from the definition of
+$\overline\mu_f$ that it is a flip-invariant geodesic current
+(recall
+Definition~\ref{def:currents}). A sketch of a proof is given in Lemma~\ref{lem:RH_flip_invariance}, showing that $\overline \mu_f$ is flip-invariant on RH boxes, from where it follows that $\overline \mu_f$ is flip-invariant.
+
+We instead define the flip-invariant geodesic current
+\begin{equation}
+\label{eq:flip-invariant}
+\mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
+\end{equation}
+where $\sigma_*$ the push-forward map on oriented geodesic currents
+induced from the flip map.
+
 
 \begin{comment}
 It is not \emph{a priori} clear from the definition of
@@ -445,7 +453,7 @@ satisfying symmetry, smoothing, additivity and stability, and let
 $\mu_f$ be as above.
 For $\vec C$ an oriented closed curve, we have
 \[
-  i(\mu_f,\delta_C)= i(\mu_f, \delta_C) =
+i(\mu_f, \delta_C) =
   2\vec\imath(\mu_f, \delta_{\vec C}) = f(\vec C).
 \]
 \end{theorem}
@@ -485,7 +493,7 @@ In the RH orbit notation, we have
 If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
   b^{(n)}, c^{(n)}, d^{(n)}}$ we then have
     \begin{align*}
-      \vec{\imath}(\mu_f, \delta_{[y]})&=\mu_f([z,Yz)\times(y^-,y^+)) \\
+      \vec{\imath}(\overline\mu_f, \delta_{[y]})&=\overline\mu_f([z,Yz)\times(y^-,y^+)) \\
     &= \lim_{n\to\infty} \wh\mu_f(B_n)  \\
     &= \frac{1}{4}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
     &= \OneFourth\bigl(f([y]) + f([y^{-1}])\bigr) =\OneHalf f([y]).
@@ -500,9 +508,12 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
     number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
     two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
-      The property $i(\mu_f, C)=f(C)$ for any unoriented multi-curve $C$
-      follows by the definition of $\mu_f$ and the fact that
-      $\mu_f$ is finitely additive.
+$\vec\imath(\sigma_*\overline\mu_f,\delta_{\vec C})
+=\vec\imath(\overline\mu_f,\delta_{\vec C^{-1}})$ and $f$ is symmetric,
+the same value is obtained for the flip-average \eqref{eq:flip-invariant}; and
+because that current is flip-invariant, Lemma~\ref{lem:asym-intersect}
+applied to it gives
+$i(\mu_f,\delta_C)=2\vec\imath(\mu_f,\delta_{\vec C})=f(\vec C)$.
 \end{proof}
 
 \begin{remark}
@@ -615,7 +626,7 @@ $(\ora{B},\ora{A})$. Then
 
 We have thus deduced $\overline{f}$ satisfies oriented connected and disconnected smoothing. Therefore, by Proposition~\ref{prop:oriented_smoothing_unoriented} below,
 $\overline{f}$~satisfies unoriented connected and disconnected smoothing as well. 
-Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(b^n)$ for every $n, m \geq 1$. This establishes smoothing of $\overline{f}$. Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
+Finally, stability implies oriented power-smoothing, i.e., $f(a^{n+m}) \geq f(a^n) + f(a^m)$ for every $n, m \geq 1$. This establishes smoothing of $\overline{f}$. Hence, smoothing, stability and additivity are satisfied for the function on unoriented curves $\overline{f}$.
 We are thus under the
 hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}

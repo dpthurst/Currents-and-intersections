@@ -1066,7 +1066,7 @@ examples.
   In each case, we will show that we can choose lifts of the curves to
   the normalized band model for which a
   relevant crossing is essential. We start with
-  Eq.~\eqref{eq:cross-join} and~\eqref{eq:cross-join-triple}, looking first at the windows $w(a\cdot
+  Eq.~\eqref{eq:cross-join} looking first at the windows $w(a\cdot
   \ora{x})$ and $w(x^rb\cdot\ora{x})$.
   Since each window is a
   finite size, there is a finite range $[s_1,s_2]$ so that $w(x^rb\cdot\ora{x})$
@@ -1078,8 +1078,7 @@ examples.
   ordering of the windows. Set
   $s \coloneqq \max\{s_2,s_2',-s_1,-s_1'\}$.
 
-  Now, for Eq.~\eqref{eq:cross-join} {\color{blue} and~\eqref{eq:cross-join-triple}}, consider
-  {\color{blue} $g_0=cx^{-n}ax^n$,}
+  Now, for Eq.~\eqref{eq:cross-join}, consider
   $g_1 = ax^n$ and $g_2 = x^rbx^{m-r}$, with $s < r < m-n-s$. We have
   \[
     r-m < -n-s \le -n+s_1',
@@ -1092,40 +1091,30 @@ examples.
   so $g_2^+ \in w(x^rb\cdot\ora{x})$ is to the right of $g_1^+ \in
   w(a\cdot\ora{x})$. Thus
   $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the left. 
-  {\color{blue}  Since $(\ora{c},\ora{a})$ R-cross:
-  \begin{itemize}\item $w(x^{-n}A \cdot \ora{x})$ is to the left of $w(x^{n}C \cdot \ora{x})$ and 
-  \item $w(c \cdot \ora{x})$ is to the left of $w(a \cdot \ora{x})$, so $(\ora{cx^{-n}},\ora{ax^n})$ R-cross.
-  \item Further, $g_1^- \in w(x^{-n}A\cdot\ora{x})$ is to the left of $g_0^- \in w(x^{n}Cx^{-n}A \cdot \ora{x})$, and \item $g_0^+ \in w(cx^{-n}ax^n \cdot \ora{x})$ is to the left of  $g_1^+ \in
-  w(a\cdot\ora{x})$. Thus, $\ora{x^rbx^{m-r}}$ crosses $\ora{cx^{-n}ax^n}$ to the left. \end{itemize}}
+  %{\color{blue}  Since $(\ora{c},\ora{a})$ R-cross:
+  %\begin{itemize}\item $w(x^{-n}A \cdot \ora{x})$ is to the left of $w(x^{n}C \cdot \ora{x})$ and 
+  %\item $w(c \cdot \ora{x})$ is to the left of $w(a \cdot \ora{x})$, so $(\ora{cx^{-n}},\ora{ax^n})$ R-cross.
+  %\item Further, $g_1^- \in w(x^{-n}A\cdot\ora{x})$ is to the left of $g_0^- \in w(x^{n}Cx^{-n}A \cdot \ora{x})$, and \item $g_0^+ \in w(cx^{-n}ax^n \cdot \ora{x})$ is to the left of  $g_1^+ \in
+  %w(a\cdot\ora{x})$. Thus, $\ora{x^rbx^{m-r}}$ crosses $\ora{cx^{-n}ax^n}$ to the left. \end{itemize}}
   
   
   Similarly if
-  $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}${\color{blue} and $\ora{cx^{-n}ax^n}$} to the
+  $m-n+s < r < -s$, then $\ora{x^rbx^{m-r}}$ crosses $\ora{ax^n}$ to the
   right. In either case,
     \[
 [ax^n][bx^m] = [ax^n][x^r bx^{m-r}] \reducesto [ax^{n+r}bx^{m-r}]
   \]
-{and \color{blue}
-  \[
-    [cx^{-n}][ax^n][bx^m] = [cx^{-n}ax^n][x^r bx^{m-r}] \reducesto [cx^{-n}ax^{n+r}bx^{m-r}]
-  \]  }
   by oriented disconnected smoothing.
 
   For Eq.~\eqref{eq:cross-split}, write   $[ax^n bx^m]=[gh]$, with $s < r < m-n-s$.
   Since $s_1 < r$ $h^+ \in w(b\cdot\ora{x})$ is to the left of
   $g^+ \in w(x^r a\cdot\ora{x})$.
   Similarly, $r-m < -n+s_1'$, so $h^-\in w(x^{r-m}B \cdot\ora{x})$ is to the left
-  of $g^- \in w(x^{-n}A\cdot\ora{x})$.
-  {\color{blue} Similarly,   for Eq.~\eqref{eq:cross-split-triple}, set
-  $[cx^{-n}ax^n bx^m]=[kh]$ with
-  $k=x^rcx^{-n} ax^n$ and $h=bx^{m-r}$, with $s < r < m-n-s$.
-  Then $h^+ \in w(b\cdot\ora{x})$ is to the left of
-  $k^+ \in w(x^r cx^{-n}a\cdot\ora{x})$ and $h^-\in w(x^{r-m}B \cdot\ora{x})$ is to the left
-  of $k^- \in w(x^{-n}A\cdot\ora{x})$}. 
+  of $g^- \in w(x^{-n}A\cdot\ora{x})$. 
   Thus $\ora{h}$ and $\ora{g}$
   are R-parallel, giving Eq.~\eqref{eq:cross-split} by oriented
-  connected smoothing, {\color{blue} and $\ora{h}$ and $\ora{k}$ are R-parallel, giving Eq.~\eqref{eq:cross-split-triple}.}
-  We similarly get $(\ora{g},\ora{h})$  {\color{blue} and  $(\ora{k},\ora{h})$} are parallel if $m-n+s < r < -s$, 
+  connected smoothing.
+  We similarly get $(\ora{g},\ora{h})$  are parallel if $m-n+s < r < -s$, 
   To see Eq.~\eqref{eq:cross-cancel}, suppose without loss of generality
   that $n < m$. Let $s_0$ be the ceiling of the width of $w(a\cdot\ora{x})$
   (measuring width in the normalized band model),
@@ -1165,6 +1154,7 @@ examples.
 \end{proof}
 
 \begin{remark}
+\label{rmk:triple_limits}
 By similar arguments as those used to prove Equations~   \ref{eq:cross-join},   \ref{eq:cross-split}, we can show, that if $a,b,c$ are R-crossing $x$, then there is $s \ge 0$ (depending on $a,b,c,x$)
   so that, for all
  $n, m, r \in \mathbb{Z}$ with either $s < r < m-n-s$ or $m-n+s < r <
