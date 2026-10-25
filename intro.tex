@@ -138,7 +138,7 @@ not even be continuous on $S \times S$ \cite[Propositions 4.7,
 These terms are defined, and Corollary~\ref{maincor:length_dual} is
 proved, in Section~\ref{subsec:length-metrics}.
 
-In short, Theorem~\ref{thm:intersect} and Corollary~\ref{maincor:length_dual} give two new equivalent geometric perspectives on geodesic currents: as additive curve functionals satisfying smoothing and as length pseudo-metrics on $S$. 
+In short, Theorem~\ref{thm:intersect} and Corollary~\ref{maincor:length_dual} give two new equivalent geometric perspectives on geodesic currents: as additive curve functionals satisfying smoothing and as curve lengths of length pseudo-metrics on $S$. 
 
 Theorem~\ref{thm:intersect} further yields dual currents (in fact, dual multi-curves) for stable
 lengths associated to embedded graphs. Let $\iota \colon \mathcal{G}
@@ -297,13 +297,12 @@ functions~\cite{Luo98:GeodesicLength}.
 \end{itemize}
 \DMGtodo{extracted this as a corollary}
     For classes of metrics with marked length spectrum rigidity, Theorem~\ref{thm:hyp-char} lets us conclude a metric is
-    hyperbolic by looking at its spectrum. Indeed, its length spectrum satisfies smoothing by
+    hyperbolic by looking at its marked length spectrum. Indeed, its marked length spectrum satisfies smoothing by
 Corollary~\ref{maincor:length_dual}, and thus is isometric to a
 hyperbolic metric
 if and only if it satisfies Equation~\eqref{eq:lambda-smoothing}. 
-     \begin{maincor}\label{maincor:rigidity_hyperbolic} If $\mathcal{M}$ is a class of marked symmetric length metrics containing hyperbolic metrics and
-  where marked length
-spectrum rigidity holds, then $d \in \cM$ if and only if it satisfies Equation~\eqref{eq:lambda-smoothing}.
+     \begin{maincor}\label{maincor:rigidity_hyperbolic} Let $\mathcal{M}$ be a class of symmetric length pseudo-metrics on $S$ containing hyperbolic metrics up to diffeomorphism isotopic to the identity. Suppose marked length
+spectrum rigidity holds. Then $d \in \cM$ is a hyperbolic metric if and only if it satisfies Equation~\eqref{eq:lambda-smoothing}.
 \end{maincor}
 
 Some classes $\mathcal{M}$ for which this
@@ -400,23 +399,13 @@ $\text{(b)} \Rightarrow \text{(a)}$ recovers
 Skora’s theorem~\cite{Sko90:GeometricAction} (which we reprove).
 All the remaining equivalences are new. Skora also proved that \ref{item:skora_lamination} is equivalent to the action being \emph{small}, meaning that every non-degenerate arc has cyclic stabilizer~\cite{Sk96:Splittings}.
 
-\DMGtodo{rephrased this and commented the previous one}
 The max-smoothing identities in \ref{item:skora_maxsmoothing} refine the general characterization of translation lengths of real trees due to Culler--Morgan and Parry~\cite{CM87:GroupActions,Par91:Translation}. Roughly, they characterize when a conjugacy-invariant
 function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ on a general finitely generated group $\Gamma$ is the translation length
 of a $\Gamma$ action on a tree $T$ in terms of inequalities involving, for every $a,b\in\Gamma$ the quantities
 \[
 \norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}.
 \]
-\begin{comment}A restatement of their theorem (see Proposition~\ref{prop:max_twice})
-is that a conjugacy-invariant
-function $\norm{\cdot}\colon\Gamma\to\mathbb{R}_{\geq 0}$ on a general finitely generated group $\Gamma$ is the translation length
-of a $\Gamma$ action on a tree $T$ if and only if for every $a,b\in\Gamma$ the
-maximum among
-\[
-\norm{a}+\norm{b}, \qquad \norm{ab}, \qquad \norm{aB}
-\]
-is attained at least twice.
-\end{comment}
+
 For surface groups, Theorem~\ref{mainthm:skora} refines this
 characterization: we single out trees dual to measured laminations
 by restricting which equality occurs, according to the geometric
@@ -496,7 +485,7 @@ In the second revision of this manuscript, the authors used the LLM Open Math OS
 for AI-assisted copy-editing, catching typos and argument verification on a final draft (previous mathematical inconsistencies and gaps had been found without use of AI on the first version, and corrected before the AI was used).
 The prompt we used was: ``Please take a look at the paper in the attached repository. 
 I will want you to read it over and check for any inaccuracies, but that is a complex task and will take some back-and-forth. Do not make any edits yet.''
-It identified various notation and typographical errors.  Its mathematical feedback included an incorrect smoothing identity (not used throughout), minor inconsistencies in some group identities and cyclic orders, and errors in exponents and summation bounds. Its role was limited to reviewing existing material; no new mathematical content or simplifications of the original arguments were introduced through its use.
+It identified various notation and typographical errors.  Its mathematical feedback included an incorrect smoothing identity (not used throughout), minor inconsistencies in some group identities and cyclic orders, and errors in exponents and summation bounds. We also analyzed with a swarm of agents sections 5-6, 8 and 9. It identified some additional minor typos, and in section 9, some inaccurate citation numbers, but no major gaps or mistakes. Its role was limited to reviewing existing material; no new mathematical content or simplifications of the original arguments were introduced through its use.
 
 \subsection{Organization}
 \label{sec:organization}
