@@ -165,7 +165,7 @@ Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\el
   Lemma~\ref{lem:convergence_action},
   \begin{align}\label{eq:box-endpoints}
     \lim_{n^+} g_{i,j,n}^- &= P_i \cdot x^- = \ell_i^- &
-    \lim_{n^+} g_n^+ &= q_j \cdot x^+ = r_j^+.
+    \lim_{n^+} g_{i,j,n}^+ &= q_j \cdot x^+ = r_j^+.
   \end{align}
   Condition~\ref{item:box-diags-cross-lift} says that for
   sufficiently large~$n$
@@ -536,7 +536,7 @@ are analogous:
 && \text{(Definition)} \\
 &= \frac{1}{4}\lim_{n,m \to \infty}
 \Big( f([bx^{m}]) + f([cx^n]) - f([ax^{m}]) - f([dx^n]) \Big)
-&& \text{(Prop.~\ref{prop:join-split-alg})} \\
+&& \text{(Lemma~\ref{lem:additivity-limit})} \\
 &= \frac{1}{4}\lim_{n \to \infty}
 \Big( f([bx^{n}]) + f([cx^n]) - f([ax^{n}]) - f([dx^n]) \Big)
 &&\\
