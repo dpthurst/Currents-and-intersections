@@ -61,7 +61,7 @@ If $\mu$ is countably sub-additive then $\mu$ is countably additive.
 \begin{proposition}[{\cite[1.3.10~Proposition]{Bo07:MeasureTheory}}]
 \label{prop:addsemitoring}
 Let $\mathcal S$ be a semiring and $\mu:\mathcal S\to [0,\infty]$ a finitely additive function. Then there exists a unique finitely additive extension
- $\hat\mu:\mathcal R_{\mathcal S} \to [0,\infty]$. If, in addition, $\mu$ is countably subadditive on $\mathcal S$, then $\hat\mu$ is countably additive on $\mathcal R_{\mathcal S}$.
+ $\hat\mu:\mathcal R_{\mathcal S} \to [0,\infty]$. If, in addition, $\mu$ is countably sub-additive on $\mathcal S$, then $\hat\mu$ is countably additive on $\mathcal R_{\mathcal S}$.
 \end{proposition}
 
 Finally, a finitely and countably additive function on a ring can be extended to the $\sigma$-algebra. A function $\mu$ on a ring~$\cR$ is called \emph{$\sigma$-finite} if
@@ -82,7 +82,9 @@ For any non-negative function $\mu$ defined on a certain class $\mathcal{A}$ of 
 \]
 defines a new function on \emph{every} $A \subset X$, called the \emph{outer measure} of $\mu$.
 
-Let $\mu$ a finitely additive and countable additive function on a ring $\mathcal{R}$. A set $A \subset X$ is called \emph{$\mu$-measurable} of for every $E \subset X$ one has
+Let $\mu$ a finitely additive and countably additive function on a
+ring $\mathcal{R}$. A set $A \subset X$ is called
+\emph{$\mu$-measurable} if for every $E \subset X$ one has
 \[
 \mu^*(E \cap A) + \mu^*(E \setminus A) = \mu^*(E).
 \]
@@ -108,7 +110,7 @@ Let $\mu$ be a Borel measure on $X$. The \emph{support} of $\mu$ is defined as t
 \end{definition}
 
 If $X$ is a separable metric space, and $\mu$ is a Borel measure, then
-every atom of $\mu$ is a union of singleton set and a $\mu$-measurable set of
+every atom of $\mu$ is the union of singleton set and a $\mu$-measurable set of
 measure zero~\cite[2.1.6, Theorem~2]{Kad18:MeasureTheory}.
 
 \subsection{Radon and Borel measures}
