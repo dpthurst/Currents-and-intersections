@@ -639,12 +639,19 @@ f(g)+f(h)=\max\{f(gh),f(gH)\}.
 Suppose first $f$ satisfies the conditions in the hypotheses including
 disconnected max-smoothing.
 By Theorem~\ref{thm:intersections_group}, there exists a geodesic current $\mu_f$ so that $f(C)=i(\mu_f,C)$ for all closed curves $C$.
+
 It remains to show that $\mu_f$ is a measured lamination.
 Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 By the hypothesis of max-smoothing, for every $n$, we have $\mu((R_n^\perp)^+)=\mu((R_n^\perp)^-)=0$ or $\mu(R_n^{+})=\mu(R_n^{-})=0$, by Eq.~\eqref{eq:Rn-meas} and Eq.~\eqref{eq:Rn-perp-meas}.
-Since each sequence of sets $(R_n^{\pm})$ and $(R_n^{\perp})^{\pm}$ is nested, if $\mu(R_1^{\pm}) \neq 0$, then $\mu(R_n^{\pm}) \neq 0$ for all $n \geq 1$ and thus either $\mu(R_n^{\pm}) = 0$ for every $n$, in which case Lemma~\ref{lem:measures_parallelogram}(1) gives $\mu(B_{a,b}^{\pm})=0$; or there is some $N$ with $\mu(R_N^{\pm}) \neq 0$, and then $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq N$, whence $\mu((B_{a,b}^{\perp})^{\pm})=0$.
+Since each sequence of sets $(R_n)^{\pm}$ and $(R_n^{\perp})^{\pm}$ is
+nested, either $\mu(R_n)^{\pm} = 0$ for every $n$, in which case
+Lemma~\ref{lem:measures_parallelogram}(1) gives
+$\mu(B_{a,b}^{\pm})=0$; or there is some $N$ with $\mu((R_N)^{\pm}) \neq
+0$, and then $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq N$, whence
+$\mu((B_{a,b}^{\perp})^{\pm})=0$.
+
 By density of endpoints of closed geodesics, these boxes have vertices on a dense set of points of $\partial_{\infty} S$.
 The pairs of the diagonal endpoints of the family of boxes $B_{a,b}^{\pm}$ (as $a,b$ runs over crossing pairs in $\pi_1(S)$) are dense in the space of geodesics. Hence, we can find sequences of crossing pairs $a_n, b_n \in \pi_1(S)$ so that if $B_n^{\pm} \coloneqq B_{a_n, b_n}^{\pm}$, we have $B_n^{\pm} \subset B_{n+1}^{\pm}$, $(B_{n+1}^{\perp})^{\pm} \subset (B_{n}^{\perp})^{\pm}$, $B=\bigcup_n B_n^{\pm}$, and $B^\perp \subseteq \bigcap_n (B_n^{\perp})^{\pm}$.
 Choosing the periodic endpoints successively from the appropriate
@@ -704,11 +711,12 @@ A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured la
   lamination. On the other hand, if $f$ is dual to a measured
   lamination, Theorem~\ref{thm:lam-char} implies disconnected
   max-smoothing. Connected max-smoothing follows from tracing through
-  the proof of Proposition~\ref{prop:cont_conn_disc}, using the fact
+  the proof of Proposition~\ref{prop:cont_conn_disc} (disconnected
+  smoothing implies connected smoothing): Use the fact
   that $i(\mu, \cdot)$ is continuous, symmetric, additive and stable,
-  and noting that if $f$ satisfies disconnected max-smoothing, all the
-  inequalities become equalities in the proof of disconnected
-  smoothing implies connected smoothing.
+  and note that if $f$ satisfies disconnected max-smoothing, all the
+  inequalities become equalities in the proof.\DPTtodo{Look at this
+    again, we may be using something about endpoints}
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by
@@ -774,7 +782,7 @@ Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measu
 Let $A_n \coloneqq f(a^n)=nf(a)$, $B_n \coloneqq f(b^n)=nf(b)$, $C_n \coloneqq f(a^nb^n)$ and $D_n \coloneqq f(a^n b^{-n})$.
 Now, we compute
 \[
-e^{(-\mu(R_n^+)-\mu(R_n^-))/2} + e^{(-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-))/2} = e^{-(A_n+B_n-C_n)/2} + e^{-(A_n+B_n-D_n/2}.
+e^{(-\mu(R_n^+)-\mu(R_n^-))/2} + e^{(-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-))/2} = e^{-(A_n+B_n-C_n)/2} + e^{-(A_n+B_n-D_n)/2}.
 \]
 The identity
 \[
