@@ -189,25 +189,25 @@ Definition~\ref{def:crossing} and
 Let $f \colon \pi_1(S) \to \mathbb{R}$ be a functional on $\pi_1(S)$
 and $\overline{f}(g) \coloneqq \frac{1}{2} \left(f(g) + f(G) \right)$
 be its symmetrization.
-Then there exists a dual geodesic current $\mu_{\overline{f}}$ on $S$ so that
-\[
-i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
-\quad\text{for every }g \in \pi_1(S).
-\]
-if and only if $\overline f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
+Suppose $f$ satisfies the following conditions for $a,b \in \pi_1(S)$:
 \begin{enumerate}
-\item class invariant: $\overline f (a)=\overline f(b)$ whenever $a$ is conjugate to $b$.
+\item class invariance: $f (a)=f(b)$ whenever $a$ is conjugate to $b$.
 \item stability: 
-$\overline f(a^n)=n\overline f(a) \mbox{ for all } n \geq 1$.
+$f(a^n)=n f(a) \mbox{ for all } n \geq 1$.
 \item oriented smoothing:
  \begin{align}
-    \label{eq:conn_oriented} \overline f(ab) &\geq  \overline f(a) + \overline f(b) && \mbox{ if } (\ora{a},\ora{b})\mbox{ are } \mbox{parallel;} \\
-    \label{eq:disconn_oriented} \overline f(a) + \overline f(b) &\geq \overline f(ab)  && \mbox{ if }  (\ora{a},\ora{b})\mbox{ are } \mbox{crossing}.
+    \label{eq:conn_oriented} f(ab) &\geq f(a) + f(b) && \mbox{ if } (\ora{a},\ora{b})\mbox{ are } \mbox{parallel;} \\
+    \label{eq:disconn_oriented} f(a) + f(b) &\geq f(ab)  && \mbox{ if }  (\ora{a},\ora{b})\mbox{ are } \mbox{crossing}.
   \end{align}
 \end{enumerate}
-Assuming that $f$ satisfies class invariance, stability, and oriented
-smoothing is sufficient to guarantee the existence
-of~$\mu_{\overline f}$.
+Then there exists a dual geodesic current $\mu_{\overline{f}}$ on $S$ so that
+\begin{equation*}
+i(\mu_{\overline{f}}, [g]) = \overline{f}(g)
+\quad\text{for every }g \in \pi_1(S).
+\end{equation*}
+Conversely, if there such a dual geodesic current $\mu_{\overline f}$,
+then $\overline f$ satisfies
+conditions (1)--(3) above.
 \end{mainthmprime}
 
 Condition~(3) in Theorem~\ref{thm:intersections_group} is formally
