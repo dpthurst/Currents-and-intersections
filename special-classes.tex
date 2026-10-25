@@ -598,7 +598,7 @@ and
 \begin{equation}\label{eq:Rn-perp-meas}
 \mu((R_n^\perp)^{+}) + \mu((R_n^\perp)^{-})=f(a^n) + f(b^n) -f(d_n).
 \end{equation}
-\item \item We have $\mu(\partial B_{a,b}^{\pm})=0$ and
+\item We have $\mu(\partial B_{a,b}^{\pm})=0$ and
 $\mu(\partial (B_{a,b}^{\perp})^{\pm})=0$, provided $\mu$ has no atom at a
 lift of $[a]$ or of $[b]$. In general the difference
 $(B_{a,b}^+\cup B_{a,b}^-)\setminus B_{a,b}$, and likewise for
@@ -609,7 +609,12 @@ $B_{a,b}^{\perp}$, is $\mu$-null (Lemma~\ref{lem:onepoint}).
 \begin{proof}
 Item (1) is by construction of $R_n^{\pm}$.
 Item (2) follows by Item (1) and lower semi-continuity of measures.
-Item (3) follows by Lemma~\ref{lem:otalclaim} and Proposition~\ref{prop:keygeometry}. Finally, Item (4) follows by Lemma~\ref{prop:spikes}, since the vertices…not contained in either of these boxes. → Finally, Item (4): by Lemma~\ref{prop:spikes} the only possible atom in the pencil at $a^\pm$ is $\ora{a}$ (and at $b^\pm$, $\ora{b}$), and these are excluded from the half-open boxes; the general bound on the boundary is Lemma~\ref{lem:onepoint}.
+Item (3) follows by Lemma~\ref{lem:otalclaim} and
+Proposition~\ref{prop:keygeometry}. Finally, Item (4): by
+Lemma~\ref{prop:spikes} the only possible atom in the pencil at
+$a^\pm$ is $\ora{a}$ (and at $b^\pm$, $\ora{b}$), and these are
+excluded from the half-open boxes; the general bound on the boundary
+is Lemma~\ref{lem:onepoint}.
 \end{proof}
 
 Recall that a geodesic current is a measured lamination if and only if for every open box of geodesics $B$, we have $\min \{\mu(B),\mu(B^{\perp})\}=0$ (see, e.g.,~\cite[Proposition~2.1]{BIPP24:PositiveCrossratios}).
@@ -745,7 +750,7 @@ where $\lambda(g)\coloneqq 2\cosh\!\bigl(f(g)/2\bigr)$.
 \end{taggedthm}
 
 \begin{proof}
-If $\mu$ is hyperbolic Liouville current then smoothing, additivity,
+If $\mu$ is hyperbolic Liouville current then smoothing, additivity, and
 stability follow from the fact these are necessary conditions for a
 geodesic current, as shown in Appendix~\ref{prop:necessary}. The
 $\lambda$-smoothing relation~\eqref{eq:lambda-smoothing} follows from
@@ -825,7 +830,9 @@ and $e^{-u}+e^{-v}=1$. Subtracting these equalities gives $e^{-u}(e^{-w}-1)=0$,
 and therefore $w=0$, a contradiction. Hence $\mu$ is non-atomic. Now we use the
 density of $B_{a,b}$ in the space of boxes of geodesics as $a,b$ run
 over intersecting pairs in $\pi_1(S)$. Hence, given any open box $B$,
-we can find a nested sequence, that is,; and $B_n \coloneqq B_{a_n,b_n}$, we have $\lim_n\mu(B_n)=\mu(B)$ → $B_n \coloneqq B_{a_n,b_n}$ with $B_n\subset B_{n+1}$ and $\bigcup_n B_n=B$, continuity from below gives $\lim_n\mu(B_n)=\mu(B)$. Specifically,
+we can find a nested sequence. Specifically, set $B_n \coloneqq
+B_{a_n,b_n}$. Then $B_n\subset B_{n+1}$ and $\bigcup_n B_n=B$;
+continuity from below gives $\lim_n\mu(B_n)=\mu(B)$. Therefore
 \[
 e^{-\mu(B)} + e^{-\mu(B^{\perp})}=1.
 \]
