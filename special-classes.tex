@@ -544,7 +544,7 @@ Consider the sets
 consisting, respectively, of geodesics crossing from the segment of $H$ contained in $\ora{ab}$ to the open segment of $H$ contained in $\ora{ba}$, and from the segment of $H$ contained in $\ora{a^{-1}b}$ to the one in $\ora{ba^{-1}}$.
 Consider also the boxes of geodesics:
 \begin{itemize} \item $B_{a,b}^+ = (a^+, b^-] \times [a^-, b^+)$ and  $(B_{a,b}^{\perp})^+ = (b^-, a^-] \times [b^+, a^+)$, 
-\item $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ and  $(B_{g,h}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$.
+\item $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ and  $(B_{a,b}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$.
 \end{itemize}
 We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ and $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $.
 
@@ -589,7 +589,7 @@ For every $n > 0$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\p
 Then:
 \begin{enumerate} 
 \item $R_n^{\pm}  \subset R_{n+1}^{\pm}$, and $\bigcup_{n \geq 1} R_n^{\pm}  = B_{a,b}^{\pm}$ and $(R_n^{\perp})^{\pm}  \subset (R_{n+1}^{\perp})^{\pm}$ and $\bigcup_{n \geq 1} (R_n^{\perp})^{\pm} = (B_{a,b}^{\perp})^{\pm}$.
-\item We have $\lim_{n} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{g,h}^{\perp})^{\pm})$.
+\item We have $\lim_{n} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
 \item  If we let $c_n=a^n b^{-n}$ and $d_n=a^n b^n$, we have 
 \begin{equation}\label{eq:Rn-meas}
 \mu(R_n^+)+\mu(R_n^-)=f(a^n) + f(b^n)-f(c_n),
@@ -645,10 +645,10 @@ Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ at the center of
 Figure~\ref{fig:smoothing_1}, and the notation and setup of Lemma~\ref{lem:measures_parallelogram}.
 By the hypothesis of max-smoothing, for every $n$, we have $\mu((R_n^\perp)^+)=\mu((R_n^\perp)^-)=0$ or $\mu(R_n^{+})=\mu(R_n^{-})=0$, by Eq.~\eqref{eq:Rn-meas} and Eq.~\eqref{eq:Rn-perp-meas}.
-Since each sequence of sets $(R_n)^{\pm}$ and $(R_n^{\perp})^{\pm}$ is
-nested, either $\mu(R_n)^{\pm} = 0$ for every $n$, in which case
+Since each sequence of sets $R_n^{\pm}$ and $(R_n^{\perp})^{\pm}$ is
+nested, either $\mu(R_n^{\pm}) = 0$ for every $n$, in which case
 Lemma~\ref{lem:measures_parallelogram}(1) gives
-$\mu(B_{a,b}^{\pm})=0$; or there is some $N$ with $\mu((R_N)^{\pm}) \neq
+$\mu(B_{a,b}^{\pm})=0$; or there is some $N$ with $\mu(R_N^{\pm}) \neq
 0$, and then $\mu((R_n^{\perp})^{\pm})=0$ for all $n \geq N$, whence
 $\mu((B_{a,b}^{\perp})^{\pm})=0$.
 
