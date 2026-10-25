@@ -10,7 +10,6 @@ our previous work in~\cite{MGT21:Smoothings}. We prove the following,
 which was crucial to prove the simpler algebraic statement in
 Theorem~\ref{thm:intersections_group}; it is not necessary for the
 proof of Theorem~\ref{thm:intersect}.
-\DMGtodo{one implication was using additivity, and we really only use it for additive functionals, so I added additivity to the hypotheses. As a consequence, the Corollary where we specialized to additive functionals disappeared because the Proposition became the Corollary.}
 \begin{proposition}
 If $f$ satisfies oriented smoothing
 (connected and disconnected), additivity,
@@ -20,7 +19,7 @@ stability, and symmetry, then $f$ satisfies smoothing.
 
 The proof uses the following result, which can be seen as a weak
 converse of the main result in our previous paper. 
-\begin{proposition}\DMGtodo{this proposition used to assume convex union instead of additivity}
+\begin{proposition}
 Suppose $f$ is a symmetric curve functional satisfying additivity and stability that extends continuously to geodesic currents.
 If $f$ satisfies disconnected smoothing (resp.\ connected smoothing) then $f$ satisfies connected smoothing (resp.\ disconnected smoothing).
 \label{prop:cont_conn_disc}
@@ -172,23 +171,22 @@ conjugation, and transitivity of R\hyp parallelism. See
 Figure~\ref{fig:cross_lemma}.
 \end{proof}
 
-\DMGtodo{added this lemma here since it is more general than what we prove in cross-ratios, and we also use it here}
 The following result allows us to extract inequalities for parallel pairs assuming disconnected smoothing but not connected smoothing.
 \begin{lemma}
 \label{lem:fekete_upper}
 Suppose $f \colon \Curves^+(S) \to \mathbb{R}$ is symmetric and satisfies disconnected smoothing and convex union. Let $(\ora{a},\ora{b})$ be parallel.
-Then, the sequence $a_n \coloneqq f(a^nb^n)$ is sub-additive $(a_{n+m} \leq a_n + a_m, \text{ for } n,m \in \mathbb{N})$ and 
+Then, the sequence $a_n \coloneqq f(a^nb^n)$ is sub-additive $(a_{n+m}
+\leq a_n + a_m, \text{ for } n,m \in \mathbb{N})$ and, for every $n \in \mathbb{N}$,
 \begin{equation}
 \label{eq:fekete1}
-f(ab) \geq \lim_n \frac{f(a^nb^n)}{n}
+f(ab) \geq \lim_{n\to\infty} \frac{1}{n} f(a^nb^n).
 \end{equation}
-for every $n \in \mathbb{N}$.
-In particular,
+\DPTtodo{Edited more: ``in particular'' $\rightarrow$ ``more specifically''}%
+More specifically, for $n \in \bbN$,
 \begin{equation}
 \label{eq:fekete2}
-f(ab) \geq \frac{1}{2^n} f(a^{2^n}b^{2^n}) \geq \lim_{n \to \infty} \frac{1}{2^n} f(a^{2^n}b^{2^n})
+f(ab) \geq \frac{1}{2^n} f(a^{2^n}b^{2^n}) \geq \lim_{n \to \infty} \frac{1}{2^n} f(a^{2^n}b^{2^n}).
 \end{equation}
-for every $n \in \mathbb{N}$.
 \end{lemma}
 \begin{proof}
 Since $(a,b)$ are R-parallel, by Lemma~\ref{lem:anbn_vs_bkak}, $(\ora{b^m a^m}, \ora{a^nb^n})$ R-cross for every $m,n \geq 1$.
@@ -197,11 +195,11 @@ Since $f$ satisfies disconnected smoothing and convex union by assumption, it fo
 f(a^n b^n) + f(b^m a^m) \geq f((b^m a^m)(a^n b^n)) = f(a^{n+m}b^{n+m}),
 \]
 i.e., the sequence $a_n \coloneqq f(a^n b^n)$ is sub-additive, as claimed, and the desired limit in Eq.~\eqref{eq:fekete1} exists and satifies the inequality by Lemma~\ref{lem:fekete}.
-In particular, an induction using the sub-additivity gives
+An induction using sub-additivity gives, for every $n \in \bbN$,
 \[
-f(ab) \geq \frac{1}{2^n} f(a^{2n}b^{2n})
+f(ab) \geq \frac{1}{2^n} f(a^{2n}b^{2n}).
 \]
-for every $n \in \mathbb{N}$. Finally, the last inequality in Eq.~\eqref{eq:fekete2} follows by Eq~~\eqref{eq:fekete1}.
+Finally, the last inequality in Eq.~\eqref{eq:fekete2} follows by Eq~~\eqref{eq:fekete1}.
 \end{proof}
 
 
@@ -213,7 +211,6 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies additivity, disco
 			$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
 			satisfies oriented connected
 			smoothing, i.e., $f([ab]) \geq f([a][b])$.
-            \DMGtodo{shortened this invoking the general lemma}
             Since $f$ satisfies disconnected smoothing, by Lemma~\ref{lem:fekete_upper} we get, for every $n \in \mathbb{N}$
 \begin{equation}\label{eq:power_ineq}
 				f(ab)  \geq \lim_n \frac{1}{n} f([a^{n}b^{n}]).
@@ -303,9 +300,8 @@ Second, we prove unoriented connected smoothing: with $a,b$ as above,
 f([ba]) 
 & \geq f([bA][a^2]) && \text{(Oriented connected smoothing)}\\
 &= f([bA]) + f(a^2)  && \text{(Additivity)} \\
-&\geq f([bA]) && \text{(Positivity)} \\
+&\geq f([bA]). && \text{(Positivity)}
 \end{align*}
-\DMGtodo{in the step above is the ONLY place where we use additivity in this proof...}
 				In the second case,
 				\[
 				f([ab]) \geq f([aB][b^2]) =f([aB]) + f([b^2]) \geq f([aB])

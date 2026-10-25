@@ -1,3 +1,6 @@
+% DOI printing: keep the hyperlink, print in roman, and let the
+% DOI break at '.', '/' and '-' (url's \UrlBreaks) instead of never.
+\newcommand*{\doi}[1]{\href{https://doi.org/#1}{\begingroup\urlstyle{rm}\nolinkurl{doi:#1}\endgroup}}
 
 \def\mathcenter#1{%
   \vcenter{\hbox{$#1$}}%
