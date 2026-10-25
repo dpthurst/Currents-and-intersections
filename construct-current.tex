@@ -320,7 +320,8 @@ $\overline\mu_f$ that it is a flip-invariant geodesic current
 (recall
 Definition~\ref{def:currents}). A sketch of a proof is given in Lemma~\ref{lem:RH_flip_invariance}, showing that $\overline \mu_f$ is flip-invariant on RH boxes, from where it follows that $\overline \mu_f$ is flip-invariant.
 
-We instead define the flip-invariant geodesic current
+Rather than relying on that sketch, we instead define the
+flip-invariant geodesic current
 \begin{equation}
 \label{eq:flip-invariant}
 \mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
@@ -388,25 +389,26 @@ We can compute intersections with curves as follows.
 \begin{lemma}
   For $\vec C = [y]$ an oriented closed curve, choose
 $z \in \partial_{\infty} S \setminus \{ y_-, y_+\}$ so that
-$y^+,y^-,\, z,\, y \cdot z$ are in cyclic order.
+$y^+,\, y \cdot z,\,z,\,y^-$ are in cyclic order.
 The standard intersection and asymmetric intersection
 of an oriented closed curve $\vec C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \begin{align*}
-i(\mu, \delta_C) &=  \mu([z,y \cdot z) \times (y^+,y^-)) + \mu(\sigma([z,y \cdot z) \times (y^+,y^-))\\
-\vec{\imath}(\mu, \delta_{\vec C}) &= \mu([z,y \cdot z) \times (y^+,y^-)).
+i(\mu, \delta_C) &=  \mu([y \cdot z,z) \times (y^+,y^-)) +
+                   \mu(\sigma([y\cdot z,z) \times (y^+,y^-))\\
+\vec{\imath}(\mu, \delta_{\vec C}) &= \mu([y \cdot z,z) \times (y^+,y^-)).
 \end{align*}
 \end{lemma}
 Recall that $\delta_C$ is the geodesic current associated to the unoriented curve (or flip-invariant)~$C$, while $\delta_{\vec C}$ denotes the geodesic current representing the oriented curve $\vec C$.
 
 Note that
-$[z,Y \cdot z)\times (y^-,y^+)$ is a Borel fundamental domain for the
+$[y\cdot z,z)\times (y^-,y^+)$ is a Borel fundamental domain for the
   action of $\langle Y \rangle$ on the set of geodesics that intersect
   $\ora{y}$ transversely.
 \begin{proof}
-Choose $z\in(y^+,y^-)$ so that $y^+,z,Yz,y^-$
+Choose $z\in(y^+,y^-)$ so that $y^+,\,y\cdot z,\,z,\,y^-$
 occur in cyclic order, and set
 \[
-A_y\coloneqq [z,Yz)\times(y^-,y^+).
+A_y\coloneqq [y\cdot z,z)\times(y^-,y^+).
 \]
 Then $A_y$ is a Borel fundamental domain for the action of
 $\langle y\rangle$ on the oriented geodesics which cross
