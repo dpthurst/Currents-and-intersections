@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{157.65636635bp}%
+    \setlength{\unitlength}{149.46705437bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,18 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.89095587)%
+  \begin{picture}(1,0.95842858)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{ca1.pdf}}%
-    \put(0.12554452,0.83983439){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$t_1$\end{tabular}}}}%
-    \put(0.13145488,0.75342382){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$t_2$\end{tabular}}}}%
-    \put(0.13566545,0.67763345){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$t_2'$\end{tabular}}}}%
-    \put(0.34319771,0.00348204){\color[rgb]{0,0,1}\transparent{0.65336132}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$s_1'$\end{tabular}}}}%
-    \put(0.57062173,0.00644422){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$s_2$\end{tabular}}}}%
-    \put(0.50698878,0.66118383){\color[rgb]{0,0,0}\transparent{0.29803899}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$F_1$\end{tabular}}}}%
-    \put(0.35376018,0.78654102){\color[rgb]{0,0,0}\transparent{0.55686301}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$F_2$\end{tabular}}}}%
-    \put(0.4589368,0.00476807){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$s_1$\end{tabular}}}}%
+    \put(0.08652804,0.90005868){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$t_1$\end{tabular}}}}%
+    \put(0.08386731,0.81780859){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$t_2$\end{tabular}}}}%
+    \put(0.09497977,0.73564193){\color[rgb]{0,0.43137255,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$t_2'$\end{tabular}}}}%
+    \put(0.33389634,0.00676381){\color[rgb]{0,0,1}\transparent{0.65336102}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$s_1'$\end{tabular}}}}%
+    \put(0.58489962,0.00766459){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$s_2$\end{tabular}}}}%
+    \put(0.47997671,0.70717237){\color[rgb]{0,0,0}\transparent{0.29803899}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$F_1$\end{tabular}}}}%
+    \put(0.33391884,0.85051656){\color[rgb]{0,0,0}\transparent{0.55686301}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$F_2$\end{tabular}}}}%
+    \put(0.46042424,0.0058966){\color[rgb]{0,0,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$s_1$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{ca1.pdf}}%
   \end{picture}%
 \endgroup%
