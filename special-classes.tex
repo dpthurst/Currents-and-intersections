@@ -552,7 +552,7 @@ Consider also the boxes of geodesics:
 \item $B_{a,b}^- = [a^+, b^-) \times (a^-, b^+]$ and  $(B_{a,b}^{\perp})^- = [b^-, a^-) \times (b^+, a^+]$.
 \end{itemize}
 We have $R_{a,b}^{\pm} \subset B_{a,b}^{\pm}$ and $(R_{a,b}^{\perp})^{\pm}  \subset (B_{a,b}^{\perp})^{\pm} $.
-
+Let $B_{a,b}$ and $B_{a,b}^\perp$ be the interior of $B_{a,b}^{\pm}$ and $(B_{a,b}^{\perp})^{\pm} $ respectively.
 We will resort to this setup several times in the proofs below.
 
 \begin{lemma}\label{lem:onepoint}
@@ -588,7 +588,7 @@ The following lemma  says that when taking large powers of $a$ and $b$, the corr
 
 \begin{lemma} 
 Given elements $a, b \in \pi_1(S)$ which R-cross,
-let $B_{a,b}^{\perp},(B_{a,b}^{\pm})^{\perp}, R_{a,b}^{\pm}, (R_{a,b}^{\pm})^\perp$ as above. Suppose $\mu$ is an arbitrary geodesic current.
+let $B_{a,b}^{\pm}, (B_{a,b}^{\pm})^{\perp}, R_{a,b}^{\pm}, (R_{a,b}^{\pm})^\perp$ as above. Suppose $\mu$ is an arbitrary geodesic current.
 
 For every $n > 0$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\perp})^{\pm}  \coloneqq (R_{a^n,b^n}^{\perp})^{\pm}$.
 Then:
@@ -698,7 +698,42 @@ to conclude $f$ is a measured lamination, i.e., one does not have to
 check essential \emph{self}-crossings of connected components of multi-curves. It is however true that intersection
 number with a measured lamination also satisfies connected
 max-smoothing.
-We state this result along the lines of Theorem~\ref{thm:intersect}.
+
+We start by proving a preliminary lemma.
+
+\begin{lemma}
+Given a measured lamination $\lambda$, and \emph{any} pair of elements $a,b \in \pi_1(S)$, we have
+\begin{equation}\label{eq:maxsmooth_ineq}
+i(\lambda,ab) \leq \max \{ i(\lambda, a) + i(\lambda, b), i(\lambda, ab^{-1}) \}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $c_n \mathcal{L}_{X_n} \to \lambda$, where $c_n \geq 0$ is a sequence of non-negative real numbers converging to $0$, and $\mathcal{L}_{X_n}$ is a sequence of hyperbolic Liouville currents escaping every compact subset (this can be achieved, for example, by earthquaking a given hyperbolic structure $X$ along $\lambda$ for a long time $t$, and normalizing by the earthquaking parameter).
+By continuity of intersection \begin{equation}\label{eq:maxsm_convergence} c_n \ell_{X_n}(g) \to i(\lambda, g) \text{ for every } g \in \pi_1(S).
+\end{equation}
+Let $\lambda_X(g)=2\cosh\left(\frac{\ell_X(g)}{2}\right)$.
+Choose arbitrary lifts $A,B \in \SL(2,\mathbb{R})$ of the images of $a,b$ by any discrete faithful representation $\rho \colon \pi_1(S)\to \PSL(2,\mathbb{R})$.
+The trace identity gives
+\[
+\tr(AB)=\tr(A)\tr(B)-\tr(AB^{-1}). 
+\]
+Recall that if $A=\rho(g)$, then $\left|\tr(A)\right|=\lambda_X(g)$.
+Taking absolute values, we get
+\begin{equation}\label{eq:maxsm_intermediate}
+\lambda_X(ab) \leq \lambda_X(a)\lambda_X(b) + \lambda_X(ab^{-1})
+\end{equation}
+Since for every $t\geq0$, $e^{t/2}\leq 2\cosh(t/2)\leq 2e^{t/2}$,
+Equation~\eqref{eq:maxsm_intermediate} gives
+\[
+e^{\ell_X(ab)/2} \leq 4e^{(\ell_X(ab)+\ell_X(b))/2)}+2e^{\ell_X(ab^{-1})/2}\leq 6\exp\left(\frac12 \max \{ \ell_X(a)+\ell_X(b),\ell_X(ab^{-1})\}\right).
+\]
+Thus
+\begin{equation}\label{eq:maxsm_lasteq}
+\ell_X(ab) \leq \max \{ \ell_X(a)+\ell_X(b), \ell_X(ab^{-1})\} + 2\log(6).
+\end{equation}
+Applying Equation~\eqref{eq:maxsm_lasteq} with $X=X_n$, and using Equation~\eqref{eq:maxsm_convergence}, the error $2c_n\log(6)$ tends to zero as $n \to \infty$, yielding Equation~\eqref{eq:maxsmooth_ineq}.
+\end{proof}
+We now state this result along the lines of Theorem~\ref{thm:intersect}.
 
 \begin{theorem}
 A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
@@ -715,12 +750,9 @@ A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured la
   Theorem~\ref{thm:lam-char}, $f$ is dual to a measured
   lamination. On the other hand, if $f$ is dual to a measured
   lamination, Theorem~\ref{thm:lam-char} implies disconnected
-  max-smoothing. Connected max-smoothing follows from tracing through
-  the proof of Proposition~\ref{prop:cont_conn_disc} (disconnected
-  smoothing implies connected smoothing): Use the fact
-  that $i(\mu, \cdot)$ is continuous, symmetric, additive and stable,
-  and note that if $f$ satisfies disconnected max-smoothing, all the
-  inequalities become equalities in the proof. Indeed, up to subsequence, we can assume either the oriented smoothing or unoriented smoothing holds, and then replace the inequalities in each case by equalities, taking the limit in the proof along the corresponding subsequence.
+  max-smoothing, which implies disconnected smoothing. Using the fact
+  that $f(\cdot) \coloneqq i(\lambda, \cdot)$ is continuous, symmetric, additive and stable, Proposition~\ref{prop:cont_conn_disc} then implies connected smoothing, that is, if $(\ora{a},\ora{b})$ are parallel, it follows that $f([ab]) \geq \max \{ f([a])+f([b]), f([ab^{-1}])\}$. On the other hand, by Equation~\eqref{eq:maxsmooth_ineq}, the other inequality $f([ab]) \leq \max \{ f([a])+f([b]), f([ab^{-1}])\}$ follows. This proves connected max-smoothing.
+  Finally, power smoothing follows from additivity and stability.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by
