@@ -594,7 +594,7 @@ For every $n > 0$, let $R_n^{\pm}  \coloneqq (R_{a^n,b^n})^{\pm} $ and $(R_n^{\p
 Then:
 \begin{enumerate} 
 \item $R_n^{\pm}  \subset R_{n+1}^{\pm}$, and $\bigcup_{n \geq 1} R_n^{\pm}  = B_{a,b}^{\pm}$ and $(R_n^{\perp})^{\pm}  \subset (R_{n+1}^{\perp})^{\pm}$ and $\bigcup_{n \geq 1} (R_n^{\perp})^{\pm} = (B_{a,b}^{\perp})^{\pm}$.
-\item We have $\lim_{n} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
+\item We have $\lim_{n \to \infty} \mu(R_n^{\pm}) \to \mu(B_{a,b}^{\pm})$ and $\lim_n \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
 \item  If we let $c_n=a^n b^{-n}$ and $d_n=a^n b^n$, we have 
 \begin{equation}\label{eq:Rn-meas}
 \mu(R_n^+)+\mu(R_n^-)=f(a^n) + f(b^n)-f(c_n),
@@ -843,7 +843,7 @@ right-hand side of Equation~\ref{eq:comp} tends to zero. Hence
 \left(e^{-(A_n+B_n-C_n)/2}+e^{-(A_n+B_n-D_n)/2}\right)
 = \lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}.
 \]
-By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_{n^-} \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_{n^-} \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
+By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_{n \to \infty} \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_{n \to \infty} \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
  Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1
