@@ -36,7 +36,7 @@ These equivalences follow from Theorem~\ref{thm:intersections_group} and \cite[T
 \subsection{Multi-curves}
 
 We say that a weighted multi-curve $M$ is \emph{integral}
-if its a weighted multi-curve whose weights are integers. We say that
+if it is a weighted multi-curve whose weights are integers. We say that
 $M$ is a \emph{half-integral} multi-curve if its weights are in
 $\frac{1}{2}\mathbb{Z}$. Note that, by definition, all integral
 multi-curves are also half-integral.
@@ -157,14 +157,14 @@ Let $\mathcal{G} \hookrightarrow S$ be a filling embedded graph
 endowed with the edge metric. Then
 the functional $\ell_{\mathcal{G}}$ is dual to a
 geodesic current $\mu_{\mathcal{G}} = \frac12 M$ where $M$ is a
-multi-curve so that $h(M)=0$ in
+multi-curve so that $h_2(M)=0$ in
 $H_1(S; \mathbb{Z}/2\mathbb{Z})$.
 \end{taggedcor}
 \begin{proof}
 Since $\mathcal{G}$ is equipped with the edge-metric, $\ell_{\mathcal{G}}(C) \in \mathbb{Z}$.
 Hence, Corollary~\ref{cor:int_multicurve} implies the result.
 \end{proof}
-%
+
 \begin{figure}
 \centering{
 \svgfignormal{embedded}}
@@ -460,7 +460,7 @@ We will now characterize measured laminations among curve functionals.
 We will need a relation about the measure of sets intersecting pairs of geodesic segments.
 
 We introduce the following notation. Given two half-closed half-open
-geodesics segments $[x,w)$ and $[y,z)$, let $\mu(G([x,w), [y,z)))$ be the set of bi-infinite geodesics in $G(S)$ intersecting $[x,w)$ and $[y,z)$ transversely. We will refer to sets of this type as \emph{double transversals}. Given a geodesic segment $[x,y)$, a geodesic $\gamma$ intersects $x$ transversely if $x\in\gamma$ and $[x,y) \nsubseteq \gamma$.
+geodesics segments $[x,w)$ and $[y,z)$, let $G([x,w), [y,z))$ be the set of bi-infinite geodesics in $G(S)$ intersecting $[x,w)$ and $[y,z)$ transversely. We will refer to sets of this type as \emph{double transversals}. Given a geodesic segment $[x,y)$, a geodesic $\gamma$ intersects $x$ transversely if $x\in\gamma$ and $[x,y) \nsubseteq \gamma$.
 
 Let $x,y,z,w \in \wt{\Sigma}$ appear counter-clockwise as vertices of an
 embedded convex geodesic quadrilateral on $\wt{\Sigma}$.
@@ -527,7 +527,7 @@ Similarly, $G((Q',P]) \cup b \cdot G((P',Q])$ is a Borel fundamental domain for
 
 For the assertion on fundamental domains, we note that the segment
 $(P',Q']$ on the axis of $\ora{ba}$, is sent by $a$ to a segment
-$(P,R]$, where $R=a(Q')$ appears forward of $P$ in according to the
+$(P,R]$, where $R=a(Q')$ appears forward of $P$ according to the
 orientation of $\ora{ab}$, and the segment $(Q,R]$ is a fundamental
 domain for the action of $ab$ on its axis $\ora{ab}$. Thus $\{
 \ora{ab} \} \times G((Q,R])= \{ \ora{ab} \} \times  (G((Q,P]) \cup a
@@ -668,7 +668,7 @@ B_n^\pm\subset B_{n+1}^\pm,\qquad
 with
 \[
 \bigcup_n B_n^\pm=B,\qquad
-\bigcap_n(B_n^\perp)^\pm=B^\perp.
+\bigcap_n(B_n^\perp)^\pm\supseteq B^\perp.
 \] For every $n$,
 \[
 \min\{\mu(B_n),\mu(B_n^\perp)\}=0.
@@ -708,16 +708,16 @@ i(\lambda,ab) \leq \max \{ i(\lambda, a) + i(\lambda, b), i(\lambda, ab^{-1}) \}
 \end{equation}
 \end{lemma}
 \begin{proof}
-Let $c_n \mathcal{L}_{X_n} \to \lambda$, where $c_n \geq 0$ is a sequence of non-negative real numbers converging to $0$, and $\mathcal{L}_{X_n}$ is a sequence of hyperbolic Liouville currents escaping every compact subset (this can be achieved, for example, by earthquaking a given hyperbolic structure $X$ along $\lambda$ for a long time $t$, and normalizing by the earthquaking parameter).
-By continuity of intersection \begin{equation}\label{eq:maxsm_convergence} c_n \ell_{X_n}(g) \to i(\lambda, g) \text{ for every } g \in \pi_1(S).
+Let $c_n \mathcal{L}_{X_n} \to \lambda$, where $(c_n)$ is a sequence of positive real numbers converging to $0$, and $\mathcal{L}_{X_n}$ is a sequence of hyperbolic Liouville currents (i.e. $i(\mathcal{L}_{X_n}, C)=\ell_{X_n}(C)$ for every curve $C$) escaping every compact subset. This can be achieved, for example, by earthquaking a given hyperbolic structure $X$ along $\lambda$ for time $n$, in which case $c_n = 1/n$ (see e.g. \cite[Theorem~30]{BS21:Boundary}).
+By continuity of intersection number \begin{equation}\label{eq:maxsm_convergence} c_n \ell_{X_n}(g) \to i(\lambda, g) \text{ for every } g \in \pi_1(S).
 \end{equation}
 Let $\lambda_X(g)=2\cosh\left(\frac{\ell_X(g)}{2}\right)$.
-Choose arbitrary lifts $A,B \in \SL(2,\mathbb{R})$ of the images of $a,b$ by any discrete faithful representation $\rho \colon \pi_1(S)\to \PSL(2,\mathbb{R})$.
+Choose arbitrary lifts $A,B \in \SL(2,\mathbb{R})$ of the images of $a,b$ by a discrete faithful representation $\rho \colon \pi_1(S)\to \PSL(2,\mathbb{R})$ uniformizing $X$.
 The trace identity gives
 \[
 \tr(AB)=\tr(A)\tr(B)-\tr(AB^{-1}). 
 \]
-Recall that if $A=\rho(g)$, then $\left|\tr(A)\right|=\lambda_X(g)$.
+Note that if $A=\rho(g)$, then $\left|\tr(A)\right|=\lambda_X(g)$.
 Taking absolute values, we get
 \begin{equation}\label{eq:maxsm_intermediate}
 \lambda_X(ab) \leq \lambda_X(a)\lambda_X(b) + \lambda_X(ab^{-1})
@@ -725,7 +725,7 @@ Taking absolute values, we get
 Since for every $t\geq0$, $e^{t/2}\leq 2\cosh(t/2)\leq 2e^{t/2}$,
 Equation~\eqref{eq:maxsm_intermediate} gives
 \[
-e^{\ell_X(ab)/2} \leq 4e^{(\ell_X(ab)+\ell_X(b))/2)}+2e^{\ell_X(ab^{-1})/2}\leq 6\exp\left(\frac12 \max \{ \ell_X(a)+\ell_X(b),\ell_X(ab^{-1})\}\right).
+e^{\ell_X(ab)/2} \leq 4e^{(\ell_X(a)+\ell_X(b))/2}+2e^{\ell_X(ab^{-1})/2}\leq 6\exp\left(\frac12 \max \{ \ell_X(a)+\ell_X(b),\ell_X(ab^{-1})\}\right).
 \]
 Thus
 \begin{equation}\label{eq:maxsm_lasteq}
@@ -843,7 +843,7 @@ right-hand side of Equation~\ref{eq:comp} tends to zero. Hence
 \left(e^{-(A_n+B_n-C_n)/2}+e^{-(A_n+B_n-D_n)/2}\right)
 = \lim_{n\to\infty} e^{\frac{-\mu(R_n^+)-\mu(R_n^-)}{2}} + e^{\frac{-\mu((R_n^{\perp})^+)-\mu((R_n^{\perp})^-)}{2}}.
 \]
-By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_{n^+} \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_{n^-} \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
+By Lemma~\ref{lem:measures_parallelogram}(2) we also get $\lim_{n^-} \mu(R_n^{\pm})=\mu(B_{a,b}^{\pm})$ and $\lim_{n^-} \mu((R_n^{\perp})^{\pm})=\mu((B_{a,b}^{\perp})^{\pm})$.
  Letting $B_{a,b}$ and $B_{a,b}^\perp$ denote the corresponding open versions of these boxes, we obtain the relation
 \[
 e^{-\mu(B_{a,b})} + e^{-\mu(B_{a,b}^{\perp})} =1

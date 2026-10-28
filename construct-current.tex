@@ -323,23 +323,8 @@ flip-invariant geodesic current
 \label{eq:flip-invariant}
 \mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
 \end{equation}
-where $\sigma_*$ the push-forward map on oriented geodesic currents
+where $\sigma_*$ is the push-forward map on oriented geodesic currents
 induced from the flip map.
-
-
-\begin{comment}
-It is not \emph{a priori} clear from the definition of
-$\overline\mu_f$ whether it is a flip-invariant geodesic current
-(recall
-Definition~\ref{def:currents}).
-
-In order to obtain a flip-invariant current, we define
-\[
-\mu_f\coloneqq\OneHalf\bigl(\overline\mu_f+\sigma_*\overline\mu_f\bigr),
-\]
-where $\sigma_*$ the push-forward map on oriented geodesic currents
-induced from the flip map.
-\end{comment}
 
 \subsection{Recovering \texorpdfstring{$f$}{f} on curves}
 \label{sec:recovery}
@@ -350,7 +335,7 @@ number between oriented geodesic currents.
 \begin{definition}\label{def:asymmetric}
   The \emph{asymmetric intersection} number between oriented geodesic currents is
 \begin{equation}
-\vec{\imath}(\mu,\nu) \coloneqq \int_{\overline{\mathcal{F}}} \mathbf{1}_R \, d(\mu \otimes \nu),
+\vec{\imath}(\mu,\nu) \coloneqq \int_{\mathcal{F}} \mathbf{1}_R \, d(\mu \otimes \nu),
 \label{eq:asymmetric}
 \end{equation}
 where $\cF$ is a fundamental domain of the action of $\pi_1(S)$ on
@@ -370,7 +355,7 @@ number~\eqref{eq:intersection}:
 i(\mu, \nu) = \vec{\imath}(\mu, \nu) + \vec{\imath}(\mu, \sigma(\nu)).
 \label{eq:relation_intersections}
 \end{equation}
-For $p,q \in \wt{S}$, partition $G[p,q]$ by
+For $p,q \in \wt{S}$, partition $G[p,q)$ by
 \begin{equation}\label{eq:partition_oriented}
 G[p,q) = \ora{G[p,q)} \sqcup \ole{G[p,q)} 
 \end{equation}

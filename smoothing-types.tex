@@ -153,7 +153,7 @@ $\bigl(\ora{b^ma^m}, \ora{ba}\bigr)$ R-cross with the endpoints of $\ora{b^ma^m}
 \label{lem:anbn_vs_bkak_parallel}
 \end{lemma}
 \begin{proof}
-We proceed it by induction on $n$. The base case is clear by
+We proceed by induction on $n$. The base case is clear by
 Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-cross}.
 In general we have
 \begin{align*}
@@ -189,15 +189,15 @@ f(ab) \geq \frac{1}{2^n} f(a^{2^n}b^{2^n}) \geq \lim_{n \to \infty} \frac{1}{2^n
 \end{equation}
 \end{lemma}
 \begin{proof}
-Since $(a,b)$ are R-parallel, by Lemma~\ref{lem:anbn_vs_bkak}, $(\ora{b^m a^m}, \ora{a^nb^n})$ R-cross for every $m,n \geq 1$.
+WLOG, assume $(a,b)$ are R-parallel. By Lemma~\ref{lem:anbn_vs_bkak}, $(\ora{b^m a^m}, \ora{a^nb^n})$ R-cross for every $m,n \geq 1$.
 Since $f$ satisfies disconnected smoothing and convex union by assumption, it follows that for every $n,m \geq 1$, we have
 \[
 f(a^n b^n) + f(b^m a^m) \geq f((b^m a^m)(a^n b^n)) = f(a^{n+m}b^{n+m}),
 \]
-i.e., the sequence $a_n \coloneqq f(a^n b^n)$ is sub-additive, as claimed, and the desired limit in Eq.~\eqref{eq:fekete1} exists and satifies the inequality by Lemma~\ref{lem:fekete}.
+i.e., the sequence $a_n \coloneqq f(a^n b^n)$ is sub-additive, as claimed, and the desired limit in Eq.~\eqref{eq:fekete1} exists and satisfies the inequality by Lemma~\ref{lem:fekete}.
 An induction using sub-additivity gives, for every $n \in \bbN$,
 \[
-f(ab) \geq \frac{1}{2^n} f(a^{2n}b^{2n}).
+f(ab) \geq \frac{1}{2^n} f(a^{2^n}b^{2^n}).
 \]
 Finally, the last inequality in Eq.~\eqref{eq:fekete2} follows by Eq~~\eqref{eq:fekete1}.
 \end{proof}
@@ -211,33 +211,11 @@ Suppose first $f \colon \Curves^+(S) \to \mathbb{R}$ satisfies additivity, disco
 			$[ab] \reducesto [a][b]$ and $[ab]\reducesto[aB]$), we show first $f$
 			satisfies oriented connected
 			smoothing, i.e., $f([ab]) \geq f([a][b])$.
-            Since $f$ satisfies disconnected smoothing, by Lemma~\ref{lem:fekete_upper} we get, for every $n \in \mathbb{N}$
+            Since $f$ satisfies disconnected smoothing, by Lemma~\ref{lem:fekete_upper} we get, 
 \begin{equation}\label{eq:power_ineq}
 				f(ab)  \geq \lim_n \frac{1}{n} f([a^{n}b^{n}]).
 			\end{equation}
 
-            \begin{comment}
-			We will start by showing, by induction on $n$, that
-			\begin{equation}\label{eq:power_ineq}
-				2nf([ab]) \geq f([a^{2n}b^{2n}]).
-			\end{equation}
-			The base case $n=1$ follows from the fact that if $\ora{a},\ora{b}$
-			are parallel, $\ora{ab}$ and $\ora{ba}$ cross, and hence
-			\[
-			2[ab]=[ab][ba] \reducesto [ab^2a]=[a^2b^2].
-			\]
-			Hence, by homogeneity and disconnected smoothing, the base case follows.
-			Now, we prove the induction step.
-			\begin{align*}
-				2nf([ab]) &= 2(n-1)f([ab]) + 2f([ab])\\
-				&\geq f([a^{2(n-1)}b^{2(n-1)}]) + f([b^2a^2])
-				&&\text{(Induction)}\\
-				&\geq f([a^{2(n-1)}b^{2(n-1)}][b^2a^2])
-				&&\text{(Convex union)}\\
-				&\geq f([a^{2(n-1)}b^{2(n-1)} b^2a^2]) = f([a^{2n}b^{2n}])
-				&&\text{(Lemma~\ref{lem:anbn_vs_bkak} and disconnected smoothing)}
-			\end{align*}
-            \end{comment}
 			Let $n$ go to infinity, and
 			use Lemma~\ref{lem:gnhn_to_gsumh} and the continuity of the extension of $f$ to geodesic currents to obtain
 			\[

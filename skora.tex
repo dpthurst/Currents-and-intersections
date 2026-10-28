@@ -72,7 +72,7 @@ Let $T_g^+$ be the attracting end of $T_g$ and $T_g^-$ the repelling end.
 
 A $\Gamma$-tree with  translation length function
 $\norm{ \cdot }$ is of one of four
-types~\cite[pp.\ 572,583]{CM87:GroupActions}:
+types~\cite[pp.\ 572 and 583]{CM87:GroupActions}:
 \begin{itemize}
 \item \textit{Global fixed point}: $\norm{ \cdot }$ is zero on all of
   $\Gamma$; equivalently,  $\Gamma$ globally fixes a point in~$T$.
@@ -162,8 +162,6 @@ hyperbolic elements.
 \end{figure}
 
 We now look at the relative positions of the characteristic sets of a pair of elements $g,h \in \Gamma$. 
-
-%, distinguishing the cases that arise in Proposition~\ref{prop:max_twice}.
 
 \begin{lemma}
 \label{lem:foundation_trees}
@@ -396,7 +394,7 @@ irreducible actions.
 Suppose that an $S$-tree~$T$ preserves axis intersection and is
 irreducible. Then for all
 hyperbolic $g \in \pi_1(S)$,
-there exist a hyperbolic $h \in \pi_1(S)$ so that $\ora{h}$
+there exists a hyperbolic $h \in \pi_1(S)$ so that $\ora{h}$
 crosses $\ora{g}$ and $T_g \cap T_h$ is bounded.
 \end{proposition}
 
@@ -544,7 +542,7 @@ is the key place where we invoke irreducibility.
 \begin{proposition}\label{prop:parallel-incoherent}
   Let $T$ be an irreducible $S$-tree that preserves axis
   intersection, and pick $g,h \in \pi_1(S)$ with
-  $(\ora{g},\ora{h})$ are parallel. Then $T_g,T_h$ do not intersect incoherently.
+  $(\ora{g},\ora{h})$ parallel. Then $T_g,T_h$ do not intersect incoherently.
 \end{proposition}
 
 \begin{proof}
@@ -695,7 +693,7 @@ Lemma~\ref{lem:foundation_trees}(1c),
 \norm{(ghG)H}=2\norm{h} > \norm{(ghG)h}.
 \]
 Now consider $gh$ and $GH$. Since one is conjugate to the inverse of
-the other, $\norm{gh} = \norm{GH} < \norm{h}$, while $\ora{gh}$ and $\ora{GH}$ cross.
+the other, $\norm{gh} = \norm{GH} < \norm{h}$, while $\ora{gh}$ and $\ora{GH}$ cross by Lemma~\ref{lem:righthandedfoundation}\ref{item:ab-parallel}.
 We can apply Subcase 1.1 or Subcase 2.1
 (depending whether they are hyperbolic or elliptic) to conclude
 $2\|h\|>\norm{gh} + \norm{GH} \ge \norm{ghGH}=2\|h\|$, a contradiction.
@@ -757,7 +755,7 @@ we prove some related facts about reducible smoothings.
 \label{lem:red_not_smoothing}
 Let $T$ be an $S$-tree.
 If the $\pi_1(S)$-action is reducible,
-then there exist a pair incoherently overlapping elements $(g,h)$ so that
+then there exists a pair of incoherently overlapping elements $(g,h)$ so that
 $(\ora{g},\ora{h})$ are parallel and $\norm{\cdot} \colon \Curves^+(S) \to \mathbb{R}$ does not
 satisfy connected smoothing.
 If the
@@ -811,7 +809,7 @@ consider the pair $(\ora{g},\ora{H})$ instead.
 Now we consider their overlaps in the tree. If $(T_g,T_h)$
 overlap
 incoherently, we have established this claim. Otherwise, following
-Example~\ref{ex:ab_parallel_aB_crossing} and consider $a \coloneqq hghgh$
+Example~\ref{ex:ab_parallel_aB_crossing} consider $a \coloneqq hghgh$
 and $b \coloneqq hgh$. Then $T_a,T_b$ are still parallel with coherent
 overlap, so that
 $\norm{a}>\norm{b}$, while
@@ -822,7 +820,7 @@ $k = ab, \ell = Ba$ or $k = ba, \ell = bA$, of parallel hyperbolic elements with
 incoherent overlap. This proves the first claim.
 
 To see that connected smoothing fails, note
-this tells us $\norm{ gh } < \norm{gH}=\norm{g} + \norm{h}$, which violates both
+this tells us $\norm{ kh } < \norm{kH}=\norm{k} + \norm{h}$, which violates both
 oriented and unoriented connected smoothing.
 
 We now turn to proving disconnected smoothing in the fixed-end case. (In
