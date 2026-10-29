@@ -697,14 +697,21 @@ current, then it is only necessary to check disconnected max-smoothing
 to conclude $f$ is a measured lamination, i.e., one does not have to
 check essential \emph{self}-crossings of connected components of multi-curves. It is however true that intersection
 number with a measured lamination also satisfies connected
-max-smoothing.
+max-smoothing, along the lines of Theorem~\ref{thm:intersect}.
+\begin{theorem}\label{thm:char_laminations_plus}
+A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
+    For any essential crossing of a multi-curve $C$, we have
+    \begin{equation}\label{eq:MLsmoothing}
+      f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
+    \end{equation}
+\end{theorem}
 
 We start by proving some preliminary lemmas. First, we prove hyperbolic lengths satisfy a ``quasi-max-smoothing'' inequality.
 
 \begin{lemma}\label{lem:quasimaxsmoothing}
     Let $\Sigma = (S,g)$ be a hyperbolic surface, and $a,b \in \pi_1(S)$ be any two elements. Then
     \[
-    \ell_\Sigma(ab) \le \max \{\ell_\Sigma(a) + \ell_\Sigma(b), \ell_\Sigma(ab^{-1})\} + 2 \log(6).
+    \ell_\Sigma(ab) \le \max \{\ell_\Sigma(a) + \ell_\Sigma(b), \ell_\Sigma(aB)\} + 2 \log(6).
     \]
 \end{lemma}
 \begin{proof}
@@ -715,39 +722,39 @@ The trace identity in $\SL(2,\bbR)$ gives
 \tr(\rho(a)\rho(b))=\tr(\rho(a))\tr(\rho(b))-\tr(\rho(aB)). 
 \]
 Note that $\abs{\tr(\rho(g))} = \lambda_\Sigma(g)$. Taking absolute values, we then get
-\begin{equation}\label{eq:maxsm_intermediate}
-\lambda_\Sigma(ab) \leq \lambda_\Sigma(a)\lambda_\Sigma(b) + \lambda_\Sigma(ab^{-1}).
-\end{equation}
+\begin{equation*}
+\lambda_\Sigma(ab) \leq \lambda_\Sigma(a)\lambda_\Sigma(b) + \lambda_\Sigma(aB).
+\end{equation*}
 Since for every $t\geq0$, $e^{t/2}\leq 2\cosh(t/2)\leq 2e^{t/2}$,
-Equation~\eqref{eq:maxsm_intermediate} gives
+we then get
 \[
-e^{\ell_\Sigma(ab)/2} \leq 4e^{(\ell_\Sigma(a)+\ell_\Sigma(b))/2}+2e^{\ell_\Sigma(ab^{-1})/2}\leq 6\exp\left(\frac12 \max \{ \ell_\Sigma(a)+\ell_\Sigma(b),\ell_\Sigma(ab^{-1})\}\right).\qedhere
+e^{\ell_\Sigma(ab)/2} \leq 4e^{(\ell_\Sigma(a)+\ell_\Sigma(b))/2}+2e^{\ell_\Sigma(aB)/2}\leq 6\exp\left(\frac12 \max \{ \ell_\Sigma(a)+\ell_\Sigma(b),\ell_\Sigma(aB)\}\right).\qedhere
 \]
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:maxsmooth_ineq}
 Given a measured lamination $\lambda$, and \emph{any} pair of elements $a,b \in \pi_1(S)$, we have
-\begin{equation}\label{eq:maxsmooth_ineq}
-i(\lambda,ab) \leq \max \{ i(\lambda, a) + i(\lambda, b), i(\lambda, ab^{-1}) \}.
-\end{equation}
+\begin{equation*}
+i(\lambda,ab) \leq \max \{ i(\lambda, a) + i(\lambda, b), i(\lambda, aB) \}.
+\end{equation*}
 \end{lemma}
 \begin{proof}
-Let $c_n \mathcal{L}_{\Sigma_n} \to \lambda$, where $(c_n)_{n \in\mathbb N}$ is a sequence of positive real numbers converging to $0$, and $\mathcal{L}_{\Sigma_n}$ is a sequence of hyperbolic Liouville currents (i.e., $i(\mathcal{L}_{\Sigma_n}, C)=\ell_{\Sigma_n}(C)$ for every curve $C$) escaping every compact subset (see e.g.~\cite[Page~152]{Bonahon88:GeodesicCurrent}).
-By continuity of intersection number \begin{equation}\label{eq:maxsm_convergence} c_n \ell_{\Sigma_n}(g) \to i(\lambda, g) \text{ for every } g \in \pi_1(S).
-\end{equation}
-Applying Lemma~\ref{lem:quasimaxsmoothing} with $\Sigma=\Sigma_n$, and using Equation~\eqref{eq:maxsm_convergence}, the error $2c_n\log(6)$ tends to zero as $n \to \infty$, yielding Equation~\eqref{eq:maxsmooth_ineq}.
+  Approximate $\lambda$ by hyperbolic representations:
+let $c_n \mathcal{L}_{\Sigma_n} \to \lambda$, where $(c_n)_{n
+  \in\mathbb N}$ is a sequence of positive real numbers converging to
+$0$, and $\mathcal{L}_{\Sigma_n}$ is a sequence of hyperbolic
+Liouville currents (i.e., $i(\mathcal{L}_{\Sigma_n},
+C)=\ell_{\Sigma_n}(C)$ for every curve $C$) escaping every compact
+subset (see, e.g.,~\cite[Page~152]{Bonahon88:GeodesicCurrent}).
+By continuity of intersection number,
+\begin{equation*} c_n \ell_{\Sigma_n}(g) \to i(\lambda, g) \text{ for every } g \in \pi_1(S).
+\end{equation*}
+Now apply Lemma~\ref{lem:quasimaxsmoothing} with $\Sigma=\Sigma_n$.
+The error $2c_n\log(6)$
+tends to zero as $n \to \infty$, yielding the result.
 \end{proof}
-We now state this result along the lines of Theorem~\ref{thm:intersect}.
 
-\begin{theorem}
-A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured lamination if and only if it satisfies additivity and the \emph{max-smoothing property}:
-    For any essential crossing of a multi-curve $C$, we have
-    \begin{equation}\label{eq:MLsmoothing}
-      f\left(\mfig{curves-0}\right) = \max \left\{ f\left(\mfig{curves-1}\right),f\left(\mfig{curves-2}\right) \right\}.
-    \end{equation}
-    \label{thm:char_laminations_plus}
-\end{theorem}
-\begin{proof}
+\begin{proof}[Proof of Theorem~\ref{thm:char_laminations_plus}]
   Suppose $f$ is a symmetric curve functional satisfying max-smoothing and
   additivity. Max-smoothing clearly implies smoothing, as well as
   disconnected max-smoothing. Thus, by
@@ -755,13 +762,18 @@ A curve functional $f \colon \Curves(S) \to \mathbb{R}$ is dual to a measured la
   lamination. On the other hand, if $f$ is dual to a measured
   lamination, Theorem~\ref{thm:lam-char} implies disconnected
   max-smoothing, which implies disconnected smoothing. Using the fact
-  that $f(\cdot) \coloneqq i(\lambda, \cdot)$ is continuous, symmetric, additive and stable, Proposition~\ref{prop:cont_conn_disc} then implies connected smoothing, that is, if $(\ora{a},\ora{b})$ are parallel, it follows that $f([ab]) \geq \max \{ f([a])+f([b]), f([ab^{-1}])\}$. On the other hand, by Equation~\eqref{eq:maxsmooth_ineq}, the other inequality $f([ab]) \leq \max \{ f([a])+f([b]), f([ab^{-1}])\}$ follows. This proves connected max-smoothing.
+  that $f(\cdot) \coloneqq i(\lambda, \cdot)$ is continuous,
+  symmetric, additive and stable,
+  Proposition~\ref{prop:cont_conn_disc} then implies connected
+  smoothing, that is, if $(\ora{a},\ora{b})$ are parallel, it follows
+  that $f([ab]) \geq \max \{ f([a])+f([b]), f([aB])\}$. The other
+  inequality follows by Lemma~\ref{lem:maxsmooth_ineq}. This proves connected max-smoothing.
   Finally, power smoothing follows from additivity and stability.
 \end{proof}
 
 The fact that measured laminations satisfy max-smoothing was proven by
-the second author in~\cite{Thu00:GeometricIntersection} using
-different techniques. 
+the second author using
+different techniques~\cite{Thu00:GeometricIntersection}.
 
 \subsection{Liouville currents}
 \label{subsec:liouville}
