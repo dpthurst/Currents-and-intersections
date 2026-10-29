@@ -46,12 +46,7 @@ conditions explained below.
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3}}
-\caption{Schematically determining a RH box from group theory data
-  with different lifts of a single curve $\protect[x]$. There are no
-  constraints on how the base lift $\protect\ora{x}$ sits with respect to the
-  other lifts. The other four lifts have constraints in how they
-  sit; some other possibilities are shown in Figure~\ref{fig:rhbox}.
-  Recall from Section~\ref{sec:actions} that the arrows between lifts of $x$ denote
+\caption{Schematically determining a RH box from group theory data with different lifts of a single curve $\protect[x]$. There are no constraints on how the base lift $\protect\ora{x}$ sits with respect to the other lifts. The other four lifts have constraints in how they sit; some other possibilities are shown in Figure~\ref{fig:rhbox}. Recall from Section~\ref{sec:actions} that the arrows between lifts of $x$ denote
 the \emph{right} action of $\pi_1$.}
 \label{fig:newmodel3}
 }
@@ -86,14 +81,12 @@ $[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+)$ must avoid the
 diagonal.
 
 \begin{definition}\label{def:RH-lift-system}
-  A \emph{right-handed lift system} (RH lift system) is a collection of elements
-  $(p_1,q_1,p_2,q_2)$ in $\pi_1(S)$ so that
+  A \emph{right-handed lift system} (RH lift system) is a collection of elements $(p_1,q_1,p_2,q_2)$ in $\pi_1(S)$ so that
   \begin{enumerate}
   \item\label{item:box-nontriv-lift} $p_1P_2$ and $Q_1q_2$ are not powers of~$x$;
   \item\label{item:box-edges-cross-lift} for $i,j \in \{1,2\}$,
     $(\ora{p_iq_j},\ora{x})$ R-cross; and
-  \item\label{item:box-diags-cross-lift} for sufficiently large~$n$,
-    $(\ora{q_2x^np_1},\ora{q_1x^np_2})$ R-cross.
+  \item\label{item:box-diags-cross-lift} for sufficiently large~$n$, $(\ora{q_2x^np_1},\ora{q_1x^np_2})$ R-cross.
   \end{enumerate}
 \end{definition}
 See Figure~\ref{fig:rhbox} for examples of
@@ -128,11 +121,7 @@ by condition \ref{item:box-edges-cross-lift}.
 \end{figure}
 
 \begin{definition}\label{def:RH-box}
-  Every right handed lift system
-  $(p_1,q_1,p_2,q_2)$ determines a
-  \emph{right-handed box} of oriented geodesics in
-  $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$, 
-  given by \[
+  Every right handed lift system $(p_1,q_1,p_2,q_2)$ determines a \emph{right-handed box} of oriented geodesics in $\partial_{\infty} \Sigma \times \partial_{\infty} \Sigma - \Delta$,  given by \[
   B(p_1,q_1,p_2,q_2)=[\ell_1^-,\ell_2^-) \times [r_2^+,r_1^+),\] where $\ora{\ell_i} = P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$.
 The set of all right-handed boxes and the empty set is denoted by $\mathcal{B}$.
 \end{definition}
@@ -148,53 +137,27 @@ The conditions in Definition \ref{def:RH-lift-system} are chosen to
 make the following proposition work.
 \begin{proposition}\label{prop:rh-boxes}
   A tuple $(p_1,q_1,p_2,q_2)$ determines an RH lift system iff, with $\ora{\ell_i} =
-  P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$, the
-  endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that
-  counter-clockwise order. In particular RH boxes in $\cB$ avoid the
-  diagonal.
+  P_i \cdot \ora{x}$ and $\ora{r_i} = q_i \cdot \ora{x}$, the endpoints $\ell_1^-, \ell_2^-, r_2^+, r_1^+$ appear in that counter-clockwise order. In particular RH boxes in $\cB$ avoid the diagonal.
 \end{proposition}
 \begin{proof}
-Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Condition~\ref{item:box-edges-cross-lift} implies
-  that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$
-  are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by
-  $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel, so all
-  endpoints are unique.
+Condition~\ref{item:box-nontriv-lift} guarantees that $\ora{\ell_1} \ne \ora{\ell_2}$ and $\ora{r_1} \ne \ora{r_2}$. Condition~\ref{item:box-edges-cross-lift} implies that for any $i,j \in \{1,2\}$, $\ora{x}$ and $p_iq_j\cdot \ora{x}$ are R-parallel (Lemma~\ref{lem:rhs}) and thus (by translation by $P_i$) that $(\ora{\ell_i}, \ora{r_j})$ are R-parallel, so all endpoints are unique.
 
-  To exploit condition~\ref{item:box-diags-cross-lift}, for $i,j \in
-  \{1,2\}$ and $n \ge 0$, set $g_{i,j,n} \coloneqq q_j x^n p_i$. By
-  Lemma~\ref{lem:convergence_action},
-  \begin{align}\label{eq:box-endpoints}
+  To exploit condition~\ref{item:box-diags-cross-lift}, for $i,j \in \{1,2\}$ and $n \ge 0$, set $g_{i,j,n} \coloneqq q_j x^n p_i$. By Lemma~\ref{lem:convergence_action}, \begin{align}\label{eq:box-endpoints}
     \lim_{n^+} g_{i,j,n}^- &= P_i \cdot x^- = \ell_i^- &
     \lim_{n^+} g_{i,j,n}^+ &= q_j \cdot x^+ = r_j^+.
   \end{align}
-  Condition~\ref{item:box-diags-cross-lift} says that for
-  sufficiently large~$n$
-  the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$
-  appear in that ccw order, which by Eq.~\eqref{eq:box-endpoints} implies
-  that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as
-  desired.
+  Condition~\ref{item:box-diags-cross-lift} says that for sufficiently large~$n$ the endpoints $g_{1,2,n}^-, g_{2,1,n}^-, g_{1,2,n}^+, g_{2,1,n}^+$ appear in that ccw order, which by Eq.~\eqref{eq:box-endpoints} implies that $\ell_1^-,\ell_2^-,r_2^+,r_1^+$ appear in that order, as desired.
 
   The converse direction follows the same way.
 \end{proof}
 
 \begin{remark}
 \label{rmk:largeenough}
-  For boxes of type~1, the group elements in
-  condition~\ref{item:box-diags-cross-lift} cross for all~$n$. For
-  boxes of type~2 or type~3, we need the ``sufficiently large'' condition.
+  For boxes of type~1, the group elements in condition~\ref{item:box-diags-cross-lift} cross for all~$n$. For boxes of type~2 or type~3, we need the ``sufficiently large'' condition.
 \end{remark}
 
 \begin{remark}
-  The reader may wonder why we choose to make the boxes half-open in
-  the specified way. It turns out \textit{post facto} we could have
-  made a different choice and it would not matter for the resulting
-  current, as by
-  Proposition~\ref{prop:spikes}
-  the weight of the
-  boundary of these boxes under any geodesic current is necessarily
-  zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box is a single lift of~$[x]$, and by definition, these lifts are not contained in the RH box. The half-open
-  choice we made is
-  more convenient the proof of Proposition~\ref{prop:countablyadditive}.
+  The reader may wonder why we choose to make the boxes half-open in the specified way. It turns out \textit{post facto} we could have made a different choice and it would not matter for the resulting current, as by Proposition~\ref{prop:spikes} the weight of the boundary of these boxes under any geodesic current is necessarily zero: the only lift of closed geodesics with an endpoint starting at one of the endpoints of the box is a single lift of~$[x]$, and by definition, these lifts are not contained in the RH box. The half-open choice we made is more convenient the proof of Proposition~\ref{prop:countablyadditive}.
   \label{rmk:no_atom_boundary_box}
 \end{remark}
 
@@ -212,28 +175,15 @@ form a basis of $G(\widetilde S)$.
 \label{prop:density}
 \end{proposition}
 \begin{proof}
-  By Lemma~\ref{lem:diagonaldense}, we can find translates
-  $\ora{\ell_i} = P_i\cdot \ora{x}$ and $\ora{r_j} = q_j \cdot \ora{x}$ with both endpoints in
-  the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$.
-  Furthermore, that same lemma lets us arrange the orientations so
-  that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a
-  RH lift system of type~$1$.
+  By Lemma~\ref{lem:diagonaldense}, we can find translates $\ora{\ell_i} = P_i\cdot \ora{x}$ and $\ora{r_j} = q_j \cdot \ora{x}$ with both endpoints in the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. Furthermore, that same lemma lets us arrange the orientations so that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a RH lift system of type~$1$.
 
 
-  To prove the statement about a basis, consider
-  $(v,w) \in G(\widetilde S) \subset (\bdy_\infty S)^2$ and a
-  product neighborhood
-  $(v,w) \subset V \times W \subset G(\widetilde S)$. Choose target
-  endpoints in $V$ on the two sides of~$v$, and target endpoints in
-  $W$ on the two sides of~$w$. Applying the previously proven
-  statement with $\varepsilon$ sufficiently small gives a right-handed
-  box containing $(v,w)$ and contained in $V\times W$.
+  To prove the statement about a basis, consider $(v,w) \in G(\widetilde S) \subset (\bdy_\infty S)^2$ and a product neighborhood $(v,w) \subset V \times W \subset G(\widetilde S)$. Choose target endpoints in $V$ on the two sides of~$v$, and target endpoints in $W$ on the two sides of~$w$. Applying the previously proven statement with $\varepsilon$ sufficiently small gives a right-handed box containing $(v,w)$ and contained in $V\times W$.
 \end{proof}
 
-We now turn to an alternate parameterization that builds in invariance
+We now turn to an alternate parametrization that builds in invariance
 under translation by $\pi_1(S)$, as in
-Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related
-  to the $p_i$ and $q_j$ by
+Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related to the $p_i$ and $q_j$ by
 \begin{equation}
 \begin{aligned}
   a &= p_1 q_1\qquad&\qquad b &= p_1 q_2\\[2pt]
@@ -245,15 +195,12 @@ Eq.~\eqref{eq:box-translate}. Consider group elements $(a,b,c,d)$ related
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3_orbits}}
-\caption{Parameterizing an RH orbit via elements $a,b,c,d$; compare
-  Figure~\ref{fig:newmodel3}. The
-  original position of $\protect\ora{x}$ is arbitrary. This is an
-  orbit of type~1.}
+\caption{Parametrizing an RH orbit via elements $a,b,c,d$; compare Figure~\ref{fig:newmodel3}. The original position of $\protect\ora{x}$ is arbitrary. This is an orbit of type~1.}
 \label{fig:newmodel3_orbit}
 }
 \end{figure}
 
-Compare Figure~\ref{fig:newmodel3_orbit}. In this parameterization, we necessarily have $aCdB = 1$.
+Compare Figure~\ref{fig:newmodel3_orbit}. In this parametrization, we necessarily have $aCdB = 1$.
 Conversely, given elements $a,b,c,d \in \pi_1(S)$ with
 $aCdB = 1$, we can
 construct four lifts of $[x]$ related by Equation~\eqref{eq:relationdatum}, for instance
@@ -295,10 +242,8 @@ Let $a,b,c,d \in \pi_1(S,\ast)$ be such that:
 \item\label{item:box-close} $a C d B = 1$;
 \item\label{item:box-nontriv} $aC\mathrel{(=}bD)$ and $Ab\mathrel{(=}Cd)$ are not powers of~$x$;
 \item\label{item:box-edges-cross} $\ora{a},\ora{b},\ora{c},\ora{d}$ cross $\ora{x}$ to the right; and
-\item\label{item:box-diags-cross} for sufficiently large~$n$,
-  $\ora{dx^na C}
-  \mathrel{(=} \ora{cAbx^na C})$ crosses
-  $\ora{cx^n}$ to the right.
+\item\label{item:box-diags-cross} for sufficiently large~$n$, $\ora{dx^na C}
+  \mathrel{(=} \ora{cAbx^na C})$ crosses $\ora{cx^n}$ to the right.
 \end{enumerate}
 
 Then we call the datum $[a,b,c,d]$ a \emph{right-handed lift orbit} (or \emph{RH orbit}, for short).
@@ -317,14 +262,11 @@ elements in condition~\ref{item:box-diags-cross} are
 Thus the two crossing conditions are equivalent.
 
 \begin{definition}
-  Let $B = B(p_1,q_1,p_2,q_2)$ be an RH box. The
-  \emph{$\pi_1(S)$-orbit of $B$} is
+  Let $B = B(p_1,q_1,p_2,q_2)$ be an RH box. The \emph{$\pi_1(S)$-orbit of $B$} is
   \[
     [B] \coloneqq \{ g \cdot B \colon g \in \pi_1(S) \},
   \]
-  where we consider the left action.
-  We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen
-  representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
+  where we consider the left action. We write $[B(p_1,q_1,p_2,q_2)]$ to emphasize a chosen representative, or $[B]_{a,b,c,d}$ to emphasize the RH orbit.
 \end{definition}
 
 \begin{remark}\label{rmk:flip_rh_box}
@@ -380,17 +322,13 @@ Let $a,x \in \pi_1(S)$, with $\ora{a}$ crossing $\ora{x}$ to the right. Then
 \end{lemma}
 
 \begin{proof}
-  By Eq.~\eqref{eq:cross-join}, with $b=a$, there exists $r>0$ so
-  that, for all $n \in \mathbb{Z}$,
+  By Eq.~\eqref{eq:cross-join}, with $b=a$, there exists $r>0$ so that, for all $n \in \mathbb{Z}$,
   \[
     f([ax^{n-r}]) + f([ax^{n+r}]) \geq 2 f([ax^n]).
   \]
-  (If $x$ is simple, we can take $r=1$.) Here we used oriented smoothing and
-  convex union.
+  (If $x$ is simple, we can take $r=1$.) Here we used oriented smoothing and convex union.
 
-  Hence, $n \mapsto f([a x^{n}])$ is $r$-convex. For $n > 0$, so
-  is $n \mapsto f([a x^n]) - n f([x]) = f([a x^n]) - f([x^n])$. (Here
-  we used stability of~$f$.)
+  Hence, $n \mapsto f([a x^{n}])$ is $r$-convex. For $n > 0$, so is $n \mapsto f([a x^n]) - n f([x]) = f([a x^n]) - f([x^n])$. (Here we used stability of~$f$.)
  
   By Lemma~\ref{lem:rhs_prod}, additivity, and 
  disconnected smoothing of~$f$, we get, for $n \in \bbZ$,
@@ -403,11 +341,7 @@ smoothing of $f$, there is $N \in \mathbb{Z}$ (depending on $a,x$) so that, for 
   \[
     f([a x^{n}]) \ge -f([a]) + f([x^{ n}]).
   \] 
-  This shows that for $\abs{n} > N$, the function $n \mapsto f([ax^n])
-  - f([x^n])$ is $r$-convex and
-  bounded, so by Lemma~\ref{lem:limexistrmidconvex}, the
-  limit as $n \to \infty$ in \eqref{eq:additivity-limit} exists. The
-  limit as $n \to -\infty$ is similar.
+  This shows that for $\abs{n} > N$, the function $n \mapsto f([ax^n]) - f([x^n])$ is $r$-convex and bounded, so by Lemma~\ref{lem:limexistrmidconvex}, the limit as $n \to \infty$ in \eqref{eq:additivity-limit} exists. The limit as $n \to -\infty$ is similar.
 \end{proof}
 
 
@@ -438,10 +372,7 @@ We also need a two-variable version of
 Lemma~\ref{lem:additivity-limit}. For later use, we allow two
 different elements $x,y \in \pi_1(S)$.
 \begin{lemma}\label{lem:additivity-limit-2}
-  Let $a,b,x,y \in \pi_1(S)$ be so that
-  $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel, and
-  let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
-  stability, and homogeneity. Then the limits
+  Let $a,b,x,y \in \pi_1(S)$ be so that $(B \cdot \ora{x}, \ora{y}, a \cdot \ora{x})$ are R-parallel, and let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing, stability, and homogeneity. Then the limits
   \begin{gather*}
     \lim_{n,m \to \infty} f([ax^nby^m]) - nf([x]) - mf([y])\\
     \lim_{n,m \to \infty} f([ax^nby^{-m}]) - nf([x]) - mf([y])
@@ -450,48 +381,31 @@ different elements $x,y \in \pi_1(S)$.
 \end{lemma}
 \begin{proof}
   For $n,m \ge 0$, define $g_
-  {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$.
-  By Corollary~\ref{cor:fund-axby}, there is some $s$ so that both
-  $g_+$ and $g_-$
-  are $(s,s)$-axis-convex: apply $f$ to the left hand side of
-  Eqs.~\eqref{eq:axby-cross-n} and~\eqref{eq:axby-cross-m}, and use
-  convex union, oriented smoothing, stability, and homogeneity. (The extra
-  linear terms in $g_{\pm}$ are irrelevant for convexity.)
+  {\pm}(n,m) \coloneqq f([ax^nby^{\pm m}]) - nf([x]) - mf([y])$. By Corollary~\ref{cor:fund-axby}, there is some $s$ so that both $g_+$ and $g_-$ are $(s,s)$-axis-convex: apply $f$ to the left hand side of Eqs.~\eqref{eq:axby-cross-n} and~\eqref{eq:axby-cross-m}, and use convex union, oriented smoothing, stability, and homogeneity. (The extra linear terms in $g_{\pm}$ are irrelevant for convexity.)
 
-  Next we check that $g_{\pm}$ are bounded.
-  On the one hand,
+  Next we check that $g_{\pm}$ are bounded. On the one hand,
   \[
     [ab][x^n][y^{\pm m}] \reducesto [ax^nb][y^{\pm m}] \reducesto [ax^nby^{\pm m}].
   \]
   For the first reduction, the hypotheses imply that
-  $(\ora{x}, ba\cdot\ora{x})$ are R-parallel, and thus $(\ora{ba},\ora{x})$ R-cross by Lemma~\ref{lem:rhs}. For the second one, note
-  that
-  $ax^n b\cdot(B\cdot x^+, B\cdot x^-) = (a\cdot x^+, a\cdot x^-)$;
-  then a look at the bands model centered on $\ora{y}$ shows that
-  $\ora{a x^n b}$ crosses $\ora{y}$.   Applying $f$ and using additivity
-  and oriented smoothing for $g_+$ and unoriented smoothing for $g_-$ shows that
+  $(\ora{x}, ba\cdot\ora{x})$ are R-parallel, and thus $(\ora{ba},\ora{x})$ R-cross by Lemma~\ref{lem:rhs}. For the second one, note that $ax^n b\cdot(B\cdot x^+, B\cdot x^-) = (a\cdot x^+, a\cdot x^-)$; then a look at the bands model centered on $\ora{y}$ shows that $\ora{a x^n b}$ crosses $\ora{y}$.   Applying $f$ and using additivity and oriented smoothing for $g_+$ and unoriented smoothing for $g_-$ shows that
   \[
     g_{\pm}(n,m) \le f([ab]).
   \]
 
-  To get a lower bound for $g_+$, applying $f$ to both sides of
-  Eq.~\eqref{eq:cancel-axby} and using additivity and unoriented smoothing shows
-  that, for $n, m$ sufficiently large,
+  To get a lower bound for $g_+$, applying $f$ to both sides of Eq.~\eqref{eq:cancel-axby} and using additivity and unoriented smoothing shows that, for $n, m$ sufficiently large,
   \[
     g_+(n,m) \ge -f([ab]).
   \]
  To get a (more complicated) lower bound for $g_-$, similarly apply $f$ to both sides of
  Eq.~\eqref{eq:crossbelowy-ab}.
 
-   Thus by
-   Lemma~\ref{lem:limexistrmidconvextwovar} the limit exists.
+   Thus by Lemma~\ref{lem:limexistrmidconvextwovar} the limit exists.
 \end{proof}
 
 \begin{proposition}\label{prop:join-split-alg}
-Let $a,b,x\in \pi_1(S)$ and
-  let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing,
-  stability, and homogeneity.
-  If $a$ and $b$ cross $x$ to the right, then
+Let $a,b,x\in \pi_1(S)$ and let $f \colon \Curves^+(S) \to \bbR$ satisfy symmetry, additivity, smoothing, stability, and homogeneity. 
+If $a$ and $b$ cross $x$ to the right, then
   \[
     \lim_{n,m\to\infty} f([a x^n b x^m]) - f([ax^n]) - f([bx^m]) = 0.
   \]
@@ -504,17 +418,7 @@ Let $a,b,x\in \pi_1(S)$ and
     h(n,m) &= f([ax^n]) + f([bx^m]) - (n+m)f([x])
   \end{align*}
   exist and are equal.
-  First, Lemmas~\ref{lem:additivity-limit}
-  and~\ref{lem:additivity-limit-2} imply that the limits
-  exist. 
-  Equation \eqref{eq:cross-join} says that there are arbitrarily large
-  $n,m$ so that $g(n',m') \le h(n,m)$ with $n'+m' = n+m$, and $n',m'$
-  closer to the diagonal. This immediately implies
-  $\lim_{n,m \to\infty} g(n,m) \le \lim_{n,m\to\infty} h(n,m)$.
-  (Take
-  $n,m$ large enough so that both $h(n,m)$ and $g(n',m')$ are within
-  $\epsilon$ of their limiting value.) Conversely,
-  Equation~\eqref{eq:cross-split} implies the opposite inequality.
+  First, Lemmas~\ref{lem:additivity-limit} and~\ref{lem:additivity-limit-2} imply that the limits exist. Equation \eqref{eq:cross-join} says that there are arbitrarily large $n,m$ so that $g(n',m') \le h(n,m)$ with $n'+m' = n+m$, and $n',m'$ closer to the diagonal. This immediately implies $\lim_{n,m \to\infty} g(n,m) \le \lim_{n,m\to\infty} h(n,m)$. (Take $n,m$ large enough so that both $h(n,m)$ and $g(n',m')$ are within $\epsilon$ of their limiting value.) Conversely, Equation~\eqref{eq:cross-split} implies the opposite inequality.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
@@ -561,13 +465,11 @@ will move on to more involved properties such as countable
 
 \begin{proposition}
   \label{prop:box-positive}
-  For a right-handed
-  box $B\in \mathcal{B}$, we have $\wh\mu_f(B) \geq 0$.
+  For a right-handed box $B\in \mathcal{B}$, we have $\wh\mu_f(B) \geq 0$.
 \end{proposition}
 
 \begin{proof}
-  Set $[B] = [B]_{a,b,c,d}$.
-  By condition~\ref{item:box-diags-cross}, for sufficiently large~$n$,
+  Set $[B] = [B]_{a,b,c,d}$. By condition~\ref{item:box-diags-cross}, for sufficiently large~$n$,
   \[
     [bx^n][cx^n] = [dx^naC][cx^n] \reducesto [dx^nax^n].
   \]
@@ -575,27 +477,16 @@ will move on to more involved properties such as countable
 \[
 f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 \]
-  Then by Proposition~\ref{prop:join-split-alg} and taking the
-  limit as $n \to \infty$, we obtain
-  $\wh\mu_f(B) \geq 0$.
+  Then by Proposition~\ref{prop:join-split-alg} and taking the limit as $n \to \infty$, we obtain $\wh\mu_f(B) \geq 0$.
 \end{proof}
 
 \begin{proposition}
   \label{prop:sidebyside}
-  If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in
-  Figure~\ref{fig:finiteadditivity} (or the symmetric version changing
-  the $p_i$), then $B_1 \cup B_2$ is a RH box
-  and $\wh\mu_f(B_1 \cup B_2) = \wh\mu_f(B_1) + \wh\mu_f(B_2)$.
+  If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in Figure~\ref{fig:finiteadditivity} (or the symmetric version changing the $p_i$), then $B_1 \cup B_2$ is a RH box and $\wh\mu_f(B_1 \cup B_2) = \wh\mu_f(B_1) + \wh\mu_f(B_2)$.
 \end{proposition}
 
 \begin{proof}
-  Set WLOG $B_1 = 
-  B(p_1,q_1,p_2,q_2)$ and $B_2 =
-  B(p_1,q_2,p_2,q_3)$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and
-  $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that
-  $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order,
-  so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also a
-  RH box. The definition of $\wh\mu_f$ immediately yields the additivity.
+  Set WLOG $B_1 =  B(p_1,q_1,p_2,q_2)$ and $B_2 = B(p_1,q_2,p_2,q_3)$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order, so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also a RH box. The definition of $\wh\mu_f$ immediately yields the additivity.
 \end{proof}
 
 \begin{figure}
@@ -667,27 +558,13 @@ meets each vertical whisker.
 
 \begin{proposition}
   \label{prop:RHsemiring}
-  The set of RH boxes $\mathcal{B}$ is a semi-ring, in the sense of
-  Definition~\ref{def:semiring}.
+  The set of RH boxes $\mathcal{B}$ is a semi-ring, in the sense of Definition~\ref{def:semiring}.
 \end{proposition}
 
 \begin{proof}
-  First, the intersection of boxes is a box. Indeed, all
-  sides of a box are necessarily in the respective whisker, and any
-  new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box.
+  First, the intersection of boxes is a box. Indeed, all sides of a box are necessarily in the respective whisker, and any new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box.
 
-  Second, we must show that if $A,B$ are boxes, then $A \setminus B$
-  is a finite union of boxes. In the interesting case, $A\setminus B$
-  is an L-shaped region, as on the left of
-  Figure~\ref{fig:box-difference}. (This shows the hardest case of the
-  orientation of the region.) If necessary, add a horizontal whisker
-  slightly above the horizontal inner edge of the L, making
-  sure that it intersects the vertical whisker forming the
-  other inner edge of the~L;
-  this is possible by Lemma~\ref{lem:initial}.
-  The resulting whiskers allow us to
-  write the L as the union of three boxes, as shown on the right of
-  Figure~\ref{fig:box-difference}.
+  Second, we must show that if $A,B$ are boxes, then $A \setminus B$ is a finite union of boxes. In the interesting case, $A\setminus B$ is an L-shaped region, as on the left of Figure~\ref{fig:box-difference}. (This shows the hardest case of the orientation of the region.) If necessary, add a horizontal whisker slightly above the horizontal inner edge of the L, making sure that it intersects the vertical whisker forming the other inner edge of the~L; this is possible by Lemma~\ref{lem:initial}. The resulting whiskers allow us to write the L as the union of three boxes, as shown on the right of Figure~\ref{fig:box-difference}.
 \end{proof}
 
 \begin{proposition}
@@ -699,9 +576,7 @@ meets each vertical whisker.
   \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{box_difference}}
-\caption{Decomposing a difference of boxes. Left: A possible shape
-    for $A \setminus B$. Right: Adding a horizontal whisker allows us to
-    write the region as a union of boxes.
+\caption{Decomposing a difference of boxes. Left: A possible shape for $A \setminus B$. Right: Adding a horizontal whisker allows us to write the region as a union of boxes.
   }
 \label{fig:box-difference}
 }
@@ -709,30 +584,12 @@ meets each vertical whisker.
 
 
 \begin{proof}
-  Given a division $B_0 = \bigsqcup_i B_i$, we will show that the
-  $B_i$ can be further divided so that the result can be joined by
-  side-by-side additivity to form $B_0$.
-  Let $W$ be the set of all whiskers
-  involved in any side of any of the~$B_i$, excluding the whiskers supporting the boundary of $B_0$. We proceed by induction on~$\abs{W}$.
+  Given a division $B_0 = \bigsqcup_i B_i$, we will show that the $B_i$ can be further divided so that the result can be joined by side-by-side additivity to form $B_0$. Let $W$ be the set of all whiskers involved in any side of any of the~$B_i$, excluding the whiskers supporting the boundary of $B_0$. We proceed by induction on~$\abs{W}$.
 
-  Whiskers in $W$ can be ``long'', passing through
-  the interior of the upper or right edge
-  of~$B_0$, or not.  (Such long whiskers necessarily also pass through the bottom
-  or left edge as well.)
-  Suppose first that there are no
-  long whiskers in~$W$. Then the partition is in fact trivial, since
-  the only possible box with no long whiskers that contains a
-  point near the upper-right corner of~$B_0$ is $B_0$ itself.
+ Whiskers in $W$ can be ``long'', passing through the interior of the upper or right edge of~$B_0$, or not.  (Such long whiskers necessarily also pass through the bottom or left edge as well.)
+  Suppose first that there are no long whiskers in~$W$. Then the partition is in fact trivial, since the only possible box with no long whiskers that contains a point near the upper-right corner of~$B_0$ is $B_0$ itself.
 
-  Otherwise, there is at least one long whisker. Pick one such long
-  whisker and use it to write $B_0 = B_1' \sqcup B_2'$. Subdivide any
-  of the $B_i$ that intersect both $B_1'$ and $B_2'$, in a
-  side-by-side way, getting sets of boxes $B_{i,1}$ and $B_{i,2}$,
-  which are partitions of $B_1'$ and $B_2'$ respectively. These give
-  subdivisions of $B_1'$ and $B_2'$ that each involve fewer total
-  whiskers: indeed, the chosen whisker is now part of the boundary of
-  each $B_j'$ and hence is not counted in the corresponding induction
-  parameter. Thus by induction and Proposition~\ref{prop:sidebyside},
+  Otherwise, there is at least one long whisker. Pick one such long whisker and use it to write $B_0 = B_1' \sqcup B_2'$. Subdivide any of the $B_i$ that intersect both $B_1'$ and $B_2'$, in a side-by-side way, getting sets of boxes $B_{i,1}$ and $B_{i,2}$, which are partitions of $B_1'$ and $B_2'$ respectively. These give subdivisions of $B_1'$ and $B_2'$ that each involve fewer total whiskers: indeed, the chosen whisker is now part of the boundary of each $B_j'$ and hence is not counted in the corresponding induction parameter. Thus by induction and Proposition~\ref{prop:sidebyside},
   \[
     \wh\mu_f(B_0) = \wh\mu_f(B_1') + \wh\mu_f(B_2') = \sum_j \wh\mu_f(B_{j,1}) +
     \sum_k \wh\mu_f(B_{k,2}) = \sum_i \wh\mu_f(B_i). \qedhere
@@ -742,10 +599,7 @@ meets each vertical whisker.
  \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{finite-additive}}
-\caption{Finite additivity of $\wh\mu_f$. We can turn an
-    arbitrary division of a large box into smaller boxes (left) into
-    one that is side-by-side decomposable (right). Note that we
-    subdivided the cyan box in the initial division to make this possible. }
+\caption{Finite additivity of $\wh\mu_f$. We can turn a arbitrary division of a large box into smaller boxes (left) into one that is side-by-side decomposable (right). Note that we subdivided the cyan box in the initial division to make this possible. }
 \label{fig:finite-additivity}
 }
 \end{figure}

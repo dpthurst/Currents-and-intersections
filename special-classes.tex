@@ -287,7 +287,7 @@ Fix $\epsilon>0$. Since $\ell_d$ is a curve functional, $\ell_d(C)<\infty$ for e
 In particular, $\gamma$ is $d$-rectifiable.
 Let $\gamma' \in C'$ be the concrete multi-curve obtained by smoothing $\gamma$ at $x'$.
 
-By abuse of notation, let $\gamma \colon I \to X$ be a continuous $d$-rectifiable concrete curve parameterizing the concrete multi-curve $\gamma$ where $I$ is a finite union of intervals. Let $t' \neq t''$ be points in (possibly different components of) $I$ such that $\gamma(t') = \gamma(t'') = x'$ correspond to the essential crossing. Let $\gamma' \colon I' \to X$ be a continuous parametrization of the $d$-rectifiable concrete curve $\gamma'$ such that
+By abuse of notation, let $\gamma \colon I \to X$ be a continuous $d$-rectifiable concrete curve parametrizing the concrete multi-curve $\gamma$ where $I$ is a finite union of intervals. Let $t' \neq t''$ be points in (possibly different components of) $I$ such that $\gamma(t') = \gamma(t'') = x'$ correspond to the essential crossing. Let $\gamma' \colon I' \to X$ be a continuous parametrization of the $d$-rectifiable concrete curve $\gamma'$ such that
 \[
 \gamma(I) = \gamma'(I')
 \]
@@ -538,7 +538,7 @@ The other claim is similar.
 
 Using it, we characterize measured laminations among curve
 functionals.
-We start with a  lemma, that first requires defining some sets of interest.
+We start with a  lemma that first requires defining some sets of interest.
 
 Given elements $a, b \in \pi_1(S)$ which R-cross,
 consider the hyperbolic parallelogram~$H$ as in Proposition~\ref{prop:keygeometry}, bounded by the vertices $Q,P,P',Q'$.
@@ -699,29 +699,29 @@ check essential \emph{self}-crossings of connected components of multi-curves. I
 number with a measured lamination also satisfies connected
 max-smoothing.
 
-We start by proving some preliminary lemmas, first proving hyperbolic lengths satisfy a ``quasi-max-smoothing'' inequality.
+We start by proving some preliminary lemmas. First, we prove hyperbolic lengths satisfy a ``quasi-max-smoothing'' inequality.
 
 \begin{lemma}\label{lem:quasimaxsmoothing}
     Let $\Sigma = (S,g)$ be a hyperbolic surface, and $a,b \in \pi_1(S)$ be any two elements. Then
     \[
-    \ell_\Sigma(ab) \le \max \{\ell_\Sigma(a) + \ell_\Sigma(b), \ell_\Sigma(b)\} + 2 \log(6).
+    \ell_\Sigma(ab) \le \max \{\ell_\Sigma(a) + \ell_\Sigma(b), \ell_\Sigma(ab^{-1})\} + 2 \log(6).
     \]
 \end{lemma}
 \begin{proof}
 Let $\lambda_\Sigma(g)=2\cosh\left(\frac{\ell_\Sigma(g)}{2}\right)$.
-Let $\rho \colon \pi_1(S) \to \SL(2,\bbR)$ be an arbitrary lift of the hyperbolic representation into $\PSL(2,\bbR)$ of $\Sigma$.
+Let $\rho \colon \pi_1(S) \to \SL(2,\bbR)$ be an arbitrary lift of the hyperbolic representation into $\PSL(2,\bbR)$ of $\Sigma$ (which exists because the Euler class is $2-2g$, so even).
 The trace identity in $\SL(2,\bbR)$ gives
 \[
 \tr(\rho(a)\rho(b))=\tr(\rho(a))\tr(\rho(b))-\tr(\rho(aB)). 
 \]
 Note that $\abs{\tr(\rho(g))} = \lambda_\Sigma(g)$. Taking absolute values, we then get
 \begin{equation}\label{eq:maxsm_intermediate}
-\lambda_X(ab) \leq \lambda_X(a)\lambda_X(b) + \lambda_X(ab^{-1}).
+\lambda_\Sigma(ab) \leq \lambda_\Sigma(a)\lambda_\Sigma(b) + \lambda_\Sigma(ab^{-1}).
 \end{equation}
 Since for every $t\geq0$, $e^{t/2}\leq 2\cosh(t/2)\leq 2e^{t/2}$,
 Equation~\eqref{eq:maxsm_intermediate} gives
 \[
-e^{\ell_X(ab)/2} \leq 4e^{(\ell_X(a)+\ell_X(b))/2}+2e^{\ell_X(ab^{-1})/2}\leq 6\exp\left(\frac12 \max \{ \ell_X(a)+\ell_X(b),\ell_X(ab^{-1})\}\right).\qedhere
+e^{\ell_\Sigma(ab)/2} \leq 4e^{(\ell_\Sigma(a)+\ell_\Sigma(b))/2}+2e^{\ell_\Sigma(ab^{-1})/2}\leq 6\exp\left(\frac12 \max \{ \ell_\Sigma(a)+\ell_\Sigma(b),\ell_\Sigma(ab^{-1})\}\right).\qedhere
 \]
 \end{proof}
 
@@ -732,7 +732,7 @@ i(\lambda,ab) \leq \max \{ i(\lambda, a) + i(\lambda, b), i(\lambda, ab^{-1}) \}
 \end{equation}
 \end{lemma}
 \begin{proof}
-Let $c_n \mathcal{L}_{\Sigma_n} \to \lambda$, where $(c_n)_{n \in\mathbb N}$ is a sequence of positive real numbers converging to $0$, and $\mathcal{L}_{\Sigma_n}$ is a sequence of hyperbolic Liouville currents (i.e. $i(\mathcal{L}_{\Sigma_n}, C)=\ell_{\Sigma_n}(C)$ for every curve $C$) escaping every compact subset (see e.g.~\cite[Page~152]{Bonahon88:GeodesicCurrent}).
+Let $c_n \mathcal{L}_{\Sigma_n} \to \lambda$, where $(c_n)_{n \in\mathbb N}$ is a sequence of positive real numbers converging to $0$, and $\mathcal{L}_{\Sigma_n}$ is a sequence of hyperbolic Liouville currents (i.e., $i(\mathcal{L}_{\Sigma_n}, C)=\ell_{\Sigma_n}(C)$ for every curve $C$) escaping every compact subset (see e.g.~\cite[Page~152]{Bonahon88:GeodesicCurrent}).
 By continuity of intersection number \begin{equation}\label{eq:maxsm_convergence} c_n \ell_{\Sigma_n}(g) \to i(\lambda, g) \text{ for every } g \in \pi_1(S).
 \end{equation}
 Applying Lemma~\ref{lem:quasimaxsmoothing} with $\Sigma=\Sigma_n$, and using Equation~\eqref{eq:maxsm_convergence}, the error $2c_n\log(6)$ tends to zero as $n \to \infty$, yielding Equation~\eqref{eq:maxsmooth_ineq}.

@@ -29,14 +29,13 @@ and $q_2$ translated by powers of $r_1 = q_1 x Q_1$:
   q_1^{(k)}\coloneqq q_1,\qquad
   q_2^{(k)} \coloneqq q_1 x^k Q_1 q_2.
 \]
-This defines boxes whose  height becomes smaller as $k$
+This defines boxes whose height becomes smaller as $k$
 grows, with the top endpoint fixed.
 
 \begin{figure}
 \centering{
 \resizebox{120mm}{!}{\svgfignormal{v-accordion}}
-\caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in
-    the disk (left) and in the whiskers picture (right)}
+\caption{A vertical accordion $F(p_1,q_1, p_2,\vec{q_2})$, shown in the disk (left) and in the whiskers picture (right)}
   \label{fig:vertical-accordion}
 }
 \end{figure}
@@ -56,8 +55,7 @@ Figure~\ref{fig:horizontal-accordion} define the
 
 \begin{proposition}
 \label{prop:finalfamily}
-  Let $F = F(p_1,q_1,p_2,\vec{q_2})$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a
-  vertical or horizontal accordion as above. Then
+  Let $F = F(p_1,q_1,p_2,\vec{q_2})$ or $F(\vec{p_1},q_1, p_2,q_2)$ be a vertical or horizontal accordion as above. Then
   \begin{itemize}
   \item each $F(k)$ is a RH box;
   \item $F(k+1) \subset F(k)$; and
@@ -66,22 +64,9 @@ Figure~\ref{fig:horizontal-accordion} define the
 \end{proposition}
 
 \begin{proof}
-  We first prove the results in the case of vertical accordions,
-  starting with checking that $F(k)$ is a box. Since $\ora{r_2}$ is
-  nested inside $\ora{r_1}$, the NS dynamics of the group element $r_1
-  = q_1 x Q_1$ translate $\ora{r_2}$ inside $(r_1^-,r_1^+)$, as depicted
-  in Figure~\ref{fig:vertical-accordion}. In particular the cyclic
-  order of the endpoints doesn't change, and we also automatically
-  have $F(k+1) \subset F(k)$.
+  We first prove the results in the case of vertical accordions, starting with checking that $F(k)$ is a box. Since $\ora{r_2}$ is nested inside $\ora{r_1}$, the NS dynamics of the group element $r_1 = q_1 x Q_1$ translate $\ora{r_2}$ inside $(r_1^-,r_1^+)$, as depicted in Figure~\ref{fig:vertical-accordion}. In particular the cyclic order of the endpoints doesn't change, and we also automatically have $F(k+1) \subset F(k)$.
 
-  To show the measures go to zero, we first reformulate the nesting
-  condition algebraically. Note that
-  $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Then  $\ora{r_2}$ and
-  $\ora{r_1}$ being nested means $(\ora{r_1},\ora{r_2})$ are
-  R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to
-  $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is
-  in turn equivalent to $Q_1 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$
-  R-crossing $Q_1 \cdot \ora{r_1} = \ora{x}$; write $e \coloneqq Q_1q_2$.
+  To show the measures go to zero, we first reformulate the nesting condition algebraically. Note that $q_2Q_1 \cdot \ora{r_1} = \ora{r_2}$. Then $\ora{r_2}$ and $\ora{r_1}$ being nested means $(\ora{r_1},\ora{r_2})$ are R-parallel which is equivalent, by Lemma~\ref{lem:rhs}, to $(\ora{q_2Q_1}, \ora{r_1})$ R-crossing. This is in turn equivalent to $Q_1 \cdot \ora{q_2Q_1} = \ora{Q_1q_2}$ R-crossing $Q_1 \cdot \ora{r_1} = \ora{x}$; write $e \coloneqq Q_1q_2$.
 
   In the RH orbit notation, we then have
   \begin{align*}
@@ -169,50 +154,24 @@ closed and open boxes.
 \end{figure}
 
 \begin{lemma}\label{lem:extend1}
-  For $B = [s_1,s_2)\times [t_2,t_1)$ a RH box and
-  any $\epsilon > 0$, there is a RH box $V(B,\epsilon) =
-  [s_1',s_2) \times [t_2',t_1)$ so that
-  $s_1' < s_1$ and $t_2' < t_2$ and
-  $\wh\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
+  For $B = [s_1,s_2)\times [t_2,t_1)$ a RH box and any $\epsilon > 0$, there is a RH box $V(B,\epsilon) = [s_1',s_2) \times [t_2',t_1)$ so that $s_1' < s_1$ and $t_2' < t_2$ and $\wh\mu_f(V(B,\epsilon) \setminus B) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca1}. That is, $V(B,\epsilon)$ extends $B$ slightly down and to the left,
 without increasing the mass much. We write $V^\circ(B,\epsilon)\coloneqq (s_1',s_2)\times(t_2',t_1)$ for the interior of $V(B,\epsilon)$.
 
 \begin{proof}
-  Let $B = B(p_1,q_1,p_2,q_2)$.
-  By Lemma~\ref{lem:diagonaldense}, there is some $q_3$ so that $q_3
-  \cdot \ora{x}$ is nested inside $q_2 \cdot \ora{x}$; in particular
-  $F_1 = F(p_1,q_2,p_2,\vec{q_3})$ is a vertical accordion. Furthermore, for
-  each $k$, $B \cup F_1(k)$ is a RH box. 
-  By Proposition~\ref{prop:finalfamily}, there is $k_1$ large enough
-  so that
-  $\wh\mu_f(F_1(k_1))<\epsilon/2$.
-  Repeat the procedure to find a horizontal
-  accordion $F_2$ abutting on $B \cup F_1(k_1)$. Again there is $k_2$
-  large enough so that $\wh\mu_f(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
+  Let $B = B(p_1,q_1,p_2,q_2)$. By Lemma~\ref{lem:diagonaldense}, there is some $q_3$ so that $q_3 \cdot \ora{x}$ is nested inside $q_2 \cdot \ora{x}$; in particular $F_1 = F(p_1,q_2,p_2,\vec{q_3})$ is a vertical accordion. Furthermore, for each $k$, $B \cup F_1(k)$ is a RH box.  By Proposition~\ref{prop:finalfamily}, there is $k_1$ large enough so that $\wh\mu_f(F_1(k_1))<\epsilon/2$. Repeat the procedure to find a horizontal accordion $F_2$ abutting on $B \cup F_1(k_1)$. Again there is $k_2$ large enough so that $\wh\mu_f(F_2(k_2)) < \epsilon/2$, and set $V(B,\epsilon) \coloneqq B \cup F_1(k_1) \cup F_2(k_2)$.
 \end{proof}
 
 \begin{lemma}\label{lem:extend2}
-  For $B = [s_1,s_2) \times [t_2,t_1)$ a RH box and
-  any $\epsilon > 0$, there is some $s_2',t_1'$ with
-  $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region
-  $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup
-  \bigl([s_2',s_2) \times [t_2,t_1)\bigr)$ is in $\mathcal{R}$ and satisfies
-  $\wh\mu_f(W(B,\epsilon)) < \epsilon$.
+  For $B = [s_1,s_2) \times [t_2,t_1)$ a RH box and any $\epsilon > 0$, there is some $s_2',t_1'$ with $s_1 < s_2' < s_2$ and $t_2 < t_1' < t_1$ so that the region $W(B,\epsilon) = \bigl([s_1,s_2) \times [t_1',t_1)\bigr) \cup \bigl([s_2',s_2) \times [t_2,t_1)\bigr)$ is in $\mathcal{R}$ and satisfies $\wh\mu_f(W(B,\epsilon)) < \epsilon$.
 \end{lemma}
 See Figure~\ref{fig:ca2}. That is, $W(B,\epsilon)$ is a neighborhood of the upper and right
 edges of~$B$ with small mass.
 
 \begin{proof}
-  Find $q_3$ so that $q_3 \cdot \ora{x}$ is nested inside
-  $q_1 \cdot \ora{x}$ and so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a
-  vertical accordion. Similarly find $p_3$ so that $P_2 \cdot \ora{x}$ is nested inside $P_3 \cdot \ora{x}$ and
-  $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then
-  for sufficiently large $k$, we have $\wh\mu_f(F_1(k)) < \epsilon/2$ and
-  $\wh\mu_f(F_2(k)) < \epsilon/2$. Then set
-  $W(B,\epsilon) = F_1(k) \cup F_2(k)$.
+  Find $q_3$ so that $q_3 \cdot \ora{x}$ is nested inside $q_1 \cdot \ora{x}$ and so that $F_1 = F(p_1,q_1,p_2,\vec{q_3})$ is a vertical accordion. Similarly find $p_3$ so that $P_2 \cdot \ora{x}$ is nested inside $P_3 \cdot \ora{x}$ and $F_2 = F(\vec{p_3},q_1,p_2,q_2)$ is a horizontal accordion. Then for sufficiently large $k$, we have $\wh\mu_f(F_1(k)) < \epsilon/2$ and $\wh\mu_f(F_2(k)) < \epsilon/2$. Then set $W(B,\epsilon) = F_1(k) \cup F_2(k)$.
 \end{proof}
-  
 In the setting of Lemma~\ref{lem:extend2}, also set
 \[
 W^\circ(B,\varepsilon):=
@@ -230,15 +189,10 @@ other.
 \end{proposition}
 
 \begin{proof}
-  Let $B_0$ be a right-handed box, and suppose we are given a
-  countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We
-  must show that
-  \[
+  Let $B_0$ be a right-handed box, and suppose we are given a countable covering of it: $B_0 \subset \bigcup_{i=1}^\infty B_i$. We must show that \[
     \wh\mu_f(B_0) \le \sum_{i=1}^\infty \wh\mu_f(B_i).
   \]
-  Fix $\epsilon > 0$. For $i \ge 1$, set
-  $V_i \coloneqq V(B_i, \epsilon/2^i)$. Add one more set by setting
-  $V_0 \coloneqq W(B_0,\epsilon)$, $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$ and $V_i^\circ \coloneqq V^\circ(B_i,\varepsilon/2^i)$.
+  Fix $\epsilon > 0$. For $i \ge 1$, set $V_i \coloneqq V(B_i, \epsilon/2^i)$. Add one more set by setting $V_0 \coloneqq W(B_0,\epsilon)$, $V_0^\circ \coloneqq W^\circ(B_0,\epsilon)$ and $V_i^\circ \coloneqq V^\circ(B_i,\varepsilon/2^i)$.
 
 We claim $\{V_i^\circ\}_{i=0}^\infty$ cover $\overline{B_0}$. Indeed,
 the sets $V_i^\circ$ for $i\geq1$
@@ -359,7 +313,7 @@ For $p,q \in \wt{S}$, partition $G[p,q)$ by
 \begin{equation}\label{eq:partition_oriented}
 G[p,q) = \ora{G[p,q)} \sqcup \ole{G[p,q)} 
 \end{equation}
-where  $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversals, i.e., the subset of
+where $\ora{G[p,q)}\subset G(S)$ for the \emph{right-oriented} transversals, i.e., the subset of
 oriented geodesics in $G[p,q)$ which right-cross the bi-infinite
 oriented geodesic~$\ora{l}$ obtained by extending $[p,q) \subset
 \wt{S}$. Similarly, we will denote by $\ole{G[p,q)}$ the
@@ -376,7 +330,7 @@ $y^+,\, y \cdot z,\,z,\,y^-$ are in cyclic order.
 The standard intersection and asymmetric intersection
 of an oriented closed curve $\vec C=[y]$ with an oriented geodesic current $\mu$ can be computed as 
 \begin{align*}
-i(\mu, \delta_C) &=  \mu([y \cdot z,z) \times (y^-,y^+)) +
+i(\mu, \delta_C) &= \mu([y \cdot z,z) \times (y^-,y^+)) +
                    \mu(\sigma([y\cdot z,z) \times (y^-,y^+))\\
 \vec{\imath}(\mu, \delta_{\vec C}) &= \mu([y \cdot z,z) \times (y^-,y^+)).
 \end{align*}
@@ -384,9 +338,7 @@ i(\mu, \delta_C) &=  \mu([y \cdot z,z) \times (y^-,y^+)) +
 Recall that $\delta_C$ is the geodesic current associated to the unoriented curve (or flip-invariant)~$C$, while $\delta_{\vec C}$ denotes the geodesic current representing the oriented curve $\vec C$.
 
 Note that
-$[y\cdot z,z)\times (y^-,y^+)$ is a Borel fundamental domain for the
-  action of $\langle Y \rangle$ on the set of geodesics that intersect
-  $\ora{y}$ transversely.
+$[y\cdot z,z)\times (y^-,y^+)$ is a Borel fundamental domain for the action of $\langle Y \rangle$ on the set of geodesics that intersect $\ora{y}$ transversely.
 \begin{proof}
 Choose $z\in(y^+,y^-)$ so that $y^+,\,y\cdot z,\,z,\,y^-$
 occur in cyclic order, and set
@@ -405,17 +357,10 @@ $i(\mu,[y])=\mu(A_y)+\mu(\sigma A_y)$. The same claim follows for the intersecti
 Analogously, an asymmetric intersection number between curves can be defined as follows.
 
 \begin{definition}\label{def:asym-intersect}
-  Given two oriented curves $\vec C$, $\vec D$, the
-  asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the
-  minimal number of \emph{right-handed} crossings between any two homotopy
-  class representatives of $\vec C$ and~$\vec D$, i.e., the number of
-  points on~$S$ where $\vec C$ crosses $\vec D$ to the right in the
-  sense of Definition~\ref{def:crossing}.
+  Given two oriented curves $\vec C$, $\vec D$, the asymmetric intersection number $\vec{\imath}(\vec C, \vec D)$ is the minimal number of \emph{right-handed} crossings between any two homotopy class representatives of $\vec C$ and~$\vec D$, i.e., the number of points on~$S$ where $\vec C$ crosses $\vec D$ to the right in the sense of Definition~\ref{def:crossing}.
 \end{definition}
 
-It is straightforward to see that the asymmetric intersection number
-  from Definition~\ref{def:asymmetric} satisfies
-  $\vec{\imath} (\delta_{\vec C}, \delta_{\vec D}) = \vec\imath(\vec C, \vec D)$ and, for a flip-invariant curve $C$ and any oriented geodesic current $\mu$, we have
+It is straightforward to see that the asymmetric intersection number from Definition~\ref{def:asymmetric} satisfies $\vec{\imath} (\delta_{\vec C}, \delta_{\vec D}) = \vec\imath(\vec C, \vec D)$ and, for a flip-invariant curve $C$ and any oriented geodesic current $\mu$, we have
   \[
   \vec{\imath}(\mu, \delta_{C}) = \OneHalf i(\mu, \delta_C).
   \]
@@ -438,11 +383,7 @@ i(\mu_f, \delta_C) =
 \]
 \end{theorem}
 \begin{proof}
-  We first prove that
-  $\vec{\imath}(\mu_f,\delta_{\vec C})=\OneHalf f(\vec C)$.
-  Given a representative $y \in \pi_1(S)$ of the conjugacy
-  class~$\vec C$, we will find a sequence of
-RH boxes to approximating the fundamental domain for $\langle
+  We first prove that $\vec{\imath}(\mu_f,\delta_{\vec C})=\OneHalf f(\vec C)$. Given a representative $y \in \pi_1(S)$ of the conjugacy class~$\vec C$, we will find a sequence of RH boxes to approximating the fundamental domain for $\langle
 y\rangle$ above, and then show that computing the measure of that
 fundamental domain yields $f([y])$.
 
@@ -478,15 +419,9 @@ If we let $z=(P \cdot \ora{x})^-$, and $B_n \coloneqq B_{a^{(n)},
     &= \frac{1}{4}\lim_{n\to\infty}\lim_{m\to\infty}f([py^{n+1}qx^{m}]) + f([py^{-(n+1)}qx^{m}])-f([py^{n}qx^{m}]) - f([py^{-n}qx^{m}]) \\
     &= \OneFourth\bigl(f([y]) + f([y^{-1}])\bigr) =\OneHalf f([y]).
     \end{align*}
-    The first equality follows by the fact that the boxes defined
-    above converge from below to the  $[z,Y
-      \cdot z) \times (y^-,y^+)$ (the fundamental domain for the
-  action of $\langle Y \rangle$) as $n \to \infty$, since $B_{n-1} \subset B_n$.
+    The first equality follows by the fact that the boxes defined above converge from below to the  $[z,Y\cdot z) \times (y^-,y^+)$ (the fundamental domain for the action of $\langle Y \rangle$) as $n \to \infty$, since $B_{n-1} \subset B_n$.
     At the second equality, we use definition of $\wh\mu_f$ on RH boxes.
-    For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass
-    from the iterated limit to a double limit, and gives a
-    number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only
-    two terms survive the cancellation. Then symmetry of $f$ gives the result.
+    For the third, Lemma~\ref{lem:additivity-limit-2} lets us pass from the iterated limit to a double limit, and gives a number of canceling terms of $mf([x])$ and $nf([y^{\pm 1}])$; only two terms survive the cancellation. Then symmetry of $f$ gives the result.
 
 We then get $\vec\imath(\sigma_*\overline\mu_f,\delta_{\vec C})
 =\vec\imath(\overline\mu_f,\delta_{\vec C^{-1}})=\frac12 f(\vec C)$, using the definition of $\sigma_*$, and the symmetry of $f$.
@@ -524,32 +459,20 @@ our Theorem~\ref{thm:intersect}, and thus our result reproves
 
 
 
-\subsection{Proof of  Main Theorems~\ref{thm:intersect} and~\texorpdfstring{\ref{thm:intersections_group}}{A'}}
+\subsection{Proof of Main Theorems~\ref{thm:intersect} and~\texorpdfstring{\ref{thm:intersections_group}}{A'}}
 
 Now we prove the two versions of the main theorem as stated in the introduction. The topological version (Theorem~\ref{thm:intersect}) is stated in terms of functionals on unoriented multi-curves. The algebraic version of the
 theorem, namely, Theorem~\ref{thm:intersections_group}, is phrased in terms of functions on the surface group.
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersect}]
-  Given a functional~$f$ as in the statement, by
-  Definition~\ref{def:smoothing} and
-  Proposition~\ref{prop:power_disconnected_imply_stable}, the induced
-  additive and symmetric functional on oriented multi-curves satisfies
-  stability. Hence the existence of $\mu_f$ follows by
-  Theorem~\ref{thm:recoverintersection}.
+  Given a functional~$f$ as in the statement, by Definition~\ref{def:smoothing} and Proposition~\ref{prop:power_disconnected_imply_stable}, the induced additive and symmetric functional on oriented multi-curves satisfies stability. Hence the existence of $\mu_f$ follows by Theorem~\ref{thm:recoverintersection}.
 
 
-  Uniqueness of the geodesic current $\mu_f$ is a result of Otal,
-  geodesic currents are determined by their marked length spectrum
-  \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}.
-  The claim about the topology is due to Duchin-Leininger-Rafi, who
-  show that the map $\Curr(S) \to \bbR^{\Curves(S)}$
-  defined by $\mu \mapsto i(\mu, \cdot)$ is a homeomorphism onto its
-  image \cite[Theorem~12]{DLR10:DegenerationFlatMetrics}.
+  Uniqueness of the geodesic current $\mu_f$ is a result of Otal, geodesic currents are determined by their marked length spectrum \cite[Th\'eor\`eme~2]{Otal90:SpectreMarqueNegative}. The claim about the topology is due to Duchin--Leininger--Rafi, who show that the map $\Curr(S) \to \bbR^{\Curves(S)}$ defined by $\mu \mapsto i(\mu, \cdot)$ is a homeomorphism onto its image \cite[Theorem~12]{DLR10:DegenerationFlatMetrics}.
 \end{proof}
 
 \begin{remark}
-  Uniqueness is not true if we don't assume $\mu_f$ is flip-invariant.
-  See Appendix~\ref{sec:asymmetric}.
+  Uniqueness is not true if we don't assume $\mu_f$ is flip-invariant. See Appendix~\ref{sec:asymmetric}.
 \end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:intersections_group}]
@@ -612,7 +535,7 @@ hypotheses of Theorem~\ref{thm:intersect}.
 \end{proof}
 
 \begin{remark}
-In fact,  we can replace the following hypotheses in~Theorem~\ref{thm:intersections_group} by the following slightly weaker ones:
+In fact, we can replace the hypotheses in~Theorem~\ref{thm:intersections_group} by the following slightly weaker ones:
 \begin{itemize}
  \item Stability can be replaced by power smoothing (by Proposition~\ref{prop:power_disconnected_imply_stable});
 \item oriented smoothing can be replaced by R-oriented smoothing:
