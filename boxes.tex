@@ -46,7 +46,7 @@ conditions explained below.
 \begin{figure}
 \centering{
 \resizebox{100mm}{!}{\svgfig{newmodel3}}
-\caption{Schematically determining a RH box from group theory data with different lifts of a single curve $\protect[x]$. There are no constraints on how the base lift $\protect\ora{x}$ sits with respect to the other lifts. The other four lifts have constraints in how they sit; some other possibilities are shown in Figure~\ref{fig:rhbox}. Recall from Section~\ref{sec:actions} that the arrows between lifts of $x$ denote
+\caption{Schematically determining an RH box from group theory data with different lifts of a single curve $\protect[x]$. There are no constraints on how the base lift $\protect\ora{x}$ sits with respect to the other lifts. The other four lifts have constraints in how they sit; some other possibilities are shown in Figure~\ref{fig:rhbox}. Recall from Section~\ref{sec:actions} that the arrows between lifts of $x$ denote
 the \emph{right} action of $\pi_1$.}
 \label{fig:newmodel3}
 }
@@ -175,7 +175,7 @@ form a basis of $G(\widetilde S)$.
 \label{prop:density}
 \end{proposition}
 \begin{proof}
-  By Lemma~\ref{lem:diagonaldense}, we can find translates $\ora{\ell_i} = P_i\cdot \ora{x}$ and $\ora{r_j} = q_j \cdot \ora{x}$ with both endpoints in the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. Furthermore, that same lemma lets us arrange the orientations so that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming a RH lift system of type~$1$.
+  By Lemma~\ref{lem:diagonaldense}, we can find translates $\ora{\ell_i} = P_i\cdot \ora{x}$ and $\ora{r_j} = q_j \cdot \ora{x}$ with both endpoints in the respective $\epsilon$-neighborhoods of the $v_i$ and $w_j$. Furthermore, that same lemma lets us arrange the orientations so that $\ora{\ell_i}$ and $\ora{r_j}$ are R-parallel, thus forming an RH lift system of type~$1$.
 
 
   To prove the statement about a basis, consider $(v,w) \in G(\widetilde S) \subset (\bdy_\infty S)^2$ and a product neighborhood $(v,w) \subset V \times W \subset G(\widetilde S)$. Choose target endpoints in $V$ on the two sides of~$v$, and target endpoints in $W$ on the two sides of~$w$. Applying the previously proven statement with $\varepsilon$ sufficiently small gives a right-handed box containing $(v,w)$ and contained in $V\times W$.
@@ -424,7 +424,7 @@ If $a$ and $b$ cross $x$ to the right, then
 
 \begin{proof}[Proof of Proposition~\ref{prop:limitexists}]
 The existence of the limit in Equation~\eqref{eq:def_measure} follows from Lemma~\ref{lem:additivity-limit}.
-Since this definition depends on a RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\wh\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
+Since this definition depends on an RH orbit $(a,b,c,d)$---which is invariant under the left action of $\pi_1(S)$---it suffices to show that $\wh\mu_f([B(p_1,q_1,p_2,q_2)])$ depends only on the box $B(p_1,q_1,p_2,q_2)$.
 To this end, by Remark~\ref{rmk:box_from_system}, it is enough to prove that the limit is invariant under the transformations described in Equations~\eqref{eq:translations}.
 We prove this for Equation~\eqref{eq:translations-l1}; the other cases
 are analogous:
@@ -483,11 +483,11 @@ f([bx^n]) + f([cx^n]) -f([dx^nax^n]) \geq 0.
 
 \begin{proposition}
   \label{prop:sidebyside}
-  If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in Figure~\ref{fig:finiteadditivity} (or the symmetric version changing the $p_i$), then $B_1 \cup B_2$ is a RH box and $\wh\mu_f(B_1 \cup B_2) = \wh\mu_f(B_1) + \wh\mu_f(B_2)$.
+  If two RH boxes $B_1$ and $B_2$ fit together side-by-side as in Figure~\ref{fig:finiteadditivity} (or the symmetric version changing the $p_i$), then $B_1 \cup B_2$ is an RH box and $\wh\mu_f(B_1 \cup B_2) = \wh\mu_f(B_1) + \wh\mu_f(B_2)$.
 \end{proposition}
 
 \begin{proof}
-  Set WLOG $B_1 =  B(p_1,q_1,p_2,q_2)$ and $B_2 = B(p_1,q_2,p_2,q_3)$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order, so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also a RH box. The definition of $\wh\mu_f$ immediately yields the additivity.
+  Set WLOG $B_1 =  B(p_1,q_1,p_2,q_2)$ and $B_2 = B(p_1,q_2,p_2,q_3)$, and set $\ora{\ell_i} = P_i \cdot \ora x$ and $\ora{r_j} = q_j \cdot \ora{x}$. The hypotheses imply that $\ell_1^-,\ell_2^-,r_3^+, r_2^+, r_1^+$ occur in that cyclic order, so in particular $B_1 \cup B_2 = B(p_1,q_1,p_2,q_3)$ is also an RH box. The definition of $\wh\mu_f$ immediately yields the additivity.
 \end{proof}
 
 \begin{figure}
@@ -563,7 +563,7 @@ meets each vertical whisker.
 \end{proposition}
 
 \begin{proof}
-  First, the intersection of boxes is a box. Indeed, all sides of a box are necessarily in the respective whisker, and any new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives a RH box.
+  First, the intersection of boxes is a box. Indeed, all sides of a box are necessarily in the respective whisker, and any new vertices of the intersection are thus intersections of whiskers. Thus, Lemma~\ref{lem:whiskertobox} gives an RH box.
 
   Second, we must show that if $A,B$ are boxes, then $A \setminus B$ is a finite union of boxes. In the interesting case, $A\setminus B$ is an L-shaped region, as on the left of Figure~\ref{fig:box-difference}. (This shows the hardest case of the orientation of the region.) If necessary, add a horizontal whisker slightly above the horizontal inner edge of the L, making sure that it intersects the vertical whisker forming the other inner edge of the~L; this is possible by Lemma~\ref{lem:initial}. The resulting whiskers allow us to write the L as the union of three boxes, as shown on the right of Figure~\ref{fig:box-difference}.
 \end{proof}
